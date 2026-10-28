@@ -41,4 +41,10 @@
 
 ## 发布
 
-待补充最终提交和线上复核。
+- 源码提交：`dada65d740f9ed8f1cedf330e435ea6c55598d09`。
+- Pages 提交：`9af0e039887299a9c78a4d363627cf831a069b5e`。
+- [GitHub Pages 部署 40737624362](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40737624362) 已完成，结论为 success。
+- 刷新公开首页，实际打开帮助，确认新增失物玩法及观察不耗灵光规则；返回游戏正常。公开版本证据：`lost-live.jpg`。
+- 发布树92个运行文件，两个冒险入口内容一致，企业logo保持原文件，未包含临时手机验收页。
+- 最终桌面物证卡位于右上空白处，替换了早期受祖先transform影响的狭窄定位；`lost-ticket-front.jpg`已更新为最终画面。
+- 美术六组正反面图示：`lost-evidence-faces.png`。

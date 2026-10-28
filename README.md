@@ -11,7 +11,7 @@
 - 当前版本：8.0.0
 - 仓库已公开；自定义域名 `tougaigu.com` 尚未绑定。
 
-![苔灯站台 · 站棚、暖窗与万圣节夜色](docs/scene-live.jpg)
+![脑洞失物招领 · 找到一张回程票的主人](docs/lost-ticket-front.jpg)
 
 ## 新游戏：掀起你的头盖骨
 
