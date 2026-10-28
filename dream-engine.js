@@ -5,6 +5,7 @@ import { resolveCapScene, drawCapInterior, drawCapFrontRim, drawCapTheatre, draw
 import { getCapActivity } from './dream-cap-activities.js';
 import { DreamCapActivity } from './dream-cap-activity-engine.js';
 import { drawCapActivity } from './dream-cap-activity-art.js';
+import { drawSceneBackdrop } from './dream-scene-backdrop.js';
 
 const TAU=Math.PI*2;
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
@@ -15,6 +16,9 @@ const FONT='"PingFang SC","Microsoft YaHei",sans-serif';
 const FIXED_STEP=1/60;
 const MAX_FRAME_ELAPSED=.2;
 const ease=n=>{n=clamp(n,0,1);return n*n*(3-2*n);};
+const STORY_BACKDROP_SCENES=['station','garden','theatre','library','coast','post'];
+// Festival chapterIndex is intentionally zero; keep its authored physical base explicit.
+const FESTIVAL_BACKDROP_SCENES={halloween:'station',thanksgiving:'garden',christmas:'library',newyear:'coast',spring:'post',lantern:'theatre',valentine:'garden',dragonboat:'theatre',qixi:'library',midautumn:'station'};
 export const DREAM_PHYSICS={gravity:1350,speed:240,jump:600,soulSpeed:340,tether:565,maxEnergy:100,energyDrain:4.3,pulseRadius:102};
 
 export function createDreamRng(seed=1){
@@ -140,7 +144,8 @@ export class DreamGame {
   applySeasonTheme(){
     if(!this.level||!this.baseTheme)return;
     this.level.theme={...this.baseTheme,sky:[...this.baseTheme.sky]};
-    if(this.mode==='story'&&this.season){
+    // Halloween is a local decoration; six distinct places keep their own atmosphere.
+    if(this.mode==='story'&&this.season&&this.season.id!=='halloween'){
       const seasonal=getFestivalTheme(this.season.id);
       this.level.theme={...this.level.theme,sky:seasonal.sky,light:seasonal.light,spirit:seasonal.spirit,accent:seasonal.accent};
     }
@@ -479,18 +484,39 @@ export class DreamGame {
     drawFestivalWeather(this,c,w,h,t);
     drawCompass(this,c,w,t);
   }
+  getSceneBackdropView(){
+    const clearZones=[],circle=(x,y,r)=>{if(Number.isFinite(x)&&Number.isFinite(y)&&Number.isFinite(r)&&r>0)clearZones.push({x,y,r});};
+    for(const lamp of this.lanterns)circle(lamp.x,lamp.y,78);
+    for(const memory of this.memories)if(!memory.collected)circle(memory.x,memory.y,54);
+    for(const plate of this.level.plates)circle(plate.x+plate.w/2,plate.y-13,plate.w/2+22);
+    for(const pad of this.pads)circle(pad.x+pad.w/2,pad.y-38,pad.w/2+24);
+    for(const platform of this.movers)circle(platform.x+platform.w/2,platform.y-8,Math.min(110,platform.w/2+20));
+    for(const hazard of this.hazards)circle(hazard.px,hazard.py,hazard.r+28);
+    for(const checkpoint of this.level.checkpoints)circle(checkpoint.x,checkpoint.y-40,50);
+    for(const npc of this.level.npcs||[])circle(npc.x,npc.y-78,94);
+    circle(this.level.exit.x,this.level.exit.y-102,112);
+    circle(this.body.x,this.body.y-36,56);
+    if(this.form==='soul')circle(this.soul.x,this.soul.y,48);
+    const activity=this.capActivity?.getView();
+    if(activity){
+      circle(activity.anchor.x,activity.anchor.y-28,70);
+      if(activity.active){
+        for(const bell of activity.switches)circle(bell.x,bell.y,50);
+        for(const destination of activity.destinations)circle(destination.x,destination.y+12,58);
+      }
+    }
+    const top=-this.viewportOffsetY/this.scale;
+    return {sceneId:FESTIVAL_BACKDROP_SCENES[this.festivalId]||STORY_BACKDROP_SCENES[this.chapterIndex]||'station',cameraX:this.camera,viewport:{width:this.viewWidth,top,bottom:top+this.cssHeight/this.scale},worldWidth:this.level.width,palette:this.level.theme,seasonId:this.festivalId||this.season?.id||null,litSeals:this.lanterns.filter(lamp=>lamp.lit).length,clearZones};
+  }
   drawBackground(c,w,h,t){
     const top=-this.viewportOffsetY/this.scale,fullHeight=this.cssHeight/this.scale,th=this.level.theme,gradient=c.createLinearGradient(0,top,0,top+fullHeight);gradient.addColorStop(0,th.sky[0]);gradient.addColorStop(1,th.sky[1]);c.fillStyle=gradient;c.fillRect(0,top,w,fullHeight);
     const mx=w*.73-this.camera*.075,my=133;
     const halo=c.createRadialGradient(mx,my,8,mx,my,220);halo.addColorStop(0,th.light+'20');halo.addColorStop(1,th.light+'00');c.fillStyle=halo;c.fillRect(mx-220,my-220,440,440);
     ellipse(c,mx,my,43,43,th.light+'be');ellipse(c,mx+16,my-10,39,39,th.sky[0]);
     for(let i=0;i<3;i++){const scroll=this.camera*(.1+i*.07),base=405+i*49;c.beginPath();c.moveTo(-10,h);for(let x=-30;x<w+50;x+=35){const y=base+Math.sin((x+scroll)/(105+i*47)+i)*21+Math.sin((x+scroll)/221)*27;c.lineTo(x,y);}c.lineTo(w+20,h);c.closePath();c.fillStyle=[th.mist+'0b',th.mist+'0d',th.mist+'12'][i];c.fill();}
-    for(let i=0;i<17;i++){const x=((i*163-this.camera*.23)%(w+220)+w+220)%(w+220)-110;const bh=95+(i*37%143),y=505-bh;c.fillStyle=th.sky[0]+'80';c.fillRect(x,y,76,bh);box(c,x-7,y-9,90,13,3,th.sky[0]+'80');for(let row=0;row<3;row++)for(let col=0;col<2;col++){if((i+row+col)%3!==0){c.fillStyle=th.light+((i+row)%2?'0d':'18');c.fillRect(x+18+col*27,y+22+row*33,10,16);}}}
+    drawSceneBackdrop(c,this.getSceneBackdropView(),t,this.options.reducedMotion);
     for(const s of this.decorations){const x=((s.x-this.camera*.38)%(w+90)+w+90)%(w+90)-45;const y=s.y+Math.sin(t*s.speed+s.phase)*5;c.globalAlpha=.13+(Math.sin(t*.8+s.phase)+1)*.16;star(c,x,y,s.r,th.light);}
     c.globalAlpha=1;
-    if(th.motif==='coast'||th.motif==='library'){
-      c.fillStyle=th.spirit+'0c';c.fillRect(0,477,w,89);for(let i=0;i<9;i++){const y=486+i*9;c.beginPath();for(let x=0;x<=w+20;x+=20){const yy=y+Math.sin(x/83+t*.35+i)*2;x?c.lineTo(x,yy):c.moveTo(x,yy);}c.strokeStyle=th.spirit+(i%3?'0a':'16');c.lineWidth=1;c.stroke();}
-    }
   }
   drawArchitecture(c,t){
     const th=this.level.theme,motif=th.motif;c.save();

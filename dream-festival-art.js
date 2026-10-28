@@ -80,13 +80,32 @@ export function drawFestivalArchitecture(game,c,t){
   c.restore();
 }
 
+function drawHalloweenGroundProps(game,c,t){
+  const level=game.level,anchor=game.capActivity?.layout?.anchor;
+  // Fixed world positions never drift over a pit or pop away when the player walks past.
+  const clear=[{...level.spawn,r:68},{...level.exit,r:112},
+    ...(level.plates||[]).map(p=>({x:p.x+p.w/2,y:p.y,r:p.w/2+25})),
+    ...(level.pads||[]).map(p=>({x:p.x+p.w/2,y:p.y,r:p.w/2+30})),
+    ...(level.checkpoints||[]).map(p=>({...p,r:55})),
+    ...(level.npcs||[]).map(p=>({...p,r:80})),
+    ...(anchor?[{...anchor,r:74}]:[])];
+  const left=Math.max(0,Math.floor((game.camera-150)/320)),right=Math.min(Math.ceil(level.width/320),Math.ceil((game.camera+game.viewWidth+150)/320));
+  for(let i=left;i<right;i++){
+    const x=150+i*320,y=559,size=11+i%3*3;
+    if(!level.platforms.some(p=>p.kind==='ground'&&p.y===560&&x-size-8>=p.x&&x+size+8<=p.x+p.w))continue;
+    if(level.platforms.some(p=>p.solid&&p.kind!=='ground'&&x+size>p.x&&x-size<p.x+p.w&&p.y<y&&p.y+p.h>y-size*2))continue;
+    if(clear.some(zone=>Math.hypot(x-zone.x,y-zone.y)<zone.r+size+10))continue;
+    c.save();c.globalAlpha=.76;pumpkin(c,x,y,size,game.options.reducedMotion?0:t);c.restore();
+  }
+}
+
 export function drawFestivalProps(game,c,t){
   const id=game.festivalId||game.season?.id;if(!themes[id])return;
+  if(id==='halloween'){drawHalloweenGroundProps(game,c,t);return;}
   const left=Math.max(0,Math.floor((game.camera-130)/185)),right=Math.min(Math.ceil(game.level.width/185),Math.ceil((game.camera+game.viewWidth+130)/185));
   for(let i=left;i<right;i++){
     const x=95+i*185,y=559; c.save();c.globalAlpha=.9;
-    if(id==='halloween'){pumpkin(c,x,y,13+i%3*4,t);if(i%3===1){line(c,[[x+38,y],[x+38,y-54]],'#82617d',4);box(c,x+22,y-78,32,29,12,'#dba57f','#edd4a5');heart(c,x+38,y-64,6,'#8c607e');}}
-    else if(id==='thanksgiving'){leaf(c,x,y-4,17,'#d5a376',i);if(i%3===0)gift(c,x+24,y,13,'#af8768','#e3c294');}
+    if(id==='thanksgiving'){leaf(c,x,y-4,17,'#d5a376',i);if(i%3===0)gift(c,x+24,y,13,'#af8768','#e3c294');}
     else if(id==='christmas'){gift(c,x,y,14+i%2*3,['#a9677b','#5f8c86','#8d839c'][i%3],'#efdfbc');if(i%2)ellipse(c,x+25,y-1,13,5,'#e2ebe3');}
     else if(id==='newyear'){star(c,x,y-12,10,'#e5c48c');if(i%3===0)clock(c,x+36,y-24,23,t);}
     else if(id==='spring'){lantern(c,x,y-31,16,'#bc5c68',t);if(i%2===0){box(c,x+20,y-24,23,23,2,'#b96069','#f0cb87');c.fillStyle='#f0cb87';c.font=`14px ${FONT}`;c.textAlign='center';c.fillText('福',x+32,y-7);}}
@@ -100,14 +119,14 @@ export function drawFestivalProps(game,c,t){
 }
 
 export function drawFestivalWeather(game,c,w,h,t){
-  const id=game.festivalId||game.season?.id;if(!themes[id])return;const th=getFestivalTheme(id),count=game.options.reducedMotion?6:25;c.save();
+  // Halloween's bats and window lights belong to the distant scene layer only.
+  const id=game.festivalId||game.season?.id;if(!themes[id]||id==='halloween')return;const th=getFestivalTheme(id),count=game.options.reducedMotion?6:25;c.save();
   for(let i=0;i<count;i++){
     const speed=.3+(i%4)*.13,tt=game.options.reducedMotion?0:t;
     const x=((i*137+Math.sin(tt*.25+i)*35-game.camera*.12)%(w+90)+w+90)%(w+90)-45;
     const y=(i*91+tt*9*speed)%580;
     c.globalAlpha=.18+(i%4)*.08;
-    if(id==='halloween'){if(i%3===0){const wing=Math.sin(tt*3+i)*5;c.fillStyle='#c5a6c288';c.beginPath();c.moveTo(x-13,y-wing);c.quadraticCurveTo(x-8,y+7,x,y+2);c.quadraticCurveTo(x+8,y+7,x+13,y-wing);c.lineTo(x+6,y-5);c.lineTo(x,y-1);c.lineTo(x-6,y-5);c.closePath();c.fill();}else star(c,x,y,2,th.light);}
-    else if(id==='thanksgiving')leaf(c,x,y,4+i%3,th.accent,tt*.3+i);
+    if(id==='thanksgiving')leaf(c,x,y,4+i%3,th.accent,tt*.3+i);
     else if(id==='christmas'){ellipse(c,x,y,1.2+i%3*.7,1.2+i%3*.7,'#f1f4e7');if(i%5===0){line(c,[[x-4,y],[x+4,y]],'#f2f6e7',1);line(c,[[x,y-4],[x,y+4]],'#f2f6e7',1);}}
     else if(id==='valentine')heart(c,x,y,3+i%3,th.accent);
     else if(id==='spring'){c.fillStyle=i%2?th.light:th.accent;c.fillRect(x,y,3,7);}
