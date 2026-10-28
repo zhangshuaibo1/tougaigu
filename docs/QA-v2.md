@@ -41,11 +41,21 @@
 
 ### 截图
 
-- `dream-homepage.jpg`：新冒险首页。
+- `dream-homepage.jpg`：已部署的新冒险公网首页。
 - `dream-puzzle.jpg`：实际第一章谜题、提示、答案解释和点灯按钮。
 - `dream-mobile.jpg`：390px 响应式预览中实际触发的《咏柳》谜题。
+- `company-footer-live.jpg`：已部署的原游戏、新冒险入口与企业页脚。
 
 临时响应式测试入口未包含在发布产物中。
+
+## 发布验收
+
+- 游戏源码提交：`5f110b314ed76a6e42e16e650ca670dd38a2b151`。
+- Pages 发布提交：`0146d893daed492b3b9e8682be97c2a834f2acab`，22 个运行时文件与 `.nojekyll`，不含测试、文档或临时预览页面。
+- [GitHub Pages 部署流程](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40700304082) 状态为 `completed / success`。
+- 实际打开并核验 [原游戏](https://zhangshuaibo1.github.io/tougaigu/) 与 [新冒险](https://zhangshuaibo1.github.io/tougaigu/dream.html)；标题、章节入口、原创图像及企业页脚正常显示。
+- 生产环境完成开始章节、跳过开场对白、暂停、恢复、掀盖和返回地图操作，未记录到应用控制台错误。
+- 新游戏首页与原游戏页脚截图来自上述真实公网页面；谜题及手机截图来自发布前的实际操作验收。
 
 ## 验证边界
 

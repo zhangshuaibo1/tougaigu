@@ -46,6 +46,8 @@
 
 详细故事、谜题和存档逻辑见 `dist/dream-story.js`；物理机关与六章地图分别见 `dist/dream-engine.js`、`dist/dream-levels.js`。
 
+54 项测试及桌面、手机响应式试玩记录见 [v2 验收记录](docs/QA-v2.md)。
+
 ## 原游戏：再活一局
 
 玩家控制一只小骷髅，在不断涌来的怪物中生存。攻击自动瞄准，玩家专注走位、收集经验、冲刺避险与选择升级。
@@ -173,9 +175,9 @@ docs/
 
 发布配置为 Settings → Pages → Deploy from a branch → `gh-pages` → `/ (root)`。`gh-pages` 分支根目录放置 `dist/` 的内容及 `.nojekyll`，游戏源文件、测试与文档保留在 `main` 分支。更新游戏后，需要将新的 `dist/` 内容同步到发布分支。
 
-- 首发游戏源码：[95f5239](https://github.com/zhangshuaibo1/tougaigu/commit/95f5239356edf4364c9c78c72deedfd8a2f68f16)。
-- 首发 Pages 提交：[4115504](https://github.com/zhangshuaibo1/tougaigu/commit/4115504a2f147a827157d6b444372762bd1a5241)。
-- 发布工作流：[pages build and deployment](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40692972037)，结果成功。
+- v2 游戏源码：[5f110b3](https://github.com/zhangshuaibo1/tougaigu/commit/5f110b314ed76a6e42e16e650ca670dd38a2b151)。
+- v2 Pages 提交：[0146d89](https://github.com/zhangshuaibo1/tougaigu/commit/0146d893daed492b3b9e8682be97c2a834f2acab)。
+- v2 发布工作流：[pages build and deployment](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40700304082)，结果成功。两款游戏均已打开公网地址复核。
 
 HTML 的样式、脚本与图标路径，以及 JavaScript 模块导入均使用相对路径，已在 GitHub Pages 的 `/tougaigu/` 子路径下实际运行。
 
@@ -184,5 +186,7 @@ HTML 的样式、脚本与图标路径，以及 JavaScript 模块导入均使用
 ## 企业版权与素材
 
 网页底部展示 **© 2026 上海九喵科技有限公司 版权所有**，统一社会信用代码 **91310109MAKQBAFQ2B**，企业官网为 <https://9mew.com>。官方 Logo 已下载到项目中，由本站直接加载。
+
+![线上新游戏入口与企业页脚](docs/company-footer-live.jpg)
 
 古典诗文原句、通行歇后语与原创谜面分别注明；诗文校对及 Logo 原始地址见 [素材与文本来源](docs/CREDITS.md)。仓库公开展示源码，暂未额外授予开源许可。
