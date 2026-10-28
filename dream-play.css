@@ -1,0 +1,118 @@
+/* The scene is the home screen. Utilities live in the floating game menu. */
+html,body.dream-play{height:100%;overflow:hidden;overscroll-behavior:none}
+body.dream-play{--play-top:var(--shell-top);--play-bottom:var(--shell-bottom);background:#171522}
+#dream-stage{top:var(--play-top);bottom:var(--play-bottom);height:auto;z-index:1;border-top:1px solid #a9ead612}
+#dream-stage canvas{display:block;width:100%;height:100%;outline-offset:-3px}
+#dream-stage .stage-vignette{background:linear-gradient(180deg,#15151d70 0,transparent 26%,transparent 80%,#15131f66)}
+#dream-stage .stage-hud{top:15px;left:24px;right:24px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
+#dream-stage .stage-hud-left{gap:13px;align-items:center}
+#dream-stage .stage-hud-left>div>span{font-size:9px;letter-spacing:2px;color:#a7a6b2}
+#dream-stage .stage-hud-left h2{font-size:19px;letter-spacing:1px;margin-top:3px}
+.stage-story-button{display:flex;align-items:center;gap:5px;border:1px solid #b5cbce30;border-radius:20px;padding:7px 10px;font-size:10px;color:#d5d0da;background:#18202999;pointer-events:auto}
+.stage-story-button svg{width:14px;height:14px}.stage-story-button:hover{background:#35413e;color:#e6f1dc}
+#dream-stage .stage-goals{padding:9px 16px;gap:19px;background:#161b237d;border:1px solid #b2d5cf24;border-radius:25px}
+#dream-stage .stage-goals b{font-size:13px}#dream-stage .stage-goals small{font-size:9px}#dream-stage .stage-time{font-size:11px}
+#dream-stage .stage-form>span{font-size:12px}#dream-stage .stage-form small{font-size:9px;color:#b1bcb6}
+#dream-stage .energy-track{height:4px;width:119px;margin:6px 0 4px auto}
+#dream-stage .stage-objective{top:79px;max-width:calc(100% - 36px);width:max-content}
+#dream-stage .stage-objective>span{font-size:12px;font-weight:600;color:#e1e5d8}
+#dream-stage .stage-objective>small{font-size:11px;color:#bac8bd;margin-top:2px}
+#dream-stage .stage-actions{right:24px;bottom:22px}
+#dream-stage .stage-desktop-hint{font-size:10px;color:#b8c2bb;left:24px;bottom:27px;gap:10px}
+#dream-stage .stage-announcement{top:26%;font-size:13px;background:#1b2129d9;border:1px solid #afc8c335;box-shadow:0 12px 40px #0003;padding:11px 18px;border-radius:12px}
+.dream-play .corporate-footer{position:fixed;bottom:0;left:0;right:0;z-index:2;max-width:none;height:var(--play-bottom);margin:0;padding:4px 24px;display:flex;justify-content:center;gap:20px;background:#171522;font-size:9px;line-height:1.6;border-top:1px solid #b9aaca18}
+.dream-play .corporate-logo{width:65px;min-height:24px;flex-shrink:0}.dream-play .corporate-logo img{width:65px;height:24px;object-fit:contain}
+.dream-play .corporate-legal{display:flex;align-items:center;gap:16px}.dream-play .corporate-legal p+p{margin:0}.dream-play .corporate-legal span{font-size:9px;letter-spacing:0}
+.dream-play .corporate-link{margin:0;font-size:9px}
+.dream-play .dream-dialog{max-height:calc(100dvh - 32px)}
+.dream-play .dialog-eyebrow:empty{display:none}
+.dream-play .dream-dialog-close{width:36px;height:36px;top:15px;right:15px;line-height:1}
+.dream-play .dream-dialog h2{padding-right:24px}
+.map-dialog{width:min(850px,calc(100vw - 32px));padding:28px}
+.map-dialog h2{margin:8px 0 18px;font-size:29px}
+.map-summary{display:flex;align-items:center;gap:16px;font-size:11px;color:#b4b7ad;margin-bottom:22px}
+.map-progress{height:3px;background:#414446;border-radius:3px;flex:1;min-width:30px}
+.map-progress i{display:block;height:100%;background:#a9ead6;border-radius:3px}
+#dream-save-status{display:flex;align-items:center;gap:5px;font-size:9px;color:#9eb4a8;white-space:nowrap}
+#dream-save-status i{width:5px;height:5px;border-radius:50%;background:#a9ead6}
+.map-dialog .chapter-grid{gap:12px}
+.map-dialog .chapter-card{min-height:165px;padding:16px;border-radius:14px}
+.map-dialog .chapter-topline{gap:7px;margin-bottom:14px}
+.map-dialog .chapter-number{font-size:8px;letter-spacing:.5px}.map-dialog .chapter-status{font-size:8px;padding:1px 6px}
+.map-dialog .chapter-card h3{font-size:19px;max-width:100%;margin-top:1px;position:relative;z-index:2}
+.map-dialog .chapter-subtitle{font-size:10px;margin-top:5px;max-width:100%;min-height:16px}
+.map-dialog .chapter-card>p{display:none}
+.map-dialog .chapter-icon{width:38px;height:38px;right:17px;top:50px;opacity:.18}
+.map-dialog .chapter-card:after{width:74px;height:74px;right:0;top:24px}
+.map-dialog .chapter-bottom{padding-top:12px;margin-top:auto;gap:6px}.map-dialog .chapter-stars svg{width:11px;height:11px}
+.map-dialog .chapter-memories{font-size:8px}.map-dialog .chapter-memories svg{width:11px;height:11px}
+.map-dialog .dialog-note{font-size:10px;margin:16px 0}.map-dialog #map-continue{margin-left:auto}
+.profile-identity{display:flex;align-items:center;gap:15px;margin:14px 0 20px;padding:12px 15px;background:#35354169;border:1px solid #b2c6ba24;border-radius:14px}
+.profile-identity img{width:65px;height:65px}.profile-identity>div{display:flex;flex-direction:column;gap:5px}.profile-identity strong{font-size:18px;color:#f3d8b3}.profile-identity>div>span{font-size:11px;color:#a9afa8}.profile-local{margin-left:auto;font-size:9px;color:#a5baad;border:1px solid #91b49d40;border-radius:20px;padding:3px 7px;white-space:nowrap}
+.dream-play .journal-intro{display:none}.dream-play .journal-dialog h2{margin-top:9px}
+.dream-play .journal-stats{margin-top:0}
+.dream-play .pause-dialog .dialog-eyebrow{display:none}.dream-play .pause-dialog h2{padding-right:0}
+.dream-play .pause-dialog #pause-detail{font-size:12px}
+.dream-play .dream-toast{bottom:calc(var(--play-bottom) + 18px);z-index:500}
+@media(max-width:800px){
+  #dream-stage .stage-hud{left:16px;right:16px;gap:10px}
+  #dream-stage .stage-hud-left h2{font-size:16px}
+  #dream-stage .stage-goals{gap:10px;padding:8px 12px}#dream-stage .stage-goals small{display:none}
+  #dream-stage .stage-goals b{font-size:12px}#dream-stage .stage-goals svg{width:14px;height:14px}
+  #dream-stage .stage-form>span{font-size:10px}
+  .stage-story-button{padding:6px 8px;font-size:9px}
+  .dream-play .corporate-footer{padding:4px 14px;gap:14px}.dream-play .corporate-legal{gap:12px;font-size:8px}.dream-play .corporate-link{font-size:8px}.dream-play .corporate-legal span{font-size:8px}
+}
+@media(max-width:640px){
+  #dream-stage{background:linear-gradient(180deg,#11252b,#141d29)}
+  #dream-stage canvas{height:calc(100% - 112px)}
+  #dream-stage .stage-hud{left:14px;right:14px;top:10px;grid-template-columns:1fr auto;gap:8px;align-items:start}
+  #dream-stage .stage-hud-left{gap:10px;grid-column:1;grid-row:1;align-items:center}
+  #dream-stage .stage-hud-left h2{font-size:16px;letter-spacing:0;margin-top:2px}
+  #dream-stage .stage-hud-left>div>span{font-size:8px;letter-spacing:1px}
+  .stage-story-button{font-size:9px;padding:6px 8px;gap:4px;align-self:end}.stage-story-button svg{width:13px;height:13px}
+  #dream-stage .stage-goals{grid-column:2;grid-row:1;justify-self:end;gap:9px;border:0;background:none;padding:4px 0}
+  #dream-stage .stage-goals>span{gap:4px}#dream-stage .stage-goals b{font-size:11px}
+  #dream-stage .stage-time{display:none}#dream-stage .stage-goals small{display:none}
+  #dream-stage .stage-form{grid-column:2;grid-row:1;min-width:0;align-self:end;transform:translateY(24px)}
+  #dream-stage .stage-form>span{font-size:8px;line-height:1}#dream-stage .stage-form small{display:none}
+  #dream-stage .energy-track{width:74px;height:3px;margin:4px 0 0 auto}
+  #dream-stage .stage-objective{top:69px;left:16px;right:16px;transform:none;width:auto;max-width:none;text-align:left}
+  #dream-stage .stage-objective>span{font-size:11px;line-height:1.6}
+  #dream-stage .stage-objective>small{font-size:10px;line-height:1.5;margin-top:4px;max-width:320px;color:#b9c7bd}
+  #dream-stage .stage-announcement{top:29%;font-size:11px;width:auto;max-width:calc(100% - 42px);padding:10px 12px;white-space:normal;text-align:center}
+  #dream-stage .stage-touch-move{display:grid;left:14px;bottom:17px;width:123px;height:123px;padding:0}
+  #dream-stage .stage-touch-move>button{font-size:22px}
+  #dream-stage .stage-actions{right:14px;bottom:20px;gap:8px}
+  #dream-stage .stage-action{min-width:67px;width:67px;height:67px;border-radius:17px}
+  #dream-stage .stage-action>span:not(.action-glyph){font-size:9px}
+  #dream-stage .secondary-action{height:36px;top:-45px;border-radius:12px}
+  #dream-stage .stage-desktop-hint{display:none}
+  .dream-play .corporate-footer{gap:12px;justify-content:center;align-items:center;padding:4px 12px 6px}
+  .dream-play .corporate-logo,.dream-play .corporate-logo img{width:49px;height:25px;min-height:0}
+  .dream-play .corporate-legal{display:block;text-align:left;font-size:8px;line-height:1.8}
+  .dream-play .corporate-legal p:first-child{letter-spacing:0}.dream-play .corporate-legal p+p{margin:0}
+  .dream-play .corporate-legal span{font-size:8px}.dream-play .corporate-link{display:none}
+  .map-dialog{padding:23px 18px}.map-dialog h2{font-size:24px;margin:7px 0 18px}
+  .map-summary{gap:9px;font-size:10px;flex-wrap:wrap;margin-bottom:16px}.map-summary #dream-save-status{font-size:8px}
+  .map-dialog .chapter-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .map-dialog .chapter-card{padding:12px;min-height:148px}.map-dialog .chapter-number{font-size:6px}.map-dialog .chapter-status{font-size:6px;padding:1px 4px}
+  .map-dialog .chapter-topline{margin-bottom:13px;gap:4px}.map-dialog .chapter-card h3{font-size:17px}.map-dialog .chapter-subtitle{font-size:8px;line-height:1.65}
+  .map-dialog .chapter-bottom{gap:4px;padding-top:10px}.map-dialog .chapter-stars{gap:1px}.map-dialog .chapter-stars svg{width:9px;height:9px}.map-dialog .chapter-memories{font-size:7px}.map-dialog .chapter-arrow{width:11px;height:11px}
+  .map-dialog .dialog-note{font-size:9px}.map-dialog #map-continue{width:100%}
+  .profile-identity{gap:10px;padding:10px;margin-bottom:15px}.profile-identity img{width:52px;height:52px}.profile-identity strong{font-size:16px}.profile-identity>div>span{font-size:9px}.profile-local{font-size:8px;padding:3px 6px}
+  .dream-play .dream-dialog-close{top:9px;right:9px;width:36px;height:36px}
+}
+@media(max-width:360px){
+  #dream-stage .stage-touch-move{left:10px;width:113px;height:113px}
+  #dream-stage .stage-actions{right:10px;gap:6px}#dream-stage .stage-action{width:62px;min-width:62px;height:64px}#dream-stage .secondary-action{height:35px}
+  .dream-play .corporate-footer{gap:8px;padding-left:8px;padding-right:8px}.dream-play .corporate-logo,.dream-play .corporate-logo img{width:38px}
+}
+@media(max-height:520px) and (min-width:601px){
+  #dream-stage .stage-hud{top:8px}.stage-story-button{padding:5px 8px}
+  #dream-stage .stage-objective{top:52px}#dream-stage .stage-objective>span{font-size:10px}#dream-stage .stage-objective>small{font-size:9px}
+  #dream-stage .stage-actions{bottom:12px;right:17px}#dream-stage .stage-touch-move{bottom:12px;width:97px;height:97px}
+  #dream-stage .stage-desktop-hint{bottom:16px;font-size:8px}
+}
+
+@media(max-width:640px){body.dream-play>.corporate-footer{padding-bottom:calc(6px + env(safe-area-inset-bottom,0px))}}
