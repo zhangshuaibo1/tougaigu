@@ -2,6 +2,9 @@ import { DREAM_LEVELS, getDreamLevel } from './dream-levels.js';
 import { getFestivalLevel } from './dream-festival-levels.js';
 import { FESTIVAL_VISUAL_IDS, getFestivalTheme, getOutfitPalette, drawFestivalArchitecture, drawFestivalProps, drawFestivalWeather, drawFestivalGift, drawFestivalNPC, drawFestivalPlatform, drawOutfitBack, drawOutfitHat, drawCompass } from './dream-festival-art.js';
 import { resolveCapScene, drawCapInterior, drawCapTheatre, drawSoulVision } from './dream-cap-art.js';
+import { getCapActivity } from './dream-cap-activities.js';
+import { DreamCapActivity } from './dream-cap-activity-engine.js';
+import { drawCapActivity } from './dream-cap-activity-art.js';
 
 const TAU=Math.PI*2;
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
@@ -51,8 +54,9 @@ export class DreamGame {
   }
   start(options={}){
     if(this.destroyed)return;
+    this.capActivity?.destroy();
     if(this.raf!==null&&typeof cancelAnimationFrame==='function')cancelAnimationFrame(this.raf);
-    this.runId++;
+    this.runId++;const startedRun=this.runId;
     this.options={chapterIndex:0,sound:true,reducedMotion:false,...options};
     const festivalLevel=this.options.festival?.id?getFestivalLevel(this.options.festival.id):null;
     this.mode=festivalLevel?'festival':'story';this.festival=festivalLevel?this.options.festival:null;this.festivalId=this.festival?.id||null;
@@ -73,8 +77,11 @@ export class DreamGame {
     this.hazards=this.level.hazards.map(h=>({...h,clock:0,frozen:0,hitCooldown:0,px:h.x,py:h.y}));
     this.pads=this.level.pads.map(p=>({...p,boing:0,cooldown:0}));this.plateState=new Map();this.particles=[];this.pulses=[];this.camera=0;this.capOpen=0;this.jumpBuffer=0;this.hudTick=0;this.trailTick=0;this.eventCooldown=0;this.pulseCooldown=0;this.lastCheckpointEvent=-1;this.shake=0;
     this.resetCapPresentation();
+    this.capActivity=this.createCapActivity(this.options.capActivityRecord,this.options.capActivityRevision);
     this.rng=createDreamRng('dream-'+(this.festivalId||this.chapterIndex));this.decorations=Array.from({length:90},()=>({x:this.rng()*this.level.width,y:40+this.rng()*480,r:.5+this.rng()*2,phase:this.rng()*TAU,speed:.3+this.rng()}));
-    this.updateMovers(0);this.updatePlates();this.resize();this.emitHud(true);this.event(this.level.tutorial,'tutorial',true);this.lastFrame=null;this.frameAccumulator=0;
+    this.updateMovers(0);this.updatePlates();this.resize();this.refreshCapActivity();
+    if(this.destroyed||this.runId!==startedRun)return;
+    this.emitHud(true);this.event(this.level.tutorial,'tutorial',true);this.lastFrame=null;this.frameAccumulator=0;
     if(typeof requestAnimationFrame==='function')this.raf=requestAnimationFrame(t=>this.frame(t));
   }
   frame(timestamp){
@@ -97,6 +104,23 @@ export class DreamGame {
     if(typeof requestAnimationFrame==='function')this.raf=requestAnimationFrame(t=>this.frame(t));
   }
   setInput(input={}){this.input={x:clamp(Number(input.x)||0,-1,1),y:clamp(Number(input.y)||0,-1,1)};}
+  createCapActivity(record,revision){
+    const activity=getCapActivity({chapterIndex:this.chapterIndex,festivalId:this.festivalId});
+    return activity?new DreamCapActivity(activity,{record,revision,chapterIndex:this.chapterIndex,festivalId:this.festivalId,mode:this.mode,onEvent:event=>this.callbacks.onCapActivity?.(event)}):null;
+  }
+  setCapActivityRecord(record,revision=this.options?.capActivityRevision){
+    if(this.destroyed||!this.level)return false;
+    this.capActivity?.destroy();
+    this.options.capActivityRecord=record;this.options.capActivityRevision=typeof revision==='string'?revision:'';
+    const activity=this.createCapActivity(record,this.options.capActivityRevision);
+    this.capActivity=activity;
+    activity?.refresh(this.capActivityContext());
+    // The refresh callback may itself install a newer imported record.
+    if(!this.destroyed&&this.capActivity===activity)this.emitHud(true);
+    return !this.destroyed;
+  }
+  capActivityContext(){return {state:this.state,body:this.body,soul:this.soul,form:this.form};}
+  refreshCapActivity(){this.capActivity?.refresh(this.capActivityContext());}
   setSound(value){this.options.sound=!!value;}
   setReducedMotion(value){
     this.options.reducedMotion=!!value;
@@ -141,14 +165,14 @@ export class DreamGame {
     this.form='soul';this.body.vx=0;this.soul={x:this.body.x,y:this.body.y-83,vx:0,vy:-30};this.input={x:0,y:0};
     const previous=this.capOpen,opens=(this.cap?.opens||0)+1;this.resetCapPresentation();
     this.cap={...this.cap,phase:this.options.reducedMotion?'open':'opening',progress:this.options.reducedMotion?1:0,opens,fromOpen:previous,openness:this.options.reducedMotion?1:previous,entry:this.options.reducedMotion?1:0,projection:this.options.reducedMotion?0:1.4};this.capOpen=this.cap.openness;
-    this.burst(this.soul.x,this.soul.y,this.options.reducedMotion?0:7,this.level.theme.spirit,45);this.sound('soul');this.emitHud(true);this.capEvent('open');return true;
+    this.burst(this.soul.x,this.soul.y,this.options.reducedMotion?0:7,this.level.theme.spirit,45);this.sound('soul');this.capEvent('open');this.refreshCapActivity();this.emitHud(true);return true;
   }
   recall(){
     if(this.state!=='playing'||this.form!=='soul')return false;
     const from=this.getSoulPresentation();
     this.cap={...this.cap,phase:this.options.reducedMotion?'closed':'returning',age:0,progress:this.options.reducedMotion?1:0,fromOpen:this.capOpen,returnFrom:this.options.reducedMotion||from.alpha<=.02?null:{x:from.x,y:from.y,vx:from.vx,vy:from.vy,scale:from.scale,alpha:from.alpha},projection:0,entry:1};
     if(this.options.reducedMotion){this.capOpen=0;this.cap.openness=0;}
-    this.form='body';this.soul.vx=0;this.soul.vy=0;this.input={x:0,y:0};this.sound('return');this.emitHud(true);this.capEvent('return');return true;
+    this.form='body';this.soul.vx=0;this.soul.vy=0;this.input={x:0,y:0};this.sound('return');this.refreshCapActivity();this.emitHud(true);this.capEvent('return');return true;
   }
   resetCapPresentation(preserveOpens=false){
     const opens=preserveOpens?(this.cap?.opens||0):0;
@@ -202,11 +226,12 @@ export class DreamGame {
     const index=this.lanterns.findIndex(l=>!l.lit&&dist(l,this.soul)<=DREAM_PHYSICS.pulseRadius);
     if(index>=0){
       if(typeof this.callbacks.onPuzzle==='function'){
-        this.pendingSeal=index;this.state='paused';this.input={x:0,y:0};this.soul.vx=0;this.soul.vy=0;this.frameAccumulator=0;this.emitHud(true);
+        this.pendingSeal=index;this.state='paused';this.input={x:0,y:0};this.soul.vx=0;this.soul.vy=0;this.frameAccumulator=0;this.refreshCapActivity();this.emitHud(true);
         this.callbacks.onPuzzle({chapterIndex:this.chapterIndex,sealIndex:index,id:this.lanterns[index].id,mode:this.mode,festivalId:this.festivalId});
       }else this.lightSeal(index);
       return true;
     }
+    if(!froze&&this.capActivity?.pulse(this.soul)){this.emitHud(true);return true;}
     if(!froze)this.event('再靠近一点。灯笼听见灵魂的共鸣，就会醒来。','hint');
     return froze;
   }
@@ -214,7 +239,7 @@ export class DreamGame {
     if(this.pendingSeal===null||this.state!=='paused')return false;
     const index=this.pendingSeal;this.pendingSeal=null;
     if(correct===true)this.lightSeal(index);
-    this.state='playing';this.lastFrame=null;this.frameAccumulator=0;this.input={x:0,y:0};this.emitHud(true);return correct===true;
+    this.state='playing';this.lastFrame=null;this.frameAccumulator=0;this.input={x:0,y:0};this.refreshCapActivity();this.emitHud(true);return correct===true;
   }
   lightSeal(index){
     const lamp=this.lanterns[index];if(!lamp||lamp.lit)return false;
@@ -230,28 +255,29 @@ export class DreamGame {
     const npc=this.level.npcs?.find(item=>Math.abs(item.x-this.body.x)<98&&Math.abs(item.y-this.body.y)<90);
     if(npc){
       if(typeof this.callbacks.onTalk==='function'){
-        this.pendingTalk=npc.id;this.state='paused';this.input={x:0,y:0};this.body.vx=0;this.frameAccumulator=0;this.emitHud(true);
+        this.pendingTalk=npc.id;this.state='paused';this.input={x:0,y:0};this.body.vx=0;this.frameAccumulator=0;this.refreshCapActivity();this.emitHud(true);
         this.callbacks.onTalk({mode:this.mode,festivalId:this.festivalId,npcId:this.festival?.npc?.id||npc.id,repeated:this.talked.has(npc.id)});
       }else this.event(this.festival?.sceneHint||this.level.tutorial,'story',true);
       return true;
     }
+    if(this.capActivity?.replay(this.capActivityContext())){this.sound('soul');this.emitHud(true);return true;}
     this.event(this.getNearHint()||this.level.mechanic,'hint');return false;
   }
   resolveTalk(){
     if(this.pendingTalk===null||this.state!=='paused')return false;
-    this.talked.add(this.pendingTalk);this.pendingTalk=null;this.state='playing';this.lastFrame=null;this.frameAccumulator=0;this.input={x:0,y:0};this.emitHud(true);return true;
+    this.talked.add(this.pendingTalk);this.pendingTalk=null;this.state='playing';this.lastFrame=null;this.frameAccumulator=0;this.input={x:0,y:0};this.refreshCapActivity();this.emitHud(true);return true;
   }
   pause(reason='manual'){
     if(this.state!=='playing'||this.pendingSeal!==null||this.pendingTalk!==null)return false;
-    this.state='paused';this.input={x:0,y:0};this.lastFrame=null;this.frameAccumulator=0;this.emitHud(true);this.callbacks.onPause?.(reason);return true;
+    this.state='paused';this.input={x:0,y:0};this.lastFrame=null;this.frameAccumulator=0;this.refreshCapActivity();this.emitHud(true);this.callbacks.onPause?.(reason);return true;
   }
-  resume(){if(this.state!=='paused'||this.pendingSeal!==null||this.pendingTalk!==null)return false;this.state='playing';this.lastFrame=null;this.frameAccumulator=0;this.input={x:0,y:0};this.emitHud(true);return true;}
-  restart(){this.start(this.options);}
+  resume(){if(this.state!=='paused'||this.pendingSeal!==null||this.pendingTalk!==null)return false;this.state='playing';this.lastFrame=null;this.frameAccumulator=0;this.input={x:0,y:0};this.refreshCapActivity();this.emitHud(true);return true;}
+  restart(){this.start({...this.options,capActivityRecord:null});}
   destroy(){
     this.destroyed=true;this.state='destroyed';if(this.raf!==null&&typeof cancelAnimationFrame==='function')cancelAnimationFrame(this.raf);
     if(typeof window!=='undefined'){window.removeEventListener('resize',this._resize);window.removeEventListener('blur',this._blur);}
     if(typeof document!=='undefined')document.removeEventListener('visibilitychange',this._visibility);
-    if(this.audio?.close)this.audio.close().catch(()=>{});this.audio=null;this.particles=[];this.pulses=[];this.resetCapPresentation(true);
+    if(this.audio?.close)this.audio.close().catch(()=>{});this.audio=null;this.particles=[];this.pulses=[];this.resetCapPresentation(true);this.capActivity?.destroy();this.capActivity=null;
   }
   updateMovers(dt){
     for(const p of this.movers){p.prevX=p.x;p.prevY=p.y;const offset=Math.sin(this.time*p.speed+p.phase)*p.range;p.x=p.baseX+(p.axis==='x'?offset:0);p.y=p.baseY+(p.axis==='y'?offset:0);p.dx=p.x-p.prevX;p.dy=p.y-p.prevY;}
@@ -315,6 +341,8 @@ export class DreamGame {
     if(b.y>720)this.respawn('没关系，掉下去的只是这一小步。灯会把你接回来。');
     if(b.grounded&&Math.abs(b.y-560)<8){for(let i=0;i<this.level.checkpoints.length;i++){const cp=this.level.checkpoints[i];if(i>this.checkpoint.index&&b.x>=cp.x){this.checkpoint={...cp,index:i};this.burst(cp.x,cp.y-22,10,this.level.theme.light,65);this.event('暖灯记住了这里。散架后，会从这里再出发。','checkpoint');}}}
     if(this.canExit()){this.finish();return;}
+    this.capActivity?.update(dt,this.capActivityContext());
+    if(this.destroyed||this.state!=='playing')return;
     for(const p of this.particles){p.life-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vx*=1-dt*.7;p.vy+=dt*8;}
     this.particles=this.particles.filter(p=>p.life>0).slice(-180);
     for(const p of this.pulses){p.age+=dt;p.r=p.max*Math.min(1,p.age/.7);}
@@ -326,13 +354,13 @@ export class DreamGame {
   respawn(message='暖灯把你接住了。'){
     if(this.state!=='playing')return false;
     if(this.featherCharges>0){this.featherCharges--;message='轻羽接住了阿拾。这次没有增加跌落次数，护符已经化成星光。';}else this.deaths++;
-    this.burst(this.body.x,this.body.y-30,24,this.level.theme.accent,170);this.body={...this.body,x:this.checkpoint.x,y:this.checkpoint.y,vx:0,vy:0,grounded:true,platform:null,invulnerable:2.1,land:.1};this.soul={x:this.body.x,y:this.body.y-80,vx:0,vy:0};this.form='body';this.resetCapPresentation(true);this.energy=this.maxEnergy;this.input={x:0,y:0};this.shake=this.options.reducedMotion?0:1.1;this.sound('fall');this.updatePlates();this.event(message,'respawn',true);this.emitHud(true);return true;
+    this.burst(this.body.x,this.body.y-30,24,this.level.theme.accent,170);this.body={...this.body,x:this.checkpoint.x,y:this.checkpoint.y,vx:0,vy:0,grounded:true,platform:null,invulnerable:2.1,land:.1};this.soul={x:this.body.x,y:this.body.y-80,vx:0,vy:0};this.form='body';this.resetCapPresentation(true);this.capActivity?.recover(this.capActivityContext());this.energy=this.maxEnergy;this.input={x:0,y:0};this.shake=this.options.reducedMotion?0:1.1;this.sound('fall');this.updatePlates();this.event(message,'respawn',true);this.emitHud(true);return true;
   }
   exitReady(){return this.lanterns.every(l=>l.lit)&&(this.mode!=='festival'||this.memories.every(m=>m.collected));}
   canExit(){return this.state==='playing'&&this.form==='body'&&this.exitReady()&&Math.abs(this.body.x-this.level.exit.x)<52&&Math.abs(this.body.y-this.level.exit.y)<90;}
   finish(){
     if(this.completed||this.state!=='playing'||!this.canExit())return false;
-    this.completed=true;this.state='complete';this.input={x:0,y:0};this.resetCapPresentation(true);
+    this.completed=true;this.state='complete';this.input={x:0,y:0};this.resetCapPresentation(true);this.capActivity?.recover(this.capActivityContext());
     const result={chapterIndex:this.chapterIndex,time:Math.round(this.time*10)/10,memories:this.memories.filter(m=>m.collected).length,deaths:this.deaths,mode:this.mode,festivalId:this.festivalId};result.gifts=result.memories;result.stars=getDreamStars(result,this.level.parTime);this.sound('complete');this.emitHud(true);this.callbacks.onComplete?.(result);return true;
   }
   getNearHint(){
@@ -344,13 +372,16 @@ export class DreamGame {
       const nearby=this.lanterns.find(l=>!l.lit&&dist(l,actor)<125);if(nearby)return '空格 / Q：与诗灯共鸣';
       if(this.hazards.some(h=>h.frozen===0&&Math.hypot(h.px-actor.x,h.py-actor.y)<240))return '空格：共鸣让影子与钟摆暂停';
       if(this.energy<25)return '灵光快用完了 · E 回到身体恢复';
+      const activityHint=this.capActivity?.getHint(this.capActivityContext());if(activityHint)return activityHint;
       return 'WASD / 方向键飞行 · E 回到身体';
     }
     const npc=this.level.npcs?.find(item=>Math.abs(item.x-this.body.x)<98&&Math.abs(item.y-this.body.y)<90);
     if(npc)return 'Q：与'+(this.festival?.npc?.name||'节日朋友')+'聊一聊';
+    const activityHint=this.capActivity?.getHint(this.capActivityContext());if(activityHint&&this.capActivity.bodyInRange(this.body))return activityHint;
     const plate=this.level.plates.find(p=>Math.abs(this.body.x-p.x-p.w/2)<125&&!this.lanterns[0].lit);
     if(plate)return this.plateState.get(plate.id)?'踏板压住了 · E 掀开头盖骨':'把身体留在发光铜踏板上';
     if(this.pads.some(p=>Math.abs(this.body.x-p.x-p.w/2)<140))return '踩上蘑菇，保持方向，借力跳上高台';
+    if(activityHint)return activityHint;
     if(Math.abs(this.body.x-this.level.exit.x)<160)return this.exitReady()?'带着身体走进门，送出这一封信':this.mode==='festival'&&this.lanterns.every(l=>l.lit)?'还差 '+this.memories.filter(m=>!m.collected).length+' 份节日礼物':'还需要点亮两盏诗灯';
     return '';
   }
@@ -358,7 +389,7 @@ export class DreamGame {
     const memories=this.memories?.filter(m=>m.collected).length||0,seals=this.lanterns?.filter(l=>l.lit).length||0;
     const npc=this.form==='body'?this.level?.npcs?.find(item=>Math.abs(item.x-this.body.x)<98&&Math.abs(item.y-this.body.y)<90):null;
     const target=npc?{kind:'npc',id:this.festival?.npc?.id||npc.id,name:this.festival?.npc?.name||'节日朋友',action:'talk'}:null;
-    return {chapterIndex:this.chapterIndex||0,mode:this.mode||'story',festivalId:this.festivalId||null,time:this.time||0,memories,gifts:memories,totalMemories:3,seals,totalSeals:2,energy:this.energy||0,maxEnergy:DREAM_PHYSICS.maxEnergy,form:this.form,deaths:this.deaths||0,objective:this.mode==='festival'?(seals===2&&memories===3?'礼物齐了，回到身体寄出节日包裹':`谜灯 ${seals} / 2 · 礼物 ${memories} / 3`):(seals===2?'回到身体，走向发光的出口':`点亮诗灯 ${seals} / 2 · 找回记忆 ${memories} / 3`),nearHint:this.getNearHint(),target,state:this.state,buffs:{compass:Math.ceil(this.compassTime||0),feather:this.featherCharges||0},cap:{phase:this.cap?.phase||'closed',progress:this.cap?.progress??1,opens:this.cap?.opens||0}};
+    return {chapterIndex:this.chapterIndex||0,mode:this.mode||'story',festivalId:this.festivalId||null,time:this.time||0,memories,gifts:memories,totalMemories:3,seals,totalSeals:2,energy:this.energy||0,maxEnergy:DREAM_PHYSICS.maxEnergy,form:this.form,deaths:this.deaths||0,objective:this.mode==='festival'?(seals===2&&memories===3?'礼物齐了，回到身体寄出节日包裹':`谜灯 ${seals} / 2 · 礼物 ${memories} / 3`):(seals===2?'回到身体，走向发光的出口':`点亮诗灯 ${seals} / 2 · 找回记忆 ${memories} / 3`),nearHint:this.getNearHint(),target,state:this.state,buffs:{compass:Math.ceil(this.compassTime||0),feather:this.featherCharges||0},cap:{phase:this.cap?.phase||'closed',progress:this.cap?.progress??1,opens:this.cap?.opens||0},capActivity:this.capActivity?.getSnapshot()||null};
   }
   emitHud(){this.callbacks.onHud?.(this.getSnapshot());}
   event(text,type='hint',force=false){if(!force&&this.eventCooldown>0)return;this.eventCooldown=3.3;this.callbacks.onEvent?.({type,text});}
@@ -389,6 +420,7 @@ export class DreamGame {
     for(const cp of this.level.checkpoints)this.drawCheckpoint(c,cp,t);
     for(const gate of this.level.barriers)this.drawVeil(c,gate,t);
     drawFestivalProps(this,c,t);
+    drawCapActivity(c,this.capActivity?.getView(),t,this.options.reducedMotion);
     this.drawExit(c,t);
     for(const memory of this.memories)if(!memory.collected){if(this.mode==='festival')drawFestivalGift(this,c,memory,t);else this.drawMemory(c,memory,t);}
     for(let i=0;i<this.lanterns.length;i++)this.drawLantern(c,this.lanterns[i],i,t);
