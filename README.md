@@ -4,12 +4,13 @@
 
 > 一颗头盖骨，一点不服输。躲开怪潮，组合异能，把死路玩成出路。
 
-- 运行状态：已完成本地浏览器验收；线上发布尚未完成。
+- 在线游玩：<https://zhangshuaibo1.github.io/tougaigu/>
+- 运行状态：已通过 GitHub Pages 发布，并完成线上首页、战斗、冲刺与升级验证。
 - 仓库：<https://github.com/zhangshuaibo1/tougaigu>
 - 当前版本：1.0.0
-- 仓库当前为私有；自定义域名 `tougaigu.com` 尚未绑定。
+- 仓库已公开；自定义域名 `tougaigu.com` 尚未绑定。
 
-![游戏首页](docs/homepage.jpg)
+![线上游戏首页](docs/live-homepage.jpg)
 
 ## 玩法
 
@@ -114,10 +115,16 @@ docs/
 
 ## 部署与域名
 
-部署产物就是 `dist/`，无构建步骤。已创建的 Sites 站点身份和静态目录记录在 `.openai/hosting.json`，后续尝试仍应复用同一个站点。Sites 源码推送受执行环境审批限制，当前尚未发布，不应把预留站点地址当作可玩的线上地址。
+部署产物就是 `dist/`，无构建步骤。当前通过 GitHub Pages 托管，地址为 <https://zhangshuaibo1.github.io/tougaigu/>，已启用强制 HTTPS。
 
-GitHub Pages 的静态发布分支为 `gh-pages`，内容与 `dist/` 一致。当前 GitHub 账号的私有仓库设置页提示需要升级或公开仓库才能启用 Pages，因此没有自动改变源码可见性。取得允许公开此新游戏仓库的授权后，可在 Settings → Pages 中选择 Deploy from a branch → gh-pages → / (root) 并保存。
+发布配置为 Settings → Pages → Deploy from a branch → `gh-pages` → `/ (root)`。`gh-pages` 分支根目录放置 `dist/` 的内容及 `.nojekyll`，游戏源文件、测试与文档保留在 `main` 分支。更新游戏后，需要将新的 `dist/` 内容同步到发布分支。
 
-如选择其他服务，也可直接把 `dist/` 发布到支持 HTTPS 的静态托管平台。绑定 `tougaigu.com` 需要先确认域名所有权，再依据托管商实际给出的记录配置 DNS；本项目没有写入推测的 A/CNAME 记录，也没有替用户购买域名。
+- 首发游戏源码：[95f5239](https://github.com/zhangshuaibo1/tougaigu/commit/95f5239356edf4364c9c78c72deedfd8a2f68f16)。
+- 首发 Pages 提交：[4115504](https://github.com/zhangshuaibo1/tougaigu/commit/4115504a2f147a827157d6b444372762bd1a5241)。
+- 发布工作流：[pages build and deployment](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40692972037)，结果成功。
+
+HTML 的样式、脚本与图标路径，以及 JavaScript 模块导入均使用相对路径，已在 GitHub Pages 的 `/tougaigu/` 子路径下实际运行。
+
+`tougaigu.com` 尚未绑定。购买并确认域名所有权后，可在 GitHub Pages 中设置自定义域名，并依据 GitHub 给出的要求配置 DNS；本项目没有替用户购买域名或修改 DNS。
 
 本仓库暂未授予开源许可，避免在未获作者决定前替作者选择对外授权条款。
