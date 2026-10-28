@@ -1,18 +1,52 @@
-# 头盖骨 · 再活一局
+# 头盖骨 · 双重冒险
 
-**TOUGAIGU** 是一款中文、原创视觉、零运行时依赖的浏览器生存 Roguelite。
+**TOUGAIGU** 是一个中文、原创视觉、零运行时依赖的双游戏项目。保留《再活一局》的生存玩法，新增独立的故事机关冒险《掀起你的头盖骨》。
 
 > 一颗头盖骨，一点不服输。躲开怪潮，组合异能，把死路玩成出路。
 
-- 在线游玩：<https://zhangshuaibo1.github.io/tougaigu/>
-- 运行状态：已通过 GitHub Pages 发布，并完成线上首页、战斗、冲刺与升级验证。
+- 《再活一局》：<https://zhangshuaibo1.github.io/tougaigu/>
+- 《掀起你的头盖骨》：<https://zhangshuaibo1.github.io/tougaigu/dream.html>
 - 仓库：<https://github.com/zhangshuaibo1/tougaigu>
-- 当前版本：1.0.0
+- 当前版本：2.0.0
 - 仓库已公开；自定义域名 `tougaigu.com` 尚未绑定。
 
 ![线上游戏首页](docs/live-homepage.jpg)
 
-## 玩法
+## 新游戏：掀起你的头盖骨
+
+![掀起你的头盖骨：给明天的一封信](docs/dream-homepage.jpg)
+
+阿拾是失去记忆的小骷髅邮差。他收到一封地址只有“明天”的信，带着住在头盖骨里的小光灵“拾光”，穿过六处迟迟不肯天亮的地方。每个地方都有一位等待的人、一道不愿松开的心结，以及一件可以带走的信物。
+
+这是横向卷轴的机关与叙事冒险。身体负责行走、跳跃和压住机关；掀开头盖骨后，灵魂可以自由飞行、越过记忆薄幕并唤醒谜灯。点亮两盏谜灯后，身体才能通过章节出口。谜灯实际连接诗词、灯谜、歇后语和道具推理，答对或主动借助完整提示后才会点亮。
+
+### 六章行程
+
+| 章节 | 场景与机关 |
+| --- | --- |
+| 苔灯站台 | 旧车站、风铃和苔灯；身体压住地板机关，灵魂穿过薄幕 |
+| 倒流温室 | 玻璃花房、发光藤蔓与弹跳蘑菇 |
+| 借月剧场 | 幕布、灯光与移动舞台 |
+| 鲸落图书馆 | 漂浮书页、沉睡巨鲸与灵魂风场 |
+| 钟摆海岸 | 海风、钟塔与可被灵魂脉冲短暂停住的钟摆 |
+| 黎明邮局 | 汇合前面学到的机关，把最后一封信交给明天 |
+
+每章有三片可选记忆、两盏谜灯、开场与收尾对白。故事中有两次重要选择，通向不同尾声；可以重玩章节、收集遗漏记忆、提高星级和补齐信物。谜题有逐步提示和答案解释，答错可重试。
+
+### 新冒险操作
+
+- 身体：A / D 或左右方向键移动；W / 空格跳跃。
+- 灵魂：E 掀盖放出灵魂，再按 E 回到身体；WASD / 方向键自由飞行。
+- 灯与机关：灵魂靠近谜灯后按空格或 Q 发出脉冲。
+- 暂停：Escape；手机使用页面提供的触屏控制。
+- 进度独立存放在 `tougaigu.dream.v1`，不会覆盖原游戏的角色、骨片或成绩。
+- 偏好设置支持导出、导入故事存档；正在游玩的章节位置不会跨刷新保存。
+
+通关获得一星；同一局收齐本章三片记忆获得两星；再满足零跌落与本章目标时间则获得三星。两次回信也可以在记忆信箱中重新选择，发现不同结局。
+
+详细故事、谜题和存档逻辑见 `dist/dream-story.js`；物理机关与六章地图分别见 `dist/dream-engine.js`、`dist/dream-levels.js`。
+
+## 原游戏：再活一局
 
 玩家控制一只小骷髅，在不断涌来的怪物中生存。攻击自动瞄准，玩家专注走位、收集经验、冲刺避险与选择升级。
 
@@ -90,6 +124,8 @@ npm test
 ```bash
 node tests/engine.test.mjs
 node tests/progression.test.mjs
+node tests/dream-engine.test.mjs
+node tests/dream-story.test.mjs
 ```
 
 ## 项目结构
@@ -102,14 +138,32 @@ dist/
   engine.js      Canvas 渲染、战斗、技能、首领、音效
   content.js     中文内容、角色、成长、存档校验
   favicon.svg   原创矢量图标
+  dream.html    新冒险首页、章节、手账与对话界面
+  dream.css     新冒险响应式视觉
+  dream-app.js  新冒险交互、谜题与进度整合
+  dream-story.js 六章故事、谜题与独立存档
+  dream-engine.js 头身协作、物理机关、动画与场景绘制
+  dream-levels.js 六章地图与场景配置
+  company-footer.css 企业版权共用样式
+  portal.css    原游戏中的新冒险入口
+  assets/       本地企业 Logo、原创 SVG 封面与人物插画
 tests/
   engine.test.mjs
   progression.test.mjs
+  dream-engine.test.mjs
+  dream-story.test.mjs
+scripts/
+  check.mjs     JavaScript 语法与本地资源引用检查
 docs/
   QA.md
+  QA-v2.md      双游戏、谜题、存档与发布验收
   homepage.jpg
+  dream-homepage.jpg
+  dream-puzzle.jpg
+  dream-mobile.jpg
   upgrade.jpg
   mobile.jpg
+  CREDITS.md    素材与诗文出处
 .openai/hosting.json
 ```
 
@@ -127,4 +181,8 @@ HTML 的样式、脚本与图标路径，以及 JavaScript 模块导入均使用
 
 `tougaigu.com` 尚未绑定。购买并确认域名所有权后，可在 GitHub Pages 中设置自定义域名，并依据 GitHub 给出的要求配置 DNS；本项目没有替用户购买域名或修改 DNS。
 
-本仓库暂未授予开源许可，避免在未获作者决定前替作者选择对外授权条款。
+## 企业版权与素材
+
+网页底部展示 **© 2026 上海九喵科技有限公司 版权所有**，统一社会信用代码 **91310109MAKQBAFQ2B**，企业官网为 <https://9mew.com>。官方 Logo 已下载到项目中，由本站直接加载。
+
+古典诗文原句、通行歇后语与原创谜面分别注明；诗文校对及 Logo 原始地址见 [素材与文本来源](docs/CREDITS.md)。仓库公开展示源码，暂未额外授予开源许可。

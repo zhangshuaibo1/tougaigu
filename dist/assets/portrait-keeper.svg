@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none" role="img" aria-labelledby="title desc"><title id="title">守夜人</title><desc id="desc">披着深蓝斗篷的年迈守夜人，戴着金色单片镜，怀抱停在黎明前的时钟。</desc><defs><radialGradient id="bg"><stop stop-color="#4f3e62"/><stop offset="1" stop-color="#242030"/></radialGradient><linearGradient id="bone" x1="80" y1="70" x2="170" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="#fff3d6"/><stop offset="1" stop-color="#d9bd91"/></linearGradient><linearGradient id="cloak" x1="70" y1="160" x2="190" y2="250" gradientUnits="userSpaceOnUse"><stop stop-color="#a58bc6"/><stop offset="1" stop-color="#4d405f"/></linearGradient><radialGradient id="light"><stop stop-color="#c4f4d2" stop-opacity=".3"/><stop offset="1" stop-color="#b1e6c9" stop-opacity="0"/></radialGradient><clipPath id="round"><circle cx="128" cy="128" r="116"/></clipPath></defs><circle cx="128" cy="128" r="121" stroke="#af95bb" stroke-opacity=".24" stroke-width="2"/><circle cx="128" cy="128" r="116" fill="url(#bg)"/><g clip-path="url(#round)">
+<path d="M68 173c-26 17-38 45-42 85h203c-7-45-24-72-53-88Z" fill="#3d4e65" stroke="#242332" stroke-width="4"/>
+<path d="m70 180 28 36 24-23 28 26 32-38" fill="#637188" stroke="#263248" stroke-width="3"/>
+<path d="M96 56c-35 19-47 64-30 116l27-7 79 7 26-5c12-60-4-96-37-114Z" fill="#373b50" stroke="#222333" stroke-width="4"/>
+<path d="M85 79c-15 27-17 62-3 84l42-5 50 8c18-30 9-63-10-86Z" fill="url(#bone)" stroke="#5a4b62" stroke-width="3"/>
+<path d="m81 105 6-31 16-24 22 6 10-7 26 5 14 24 3 27-19-27-12 4-24-12-12 9-10-4Z" fill="#aaa7ae" stroke="#51506b" stroke-width="3" stroke-linejoin="round"/>
+<path d="M93 133c-11 1-15-11-11-22 4-13 25-16 31-5 9 14-1 27-20 27Zm63-1c-19-1-28-15-19-28 8-10 28-5 31 7 4 12-2 22-12 21Z" fill="#383447"/>
+<path d="m89 117 14-3m43-1 13 5" stroke="#d9b58b" stroke-width="3" stroke-linecap="round"/>
+<circle cx="153" cy="117" r="23" stroke="#d6b77d" stroke-width="4"/><path d="m172 132 3 21 12 6 1 29" stroke="#c4a577" stroke-width="2.5"/>
+<path d="m125 134-5 8h10m-34 9q29 12 58-1m-44 6 1 15m14-11v15m15-16v14" stroke="#a58e79" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M99 167q26 10 50-1l-13 28-12-10-13 11Z" fill="#b8b2b8" stroke="#626176" stroke-width="2"/>
+<path d="M83 194c-14-3-23 8-17 20l16 12m94-32c14-3 22 9 16 20l-14 11" stroke="#d9c5a4" stroke-width="12" stroke-linecap="round"/>
+<circle cx="129" cy="224" r="39" fill="#736075" stroke="#d2aa7e" stroke-width="4"/><circle cx="129" cy="224" r="31" fill="#e7d3ac"/>
+<path d="M129 203v21l-16 8m16-35v4m26 23h-4m-22 26v-4m-26-22h4" stroke="#76616e" stroke-width="3" stroke-linecap="round"/>
+<path d="m120 193 13 8-7 9 12 10" stroke="#9b807c" stroke-width="1.5" opacity=".65"/><circle cx="129" cy="224" r="3" fill="#76616e"/>
+</g><path d="m37 76 2 6 6 2-6 2-2 6-2-6-6-2 6-2Zm178 92 2 5 5 2-5 2-2 5-2-5-5-2 5-2Z" fill="#ecc994"/><circle cx="210" cy="65" r="2" fill="#b3d8c7"/><circle cx="53" cy="192" r="2" fill="#b3d8c7"/></svg>

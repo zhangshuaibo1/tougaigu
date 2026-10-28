@@ -1,0 +1,566 @@
+import { DreamGame } from './dream-engine.js';
+import {
+  CHAPTERS, CAST, STORY_CHOICES, ENDINGS, STAMPS, STORY_ITEMS, PUZZLES, DREAM_SAVE_KEY,
+  loadDreamSave, persistDreamSave, validateDreamSave, getUnlockedChapter, getJourneyStats,
+  earnedStampIds, completeDreamChapter, chooseStoryReply, getEnding, rememberEnding,
+  nextPendingChoice, getPuzzle, checkPuzzleAnswer, recordPuzzleSolve,
+} from './dream-story.js';
+
+const $ = selector => document.querySelector(selector);
+const $$ = selector => Array.from(document.querySelectorAll(selector));
+const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+const icon = (name, className = '') => '<svg class="' + className + '" aria-hidden="true"><use href="#d-' + name + '"/></svg>';
+const timeLabel = seconds => Math.floor(Math.max(0, seconds) / 60).toString().padStart(2, '0') + ':' + Math.floor(Math.max(0, seconds) % 60).toString().padStart(2, '0');
+const chaptersInChinese = ['第一幕', '第二幕', '第三幕', '第四幕', '第五幕', '第六幕'];
+const stars = value => [0, 1, 2].map(index => icon('star', index < value ? 'earned' : '')).join('');
+let save = loadDreamSave();
+let game = null;
+let currentChapter = 0;
+let currentHud = null;
+let storySequence = null;
+let activePuzzle = null;
+let activeChoice = null;
+let lastResult = null;
+let settled = false;
+let storageWarningShown = false;
+let toastTimer, announcementTimer;
+const heldKeys = new Set();
+const heldPointers = new Map();
+let lastHudAt = 0;
+
+function toast(message) {
+  clearTimeout(toastTimer);
+  $('#dream-toast').textContent = message;
+  $('#dream-toast').classList.add('show');
+  toastTimer = setTimeout(() => $('#dream-toast').classList.remove('show'), 4000);
+}
+
+function persist() {
+  const okay = persistDreamSave(save);
+  $('#dream-save-status').innerHTML = '<i style="background:' + (okay ? 'var(--dream-mint)' : 'var(--dream-orange)') + '"></i>' + (okay ? '章节进度自动保存在此浏览器' : '浏览器未能保存，请导出备份');
+  if (!okay && !storageWarningShown) {
+    storageWarningShown = true;
+    toast('这段旅程可以继续，但浏览器暂时无法保存。请在偏好里导出故事存档。');
+  }
+  return okay;
+}
+
+function closeDialogs() {
+  $$('dialog[open]').forEach(dialog => dialog.close());
+}
+
+function openDialog(id) {
+  resetInput();
+  closeDialogs();
+  const dialog = $(id);
+  dialog.scrollTop = 0;
+  dialog.showModal();
+}
+
+function renderSettings() {
+  $('#dream-sound').setAttribute('aria-pressed', String(save.settings.sound));
+  $('#dream-sound').setAttribute('aria-label', save.settings.sound ? '关闭音效' : '开启音效');
+  $('#dream-pref-sound').checked = save.settings.sound;
+  $('#dream-pref-motion').checked = save.settings.reducedMotion;
+  document.body.classList.toggle('reduced-motion', save.settings.reducedMotion);
+  $('.dream-hero-art>img').src = save.settings.reducedMotion ? './assets/dream-cover-still.svg' : './assets/dream-cover.svg';
+  game?.setSound(save.settings.sound);
+  game?.setReducedMotion(save.settings.reducedMotion);
+}
+
+function renderLobby() {
+  const stats = getJourneyStats(save);
+  const unlocked = getUnlockedChapter(save);
+  const next = stats.completed === 6 ? Math.min(save.lastChapter, 5) : unlocked;
+  $('#journey-start-label').textContent = stats.completed === 6 ? '重访一个亮着的夜晚' : stats.completed ? '继续把故事走完' : '拆开第一封信';
+  $('#journey-start-note').textContent = (stats.completed === 6 ? '重访 · ' : '下一站 · ') + CHAPTERS[next].title;
+  $('#journey-progress-label').textContent = stats.completed + ' / 6 封信已送达';
+  $('#journey-progress-fill').style.width = (stats.completed / 6 * 100) + '%';
+  $('#chapter-grid').innerHTML = CHAPTERS.map((chapter, index) => {
+    const record = save.chapters[index];
+    const locked = index > unlocked;
+    const state = locked ? 'locked' : record.completed ? 'completed' : 'current';
+    const status = locked ? icon('lock') + '等上一封信' : record.completed ? '已送达 · 可重访' : '等你出发';
+    return '<button class="chapter-card ' + state + '" data-chapter="' + index + '" style="--chapter-color:' + chapter.color + '"' + (locked ? ' disabled' : '') + ' aria-label="' + escapeHtml(chaptersInChinese[index] + '，' + chapter.title + '，' + (locked ? '尚未解锁' : record.completed ? '重新游玩，最好' + record.bestStars + '星' : '开始章节')) + '"><div class="chapter-topline"><span class="chapter-number">CHAPTER 0' + (index + 1) + '</span><span class="chapter-status">' + status + '</span></div>' + icon(chapter.icon, 'chapter-icon') + '<h3>' + chapter.title + '</h3><span class="chapter-subtitle">' + chapter.subtitle + '</span><p>' + chapter.summary + '</p><div class="chapter-bottom"><span class="chapter-stars" aria-label="最好成绩' + record.bestStars + '星">' + stars(record.bestStars) + '</span><span class="chapter-memories">' + icon('letter') + record.bestMemories + ' / 3 记忆</span>' + icon(locked ? 'lock' : 'arrow', 'chapter-arrow') + '</div></button>';
+  }).join('');
+  renderSettings();
+}
+
+function renderJournal() {
+  const stats = getJourneyStats(save);
+  const stampIds = new Set(earnedStampIds(save));
+  $('#journal-stats').innerHTML = [
+    [stats.completed + ' / 6', '已经送达的信'], [stats.memories + ' / 18', '找回的记忆残页'],
+    [stats.riddles + ' / 12', '读懂的回声谜灯'], [stats.stars + ' / 18', '旅途里的星星'],
+  ].map(([value, label]) => '<div><b>' + value + '</b><span>' + label + '</span></div>').join('');
+  $('#memory-grid').innerHTML = CHAPTERS.map((chapter, index) => {
+    const amount = save.chapters[index].bestMemories;
+    return '<button class="memory-card" data-letter="' + index + '"' + (amount === 0 ? ' disabled' : '') + '><small>0' + (index + 1) + ' · ' + chapter.title + '</small><h4>' + chapter.letterTitle + '</h4><span>' + icon(amount ? 'letter' : 'lock') + (amount ? '已找回 ' + amount + ' / 3 片 · 拆开看看' : '还在等你找回') + '</span></button>';
+  }).join('');
+  $('#keepsake-grid').innerHTML = STORY_ITEMS.map(item => {
+    const owned = save.chapters[item.chapterIndex].completed;
+    return '<article class="keepsake-card' + (owned ? '' : ' locked') + '" style="--item-color:' + item.color + '">' + icon(owned ? item.icon : 'lock') + '<div><h4>' + item.title + '</h4><p>' + (owned ? item.text : '完成“' + CHAPTERS[item.chapterIndex].title + '”后，阿拾会把它收进邮包。') + '</p></div></article>';
+  }).join('');
+  $('#stamp-grid').innerHTML = STAMPS.map(stamp => '<article class="stamp-card' + (stampIds.has(stamp.id) ? ' earned' : '') + '">' + icon(stamp.icon) + '<b>' + stamp.title + '</b><small>' + (stampIds.has(stamp.id) ? '✓ 已盖上邮戳' : stamp.text) + '</small></article>').join('');
+  $('#journal-choices').innerHTML = Object.entries(STORY_CHOICES).map(([key, choice]) => {
+    const selected = choice.options.find(option => option.id === save.choices[key]);
+    const available = save.chapters[choice.chapterIndex].completed;
+    return '<div class="journal-choice"><div><h4>' + choice.title + '</h4><p>' + (selected ? selected.title : available ? '这封信，正等着你的回音' : '故事将在“' + CHAPTERS[choice.chapterIndex].title + '”抵达这里') + '</p></div><button data-reply="' + key + '"' + (available ? '' : ' disabled') + '>' + (selected ? '重新回信' : '写下回信') + '</button></div>';
+  }).join('');
+  const ending = getEnding(save);
+  $('#journal-ending').innerHTML = ending ? '<button class="dream-secondary" id="journal-ending-open">' + icon('sun') + '重读最后的回信 · ' + ending.title + '</button><p class="dialog-note">已发现 ' + save.discoveredEndings.length + ' / 3 种结局。不同回信，会留下不同的天色。</p>' : '<p class="dialog-note">走完六个夜晚后，你写下的回信，会变成最后的天色。</p>';
+}
+
+function openJournal() {
+  renderJournal();
+  openDialog('#journal-dialog');
+}
+
+function openLetter(index) {
+  const chapter = CHAPTERS[index];
+  const amount = save.chapters[index]?.bestMemories || 0;
+  if (!chapter || amount === 0) return;
+  $('#letter-chapter').textContent = chaptersInChinese[index] + ' · ' + chapter.title;
+  $('#letter-title').textContent = chapter.letterTitle;
+  $('#letter-fragments').innerHTML = chapter.memories.slice(0, amount).map(text => '<p>' + escapeHtml(text) + '</p>').join('');
+  $('#letter-missing').textContent = amount === 3 ? '三片残页已经拼好。这一段记忆，没有再寄丢。' : '还差 ' + (3 - amount) + ' 片残页。重访这一章，可以把这封信拼完整。';
+  openDialog('#letter-dialog');
+}
+
+function openStory(lines, chapterIndex, onDone, lastLabel = '收好这封信') {
+  storySequence = { lines, chapterIndex, index: 0, onDone, lastLabel };
+  renderStoryLine();
+  openDialog('#story-dialog');
+}
+
+function renderStoryLine() {
+  const sequence = storySequence;
+  const line = sequence.lines[sequence.index];
+  const speaker = CAST[line.speaker] || CAST.ashi;
+  $('#story-dialog').style.setProperty('--speaker-color', speaker.color);
+  $('#story-chapter-label').textContent = chaptersInChinese[sequence.chapterIndex] + ' · ' + CHAPTERS[sequence.chapterIndex].title;
+  $('#story-page').textContent = (sequence.index + 1).toString().padStart(2, '0') + ' / ' + sequence.lines.length.toString().padStart(2, '0');
+  $('#story-portrait').src = speaker.portrait;
+  $('#story-portrait').alt = speaker.name;
+  $('#story-speaker-role').textContent = speaker.role;
+  $('#story-dialog-title').textContent = speaker.name;
+  $('#story-dialog-text').textContent = line.text;
+  $('#story-next>span').textContent = sequence.index === sequence.lines.length - 1 ? sequence.lastLabel : '下一句';
+}
+
+function finishStory() {
+  if (!storySequence) return;
+  const done = storySequence.onDone;
+  storySequence = null;
+  $('#story-dialog').close();
+  done?.();
+}
+
+function advanceStory() {
+  if (!storySequence) return;
+  if (++storySequence.index >= storySequence.lines.length) finishStory();
+  else renderStoryLine();
+}
+
+function openChoice(key, onDone = openJournal) {
+  const choice = STORY_CHOICES[key];
+  if (!choice || !save.chapters[choice.chapterIndex].completed) return;
+  activeChoice = { key, onDone };
+  $('#choice-title').textContent = choice.title;
+  $('#choice-lead').textContent = choice.lead;
+  $('#choice-options').innerHTML = choice.options.map((option, index) => '<button class="choice-option' + (save.choices[key] === option.id ? ' selected' : '') + '" data-choice="' + option.id + '"><span>' + (index ? '☾' : '✧') + '</span><strong>' + option.title + '</strong><small>' + option.text + '</small></button>').join('');
+  openDialog('#choice-dialog');
+}
+
+function resolveChoice(id) {
+  if (!activeChoice || !chooseStoryReply(save, activeChoice.key, id)) return;
+  const { key, onDone } = activeChoice;
+  const choice = STORY_CHOICES[key];
+  const option = choice.options.find(item => item.id === id);
+  activeChoice = null;
+  persist();
+  openStory([{ speaker: 'light', text: option.reply }], choice.chapterIndex, onDone, '把这份回音收好');
+}
+
+function showEnding() {
+  const pending = nextPendingChoice(save);
+  if (pending) { openChoice(pending, showEnding); return; }
+  const ending = rememberEnding(save);
+  if (!ending) { returnLobby(); return; }
+  persist();
+  $('#ending-dialog').style.setProperty('--ending-color', ending.color);
+  $('#ending-eyebrow').textContent = ending.eyebrow;
+  $('#ending-title').textContent = ending.title;
+  $('#ending-text').innerHTML = ending.text.map(text => '<p>' + escapeHtml(text) + '</p>').join('');
+  $('#ending-last-line').textContent = ending.lastLine;
+  $('#ending-collection').textContent = '你已收好 ' + save.discoveredEndings.length + ' / ' + Object.keys(ENDINGS).length + ' 种天色';
+  openDialog('#ending-dialog');
+}
+
+function beginChapter(index) {
+  if (!Number.isInteger(index) || index < 0 || index > getUnlockedChapter(save)) return;
+  const pending = nextPendingChoice(save);
+  if (pending && STORY_CHOICES[pending].chapterIndex < index) {
+    openChoice(pending, () => beginChapter(index));
+    return;
+  }
+  stopGame();
+  closeDialogs();
+  $('#dream-stage').hidden = true;
+  $('#dream-lobby').hidden = false;
+  document.body.classList.remove('game-active', 'soul-active');
+  currentChapter = index;
+  save.lastChapter = index;
+  persist();
+  openStory(CHAPTERS[index].intro, index, () => launchChapter(index), '出发，把灯点亮');
+}
+
+function launchChapter(index) {
+  closeDialogs();
+  stopGame();
+  currentChapter = index;
+  currentHud = null;
+  settled = false;
+  lastHudAt = 0;
+  $('#dream-lobby').hidden = true;
+  $('#dream-stage').hidden = false;
+  document.body.classList.add('game-active');
+  $('#stage-chapter-number').textContent = chaptersInChinese[index] + ' · 给明天的一封信';
+  $('#stage-chapter-title').textContent = CHAPTERS[index].title;
+  game = new DreamGame($('#dream-canvas'), { onHud, onComplete: finishChapter, onPause: showPause, onEvent: announce, onPuzzle: showPuzzle });
+  game.start({ chapterIndex: index, sound: save.settings.sound, reducedMotion: save.settings.reducedMotion });
+  $('#dream-canvas').focus({ preventScroll: true });
+}
+
+function stopGame() {
+  resetInput();
+  game?.destroy();
+  game = null;
+  activePuzzle = null;
+  clearTimeout(announcementTimer);
+  $('#stage-announcement').classList.remove('show');
+}
+
+function returnLobby(scrollToMap = true) {
+  closeDialogs();
+  stopGame();
+  storySequence = null;
+  activeChoice = null;
+  $('#dream-stage').hidden = true;
+  $('#dream-lobby').hidden = false;
+  document.body.classList.remove('game-active', 'soul-active');
+  renderLobby();
+  if (scrollToMap) $('#journey').scrollIntoView({ behavior: save.settings.reducedMotion ? 'instant' : 'smooth', block: 'start' });
+}
+
+function onHud(snapshot) {
+  const previousForm = currentHud?.form;
+  currentHud = snapshot;
+  const now = performance.now();
+  if (now - lastHudAt < 80 && previousForm === snapshot.form && snapshot.state === 'playing') return;
+  lastHudAt = now;
+  $('#stage-seals').textContent = snapshot.seals + ' / ' + snapshot.totalSeals;
+  $('#stage-memories').textContent = snapshot.memories + ' / ' + snapshot.totalMemories;
+  $('#stage-time').textContent = timeLabel(snapshot.time);
+  $('#stage-objective').textContent = snapshot.objective || '点亮两盏回声谜灯，让阿拾走向出口';
+  $('#stage-near-hint').textContent = snapshot.nearHint || CHAPTERS[snapshot.chapterIndex].hint;
+  const soul = snapshot.form === 'soul';
+  document.body.classList.toggle('soul-active', soul);
+  $('#stage-form-name').textContent = soul ? '拾光 · 灵魂飞行' : '身体 · 阿拾';
+  const energy = Math.max(0, Math.min(100, snapshot.energy / Math.max(1, snapshot.maxEnergy) * 100));
+  $('#stage-energy').style.width = energy + '%';
+  $('#stage-energy').style.background = energy < 25 ? 'var(--dream-orange)' : 'var(--dream-mint)';
+  $('#stage-energy-label').textContent = soul ? '灵光 ' + Math.ceil(energy) + '% · E 回到身体' : energy < 99 ? '正在恢复灵光 · ' + Math.ceil(energy) + '%' : '拾光正在头顶休息';
+  $('#stage-toggle-label').textContent = soul ? '回到身体' : '掀开头盖骨';
+  $('#stage-action-label').textContent = soul ? '回声脉冲' : '跳跃';
+  $('#stage-action-glyph').textContent = soul ? '✧' : '↑';
+  if (previousForm && previousForm !== snapshot.form) resetInput();
+}
+
+function announce(event) {
+  if (!event?.text) return;
+  clearTimeout(announcementTimer);
+  $('#stage-announcement').textContent = event.text;
+  $('#stage-announcement').classList.add('show');
+  announcementTimer = setTimeout(() => $('#stage-announcement').classList.remove('show'), event.type === 'tutorial' ? 4600 : 3000);
+}
+
+function showPause(reason) {
+  if (!game || settled || activePuzzle || storySequence) return;
+  $('#pause-detail').textContent = reason === 'visibility' || reason === 'blur' ? '你刚刚离开了一会儿。故事已经替你停下，阿拾还在原处。' : '阿拾和拾光都在原处等你。';
+  openDialog('#pause-dialog');
+}
+
+function resumeGame() {
+  if (!game || settled || activePuzzle) return;
+  $('#pause-dialog').close();
+  resetInput();
+  game.resume();
+  $('#dream-canvas').focus({ preventScroll: true });
+}
+
+function restartChapter() {
+  closeDialogs();
+  launchChapter(currentChapter);
+}
+
+function finishChapter(result) {
+  if (settled) return;
+  settled = true;
+  resetInput();
+  const recorded = completeDreamChapter(save, result);
+  if (!recorded.ok) { toast('这一站的记录没有写好，请重新出发。'); returnLobby(); return; }
+  lastResult = result;
+  persist();
+  const chapter = CHAPTERS[result.chapterIndex];
+  const item = STORY_ITEMS[result.chapterIndex];
+  $('#result-kicker').textContent = chaptersInChinese[result.chapterIndex] + ' · ' + chapter.title + ' · 已送达';
+  $('#result-title').textContent = result.chapterIndex === 5 ? '最后一封信，终于到了。' : '这盏灯，为你亮着。';
+  $('#result-stars').innerHTML = stars(result.stars);
+  $('#result-stars').setAttribute('aria-label', '本章获得' + result.stars + '颗星');
+  $('#result-message').textContent = result.memories === 3 ? '三片残页都在。这个夜晚的故事，被你完整地带了回来。' : '还有 ' + (3 - result.memories) + ' 片记忆留在路上。随时可以回来，把它们慢慢找齐。';
+  $('#result-memories').textContent = result.memories + ' / 3';
+  $('#result-time').textContent = timeLabel(result.time);
+  $('#result-falls').textContent = result.deaths;
+  $('#result-keepsake').style.setProperty('--item-color', item.color);
+  $('#result-keepsake').innerHTML = icon(item.icon) + '<div><b>收进邮包 · ' + item.title + '</b><span>' + item.text + '</span></div>';
+  $('#result-new-stamps').textContent = recorded.newStamps.length ? '新邮戳：' + recorded.newStamps.map(id => STAMPS.find(stamp => stamp.id === id).title).join(' · ') : '更好的章节成绩与记忆收集，已经记进信箱。';
+  openDialog('#result-dialog');
+}
+
+function readChapterOutro() {
+  if (!lastResult) return;
+  const index = lastResult.chapterIndex;
+  const after = () => {
+    const choice = CHAPTERS[index].choice;
+    if (choice) openChoice(choice, () => returnLobby());
+    else if (index === 5) showEnding();
+    else returnLobby();
+  };
+  openStory(CHAPTERS[index].outro, index, after, index === 5 ? '读一读，明天的回信' : '收好这封信');
+}
+
+function shuffledIndexes(length) {
+  const values = Array.from({ length }, (_, index) => index);
+  for (let i = length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [values[i], values[j]] = [values[j], values[i]];
+  }
+  return values;
+}
+
+function showPuzzle(payload) {
+  const puzzle = getPuzzle(payload.chapterIndex, payload.sealIndex);
+  if (!puzzle) { game?.resolvePuzzle(false); toast('这盏灯还没找到自己的谜面，请试试另一盏灯。'); return; }
+  activePuzzle = { puzzle, hints: 0, solved: false, assisted: false, order: shuffledIndexes(puzzle.options.length) };
+  const speaker = CAST[puzzle.speaker] || CAST.light;
+  $('#puzzle-dialog').dataset.puzzleKind = puzzle.type.startsWith('诗词') ? 'poem' : puzzle.type === '歇后语' ? 'saying' : puzzle.type.startsWith('原创') ? 'riddle' : 'story';
+  $('#puzzle-type').textContent = puzzle.type;
+  $('#puzzle-count').textContent = (PUZZLES.indexOf(puzzle) + 1).toString().padStart(2, '0') + ' / 12';
+  $('#puzzle-portrait').src = speaker.portrait;
+  $('#puzzle-portrait').alt = speaker.name;
+  $('#puzzle-scene').textContent = puzzle.scene;
+  $('#puzzle-title').textContent = puzzle.title;
+  $('#puzzle-question').textContent = puzzle.question;
+  $('#puzzle-options').innerHTML = activePuzzle.order.map((answer, displayIndex) => '<button class="puzzle-option" data-answer="' + answer + '"><span>' + String.fromCharCode(65 + displayIndex) + '</span><span>' + escapeHtml(puzzle.options[answer]) + '</span></button>').join('');
+  $('#puzzle-feedback').textContent = '';
+  $('#puzzle-hints').innerHTML = '';
+  $('#puzzle-explanation').hidden = true;
+  $('#puzzle-explanation').textContent = '';
+  $('#puzzle-hint').hidden = false;
+  $('#puzzle-hint').textContent = '拾光，给我一点提示 ✧';
+  $('#puzzle-return').hidden = false;
+  $('#puzzle-continue').hidden = true;
+  openDialog('#puzzle-dialog');
+}
+
+function answerPuzzle(answer, assisted = false) {
+  if (!activePuzzle || activePuzzle.solved) return;
+  const { puzzle } = activePuzzle;
+  const correct = checkPuzzleAnswer(puzzle.id, answer);
+  const selected = $('#puzzle-options').querySelector('[data-answer="' + answer + '"]');
+  if (!correct) {
+    selected?.classList.add('wrong');
+    $('#puzzle-feedback').textContent = '这盏灯轻轻摇了摇头。再读读谜面，或者请拾光给一点提示。';
+    return;
+  }
+  activePuzzle.solved = true;
+  activePuzzle.assisted = assisted;
+  $$('#puzzle-options button').forEach(button => {
+    button.disabled = true;
+    button.classList.toggle('correct', Number(button.dataset.answer) === puzzle.answer);
+    button.classList.remove('wrong');
+  });
+  $('#puzzle-feedback').textContent = assisted ? '拾光把答案轻轻告诉了你。看懂了，也是一种抵达。' : '答对了。灯芯里，亮起了一点小小的光。';
+  $('#puzzle-explanation').textContent = puzzle.explanation;
+  $('#puzzle-explanation').hidden = false;
+  $('#puzzle-hint').hidden = true;
+  $('#puzzle-return').hidden = true;
+  $('#puzzle-continue').hidden = false;
+  recordPuzzleSolve(save, puzzle.id, assisted);
+  persist();
+  $('#puzzle-continue').focus({ preventScroll: true });
+}
+
+function revealHint() {
+  if (!activePuzzle || activePuzzle.solved) return;
+  if (activePuzzle.hints >= 2) { answerPuzzle(activePuzzle.puzzle.answer, true); return; }
+  const hint = activePuzzle.puzzle.hints[activePuzzle.hints];
+  activePuzzle.hints++;
+  const paragraph = document.createElement('p');
+  paragraph.textContent = '拾光的提示 ' + activePuzzle.hints + ' · ' + hint;
+  $('#puzzle-hints').append(paragraph);
+  $('#puzzle-hint').textContent = activePuzzle.hints === 1 ? '再给我一点光 ✧' : '看看答案，再继续 →';
+}
+
+function leavePuzzle(solved) {
+  if (!activePuzzle) return;
+  const canLight = solved && activePuzzle.solved;
+  activePuzzle = null;
+  $('#puzzle-dialog').close();
+  resetInput();
+  game?.resolvePuzzle(Boolean(canLight));
+  $('#dream-canvas').focus({ preventScroll: true });
+}
+
+function syncInput() {
+  const pointerDirections = new Set(heldPointers.values());
+  const left = heldKeys.has('KeyA') || heldKeys.has('ArrowLeft') || pointerDirections.has('left');
+  const right = heldKeys.has('KeyD') || heldKeys.has('ArrowRight') || pointerDirections.has('right');
+  const up = heldKeys.has('KeyW') || heldKeys.has('ArrowUp') || pointerDirections.has('up');
+  const down = heldKeys.has('KeyS') || heldKeys.has('ArrowDown') || pointerDirections.has('down');
+  game?.setInput({ x: Number(right) - Number(left), y: Number(down) - Number(up) });
+}
+
+function resetInput() {
+  heldKeys.clear();
+  heldPointers.clear();
+  $$('[data-direction].held').forEach(button => button.classList.remove('held'));
+  game?.setInput({ x: 0, y: 0 });
+}
+
+function gameplayAvailable() { return game && !settled && game.state === 'playing' && !document.querySelector('dialog[open]'); }
+
+document.addEventListener('click', event => {
+  const chapter = event.target.closest('[data-chapter]');
+  if (chapter && !chapter.disabled) { beginChapter(Number(chapter.dataset.chapter)); return; }
+  const close = event.target.closest('[data-close]');
+  if (close) {
+    if (close.dataset.close === 'letter-dialog') openJournal();
+    else document.getElementById(close.dataset.close)?.close();
+    return;
+  }
+  const letter = event.target.closest('[data-letter]');
+  if (letter && !letter.disabled) { openLetter(Number(letter.dataset.letter)); return; }
+  const reply = event.target.closest('[data-reply]');
+  if (reply && !reply.disabled) { openChoice(reply.dataset.reply, openJournal); return; }
+  const choice = event.target.closest('[data-choice]');
+  if (choice) { resolveChoice(choice.dataset.choice); return; }
+  const answer = event.target.closest('[data-answer]');
+  if (answer && !answer.disabled) { answerPuzzle(Number(answer.dataset.answer)); return; }
+  if (event.target.closest('#journal-ending-open')) showEnding();
+});
+
+$('#journey-start').addEventListener('click', () => beginChapter(getJourneyStats(save).completed === 6 ? save.lastChapter : getUnlockedChapter(save)));
+['#guide-open', '#hero-guide', '#mechanics-guide'].forEach(selector => $(selector).addEventListener('click', () => openDialog('#guide-dialog')));
+['#journal-open', '#mailbox-teaser-open'].forEach(selector => $(selector).addEventListener('click', openJournal));
+$('#story-next').addEventListener('click', advanceStory);
+$('#story-skip').addEventListener('click', finishStory);
+$('#story-dialog').addEventListener('cancel', event => { event.preventDefault(); finishStory(); });
+$('#puzzle-hint').addEventListener('click', revealHint);
+$('#puzzle-return').addEventListener('click', () => leavePuzzle(false));
+$('#puzzle-continue').addEventListener('click', () => leavePuzzle(true));
+$('#puzzle-dialog').addEventListener('cancel', event => { event.preventDefault(); leavePuzzle(activePuzzle?.solved === true); });
+$('#stage-pause').addEventListener('click', () => { resetInput(); game?.pause('manual'); });
+$('#stage-resume').addEventListener('click', resumeGame);
+$('#stage-restart').addEventListener('click', restartChapter);
+$('#stage-home').addEventListener('click', () => returnLobby());
+$('#pause-dialog').addEventListener('cancel', event => { event.preventDefault(); resumeGame(); });
+$('#result-story').addEventListener('click', readChapterOutro);
+$('#result-map').addEventListener('click', () => {
+  if (lastResult?.chapterIndex === 5) showEnding();
+  else returnLobby();
+});
+$('#result-dialog').addEventListener('cancel', event => { event.preventDefault(); returnLobby(); });
+$('#choice-dialog').addEventListener('cancel', event => { event.preventDefault(); returnLobby(); });
+$('#ending-home').addEventListener('click', () => returnLobby());
+$('#ending-dialog').addEventListener('cancel', event => { event.preventDefault(); returnLobby(); });
+$('#letter-back').addEventListener('click', openJournal);
+$('#letter-dialog').addEventListener('cancel', event => { event.preventDefault(); openJournal(); });
+
+$('#stage-toggle').addEventListener('click', () => { if (gameplayAvailable()) { resetInput(); game.toggleSoul(); $('#dream-canvas').focus({ preventScroll: true }); } });
+$('#stage-jump').addEventListener('click', () => { if (gameplayAvailable()) { game.jump(); $('#dream-canvas').focus({ preventScroll: true }); } });
+$('#stage-interact').addEventListener('click', () => { if (gameplayAvailable()) { game.interact(); if (!activePuzzle) $('#dream-canvas').focus({ preventScroll: true }); } });
+
+$$('[data-direction]').forEach(button => {
+  button.addEventListener('pointerdown', event => {
+    if (!gameplayAvailable()) return;
+    event.preventDefault();
+    button.setPointerCapture(event.pointerId);
+    heldPointers.set(event.pointerId, button.dataset.direction);
+    button.classList.add('held');
+    if (button.dataset.direction === 'up' && currentHud?.form === 'body') game.jump();
+    syncInput();
+  });
+  for (const type of ['pointerup', 'pointercancel', 'lostpointercapture']) button.addEventListener(type, event => {
+    heldPointers.delete(event.pointerId);
+    button.classList.remove('held');
+    syncInput();
+  });
+});
+
+document.addEventListener('keydown', event => {
+  if (event.ctrlKey || event.metaKey || event.altKey) return;
+  if (event.code === 'Escape' && gameplayAvailable()) { event.preventDefault(); resetInput(); game.pause('manual'); return; }
+  if (!gameplayAvailable()) return;
+  if (['KeyW', 'KeyA', 'KeyS', 'KeyD', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight'].includes(event.code)) {
+    event.preventDefault();
+    heldKeys.add(event.code);
+    if ((event.code === 'KeyW' || event.code === 'ArrowUp') && currentHud?.form === 'body' && !event.repeat) game.jump();
+    syncInput();
+  }
+  if (event.code === 'Space') { event.preventDefault(); if (!event.repeat) game.jump(); }
+  if (event.code === 'KeyE') { event.preventDefault(); if (!event.repeat) { resetInput(); game.toggleSoul(); } }
+  if (event.code === 'KeyQ') { event.preventDefault(); if (!event.repeat) game.interact(); }
+});
+document.addEventListener('keyup', event => { if (heldKeys.delete(event.code)) syncInput(); });
+window.addEventListener('blur', resetInput);
+document.addEventListener('visibilitychange', () => { if (document.hidden) resetInput(); });
+
+$('#dream-sound').addEventListener('click', () => { save.settings.sound = !save.settings.sound; persist(); renderSettings(); });
+$('#dream-settings').addEventListener('click', () => { renderSettings(); $('#dream-save-message').textContent = ''; openDialog('#preferences-dialog'); });
+$('#dream-pref-sound').addEventListener('change', event => { save.settings.sound = event.target.checked; persist(); renderSettings(); });
+$('#dream-pref-motion').addEventListener('change', event => { save.settings.reducedMotion = event.target.checked; persist(); renderSettings(); });
+$('#dream-export').addEventListener('click', () => {
+  const url = URL.createObjectURL(new Blob([JSON.stringify(validateDreamSave(save), null, 2)], { type: 'application/json' }));
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'tougaigu-dream-save-' + new Date().toISOString().slice(0, 10) + '.json';
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+  $('#dream-save-message').textContent = '故事已收进文件。下次出发，也可以带着它。';
+});
+$('#dream-import').addEventListener('change', async event => {
+  const file = event.target.files?.[0];
+  if (!file) return;
+  try {
+    if (file.size > 32000) throw new Error('这份存档太大，请选择本游戏导出的故事存档。');
+    const parsed = JSON.parse(await file.text());
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed) || parsed.version !== 1 || !Array.isArray(parsed.chapters)) throw new Error('这不是可识别的故事存档。原版生存存档请在原版导入。');
+    const imported = validateDreamSave(parsed);
+    const stats = getJourneyStats(imported);
+    if (!window.confirm('导入会替换当前故事进度：已完成 ' + stats.completed + ' 章，收集 ' + stats.memories + ' 片记忆。原版生存存档不受影响。确定导入吗？')) return;
+    save = imported;
+    const okay = persist();
+    renderLobby();
+    $('#dream-save-message').textContent = okay ? '故事接好了。欢迎回来，邮差。' : '故事已载入，但浏览器暂时无法保存，请保留备份。';
+  } catch (error) {
+    $('#dream-save-message').textContent = error instanceof SyntaxError ? '这份文件没有读懂，请选择导出的 JSON 故事存档。' : error.message;
+  } finally { event.target.value = ''; }
+});
+
+try {
+  if (!localStorage.getItem(DREAM_SAVE_KEY) && matchMedia('(prefers-reduced-motion: reduce)').matches) save.settings.reducedMotion = true;
+} catch { /* Storage failure is surfaced by persist(), without blocking play. */ }
+renderLobby();
+persist();

@@ -1,12 +1,12 @@
 {
   "name": "tougaigu",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "头盖骨 · A playful skull survival roguelite for the browser",
+  "description": "头盖骨双游戏：再活一局生存冒险与掀起你的头盖骨叙事解谜",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check dist/app.js && node --check dist/engine.js && node --check dist/content.js",
+    "check": "node scripts/check.mjs",
     "serve": "python3 -m http.server 8080 --directory dist"
   }
 }
