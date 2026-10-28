@@ -79,6 +79,9 @@ function onCapEvent(event) {
   if (event.type === 'open') lines = outcome.firstOpen ? scene.opening : scene.reopening;
   else if (event.type === 'return') { if (now - lastCapBubbleAt < 1600) return; lines = scene.returning; }
   else if (outcome.changed) lines = [event.type === 'memory' ? scene.memories[event.index] : scene.seals[event.index]];
+  if (event.type === 'memory' && event.chapterIndex === 0 && !event.festivalId && event.index === 0 && game?.firstTicket.phase === 'held') {
+    lines = [{ speaker: 'light', mood: 'joy', text: '去程票抱好了！按 E，陪我把它送回头顶的小火车。' }];
+  }
   showCapLines(lines);
 }
 
@@ -523,7 +526,7 @@ function launchScene(index, festival) {
   const capScene = getCapScene({ chapterIndex: index, festivalId: festival?.id });
   const lost = getLostCase(capScene.id);
   game = new DreamGame($('#dream-canvas'), { onHud, onComplete: finishChapter, onPause: showPause, onEvent: announce, onPuzzle: showPuzzle, onTalk: showEncounter, onCapEvent, onCapActivity, onLostCase });
-  game.start({ chapterIndex: index, festival, capScene, capActivityRecord: getCapActivityRecord(capActivitySave, capScene.id), capActivityRevision: capActivityRevision(capActivitySave), lostCaseRecord: lost ? getLostRecord(lostSave, lost.id) : null, lostCaseRevision: lostRevision(lostSave), season: hub?.getSeason(), outfit: hub?.getOutfit() || 'auto', sound: save.settings.sound, reducedMotion: save.settings.reducedMotion });
+  game.start({ chapterIndex: index, festival, capScene, firstTicketCollected: capBook?.getRecord('story-0')?.memories.includes(0) === true, capActivityRecord: getCapActivityRecord(capActivitySave, capScene.id), capActivityRevision: capActivityRevision(capActivitySave), lostCaseRecord: lost ? getLostRecord(lostSave, lost.id) : null, lostCaseRevision: lostRevision(lostSave), season: hub?.getSeason(), outfit: hub?.getOutfit() || 'auto', sound: save.settings.sound, reducedMotion: save.settings.reducedMotion });
   updateSeasonLabel();
   $('#dream-canvas').focus({ preventScroll: true });
 }
@@ -531,7 +534,7 @@ function launchScene(index, festival) {
 function stopGame() {
   hideCapBubble();
   renderLostEvidence(null);
-  document.body.classList.remove('lost-inspecting');
+  document.body.classList.remove('lost-inspecting', 'moon-playing');
   resetInput();
   game?.destroy();
   game = null;
@@ -563,8 +566,11 @@ function onHud(snapshot) {
   const lost = snapshot.lostCase;
   const lostExpanded = Boolean(lost && ['active', 'solved', 'delivering', 'returning'].includes(lost.phase));
   const lostVisible = Boolean(lost && (lost.nearBox || lostExpanded));
+  const moon = snapshot.moonPlay;
+  const moonVisible = Boolean(moon?.near);
+  document.body.classList.toggle('moon-playing', moonVisible);
   document.body.classList.toggle('lost-inspecting', lostExpanded);
-  $('#stage-objective').textContent = lostVisible ? lost.title : snapshot.objective || '点亮两盏回声谜灯，让阿拾走向出口';
+  $('#stage-objective').textContent = lostVisible ? lost.title : moonVisible ? '借月追光 · 第 ' + (moon.variant + 1) + ' 幕 / 3' : snapshot.objective || '点亮两盏回声谜灯，让阿拾走向出口';
   $('#stage-lost-case').hidden = !lostVisible;
   if (lostVisible) {
     const lostDone = getLostRecord(lostSave, lost.caseId)?.solvedVariants.includes(lost.variant);
@@ -587,13 +593,16 @@ function onHud(snapshot) {
   const capPhase = snapshot.cap?.phase || (soul ? 'open' : 'closed');
   $('#stage-cap-status').dataset.phase = capPhase;
   $('#stage-cap-label').textContent = ({ closed: 'E · 掀开脑洞', opening: '咔哒 · 脑洞打开', open: '脑洞打开 · 念头出发', returning: '拾光回家 · 轻轻扣盖' })[capPhase] || '';
+  if (snapshot.firstTicket?.phase === 'held') $('#stage-cap-label').textContent = '去程票抱好了 · E 带回家';
+  else if (snapshot.firstTicket?.phase === 'returning') $('#stage-cap-label').textContent = '拾光抱票回家 · 轻轻扣盖';
+  else if (snapshot.firstTicket?.newlyCollected && snapshot.firstTicket.settledAge < 7) $('#stage-cap-label').textContent = '去程票已上车 · E 再看一眼';
   const activity = snapshot.capActivity;
-  const activityVisible = !lostVisible && Boolean(activity && (activity.phase === 'active' || activity.nearRing));
+  const activityVisible = !lostVisible && (moonVisible || Boolean(activity && (activity.phase === 'active' || activity.nearRing)));
   $('#stage-cap-activity').hidden = !activityVisible;
   if (activityVisible) {
-    const config = getCapActivity({ chapterIndex: snapshot.chapterIndex, festivalId: snapshot.festivalId });
-    const count = Array.isArray(activity.completedSteps) ? activity.completedSteps.length : activity.completedSteps || 0;
-    $('#stage-cap-activity').dataset.phase = activity.phase;
+    const config = moonVisible ? moon : getCapActivity({ chapterIndex: snapshot.chapterIndex, festivalId: snapshot.festivalId });
+    const count = moonVisible ? moon.progress.lit : Array.isArray(activity.completedSteps) ? activity.completedSteps.length : activity.completedSteps || 0;
+    $('#stage-cap-activity').dataset.phase = moonVisible ? (moon.complete ? 'complete' : 'active') : activity.phase;
     $('#stage-cap-activity-name').textContent = config.title;
     $('#stage-cap-activity-count').textContent = count + ' / 3';
     $('#stage-cap-activity-progress').innerHTML = [0, 1, 2].map(index => '<i class="' + (index < count ? 'done' : '') + '"></i>').join('');
@@ -604,6 +613,12 @@ function onHud(snapshot) {
   const talkTarget = !soul && snapshot.target?.kind === 'npc' ? snapshot.target : null;
   $('#stage-interact-label').textContent = talkTarget ? '交谈' : '互动';
   $('#stage-interact').setAttribute('aria-label', talkTarget ? '与' + talkTarget.name + '交谈 Q' : '互动 Q');
+  if (moonVisible && (moon.canTurn || moon.canAdvance)) {
+    const action = moon.canTurn ? '转月镜' : '换一幕';
+    $('#stage-interact-label').textContent = action;
+    $('#stage-interact').setAttribute('aria-label', action + ' Q');
+    if (moon.canTurn) $('#stage-action-label').textContent = '转月镜';
+  }
   if (previousForm && previousForm !== snapshot.form) resetInput();
 }
 
