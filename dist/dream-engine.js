@@ -11,6 +11,8 @@ import { DreamLostCase } from './dream-lost-engine.js';
 import { drawLostCase } from './dream-lost-art.js';
 import { getStoryNPC, getStoryEncounter } from './dream-encounters.js';
 import { drawStoryNPC } from './dream-encounter-art.js';
+import { getStoryAwakening } from './dream-awakenings.js';
+import { drawStoryAwakening } from './dream-awakening-art.js';
 
 const TAU=Math.PI*2;
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
@@ -45,7 +47,7 @@ function circleRect(x,y,r,rect){const nearX=clamp(x,rect.x,rect.x+rect.w),nearY=
 
 export class DreamGame {
   constructor(canvas,callbacks={}){
-    this.canvas=canvas;this.ctx=canvas.getContext('2d');this.callbacks=callbacks;this.state='idle';this.form='body';this.input={x:0,y:0};this.destroyed=false;this.raf=null;this.audio=null;this.lastFrame=null;this.frameAccumulator=0;this.runId=0;this.dpr=1;this.scale=1;this.viewWidth=1280;this.viewHeight=640;
+    this.canvas=canvas;this.ctx=canvas.getContext('2d');this.callbacks=callbacks;this.state='idle';this.form='body';this.input={x:0,y:0};this.destroyed=false;this.raf=null;this.audio=null;this.lastFrame=null;this.frameAccumulator=0;this.runId=0;this.dpr=1;this.scale=1;this.viewWidth=1280;this.viewHeight=640;this.storyAwakenings=[];
     this._resize=()=>this.resize();
     this._visibility=()=>{if(typeof document!=='undefined'&&document.hidden)this.pause('visibility');};
     this._blur=()=>this.pause('blur');
@@ -97,6 +99,7 @@ export class DreamGame {
     this.soul={x:this.body.x,y:this.body.y-58,vx:0,vy:0};this.checkpoint={...this.level.spawn,index:-1};
     this.companion={x:this.mode==='story'?clamp(this.body.x-this.body.face*65,30,this.level.width-30):this.body.x+75,y:this.body.y};
     this.memories=this.level.memories.map(m=>({...m,collected:false}));this.lanterns=this.level.lanterns.map(l=>({...l,lit:false,glow:0}));
+    this.storyAwakenings=[];
     this.movers=this.level.movers.map(m=>({...m,baseX:m.x,baseY:m.y,prevX:m.x,prevY:m.y}));
     this.hazards=this.level.hazards.map(h=>({...h,clock:0,frozen:0,hitCooldown:0,px:h.x,py:h.y}));
     this.pads=this.level.pads.map(p=>({...p,boing:0,cooldown:0}));this.plateState=new Map();this.particles=[];this.pulses=[];this.camera=0;this.capOpen=0;this.jumpBuffer=0;this.hudTick=0;this.trailTick=0;this.eventCooldown=0;this.pulseCooldown=0;this.lastCheckpointEvent=-1;this.shake=0;
@@ -178,6 +181,8 @@ export class DreamGame {
   setSound(value){this.options.sound=!!value;}
   setReducedMotion(value){
     this.options.reducedMotion=!!value;
+    // Settling is permanent for this run, including when motion is restored.
+    if(value)for(const awakening of this.storyAwakenings)if(awakening)awakening.elapsed=awakening.cfg.duration;
     if(value&&this.cap){const opens=this.cap.opens;this.resetCapPresentation();this.cap.opens=opens;this.cap.phase=this.form==='soul'?'open':'closed';this.capOpen=this.form==='soul'?1:0;this.cap.openness=this.capOpen;this.cap.handGrip=this.capOpen;this.cap.handClasp=this.capOpen*.25;this.emitHud();}
     this.refreshCapActivity();
   }
@@ -323,10 +328,54 @@ export class DreamGame {
   lightSeal(index){
     const lamp=this.lanterns[index];if(!lamp||lamp.lit)return false;
     lamp.lit=true;lamp.glow=1;this.energy=Math.min(this.maxEnergy,this.energy+24);this.burst(lamp.x,lamp.y,30,this.level.theme.light,160);this.pulses.push({x:lamp.x,y:lamp.y,age:0,r:0,max:290});this.sound('light');
+    // A successful, concrete lamp owns its scene; a light count cannot reveal it.
+    const cfg=this.mode==='story'?getStoryAwakening(this.chapterIndex,this.lanterns.indexOf(lamp)):null;
+    if(cfg)this.storyAwakenings[cfg.sealIndex]={cfg,elapsed:this.options.reducedMotion?cfg.duration:0,...this.placeStoryAwakening(lamp,cfg.duration)};
     this.emoteTime=2;
     const giftsLeft=this.memories.filter(m=>!m.collected).length;
     this.event(this.lanterns.every(l=>l.lit)?(this.mode==='festival'&&giftsLeft?'谜灯都亮了，再找回 '+giftsLeft+' 份礼物，就能寄出节日包裹。':'两盏诗灯都醒了。按 E 回到身体，走向发光的门。'):'一盏诗灯亮了。它记住了你的答案，也为身体打开了路。','seal',true);this.emitHud(true);this.rememberInCap(lamp,'seal',index);return true;
   }
+  placeStoryAwakening(lamp,duration=1.8){
+    const {cameraX,viewport,worldWidth,clearZones}=this.getSceneBackdropView();
+    const actor=this.form==='soul'?this.soul:this.body,cameras=[cameraX],limit=Math.max(0,worldWidth-viewport.width);
+    if(!this.activityFramed){
+      // A paused answer stops input, but the camera still settles and existing
+      // wind can carry the soul. Keep the unfolding in their shared view.
+      const wind=this.form==='soul'?this.level.winds.filter(area=>actor.x>=area.x&&actor.x<=area.x+area.w&&actor.y>=area.y&&actor.y<=area.y+area.h).reduce((speed,area)=>speed+area.dx,0):0;
+      cameras.push(clamp(actor.x-viewport.width*.43,0,limit),clamp(actor.x+wind*duration-viewport.width*.43,0,limit));
+    }
+    const left=Math.max(0,...cameras),right=Math.min(worldWidth,...cameras.map(x=>x+viewport.width));
+    // HUD and controls sit in CSS pixels. Mobile canvas already excludes most
+    // of its 112px control strip, leaving only a small overlap at its bottom.
+    const top=Math.max(viewport.top,(150-this.viewportOffsetY)/this.scale),bottom=Math.min(viewport.bottom,(this.cssHeight-(this.cssWidth<=640?36:110)-this.viewportOffsetY)/this.scale);
+    let best=null,bestScore=-1;
+    // Only four nearby places are considered. The winning world position is
+    // locked at the answer, so walking, returning or resizing cannot move it.
+    for(const [dx,dy] of [[128,0],[-128,0],[0,128],[0,-128]]){
+      const anchor={x:lamp.x+dx,y:lamp.y+dy},bounds={left:lamp.x+dx-48,right:lamp.x+dx+48,top:lamp.y+dy-48,bottom:lamp.y+dy+48};
+      let clear=0;
+      for(let x=bounds.left+4;x<bounds.right;x+=8)for(let y=bounds.top+4;y<bounds.bottom;y+=8){
+        if(x<left||x>right||y<top||y>bottom)continue;
+        if(!clearZones.some(zone=>(x-zone.x)**2+(y-zone.y)**2<zone.r**2))clear++;
+      }
+      const visibleArea=Math.max(0,Math.min(bounds.right,right)-Math.max(bounds.left,left))*Math.max(0,Math.min(bounds.bottom,bottom)-Math.max(bounds.top,top));
+      const score=clear+visibleArea/100000;
+      if(score>bestScore){bestScore=score;best={anchor,bounds};}
+    }
+    return best;
+  }
+  getStoryAwakeningViews(){
+    if(this.destroyed||this.mode!=='story'||!this.level||!this.storyAwakenings.some(Boolean))return [];
+    const {clearZones}=this.getSceneBackdropView();
+    return this.storyAwakenings.flatMap(awakening=>{
+      if(!awakening)return [];
+      const {cfg,elapsed,anchor,bounds}=awakening,lamp=this.lanterns[cfg.sealIndex];
+      if(!lamp?.lit)return [];
+      const progress=clamp(elapsed/cfg.duration,0,1),settled=progress===1;
+      return [{...cfg,cfg,lamp:{x:lamp.x,y:lamp.y},anchor:{...anchor},bounds:{...bounds},clearZones:clearZones.map(zone=>({...zone})),elapsed,progress,stage:settled?'settled':'unfold',settled}];
+    });
+  }
+  drawStoryAwakenings(c){for(const view of this.getStoryAwakeningViews())drawStoryAwakening(c,view,this.options.reducedMotion);}
   getNearbyNPC(){
     if(this.form!=='body'||!this.body)return null;
     return this.level?.npcs?.find(npc=>Math.abs(npc.x-this.body.x)<98&&Math.abs(npc.y-this.body.y)<90)||null;
@@ -373,7 +422,7 @@ export class DreamGame {
     this.destroyed=true;this.state='destroyed';if(this.raf!==null&&typeof cancelAnimationFrame==='function')cancelAnimationFrame(this.raf);
     if(typeof window!=='undefined'){window.removeEventListener('resize',this._resize);window.removeEventListener('blur',this._blur);}
     if(typeof document!=='undefined')document.removeEventListener('visibilitychange',this._visibility);
-    if(this.audio?.close)this.audio.close().catch(()=>{});this.audio=null;this.particles=[];this.pulses=[];this.resetCapPresentation(true);this.capActivity?.destroy();this.capActivity=null;this.lostCase?.destroy();this.lostCase=null;
+    if(this.audio?.close)this.audio.close().catch(()=>{});this.audio=null;this.particles=[];this.pulses=[];this.storyAwakenings=[];this.resetCapPresentation(true);this.capActivity?.destroy();this.capActivity=null;this.lostCase?.destroy();this.lostCase=null;
   }
   updateMovers(dt){
     for(const p of this.movers){p.prevX=p.x;p.prevY=p.y;const offset=Math.sin(this.time*p.speed+p.phase)*p.range;p.x=p.baseX+(p.axis==='x'?offset:0);p.y=p.baseY+(p.axis==='y'?offset:0);p.dx=p.x-p.prevX;p.dy=p.y-p.prevY;}
@@ -387,6 +436,7 @@ export class DreamGame {
     if(this.state!=='playing'||this.destroyed||!this.level)return;
     dt=clamp(Number(dt)||0,0,.04);if(dt===0)return;
     this.time+=dt;this.visualTime+=dt;this.eventCooldown=Math.max(0,this.eventCooldown-dt);this.pulseCooldown=Math.max(0,(this.pulseCooldown||0)-dt);this.jumpBuffer=Math.max(0,this.jumpBuffer-dt);this.shake=Math.max(0,this.shake-dt*9);this.compassTime=Math.max(0,this.compassTime-dt);this.emoteTime=Math.max(0,this.emoteTime-dt);
+    for(const awakening of this.storyAwakenings)if(awakening){const next=awakening.elapsed+dt;awakening.elapsed=this.options.reducedMotion||next>=awakening.cfg.duration-1e-9?awakening.cfg.duration:next;}
     this.updateMovers(dt);
     const b=this.body,oldPlatform=this.movers.find(p=>p.id===b.platform);
     if(b.grounded&&oldPlatform){b.x+=oldPlatform.dx;b.y+=oldPlatform.dy;}
@@ -518,6 +568,7 @@ export class DreamGame {
     c.save();const shake=this.options.reducedMotion?0:this.shake*Math.sin(t*65)*3;c.translate(-this.camera+shake,0);
     if(this.mode==='festival')drawFestivalArchitecture(this,c,t);else this.drawArchitecture(c,t);
     this.drawWinds(c,t);
+    this.drawStoryAwakenings(c);
     // Extend only the drawn ground into the extra portrait framing; collisions stay authored.
     if(this.viewportOffsetY>0){const bottom=canvasTop+canvasHeight;c.fillStyle=theme.ground;for(const p of this.level.platforms)if(p.kind==='ground'&&p.y+p.h<bottom)c.fillRect(p.x,p.y+p.h-2,p.w,bottom-p.y-p.h+2);}
     for(const p of this.level.platforms)this.drawPlatform(c,p,t);
