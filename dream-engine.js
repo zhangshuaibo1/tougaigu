@@ -6,6 +6,9 @@ import { getCapActivity } from './dream-cap-activities.js';
 import { DreamCapActivity } from './dream-cap-activity-engine.js';
 import { drawCapActivity } from './dream-cap-activity-art.js';
 import { drawSceneBackdrop } from './dream-scene-backdrop.js';
+import { getLostCase } from './dream-lost-cases.js';
+import { DreamLostCase } from './dream-lost-engine.js';
+import { drawLostCase } from './dream-lost-art.js';
 
 const TAU=Math.PI*2;
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
@@ -57,7 +60,8 @@ export class DreamGame {
   }
   updateViewport(){
     const wasFramed=this.activityFramed===true;
-    this.activityFramed=this.form==='soul'&&!!this.capActivity?.bodyInRange(this.body)&&(this.capActivity.started||this.capActivity.phase==='complete');
+    this.lostFramed=this.form==='soul'&&!!this.lostCase?.available&&this.lostCase.opened&&this.lostCase.bodyInRange(this.body);
+    this.activityFramed=this.lostFramed||(this.form==='soul'&&!!this.capActivity?.bodyInRange(this.body)&&(this.capActivity.started||this.capActivity.phase==='complete'));
     this.scale=this.activityFramed?Math.min(this.baseScale,this.cssWidth/400):this.baseScale;
     this.viewWidth=this.cssWidth/this.scale;this.viewportOffsetY=Math.max(0,(this.cssHeight-640*this.scale)/2);
     if(!this.level)return;
@@ -69,9 +73,11 @@ export class DreamGame {
   start(options={}){
     if(this.destroyed)return;
     this.capActivity?.destroy();
+    this.lostCase?.destroy();
     if(this.raf!==null&&typeof cancelAnimationFrame==='function')cancelAnimationFrame(this.raf);
     this.runId++;const startedRun=this.runId;
     this.options={chapterIndex:0,sound:true,reducedMotion:false,...options};
+    this.restartLostUnlocked=this.options.lostCaseUnlocked===true;
     const festivalLevel=this.options.festival?.id?getFestivalLevel(this.options.festival.id):null;
     this.mode=festivalLevel?'festival':'story';this.festival=festivalLevel?this.options.festival:null;this.festivalId=this.festival?.id||null;
     this.level=festivalLevel||getDreamLevel(this.options.chapterIndex);this.chapterIndex=this.level.chapterIndex;
@@ -92,6 +98,7 @@ export class DreamGame {
     this.pads=this.level.pads.map(p=>({...p,boing:0,cooldown:0}));this.plateState=new Map();this.particles=[];this.pulses=[];this.camera=0;this.capOpen=0;this.jumpBuffer=0;this.hudTick=0;this.trailTick=0;this.eventCooldown=0;this.pulseCooldown=0;this.lastCheckpointEvent=-1;this.shake=0;
     this.resetCapPresentation();
     this.capActivity=this.createCapActivity(this.options.capActivityRecord,this.options.capActivityRevision);
+    this.lostCase=this.createLostCase(this.options.lostCaseRecord,this.options.lostCaseRevision);
     this.rng=createDreamRng('dream-'+(this.festivalId||this.chapterIndex));this.decorations=Array.from({length:90},()=>({x:this.rng()*this.level.width,y:40+this.rng()*480,r:.5+this.rng()*2,phase:this.rng()*TAU,speed:.3+this.rng()}));
     this.updateMovers(0);this.updatePlates();this.resize();this.refreshCapActivity();
     if(this.destroyed||this.runId!==startedRun)return;
@@ -126,15 +133,44 @@ export class DreamGame {
     if(this.destroyed||!this.level)return false;
     this.capActivity?.destroy();
     this.options.capActivityRecord=record;this.options.capActivityRevision=typeof revision==='string'?revision:'';
+    this.restartLostUnlocked=false;this.options.lostCaseUnlocked=false;
     const activity=this.createCapActivity(record,this.options.capActivityRevision);
     this.capActivity=activity;
     activity?.refresh(this.capActivityContext());
+    this.refreshLostCase();
     // The refresh callback may itself install a newer imported record.
     if(!this.destroyed&&this.capActivity===activity)this.emitHud(true);
     return !this.destroyed;
   }
   capActivityContext(){return {state:this.state,body:this.body,soul:this.soul,form:this.form,reducedMotion:!!this.options.reducedMotion};}
-  refreshCapActivity(){this.capActivity?.refresh(this.capActivityContext());}
+  refreshCapActivity(){this.capActivity?.refresh(this.capActivityContext());this.refreshLostCase();}
+  createLostCase(record,revision){
+    const config=getLostCase(this.festivalId||'story-'+this.chapterIndex);if(!config)return null;
+    let lost;
+    lost=new DreamLostCase(config,{record,revision,chapterIndex:this.chapterIndex,festivalId:this.festivalId,mode:this.mode,onEvent:event=>{
+      if(this.destroyed||this.lostCase!==lost)return;
+      this.options.lostCaseRecord=lost.getRecord();
+      this.callbacks.onLostCase?.(event);
+    }});
+    return lost;
+  }
+  setLostCaseRecord(record,revision=this.options?.lostCaseRevision){
+    if(this.destroyed||!this.level)return false;
+    this.lostCase?.destroy();this.restartLostUnlocked=false;this.options.lostCaseUnlocked=false;
+    this.options.lostCaseRecord=record;this.options.lostCaseRevision=typeof revision==='string'?revision:'0:base';
+    const lost=this.createLostCase(record,this.options.lostCaseRevision);this.lostCase=lost;
+    lost?.refresh(this.lostCaseContext());
+    if(!this.destroyed&&this.lostCase===lost)this.emitHud(true);
+    return !this.destroyed;
+  }
+  isLostCaseUnlocked(){
+    const record=this.lostCase?.record;
+    return !!(this.restartLostUnlocked||this.capActivity?.record.completedVariants.includes(0)||record?.solvedVariants.length||record?.seenClues[0]?.length||record?.seenClues[1]?.length);
+  }
+  lostCaseContext(){return {...this.capActivityContext(),unlocked:this.isLostCaseUnlocked()};}
+  refreshLostCase(){this.lostCase?.refresh(this.lostCaseContext());}
+  // The cabinet supplies reading light only inside an actual observation circle.
+  hasLostReadingLight(){return !!(this.lostCase?.isExpanded(this.lostCaseContext())&&this.lostCase.nearestTarget(this.soul));}
   setSound(value){this.options.sound=!!value;}
   setReducedMotion(value){
     this.options.reducedMotion=!!value;
@@ -268,6 +304,9 @@ export class DreamGame {
       return true;
     }
     if(!froze&&this.capActivity?.pulse(this.soul)){this.emitHud(true);return true;}
+    this.refreshLostCase();
+    const lost=this.lostCase;
+    if(!froze&&lost?.pulse(this.soul)){if(!this.destroyed&&this.lostCase===lost)this.emitHud(true);return true;}
     if(!froze)this.event('再靠近一点。灯笼听见灵魂的共鸣，就会醒来。','hint');
     return froze;
   }
@@ -297,6 +336,8 @@ export class DreamGame {
       return true;
     }
     if(this.capActivity?.replay(this.capActivityContext())){this.sound('soul');this.emitHud(true);return true;}
+    const lost=this.lostCase;
+    if(lost?.open(this.lostCaseContext())){if(!this.destroyed&&this.lostCase===lost){this.sound('soul');this.emitHud(true);}return true;}
     this.event(this.getNearHint()||this.level.mechanic,'hint');return false;
   }
   resolveTalk(){
@@ -308,12 +349,12 @@ export class DreamGame {
     this.state='paused';this.input={x:0,y:0};this.lastFrame=null;this.frameAccumulator=0;this.refreshCapActivity();this.emitHud(true);this.callbacks.onPause?.(reason);return true;
   }
   resume(){if(this.state!=='paused'||this.pendingSeal!==null||this.pendingTalk!==null)return false;this.state='playing';this.lastFrame=null;this.frameAccumulator=0;this.input={x:0,y:0};this.refreshCapActivity();this.emitHud(true);return true;}
-  restart(){this.start({...this.options,capActivityRecord:null});}
+  restart(){this.start({...this.options,capActivityRecord:null,lostCaseRecord:this.lostCase?.getRecord()||this.options.lostCaseRecord,lostCaseUnlocked:this.isLostCaseUnlocked()});}
   destroy(){
     this.destroyed=true;this.state='destroyed';if(this.raf!==null&&typeof cancelAnimationFrame==='function')cancelAnimationFrame(this.raf);
     if(typeof window!=='undefined'){window.removeEventListener('resize',this._resize);window.removeEventListener('blur',this._blur);}
     if(typeof document!=='undefined')document.removeEventListener('visibilitychange',this._visibility);
-    if(this.audio?.close)this.audio.close().catch(()=>{});this.audio=null;this.particles=[];this.pulses=[];this.resetCapPresentation(true);this.capActivity?.destroy();this.capActivity=null;
+    if(this.audio?.close)this.audio.close().catch(()=>{});this.audio=null;this.particles=[];this.pulses=[];this.resetCapPresentation(true);this.capActivity?.destroy();this.capActivity=null;this.lostCase?.destroy();this.lostCase=null;
   }
   updateMovers(dt){
     for(const p of this.movers){p.prevX=p.x;p.prevY=p.y;const offset=Math.sin(this.time*p.speed+p.phase)*p.range;p.x=p.baseX+(p.axis==='x'?offset:0);p.y=p.baseY+(p.axis==='y'?offset:0);p.dx=p.x-p.prevX;p.dy=p.y-p.prevY;}
@@ -358,7 +399,7 @@ export class DreamGame {
       }
       const anchor={x:b.x,y:b.y-56},distance=dist(s,anchor);
       if(distance>DREAM_PHYSICS.tether){const factor=DREAM_PHYSICS.tether/distance;s.x=anchor.x+(s.x-anchor.x)*factor;s.y=anchor.y+(s.y-anchor.y)*factor;s.vx*=.35;s.vy*=.35;this.event('离身体太远啦。按 E 回来，带着身体向前走。','hint');}
-      this.energy=Math.max(0,this.energy-dt*DREAM_PHYSICS.energyDrain);
+      if(!this.hasLostReadingLight())this.energy=Math.max(0,this.energy-dt*DREAM_PHYSICS.energyDrain);
       this.trailTick-=dt;if(this.trailTick<=0&&!this.options.reducedMotion){this.trailTick=.055;this.particle(s.x,s.y,-s.vx*.06,12-s.vy*.03,this.level.theme.spirit,.65,2.2);}
       if(this.energy<=0){this.recall();this.event('灵魂打了个哈欠，回到身体充充电。已点亮的灯会等你。','recall',true);}
     }else this.energy=Math.min(this.maxEnergy,this.energy+dt*18);
@@ -379,6 +420,7 @@ export class DreamGame {
     if(this.canExit()){this.finish();return;}
     this.capActivity?.update(dt,this.capActivityContext());
     if(this.destroyed||this.state!=='playing')return;
+    this.lostCase?.update(dt,this.lostCaseContext());
     for(const p of this.particles){p.life-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vx*=1-dt*.7;p.vy+=dt*8;}
     this.particles=this.particles.filter(p=>p.life>0).slice(-180);
     for(const p of this.pulses){p.age+=dt;p.r=p.max*Math.min(1,p.age/.7);}
@@ -392,13 +434,13 @@ export class DreamGame {
   respawn(message='暖灯把你接住了。'){
     if(this.state!=='playing')return false;
     if(this.featherCharges>0){this.featherCharges--;message='轻羽接住了阿拾。这次没有增加跌落次数，护符已经化成星光。';}else this.deaths++;
-    this.burst(this.body.x,this.body.y-30,24,this.level.theme.accent,170);this.body={...this.body,x:this.checkpoint.x,y:this.checkpoint.y,vx:0,vy:0,grounded:true,platform:null,invulnerable:2.1,land:.1};this.soul={x:this.body.x,y:this.body.y-80,vx:0,vy:0};this.form='body';this.resetCapPresentation(true);this.capActivity?.recover(this.capActivityContext());this.energy=this.maxEnergy;this.input={x:0,y:0};this.shake=this.options.reducedMotion?0:1.1;this.sound('fall');this.updatePlates();this.event(message,'respawn',true);this.emitHud(true);return true;
+    this.burst(this.body.x,this.body.y-30,24,this.level.theme.accent,170);this.body={...this.body,x:this.checkpoint.x,y:this.checkpoint.y,vx:0,vy:0,grounded:true,platform:null,invulnerable:2.1,land:.1};this.soul={x:this.body.x,y:this.body.y-80,vx:0,vy:0};this.form='body';this.resetCapPresentation(true);this.capActivity?.recover(this.capActivityContext());this.lostCase?.recover(this.lostCaseContext());this.energy=this.maxEnergy;this.input={x:0,y:0};this.shake=this.options.reducedMotion?0:1.1;this.sound('fall');this.updatePlates();this.event(message,'respawn',true);this.emitHud(true);return true;
   }
   exitReady(){return this.lanterns.every(l=>l.lit)&&(this.mode!=='festival'||this.memories.every(m=>m.collected));}
   canExit(){return this.state==='playing'&&this.form==='body'&&this.exitReady()&&Math.abs(this.body.x-this.level.exit.x)<52&&Math.abs(this.body.y-this.level.exit.y)<90;}
   finish(){
     if(this.completed||this.state!=='playing'||!this.canExit())return false;
-    this.completed=true;this.state='complete';this.input={x:0,y:0};this.resetCapPresentation(true);this.capActivity?.recover(this.capActivityContext());
+    this.completed=true;this.state='complete';this.input={x:0,y:0};this.resetCapPresentation(true);this.capActivity?.recover(this.capActivityContext());this.lostCase?.recover(this.lostCaseContext());
     const result={chapterIndex:this.chapterIndex,time:Math.round(this.time*10)/10,memories:this.memories.filter(m=>m.collected).length,deaths:this.deaths,mode:this.mode,festivalId:this.festivalId};result.gifts=result.memories;result.stars=getDreamStars(result,this.level.parTime);this.sound('complete');this.emitHud(true);this.callbacks.onComplete?.(result);return true;
   }
   getNearHint(){
@@ -409,17 +451,20 @@ export class DreamGame {
     if(this.form==='soul'){
       const nearby=this.lanterns.find(l=>!l.lit&&dist(l,actor)<125);if(nearby)return '空格 / Q：与诗灯共鸣';
       if(this.hazards.some(h=>h.frozen===0&&Math.hypot(h.px-actor.x,h.py-actor.y)<240))return '空格：共鸣让影子与钟摆暂停';
-      if(this.energy<25)return '灵光快用完了 · E 回到身体恢复';
+      if(this.energy<25&&!this.hasLostReadingLight())return '灵光快用完了 · E 回到身体恢复';
       const activityHint=this.capActivity?.getHint(this.capActivityContext());if(activityHint)return activityHint;
+      const lostHint=this.lostCase?.getHint(this.lostCaseContext());if(lostHint)return lostHint;
       return 'WASD / 方向键飞行 · E 回到身体';
     }
     const npc=this.level.npcs?.find(item=>Math.abs(item.x-this.body.x)<98&&Math.abs(item.y-this.body.y)<90);
     if(npc)return 'Q：与'+(this.festival?.npc?.name||'节日朋友')+'聊一聊';
     const activityHint=this.capActivity?.getHint(this.capActivityContext());if(activityHint&&this.capActivity.bodyInRange(this.body))return activityHint;
+    const lostHint=this.lostCase?.getHint(this.lostCaseContext());if(lostHint&&this.lostCase.bodyInRange(this.body))return lostHint;
     const plate=this.level.plates.find(p=>Math.abs(this.body.x-p.x-p.w/2)<125&&!this.lanterns[0].lit);
     if(plate)return this.plateState.get(plate.id)?'踏板压住了 · E 掀开头盖骨':'把身体留在发光铜踏板上';
     if(this.pads.some(p=>Math.abs(this.body.x-p.x-p.w/2)<140))return '踩上蘑菇，保持方向，借力跳上高台';
     if(activityHint)return activityHint;
+    if(lostHint)return lostHint;
     if(Math.abs(this.body.x-this.level.exit.x)<160)return this.exitReady()?'带着身体走进门，送出这一封信':this.mode==='festival'&&this.lanterns.every(l=>l.lit)?'还差 '+this.memories.filter(m=>!m.collected).length+' 份节日礼物':'还需要点亮两盏诗灯';
     return '';
   }
@@ -427,7 +472,7 @@ export class DreamGame {
     const memories=this.memories?.filter(m=>m.collected).length||0,seals=this.lanterns?.filter(l=>l.lit).length||0;
     const npc=this.form==='body'?this.level?.npcs?.find(item=>Math.abs(item.x-this.body.x)<98&&Math.abs(item.y-this.body.y)<90):null;
     const target=npc?{kind:'npc',id:this.festival?.npc?.id||npc.id,name:this.festival?.npc?.name||'节日朋友',action:'talk'}:null;
-    return {chapterIndex:this.chapterIndex||0,mode:this.mode||'story',festivalId:this.festivalId||null,time:this.time||0,memories,gifts:memories,totalMemories:3,seals,totalSeals:2,energy:this.energy||0,maxEnergy:DREAM_PHYSICS.maxEnergy,form:this.form,deaths:this.deaths||0,objective:this.mode==='festival'?(seals===2&&memories===3?'礼物齐了，回到身体寄出节日包裹':`谜灯 ${seals} / 2 · 礼物 ${memories} / 3`):(seals===2?'回到身体，走向发光的出口':`点亮诗灯 ${seals} / 2 · 找回记忆 ${memories} / 3`),nearHint:this.getNearHint(),target,state:this.state,buffs:{compass:Math.ceil(this.compassTime||0),feather:this.featherCharges||0},cap:{phase:this.cap?.phase||'closed',progress:this.cap?.progress??1,opens:this.cap?.opens||0},capActivity:this.capActivity?.getSnapshot()||null};
+    return {chapterIndex:this.chapterIndex||0,mode:this.mode||'story',festivalId:this.festivalId||null,time:this.time||0,memories,gifts:memories,totalMemories:3,seals,totalSeals:2,energy:this.energy||0,maxEnergy:DREAM_PHYSICS.maxEnergy,form:this.form,deaths:this.deaths||0,objective:this.mode==='festival'?(seals===2&&memories===3?'礼物齐了，回到身体寄出节日包裹':`谜灯 ${seals} / 2 · 礼物 ${memories} / 3`):(seals===2?'回到身体，走向发光的出口':`点亮诗灯 ${seals} / 2 · 找回记忆 ${memories} / 3`),nearHint:this.getNearHint(),target,state:this.state,buffs:{compass:Math.ceil(this.compassTime||0),feather:this.featherCharges||0},cap:{phase:this.cap?.phase||'closed',progress:this.cap?.progress??1,opens:this.cap?.opens||0},capActivity:this.capActivity?.getSnapshot()||null,lostCase:this.lostCase?.getSnapshot()||null};
   }
   emitHud(){this.callbacks.onHud?.(this.getSnapshot());}
   event(text,type='hint',force=false){if(!force&&this.eventCooldown>0)return;this.eventCooldown=3.3;this.callbacks.onEvent?.({type,text});}
@@ -464,6 +509,7 @@ export class DreamGame {
     for(const gate of this.level.barriers)this.drawVeil(c,gate,t);
     drawFestivalProps(this,c,t);
     drawCapActivity(c,this.capActivity?.getView(),t,this.options.reducedMotion);
+    drawLostCase(c,this.lostCase?.getView(),t,this.options.reducedMotion);
     this.drawExit(c,t);
     for(const memory of this.memories)if(!memory.collected){if(this.mode==='festival')drawFestivalGift(this,c,memory,t);else this.drawMemory(c,memory,t);}
     for(let i=0;i<this.lanterns.length;i++)this.drawLantern(c,this.lanterns[i],i,t);
@@ -503,6 +549,14 @@ export class DreamGame {
       if(activity.active){
         for(const bell of activity.switches)circle(bell.x,bell.y,50);
         for(const destination of activity.destinations)circle(destination.x,destination.y+12,58);
+      }
+    }
+    const lost=this.lostCase?.getView();
+    if(lost?.visible){
+      circle(lost.box.x,lost.box.y-21,53);
+      if(lost.expanded){
+        circle(lost.object.x,lost.object.y,58);
+        for(const claimant of lost.claimants)circle(claimant.x,claimant.y+8,65);
       }
     }
     const top=-this.viewportOffsetY/this.scale;
