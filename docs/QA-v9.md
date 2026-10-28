@@ -35,4 +35,8 @@
 
 ## 发布
 
-源码与公开版本将在部署完成后记录。运行文件93个，企业logo与版权保留，自定义域名尚未绑定。
+- 源码提交：`ccbc371ff12bc5820ae3a23e91171af8cd801f51`。
+- Pages提交：`715c7bfbf2a742dd182470ce243bbdf20882c5b0`。
+- [GitHub Pages部署40740510436](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40740510436) 已完成，结论success。
+- 刷新公开首页，打开正式帮助，确认温室、鲸馆、感恩节已列入失物场景；返回游戏正常。线上证据为lost-v9-live.jpg。
+- 运行文件93个，两个冒险入口一致，企业logo原始blob与版权保留，未包含临时验收页。自定义域名尚未绑定。
