@@ -1,7 +1,7 @@
 import { DREAM_LEVELS, getDreamLevel } from './dream-levels.js';
 import { getFestivalLevel } from './dream-festival-levels.js';
 import { FESTIVAL_VISUAL_IDS, getFestivalTheme, getOutfitPalette, drawFestivalArchitecture, drawFestivalProps, drawFestivalWeather, drawFestivalGift, drawFestivalNPC, drawFestivalPlatform, drawOutfitBack, drawOutfitHat, drawCompass } from './dream-festival-art.js';
-import { resolveCapScene, drawCapInterior, drawCapTheatre, drawSoulVision } from './dream-cap-art.js';
+import { resolveCapScene, drawCapInterior, drawCapFrontRim, drawCapTheatre, drawSoulVision, createCapRig, transformCapPoint, solveCapArm } from './dream-cap-art.js';
 import { getCapActivity } from './dream-cap-activities.js';
 import { DreamCapActivity } from './dream-cap-activity-engine.js';
 import { drawCapActivity } from './dream-cap-activity-art.js';
@@ -49,8 +49,18 @@ export class DreamGame {
     this.cssWidth=Math.max(300,rect.width||1280);this.cssHeight=Math.max(240,rect.height||640);
     this.dpr=Math.min(2,typeof window!=='undefined'?(window.devicePixelRatio||1):1);
     this.canvas.width=Math.round(this.cssWidth*this.dpr);this.canvas.height=Math.round(this.cssHeight*this.dpr);
-    this.scale=this.cssHeight/640;this.viewWidth=this.cssWidth/this.scale;this.viewHeight=640;
-    if(this.level)this.camera=clamp(this.camera||0,0,Math.max(0,this.level.width-this.viewWidth));
+    this.baseScale=this.cssHeight/640;this.viewHeight=640;this.updateViewport();
+  }
+  updateViewport(){
+    const wasFramed=this.activityFramed===true;
+    this.activityFramed=this.form==='soul'&&!!this.capActivity?.bodyInRange(this.body)&&(this.capActivity.started||this.capActivity.phase==='complete');
+    this.scale=this.activityFramed?Math.min(this.baseScale,this.cssWidth/400):this.baseScale;
+    this.viewWidth=this.cssWidth/this.scale;this.viewportOffsetY=Math.max(0,(this.cssHeight-640*this.scale)/2);
+    if(!this.level)return;
+    const limit=Math.max(0,this.level.width-this.viewWidth);
+    if(this.activityFramed)this.camera=clamp(320-this.viewWidth/2,0,limit);
+    else if(wasFramed){const target=this.form==='soul'?this.soul.x:this.body.x;this.camera=clamp(target-this.viewWidth*.43,0,limit);}
+    else this.camera=clamp(this.camera||0,0,limit);
   }
   start(options={}){
     if(this.destroyed)return;
@@ -119,12 +129,13 @@ export class DreamGame {
     if(!this.destroyed&&this.capActivity===activity)this.emitHud(true);
     return !this.destroyed;
   }
-  capActivityContext(){return {state:this.state,body:this.body,soul:this.soul,form:this.form};}
+  capActivityContext(){return {state:this.state,body:this.body,soul:this.soul,form:this.form,reducedMotion:!!this.options.reducedMotion};}
   refreshCapActivity(){this.capActivity?.refresh(this.capActivityContext());}
   setSound(value){this.options.sound=!!value;}
   setReducedMotion(value){
     this.options.reducedMotion=!!value;
-    if(value&&this.cap){const opens=this.cap.opens;this.resetCapPresentation();this.cap.opens=opens;this.cap.phase=this.form==='soul'?'open':'closed';this.capOpen=this.form==='soul'?1:0;this.cap.openness=this.capOpen;this.emitHud();}
+    if(value&&this.cap){const opens=this.cap.opens;this.resetCapPresentation();this.cap.opens=opens;this.cap.phase=this.form==='soul'?'open':'closed';this.capOpen=this.form==='soul'?1:0;this.cap.openness=this.capOpen;this.cap.handGrip=this.capOpen;this.cap.handClasp=this.capOpen*.25;this.emitHud();}
+    this.refreshCapActivity();
   }
   applySeasonTheme(){
     if(!this.level||!this.baseTheme)return;
@@ -163,20 +174,21 @@ export class DreamGame {
     if(this.form==='soul')return this.recall();
     if(this.energy<18){this.event('灵魂正在休息。留在身体里，等光芒恢复。','hint');return false;}
     this.form='soul';this.body.vx=0;this.soul={x:this.body.x,y:this.body.y-83,vx:0,vy:-30};this.input={x:0,y:0};
-    const previous=this.capOpen,opens=(this.cap?.opens||0)+1;this.resetCapPresentation();
-    this.cap={...this.cap,phase:this.options.reducedMotion?'open':'opening',progress:this.options.reducedMotion?1:0,opens,fromOpen:previous,openness:this.options.reducedMotion?1:previous,entry:this.options.reducedMotion?1:0,projection:this.options.reducedMotion?0:1.4};this.capOpen=this.cap.openness;
+    const previous=this.capOpen,opens=(this.cap?.opens||0)+1,hands={handGrip:this.cap.handGrip,handClasp:this.cap.handClasp,handCatch:this.cap.handCatch};this.resetCapPresentation();
+    this.cap={...this.cap,...hands,phase:this.options.reducedMotion?'open':'opening',progress:this.options.reducedMotion?1:0,opens,fromOpen:previous,openness:this.options.reducedMotion?1:previous,entry:this.options.reducedMotion?1:0,projection:this.options.reducedMotion?0:1.4};this.capOpen=this.cap.openness;
+    if(this.options.reducedMotion){this.cap.handGrip=1;this.cap.handClasp=.25;this.cap.handCatch=0;}
     this.burst(this.soul.x,this.soul.y,this.options.reducedMotion?0:7,this.level.theme.spirit,45);this.sound('soul');this.capEvent('open');this.refreshCapActivity();this.emitHud(true);return true;
   }
   recall(){
     if(this.state!=='playing'||this.form!=='soul')return false;
     const from=this.getSoulPresentation();
     this.cap={...this.cap,phase:this.options.reducedMotion?'closed':'returning',age:0,progress:this.options.reducedMotion?1:0,fromOpen:this.capOpen,returnFrom:this.options.reducedMotion||from.alpha<=.02?null:{x:from.x,y:from.y,vx:from.vx,vy:from.vy,scale:from.scale,alpha:from.alpha},projection:0,entry:1};
-    if(this.options.reducedMotion){this.capOpen=0;this.cap.openness=0;}
+    if(this.options.reducedMotion){this.capOpen=0;this.cap.openness=0;this.cap.handGrip=0;this.cap.handClasp=0;this.cap.handCatch=0;}
     this.form='body';this.soul.vx=0;this.soul.vy=0;this.input={x:0,y:0};this.sound('return');this.refreshCapActivity();this.emitHud(true);this.capEvent('return');return true;
   }
   resetCapPresentation(preserveOpens=false){
     const opens=preserveOpens?(this.cap?.opens||0):0;
-    this.cap={phase:'closed',age:0,progress:1,opens,openness:0,fromOpen:0,entry:1,projection:0,returnFrom:null};this.capOpen=0;this.thoughtFlights=[];
+    this.cap={phase:'closed',age:0,progress:1,opens,openness:0,fromOpen:0,entry:1,projection:0,returnFrom:null,handGrip:0,handClasp:0,handCatch:0};this.capOpen=0;this.thoughtFlights=[];
   }
   updateCapPresentation(dt){
     const cap=this.cap;if(!cap)return;
@@ -192,23 +204,42 @@ export class DreamGame {
       cap.openness=cap.fromOpen*(1-ease((cap.age-.44)/.28));
       if(cap.age>=.72){cap.phase='closed';cap.progress=1;cap.openness=0;cap.returnFrom=null;}
     }
+    const gripTarget=cap.phase==='opening'||cap.phase==='open'||cap.openness>.001?1:0;
+    const claspTarget=cap.phase==='opening'?(cap.age<.25?1:.25):cap.phase==='returning'?(cap.age<.55?.8:1):cap.phase==='open'?.25:0;
+    const catchTarget=cap.phase==='returning'&&cap.age<.48?1:0;
+    cap.handGrip=cap.openness>.001?1:approach(cap.handGrip,gripTarget,dt*12);
+    cap.handClasp=approach(cap.handClasp,claspTarget,dt*10);cap.handCatch=approach(cap.handCatch,catchTarget,dt*8);
     if(cap.projection>0&&(cap.phase==='open'||cap.age>.2))cap.projection=Math.max(0,cap.projection-dt);
     this.capOpen=clamp(cap.openness,0,1);
     for(const flight of this.thoughtFlights)flight.age+=dt;
     this.thoughtFlights=this.thoughtFlights.filter(f=>f.age<f.duration).slice(-8);
   }
-  getSoulPresentation(){
+  getCharacterPresentation(t=this.options.reducedMotion?0:this.visualTime){
+    const b=this.body,walking=b.grounded&&Math.abs(b.vx)>12,step=walking?Math.sin(b.walk):0;
+    const hop=this.options.reducedMotion?0:walking?Math.abs(Math.cos(b.walk))*2.4:Math.sin(t*1.8)*1.1,scaleY=1-b.land;
+    const tilt=this.options.reducedMotion?0:clamp(b.vx/240,-1,1)*.055+(b.grounded?0:b.vy/9000)-this.capOpen*.025;
+    const rig=createCapRig({x:b.x,y:b.y,face:b.face,scaleY,hop,tilt,open:this.capOpen}),grip=clamp(this.cap.handGrip,0,1),clasp=clamp(this.cap.handClasp,0,1),catching=clamp(this.cap.handCatch,0,1);
+    const leftTarget={x:mix(-16-step*4,rig.gripBody.x,grip)-Math.sin(Math.PI*grip)*16,y:mix(-16,rig.gripBody.y,grip)};
+    const catchTarget={x:mix(rig.claspBody.x,rig.catchBody.x,catching),y:mix(rig.claspBody.y,rig.catchBody.y,catching)};
+    const rightTarget={x:mix(17+step*4,catchTarget.x,clasp)+Math.sin(Math.PI*clasp)*16,y:mix(-16,catchTarget.y,clasp)};
+    const left=solveCapArm({x:-13,y:-35},leftTarget,-1),right=solveCapArm({x:13,y:-35},rightTarget,1);
+    left.world=transformCapPoint(rig.bodyMatrix,left.wrist);right.world=transformCapPoint(rig.bodyMatrix,right.wrist);
+    return {walking,step,hop,scaleY,tilt,rig,grip,clasp,catching,arms:{left,right}};
+  }
+  getSoulPresentation(character=null){
     if(this.destroyed||!this.body||!this.soul)return null;
+    character=character||this.getCharacterPresentation();
     const cap=this.cap,b=this.body,s=this.soul;
+    const opening=character.rig.openingWorld;
     if(this.form==='soul'){
       const q=cap?.phase==='opening'?cap.entry:1;
-      return {...s,x:mix(b.x,s.x,q),y:mix(b.y-65,s.y,q),scale:.36+.64*q,alpha:clamp((cap?.openness||0)*3,0,1),pose:q<1?'peek':'free'};
+      return {...s,x:mix(opening.x,s.x,q),y:mix(opening.y,s.y,q),scale:.36+.64*q,alpha:clamp((cap?.openness||0)*3,0,1),pose:q<1?'peek':'free',layer:q<1?'inside':'world'};
     }
     if(cap?.phase!=='returning'||!cap.returnFrom||this.options.reducedMotion)return null;
     const progress=clamp(cap.age/.48,0,1);if(progress>=1)return null;
-    const q=ease(progress),u=1-q,from=cap.returnFrom,to={x:b.x,y:b.y-66},lift=Math.min(135,28+Math.hypot(to.x-from.x,to.y-from.y)*.17);
+    const q=ease(progress),u=1-q,from=cap.returnFrom,to=opening,lift=Math.min(135,28+Math.hypot(to.x-from.x,to.y-from.y)*.17);
     const cx1=from.x+(to.x-from.x)*.3,cy1=from.y-lift,cx2=to.x-b.face*33,cy2=to.y-52;
-    return {x:u*u*u*from.x+3*u*u*q*cx1+3*u*q*q*cx2+q*q*q*to.x,y:u*u*u*from.y+3*u*u*q*cy1+3*u*q*q*cy2+q*q*q*to.y,vx:clamp((to.x-from.x)*1.3,-340,340),vy:0,scale:(from.scale??1)*(1-q*.68),alpha:(from.alpha??1)*clamp((1-progress)/.13,0,1),pose:'return'};
+    return {x:u*u*u*from.x+3*u*u*q*cx1+3*u*q*q*cx2+q*q*q*to.x,y:u*u*u*from.y+3*u*u*q*cy1+3*u*q*q*cy2+q*q*q*to.y,vx:clamp((to.x-from.x)*1.3,-340,340),vy:0,scale:(from.scale??1)*(1-q*.68),alpha:(from.alpha??1)*clamp((1-progress)/.13,0,1),pose:'return',layer:'inside'};
   }
   capEvent(type,index){this.callbacks.onCapEvent?.({type,...(Number.isInteger(index)?{index}:{}),chapterIndex:this.chapterIndex,festivalId:this.festivalId,mode:this.mode});}
   rememberInCap(source,type,index){
@@ -347,7 +378,9 @@ export class DreamGame {
     this.particles=this.particles.filter(p=>p.life>0).slice(-180);
     for(const p of this.pulses){p.age+=dt;p.r=p.max*Math.min(1,p.age/.7);}
     this.pulses=this.pulses.filter(p=>p.age<.8).slice(-8);
-    const target=this.form==='soul'?this.soul.x:this.body.x;const targetCamera=clamp(target-this.viewWidth*.43,0,Math.max(0,this.level.width-this.viewWidth));this.camera=this.options.reducedMotion?targetCamera:mix(this.camera,targetCamera,dt*5.5);
+    this.updateViewport();
+    const target=this.form==='soul'?this.soul.x:this.body.x,targetCamera=clamp(target-this.viewWidth*.43,0,Math.max(0,this.level.width-this.viewWidth));
+    if(!this.activityFramed)this.camera=this.options.reducedMotion?targetCamera:mix(this.camera,targetCamera,dt*5.5);
     this.companion.x=mix(this.companion.x,clamp(b.x-b.face*65,30,this.level.width-30),dt*3);this.companion.y=mix(this.companion.y,Math.min(560,b.y+10),dt*4);
     this.hudTick-=dt;if(this.hudTick<=0){this.hudTick=.1;this.emitHud();}
   }
@@ -407,12 +440,17 @@ export class DreamGame {
 
   render(){
     if(this.destroyed||!this.level||!this.ctx)return;
+    this.updateViewport();
     const c=this.ctx,w=this.viewWidth,h=640,t=this.options.reducedMotion?0:this.visualTime,theme=this.level.theme;
-    c.setTransform(this.dpr*this.scale,0,0,this.dpr*this.scale,0,0);c.clearRect(0,0,w,h);c.lineCap='round';c.lineJoin='round';
+    const character=this.getCharacterPresentation(t),presentedSoul=this.getSoulPresentation(character);
+    const canvasTop=-this.viewportOffsetY/this.scale,canvasHeight=this.cssHeight/this.scale;
+    c.setTransform(this.dpr*this.scale,0,0,this.dpr*this.scale,0,this.dpr*this.viewportOffsetY);c.clearRect(0,canvasTop,w,canvasHeight);c.lineCap='round';c.lineJoin='round';
     this.drawBackground(c,w,h,t);
     c.save();const shake=this.options.reducedMotion?0:this.shake*Math.sin(t*65)*3;c.translate(-this.camera+shake,0);
     if(this.mode==='festival')drawFestivalArchitecture(this,c,t);else this.drawArchitecture(c,t);
     this.drawWinds(c,t);
+    // Extend only the drawn ground into the extra portrait framing; collisions stay authored.
+    if(this.viewportOffsetY>0){const bottom=canvasTop+canvasHeight;c.fillStyle=theme.ground;for(const p of this.level.platforms)if(p.kind==='ground'&&p.y+p.h<bottom)c.fillRect(p.x,p.y+p.h-2,p.w,bottom-p.y-p.h+2);}
     for(const p of this.level.platforms)this.drawPlatform(c,p,t);
     for(const p of this.movers)this.drawPlatform(c,p,t);
     for(const p of this.pads)this.drawMushroom(c,p,t);
@@ -429,10 +467,10 @@ export class DreamGame {
     this.drawSigns(c);
     for(const npc of this.level.npcs||[])drawFestivalNPC(this,c,npc,t);
     this.drawCompanion(c,this.companion.x,this.companion.y,t);
-    if(this.form==='soul')this.drawTether(c,t);
+    if(this.form==='soul')this.drawTether(c,t,presentedSoul,character);
     drawCapTheatre(this,c,t);
-    this.drawCharacter(c,this.body,t);
-    const presentedSoul=this.getSoulPresentation();if(presentedSoul)this.drawSoul(c,presentedSoul,t);
+    this.drawCharacter(c,this.body,t,presentedSoul,character);
+    if(presentedSoul?.layer==='world')this.drawSoul(c,presentedSoul,t);
     for(const p of this.particles){c.globalAlpha=Math.max(0,p.life/p.maxLife)*.75;ellipse(c,p.x,p.y,p.size,p.size*.75,p.color);}
     c.globalAlpha=1;
     for(const p of this.pulses){c.globalAlpha=Math.max(0,1-p.age/.8)*.5;c.strokeStyle=theme.spirit;c.lineWidth=2;c.beginPath();c.ellipse(p.x,p.y,p.r,p.r*.85,0,0,TAU);c.stroke();}
@@ -442,7 +480,7 @@ export class DreamGame {
     drawCompass(this,c,w,t);
   }
   drawBackground(c,w,h,t){
-    const th=this.level.theme,gradient=c.createLinearGradient(0,0,0,h);gradient.addColorStop(0,th.sky[0]);gradient.addColorStop(1,th.sky[1]);c.fillStyle=gradient;c.fillRect(0,0,w,h);
+    const top=-this.viewportOffsetY/this.scale,fullHeight=this.cssHeight/this.scale,th=this.level.theme,gradient=c.createLinearGradient(0,top,0,top+fullHeight);gradient.addColorStop(0,th.sky[0]);gradient.addColorStop(1,th.sky[1]);c.fillStyle=gradient;c.fillRect(0,top,w,fullHeight);
     const mx=w*.73-this.camera*.075,my=133;
     const halo=c.createRadialGradient(mx,my,8,mx,my,220);halo.addColorStop(0,th.light+'20');halo.addColorStop(1,th.light+'00');c.fillStyle=halo;c.fillRect(mx-220,my-220,440,440);
     ellipse(c,mx,my,43,43,th.light+'be');ellipse(c,mx+16,my-10,39,39,th.sky[0]);
@@ -585,61 +623,75 @@ export class DreamGame {
     ellipse(c,0,-24,13,18,'#b5c9b7');ellipse(c,0,-17,7,10,'#d7dfc3');c.beginPath();c.moveTo(-11,-36);c.lineTo(-16,-52);c.lineTo(-3,-43);c.lineTo(3,-43);c.lineTo(15,-52);c.lineTo(11,-34);c.fillStyle='#b5c9b7';c.fill();line(c,[[-12,-45],[-10,-38]],'#e3b7a9',2);line(c,[[11,-45],[10,-38]],'#e3b7a9',2);
     for(const eye of [-5,5]){ellipse(c,eye,-31,3,4*blink,'#293f42');if(blink>.3)ellipse(c,eye+look,-32,1,1.4,'#edf3d9');}ellipse(c,-10,-27,3,1.5,'#d9a99b66');ellipse(c,10,-27,3,1.5,'#d9a99b66');c.fillStyle='#eacb93';c.beginPath();c.moveTo(-3,-25);c.lineTo(3,-25);c.lineTo(0,-21);c.fill();line(c,[[-9,-7],[-5,-3],[1,-6],[7,-3]],'#8c7462',2);if(happy)star(c,20,-46,4,this.level.theme.light);c.restore();
   }
-  drawTether(c,t){
-    const b=this.body,s=this.getSoulPresentation();if(!s||s.alpha<.05)return;const sx=b.x,sy=b.y-68;const bend=(sx+s.x)/2;c.save();c.globalAlpha=.25*s.alpha;c.strokeStyle=this.level.theme.spirit;c.lineWidth=1.25;c.setLineDash([3,8]);c.lineDashOffset=-t*18;c.beginPath();c.moveTo(sx,sy);c.quadraticCurveTo(bend,Math.min(sy,s.y)-45,s.x,s.y);c.stroke();c.setLineDash([]);c.globalAlpha=.55*s.alpha;for(let i=0;i<3;i++){const u=(t*.22+i/3)%1;const px=(1-u)*(1-u)*sx+2*(1-u)*u*bend+u*u*s.x,py=(1-u)*(1-u)*sy+2*(1-u)*u*(Math.min(sy,s.y)-45)+u*u*s.y;ellipse(c,px,py,2,2,this.level.theme.spirit);}c.restore();
+  drawTether(c,t,s,character){
+    if(!s||s.alpha<.05)return;const anchor=character.rig.openingWorld,sx=anchor.x,sy=anchor.y;const bend=(sx+s.x)/2;c.save();c.globalAlpha=.25*s.alpha;c.strokeStyle=this.level.theme.spirit;c.lineWidth=1.25;c.setLineDash([3,8]);c.lineDashOffset=-t*18;c.beginPath();c.moveTo(sx,sy);c.quadraticCurveTo(bend,Math.min(sy,s.y)-45,s.x,s.y);c.stroke();c.setLineDash([]);c.globalAlpha=.55*s.alpha;for(let i=0;i<3;i++){const u=(t*.22+i/3)%1;const px=(1-u)*(1-u)*sx+2*(1-u)*u*bend+u*u*s.x,py=(1-u)*(1-u)*sy+2*(1-u)*u*(Math.min(sy,s.y)-45)+u*u*s.y;ellipse(c,px,py,2,2,this.level.theme.spirit);}c.restore();
   }
-  drawCharacter(c,b,t){
-    const th=this.level.theme,outfit=this.getOutfitId(),dress=getOutfitPalette(outfit),walking=b.grounded&&Math.abs(b.vx)>12,phase=b.walk,step=walking?Math.sin(phase):0,hop=this.options.reducedMotion?0:walking?Math.abs(Math.cos(phase))*2.4:Math.sin(t*1.8)*1.1,scaleY=1-b.land;
-    const cap=this.cap,opening=cap.phase==='opening',returning=cap.phase==='returning',attentive=this.form==='soul'||returning,sleepy=this.energy<20,happy=this.emoteTime>0;
-    const reach=opening?ease(cap.age/.12)*(1-.7*ease((cap.age-.24)/.3)):returning?ease(cap.age/.1)*(1-ease((cap.age-.58)/.14)):attentive?.3:0;
-    const leftHand={x:mix(-16-step*4,-25,this.capOpen),y:mix(-16,-60,this.capOpen)},rightHand={x:mix(17+step*4,25,reach),y:mix(-16,-62,reach)};
-    c.save();c.translate(b.x,b.y);ellipse(c,0,2,24-(b.grounded?0:6),5,'#0c18294d');if(b.invulnerable>0&&!this.options.reducedMotion&&Math.floor(t*13)%2===0)c.globalAlpha=.48;c.scale(b.face,scaleY);c.translate(0,-hop);
+  drawCharacter(c,b,t,shown=null,character=null){
+    const p=character||this.getCharacterPresentation(t),{rig,step,walking}=p,th=this.level.theme,outfit=this.getOutfitId(),dress=getOutfitPalette(outfit),happy=this.emoteTime>0;
+    const opacity=b.invulnerable>0&&!this.options.reducedMotion&&Math.floor(t*13)%2===0?.48:1;
+    c.save();c.translate(b.x,b.y);ellipse(c,0,2,24-(b.grounded?0:6),5,'#0c18294d');c.restore();
+    c.save();c.transform(...rig.bodyMatrix);c.globalAlpha*=opacity;
     drawOutfitBack(c,outfit,t,walking);
     if(this.featherCharges){for(let i=0;i<3;i++){const a=t*.55+i*TAU/3;star(c,Math.cos(a)*30,-39+Math.sin(a)*22,3,'#d6e8ecaa');}}
     // A stitched delivery satchel and springy scarf give the small silhouette a story.
-    c.save();c.translate(-17,-28);c.rotate(-.2+step*.04);box(c,-10,-3,17,22,5,'#ba8c67','#dfb887');line(c,[[-7,5],[4,5]],'#765c54',1);ellipse(c,0,8,2,2,'#ead1a5');c.restore();
+    c.save();c.translate(-17,-28);c.rotate(-.2+step*.04);box(c,-10,-3,17,22,5,'#ba8c67','#dfb887');line(c,[[-7,5],[4,5]],'#765c54',1);star(c,0,8,3.2,'#efc779');c.restore();
     const legs=[{x:-7,phase:step},{x:7,phase:-step}];
     for(const leg of legs){const kneeX=leg.x+leg.phase*4,footX=leg.x+leg.phase*8;line(c,[[leg.x,-21],[kneeX,-11],[footX,-2]],'#d9cfb4',5);ellipse(c,kneeX,-11,3,3,'#f0e5c9');ellipse(c,footX+2,-2,7,3.3,'#b9c9b6');}
+    // The shoulders and wrists are solved in the same body space as the lid grip.
+    // The coat covers the folded inner arm when the hands are resting.
+    for(const arm of [p.arms.left,p.arms.right]){line(c,[[arm.shoulder.x,arm.shoulder.y],[arm.elbow.x,arm.elbow.y],[arm.wrist.x,arm.wrist.y]],'#d9cfb4',4);ellipse(c,arm.elbow.x,arm.elbow.y,2.8,2.8,'#f3e6c5');}
     c.beginPath();c.moveTo(-13,-39);c.quadraticCurveTo(1,-47,14,-38);c.lineTo(17,-17);c.quadraticCurveTo(0,-12,-16,-18);c.closePath();const coat=c.createLinearGradient(-15,-37,18,-14);coat.addColorStop(0,dress.trim);coat.addColorStop(.25,dress.coat);coat.addColorStop(1,dress.coat);c.fillStyle=coat;c.fill();line(c,[[0,-35],[0,-18]],dress.trim+'99',1.3);line(c,[[-11,-34],[-5,-29],[0,-36],[6,-29],[12,-34]],dress.trim+'aa',1);for(let y=-31;y<-18;y+=6)ellipse(c,2,y,1.5,1.5,'#e3d6b3');box(c,-11,-27,7,6,2,dress.coat,dress.trim+'88');star(c,10,-29,2,dress.trim);
-    line(c,[[-13,-35],[mix(-18-step*3,-29,this.capOpen),mix(-24,-42,this.capOpen)],[leftHand.x,leftHand.y]],'#d9cfb4',4);line(c,[[13,-35],[mix(19+step*3,31,reach),mix(-25,-43,reach)],[rightHand.x,rightHand.y]],'#d9cfb4',4);ellipse(c,mix(-18-step*3,-29,this.capOpen),mix(-24,-42,this.capOpen),2.8,2.8,'#f3e6c5');ellipse(c,mix(19+step*3,31,reach),mix(-25,-43,reach),2.8,2.8,'#f3e6c5');
     c.beginPath();c.moveTo(-9,-38);c.bezierCurveTo(-27,-41,-34,-52+Math.sin(t*4)*3,-49,-44+Math.sin(t*3)*4);c.lineTo(-44,-34+Math.sin(t*3+.4)*4);c.bezierCurveTo(-31,-36,-18,-32,-9,-34);c.closePath();c.fillStyle=dress.scarf;c.fill();line(c,[[-40,-41],[-39,-35]],'#f5d2a577',1);box(c,-16,-41,32,8,4,dress.scarf);line(c,[[-11,-37],[11,-37]],'#fff0cf33',1);
-    const tilt=this.options.reducedMotion?0:clamp(b.vx/240,-1,1)*.055+(b.grounded?0:b.vy/9000)+(attentive?-.025:0);c.save();c.translate(0,-49);c.rotate(tilt);
+    c.save();c.transform(...rig.headLocalMatrix);drawCapInterior(c,this.capScene,t,this.capOpen);c.restore();c.restore();
+    // World-space spirit, head-space occlusion: no duplicate spirit is drawn later.
+    if(shown?.layer==='inside')this.drawSoul(c,shown,t);
+    c.save();c.transform(...rig.bodyMatrix);c.globalAlpha*=shown?.layer==='inside'?1:opacity;
+    c.save();c.transform(...rig.headLocalMatrix);
+    this.drawSkullFront(c,b,t,shown);drawCapFrontRim(c,this.capScene,this.capOpen);this.drawCapLid(c,t,rig,outfit);c.restore();
+    this.drawCharacterHands(c,p);
+    if(happy){star(c,32,-56,3,th.light+'cc');star(c,-36,-38,2,th.light+'88');}c.restore();
+  }
+  drawSkullFront(c,b,t,shown){
+    const th=this.level.theme,opening=this.cap.phase==='opening',attentive=this.form==='soul'||this.cap.phase==='returning',sleepy=this.energy<20,happy=this.emoteTime>0;
     // Lower skull: cheekbones, inset eye sockets, little teeth and a hairline crack.
     c.beginPath();c.moveTo(-22,-13);c.bezierCurveTo(-26,0,-23,10,-14,14);c.lineTo(-13,22);c.quadraticCurveTo(0,26,13,22);c.lineTo(14,14);c.bezierCurveTo(23,10,26,0,22,-13);c.closePath();const ivory=c.createLinearGradient(-22,-13,23,23);ivory.addColorStop(0,'#fff0cf');ivory.addColorStop(.48,'#e9d8b6');ivory.addColorStop(1,'#c7b996');c.fillStyle=ivory;c.fill();c.strokeStyle='#c7bb9c';c.lineWidth=1.2;c.stroke();
-    const shown=this.getSoulPresentation(),blink=Math.sin(t*1.27+.4)>.985?.12:sleepy?.43:opening?1.06:happy?.7:1,look=attentive?clamp(((shown?.x??b.x)-b.x)*b.face/100,-3,3):clamp(b.vx*b.face/180,-1.3,1.3)+.35,lookY=attentive?-2.7:sleepy?1.8:-.7;
+    const blink=Math.sin(t*1.27+.4)>.985?.12:sleepy?.43:opening?1.06:happy?.7:1,look=attentive?clamp(((shown?.x??b.x)-b.x)*b.face/100,-3,3):clamp(b.vx*b.face/180,-1.3,1.3)+.35,lookY=attentive?-2.7:sleepy?1.8:-.7;
     for(const x of [-9,9]){ellipse(c,x,1,6.6,8.2*blink,'#2d303d');if(blink>.2){ellipse(c,x+look,lookY,2.2,2.6,th.light);ellipse(c,x+look+1,lookY-1.5,.9,1,'#fff1ce');}}
     if(attentive||happy){line(c,[[-15,-11],[-10,-13],[-5,-11]],'#bba684',1.2);line(c,[[5,-11],[10,-13],[15,-11]],'#bba684',1.2);}
     ellipse(c,-18,8,3.8,1.7,'#d39b8b44');ellipse(c,18,8,3.8,1.7,'#d39b8b44');c.beginPath();c.moveTo(0,9);c.lineTo(-3,14);c.lineTo(3,14);c.closePath();c.fillStyle='#736566';c.fill();for(const x of [-7,0,7])line(c,[[x,20],[x,24]],'#9b8d7a',1.4);
-    // The miniature stays in the bowl; the ivory lid, engraving and hat all hinge.
-    drawCapInterior(c,this.capScene,t,this.capOpen);
-    c.save();c.translate(-22,-13);c.rotate(-this.capOpen*1.16);c.translate(22,13);c.beginPath();c.moveTo(-22,-13);c.bezierCurveTo(-21,-40,21,-40,22,-13);c.closePath();const capIvory=c.createLinearGradient(0,-36,0,-12);capIvory.addColorStop(0,'#fff3d8');capIvory.addColorStop(1,'#d8c6a0');c.fillStyle=capIvory;c.fill();c.strokeStyle='#b8a788';c.lineWidth=1.2;c.stroke();
+    if(sleepy)ellipse(c,0,19,3,2.4,'#9f8b7a');else if(happy)line(c,[[-8,18],[-4,20],[4,20],[8,18]],'#a68a75',1);
+  }
+  drawCapLid(c,t,rig,outfit){
+    // The exact same cap matrix transforms its grip, ivory shell and every outfit.
+    c.save();c.transform(...rig.capLocalMatrix);c.beginPath();c.moveTo(-22,-13);c.bezierCurveTo(-21,-40,21,-40,22,-13);c.closePath();const capIvory=c.createLinearGradient(0,-36,0,-12);capIvory.addColorStop(0,'#fff3d8');capIvory.addColorStop(1,'#d8c6a0');c.fillStyle=capIvory;c.fill();c.strokeStyle='#b8a788';c.lineWidth=1.2;c.stroke();
     line(c,[[-4,-31],[-1,-25],[-5,-20],[0,-18]],'#a69a84',1.15);line(c,[[-21,-13],[21,-13]],'#a88a5f',3);line(c,[[-18,-14],[18,-14]],'#f0dca7',.9);line(c,[[-16,-26],[-10,-31],[-3,-33]],'#fff8e4bb',2);box(c,19,-17,6,6,2,'#d1ac6d','#e8cf92');
     star(c,10,-25,2.2,'#c1a574');drawOutfitHat(c,outfit,t);c.restore();
     ellipse(c,-22,-13,3.8,3.8,'#bda16f');ellipse(c,-22,-13,2,2,'#f0d69a');line(c,[[-23,-14],[-21,-12]],'#917b5f',.9);box(c,20,-12,5,6,1.5,'#a38b64');ellipse(c,22.5,-9,1.1,1.1,'#f3d998');
-    if(sleepy)ellipse(c,0,19,3,2.4,'#9f8b7a');else if(happy)line(c,[[-8,18],[-4,20],[4,20],[8,18]],'#a68a75',1);
-    c.restore();
-    // Individual knuckles and a curled thumb keep the clasp gesture legible at play size.
-    for(const hand of [leftHand,rightHand]){ellipse(c,hand.x,hand.y,3.8,4,'#f2e5c6');line(c,[[hand.x-1,hand.y-2],[hand.x-1,hand.y+1]],'#b9a88b',.8);line(c,[[hand.x+1,hand.y-2],[hand.x+1,hand.y+1]],'#b9a88b',.8);ellipse(c,hand.x-3,hand.y+1,1.8,2,'#e7d8b7');}
-    if(happy){star(c,32,-56,3,th.light+'cc');star(c,-36,-38,2,th.light+'88');}c.restore();
+  }
+  drawCharacterHands(c,pose){
+    for(const [side,arm] of Object.entries(pose.arms)){
+      const hand=arm.wrist,angle=side==='left'?(pose.rig.theta+pose.tilt)*pose.grip:-.25*pose.clasp;
+      c.save();c.translate(hand.x,hand.y);c.rotate(angle);ellipse(c,0,0,3.8,4,'#f2e5c6');line(c,[[-1,-2],[-1,1]],'#b9a88b',.8);line(c,[[1,-2],[1,1]],'#b9a88b',.8);ellipse(c,-3,1,1.8,2,'#e7d8b7');c.restore();
+    }
   }
   drawSoul(c,s,t){
-    const th=this.level.theme,bob=this.options.reducedMotion?0:Math.sin(t*3)*2,size=s.scale??1,alpha=s.alpha??1,sleepy=this.energy<25,returning=s.pose==='return';if(alpha<=0)return;
+    const th=this.level.theme,bob=this.options.reducedMotion||s.layer==='inside'?0:Math.sin(t*3)*2,size=s.scale??1,alpha=s.alpha??1,sleepy=this.energy<25,returning=s.pose==='return';if(alpha<=0)return;
     c.save();c.globalAlpha*=alpha;
     const glow=c.createRadialGradient(s.x,s.y,1,s.x,s.y,58*size);glow.addColorStop(0,th.spirit+'50');glow.addColorStop(1,th.spirit+'00');c.fillStyle=glow;c.fillRect(s.x-60*size,s.y-60*size,120*size,120*size);
     c.save();c.translate(s.x,s.y+bob*size);c.rotate(this.options.reducedMotion?0:clamp(s.vx/340,-1,1)*.14);c.scale(size,size);const tailX=-clamp(s.vx,-400,400)*.055,tailY=(sleepy?23:29)+Math.sin(t*4)*2;
-    c.beginPath();c.moveTo(-15,4);c.bezierCurveTo(-27,-21,16,-34,19,-9);c.bezierCurveTo(25,9,11,21,tailX,tailY);c.quadraticCurveTo(4,15,-15,4);const pearl=c.createLinearGradient(-15,-24,18,26);pearl.addColorStop(0,'#f4fff0');pearl.addColorStop(.5,'#d5f5df');pearl.addColorStop(1,th.spirit+'aa');c.fillStyle=pearl;c.fill();c.strokeStyle=th.spirit;c.lineWidth=1.5;c.stroke();
+    c.beginPath();c.moveTo(-15,4);c.bezierCurveTo(-24,-8,-17,-22,-6,-23);c.quadraticCurveTo(1,-28,2,-35);c.bezierCurveTo(10,-31,7,-25,12,-22);c.bezierCurveTo(20,-21,23,-14,19,-9);c.bezierCurveTo(25,9,11,21,tailX,tailY);c.quadraticCurveTo(4,15,-15,4);const pearl=c.createLinearGradient(-15,-29,18,26);pearl.addColorStop(0,'#f4fff0');pearl.addColorStop(.5,'#d5f5df');pearl.addColorStop(1,th.spirit+'aa');c.fillStyle=pearl;c.fill();c.strokeStyle=th.spirit;c.lineWidth=1.5;c.stroke();
     c.beginPath();c.moveTo(-8,14);c.quadraticCurveTo(1,19,tailX,tailY);c.strokeStyle='#ffffff66';c.lineWidth=1;c.stroke();line(c,[[-14,-16],[-10,-20],[-4,-22]],'#ffffff99',1.5);
     const blink=Math.sin(t*1.42+1)>.99?.18:sleepy?.42:1,look=clamp(s.vx/250,-1.2,1.2);
     if(returning&&!sleepy){for(const x of [-6,7]){c.beginPath();c.moveTo(x-3,-4);c.quadraticCurveTo(x,-9,x+3,-4);c.strokeStyle='#35545d';c.lineWidth=1.8;c.stroke();}}
     else {ellipse(c,-6,-6,4,5*blink,'#35545d');ellipse(c,7,-6,4,5*blink,'#35545d');if(blink>.3){ellipse(c,-5+look,-7,1.2,1.4,'#fff8df');ellipse(c,8+look,-7,1.2,1.4,'#fff8df');}}
     if(this.emoteTime>0){star(c,-23,-12,3,th.light+'bb');star(c,23,-18,2.5,th.light+'bb');}
     if(sleepy)ellipse(c,1,4,2.3,3,'#6d9c94');else if(s.pose==='peek')ellipse(c,1,3,2,2.6,'#6d9c94');else {c.beginPath();c.moveTo(-3,3);c.quadraticCurveTo(1,8,5,3);c.strokeStyle='#6d9c94';c.lineWidth=1.2;c.stroke();}
-    ellipse(c,-12,1,3,1.5,'#f2bcac77');ellipse(c,13,1,3,1.5,'#f2bcac77');star(c,0,-25,3.4,th.light);c.restore();
+    ellipse(c,-12,1,3,1.5,'#f2bcac77');ellipse(c,13,1,3,1.5,'#f2bcac77');star(c,0,-16,3.2,th.light);c.restore();
     if(sleepy&&!returning){c.strokeStyle='#efba9c88';c.lineWidth=2;c.beginPath();c.arc(s.x,s.y,30*size,-Math.PI/2,-Math.PI/2+TAU*this.energy/this.maxEnergy);c.stroke();}c.restore();
   }
   drawForeground(c,w,h,t){
     const th=this.level.theme;
-    const vignette=c.createRadialGradient(w*.5,h*.5,h*.18,w*.5,h*.5,Math.max(w,h)*.7);vignette.addColorStop(0,'#07101900');vignette.addColorStop(1,'#0710196c');c.fillStyle=vignette;c.fillRect(0,0,w,h);
+    const vignette=c.createRadialGradient(w*.5,h*.5,h*.18,w*.5,h*.5,Math.max(w,h)*.7);vignette.addColorStop(0,'#07101900');vignette.addColorStop(1,'#0710196c');c.fillStyle=vignette;c.fillRect(0,-this.viewportOffsetY/this.scale,w,this.cssHeight/this.scale);
     for(let i=0;i<5;i++){const x=((i*377-this.camera*.95)%(w+220)+w+220)%(w+220)-100;this.drawPlant(c,x,666,75+i%2*40,'#111d2be6',.75);}
     if(this.form==='soul'){
       const bx=this.body.x-this.camera;if(bx<20||bx>w-20){const edge=bx<20?18:w-18;c.save();c.fillStyle=th.light;c.font=`12px ${FONT}`;c.textAlign=bx<20?'left':'right';c.fillText(bx<20?'← 身体 · E 回去':'身体 · E 回去 →',edge,530);c.restore();}

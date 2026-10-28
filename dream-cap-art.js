@@ -5,6 +5,29 @@ const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 const STORY_MOTIFS=['station','sprout','moon','whale','clock','dawn'];
 const FESTIVAL_MOTIFS={halloween:'pumpkin',thanksgiving:'table',christmas:'bell',newyear:'firework',spring:'nian',lantern:'rabbit',valentine:'heart',dragonboat:'boat',qixi:'bridge',midautumn:'mooncake'};
 export const CAP_MOTIFS=Object.freeze([...STORY_MOTIFS,...Object.values(FESTIVAL_MOTIFS)]);
+export const CAP_HINGE=Object.freeze({x:-22,y:-13});
+export const CAP_GRIP=Object.freeze({x:-13,y:-13});
+export const CAP_HEAD_OFFSET=Object.freeze({x:0,y:-49});
+
+// Canvas affine matrices are the source of truth for the lid and both hands.
+export function multiplyCapMatrices(a,b){
+  return [a[0]*b[0]+a[2]*b[1],a[1]*b[0]+a[3]*b[1],a[0]*b[2]+a[2]*b[3],a[1]*b[2]+a[3]*b[3],a[0]*b[4]+a[2]*b[5]+a[4],a[1]*b[4]+a[3]*b[5]+a[5]];
+}
+export function transformCapPoint(matrix,p){return {x:matrix[0]*p.x+matrix[2]*p.y+matrix[4],y:matrix[1]*p.x+matrix[3]*p.y+matrix[5]};}
+export function createCapRig({x=0,y=0,face=1,scaleY=1,hop=0,tilt=0,open=0}={}){
+  const theta=-1.16*clamp(open,0,1),cos=Math.cos(theta),sin=Math.sin(theta),ct=Math.cos(tilt),st=Math.sin(tilt);
+  const bodyMatrix=[face,0,0,scaleY,x,y-scaleY*hop],headLocalMatrix=[ct,st,-st,ct,0,-49];
+  const capLocalMatrix=[cos,sin,-sin,cos,CAP_HINGE.x-cos*CAP_HINGE.x+sin*CAP_HINGE.y,CAP_HINGE.y-sin*CAP_HINGE.x-cos*CAP_HINGE.y];
+  const headMatrix=multiplyCapMatrices(bodyMatrix,headLocalMatrix),capMatrix=multiplyCapMatrices(headMatrix,capLocalMatrix);
+  const gripHead=transformCapPoint(capLocalMatrix,CAP_GRIP),gripBody=transformCapPoint(headLocalMatrix,gripHead);
+  return {theta,bodyMatrix,headLocalMatrix,headMatrix,capLocalMatrix,capMatrix,gripHead,gripBody,gripWorld:transformCapPoint(capMatrix,CAP_GRIP),claspBody:transformCapPoint(headLocalMatrix,{x:22.5,y:-10}),catchBody:transformCapPoint(headLocalMatrix,{x:0,y:-17}),openingWorld:transformCapPoint(headMatrix,{x:0,y:-16})};
+}
+
+export function solveCapArm(shoulder,target,bend=1,length=20){
+  const dx=target.x-shoulder.x,dy=target.y-shoulder.y,raw=Math.hypot(dx,dy),distance=clamp(raw,.0001,length*2-.0001),ux=raw>.00001?dx/raw:0,uy=raw>.00001?dy/raw:-1;
+  const wrist={x:shoulder.x+ux*distance,y:shoulder.y+uy*distance},half=distance*.5,height=Math.sqrt(Math.max(0,length*length-half*half));
+  return {shoulder:{...shoulder},elbow:{x:shoulder.x+ux*half-uy*height*bend,y:shoulder.y+uy*half+ux*height*bend},wrist,requested:{...target},length};
+}
 const hex=(value,fallback)=>/^#[0-9a-f]{6}$/i.test(value||'')?value:/^#[0-9a-f]{3}$/i.test(value||'')?'#'+value.slice(1).split('').map(c=>c+c).join(''):fallback;
 
 export function resolveCapScene(scene,chapterIndex=0,festivalId=null,theme={}){
@@ -133,7 +156,15 @@ export function drawCapInterior(c,scene,t,openness){
   const glow=c.createRadialGradient(0,-17,1,0,-17,35);glow.addColorStop(0,scene.color+'70');glow.addColorStop(1,scene.color+'00');c.fillStyle=glow;c.fillRect(-36,-53,72,72);
   oval(c,0,-13,20,5,'#283e48');oval(c,0,-14,17,3,scene.color+'66');
   c.save();c.translate(0,-20);c.scale(.35,.35);drawCapMiniature(c,scene,t);c.restore();
-  c.beginPath();c.ellipse(0,-13,21,5,0,0,Math.PI);c.strokeStyle='#e5d5ac';c.lineWidth=2;c.stroke();c.restore();
+  c.restore();
+}
+
+// This rim belongs in front of a peeking/returning soul, after the lower skull.
+export function drawCapFrontRim(c,scene,openness){
+  if(openness<=.02)return;
+  c.save();c.globalAlpha*=clamp(openness,0,1);
+  c.beginPath();c.ellipse(0,-13,21,5,0,0,Math.PI);c.strokeStyle='#c8b58e';c.lineWidth=3.4;c.stroke();
+  c.beginPath();c.ellipse(0,-14,20,4.2,0,.06,Math.PI-.06);c.strokeStyle='#f4e5bc';c.lineWidth=1.4;c.stroke();c.restore();
 }
 
 export function drawCapTheatre(game,c,t){
