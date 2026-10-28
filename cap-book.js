@@ -2,13 +2,15 @@ import { CAP_SCENES, getCapScene } from './dream-cap-story.js';
 import { drawCapMiniature } from './dream-cap-art.js';
 import { CHAPTERS } from './dream-story.js';
 import { getFestival } from './dream-festivals.js';
+import { getCapActivity } from './dream-cap-activities.js';
+import { CAP_ACTIVITY_VARIANTS } from './cap-activity-progress.js';
 import { CAP_SAVE_KEY, loadCapSave, persistCapSave, validateCapSave, mergeCapSaves, getCapRecord, getCapStats, recordCapEvent } from './cap-progress.js';
 
 const escape = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 const titleFor = scene => scene.festivalId ? getFestival(scene.festivalId)?.title : CHAPTERS[scene.chapterIndex]?.title;
 const pictureFor = scene => scene.festivalId ? './assets/festival-item-' + scene.festivalId + '.svg' : './assets/portrait-hero-open.svg';
 
-export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNotice } = {}) {
+export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNotice, getActivityRecord, getActivityStats, onPlayActivity } = {}) {
   let save = loadCapSave(), selected = 'story-0', reducedMotion = false, animation = null, lastDraw = 0, elapsed = 0, storageWarned = false;
   const dialog = document.createElement('dialog');
   dialog.id = 'cap-book-dialog';
@@ -56,6 +58,16 @@ export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNoti
   }
   function runAnimation() { stopAnimation(); draw(elapsed); if (dialog.open && !reducedMotion) animation = requestAnimationFrame(animate); }
 
+  function activityMarkup(scene, opened) {
+    const activity = getCapActivity(scene), record = getActivityRecord?.(scene.id) || { completedSteps: [], completedVariants: [], best: {}, pending: null };
+    const complete = record.completedVariants.includes(0);
+    return '<section class="cap-book-activity"><div class="cap-book-activity-title"><span>✧</span><div><small>借景小戏</small><h4>' + escape(activity.title) + '</h4></div><b>' + (complete ? '已搭好' : record.completedSteps.length + ' / 3 处') + '</b></div><div class="cap-activity-destinations">' + activity.destinations.map((destination, index) => '<span class="' + (record.completedSteps.includes(index) ? 'done' : '') + '"><i>' + (record.completedSteps.includes(index) ? '✦' : '○') + '</i>' + escape(destination.label) + '</span>').join('') + '</div><div class="cap-activity-variants">' + CAP_ACTIVITY_VARIANTS.map((label, index) => {
+      const completed = record.completedVariants.includes(index), best = record.best[index];
+      const pending = record.pending?.variant === index ? record.pending : null;
+      return '<span class="' + (completed ? 'done' : '') + '"><b>' + (completed ? '✓ ' : '') + label + '</b><small>' + (pending ? '待续 · ' + pending.completedSteps.length + ' / 3 处' : best ? best.switches + ' 次转向 · ' + Math.ceil(best.seconds) + ' 秒' : completed ? '已收好这条路线' : index ? '完成后按 Q 再来一局' : '把三个念头送到亮起的地方') + '</small></span>';
+    }).join('') + '</div>' + (opened ? '<button class="dream-secondary" data-cap-play="' + scene.id + '">去看看这出小戏 <span>↗</span></button>' : '') + '<p>阿拾站在圆环供光，拾光靠近岔路按空格转向。</p></section>';
+  }
+
   function render() {
     const stats = getCapStats(save), scene = CAP_SCENES.find(item => item.id === selected) || CAP_SCENES[0], record = getCapRecord(save, scene.id), opened = record.opens > 0;
     $('#cap-book-stats').innerHTML = [[stats.opens, '次掀盖'], [stats.opened + ' / 16', '个脑洞'], [stats.memories + ' / 48', '个念头']].map(([value, label]) => '<span><b>' + value + '</b>' + label + '</span>').join('');
@@ -67,9 +79,13 @@ export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNoti
       const prose = festival ? scene.memories[index].text : CHAPTERS[scene.chapterIndex].memories[index];
       return '<article class="cap-thought ' + (found ? 'found' : '') + '"><i>' + (found ? '✦' : '·') + '</i><div><small>' + escape(title) + '</small><p>' + (found ? escape(prose) : '还藏在这一幕里，等拾光把它带回来。') + '</p></div></article>';
     }).join('') + '</div>';
+    $('#cap-book-feature').insertAdjacentHTML('beforeend', activityMarkup(scene, opened));
+    const activityStats = getActivityStats?.();
+    if (activityStats) $('.cap-book-section-title>span').textContent = '借景 ' + activityStats.completed + ' / 16 · 路线 ' + activityStats.variants + ' / 48';
     $('#cap-book-grid').innerHTML = CAP_SCENES.map(item => {
       const value = getCapRecord(save, item.id), discovered = value.opens > 0;
-      return '<button class="cap-book-card ' + (discovered ? 'discovered' : '') + (item.id === selected ? ' selected' : '') + '" data-cap-scene="' + item.id + '" aria-pressed="' + (item.id === selected) + '"><img src="' + pictureFor(item) + '" alt="" width="52" height="52" loading="lazy"><span><small>' + escape(titleFor(item)) + '</small><b>' + escape(item.title) + '</b><em>' + (discovered ? value.memories.length + '/3 念头 · ' + value.seals.length + '/2 谜灯' : '等你掀开') + '</em></span></button>';
+      const activityComplete = getActivityRecord?.(item.id)?.completedVariants?.includes(0);
+      return '<button class="cap-book-card ' + (discovered ? 'discovered' : '') + (item.id === selected ? ' selected' : '') + '" data-cap-scene="' + item.id + '" aria-pressed="' + (item.id === selected) + '"><img src="' + pictureFor(item) + '" alt="" width="52" height="52" loading="lazy"><span><small>' + escape(titleFor(item)) + '</small><b>' + escape(item.title) + '</b><em>' + (discovered ? value.memories.length + '/3 念头 · ' + value.seals.length + '/2 谜灯' : '等你掀开') + (activityComplete ? ' · 借景 ✓' : '') + '</em></span></button>';
     }).join('');
     runAnimation();
   }
@@ -79,6 +95,8 @@ export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNoti
     if (card) { selected = card.dataset.capScene; render(); dialog.scrollTop = 0; return; }
     const letter = event.target.closest('[data-cap-letter]');
     if (letter) onReadLetter?.(CAP_SCENES.find(scene => scene.id === letter.dataset.capLetter));
+    const play = event.target.closest('[data-cap-play]');
+    if (play) onPlayActivity?.(CAP_SCENES.find(scene => scene.id === play.dataset.capPlay));
   });
   dialog.addEventListener('close', () => { stopAnimation(); queueMicrotask(() => onClose?.()); });
   dialog.addEventListener('keydown', event => event.stopPropagation());
@@ -94,6 +112,7 @@ export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNoti
     exportState: () => validateCapSave(save),
     importState(next) { if (!next) return; save = validateCapSave(next); commit(); report(); if (dialog.open) render(); },
     summary: report,
+    refreshActivities() { report(); if (dialog.open) render(); },
     destroy() { stopAnimation(); window.removeEventListener('storage', storage); dialog.remove(); },
   };
 }

@@ -4,6 +4,8 @@ import { createFestivalHub } from './festival-hub.js';
 import { getFestival, getFestivalPuzzle } from './dream-festivals.js';
 import { getCapScene } from './dream-cap-story.js';
 import { createCapBook } from './cap-book.js';
+import { getCapActivity } from './dream-cap-activities.js';
+import { CAP_ACTIVITY_SAVE_KEY, capActivityRevision, loadCapActivitySave, persistCapActivitySave, validateCapActivitySave, mergeCapActivitySaves, replaceCapActivitySave, getCapActivityRecord, getCapActivityStats, recordCapActivityEvent } from './cap-activity-progress.js';
 import {
   CHAPTERS, CAST, STORY_CHOICES, ENDINGS, STAMPS, STORY_ITEMS, PUZZLES, DREAM_SAVE_KEY,
   loadDreamSave, persistDreamSave, validateDreamSave, getUnlockedChapter, getJourneyStats,
@@ -45,6 +47,8 @@ let runSessionId = '';
 let capBook = null;
 let capBubbleTimer = null;
 let lastCapBubbleAt = -Infinity;
+let capActivitySave = loadCapActivitySave();
+let capActivityStorageWarned = false;
 
 function portraitForLine(line, festival = currentFestival) {
   const moods = line.speaker === 'ashi' ? ['curious', 'open', 'joy', 'tender'] : line.speaker === 'light' ? ['peek', 'joy', 'brave', 'sleep'] : [];
@@ -67,7 +71,12 @@ function onCapEvent(event) {
   if (event.type === 'open') lines = outcome.firstOpen ? scene.opening : scene.reopening;
   else if (event.type === 'return') { if (now - lastCapBubbleAt < 1600) return; lines = scene.returning; }
   else if (outcome.changed) lines = [event.type === 'memory' ? scene.memories[event.index] : scene.seals[event.index]];
+  showCapLines(lines);
+}
+
+function showCapLines(lines) {
   if (!lines?.length || document.querySelector('dialog[open]')) return;
+  const now = performance.now();
   lastCapBubbleAt = now;
   clearTimeout(capBubbleTimer);
   clearTimeout(announcementTimer);
@@ -80,6 +89,36 @@ function onCapEvent(event) {
 }
 
 function openCapBook() { capBook?.open({ chapterIndex: currentChapter, festivalId: currentFestival?.id }); }
+
+function updateCapSummary() {
+  const stats = capBook?.stats() || { opened: 0 };
+  const activities = getCapActivityStats(capActivitySave);
+  $('#journal-cap-summary').textContent = stats.opened + ' / 16 个脑洞 · 借景 ' + activities.completed + ' / 16';
+}
+
+function onCapActivity(event) {
+  capActivitySave = mergeCapActivitySaves(capActivitySave, loadCapActivitySave());
+  const revision = capActivityRevision(capActivitySave);
+  if ((event.revision || '0:base') !== revision) {
+    const scene = getCapScene({ chapterIndex: currentChapter, festivalId: currentFestival?.id });
+    game?.setCapActivityRecord(getCapActivityRecord(capActivitySave, scene.id), revision);
+    capBook?.refreshActivities();
+    updateCapSummary();
+    return;
+  }
+  const outcome = recordCapActivityEvent(capActivitySave, event);
+  if (!outcome.ok) return;
+  if (outcome.changed) {
+    if (!persistCapActivitySave(capActivitySave) && !capActivityStorageWarned) { capActivityStorageWarned = true; toast('借景小戏可以继续。请在设置里导出旅途存档，收好已完成的路线。'); }
+    capBook?.refreshActivities();
+    updateCapSummary();
+  }
+  const activity = outcome.activity;
+  const now = performance.now();
+  if ((event.type === 'start' && now - lastCapBubbleAt < 1700) || (event.type === 'wrong' && now - lastCapBubbleAt < 3000)) return;
+  const line = event.type === 'step' ? activity.steps[event.stepIndex] : event.type === 'complete' ? activity.complete : event.type === 'wrong' ? activity.wrong : event.variant > 0 ? activity.replay : activity.start;
+  showCapLines([line]);
+}
 
 function updateShell() {
   const stats = getJourneyStats(save);
@@ -383,6 +422,7 @@ function launchScene(index, festival) {
   settled = false;
   lastHudAt = 0;
   lastCapBubbleAt = -Infinity;
+  capActivitySave = mergeCapActivitySaves(capActivitySave, loadCapActivitySave());
   $('#dream-stage').hidden = false;
   document.body.classList.add('game-active');
   document.body.classList.toggle('festival-session', Boolean(festival));
@@ -392,8 +432,9 @@ function launchScene(index, festival) {
   $('#stage-chapter-title').textContent = festival?.title || CHAPTERS[index].title;
   $('#stage-memories-label').textContent = festival ? '礼物' : '记忆';
   $('#stage-restart').textContent = festival ? '重新开始这封来信' : '重新开始本章';
-  game = new DreamGame($('#dream-canvas'), { onHud, onComplete: finishChapter, onPause: showPause, onEvent: announce, onPuzzle: showPuzzle, onTalk: showEncounter, onCapEvent });
-  game.start({ chapterIndex: index, festival, capScene: getCapScene({ chapterIndex: index, festivalId: festival?.id }), season: hub?.getSeason(), outfit: hub?.getOutfit() || 'auto', sound: save.settings.sound, reducedMotion: save.settings.reducedMotion });
+  const capScene = getCapScene({ chapterIndex: index, festivalId: festival?.id });
+  game = new DreamGame($('#dream-canvas'), { onHud, onComplete: finishChapter, onPause: showPause, onEvent: announce, onPuzzle: showPuzzle, onTalk: showEncounter, onCapEvent, onCapActivity });
+  game.start({ chapterIndex: index, festival, capScene, capActivityRecord: getCapActivityRecord(capActivitySave, capScene.id), capActivityRevision: capActivityRevision(capActivitySave), season: hub?.getSeason(), outfit: hub?.getOutfit() || 'auto', sound: save.settings.sound, reducedMotion: save.settings.reducedMotion });
   updateSeasonLabel();
   $('#dream-canvas').focus({ preventScroll: true });
 }
@@ -442,6 +483,17 @@ function onHud(snapshot) {
   const capPhase = snapshot.cap?.phase || (soul ? 'open' : 'closed');
   $('#stage-cap-status').dataset.phase = capPhase;
   $('#stage-cap-label').textContent = ({ closed: 'E · 掀开脑洞', opening: '咔哒 · 脑洞打开', open: '脑洞打开 · 念头出发', returning: '拾光回家 · 轻轻扣盖' })[capPhase] || '';
+  const activity = snapshot.capActivity;
+  const activityVisible = Boolean(activity && (activity.phase === 'active' || activity.nearRing));
+  $('#stage-cap-activity').hidden = !activityVisible;
+  if (activityVisible) {
+    const config = getCapActivity({ chapterIndex: snapshot.chapterIndex, festivalId: snapshot.festivalId });
+    const count = Array.isArray(activity.completedSteps) ? activity.completedSteps.length : activity.completedSteps || 0;
+    $('#stage-cap-activity').dataset.phase = activity.phase;
+    $('#stage-cap-activity-name').textContent = config.title;
+    $('#stage-cap-activity-count').textContent = count + ' / 3';
+    $('#stage-cap-activity-progress').innerHTML = [0, 1, 2].map(index => '<i class="' + (index < count ? 'done' : '') + '"></i>').join('');
+  }
   $('#stage-toggle-label').textContent = soul ? '回到身体' : '掀开头盖骨';
   $('#stage-action-label').textContent = soul ? '回声脉冲' : '跳跃';
   $('#stage-action-glyph').textContent = soul ? '✧' : '↑';
@@ -763,14 +815,14 @@ document.addEventListener('visibilitychange', () => { if (document.hidden) reset
 $('#dream-pref-sound').addEventListener('change', event => { save.settings.sound = event.target.checked; persist(); renderSettings(); });
 $('#dream-pref-motion').addEventListener('change', event => { save.settings.reducedMotion = event.target.checked; persist(); renderSettings(); });
 $('#dream-export').addEventListener('click', () => {
-  const backup = { type: 'tougaigu-journey', version: 2, story: validateDreamSave(save), ...hub.exportState(), capbook: capBook.exportState() };
+  const backup = { type: 'tougaigu-journey', version: 2, story: validateDreamSave(save), ...hub.exportState(), capbook: capBook.exportState(), capactivities: validateCapActivitySave(capActivitySave) };
   const url = URL.createObjectURL(new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' }));
   const link = document.createElement('a');
   link.href = url;
   link.download = 'tougaigu-journey-save-' + new Date().toISOString().slice(0, 10) + '.json';
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 10000);
-  $('#dream-save-message').textContent = '故事、脑洞画册、节日收藏和时光奖励已一起备份。';
+  $('#dream-save-message').textContent = '故事、脑洞画册、借景路线、节日收藏和时光奖励已一起备份。';
 });
 $('#dream-import').addEventListener('change', async event => {
   const file = event.target.files?.[0];
@@ -783,11 +835,22 @@ $('#dream-import').addEventListener('change', async event => {
     if (!story || typeof story !== 'object' || Array.isArray(story) || story.version !== 1 || !Array.isArray(story.chapters)) throw new Error('这不是可识别的旅途存档。原版生存存档请在原版导入。');
     const imported = validateDreamSave(story);
     const stats = getJourneyStats(imported);
-    if (!window.confirm('导入会替换当前故事进度：已完成 ' + stats.completed + ' 章，收集 ' + stats.memories + ' 片记忆。' + (journey ? '节日收藏与共享时光奖励也会替换。' : '') + '原版生存成长不受影响。确定导入吗？')) return;
+    if (!window.confirm('导入会替换当前故事进度：已完成 ' + stats.completed + ' 章，收集 ' + stats.memories + ' 片记忆。' + (journey ? '文件中的脑洞画册、借景路线、节日收藏和时光奖励也会一并载入。' : '') + '原版生存成长不受影响。确定导入吗？')) return;
     stopGame();
     save = imported;
-    if (journey) { hub.importState(parsed); capBook.importState(parsed.capbook); }
-    const okay = persist();
+    let activityStored = true;
+    if (journey) {
+      hub.importState(parsed);
+      capBook.importState(parsed.capbook);
+      if (parsed.capactivities) {
+        capActivitySave = replaceCapActivitySave(parsed.capactivities, capActivitySave, loadCapActivitySave());
+        activityStored = persistCapActivitySave(capActivitySave);
+        capActivityStorageWarned = !activityStored;
+        capBook.refreshActivities();
+        updateCapSummary();
+      }
+    }
+    const okay = persist() && activityStored;
     settled = true;
     renderLobby();
     $('#dream-save-message').textContent = okay ? '故事接好了。欢迎回来，邮差。' : '故事已载入，但浏览器暂时无法保存，请保留备份。';
@@ -825,10 +888,37 @@ capBook = createCapBook({
     const index = festival ? currentChapter : scene.chapterIndex;
     openStory(festival?.intro || CHAPTERS[index].intro, index, () => capBook.open(scene.id), '收回脑洞画册', festival || null);
   },
-  onSummary(stats) { $('#journal-cap-summary').textContent = stats.opened + ' / 16 个脑洞 · ' + stats.memories + ' / 48 个念头'; },
+  getActivityRecord: id => getCapActivityRecord(capActivitySave, id),
+  getActivityStats: () => getCapActivityStats(capActivitySave),
+  onPlayActivity(scene) {
+    const festival = getFestival(scene.festivalId);
+    const same = festival ? currentFestival?.id === festival.id : !currentFestival && currentChapter === scene.chapterIndex;
+    if (same && game && !settled) {
+      $('#cap-book-dialog').close();
+      toast('在起点附近找到发光圆环：站稳后按 E 借出脑洞，拾光靠近岔路按空格转向。');
+      return;
+    }
+    if (festival) launchFestival(festival.id);
+    else if (scene.chapterIndex <= getUnlockedChapter(save)) launchChapter(scene.chapterIndex);
+  },
+  onSummary: updateCapSummary,
   onNotice: toast,
 });
 capBook.summary();
+window.addEventListener('storage', event => {
+  if (event.key !== CAP_ACTIVITY_SAVE_KEY) return;
+  const previousRevision = capActivityRevision(capActivitySave), stored = loadCapActivitySave();
+  let incoming;
+  try { incoming = event.newValue ? validateCapActivitySave(JSON.parse(event.newValue)) : null; } catch { incoming = null; }
+  capActivitySave = mergeCapActivitySaves(mergeCapActivitySaves(capActivitySave, incoming), stored);
+  if (JSON.stringify(capActivitySave) !== JSON.stringify(stored)) persistCapActivitySave(capActivitySave);
+  if (capActivityRevision(capActivitySave) !== previousRevision && game) {
+    const scene = getCapScene({ chapterIndex: currentChapter, festivalId: currentFestival?.id });
+    game.setCapActivityRecord(getCapActivityRecord(capActivitySave, scene.id), capActivityRevision(capActivitySave));
+  }
+  capBook.refreshActivities();
+  updateCapSummary();
+});
 renderLobby();
 const requestedFestival = getFestival(new URLSearchParams(location.search).get('festival'));
 if (requestedFestival) launchFestival(requestedFestival.id);
