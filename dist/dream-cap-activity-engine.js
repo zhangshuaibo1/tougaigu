@@ -73,7 +73,7 @@ export class DreamCapActivity {
     this.revision=typeof revision==='string'?revision:'';
     this.meta={chapterIndex,festivalId,mode,revision:this.revision};this.onEvent=onEvent;
     this.sessionId='cap-'+Date.now().toString(36)+'-'+(++instanceCount).toString(36);this.attempt=0;
-    this.destroyed=false;this.context=null;this.inRange=false;this.nearbySwitchId=null;
+    this.destroyed=false;this.context=null;this.inRange=false;this.nearbySwitchId=null;this.growth=null;
     this.variant=this.record.pending?.variant??0;this.delivered=new Set(this.record.pending?.completedSteps??this.record.completedSteps);this.resumed=this.delivered.size>0;
     this.switches={a:1,b:1};this.switchCount=0;this.activeSeconds=0;this.started=false;this.completeSent=false;
     this.phase=this.delivered.size===3?'complete':'idle';this.wait=.65;this.pendingRoute=null;
@@ -106,6 +106,7 @@ export class DreamCapActivity {
   refresh(context){
     if(this.destroyed)return;
     this.context=context;this.inRange=this.bodyInRange(context?.body);
+    if(context?.reducedMotion)this.growth=null;
     if(this.repairCompletion&&context?.state==='playing'){
       this.repairCompletion=false;this.resumed=true;this.commitCompletion();return;
     }
@@ -157,6 +158,7 @@ export class DreamCapActivity {
     this.traveler.routeId=null;this.traveler.state='waiting';this.wait=correct?.45:.75;this.pendingRoute='return-'+destination.index;
     if(!correct){this.emit('wrong',destination.index);return;}
     const target=destination.index;this.delivered.add(target);this.traveler.carrying=false;
+    this.growth=this.context?.reducedMotion?null:{index:target,progress:0};
     const complete=this.delivered.size===3;
     if(complete){this.phase='complete';this.pendingRoute=null;this.wait=0;this.traveler.state='parked';this.nearbySwitchId=null;}
     this.rememberPending();const attempt=this.attemptId;
@@ -166,8 +168,15 @@ export class DreamCapActivity {
   update(dt,context){
     if(this.destroyed)return;
     this.refresh(context);
-    if(this.destroyed||this.phase!=='active')return;
-    dt=clamp(finite(dt),0,.04);if(!dt)return;
+    if(this.destroyed)return;
+    dt=clamp(finite(dt),0,.04);
+    // A delivered prop can finish unfolding after the route becomes complete.
+    // This is presentation only: pausing freezes it, and saved props start fully grown.
+    if(context?.state==='playing'&&this.growth&&dt){
+      this.growth.progress=clamp(this.growth.progress+dt/.48,0,1);
+      if(this.growth.progress>=1)this.growth=null;
+    }
+    if(this.phase!=='active'||!dt)return;
     this.activeSeconds=Math.min(360000,this.activeSeconds+dt);
     if(this.wait>0){this.wait=Math.max(0,this.wait-dt);return;}
     if(this.pendingRoute){const route=this.pendingRoute;this.pendingRoute=null;this.beginRoute(route);}
@@ -182,14 +191,14 @@ export class DreamCapActivity {
   }
   recover(context){
     if(this.destroyed)return;
-    this.resetTraveler();this.pendingRoute=null;this.wait=.65;this.nearbySwitchId=null;
+    this.resetTraveler();this.pendingRoute=null;this.wait=.65;this.nearbySwitchId=null;this.growth=null;
     if(this.phase!=='complete')this.phase=this.started?'suspended':'idle';
     this.refresh(context);
   }
   replay(context){
     if(this.destroyed||this.phase!=='complete'||context?.state!=='playing'||context?.form!=='body'||!this.bodyInRange(context.body))return false;
     this.variant=[0,1,2].find(variant=>!this.record.completedVariants.includes(variant))??(this.variant+1)%3;this.attempt++;this.attemptId=this.sessionId+'-'+this.attempt;
-    this.delivered=new Set();this.resumed=false;this.phase='idle';this.started=false;this.completeSent=false;this.repairCompletion=false;this.switchCount=0;this.activeSeconds=0;this.switches={a:1,b:1};this.wait=.65;this.pendingRoute=null;this.resetTraveler();this.rememberPending();this.refresh(context);return true;
+    this.delivered=new Set();this.resumed=false;this.phase='idle';this.started=false;this.completeSent=false;this.repairCompletion=false;this.switchCount=0;this.activeSeconds=0;this.switches={a:1,b:1};this.wait=.65;this.pendingRoute=null;this.growth=null;this.resetTraveler();this.rememberPending();this.refresh(context);return true;
   }
   getHint(context=this.context){
     if(this.destroyed)return '';
@@ -211,7 +220,7 @@ export class DreamCapActivity {
     });
     const switches=['a','b'].map(id=>({...this.nodes[id],selected:this.switches[id],routeIndex:this.switches[id],nearby:active&&this.nearbySwitchId===id,reachable:active,outputs:(id==='a'?['a-0','a-b']:['b-1','b-2']).map(routeId=>{const route=this.routes[routeId],to=this.nodes[route.to];return {routeId,to:route.to,...(Number.isInteger(to.index)?{targetIndex:to.index}:{})};})}));
     const routes=this.layout.routes.map(route=>({...route,points:route.points.map(p=>({...p})),selected:route.kind==='trunk'||(route.kind==='choice'&&this.switches[route.switchId]===route.selection),active:active&&this.traveler.routeId===route.id}));
-    return {id:this.config.id,sceneId:this.config.id,title:this.config.title,motif:this.config.motif,color:this.config.color,accent:this.config.accent,ringLabel:this.config.ringLabel,phase:this.phase,active,completed:this.phase==='complete',anchor:{...this.layout.anchor,inRange:this.inRange},origin:{x:this.layout.anchor.x,y:this.layout.anchor.y},variant:this.variant,targetIndex:this.targetIndex,targetLabel:this.targetLabel,completedSteps:[...this.delivered].sort(),delivered:[0,1,2].map(index=>this.delivered.has(index)),nodes:this.layout.nodes.map(node=>({...node})),routes,switches,bells:switches,destinations,targets:destinations,traveler:{...this.traveler,kind:this.config.traveler,visible:active,targetIndex:this.targetIndex},hint:this.getHint()};
+    return {id:this.config.id,sceneId:this.config.id,title:this.config.title,motif:this.config.motif,color:this.config.color,accent:this.config.accent,ringLabel:this.config.ringLabel,phase:this.phase,active,completed:this.phase==='complete',anchor:{...this.layout.anchor,inRange:this.inRange},origin:{x:this.layout.anchor.x,y:this.layout.anchor.y},variant:this.variant,targetIndex:this.targetIndex,targetLabel:this.targetLabel,completedSteps:[...this.delivered].sort(),delivered:[0,1,2].map(index=>this.delivered.has(index)),growth:this.growth?{...this.growth}:null,nodes:this.layout.nodes.map(node=>({...node})),routes,switches,bells:switches,destinations,targets:destinations,traveler:{...this.traveler,kind:this.config.traveler,visible:active,targetIndex:this.targetIndex},hint:this.getHint()};
   }
-  destroy(){this.destroyed=true;this.phase='destroyed';this.context=null;this.nearbySwitchId=null;this.pendingRoute=null;this.wait=0;this.traveler=null;this.onEvent=null;}
+  destroy(){this.destroyed=true;this.phase='destroyed';this.context=null;this.nearbySwitchId=null;this.pendingRoute=null;this.wait=0;this.growth=null;this.traveler=null;this.onEvent=null;}
 }

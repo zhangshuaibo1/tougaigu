@@ -258,21 +258,48 @@ function drawGrowthPiece(c,motif,index,color,accent) {
 function deliveryFlags(view) {
   return [0,1,2].map(i => !!view.delivered?.[i] || !!view.destinations?.[i]?.complete || (view.completedSteps||[]).includes(i));
 }
-function drawGrownVignette(c,view,color,accent,t) {
+// Ground contacts in each piece's existing local coordinates. Scaling around
+// these feet keeps a new chair, pot or bridge planted while its top unfolds.
+const GROWTH_FEET = {
+  station:[4,6,7],sprout:[6,12,4],moon:[4,5,6],whale:[3,9,8],
+  clock:[6,2,0],dawn:[4,3,0],pumpkin:[4,3,0],table:[3,2,4],
+  bell:[7,2,5],firework:[4,4,5],nian:[5,9,6],rabbit:[2,3,3],
+  heart:[3,6,3],boat:[6,7,7],bridge:[7,4,3],mooncake:[5,3,14],
+};
+function growthPresentation(view,reducedMotion) {
+  const growth=view.growth;
+  if(reducedMotion||!growth||!Number.isInteger(growth.index)||growth.index<0||growth.index>2)return null;
+  const p=clamp(finite(growth.progress,1),0,1);
+  if(p>=1)return null;
+  const ease=1-Math.pow(1-p,3),sway=Math.sin(Math.PI*p),fade=clamp(p/(.1/.48),0,1);
+  return {index:growth.index,ease,x:1-.04*sway,y:.68+.32*ease+.045*sway,alpha:fade*fade*(3-2*fade)};
+}
+function drawGrownVignette(c,view,color,accent,t,reducedMotion) {
   const flags=deliveryFlags(view),count=flags.filter(Boolean).length;
   if(!count)return;
   const origin=view.origin||view.anchor;
   if(!point(origin))return;
+  const grow=growthPresentation(view,reducedMotion),live=grow&&flags[grow.index]?grow:null;
   c.save();c.translate(origin.x,origin.y-16);
   ellipse(c,0,-1,76,4,INK+'66');
   // Each independent delivered destination adds one recognizable object.
   for(let i=0;i<3;i++)if(flags[i]){
-    c.save();c.translate((i-1)*51,0);c.scale(.62,.62);drawGrowthPiece(c,view.motif,i,color,accent);c.restore();
+    c.save();c.translate((i-1)*51,0);c.scale(.62,.62);
+    if(live?.index===i){
+      const foot=GROWTH_FEET[view.motif]?.[i]??0;
+      c.globalAlpha*=live.alpha;c.translate(0,foot);c.scale(live.x,live.y);c.translate(0,-foot);
+    }
+    drawGrowthPiece(c,view.motif,i,color,accent);c.restore();
   }
   if(view.completed||count===3){
     // The complete borrowed scene keeps its original chapter/holiday motif.
-    c.save();c.translate(0,-56);c.scale(.36,.36);drawCapMiniature(c,{motif:view.motif,color,accent},t);c.restore();
+    c.save();
+    if(live)c.globalAlpha*=live.ease;
+    c.save();c.translate(0,-56);c.scale(.36,.36);
+    if(live){const scale=.94+.06*live.ease;c.translate(0,20);c.scale(scale,scale);c.translate(0,-20);}
+    drawCapMiniature(c,{motif:view.motif,color,accent},t);c.restore();
     path(c,[[-65,4],[-38,6],[0,7],[38,6],[65,4]],accent+'5e',.8);
+    c.restore();
   }
   c.restore();
 }
@@ -387,20 +414,6 @@ function drawAnchor(c,view,color,accent,t,reducedMotion) {
   c.restore();
 }
 
-function drawHint(c,view,color,accent) {
-  const destinations=view.destinations||view.targets||[],origin=view.origin||view.anchor;
-  if(!point(origin))return;
-  const top=destinations.filter(point).reduce((y,d)=>Math.min(y,d.y),origin.y-200);
-  const nearby=(view.switches||view.bells||[]).find(b=>b.nearby);
-  let text=String(view.hint||'');
-  if(!text)text=nearby?'Q / 空格 · 转动导向铃':view.targetLabel||'把小旅客送到编号底座';
-  text=Array.from(text).slice(0,27).join('');
-  const width=Math.min(282,Math.max(122,Array.from(text).length*10.2+22)),y=top-57;
-  box(c,origin.x-width/2,y-10,width,22,INK+'e6',7,color+'77',.7);
-  star(c,origin.x-width/2+10,y+1,2.5,accent);
-  c.fillStyle=IVORY;c.font=`10px ${FONT}`;c.textAlign='center';c.textBaseline='middle';c.fillText(text,origin.x+3,y+1);
-}
-
 /**
  * Draw a borrowed brain scene using controller-supplied world coordinates.
  * Reduced motion freezes decorative bob/sway but preserves the traveler's
@@ -412,7 +425,7 @@ export function drawCapActivity(c,view,t=0,reducedMotion=false) {
   const color=hex(view.color,'#b8e3cd'),accent=hex(view.accent,GOLD);
   const active=view.phase==='active'||(view.phase==null&&!!view.active);
   c.save();c.lineCap='round';c.lineJoin='round';
-  drawGrownVignette(c,view,color,accent,t);
+  drawGrownVignette(c,view,color,accent,t,reducedMotion);
   drawAnchor(c,view,color,accent,t,reducedMotion);
   if(active){
     drawRoutes(c,view,color,accent);
@@ -425,7 +438,8 @@ export function drawCapActivity(c,view,t=0,reducedMotion=false) {
       c.save();c.translate(source.x,source.y-20);c.scale(.24,.24);c.globalAlpha*=.84;drawCapMiniature(c,{motif:view.motif,color,accent},t);c.restore();
     }
     drawTraveler(c,view.traveler,view.motif,color,accent,t,reducedMotion);
-    drawHint(c,view,color,accent);
+    // The HUD owns the one contextual instruction; switches keep only their
+    // local Q badge so a route never repeats the same sentence on the canvas.
   }
   c.restore();
 }
