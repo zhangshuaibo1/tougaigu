@@ -4,13 +4,14 @@ import { CHAPTERS } from './dream-story.js';
 import { getFestival } from './dream-festivals.js';
 import { getCapActivity } from './dream-cap-activities.js';
 import { CAP_ACTIVITY_VARIANTS } from './cap-activity-progress.js';
+import { getLostCase, getLostCaseVariant } from './dream-lost-cases.js';
 import { CAP_SAVE_KEY, loadCapSave, persistCapSave, validateCapSave, mergeCapSaves, getCapRecord, getCapStats, recordCapEvent } from './cap-progress.js';
 
 const escape = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 const titleFor = scene => scene.festivalId ? getFestival(scene.festivalId)?.title : CHAPTERS[scene.chapterIndex]?.title;
 const pictureFor = scene => scene.festivalId ? './assets/festival-item-' + scene.festivalId + '.svg' : './assets/portrait-hero-open.svg';
 
-export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNotice, getActivityRecord, getActivityStats, onPlayActivity } = {}) {
+export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNotice, getActivityRecord, getActivityStats, onPlayActivity, getLostRecord, getLostStats, onPlayLost } = {}) {
   let save = loadCapSave(), selected = 'story-0', reducedMotion = false, animation = null, lastDraw = 0, elapsed = 0, storageWarned = false;
   const dialog = document.createElement('dialog');
   dialog.id = 'cap-book-dialog';
@@ -68,6 +69,27 @@ export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNoti
     }).join('') + '</div>' + (opened ? '<button class="dream-secondary" data-cap-play="' + scene.id + '">去看看这出小戏 <span>↗</span></button>' : '') + '<p>阿拾站在圆环供光，拾光靠近岔路按空格转向。</p></section>';
   }
 
+  function lostState(scene, opened) {
+    const item = getLostCase(scene.id);
+    if (!item) return null;
+    const record = getLostRecord?.(item.id), solved = Array.isArray(record?.solvedVariants) ? record.solvedVariants : [];
+    const groups = item.variants.map((_, index) => {
+      const variant = getLostCaseVariant(item.id, index), seen = record?.seenClues?.[index];
+      const count = Array.isArray(seen) ? new Set(seen.filter(value => Number.isInteger(value) && value >= 0 && value < variant.clues.length)).size : 0;
+      return { variant, solved: solved.includes(index), seen: count };
+    });
+    const unlocked = getActivityRecord?.(scene.id)?.completedVariants?.includes(0)
+      || groups.some(group => group.solved || group.seen > 0);
+    return { item, groups, unlocked: Boolean(unlocked), canPlay: opened && Boolean(unlocked) };
+  }
+
+  function lostMarkup(scene, opened) {
+    const state = lostState(scene, opened);
+    if (!state) return '';
+    const solved = state.groups.filter(group => group.solved).length;
+    return '<section class="cap-book-lost"><div class="cap-lost-title"><span>✉</span><div><small>失物招领</small><h4>' + escape(state.item.title) + '</h4></div><b>回执 ' + solved + '/2</b></div><div class="cap-lost-receipts">' + state.groups.map((group, index) => '<article class="cap-lost-receipt' + (group.solved ? ' done' : '') + '"><small>第 ' + (index + 1) + ' 组物证</small><p>' + (group.solved ? escape(group.variant.receipt) : '已看 ' + group.seen + '/2 物证') + '</p></article>').join('') + '</div>' + (state.canPlay ? '<button class="dream-secondary" data-cap-lost="' + escape(scene.id) + '">去认领失物 <span>↗</span></button>' : !state.unlocked ? '<p>先搭好这一幕的借景小戏</p>' : '') + '</section>';
+  }
+
   function render() {
     const stats = getCapStats(save), scene = CAP_SCENES.find(item => item.id === selected) || CAP_SCENES[0], record = getCapRecord(save, scene.id), opened = record.opens > 0;
     $('#cap-book-stats').innerHTML = [[stats.opens, '次掀盖'], [stats.opened + ' / 16', '个脑洞'], [stats.memories + ' / 48', '个念头']].map(([value, label]) => '<span><b>' + value + '</b>' + label + '</span>').join('');
@@ -80,8 +102,10 @@ export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNoti
       return '<article class="cap-thought ' + (found ? 'found' : '') + '"><i>' + (found ? '✦' : '·') + '</i><div><small>' + escape(title) + '</small><p>' + (found ? escape(prose) : '还藏在这一幕里，等拾光把它带回来。') + '</p></div></article>';
     }).join('') + '</div>';
     $('#cap-book-feature').insertAdjacentHTML('beforeend', activityMarkup(scene, opened));
-    const activityStats = getActivityStats?.();
-    if (activityStats) $('.cap-book-section-title>span').textContent = '借景 ' + activityStats.completed + ' / 16 · 路线 ' + activityStats.variants + ' / 48';
+    $('#cap-book-feature').insertAdjacentHTML('beforeend', lostMarkup(scene, opened));
+    const activityStats = getActivityStats?.(), lostStats = getLostStats?.();
+    const receipts = Number.isInteger(lostStats?.variants) ? Math.max(0, Math.min(6, lostStats.variants)) : 0;
+    $('.cap-book-section-title>span').textContent = (activityStats ? '借景 ' + activityStats.completed + '/16 · 路线 ' + activityStats.variants + '/48' : '6 幕旅途 · 10 封节日来信') + (lostStats ? ' · 回执 ' + receipts + '/6' : '');
     $('#cap-book-grid').innerHTML = CAP_SCENES.map(item => {
       const value = getCapRecord(save, item.id), discovered = value.opens > 0;
       const activityComplete = getActivityRecord?.(item.id)?.completedVariants?.includes(0);
@@ -97,6 +121,12 @@ export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNoti
     if (letter) onReadLetter?.(CAP_SCENES.find(scene => scene.id === letter.dataset.capLetter));
     const play = event.target.closest('[data-cap-play]');
     if (play) onPlayActivity?.(CAP_SCENES.find(scene => scene.id === play.dataset.capPlay));
+    const lost = event.target.closest('[data-cap-lost]');
+    if (lost) {
+      const scene = CAP_SCENES.find(item => item.id === lost.dataset.capLost);
+      // Recheck after imports or another tab's updates, including the existing scene-open gate.
+      if (scene && lostState(scene, getCapRecord(save, scene.id)?.opens > 0)?.canPlay) onPlayLost?.(scene);
+    }
   });
   dialog.addEventListener('close', () => { stopAnimation(); queueMicrotask(() => onClose?.()); });
   dialog.addEventListener('keydown', event => event.stopPropagation());

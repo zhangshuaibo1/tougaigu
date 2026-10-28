@@ -6,6 +6,8 @@ import { getCapScene } from './dream-cap-story.js';
 import { createCapBook } from './cap-book.js';
 import { getCapActivity } from './dream-cap-activities.js';
 import { CAP_ACTIVITY_SAVE_KEY, capActivityRevision, loadCapActivitySave, persistCapActivitySave, validateCapActivitySave, mergeCapActivitySaves, replaceCapActivitySave, getCapActivityRecord, getCapActivityStats, recordCapActivityEvent } from './cap-activity-progress.js';
+import { getLostCase, evaluateLostClaim } from './dream-lost-cases.js';
+import { LOST_SAVE_KEY, lostRevision, loadLostSave, persistLostSave, validateLostSave, mergeLostSaves, replaceLostSave, getLostRecord, getLostStats, recordLostEvent } from './lost-progress.js';
 import {
   CHAPTERS, CAST, STORY_CHOICES, ENDINGS, STAMPS, STORY_ITEMS, PUZZLES, DREAM_SAVE_KEY,
   loadDreamSave, persistDreamSave, validateDreamSave, getUnlockedChapter, getJourneyStats,
@@ -49,6 +51,9 @@ let capBubbleTimer = null;
 let lastCapBubbleAt = -Infinity;
 let capActivitySave = loadCapActivitySave();
 let capActivityStorageWarned = false;
+let lostSave = loadLostSave();
+let lostStorageWarned = false;
+let lastLostEvidence = '';
 
 function portraitForLine(line, festival = currentFestival) {
   const moods = line.speaker === 'ashi' ? ['curious', 'open', 'joy', 'tender'] : line.speaker === 'light' ? ['peek', 'joy', 'brave', 'sleep'] : [];
@@ -65,6 +70,7 @@ function hideCapBubble() {
 function onCapEvent(event) {
   const outcome = capBook?.record(event);
   if (!outcome?.ok) return;
+  if (event.type === 'open' && currentHud?.lostCase?.opened && currentHud.lostCase.nearBox) return;
   const scene = outcome.scene;
   const now = performance.now();
   let lines;
@@ -93,7 +99,83 @@ function openCapBook() { capBook?.open({ chapterIndex: currentChapter, festivalI
 function updateCapSummary() {
   const stats = capBook?.stats() || { opened: 0 };
   const activities = getCapActivityStats(capActivitySave);
-  $('#journal-cap-summary').textContent = stats.opened + ' / 16 个脑洞 · 借景 ' + activities.completed + ' / 16';
+  const lost = getLostStats(lostSave);
+  $('#journal-cap-summary').textContent = stats.opened + ' / 16 个脑洞 · 借景 ' + activities.completed + ' / 16' + (lost.variants ? ' · 回执 ' + lost.variants + ' / 6' : '');
+}
+
+function currentLostCase() {
+  return getLostCase(getCapScene({ chapterIndex: currentChapter, festivalId: currentFestival?.id }).id);
+}
+
+function syncLostInstance() {
+  const item = currentLostCase();
+  game?.setLostCaseRecord(item ? getLostRecord(lostSave, item.id) : null, lostRevision(lostSave));
+}
+
+function storeLostProgress() {
+  const okay = persistLostSave(lostSave);
+  if (!okay && !lostStorageWarned) {
+    lostStorageWarned = true;
+    toast('失物故事可以继续。请在设置里导出旅途存档，收好物证和回执。');
+  }
+  return okay;
+}
+
+function onLostCase(event) {
+  lostSave = mergeLostSaves(lostSave, loadLostSave());
+  if (event.revision !== lostRevision(lostSave)) {
+    syncLostInstance();
+    capBook?.refreshActivities();
+    updateCapSummary();
+    return;
+  }
+  const result = recordLostEvent(lostSave, event);
+  if (!result.ok) return;
+  if (result.changed) {
+    storeLostProgress();
+    capBook?.refreshActivities();
+    updateCapSummary();
+  }
+  const item = getLostCase(event.sceneId);
+  if (!item) return;
+  if (event.type === 'open') showCapLines([{ speaker: 'light', mood: 'peek', text: item.intro }]);
+  if (event.type === 'wrong' || event.type === 'solve') {
+    const judgement = evaluateLostClaim(event.caseId, event.variant, event.claimantId);
+    if (!judgement.valid) return;
+    showCapLines([{ speaker: 'light', mood: judgement.correct ? 'joy' : 'peek', text: judgement.feedback }]);
+  }
+}
+
+function renderLostEvidence(lost) {
+  const evidence = lost?.evidence || null;
+  const key = evidence ? JSON.stringify([lost.caseId, lost.variant, evidence]) : '';
+  const card = $('#stage-lost-evidence');
+  card.hidden = !evidence;
+  if (key === lastLostEvidence) return;
+  lastLostEvidence = key;
+  if (!evidence) { card.replaceChildren(); return; }
+  const heading = document.createElement('div');
+  heading.className = 'lost-evidence-heading';
+  const kind = document.createElement('small');
+  kind.textContent = evidence.kind === 'claimant' ? '认领者' : '物证';
+  const title = document.createElement('strong');
+  title.textContent = evidence.title;
+  heading.append(kind, title);
+  const text = document.createElement('p');
+  text.textContent = evidence.text;
+  card.replaceChildren(heading, text);
+  const diagram = evidence.diagram;
+  if (diagram?.type === 'notes') {
+    const notes = document.createElement('ol');
+    notes.className = 'lost-evidence-notes';
+    for (const note of diagram.notes) {
+      const row = document.createElement('li');
+      row.textContent = note.mark + ' ' + note.text;
+      notes.append(row);
+    }
+    card.append(notes);
+  }
+  // All other diagram facts are already present in the short evidence prose.
 }
 
 function onCapActivity(event) {
@@ -423,6 +505,9 @@ function launchScene(index, festival) {
   lastHudAt = 0;
   lastCapBubbleAt = -Infinity;
   capActivitySave = mergeCapActivitySaves(capActivitySave, loadCapActivitySave());
+  lostSave = mergeLostSaves(lostSave, loadLostSave());
+  lastLostEvidence = '';
+  renderLostEvidence(null);
   $('#dream-stage').hidden = false;
   document.body.classList.add('game-active');
   document.body.classList.toggle('festival-session', Boolean(festival));
@@ -433,14 +518,17 @@ function launchScene(index, festival) {
   $('#stage-memories-label').textContent = festival ? '礼物' : '记忆';
   $('#stage-restart').textContent = festival ? '重新开始这封来信' : '重新开始本章';
   const capScene = getCapScene({ chapterIndex: index, festivalId: festival?.id });
-  game = new DreamGame($('#dream-canvas'), { onHud, onComplete: finishChapter, onPause: showPause, onEvent: announce, onPuzzle: showPuzzle, onTalk: showEncounter, onCapEvent, onCapActivity });
-  game.start({ chapterIndex: index, festival, capScene, capActivityRecord: getCapActivityRecord(capActivitySave, capScene.id), capActivityRevision: capActivityRevision(capActivitySave), season: hub?.getSeason(), outfit: hub?.getOutfit() || 'auto', sound: save.settings.sound, reducedMotion: save.settings.reducedMotion });
+  const lost = getLostCase(capScene.id);
+  game = new DreamGame($('#dream-canvas'), { onHud, onComplete: finishChapter, onPause: showPause, onEvent: announce, onPuzzle: showPuzzle, onTalk: showEncounter, onCapEvent, onCapActivity, onLostCase });
+  game.start({ chapterIndex: index, festival, capScene, capActivityRecord: getCapActivityRecord(capActivitySave, capScene.id), capActivityRevision: capActivityRevision(capActivitySave), lostCaseRecord: lost ? getLostRecord(lostSave, lost.id) : null, lostCaseRevision: lostRevision(lostSave), season: hub?.getSeason(), outfit: hub?.getOutfit() || 'auto', sound: save.settings.sound, reducedMotion: save.settings.reducedMotion });
   updateSeasonLabel();
   $('#dream-canvas').focus({ preventScroll: true });
 }
 
 function stopGame() {
   hideCapBubble();
+  renderLostEvidence(null);
+  document.body.classList.remove('lost-inspecting');
   resetInput();
   game?.destroy();
   game = null;
@@ -469,7 +557,18 @@ function onHud(snapshot) {
   $('#stage-seals').textContent = snapshot.seals + ' / ' + snapshot.totalSeals;
   $('#stage-memories').textContent = snapshot.memories + ' / ' + snapshot.totalMemories;
   $('#stage-time').textContent = timeLabel(snapshot.time);
-  $('#stage-objective').textContent = snapshot.objective || '点亮两盏回声谜灯，让阿拾走向出口';
+  const lost = snapshot.lostCase;
+  const lostExpanded = Boolean(lost && ['active', 'solved', 'delivering', 'returning'].includes(lost.phase));
+  const lostVisible = Boolean(lost && (lost.nearBox || lostExpanded));
+  document.body.classList.toggle('lost-inspecting', lostExpanded);
+  $('#stage-objective').textContent = lostVisible ? lost.title : snapshot.objective || '点亮两盏回声谜灯，让阿拾走向出口';
+  $('#stage-lost-case').hidden = !lostVisible;
+  if (lostVisible) {
+    const lostDone = getLostRecord(lostSave, lost.caseId)?.solvedVariants.includes(lost.variant);
+    $('#stage-lost-case').dataset.phase = lost.phase;
+    $('#stage-lost-case').textContent = '失物 ' + (lost.variant + 1) + ' / 2 · ' + (lostDone || ['solved', 'delivering'].includes(lost.phase) ? '物归原主' : '物证 ' + lost.seenClues + ' / ' + lost.totalClues);
+  }
+  renderLostEvidence(lost);
   $('#stage-near-hint').textContent = snapshot.nearHint || currentFestival?.sceneHint || CHAPTERS[snapshot.chapterIndex].hint;
   $('#stage-buffs').innerHTML = (snapshot.buffs?.compass ? '<span>罗盘 ' + snapshot.buffs.compass + 's</span>' : '') + (snapshot.buffs?.feather ? '<span>轻羽守护</span>' : '');
   const soul = snapshot.form === 'soul';
@@ -484,7 +583,7 @@ function onHud(snapshot) {
   $('#stage-cap-status').dataset.phase = capPhase;
   $('#stage-cap-label').textContent = ({ closed: 'E · 掀开脑洞', opening: '咔哒 · 脑洞打开', open: '脑洞打开 · 念头出发', returning: '拾光回家 · 轻轻扣盖' })[capPhase] || '';
   const activity = snapshot.capActivity;
-  const activityVisible = Boolean(activity && (activity.phase === 'active' || activity.nearRing));
+  const activityVisible = !lostVisible && Boolean(activity && (activity.phase === 'active' || activity.nearRing));
   $('#stage-cap-activity').hidden = !activityVisible;
   if (activityVisible) {
     const config = getCapActivity({ chapterIndex: snapshot.chapterIndex, festivalId: snapshot.festivalId });
@@ -815,14 +914,15 @@ document.addEventListener('visibilitychange', () => { if (document.hidden) reset
 $('#dream-pref-sound').addEventListener('change', event => { save.settings.sound = event.target.checked; persist(); renderSettings(); });
 $('#dream-pref-motion').addEventListener('change', event => { save.settings.reducedMotion = event.target.checked; persist(); renderSettings(); });
 $('#dream-export').addEventListener('click', () => {
-  const backup = { type: 'tougaigu-journey', version: 2, story: validateDreamSave(save), ...hub.exportState(), capbook: capBook.exportState(), capactivities: validateCapActivitySave(capActivitySave) };
+  lostSave = mergeLostSaves(lostSave, loadLostSave());
+  const backup = { type: 'tougaigu-journey', version: 2, story: validateDreamSave(save), ...hub.exportState(), capbook: capBook.exportState(), capactivities: validateCapActivitySave(capActivitySave), lostcases: validateLostSave(lostSave) };
   const url = URL.createObjectURL(new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' }));
   const link = document.createElement('a');
   link.href = url;
   link.download = 'tougaigu-journey-save-' + new Date().toISOString().slice(0, 10) + '.json';
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 10000);
-  $('#dream-save-message').textContent = '故事、脑洞画册、借景路线、节日收藏和时光奖励已一起备份。';
+  $('#dream-save-message').textContent = '故事、脑洞画册、借景路线、失物回执、节日收藏和时光奖励已一起备份。';
 });
 $('#dream-import').addEventListener('change', async event => {
   const file = event.target.files?.[0];
@@ -835,10 +935,11 @@ $('#dream-import').addEventListener('change', async event => {
     if (!story || typeof story !== 'object' || Array.isArray(story) || story.version !== 1 || !Array.isArray(story.chapters)) throw new Error('这不是可识别的旅途存档。原版生存存档请在原版导入。');
     const imported = validateDreamSave(story);
     const stats = getJourneyStats(imported);
-    if (!window.confirm('导入会替换当前故事进度：已完成 ' + stats.completed + ' 章，收集 ' + stats.memories + ' 片记忆。' + (journey ? '文件中的脑洞画册、借景路线、节日收藏和时光奖励也会一并载入。' : '') + '原版生存成长不受影响。确定导入吗？')) return;
+    if (!window.confirm('导入会替换当前故事进度：已完成 ' + stats.completed + ' 章，收集 ' + stats.memories + ' 片记忆。' + (journey ? '文件中的脑洞画册、借景路线、失物回执、节日收藏和时光奖励也会一并载入。' : '') + '原版生存成长不受影响。确定导入吗？')) return;
+    const importedLost = journey && parsed.lostcases ? replaceLostSave(parsed.lostcases, lostSave, loadLostSave()) : null;
     stopGame();
     save = imported;
-    let activityStored = true;
+    let activityStored = true, lostStored = true;
     if (journey) {
       hub.importState(parsed);
       capBook.importState(parsed.capbook);
@@ -849,8 +950,15 @@ $('#dream-import').addEventListener('change', async event => {
         capBook.refreshActivities();
         updateCapSummary();
       }
+      if (importedLost) {
+        lostSave = importedLost;
+        lostStored = persistLostSave(lostSave);
+        lostStorageWarned = !lostStored;
+        capBook.refreshActivities();
+        updateCapSummary();
+      }
     }
-    const okay = persist() && activityStored;
+    const okay = persist() && activityStored && lostStored;
     settled = true;
     renderLobby();
     $('#dream-save-message').textContent = okay ? '故事接好了。欢迎回来，邮差。' : '故事已载入，但浏览器暂时无法保存，请保留备份。';
@@ -890,6 +998,27 @@ capBook = createCapBook({
   },
   getActivityRecord: id => getCapActivityRecord(capActivitySave, id),
   getActivityStats: () => getCapActivityStats(capActivitySave),
+  getLostRecord: id => getLostRecord(lostSave, id),
+  getLostStats: () => getLostStats(lostSave),
+  onPlayLost(scene) {
+    if (!scene) return;
+    capActivitySave = mergeCapActivitySaves(capActivitySave, loadCapActivitySave());
+    lostSave = mergeLostSaves(lostSave, loadLostSave());
+    const festival = getFestival(scene.festivalId);
+    const same = festival ? currentFestival?.id === festival.id : !currentFestival && currentChapter === scene.chapterIndex;
+    if (same && game && !settled) {
+      const activityRecord = getCapActivityRecord(capActivitySave, scene.id);
+      if (!game.getSnapshot().lostCase && activityRecord.completedVariants.includes(0)) {
+        game.setCapActivityRecord(activityRecord, capActivityRevision(capActivitySave));
+      }
+      syncLostInstance();
+      $('#cap-book-dialog').close();
+      toast('从借景圆环向右，找到失物匣。阿拾按 Q 打开，再按 E 让拾光查看。');
+      return;
+    }
+    if (festival) launchFestival(festival.id);
+    else if (scene.chapterIndex <= getUnlockedChapter(save)) launchChapter(scene.chapterIndex);
+  },
   onPlayActivity(scene) {
     const festival = getFestival(scene.festivalId);
     const same = festival ? currentFestival?.id === festival.id : !currentFestival && currentChapter === scene.chapterIndex;
@@ -906,6 +1035,17 @@ capBook = createCapBook({
 });
 capBook.summary();
 window.addEventListener('storage', event => {
+  if (event.key === LOST_SAVE_KEY) {
+    const previousRevision = lostRevision(lostSave), stored = loadLostSave();
+    let incoming;
+    try { incoming = event.newValue ? validateLostSave(JSON.parse(event.newValue)) : null; } catch { incoming = null; }
+    lostSave = mergeLostSaves(mergeLostSaves(lostSave, incoming), stored);
+    if (JSON.stringify(lostSave) !== JSON.stringify(stored)) storeLostProgress();
+    if (lostRevision(lostSave) !== previousRevision && game) syncLostInstance();
+    capBook.refreshActivities();
+    updateCapSummary();
+    return;
+  }
   if (event.key !== CAP_ACTIVITY_SAVE_KEY) return;
   const previousRevision = capActivityRevision(capActivitySave), stored = loadCapActivitySave();
   let incoming;
