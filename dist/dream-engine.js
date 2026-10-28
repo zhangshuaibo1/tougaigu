@@ -9,6 +9,8 @@ import { drawSceneBackdrop } from './dream-scene-backdrop.js';
 import { getLostCase } from './dream-lost-cases.js';
 import { DreamLostCase } from './dream-lost-engine.js';
 import { drawLostCase } from './dream-lost-art.js';
+import { getStoryNPC, getStoryEncounter } from './dream-encounters.js';
+import { drawStoryNPC } from './dream-encounter-art.js';
 
 const TAU=Math.PI*2;
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
@@ -81,6 +83,8 @@ export class DreamGame {
     const festivalLevel=this.options.festival?.id?getFestivalLevel(this.options.festival.id):null;
     this.mode=festivalLevel?'festival':'story';this.festival=festivalLevel?this.options.festival:null;this.festivalId=this.festival?.id||null;
     this.level=festivalLevel||getDreamLevel(this.options.chapterIndex);this.chapterIndex=this.level.chapterIndex;
+    // Friends inhabit a fresh runtime copy; the authored collision maps stay untouched.
+    if(this.mode==='story'){const friend=getStoryNPC(this.chapterIndex);this.level.npcs=friend?[{...friend}]:[];}
     if(this.festival&&Array.isArray(this.festival.gifts))this.level.memories.forEach((gift,index)=>{if(typeof this.festival.gifts[index]==='string')gift.name=this.festival.gifts[index];});
     this.baseTheme={...this.level.theme,sky:[...this.level.theme.sky]};
     this.season=FESTIVAL_VISUAL_IDS.includes(this.options.season?.id)?this.options.season:null;
@@ -91,7 +95,7 @@ export class DreamGame {
     this.compassTime=0;this.featherCharges=0;this.emoteTime=0;
     this.input={x:0,y:0};this.body={...this.level.spawn,w:30,h:58,vx:0,vy:0,face:1,grounded:true,coyote:.12,platform:null,invulnerable:1,walk:0,land:0};
     this.soul={x:this.body.x,y:this.body.y-58,vx:0,vy:0};this.checkpoint={...this.level.spawn,index:-1};
-    this.companion={x:this.body.x+75,y:this.body.y};
+    this.companion={x:this.mode==='story'?clamp(this.body.x-this.body.face*65,30,this.level.width-30):this.body.x+75,y:this.body.y};
     this.memories=this.level.memories.map(m=>({...m,collected:false}));this.lanterns=this.level.lanterns.map(l=>({...l,lit:false,glow:0}));
     this.movers=this.level.movers.map(m=>({...m,baseX:m.x,baseY:m.y,prevX:m.x,prevY:m.y}));
     this.hazards=this.level.hazards.map(h=>({...h,clock:0,frozen:0,hitCooldown:0,px:h.x,py:h.y}));
@@ -323,15 +327,30 @@ export class DreamGame {
     const giftsLeft=this.memories.filter(m=>!m.collected).length;
     this.event(this.lanterns.every(l=>l.lit)?(this.mode==='festival'&&giftsLeft?'谜灯都亮了，再找回 '+giftsLeft+' 份礼物，就能寄出节日包裹。':'两盏诗灯都醒了。按 E 回到身体，走向发光的门。'):'一盏诗灯亮了。它记住了你的答案，也为身体打开了路。','seal',true);this.emitHud(true);this.rememberInCap(lamp,'seal',index);return true;
   }
+  getNearbyNPC(){
+    if(this.form!=='body'||!this.body)return null;
+    return this.level?.npcs?.find(npc=>Math.abs(npc.x-this.body.x)<98&&Math.abs(npc.y-this.body.y)<90)||null;
+  }
+  getNPCName(npc){return this.mode==='festival'?(this.festival?.npc?.name||'节日朋友'):(npc?.name||'旅途朋友');}
+  getStoryNPCView(npc=this.level?.npcs?.[0]){
+    if(this.mode!=='story'||!npc||!this.body)return null;
+    const near=Math.abs(npc.x-this.body.x)<98&&Math.abs(npc.y-this.body.y)<90;
+    const look=near&&this.form==='soul'?this.soul:{x:this.body.x,y:this.body.y-35};
+    const {id,chapterIndex,speaker,name,motif,prop,x,y,accent}=npc;
+    return {id,chapterIndex,speaker,name,motif,prop,x,y,accent,near,talking:this.pendingTalk===id,talked:this.talked.has(id),seals:this.lanterns.filter(lamp=>lamp.lit).length,form:this.form,look:{x:look.x,y:look.y},capOpen:clamp(this.cap?.openness||0,0,1)};
+  }
   interact(){
     if(this.state!=='playing')return false;
     if(this.form==='soul')return this.pulse();
     if(this.canExit()){this.finish();return true;}
-    const npc=this.level.npcs?.find(item=>Math.abs(item.x-this.body.x)<98&&Math.abs(item.y-this.body.y)<90);
+    const npc=this.getNearbyNPC();
     if(npc){
       if(typeof this.callbacks.onTalk==='function'){
         this.pendingTalk=npc.id;this.state='paused';this.input={x:0,y:0};this.body.vx=0;this.frameAccumulator=0;this.refreshCapActivity();this.emitHud(true);
-        this.callbacks.onTalk({mode:this.mode,festivalId:this.festivalId,npcId:this.festival?.npc?.id||npc.id,repeated:this.talked.has(npc.id)});
+        this.callbacks.onTalk(this.mode==='festival'?{mode:this.mode,festivalId:this.festivalId,npcId:this.festival?.npc?.id||npc.id,repeated:this.talked.has(npc.id)}:{mode:'story',chapterIndex:this.chapterIndex,npcId:npc.id,repeated:this.talked.has(npc.id),seals:this.lanterns.filter(lamp=>lamp.lit).length});
+      }else if(this.mode==='story'){
+        const lines=getStoryEncounter(this.chapterIndex,{seals:this.lanterns.filter(lamp=>lamp.lit).length,repeated:this.talked.has(npc.id)});
+        this.event(lines?.[0]?.text||this.level.tutorial,'story',true);this.talked.add(npc.id);
       }else this.event(this.festival?.sceneHint||this.level.tutorial,'story',true);
       return true;
     }
@@ -446,7 +465,7 @@ export class DreamGame {
   getNearHint(){
     if(!this.level)return '';
     if(this.pendingSeal!==null)return '诗灯在等你的答案。';
-    if(this.pendingTalk!==null)return '节日朋友正在和你说话。';
+    if(this.pendingTalk!==null)return this.mode==='festival'?'节日朋友正在和你说话。':this.getNPCName(this.level.npcs?.find(npc=>npc.id===this.pendingTalk))+'正在和你说话。';
     const actor=this.form==='soul'?this.soul:{x:this.body.x,y:this.body.y-35};
     if(this.form==='soul'){
       const nearby=this.lanterns.find(l=>!l.lit&&dist(l,actor)<125);if(nearby)return '空格 / Q：与诗灯共鸣';
@@ -456,8 +475,8 @@ export class DreamGame {
       const lostHint=this.lostCase?.getHint(this.lostCaseContext());if(lostHint)return lostHint;
       return 'WASD / 方向键飞行 · E 回到身体';
     }
-    const npc=this.level.npcs?.find(item=>Math.abs(item.x-this.body.x)<98&&Math.abs(item.y-this.body.y)<90);
-    if(npc)return 'Q：与'+(this.festival?.npc?.name||'节日朋友')+'聊一聊';
+    const npc=this.getNearbyNPC();
+    if(npc)return 'Q：与'+this.getNPCName(npc)+'聊一聊';
     const activityHint=this.capActivity?.getHint(this.capActivityContext());if(activityHint&&this.capActivity.bodyInRange(this.body))return activityHint;
     const lostHint=this.lostCase?.getHint(this.lostCaseContext());if(lostHint&&this.lostCase.bodyInRange(this.body))return lostHint;
     const plate=this.level.plates.find(p=>Math.abs(this.body.x-p.x-p.w/2)<125&&!this.lanterns[0].lit);
@@ -470,8 +489,8 @@ export class DreamGame {
   }
   getSnapshot(){
     const memories=this.memories?.filter(m=>m.collected).length||0,seals=this.lanterns?.filter(l=>l.lit).length||0;
-    const npc=this.form==='body'?this.level?.npcs?.find(item=>Math.abs(item.x-this.body.x)<98&&Math.abs(item.y-this.body.y)<90):null;
-    const target=npc?{kind:'npc',id:this.festival?.npc?.id||npc.id,name:this.festival?.npc?.name||'节日朋友',action:'talk'}:null;
+    const npc=this.getNearbyNPC();
+    const target=npc?{kind:'npc',id:this.festival?.npc?.id||npc.id,name:this.getNPCName(npc),action:'talk'}:null;
     return {chapterIndex:this.chapterIndex||0,mode:this.mode||'story',festivalId:this.festivalId||null,time:this.time||0,memories,gifts:memories,totalMemories:3,seals,totalSeals:2,energy:this.energy||0,maxEnergy:DREAM_PHYSICS.maxEnergy,form:this.form,deaths:this.deaths||0,objective:this.mode==='festival'?(seals===2&&memories===3?'礼物齐了，回到身体寄出节日包裹':`谜灯 ${seals} / 2 · 礼物 ${memories} / 3`):(seals===2?'回到身体，走向发光的出口':`点亮诗灯 ${seals} / 2 · 找回记忆 ${memories} / 3`),nearHint:this.getNearHint(),target,state:this.state,buffs:{compass:Math.ceil(this.compassTime||0),feather:this.featherCharges||0},cap:{phase:this.cap?.phase||'closed',progress:this.cap?.progress??1,opens:this.cap?.opens||0},capActivity:this.capActivity?.getSnapshot()||null,lostCase:this.lostCase?.getSnapshot()||null};
   }
   emitHud(){this.callbacks.onHud?.(this.getSnapshot());}
@@ -516,7 +535,7 @@ export class DreamGame {
     for(const hazard of this.hazards)this.drawHazard(c,hazard,t);
     drawSoulVision(this,c,t);
     this.drawSigns(c);
-    for(const npc of this.level.npcs||[])drawFestivalNPC(this,c,npc,t);
+    for(const npc of this.level.npcs||[]){if(this.mode==='festival')drawFestivalNPC(this,c,npc,t);else drawStoryNPC(c,this.getStoryNPCView(npc),t,this.options.reducedMotion);}
     this.drawCompanion(c,this.companion.x,this.companion.y,t);
     if(this.form==='soul')this.drawTether(c,t,presentedSoul,character);
     drawCapTheatre(this,c,t);
@@ -539,7 +558,7 @@ export class DreamGame {
     for(const platform of this.movers)circle(platform.x+platform.w/2,platform.y-8,Math.min(110,platform.w/2+20));
     for(const hazard of this.hazards)circle(hazard.px,hazard.py,hazard.r+28);
     for(const checkpoint of this.level.checkpoints)circle(checkpoint.x,checkpoint.y-40,50);
-    for(const npc of this.level.npcs||[])circle(npc.x,npc.y-78,94);
+    for(const npc of this.level.npcs||[])circle(npc.x,npc.y-(this.mode==='story'?63:78),this.mode==='story'?86:94);
     circle(this.level.exit.x,this.level.exit.y-102,112);
     circle(this.body.x,this.body.y-36,56);
     if(this.form==='soul')circle(this.soul.x,this.soul.y,48);
