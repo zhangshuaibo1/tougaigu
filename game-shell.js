@@ -1,5 +1,6 @@
 /* Shared, game-first navigation. Each game owns its own pause state and data. */
 const ICONS = {
+  gift: '<path d="M3 9h18v5H3Zm2 5v8h14v-8M12 9v13M12 8C1 10 5-1 12 8Zm0 0C23 10 19-1 12 8Z"/>',
   cap: '<path d="M5 13c-1.8 7 2 9 4 9v3h9v-3c4-1 6-4 4-10Z" fill="currentColor"/><path d="M4 7c-1-7 17-10 19-3L4 7Z" fill="currentColor"/><circle cx="10" cy="17" r="2" fill="#171b2b"/><circle cx="17" cy="17" r="2" fill="#171b2b"/><path d="m13.5 20-1.5 2h3Z" fill="#171b2b"/>',
   chevron: '<path d="m8 10 4 4 4-4"/>',
   map: '<path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2Z"/><path d="M9 3v16m6-14v16"/>',
@@ -29,6 +30,7 @@ export function mountGameShell({ gameId, onAction = () => {}, onOverlayChange = 
       <span class="shell-profile-label">档案</span>
     </button>
     <nav class="shell-actions" aria-label="游戏工具">
+      <button type="button" class="shell-labeled-action shell-event-action" data-shell-action="events" title="节日故事、时光礼物与衣橱">${icon('gift')}<span>礼物</span><i hidden aria-hidden="true"></i></button>
       <button type="button" class="shell-labeled-action" data-shell-action="map" title="${dream?'章节地图':'角色、模式与工坊'}">${icon('map')}<span>${dream?'章节':'备战'}</span></button>
       <button type="button" class="shell-labeled-action" data-shell-action="help" title="操作帮助">${icon('help')}<span>帮助</span></button>
       <button type="button" class="shell-icon-action" data-shell-action="settings" aria-label="设置与存档" title="设置与存档">${icon('settings')}</button>
@@ -89,16 +91,21 @@ export function mountGameShell({ gameId, onAction = () => {}, onOverlayChange = 
     if (button) onAction(button.dataset.shellAction);
   });
   return {
-    update({ role, progress } = {}) {
+    update({ role, progress, portrait, rewards } = {}) {
       if (role !== undefined) {
         header.querySelector('.shell-role').textContent = role;
         if (dream) {
           const avatar = header.querySelector('.shell-avatar img');
-          const portrait = role === '拾光' ? './assets/portrait-soul.svg' : './assets/portrait-hero.svg';
-          if (avatar.getAttribute('src') !== portrait) avatar.src = portrait;
+          const source = portrait || (role === '拾光' ? './assets/portrait-soul.svg' : './assets/portrait-hero.svg');
+          if (avatar.getAttribute('src') !== source) avatar.src = source;
         }
       }
       if (progress !== undefined) header.querySelector('.shell-progress').textContent = progress;
+      if (rewards !== undefined) {
+        const dot = header.querySelector('.shell-event-action i');
+        dot.hidden = rewards < 1; dot.textContent = Math.min(99,rewards);
+        header.querySelector('.shell-event-action').setAttribute('aria-label', rewards ? '节日与礼物，'+rewards+'份可领取' : '节日故事、时光礼物与衣橱');
+      }
       const roleText = header.querySelector('.shell-role').textContent;
       const progressText = header.querySelector('.shell-progress').textContent;
       header.querySelector('.shell-profile').setAttribute('aria-label', `${roleText} · ${progressText} · 打开角色档案与游戏数据`);

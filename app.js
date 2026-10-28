@@ -1,5 +1,7 @@
 import { ArenaGame, drawSkull } from './engine.js';
 import { mountGameShell } from './game-shell.js';
+import { createFestivalHub } from './festival-hub.js';
+import { getFestival } from './dream-festivals.js';
 import { CHARACTERS, UPGRADES, SYNERGIES, META_UPGRADES, ACHIEVEMENTS, ENEMIES, loadSave, persistSave, metaCost, buyMeta, unlockCharacter, recordRun, getDailyKey, getDailySeed, exportSave, importSave } from './content.js';
 
 const $ = (selector) => document.querySelector(selector);
@@ -26,7 +28,8 @@ let warnedStorage = false;
 let menuLease = null;
 let shellOverlayOpen = false;
 let shell = null;
-const menuDialogIds = ['prep-dialog', 'help-dialog', 'settings-dialog'];
+let festivalHub = null;
+const menuDialogIds = ['prep-dialog', 'help-dialog', 'settings-dialog', 'festival-hub'];
 const keys = new Set();
 let joystickPointer = null;
 const formatTime = seconds => `${Math.floor(Math.max(0, seconds) / 60).toString().padStart(2,'0')}:${Math.floor(Math.max(0, seconds) % 60).toString().padStart(2,'0')}`;
@@ -150,6 +153,12 @@ function renderLobby() {
 
 function onHud(hud) {
   currentHud=hud;
+  if(activeRun?.runId)festivalHub?.tick({
+    sessionId:activeRun.runId,
+    time:hud.time,
+    playing:game?.state==='playing' && !finished && !menuLease && !shellOverlayOpen && !document.hidden && !$$('dialog[open]').length,
+    usable:false,
+  });
   $('#health-label').textContent=`${Math.ceil(hud.hp)} / ${hud.maxHp}`;
   $('#health-fill').style.width=`${Math.max(0,hud.hp/hud.maxHp)*100}%`;
   $('#time-label').textContent=formatTime(hud.time);$('#wave-label').textContent=`第 ${hud.wave} 波`;
@@ -281,10 +290,10 @@ $('#import-file').addEventListener('change',async event=>{
 });
 window.addEventListener('pageshow',()=>{if(!game)renderLobby();});
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!game)renderLobby();});
-for (const id of menuDialogIds) $(`#${id}`).addEventListener('close', resumeAfterMenu);
 shell = mountGameShell({
   gameId:'survivor',
   onAction(action) {
+    if (action === 'events') festivalHub?.open();
     if (action === 'map') openPreparation('home');
     if (action === 'profile') openPreparation('journal');
     if (action === 'help') openMenuDialog('#help-dialog');
@@ -296,4 +305,19 @@ shell = mountGameShell({
     if (open) pauseForMenu(); else resumeAfterMenu();
   }
 });
+festivalHub = createFestivalHub({
+  gameId:'survivor',
+  onOpen:()=>openMenuDialog('#festival-hub'),
+  onClose:resumeAfterMenu,
+  onLaunch(id) {
+    const festival=getFestival(id);
+    if(festival)location.href='./index.html?festival='+encodeURIComponent(festival.id);
+  },
+  onUseItem:()=>false,
+  onSummary:summary=>shell?.update({rewards:summary.claimable}),
+  onNotice:toast,
+});
+// The hub creates its dialog above and owns its own close callback.
+for (const id of menuDialogIds) if(id!=='festival-hub')$(`#${id}`).addEventListener('close', resumeAfterMenu);
+festivalHub.summary();
 selectMode('standard');renderLobby();persist();startRun();

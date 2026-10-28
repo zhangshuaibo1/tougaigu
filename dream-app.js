@@ -1,5 +1,7 @@
 import { DreamGame } from './dream-engine.js';
 import { mountGameShell } from './game-shell.js';
+import { createFestivalHub } from './festival-hub.js';
+import { getFestival, getFestivalPuzzle } from './dream-festivals.js';
 import {
   CHAPTERS, CAST, STORY_CHOICES, ENDINGS, STAMPS, STORY_ITEMS, PUZZLES, DREAM_SAVE_KEY,
   loadDreamSave, persistDreamSave, validateDreamSave, getUnlockedChapter, getJourneyStats,
@@ -33,10 +35,30 @@ let overlayResumeGame = null;
 let shellOverlayOpen = false;
 let suppressPauseDialog = false;
 let overlayReturnToPause = false;
+let hub = null;
+let hubSummary = null;
+let currentFestival = null;
+let pendingTalk = false;
+let runSessionId = '';
 
 function updateShell() {
   const stats = getJourneyStats(save);
-  shell?.update({ role: currentHud?.form === 'soul' ? '拾光' : '阿拾', progress: stats.completed + '/6 章 · ' + stats.memories + '/18 记忆' });
+  const soul = currentHud?.form === 'soul';
+  shell?.update({ role: soul ? '拾光' : '阿拾', progress: currentFestival ? currentFestival.name + ' · ' + (currentHud?.gifts || 0) + '/3 礼物' : stats.completed + '/6 章 · ' + stats.memories + '/18 记忆', portrait: hub?.portrait(currentFestival, soul ? 'light' : 'ashi'), rewards: hubSummary?.claimable || 0 });
+}
+
+function updateSeasonLabel() {
+  const season = currentFestival || hub?.getSeason();
+  $('#stage-season-label').textContent = season?.title || '四季来信';
+  $('#stage-season-note').textContent = currentFestival ? '节日支线' : season ? '进行中 · 有礼物' : '故事与礼物';
+  $('#stage-back-story').hidden = !currentFestival;
+  $('#journal-dialog .profile-identity img').src = hub?.portrait(currentFestival) || './assets/portrait-hero.svg';
+  updateShell();
+}
+
+function openFestivalHub(tab = 'stories') {
+  hub?.setUsable(Boolean(game && !settled && !activePuzzle && !pendingTalk));
+  hub?.open(tab, currentFestival?.id);
 }
 
 function pauseForOverlay() {
@@ -49,7 +71,8 @@ function pauseForOverlay() {
 }
 
 function resumeAfterOverlay() {
-  if (shellOverlayOpen || document.querySelector('dialog[open]') || storySequence || activeChoice || activePuzzle || document.hidden) return;
+  if (shellOverlayOpen || document.querySelector('dialog[open]') || storySequence || activeChoice || activePuzzle || pendingTalk || document.hidden) return;
+  if (settled && currentFestival && lastResult?.festivalId === currentFestival.id) { openDialog('#result-dialog'); return; }
   if (overlayReturnToPause && game && !settled && game.state === 'paused') {
     overlayReturnToPause = false;
     showPause('manual');
@@ -67,12 +90,14 @@ function resumeAfterOverlay() {
 function openMap() {
   renderLobby();
   $('#map-continue').innerHTML = settled ? '下一章 <span>→</span>' : '继续游戏 <span>→</span>';
-  if (settled && getJourneyStats(save).completed === 6) $('#map-continue').innerHTML = '重访本章 <span>→</span>';
+  if (currentFestival && settled) $('#map-continue').innerHTML = '返回主线 <span>→</span>';
+  if (!currentFestival && settled && getJourneyStats(save).completed === 6) $('#map-continue').innerHTML = '重访本章 <span>→</span>';
   openDialog('#map-dialog');
 }
 
 function continueFromMap() {
-  if (!game || settled) beginChapter(getJourneyStats(save).completed === 6 ? save.lastChapter : getUnlockedChapter(save));
+  if (currentFestival && settled) launchChapter(Math.min(save.lastChapter, getUnlockedChapter(save)));
+  else if (!game || settled) beginChapter(getJourneyStats(save).completed === 6 ? save.lastChapter : getUnlockedChapter(save));
   else {
     overlayReturnToPause = false;
     if (game.state === 'paused') overlayResumeGame = game;
@@ -83,6 +108,7 @@ function continueFromMap() {
 function handleShellAction(action) {
   if (action === 'map') openMap();
   if (action === 'profile') openJournal();
+  if (action === 'events') openFestivalHub();
   if (action === 'help') openDialog('#guide-dialog');
   if (action === 'settings') { renderSettings(); $('#dream-save-message').textContent = ''; openDialog('#preferences-dialog'); }
   if (action === 'pause') { resetInput(); game?.pause('manual'); }
@@ -138,7 +164,7 @@ function renderLobby() {
     const record = save.chapters[index];
     const locked = index > unlocked;
     const state = locked ? 'locked' : record.completed ? 'completed' : 'current';
-    const status = locked ? icon('lock') + '未解锁' : index === currentChapter && !settled ? '当前章节' : record.completed ? '已完成' : '可出发';
+    const status = locked ? icon('lock') + '未解锁' : !currentFestival && index === currentChapter && !settled ? '当前章节' : record.completed ? '已完成' : '可出发';
     return '<button class="chapter-card ' + state + '" data-chapter="' + index + '" style="--chapter-color:' + chapter.color + '"' + (locked ? ' disabled' : '') + ' aria-label="' + escapeHtml(chaptersInChinese[index] + '，' + chapter.title + '，' + (locked ? '尚未解锁' : record.completed ? '重新游玩，最好' + record.bestStars + '星' : '开始章节')) + '"><div class="chapter-topline"><span class="chapter-number">CHAPTER 0' + (index + 1) + '</span><span class="chapter-status">' + status + '</span></div>' + icon(chapter.icon, 'chapter-icon') + '<h3>' + chapter.title + '</h3><span class="chapter-subtitle">' + chapter.subtitle + '</span><p>' + chapter.summary + '</p><div class="chapter-bottom"><span class="chapter-stars" aria-label="最好成绩' + record.bestStars + '星">' + stars(record.bestStars) + '</span><span class="chapter-memories">' + icon('letter') + record.bestMemories + ' / 3 记忆</span>' + icon(locked ? 'lock' : 'arrow', 'chapter-arrow') + '</div></button>';
   }).join('');
   renderSettings();
@@ -171,6 +197,7 @@ function renderJournal() {
 
 function openJournal() {
   renderJournal();
+  updateSeasonLabel();
   openDialog('#journal-dialog');
 }
 
@@ -185,8 +212,8 @@ function openLetter(index) {
   openDialog('#letter-dialog');
 }
 
-function openStory(lines, chapterIndex, onDone, lastLabel = '收好这封信') {
-  storySequence = { lines, chapterIndex, index: 0, onDone, lastLabel };
+function openStory(lines, chapterIndex, onDone, lastLabel = '收好这封信', festival = currentFestival) {
+  storySequence = { lines, chapterIndex, index: 0, onDone, lastLabel, festival };
   renderStoryLine();
   openDialog('#story-dialog');
 }
@@ -194,11 +221,11 @@ function openStory(lines, chapterIndex, onDone, lastLabel = '收好这封信') {
 function renderStoryLine() {
   const sequence = storySequence;
   const line = sequence.lines[sequence.index];
-  const speaker = CAST[line.speaker] || CAST.ashi;
-  $('#story-dialog').style.setProperty('--speaker-color', speaker.color);
-  $('#story-chapter-label').textContent = chaptersInChinese[sequence.chapterIndex] + ' · ' + CHAPTERS[sequence.chapterIndex].title;
+  const speaker = line.speaker === 'festival' && sequence.festival ? sequence.festival.npc : CAST[line.speaker] || CAST.ashi;
+  $('#story-dialog').style.setProperty('--speaker-color', speaker.color || sequence.festival?.color || '#a9ead6');
+  $('#story-chapter-label').textContent = sequence.festival ? sequence.festival.name + ' · ' + sequence.festival.title : chaptersInChinese[sequence.chapterIndex] + ' · ' + CHAPTERS[sequence.chapterIndex].title;
   $('#story-page').textContent = (sequence.index + 1).toString().padStart(2, '0') + ' / ' + sequence.lines.length.toString().padStart(2, '0');
-  $('#story-portrait').src = speaker.portrait;
+  $('#story-portrait').src = line.speaker === 'ashi' ? hub?.portrait(sequence.festival) || speaker.portrait : speaker.portrait;
   $('#story-portrait').alt = speaker.name;
   $('#story-speaker-role').textContent = speaker.role;
   $('#story-dialog-title').textContent = speaker.name;
@@ -231,13 +258,32 @@ function openChoice(key, onDone = openJournal) {
 }
 
 function resolveChoice(id) {
+  if (activeChoice?.festivalId) {
+    const festival = getFestival(activeChoice.festivalId);
+    const option = festival?.choice.options.find(item => item.id === id);
+    if (!option || !hub.choose(festival.id, id)) return;
+    const done = activeChoice.onDone;
+    activeChoice = null;
+    openStory([{ speaker: 'festival', text: option.reply }], currentChapter, done, '把这份回音收好', festival);
+    return;
+  }
   if (!activeChoice || !chooseStoryReply(save, activeChoice.key, id)) return;
   const { key, onDone } = activeChoice;
   const choice = STORY_CHOICES[key];
   const option = choice.options.find(item => item.id === id);
   activeChoice = null;
   persist();
-  openStory([{ speaker: 'light', text: option.reply }], choice.chapterIndex, onDone, '把这份回音收好');
+  openStory([{ speaker: 'light', text: option.reply }], choice.chapterIndex, onDone, '把这份回音收好', null);
+}
+
+function openFestivalChoice(festival) {
+  const choice = festival.choice;
+  activeChoice = { festivalId: festival.id, onDone: () => hub.open('collection', festival.id) };
+  $('#choice-title').textContent = choice.title;
+  $('#choice-lead').textContent = choice.lead;
+  const selected = hub.getRecord(festival.id)?.choice;
+  $('#choice-options').innerHTML = choice.options.map((option, index) => '<button class="choice-option' + (selected === option.id ? ' selected' : '') + '" data-choice="' + option.id + '"><span>' + (index ? '☾' : '✧') + '</span><strong>' + escapeHtml(option.title) + '</strong><small>' + escapeHtml(option.text) + '</small></button>').join('');
+  openDialog('#choice-dialog');
 }
 
 function showEnding() {
@@ -257,7 +303,7 @@ function showEnding() {
 
 function beginChapter(index) {
   if (!Number.isInteger(index) || index < 0 || index > getUnlockedChapter(save)) return;
-  if (index === currentChapter && game && !settled) { continueFromMap(); return; }
+  if (!currentFestival && index === currentChapter && game && !settled) { continueFromMap(); return; }
   const pending = nextPendingChoice(save);
   if (pending && STORY_CHOICES[pending].chapterIndex < index) {
     openChoice(pending, () => beginChapter(index));
@@ -267,6 +313,15 @@ function beginChapter(index) {
 }
 
 function launchChapter(index) {
+  launchScene(index, null);
+}
+
+function launchFestival(id) {
+  const festival = getFestival(id);
+  if (festival) launchScene(Math.min(save.lastChapter, getUnlockedChapter(save)), festival);
+}
+
+function launchScene(index, festival) {
   overlayReturnToPause = false;
   overlayResumeGame = null;
   storySequence = null;
@@ -274,17 +329,23 @@ function launchChapter(index) {
   closeDialogs();
   stopGame();
   currentChapter = index;
+  currentFestival = festival;
+  runSessionId = 'dream-' + (globalThis.crypto?.randomUUID?.() || Date.now() + '-' + Math.random().toString(36).slice(2));
   currentHud = null;
   settled = false;
   lastHudAt = 0;
   $('#dream-stage').hidden = false;
   document.body.classList.add('game-active');
-  $('#stage-chapter-number').textContent = '0' + (index + 1) + ' / 06';
-  save.lastChapter = index;
+  document.body.classList.toggle('festival-session', Boolean(festival));
+  $('#stage-chapter-number').textContent = festival ? festival.name + ' · 四季来信' : '0' + (index + 1) + ' / 06';
+  if (!festival) save.lastChapter = index;
   persist();
-  $('#stage-chapter-title').textContent = CHAPTERS[index].title;
-  game = new DreamGame($('#dream-canvas'), { onHud, onComplete: finishChapter, onPause: showPause, onEvent: announce, onPuzzle: showPuzzle });
-  game.start({ chapterIndex: index, sound: save.settings.sound, reducedMotion: save.settings.reducedMotion });
+  $('#stage-chapter-title').textContent = festival?.title || CHAPTERS[index].title;
+  $('#stage-memories-label').textContent = festival ? '礼物' : '记忆';
+  $('#stage-restart').textContent = festival ? '重新开始这封来信' : '重新开始本章';
+  game = new DreamGame($('#dream-canvas'), { onHud, onComplete: finishChapter, onPause: showPause, onEvent: announce, onPuzzle: showPuzzle, onTalk: showEncounter });
+  game.start({ chapterIndex: index, festival, season: hub?.getSeason(), outfit: hub?.getOutfit() || 'auto', sound: save.settings.sound, reducedMotion: save.settings.reducedMotion });
+  updateSeasonLabel();
   $('#dream-canvas').focus({ preventScroll: true });
 }
 
@@ -293,6 +354,7 @@ function stopGame() {
   game?.destroy();
   game = null;
   activePuzzle = null;
+  pendingTalk = false;
   overlayReturnToPause = false;
   overlayResumeGame = null;
   clearTimeout(announcementTimer);
@@ -307,19 +369,22 @@ function returnLobby() {
 
 function onHud(snapshot) {
   const previousForm = currentHud?.form;
+  const previousGifts = currentHud?.gifts;
   currentHud = snapshot;
+  hub?.tick({ sessionId: runSessionId, time: snapshot.time, playing: snapshot.state === 'playing' && !document.querySelector('dialog[open]') && !shellOverlayOpen, usable: !settled && !activePuzzle && !pendingTalk && ['playing', 'paused'].includes(snapshot.state) });
   const now = performance.now();
-  if (now - lastHudAt < 80 && previousForm === snapshot.form && snapshot.state === 'playing') return;
+  if (now - lastHudAt < 80 && previousForm === snapshot.form && previousGifts === snapshot.gifts && snapshot.state === 'playing') return;
   lastHudAt = now;
   $('#stage-seals').textContent = snapshot.seals + ' / ' + snapshot.totalSeals;
   $('#stage-memories').textContent = snapshot.memories + ' / ' + snapshot.totalMemories;
   $('#stage-time').textContent = timeLabel(snapshot.time);
   $('#stage-objective').textContent = snapshot.objective || '点亮两盏回声谜灯，让阿拾走向出口';
-  $('#stage-near-hint').textContent = snapshot.nearHint || CHAPTERS[snapshot.chapterIndex].hint;
+  $('#stage-near-hint').textContent = snapshot.nearHint || currentFestival?.sceneHint || CHAPTERS[snapshot.chapterIndex].hint;
+  $('#stage-buffs').innerHTML = (snapshot.buffs?.compass ? '<span>罗盘 ' + snapshot.buffs.compass + 's</span>' : '') + (snapshot.buffs?.feather ? '<span>轻羽守护</span>' : '');
   const soul = snapshot.form === 'soul';
   document.body.classList.toggle('soul-active', soul);
   $('#stage-form-name').textContent = soul ? '拾光 · 灵魂' : '阿拾 · 身体';
-  if (previousForm !== snapshot.form) updateShell();
+  if (previousForm !== snapshot.form || previousGifts !== snapshot.gifts) updateShell();
   const energy = Math.max(0, Math.min(100, snapshot.energy / Math.max(1, snapshot.maxEnergy) * 100));
   $('#stage-energy').style.width = energy + '%';
   $('#stage-energy').style.background = energy < 25 ? 'var(--dream-orange)' : 'var(--dream-mint)';
@@ -339,13 +404,13 @@ function announce(event) {
 }
 
 function showPause(reason) {
-  if (suppressPauseDialog || shellOverlayOpen || !game || settled || activePuzzle || storySequence || document.querySelector('dialog[open]')) return;
-  $('#pause-detail').textContent = reason === 'visibility' || reason === 'blur' ? '离开页面时，游戏已自动暂停。' : CHAPTERS[currentChapter].title;
+  if (suppressPauseDialog || shellOverlayOpen || !game || settled || activePuzzle || pendingTalk || storySequence || document.querySelector('dialog[open]')) return;
+  $('#pause-detail').textContent = reason === 'visibility' || reason === 'blur' ? '离开页面时，游戏已自动暂停。' : currentFestival?.title || CHAPTERS[currentChapter].title;
   openDialog('#pause-dialog');
 }
 
 function resumeGame() {
-  if (!game || settled || activePuzzle) return;
+  if (!game || settled || activePuzzle || pendingTalk) return;
   overlayReturnToPause = false;
   overlayResumeGame = null;
   $('#pause-dialog').close();
@@ -355,11 +420,25 @@ function resumeGame() {
 }
 
 function restartChapter() {
-  closeDialogs();
-  launchChapter(currentChapter);
+  if (currentFestival) launchFestival(currentFestival.id);
+  else launchChapter(currentChapter);
+}
+
+function showEncounter(payload) {
+  const festival = getFestival(payload.festivalId);
+  if (!festival) { game?.resolveTalk(); return; }
+  pendingTalk = true;
+  const lines = payload.repeated ? festival.encounters : festival.intro;
+  openStory(lines, currentChapter, () => {
+    pendingTalk = false;
+    resetInput();
+    game?.resolveTalk();
+    $('#dream-canvas').focus({ preventScroll: true });
+  }, '一起去找礼物', festival);
 }
 
 function finishChapter(result) {
+  if (result.mode === 'festival' || currentFestival) { finishFestival(result); return; }
   if (settled) return;
   settled = true;
   resetInput();
@@ -369,6 +448,8 @@ function finishChapter(result) {
   persist();
   const chapter = CHAPTERS[result.chapterIndex];
   const item = STORY_ITEMS[result.chapterIndex];
+  $('#result-memories-label').textContent = '记忆残页';
+  $('#result-map').textContent = '章节地图';
   $('#result-kicker').textContent = chaptersInChinese[result.chapterIndex] + ' · ' + chapter.title + ' · 已送达';
   $('#result-title').textContent = result.chapterIndex === 5 ? '最后一封信，终于到了。' : '这盏灯，为你亮着。';
   $('#result-stars').innerHTML = stars(result.stars);
@@ -383,8 +464,37 @@ function finishChapter(result) {
   openDialog('#result-dialog');
 }
 
+function finishFestival(result) {
+  if (settled || !currentFestival) return;
+  const festival = currentFestival;
+  const recorded = hub.complete(festival.id, result);
+  if (!recorded.ok) { toast('礼物还没有装齐，再试一次吧。'); launchFestival(festival.id); return; }
+  settled = true;
+  resetInput();
+  lastResult = { ...result, festivalId: festival.id };
+  $('#result-kicker').textContent = festival.name + ' · ' + festival.title + ' · 已送达';
+  $('#result-title').textContent = '这份相遇，收进四季里。';
+  $('#result-stars').innerHTML = stars(result.stars);
+  $('#result-stars').setAttribute('aria-label', '本次获得' + result.stars + '颗星');
+  $('#result-message').textContent = '两盏谜灯亮了，三份礼物齐了。' + festival.npc.name + '还留了一封回信给你。';
+  $('#result-memories').textContent = '3 / 3';
+  $('#result-memories-label').textContent = '节日礼物';
+  $('#result-time').textContent = timeLabel(result.time);
+  $('#result-falls').textContent = result.deaths;
+  $('#result-keepsake').style.setProperty('--item-color', festival.color);
+  $('#result-keepsake').innerHTML = '<img src="./assets/festival-item-' + festival.id + '.svg" width="76" height="76" alt=""><div><b>收进邮包 · ' + escapeHtml(festival.item.name) + '</b><span>' + escapeHtml(festival.item.description) + '</span></div>';
+  $('#result-new-stamps').textContent = recorded.newOutfit ? '新装扮已解锁：' + festival.name + '装扮 · 全年可穿' : '更好的成绩已经收好，随时可以回来重访。';
+  $('#result-map').textContent = '返回主线';
+  openDialog('#result-dialog');
+}
+
 function readChapterOutro() {
   if (!lastResult) return;
+  if (lastResult.festivalId) {
+    const festival = getFestival(lastResult.festivalId);
+    openStory(festival.outro, currentChapter, () => openFestivalChoice(festival), '留下一句回音', festival);
+    return;
+  }
   const index = lastResult.chapterIndex;
   const after = () => {
     const choice = CHAPTERS[index].choice;
@@ -392,7 +502,7 @@ function readChapterOutro() {
     else if (index === 5) showEnding();
     else returnLobby();
   };
-  openStory(CHAPTERS[index].outro, index, after, index === 5 ? '读一读，明天的回信' : '收好这封信');
+  openStory(CHAPTERS[index].outro, index, after, index === 5 ? '读一读，明天的回信' : '收好这封信', null);
 }
 
 function shuffledIndexes(length) {
@@ -405,13 +515,14 @@ function shuffledIndexes(length) {
 }
 
 function showPuzzle(payload) {
-  const puzzle = getPuzzle(payload.chapterIndex, payload.sealIndex);
+  const festival = getFestival(payload.festivalId);
+  const puzzle = festival ? getFestivalPuzzle(festival.id, payload.sealIndex) : getPuzzle(payload.chapterIndex, payload.sealIndex);
   if (!puzzle) { game?.resolvePuzzle(false); toast('这盏灯还没找到自己的谜面，请试试另一盏灯。'); return; }
-  activePuzzle = { puzzle, hints: 0, solved: false, assisted: false, order: shuffledIndexes(puzzle.options.length) };
-  const speaker = CAST[puzzle.speaker] || CAST.light;
+  activePuzzle = { puzzle, festivalId: festival?.id, hints: 0, solved: false, assisted: false, order: shuffledIndexes(puzzle.options.length) };
+  const speaker = puzzle.speaker === 'festival' && festival ? festival.npc : CAST[puzzle.speaker] || CAST.light;
   $('#puzzle-dialog').dataset.puzzleKind = puzzle.type.startsWith('诗词') ? 'poem' : puzzle.type === '歇后语' ? 'saying' : puzzle.type.startsWith('原创') ? 'riddle' : 'story';
   $('#puzzle-type').textContent = puzzle.type;
-  $('#puzzle-count').textContent = (PUZZLES.indexOf(puzzle) + 1).toString().padStart(2, '0') + ' / 12';
+  $('#puzzle-count').textContent = festival ? (payload.sealIndex + 1).toString().padStart(2, '0') + ' / 02' : (PUZZLES.indexOf(puzzle) + 1).toString().padStart(2, '0') + ' / 12';
   $('#puzzle-portrait').src = speaker.portrait;
   $('#puzzle-portrait').alt = speaker.name;
   $('#puzzle-scene').textContent = puzzle.scene;
@@ -432,7 +543,7 @@ function showPuzzle(payload) {
 function answerPuzzle(answer, assisted = false) {
   if (!activePuzzle || activePuzzle.solved) return;
   const { puzzle } = activePuzzle;
-  const correct = checkPuzzleAnswer(puzzle.id, answer);
+  const correct = activePuzzle.festivalId ? Number.isInteger(answer) && answer === puzzle.answer : checkPuzzleAnswer(puzzle.id, answer);
   const selected = $('#puzzle-options').querySelector('[data-answer="' + answer + '"]');
   if (!correct) {
     selected?.classList.add('wrong');
@@ -452,8 +563,8 @@ function answerPuzzle(answer, assisted = false) {
   $('#puzzle-hint').hidden = true;
   $('#puzzle-return').hidden = true;
   $('#puzzle-continue').hidden = false;
-  recordPuzzleSolve(save, puzzle.id, assisted);
-  persist();
+  if (activePuzzle.festivalId) hub.solvePuzzle(activePuzzle.festivalId, puzzle.id, assisted);
+  else { recordPuzzleSolve(save, puzzle.id, assisted); persist(); }
   $('#puzzle-continue').focus({ preventScroll: true });
 }
 
@@ -517,8 +628,11 @@ document.addEventListener('click', event => {
 });
 
 $('#stage-story').addEventListener('click', () => {
-  openStory(CHAPTERS[currentChapter].intro, currentChapter, resumeAfterOverlay, '返回游戏');
+  openStory(currentFestival?.intro || CHAPTERS[currentChapter].intro, currentChapter, resumeAfterOverlay, '返回游戏');
 });
+$('#stage-season').addEventListener('click', () => openFestivalHub());
+$('#stage-back-story').addEventListener('click', () => launchChapter(Math.min(save.lastChapter, getUnlockedChapter(save))));
+$('#journal-festivals').addEventListener('click', () => openFestivalHub('collection'));
 $('#map-continue').addEventListener('click', continueFromMap);
 $$('dialog').forEach(dialog => dialog.addEventListener('close', () => {
   queueMicrotask(() => {
@@ -540,7 +654,8 @@ $('#stage-home').addEventListener('click', () => returnLobby());
 $('#pause-dialog').addEventListener('cancel', event => { event.preventDefault(); resumeGame(); });
 $('#result-story').addEventListener('click', readChapterOutro);
 $('#result-map').addEventListener('click', () => {
-  if (lastResult?.chapterIndex === 5) showEnding();
+  if (lastResult?.festivalId) launchChapter(Math.min(save.lastChapter, getUnlockedChapter(save)));
+  else if (lastResult?.chapterIndex === 5) showEnding();
   else returnLobby();
 });
 $('#result-dialog').addEventListener('cancel', event => { event.preventDefault(); returnLobby(); });
@@ -552,7 +667,7 @@ $('#letter-dialog').addEventListener('cancel', event => { event.preventDefault()
 
 $('#stage-toggle').addEventListener('click', () => { if (gameplayAvailable()) { resetInput(); game.toggleSoul(); $('#dream-canvas').focus({ preventScroll: true }); } });
 $('#stage-jump').addEventListener('click', () => { if (gameplayAvailable()) { game.jump(); $('#dream-canvas').focus({ preventScroll: true }); } });
-$('#stage-interact').addEventListener('click', () => { if (gameplayAvailable()) { game.interact(); if (!activePuzzle) $('#dream-canvas').focus({ preventScroll: true }); } });
+$('#stage-interact').addEventListener('click', () => { if (gameplayAvailable()) { game.interact(); if (!activePuzzle && !pendingTalk) $('#dream-canvas').focus({ preventScroll: true }); } });
 
 $$('[data-direction]').forEach(button => {
   button.addEventListener('pointerdown', event => {
@@ -593,27 +708,31 @@ document.addEventListener('visibilitychange', () => { if (document.hidden) reset
 $('#dream-pref-sound').addEventListener('change', event => { save.settings.sound = event.target.checked; persist(); renderSettings(); });
 $('#dream-pref-motion').addEventListener('change', event => { save.settings.reducedMotion = event.target.checked; persist(); renderSettings(); });
 $('#dream-export').addEventListener('click', () => {
-  const url = URL.createObjectURL(new Blob([JSON.stringify(validateDreamSave(save), null, 2)], { type: 'application/json' }));
+  const backup = { type: 'tougaigu-journey', version: 2, story: validateDreamSave(save), ...hub.exportState() };
+  const url = URL.createObjectURL(new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' }));
   const link = document.createElement('a');
   link.href = url;
-  link.download = 'tougaigu-dream-save-' + new Date().toISOString().slice(0, 10) + '.json';
+  link.download = 'tougaigu-journey-save-' + new Date().toISOString().slice(0, 10) + '.json';
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 10000);
-  $('#dream-save-message').textContent = '故事已收进文件。下次出发，也可以带着它。';
+  $('#dream-save-message').textContent = '故事、节日收藏和时光奖励已一起备份。';
 });
 $('#dream-import').addEventListener('change', async event => {
   const file = event.target.files?.[0];
   if (!file) return;
   try {
-    if (file.size > 32000) throw new Error('这份存档太大，请选择本游戏导出的故事存档。');
+    if (file.size > 262144) throw new Error('这份存档太大，请选择本游戏导出的旅途存档。');
     const parsed = JSON.parse(await file.text());
-    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed) || parsed.version !== 1 || !Array.isArray(parsed.chapters)) throw new Error('这不是可识别的故事存档。原版生存存档请在原版导入。');
-    const imported = validateDreamSave(parsed);
+    const journey = parsed?.type === 'tougaigu-journey' && parsed.version === 2;
+    const story = journey ? parsed.story : parsed;
+    if (!story || typeof story !== 'object' || Array.isArray(story) || story.version !== 1 || !Array.isArray(story.chapters)) throw new Error('这不是可识别的旅途存档。原版生存存档请在原版导入。');
+    const imported = validateDreamSave(story);
     const stats = getJourneyStats(imported);
-    if (!window.confirm('导入会替换当前故事进度：已完成 ' + stats.completed + ' 章，收集 ' + stats.memories + ' 片记忆。原版生存存档不受影响。确定导入吗？')) return;
-    save = imported;
-    const okay = persist();
+    if (!window.confirm('导入会替换当前故事进度：已完成 ' + stats.completed + ' 章，收集 ' + stats.memories + ' 片记忆。' + (journey ? '节日收藏与共享时光奖励也会替换。' : '') + '原版生存成长不受影响。确定导入吗？')) return;
     stopGame();
+    save = imported;
+    if (journey) hub.importState(parsed);
+    const okay = persist();
     settled = true;
     renderLobby();
     $('#dream-save-message').textContent = okay ? '故事接好了。欢迎回来，邮差。' : '故事已载入，但浏览器暂时无法保存，请保留备份。';
@@ -630,5 +749,20 @@ shell = mountGameShell({
   onAction: handleShellAction,
   onOverlayChange(open) { shellOverlayOpen = open; if (open) pauseForOverlay(); else queueMicrotask(resumeAfterOverlay); },
 });
+hub = createFestivalHub({
+  gameId: 'dream',
+  onOpen: openDialog,
+  onClose: resumeAfterOverlay,
+  onLaunch: launchFestival,
+  onOutfit(id) { game?.setOutfit(id); updateSeasonLabel(); },
+  onSeason(season) { game?.setSeason(season); updateSeasonLabel(); },
+  onUseItem(id) { return Boolean(game && !settled && !activePuzzle && !pendingTalk && game.useItem(id)); },
+  onSummary(summary) { hubSummary = summary; updateSeasonLabel(); },
+  onNotice: toast,
+});
+hub.summary();
 renderLobby();
-launchChapter(Math.min(save.lastChapter, getUnlockedChapter(save)));
+const requestedFestival = getFestival(new URLSearchParams(location.search).get('festival'));
+if (requestedFestival) launchFestival(requestedFestival.id);
+else launchChapter(Math.min(save.lastChapter, getUnlockedChapter(save)));
+window.addEventListener('pagehide', event => { hub.flush(); if (!event.persisted) { hub.destroy(); game?.destroy(); } });
