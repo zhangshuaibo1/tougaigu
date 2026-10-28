@@ -4,7 +4,7 @@ import { CHAPTERS } from './dream-story.js';
 import { getFestival } from './dream-festivals.js';
 import { getCapActivity } from './dream-cap-activities.js';
 import { CAP_ACTIVITY_VARIANTS } from './cap-activity-progress.js';
-import { getLostCase, getLostCaseVariant } from './dream-lost-cases.js';
+import { getLostCase, getLostCaseVariant, LOST_CASE_TOTALS } from './dream-lost-cases.js';
 import { CAP_SAVE_KEY, loadCapSave, persistCapSave, validateCapSave, mergeCapSaves, getCapRecord, getCapStats, recordCapEvent } from './cap-progress.js';
 
 const escape = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
@@ -104,8 +104,8 @@ export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNoti
     $('#cap-book-feature').insertAdjacentHTML('beforeend', activityMarkup(scene, opened));
     $('#cap-book-feature').insertAdjacentHTML('beforeend', lostMarkup(scene, opened));
     const activityStats = getActivityStats?.(), lostStats = getLostStats?.();
-    const receipts = Number.isInteger(lostStats?.variants) ? Math.max(0, Math.min(6, lostStats.variants)) : 0;
-    $('.cap-book-section-title>span').textContent = (activityStats ? '借景 ' + activityStats.completed + '/16 · 路线 ' + activityStats.variants + '/48' : '6 幕旅途 · 10 封节日来信') + (lostStats ? ' · 回执 ' + receipts + '/6' : '');
+    const receipts = Number.isInteger(lostStats?.variants) ? Math.max(0, Math.min(LOST_CASE_TOTALS.variants, lostStats.variants)) : 0;
+    $('.cap-book-section-title>span').textContent = (activityStats ? '借景 ' + activityStats.completed + '/16 · 路线 ' + activityStats.variants + '/48' : '6 幕旅途 · 10 封节日来信') + (lostStats ? ' · 回执 ' + receipts + '/' + LOST_CASE_TOTALS.variants : '');
     $('#cap-book-grid').innerHTML = CAP_SCENES.map(item => {
       const value = getCapRecord(save, item.id), discovered = value.opens > 0;
       const activityComplete = getActivityRecord?.(item.id)?.completedVariants?.includes(0);

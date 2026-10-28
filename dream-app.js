@@ -6,7 +6,8 @@ import { getCapScene } from './dream-cap-story.js';
 import { createCapBook } from './cap-book.js';
 import { getCapActivity } from './dream-cap-activities.js';
 import { CAP_ACTIVITY_SAVE_KEY, capActivityRevision, loadCapActivitySave, persistCapActivitySave, validateCapActivitySave, mergeCapActivitySaves, replaceCapActivitySave, getCapActivityRecord, getCapActivityStats, recordCapActivityEvent } from './cap-activity-progress.js';
-import { getLostCase, evaluateLostClaim } from './dream-lost-cases.js';
+import { getLostCase, evaluateLostClaim, LOST_CASE_TOTALS } from './dream-lost-cases.js';
+import { createLostDiagram } from './lost-evidence.js';
 import { LOST_SAVE_KEY, lostRevision, loadLostSave, persistLostSave, validateLostSave, mergeLostSaves, replaceLostSave, getLostRecord, getLostStats, recordLostEvent } from './lost-progress.js';
 import {
   CHAPTERS, CAST, STORY_CHOICES, ENDINGS, STAMPS, STORY_ITEMS, PUZZLES, DREAM_SAVE_KEY,
@@ -100,7 +101,7 @@ function updateCapSummary() {
   const stats = capBook?.stats() || { opened: 0 };
   const activities = getCapActivityStats(capActivitySave);
   const lost = getLostStats(lostSave);
-  $('#journal-cap-summary').textContent = stats.opened + ' / 16 个脑洞 · 借景 ' + activities.completed + ' / 16' + (lost.variants ? ' · 回执 ' + lost.variants + ' / 6' : '');
+  $('#journal-cap-summary').textContent = stats.opened + ' / 16 个脑洞 · 借景 ' + activities.completed + ' / 16' + (lost.variants ? ' · 回执 ' + lost.variants + ' / ' + LOST_CASE_TOTALS.variants : '');
 }
 
 function currentLostCase() {
@@ -175,7 +176,8 @@ function renderLostEvidence(lost) {
     }
     card.append(notes);
   }
-  // All other diagram facts are already present in the short evidence prose.
+  const picture = createLostDiagram(diagram);
+  if (picture) card.append(picture);
 }
 
 function onCapActivity(event) {
