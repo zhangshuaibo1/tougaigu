@@ -1,5 +1,6 @@
 // A lost-property cabinet and its projected memories. The controller supplies
 // all observation, selection and hand-off state; painting never changes it.
+import { drawLostEncore } from './dream-lost-encore-art.js';
 const TAU = Math.PI * 2;
 const INK = '#40384f';
 const NIGHT = '#202c36';
@@ -543,6 +544,7 @@ function sideMarkers(c,view) {
   }
 }
 function drawEvidence(c,view,t,reduced) {
+  if(view.encore&&view.encore.stage!=='delivery')return;
   const object=view.object;if(!validPoint(object))return;
   const handoff=view.handoff&&validPoint(view.handoff)?view.handoff:null;
   const solved=(!!object.delivered||view.phase==='solved')&&!handoff;
@@ -579,6 +581,7 @@ export function drawLostCase(c,view,t=0,reducedMotion=false) {
   if(view.expanded){
     for(const person of view.claimants||[])drawClaimant(c,person,view,time,reducedMotion);
     drawEvidence(c,view,time,reducedMotion);
+    drawLostEncore(c,view.encore,reducedMotion);
   }
   c.restore();
 }

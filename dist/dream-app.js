@@ -568,7 +568,9 @@ function onHud(snapshot) {
   if (lostVisible) {
     const lostDone = getLostRecord(lostSave, lost.caseId)?.solvedVariants.includes(lost.variant);
     $('#stage-lost-case').dataset.phase = lost.phase;
-    $('#stage-lost-case').textContent = '失物 ' + (lost.variant + 1) + ' / 2 · ' + (lostDone || ['solved', 'delivering'].includes(lost.phase) ? '物归原主' : '物证 ' + lost.seenClues + ' / ' + lost.totalClues);
+    const encoreVisible = lost.encore && ['unfold', 'celebrate', 'settled'].includes(lost.encore.stage);
+    const lostLabel = encoreVisible ? lost.encore.caption : '失物 ' + (lost.variant + 1) + ' / 2 · ' + (lostDone || ['solved', 'delivering'].includes(lost.phase) ? '物归原主' : '物证 ' + lost.seenClues + ' / ' + lost.totalClues);
+    if ($('#stage-lost-case').textContent !== lostLabel) $('#stage-lost-case').textContent = lostLabel;
   }
   renderLostEvidence(lost);
   $('#stage-near-hint').textContent = snapshot.nearHint || currentFestival?.sceneHint || CHAPTERS[snapshot.chapterIndex].hint;

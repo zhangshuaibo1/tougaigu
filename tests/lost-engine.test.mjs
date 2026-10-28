@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { DreamGame, DREAM_PHYSICS } from '../dist/dream-engine.js';
 import { LOST_CASES, LOST_CASE_TOTALS, evaluateLostClaim } from '../dist/dream-lost-cases.js';
-import { DreamLostCase, createLostLayout, normalizeLostCaseRecord, pointOnLostHandoff } from '../dist/dream-lost-engine.js';
+import { DreamLostCase, createLostLayout, normalizeLostCaseRecord, pointOnLostHandoff, LOST_ENCORE_DURATION } from '../dist/dream-lost-engine.js';
+import { getLostEncore } from '../dist/dream-lost-encores.js';
 import { CAP_ACTIVITIES } from '../dist/dream-cap-activities.js';
 import { createLostSave, getLostRecord, getLostStats, loadLostSave, persistLostSave, lostRevision, recordLostEvent } from '../dist/lost-progress.js';
 
@@ -235,4 +236,82 @@ test('lost records are bounded independent copies and constructing an instance c
   const input={activeVariant:99,seenClues:{0:[1,1,-1,0,3,'1'],1:[0,Infinity]},solvedVariants:[1,1,2,null]},record=normalizeLostCaseRecord(input);
   assert.deepEqual(record,{activeVariant:0,seenClues:{0:[0,1],1:[0]},solvedVariants:[1]});record.seenClues[0].push(9);assert.deepEqual(input.seenClues[0],[1,1,-1,0,3,'1']);
   const events=[],lost=new DreamLostCase(LOST_CASES[0],{record:input,onEvent:event=>events.push(event)});assert.equal(events.length,0);const view=lost.getView();view.seenClues.push(99);assert.deepEqual(lost.seenClues,[0,1]);lost.destroy();assert.equal(lost.getView(),null);
+});
+
+test('all twelve real handoffs unlock only their own encore and settle without another event or save write',()=>{
+  const kinds=new Set();
+  for(const config of LOST_CASES){
+    const events=[],game=makeGame(caseOptions(config),{onLostCase:event=>events.push(event)});openBox(game);
+    for(let variant=0;variant<2;variant++){
+      assert.equal(game.lostCase.getView().encore,null);assert.equal(game.getSnapshot().lostCase.encore,null);
+      readBoth(game);assert.equal(game.lostCase.getView().encore,null);
+      if(variant===0){choose(game,claimant(game,false));tick(game,1);assert.equal(game.lostCase.getView().encore,null);assert.equal(game.getSnapshot().lostCase.encore,null);}
+      const owner=claimant(game);choose(game,owner);
+      const initial=game.lostCase.getView().encore,definition=getLostEncore(config.id,variant);
+      assert.equal(initial.caseId,config.id);assert.equal(initial.variant,variant);assert.equal(initial.recipient.id,owner.id);assert.equal(initial.caption,definition.caption);assert.equal(initial.kind,definition.kind);kinds.add(initial.kind);
+      assert.equal(initial.elapsed,0);assert.equal(initial.progress,0);assert.equal(initial.stage,'delivery');assert.equal(initial.settled,false);assert.equal(game.state,'playing');assert.equal(game.form,'soul');
+      const saved=game.lostCase.getRecord(),eventCount=events.length;
+      assert.deepEqual(game.getSnapshot().lostCase.encore,{caption:definition.caption,stage:'delivery',settled:false});
+      tick(game,.3);assert.equal(game.lostCase.getView().encore.stage,'delivery');assert.ok(game.lostCase.handoff);
+      tick(game,.45);assert.equal(game.lostCase.getView().encore.stage,'unfold');assert.equal(game.lostCase.handoff,null);
+      tick(game,.95);assert.equal(game.lostCase.getView().encore.stage,'celebrate');
+      tick(game,1.3);const final=game.lostCase.getView().encore;assert.equal(final.stage,'settled');assert.equal(final.elapsed,LOST_ENCORE_DURATION);assert.equal(final.progress,1);assert.equal(final.settled,true);
+      game.render();tick(game,4);assert.deepEqual(game.lostCase.getView().encore,final);assert.deepEqual(game.lostCase.getRecord(),saved);assert.equal(events.length,eventCount);assert.match(game.getNearHint(),/E 归位.*Q 查看下一件/);
+      // Public presentation snapshots cannot modify the next frame.
+      final.anchor.x=-999;final.bounds.left=-999;final.recipient.name='changed';const hud=game.getSnapshot().lostCase.encore;hud.caption='changed';
+      assert.equal(game.lostCase.getView().encore.caption,definition.caption);assert.equal(game.lostCase.getView().encore.recipient.name,owner.name);assert.notEqual(game.lostCase.getView().encore.anchor.x,-999);
+      if(variant===0){game.recall();tick(game,6);game.interact();game.toggleSoul();}
+    }
+    const count=events.length;game.recall();game.interact();game.toggleSoul();
+    assert.equal(game.lostCase.variant,0);assert.deepEqual(game.lostCase.record.solvedVariants,[0,1]);assert.equal(game.lostCase.roundSolved,false);assert.equal(game.lostCase.getView().encore,null);assert.equal(game.getSnapshot().lostCase.encore,null);
+    assert.equal(events.length,count+1,'explicit replay emits only the existing open event');game.destroy();
+  }
+  assert.deepEqual([...kinds].sort(),['candy','echo','sprout','table','train','window']);
+});
+
+test('encore time freezes on pause, recall and leaving the box, while ordinary movement stays available',()=>{
+  for(const config of LOST_CASES){
+    const events=[],game=makeGame(caseOptions(config),{onLostCase:event=>events.push(event)});openBox(game);readBoth(game);choose(game,claimant(game));tick(game,.9);
+    const before=game.lostCase.getView().encore;assert.equal(before.stage,'unfold');
+    game.pause();tick(game,5);game.render();assert.deepEqual(game.lostCase.getView().encore,before);
+    game.resume();const x=game.soul.x;game.setInput({x:.2,y:0});tick(game,.1);game.setInput({x:0,y:0});assert.ok(game.soul.x>x);assert.ok(game.lostCase.getView().encore.elapsed>before.elapsed);
+    const frozen=game.lostCase.encoreElapsed,count=events.length,record=game.lostCase.getRecord();game.recall();assert.equal(game.lostCase.getView().encore,null);assert.equal(game.getSnapshot().lostCase.encore,null);tick(game,4);assert.equal(game.lostCase.encoreElapsed,frozen);
+    walkTo(game,390);assert.equal(game.lostCase.getView().expanded,false);assert.equal(game.lostCase.getView().encore,null);assert.equal(game.lostCase.encoreElapsed,frozen);
+    walkTo(game,465);game.toggleSoul();assert.equal(game.lostCase.getView().encore.elapsed,frozen);tick(game,3);assert.equal(game.lostCase.getView().encore.stage,'settled');assert.equal(events.length,count);assert.deepEqual(game.lostCase.getRecord(),record);game.destroy();
+  }
+});
+
+test('restored solved receipts have static encores without replay events, and partial or replaced records cannot reveal one',()=>{
+  for(const config of LOST_CASES)for(const variant of [0,1]){
+    const events=[],record={activeVariant:variant,seenClues:{0:variant===0?[0,1]:[],1:variant===1?[0,1]:[]},solvedVariants:[variant]};
+    const game=makeGame({...caseOptions(config),capActivityRecord:null,lostCaseRecord:record},{onLostCase:event=>events.push(event)});
+    assert.equal(game.lostCase.getView().encore,null);assert.equal(game.getSnapshot().lostCase.encore,null);walkTo(game,465);game.toggleSoul();
+    const encore=game.lostCase.getView().encore;assert.equal(encore.elapsed,LOST_ENCORE_DURATION);assert.equal(encore.stage,'settled');assert.equal(encore.recipient.id,config.variants[variant].answer);assert.equal(game.lostCase.handoff,null);assert.equal(events.length,0);
+    const old=game.lostCase;game.setLostCaseRecord({activeVariant:1-variant,seenClues:{0:[],1:[]},solvedVariants:[variant]},'1:partial-current');
+    assert.equal(old.getView(),null);assert.equal(old.encoreElapsed,null);assert.equal(game.lostCase.getView().encore,null);assert.equal(game.getSnapshot().lostCase.encore,null);
+    game.recall();game.interact();game.toggleSoul();tick(game,1);assert.equal(game.lostCase.getView().encore,null);assert.equal(game.getSnapshot().lostCase.encore,null);assert.equal(events.filter(event=>event.type==='solve').length,0);game.destroy();
+  }
+});
+
+test('reduced motion and fall recovery settle successful scenes immediately and never restart an old animation',()=>{
+  for(const config of LOST_CASES){
+    const events=[],game=makeGame(caseOptions(config),{onLostCase:event=>events.push(event)});openBox(game);readBoth(game);choose(game,claimant(game));tick(game,.2);assert.equal(game.lostCase.getView().encore.stage,'delivery');
+    game.pause();game.setReducedMotion(true);assert.equal(game.lostCase.handoff,null);assert.equal(game.lostCase.getView().encore.stage,'settled');assert.equal(game.lostCase.getView().encore.elapsed,LOST_ENCORE_DURATION);
+    game.setReducedMotion(false);game.resume();tick(game,1);assert.equal(game.lostCase.getView().encore.elapsed,LOST_ENCORE_DURATION);
+    game.recall();tick(game,6);game.interact();game.toggleSoul();assert.equal(game.lostCase.getView().encore,null);readBoth(game);choose(game,claimant(game));tick(game,.9);assert.equal(game.lostCase.getView().encore.stage,'unfold');
+    const saved=game.lostCase.getRecord(),count=events.length;game.body.y=730;game.update(1/60);assert.equal(game.form,'body');assert.equal(game.lostCase.getView().encore,null);assert.equal(game.lostCase.encoreElapsed,LOST_ENCORE_DURATION);
+    walkTo(game,465);game.toggleSoul();assert.equal(game.lostCase.getView().encore.stage,'settled');assert.equal(events.length,count);assert.deepEqual(game.lostCase.getRecord(),saved);game.destroy();
+    const reduced=makeGame({...caseOptions(config),reducedMotion:true});openBox(reduced);readBoth(reduced);choose(reduced,claimant(reduced));assert.equal(reduced.lostCase.getView().encore.stage,'settled');assert.equal(reduced.lostCase.handoff,null);reduced.destroy();
+  }
+});
+
+test('encore bounds fit both phone viewports and receive their own background clear zone',()=>{
+  for(const width of [320,390])for(const config of LOST_CASES){
+    const game=makeGame({...caseOptions(config),lostCaseRecord:{activeVariant:0,seenClues:{0:[0,1],1:[]},solvedVariants:[0]}},{},width);walkTo(game,465);game.toggleSoul();game.render();
+    const {bounds,anchor}=game.lostCase.getView().encore;
+    assert.ok((bounds.left-game.camera)*game.scale>=0);assert.ok((bounds.right-game.camera)*game.scale<=width);assert.ok(bounds.top*game.scale+game.viewportOffsetY>=0);assert.ok(bounds.bottom*game.scale+game.viewportOffsetY<=620);
+    const zone=game.getSceneBackdropView().clearZones.find(circle=>circle.x===anchor.x&&Math.abs(circle.y-(bounds.top+bounds.bottom)/2)<1e-6);
+    assert.ok(zone);for(const x of [bounds.left,bounds.right])for(const y of [bounds.top,bounds.bottom])assert.ok(Math.hypot(x-zone.x,y-zone.y)<zone.r);
+    game.recall();assert.equal(game.lostCase.getView().encore,null);game.destroy();
+  }
 });

@@ -5,6 +5,8 @@ import { getFestival } from './dream-festivals.js';
 import { getCapActivity } from './dream-cap-activities.js';
 import { CAP_ACTIVITY_VARIANTS } from './cap-activity-progress.js';
 import { getLostCase, getLostCaseVariant, LOST_CASE_TOTALS } from './dream-lost-cases.js';
+import { getLostEncore } from './dream-lost-encores.js';
+import { drawLostEncore } from './dream-lost-encore-art.js';
 import { CAP_SAVE_KEY, loadCapSave, persistCapSave, validateCapSave, mergeCapSaves, getCapRecord, getCapStats, recordCapEvent } from './cap-progress.js';
 
 const escape = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
@@ -87,7 +89,28 @@ export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNoti
     const state = lostState(scene, opened);
     if (!state) return '';
     const solved = state.groups.filter(group => group.solved).length;
-    return '<section class="cap-book-lost"><div class="cap-lost-title"><span>✉</span><div><small>失物招领</small><h4>' + escape(state.item.title) + '</h4></div><b>回执 ' + solved + '/2</b></div><div class="cap-lost-receipts">' + state.groups.map((group, index) => '<article class="cap-lost-receipt' + (group.solved ? ' done' : '') + '"><small>第 ' + (index + 1) + ' 组物证</small><p>' + (group.solved ? escape(group.variant.receipt) : '已看 ' + group.seen + '/2 物证') + '</p></article>').join('') + '</div>' + (state.canPlay ? '<button class="dream-secondary" data-cap-lost="' + escape(scene.id) + '">去认领失物 <span>↗</span></button>' : !state.unlocked ? '<p>先搭好这一幕的借景小戏</p>' : '') + '</section>';
+    return '<section class="cap-book-lost"><div class="cap-lost-title"><span>✉</span><div><small>失物招领</small><h4>' + escape(state.item.title) + '</h4></div><b>回执 ' + solved + '/2</b></div><div class="cap-lost-receipts">' + state.groups.map((group, index) => {
+      const encore = group.solved ? getLostEncore(state.item.id, index) : null;
+      const picture = encore ? '<canvas class="cap-lost-thumbnail" data-lost-encore="' + index + '" width="280" height="180" role="img" aria-label="物归原主：' + escape(encore.caption) + '"></canvas>' : '';
+      return '<article class="cap-lost-receipt' + (group.solved ? ' done' : '') + '"><small>第 ' + (index + 1) + ' 组物证</small>' + picture + '<p>' + (group.solved ? escape(group.variant.receipt) : '已看 ' + group.seen + '/2 物证') + '</p></article>';
+    }).join('') + '</div>' + (state.canPlay ? '<button class="dream-secondary" data-cap-lost="' + escape(scene.id) + '">去认领失物 <span>↗</span></button>' : !state.unlocked ? '<p>先搭好这一幕的借景小戏</p>' : '') + '</section>';
+  }
+
+  function drawLostThumbnails(scene, opened) {
+    const state = lostState(scene, opened);
+    if (!state) return;
+    state.groups.forEach((group, index) => {
+      if (!group.solved) return;
+      const config = getLostEncore(state.item.id, index), canvas = $('[data-lost-encore="' + index + '"]');
+      if (!config || !canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      const dpr = Math.min(2, window.devicePixelRatio || 1);
+      canvas.width = 140 * dpr; canvas.height = 90 * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const owner = group.variant.claimants.find(person => person.id === group.variant.answer);
+      drawLostEncore(ctx, { ...config, elapsed: 3, duration: 3, progress: 1, stage: 'settled', settled: true, anchor: { x: 70, y: 43 }, bounds: { left: 18, right: 122, top: 15, bottom: 75 }, recipient: owner ? { diagram: owner.diagram } : null }, true);
+    });
   }
 
   function render() {
@@ -103,6 +126,7 @@ export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNoti
     }).join('') + '</div>';
     $('#cap-book-feature').insertAdjacentHTML('beforeend', activityMarkup(scene, opened));
     $('#cap-book-feature').insertAdjacentHTML('beforeend', lostMarkup(scene, opened));
+    drawLostThumbnails(scene, opened);
     const activityStats = getActivityStats?.(), lostStats = getLostStats?.();
     const receipts = Number.isInteger(lostStats?.variants) ? Math.max(0, Math.min(LOST_CASE_TOTALS.variants, lostStats.variants)) : 0;
     $('.cap-book-section-title>span').textContent = (activityStats ? '借景 ' + activityStats.completed + '/16 · 路线 ' + activityStats.variants + '/48' : '6 幕旅途 · 10 封节日来信') + (lostStats ? ' · 回执 ' + receipts + '/' + LOST_CASE_TOTALS.variants : '');

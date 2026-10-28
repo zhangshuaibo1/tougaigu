@@ -1,4 +1,5 @@
 import { evaluateLostClaim } from './dream-lost-cases.js';
+import { getLostEncore } from './dream-lost-encores.js';
 
 // A small optional evidence game. Its anchors never enter the collision model.
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
@@ -8,6 +9,7 @@ const distance=(a,b)=>a&&b?Math.hypot(a.x-b.x,a.y-b.y):Infinity;
 const smooth=t=>t*t*(3-2*t);
 export const LOST_BOX_ANCHOR=Object.freeze({x:465,y:560,r:30});
 export const LOST_INTERACTION_RADIUS=36;
+export const LOST_ENCORE_DURATION=3;
 
 export function createLostLayout(sceneId){
   // The library's first memory occupies the shared object position.
@@ -30,6 +32,9 @@ export class DreamLostCase {
     this.opened=this.record.seenClues[this.variant].length>0||this.record.solvedVariants.includes(this.variant);
     this.roundSolved=this.record.solvedVariants.includes(this.variant);this.solveSent=this.roundSolved;
     this.clueIndex=this.record.seenClues[this.variant][0]??null;this.handoff=null;this.feedback=null;this.notice=null;
+    // This is presentation time only. Restored receipts are already complete,
+    // and never replay a solve event or invent another stored fact.
+    this.encoreElapsed=this.roundSolved?LOST_ENCORE_DURATION:null;
   }
   get variantDefinition(){return this.config.variants[this.variant];}
   get seenClues(){return this.record.seenClues[this.variant];}
@@ -44,7 +49,7 @@ export class DreamLostCase {
   refresh(context){
     if(this.destroyed)return;
     this.context=context;this.available=!!context?.unlocked;this.inRange=this.bodyInRange(context?.body);
-    if(context?.reducedMotion)this.handoff=null;
+    if(context?.reducedMotion){this.handoff=null;if(this.roundSolved)this.encoreElapsed=LOST_ENCORE_DURATION;}
     if(!this.available)this.phase='locked';
     else if(!this.opened)this.phase='closed';
     else if(!this.isExpanded(context)||context.state!=='playing')this.phase='suspended';
@@ -64,7 +69,7 @@ export class DreamLostCase {
     let announce=!this.opened;
     if(this.roundSolved){
       this.variant=[0,1].find(index=>!this.record.solvedVariants.includes(index))??(this.variant+1)%2;
-      this.record.activeVariant=this.variant;this.roundSolved=false;this.solveSent=false;this.clueIndex=null;this.observed.clear();this.handoff=null;this.feedback=null;this.notice=null;announce=true;
+      this.record.activeVariant=this.variant;this.roundSolved=false;this.solveSent=false;this.clueIndex=null;this.observed.clear();this.handoff=null;this.feedback=null;this.notice=null;this.encoreElapsed=null;announce=true;
     }
     this.opened=true;this.record.activeVariant=this.variant;this.refresh(context);
     if(announce)this.emit('open');
@@ -91,6 +96,7 @@ export class DreamLostCase {
     this.handoff=context.reducedMotion?null:{kind,claimantId:claimant.id,progress:0,duration:judgement.correct?.7:.85,from:{x:this.layout.object.x,y:this.layout.object.y},to:{x:target.x,y:target.y}};
     if(judgement.correct){
       this.roundSolved=true;this.record.solvedVariants=indexes([...this.record.solvedVariants,this.variant]);
+      this.encoreElapsed=context.reducedMotion?LOST_ENCORE_DURATION:0;
       this.record.activeVariant=this.variant;this.refresh(context);
       if(!this.solveSent){this.solveSent=true;this.emit('solve',{claimantId:claimant.id});}
     }else{this.refresh(context);this.emit('wrong',{claimantId:claimant.id});}
@@ -102,11 +108,17 @@ export class DreamLostCase {
     if(!this.isExpanded(context)||context?.state!=='playing'||!dt)return;
     if(this.notice){this.notice.remaining=Math.max(0,this.notice.remaining-dt);if(!this.notice.remaining)this.notice=null;}
     if(this.handoff){this.handoff.progress=clamp(this.handoff.progress+dt/this.handoff.duration,0,1);if(this.handoff.progress>=1)this.handoff=null;}
+    if(this.roundSolved&&this.encoreElapsed!==null){
+      const next=this.encoreElapsed+dt;
+      this.encoreElapsed=next>=LOST_ENCORE_DURATION-1e-9?LOST_ENCORE_DURATION:next;
+    }
     this.refresh(context);
   }
   recover(context){
     if(this.destroyed)return;
-    this.handoff=null;this.notice=null;this.refresh(context);
+    this.handoff=null;this.notice=null;
+    if(this.roundSolved)this.encoreElapsed=LOST_ENCORE_DURATION;
+    this.refresh(context);
   }
   getEvidence(){
     if(!this.isExpanded())return null;
@@ -139,7 +151,21 @@ export class DreamLostCase {
   }
   getSnapshot(){
     if(this.destroyed||!this.available)return null;
-    return {caseId:this.config.id,title:this.config.title,phase:this.phase,variant:this.variant,nearBox:this.nearBox(),opened:this.opened,seenClues:this.seenClues.length,totalClues:2,hint:this.getHint(),evidence:this.getEvidence()};
+    const encore=this.getEncore();
+    return {caseId:this.config.id,title:this.config.title,phase:this.phase,variant:this.variant,nearBox:this.nearBox(),opened:this.opened,seenClues:this.seenClues.length,totalClues:2,hint:this.getHint(),evidence:this.getEvidence(),
+      encore:encore?{caption:encore.caption,stage:encore.stage,settled:encore.settled}:null};
+  }
+  getEncore(){
+    if(!this.roundSolved||!this.isExpanded()||this.encoreElapsed===null)return null;
+    const definition=getLostEncore(this.config.id,this.variant);
+    if(!definition)return null;
+    const index=this.variantDefinition.claimants.findIndex(person=>person.id===this.variantDefinition.answer);
+    if(index<0)return null;
+    const elapsed=clamp(finite(this.encoreElapsed),0,LOST_ENCORE_DURATION),x=this.layout.object.x,library=this.config.sceneId==='story-3';
+    return {...definition,motif:this.config.object.motif,elapsed,duration:LOST_ENCORE_DURATION,progress:elapsed/LOST_ENCORE_DURATION,
+      stage:elapsed<.7?'delivery':elapsed<1.65?'unfold':elapsed<LOST_ENCORE_DURATION?'celebrate':'settled',settled:elapsed===LOST_ENCORE_DURATION,
+      anchor:{x,y:library?424:432},bounds:{left:x-52,right:x+52,top:library?403:404,bottom:library?448:464},
+      recipient:{...this.variantDefinition.claimants[index],...this.layout.claimants[index]}};
   }
   getView(){
     if(this.destroyed)return null;
@@ -148,7 +174,7 @@ export class DreamLostCase {
     return {caseId:this.config.id,sceneId:this.config.sceneId,config:this.config,variant:this.variant,variantDefinition:this.variantDefinition,phase:this.phase,available:this.available,opened:this.opened,visible:this.available,expanded,nearBox:this.nearBox(),
       box:{...this.layout.box,nearby:this.inRange},object:{...this.layout.object,...this.config.object,selected:selected?.kind==='object',clueIndex:this.clueIndex,seen:[...this.seenClues],delivered:this.roundSolved&&!this.handoff},
       claimants:this.variantDefinition.claimants.map((claimant,index)=>({...claimant,...this.layout.claimants[index],selected:selected?.kind==='claimant'&&selected.index===index,seen:this.observed.has(claimant.id)})),
-      seenClues:[...this.seenClues],solvedVariants:[...this.record.solvedVariants],deliveredClaimantId:this.roundSolved?this.variantDefinition.answer:null,handoff,feedback:this.feedback?{...this.feedback}:null,hint:this.getHint()};
+      seenClues:[...this.seenClues],solvedVariants:[...this.record.solvedVariants],deliveredClaimantId:this.roundSolved?this.variantDefinition.answer:null,handoff,encore:this.getEncore(),feedback:this.feedback?{...this.feedback}:null,hint:this.getHint()};
   }
-  destroy(){this.destroyed=true;this.phase='destroyed';this.context=null;this.handoff=null;this.notice=null;this.feedback=null;this.observed.clear();this.onEvent=null;}
+  destroy(){this.destroyed=true;this.phase='destroyed';this.context=null;this.handoff=null;this.encoreElapsed=null;this.notice=null;this.feedback=null;this.observed.clear();this.onEvent=null;}
 }
