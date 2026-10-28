@@ -31,4 +31,8 @@
 
 ## 发布
 
-发布前检查完成；源码、Pages和部署结果在发布后记录。
+- 源码提交：`35a46a28d4b81411f0422553a7bd8564c13c2c55`。
+- Pages提交：`dc31d2276c3ad3cb5bedcc9667b5f610f3fd9aa0`。
+- [GitHub Pages部署40744673116](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40744673116) 完成，结论success。
+- 刷新公开首页，初始绒绒与交谈按钮出现；实际交谈读到站踏板掀盖提示，跳过后掀盖，绒绒托灯看向拾光，Q按钮恢复互动。线上截图story-friends-live.jpg。
+- 发布树97个运行文件，两入口一致，原企业版权与logo保留，无临时验收页，自定义域名尚未绑定。
