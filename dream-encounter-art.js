@@ -46,15 +46,15 @@ function envelope(c, x, y, width, height, wax = '#aa91b0', open = 0) {
 }
 function lantern(c, pose) {
   const sway = pose.reduced ? 0 : Math.sin(pose.time * 1.45) * .8;
-  c.save(); c.translate(sway, -27 - pose.lift);
+  c.save(); c.translate(sway+pose.propX, -27 - pose.lift);
   const light = c.createRadialGradient(0, 1, 0, 0, 1, 20);
-  light.addColorStop(0, '#f7d59635'); light.addColorStop(1, '#f7d59600');
+  light.addColorStop(0, pose.warm?'#ffe1a55c':'#f7d59635'); light.addColorStop(1, '#f7d59600');
   ellipse(c, 0, 0, 20, 23, light);
   path(c, p => { p.moveTo(-6, -10); p.lineTo(-6, -15); p.quadraticCurveTo(0, -21, 6, -15); p.lineTo(6, -10); }, null, '#bca17d', 1.2);
   box(c, -10, -10, 20, 25, 3, '#8e758b', '#cfb99a', 1.1);
-  box(c, -7, -7, 14, 18, 2, pose.open ? '#f4d793' : '#d8b784');
+  box(c, -7, -7, 14, 18, 2, pose.warm?'#ffe1a1':pose.open ? '#f4d793' : '#d8b784');
   line(c, [[-3, -6], [-3, 10]], '#f8e7bf', .8); line(c, [[3, -6], [3, 10]], '#a98e76', .8);
-  star(c, 0, 2, pose.open ? 4 : 3, '#fff0c4');
+  star(c, 0, 2, pose.open||pose.warm ? 4 : 3, '#fff0c4');
   box(c, -11, -11, 22, 3, 1, '#d4b98e'); box(c, -9, 13, 18, 3, 1, '#c0a782');
   c.restore();
 }
@@ -73,7 +73,7 @@ function tickets(c, pose) {
 function moth(c, pose) {
   const wing = pose.reduced ? 0 : Math.sin(pose.time * 1.8) * .035;
   for (const side of [-1, 1]) {
-    c.save(); c.scale(side, 1); c.translate(10, -49); c.rotate(wing + (pose.open ? -.04 : 0));
+    c.save(); c.scale(side, 1); c.translate(10, -49); c.rotate(wing + (pose.open ? -.04 : 0)-pose.salute*.07);c.scale(1+pose.salute*.055,1+pose.salute*.035);
     path(c, p => { p.moveTo(0, 0); p.bezierCurveTo(15, -38, 39, -35, 28, -13); p.bezierCurveTo(23, -2, 13, 3, 2, 2); p.bezierCurveTo(24, 7, 24, 26, 12, 25); p.bezierCurveTo(5, 24, 0, 13, 0, 0); }, side < 0 ? '#d7bba1' : '#e5cfad', '#9b8291', 1.1);
     line(c, [[3, -1], [24, -23], [11, -9], [29, -15]], '#b39794', .9);
     line(c, [[3, 4], [13, 18], [12, 7]], '#b39794', .9);
@@ -88,26 +88,32 @@ function moth(c, pose) {
   line(c, [[-9,-43],[-11,-15]], '#d4b9bd', .7);
   for (const y of [-39,-33,-27,-21]) line(c, [[-11,y],[-9,y+1]], '#e4d2bd', .7);
   // Head and antennae tilt very slightly toward the light, without moving feet.
-  c.save(); c.translate(0, pose.open ? -1 : 0); c.translate(0,-65); c.rotate(pose.gazeX * .045); c.translate(0,65);
+  c.save(); c.translate(0, (pose.open ? -1 : 0)-pose.salute*.8); c.translate(0,-65); c.rotate(pose.gazeX * .045+pose.salute*.035); c.translate(0,65);
   for (const side of [-1,1]) {
-    path(c, p => { p.moveTo(side*7,-79); p.quadraticCurveTo(side*7,-85,side*13,-88); }, null, '#b3a0ac', 1.3);
-    ellipse(c,side*13,-88,2,2,'#e8d4b3');
+    const antennaTop=-88-pose.salute*3;
+    path(c, p => { p.moveTo(side*7,-79); p.quadraticCurveTo(side*7,-85,side*13,antennaTop); }, null, '#b3a0ac', 1.3);
+    ellipse(c,side*13,antennaTop,2,2,'#e8d4b3');
   }
   ellipse(c,0,-65,16.3,19,'#e8d4b1',0,'#a78d94');
   path(c,p=>{p.moveTo(-13,-76);p.bezierCurveTo(-17,-84,-8,-88,-5,-81);p.bezierCurveTo(-3,-90,5,-90,6,-82);p.bezierCurveTo(13,-88,18,-82,13,-76);},'#f3e6cd','#b8a2a3',.9);
   for (const side of [-1,1]) {
     ellipse(c,side*7.5,-65,6.6,7.3,null,0,'#806b80');
-    if(pose.blink) line(c,[[side*7.5-2,-65],[side*7.5+2,-65]],'#4f4358',1.4);
+    if(pose.smile)path(c,p=>{p.moveTo(side*7.5-2.5,-64.5);p.quadraticCurveTo(side*7.5,-68,side*7.5+2.5,-64.5);},null,'#4f4358',1.4);
+    else if(pose.blink) line(c,[[side*7.5-2,-65],[side*7.5+2,-65]],'#4f4358',1.4);
     else { ellipse(c,side*7.5+pose.gazeX*1.25,-65+pose.gazeY,2.2,3,'#4c4156'); ellipse(c,side*7.5+pose.gazeX*1.25+.6,-66.1+pose.gazeY,.75,.8,'#f7edd5'); }
     ellipse(c,side*12.5,-56,3,1.3,'#cfaa9b88');
   }
   line(c,[[-1,-65],[1,-65]],'#806b80',1); line(c,[[-14,-66],[-16,-67]],'#806b80',1);line(c,[[14,-66],[16,-67]],'#806b80',1);
-  path(c,p=>{p.moveTo(-4,-54);p.quadraticCurveTo(0,pose.talking?-48:-50.5,5,-54);},null,'#9d7d7f',1.05);
+  path(c,p=>{p.moveTo(-4,-54);p.quadraticCurveTo(0,pose.smile?-47.5:pose.talking?-48:-50.5,5,-54);},null,'#9d7d7f',1.05);
   c.restore();
+  // The same offset owns lantern, wrist and elbow targets throughout the
+  // greeting. The light cannot slide away from the hands that are lifting it.
+  const propSway=pose.prop==='theatre-ticket'?0:pose.reduced?0:Math.sin(pose.time*1.45)*.8;
+  const propX=pose.propX+propSway;
   const handY = -28 - pose.lift;
-  for (const side of [-1,1]) { line(c,[[side*12,-43],[side*17,handY+4],[side*10,handY]],'#cab5a5',3.1); }
+  for (const side of [-1,1]) { line(c,[[side*12,-43],[side*17+propX*.55,handY+4],[side*10+propX,handY]],'#cab5a5',3.1); }
   if(pose.prop==='theatre-ticket') tickets(c,pose); else lantern(c,pose);
-  for(const side of [-1,1]) ellipse(c,side*11,handY,2.6,3.2,'#ead7b5');
+  for(const side of [-1,1]) ellipse(c,side*11+propX,handY,2.6,3.2,'#ead7b5');
 }
 
 function wateringCan(c, pose) {
@@ -218,12 +224,21 @@ function label(c,view) {
 export function drawStoryNPC(c,view,time=0,reducedMotion=false) {
   if(!c||!view||!['moth','keeper','whale'].includes(view.motif))return;
   const x=finite(view.x),y=finite(view.y),t=reducedMotion?0:finite(time);
-  const open=Boolean(view.near&&view.form==='soul'&&view.capOpen);
+  const ticket=view.chapterIndex===0&&view.motif==='moth'&&view.prop==='station-lantern'&&view.stationTicket&&typeof view.stationTicket==='object'?view.stationTicket:null;
+  const open=Boolean(view.near&&(view.form==='soul'||ticket?.phase==='returning')&&view.capOpen);
   const look=view.look||{x,y:y-58};
-  const pose={time:t,reduced:!!reducedMotion,prop:view.prop,open,talking:!!view.talking,
+  const greeting=ticket?.greeting,progress=clamp(finite(ticket?.progress,1),0,1);
+  const welcome=!!ticket&&greeting==='welcome'&&ticket.fresh===true;
+  // This one-shot gesture consumes engine progress, never wall time. Reduced
+  // motion settles it into the warmer resting lamp without a brief flash.
+  const salute=welcome&&!reducedMotion?Math.sin(progress*Math.PI):0;
+  const notice=!!ticket&&greeting==='notice'&&ticket.fresh===true?progress*progress*(3-2*progress):0;
+  const warm=!!ticket&&['held','returning','stowed'].includes(ticket.phase);
+  const pose={time:t,reduced:!!reducedMotion,prop:view.prop,open,talking:!!view.talking,salute,warm,propX:salute*21,
+    smile:welcome&&!reducedMotion&&progress>.24&&progress<.81,
     gazeX:clamp((finite(look.x,x)-x)/140,-1,1),gazeY:clamp((finite(look.y,y-65)-(y-65))/100,-1.2,1.2),
     blink:!reducedMotion&&Math.sin(t*1.67+view.chapterIndex*.4)>.992,
-    lift:open?11:view.talking?3:0};
+    lift:(open?11:view.talking?3:0)+notice*2+salute*14};
   c.save();c.translate(x,y);c.lineCap='round';c.lineJoin='round';c.lineWidth=1;
   ellipse(c,0,2,view.motif==='whale'?34:27,4,'#10202a55');
   // Body breathing is deliberately tiny; the first platform is just above us.

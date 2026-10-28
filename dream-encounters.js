@@ -1,5 +1,6 @@
 // Optional, player-opened conversations in the six main chapters. These
-// descriptions never read or write progress; the caller supplies current lamps.
+// descriptions never read or write progress; the caller supplies current facts.
+import { normalizeJourneyContext } from './dream-journey.js';
 const encounters = [
   {
     id: 'story-npc-0', chapterIndex: 0, sceneId: 'story-0',
@@ -161,11 +162,150 @@ export function getStoryNPC(chapterIndex) {
     ? STORY_ENCOUNTERS[chapterIndex] : null;
 }
 
+function plainRecord(value) {
+  if (!value || typeof value !== 'object') return false;
+  try {
+    const prototype = Object.getPrototypeOf(value);
+    return !Array.isArray(value) && (prototype === Object.prototype || prototype === null);
+  } catch { return false; }
+}
+
+function option(value, key) {
+  if (!plainRecord(value)) return undefined;
+  try {
+    const item = Object.getOwnPropertyDescriptor(value, key);
+    return item && Object.hasOwn(item, 'value') ? item.value : undefined;
+  } catch { return undefined; }
+}
+
+function encounterState(chapterIndex, options) {
+  const seals = option(options, 'seals');
+  const stage = Number.isInteger(seals) && seals >= 0 && seals <= 2 ? seals : 0;
+  const candidate = option(options, 'journey');
+  return {
+    stage, repeated: option(options, 'repeated') === true,
+    journey: chapterIndex <= 1 && plainRecord(candidate) ? normalizeJourneyContext(candidate) : null,
+  };
+}
+
+// Earlier chapters may greet a newly delivered object even if the same friend
+// was already visited. Later chapters retain their established NPC-level repeat.
+export function getStoryEncounterKey(chapterIndex, options = {}) {
+  const npc = getStoryNPC(chapterIndex);
+  if (!npc) return null;
+  if (chapterIndex > 1) return npc.id;
+  const {stage, journey} = encounterState(chapterIndex, options);
+  const reaction = !journey ? 'default' : chapterIndex === 0
+    ? 'ticket-' + journey.ticketPhase
+    : [journey.hasTicket ? 'ticket-pot' : 'plain-pot', journey.seedPhase, journey.plantStage].join(':');
+  return npc.id + ':lamps-' + stage + ':' + reaction;
+}
+
+const dialogue = (speaker, text, mood) => ({speaker, text, ...(mood ? {mood} : {})});
+function stationJourneyLines(stage, repeated, journey) {
+  if (journey.ticketPhase === 'held' || journey.ticketPhase === 'returning') {
+    const returning = journey.ticketPhase === 'returning';
+    if (repeated) return [dialogue('moth', returning
+      ? '票正在回家的路上。等拾光抱它坐稳，再带身体向前走。'
+      : '票还在拾光怀里。先归位，再去找路上的光。')];
+    return [
+      dialogue('moth', returning
+        ? '拾光正抱着去程票回家。车厢已经留好座，等它轻轻坐稳。'
+        : '去程票已经接住了，还在拾光怀里。先归位，陪它坐进头顶的小火车。'),
+      dialogue('ashi', [
+        '车票坐稳后，身体站上铜踏板，拾光再去找诗灯。',
+        '车票坐稳后，我们带着身体去找前面的另一盏灯。',
+        '车票坐稳后，我带着身体从亮起的门出发。',
+      ][stage], 'tender'),
+    ];
+  }
+  const full = journey.hasTicket ? [
+    [
+      dialogue('moth', '去程票收进小火车了。身体站上铜踏板，再让拾光穿过帘幕。'),
+      dialogue('ashi', '下一站若有种子想搭车，我给它留个靠窗座。', 'open'),
+    ],
+    [
+      dialogue('moth', '第一盏亮了，车票也收好了。另一盏在前方，身体别落在站台。'),
+      dialogue('light', '小火车有了乘客。等你一起走，再给新来的念头让个座。', 'joy'),
+    ],
+    [
+      dialogue('moth', '两盏灯齐了，去程票也在车上。拾光归位，让身体从出口出发。'),
+      dialogue('ashi', '这张票先不丢。下一站，也许还有谁需要一个座位。', 'tender'),
+    ],
+  ] : [
+    [
+      dialogue('moth', '去程票还在站台上方。先掀盖去够一够，再让身体站上铜踏板。'),
+      dialogue('ashi', '身体守住路，拾光去接头顶候车室的第一位乘客。', 'open'),
+    ],
+    [
+      dialogue('moth', '第一盏亮了。去程票还等在上方，另一盏灯则等着身体往前走。'),
+      dialogue('light', '头里的小火车留着空位。哪天想带上它，我们再来接。', 'joy'),
+    ],
+    [
+      dialogue('moth', '两盏灯齐了，归位带身体去出口吧。去程票还留在站台，愿意时再找。'),
+      dialogue('ashi', '小火车先留个空座。忘了带上的念头，不会被催着下车。', 'tender'),
+    ],
+  ];
+  if (!repeated) return full[stage];
+  const text = journey.hasTicket ? [
+    '票坐稳了。身体站铜踏板，拾光掀盖过帘幕，别把车厢也抖出去。',
+    '票在车上等你。另一盏还没亮，带身体继续向前吧。',
+    '去程票不催人。两盏灯齐了，归位带身体从出口出发。',
+  ] : [
+    '上方那张票还没上车。掀盖去看看，铜踏板会等身体站稳。',
+    '另一盏灯在前面。没带上的车票也留着，不必锁上头顶的小窗。',
+    '两盏灯替你留路，身体能去出口。车票还在，随时可以回来找。',
+  ];
+  return [dialogue('moth', text[stage])];
+}
+
+function greenhouseJourneyLines(stage, repeated, journey) {
+  const direction = [
+    '让身体借蘑菇站稳，拾光去够诗灯。',
+    '还差一盏光，身体站稳再掀盖。',
+    '两盏灯齐了，归位带身体去出口。',
+  ][stage];
+  let first, response, short;
+  if (journey.seedPhase === 'missing') {
+    first = [
+      '高处旧靴子里有粒种子。身体借蘑菇上高台，让拾光去接它。',
+      '一盏灯亮了，旧靴子里的种子还在等。蘑菇会送身体上高台。',
+      '两盏灯齐了，身体能去出口。旧靴子里的种子，愿意时再带上。',
+    ][stage];
+    response = journey.hasTicket
+      ? '旧车票折成了小纸盆。空着的靠窗座，原来是给它留的。'
+      : '头里的小盆还空着。先替它开扇窗，再去接那位小客人。';
+    short = stage === 2 ? '种子还在旧靴子里。两盏灯齐了，归位让身体继续走也可以。'
+      : '旧靴子里的种子还没搬家。身体借蘑菇站稳，拾光去看看。';
+  } else if (journey.seedPhase === 'held' || journey.seedPhase === 'returning') {
+    first = journey.seedPhase === 'held'
+      ? '种子还在拾光手里。先归位，把它轻轻放进头顶的小盆。'
+      : '拾光正抱它回家。盆已经摆稳，等种子轻轻落下就好。';
+    response = '我把头顶的窗留着。先接住这位小客人，再陪它去借光。';
+    short = journey.seedPhase === 'held' ? '拾光还抱着种子。先归位落盆，别急着替它数花瓣。'
+      : '种子正在回家的路上。小盆等得住，你也不必催它。';
+  } else if (journey.plantStage === 1) {
+    first = '种子落盆了。小小的一程，也值得替它好好站稳。';
+    response = '我守住它的窗。' + direction;
+    short = '种子已经安家。' + direction;
+  } else if (journey.plantStage === 2) {
+    first = '叶子探出来了。它认得你借来的那束光，也认得回家的小盆。';
+    response = '头盖再开一点，别碰着叶尖。' + direction;
+    short = '这片叶子是你带回的春天。' + direction;
+  } else {
+    first = '那粒种子真的开花了。你替它站过稳，也替它开过窗。';
+    response = '这回，头里有一朵自己带回的花。' + direction;
+    short = '花会记得你给的光。' + direction;
+  }
+  return repeated ? [dialogue('keeper', short)] : [dialogue('keeper', first), dialogue('ashi', response, journey.plantStage === 3 ? 'joy' : 'tender')];
+}
+
 export function getStoryEncounter(chapterIndex, options = {}) {
   const npc = getStoryNPC(chapterIndex);
   if (!npc) return null;
-  const { seals, repeated } = options && typeof options === 'object' && !Array.isArray(options) ? options : {};
-  // Malformed progress cannot fabricate a later-stage conversation.
-  const stage = Number.isInteger(seals) && seals >= 0 && seals <= 2 ? seals : 0;
-  return (repeated === true ? npc.repeat : npc.lines)[stage];
+  const {stage, repeated, journey} = encounterState(chapterIndex, options);
+  // Keep existing references and text for callers without journey evidence.
+  if (!journey) return (repeated ? npc.repeat : npc.lines)[stage];
+  return freezeDeep(chapterIndex === 0 ? stationJourneyLines(stage, repeated, journey)
+    : greenhouseJourneyLines(stage, repeated, journey));
 }

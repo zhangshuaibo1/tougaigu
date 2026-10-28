@@ -1,6 +1,7 @@
 // A little theatre in a hinged skull. These drawings are shared with the album.
 // Every miniature lives in x [-60, 60], y [-60, 30], without game state or assets.
 import { drawFirstTicket } from './dream-first-ticket-art.js';
+import { drawGreenhouseSeed } from './dream-greenhouse-art.js';
 const TAU=Math.PI*2;
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 const STORY_MOTIFS=['station','sprout','moon','whale','clock','dawn'];
@@ -50,6 +51,56 @@ function face(c,x,y,color,smile=true){oval(c,x-5,y,1.8,2.3,color);oval(c,x+5,y,1
 function moon(c,x,y,r,color){oval(c,x,y,r,r,color);oval(c,x+r*.45,y-r*.25,r*.78,r*.78,'#274548');}
 function flame(c,x,y,color){c.beginPath();c.moveTo(x,y-7);c.bezierCurveTo(x-8,y+1,x-3,y+7,x,y+6);c.bezierCurveTo(x+7,y+6,x+5,y,x,y-7);c.fillStyle=color;c.fill();}
 
+function greenhouseMiniature(c,scene){
+  const state=scene.greenhouse,color=scene.color,accent=scene.accent;
+  const stage=Number.isInteger(state.stage)?clamp(state.stage,0,3):0;
+  const from=Number.isInteger(state.fromStage)?clamp(state.fromStage,0,stage):stage;
+  const progress=Number.isFinite(state.progress)?clamp(state.progress,0,1):1;
+  const eased=progress*progress*(3-2*progress);
+  // Stage visibility comes solely from the supplied progression. Time cannot
+  // grow an unearned plant, and a saved final stage needs no replayed flourish.
+  const reveal=threshold=>from>=threshold?1:stage>=threshold?eased:0;
+  const soilSeed=reveal(1),leaves=reveal(2),flower=reveal(3);
+  const paper=state.pot==='ticket';
+  oval(c,0,21,28,3,'#203d3c33');
+  if(paper){
+    // Keep the conductor's notches, perforation and train from the original
+    // ticket; the folded corners and dark top turn it into a tiny paper pot.
+    c.save();c.translate(0,3);drawFirstTicket(c,{scale:.92});c.restore();
+    c.beginPath();c.moveTo(-20,-9);c.lineTo(-14,-15);c.lineTo(14,-15);c.lineTo(20,-9);c.closePath();c.fillStyle='#e1bf85';c.fill();
+    stroke(c,[[-20,-9],[-14,15],[14,15],[20,-9]],'#b58b58',.9);
+    stroke(c,[[-17,12],[17,12]],'#fff1c288',.7);
+    oval(c,0,-10,18,5,'#715c48');oval(c,0,-11,16,3.1,'#493f37');
+    curve(c,[-18,-10,-7,-3,7,-3,18,-10],'#f6dba1',1.8);
+  }else{
+    c.beginPath();c.moveTo(-18,-10);c.lineTo(18,-10);c.lineTo(13,14);c.quadraticCurveTo(0,20,-13,14);c.closePath();c.fillStyle='#ba876c';c.fill();
+    stroke(c,[[-13,-5],[-10,12]],'#e7b292',1.7);rect(c,-21,-13,42,7,'#ddb08d',3);
+    oval(c,0,-12,18,3.5,'#614c3e');star(c,0,4,4.3,'#eac99a');
+  }
+  // Soil granules are stable landmarks; the seed settles between them.
+  for(const [x,y,r] of [[-9,-11,1.3],[11,-10,1],[-2,-8,1],[6,-12,.8]])oval(c,x,y,r,r,'#a48964');
+  if(soilSeed>0&&leaves<1){
+    c.save();c.globalAlpha*=soilSeed*(1-leaves);
+    // Keep enough of the kernel above the soil to read as a newly planted
+    // seed even in the phone's small projection; bury its lower tip.
+    c.beginPath();c.rect(-20,-60,40,52);c.clip();
+    drawGreenhouseSeed(c,{x:0,y:-13-(1-soilSeed)*19,scale:.6});c.restore();
+  }
+  if(leaves>0){
+    const top=-10-24*leaves-11*flower;
+    curve(c,[0,-10,-4,-18*leaves-8,5,-24*leaves-8,2,top],color,2.3);
+    c.save();c.translate(0,-12-10*leaves);c.scale(leaves,leaves);
+    leaf(c,-8,-5,11,4.2,color,.5);stroke(c,[[-15,-8],[-1,-1]],'#e7ecc777',.65);
+    leaf(c,10,-11,12,4.7,'#97c89d',-.55);stroke(c,[[2,-7],[18,-15]],'#e7ecc788',.65);c.restore();
+    if(flower>0){
+      c.save();c.translate(2,top);c.scale(.22+.78*flower,.22+.78*flower);
+      for(let i=0;i<6;i++){const a=-Math.PI/2+i*TAU/6;leaf(c,Math.cos(a)*6.2,Math.sin(a)*6.2,5.3,3.1,i%2?'#f2c3b3':'#f2d6b2',a);}
+      oval(c,0,0,4.6,4.6,accent);oval(c,0,0,2.1,2.1,'#ba9862');
+      for(const [x,y] of [[-1,-1],[1.5,-.5],[.3,1.7]])oval(c,x,y,.55,.55,'#fff0c2');c.restore();
+    }else oval(c,2,top,2.4,3,color);
+  }
+}
+
 export function drawCapMiniature(c,input,t=0){
   const scene=resolveCapScene(input),color=scene.color,accent=scene.accent,ivory='#f6e8c8',ink='#324c52';
   t=Number.isFinite(t)?clamp(t,-1000000,1000000):0;
@@ -70,6 +121,7 @@ export function drawCapMiniature(c,input,t=0){
       break;
     }
     case 'sprout': {
+      if(scene.greenhouse&&typeof scene.greenhouse==='object'&&!Array.isArray(scene.greenhouse)){greenhouseMiniature(c,scene);break;}
       book(c,-35,8,52,8,accent);book(c,-29,0,49,8,color);
       c.beginPath();c.moveTo(-13,-8);c.lineTo(13,-8);c.lineTo(9,8);c.quadraticCurveTo(0,13,-9,8);c.closePath();c.fillStyle='#d79c80';c.fill();rect(c,-16,-11,32,6,'#f0ba94');
       curve(c,[0,-8,-6,-24,6+sway,-34,2+sway,-49],color,2.5);
