@@ -8,6 +8,7 @@ import { getCapActivity } from './dream-cap-activities.js';
 import { CAP_ACTIVITY_SAVE_KEY, capActivityRevision, loadCapActivitySave, persistCapActivitySave, validateCapActivitySave, mergeCapActivitySaves, replaceCapActivitySave, getCapActivityRecord, getCapActivityStats, recordCapActivityEvent } from './cap-activity-progress.js';
 import { getLostCase, evaluateLostClaim, LOST_CASE_TOTALS } from './dream-lost-cases.js';
 import { createLostDiagram } from './lost-evidence.js';
+import { getStoryEncounter } from './dream-encounters.js';
 import { LOST_SAVE_KEY, lostRevision, loadLostSave, persistLostSave, validateLostSave, mergeLostSaves, replaceLostSave, getLostRecord, getLostStats, recordLostEvent } from './lost-progress.js';
 import {
   CHAPTERS, CAST, STORY_CHOICES, ENDINGS, STAMPS, STORY_ITEMS, PUZZLES, DREAM_SAVE_KEY,
@@ -600,6 +601,9 @@ function onHud(snapshot) {
   $('#stage-toggle-label').textContent = soul ? '回到身体' : '掀开头盖骨';
   $('#stage-action-label').textContent = soul ? '回声脉冲' : '跳跃';
   $('#stage-action-glyph').textContent = soul ? '✧' : '↑';
+  const talkTarget = !soul && snapshot.target?.kind === 'npc' ? snapshot.target : null;
+  $('#stage-interact-label').textContent = talkTarget ? '交谈' : '互动';
+  $('#stage-interact').setAttribute('aria-label', talkTarget ? '与' + talkTarget.name + '交谈 Q' : '互动 Q');
   if (previousForm && previousForm !== snapshot.form) resetInput();
 }
 
@@ -634,16 +638,17 @@ function restartChapter() {
 }
 
 function showEncounter(payload) {
-  const festival = getFestival(payload.festivalId);
-  if (!festival) { game?.resolveTalk(); return; }
+  const festival = payload.mode === 'festival' ? getFestival(payload.festivalId) : null;
+  const lines = festival ? (payload.repeated ? festival.encounters : festival.intro)
+    : payload.mode === 'story' ? getStoryEncounter(payload.chapterIndex, { seals: payload.seals, repeated: payload.repeated }) : null;
+  if (!lines?.length) { game?.resolveTalk(); return; }
   pendingTalk = true;
-  const lines = payload.repeated ? festival.encounters : festival.intro;
-  openStory(lines, currentChapter, () => {
+  openStory(lines, festival ? currentChapter : payload.chapterIndex, () => {
     pendingTalk = false;
     resetInput();
     game?.resolveTalk();
     $('#dream-canvas').focus({ preventScroll: true });
-  }, '一起去找礼物', festival);
+  }, festival ? '一起去找礼物' : '继续出发', festival);
 }
 
 function finishChapter(result) {
