@@ -52,7 +52,8 @@ export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNoti
     ctx.fillStyle = '#b89760'; ctx.beginPath(); ctx.arc(-54, -13, 5, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = '#30484b'; ctx.beginPath(); ctx.ellipse(0, -12, 53, 10, 0, 0, Math.PI * 2); ctx.fill();
     ctx.strokeStyle = '#c7e7cf'; ctx.lineWidth = 2; ctx.stroke(); ctx.restore();
-    ctx.save(); ctx.translate(150, 115); ctx.scale(1.15, 1.15); drawCapMiniature(ctx, scene, reducedMotion ? 0 : time); ctx.restore();
+    const miniature = { ...scene, firstTicket: scene.id === 'story-0' && getCapRecord(save, scene.id).memories.includes(0) };
+    ctx.save(); ctx.translate(150, 115); ctx.scale(1.15, 1.15); drawCapMiniature(ctx, miniature, reducedMotion ? 0 : time); ctx.restore();
   }
   function animate(time) {
     if (!dialog.open || reducedMotion) { stopAnimation(); draw(0); return; }
@@ -120,7 +121,7 @@ export function createCapBook({ onOpen, onClose, onReadLetter, onSummary, onNoti
     $('#cap-book-feature').style.setProperty('--cap-accent', scene.color || '#a9ead6');
     $('#cap-book-feature').innerHTML = '<div class="cap-book-window ' + (opened ? '' : 'unopened') + '">' + (opened ? '<canvas id="cap-book-canvas" width="300" height="248" aria-label="' + escape(scene.title) + '：从掀开的头盖骨里升起的小剧场"></canvas>' : '<img src="./assets/portrait-hero-curious.svg" width="196" height="196" alt="等着掀盖的阿拾"><span>这一个脑洞，等你来打开</span>') + '</div><div class="cap-book-copy"><small>' + escape(titleFor(scene)) + '</small><h3>' + escape(scene.title) + '</h3><p>' + escape(scene.tagline) + '</p><div class="cap-book-lines">' + (opened ? scene.opening.map(line => '<p><b>' + (line.speaker === 'light' ? '拾光' : '阿拾') + '</b>' + escape(line.text) + '</p>').join('') : '<p>在这一幕按 <kbd>E</kbd> 掀开头盖骨，让拾光出来看看。</p>') + '</div><div class="cap-book-actions"><button class="dream-secondary" data-cap-close>回到游戏</button>' + (opened ? '<button class="dream-text-link" data-cap-letter="' + scene.id + '">读这一幕的来信 ↗</button>' : '') + '</div></div><div class="cap-thoughts"><div class="cap-thoughts-title"><b>带回脑袋的念头</b><span>' + record.memories.length + ' / 3</span></div>' + [0, 1, 2].map(index => {
       const found = record.memories.includes(index);
-      const title = festival ? festival.gifts[index] : '记忆 ' + (index + 1);
+      const title = festival ? festival.gifts[index] : scene.id === 'story-0' && index === 0 ? '去程票 · 小火车的第一位乘客' : '记忆 ' + (index + 1);
       const prose = festival ? scene.memories[index].text : CHAPTERS[scene.chapterIndex].memories[index];
       return '<article class="cap-thought ' + (found ? 'found' : '') + '"><i>' + (found ? '✦' : '·') + '</i><div><small>' + escape(title) + '</small><p>' + (found ? escape(prose) : '还藏在这一幕里，等拾光把它带回来。') + '</p></div></article>';
     }).join('') + '</div>';

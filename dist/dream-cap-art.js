@@ -1,5 +1,6 @@
 // A little theatre in a hinged skull. These drawings are shared with the album.
 // Every miniature lives in x [-60, 60], y [-60, 30], without game state or assets.
+import { drawFirstTicket } from './dream-first-ticket-art.js';
 const TAU=Math.PI*2;
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 const STORY_MOTIFS=['station','sprout','moon','whale','clock','dawn'];
@@ -64,6 +65,7 @@ export function drawCapMiniature(c,input,t=0){
       oval(c,-29,-43,10,10,ivory);oval(c,-29,-43,7.5,7.5,ink);stroke(c,[[-29,-48],[-29,-43],[-25,-41]],accent,1.4);
       rect(c,-11,-24,34,29,color,5);rect(c,18,-13,16,18,color,4);rect(c,-8,-21,12,10,ink,2);rect(c,8,-21,11,10,ink,2);rect(c,23,-25,5,12,accent,1);rect(c,-13,3,49,5,accent,2);
       for(const x of [-4,17,29]){oval(c,x,9,5,5,ink);oval(c,x,9,2,2,accent);}
+      if(scene.firstTicket===true)drawFirstTicket(c,{x:5,y:-7,scale:.47,rotation:-.06});
       oval(c,27+sway,-34,5,3,ivory+'66');oval(c,33+sway*2,-43,4,2.5,ivory+'44');star(c,42,-31,3,accent);
       break;
     }
