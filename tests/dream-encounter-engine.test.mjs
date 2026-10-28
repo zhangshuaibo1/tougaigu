@@ -67,7 +67,7 @@ test('approaching never auto-pauses, and actual Q owns one conversation pause un
     assert.equal(game.getNearHint(),'Q：与'+npc.name+'聊一聊');
     walkTo(game,190);tick(game,.3);assert.equal(game.state,'playing');assert.equal(talks.length,0);
     const before=facts(game);assert.equal(game.interact(),true);
-    assert.deepEqual(talks,[{mode:'story',chapterIndex,npcId:npc.id,repeated:false,seals:0}]);
+    assert.deepEqual(talks,[{mode:'story',chapterIndex,npcId:npc.id,repeated:false,seals:0,...(chapterIndex<2?{journey:{hasTicket:false,ticketPhase:'missing',seedPhase:'missing',plantStage:0}}:{})}]);
     assert.equal(game.state,'paused');assert.equal(game.pendingTalk,npc.id);assert.equal(game.getStoryNPCView().talking,true);
     assert.equal(game.getNearHint(),npc.name+'正在和你说话。');
     const time=game.time,visualTime=game.visualTime,pose=game.getStoryNPCView();tick(game,9);
@@ -85,7 +85,7 @@ test('returning after a real first-lamp journey reports the current light count 
     game.interact();game.resolveTalk();walkTo(game,410);assert.equal(game.getSnapshot().target,null);
     assert.equal(game.toggleSoul(),true);flyTo(game,game.lanterns[0]);assert.equal(game.interact(),true);assert.equal(game.lanterns[0].lit,true);
     game.recall();walkTo(game,190);const before=facts(game);game.interact();
-    assert.equal(talks.at(-1).seals,1);assert.equal(talks.at(-1).repeated,true);game.resolveTalk();assert.equal(facts(game),before);
+    assert.equal(talks.at(-1).seals,1);assert.equal(talks.at(-1).repeated,chapterIndex>=2,'The first two friends give a full new response to a new milestone');game.resolveTalk();assert.equal(facts(game),before);
     game.lightSeal(1);game.interact();assert.equal(talks.at(-1).seals,2);game.resolveTalk();
     assert.equal(game.lanterns.filter(lamp=>lamp.lit).length,2);assert.equal(game.state,'playing');assert.equal(game.completed,false);game.destroy();
   }
@@ -122,9 +122,10 @@ test('without a dialogue callback the current short line is announced without pa
   for(let chapterIndex=0;chapterIndex<6;chapterIndex++){
     const events=[],{game}=makeGame({chapterIndex},{onEvent:event=>events.push(event)}),before=facts(game);
     assert.equal(game.interact(),true);assert.equal(game.state,'playing');assert.equal(game.pendingTalk,null);
-    assert.equal(events.at(-1).text,getStoryEncounter(chapterIndex,{seals:0,repeated:false})[0].text);
+    const journey=chapterIndex<2?{journey:{hasTicket:false,ticketPhase:'missing',seedPhase:'missing',plantStage:0}}:{};
+    assert.equal(events.at(-1).text,getStoryEncounter(chapterIndex,{seals:0,repeated:false,...journey})[0].text);
     assert.equal(events.at(-1).type,'story');assert.equal(game.talked.has(getStoryNPC(chapterIndex).id),true);
-    game.interact();assert.equal(events.at(-1).text,getStoryEncounter(chapterIndex,{seals:0,repeated:true})[0].text);
+    game.interact();assert.equal(events.at(-1).text,getStoryEncounter(chapterIndex,{seals:0,repeated:true,...journey})[0].text);
     assert.equal(facts(game),before);game.destroy();
   }
 });

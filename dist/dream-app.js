@@ -9,6 +9,9 @@ import { CAP_ACTIVITY_SAVE_KEY, capActivityRevision, loadCapActivitySave, persis
 import { getLostCase, evaluateLostClaim, LOST_CASE_TOTALS } from './dream-lost-cases.js';
 import { createLostDiagram } from './lost-evidence.js';
 import { getStoryEncounter } from './dream-encounters.js';
+import { getJourneyFacts, getDiscoveredLetter, resolveChapterStory, getJourneyCapLines } from './dream-journey.js';
+import { getStageObjective, getStageActions, formatControlHint } from './dream-ui.js';
+import { createDirectionInput } from './dream-direction-input.js';
 import { LOST_SAVE_KEY, lostRevision, loadLostSave, persistLostSave, validateLostSave, mergeLostSaves, replaceLostSave, getLostRecord, getLostStats, recordLostEvent } from './lost-progress.js';
 import {
   CHAPTERS, CAST, STORY_CHOICES, ENDINGS, STAMPS, STORY_ITEMS, PUZZLES, DREAM_SAVE_KEY,
@@ -36,7 +39,12 @@ let settled = false;
 let storageWarningShown = false;
 let toastTimer, announcementTimer;
 const heldKeys = new Set();
-const heldPointers = new Map();
+let controlSource = 'buttons';
+const directionInput = createDirectionInput({
+  available: gameplayAvailable,
+  onChange: syncInput,
+  onUp: () => { if (currentHud?.form === 'body') game?.jump(); },
+});
 let lastHudAt = 0;
 let shell = null;
 let overlayResumeGame = null;
@@ -56,6 +64,28 @@ let capActivityStorageWarned = false;
 let lostSave = loadLostSave();
 let lostStorageWarned = false;
 let lastLostEvidence = '';
+
+function journeyFacts(chapterIndex) {
+  const facts = getJourneyFacts({ stationRecord: capBook?.getRecord('story-0'), greenhouseRecord: capBook?.getRecord('story-1') });
+  if (game && !currentFestival && currentChapter === chapterIndex) return { ...facts, ...game.getSnapshot().journey };
+  return facts;
+}
+
+function chapterStory(chapterIndex, kind) {
+  return resolveChapterStory(chapterIndex, kind, journeyFacts(chapterIndex)) || CHAPTERS[chapterIndex]?.[kind];
+}
+
+function discoveredLetter(chapterIndex) {
+  return getDiscoveredLetter(chapterIndex, { record: capBook?.getRecord('story-' + chapterIndex), legacyCount: save.chapters[chapterIndex]?.bestMemories });
+}
+
+function controlHint(text, snapshot = currentHud) { return formatControlHint(text, controlSource, getStageActions(snapshot || {})); }
+
+function setControlSource(source) {
+  if (controlSource === source) return;
+  controlSource = source;
+  if (game) { lastHudAt = -Infinity; onHud(game.getSnapshot()); }
+}
 
 function portraitForLine(line, festival = currentFestival) {
   const moods = line.speaker === 'ashi' ? ['curious', 'open', 'joy', 'tender'] : line.speaker === 'light' ? ['peek', 'joy', 'brave', 'sleep'] : [];
@@ -82,6 +112,7 @@ function onCapEvent(event) {
   if (event.type === 'memory' && event.chapterIndex === 0 && !event.festivalId && event.index === 0 && game?.firstTicket.phase === 'held') {
     lines = [{ speaker: 'light', mood: 'joy', text: '去程票抱好了！按 E，陪我把它送回头顶的小火车。' }];
   }
+  if (!event.festivalId) lines = getJourneyCapLines(event.chapterIndex, event, game?.getSnapshot().journey || journeyFacts(event.chapterIndex)) || lines;
   showCapLines(lines);
 }
 
@@ -94,7 +125,7 @@ function showCapLines(lines) {
   $('#stage-announcement').classList.remove('show');
   $('#cap-bubble-portrait').src = portraitForLine(lines[0]);
   $('#cap-bubble-portrait').alt = '';
-  $('#cap-bubble-lines').innerHTML = lines.slice(0, 2).map(line => '<p data-speaker="' + line.speaker + '"><b>' + (line.speaker === 'light' ? '拾光' : '阿拾') + '</b>' + escapeHtml(line.text) + '</p>').join('');
+  $('#cap-bubble-lines').innerHTML = lines.slice(0, 2).map(line => '<p data-speaker="' + line.speaker + '"><b>' + (line.speaker === 'light' ? '拾光' : '阿拾') + '</b>' + escapeHtml(controlHint(line.text)) + '</p>').join('');
   $('#cap-bubble').classList.add('show');
   capBubbleTimer = setTimeout(hideCapBubble, lines.length > 1 ? 5800 : 3800);
 }
@@ -348,8 +379,9 @@ function renderJournal() {
     [stats.riddles + ' / 12', '解开谜灯'], [stats.stars + ' / 18', '收集星星'],
   ].map(([value, label]) => '<div><b>' + value + '</b><span>' + label + '</span></div>').join('');
   $('#memory-grid').innerHTML = CHAPTERS.map((chapter, index) => {
-    const amount = save.chapters[index].bestMemories;
-    return '<button class="memory-card" data-letter="' + index + '"' + (amount === 0 ? ' disabled' : '') + '><small>0' + (index + 1) + ' · ' + chapter.title + '</small><h4>' + chapter.letterTitle + '</h4><span>' + icon(amount ? 'letter' : 'lock') + (amount ? '已找回 ' + amount + ' / 3 片 · 拆开看看' : '还在等你找回') + '</span></button>';
+    const letter = discoveredLetter(index), amount = letter.fragments.length, available = amount > 0 || letter.legacyOnly;
+    const label = amount ? '已确认 ' + amount + ' / 3 片 · 拆开看看' : letter.legacyOnly ? '旧信已有记录 · 重访确认页码' : '还在等你找回';
+    return '<button class="memory-card" data-letter="' + index + '"' + (!available ? ' disabled' : '') + '><small>0' + (index + 1) + ' · ' + chapter.title + '</small><h4>' + chapter.letterTitle + '</h4><span>' + icon(available ? 'letter' : 'lock') + label + '</span></button>';
   }).join('');
   $('#keepsake-grid').innerHTML = STORY_ITEMS.map(item => {
     const owned = save.chapters[item.chapterIndex].completed;
@@ -373,12 +405,12 @@ function openJournal() {
 
 function openLetter(index) {
   const chapter = CHAPTERS[index];
-  const amount = save.chapters[index]?.bestMemories || 0;
-  if (!chapter || amount === 0) return;
+  const letter = discoveredLetter(index);
+  if (!chapter || (!letter.fragments.length && !letter.legacyOnly)) return;
   $('#letter-chapter').textContent = chaptersInChinese[index] + ' · ' + chapter.title;
   $('#letter-title').textContent = chapter.letterTitle;
-  $('#letter-fragments').innerHTML = chapter.memories.slice(0, amount).map(text => '<p>' + escapeHtml(text) + '</p>').join('');
-  $('#letter-missing').textContent = amount === 3 ? '三片残页已经拼好。这一段记忆，没有再寄丢。' : '还差 ' + (3 - amount) + ' 片残页。重访这一章，可以把这封信拼完整。';
+  $('#letter-fragments').innerHTML = letter.fragments.map(fragment => '<p data-fragment-index="' + fragment.index + '"><small>第 ' + (fragment.index + 1) + ' 片</small>' + escapeHtml(fragment.text) + '</p>').join('');
+  $('#letter-missing').textContent = letter.legacyOnly ? '旧存档记下了收集数量，还没有每片残页的页码。重访这一章，找到的文字就会出现在这里。' : letter.missing.length === 0 ? '三片残页已经拼好。这一段记忆，没有再寄丢。' : '还差第 ' + letter.missing.map(value => value + 1).join('、') + ' 片残页。重访这一章，可以把这封信拼完整。';
   openDialog('#letter-dialog');
 }
 
@@ -526,7 +558,7 @@ function launchScene(index, festival) {
   const capScene = getCapScene({ chapterIndex: index, festivalId: festival?.id });
   const lost = getLostCase(capScene.id);
   game = new DreamGame($('#dream-canvas'), { onHud, onComplete: finishChapter, onPause: showPause, onEvent: announce, onPuzzle: showPuzzle, onTalk: showEncounter, onCapEvent, onCapActivity, onLostCase });
-  game.start({ chapterIndex: index, festival, capScene, firstTicketCollected: capBook?.getRecord('story-0')?.memories.includes(0) === true, capActivityRecord: getCapActivityRecord(capActivitySave, capScene.id), capActivityRevision: capActivityRevision(capActivitySave), lostCaseRecord: lost ? getLostRecord(lostSave, lost.id) : null, lostCaseRevision: lostRevision(lostSave), season: hub?.getSeason(), outfit: hub?.getOutfit() || 'auto', sound: save.settings.sound, reducedMotion: save.settings.reducedMotion });
+  game.start({ chapterIndex: index, festival, capScene, firstTicketCollected: capBook?.getRecord('story-0')?.memories.includes(0) === true, greenhouseRecord: capBook?.getRecord('story-1'), capActivityRecord: getCapActivityRecord(capActivitySave, capScene.id), capActivityRevision: capActivityRevision(capActivitySave), lostCaseRecord: lost ? getLostRecord(lostSave, lost.id) : null, lostCaseRevision: lostRevision(lostSave), season: hub?.getSeason(), outfit: hub?.getOutfit() || 'auto', sound: save.settings.sound, reducedMotion: save.settings.reducedMotion });
   updateSeasonLabel();
   $('#dream-canvas').focus({ preventScroll: true });
 }
@@ -570,7 +602,7 @@ function onHud(snapshot) {
   const moonVisible = Boolean(moon?.near);
   document.body.classList.toggle('moon-playing', moonVisible);
   document.body.classList.toggle('lost-inspecting', lostExpanded);
-  $('#stage-objective').textContent = lostVisible ? lost.title : moonVisible ? '借月追光 · 第 ' + (moon.variant + 1) + ' 幕 / 3' : snapshot.objective || '点亮两盏回声谜灯，让阿拾走向出口';
+  $('#stage-objective').textContent = getStageObjective(snapshot);
   $('#stage-lost-case').hidden = !lostVisible;
   if (lostVisible) {
     const lostDone = getLostRecord(lostSave, lost.caseId)?.solvedVariants.includes(lost.variant);
@@ -580,7 +612,7 @@ function onHud(snapshot) {
     if ($('#stage-lost-case').textContent !== lostLabel) $('#stage-lost-case').textContent = lostLabel;
   }
   renderLostEvidence(lost);
-  $('#stage-near-hint').textContent = snapshot.nearHint || currentFestival?.sceneHint || CHAPTERS[snapshot.chapterIndex].hint;
+  $('#stage-near-hint').textContent = controlHint(snapshot.nearHint || currentFestival?.sceneHint || CHAPTERS[snapshot.chapterIndex].hint, snapshot);
   $('#stage-buffs').innerHTML = (snapshot.buffs?.compass ? '<span>罗盘 ' + snapshot.buffs.compass + 's</span>' : '') + (snapshot.buffs?.feather ? '<span>轻羽守护</span>' : '');
   const soul = snapshot.form === 'soul';
   document.body.classList.toggle('soul-active', soul);
@@ -595,7 +627,11 @@ function onHud(snapshot) {
   $('#stage-cap-label').textContent = ({ closed: 'E · 掀开脑洞', opening: '咔哒 · 脑洞打开', open: '脑洞打开 · 念头出发', returning: '拾光回家 · 轻轻扣盖' })[capPhase] || '';
   if (snapshot.firstTicket?.phase === 'held') $('#stage-cap-label').textContent = '去程票抱好了 · E 带回家';
   else if (snapshot.firstTicket?.phase === 'returning') $('#stage-cap-label').textContent = '拾光抱票回家 · 轻轻扣盖';
-  else if (snapshot.firstTicket?.newlyCollected && snapshot.firstTicket.settledAge < 7) $('#stage-cap-label').textContent = '去程票已上车 · E 再看一眼';
+  else if (snapshot.firstTicket?.newlyCollected && snapshot.firstTicket.settledAge < 7) $('#stage-cap-label').textContent = soul ? '去程票坐进小火车 · 窗边留着一个座位' : '去程票已上车 · E 再看一眼';
+  if (snapshot.greenhousePlant?.phase === 'held') $('#stage-cap-label').textContent = '种子抱好了 · E 带回温室';
+  else if (snapshot.greenhousePlant?.phase === 'returning') $('#stage-cap-label').textContent = '拾光抱着种子回家 · 还没落进盆里';
+  else if (snapshot.greenhousePlant?.phase === 'planted') $('#stage-cap-label').textContent = ['温室花盆在等一颗种子', '种子已入盆 · 让诗灯照着它', '温室长出新叶 · 还等一盏诗灯', '温室开花了 · 两束光都记在花里'][snapshot.greenhousePlant.stage];
+  $('#stage-cap-label').textContent = controlHint($('#stage-cap-label').textContent, snapshot);
   const activity = snapshot.capActivity;
   const activityVisible = !lostVisible && (moonVisible || Boolean(activity && (activity.phase === 'active' || activity.nearRing)));
   $('#stage-cap-activity').hidden = !activityVisible;
@@ -607,31 +643,29 @@ function onHud(snapshot) {
     $('#stage-cap-activity-count').textContent = count + ' / 3';
     $('#stage-cap-activity-progress').innerHTML = [0, 1, 2].map(index => '<i class="' + (index < count ? 'done' : '') + '"></i>').join('');
   }
-  $('#stage-toggle-label').textContent = soul ? '回到身体' : '掀开头盖骨';
-  $('#stage-action-label').textContent = soul ? '回声脉冲' : '跳跃';
-  $('#stage-action-glyph').textContent = soul ? '✧' : '↑';
-  const talkTarget = !soul && snapshot.target?.kind === 'npc' ? snapshot.target : null;
-  $('#stage-interact-label').textContent = talkTarget ? '交谈' : '互动';
-  $('#stage-interact').setAttribute('aria-label', talkTarget ? '与' + talkTarget.name + '交谈 Q' : '互动 Q');
-  if (moonVisible && (moon.canTurn || moon.canAdvance)) {
-    const action = moon.canTurn ? '转月镜' : '换一幕';
-    $('#stage-interact-label').textContent = action;
-    $('#stage-interact').setAttribute('aria-label', action + ' Q');
-    if (moon.canTurn) $('#stage-action-label').textContent = '转月镜';
-  }
+  const actions = getStageActions(snapshot);
+  $('#stage-toggle-label').textContent = actions.toggle;
+  $('#stage-action-label').textContent = actions.action;
+  $('#stage-action-glyph').textContent = actions.glyph;
+  $('#stage-interact-label').textContent = actions.interact;
+  $('#stage-toggle').setAttribute('aria-label', actions.toggle + (controlSource === 'keyboard' ? ' E' : ''));
+  $('#stage-jump').setAttribute('aria-label', actions.actionDescription + (controlSource === 'keyboard' ? ' 空格' : ''));
+  $('#stage-interact').setAttribute('aria-label', actions.interactDescription + (controlSource === 'keyboard' ? ' Q' : ''));
   if (previousForm && previousForm !== snapshot.form) resetInput();
 }
 
 function announce(event) {
   if (!event?.text) return;
+  if (event.type === 'growth') hideCapBubble();
   if (['memory', 'seal'].includes(event.type) && $('#cap-bubble').classList.contains('show')) return;
   clearTimeout(announcementTimer);
-  $('#stage-announcement').textContent = event.text;
+  $('#stage-announcement').textContent = controlHint(event.text);
   $('#stage-announcement').classList.add('show');
   announcementTimer = setTimeout(() => $('#stage-announcement').classList.remove('show'), event.type === 'tutorial' ? 4600 : 3000);
 }
 
 function showPause(reason) {
+  resetInput();
   if (suppressPauseDialog || shellOverlayOpen || !game || settled || activePuzzle || pendingTalk || storySequence || document.querySelector('dialog[open]')) return;
   $('#pause-detail').textContent = reason === 'visibility' || reason === 'blur' ? '离开页面时，游戏已自动暂停。' : currentFestival?.title || CHAPTERS[currentChapter].title;
   openDialog('#pause-dialog');
@@ -655,7 +689,7 @@ function restartChapter() {
 function showEncounter(payload) {
   const festival = payload.mode === 'festival' ? getFestival(payload.festivalId) : null;
   const lines = festival ? (payload.repeated ? festival.encounters : festival.intro)
-    : payload.mode === 'story' ? getStoryEncounter(payload.chapterIndex, { seals: payload.seals, repeated: payload.repeated }) : null;
+    : payload.mode === 'story' ? getStoryEncounter(payload.chapterIndex, { seals: payload.seals, repeated: payload.repeated, journey: payload.journey }) : null;
   if (!lines?.length) { game?.resolveTalk(); return; }
   pendingTalk = true;
   openStory(lines, festival ? currentChapter : payload.chapterIndex, () => {
@@ -731,7 +765,7 @@ function readChapterOutro() {
     else if (index === 5) showEnding();
     else returnLobby();
   };
-  openStory(CHAPTERS[index].outro, index, after, index === 5 ? '读一读，明天的回信' : '收好这封信', null);
+  openStory(chapterStory(index, 'outro'), index, after, index === 5 ? '读一读，明天的回信' : '收好这封信', null);
 }
 
 function shuffledIndexes(length) {
@@ -819,19 +853,18 @@ function leavePuzzle(solved) {
 }
 
 function syncInput() {
-  const pointerDirections = new Set(heldPointers.values());
+  const pointerDirections = directionInput.directions();
   const left = heldKeys.has('KeyA') || heldKeys.has('ArrowLeft') || pointerDirections.has('left');
   const right = heldKeys.has('KeyD') || heldKeys.has('ArrowRight') || pointerDirections.has('right');
   const up = heldKeys.has('KeyW') || heldKeys.has('ArrowUp') || pointerDirections.has('up');
   const down = heldKeys.has('KeyS') || heldKeys.has('ArrowDown') || pointerDirections.has('down');
+  $$('[data-direction]').forEach(button => button.classList.toggle('held', pointerDirections.has(button.dataset.direction)));
   game?.setInput({ x: Number(right) - Number(left), y: Number(down) - Number(up) });
 }
 
 function resetInput() {
   heldKeys.clear();
-  heldPointers.clear();
-  $$('[data-direction].held').forEach(button => button.classList.remove('held'));
-  game?.setInput({ x: 0, y: 0 });
+  directionInput.reset();
 }
 
 function gameplayAvailable() { return game && !settled && game.state === 'playing' && !document.querySelector('dialog[open]'); }
@@ -857,7 +890,7 @@ document.addEventListener('click', event => {
 });
 
 $('#stage-story').addEventListener('click', () => {
-  openStory(currentFestival?.intro || CHAPTERS[currentChapter].intro, currentChapter, resumeAfterOverlay, '返回游戏');
+  openStory(currentFestival?.intro || chapterStory(currentChapter, 'intro'), currentChapter, resumeAfterOverlay, '返回游戏');
 });
 $('#stage-season').addEventListener('click', () => openFestivalHub());
 $('#stage-back-story').addEventListener('click', () => launchChapter(Math.min(save.lastChapter, getUnlockedChapter(save))));
@@ -898,21 +931,21 @@ $('#letter-dialog').addEventListener('cancel', event => { event.preventDefault()
 $('#stage-toggle').addEventListener('click', () => { if (gameplayAvailable()) { resetInput(); game.toggleSoul(); $('#dream-canvas').focus({ preventScroll: true }); } });
 $('#stage-jump').addEventListener('click', () => { if (gameplayAvailable()) { game.jump(); $('#dream-canvas').focus({ preventScroll: true }); } });
 $('#stage-interact').addEventListener('click', () => { if (gameplayAvailable()) { game.interact(); if (!activePuzzle && !pendingTalk) $('#dream-canvas').focus({ preventScroll: true }); } });
+$('#dream-stage').addEventListener('pointerdown', () => setControlSource('buttons'));
 
 $$('[data-direction]').forEach(button => {
   button.addEventListener('pointerdown', event => {
     if (!gameplayAvailable()) return;
     event.preventDefault();
     button.setPointerCapture(event.pointerId);
-    heldPointers.set(event.pointerId, button.dataset.direction);
-    button.classList.add('held');
-    if (button.dataset.direction === 'up' && currentHud?.form === 'body') game.jump();
-    syncInput();
+    directionInput.pressPointer(event.pointerId, button.dataset.direction);
   });
   for (const type of ['pointerup', 'pointercancel', 'lostpointercapture']) button.addEventListener(type, event => {
-    heldPointers.delete(event.pointerId);
-    button.classList.remove('held');
-    syncInput();
+    directionInput.releasePointer(event.pointerId);
+  });
+  button.addEventListener('click', event => {
+    if (event.detail === 0 && !event.pointerType) setControlSource('buttons');
+    directionInput.activate(button.dataset.direction, event);
   });
 });
 
@@ -920,6 +953,7 @@ document.addEventListener('keydown', event => {
   if (event.ctrlKey || event.metaKey || event.altKey) return;
   if (event.code === 'Escape' && gameplayAvailable()) { event.preventDefault(); resetInput(); game.pause('manual'); return; }
   if (!gameplayAvailable()) return;
+  setControlSource('keyboard');
   if (event.target instanceof Element && event.target.closest('button,a,input,select,textarea,[contenteditable]')) return;
   if (['KeyW', 'KeyA', 'KeyS', 'KeyD', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight'].includes(event.code)) {
     event.preventDefault();
@@ -1018,7 +1052,7 @@ capBook = createCapBook({
     if (!scene) return;
     const festival = getFestival(scene.festivalId);
     const index = festival ? currentChapter : scene.chapterIndex;
-    openStory(festival?.intro || CHAPTERS[index].intro, index, () => capBook.open(scene.id), '收回脑洞画册', festival || null);
+    openStory(festival?.intro || chapterStory(index, 'intro'), index, () => capBook.open(scene.id), '收回脑洞画册', festival || null);
   },
   getActivityRecord: id => getCapActivityRecord(capActivitySave, id),
   getActivityStats: () => getCapActivityStats(capActivitySave),
