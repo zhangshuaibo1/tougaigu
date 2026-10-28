@@ -39,6 +39,11 @@
 
 实际画面：`cap-activity-play.jpg`、`cap-activity-book.jpg`、`cap-activity-mobile.jpg`。
 
-## 发布状态
+## 发布与线上复核
 
-本文件随源码发布；公开部署完成后追加提交标识与线上复核记录。
+- 源码提交：6a034e340f7a560fd783efd928626f0431010f97。
+- Pages提交：c1ce4f098cb15f2bd736efc94c983c2f3fe2de97。
+- GitHub Pages部署[40728512676](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40728512676)成功。
+- 公开首页实际行走进入汽笛圈、点击掀盖并向上飞行，确认“脑洞发车”、三目标路网、真实移动的小火车、就近导向铃提示均出现。
+- 线上截图：`cap-activity-live.jpg`。公开地址：https://zhangshuaibo1.github.io/tougaigu/ 。
+- 发布树含86个运行文件，两个故事入口内容一致；企业Logo原始blob不变，临时验收页不在发布树。
