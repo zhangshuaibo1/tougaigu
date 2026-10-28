@@ -30,6 +30,11 @@
 - 画册保留第一路线“4次转向、43秒”；续玩完成的第二路线只显示“已收好这条路线”，未伪造完整时间；第三路线显示真实待续1/3。
 - 手机截图：`cap-motion-mobile-320.jpg`、`cap-motion-mobile-390.jpg`。临时验收页发布前删除。
 
-## 发布状态
+## 发布与线上复核
 
-本文件随源码发布，部署完成后追加公开提交与线上复核。
+- 源码提交：16854623b5301700f27d83081ffb8d155a7227c4。
+- Pages提交：3a0e40be311ac84484a268ad26aa8ce542a656a2。
+- GitHub Pages部署[40730676965](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40730676965)成功。
+- 公开首页实际行走、掀盖、飞行、归位再启动借景，确认火苗轮廓、额星、跟随盖沿的手部与单一操作提示生效。
+- 线上画面：`cap-motion-live.jpg`；运行地址：https://zhangshuaibo1.github.io/tougaigu/ 。
+- 86个运行文件与企业Logo保留，两个故事入口一致，临时手机验收页未进入发布树。
