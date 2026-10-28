@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1100 850" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">阿拾与拾光的月夜邮路</title>
+<desc id="desc">披着紫色邮差斗篷的小骷髅掀起头盖骨，薄荷色灵魂从星光中升起。远处有灯火站台、玻璃温室、漂浮书页与鲸鱼。</desc>
+<defs>
+ <radialGradient id="night"><stop stop-color="#594065" stop-opacity=".65"/><stop offset=".62" stop-color="#30263f" stop-opacity=".42"/><stop offset="1" stop-color="#171522" stop-opacity="0"/></radialGradient>
+ <radialGradient id="aura"><stop stop-color="#b8ffe3" stop-opacity=".42"/><stop offset=".5" stop-color="#97e9cd" stop-opacity=".12"/><stop offset="1" stop-color="#b8ffe3" stop-opacity="0"/></radialGradient>
+ <radialGradient id="warm"><stop stop-color="#ffc47a" stop-opacity=".56"/><stop offset="1" stop-color="#ffb76c" stop-opacity="0"/></radialGradient>
+ <linearGradient id="bone" x1="460" y1="350" x2="610" y2="570" gradientUnits="userSpaceOnUse"><stop stop-color="#fff4d8"/><stop offset=".62" stop-color="#efdfb8"/><stop offset="1" stop-color="#cfb58e"/></linearGradient>
+ <linearGradient id="cap" x1="420" y1="320" x2="625" y2="397" gradientUnits="userSpaceOnUse"><stop stop-color="#fff5dc"/><stop offset="1" stop-color="#dbc397"/></linearGradient>
+ <linearGradient id="coat" x1="470" y1="540" x2="620" y2="697" gradientUnits="userSpaceOnUse"><stop stop-color="#9b83bf"/><stop offset=".55" stop-color="#746198"/><stop offset="1" stop-color="#453752"/></linearGradient>
+ <linearGradient id="glass" x1="795" y1="340" x2="933" y2="585" gradientUnits="userSpaceOnUse"><stop stop-color="#8db3ac" stop-opacity=".32"/><stop offset="1" stop-color="#28484b" stop-opacity=".1"/></linearGradient>
+ <linearGradient id="spirit" x1="564" y1="202" x2="603" y2="316" gradientUnits="userSpaceOnUse"><stop stop-color="#f4ffe4"/><stop offset=".55" stop-color="#b1efd5"/><stop offset="1" stop-color="#73cbb5"/></linearGradient>
+ <linearGradient id="island" x1="490" y1="688" x2="559" y2="833" gradientUnits="userSpaceOnUse"><stop stop-color="#574d63"/><stop offset="1" stop-color="#282233"/></linearGradient>
+ <linearGradient id="wood" x1="179" y1="502" x2="322" y2="650" gradientUnits="userSpaceOnUse"><stop stop-color="#705461"/><stop offset="1" stop-color="#3c3148"/></linearGradient>
+ <linearGradient id="water" x1="677" y1="727" x2="677" y2="850" gradientUnits="userSpaceOnUse"><stop stop-color="#8dd0c4" stop-opacity=".7"/><stop offset="1" stop-color="#8dd0c4" stop-opacity="0"/></linearGradient>
+ <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="9"/></filter>
+ <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+ <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur in="SourceAlpha" stdDeviation="7"/><feOffset dy="8"/><feColorMatrix type="matrix" values="0 0 0 0 0.06 0 0 0 0 0.05 0 0 0 0 0.09 0 0 0 .4 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="stone" width="64" height="40" patternUnits="userSpaceOnUse"><path d="M0 1h64M32 1v20M0 21h64M11 21v19" stroke="#b6a8bc" stroke-opacity=".1" stroke-width="2"/></pattern>
+ <g id="star"><path d="m0-12 3 9 9 3-9 3-3 9-3-9-9-3 9-3Z" fill="#f8cb91"/></g>
+ <g id="letter"><rect x="-22" y="-15" width="44" height="30" rx="3" fill="#f7e8c7" stroke="#b69d82" stroke-width="2"/><path d="m-20-12 20 15 20-15M-20 12l13-10m27 10L7 2" stroke="#c4a88a" stroke-width="1.7"/><circle cy="3" r="4" fill="#c8857f"/></g>
+ <g id="leaf"><path d="M0 0C-24-30-17-47-8-51 10-40 13-15 0 0Z" fill="#83a98f"/><path d="M0 0-7-35" stroke="#435e58" stroke-width="2"/></g>
+ <g id="smallSkull"><path d="M-15 4c-8-16-2-30 15-30S23-12 15 4l-4 2v8h-22V6Z" fill="#e7d7b8"/><ellipse cx="-7" cy="-6" rx="4" ry="6" fill="#3c3248"/><ellipse cx="7" cy="-6" rx="4" ry="6" fill="#3c3248"/><path d="m0 1-3 5h6ZM-5 9v7m10-7v7" stroke="#86715e" stroke-width="2"/></g>
+</defs>
+
+<!-- Moonlit world: layered silhouettes and orbital postal route. -->
+<ellipse cx="559" cy="443" rx="526" ry="406" fill="url(#night)"/>
+<ellipse cx="572" cy="287" rx="210" ry="209" fill="url(#aura)"/>
+<path d="M142 439C116 222 290 132 463 120c223-16 470 83 507 281" stroke="#c4b0cd" stroke-opacity=".14" stroke-dasharray="3 12" stroke-width="2"/>
+<path d="M124 608c24-171 186-346 435-365 281-21 419 126 438 253" stroke="#b5a3bf" stroke-opacity=".1" stroke-width="1.5"/>
+<path d="M112 628 151 520l43 66 47-132 52 112 28-72 63 99 44-155 61 160 38-86 65 76 76-107 47 101 35-67 64 83 59-94 55 121 52-76 33 128Z" fill="#282638" opacity=".65"/>
+<path d="M82 675c77-23 139-23 218-10 137 23 185-5 287-22 146-25 268-9 420 37l-30 69H119Z" fill="#211e2d" opacity=".8"/>
+<g opacity=".8"><circle cx="259" cy="203" r="48" fill="#ae9aae" opacity=".2"/><path d="M267 160c-41 4-55 63-15 86-27 0-46-19-46-43 0-28 25-50 61-43Z" fill="#f0d8ac" opacity=".77"/><path d="m236 204 5-2m-14 16 4 2" stroke="#ac9a96" stroke-width="2"/></g>
+<g class="twinkle"><use href="#star" xlink:href="#star" transform="translate(384 157) scale(.72)"/><use href="#star" xlink:href="#star" transform="translate(719 123) scale(.4)"/><use href="#star" xlink:href="#star" transform="translate(987 466) scale(.8)"/><use href="#star" xlink:href="#star" transform="translate(121 363) scale(.58)"/></g>
+<g fill="#bdadc7"><circle cx="150" cy="239" r="2"/><circle cx="347" cy="262" r="2.3"/><circle cx="451" cy="215" r="1.8"/><circle cx="671" cy="170" r="2"/><circle cx="915" cy="210" r="2"/><circle cx="977" cy="343" r="2"/><circle cx="102" cy="523" r="2"/><circle cx="764" cy="291" r="1.7"/><circle cx="611" cy="120" r="2"/><circle cx="834" cy="85" r="2"/></g>
+<!-- Gentle cosmic whale, with books carried along its mail route. -->
+<g class="float-book" opacity=".77">
+ <path d="M742 178c37-48 115-56 159-21 22 17 30 41 43 43 21 3 32-20 36-34 7 25 3 49-19 60 14 2 28 0 41-10-5 23-20 37-44 37-23 0-34-18-46-20-55 34-138 28-170-7-14-15-13-33 0-48Z" fill="#7c829d"/>
+ <path d="M751 206c52 25 101 28 152 9-35 36-118 40-151 9" fill="#b5b7bd"/>
+ <path d="M805 237c-3 17 10 26 28 26-8-12-7-25-1-34" fill="#69738e"/>
+ <path d="M747 184c-15 3-24 11-31 22 19-2 30-7 39-15" fill="#8e95aa"/>
+ <circle cx="768" cy="190" r="5.2" fill="#2b2a3c"/><circle cx="769.7" cy="188" r="1.8" fill="#f5e2bd"/>
+ <path d="M766 207q10 6 18-2" stroke="#46465d" stroke-width="2.4" stroke-linecap="round"/>
+ <path d="m844 142 1-20m-2 6-12-10m15 5 9-11" stroke="#aacdc4" stroke-width="3" stroke-linecap="round"/>
+ <circle cx="843" cy="108" r="3" fill="#abd9cf"/>
+ <path d="m805 170 22 8 13-19 19 6" stroke="#d4bdad" stroke-width="2" stroke-opacity=".4"/>
+</g>
+<g transform="translate(924 316)"><g class="float-book">
+ <path d="m-36-17 33 2L27-31 38 6 7 23l-35-4Z" fill="#d8ccb8" stroke="#716579" stroke-width="3"/>
+ <path d="m-35-24 33 5L26-37 36-2 6 17l-35-7Z" fill="#f0e0bd" stroke="#8d7b86" stroke-width="2"/>
+ <path d="m-2-19 8 36" stroke="#a18c88" stroke-width="2"/>
+ <path d="m-27-15 17 3m-15 5 16 3m-14 5 16 3m14-24 15-8m-12 15 15-8m-13 16 15-8" stroke="#c1ab93" stroke-width="2" stroke-linecap="round"/>
+</g>
+</g>
+<!-- Forgotten station, clock, light and abandoned letter box. -->
+<g filter="url(#shadow)">
+ <path d="M167 509h175v167H167Z" fill="url(#wood)" stroke="#3a3148" stroke-width="4"/>
+ <path d="m149 511 109-120 109 120Z" fill="#3d354b" stroke="#817084" stroke-width="4" stroke-linejoin="round"/>
+ <path d="m158 503 100-109 99 109" stroke="#b79285" stroke-width="5" stroke-linecap="round"/>
+ <path d="m180 478 78-84 76 82" stroke="#5c4c65" stroke-width="8"/>
+ <path d="M198 531v93h44v-93Z" fill="#f1b975" opacity=".58"/>
+ <path d="M263 531v93h45v-93Z" fill="#e6b677" opacity=".43"/>
+ <path d="M219 532v91m-20-48h43m43-43v91m-22-48h44" stroke="#4e3d51" stroke-width="5"/>
+ <path d="M182 644h145m-145 12h145" stroke="#a7827b" stroke-opacity=".4" stroke-width="3"/>
+ <circle cx="258" cy="461" r="29" fill="#e9d3ac" stroke="#aa8c88" stroke-width="5"/>
+ <circle cx="258" cy="461" r="22" stroke="#85727b" stroke-width="1.5"/>
+ <path d="M258 443v18l-12 8m12-33v4m24 21h-4m-20 25v-4m-24-21h4" stroke="#665168" stroke-width="3" stroke-linecap="round"/>
+ <circle cx="258" cy="461" r="3" fill="#665168"/>
+ <path d="M330 475c15 30 16 83 8 127" stroke="#708f79" stroke-width="5"/>
+ <use href="#leaf" xlink:href="#leaf" transform="translate(339 518) rotate(62) scale(.5)"/><use href="#leaf" xlink:href="#leaf" transform="translate(342 549) rotate(-49) scale(.55)"/><use href="#leaf" xlink:href="#leaf" transform="translate(341 579) rotate(68) scale(.56)"/>
+</g>
+<g>
+ <path d="M121 665V475q0-18 17-18h28" stroke="#6b6178" stroke-width="7" stroke-linecap="round"/>
+ <path d="M160 456v23" stroke="#6b6178" stroke-width="4"/><ellipse cx="160" cy="503" rx="57" ry="66" fill="url(#warm)"/>
+ <path d="m143 485 6-11h24l6 11-5 42h-26Z" fill="#f5ba70" stroke="#746076" stroke-width="4"/>
+ <path d="M146 485h31m-26 2 3 34m15-34-3 34" stroke="#a67f77" stroke-width="2"/>
+ <path d="M155 483v40" stroke="#ffe6a9" stroke-width="4" stroke-linecap="round"/>
+ <path d="M124 674h-15" stroke="#53485e" stroke-width="8" stroke-linecap="round"/>
+</g>
+<g transform="translate(325 631) rotate(-5)">
+ <path d="M-27 38v-79q27-32 54 0v79Z" fill="#ba747c" stroke="#473747" stroke-width="4"/>
+ <path d="M-27-40q26-30 54 0" stroke="#e2a58f" stroke-width="4"/>
+ <rect x="-17" y="-25" width="34" height="7" rx="3.5" fill="#513a4b"/>
+ <path d="M-15-9h30v29h-30Z" fill="#9a6571" stroke="#d39485" stroke-width="2"/>
+ <path d="M-10 27h20" stroke="#d39485" stroke-width="3"/>
+ <path d="M-17 40v16m34-16v16" stroke="#503f51" stroke-width="6"/>
+ <use href="#letter" xlink:href="#letter" transform="translate(3 -26) rotate(8) scale(.65)"/>
+</g>
+<!-- Greenhouse and lantern vines. -->
+<g opacity=".95">
+ <path d="M773 628V414q0-80 83-105 83 25 83 105v214Z" fill="url(#glass)" stroke="#7c9a91" stroke-width="4"/>
+ <path d="M773 418h166m-166 80h166m-166 81h166M856 309v319m-47 0V409q0-48 47-100 47 52 47 100v219" stroke="#607c7b" stroke-width="3"/>
+ <path d="M786 625h139" stroke="#bdd1ad" stroke-width="8" stroke-linecap="round"/>
+ <path d="M825 619c-27-53-16-85 11-117 34-41 21-72 12-100" stroke="#779b82" stroke-width="6"/>
+ <use href="#leaf" xlink:href="#leaf" transform="translate(821 565) rotate(-46) scale(.8)"/><use href="#leaf" xlink:href="#leaf" transform="translate(834 530) rotate(61) scale(.7)"/><use href="#leaf" xlink:href="#leaf" transform="translate(851 480) rotate(-45) scale(.75)"/><use href="#leaf" xlink:href="#leaf" transform="translate(853 445) rotate(51) scale(.65)"/>
+ <path d="M885 620c27-39 33-82 7-105" stroke="#617a70" stroke-width="5"/>
+ <use href="#leaf" xlink:href="#leaf" transform="translate(902 564) rotate(54) scale(.55)"/><use href="#leaf" xlink:href="#leaf" transform="translate(898 539) rotate(-38) scale(.7)"/>
+ <ellipse cx="841" cy="476" rx="38" ry="45" fill="url(#warm)"/><path d="M832 457q10-12 20 0v23q-10 17-20 0Z" fill="#e9bb73" stroke="#82a18c" stroke-width="2"/><path d="M842 447v11m-4 8v10" stroke="#ffe2a0" stroke-width="3"/>
+ <path d="M790 349 803 338m87-1 12 11M783 439l19-23m106 124 18-22" stroke="#d1e0c6" stroke-opacity=".2" stroke-width="3"/>
+</g>
+<!-- Suspended moss island, staircase and stream. -->
+<path d="M149 700c46-47 122-48 186-33 101-40 215-40 323-17 101-31 216-10 285 41l-74 62-105 35-103 8-125 22-139-23-101-27-88-30Z" fill="url(#island)" stroke="#6b5d73" stroke-width="3"/>
+<path d="m149 700 59 38 88 30 101 27 139 23 125-22 103-8 105-35 74-62c-94 59-209 67-347 69-176 15-282-7-447-60Z" fill="url(#stone)" opacity=".75"/>
+<path d="M149 700c46-47 122-48 186-33 101-40 215-40 323-17 101-31 216-10 285 41-96 29-195 39-293 37-174 10-336 2-501-28Z" fill="#74836d"/>
+<path d="M149 700c46-47 122-48 186-33 101-40 215-40 323-17 101-31 216-10 285 41" stroke="#a3b28d" stroke-width="8" stroke-linecap="round"/>
+<path d="m205 710 23 20 39 5 26 17m130-11 10 27 33 16m328-50-31 29-38 6m-119-24-7 37-24 16" stroke="#2e293a" stroke-width="4" stroke-linecap="round"/>
+<path d="M626 700c7-18 24-25 40-22s25 23 42 31c8 5-1 19-13 22l-1 88h-42l1-96Z" fill="url(#water)"/>
+<path d="M666 711v87m16-67v111m-22-41v12" stroke="#cef0d3" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+<path d="M382 687c74-17 179-18 254-2m-252 13c75-16 173-16 239-2" stroke="#e1c797" stroke-opacity=".24" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="558" cy="713" rx="140" ry="28" fill="#282438" opacity=".35"/>
+<!-- Boots, jointed bones and layered postal coat. -->
+<g filter="url(#shadow)">
+ <path d="M492 663v42m64-43 5 42" stroke="#cfbfa0" stroke-width="18" stroke-linecap="round"/>
+ <path d="M492 665v35m64-34 5 35" stroke="#f1e2bd" stroke-width="8" stroke-linecap="round"/>
+ <path d="M476 702c-8 4-20 9-22 19-2 12 41 15 55 4l-2-23Z" fill="#332c40" stroke="#857185" stroke-width="3"/>
+ <path d="M546 704c-5 12-3 24 13 28 21 4 43-1 43-12 0-8-17-13-26-17Z" fill="#332c40" stroke="#857185" stroke-width="3"/>
+ <path d="M456 722c17 8 38 9 53 0m39 5c17 7 38 7 51-3" stroke="#b39281" stroke-width="4" stroke-linecap="round"/>
+ <path d="m483 709 16 3m-18 3 16 3m63-8 15 2m-15 4 17 2" stroke="#d0bea2" stroke-width="2.5" stroke-linecap="round"/>
+ <path d="M476 537c-31 26-43 88-46 128l42-3 17 26 37-15 40 18 16-27 48 4c-9-50-24-109-51-133Z" fill="url(#coat)" stroke="#393044" stroke-width="5" stroke-linejoin="round"/>
+ <path d="m514 552 8 123m-46-124 26 20 22-13 25 16 25-23" stroke="#c5abd2" stroke-opacity=".55" stroke-width="3"/>
+ <path d="m449 650 23-2 19 22 34-12 39 16 13-24 35 3" stroke="#c4a8c8" stroke-opacity=".45" stroke-dasharray="4 6" stroke-width="2"/>
+ <path d="M479 578c-14 15-19 34-16 54m112-53c10 14 17 34 20 48" stroke="#4c3f65" stroke-width="4" stroke-linecap="round"/>
+ <circle cx="525" cy="594" r="5" fill="#e7c392" stroke="#64485a" stroke-width="2"/><circle cx="527" cy="624" r="5" fill="#e7c392" stroke="#64485a" stroke-width="2"/>
+ <path d="m449 560-27 32 10 26 26-20" fill="#746197" stroke="#3e334e" stroke-width="4" stroke-linejoin="round"/>
+ <path d="m582 556 34 31-4 23-28-20" fill="#746197" stroke="#3e334e" stroke-width="4" stroke-linejoin="round"/>
+ <!-- left hand holds a warm letter, right hand steadies satchel -->
+ <path d="M427 601c-11-9-19-3-16 8-8-2-12 5-5 11 3 10 18 17 29 6l10-14" fill="#f3e2bd" stroke="#5b4659" stroke-width="3" stroke-linecap="round"/>
+ <path d="m416 610 12 6m-14 1 9 5" stroke="#bca285" stroke-width="2.5" stroke-linecap="round"/>
+ <path d="M606 599c8-10 16-7 15 4 10-1 13 6 7 13-6 12-20 15-27 4l-3-8" fill="#f3e2bd" stroke="#5b4659" stroke-width="3" stroke-linecap="round"/>
+ <path d="m615 610-8 6m13 0-8 6" stroke="#bca285" stroke-width="2.5" stroke-linecap="round"/>
+ <use href="#letter" xlink:href="#letter" transform="translate(416 585) rotate(-16) scale(1.4)"/>
+ <!-- crossbody strap and satchel -->
+ <path d="M472 552c38 16 71 44 111 83" stroke="#3b2f43" stroke-width="19"/>
+ <path d="M472 552c38 16 71 44 111 83" stroke="#c48e79" stroke-width="12"/>
+ <path d="m480 558 16 8" stroke="#efd0a0" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 3"/>
+ <path d="M574 615h61l6 56q-36 18-71-1Z" fill="#996a68" stroke="#402f43" stroke-width="4" stroke-linejoin="round"/>
+ <path d="M570 616h67l-7 29q-29 14-58-1Z" fill="#ba8576" stroke="#493446" stroke-width="3"/>
+ <path d="M576 626h54l-4 14q-23 8-48-1Z" stroke="#e4ba91" stroke-opacity=".55" stroke-width="1.6" stroke-dasharray="3 4"/>
+ <rect x="597" y="638" width="13" height="16" rx="3" fill="#d6ad79" stroke="#6f5152" stroke-width="2"/><path d="M604 641v9" stroke="#755254" stroke-width="2"/>
+ <path d="m578 615 5-24 28 5-4 19" fill="#ead6b4" stroke="#755c65" stroke-width="2"/>
+ <path d="m585 599 17 3m-18 4 14 3" stroke="#c1a58c" stroke-width="2"/>
+</g>
+<!-- Scarf tail is separately animated at its neck anchor. -->
+<g class="scarf-tail"><path d="M495 546c-63 18-83 23-105 1-13-14-22-10-36-8 19-33 48-26 63-17 17 11 42 12 70 5Z" fill="#dc957c" stroke="#604352" stroke-width="3"/><path d="M365 536c25-9 29 26 65 19" stroke="#f4bd8e" stroke-width="3" stroke-linecap="round"/><path d="m356 537 2 11m7-10 4 9m6-7 5 10" stroke="#bd7c72" stroke-width="3" stroke-linecap="round"/></g>
+<path d="M469 524c24 11 80 14 111-1l-2 30c-27 19-85 9-111-3Z" fill="#df9a7d" stroke="#684758" stroke-width="3"/>
+<path d="M478 536c31 12 68 12 94 1m-85 13c22 7 55 8 75 1" stroke="#f1ba90" stroke-width="3" stroke-linecap="round"/>
+<!-- Open skull: expressive eyes, bevelled rim, tooth joints, hinge. -->
+<g filter="url(#shadow)">
+ <path d="M419 393c-8 15-16 37-12 63 3 27 21 47 39 54v28c19 22 114 31 146-1v-29c25-9 43-34 43-63 0-23-8-41-20-54Z" fill="url(#bone)" stroke="#59445a" stroke-width="5"/>
+ <path d="M417 392c30-17 160-19 198 0-5 21-167 27-198 0Z" fill="#897273" stroke="#59445a" stroke-width="4"/>
+ <ellipse cx="519" cy="394" rx="79" ry="11" fill="#303743"/>
+ <ellipse cx="526" cy="393" rx="49" ry="7" fill="#9bdbc0" opacity=".55"/>
+ <path d="M420 410c-7 24-5 56 11 70" stroke="#fff8df" stroke-opacity=".6" stroke-width="7" stroke-linecap="round"/>
+ <path d="M452 415c22-9 40-7 51 7m38-4c17-10 35-8 47 1" stroke="#c6b08b" stroke-width="5" stroke-linecap="round"/>
+ <g class="blink">
+  <ellipse cx="469" cy="457" rx="30" ry="35" transform="rotate(-8 469 457)" fill="#392d46"/>
+  <ellipse cx="568" cy="457" rx="29" ry="34" transform="rotate(9 568 457)" fill="#392d46"/>
+  <ellipse cx="480" cy="454" rx="11" ry="19" fill="#e8b47d"/><ellipse cx="558" cy="453" rx="11" ry="18" fill="#e8b47d"/>
+  <ellipse cx="483" cy="447" rx="4" ry="7" fill="#fff4cf"/><ellipse cx="560" cy="446" rx="4" ry="6" fill="#fff4cf"/>
+ </g>
+ <path d="m520 481-8 14q9 5 17 0Z" fill="#8b746c"/>
+ <path d="M456 519c31 17 94 19 128-1" stroke="#a48a77" stroke-width="3.5" stroke-linecap="round"/>
+ <path d="m476 528-1 16m25-12v16m26-15v16m26-17 1 16m22-20 1 15" stroke="#ba9e81" stroke-width="3" stroke-linecap="round"/>
+ <path d="m440 479-9 4m163-5 8 4" stroke="#d3a486" stroke-width="5" stroke-linecap="round"/>
+ <path d="m604 390 16-11 12 15-13 11" fill="#a99177" stroke="#59445a" stroke-width="3"/>
+ <circle cx="620" cy="392" r="5" fill="#e1be8a"/>
+</g>
+<g class="cap-lift">
+ <g transform="rotate(18 618 383)">
+  <path d="M415 369c3-67 39-103 106-103 61 0 94 39 100 103-39 23-164 23-206 0Z" fill="url(#cap)" stroke="#59445a" stroke-width="5"/>
+  <path d="M423 347c11-45 43-68 84-72" stroke="#fff9e5" stroke-width="7" stroke-linecap="round" opacity=".7"/>
+  <path d="M416 369c43 22 167 23 204 0l-2 14c-56 22-157 20-202-1Z" fill="#c5ad8b" stroke="#59445a" stroke-width="4"/>
+  <path d="m514 291-14 18 20 13-4 18 18-7" stroke="#bba17f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m586 338 7 10" stroke="#dac299" stroke-width="5" stroke-linecap="round"/>
+ </g>
+</g>
+<!-- The spirit leaves the cap on a ribbon of tiny stars. -->
+<path d="M530 392c22-21 30-43 21-66s6-48 33-63" stroke="#b6f3d5" stroke-opacity=".3" stroke-width="13" stroke-linecap="round" filter="url(#soft)"/>
+<path d="M530 392c22-21 30-43 21-66s6-48 33-63" stroke="#b6f3d5" stroke-opacity=".75" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 10"/>
+<g class="soul">
+ <ellipse cx="588" cy="254" rx="81" ry="91" fill="#b6f3d5" opacity=".1" filter="url(#glow)"/>
+ <path d="M550 271c-21-32-7-60 17-72 12-6 19-17 19-27 25 15 18 37 29 46 27 23 20 60-4 73-15 8-29 5-37-1-7 15-22 19-30 13 11-12 12-22 6-32Z" fill="url(#spirit)" stroke="#def8d6" stroke-width="3"/>
+ <path d="M565 213c-14 9-21 25-17 39" stroke="#f4ffe7" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+ <ellipse cx="568" cy="250" rx="5" ry="9" fill="#3e6e68"/><ellipse cx="598" cy="249" rx="5" ry="9" fill="#3e6e68"/>
+ <path d="M577 265q6 7 12-1" stroke="#548e7b" stroke-width="3" stroke-linecap="round"/>
+ <path d="M553 261h5m49 0h5" stroke="#93c9ab" stroke-width="4" stroke-linecap="round"/>
+ <path d="m560 283-9 5m57-8 11 6" stroke="#d5f4cd" stroke-width="5" stroke-linecap="round"/>
+</g>
+<g class="twinkle" fill="#b5edcc"><circle cx="601" cy="341" r="3"/><circle cx="489" cy="295" r="2.5"/><circle cx="625" cy="291" r="2.7"/><circle cx="549" cy="164" r="2"/><circle cx="635" cy="205" r="2.5"/></g>
+<use href="#star" xlink:href="#star" transform="translate(640 337) scale(.55)"/><use href="#star" xlink:href="#star" transform="translate(513 209) scale(.35)"/>
+<!-- Moth messenger with folded paper wings. -->
+<g transform="translate(732 449)"><g class="moth">
+ <path d="M-5-4c-28-32-60-27-53-5 5 17 30 24 47 17-25 16-30 32-12 36 16 3 28-20 29-33" fill="#deb992" stroke="#816879" stroke-width="2"/>
+ <path d="M5-4c28-32 60-27 53-5-5 17-30 24-47 17 25 16 30 32 12 36C7 47-5 24-6 11" fill="#ddc4a4" stroke="#816879" stroke-width="2"/>
+ <path d="m-48-11 31 16-28-2m90-14L17 5l28-2" stroke="#a88d86" stroke-width="2"/>
+ <ellipse cy="9" rx="9" ry="25" fill="#8f7896"/><circle cy="-12" r="13" fill="#e8d1ac"/>
+ <path d="m-4-23-7-11m15 11 7-11" stroke="#baa9a5" stroke-width="2" stroke-linecap="round"/>
+ <circle cx="-4" cy="-13" r="2.3" fill="#43354c"/><circle cx="4" cy="-13" r="2.3" fill="#43354c"/>
+ <path d="M-6 5h12m-13 10h14m-11 10h8" stroke="#c0a1a3" stroke-width="2"/>
+</g>
+</g>
+<!-- Foreground botanicals, bouncing mushroom and lantern stamp. -->
+<g transform="translate(256 693)">
+ <path d="M-5-8-8-45m17 39 13-48m-10 44 32-25" stroke="#9eb591" stroke-width="4" stroke-linecap="round"/>
+ <use href="#leaf" xlink:href="#leaf" transform="translate(-6 -22) rotate(-50) scale(.55)"/><use href="#leaf" xlink:href="#leaf" transform="translate(14 -22) rotate(45) scale(.6)"/><use href="#leaf" xlink:href="#leaf" transform="translate(33 -23) rotate(83) scale(.5)"/>
+</g>
+<g transform="translate(798 682)">
+ <path d="M-7 14c4-17 2-32 0-46h18c-3 18-4 34 1 46" fill="#d5c2a3" stroke="#655366" stroke-width="3"/>
+ <path d="M-38-26c3-38 69-53 82-4-16 16-62 18-82 4Z" fill="#c58791" stroke="#574258" stroke-width="3"/>
+ <path d="M-28-25c16 5 44 6 62-3" stroke="#e4ad9f" stroke-width="3"/>
+ <ellipse cx="-16" cy="-43" rx="7" ry="4" transform="rotate(-25 -16 -43)" fill="#efcbb1"/><ellipse cx="17" cy="-43" rx="8" ry="5" transform="rotate(19 17 -43)" fill="#efcbb1"/><ellipse cx="3" cy="-54" rx="5" ry="3" fill="#efcbb1"/>
+ <path d="m34 12 4-20m-4 20 16-9m-17 7-5-9" stroke="#8ead91" stroke-width="4" stroke-linecap="round"/>
+</g>
+<g transform="translate(880 678) rotate(11)"><path d="m-31-30 39 0 18 24-16 35h-41l-17-35Z" fill="#74637b" stroke="#b89a99" stroke-width="3"/><circle cx="-9" cy="-2" r="23" fill="#a18893"/><use href="#smallSkull" xlink:href="#smallSkull" transform="translate(-9 2) scale(.58)"/><path d="M-36-8h6m32 0h5m-17-22v6m0 32v6" stroke="#d0b195" stroke-width="2"/></g>
+<g fill="#cbdbb2"><path d="m371 698 5-9 5 9-5 4Zm337-16 4-8 4 8-4 4Zm-523 3 4-7 4 7-4 4Z"/><circle cx="297" cy="707" r="2.5"/><circle cx="753" cy="716" r="2.8"/></g>
+<g opacity=".6" stroke="#a9c9b0" stroke-width="2" stroke-linecap="round"><path d="m312 738-5 17m7-9 6 15m472-18 10 9m-6-12 11-2"/></g>
+</svg>

@@ -10,6 +10,8 @@
   <title>头盖骨 TOUGAIGU · 再活一局</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./portal.css">
+  <link rel="stylesheet" href="./company-footer.css">
 </head>
 <body>
 <a class="skip-link" href="#main">跳到游戏内容</a>
@@ -29,7 +31,7 @@
 <div id="lobby">
   <header class="site-header">
     <a href="#home" class="brand" aria-label="头盖骨首页"><span class="brand-mark"><svg><use href="#i-skull"/></svg></span><span>头盖骨<small>TOUGAIGU</small></span></a>
-    <nav class="main-nav" aria-label="主导航"><button class="nav-link active" data-page="home" aria-current="page">出发冒险</button><button class="nav-link" data-page="workshop">骨骼工坊</button><button class="nav-link" data-page="journal">冒险手账</button></nav>
+    <nav class="main-nav" aria-label="主导航"><button class="nav-link active" data-page="home" aria-current="page">出发冒险</button><button class="nav-link" data-page="workshop">骨骼工坊</button><button class="nav-link" data-page="journal">冒险手账</button><a class="nav-link new-game-nav" href="./dream.html">掀起头盖骨 <b>新</b></a></nav>
     <div class="header-tools"><span class="wallet" title="骨片：冒险获得的成长资源"><svg><use href="#i-bone"/></svg><b id="wallet">0</b><span>骨片</span></span><button class="icon-btn sound-toggle" aria-label="关闭音效" title="音效"><svg><use href="#i-sound"/></svg></button><button class="icon-btn" id="settings-open" aria-label="设置与存档" title="设置与存档"><svg><use href="#i-gear"/></svg></button></div>
   </header>
 
@@ -61,6 +63,12 @@
         <aside class="daily-card"><span class="daily-icon"><svg><use href="#i-star"/></svg></span><div class="section-kicker">ONE DAY. ONE CHALLENGE.</div><h2>同一个夜晚，<br>新的可能。</h2><p>每日固定挑战种子。<br>放下永久加成，凭本事刷新纪录。</p><div class="daily-bottom"><span><small id="daily-date">今日试炼</small><b id="daily-score">等待你的第一局</b></span><button id="daily-select" class="round-btn" aria-label="选择每日试炼"><svg><use href="#i-arrow"/></svg></button></div></aside>
       </div>
 
+      <a class="dream-entry" href="./dream.html" aria-label="进入新游戏：掀起你的头盖骨">
+        <div class="dream-entry-art"><img src="./assets/dream-cover.svg" alt="阿拾掀开头盖骨，放出一缕拾光灵魂" width="140" height="120" loading="lazy"></div>
+        <div class="dream-entry-copy"><span class="dream-entry-kicker">全新独立冒险 · THE UNSENT DAWN</span><h2>掀起你的头盖骨</h2><p>把灵魂放出来。替六个没有天亮的地方，送完最后一封信。</p><div><span>头身协作</span><span>机关解谜</span><span>六章故事</span></div></div>
+        <span class="dream-entry-cta">进入新冒险 <span aria-hidden="true">↗</span></span>
+      </a>
+
       <div class="lower-grid"><section class="characters-section" aria-labelledby="characters-heading"><div class="section-heading"><h2 id="characters-heading">挑一位不服输的。<span>CHOOSE YOUR SOUL</span></h2><span id="character-count">1 / 3 已唤醒</span></div><div id="character-cards" class="character-cards"></div></section><aside class="goal-card"><div class="section-heading"><h2>今晚的小目标</h2><svg><use href="#i-star"/></svg></div><div id="next-goal"></div><button class="text-link" data-page="journal">看看我的冒险手账 <span>↗</span></button></aside></div>
       <div class="bottom-note"><span>✦ 死亡只是一个逗号。下一局，继续写。</span><span>进度自动保存在当前浏览器 <i class="save-dot"></i></span></div>
     </section>
@@ -69,7 +77,12 @@
 
     <section id="page-journal" class="page-view" hidden aria-labelledby="journal-title"><div class="page-title"><div class="eyebrow">NOT DEAD. JUST DOCUMENTED.</div><h1 id="journal-title">每一局，<span>都算数。</span></h1><p>那些险些散架的时刻，都值得记下来。</p></div><div id="stats-grid" class="stats-grid"></div><div class="section-heading journal-heading"><h2>不朽收藏<span>ACHIEVEMENTS</span></h2><span id="achievement-count"></span></div><div id="achievement-cards" class="achievement-grid"></div><div class="section-heading journal-heading"><h2>最近的冒险<span>LOCAL RECORDS</span></h2><span>当前浏览器的真实战绩</span></div><div id="history-list" class="history-list"></div><div class="section-heading journal-heading"><h2>夜里会遇见谁<span>FIELD NOTES</span></h2></div><div id="enemy-cards" class="enemy-grid"></div></section>
   </main>
-  <footer class="site-footer"><span>TOUGAIGU <span class="footer-dot">✦</span> MADE FOR ONE MORE RUN.</span><span>一颗头盖骨，也有自己的宇宙。</span></footer>
+  <div class="site-footer"><span>TOUGAIGU <span class="footer-dot">✦</span> MADE FOR ONE MORE RUN.</span><span>一颗头盖骨，也有自己的宇宙。</span></div>
+  <footer class="corporate-footer">
+    <a class="corporate-logo" href="https://9mew.com" target="_blank" rel="noopener noreferrer" aria-label="上海九喵科技有限公司官网"><img src="./assets/company-wordmark.webp" alt="9mew 九喵科技" width="156" height="44" loading="lazy" decoding="async"></a>
+    <div class="corporate-legal"><p>© 2026 上海九喵科技有限公司 版权所有</p><p>统一社会信用代码：<span>91310109MAKQBAFQ2B</span></p></div>
+    <a class="corporate-link" href="https://9mew.com" target="_blank" rel="noopener noreferrer">企业官网 9mew.com <span aria-hidden="true">↗</span></a>
+  </footer>
 </div>
 
 <section id="arena" hidden aria-label="游戏战场">

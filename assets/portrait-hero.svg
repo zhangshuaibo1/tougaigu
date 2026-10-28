@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none" role="img" aria-labelledby="title desc"><title id="title">阿拾</title><desc id="desc">戴着橙色围巾的骷髅邮差，头盖骨轻轻掀起，一缕拾光升向月夜。</desc><defs><radialGradient id="bg"><stop stop-color="#4f3e62"/><stop offset="1" stop-color="#242030"/></radialGradient><linearGradient id="bone" x1="80" y1="70" x2="170" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="#fff3d6"/><stop offset="1" stop-color="#d9bd91"/></linearGradient><linearGradient id="cloak" x1="70" y1="160" x2="190" y2="250" gradientUnits="userSpaceOnUse"><stop stop-color="#a58bc6"/><stop offset="1" stop-color="#4d405f"/></linearGradient><radialGradient id="light"><stop stop-color="#c4f4d2" stop-opacity=".3"/><stop offset="1" stop-color="#b1e6c9" stop-opacity="0"/></radialGradient><clipPath id="round"><circle cx="128" cy="128" r="116"/></clipPath></defs><circle cx="128" cy="128" r="121" stroke="#af95bb" stroke-opacity=".24" stroke-width="2"/><circle cx="128" cy="128" r="116" fill="url(#bg)"/><g clip-path="url(#round)">
+<ellipse cx="134" cy="70" rx="75" ry="74" fill="url(#light)"/>
+<path d="M84 174c-27 14-44 57-45 83h175c-7-42-24-70-47-83Z" fill="url(#cloak)" stroke="#392d46" stroke-width="4"/>
+<path d="m91 193 31 15 34-17m-32 17 2 45" stroke="#c2a4d0" stroke-width="2.5"/>
+<path d="m93 181 84 71" stroke="#443146" stroke-width="12"/><path d="m93 181 84 71" stroke="#c08c77" stroke-width="8"/>
+<circle cx="129" cy="228" r="4" fill="#e7bc82"/>
+<path d="M81 172c-11 4-26-1-35-8 2 13 17 23 42 19l7-4" fill="#d49176" stroke="#604152" stroke-width="2.5"/>
+<path d="M83 166q43 21 87-1l-1 22q-40 18-84-1Z" fill="#df9b7d" stroke="#674455" stroke-width="3"/>
+<path d="M92 177q35 12 66-1" stroke="#f3bd92" stroke-width="3" stroke-linecap="round"/>
+<path d="M62 91c-9 14-11 34-5 51 5 13 15 23 28 27v17q39 24 83-1v-17c18-7 28-22 28-42 0-15-5-29-14-39Z" fill="url(#bone)" stroke="#594259" stroke-width="3.5"/>
+<ellipse cx="123" cy="89" rx="59" ry="11" fill="#8d7474" stroke="#594259" stroke-width="3"/><ellipse cx="123" cy="88" rx="46" ry="5" fill="#35534f"/>
+<path d="M71 102c-5 15-2 33 5 41" stroke="#fff5dd" stroke-width="4" stroke-linecap="round"/>
+<ellipse cx="94" cy="130" rx="19" ry="23" fill="#3b2d45"/><ellipse cx="157" cy="128" rx="19" ry="22" fill="#3b2d45"/>
+<ellipse cx="101" cy="127" rx="7" ry="12" fill="#ebb57a"/><ellipse cx="151" cy="125" rx="7" ry="11" fill="#ebb57a"/>
+<ellipse cx="102" cy="121" rx="2.5" ry="4" fill="#fff7da"/><ellipse cx="152" cy="120" rx="2.5" ry="4" fill="#fff7da"/>
+<path d="m127 147-5 8h10Zm-38 22q37 18 74-1m-58 8v12m16-8v13m16-13v13m16-15v12" stroke="#ab8e75" stroke-width="2.3" stroke-linecap="round"/>
+<g transform="rotate(22 184 89)"><path d="M62 80c2-41 26-65 61-65s57 24 60 65c-30 16-93 17-121 0Z" fill="url(#bone)" stroke="#594259" stroke-width="3.5"/><path d="M63 80v8q60 20 119-1v-7" fill="#c7ad88" stroke="#594259" stroke-width="3"/><path d="m123 32-8 13 12 7-2 12" stroke="#b89b77" stroke-width="2.5"/><path d="M75 61q10-25 33-31" stroke="#fff8e6" stroke-width="4" stroke-linecap="round"/></g>
+<path d="M152 70c-17-20-3-34 9-42 3-3 7-9 6-14 13 9 9 20 17 28 13 13 8 28-3 35-6 4-11 4-17 0l-10 7 2-12Z" fill="#b4eed0" stroke="#d8f4d3" stroke-width="2"/>
+<ellipse cx="162" cy="58" rx="2.5" ry="4.5" fill="#4b7d70"/><ellipse cx="176" cy="57" rx="2.5" ry="4.5" fill="#4b7d70"/><path d="M166 66q3 3 6-1" stroke="#60937d" stroke-width="1.8" stroke-linecap="round"/>
+</g><path d="m37 76 2 6 6 2-6 2-2 6-2-6-6-2 6-2Zm178 92 2 5 5 2-5 2-2 5-2-5-5-2 5-2Z" fill="#ecc994"/><circle cx="210" cy="65" r="2" fill="#b3d8c7"/><circle cx="53" cy="192" r="2" fill="#b3d8c7"/></svg>

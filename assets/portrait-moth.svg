@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none" role="img" aria-labelledby="title desc"><title id="title">灯蛾婆婆</title><desc id="desc">纸翼像旧信笺的灯蛾婆婆，戴小眼镜，捧着一盏蜂蜜色的灯。</desc><defs><radialGradient id="bg"><stop stop-color="#4f3e62"/><stop offset="1" stop-color="#242030"/></radialGradient><linearGradient id="bone" x1="80" y1="70" x2="170" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="#fff3d6"/><stop offset="1" stop-color="#d9bd91"/></linearGradient><linearGradient id="cloak" x1="70" y1="160" x2="190" y2="250" gradientUnits="userSpaceOnUse"><stop stop-color="#a58bc6"/><stop offset="1" stop-color="#4d405f"/></linearGradient><radialGradient id="light"><stop stop-color="#c4f4d2" stop-opacity=".3"/><stop offset="1" stop-color="#b1e6c9" stop-opacity="0"/></radialGradient><clipPath id="round"><circle cx="128" cy="128" r="116"/></clipPath></defs><circle cx="128" cy="128" r="121" stroke="#af95bb" stroke-opacity=".24" stroke-width="2"/><circle cx="128" cy="128" r="116" fill="url(#bg)"/><g clip-path="url(#round)">
+<ellipse cx="128" cy="149" rx="91" ry="76" fill="url(#light)" opacity=".5"/>
+<path d="M112 119C72 55 20 51 29 95c6 29 40 48 70 44-35 14-54 52-24 61 18 5 35-10 46-35" fill="#dfbf9e" stroke="#8e7184" stroke-width="3"/>
+<path d="M144 119c40-64 92-68 83-24-6 29-40 48-70 44 35 14 54 52 24 61-18 5-35-10-46-35" fill="#e8d3af" stroke="#8e7184" stroke-width="3"/>
+<path d="m42 81 54 44-53-25m169-19-54 44 53-25m-123 44-18 33m99-33 17 33" stroke="#b9988e" stroke-width="2.5" stroke-linecap="round"/>
+<path d="m54 85 10 9 12-2m114-7-10 9-12-2" stroke="#eedbc1" stroke-width="4" stroke-linecap="round"/>
+<path d="M105 126c-16 32-15 69-7 104q30 22 59-2c8-34 7-73-8-101Z" fill="#917a9c" stroke="#57465e" stroke-width="3"/>
+<path d="M102 158q27 11 52-1m-55 23q28 12 59-1m-61 23q28 13 62 0" stroke="#bb99b1" stroke-width="5"/>
+<path d="m113 70-19-29m49 29 19-30" stroke="#b5a1af" stroke-width="4" stroke-linecap="round"/>
+<circle cx="92" cy="38" r="6" fill="#d8c5b0"/><circle cx="164" cy="37" r="6" fill="#d8c5b0"/>
+<path d="M91 89c0-26 16-39 37-39s38 14 38 39c0 26-18 46-39 46S91 115 91 89Z" fill="#ead4af" stroke="#8d7483" stroke-width="3"/>
+<path d="M99 66c-9-13 5-22 14-14 5-17 21-18 25-1 15-11 27 0 20 13" fill="#f2e5cf" stroke="#a28f9d" stroke-width="3"/>
+<ellipse cx="112" cy="88" rx="13" ry="15" stroke="#796172" stroke-width="2.5"/><ellipse cx="143" cy="88" rx="13" ry="15" stroke="#796172" stroke-width="2.5"/><path d="M125 87h5m-31-1-8-3m65 3 9-4" stroke="#796172" stroke-width="2.5"/>
+<path d="m108 89 7-1m24 0 7 1" stroke="#4c3b50" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M117 111q11 8 22-1" stroke="#a17a76" stroke-width="2.5" stroke-linecap="round"/><path d="m101 104 4 1m46-1 4-1" stroke="#cfaa8d" stroke-width="5" stroke-linecap="round"/>
+<path d="M99 147c-12 10-15 27 1 31m57-29c11 11 13 26-3 31" stroke="#ccb49f" stroke-width="7" stroke-linecap="round"/>
+<ellipse cx="128" cy="188" rx="35" ry="41" fill="url(#light)"/>
+<path d="M112 170v-11q16-15 32 0v11" stroke="#a28d8d" stroke-width="3"/>
+<path d="m108 174 8-8h24l8 8-4 37h-31Z" fill="#efbe7a" stroke="#806576" stroke-width="3"/>
+<path d="M112 175h32m-27 4 3 26m18-26-3 26" stroke="#b5917d" stroke-width="2"/><path d="M127 180v22" stroke="#ffe4a9" stroke-width="4" stroke-linecap="round"/>
+</g><path d="m37 76 2 6 6 2-6 2-2 6-2-6-6-2 6-2Zm178 92 2 5 5 2-5 2-2 5-2-5-5-2 5-2Z" fill="#ecc994"/><circle cx="210" cy="65" r="2" fill="#b3d8c7"/><circle cx="53" cy="192" r="2" fill="#b3d8c7"/></svg>

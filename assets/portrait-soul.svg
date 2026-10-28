@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">拾光</title>
+<desc id="desc">一只圆润的薄荷色灵魂轻轻漂浮，尾尖弯成小小的笑意，身旁围绕着温柔的星光。</desc>
+<defs>
+  <radialGradient id="aura"><stop stop-color="#c7ffe0" stop-opacity=".29"/><stop offset=".55" stop-color="#a9ead6" stop-opacity=".12"/><stop offset="1" stop-color="#a9ead6" stop-opacity="0"/></radialGradient>
+  <linearGradient id="soul" x1="111" y1="44" x2="144" y2="199" gradientUnits="userSpaceOnUse"><stop stop-color="#f0ffe1"/><stop offset=".43" stop-color="#c2f2d8"/><stop offset="1" stop-color="#72c8b5"/></linearGradient>
+  <linearGradient id="edge" x1="75" y1="81" x2="174" y2="184" gradientUnits="userSpaceOnUse"><stop stop-color="#efffe2"/><stop offset="1" stop-color="#c9f2d7"/></linearGradient>
+  <filter id="soft" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<circle cx="128" cy="128" r="121" stroke="#afd9c8" stroke-opacity=".22" stroke-width="2"/>
+<circle cx="128" cy="128" r="113" fill="url(#aura)"/>
+<ellipse cx="132" cy="224" rx="50" ry="10" fill="#76bcac" opacity=".17" filter="url(#soft)"/>
+<path d="M43 171c-9-27-8-56 7-81m153 76c12-22 12-53 1-74" stroke="#b5e4cd" stroke-opacity=".2" stroke-width="1.5" stroke-dasharray="3 8" stroke-linecap="round"/>
+<path d="M96 177c-30-17-39-57-21-84 10-17 27-24 39-39 7-9 12-20 12-31 27 14 25 40 40 52 25 20 32 42 27 65-4 20-17 37-36 44-17 6-33 5-46-1-5 18-21 32-38 27 12-11 21-22 23-33Z" fill="#a9ead6" opacity=".18" filter="url(#soft)"/>
+<path d="M96 177c-30-17-39-57-21-84 10-17 27-24 39-39 7-9 12-20 12-31 27 14 25 40 40 52 25 20 32 42 27 65-4 20-17 37-36 44-17 6-33 5-46-1-5 18-21 32-38 27 12-11 21-22 23-33Z" fill="url(#soul)" stroke="url(#edge)" stroke-width="3" stroke-linejoin="round"/>
+<path d="M85 118c-2-23 10-36 26-47 8-5 15-13 18-22" stroke="#f7ffe9" stroke-width="6" stroke-linecap="round" opacity=".83"/>
+<path d="M166 167c12-7 18-18 19-29m-83 51-11 12" stroke="#def8d9" stroke-width="3.5" stroke-linecap="round" opacity=".65"/>
+<ellipse cx="108" cy="122" rx="7" ry="12" fill="#3e756b"/>
+<ellipse cx="153" cy="121" rx="7" ry="12" fill="#3e756b"/>
+<ellipse cx="110" cy="118" rx="2" ry="4" fill="#c9f1d3"/>
+<ellipse cx="155" cy="117" rx="2" ry="4" fill="#c9f1d3"/>
+<path d="M121 144c4 7 12 9 19-1" stroke="#568d79" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M92 140h7m63 0h7" stroke="#91cbb0" stroke-width="5" stroke-linecap="round"/>
+<path d="M85 151c-14-2-22 4-20 10 2 5 11 4 21-1m91-7c13-3 22 3 20 9-1 5-10 4-20-1" fill="#b8eecf" stroke="#d8f5d5" stroke-width="2.5" stroke-linecap="round"/>
+<path d="m131 163 2 5 5 2-5 2-2 5-2-5-5-2 5-2Z" fill="#f4edba" opacity=".9"/>
+<path d="m51 66 2.5 8.5L62 77l-8.5 2.5L51 88l-2.5-8.5L40 77l8.5-2.5Zm150 102 2 6 6 2-6 2-2 6-2-6-6-2 6-2Zm-26-133 1.5 5.5L182 42l-5.5 1.5L175 49l-1.5-5.5L168 42l5.5-1.5Z" fill="#efd39b"/>
+<g fill="#bcefd4"><circle cx="209" cy="104" r="3"/><circle cx="44" cy="132" r="2.5"/><circle cx="65" cy="193" r="2"/><circle cx="166" cy="213" r="3"/><circle cx="91" cy="39" r="2"/><circle cx="195" cy="67" r="2"/><circle cx="120" cy="226" r="1.8"/></g>
+<path d="m157 205 3-4m-99-92 3 3" stroke="#caefd7" stroke-width="2" stroke-linecap="round" opacity=".65"/>
+</svg>
