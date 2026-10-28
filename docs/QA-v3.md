@@ -35,7 +35,22 @@
 
 ## 发布
 
-沿用已公开的GitHub仓库和既有GitHub Pages发布分支。发布后的提交、部署运行链接与线上截图将在发布验证后补充。
+沿用已公开的GitHub仓库和既有GitHub Pages发布分支，部署状态已验证成功。
+
+- 源码提交：[1e5ba0e](https://github.com/zhangshuaibo1/tougaigu/commit/1e5ba0e360959f930a3b534126c46a208f37eca2)
+- 发布提交：[b16633d](https://github.com/zhangshuaibo1/tougaigu/commit/b16633d2ff3b813ae63bde08e629ae71b15f1ffb)
+- 部署运行：[40716660666 · success](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40716660666)
+- 线上地址：<https://zhangshuaibo1.github.io/tougaigu/>
+
+发布后刷新真实线上入口，确认页面直接进入主线、万圣节氛围自动激活、节日入口含10个故事；领取万圣见面礼成功到账10星砂、1灵光糖、1寻星罗盘。打开时光礼物验证普通及节日档位展示，进入南瓜夜邮验证专属场景、角色、两灯三礼物HUD和返回主线入口。线上页面没有观察到项目自身的控制台错误。该线上验证没有导入测试夹具。
+
+![线上万圣节场景](holiday-scene.jpg)
+
+![线上节日故事中心](holiday-live.jpg)
+
+![线上时光礼物](holiday-rewards.jpg)
+
+![手机390像素场景验收](holiday-mobile.jpg)
 
 ## 真实边界
 
