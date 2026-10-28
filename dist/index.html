@@ -2,107 +2,73 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#171420">
-  <meta name="description" content="一颗头盖骨，一点不服输。躲开怪潮，组合异能，在永夜墓园再活一局。免费的浏览器生存 Roguelite。">
-  <meta property="og:title" content="头盖骨 · 再活一局">
-  <meta property="og:description" content="今天，也要活蹦乱跳。三种角色、技能进化、每日挑战，打开就能玩。">
-  <title>头盖骨 TOUGAIGU · 再活一局</title>
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./portal.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#171522">
+  <meta name="description" content="掀起你的头盖骨：一场身体与灵魂合作的故事解谜冒险。穿过六个奇妙场景，解开诗词、灯谜与歇后语，替一座忘记天亮的小镇送出最后一封信。">
+  <meta property="og:title" content="掀起你的头盖骨 · 给明天的一封信">
+  <meta property="og:description" content="头顶掀开一点，世界就会亮一点。双形态机关、六幕故事、十二盏谜灯，打开即玩。">
+  <title>掀起你的头盖骨 · 给明天的一封信 | TOUGAIGU</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./dream.css">
   <link rel="stylesheet" href="./company-footer.css">
+  <link rel="stylesheet" href="./game-shell.css">
+  <link rel="stylesheet" href="./dream-play.css">
 </head>
-<body>
-<a class="skip-link" href="#main">跳到游戏内容</a>
-<svg class="svg-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
-  <symbol id="i-skull" viewBox="0 0 40 40"><path d="M9 29C3 25 3 15 7 9c5-7 21-7 26 0 4 6 4 16-2 20v6H9Z" fill="currentColor"/><path d="M12 18c-5-1-5 6-1 7 5 1 6-6 1-7Zm16 0c-5 0-6 7-1 7 4-1 5-8 1-7Zm-9 8-2 4h6l-2-4ZM14 32v5m6-5v5m6-5v5" fill="#171420" stroke="#171420" stroke-width="2.5" stroke-linecap="round"/></symbol>
-  <symbol id="i-bone" viewBox="0 0 24 24"><path d="m7 5 12 12c4-1 4 5 0 4-1 4-6 1-4-2L4 8C0 9 0 3 4 4c0-4 6-3 3 1Z" fill="currentColor"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z" fill="currentColor"/></symbol>
-  <symbol id="i-sound" viewBox="0 0 24 24"><path d="m4 9 4 0 5-4v14l-5-4H4Zm13-1q5 4 0 8m3-11q7 7 0 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-mute" viewBox="0 0 24 24"><path d="m4 9 4 0 5-4v14l-5-4H4Zm13 0 5 6m0-6-5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-gear" viewBox="0 0 24 24"><path d="m9 3 6 0 1 3 3 1 2 5-2 5-3 1-1 3H9l-1-3-3-1-2-5 2-5 3-1Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
-  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M14 2 5 14h6l-1 8 9-12h-6Z" fill="currentColor"/></symbol>
-  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="15" r="1.5" fill="currentColor"/></symbol>
-  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21C-7 8 5-3 12 5c7-8 19 3 0 16" fill="currentColor"/></symbol>
+<body class="dream-play">
+<a href="#dream-canvas" class="dream-skip">跳到游戏内容</a>
+<svg class="dream-symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+  <symbol id="d-star" viewBox="0 0 24 24"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1Z" fill="currentColor"/></symbol>
+  <symbol id="d-spark" viewBox="0 0 24 24"><path d="m12 1 3 8 8 3-8 3-3 8-3-8-8-3 8-3Z" fill="currentColor"/></symbol>
+  <symbol id="d-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="d-letter" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m4 7 8 6 8-6m-16 10 6-5m10 5-6-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="d-moon" viewBox="0 0 24 24"><path d="M19 16A9 9 0 0 1 9 3a9 9 0 1 0 10 13Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m18 2 1 3 3 1-3 1-1 3-1-3-3-1 3-1Z" fill="currentColor"/></symbol>
+  <symbol id="d-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="d-clock" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 8v5l3 2M9 2h6m-3 0v3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="d-flower" viewBox="0 0 24 24"><path d="M12 22V12m0 7q-9-1-9-7 8-1 9 7Zm0-4q9-1 9-7-8-1-9 7Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 3c-3-5-9 2-4 5-5 4 3 9 4 4 3 5 10-1 5-4 4-4-2-10-5-5Z" fill="currentColor"/></symbol>
+  <symbol id="d-station" viewBox="0 0 24 24"><path d="M4 20h16M6 20V8m12 12V8M3 8l9-6 9 6H3Zm6 12v-7h6v7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="6" r="1" fill="currentColor"/></symbol>
+  <symbol id="d-whale" viewBox="0 0 24 24"><path d="M2 13c0-5 7-7 12-3l3 3 3-5 2 2-3 7c-3 4-17 5-17-4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 7V4m-3-1 3 1 3-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="6" cy="12" r="1" fill="currentColor"/></symbol>
+  <symbol id="d-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m12 12 9 9m-4-4 3-3m-6 0 3-3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="d-cap" viewBox="0 0 28 28"><path d="M5 14c-2 7 2 9 4 9v3h10v-3c4-1 6-5 4-10Z" fill="currentColor"/><path d="M5 8c-2-8 17-11 19-3L5 8Z" fill="currentColor" transform="rotate(-12 14 7)"/><circle cx="10" cy="18" r="2" fill="#171522"/><circle cx="18" cy="18" r="2" fill="#171522"/><path d="m14 20-2 3h4Z" fill="#171522"/><path d="m15 5 1 3 3 1-3 1-1 3-1-3-3-1 3-1Z" fill="#a9ead6"/></symbol>
+  <symbol id="d-sound" viewBox="0 0 24 24"><path d="m3 9 4 0 5-4v14l-5-4H3Zm13-1q5 4 0 8m3-11q7 7 0 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="d-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="15" r="1.5" fill="currentColor"/></symbol>
 </defs></svg>
 
-<div id="lobby">
-  <header class="site-header">
-    <a href="#home" class="brand" aria-label="头盖骨首页"><span class="brand-mark"><svg><use href="#i-skull"/></svg></span><span>头盖骨<small>TOUGAIGU</small></span></a>
-    <nav class="main-nav" aria-label="主导航"><button class="nav-link active" data-page="home" aria-current="page">出发冒险</button><button class="nav-link" data-page="workshop">骨骼工坊</button><button class="nav-link" data-page="journal">冒险手账</button><a class="nav-link new-game-nav" href="./dream.html">掀起头盖骨 <b>新</b></a></nav>
-    <div class="header-tools"><span class="wallet" title="骨片：冒险获得的成长资源"><svg><use href="#i-bone"/></svg><b id="wallet">0</b><span>骨片</span></span><button class="icon-btn sound-toggle" aria-label="关闭音效" title="音效"><svg><use href="#i-sound"/></svg></button><button class="icon-btn" id="settings-open" aria-label="设置与存档" title="设置与存档"><svg><use href="#i-gear"/></svg></button></div>
-  </header>
+<main id="dream-stage" aria-label="掀起你的头盖骨 · 故事解谜关卡">
+  <canvas id="dream-canvas" tabindex="0" aria-label="回声旅途。方向键移动，身体形态空格跳跃，E 掀开头盖骨或返回身体，灵魂形态空格发出脉冲，Q 互动，Escape 暂停。"></canvas>
+  <div class="stage-vignette"></div>
+  <header class="stage-hud"><div class="stage-hud-left"><div><span id="stage-chapter-number">01 / 06</span><h2 id="stage-chapter-title">苔灯站台</h2></div><button id="stage-story" class="stage-story-button" aria-label="阅读本章来信"><svg><use href="#d-letter"/></svg><span>来信</span></button></div><div class="stage-goals"><span><svg><use href="#d-sun"/></svg><b id="stage-seals">0 / 2</b><small>谜灯</small></span><span><svg><use href="#d-letter"/></svg><b id="stage-memories">0 / 3</b><small>记忆</small></span><span class="stage-time" id="stage-time">00:00</span></div><div class="stage-form"><span id="stage-form-name">身体 · 阿拾</span><div class="energy-track"><i id="stage-energy"></i></div><small id="stage-energy-label">拾光正在头顶休息</small></div></header>
+  <div class="stage-objective"><span id="stage-objective">找到两盏回声谜灯</span><small id="stage-near-hint">按 E 掀开头盖骨</small></div>
+  <div id="stage-announcement" class="stage-announcement" role="status" aria-live="polite"></div>
+  <div id="stage-touch-move" class="stage-touch-move" role="group" aria-label="触屏方向控制"><button data-direction="up" aria-label="向上飞行或跳跃">↑</button><button data-direction="left" aria-label="向左移动">←</button><span></span><button data-direction="right" aria-label="向右移动">→</button><button data-direction="down" aria-label="向下飞行">↓</button></div>
+  <div class="stage-actions"><button id="stage-interact" class="stage-action secondary-action"><svg><use href="#d-letter"/></svg><span>互动</span><kbd>Q</kbd></button><button id="stage-toggle" class="stage-action soul-action"><svg><use href="#d-cap"/></svg><span id="stage-toggle-label">掀开头盖骨</span><kbd>E</kbd></button><button id="stage-jump" class="stage-action jump-action"><span class="action-glyph" id="stage-action-glyph">↑</span><span id="stage-action-label">跳跃</span><kbd>SPACE</kbd></button></div>
+  <div class="stage-desktop-hint"><span>← → 移动 · 空格跳跃</span><i>✦</i><span>E 掀盖 / 归位 · 拾光用方向键飞行</span></div>
+</main>
 
-  <main id="main" class="page-shell">
-    <section id="page-home" class="page-view" aria-labelledby="hero-title">
-      <div class="hero">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="live-dot"></span> 永夜墓园，今日营业 <span class="eyebrow-line"></span></div>
-          <h1 id="hero-title">今天，也要<br><span>活蹦乱跳。</span><svg class="title-star"><use href="#i-star"/></svg></h1>
-          <p>一颗头盖骨，一点不服输。<br>躲开怪潮，组合异能，把死路玩成出路。</p>
-          <div class="hero-tags"><span><i>↗</i> 约 5 分钟一局</span><span><i>✦</i> 每次都有新花样</span><span><i>◌</i> 打开就能玩</span></div>
-        </div>
-        <div class="hero-art" aria-label="一只披着紫色斗篷的小骷髅，站在月光下的墓园里">
-          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="art-star star-one">✧</span><span class="art-star star-two">✦</span><span class="art-dot dot-one"></span><span class="art-dot dot-two"></span>
-          <span class="speech-bubble">问题不大，我还能再活一局。</span>
-          <canvas id="hero-canvas" width="640" height="440" aria-hidden="true"></canvas>
-          <span class="art-label"><span>LV. 01</span> 小骨 <svg><use href="#i-heart"/></svg></span>
-          <span class="sticker">STILL<br><b>ALIVE!</b></span>
-        </div>
-      </div>
+<footer class="corporate-footer"><a class="corporate-logo" href="https://9mew.com" target="_blank" rel="noopener noreferrer"><img src="./assets/company-wordmark.webp" alt="9mew 九喵科技" width="156" height="44" loading="lazy"></a><div class="corporate-legal"><p>© 2026 上海九喵科技有限公司 版权所有</p><p>统一社会信用代码：<span>91310109MAKQBAFQ2B</span></p></div><a class="corporate-link" href="https://9mew.com" target="_blank" rel="noopener noreferrer">企业官网 9mew.com ↗</a></footer>
 
-      <div class="adventure-grid">
-        <section class="play-card" aria-labelledby="play-heading">
-          <div class="play-topline"><span class="section-kicker">YOUR NEXT ADVENTURE</span><span class="version-badge">VOL. 01 · 永夜篇</span></div>
-          <div class="mode-tabs" role="group" aria-label="选择游戏模式"><button data-mode="standard" class="mode-tab selected" aria-pressed="true">墓园冒险 <span>5 MIN</span></button><button data-mode="endless" class="mode-tab" aria-pressed="false">无尽长夜 <span>∞</span></button><button data-mode="daily" class="mode-tab" aria-pressed="false">每日试炼 <span>DAILY</span></button></div>
-          <div class="play-body"><div><h2 id="play-heading">熬过长夜，向天亮进发。</h2><p id="mode-description">在怪潮里坚持 5 分钟，击败终夜领主。你的第一段传说，从这里开始。</p><div class="difficulty"><span class="difficulty-dots"><i></i><i></i><i></i><i></i><i></i></span><span id="mode-detail">渐进难度 · 永久成长生效</span></div></div><button id="play-button" class="play-button"><span>再活一局</span><svg><use href="#i-arrow"/></svg><small>LET'S GO!</small></button></div>
-          <div class="control-hint"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 移动</span><span><kbd>SPACE</kbd> 冲刺</span><span>自动攻击，你负责走位</span><button id="help-open">怎么玩 <span>↗</span></button></div>
-        </section>
-        <aside class="daily-card"><span class="daily-icon"><svg><use href="#i-star"/></svg></span><div class="section-kicker">ONE DAY. ONE CHALLENGE.</div><h2>同一个夜晚，<br>新的可能。</h2><p>每日固定挑战种子。<br>放下永久加成，凭本事刷新纪录。</p><div class="daily-bottom"><span><small id="daily-date">今日试炼</small><b id="daily-score">等待你的第一局</b></span><button id="daily-select" class="round-btn" aria-label="选择每日试炼"><svg><use href="#i-arrow"/></svg></button></div></aside>
-      </div>
+<dialog id="map-dialog" class="dream-dialog map-dialog" aria-labelledby="map-title"><button class="dream-dialog-close" data-close="map-dialog" aria-label="关闭章节地图">×</button><div class="dialog-eyebrow">给明天的一封信</div><h2 id="map-title">章节地图</h2><div class="map-summary"><span id="journey-progress-label">0 / 6 章已完成</span><div class="map-progress"><i id="journey-progress-fill"></i></div><span id="dream-save-status"><i></i> 进度已保存</span></div><div id="chapter-grid" class="chapter-grid"></div><p class="dialog-note">切换章节会从该章起点出发。</p><button id="map-continue" class="dream-primary compact">继续游戏 <span>→</span></button></dialog>
 
-      <a class="dream-entry" href="./dream.html" aria-label="进入新游戏：掀起你的头盖骨">
-        <div class="dream-entry-art"><img src="./assets/dream-cover.svg" alt="阿拾掀开头盖骨，放出一缕拾光灵魂" width="140" height="120" loading="lazy"></div>
-        <div class="dream-entry-copy"><span class="dream-entry-kicker">全新独立冒险 · THE UNSENT DAWN</span><h2>掀起你的头盖骨</h2><p>把灵魂放出来。替六个没有天亮的地方，送完最后一封信。</p><div><span>头身协作</span><span>机关解谜</span><span>六章故事</span></div></div>
-        <span class="dream-entry-cta">进入新冒险 <span aria-hidden="true">↗</span></span>
-      </a>
+<dialog id="story-dialog" class="dream-dialog story-dialog" aria-labelledby="story-dialog-title"><div class="dialog-eyebrow"><span id="story-chapter-label">第一幕 · 苔灯站台</span><small id="story-page">01 / 03</small></div><div class="story-dialog-body"><div class="story-portrait-wrap"><img id="story-portrait" src="./assets/portrait-hero.svg" alt="" width="200" height="200"><span class="story-portrait-light"></span></div><div class="story-words"><span id="story-speaker-role"></span><h2 id="story-dialog-title">阿拾</h2><p id="story-dialog-text"></p><span class="story-little-star">✧</span></div></div><div class="story-dialog-actions"><button id="story-skip" class="dream-text-link">跳过</button><button id="story-next" class="dream-primary compact"><span>下一句</span><svg><use href="#d-arrow"/></svg></button></div></dialog>
 
-      <div class="lower-grid"><section class="characters-section" aria-labelledby="characters-heading"><div class="section-heading"><h2 id="characters-heading">挑一位不服输的。<span>CHOOSE YOUR SOUL</span></h2><span id="character-count">1 / 3 已唤醒</span></div><div id="character-cards" class="character-cards"></div></section><aside class="goal-card"><div class="section-heading"><h2>今晚的小目标</h2><svg><use href="#i-star"/></svg></div><div id="next-goal"></div><button class="text-link" data-page="journal">看看我的冒险手账 <span>↗</span></button></aside></div>
-      <div class="bottom-note"><span>✦ 死亡只是一个逗号。下一局，继续写。</span><span>进度自动保存在当前浏览器 <i class="save-dot"></i></span></div>
-    </section>
+<dialog id="puzzle-dialog" class="dream-dialog puzzle-dialog" aria-labelledby="puzzle-title"><div class="dialog-eyebrow"><span id="puzzle-type">回声谜灯</span><small id="puzzle-count">01 / 12</small></div><div class="puzzle-speaker"><img id="puzzle-portrait" src="./assets/portrait-moth.svg" alt="" width="72" height="72"><p id="puzzle-scene"></p></div><h2 id="puzzle-title">站台的第一盏灯</h2><p id="puzzle-question"></p><div id="puzzle-options" class="puzzle-options"></div><p id="puzzle-feedback" class="puzzle-feedback" role="status" aria-live="polite"></p><div id="puzzle-hints" class="puzzle-hints"></div><div id="puzzle-explanation" class="puzzle-explanation" hidden></div><div class="puzzle-dialog-actions"><button id="puzzle-hint" class="dream-text-link">提示 <span>✧</span></button><button id="puzzle-return" class="dream-text-link">返回场景</button><button id="puzzle-continue" class="dream-primary compact" hidden>点亮谜灯 <span>→</span></button></div></dialog>
 
-    <section id="page-workshop" class="page-view" hidden aria-labelledby="workshop-title"><div class="page-title"><div class="eyebrow">THE BONE WORKSHOP</div><h1 id="workshop-title">散架了？<span>升级一下。</span></h1><p>把每一局捡回来的骨片，变成下一次出发的底气。</p></div><div class="info-banner"><svg><use href="#i-bone"/></svg><span>永久成长在墓园冒险与无尽长夜中生效。每日试炼保留同一起跑线。</span></div><div class="workshop-grid" id="workshop-cards"></div><section class="evolution-guide"><div class="section-heading"><h2>不止升级。还会进化。<span>SECRET RECIPES</span></h2></div><div class="recipe-grid"><article><span>◉ + ↗</span><h3>白骨风暴</h3><p>环绕骨刃 Lv.4 + 移速 Lv.3</p><small>骨刃加速，扩大你的安全区。</small></article><article><span>ϟ + ⏱</span><h3>雷霆永动</h3><p>连锁闪电 Lv.4 + 攻速 Lv.3</p><small>让每一道闪电更快抵达。</small></article><article><span>✦ + ⋔</span><h3>碎骨弹幕</h3><p>攻击 Lv.5 + 多重弹 Lv.3</p><small>把一条出路，变成一片出路。</small></article></div></section></section>
+<dialog id="pause-dialog" class="dream-dialog pause-dialog" aria-labelledby="pause-title"><div class="pause-symbol">☾</div><div class="dialog-eyebrow"></div><h2 id="pause-title">已暂停</h2><p id="pause-detail">阿拾和拾光都在原处等你。</p><button id="stage-resume" class="dream-primary">继续游戏 <span>→</span></button><button id="stage-restart" class="dream-secondary">重新开始本章</button><button id="stage-home" class="dream-text-link">章节地图</button><small class="dialog-note">章节记录自动保存；刷新会回到本章起点。</small></dialog>
 
-    <section id="page-journal" class="page-view" hidden aria-labelledby="journal-title"><div class="page-title"><div class="eyebrow">NOT DEAD. JUST DOCUMENTED.</div><h1 id="journal-title">每一局，<span>都算数。</span></h1><p>那些险些散架的时刻，都值得记下来。</p></div><div id="stats-grid" class="stats-grid"></div><div class="section-heading journal-heading"><h2>不朽收藏<span>ACHIEVEMENTS</span></h2><span id="achievement-count"></span></div><div id="achievement-cards" class="achievement-grid"></div><div class="section-heading journal-heading"><h2>最近的冒险<span>LOCAL RECORDS</span></h2><span>当前浏览器的真实战绩</span></div><div id="history-list" class="history-list"></div><div class="section-heading journal-heading"><h2>夜里会遇见谁<span>FIELD NOTES</span></h2></div><div id="enemy-cards" class="enemy-grid"></div></section>
-  </main>
-  <div class="site-footer"><span>TOUGAIGU <span class="footer-dot">✦</span> MADE FOR ONE MORE RUN.</span><span>一颗头盖骨，也有自己的宇宙。</span></div>
-  <footer class="corporate-footer">
-    <a class="corporate-logo" href="https://9mew.com" target="_blank" rel="noopener noreferrer" aria-label="上海九喵科技有限公司官网"><img src="./assets/company-wordmark.webp" alt="9mew 九喵科技" width="156" height="44" loading="lazy" decoding="async"></a>
-    <div class="corporate-legal"><p>© 2026 上海九喵科技有限公司 版权所有</p><p>统一社会信用代码：<span>91310109MAKQBAFQ2B</span></p></div>
-    <a class="corporate-link" href="https://9mew.com" target="_blank" rel="noopener noreferrer">企业官网 9mew.com <span aria-hidden="true">↗</span></a>
-  </footer>
-</div>
+<dialog id="result-dialog" class="dream-dialog result-dialog" aria-labelledby="result-title"><div class="result-stamp"><svg><use href="#d-letter"/></svg><span>DELIVERED</span></div><div class="dialog-eyebrow" id="result-kicker">第一封信 · 已送达</div><h2 id="result-title">这盏灯，为你亮着。</h2><div class="result-stars" id="result-stars"></div><p id="result-message"></p><div class="result-stats"><span><b id="result-memories">0 / 3</b>记忆残页</span><span><b id="result-time">00:00</b>旅途用时</span><span><b id="result-falls">0</b>重新站起</span></div><div id="result-keepsake" class="result-keepsake"></div><div id="result-new-stamps" class="result-new-stamps"></div><button id="result-story" class="dream-primary">拆开这一站的来信 <span>→</span></button><button id="result-map" class="dream-text-link">章节地图</button></dialog>
 
-<section id="arena" hidden aria-label="游戏战场">
-  <canvas id="game-canvas" tabindex="0" aria-label="生存战场，使用 WASD 或方向键移动，空格冲刺，Escape 暂停"></canvas>
-  <div class="battle-hud"><div class="hud-left"><button id="pause-button" class="pause-button" aria-label="暂停游戏">Ⅱ</button><div class="health-block"><div><svg><use href="#i-heart"/></svg><b id="health-label">110 / 110</b><span id="hero-name">小骨</span></div><div class="health-track"><i id="health-fill"></i></div></div></div><div class="hud-center"><span id="wave-label">第 1 波</span><strong id="time-label">00:00</strong><small id="battle-mode">墓园冒险</small></div><div class="hud-right"><span>击败 <b id="kills-label">0</b></span><span>得分 <b id="score-label">0</b></span></div></div>
-  <div class="xp-hud"><span id="level-label">LV. 1</span><div><i id="xp-fill"></i></div><span id="xp-label">0 / 10</span></div>
-  <div id="boss-hud" hidden><span id="boss-name"></span><div><i id="boss-fill"></i></div></div>
-  <div id="battle-announcement" role="status" aria-live="polite"></div>
-  <div class="battle-bottom"><div id="active-upgrades" class="active-upgrades" aria-label="本局技能"></div><button id="dash-button" class="dash-button"><svg><use href="#i-bolt"/></svg><span>冲刺</span><small id="dash-label">SPACE</small><i id="dash-shade"></i></button></div>
-  <div id="joystick" class="joystick" aria-label="拖动摇杆移动"><span id="joystick-stick"></span></div>
-  <div id="battle-tutorial">收集光点升级 · 自动攻击 · 空格冲刺</div>
-</section>
+<dialog id="choice-dialog" class="dream-dialog choice-dialog" aria-labelledby="choice-title"><div class="dialog-eyebrow">SOME WORDS NEED YOUR REPLY</div><h2 id="choice-title">这封信，交给谁？</h2><p id="choice-lead"></p><div id="choice-options" class="choice-options"></div><p class="dialog-note">选择会改变最后的回信。没有标准答案，只有你想留下的温度。</p></dialog>
 
-<dialog id="upgrade-dialog" class="game-dialog upgrade-dialog" aria-labelledby="upgrade-title"><div class="dialog-kicker">A LITTLE LESS DEAD</div><h2 id="upgrade-title">骨气，又多了一点。</h2><p>选一项异能，写下这一局的玩法。</p><div id="upgrade-options" class="upgrade-options"></div><small class="dialog-footnote">战场已暂停 · 按 1 / 2 / 3 快速选择</small></dialog>
-<dialog id="pause-dialog" class="game-dialog compact-dialog" aria-labelledby="pause-title"><div class="dialog-hero">☾</div><div class="dialog-kicker">TAKE A BREATHER</div><h2 id="pause-title">喘口气。虽然你没有肺。</h2><p>时间停住了。怪物也会等你。</p><button id="resume-button" class="primary-button">继续冒险 <span>→</span></button><button id="end-run-button" class="secondary-button">收好骨片，返回墓园</button><small class="dialog-footnote">退出会结算当前战绩，下一局从头开始。</small></dialog>
-<dialog id="result-dialog" class="game-dialog result-dialog" aria-labelledby="result-title"><div id="result-emblem" class="result-emblem"><svg><use href="#i-skull"/></svg></div><div class="dialog-kicker" id="result-kicker">NOT THE END</div><h2 id="result-title">散架了，但没白来。</h2><p id="result-subtitle">每次重来，都比上一次多一点底气。</p><div id="result-stats" class="result-stats"></div><div class="result-reward"><span>这一局带回 <b id="result-bones">0</b> 骨片</span><svg><use href="#i-bone"/></svg></div><div id="result-achievements"></div><div class="result-actions"><button id="again-button" class="primary-button">再活一局 <span>→</span></button><button id="return-button" class="secondary-button">回墓园，整顿一下</button></div></dialog>
-<dialog id="settings-dialog" class="game-dialog compact-dialog" aria-labelledby="settings-title"><button class="dialog-close" data-close="settings-dialog" aria-label="关闭设置">×</button><div class="dialog-kicker">MAKE YOURSELF AT HOME</div><h2 id="settings-title">舒服一点，再出发。</h2><label class="setting-row"><span><b>游戏音效</b><small>合成音效，跟着每次命中响起</small></span><input id="setting-sound" type="checkbox" role="switch"></label><label class="setting-row"><span><b>减少动态效果</b><small>减少装饰动画与战场晃动</small></span><input id="setting-motion" type="checkbox" role="switch"></label><div class="save-section"><h3>把冒险带在身边</h3><p>进度保存在当前浏览器。导出备份，可以在另一台设备导入继续成长。</p><div><button id="export-button" class="secondary-button">导出存档 ↓</button><label class="secondary-button file-label">导入存档 ↑<input id="import-file" type="file" accept="application/json,.json"></label></div><p id="save-message" class="save-message" role="status"></p></div></dialog>
-<dialog id="help-dialog" class="game-dialog help-dialog" aria-labelledby="help-title"><button class="dialog-close" data-close="help-dialog" aria-label="关闭玩法说明">×</button><div class="dialog-kicker">A QUICK SURVIVAL GUIDE</div><h2 id="help-title">这副骨头，怎么用？</h2><div class="help-steps"><article><b>01</b><div><h3>走位就好，攻击交给本能。</h3><p>WASD / 方向键移动；手机用左下角摇杆。空格或右下按钮冲刺，短暂无敌并穿过怪群。</p></div></article><article><b>02</b><div><h3>捡起光点，选出自己的流派。</h3><p>击败怪物会掉落经验。升级时战场暂停，三选一。先把几个核心技能升高，更容易触发进化。</p></div></article><article><b>03</b><div><h3>长夜有尽头，成长没有。</h3><p>90 秒、180 秒与 300 秒迎战首领。击败终夜领主即通关；想挑战极限，可以选择无尽长夜。</p></div></article></div><div class="help-tip">小提示：沿怪群的外圈移动，给自己留一条退路。暂停或切走标签页，战斗都会停下。</div><button class="primary-button" data-close="help-dialog">明白了，出发！ <span>→</span></button></dialog>
-<div id="toast" class="toast" role="status" aria-live="polite"></div>
-<noscript><div class="noscript">这款游戏需要启用 JavaScript 才能运行。</div></noscript>
-<script type="module" src="./app.js"></script>
+<dialog id="ending-dialog" class="dream-dialog ending-dialog" aria-labelledby="ending-title"><div class="ending-sky"><span>✧</span><i></i><span>✦</span></div><div class="dialog-eyebrow" id="ending-eyebrow">一封终于抵达的信</div><h2 id="ending-title"></h2><div id="ending-text" class="ending-text"></div><p id="ending-last-line"></p><div class="ending-collection" id="ending-collection"></div><button id="ending-home" class="dream-primary">把明天，装进口袋 <span>→</span></button><p class="dialog-note">你可以重访章节、收集遗漏残页，或在记忆信箱里写下不同的回信。</p></dialog>
+
+<dialog id="journal-dialog" class="dream-dialog journal-dialog" aria-labelledby="journal-title"><button class="dream-dialog-close" data-close="journal-dialog" aria-label="关闭记忆信箱">×</button><div class="dialog-eyebrow">角色 · 收藏 · 记录</div><h2 id="journal-title">邮差档案</h2><div class="profile-identity"><img src="./assets/portrait-hero.svg" width="72" height="72" alt="阿拾"><div><strong>阿拾</strong><span>黎明邮局 · 第拾号邮差</span></div><span class="profile-local">本地角色</span></div><div id="journal-stats" class="journal-stats"></div><h3 class="journal-section-title">记忆残页</h3><div id="memory-grid" class="memory-grid"></div><h3 class="journal-section-title">旅途纪念物</h3><div id="keepsake-grid" class="keepsake-grid"></div><h3 class="journal-section-title">邮戳收藏</h3><div id="stamp-grid" class="stamp-grid"></div><h3 class="journal-section-title">故事选择</h3><div id="journal-choices" class="journal-choices"></div><div id="journal-ending" class="journal-ending"></div><p class="dialog-note">纪念物用于收藏与叙事，不额外增加角色能力。进度仅保存在当前浏览器。</p></dialog>
+
+<dialog id="letter-dialog" class="dream-dialog letter-dialog" aria-labelledby="letter-title"><button class="dream-dialog-close" data-close="letter-dialog" aria-label="收好记忆残页">×</button><div class="dialog-eyebrow" id="letter-chapter"></div><h2 id="letter-title"></h2><div id="letter-fragments"></div><p id="letter-missing" class="dialog-note"></p><button id="letter-back" class="dream-secondary">收回记忆信箱</button></dialog>
+
+<dialog id="guide-dialog" class="dream-dialog guide-dialog" aria-labelledby="guide-title"><button class="dream-dialog-close" data-close="guide-dialog" aria-label="关闭玩法说明">×</button><div class="dialog-eyebrow">怎么玩</div><h2 id="guide-title">操作与目标</h2><div class="guide-steps"><article><span>01</span><div><h3>移动与掀盖</h3><p>身体用 A / D 或左右方向键移动，W、↑ 或空格跳跃。按 E 掀开头盖骨，留下身体，放出拾光；再按 E 返回身体。</p></div></article><article><span>02</span><div><h3>灵魂飞行与脉冲</h3><p>拾光用 WASD / 方向键自由飞行，靠近回声灯后按空格或 Q 发出脉冲。能量与距离有限，及时归位休息；灯亮后不会熄灭。</p></div></article><article><span>03</span><div><h3>解谜并找到出口</h3><p>每章两盏谜灯。选择答案，或请拾光逐步提示。答错不会惩罚；看过答案也能继续。点亮两盏灯后，让阿拾走到出口完成章节。</p></div></article><article><span>04</span><div><h3>收集与重玩</h3><p>每章三片记忆可以选收。跌落会回到检查点；已通关章节可重玩。两次回信选择会改变最终结局，纪念物与邮戳保存在记忆信箱。</p></div></article></div><div class="guide-controls"><span><kbd>ESC</kbd> 暂停</span><span><kbd>Q</kbd> 互动 / 脉冲</span><span>手机使用屏幕方向键和动作按钮</span></div><button class="dream-primary" data-close="guide-dialog">返回游戏 <span>→</span></button></dialog>
+
+<dialog id="preferences-dialog" class="dream-dialog preferences-dialog" aria-labelledby="preferences-title"><button class="dream-dialog-close" data-close="preferences-dialog" aria-label="关闭偏好设置">×</button><div class="dialog-eyebrow"></div><h2 id="preferences-title">设置与存档</h2><label class="preference-row"><span><b>旅途音效</b><small>合成的脚步、跳跃与回声灯声</small></span><input id="dream-pref-sound" type="checkbox" role="switch"></label><label class="preference-row"><span><b>减少动态效果</b><small>减少粒子与镜头晃动</small></span><input id="dream-pref-motion" type="checkbox" role="switch"></label><div class="dream-save-box"><h3>存档备份</h3><p>章节、残页、谜题与回信会自动保存。导出一份备份，也可以在其他浏览器继续。</p><div><button id="dream-export" class="dream-secondary">导出故事存档 ↓</button><label class="dream-secondary dream-file-label">导入故事存档 ↑<input id="dream-import" type="file" accept="application/json,.json"></label></div><p id="dream-save-message" role="status"></p></div><p class="dialog-note">本游戏与原版生存玩法各自保存进度。正在进行的章节不提供跨刷新续关。</p></dialog>
+<div id="dream-toast" class="dream-toast" role="status" aria-live="polite"></div>
+<noscript><div class="dream-noscript">这段旅程需要启用 JavaScript 才能开始。<a href="./index.html">返回头盖骨首页</a></div></noscript>
+<script type="module" src="./dream-app.js"></script>
 </body>
 </html>

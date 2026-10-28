@@ -1,4 +1,5 @@
 import { DreamGame } from './dream-engine.js';
+import { mountGameShell } from './game-shell.js';
 import {
   CHAPTERS, CAST, STORY_CHOICES, ENDINGS, STAMPS, STORY_ITEMS, PUZZLES, DREAM_SAVE_KEY,
   loadDreamSave, persistDreamSave, validateDreamSave, getUnlockedChapter, getJourneyStats,
@@ -27,6 +28,66 @@ let toastTimer, announcementTimer;
 const heldKeys = new Set();
 const heldPointers = new Map();
 let lastHudAt = 0;
+let shell = null;
+let overlayResumeGame = null;
+let shellOverlayOpen = false;
+let suppressPauseDialog = false;
+let overlayReturnToPause = false;
+
+function updateShell() {
+  const stats = getJourneyStats(save);
+  shell?.update({ role: currentHud?.form === 'soul' ? '拾光' : '阿拾', progress: stats.completed + '/6 章 · ' + stats.memories + '/18 记忆' });
+}
+
+function pauseForOverlay() {
+  if (!game || settled || game.state !== 'playing') return;
+  overlayResumeGame = game;
+  suppressPauseDialog = true;
+  resetInput();
+  game.pause('overlay');
+  suppressPauseDialog = false;
+}
+
+function resumeAfterOverlay() {
+  if (shellOverlayOpen || document.querySelector('dialog[open]') || storySequence || activeChoice || activePuzzle || document.hidden) return;
+  if (overlayReturnToPause && game && !settled && game.state === 'paused') {
+    overlayReturnToPause = false;
+    showPause('manual');
+    return;
+  }
+  const pausedGame = overlayResumeGame;
+  overlayResumeGame = null;
+  if (pausedGame && pausedGame === game && !settled) {
+    resetInput();
+    game.resume();
+    $('#dream-canvas').focus({ preventScroll: true });
+  }
+}
+
+function openMap() {
+  renderLobby();
+  $('#map-continue').innerHTML = settled ? '下一章 <span>→</span>' : '继续游戏 <span>→</span>';
+  if (settled && getJourneyStats(save).completed === 6) $('#map-continue').innerHTML = '重访本章 <span>→</span>';
+  openDialog('#map-dialog');
+}
+
+function continueFromMap() {
+  if (!game || settled) beginChapter(getJourneyStats(save).completed === 6 ? save.lastChapter : getUnlockedChapter(save));
+  else {
+    overlayReturnToPause = false;
+    if (game.state === 'paused') overlayResumeGame = game;
+    $('#map-dialog').close();
+  }
+}
+
+function handleShellAction(action) {
+  if (action === 'map') openMap();
+  if (action === 'profile') openJournal();
+  if (action === 'help') openDialog('#guide-dialog');
+  if (action === 'settings') { renderSettings(); $('#dream-save-message').textContent = ''; openDialog('#preferences-dialog'); }
+  if (action === 'pause') { resetInput(); game?.pause('manual'); }
+}
+
 
 function toast(message) {
   clearTimeout(toastTimer);
@@ -37,11 +98,12 @@ function toast(message) {
 
 function persist() {
   const okay = persistDreamSave(save);
-  $('#dream-save-status').innerHTML = '<i style="background:' + (okay ? 'var(--dream-mint)' : 'var(--dream-orange)') + '"></i>' + (okay ? '章节进度自动保存在此浏览器' : '浏览器未能保存，请导出备份');
+  $('#dream-save-status').innerHTML = '<i style="background:' + (okay ? 'var(--dream-mint)' : 'var(--dream-orange)') + '"></i>' + (okay ? '进度已保存' : '保存失败，请导出备份');
   if (!okay && !storageWarningShown) {
     storageWarningShown = true;
     toast('这段旅程可以继续，但浏览器暂时无法保存。请在偏好里导出故事存档。');
   }
+  updateShell();
   return okay;
 }
 
@@ -50,6 +112,8 @@ function closeDialogs() {
 }
 
 function openDialog(id) {
+  if (id !== '#pause-dialog' && $('#pause-dialog').open) overlayReturnToPause = true;
+  pauseForOverlay();
   resetInput();
   closeDialogs();
   const dialog = $(id);
@@ -58,12 +122,9 @@ function openDialog(id) {
 }
 
 function renderSettings() {
-  $('#dream-sound').setAttribute('aria-pressed', String(save.settings.sound));
-  $('#dream-sound').setAttribute('aria-label', save.settings.sound ? '关闭音效' : '开启音效');
   $('#dream-pref-sound').checked = save.settings.sound;
   $('#dream-pref-motion').checked = save.settings.reducedMotion;
   document.body.classList.toggle('reduced-motion', save.settings.reducedMotion);
-  $('.dream-hero-art>img').src = save.settings.reducedMotion ? './assets/dream-cover-still.svg' : './assets/dream-cover.svg';
   game?.setSound(save.settings.sound);
   game?.setReducedMotion(save.settings.reducedMotion);
 }
@@ -71,16 +132,13 @@ function renderSettings() {
 function renderLobby() {
   const stats = getJourneyStats(save);
   const unlocked = getUnlockedChapter(save);
-  const next = stats.completed === 6 ? Math.min(save.lastChapter, 5) : unlocked;
-  $('#journey-start-label').textContent = stats.completed === 6 ? '重访一个亮着的夜晚' : stats.completed ? '继续把故事走完' : '拆开第一封信';
-  $('#journey-start-note').textContent = (stats.completed === 6 ? '重访 · ' : '下一站 · ') + CHAPTERS[next].title;
-  $('#journey-progress-label').textContent = stats.completed + ' / 6 封信已送达';
+  $('#journey-progress-label').textContent = stats.completed + ' / 6 章已完成';
   $('#journey-progress-fill').style.width = (stats.completed / 6 * 100) + '%';
   $('#chapter-grid').innerHTML = CHAPTERS.map((chapter, index) => {
     const record = save.chapters[index];
     const locked = index > unlocked;
     const state = locked ? 'locked' : record.completed ? 'completed' : 'current';
-    const status = locked ? icon('lock') + '等上一封信' : record.completed ? '已送达 · 可重访' : '等你出发';
+    const status = locked ? icon('lock') + '未解锁' : index === currentChapter && !settled ? '当前章节' : record.completed ? '已完成' : '可出发';
     return '<button class="chapter-card ' + state + '" data-chapter="' + index + '" style="--chapter-color:' + chapter.color + '"' + (locked ? ' disabled' : '') + ' aria-label="' + escapeHtml(chaptersInChinese[index] + '，' + chapter.title + '，' + (locked ? '尚未解锁' : record.completed ? '重新游玩，最好' + record.bestStars + '星' : '开始章节')) + '"><div class="chapter-topline"><span class="chapter-number">CHAPTER 0' + (index + 1) + '</span><span class="chapter-status">' + status + '</span></div>' + icon(chapter.icon, 'chapter-icon') + '<h3>' + chapter.title + '</h3><span class="chapter-subtitle">' + chapter.subtitle + '</span><p>' + chapter.summary + '</p><div class="chapter-bottom"><span class="chapter-stars" aria-label="最好成绩' + record.bestStars + '星">' + stars(record.bestStars) + '</span><span class="chapter-memories">' + icon('letter') + record.bestMemories + ' / 3 记忆</span>' + icon(locked ? 'lock' : 'arrow', 'chapter-arrow') + '</div></button>';
   }).join('');
   renderSettings();
@@ -90,8 +148,8 @@ function renderJournal() {
   const stats = getJourneyStats(save);
   const stampIds = new Set(earnedStampIds(save));
   $('#journal-stats').innerHTML = [
-    [stats.completed + ' / 6', '已经送达的信'], [stats.memories + ' / 18', '找回的记忆残页'],
-    [stats.riddles + ' / 12', '读懂的回声谜灯'], [stats.stars + ' / 18', '旅途里的星星'],
+    [stats.completed + ' / 6', '完成章节'], [stats.memories + ' / 18', '记忆残页'],
+    [stats.riddles + ' / 12', '解开谜灯'], [stats.stars + ' / 18', '收集星星'],
   ].map(([value, label]) => '<div><b>' + value + '</b><span>' + label + '</span></div>').join('');
   $('#memory-grid').innerHTML = CHAPTERS.map((chapter, index) => {
     const amount = save.chapters[index].bestMemories;
@@ -199,33 +257,31 @@ function showEnding() {
 
 function beginChapter(index) {
   if (!Number.isInteger(index) || index < 0 || index > getUnlockedChapter(save)) return;
+  if (index === currentChapter && game && !settled) { continueFromMap(); return; }
   const pending = nextPendingChoice(save);
   if (pending && STORY_CHOICES[pending].chapterIndex < index) {
     openChoice(pending, () => beginChapter(index));
     return;
   }
-  stopGame();
-  closeDialogs();
-  $('#dream-stage').hidden = true;
-  $('#dream-lobby').hidden = false;
-  document.body.classList.remove('game-active', 'soul-active');
-  currentChapter = index;
-  save.lastChapter = index;
-  persist();
-  openStory(CHAPTERS[index].intro, index, () => launchChapter(index), '出发，把灯点亮');
+  launchChapter(index);
 }
 
 function launchChapter(index) {
+  overlayReturnToPause = false;
+  overlayResumeGame = null;
+  storySequence = null;
+  activeChoice = null;
   closeDialogs();
   stopGame();
   currentChapter = index;
   currentHud = null;
   settled = false;
   lastHudAt = 0;
-  $('#dream-lobby').hidden = true;
   $('#dream-stage').hidden = false;
   document.body.classList.add('game-active');
-  $('#stage-chapter-number').textContent = chaptersInChinese[index] + ' · 给明天的一封信';
+  $('#stage-chapter-number').textContent = '0' + (index + 1) + ' / 06';
+  save.lastChapter = index;
+  persist();
   $('#stage-chapter-title').textContent = CHAPTERS[index].title;
   game = new DreamGame($('#dream-canvas'), { onHud, onComplete: finishChapter, onPause: showPause, onEvent: announce, onPuzzle: showPuzzle });
   game.start({ chapterIndex: index, sound: save.settings.sound, reducedMotion: save.settings.reducedMotion });
@@ -237,20 +293,16 @@ function stopGame() {
   game?.destroy();
   game = null;
   activePuzzle = null;
+  overlayReturnToPause = false;
+  overlayResumeGame = null;
   clearTimeout(announcementTimer);
   $('#stage-announcement').classList.remove('show');
 }
 
-function returnLobby(scrollToMap = true) {
-  closeDialogs();
-  stopGame();
+function returnLobby() {
   storySequence = null;
   activeChoice = null;
-  $('#dream-stage').hidden = true;
-  $('#dream-lobby').hidden = false;
-  document.body.classList.remove('game-active', 'soul-active');
-  renderLobby();
-  if (scrollToMap) $('#journey').scrollIntoView({ behavior: save.settings.reducedMotion ? 'instant' : 'smooth', block: 'start' });
+  openMap();
 }
 
 function onHud(snapshot) {
@@ -266,11 +318,12 @@ function onHud(snapshot) {
   $('#stage-near-hint').textContent = snapshot.nearHint || CHAPTERS[snapshot.chapterIndex].hint;
   const soul = snapshot.form === 'soul';
   document.body.classList.toggle('soul-active', soul);
-  $('#stage-form-name').textContent = soul ? '拾光 · 灵魂飞行' : '身体 · 阿拾';
+  $('#stage-form-name').textContent = soul ? '拾光 · 灵魂' : '阿拾 · 身体';
+  if (previousForm !== snapshot.form) updateShell();
   const energy = Math.max(0, Math.min(100, snapshot.energy / Math.max(1, snapshot.maxEnergy) * 100));
   $('#stage-energy').style.width = energy + '%';
   $('#stage-energy').style.background = energy < 25 ? 'var(--dream-orange)' : 'var(--dream-mint)';
-  $('#stage-energy-label').textContent = soul ? '灵光 ' + Math.ceil(energy) + '% · E 回到身体' : energy < 99 ? '正在恢复灵光 · ' + Math.ceil(energy) + '%' : '拾光正在头顶休息';
+  $('#stage-energy-label').textContent = soul ? '灵光 ' + Math.ceil(energy) + '%' : energy < 99 ? '恢复中 ' + Math.ceil(energy) + '%' : '灵光充足';
   $('#stage-toggle-label').textContent = soul ? '回到身体' : '掀开头盖骨';
   $('#stage-action-label').textContent = soul ? '回声脉冲' : '跳跃';
   $('#stage-action-glyph').textContent = soul ? '✧' : '↑';
@@ -286,13 +339,15 @@ function announce(event) {
 }
 
 function showPause(reason) {
-  if (!game || settled || activePuzzle || storySequence) return;
-  $('#pause-detail').textContent = reason === 'visibility' || reason === 'blur' ? '你刚刚离开了一会儿。故事已经替你停下，阿拾还在原处。' : '阿拾和拾光都在原处等你。';
+  if (suppressPauseDialog || shellOverlayOpen || !game || settled || activePuzzle || storySequence || document.querySelector('dialog[open]')) return;
+  $('#pause-detail').textContent = reason === 'visibility' || reason === 'blur' ? '离开页面时，游戏已自动暂停。' : CHAPTERS[currentChapter].title;
   openDialog('#pause-dialog');
 }
 
 function resumeGame() {
   if (!game || settled || activePuzzle) return;
+  overlayReturnToPause = false;
+  overlayResumeGame = null;
   $('#pause-dialog').close();
   resetInput();
   game.resume();
@@ -368,7 +423,7 @@ function showPuzzle(payload) {
   $('#puzzle-explanation').hidden = true;
   $('#puzzle-explanation').textContent = '';
   $('#puzzle-hint').hidden = false;
-  $('#puzzle-hint').textContent = '拾光，给我一点提示 ✧';
+  $('#puzzle-hint').textContent = '提示 ✧';
   $('#puzzle-return').hidden = false;
   $('#puzzle-continue').hidden = true;
   openDialog('#puzzle-dialog');
@@ -381,7 +436,7 @@ function answerPuzzle(answer, assisted = false) {
   const selected = $('#puzzle-options').querySelector('[data-answer="' + answer + '"]');
   if (!correct) {
     selected?.classList.add('wrong');
-    $('#puzzle-feedback').textContent = '这盏灯轻轻摇了摇头。再读读谜面，或者请拾光给一点提示。';
+    $('#puzzle-feedback').textContent = '还不对，再试一次。也可以查看提示。';
     return;
   }
   activePuzzle.solved = true;
@@ -391,7 +446,7 @@ function answerPuzzle(answer, assisted = false) {
     button.classList.toggle('correct', Number(button.dataset.answer) === puzzle.answer);
     button.classList.remove('wrong');
   });
-  $('#puzzle-feedback').textContent = assisted ? '拾光把答案轻轻告诉了你。看懂了，也是一种抵达。' : '答对了。灯芯里，亮起了一点小小的光。';
+  $('#puzzle-feedback').textContent = assisted ? '已查看答案。' : '答对了！';
   $('#puzzle-explanation').textContent = puzzle.explanation;
   $('#puzzle-explanation').hidden = false;
   $('#puzzle-hint').hidden = true;
@@ -410,7 +465,7 @@ function revealHint() {
   const paragraph = document.createElement('p');
   paragraph.textContent = '拾光的提示 ' + activePuzzle.hints + ' · ' + hint;
   $('#puzzle-hints').append(paragraph);
-  $('#puzzle-hint').textContent = activePuzzle.hints === 1 ? '再给我一点光 ✧' : '看看答案，再继续 →';
+  $('#puzzle-hint').textContent = activePuzzle.hints === 1 ? '下一条提示 ✧' : '看看答案，再继续 →';
 }
 
 function leavePuzzle(solved) {
@@ -461,9 +516,17 @@ document.addEventListener('click', event => {
   if (event.target.closest('#journal-ending-open')) showEnding();
 });
 
-$('#journey-start').addEventListener('click', () => beginChapter(getJourneyStats(save).completed === 6 ? save.lastChapter : getUnlockedChapter(save)));
-['#guide-open', '#hero-guide', '#mechanics-guide'].forEach(selector => $(selector).addEventListener('click', () => openDialog('#guide-dialog')));
-['#journal-open', '#mailbox-teaser-open'].forEach(selector => $(selector).addEventListener('click', openJournal));
+$('#stage-story').addEventListener('click', () => {
+  openStory(CHAPTERS[currentChapter].intro, currentChapter, resumeAfterOverlay, '返回游戏');
+});
+$('#map-continue').addEventListener('click', continueFromMap);
+$$('dialog').forEach(dialog => dialog.addEventListener('close', () => {
+  queueMicrotask(() => {
+    if (dialog.id === 'map-dialog' && !document.querySelector('dialog[open]') && (!game || settled)) continueFromMap();
+    else if (dialog.id === 'preferences-dialog' && !game && !document.querySelector('dialog[open]')) launchChapter(Math.min(save.lastChapter, getUnlockedChapter(save)));
+    else resumeAfterOverlay();
+  });
+}));
 $('#story-next').addEventListener('click', advanceStory);
 $('#story-skip').addEventListener('click', finishStory);
 $('#story-dialog').addEventListener('cancel', event => { event.preventDefault(); finishStory(); });
@@ -471,7 +534,6 @@ $('#puzzle-hint').addEventListener('click', revealHint);
 $('#puzzle-return').addEventListener('click', () => leavePuzzle(false));
 $('#puzzle-continue').addEventListener('click', () => leavePuzzle(true));
 $('#puzzle-dialog').addEventListener('cancel', event => { event.preventDefault(); leavePuzzle(activePuzzle?.solved === true); });
-$('#stage-pause').addEventListener('click', () => { resetInput(); game?.pause('manual'); });
 $('#stage-resume').addEventListener('click', resumeGame);
 $('#stage-restart').addEventListener('click', restartChapter);
 $('#stage-home').addEventListener('click', () => returnLobby());
@@ -513,6 +575,7 @@ document.addEventListener('keydown', event => {
   if (event.ctrlKey || event.metaKey || event.altKey) return;
   if (event.code === 'Escape' && gameplayAvailable()) { event.preventDefault(); resetInput(); game.pause('manual'); return; }
   if (!gameplayAvailable()) return;
+  if (event.target instanceof Element && event.target.closest('button,a,input,select,textarea,[contenteditable]')) return;
   if (['KeyW', 'KeyA', 'KeyS', 'KeyD', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight'].includes(event.code)) {
     event.preventDefault();
     heldKeys.add(event.code);
@@ -525,10 +588,8 @@ document.addEventListener('keydown', event => {
 });
 document.addEventListener('keyup', event => { if (heldKeys.delete(event.code)) syncInput(); });
 window.addEventListener('blur', resetInput);
-document.addEventListener('visibilitychange', () => { if (document.hidden) resetInput(); });
+document.addEventListener('visibilitychange', () => { if (document.hidden) resetInput(); else resumeAfterOverlay(); });
 
-$('#dream-sound').addEventListener('click', () => { save.settings.sound = !save.settings.sound; persist(); renderSettings(); });
-$('#dream-settings').addEventListener('click', () => { renderSettings(); $('#dream-save-message').textContent = ''; openDialog('#preferences-dialog'); });
 $('#dream-pref-sound').addEventListener('change', event => { save.settings.sound = event.target.checked; persist(); renderSettings(); });
 $('#dream-pref-motion').addEventListener('change', event => { save.settings.reducedMotion = event.target.checked; persist(); renderSettings(); });
 $('#dream-export').addEventListener('click', () => {
@@ -552,6 +613,8 @@ $('#dream-import').addEventListener('change', async event => {
     if (!window.confirm('导入会替换当前故事进度：已完成 ' + stats.completed + ' 章，收集 ' + stats.memories + ' 片记忆。原版生存存档不受影响。确定导入吗？')) return;
     save = imported;
     const okay = persist();
+    stopGame();
+    settled = true;
     renderLobby();
     $('#dream-save-message').textContent = okay ? '故事接好了。欢迎回来，邮差。' : '故事已载入，但浏览器暂时无法保存，请保留备份。';
   } catch (error) {
@@ -562,5 +625,10 @@ $('#dream-import').addEventListener('change', async event => {
 try {
   if (!localStorage.getItem(DREAM_SAVE_KEY) && matchMedia('(prefers-reduced-motion: reduce)').matches) save.settings.reducedMotion = true;
 } catch { /* Storage failure is surfaced by persist(), without blocking play. */ }
+shell = mountGameShell({
+  gameId: 'dream',
+  onAction: handleShellAction,
+  onOverlayChange(open) { shellOverlayOpen = open; if (open) pauseForOverlay(); else queueMicrotask(resumeAfterOverlay); },
+});
 renderLobby();
-persist();
+launchChapter(Math.min(save.lastChapter, getUnlockedChapter(save)));

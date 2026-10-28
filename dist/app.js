@@ -1,4 +1,5 @@
 import { ArenaGame, drawSkull } from './engine.js';
+import { mountGameShell } from './game-shell.js';
 import { CHARACTERS, UPGRADES, SYNERGIES, META_UPGRADES, ACHIEVEMENTS, ENEMIES, loadSave, persistSave, metaCost, buyMeta, unlockCharacter, recordRun, getDailyKey, getDailySeed, exportSave, importSave } from './content.js';
 
 const $ = (selector) => document.querySelector(selector);
@@ -7,9 +8,9 @@ const escapeHtml = (value) => String(value).replace(/[&<>"']/g, c => ({'&':'&amp
 const icon = (name, className = '') => `<svg class="${className}" aria-hidden="true"><use href="#i-${name}"/></svg>`;
 const symbols = {bone:'✦',bolt:'ϟ',wind:'↗',heart:'♥',sprout:'♧',magnet:'∩',arrows:'⋔',arrow:'➶',spark:'✧',orbit:'◉',lightning:'ϟ',burst:'✹',snow:'❄',drop:'♦',shield:'⬡',clover:'♧',target:'◎',expand:'↔',flag:'⚑',moon:'☾',crown:'♛',clock:'◷',sun:'☀',group:'♧'};
 const modes = {
-  standard: { name:'墓园冒险', title:'熬过长夜，向天亮进发。', description:'在怪潮里坚持 5 分钟，再击败终夜领主。你的第一段传说，从这里开始。', detail:'渐进难度 · 永久成长生效' },
-  endless: { name:'无尽长夜', title:'天不亮，那就一直打。', description:'没有终点的怪潮，越来越强的首领。这副骨头，究竟能撑到什么时候？', detail:'难度持续增长 · 永久成长生效' },
-  daily: { name:'每日试炼', title:'同一个夜晚，刷新自己的纪录。', description:'每日相同种子，固定使用小骨。选择与走位决定成绩，挑战今天最好的自己。', detail:'固定小骨 · 无永久加成 · UTC 每日更新' },
+  standard: { name:'墓园冒险', title:'墓园冒险', description:'坚持 5 分钟，击败终夜领主。', detail:'永久成长生效' },
+  endless: { name:'无尽长夜', title:'无尽长夜', description:'怪潮不断增强，挑战最长生存纪录。', detail:'永久成长生效' },
+  daily: { name:'每日试炼', title:'每日试炼', description:'每日固定种子，挑战今天的最高分。', detail:'固定小骨 · 无永久加成 · UTC 每日更新' },
 };
 let save = loadSave();
 let mode = 'standard';
@@ -22,6 +23,10 @@ let lastUpgradeKey = '';
 let toastTimer, announcementTimer, tutorialTimer;
 let finished = false;
 let warnedStorage = false;
+let menuLease = null;
+let shellOverlayOpen = false;
+let shell = null;
+const menuDialogIds = ['prep-dialog', 'help-dialog', 'settings-dialog'];
 const keys = new Set();
 let joystickPointer = null;
 const formatTime = seconds => `${Math.floor(Math.max(0, seconds) / 60).toString().padStart(2,'0')}:${Math.floor(Math.max(0, seconds) % 60).toString().padStart(2,'0')}`;
@@ -42,12 +47,43 @@ function persist() {
 function openDialog(id) { const dialog = $(id); if (!dialog.open) dialog.showModal(); }
 function closeDialog(id) { const dialog = $(id); if (dialog.open) dialog.close(); }
 function closeAllDialogs() { $$('dialog[open]').forEach(d => d.close()); }
+function pauseForMenu() {
+  if (!menuLease) menuLease = { game, resume: game?.state === 'playing' && !finished };
+  if (game?.state === 'playing') game.pause();
+  resetInput();
+}
+function resumeAfterMenu() {
+  if (shellOverlayOpen || menuDialogIds.some(id => $(`#${id}`).open)) return;
+  const lease = menuLease; menuLease = null;
+  if (finished && game?.state === 'ended' && !$$('dialog[open]').length) { openDialog('#result-dialog'); return; }
+  if (lease?.resume && lease.game === game && !finished && !$$('dialog[open]').length && game?.state === 'paused') {
+    game.resume(); $('#game-canvas').focus({preventScroll:true});
+  }
+}
+function openMenuDialog(id) {
+  if ($('#upgrade-dialog').open || $('#result-dialog').open) return;
+  pauseForMenu();
+  for (const other of menuDialogIds) if (`#${other}` !== id) closeDialog(`#${other}`);
+  openDialog(id);
+}
+function openPreparation(page = 'home') {
+  showPage(page);
+  $('#prep-title').textContent = page === 'journal' ? '冒险档案' : '备战';
+  $('#prep-run-note').textContent = game && !finished ? '开始新局会结算当前这一局。关闭菜单可继续。' : '选择角色与模式，开始下一局。';
+  $('#play-button>span').textContent = game && !finished ? '结算本局并开始' : '开始新局';
+  openMenuDialog('#prep-dialog');
+}
+function updateShell() {
+  const hero = heroFor(activeRun?.characterId || save.selectedCharacter);
+  shell?.update({role:hero.name,progress:`${number(save.bones)} 骨片`});
+  $('#profile-identity').textContent = `${hero.name} · 本地冒险者 · ${save.unlockedCharacters.length} / 3 角色`;
+}
 function showPage(page) {
   if (!['home','workshop','journal'].includes(page)) return;
   currentPage = page;
   $$('.page-view').forEach(el => { el.hidden = el.id !== `page-${page}`; });
   $$('.nav-link').forEach(el => { const active = el.dataset.page === page; el.classList.toggle('active',active); active ? el.setAttribute('aria-current','page') : el.removeAttribute('aria-current'); });
-  renderLobby(); window.scrollTo({top:0,behavior:save.settings.reducedMotion?'instant':'smooth'});
+  renderLobby(); $('#prep-dialog').scrollTop = 0;
 }
 function selectMode(next) {
   mode = next in modes ? next : 'standard';
@@ -55,7 +91,7 @@ function selectMode(next) {
   $('#play-heading').textContent = modes[mode].title;
   $('#mode-description').textContent = modes[mode].description;
   $('#mode-detail').textContent = modes[mode].detail;
-  $('#play-button>span').textContent = mode === 'daily' ? '挑战今天' : '再活一局';
+  $('#play-button>span').textContent = game && !finished ? '结算本局并开始' : '开始新局';
   renderCharacters();
 }
 function renderSettings() {
@@ -70,7 +106,7 @@ function renderCharacters() {
   $('#character-cards').innerHTML = CHARACTERS.map(hero => {
     const unlocked = save.unlockedCharacters.includes(hero.id);
     const selected = chosen === hero.id;
-    return `<button class="character-card ${selected?'selected':''} ${unlocked?'':'locked'}" data-hero="${hero.id}" aria-pressed="${selected}" aria-label="${hero.name}，${hero.title}，${unlocked?(selected?'当前出战':'选择出战'):`${hero.unlockCost} 骨片解锁`}"><canvas data-portrait="${hero.id}" width="116" height="150" aria-hidden="true"></canvas><div><h3>${hero.name}</h3><small>${hero.title}</small></div><div class="character-bottom">${unlocked?(selected?'✓ 当前出战':escapeHtml(hero.shortDescription)):`${icon('lock')} ${hero.unlockCost} 骨片解锁`}</div></button>`;
+    return `<button class="character-card ${selected?'selected':''} ${unlocked?'':'locked'}" data-hero="${hero.id}" aria-pressed="${selected}" aria-label="${hero.name}，${hero.title}，${unlocked?(selected?'已选择':'选择出战'):`${hero.unlockCost} 骨片解锁`}"><canvas data-portrait="${hero.id}" width="116" height="150" aria-hidden="true"></canvas><div><h3>${hero.name}</h3><small>${hero.title}</small></div><div class="character-bottom">${unlocked?(selected?'✓ 已选择':escapeHtml(hero.shortDescription)):`${icon('lock')} ${hero.unlockCost} 骨片解锁`}</div></button>`;
   }).join('');
   $$('[data-portrait]').forEach(canvas => {
     const hero = heroFor(canvas.dataset.portrait); const ctx = canvas.getContext('2d');
@@ -106,24 +142,10 @@ function renderJournal() {
   $('#enemy-cards').innerHTML=ENEMIES.map(enemy=>`<article class="enemy-card"><div class="enemy-avatar" style="color:${enemy.color}">${enemySymbols[enemy.id]||'◉'}</div><div><h3>${enemy.name} · ${enemy.title}</h3><p>${enemy.description}<br>${enemy.tip}</p></div></article>`).join('');
 }
 function renderLobby() {
-  $('#wallet').textContent=number(save.bones); renderSettings();
-  if(currentPage==='home'){renderCharacters();renderGoal();const day=getDailyKey();$('#daily-date').textContent=`${day.slice(5).replace('-',' / ')} · UTC 每日更新`;const best=save.dailyBests[day];$('#daily-score').textContent=best?`今日最高 ${number(best.score)} 分`:'等待你的第一局';drawHeroScene();}
+  $('#wallet').textContent=number(save.bones); renderSettings();updateShell();
+  if(currentPage==='home'){renderCharacters();renderGoal();const day=getDailyKey();$('#daily-date').textContent=`${day.slice(5).replace('-',' / ')} · 每日试炼`;const best=save.dailyBests[day];$('#daily-score').textContent=best?`今日最高 ${number(best.score)} 分`:'今日暂无纪录';}
   if(currentPage==='workshop')renderWorkshop();
   if(currentPage==='journal')renderJournal();
-}
-
-function drawHeroScene() {
-  const canvas=$('#hero-canvas');const c=canvas.getContext('2d');const w=640,h=440;canvas.width=w;canvas.height=h;c.clearRect(0,0,w,h);
-  const glow=c.createRadialGradient(330,223,15,330,223,195);glow.addColorStop(0,'#6e497a40');glow.addColorStop(1,'#48345100');c.fillStyle=glow;c.fillRect(0,0,w,h);
-  c.save();c.translate(340,290);c.rotate(-.1);c.fillStyle='#0d0b1555';c.beginPath();c.ellipse(0,60,155,29,0,0,Math.PI*2);c.fill();c.restore();
-  // Tiny graves and flowers make the lobby a miniature of the playable world.
-  function grave(x,y,scale,angle){c.save();c.translate(x,y);c.rotate(angle);c.scale(scale,scale);c.fillStyle='#3b3248';c.beginPath();c.roundRect(-20,-45,40,59,[19,19,4,4]);c.fill();c.strokeStyle='#75617f';c.lineWidth=2;c.beginPath();c.moveTo(0,-32);c.lineTo(0,-12);c.moveTo(-7,-24);c.lineTo(7,-24);c.stroke();c.fillStyle='#272030';c.beginPath();c.ellipse(0,15,32,7,0,0,Math.PI*2);c.fill();c.restore();}
-  grave(177,300,1.05,-.2);grave(484,280,.86,.14);grave(438,347,.6,.18);
-  c.save();c.translate(470,133);c.fillStyle='#f0d7a230';c.beginPath();c.arc(0,0,31,0,Math.PI*2);c.fill();c.fillStyle='#f5deb4';c.beginPath();c.arc(0,0,19,0,Math.PI*2);c.fill();c.fillStyle='#241d30';c.beginPath();c.arc(9,-7,17,0,Math.PI*2);c.fill();c.restore();
-  drawSkull(c,325,237,178,'#f5dfbc','bone',0);
-  // Warm candle light, unlike the monsters.
-  for(const [x,y] of [[215,333],[416,319]]){c.fillStyle='#e7c8a0';c.fillRect(x-4,y-12,8,18);c.fillStyle='#f7b76c';c.beginPath();c.ellipse(x,y-18,4,7,0,0,Math.PI*2);c.fill();const light=c.createRadialGradient(x,y-17,0,x,y-17,26);light.addColorStop(0,'#f5ac643b');light.addColorStop(1,'#f5ac6400');c.fillStyle=light;c.fillRect(x-26,y-43,52,52);}
-  for(let i=0;i<9;i++){const x=145+i*38,y=334+Math.sin(i*2)*22;c.strokeStyle=i%2?'#72957c':'#685279';c.lineWidth=2;c.beginPath();c.moveTo(x,y);c.lineTo(x-4,y-8);c.moveTo(x,y);c.lineTo(x+3,y-12);c.stroke();}
 }
 
 function onHud(hud) {
@@ -156,29 +178,36 @@ function announce(event) {
   announcementTimer=setTimeout(()=>$('#battle-announcement').classList.remove('visible'),event.type==='evolution'?3000:2200);
 }
 function pauseRun() {
-  if(!game||finished||$('#upgrade-dialog').open)return;
+  if(!game||finished||$$('dialog[open]').length||shellOverlayOpen)return;
   game.pause();resetInput();openDialog('#pause-dialog');
 }
-function resumeRun(){closeDialog('#pause-dialog');resetInput();game?.resume();$('#game-canvas').focus({preventScroll:true});}
+function resumeRun(){closeDialog('#pause-dialog');resetInput();if(!finished&&!$$('dialog[open]').length){game?.resume();$('#game-canvas').focus({preventScroll:true});}}
+function startPreparedRun() {
+  // Only this explicit action settles a running game; opening preparation does not.
+  if (game && !finished && activeRun && game.state !== 'ended') game.finish(false);
+  startRun();
+}
 function startRun() {
+  menuLease=null;shell?.close();
   closeAllDialogs();game?.destroy();resetInput();finished=false;currentHud=null;lastUpgradeKey='';choices=[];
   const today=new Date();const dailyKey=getDailyKey(today);const seed=mode==='daily'?getDailySeed(today):crypto.getRandomValues(new Uint32Array(1))[0];
   const characterId=mode==='daily'?'bone':save.selectedCharacter;
   activeRun={mode,characterId,seed,dailyKey,runId:crypto.randomUUID?crypto.randomUUID():`${Date.now()}-${seed}`};
-  $('#lobby').hidden=true;$('#arena').hidden=false;document.body.style.overflow='hidden';
+  $('#arena').hidden=false;document.body.style.overflow='hidden';
   $('#hero-name').textContent=heroFor(characterId).name;$('#battle-mode').textContent=modes[mode].name;
   $('#battle-announcement').classList.remove('visible');$('#active-upgrades').innerHTML='';
   $('#battle-tutorial').textContent=touchControls()?'左侧摇杆移动 · 右侧按钮冲刺 · 收集光点升级':'收集光点升级 · WASD 移动 · 空格冲刺';
   $('#battle-tutorial').style.opacity='1';clearTimeout(tutorialTimer);tutorialTimer=setTimeout(()=>$('#battle-tutorial').style.opacity='0',14000);
   try {
-    game=new ArenaGame($('#game-canvas'),{onHud,onUpgrade:showUpgrade,onEnd:finishRun,onEvent:announce,onPause:()=>{resetInput();if(!finished)openDialog('#pause-dialog');}});
+    game=new ArenaGame($('#game-canvas'),{onHud,onUpgrade:showUpgrade,onEnd:finishRun,onEvent:announce,onPause:()=>{resetInput();if(!finished&&!$$('dialog[open]').length&&!shellOverlayOpen)openDialog('#pause-dialog');}});
     game.start({...activeRun,meta:save.meta,sound:save.settings.sound,reducedMotion:save.settings.reducedMotion||matchMedia('(prefers-reduced-motion: reduce)').matches});
-    game.resize();$('#game-canvas').focus({preventScroll:true});
+    game.resize();updateShell();$('#game-canvas').focus({preventScroll:true});
   } catch(error){console.error('Unable to start game',error);returnLobby();toast('游戏暂时无法启动，请尝试更新浏览器后再试。');}
 }
 function finishRun(result) {
-  if(finished)return;finished=true;resetInput();closeAllDialogs();choices=[];
+  if(finished)return;finished=true;menuLease=null;resetInput();closeAllDialogs();choices=[];
   const outcome=recordRun(save,{...result,seed:activeRun.seed,dailyKey:activeRun.dailyKey,runId:activeRun.runId});persist();
+  updateShell();
   $('#result-kicker').textContent=result.won?'YOU MADE IT TO DAWN':'NOT THE END';
   $('#result-title').textContent=result.won?'天亮了。你还站着。':'散架了，但没白来。';
   $('#result-subtitle').textContent=!outcome.qualified?'坚持满 15 秒，即可获得成长奖励。下一局再试试。':result.won?'长夜已过。想试试另一种活法，或挑战无尽长夜吗？':'每次重来，都比上一次多一点底气。';
@@ -188,9 +217,8 @@ function finishRun(result) {
   openDialog('#result-dialog');
 }
 function returnLobby() {
-  game?.destroy();game=null;resetInput();closeAllDialogs();clearTimeout(tutorialTimer);clearTimeout(announcementTimer);
-  $('#arena').hidden=true;$('#lobby').hidden=false;document.body.style.overflow='';finished=false;activeRun=null;
-  renderLobby();$('#play-button').focus({preventScroll:true});
+  menuLease=null;resetInput();closeAllDialogs();clearTimeout(tutorialTimer);clearTimeout(announcementTimer);
+  openPreparation('home');$('#play-button').focus({preventScroll:true});
 }
 function resetInput(){keys.clear();joystickPointer=null;$('#joystick-stick').style.transform='translate(0,0)';game?.setInput({x:0,y:0});}
 function syncKeys(){game?.setInput({x:Number(keys.has('KeyD')||keys.has('ArrowRight'))-Number(keys.has('KeyA')||keys.has('ArrowLeft')),y:Number(keys.has('KeyS')||keys.has('ArrowDown'))-Number(keys.has('KeyW')||keys.has('ArrowUp'))});}
@@ -208,14 +236,13 @@ document.addEventListener('click',event=>{
   const buyButton=event.target.closest('[data-buy]');if(buyButton){const result=buyMeta(save,buyButton.dataset.buy);toast(result.ok?`强化完成 · Lv.${result.level}，下一局生效。`:result.reason);if(result.ok){persist();renderLobby();}}
   const upgradeButton=event.target.closest('[data-upgrade]');if(upgradeButton)selectUpgrade(upgradeButton.dataset.upgrade);
 });
-$('.brand').addEventListener('click',event=>{event.preventDefault();showPage('home');});
-$('#play-button').addEventListener('click',startRun);
+$('#play-button').addEventListener('click',startPreparedRun);
 $('#daily-select').addEventListener('click',()=>{selectMode('daily');$('#play-button').focus({preventScroll:true});});
-$('#help-open').addEventListener('click',()=>openDialog('#help-dialog'));
-$('#settings-open').addEventListener('click',()=>{renderSettings();$('#save-message').textContent='';openDialog('#settings-dialog');});
+$('#help-open').addEventListener('click',()=>openMenuDialog('#help-dialog'));
+$('#settings-open').addEventListener('click',()=>{renderSettings();$('#save-message').textContent='';openMenuDialog('#settings-dialog');});
 $$('.sound-toggle').forEach(el=>el.addEventListener('click',()=>{save.settings.sound=!save.settings.sound;game?.setSound(save.settings.sound);persist();renderSettings();}));
 $('#setting-sound').addEventListener('change',event=>{save.settings.sound=event.target.checked;game?.setSound(save.settings.sound);persist();renderSettings();});
-$('#setting-motion').addEventListener('change',event=>{save.settings.reducedMotion=event.target.checked;persist();renderSettings();});
+$('#setting-motion').addEventListener('change',event=>{save.settings.reducedMotion=event.target.checked;if(game)game.reducedMotion=event.target.checked;persist();renderSettings();});
 $('#pause-button').addEventListener('click',pauseRun);$('#resume-button').addEventListener('click',resumeRun);
 $('#end-run-button').addEventListener('click',()=>game?.finish(false));
 $('#again-button').addEventListener('click',startRun);$('#return-button').addEventListener('click',returnLobby);
@@ -228,8 +255,13 @@ $('#pause-dialog').addEventListener('cancel',event=>{event.preventDefault();resu
 document.addEventListener('keydown',event=>{
   if($('#arena').hidden||event.ctrlKey||event.metaKey||event.altKey)return;
   if($('#upgrade-dialog').open){if(['Digit1','Digit2','Digit3'].includes(event.code)){event.preventDefault();selectUpgrade(choices[Number(event.code.slice(-1))-1]);}return;}
-  if(event.code==='Escape'){if(!finished){event.preventDefault();if($('#pause-dialog').open)resumeRun();else pauseRun();}return;}
+  if(event.code==='Escape'){
+    if($('#pause-dialog').open){event.preventDefault();resumeRun();return;}
+    if($$('dialog[open]').length)return;
+    if(!finished){event.preventDefault();pauseRun();}return;
+  }
   if($$('dialog[open]').length)return;
+  if(event.target instanceof Element && event.target.closest('button,a,input,select,textarea,[contenteditable]'))return;
   if(['KeyW','KeyA','KeyS','KeyD','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.code)){event.preventDefault();keys.add(event.code);syncKeys();}
   if(event.code==='Space'){event.preventDefault();if(!event.repeat)game?.dash();}
 });
@@ -245,8 +277,23 @@ $('#export-button').addEventListener('click',()=>{
 });
 $('#import-file').addEventListener('change',async event=>{
   const file=event.target.files?.[0];if(!file)return;
-  try{if(file.size>256000)throw new Error('存档文件过大，请选择游戏导出的 JSON 文件。');const next=importSave(await file.text());if(!window.confirm(`导入后将替换当前浏览器的进度：${next.stats.runs} 次冒险、${next.bones} 骨片。确定导入吗？`))return;save=next;const ok=persist();renderLobby();renderSettings();$('#save-message').textContent=ok?'存档已接好。欢迎回来。':'存档已载入，但浏览器无法持久保存，请保留导出备份。';}catch(error){$('#save-message').textContent=error.message;}finally{event.target.value='';}
+  try{if(file.size>256000)throw new Error('存档文件过大，请选择游戏导出的 JSON 文件。');const next=importSave(await file.text());if(!window.confirm(`导入后将替换当前浏览器的进度：${next.stats.runs} 次冒险、${next.bones} 骨片。确定导入吗？`))return;menuLease=null;game?.destroy();game=null;activeRun=null;save=next;const ok=persist();renderLobby();renderSettings();startRun();toast(ok?'存档已导入，已按新进度开始。':'存档已载入，请保留导出备份。');}catch(error){$('#save-message').textContent=error.message;}finally{event.target.value='';}
 });
 window.addEventListener('pageshow',()=>{if(!game)renderLobby();});
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!game)renderLobby();});
-selectMode('standard');renderLobby();persist();
+for (const id of menuDialogIds) $(`#${id}`).addEventListener('close', resumeAfterMenu);
+shell = mountGameShell({
+  gameId:'survivor',
+  onAction(action) {
+    if (action === 'map') openPreparation('home');
+    if (action === 'profile') openPreparation('journal');
+    if (action === 'help') openMenuDialog('#help-dialog');
+    if (action === 'settings') { renderSettings(); $('#save-message').textContent=''; openMenuDialog('#settings-dialog'); }
+    if (action === 'pause') pauseRun();
+  },
+  onOverlayChange(open) {
+    shellOverlayOpen = open;
+    if (open) pauseForMenu(); else resumeAfterMenu();
+  }
+});
+selectMode('standard');renderLobby();persist();startRun();
