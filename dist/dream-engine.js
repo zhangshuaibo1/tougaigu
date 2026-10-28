@@ -556,7 +556,7 @@ export class DreamGame {
       circle(lost.box.x,lost.box.y-21,53);
       if(lost.expanded){
         circle(lost.object.x,lost.object.y,58);
-        for(const claimant of lost.claimants)circle(claimant.x,claimant.y+8,65);
+        for(const claimant of lost.claimants)circle(claimant.x,claimant.y+8,claimant.diagram?.type==='rhythm-signature'?80:65);
       }
     }
     const top=-this.viewportOffsetY/this.scale;

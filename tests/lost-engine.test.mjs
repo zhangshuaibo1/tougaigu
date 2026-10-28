@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { DreamGame, DREAM_PHYSICS } from '../dist/dream-engine.js';
-import { LOST_CASES, evaluateLostClaim } from '../dist/dream-lost-cases.js';
-import { DreamLostCase, normalizeLostCaseRecord, pointOnLostHandoff } from '../dist/dream-lost-engine.js';
+import { LOST_CASES, LOST_CASE_TOTALS, evaluateLostClaim } from '../dist/dream-lost-cases.js';
+import { DreamLostCase, createLostLayout, normalizeLostCaseRecord, pointOnLostHandoff } from '../dist/dream-lost-engine.js';
 import { CAP_ACTIVITIES } from '../dist/dream-cap-activities.js';
+import { createLostSave, getLostRecord, getLostStats, loadLostSave, persistLostSave, lostRevision, recordLostEvent } from '../dist/lost-progress.js';
 
 const noop=()=>{};
 globalThis.window={devicePixelRatio:1,addEventListener:noop,removeEventListener:noop};
@@ -48,8 +49,8 @@ function choose(game,person){flyTo(game,person);const evidence=game.getSnapshot(
 const geometry=game=>JSON.stringify({platforms:game.level.platforms,barriers:game.level.barriers,pads:game.level.pads,winds:game.level.winds,exit:game.level.exit,checkpoints:game.level.checkpoints});
 const stateOfPlay=game=>JSON.stringify({body:game.body,soul:game.soul,energy:game.energy,time:game.time,lamps:game.lanterns,memories:game.memories,geometry:geometry(game)});
 
-test('three cases and all six evidence variants finish through walking, Q, E, flying and pulse inputs',()=>{
-  assert.equal(LOST_CASES.length,3);
+test('all authored cases and evidence variants finish through walking, Q, E, flying and pulse inputs',()=>{
+  assert.equal(LOST_CASES.length,LOST_CASE_TOTALS.cases);
   for(const config of LOST_CASES){
     const events=[],mainCompletions=[],game=makeGame(caseOptions(config),{onLostCase:event=>events.push(event),onComplete:event=>mainCompletions.push(event)}),before=geometry(game);
     openBox(game);assert.equal(events.filter(e=>e.type==='open').length,1);assert.equal(game.getSnapshot().lostCase.evidence,null);
@@ -64,6 +65,41 @@ test('three cases and all six evidence variants finish through walking, Q, E, fl
     }
     assert.deepEqual(events.filter(e=>e.type==='clue').map(e=>[e.variant,e.clueIndex]),[[0,0],[0,1],[1,0],[1,1]]);assert.deepEqual(game.lostCase.record.solvedVariants,[0,1]);game.destroy();
   }
+});
+
+test('real clue and handoff callbacks persist all cases across mid-evidence reloads without completing unseen variants',()=>{
+  const storageValues=new Map([['tougaigu.rewards.v1','unchanged rewards']]),storage={getItem:key=>storageValues.get(key)||null,setItem:(key,value)=>storageValues.set(key,value)};
+  let save=createLostSave(),firstSolves=0;
+  const callbacks={onLostCase:event=>{
+    const result=recordLostEvent(save,event);assert.equal(result.ok,true,`${event.sceneId} ${event.type} must reach its own save record`);
+    if(result.firstSolve)firstSolves++;assert.equal(persistLostSave(save,storage),true);
+  }};
+  const launch=(config,initial=false)=>makeGame({...caseOptions(config),capActivityRecord:initial?completeBase():null,lostCaseRecord:getLostRecord(save,config.id),lostCaseRevision:lostRevision(save)},callbacks);
+  for(const config of LOST_CASES){
+    let game=launch(config,true);openBox(game);
+    for(const variant of config.variants){
+      assert.equal(game.lostCase.variant,variant.index);flyTo(game,game.lostCase.layout.object);pulse(game);
+      assert.deepEqual(getLostRecord(save,config.id).seenClues[variant.index],[0]);assert.ok(!getLostRecord(save,config.id).solvedVariants.includes(variant.index));
+      game.destroy();save=loadLostSave(storage);game=launch(config);
+      assert.equal(game.lostCase.available,true);assert.equal(game.getSnapshot().lostCase.evidence,null);walkTo(game,465);game.toggleSoul();flyTo(game,game.lostCase.layout.object);
+      assert.equal(game.getSnapshot().lostCase.evidence.title,variant.clues[0].title);pulse(game);assert.deepEqual(getLostRecord(save,config.id).seenClues[variant.index],[0,1]);choose(game,claimant(game));
+      assert.ok(getLostRecord(save,config.id).solvedVariants.includes(variant.index));game.destroy();save=loadLostSave(storage);game=launch(config);
+      assert.equal(game.lostCase.roundSolved,true);assert.equal(game.lostCase.variant,variant.index);
+      if(variant.index===0){assert.deepEqual(getLostRecord(save,config.id).seenClues[1],[]);assert.deepEqual(getLostRecord(save,config.id).solvedVariants,[0]);openBox(game);}
+    }
+    const stats=getLostStats(save),count=firstSolves;openBox(game);assert.equal(game.lostCase.variant,0);choose(game,claimant(game));
+    assert.equal(firstSolves,count);assert.deepEqual(getLostStats(save),stats);game.destroy();
+  }
+  assert.equal(firstSolves,LOST_CASE_TOTALS.variants);assert.deepEqual(getLostStats(loadLostSave(storage)),LOST_CASE_TOTALS);assert.equal(storageValues.get('tougaigu.rewards.v1'),'unchanged rewards');
+});
+
+test('the library object avoids its original memory and every claimant circle while remaining reachable',()=>{
+  const defaultLayout=createLostLayout(),game=makeGame({chapterIndex:3}),layout=game.lostCase.layout;
+  assert.deepEqual(defaultLayout.object,{x:390,y:430,r:36});assert.deepEqual(layout.object,{x:450,y:430,r:36});assert.deepEqual(layout.box,defaultLayout.box);assert.deepEqual(layout.claimants,defaultLayout.claimants);
+  const memory=game.memories[0];assert.ok(Math.hypot(memory.x-layout.object.x,memory.y-layout.object.y)>34+layout.object.r);
+  for(const person of layout.claimants)assert.ok(Math.hypot(person.x-layout.object.x,person.y-layout.object.y)>person.r+layout.object.r);
+  openBox(game);readBoth(game);assert.equal(memory.collected,false);assert.equal(game.getSnapshot().memories,0);assert.equal(game.hasLostReadingLight(),true);assert.equal(game.lostCase.nearestTarget().kind,'object');
+  flyTo(game,layout.claimants[2]);assert.equal(game.lostCase.nearestTarget().kind,'claimant');assert.equal(game.lostCase.nearestTarget().index,2);assert.equal(memory.collected,false);game.destroy();
 });
 
 test('a cabinet stays locked until a real base route completes, and unsupported scenes add no cabinet',()=>{
@@ -179,10 +215,10 @@ test('lamps, dangerous shadows, festival NPCs and the original borrowing Q retai
 });
 
 test('narrow-screen lost projections retain all claimant labels during pause and restore framing after recall',()=>{
-  for(const width of [320,390]){
-    const game=makeGame({}, {},width);openBox(game);game.render();assert.equal(game.lostFramed,true);assert.ok(game.viewWidth>=400);
-    const view=game.lostCase.getView();for(const person of view.claimants){assert.ok((person.x-44-game.camera)*game.scale>=0);assert.ok((person.x+44-game.camera)*game.scale<=width);assert.ok((person.y-43)*game.scale+game.viewportOffsetY>=0);assert.ok((person.y+55)*game.scale+game.viewportOffsetY<=620);}
-    const backdrop=game.getSceneBackdropView();for(const person of view.claimants)assert.ok(backdrop.clearZones.some(circle=>circle.x===person.x&&circle.y===person.y+8&&circle.r>=65));
+  for(const width of [320,390])for(const config of LOST_CASES){
+    const game=makeGame(caseOptions(config), {},width);openBox(game);game.render();assert.equal(game.lostFramed,true);assert.ok(game.viewWidth>=400);
+    const view=game.lostCase.getView();for(const person of view.claimants){const bottom=person.diagram?.type==='rhythm-signature'?79:55;assert.ok((person.x-44-game.camera)*game.scale>=0);assert.ok((person.x+44-game.camera)*game.scale<=width);assert.ok((person.y-43)*game.scale+game.viewportOffsetY>=0);assert.ok((person.y+bottom)*game.scale+game.viewportOffsetY<=620);}
+    const backdrop=game.getSceneBackdropView();for(const person of view.claimants){const zone=backdrop.clearZones.find(circle=>circle.x===person.x&&circle.y===person.y+8&&circle.r>=65);assert.ok(zone);if(person.diagram?.type==='rhythm-signature')for(const dx of [-32,32])assert.ok(Math.hypot(person.x+dx-zone.x,person.y+79-zone.y)<zone.r);}
     const frame={camera:game.camera,scale:game.scale,offset:game.viewportOffsetY};game.pause();tick(game,2);game.render();assert.deepEqual({camera:game.camera,scale:game.scale,offset:game.viewportOffsetY},frame);game.resume();game.recall();game.render();assert.equal(game.lostFramed,false);assert.equal(game.scale,game.baseScale);assert.equal(game.viewportOffsetY,0);
     walkTo(game,390);game.toggleSoul();game.render();assert.equal(game.lostFramed,false);assert.equal(game.lostCase.getView().expanded,false);game.destroy();
   }

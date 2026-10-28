@@ -1,16 +1,19 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { LOST_CASES, getLostCase, getLostCaseVariant, evaluateLostClaim } from '../dist/dream-lost-cases.js';
+import { LOST_CASES, LOST_CASE_TOTALS, getLostCase, getLostCaseVariant, evaluateLostClaim } from '../dist/dream-lost-cases.js';
 
 const clue = (variant, id) => variant.clues.find(item => item.id === id);
 const unique = values => new Set(values).size === values.length;
 const invalidJudgement = { valid: false, correct: false, feedback: null, receipt: null };
 
-test('three scene cabinets expose two complete, stable evidence sets apiece', () => {
+test('six scene cabinets expose two complete, stable evidence sets apiece', () => {
   assert.deepEqual(LOST_CASES.map(item => [item.id, item.sceneId]), [
     ['lost-station-01', 'story-0'],
     ['lost-halloween-01', 'halloween'],
     ['lost-valentine-01', 'valentine'],
+    ['lost-greenhouse-01', 'story-1'],
+    ['lost-library-01', 'story-3'],
+    ['lost-thanksgiving-01', 'thanksgiving'],
   ]);
   const variantIds = [];
   for (const item of LOST_CASES) {
@@ -35,6 +38,15 @@ test('three scene cabinets expose two complete, stable evidence sets apiece', ()
     }
   }
   assert.ok(unique(variantIds));
+});
+
+test('immutable catalog totals count actual cases, authored evidence sets, and their two sides', () => {
+  assert.deepEqual(LOST_CASE_TOTALS, { cases: 6, variants: 12, clues: 24 });
+  assert.equal(LOST_CASE_TOTALS.cases, LOST_CASES.length);
+  assert.equal(LOST_CASE_TOTALS.variants, LOST_CASES.flatMap(item => item.variants).length);
+  assert.equal(LOST_CASE_TOTALS.clues, LOST_CASES.flatMap(item => item.variants.flatMap(variant => variant.clues)).length);
+  assert.equal(Object.isFrozen(LOST_CASE_TOTALS), true);
+  assert.throws(() => { LOST_CASE_TOTALS.variants = 0; }, TypeError);
 });
 
 test('a reader can uniquely solve each ticket from the displayed return stamp and arrow directions', () => {
@@ -151,7 +163,7 @@ test('each gratitude letter names an observable action, distinguishes writer and
   }
 });
 
-test('all 18 claims return one short outcome, and only the six correct claims return a receipt', () => {
+test('all 36 claims return one short outcome, and only one claimant per evidence set gets a receipt', () => {
   let correctCount = 0, incorrectCount = 0;
   for (const item of LOST_CASES) {
     for (const variant of item.variants) {
@@ -178,8 +190,171 @@ test('all 18 claims return one short outcome, and only the six correct claims re
       assert.deepEqual(Object.keys(variant.wrong).sort(), incorrectIds.sort());
     }
   }
-  assert.equal(correctCount, 6);
-  assert.equal(incorrectCount, 12);
+  assert.equal(correctCount, LOST_CASE_TOTALS.variants);
+  assert.equal(incorrectCount, LOST_CASE_TOTALS.variants * 2);
+});
+
+test('two upright paper masks have one shared light badge, while either face alone leaves two owners', () => {
+  const item = getLostCase('story-1'), labels = ['左上', '右上', '左下', '右下'];
+  // Derive the pattern from visible cell names, independently of the evaluator's integer diagrams.
+  const readHoles = text => {
+    const match = /^(?:正面|背面)开孔：(.+?)。/u.exec(text);
+    assert.ok(match, text);
+    return match[1].split('、');
+  };
+  const readBadge = text => {
+    const match = /^灯牌亮格：(.+)。$/u.exec(text);
+    assert.ok(match, text);
+    return match[1].split('、');
+  };
+  for (const variant of item.variants) {
+    assert.equal(variant.logic.type, 'stencil-overlap');
+    const front = clue(variant, 'seed-front'), back = clue(variant, 'seed-back');
+    assert.match(front.text, /两面都开孔才会亮/u);
+    assert.match(back.text, /箭头朝上对齐.*主人的灯牌/u);
+    const holes = [readHoles(front.text), readHoles(back.text)];
+    for (const [index, face] of [front, back].entries()) {
+      assert.deepEqual(face.diagram, { type: 'light-stencil', rows: 2, columns: 2, orientation: 'up', holes: holes[index].map(name => labels.indexOf(name)) });
+      assert.ok(holes[index].every(name => labels.includes(name)));
+      assert.ok(unique(holes[index]));
+    }
+    const badgeById = new Map(variant.claimants.map(person => {
+      const badge = readBadge(person.observation);
+      assert.deepEqual(person.diagram, { type: 'lamp-badge', cells: badge.map(name => labels.indexOf(name)) });
+      assert.ok(unique(badge));
+      return [person.id, badge];
+    }));
+    for (const face of holes) {
+      const stillPossible = variant.claimants.filter(person => badgeById.get(person.id).every(cell => face.includes(cell)));
+      assert.equal(stillPossible.length, 2, 'neither face reveals a unique owner');
+    }
+    const lit = labels.filter(cell => holes[0].includes(cell) && holes[1].includes(cell));
+    const possible = variant.claimants.filter(person => {
+      const badge = badgeById.get(person.id), fits = lit.length === badge.length && lit.every(cell => badge.includes(cell));
+      const judgement = evaluateLostClaim(item.id, variant.index, person.id);
+      assert.equal(judgement.valid, true);
+      assert.equal(judgement.correct, fits);
+      return fits;
+    });
+    assert.equal(possible.length, 1);
+    assert.equal(variant.answer, possible[0].id);
+    for (const [personId, feedback] of Object.entries(variant.wrong)) {
+      const match = /^(.+)的(左上|右上|左下|右下)格，被(正面|背面)挡住了。$/u.exec(feedback);
+      assert.ok(match, feedback);
+      assert.equal(match[1], variant.claimants.find(person => person.id === personId).name);
+      assert.ok(badgeById.get(personId).includes(match[2]));
+      const face = match[3] === '正面' ? 0 : 1;
+      assert.equal(holes[face].includes(match[2]), false);
+      assert.equal(holes[1 - face].includes(match[2]), true);
+    }
+  }
+  assert.deepEqual(item.variants.map(variant => variant.answer), ['sprout', 'mushroom']);
+});
+
+test('odd and even written beat numbers reconstruct one signature; either side alone still fits two singers', () => {
+  const item = getLostCase('story-3'), marks = ['①', '②', '③', '④'];
+  const symbolIds = { 月: 'moon', 铃: 'bell', 星: 'star', 浪: 'wave' };
+  const readSlots = text => [...text.matchAll(/([①②③④])(月|铃|星|浪)/gu)].map(match => ({ beat: marks.indexOf(match[1]), label: match[2] }));
+  const readSignature = text => {
+    const match = /^四拍签名：(.+)。$/u.exec(text);
+    assert.ok(match, text);
+    return match[1].split('、');
+  };
+  for (const variant of item.variants) {
+    assert.equal(variant.logic.type, 'interleave-beats');
+    const front = clue(variant, 'score-front'), back = clue(variant, 'score-back');
+    assert.match(front.text, /按①②③④合起来.*主人的四拍签名/u);
+    assert.match(back.text, /数字就是拍号/u);
+    const faces = [readSlots(front.text), readSlots(back.text)];
+    assert.deepEqual(faces[0].map(slot => slot.beat), [0, 2]);
+    assert.deepEqual(faces[1].map(slot => slot.beat), [1, 3]);
+    for (const [index, face] of [front, back].entries()) assert.deepEqual(face.diagram, {
+      type: 'score-fragment', beats: 4,
+      slots: faces[index].map(slot => ({ beat: slot.beat, symbol: symbolIds[slot.label] })),
+    });
+    const songs = new Map(variant.claimants.map(person => {
+      const notes = readSignature(person.observation);
+      assert.equal(notes.length, 4);
+      assert.deepEqual(person.diagram, { type: 'rhythm-signature', symbols: notes.map(label => symbolIds[label]) });
+      return [person.id, notes];
+    }));
+    for (const face of faces) assert.equal(variant.claimants.filter(person => face.every(slot => songs.get(person.id)[slot.beat] === slot.label)).length, 2);
+    const ordered = faces.flat().sort((a, b) => a.beat - b.beat).map(slot => slot.label);
+    const possible = variant.claimants.filter(person => {
+      const fits = songs.get(person.id).every((symbol, beat) => symbol === ordered[beat]);
+      const judgement = evaluateLostClaim(item.id, variant.index, person.id);
+      assert.equal(judgement.valid, true);
+      assert.equal(judgement.correct, fits);
+      return fits;
+    });
+    assert.equal(possible.length, 1);
+    assert.equal(variant.answer, possible[0].id);
+    for (const [personId, feedback] of Object.entries(variant.wrong)) {
+      const match = /^(.+)的第([一二三四])拍是(月|铃|星|浪)，书签这一拍是(月|铃|星|浪)。$/u.exec(feedback);
+      assert.ok(match, feedback);
+      assert.equal(match[1], variant.claimants.find(person => person.id === personId).name);
+      const beat = ['一', '二', '三', '四'].indexOf(match[2]);
+      assert.equal(songs.get(personId)[beat], match[3]);
+      assert.equal(ordered[beat], match[4]);
+      assert.notEqual(match[3], match[4]);
+    }
+  }
+  assert.deepEqual(item.variants.map(variant => variant.answer), ['whale', 'moth']);
+});
+
+test('two visible left-of relationships yield one seating order, and neither side alone determines the middle guest', () => {
+  const item = getLostCase('thanksgiving'), symbols = { 松果: 'pinecone', 信封: 'envelope', 月亮: 'moon' };
+  const readRelation = text => {
+    const match = /(松果|信封|月亮)在(松果|信封|月亮)左边/u.exec(text);
+    assert.ok(match, text);
+    return [match[1], match[2]];
+  };
+  const seatOrders = people => [
+    [people[0], people[1], people[2]], [people[0], people[2], people[1]],
+    [people[1], people[0], people[2]], [people[1], people[2], people[0]],
+    [people[2], people[0], people[1]], [people[2], people[1], people[0]],
+  ];
+  for (const variant of item.variants) {
+    assert.equal(variant.logic.type, 'seat-order');
+    assert.equal(variant.logic.targetSeat, 1);
+    const front = clue(variant, 'seat-front'), back = clue(variant, 'seat-back');
+    assert.match(front.text, /三席并排，座签属中间/u);
+    assert.match(back.text, /三种名牌各占一席.*左右按你看到的方向/u);
+    const relations = [readRelation(front.text), readRelation(back.text)];
+    for (const [index, face] of [front, back].entries()) assert.deepEqual(face.diagram, {
+      type: 'seat-relation', seatCount: 3, ...(index === 0 ? { targetSeat: 1 } : {}),
+      direction: 'screen-left-to-right', relation: { left: symbols[relations[index][0]], right: symbols[relations[index][1]] },
+    });
+    const badges = new Map(variant.claimants.map(person => {
+      const match = /^名牌是(松果|信封|月亮)；/u.exec(person.observation);
+      assert.ok(match, person.observation);
+      assert.deepEqual(person.diagram, { type: 'name-badge', symbol: symbols[match[1]] });
+      return [person.id, match[1]];
+    }));
+    const worlds = seatOrders(variant.claimants.map(person => person.id));
+    const fits = (world, relation) => {
+      const row = world.map(personId => badges.get(personId));
+      return row.indexOf(relation[0]) < row.indexOf(relation[1]);
+    };
+    for (const relation of relations) assert.equal(new Set(worlds.filter(world => fits(world, relation)).map(world => world[1])).size, 3);
+    const possibleWorlds = worlds.filter(world => relations.every(relation => fits(world, relation)));
+    assert.equal(possibleWorlds.length, 1);
+    const order = possibleWorlds[0];
+    for (const person of variant.claimants) {
+      const judgement = evaluateLostClaim(item.id, variant.index, person.id);
+      assert.equal(judgement.valid, true);
+      assert.equal(judgement.correct, person.id === order[1]);
+    }
+    assert.equal(variant.answer, order[1]);
+    for (const [personId, feedback] of Object.entries(variant.wrong)) {
+      const match = /^(.+)的(松果|信封|月亮)在最(左|右)边，座签留给中间的人。$/u.exec(feedback);
+      assert.ok(match, feedback);
+      assert.equal(match[1], variant.claimants.find(person => person.id === personId).name);
+      assert.equal(badges.get(personId), match[2]);
+      assert.equal(order.indexOf(personId), match[3] === '左' ? 0 : 2);
+    }
+  }
+  assert.deepEqual(item.variants.map(variant => variant.answer), ['lili', 'ashi']);
 });
 
 test('unknown, prototype-like, and mistyped inputs cannot select a case or produce a valid claim', () => {
@@ -196,6 +371,21 @@ test('unknown, prototype-like, and mistyped inputs cannot select a case or produ
   }
   for (const person of [undefined, null, 0, false, {}, [], 'missing', 'constructor', '__proto__', 'light']) {
     assert.deepEqual(evaluateLostClaim('lost-station-01', 0, person), invalidJudgement);
+  }
+});
+
+test('callers cannot inject replacement diagrams or answer annotations into the closed catalog', () => {
+  for (const item of LOST_CASES) {
+    const variant = item.variants[0], forged = structuredClone(variant);
+    forged.answer = variant.claimants.find(person => person.id !== variant.answer).id;
+    forged.logic.type = 'unknown-rule';
+    forged.clues[0].diagram = { type: 'light-stencil', rows: Infinity, holes: [0, 0, -1, '1'] };
+    assert.equal(getLostCase(forged), null);
+    assert.equal(getLostCaseVariant(item.id, forged), null);
+    assert.deepEqual(evaluateLostClaim(item.id, forged, forged.answer), invalidJudgement);
+    assert.deepEqual(evaluateLostClaim(item, 0, forged.answer), invalidJudgement);
+    assert.throws(() => { variant.clues[0].diagram.type = 'unknown-rule'; }, TypeError);
+    assert.equal(evaluateLostClaim(item.id, 0, variant.answer).correct, true);
   }
 });
 

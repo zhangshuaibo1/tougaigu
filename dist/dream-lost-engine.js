@@ -9,8 +9,9 @@ const smooth=t=>t*t*(3-2*t);
 export const LOST_BOX_ANCHOR=Object.freeze({x:465,y:560,r:30});
 export const LOST_INTERACTION_RADIUS=36;
 
-export function createLostLayout(){
-  return {box:{...LOST_BOX_ANCHOR},object:{x:390,y:430,r:LOST_INTERACTION_RADIUS},claimants:[{x:175,y:285,r:LOST_INTERACTION_RADIUS},{x:355,y:265,r:LOST_INTERACTION_RADIUS},{x:460,y:340,r:LOST_INTERACTION_RADIUS}]};
+export function createLostLayout(sceneId){
+  // The library's first memory occupies the shared object position.
+  return {box:{...LOST_BOX_ANCHOR},object:{x:sceneId==='story-3'?450:390,y:430,r:LOST_INTERACTION_RADIUS},claimants:[{x:175,y:285,r:LOST_INTERACTION_RADIUS},{x:355,y:265,r:LOST_INTERACTION_RADIUS},{x:460,y:340,r:LOST_INTERACTION_RADIUS}]};
 }
 export function normalizeLostCaseRecord(value){
   return {activeVariant:value?.activeVariant===1?1:0,seenClues:{0:indexes(value?.seenClues?.[0]),1:indexes(value?.seenClues?.[1])},solvedVariants:indexes(value?.solvedVariants)};
@@ -23,7 +24,7 @@ export function pointOnLostHandoff(from,to,progress,kind='solve'){
 
 export class DreamLostCase {
   constructor(config,{record,onEvent,revision='0:base',chapterIndex=0,festivalId=null,mode='story'}={}){
-    this.config=config;this.layout=createLostLayout();this.record=normalizeLostCaseRecord(record);
+    this.config=config;this.layout=createLostLayout(config.sceneId);this.record=normalizeLostCaseRecord(record);
     this.variant=this.record.activeVariant;this.revision=typeof revision==='string'?revision:'0:base';this.meta={revision:this.revision,chapterIndex,festivalId,mode};this.onEvent=onEvent;
     this.destroyed=false;this.context=null;this.available=false;this.inRange=false;this.phase='locked';this.observed=new Set();
     this.opened=this.record.seenClues[this.variant].length>0||this.record.solvedVariants.includes(this.variant);

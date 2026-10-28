@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { LOST_CASES } from '../dist/dream-lost-cases.js';
+import { LOST_CASES, LOST_CASE_TOTALS } from '../dist/dream-lost-cases.js';
 import {
   LOST_SAVE_KEY, createLostSave, validateLostSave, loadLostSave, persistLostSave, lostRevision,
   replaceLostSave, getLostRecord, getLostStats, mergeLostSaves, recordLostEvent,
@@ -11,7 +11,7 @@ const event = (save, type, extra = {}) => {
   const item = LOST_CASES.find(item => item.id === extra.caseId) || LOST_CASES[0];
   const festival = !item.sceneId.startsWith('story-');
   return { type, caseId: item.id, sceneId: item.sceneId, variant: 0, seenClues: [], revision: lostRevision(save),
-    chapterIndex: 0, festivalId: festival ? item.sceneId : null, mode: festival ? 'festival' : 'story', ...extra };
+    chapterIndex: festival ? 0 : Number(item.sceneId.slice(6)), festivalId: festival ? item.sceneId : null, mode: festival ? 'festival' : 'story', ...extra };
 };
 const readBoth = (save, extra = {}, now = 1000) => {
   assert.equal(recordLostEvent(save, event(save, 'open', extra), { now }).ok, true);
@@ -63,7 +63,7 @@ test('a solve requires the actual two clue events and a correct claimant, never 
   assert.deepEqual(getLostRecord(save, station).solvedVariants, [0]);
 });
 
-test('all six real solutions count once; wrong claims and replay solves never write or add rewards', () => {
+test('all authored solutions count once; wrong claims and replay solves never write or add rewards', () => {
   const save = createLostSave();
   for (const item of LOST_CASES) {
     for (const variant of item.variants) {
@@ -91,9 +91,21 @@ test('all six real solutions count once; wrong claims and replay solves never wr
       assert.equal(JSON.stringify(save), finished);
     }
   }
-  assert.deepEqual(getLostStats(save), { cases: 3, variants: 6, clues: 12 });
+  assert.deepEqual(getLostStats(save), LOST_CASE_TOTALS);
   assert.deepEqual(Object.keys(save).sort(), ['cases', 'revision', 'revisionId', 'version']);
   for (const record of Object.values(save.cases)) assert.deepEqual(Object.keys(record).sort(), ['activeAt', 'activeVariant', 'seenClues', 'solvedVariants']);
+});
+
+test('v8 three-case saves retain their exact facts and leave all newly added cases naturally empty', () => {
+  const legacyIds=[station,halloween,valentine],newCases=LOST_CASES.filter(item=>!legacyIds.includes(item.id));
+  const legacy={version:1,revision:0,revisionId:'base',cases:Object.fromEntries(legacyIds.map(id=>[id,{activeVariant:1,activeAt:100,seenClues:{0:[0,1],1:[0,1]},solvedVariants:[0,1]}]))};
+  const before=JSON.stringify(legacy),{storage}=storageFixture();assert.equal(persistLostSave(legacy,storage),true);
+  const restored=loadLostSave(storage);assert.deepEqual(getLostStats(restored),{cases:3,variants:6,clues:12});assert.equal(newCases.length,LOST_CASE_TOTALS.cases-legacyIds.length);
+  for(const item of newCases){assert.equal(Object.hasOwn(restored.cases,item.id),false);assert.deepEqual(getLostRecord(restored,item.id),{activeVariant:0,activeAt:0,seenClues:{0:[],1:[]},solvedVariants:[]});}
+  const meta={caseId:newCases[0].id,variant:0};readBoth(restored,meta);assert.equal(solve(restored,meta).firstSolve,true);assert.deepEqual(getLostStats(restored),{cases:4,variants:7,clues:14});
+  const merged=mergeLostSaves(legacy,restored);for(const id of legacyIds)assert.deepEqual(getLostRecord(merged,id),legacy.cases[id]);
+  for(const item of newCases.slice(1)){assert.deepEqual(getLostRecord(merged,item.id).seenClues,{0:[],1:[]});assert.deepEqual(getLostRecord(merged,item.id).solvedVariants,[]);}
+  assert.equal(JSON.stringify(legacy),before);assert.equal(persistLostSave(merged,storage),true);assert.deepEqual(loadLostSave(storage),merged);
 });
 
 test('late evidence and solves keep their facts without taking over another tab’s active variant', () => {
@@ -231,7 +243,7 @@ test('validation bounds known collections, discards prototype keys, and keeps se
     activeVariant: 1, activeAt: 100, seenClues: { 0: Array(10000).fill(0), 1: [0, 1] }, solvedVariants: Array(10000).fill(1),
   }])) };
   const bounded = validateLostSave(huge);
-  assert.deepEqual(getLostStats(bounded), { cases: 3, variants: 3, clues: 9 });
+  assert.deepEqual(getLostStats(bounded), { cases: LOST_CASE_TOTALS.cases, variants: LOST_CASE_TOTALS.cases, clues: LOST_CASE_TOTALS.cases*3 });
   assert.ok(JSON.stringify(bounded).length < 2048);
   for (const invalid of [null, [], 1, { version: 2, cases: {} }, { version: 1, cases: [] }]) assert.deepEqual(validateLostSave(invalid), createLostSave());
 });

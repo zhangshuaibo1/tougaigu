@@ -113,6 +113,74 @@ const letterClues = (senderId, thankedActionId, text) => {
   ];
 };
 
+// Both paper layers and every claimant's badge use this upright coordinate frame.
+const cellLabels = ['左上', '右上', '左下', '右下'];
+const lampBadge = (id, name, motif, cells) => ({
+  id, name, motif,
+  observation: '灯牌亮格：' + cells.map(cell => cellLabels[cell]).join('、') + '。',
+  diagram: { type: 'lamp-badge', cells },
+});
+const greenhouseClaimants = [
+  lampBadge('sprout', '芽芽', 'sprout', [0, 1]),
+  lampBadge('mushroom', '伞伞', 'mushroom', [0, 2]),
+  lampBadge('moth', '绒绒', 'moth', [0, 3]),
+];
+const seedClues = (front, back) => [
+  {
+    id: 'seed-front', side: 'front', title: '袋面小窗',
+    text: '正面开孔：' + front.map(cell => cellLabels[cell]).join('、') + '。两面都开孔才会亮。',
+    diagram: { type: 'light-stencil', rows: 2, columns: 2, orientation: 'up', holes: front },
+  },
+  {
+    id: 'seed-back', side: 'back', title: '袋背小窗',
+    text: '背面开孔：' + back.map(cell => cellLabels[cell]).join('、') + '。箭头朝上对齐，亮格配主人的灯牌。',
+    diagram: { type: 'light-stencil', rows: 2, columns: 2, orientation: 'up', holes: back },
+  },
+];
+
+const soundLabels = { moon: '月', bell: '铃', star: '星', wave: '浪' };
+const beatMarks = ['①', '②', '③', '④'];
+const signature = (id, name, motif, symbols) => ({
+  id, name, motif,
+  observation: '四拍签名：' + symbols.map(symbol => soundLabels[symbol]).join('、') + '。',
+  diagram: { type: 'rhythm-signature', symbols },
+});
+const scoreClues = symbols => {
+  const slots = beats => beats.map(beat => ({ beat, symbol: symbols[beat] }));
+  const line = beats => beats.map(beat => beatMarks[beat] + soundLabels[symbols[beat]]).join('、');
+  return [
+    {
+      id: 'score-front', side: 'front', title: '书签正面',
+      text: '正面记' + line([0, 2]) + '；按①②③④合起来，才是主人的四拍签名。',
+      diagram: { type: 'score-fragment', beats: 4, slots: slots([0, 2]) },
+    },
+    {
+      id: 'score-back', side: 'back', title: '书签背面',
+      text: '背面记' + line([1, 3]) + '；数字就是拍号。',
+      diagram: { type: 'score-fragment', beats: 4, slots: slots([1, 3]) },
+    },
+  ];
+};
+
+const seatLabels = { pinecone: '松果', envelope: '信封', moon: '月亮' };
+const thanksgivingClaimants = [
+  { id: 'lili', name: '栗栗', motif: 'squirrel', observation: '名牌是松果；尾巴抱着一只空碗。', diagram: { type: 'name-badge', symbol: 'pinecone' } },
+  { id: 'ashi', name: '阿拾', motif: 'ashi', observation: '名牌是信封；脚边还留着一束光。', diagram: { type: 'name-badge', symbol: 'envelope' } },
+  { id: 'moth', name: '绒绒', motif: 'moth', observation: '名牌是月亮；翅膀替餐巾挡着风。', diagram: { type: 'name-badge', symbol: 'moon' } },
+];
+const seatClues = (front, back) => [
+  {
+    id: 'seat-front', side: 'front', title: '座签正面',
+    text: '三席并排，座签属中间；' + seatLabels[front.left] + '在' + seatLabels[front.right] + '左边。',
+    diagram: { type: 'seat-relation', seatCount: 3, targetSeat: 1, direction: 'screen-left-to-right', relation: front },
+  },
+  {
+    id: 'seat-back', side: 'back', title: '座签背面',
+    text: seatLabels[back.left] + '在' + seatLabels[back.right] + '左边。三种名牌各占一席，左右按你看到的方向。',
+    diagram: { type: 'seat-relation', seatCount: 3, direction: 'screen-left-to-right', relation: back },
+  },
+];
+
 const authorCase = spec => ({
   ...spec,
   // The first evidence set is also available for a static cabinet/album preview.
@@ -216,7 +284,113 @@ export const LOST_CASES = freeze([
       },
     ],
   }),
+  authorCase({
+    id: 'lost-greenhouse-01', sceneId: 'story-1',
+    title: '种子袋的两层小窗',
+    object: { name: '借光种子袋', motif: 'seed-window-bag' },
+    intro: '阿拾站稳供光，种子袋的两层小窗都醒了。',
+    variants: [
+      {
+        id: 'top-light', clues: seedClues([0, 1, 2], [0, 1, 3]), claimants: greenhouseClaimants,
+        logic: { type: 'stencil-overlap', frontClueId: 'seed-front', backClueId: 'seed-back' },
+        answer: 'sprout',
+        wrong: {
+          mushroom: '伞伞的左下格，被背面挡住了。',
+          moth: '绒绒的右下格，被正面挡住了。',
+        },
+        success: '我就说，脑袋里的春天没下班。',
+        receipt: '芽芽把种子袋挂在头顶小窗，第一片叶子接住了光。',
+      },
+      {
+        id: 'left-light', clues: seedClues([0, 2, 3], [0, 1, 2]), claimants: greenhouseClaimants,
+        logic: { type: 'stencil-overlap', frontClueId: 'seed-front', backClueId: 'seed-back' },
+        answer: 'mushroom',
+        wrong: {
+          sprout: '芽芽的右上格，被正面挡住了。',
+          moth: '绒绒的右下格，被背面挡住了。',
+        },
+        success: '伞借你遮雨，光替我留一点。',
+        receipt: '伞伞把种子袋藏进伞褶，阿拾头里多了一片小阴凉。',
+      },
+    ],
+  }),
+  authorCase({
+    id: 'lost-library-01', sceneId: 'story-3',
+    title: '谁的四拍藏在书签里？',
+    object: { name: '回声书签', motif: 'echo-bookmark' },
+    intro: '阿拾把光留在书页上，拾光捞起一枚只肯唱两拍的书签。',
+    variants: [
+      {
+        id: 'moon-start', clues: scoreClues(['moon', 'bell', 'star', 'wave']),
+        claimants: [
+          signature('whale', '蓝页', 'whale', ['moon', 'bell', 'star', 'wave']),
+          signature('moth', '绒绒', 'moth', ['moon', 'wave', 'star', 'bell']),
+          signature('ashi', '阿拾', 'ashi', ['star', 'bell', 'moon', 'wave']),
+        ],
+        logic: { type: 'interleave-beats', frontClueId: 'score-front', backClueId: 'score-back' },
+        answer: 'whale',
+        wrong: {
+          moth: '绒绒的第二拍是浪，书签这一拍是铃。',
+          ashi: '阿拾的第一拍是星，书签这一拍是月。',
+        },
+        success: '书签归位，打嗝也能按拍子来。',
+        receipt: '蓝页把书签夹回书里，小鲸从阿拾头顶吹出四个泡泡。',
+      },
+      {
+        id: 'bell-start', clues: scoreClues(['bell', 'wave', 'moon', 'star']),
+        claimants: [
+          signature('whale', '蓝页', 'whale', ['bell', 'star', 'moon', 'wave']),
+          signature('moth', '绒绒', 'moth', ['bell', 'wave', 'moon', 'star']),
+          signature('ashi', '阿拾', 'ashi', ['moon', 'wave', 'bell', 'star']),
+        ],
+        logic: { type: 'interleave-beats', frontClueId: 'score-front', backClueId: 'score-back' },
+        answer: 'moth',
+        wrong: {
+          whale: '蓝页的第二拍是星，书签这一拍是浪。',
+          ashi: '阿拾的第一拍是月，书签这一拍是铃。',
+        },
+        success: '找到了，今晚的谢幕能多唱两拍。',
+        receipt: '绒绒轻敲书签，四个音符在头顶小窗排队谢幕。',
+      },
+    ],
+  }),
+  authorCase({
+    id: 'lost-thanksgiving-01', sceneId: 'thanksgiving',
+    title: '中间那把椅子，等谁？',
+    object: { name: '漏印名字的座签', motif: 'folded-seat-card' },
+    intro: '阿拾留在桌边供光，拾光吹开一张漏印名字的座签。',
+    variants: [
+      {
+        id: 'first-table', clues: seatClues({ left: 'envelope', right: 'pinecone' }, { left: 'pinecone', right: 'moon' }), claimants: thanksgivingClaimants,
+        logic: { type: 'seat-order', frontClueId: 'seat-front', backClueId: 'seat-back', targetSeat: 1 },
+        answer: 'lili',
+        wrong: {
+          ashi: '阿拾的信封在最左边，座签留给中间的人。',
+          moth: '绒绒的月亮在最右边，座签留给中间的人。',
+        },
+        success: '原来中间这碗，也有我的份。',
+        receipt: '栗栗终于坐下，阿拾头里的小长桌多了一缕热气。',
+      },
+      {
+        id: 'second-table', clues: seatClues({ left: 'moon', right: 'envelope' }, { left: 'envelope', right: 'pinecone' }), claimants: thanksgivingClaimants,
+        logic: { type: 'seat-order', frontClueId: 'seat-front', backClueId: 'seat-back', targetSeat: 1 },
+        answer: 'ashi',
+        wrong: {
+          lili: '栗栗的松果在最右边，座签留给中间的人。',
+          moth: '绒绒的月亮在最左边，座签留给中间的人。',
+        },
+        success: '头顶留了光，桌边也给我留了座。',
+        receipt: '阿拾收好座签，拾光把空椅子拖到头顶的小餐桌旁。',
+      },
+    ],
+  }),
 ]);
+
+export const LOST_CASE_TOTALS = freeze({
+  cases: LOST_CASES.length,
+  variants: LOST_CASES.reduce((total, item) => total + item.variants.length, 0),
+  clues: LOST_CASES.reduce((total, item) => total + item.variants.reduce((sum, variant) => sum + variant.clues.length, 0), 0),
+});
 
 const casesByScene = new Map(LOST_CASES.map(item => [item.sceneId, item]));
 const casesById = new Map(LOST_CASES.map(item => [item.id, item]));
@@ -232,30 +406,109 @@ export function getLostCaseVariant(caseId, index) {
 }
 
 const diagram = (variant, clueId) => variant.clues.find(clue => clue.id === clueId)?.diagram;
+const plain = value => Boolean(value && typeof value === 'object' && !Array.isArray(value)
+  && (Object.getPrototypeOf(value) === Object.prototype || Object.getPrototypeOf(value) === null));
+const identifier = value => typeof value === 'string' && /^[a-z][a-z0-9-]{0,63}$/.test(value)
+  && !['constructor', 'prototype'].includes(value);
+const shortText = value => typeof value === 'string' && value.trim() === value && value.length > 0
+  && [...value].length <= 50 && !/[\r\n<>]/.test(value);
+const uniqueIndexes = (values, count) => Array.isArray(values) && values.length > 0 && values.length <= count
+  && new Set(values).size === values.length
+  && Array.from(values).every(value => Number.isInteger(value) && value >= 0 && value < count);
+const symbolsAre = (values, labels, length) => Array.isArray(values) && values.length === length
+  && Array.from(values).every(symbol => typeof symbol === 'string' && Object.hasOwn(labels, symbol));
+const sameSet = (a, b) => a.length === b.length && a.every(value => b.includes(value));
+const validVariant = variant => plain(variant) && plain(variant.logic)
+  && Array.isArray(variant.clues) && variant.clues.length === 2
+  && Array.from(variant.clues).every(clue => plain(clue) && identifier(clue.id) && ['front', 'back'].includes(clue.side)
+    && shortText(clue.title) && shortText(clue.text) && plain(clue.diagram))
+  && new Set(variant.clues.map(clue => clue.id)).size === 2 && new Set(variant.clues.map(clue => clue.side)).size === 2
+  && Array.isArray(variant.claimants) && variant.claimants.length === 3
+  && Array.from(variant.claimants).every(person => plain(person) && identifier(person.id)
+    && shortText(person.name) && identifier(person.motif) && shortText(person.observation))
+  && new Set(variant.claimants.map(person => person.id)).size === 3
+  && identifier(variant.answer) && plain(variant.wrong) && shortText(variant.success) && shortText(variant.receipt);
+const twoSides = variant => {
+  const { frontClueId, backClueId } = variant.logic;
+  if (!identifier(frontClueId) || !identifier(backClueId) || frontClueId === backClueId) return null;
+  const front = variant.clues.find(clue => clue.id === frontClueId), back = variant.clues.find(clue => clue.id === backClueId);
+  return front?.side === 'front' && back?.side === 'back' ? [front.diagram, back.diagram] : null;
+};
+const permutations = values => values.length
+  ? values.flatMap((value, index) => permutations(values.filter((_, other) => other !== index)).map(rest => [value, ...rest]))
+  : [[]];
 const solvesEvidence = (variant, claimant) => {
   const logic = variant.logic;
   if (logic.type === 'return-route') {
     const ticket = diagram(variant, logic.routeClueId), stamp = diagram(variant, logic.stampClueId), trip = claimant.diagram;
+    const validRoute = value => plain(value) && value.type === 'route' && plain(value.from) && plain(value.to) && identifier(value.from.id) && identifier(value.to.id);
+    if (!validRoute(ticket) || !validRoute(trip) || stamp?.type !== 'stamp' || stamp.journey !== 'return') return null;
     return stamp?.journey === 'return' && ticket?.from.id === trip?.to.id && ticket?.to.id === trip?.from.id;
   }
   if (logic.type === 'truth-count') {
     const notes = diagram(variant, logic.notesClueId)?.notes, rule = diagram(variant, logic.ruleClueId);
-    if (!notes || !rule) return false;
+    if (!Array.isArray(notes) || notes.length !== 3 || rule?.type !== 'truth-rule' || !Number.isInteger(rule.exactlyTrue) || rule.exactlyTrue < 0 || rule.exactlyTrue > notes.length
+      || !Array.from(notes).every(note => plain(note) && plain(note.claim) && ['is', 'is-not'].includes(note.claim.operator)
+        && variant.claimants.some(person => person.id === note.claim.ownerId))) return null;
     const truths = notes.reduce((count, note) => count + Number(note.claim.operator === 'is' ? claimant.id === note.claim.ownerId : note.claim.operator === 'is-not' && claimant.id !== note.claim.ownerId), 0);
     return truths === rule.exactlyTrue;
   }
   if (logic.type === 'thanked-action') {
     const letter = diagram(variant, logic.letterClueId), marks = diagram(variant, logic.marksClueId);
+    if (letter?.type !== 'letter' || !identifier(letter.thankedActionId) || marks?.type !== 'mail-marks'
+      || !plain(marks.sender) || !plain(marks.courier) || !variant.claimants.some(person => person.id === marks.sender.id)
+      || !variant.claimants.some(person => person.id === marks.courier.id) || claimant.diagram?.type !== 'action' || !identifier(claimant.diagram.actionId)) return null;
     return Boolean(letter && marks && claimant.diagram?.actionId === letter.thankedActionId && claimant.id !== marks.sender.id);
   }
-  return false;
+  if (logic.type === 'stencil-overlap') {
+    const sides = twoSides(variant), badge = claimant.diagram;
+    if (!sides || !sides.every(side => side.type === 'light-stencil' && side.rows === 2 && side.columns === 2
+      && side.orientation === 'up' && uniqueIndexes(side.holes, 4))
+      || badge?.type !== 'lamp-badge' || !uniqueIndexes(badge.cells, 4)) return null;
+    const [front, back] = sides, lit = front.holes.filter(cell => back.holes.includes(cell));
+    return sameSet(lit, badge.cells);
+  }
+  if (logic.type === 'interleave-beats') {
+    const sides = twoSides(variant), signature = claimant.diagram;
+    if (!sides || !sides.every((side, parity) => side.type === 'score-fragment' && side.beats === 4
+      && Array.isArray(side.slots) && side.slots.length === 2
+      && Array.from(side.slots).every(slot => plain(slot) && Number.isInteger(slot.beat) && slot.beat >= 0 && slot.beat < 4
+        && slot.beat % 2 === parity && typeof slot.symbol === 'string' && Object.hasOwn(soundLabels, slot.symbol))
+      && new Set(side.slots.map(slot => slot.beat)).size === 2)
+      || signature?.type !== 'rhythm-signature' || !symbolsAre(signature.symbols, soundLabels, 4)) return null;
+    const complete = Array(4);
+    for (const side of sides) for (const slot of side.slots) complete[slot.beat] = slot.symbol;
+    return signature.symbols.every((symbol, beat) => symbol === complete[beat]);
+  }
+  if (logic.type === 'seat-order') {
+    const sides = twoSides(variant), badges = variant.claimants.map(person => person.diagram?.symbol);
+    if (!sides || logic.targetSeat !== 1 || sides[0].targetSeat !== 1 || sides[1].targetSeat !== undefined
+      || !variant.claimants.every(person => person.diagram?.type === 'name-badge')
+      || !symbolsAre(badges, seatLabels, 3) || new Set(badges).size !== 3
+      || !sides.every(side => side.type === 'seat-relation' && side.seatCount === 3 && side.direction === 'screen-left-to-right'
+        && plain(side.relation) && badges.includes(side.relation.left) && badges.includes(side.relation.right)
+        && side.relation.left !== side.relation.right)) return null;
+    const orders = permutations(badges).filter(order => sides.every(side => order.indexOf(side.relation.left) < order.indexOf(side.relation.right)));
+    if (orders.length !== 1) return null;
+    return claimant.diagram.symbol === orders[0][sides[0].targetSeat];
+  }
+  return null;
 };
+
+const invalidJudgement = () => ({ valid: false, correct: false, feedback: null, receipt: null });
 
 /** Returns a new judgement; evaluating never changes a case or claims any reward. */
 export function evaluateLostClaim(caseId, variantIndex, claimantId) {
   const variant = getLostCaseVariant(caseId, variantIndex);
-  const claimant = variant && typeof claimantId === 'string' ? variant.claimants.find(item => item.id === claimantId) : null;
-  if (!variant || !claimant) return { valid: false, correct: false, feedback: null, receipt: null };
-  const correct = solvesEvidence(variant, claimant);
+  if (!validVariant(variant) || typeof claimantId !== 'string') return invalidJudgement();
+  const claimant = variant.claimants.find(item => item.id === claimantId);
+  if (!claimant) return invalidJudgement();
+  const checks = variant.claimants.map(person => solvesEvidence(variant, person));
+  if (checks.some(result => typeof result !== 'boolean') || checks.filter(Boolean).length !== 1) return invalidJudgement();
+  const winner = variant.claimants[checks.indexOf(true)].id;
+  // Derive the winner first, then verify authored labels and feedback agree with that evidence.
+  if (variant.answer !== winner || Object.keys(variant.wrong).length !== 2
+    || variant.claimants.some(person => person.id !== winner && (!Object.hasOwn(variant.wrong, person.id) || !shortText(variant.wrong[person.id])))) return invalidJudgement();
+  const correct = checks[variant.claimants.indexOf(claimant)];
   return { valid: true, correct, feedback: correct ? variant.success : variant.wrong[claimant.id], receipt: correct ? variant.receipt : null };
 }
