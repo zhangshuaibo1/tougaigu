@@ -2,19 +2,18 @@
 
 **TOUGAIGU** 是一个中文、原创视觉、零运行时依赖的双游戏项目。保留《再活一局》的生存玩法，新增独立的故事机关冒险《掀起你的头盖骨》。
 
-> 一颗头盖骨，一点不服输。躲开怪潮，组合异能，把死路玩成出路。
+打开网站直接进入《掀起你的头盖骨》的关卡。顶部悬浮菜单用于切换游戏、打开章节或备战、查看角色档案、帮助和设置。
 
-- 《再活一局》：<https://zhangshuaibo1.github.io/tougaigu/>
-- 《掀起你的头盖骨》：<https://zhangshuaibo1.github.io/tougaigu/dream.html>
+- 默认入口《掀起你的头盖骨》：<https://zhangshuaibo1.github.io/tougaigu/>
+- 《再活一局》：<https://zhangshuaibo1.github.io/tougaigu/survivor.html>
+- 新冒险旧链接仍可使用：<https://zhangshuaibo1.github.io/tougaigu/dream.html>
 - 仓库：<https://github.com/zhangshuaibo1/tougaigu>
-- 当前版本：2.0.0
+- 当前版本：2.1.0
 - 仓库已公开；自定义域名 `tougaigu.com` 尚未绑定。
 
-![线上游戏首页](docs/live-homepage.jpg)
+![打开即玩的游戏界面](docs/game-first-live.jpg)
 
 ## 新游戏：掀起你的头盖骨
-
-![掀起你的头盖骨：给明天的一封信](docs/dream-homepage.jpg)
 
 阿拾是失去记忆的小骷髅邮差。他收到一封地址只有“明天”的信，带着住在头盖骨里的小光灵“拾光”，穿过六处迟迟不肯天亮的地方。每个地方都有一位等待的人、一道不愿松开的心结，以及一件可以带走的信物。
 
@@ -46,7 +45,7 @@
 
 详细故事、谜题和存档逻辑见 `dist/dream-story.js`；物理机关与六章地图分别见 `dist/dream-engine.js`、`dist/dream-levels.js`。
 
-54 项测试及桌面、手机响应式试玩记录见 [v2 验收记录](docs/QA-v2.md)。
+原有玩法的 54 项测试及桌面、手机响应式试玩记录见 [v2 验收记录](docs/QA-v2.md)。直接进入游戏与悬浮菜单的更新验收见 [v2.1 验收记录](docs/QA-v2.1.md)。
 
 ## 原游戏：再活一局
 
@@ -96,7 +95,7 @@
 - 成长进度使用当前浏览器的 `localStorage`，键为 `tougaigu.save.v1`。
 - 钱包、角色、永久强化、成就、最近 20 局战绩及最近 30 天的每日最好成绩会保存。
 - 坚持至少 15 秒才结算成长奖励；成就奖励只领取一次；同一局有唯一 ID 防止重复结算。
-- 退出战斗会结算这一局。当前正在进行的战斗不提供跨刷新续局，刷新后开始新的一局。
+- 明确点击结束并结算，或备战中的“结算本局并开始”，才结算当前局。刷新、关闭页面或切换游戏会放弃未结算的战斗，已保存的成长进度保留。
 - 导出 JSON 可以备份和跨设备迁移；导入校验版本、结构、字段与数值，并要求确认替换当前进度。
 - 首发版没有账号系统、云存档、在线多人或全球排行榜。手账显示当前浏览器的真实战绩。
 - 所有分数与奖励由客户端计算，适合单人娱乐；不能把本地记录当作防作弊竞技成绩。
@@ -134,20 +133,25 @@ node tests/dream-story.test.mjs
 
 ```text
 dist/
-  index.html     页面、游戏 HUD、原生对话框
+  index.html     默认直接进入故事关卡（与 dream.html 同步）
+  survivor.html  原版生存游戏与备战面板
+  game-shell.js  双游戏切换、角色摘要与悬浮菜单
+  game-shell.css 悬浮菜单与紧凑企业页脚
   style.css      响应式视觉、战斗界面、窄屏摇杆
   app.js         页面交互、输入、结算与存档整合
   engine.js      Canvas 渲染、战斗、技能、首领、音效
   content.js     中文内容、角色、成长、存档校验
   favicon.svg   原创矢量图标
-  dream.html    新冒险首页、章节、手账与对话界面
+  dream.html    故事关卡、章节地图、手账与对话界面
   dream.css     新冒险响应式视觉
+  dream-play.css 直接游玩的场景布局
+  survivor-play.css 生存场景与备战布局
   dream-app.js  新冒险交互、谜题与进度整合
   dream-story.js 六章故事、谜题与独立存档
   dream-engine.js 头身协作、物理机关、动画与场景绘制
   dream-levels.js 六章地图与场景配置
   company-footer.css 企业版权共用样式
-  portal.css    原游戏中的新冒险入口
+  portal.css    历史推广入口样式（当前页面不再引用）
   assets/       本地企业 Logo、原创 SVG 封面与人物插画
 tests/
   engine.test.mjs
@@ -159,6 +163,9 @@ scripts/
 docs/
   QA.md
   QA-v2.md      双游戏、谜题、存档与发布验收
+  QA-v2.1.md    直接游玩、悬浮菜单与手机验收
+  game-first-live.jpg
+  game-first-mobile.jpg
   homepage.jpg
   dream-homepage.jpg
   dream-puzzle.jpg
@@ -175,9 +182,9 @@ docs/
 
 发布配置为 Settings → Pages → Deploy from a branch → `gh-pages` → `/ (root)`。`gh-pages` 分支根目录放置 `dist/` 的内容及 `.nojekyll`，游戏源文件、测试与文档保留在 `main` 分支。更新游戏后，需要将新的 `dist/` 内容同步到发布分支。
 
-- v2 游戏源码：[5f110b3](https://github.com/zhangshuaibo1/tougaigu/commit/5f110b314ed76a6e42e16e650ca670dd38a2b151)。
-- v2 Pages 提交：[0146d89](https://github.com/zhangshuaibo1/tougaigu/commit/0146d893daed492b3b9e8682be97c2a834f2acab)。
-- v2 发布工作流：[pages build and deployment](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40700304082)，结果成功。两款游戏均已打开公网地址复核。
+- v2.1 游戏源码：[1a7c78a](https://github.com/zhangshuaibo1/tougaigu/commit/1a7c78af056f5d8132e8a0f19ac507b47c31b732)。
+- v2.1 Pages 提交：[a1cb6b7](https://github.com/zhangshuaibo1/tougaigu/commit/a1cb6b76ae17465ecea4681351b9e650de975901)。
+- v2.1 发布工作流：[pages build and deployment](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40704947221)，已成功完成，并实际验证公网入口与游戏切换。
 
 HTML 的样式、脚本与图标路径，以及 JavaScript 模块导入均使用相对路径，已在 GitHub Pages 的 `/tougaigu/` 子路径下实际运行。
 
@@ -186,7 +193,5 @@ HTML 的样式、脚本与图标路径，以及 JavaScript 模块导入均使用
 ## 企业版权与素材
 
 网页底部展示 **© 2026 上海九喵科技有限公司 版权所有**，统一社会信用代码 **91310109MAKQBAFQ2B**，企业官网为 <https://9mew.com>。官方 Logo 已下载到项目中，由本站直接加载。
-
-![线上新游戏入口与企业页脚](docs/company-footer-live.jpg)
 
 古典诗文原句、通行歇后语与原创谜面分别注明；诗文校对及 Logo 原始地址见 [素材与文本来源](docs/CREDITS.md)。仓库公开展示源码，暂未额外授予开源许可。
