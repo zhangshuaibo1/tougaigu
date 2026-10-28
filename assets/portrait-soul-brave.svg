@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">拾光 · 借你一点勇敢</title>
+<desc id="desc">拾光挺起圆润的小身子，手举一盏金色星灯，明亮的眼睛带着勇气，准备照亮头盖外面的路。</desc>
+<defs>
+  <radialGradient id="bg" cx=".44" cy=".35" r=".8"><stop stop-color="#554363"/><stop offset=".57" stop-color="#30283e"/><stop offset="1" stop-color="#201f30"/></radialGradient>
+  <radialGradient id="aura"><stop stop-color="#b6f4d5" stop-opacity=".28"/><stop offset=".6" stop-color="#8bdecc" stop-opacity=".12"/><stop offset="1" stop-color="#8bdecc" stop-opacity="0"/></radialGradient>
+  <linearGradient id="bone" x1="78" y1="66" x2="166" y2="186" gradientUnits="userSpaceOnUse"><stop stop-color="#fff6dc"/><stop offset=".48" stop-color="#f1dfbb"/><stop offset="1" stop-color="#d6b68d"/></linearGradient>
+  <linearGradient id="capBone" x1="102" y1="43" x2="164" y2="110" gradientUnits="userSpaceOnUse"><stop stop-color="#fff8e2"/><stop offset=".58" stop-color="#f0ddba"/><stop offset="1" stop-color="#cbae87"/></linearGradient>
+  <linearGradient id="coat" x1="84" y1="176" x2="165" y2="236" gradientUnits="userSpaceOnUse"><stop stop-color="#a18bb2"/><stop offset=".47" stop-color="#796183"/><stop offset="1" stop-color="#51415f"/></linearGradient>
+  <linearGradient id="scarf" x1="82" y1="173" x2="149" y2="198" gradientUnits="userSpaceOnUse"><stop stop-color="#efb18a"/><stop offset="1" stop-color="#bf795f"/></linearGradient>
+  <linearGradient id="bag" x1="152" y1="194" x2="186" y2="222" gradientUnits="userSpaceOnUse"><stop stop-color="#b78366"/><stop offset="1" stop-color="#815743"/></linearGradient>
+  <radialGradient id="socket" cx=".5" cy=".34"><stop stop-color="#544356"/><stop offset="1" stop-color="#342c40"/></radialGradient>
+  <linearGradient id="soul" x1="110" y1="36" x2="152" y2="206" gradientUnits="userSpaceOnUse"><stop stop-color="#f2ffe7"/><stop offset=".48" stop-color="#bff1d8"/><stop offset="1" stop-color="#78c6b9"/></linearGradient>
+  <linearGradient id="miniSoul" x1="-10" y1="-38" x2="12" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#f3ffe5"/><stop offset=".55" stop-color="#c2f4d9"/><stop offset="1" stop-color="#72cabb"/></linearGradient>
+  <linearGradient id="soulEdge" x1="77" y1="78" x2="175" y2="182" gradientUnits="userSpaceOnUse"><stop stop-color="#f4ffe5"/><stop offset="1" stop-color="#c6f3d9"/></linearGradient>
+  <radialGradient id="blush"><stop stop-color="#eaaf99" stop-opacity=".7"/><stop offset="1" stop-color="#eaaf99" stop-opacity="0"/></radialGradient>
+  <radialGradient id="soulBlush"><stop stop-color="#f6d5ad" stop-opacity=".8"/><stop offset="1" stop-color="#f6d5ad" stop-opacity="0"/></radialGradient>
+  <linearGradient id="inside" x1="128" y1="86" x2="128" y2="117" gradientUnits="userSpaceOnUse"><stop stop-color="#192d40"/><stop offset=".65" stop-color="#364b55"/><stop offset="1" stop-color="#9cd0b3"/></linearGradient>
+  <clipPath id="round"><circle cx="128" cy="128" r="116"/></clipPath>
+</defs>
+<circle cx="128" cy="128" r="121" stroke="#b8e2ce" stroke-width="1.4" stroke-opacity=".28"/>
+<circle cx="128" cy="128" r="116" fill="url(#bg)"/>
+<circle cx="128" cy="128" r="111" stroke="#f2cc90" stroke-width=".6" stroke-opacity=".13"/>
+<g clip-path="url(#round)" stroke-linecap="round" stroke-linejoin="round">
+  <ellipse cx="128" cy="103" rx="92" ry="94" fill="url(#aura)"/>
+  <path d="M39 135c-4-26 5-53 21-69M207 173c12-19 16-40 12-61" stroke="#c4f3dc" stroke-width="1" stroke-opacity=".18" stroke-dasharray="2 7"/>
+  <path d="m43 76 14-12 12 4M198 58l10 17-5 17" stroke="#f2cc90" stroke-width=".75" stroke-opacity=".22"/>
+  <g fill="#f2cc90" opacity=".58"><circle cx="43" cy="76" r="1.5"/><circle cx="57" cy="64" r="1.5"/><circle cx="69" cy="68" r="1.3"/><circle cx="198" cy="58" r="1.3"/><circle cx="208" cy="75" r="1.5"/></g>
+  <ellipse cx="129" cy="220" rx="43" ry="7" fill="#9adfc4" opacity=".09"/>
+  <ellipse cx="130" cy="129" rx="82" ry="89" fill="url(#aura)"/>
+  <g transform="translate(0 -1)">
+  <path d="M96 178c-31-16-40-53-22-81 11-19 30-27 42-43 6-8 9-17 8-27 26 13 25 37 43 54 24 21 29 44 23 65-6 23-27 39-50 38-12 0-20-2-27-6-5 18-20 31-36 29 11-10 18-20 19-29Z" fill="url(#soul)" stroke="url(#soulEdge)" stroke-width="3"/>
+  <path d="M83 116q0-24 25-41c10-7 16-16 18-28" stroke="#faffec" stroke-width="5" opacity=".88"/>
+  <path d="M172 156q11-13 12-28m-83 63-10 9" stroke="#e6f8d9" stroke-width="3" opacity=".6"/>
+  <path d="M104 177q11-12 24-8 8 3 9 10" stroke="#92cdb5" stroke-width="1.1" opacity=".6"/>
+  <ellipse cx="92" cy="143" rx="12" ry="6.2" fill="url(#soulBlush)"/>
+  <ellipse cx="170" cy="141" rx="12" ry="6.2" fill="url(#soulBlush)"/>
+  <path d="m87 142 2 1m4-2 2 1m70-1 2 1m4-2 2 1" stroke="#d3bfa0" stroke-width="1" opacity=".7"/>
+  <path d="m118 87 10-3 12 2" stroke="#d9e7be" stroke-width="1" opacity=".75"/>
+  <path d="M130 76 132.32 81.68 138 84 132.32 86.32 130 92 127.68 86.32 122 84 127.68 81.68Z" fill="#edd6a6" opacity="1"/><path d="M130 80.5 131.015 82.985 133.5 84 131.015 85.015 130 87.5 128.985 85.015 126.5 84 128.985 82.985Z" fill="#fff6d1" opacity="1"/>
+  <ellipse cx="109" cy="123" rx="6.8" ry="11.6" fill="#41776b"/>
+  <ellipse cx="154" cy="122" rx="6.8" ry="11.6" fill="#41776b"/>
+  <ellipse cx="110" cy="119" rx="2" ry="3.8" fill="#efffe2"/>
+  <ellipse cx="155" cy="118" rx="2" ry="3.8" fill="#efffe2"/>
+  <circle cx="106" cy="128" r="1.2" fill="#aacfb2"/><circle cx="151" cy="127" r="1.2" fill="#aacfb2"/>
+  <path d="M122 144q8 6 17-1" stroke="#568a77" stroke-width="2.8"/>
+  <path d="m100 106 14 3m31-1 15-4" stroke="#6ea38b" stroke-width="1.7"/>
+  <path d="M83 151q-18-7-19 0 2 8 19 7m95-3q11-3 20 0 7 1 6-6-4-6-22-2" fill="#b7efd3" stroke="#e5f9db" stroke-width="2.4"/>
+  <path d="m197 132-1 17" stroke="#d7bb88" stroke-width="1.7"/>
+  <path d="M198 116 201.19 123.81 209 127 201.19 130.19 198 138 194.81 130.19 187 127 194.81 123.81Z" fill="#f3d9a0" opacity="1"/><path d="M198 121.4 199.624 125.376 203.6 127 199.624 128.624 198 132.6 196.376 128.624 192.4 127 196.376 125.376Z" fill="#fff5cf" opacity="1"/>
+  <path d="m127 162 7-1 1 6-7 1Z" fill="#ecdfb8" stroke="#9fb9a0" stroke-width=".7"/>
+  <path d="m128 163 3 2 3-3" stroke="#aab19a" stroke-width=".6"/>
+  </g>
+  <path d="M51 79 53.03 83.97 58 86 53.03 88.03 51 93 48.97 88.03 44 86 48.97 83.97Z" fill="#f2cc90" opacity="0.84"/><path d="M195 61 196.45 64.55 200 66 196.45 67.45 195 71 193.55 67.45 190 66 193.55 64.55Z" fill="#d5edcd" opacity="0.9"/><path d="M176 205 177.16 207.84 180 209 177.16 210.16 176 213 174.84 210.16 172 209 174.84 207.84Z" fill="#f2cc90" opacity="0.8"/><path d="m188 109 2 3m19 1 2-3m4 16 4 1" stroke="#f2cc90" stroke-width="1.2"/>
+</g>
+<path d="M36 101.5 37.595 105.405 41.5 107 37.595 108.595 36 112.5 34.405 108.595 30.5 107 34.405 105.405Z" fill="#f2cc90" opacity="1"/><path d="M215 165 216.45 168.55 220 170 216.45 171.45 215 175 213.55 171.45 210 170 213.55 168.55Z" fill="#d9eac5" opacity="1"/>
+<g fill="#c4f3dc" opacity=".76"><circle cx="54" cy="178" r="1.8"/><circle cx="203" cy="99" r="1.7"/><circle cx="81" cy="40" r="1.4"/></g>
+</svg>
