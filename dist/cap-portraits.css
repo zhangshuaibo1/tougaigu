@@ -1,0 +1,78 @@
+/* Story expression cues; the SVGs remain readable without animation. */
+.story-portrait-wrap.cap-portrait-enter {
+  --cap-entry-x: -3px;
+  --cap-entry-y: 5px;
+  --cap-entry-turn: -2deg;
+  --cap-entry-scale: .97;
+  --cap-entry-time: 520ms;
+}
+
+.story-portrait-wrap.cap-portrait-enter > img {
+  transform-origin: 50% 72%;
+  animation: cap-portrait-arrive var(--cap-entry-time) cubic-bezier(.22, .72, .25, 1) both;
+}
+
+.story-portrait-wrap.cap-portrait-enter[data-mood="curious"],
+.story-portrait-wrap.cap-portrait-enter[data-mood="peek"] {
+  --cap-entry-x: -6px;
+  --cap-entry-turn: -4deg;
+  --cap-entry-time: 620ms;
+}
+
+.story-portrait-wrap.cap-portrait-enter[data-mood="open"] {
+  --cap-entry-x: 0px;
+  --cap-entry-y: 7px;
+  --cap-entry-turn: 2deg;
+  --cap-entry-scale: .96;
+  --cap-entry-time: 680ms;
+}
+
+.story-portrait-wrap.cap-portrait-enter[data-mood="joy"] > img {
+  animation-name: cap-portrait-delight;
+  animation-duration: 680ms;
+}
+
+.story-portrait-wrap.cap-portrait-enter[data-mood="brave"] {
+  --cap-entry-x: 0px;
+  --cap-entry-y: 4px;
+  --cap-entry-turn: 0deg;
+  --cap-entry-scale: .965;
+}
+
+.story-portrait-wrap.cap-portrait-enter[data-mood="tender"],
+.story-portrait-wrap.cap-portrait-enter[data-mood="sleep"] {
+  --cap-entry-x: 2px;
+  --cap-entry-y: 2px;
+  --cap-entry-turn: 1.5deg;
+  --cap-entry-scale: .985;
+  --cap-entry-time: 760ms;
+}
+
+@keyframes cap-portrait-arrive {
+  from {
+    opacity: .55;
+    transform: translate(var(--cap-entry-x), var(--cap-entry-y)) rotate(var(--cap-entry-turn)) scale(var(--cap-entry-scale));
+  }
+  to { opacity: 1; transform: translate(0, 0) rotate(0) scale(1); }
+}
+
+@keyframes cap-portrait-delight {
+  0% { opacity: .6; transform: translateY(5px) rotate(-2deg) scale(.97); }
+  54% { opacity: 1; transform: translateY(-3px) rotate(1deg) scale(1); }
+  100% { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
+}
+
+.reduced-motion .story-portrait-wrap.cap-portrait-enter > img,
+.story-portrait-wrap.cap-portrait-enter.reduced-motion > img {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-portrait-wrap.cap-portrait-enter > img {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

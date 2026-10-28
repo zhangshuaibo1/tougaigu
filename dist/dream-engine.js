@@ -1,6 +1,7 @@
 import { DREAM_LEVELS, getDreamLevel } from './dream-levels.js';
 import { getFestivalLevel } from './dream-festival-levels.js';
 import { FESTIVAL_VISUAL_IDS, getFestivalTheme, getOutfitPalette, drawFestivalArchitecture, drawFestivalProps, drawFestivalWeather, drawFestivalGift, drawFestivalNPC, drawFestivalPlatform, drawOutfitBack, drawOutfitHat, drawCompass } from './dream-festival-art.js';
+import { resolveCapScene, drawCapInterior, drawCapTheatre, drawSoulVision } from './dream-cap-art.js';
 
 const TAU=Math.PI*2;
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
@@ -10,6 +11,7 @@ const approach=(a,b,d)=>a<b?Math.min(b,a+d):Math.max(b,a-d);
 const FONT='"PingFang SC","Microsoft YaHei",sans-serif';
 const FIXED_STEP=1/60;
 const MAX_FRAME_ELAPSED=.2;
+const ease=n=>{n=clamp(n,0,1);return n*n*(3-2*n);};
 export const DREAM_PHYSICS={gravity:1350,speed:240,jump:600,soulSpeed:340,tether:565,maxEnergy:100,energyDrain:4.3,pulseRadius:102};
 
 export function createDreamRng(seed=1){
@@ -60,6 +62,7 @@ export class DreamGame {
     this.season=FESTIVAL_VISUAL_IDS.includes(this.options.season?.id)?this.options.season:null;
     this.outfit=FESTIVAL_VISUAL_IDS.includes(this.options.outfit)||this.options.outfit==='starlight'?this.options.outfit:'auto';
     this.applySeasonTheme();
+    this.capScene=resolveCapScene(this.options.capScene,this.chapterIndex,this.festivalId,this.level.theme);
     this.time=0;this.visualTime=0;this.deaths=0;this.energy=DREAM_PHYSICS.maxEnergy;this.maxEnergy=DREAM_PHYSICS.maxEnergy;this.form='body';this.state='playing';this.pendingSeal=null;this.pendingTalk=null;this.talked=new Set();this.completed=false;
     this.compassTime=0;this.featherCharges=0;this.emoteTime=0;
     this.input={x:0,y:0};this.body={...this.level.spawn,w:30,h:58,vx:0,vy:0,face:1,grounded:true,coyote:.12,platform:null,invulnerable:1,walk:0,land:0};
@@ -69,6 +72,7 @@ export class DreamGame {
     this.movers=this.level.movers.map(m=>({...m,baseX:m.x,baseY:m.y,prevX:m.x,prevY:m.y}));
     this.hazards=this.level.hazards.map(h=>({...h,clock:0,frozen:0,hitCooldown:0,px:h.x,py:h.y}));
     this.pads=this.level.pads.map(p=>({...p,boing:0,cooldown:0}));this.plateState=new Map();this.particles=[];this.pulses=[];this.camera=0;this.capOpen=0;this.jumpBuffer=0;this.hudTick=0;this.trailTick=0;this.eventCooldown=0;this.pulseCooldown=0;this.lastCheckpointEvent=-1;this.shake=0;
+    this.resetCapPresentation();
     this.rng=createDreamRng('dream-'+(this.festivalId||this.chapterIndex));this.decorations=Array.from({length:90},()=>({x:this.rng()*this.level.width,y:40+this.rng()*480,r:.5+this.rng()*2,phase:this.rng()*TAU,speed:.3+this.rng()}));
     this.updateMovers(0);this.updatePlates();this.resize();this.emitHud(true);this.event(this.level.tutorial,'tutorial',true);this.lastFrame=null;this.frameAccumulator=0;
     if(typeof requestAnimationFrame==='function')this.raf=requestAnimationFrame(t=>this.frame(t));
@@ -94,7 +98,10 @@ export class DreamGame {
   }
   setInput(input={}){this.input={x:clamp(Number(input.x)||0,-1,1),y:clamp(Number(input.y)||0,-1,1)};}
   setSound(value){this.options.sound=!!value;}
-  setReducedMotion(value){this.options.reducedMotion=!!value;}
+  setReducedMotion(value){
+    this.options.reducedMotion=!!value;
+    if(value&&this.cap){const opens=this.cap.opens;this.resetCapPresentation();this.cap.opens=opens;this.cap.phase=this.form==='soul'?'open':'closed';this.capOpen=this.form==='soul'?1:0;this.cap.openness=this.capOpen;this.emitHud();}
+  }
   applySeasonTheme(){
     if(!this.level||!this.baseTheme)return;
     this.level.theme={...this.baseTheme,sky:[...this.baseTheme.sky]};
@@ -131,11 +138,58 @@ export class DreamGame {
     if(this.state!=='playing')return false;
     if(this.form==='soul')return this.recall();
     if(this.energy<18){this.event('灵魂正在休息。留在身体里，等光芒恢复。','hint');return false;}
-    this.form='soul';this.body.vx=0;this.soul={x:this.body.x,y:this.body.y-83,vx:0,vy:-30};this.input={x:0,y:0};this.burst(this.soul.x,this.soul.y,18,this.level.theme.spirit,105);this.sound('soul');this.emitHud(true);return true;
+    this.form='soul';this.body.vx=0;this.soul={x:this.body.x,y:this.body.y-83,vx:0,vy:-30};this.input={x:0,y:0};
+    const previous=this.capOpen,opens=(this.cap?.opens||0)+1;this.resetCapPresentation();
+    this.cap={...this.cap,phase:this.options.reducedMotion?'open':'opening',progress:this.options.reducedMotion?1:0,opens,fromOpen:previous,openness:this.options.reducedMotion?1:previous,entry:this.options.reducedMotion?1:0,projection:this.options.reducedMotion?0:1.4};this.capOpen=this.cap.openness;
+    this.burst(this.soul.x,this.soul.y,this.options.reducedMotion?0:7,this.level.theme.spirit,45);this.sound('soul');this.emitHud(true);this.capEvent('open');return true;
   }
   recall(){
     if(this.state!=='playing'||this.form!=='soul')return false;
-    this.burst(this.soul.x,this.soul.y,12,this.level.theme.spirit,100);this.burst(this.body.x,this.body.y-60,12,this.level.theme.light,90);this.form='body';this.soul.vx=0;this.soul.vy=0;this.input={x:0,y:0};this.sound('return');this.emitHud(true);return true;
+    const from=this.getSoulPresentation();
+    this.cap={...this.cap,phase:this.options.reducedMotion?'closed':'returning',age:0,progress:this.options.reducedMotion?1:0,fromOpen:this.capOpen,returnFrom:this.options.reducedMotion||from.alpha<=.02?null:{x:from.x,y:from.y,vx:from.vx,vy:from.vy,scale:from.scale,alpha:from.alpha},projection:0,entry:1};
+    if(this.options.reducedMotion){this.capOpen=0;this.cap.openness=0;}
+    this.form='body';this.soul.vx=0;this.soul.vy=0;this.input={x:0,y:0};this.sound('return');this.emitHud(true);this.capEvent('return');return true;
+  }
+  resetCapPresentation(preserveOpens=false){
+    const opens=preserveOpens?(this.cap?.opens||0):0;
+    this.cap={phase:'closed',age:0,progress:1,opens,openness:0,fromOpen:0,entry:1,projection:0,returnFrom:null};this.capOpen=0;this.thoughtFlights=[];
+  }
+  updateCapPresentation(dt){
+    const cap=this.cap;if(!cap)return;
+    cap.age+=dt;
+    if(cap.phase==='opening'){
+      cap.progress=clamp(cap.age/.64,0,1);
+      // Clasp, hinge, then a peek. Control already belongs to the soul at t = 0.
+      cap.openness=cap.fromOpen+(1-cap.fromOpen)*ease((cap.age-.11)/.34);
+      cap.entry=ease((cap.age-.24)/.3);
+      if(cap.age>=.64){cap.phase='open';cap.progress=1;cap.openness=1;cap.entry=1;}
+    }else if(cap.phase==='returning'){
+      cap.progress=clamp(cap.age/.72,0,1);
+      cap.openness=cap.fromOpen*(1-ease((cap.age-.44)/.28));
+      if(cap.age>=.72){cap.phase='closed';cap.progress=1;cap.openness=0;cap.returnFrom=null;}
+    }
+    if(cap.projection>0&&(cap.phase==='open'||cap.age>.2))cap.projection=Math.max(0,cap.projection-dt);
+    this.capOpen=clamp(cap.openness,0,1);
+    for(const flight of this.thoughtFlights)flight.age+=dt;
+    this.thoughtFlights=this.thoughtFlights.filter(f=>f.age<f.duration).slice(-8);
+  }
+  getSoulPresentation(){
+    if(this.destroyed||!this.body||!this.soul)return null;
+    const cap=this.cap,b=this.body,s=this.soul;
+    if(this.form==='soul'){
+      const q=cap?.phase==='opening'?cap.entry:1;
+      return {...s,x:mix(b.x,s.x,q),y:mix(b.y-65,s.y,q),scale:.36+.64*q,alpha:clamp((cap?.openness||0)*3,0,1),pose:q<1?'peek':'free'};
+    }
+    if(cap?.phase!=='returning'||!cap.returnFrom||this.options.reducedMotion)return null;
+    const progress=clamp(cap.age/.48,0,1);if(progress>=1)return null;
+    const q=ease(progress),u=1-q,from=cap.returnFrom,to={x:b.x,y:b.y-66},lift=Math.min(135,28+Math.hypot(to.x-from.x,to.y-from.y)*.17);
+    const cx1=from.x+(to.x-from.x)*.3,cy1=from.y-lift,cx2=to.x-b.face*33,cy2=to.y-52;
+    return {x:u*u*u*from.x+3*u*u*q*cx1+3*u*q*q*cx2+q*q*q*to.x,y:u*u*u*from.y+3*u*u*q*cy1+3*u*q*q*cy2+q*q*q*to.y,vx:clamp((to.x-from.x)*1.3,-340,340),vy:0,scale:(from.scale??1)*(1-q*.68),alpha:(from.alpha??1)*clamp((1-progress)/.13,0,1),pose:'return'};
+  }
+  capEvent(type,index){this.callbacks.onCapEvent?.({type,...(Number.isInteger(index)?{index}:{}),chapterIndex:this.chapterIndex,festivalId:this.festivalId,mode:this.mode});}
+  rememberInCap(source,type,index){
+    if(!this.options.reducedMotion){this.thoughtFlights.push({x:source.x,y:source.y,color:type==='seal'?this.level.theme.light:this.level.theme.spirit,age:0,duration:.8});this.thoughtFlights=this.thoughtFlights.slice(-8);}
+    this.capEvent(type,index);
   }
   pulse(){
     if(this.state!=='playing'||this.pendingSeal!==null)return false;
@@ -167,7 +221,7 @@ export class DreamGame {
     lamp.lit=true;lamp.glow=1;this.energy=Math.min(this.maxEnergy,this.energy+24);this.burst(lamp.x,lamp.y,30,this.level.theme.light,160);this.pulses.push({x:lamp.x,y:lamp.y,age:0,r:0,max:290});this.sound('light');
     this.emoteTime=2;
     const giftsLeft=this.memories.filter(m=>!m.collected).length;
-    this.event(this.lanterns.every(l=>l.lit)?(this.mode==='festival'&&giftsLeft?'谜灯都亮了，再找回 '+giftsLeft+' 份礼物，就能寄出节日包裹。':'两盏诗灯都醒了。按 E 回到身体，走向发光的门。'):'一盏诗灯亮了。它记住了你的答案，也为身体打开了路。','seal',true);this.emitHud(true);return true;
+    this.event(this.lanterns.every(l=>l.lit)?(this.mode==='festival'&&giftsLeft?'谜灯都亮了，再找回 '+giftsLeft+' 份礼物，就能寄出节日包裹。':'两盏诗灯都醒了。按 E 回到身体，走向发光的门。'):'一盏诗灯亮了。它记住了你的答案，也为身体打开了路。','seal',true);this.emitHud(true);this.rememberInCap(lamp,'seal',index);return true;
   }
   interact(){
     if(this.state!=='playing')return false;
@@ -197,7 +251,7 @@ export class DreamGame {
     this.destroyed=true;this.state='destroyed';if(this.raf!==null&&typeof cancelAnimationFrame==='function')cancelAnimationFrame(this.raf);
     if(typeof window!=='undefined'){window.removeEventListener('resize',this._resize);window.removeEventListener('blur',this._blur);}
     if(typeof document!=='undefined')document.removeEventListener('visibilitychange',this._visibility);
-    if(this.audio?.close)this.audio.close().catch(()=>{});this.audio=null;this.particles=[];
+    if(this.audio?.close)this.audio.close().catch(()=>{});this.audio=null;this.particles=[];this.pulses=[];this.resetCapPresentation(true);
   }
   updateMovers(dt){
     for(const p of this.movers){p.prevX=p.x;p.prevY=p.y;const offset=Math.sin(this.time*p.speed+p.phase)*p.range;p.x=p.baseX+(p.axis==='x'?offset:0);p.y=p.baseY+(p.axis==='y'?offset:0);p.dx=p.x-p.prevX;p.dy=p.y-p.prevY;}
@@ -243,13 +297,13 @@ export class DreamGame {
       const anchor={x:b.x,y:b.y-56},distance=dist(s,anchor);
       if(distance>DREAM_PHYSICS.tether){const factor=DREAM_PHYSICS.tether/distance;s.x=anchor.x+(s.x-anchor.x)*factor;s.y=anchor.y+(s.y-anchor.y)*factor;s.vx*=.35;s.vy*=.35;this.event('离身体太远啦。按 E 回来，带着身体向前走。','hint');}
       this.energy=Math.max(0,this.energy-dt*DREAM_PHYSICS.energyDrain);
-      this.trailTick-=dt;if(this.trailTick<=0){this.trailTick=.035;this.particle(s.x,s.y,0,15,this.level.theme.spirit,1.4,4);}
+      this.trailTick-=dt;if(this.trailTick<=0&&!this.options.reducedMotion){this.trailTick=.055;this.particle(s.x,s.y,-s.vx*.06,12-s.vy*.03,this.level.theme.spirit,.65,2.2);}
       if(this.energy<=0){this.recall();this.event('灵魂打了个哈欠，回到身体充充电。已点亮的灯会等你。','recall',true);}
     }else this.energy=Math.min(this.maxEnergy,this.energy+dt*18);
-    this.capOpen=mix(this.capOpen,this.form==='soul'?1:0,dt*9);
+    this.updateCapPresentation(dt);
     for(const lamp of this.lanterns)lamp.glow=Math.max(0,lamp.glow-dt*.4);
     const actor=this.form==='soul'?this.soul:{x:b.x,y:b.y-30};
-    for(const m of this.memories){if(!m.collected&&dist(m,actor)<34){m.collected=true;this.emoteTime=2.3;this.burst(m.x,m.y,24,this.level.theme.accent,125);this.energy=Math.min(this.maxEnergy,this.energy+15);this.sound('memory');this.event(this.mode==='festival'?'收进邮包 · '+(m.name||'节日礼物')+'（'+this.memories.filter(item=>item.collected).length+'/3）':'拾到一页记忆。有人把没说完的话，留在了这里。','memory',true);}}
+    for(let index=0;index<this.memories.length;index++){const m=this.memories[index];if(!m.collected&&dist(m,actor)<34){m.collected=true;this.emoteTime=2.3;this.burst(m.x,m.y,24,this.level.theme.accent,125);this.energy=Math.min(this.maxEnergy,this.energy+15);this.sound('memory');this.event(this.mode==='festival'?'收进邮包 · '+(m.name||'节日礼物')+'（'+this.memories.filter(item=>item.collected).length+'/3）':'拾到一页记忆。有人把没说完的话，留在了这里。','memory',true);this.rememberInCap(m,'memory',index);}}
     for(const h of this.hazards){
       h.frozen=Math.max(0,h.frozen-dt);h.hitCooldown=Math.max(0,h.hitCooldown-dt);
       if(h.frozen===0)h.clock+=dt;
@@ -272,13 +326,13 @@ export class DreamGame {
   respawn(message='暖灯把你接住了。'){
     if(this.state!=='playing')return false;
     if(this.featherCharges>0){this.featherCharges--;message='轻羽接住了阿拾。这次没有增加跌落次数，护符已经化成星光。';}else this.deaths++;
-    this.burst(this.body.x,this.body.y-30,24,this.level.theme.accent,170);this.body={...this.body,x:this.checkpoint.x,y:this.checkpoint.y,vx:0,vy:0,grounded:true,platform:null,invulnerable:2.1,land:.1};this.soul={x:this.body.x,y:this.body.y-80,vx:0,vy:0};this.form='body';this.energy=this.maxEnergy;this.input={x:0,y:0};this.shake=this.options.reducedMotion?0:1.1;this.sound('fall');this.updatePlates();this.event(message,'respawn',true);this.emitHud(true);return true;
+    this.burst(this.body.x,this.body.y-30,24,this.level.theme.accent,170);this.body={...this.body,x:this.checkpoint.x,y:this.checkpoint.y,vx:0,vy:0,grounded:true,platform:null,invulnerable:2.1,land:.1};this.soul={x:this.body.x,y:this.body.y-80,vx:0,vy:0};this.form='body';this.resetCapPresentation(true);this.energy=this.maxEnergy;this.input={x:0,y:0};this.shake=this.options.reducedMotion?0:1.1;this.sound('fall');this.updatePlates();this.event(message,'respawn',true);this.emitHud(true);return true;
   }
   exitReady(){return this.lanterns.every(l=>l.lit)&&(this.mode!=='festival'||this.memories.every(m=>m.collected));}
   canExit(){return this.state==='playing'&&this.form==='body'&&this.exitReady()&&Math.abs(this.body.x-this.level.exit.x)<52&&Math.abs(this.body.y-this.level.exit.y)<90;}
   finish(){
     if(this.completed||this.state!=='playing'||!this.canExit())return false;
-    this.completed=true;this.state='complete';this.input={x:0,y:0};
+    this.completed=true;this.state='complete';this.input={x:0,y:0};this.resetCapPresentation(true);
     const result={chapterIndex:this.chapterIndex,time:Math.round(this.time*10)/10,memories:this.memories.filter(m=>m.collected).length,deaths:this.deaths,mode:this.mode,festivalId:this.festivalId};result.gifts=result.memories;result.stars=getDreamStars(result,this.level.parTime);this.sound('complete');this.emitHud(true);this.callbacks.onComplete?.(result);return true;
   }
   getNearHint(){
@@ -304,7 +358,7 @@ export class DreamGame {
     const memories=this.memories?.filter(m=>m.collected).length||0,seals=this.lanterns?.filter(l=>l.lit).length||0;
     const npc=this.form==='body'?this.level?.npcs?.find(item=>Math.abs(item.x-this.body.x)<98&&Math.abs(item.y-this.body.y)<90):null;
     const target=npc?{kind:'npc',id:this.festival?.npc?.id||npc.id,name:this.festival?.npc?.name||'节日朋友',action:'talk'}:null;
-    return {chapterIndex:this.chapterIndex||0,mode:this.mode||'story',festivalId:this.festivalId||null,time:this.time||0,memories,gifts:memories,totalMemories:3,seals,totalSeals:2,energy:this.energy||0,maxEnergy:DREAM_PHYSICS.maxEnergy,form:this.form,deaths:this.deaths||0,objective:this.mode==='festival'?(seals===2&&memories===3?'礼物齐了，回到身体寄出节日包裹':`谜灯 ${seals} / 2 · 礼物 ${memories} / 3`):(seals===2?'回到身体，走向发光的出口':`点亮诗灯 ${seals} / 2 · 找回记忆 ${memories} / 3`),nearHint:this.getNearHint(),target,state:this.state,buffs:{compass:Math.ceil(this.compassTime||0),feather:this.featherCharges||0}};
+    return {chapterIndex:this.chapterIndex||0,mode:this.mode||'story',festivalId:this.festivalId||null,time:this.time||0,memories,gifts:memories,totalMemories:3,seals,totalSeals:2,energy:this.energy||0,maxEnergy:DREAM_PHYSICS.maxEnergy,form:this.form,deaths:this.deaths||0,objective:this.mode==='festival'?(seals===2&&memories===3?'礼物齐了，回到身体寄出节日包裹':`谜灯 ${seals} / 2 · 礼物 ${memories} / 3`):(seals===2?'回到身体，走向发光的出口':`点亮诗灯 ${seals} / 2 · 找回记忆 ${memories} / 3`),nearHint:this.getNearHint(),target,state:this.state,buffs:{compass:Math.ceil(this.compassTime||0),feather:this.featherCharges||0},cap:{phase:this.cap?.phase||'closed',progress:this.cap?.progress??1,opens:this.cap?.opens||0}};
   }
   emitHud(){this.callbacks.onHud?.(this.getSnapshot());}
   event(text,type='hint',force=false){if(!force&&this.eventCooldown>0)return;this.eventCooldown=3.3;this.callbacks.onEvent?.({type,text});}
@@ -321,7 +375,7 @@ export class DreamGame {
   }
 
   render(){
-    if(!this.level||!this.ctx)return;
+    if(this.destroyed||!this.level||!this.ctx)return;
     const c=this.ctx,w=this.viewWidth,h=640,t=this.options.reducedMotion?0:this.visualTime,theme=this.level.theme;
     c.setTransform(this.dpr*this.scale,0,0,this.dpr*this.scale,0,0);c.clearRect(0,0,w,h);c.lineCap='round';c.lineJoin='round';
     this.drawBackground(c,w,h,t);
@@ -339,12 +393,14 @@ export class DreamGame {
     for(const memory of this.memories)if(!memory.collected){if(this.mode==='festival')drawFestivalGift(this,c,memory,t);else this.drawMemory(c,memory,t);}
     for(let i=0;i<this.lanterns.length;i++)this.drawLantern(c,this.lanterns[i],i,t);
     for(const hazard of this.hazards)this.drawHazard(c,hazard,t);
+    drawSoulVision(this,c,t);
     this.drawSigns(c);
     for(const npc of this.level.npcs||[])drawFestivalNPC(this,c,npc,t);
     this.drawCompanion(c,this.companion.x,this.companion.y,t);
     if(this.form==='soul')this.drawTether(c,t);
+    drawCapTheatre(this,c,t);
     this.drawCharacter(c,this.body,t);
-    if(this.form==='soul')this.drawSoul(c,this.soul,t);
+    const presentedSoul=this.getSoulPresentation();if(presentedSoul)this.drawSoul(c,presentedSoul,t);
     for(const p of this.particles){c.globalAlpha=Math.max(0,p.life/p.maxLife)*.75;ellipse(c,p.x,p.y,p.size,p.size*.75,p.color);}
     c.globalAlpha=1;
     for(const p of this.pulses){c.globalAlpha=Math.max(0,1-p.age/.8)*.5;c.strokeStyle=theme.spirit;c.lineWidth=2;c.beginPath();c.ellipse(p.x,p.y,p.r,p.r*.85,0,0,TAU);c.stroke();}
@@ -498,11 +554,14 @@ export class DreamGame {
     for(const eye of [-5,5]){ellipse(c,eye,-31,3,4*blink,'#293f42');if(blink>.3)ellipse(c,eye+look,-32,1,1.4,'#edf3d9');}ellipse(c,-10,-27,3,1.5,'#d9a99b66');ellipse(c,10,-27,3,1.5,'#d9a99b66');c.fillStyle='#eacb93';c.beginPath();c.moveTo(-3,-25);c.lineTo(3,-25);c.lineTo(0,-21);c.fill();line(c,[[-9,-7],[-5,-3],[1,-6],[7,-3]],'#8c7462',2);if(happy)star(c,20,-46,4,this.level.theme.light);c.restore();
   }
   drawTether(c,t){
-    const b=this.body,s=this.soul;const sx=b.x,sy=b.y-68;const bend=(sx+s.x)/2;c.save();c.globalAlpha=.3;c.strokeStyle=this.level.theme.spirit;c.lineWidth=1.5;c.setLineDash([3,8]);c.lineDashOffset=-t*18;c.beginPath();c.moveTo(sx,sy);c.quadraticCurveTo(bend,Math.min(sy,s.y)-45,s.x,s.y);c.stroke();c.setLineDash([]);c.globalAlpha=.55;for(let i=0;i<3;i++){const u=(t*.22+i/3)%1;const px=(1-u)*(1-u)*sx+2*(1-u)*u*bend+u*u*s.x,py=(1-u)*(1-u)*sy+2*(1-u)*u*(Math.min(sy,s.y)-45)+u*u*s.y;ellipse(c,px,py,2.5,2.5,this.level.theme.spirit);}c.restore();
+    const b=this.body,s=this.getSoulPresentation();if(!s||s.alpha<.05)return;const sx=b.x,sy=b.y-68;const bend=(sx+s.x)/2;c.save();c.globalAlpha=.25*s.alpha;c.strokeStyle=this.level.theme.spirit;c.lineWidth=1.25;c.setLineDash([3,8]);c.lineDashOffset=-t*18;c.beginPath();c.moveTo(sx,sy);c.quadraticCurveTo(bend,Math.min(sy,s.y)-45,s.x,s.y);c.stroke();c.setLineDash([]);c.globalAlpha=.55*s.alpha;for(let i=0;i<3;i++){const u=(t*.22+i/3)%1;const px=(1-u)*(1-u)*sx+2*(1-u)*u*bend+u*u*s.x,py=(1-u)*(1-u)*sy+2*(1-u)*u*(Math.min(sy,s.y)-45)+u*u*s.y;ellipse(c,px,py,2,2,this.level.theme.spirit);}c.restore();
   }
   drawCharacter(c,b,t){
-    const th=this.level.theme,outfit=this.getOutfitId(),dress=getOutfitPalette(outfit),walking=b.grounded&&Math.abs(b.vx)>12,phase=b.walk,step=walking?Math.sin(phase):0,hop=walking?Math.abs(Math.cos(phase))*2.4:Math.sin(t*1.8)*1.1,scaleY=1-b.land;
-    c.save();c.translate(b.x,b.y);ellipse(c,0,2,24-(b.grounded?0:6),5,'#0c18294d');if(b.invulnerable>0&&Math.floor(t*13)%2===0)c.globalAlpha=.48;c.scale(b.face,scaleY);c.translate(0,-hop);
+    const th=this.level.theme,outfit=this.getOutfitId(),dress=getOutfitPalette(outfit),walking=b.grounded&&Math.abs(b.vx)>12,phase=b.walk,step=walking?Math.sin(phase):0,hop=this.options.reducedMotion?0:walking?Math.abs(Math.cos(phase))*2.4:Math.sin(t*1.8)*1.1,scaleY=1-b.land;
+    const cap=this.cap,opening=cap.phase==='opening',returning=cap.phase==='returning',attentive=this.form==='soul'||returning,sleepy=this.energy<20,happy=this.emoteTime>0;
+    const reach=opening?ease(cap.age/.12)*(1-.7*ease((cap.age-.24)/.3)):returning?ease(cap.age/.1)*(1-ease((cap.age-.58)/.14)):attentive?.3:0;
+    const leftHand={x:mix(-16-step*4,-25,this.capOpen),y:mix(-16,-60,this.capOpen)},rightHand={x:mix(17+step*4,25,reach),y:mix(-16,-62,reach)};
+    c.save();c.translate(b.x,b.y);ellipse(c,0,2,24-(b.grounded?0:6),5,'#0c18294d');if(b.invulnerable>0&&!this.options.reducedMotion&&Math.floor(t*13)%2===0)c.globalAlpha=.48;c.scale(b.face,scaleY);c.translate(0,-hop);
     drawOutfitBack(c,outfit,t,walking);
     if(this.featherCharges){for(let i=0;i<3;i++){const a=t*.55+i*TAU/3;star(c,Math.cos(a)*30,-39+Math.sin(a)*22,3,'#d6e8ecaa');}}
     // A stitched delivery satchel and springy scarf give the small silhouette a story.
@@ -510,26 +569,41 @@ export class DreamGame {
     const legs=[{x:-7,phase:step},{x:7,phase:-step}];
     for(const leg of legs){const kneeX=leg.x+leg.phase*4,footX=leg.x+leg.phase*8;line(c,[[leg.x,-21],[kneeX,-11],[footX,-2]],'#d9cfb4',5);ellipse(c,kneeX,-11,3,3,'#f0e5c9');ellipse(c,footX+2,-2,7,3.3,'#b9c9b6');}
     c.beginPath();c.moveTo(-13,-39);c.quadraticCurveTo(1,-47,14,-38);c.lineTo(17,-17);c.quadraticCurveTo(0,-12,-16,-18);c.closePath();const coat=c.createLinearGradient(-15,-37,18,-14);coat.addColorStop(0,dress.trim);coat.addColorStop(.25,dress.coat);coat.addColorStop(1,dress.coat);c.fillStyle=coat;c.fill();line(c,[[0,-35],[0,-18]],dress.trim+'99',1.3);line(c,[[-11,-34],[-5,-29],[0,-36],[6,-29],[12,-34]],dress.trim+'aa',1);for(let y=-31;y<-18;y+=6)ellipse(c,2,y,1.5,1.5,'#e3d6b3');box(c,-11,-27,7,6,2,dress.coat,dress.trim+'88');star(c,10,-29,2,dress.trim);
-    line(c,[[-13,-35],[-18-step*3,-24],[-16-step*4,-16]],'#d9cfb4',4);line(c,[[13,-35],[19+step*3,-25],[17+step*4,-16]],'#d9cfb4',4);ellipse(c,-16-step*4,-16,3.5,4,'#e8ddc1');ellipse(c,17+step*4,-16,3.5,4,'#e8ddc1');
+    line(c,[[-13,-35],[mix(-18-step*3,-29,this.capOpen),mix(-24,-42,this.capOpen)],[leftHand.x,leftHand.y]],'#d9cfb4',4);line(c,[[13,-35],[mix(19+step*3,31,reach),mix(-25,-43,reach)],[rightHand.x,rightHand.y]],'#d9cfb4',4);ellipse(c,mix(-18-step*3,-29,this.capOpen),mix(-24,-42,this.capOpen),2.8,2.8,'#f3e6c5');ellipse(c,mix(19+step*3,31,reach),mix(-25,-43,reach),2.8,2.8,'#f3e6c5');
     c.beginPath();c.moveTo(-9,-38);c.bezierCurveTo(-27,-41,-34,-52+Math.sin(t*4)*3,-49,-44+Math.sin(t*3)*4);c.lineTo(-44,-34+Math.sin(t*3+.4)*4);c.bezierCurveTo(-31,-36,-18,-32,-9,-34);c.closePath();c.fillStyle=dress.scarf;c.fill();line(c,[[-40,-41],[-39,-35]],'#f5d2a577',1);box(c,-16,-41,32,8,4,dress.scarf);line(c,[[-11,-37],[11,-37]],'#fff0cf33',1);
-    const tilt=clamp(b.vx/240,-1,1)*.055+(b.grounded?0:b.vy/9000);c.save();c.translate(0,-49);c.rotate(tilt);
+    const tilt=this.options.reducedMotion?0:clamp(b.vx/240,-1,1)*.055+(b.grounded?0:b.vy/9000)+(attentive?-.025:0);c.save();c.translate(0,-49);c.rotate(tilt);
     // Lower skull: cheekbones, inset eye sockets, little teeth and a hairline crack.
     c.beginPath();c.moveTo(-22,-13);c.bezierCurveTo(-26,0,-23,10,-14,14);c.lineTo(-13,22);c.quadraticCurveTo(0,26,13,22);c.lineTo(14,14);c.bezierCurveTo(23,10,26,0,22,-13);c.closePath();const ivory=c.createLinearGradient(-22,-13,23,23);ivory.addColorStop(0,'#fff0cf');ivory.addColorStop(.48,'#e9d8b6');ivory.addColorStop(1,'#c7b996');c.fillStyle=ivory;c.fill();c.strokeStyle='#c7bb9c';c.lineWidth=1.2;c.stroke();
-    const blink=(Math.sin(t*1.27+.4)>.985||this.form==='soul')?.12:this.emoteTime>1.7?.65:1,look=this.form==='soul'?clamp((this.soul.x-b.x)/150,-2,2):clamp(b.vx/180,-1.3,1.3)+.35;
-    for(const x of [-9,9]){ellipse(c,x,1,6.6,8.2*blink,'#2d303d');if(blink>.2){ellipse(c,x+look+1,-1,2.1,2.6,th.light);ellipse(c,x+look+2,-3,1,1,'#fff1ce');}}
+    const shown=this.getSoulPresentation(),blink=Math.sin(t*1.27+.4)>.985?.12:sleepy?.43:opening?1.06:happy?.7:1,look=attentive?clamp(((shown?.x??b.x)-b.x)*b.face/100,-3,3):clamp(b.vx*b.face/180,-1.3,1.3)+.35,lookY=attentive?-2.7:sleepy?1.8:-.7;
+    for(const x of [-9,9]){ellipse(c,x,1,6.6,8.2*blink,'#2d303d');if(blink>.2){ellipse(c,x+look,lookY,2.2,2.6,th.light);ellipse(c,x+look+1,lookY-1.5,.9,1,'#fff1ce');}}
+    if(attentive||happy){line(c,[[-15,-11],[-10,-13],[-5,-11]],'#bba684',1.2);line(c,[[5,-11],[10,-13],[15,-11]],'#bba684',1.2);}
     ellipse(c,-18,8,3.8,1.7,'#d39b8b44');ellipse(c,18,8,3.8,1.7,'#d39b8b44');c.beginPath();c.moveTo(0,9);c.lineTo(-3,14);c.lineTo(3,14);c.closePath();c.fillStyle='#736566';c.fill();for(const x of [-7,0,7])line(c,[[x,20],[x,24]],'#9b8d7a',1.4);
-    // The cap lifts around a real hinge, rather than swapping a static sprite.
-    c.save();c.translate(-22,-13);c.rotate(-this.capOpen*1.12);c.translate(22,13);c.beginPath();c.moveTo(-22,-13);c.bezierCurveTo(-21,-40,21,-40,22,-13);c.closePath();c.fillStyle='#f1e5c8';c.fill();c.strokeStyle='#c7bb9c';c.lineWidth=1.2;c.stroke();line(c,[[-4,-31],[-1,-25],[-5,-20],[0,-18]],'#a69a84',1.2);line(c,[[-21,-13],[21,-13]],'#b8a987',2);line(c,[[-16,-26],[-10,-31],[-3,-33]],'#fff7df77',2);drawOutfitHat(c,outfit,t);c.restore();ellipse(c,-22,-13,3,3,'#b7a285');
-    if(this.capOpen>.1){c.globalAlpha*=this.capOpen;ellipse(c,0,-15,18,4,th.spirit+'88');for(let i=0;i<3;i++)star(c,-8+i*8,-25-Math.sin(t*3+i)*4,2.5,th.spirit);}
-    c.restore();c.restore();
+    // The miniature stays in the bowl; the ivory lid, engraving and hat all hinge.
+    drawCapInterior(c,this.capScene,t,this.capOpen);
+    c.save();c.translate(-22,-13);c.rotate(-this.capOpen*1.16);c.translate(22,13);c.beginPath();c.moveTo(-22,-13);c.bezierCurveTo(-21,-40,21,-40,22,-13);c.closePath();const capIvory=c.createLinearGradient(0,-36,0,-12);capIvory.addColorStop(0,'#fff3d8');capIvory.addColorStop(1,'#d8c6a0');c.fillStyle=capIvory;c.fill();c.strokeStyle='#b8a788';c.lineWidth=1.2;c.stroke();
+    line(c,[[-4,-31],[-1,-25],[-5,-20],[0,-18]],'#a69a84',1.15);line(c,[[-21,-13],[21,-13]],'#a88a5f',3);line(c,[[-18,-14],[18,-14]],'#f0dca7',.9);line(c,[[-16,-26],[-10,-31],[-3,-33]],'#fff8e4bb',2);box(c,19,-17,6,6,2,'#d1ac6d','#e8cf92');
+    star(c,10,-25,2.2,'#c1a574');drawOutfitHat(c,outfit,t);c.restore();
+    ellipse(c,-22,-13,3.8,3.8,'#bda16f');ellipse(c,-22,-13,2,2,'#f0d69a');line(c,[[-23,-14],[-21,-12]],'#917b5f',.9);box(c,20,-12,5,6,1.5,'#a38b64');ellipse(c,22.5,-9,1.1,1.1,'#f3d998');
+    if(sleepy)ellipse(c,0,19,3,2.4,'#9f8b7a');else if(happy)line(c,[[-8,18],[-4,20],[4,20],[8,18]],'#a68a75',1);
+    c.restore();
+    // Individual knuckles and a curled thumb keep the clasp gesture legible at play size.
+    for(const hand of [leftHand,rightHand]){ellipse(c,hand.x,hand.y,3.8,4,'#f2e5c6');line(c,[[hand.x-1,hand.y-2],[hand.x-1,hand.y+1]],'#b9a88b',.8);line(c,[[hand.x+1,hand.y-2],[hand.x+1,hand.y+1]],'#b9a88b',.8);ellipse(c,hand.x-3,hand.y+1,1.8,2,'#e7d8b7');}
+    if(happy){star(c,32,-56,3,th.light+'cc');star(c,-36,-38,2,th.light+'88');}c.restore();
   }
   drawSoul(c,s,t){
-    const th=this.level.theme,bob=this.options.reducedMotion?0:Math.sin(t*3)*2;
-    const glow=c.createRadialGradient(s.x,s.y,1,s.x,s.y,66);glow.addColorStop(0,th.spirit+'50');glow.addColorStop(1,th.spirit+'00');c.fillStyle=glow;c.fillRect(s.x-68,s.y-68,136,136);
-    c.save();c.translate(s.x,s.y+bob);c.rotate(clamp(s.vx/340,-1,1)*.14);const tailX=-s.vx*.055;
-    c.beginPath();c.moveTo(-15,4);c.bezierCurveTo(-27,-21,16,-34,19,-9);c.bezierCurveTo(25,9,11,21,tailX,27+Math.sin(t*4)*3);c.quadraticCurveTo(4,15,-15,4);c.fillStyle='#d5f5df';c.fill();c.strokeStyle=th.spirit;c.lineWidth=1.5;c.stroke();
-    const blink=Math.sin(t*1.42+1)>.99?.18:1,look=clamp(s.vx/250,-1.2,1.2);ellipse(c,-6,-6,4,5*blink,'#35545d');ellipse(c,7,-6,4,5*blink,'#35545d');if(blink>.3){ellipse(c,-5+look,-7,1.2,1.4,'#fff8df');ellipse(c,8+look,-7,1.2,1.4,'#fff8df');}if(this.emoteTime>0){star(c,-23,-12,3,th.light+'bb');star(c,23,-18,2.5,th.light+'bb');}line(c,[[-3,3],[0,5],[3,3]],'#6d9c94',1.2);ellipse(c,-12,1,3,1.5,'#f2bcac77');ellipse(c,13,1,3,1.5,'#f2bcac77');star(c,0,-24,3,th.light);c.restore();
-    if(this.energy<25){c.strokeStyle='#efba9c88';c.lineWidth=2;c.beginPath();c.arc(s.x,s.y,30,-Math.PI/2,-Math.PI/2+TAU*this.energy/this.maxEnergy);c.stroke();}
+    const th=this.level.theme,bob=this.options.reducedMotion?0:Math.sin(t*3)*2,size=s.scale??1,alpha=s.alpha??1,sleepy=this.energy<25,returning=s.pose==='return';if(alpha<=0)return;
+    c.save();c.globalAlpha*=alpha;
+    const glow=c.createRadialGradient(s.x,s.y,1,s.x,s.y,58*size);glow.addColorStop(0,th.spirit+'50');glow.addColorStop(1,th.spirit+'00');c.fillStyle=glow;c.fillRect(s.x-60*size,s.y-60*size,120*size,120*size);
+    c.save();c.translate(s.x,s.y+bob*size);c.rotate(this.options.reducedMotion?0:clamp(s.vx/340,-1,1)*.14);c.scale(size,size);const tailX=-clamp(s.vx,-400,400)*.055,tailY=(sleepy?23:29)+Math.sin(t*4)*2;
+    c.beginPath();c.moveTo(-15,4);c.bezierCurveTo(-27,-21,16,-34,19,-9);c.bezierCurveTo(25,9,11,21,tailX,tailY);c.quadraticCurveTo(4,15,-15,4);const pearl=c.createLinearGradient(-15,-24,18,26);pearl.addColorStop(0,'#f4fff0');pearl.addColorStop(.5,'#d5f5df');pearl.addColorStop(1,th.spirit+'aa');c.fillStyle=pearl;c.fill();c.strokeStyle=th.spirit;c.lineWidth=1.5;c.stroke();
+    c.beginPath();c.moveTo(-8,14);c.quadraticCurveTo(1,19,tailX,tailY);c.strokeStyle='#ffffff66';c.lineWidth=1;c.stroke();line(c,[[-14,-16],[-10,-20],[-4,-22]],'#ffffff99',1.5);
+    const blink=Math.sin(t*1.42+1)>.99?.18:sleepy?.42:1,look=clamp(s.vx/250,-1.2,1.2);
+    if(returning&&!sleepy){for(const x of [-6,7]){c.beginPath();c.moveTo(x-3,-4);c.quadraticCurveTo(x,-9,x+3,-4);c.strokeStyle='#35545d';c.lineWidth=1.8;c.stroke();}}
+    else {ellipse(c,-6,-6,4,5*blink,'#35545d');ellipse(c,7,-6,4,5*blink,'#35545d');if(blink>.3){ellipse(c,-5+look,-7,1.2,1.4,'#fff8df');ellipse(c,8+look,-7,1.2,1.4,'#fff8df');}}
+    if(this.emoteTime>0){star(c,-23,-12,3,th.light+'bb');star(c,23,-18,2.5,th.light+'bb');}
+    if(sleepy)ellipse(c,1,4,2.3,3,'#6d9c94');else if(s.pose==='peek')ellipse(c,1,3,2,2.6,'#6d9c94');else {c.beginPath();c.moveTo(-3,3);c.quadraticCurveTo(1,8,5,3);c.strokeStyle='#6d9c94';c.lineWidth=1.2;c.stroke();}
+    ellipse(c,-12,1,3,1.5,'#f2bcac77');ellipse(c,13,1,3,1.5,'#f2bcac77');star(c,0,-25,3.4,th.light);c.restore();
+    if(sleepy&&!returning){c.strokeStyle='#efba9c88';c.lineWidth=2;c.beginPath();c.arc(s.x,s.y,30*size,-Math.PI/2,-Math.PI/2+TAU*this.energy/this.maxEnergy);c.stroke();}c.restore();
   }
   drawForeground(c,w,h,t){
     const th=this.level.theme;
