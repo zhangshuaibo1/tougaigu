@@ -72,15 +72,43 @@ function lantern(c, pose) {
   box(c, -11, -11, 22, 3, 1, brass); box(c, -9, 13, 18, 3, 1, pose.painted?brass:'#c0a782');
   c.restore();
 }
+// The ticket fan has a single hinge. The hands, three papers and moon stamp
+// remain attached when Rongrong invites the exposed cap onto the stage.
+function theatreTicketGrip(pose) {
+  return {x:pose.propX, y:-26-pose.lift, angle:pose.theatre ? -.16*pose.invite+.025*pose.theatreLamps : 0};
+}
 function tickets(c, pose) {
-  c.save(); c.translate(0, -26 - pose.lift);
-  for (const [i, angle] of [-.28, 0, .25].entries()) {
-    c.save(); c.translate((i - 1) * 5, 1); c.rotate(angle + (pose.reduced ? 0 : Math.sin(pose.time * 1.3) * .035));
-    box(c, -7, -12, 14, 25, 1.8, i === 1 ? '#ead4b3' : '#cbb4c8', '#a78c9b', .75);
-    line(c, [[-4, 6], [4, 6]], '#ad939a', .8);
-    for (const x of [-3, 0, 3]) ellipse(c, x, 9, .5, .5, '#997d94');
-    ellipse(c, 0, -3, 4, 4, '#9b7eaf'); ellipse(c, 1.6, -4.3, 3.5, 3.5, i === 1 ? '#ead4b3' : '#cbb4c8');
+  const grip=theatreTicketGrip(pose);
+  c.save();c.translate(grip.x,grip.y);c.rotate(grip.angle);
+  if(pose.painted)ellipse(c,0,2,15,15,'#3d30476b');
+  for(const [i,angle] of [-.31,0,.28].entries()) {
+    const sway=pose.reduced?0:Math.sin(pose.time*1.3)*.024;
+    c.save();c.translate((i-1)*5,1);c.rotate(angle+sway+(i-1)*pose.invite*.07);
+    const color=i===1?'#f1dfbe':'#d6bfd3';
+    if(pose.painted){
+      box(c,-7.8,-11.4,15.6,25.8,1.7,'#806985','#e7d4bb',.6);
+      box(c,-7,-12,14,25,1.7,material(c,-7,-12,7,13,[[0,'#fff3dc'],[.55,color],[1,'#ad92b3']]),'#a58c9a',.75);
+      // A little diagonal cut-out and a pressed brass border are legible at 1x.
+      path(c,p=>{p.moveTo(-7,-7);p.lineTo(-4.7,-5.2);p.lineTo(-7,-3.4);p.closePath();},'#6a53739c');
+      line(c,[[-5.5,-9.2],[5,-9.2]],'#fff5d3ad',.7);
+      line(c,[[-5.4,4],[5.4,4]],'#aa8f9ca8',.8);
+    } else box(c,-7,-12,14,25,1.8,color,'#a78c9b',.75);
+    line(c,[[-4,6],[4,6]],'#ad939a',.8);
+    for(const x of [-3,0,3])ellipse(c,x,9,.5,.5,'#997d94');
+    ellipse(c,0,-3,4,4,pose.painted?'#a889a6':'#9b7eaf');
+    ellipse(c,1.6,-4.3,3.5,3.5,color);
+    if(pose.painted){
+      path(c,p=>{p.moveTo(0,-6.3);p.quadraticCurveTo(2.8,-6.4,3.2,-3.7);},null,'#fff4cf',.8);
+      star(c,-2,-8,.75,'#c8a46e');
+    }
     c.restore();
+  }
+  // Fingertips in the same rotated space as the paper: no detached hands.
+  if(pose.theatre){
+    for(const side of [-1,1]){
+      ellipse(c,side*10,-2,2.4,3.1,'#e8d4b4',side*.12,'#b6a08f');
+      ellipse(c,side*9.2,-3,1,1.25,'#fff1d0');
+    }
   }
   c.restore();
 }
@@ -95,6 +123,8 @@ function moth(c, pose) {
     const membrane=pose.painted?material(c,0,16,29,-27,[[0,side<0?'#998998':'#b39c9a'],[.45,side<0?'#c9b5ad':'#dbc3ab'],[1,'#f0d9b2']]):side < 0 ? '#d7bba1' : '#e5cfad';
     path(c,mothWing,membrane,pose.painted?'#978896':'#9b8291',1.1);
     if(pose.painted){
+      // The edge catches a narrow crescent of the real theatre moonlight.
+      path(c,p=>{p.moveTo(6,-19);p.bezierCurveTo(15,-35,33,-34,29,-21);},null,pose.theatre?'#f2e5f1a6':'#fff0d095',1.2);
       path(c,p=>{p.moveTo(8,-15);p.bezierCurveTo(17,-31,31,-31,31,-21);},null,'#fff0d095',.8);
       path(c,p=>{p.moveTo(6,7);p.quadraticCurveTo(21,14,15,22);},null,'#ead5ba75',.8);
       path(c,p=>{p.moveTo(4,-3);p.quadraticCurveTo(15,-15,28,-16);},null,'#8d87944d',2.2);
@@ -107,9 +137,17 @@ function moth(c, pose) {
   }
   line(c, [[-7,-12],[-8,-2],[-13,-1]], '#c9bbad', 3.3);
   line(c, [[7,-12],[8,-2],[13,-1]], '#c9bbad', 3.3);
-  const coat=pose.painted?material(c,-17,-30,16,-23,[[0,'#68667f'],[.42,'#9586a2'],[.78,'#b49aab'],[1,'#897489']]):'#8c7799';
+  const coat=pose.painted?material(c,-17,-30,16,-23,[[0,pose.theatre?'#5f4e78':'#68667f'],[.42,'#9586a2'],[.78,pose.theatre?'#c5a8cf':'#b49aab'],[1,'#897489']]):'#8c7799';
   path(c, p => { p.moveTo(-11,-49); p.quadraticCurveTo(0,-55,11,-49); p.quadraticCurveTo(19,-31,14,-10); p.quadraticCurveTo(0,-4,-14,-10); p.quadraticCurveTo(-18,-31,-11,-49); }, coat, pose.painted?'#625a73':'#67556f', 1.1);
-  if(pose.painted)path(c,p=>{p.moveTo(11,-45);p.quadraticCurveTo(16,-28,12.5,-13);},null,'#e3c5b366',1.15);
+  if(pose.painted){
+    path(c,p=>{p.moveTo(11,-45);p.quadraticCurveTo(16,-28,12.5,-13);},null,'#e3c5b366',1.15);
+    if(pose.theatre){
+      path(c,p=>{p.moveTo(-9,-44);p.quadraticCurveTo(-4,-40,0,-42);p.quadraticCurveTo(6,-41,10,-44);},null,'#efdfd1b5',1);
+      path(c,p=>{p.moveTo(-16,-19);p.quadraticCurveTo(-12,-13,-11,-10);},null,'#e8cade8c',1.4);
+      path(c,p=>{p.moveTo(14,-30);p.quadraticCurveTo(17,-23,15,-17);},null,'#ecd1e8a1',1.4);
+      ellipse(c,0,-43,1.7,1.3,'#ead6ae',0,'#a38b78');
+    }
+  }
   for (const y of [-38, -27, -17]) path(c, p => { p.moveTo(-12,y); p.quadraticCurveTo(0,y+4,12,y); }, null, pose.painted?'#ceb2be9c':'#b99db4', 2);
   line(c, [[-9,-43],[-11,-15]], '#d4b9bd', .7);
   for (const y of [-39,-33,-27,-21]) line(c, [[-11,y],[-9,y+1]], '#e4d2bd', .7);
@@ -124,6 +162,10 @@ function moth(c, pose) {
   if(pose.painted){face=c.createRadialGradient(5,-73,2,1,-65,23);face.addColorStop(0,'#f9e9c8');face.addColorStop(.58,'#ead3b0');face.addColorStop(1,'#bda69d');}
   ellipse(c,0,-65,16.3,19,face,0,pose.painted?'#a39599':'#a78d94');
   if(pose.painted){
+    if(pose.theatre){
+      ellipse(c,-12.4,-62,3.5,2,'#f8e2d456');
+      ellipse(c,12.4,-62,3.5,2,'#f8e2d456');
+    }
     path(c,p=>{p.moveTo(9,-79);p.quadraticCurveTo(16,-72,14.5,-61);},null,'#fff0cd9c',.85);
     path(c,p=>{p.moveTo(-12,-75);p.quadraticCurveTo(-17,-65,-11,-55);},null,'#8b97aa55',.9);
   }
@@ -149,8 +191,8 @@ function moth(c, pose) {
     line(c,arm,pose.painted?'#b29d99':'#cab5a5',3.1);
     if(pose.painted)line(c,arm,'#eed8b6bb',1.1);
   }
-  if(pose.prop==='theatre-ticket') tickets(c,pose); else lantern(c,pose);
-  for(const side of [-1,1]) ellipse(c,side*11+propX,handY,2.6,3.2,'#ead7b5');
+  if(pose.prop==='theatre-ticket')tickets(c,pose);else lantern(c,pose);
+  if(!pose.theatre)for(const side of [-1,1])ellipse(c,side*11+propX,handY,2.6,3.2,'#ead7b5');
 }
 
 function wateringCan(c, pose) {
@@ -386,13 +428,17 @@ export function drawStoryNPC(c,view,time=0,reducedMotion=false) {
   const salute=welcome&&!reducedMotion?Math.sin(progress*Math.PI):0;
   const notice=!!ticket&&greeting==='notice'&&ticket.fresh===true?progress*progress*(3-2*progress):0;
   const warm=!!ticket&&['held','returning','stowed'].includes(ticket.phase);
+  const theatre=view.chapterIndex===2&&view.motif==='moth'&&view.prop==='theatre-ticket';
+  const theatreLamps=theatre?clamp(finite(view.seals),0,2):0;
+  const invite=theatre&&open?clamp(finite(view.capOpen),0,1):0;
   const pose={time:t,reduced:!!reducedMotion,prop:view.prop,open,talking:!!view.talking,salute,warm,propX:salute*21,
     greenhouse:view.chapterIndex===1&&view.prop==='greenhouse-can',
-    painted:view.lighting==='painted-station'&&view.chapterIndex===0,
-    smile:welcome&&!reducedMotion&&progress>.24&&progress<.81,
-    gazeX:clamp((finite(look.x,x)-x)/140,-1,1),gazeY:clamp((finite(look.y,y-65)-(y-65))/100,-1.2,1.2),
+    painted:(view.lighting==='painted-station'&&view.chapterIndex===0)||theatre,
+    theatre,theatreLamps,invite,
+    smile:(welcome&&!reducedMotion&&progress>.24&&progress<.81)||(theatre&&theatreLamps===2),
+    gazeX:clamp((finite(look.x,x)-x)/140,-1,1),gazeY:clamp((finite(look.y,y-65)-(y-65))/100-(invite*.45),-1.2,1.2),
     blink:!reducedMotion&&Math.sin(t*1.67+view.chapterIndex*.4)>.992,
-    lift:(open?11:view.talking?3:0)+notice*2+salute*14};
+    lift:(open?11:view.talking?3:0)+notice*2+salute*14+invite*2};
   c.save();c.translate(x,y);c.lineCap='round';c.lineJoin='round';c.lineWidth=1;
   ellipse(c,0,2,view.motif==='whale'?34:27,4,'#10202a55');
   // Body breathing is deliberately tiny; the first platform is just above us.

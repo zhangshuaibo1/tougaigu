@@ -1,4 +1,5 @@
 import { DreamGame } from './dream-engine.js';
+import { createStoryPortraitController } from './dream-story-portrait.js';
 import { mountGameShell } from './game-shell.js';
 import { createFestivalHub } from './festival-hub.js';
 import { getFestival, getFestivalPuzzle } from './dream-festivals.js';
@@ -32,6 +33,7 @@ let game = null;
 let currentChapter = 0;
 let currentHud = null;
 let storySequence = null;
+let storyPortraitController = null;
 let activePuzzle = null;
 let activeChoice = null;
 let lastResult = null;
@@ -427,8 +429,8 @@ function renderStoryLine() {
   $('#story-dialog').style.setProperty('--speaker-color', speaker.color || sequence.festival?.color || '#a9ead6');
   $('#story-chapter-label').textContent = sequence.festival ? sequence.festival.name + ' · ' + sequence.festival.title : chaptersInChinese[sequence.chapterIndex] + ' · ' + CHAPTERS[sequence.chapterIndex].title;
   $('#story-page').textContent = (sequence.index + 1).toString().padStart(2, '0') + ' / ' + sequence.lines.length.toString().padStart(2, '0');
-  $('#story-portrait').src = portraitForLine(line, sequence.festival);
-  $('#story-portrait').alt = speaker.name;
+  storyPortraitController ??= createStoryPortraitController($('#story-portrait'), $('#story-dialog .story-portrait-wrap'));
+  storyPortraitController.show(portraitForLine(line, sequence.festival), speaker.name);
   const portraitWrap = $('#story-dialog .story-portrait-wrap');
   portraitWrap.dataset.mood = line.mood || 'tender';
   portraitWrap.classList.remove('cap-portrait-enter');
@@ -444,6 +446,7 @@ function finishStory() {
   if (!storySequence) return;
   const done = storySequence.onDone;
   storySequence = null;
+  storyPortraitController?.cancel();
   $('#story-dialog').close();
   done?.();
 }

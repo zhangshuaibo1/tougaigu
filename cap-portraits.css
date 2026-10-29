@@ -76,3 +76,18 @@
     transform: none;
   }
 }
+
+/* No old speaker is visible while a new portrait is loading/decoding.
+   The name, dialogue and Next button stay available on failure. */
+.story-portrait-wrap > img.story-portrait-pending {
+  visibility: hidden !important;
+  animation: none !important;
+}
+.story-portrait-wrap[data-portrait="loading"]::after,
+.story-portrait-wrap[data-portrait="unavailable"]::after {
+  content: "✧";
+  position: absolute; inset: 12% 24%;
+  display: grid; place-items: center;
+  color: #dccbad; font-size: 46px; opacity: .5;
+  pointer-events: none;
+}
