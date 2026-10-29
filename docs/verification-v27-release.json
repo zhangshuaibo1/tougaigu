@@ -1,0 +1,4519 @@
+{
+  "status": "passed",
+  "repository": "zhangshuaibo1/tougaigu",
+  "sourceCommit": "73fe30b751e6fa46d01ded252fb6f3c34c19cc04",
+  "runId": 40871791153,
+  "runUrl": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40871791153",
+  "artifact": {
+    "id": 12896194998,
+    "name": "game-verification-73fe30b751e6fa46d01ded252fb6f3c34c19cc04",
+    "size_in_bytes": 223874243,
+    "url": "https://api.github.com/repos/zhangshuaibo1/tougaigu/actions/artifacts/12896194998",
+    "archive_download_url": "https://api.github.com/repos/zhangshuaibo1/tougaigu/actions/artifacts/12896194998/zip",
+    "expired": false,
+    "created_at": "2026-10-29T12:33:23Z",
+    "expires_at": "2026-11-01T12:33:15Z",
+    "updated_at": "2026-10-29T12:33:23Z",
+    "digest": "sha256:992cdee35d2f7deb68d9a1510754e007ef4ca2db72a71db057e7157a1719b227",
+    "workflow_run": {
+      "id": 40871791153,
+      "repository_id": 1437053091,
+      "head_repository_id": 1437053091,
+      "head_branch": "main",
+      "head_sha": "73fe30b751e6fa46d01ded252fb6f3c34c19cc04"
+    }
+  },
+  "archivePath": "/tmp/tougaigu-v27-release-40871791153.zip",
+  "artifactCodeExecuted": false,
+  "testCounts": {
+    "tests": 605,
+    "pass": 605,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "references": {
+    "jsModules": 61,
+    "localReferences": 157,
+    "versionedReferences": 209,
+    "filesNeedingChange": 0
+  },
+  "sourceArchive": {
+    "path": "/tmp/tougaigu-v27-release-40871791153/source.tar.gz",
+    "sha256": "f42c28901bd3211763c47f51f1b5da0654f77c4f7b0feb2350f180bce48343c8",
+    "reviewedLocalFilesExactlyMatched": 224,
+    "files": [
+      {
+        "file": ".github/workflows/iteration-check.yml",
+        "bytes": 2805,
+        "sha256": "9625fa9506c4c28cf6900325b221b286237ef3143cf29089da26c4ded7eb77da"
+      },
+      {
+        "file": "dist/CNAME",
+        "bytes": 13,
+        "sha256": "447a79106804d0bd1c330e2c219b75b7503796a3fcc4d2bbb0af3267d56fd6f8"
+      },
+      {
+        "file": "dist/app.js",
+        "bytes": 26222,
+        "sha256": "b92bfcf99fc9f5121caeaa1697f5f640193eedc0f294b2e1a53db023bdcfa300"
+      },
+      {
+        "file": "dist/assets/coast-painted-v27.webp",
+        "bytes": 71750,
+        "sha256": "55e8b21548307d311cf98eaff3823fe3684cf55053a4c9f9035fdee8ba201510"
+      },
+      {
+        "file": "dist/assets/company-wordmark.webp",
+        "bytes": 7152,
+        "sha256": "932bb8787b245c8d3e20bef2fcf5e0e7b8e4af0dd18c6b3771e42c5526a57a10"
+      },
+      {
+        "file": "dist/assets/dream-cover-still.svg",
+        "bytes": 22934,
+        "sha256": "438e2d43ac707c6f71fbd20e664f869c8fe51ec5d86d94efbed774cd9cdf890f"
+      },
+      {
+        "file": "dist/assets/dream-cover.svg",
+        "bytes": 24298,
+        "sha256": "c615db969ffa694e4151c3b3de0eb5b300dee672a3ae6d4d69cc45fb725bad0d"
+      },
+      {
+        "file": "dist/assets/festival-hero-christmas.svg",
+        "bytes": 3729,
+        "sha256": "53e1dfae2214c9b295e65541864e6eb8fabcaaeeecfe416cf26860ef43263c39"
+      },
+      {
+        "file": "dist/assets/festival-hero-dragonboat.svg",
+        "bytes": 3752,
+        "sha256": "0acfdd984f0d37558ba5e297a2bca3331fb74970281f25c014f976062b77c142"
+      },
+      {
+        "file": "dist/assets/festival-hero-halloween.svg",
+        "bytes": 4153,
+        "sha256": "00864c16e8adac8bf45c5b6f36e615769e7e7682e21e88a4d3c239f4cd9d2e53"
+      },
+      {
+        "file": "dist/assets/festival-hero-lantern.svg",
+        "bytes": 4011,
+        "sha256": "514627a5429c84c94d78657ca9cc94333afbfaa6e4642886e842333e4554fc9d"
+      },
+      {
+        "file": "dist/assets/festival-hero-midautumn.svg",
+        "bytes": 3861,
+        "sha256": "75e56ac57c02e1c64a32286bf17f3721e175f4bb0064cc774d21169b036d903c"
+      },
+      {
+        "file": "dist/assets/festival-hero-newyear.svg",
+        "bytes": 4048,
+        "sha256": "c0af96c59ee50fa6aca5f385b241ea4589df33129fe5025a098aaaf0084c625d"
+      },
+      {
+        "file": "dist/assets/festival-hero-qixi.svg",
+        "bytes": 3834,
+        "sha256": "6923d62120dfec7ec769f7a2d2571cffa1bc13001ed50128d730516c89ff20c4"
+      },
+      {
+        "file": "dist/assets/festival-hero-spring.svg",
+        "bytes": 4165,
+        "sha256": "eeda58a5f492535a69895325b9a5b5cd99bb0096213172c902e49df9d204aac7"
+      },
+      {
+        "file": "dist/assets/festival-hero-starlight.svg",
+        "bytes": 3973,
+        "sha256": "90f2f9d5a15055f0a0d46ce81c23a1abbc61db7ba456fee81baf116ab23c7c59"
+      },
+      {
+        "file": "dist/assets/festival-hero-thanksgiving.svg",
+        "bytes": 3752,
+        "sha256": "4365b5d99320a304f952745db27cd4349bc532088a08bfcdc7173221847eb2fe"
+      },
+      {
+        "file": "dist/assets/festival-hero-valentine.svg",
+        "bytes": 3893,
+        "sha256": "14fe9d731f1c385e05308b86c612adb813e9eff6c9c1ac698813b3e44a2992f6"
+      },
+      {
+        "file": "dist/assets/festival-item-christmas.svg",
+        "bytes": 2851,
+        "sha256": "5eedb876b2288cb1468fb0efdfd4910869e23b8001426106a15706968786fa13"
+      },
+      {
+        "file": "dist/assets/festival-item-dragonboat.svg",
+        "bytes": 2914,
+        "sha256": "5f32443e562015bb9e66084cd39e78d8520c0da91bfaa61382b9bdd5e76e4e05"
+      },
+      {
+        "file": "dist/assets/festival-item-halloween.svg",
+        "bytes": 3042,
+        "sha256": "664c40d99102a833537261cc4b1eee13b51e2881e8042e46505612127700f849"
+      },
+      {
+        "file": "dist/assets/festival-item-lantern.svg",
+        "bytes": 3023,
+        "sha256": "955afe8182003dea214fe1b4f05d35447de8cc4668ce197bb6973d58f363a074"
+      },
+      {
+        "file": "dist/assets/festival-item-midautumn.svg",
+        "bytes": 2823,
+        "sha256": "a44acae234fe519ecfef23d458d4bb17622a2ce7e1b41cc0cb08ac7560875157"
+      },
+      {
+        "file": "dist/assets/festival-item-newyear.svg",
+        "bytes": 3768,
+        "sha256": "afd0ac7092b888ea4465387199d7b9e5235b1181261eb382297d21f63ad8aaae"
+      },
+      {
+        "file": "dist/assets/festival-item-qixi.svg",
+        "bytes": 3258,
+        "sha256": "5ebbb5f006233d358b50229db62502bfad15740780581b4417ce957a0022409f"
+      },
+      {
+        "file": "dist/assets/festival-item-spring.svg",
+        "bytes": 3134,
+        "sha256": "d4fab369b15c45193888dd50e9acd586a6946a3c0b8e853680ff11a2d49439a3"
+      },
+      {
+        "file": "dist/assets/festival-item-thanksgiving.svg",
+        "bytes": 2849,
+        "sha256": "a1db3c8bd1f2a38c55b33a87694e4893ff8e03644ffcc307e0492e3372216032"
+      },
+      {
+        "file": "dist/assets/festival-item-valentine.svg",
+        "bytes": 3023,
+        "sha256": "2c696df902dc0425f832e0d99aaf412227eb4b30307c397bad8c055539463cb8"
+      },
+      {
+        "file": "dist/assets/festival-npc-christmas.svg",
+        "bytes": 3221,
+        "sha256": "438ff90b8cfd12da819dce37e6e8c978f006ac49d6f13c48c27c9350d7d95852"
+      },
+      {
+        "file": "dist/assets/festival-npc-dragonboat.svg",
+        "bytes": 3169,
+        "sha256": "eaea71b7f1c55dfc9c83a55a6266f07e5fb6acbba3f59bd652cb211242944522"
+      },
+      {
+        "file": "dist/assets/festival-npc-halloween.svg",
+        "bytes": 2816,
+        "sha256": "340d50b07d39898b98d272ab0014b7dc103a6c281e33f4600554222880ee35ff"
+      },
+      {
+        "file": "dist/assets/festival-npc-lantern.svg",
+        "bytes": 3068,
+        "sha256": "8387b3dcc77b6ae99fca78f457b5c8683fc54b42bfce88eee107a15167a1e6df"
+      },
+      {
+        "file": "dist/assets/festival-npc-midautumn.svg",
+        "bytes": 2766,
+        "sha256": "d721b60c3d5984be991fd4fc07f501f2bf1dcc7e841dcd897efbc0372414141d"
+      },
+      {
+        "file": "dist/assets/festival-npc-newyear.svg",
+        "bytes": 2968,
+        "sha256": "858b80944e155050a49494681df5337ef1f6fbc3710bc00c743107670bde6d37"
+      },
+      {
+        "file": "dist/assets/festival-npc-qixi.svg",
+        "bytes": 2553,
+        "sha256": "de7b0411980c5a90bd27f66770c43f40051f2bfe263e056c7af6d60fe98a501c"
+      },
+      {
+        "file": "dist/assets/festival-npc-spring.svg",
+        "bytes": 2986,
+        "sha256": "1f5309ca12148e6a9f5355b48169f06f9123efeda7c714d3f225afcf33c375dc"
+      },
+      {
+        "file": "dist/assets/festival-npc-thanksgiving.svg",
+        "bytes": 2760,
+        "sha256": "a9c1a5b1217bef334b3729da20a15a9823eb20df4644f1b3476024d49d7b5bb5"
+      },
+      {
+        "file": "dist/assets/festival-npc-valentine.svg",
+        "bytes": 2800,
+        "sha256": "b3e4ea9323868a05933fd4d033a09e31886715c42147fa4fde4bec69c20e192a"
+      },
+      {
+        "file": "dist/assets/greenhouse-painted-v17.webp",
+        "bytes": 508666,
+        "sha256": "f017cedf22b93e3fc53de1feb95e00cac21661dab00d90a31c2b9aa9efb4c4fd"
+      },
+      {
+        "file": "dist/assets/library-painted-v26.webp",
+        "bytes": 178156,
+        "sha256": "6e32b91fc56890f6362590eb2bfe0ccd0858389aeeb5de5aac72b5cb02dcab03"
+      },
+      {
+        "file": "dist/assets/portrait-hero-curious.svg",
+        "bytes": 11821,
+        "sha256": "b4b3454a990a1a237cad6e269096861c08ce2644f1debab1e8e71820e5ad3828"
+      },
+      {
+        "file": "dist/assets/portrait-hero-joy.svg",
+        "bytes": 11604,
+        "sha256": "195f32e5b566f78e6761cca67cc85523e9a280ebe2855bb7c2d77957d7dbc8f7"
+      },
+      {
+        "file": "dist/assets/portrait-hero-open.svg",
+        "bytes": 12708,
+        "sha256": "57fd3074a83dfe7ff65d90b519fa6be136284ce9636ee989a2cdaa04c6f0d9a8"
+      },
+      {
+        "file": "dist/assets/portrait-hero-tender.svg",
+        "bytes": 11673,
+        "sha256": "b0b5af577982007fc221dae38f87c14973d6b722690b0a8e636573e6b9b88a50"
+      },
+      {
+        "file": "dist/assets/portrait-hero.svg",
+        "bytes": 11598,
+        "sha256": "2d407ef312fa8012eafbff1ad246ace7b262b527f9a2ce94e33da85a190846c5"
+      },
+      {
+        "file": "dist/assets/portrait-keeper.svg",
+        "bytes": 3053,
+        "sha256": "2852a93a02a8811bec16df4ec95edd65ae415ad6c2a7a013e6ca6d52f7a20dc0"
+      },
+      {
+        "file": "dist/assets/portrait-moth.svg",
+        "bytes": 3575,
+        "sha256": "50c8ebd220c55e8a857894753faa2c12b9ffc0a8c890e1a01a781516a94263ab"
+      },
+      {
+        "file": "dist/assets/portrait-soul-brave.svg",
+        "bytes": 7204,
+        "sha256": "127e3a064b7dcff96e6b7c52a843d9a993521e3ab754eedaf8506c735b1f4f22"
+      },
+      {
+        "file": "dist/assets/portrait-soul-joy.svg",
+        "bytes": 6893,
+        "sha256": "f3616b565ce5766bab09a026669c09a70fe78cc2d6eee1c4f8524f2f5ee56f6f"
+      },
+      {
+        "file": "dist/assets/portrait-soul-peek.svg",
+        "bytes": 6802,
+        "sha256": "2943744828f1312a7e84736f448c88c6468b7b9d9d9643f93579d80e5bc6ebdd"
+      },
+      {
+        "file": "dist/assets/portrait-soul-sleep.svg",
+        "bytes": 6742,
+        "sha256": "087ca85d1acf004b493d84d9627cee82757e4481bf2bd36d514298f31400f1ee"
+      },
+      {
+        "file": "dist/assets/portrait-soul.svg",
+        "bytes": 6766,
+        "sha256": "88047b69cd52536ca164b507c811871cdcf5ca311b0478221b679274b6b53c9a"
+      },
+      {
+        "file": "dist/assets/portrait-whale.svg",
+        "bytes": 3200,
+        "sha256": "f5b99f6522cd7af5315ea0a258833181f457b0ccf8998787971148b68a50efbc"
+      },
+      {
+        "file": "dist/assets/reward-feather_charm.svg",
+        "bytes": 2370,
+        "sha256": "bde651f012ab108e437274ccb295d1cd6ba111df151d8dd1ac5df151fc04a2f7"
+      },
+      {
+        "file": "dist/assets/reward-glow_candy.svg",
+        "bytes": 2470,
+        "sha256": "4f90857f6288d137c442ec49c5dba0929214e3f5672b71579f40c2c1b2c943f8"
+      },
+      {
+        "file": "dist/assets/reward-star_compass.svg",
+        "bytes": 2260,
+        "sha256": "16586e58b57f7fd578e01a17325ac268014f1b6e0b2458f06d671e83cb2a7caa"
+      },
+      {
+        "file": "dist/assets/station-painted-v16.webp",
+        "bytes": 266328,
+        "sha256": "51406de059d3d092b0bf7c8f80f285f82dcc7fb17bcfbd77b5fcd000bb888fba"
+      },
+      {
+        "file": "dist/assets/theatre-painted-v20.svg",
+        "bytes": 58148,
+        "sha256": "059b3c68d84666f292e4c8fab3b379e894eaff484a6907eb9dbba1faabe32cea"
+      },
+      {
+        "file": "dist/assets/theatre-painted-v22.webp",
+        "bytes": 178844,
+        "sha256": "8c59e1cf3a361501e57eaf8d9bc5e5df6a71823ac4773895f19e48e392632b7d"
+      },
+      {
+        "file": "dist/cap-activities.css",
+        "bytes": 3911,
+        "sha256": "a1ab4e7e50c922c159c61678f429e633973c5df40f06c39ef3b8bff36afb53a1"
+      },
+      {
+        "file": "dist/cap-activity-progress.js",
+        "bytes": 11165,
+        "sha256": "30190693766ddaedd1f5c1c46f73374e28041851d6c71f65ea6cb9111178d967"
+      },
+      {
+        "file": "dist/cap-book.js",
+        "bytes": 17410,
+        "sha256": "210950f7a4cdf2a99bb6ea3943bf739ce79f5d517081621fe90994a1faa38f87"
+      },
+      {
+        "file": "dist/cap-play.css",
+        "bytes": 9603,
+        "sha256": "e80091822b14c618a820cdda14f2a56ddfc2f859bf05176b251d03156b288fd1"
+      },
+      {
+        "file": "dist/cap-portraits.css",
+        "bytes": 2741,
+        "sha256": "4686bb6bfb5fecb24b7413973b93c40974e9744c76afa9cfa6b84212e9e10ddb"
+      },
+      {
+        "file": "dist/cap-progress.js",
+        "bytes": 4574,
+        "sha256": "5ab3326cea09d614e65e1c11c941fbbe97e90cfd7889d23a65495151cbd0f681"
+      },
+      {
+        "file": "dist/company-footer.css",
+        "bytes": 1785,
+        "sha256": "a5f94a2c7e3f2a53def5b5c7c06882cfe2fff8320e0e4c7200d03dcc4c5f72ad"
+      },
+      {
+        "file": "dist/content.js",
+        "bytes": 19739,
+        "sha256": "cc7726e290e6bb2ea9100a28d977f1b1f3f3f2146282d222dfa5d1fe094512ff"
+      },
+      {
+        "file": "dist/dream-app.js",
+        "bytes": 63870,
+        "sha256": "09da493db93a98c96cee769d91f7c9aa92cd8c20bb4d421ac48ef4b5fb33c0aa"
+      },
+      {
+        "file": "dist/dream-awakening-art.js",
+        "bytes": 26022,
+        "sha256": "a9255f851e92b8649798c23de42167c6137a8745829dbf5e71ca1ba22df6cdd6"
+      },
+      {
+        "file": "dist/dream-awakenings.js",
+        "bytes": 3832,
+        "sha256": "a96bf35c9379612d0cda50073b8c12e56b263b5ae8dbf90362b0dcfc9ed30e1b"
+      },
+      {
+        "file": "dist/dream-cap-activities.js",
+        "bytes": 13737,
+        "sha256": "041c66d52a0a17f80e75bc4da31054f2d01d5c440567d380533be10076a69749"
+      },
+      {
+        "file": "dist/dream-cap-activity-art.js",
+        "bytes": 32906,
+        "sha256": "fe5127ec3b28ee9ce891fa864ae3e277c2be23b88053c3f345fc99a6bc5a163d"
+      },
+      {
+        "file": "dist/dream-cap-activity-engine.js",
+        "bytes": 15627,
+        "sha256": "e29d1cd2a3e1853aee323fdfb36890e2965924c5d3c070bb01155a1a7bdaf31a"
+      },
+      {
+        "file": "dist/dream-cap-art.js",
+        "bytes": 22813,
+        "sha256": "066d3671464b18366aa3b716a1bcf3c75e3f96d79607fb56dfe85e60f3d6912f"
+      },
+      {
+        "file": "dist/dream-cap-story.js",
+        "bytes": 14480,
+        "sha256": "cb17da0fc2a46ec8476910953a4bf3094aaef351f58183eb83745334f4345c19"
+      },
+      {
+        "file": "dist/dream-clock-echo.js",
+        "bytes": 8888,
+        "sha256": "51a27018ea27ff0817b38cec88d52b28f4836e9691a8fdbe624dc3c7ed008171"
+      },
+      {
+        "file": "dist/dream-coast-finish.js",
+        "bytes": 6742,
+        "sha256": "39b1818d3158c415546c2ae1b6b44ec379d765a7e089caa0cd578b3ba0bd8902"
+      },
+      {
+        "file": "dist/dream-coast-scene.js",
+        "bytes": 4219,
+        "sha256": "5927d816f86835dbbf9e5d0237a251ed14953f11a80869609b43d30727257fc7"
+      },
+      {
+        "file": "dist/dream-direction-input.js",
+        "bytes": 1920,
+        "sha256": "ebbe509a6ce3114fe1f0689ef4252b19bf9ddfd2e8b3e367626ef21c891401de"
+      },
+      {
+        "file": "dist/dream-encounter-art.js",
+        "bytes": 33586,
+        "sha256": "5be256ba3df0332e583661241b108dd6da182f32628c3f33bf04f5d6ac555ee4"
+      },
+      {
+        "file": "dist/dream-encounters.js",
+        "bytes": 16794,
+        "sha256": "6d3d3b962c9d9d27deb2ccfbcb52255b18bb3caeb8d77dce4a4a0e9e745c1f20"
+      },
+      {
+        "file": "dist/dream-engine-base.js",
+        "bytes": 94772,
+        "sha256": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699"
+      },
+      {
+        "file": "dist/dream-engine.js",
+        "bytes": 20814,
+        "sha256": "e77686edebb672eb764894e9e56b48e7443f52e980a38e1123e9353d00887e77"
+      },
+      {
+        "file": "dist/dream-festival-art.js",
+        "bytes": 31364,
+        "sha256": "9ede1ae7d2c0499bc2a22aa61fb1f44a3c97b4efe327023406f15d2c695881e5"
+      },
+      {
+        "file": "dist/dream-festival-levels.js",
+        "bytes": 6674,
+        "sha256": "ab633cf46ea8b2c1f925692c9ae21bf104522d647a1b05be782ebf2418c346c5"
+      },
+      {
+        "file": "dist/dream-festivals.js",
+        "bytes": 53530,
+        "sha256": "3ea4f05fc6a260ec6a0e0cdc1bda849bdca199ef664ad1dd353002508c15f86c"
+      },
+      {
+        "file": "dist/dream-first-ticket-art.js",
+        "bytes": 4329,
+        "sha256": "44c9b420d544f7db1ed9c79cb2a0291563db8e83442f6ce4df5e1aaf4f56dd04"
+      },
+      {
+        "file": "dist/dream-greenhouse-art.js",
+        "bytes": 3880,
+        "sha256": "38a4f9044a7f403a5d121ef6189aa83108d72f0b4a2c8b0e0aeabc03dbe3db83"
+      },
+      {
+        "file": "dist/dream-greenhouse-finish.js",
+        "bytes": 10999,
+        "sha256": "af7d94a6222491b2712b7af10db2f79ef45db9f899a92e939d5fb6eba664ab56"
+      },
+      {
+        "file": "dist/dream-greenhouse-scene.js",
+        "bytes": 4446,
+        "sha256": "b4a4c84440ed43bd52ba8405c719cb3d426d134e6c8285bcb584533879a6c8e6"
+      },
+      {
+        "file": "dist/dream-ground-shadow.js",
+        "bytes": 3409,
+        "sha256": "ede6c52978710e0e8286a1b5fdf51eeb09e1e17a1d9df3171cca8176c90d94bc"
+      },
+      {
+        "file": "dist/dream-journey.js",
+        "bytes": 10112,
+        "sha256": "62947008e6c4edd0f1817b92a5338d7d0ebdf0a2a065d3049b280ea36d22434c"
+      },
+      {
+        "file": "dist/dream-letter-echo.js",
+        "bytes": 8899,
+        "sha256": "10c446ba05235b9123f09667cf2fd2e9e96be57b9fc87da6e8b1c8c5696e1f2f"
+      },
+      {
+        "file": "dist/dream-levels.js",
+        "bytes": 8742,
+        "sha256": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0"
+      },
+      {
+        "file": "dist/dream-library-finish.js",
+        "bytes": 2485,
+        "sha256": "0295efbb70a84b616301e0b3d9e68bdfd87706c33c5e1736403b624d5d8316f8"
+      },
+      {
+        "file": "dist/dream-library-scene.js",
+        "bytes": 3661,
+        "sha256": "9564ec3fa13e9f4de038d8db6ec44cd3421cbc1bf26d89256a22921307ca23ea"
+      },
+      {
+        "file": "dist/dream-lost-art.js",
+        "bytes": 41560,
+        "sha256": "f572fc0d082178d8bb28ac3fc45561aacfc0b090da6f1f6c5f0cdb0815f0c235"
+      },
+      {
+        "file": "dist/dream-lost-cases.js",
+        "bytes": 26967,
+        "sha256": "8c82de1b2021734f9355fae64475386f235b6b8451dd495fd3afc839adfea79f"
+      },
+      {
+        "file": "dist/dream-lost-encore-art.js",
+        "bytes": 15525,
+        "sha256": "2eeecf0c00e9f965a66034089b18d8fa7795641855c5269d8c6e5aaac235dda2"
+      },
+      {
+        "file": "dist/dream-lost-encores.js",
+        "bytes": 2730,
+        "sha256": "0bbba9148430c6efae7bbee811bcd9170296bfff07cdb98a8aa4509d73be5576"
+      },
+      {
+        "file": "dist/dream-lost-engine.js",
+        "bytes": 12739,
+        "sha256": "42239bd2c4df5e4aa465d70a1d8d598faa4ef882b1477484fbe18a1d2eb636d5"
+      },
+      {
+        "file": "dist/dream-moon-art.js",
+        "bytes": 14741,
+        "sha256": "1f6941a32a0ec6d448b29920816d026778b09c71a951f54cd9107cd05ce05b32"
+      },
+      {
+        "file": "dist/dream-moon-play.js",
+        "bytes": 12656,
+        "sha256": "4f43c1b14750211498edda61d70a1c3fef54c9aa56c66c7b48006604650e5095"
+      },
+      {
+        "file": "dist/dream-painted-scene.js",
+        "bytes": 7197,
+        "sha256": "ba9551548f431ecf4b7d13f63e62e9f329d9643a0afac292729fa3b598722ce7"
+      },
+      {
+        "file": "dist/dream-play.css",
+        "bytes": 13110,
+        "sha256": "d493a4f215231dae11d71617e1b972fa21c41b7e9cf1303b4ea7cf09412b9fc3"
+      },
+      {
+        "file": "dist/dream-scene-backdrop.js",
+        "bytes": 19110,
+        "sha256": "39f31d372405896f580ee297c9168a1d8a12dcd5af134c2c09ea908f28cbedd8"
+      },
+      {
+        "file": "dist/dream-soul-art.js",
+        "bytes": 9933,
+        "sha256": "f43fa8d0030c6c33899a4fe484072e029ada03568d5f494f776da66a1bf342cd"
+      },
+      {
+        "file": "dist/dream-station-art.js",
+        "bytes": 16476,
+        "sha256": "73a257203b10d12dd52f7b66f60fe3d65e08200aa64b1b4e5c3f223f654d31ee"
+      },
+      {
+        "file": "dist/dream-story-portrait.js",
+        "bytes": 1526,
+        "sha256": "fe82cc56695db356b71b572cbc9563cddc7c455e7bae1e56db46dba9905a62ef"
+      },
+      {
+        "file": "dist/dream-story.js",
+        "bytes": 31000,
+        "sha256": "a91aaf6b497cf956a85c9119e97871ed8b4cc119dd06c6ebe765aa3ed02fb9de"
+      },
+      {
+        "file": "dist/dream-theatre-art.js",
+        "bytes": 11372,
+        "sha256": "a92c905952383c801559103f3b80d34537acdde4eb4d2292d3fc88e7c51bf213"
+      },
+      {
+        "file": "dist/dream-theatre-encore.js",
+        "bytes": 4646,
+        "sha256": "62ca4f474e0261e31980bedfae4d02f97b879ceaa83e8670596253d6d190456d"
+      },
+      {
+        "file": "dist/dream-theatre-guidance.js",
+        "bytes": 3586,
+        "sha256": "ee0db2c0c396d45dc6386e81921f90369092a3361927295a4bf160a2ba5c9a28"
+      },
+      {
+        "file": "dist/dream-theatre-lantern.js",
+        "bytes": 5506,
+        "sha256": "84be352475290b6fb2f0f9b85d0f77d9bf262be89fc3d5443ea1cd9af0da1904"
+      },
+      {
+        "file": "dist/dream-theatre-painted.js",
+        "bytes": 6850,
+        "sha256": "240e8e0990fbd65fa24f920daaa24a6c0225b4714f04496d5e5d33c7b001fd6e"
+      },
+      {
+        "file": "dist/dream-traveler-art.js",
+        "bytes": 8767,
+        "sha256": "e7c1315bdf28b22705887d8fc478472e1d4952df0c1f9e598abf5f2f6ca0e8ac"
+      },
+      {
+        "file": "dist/dream-traveler-performance.js",
+        "bytes": 6069,
+        "sha256": "4a4ebf035a94863e1be4ccceeaf23d1cbdec221808d46b596b7f3b911939ae14"
+      },
+      {
+        "file": "dist/dream-ui.js",
+        "bytes": 4422,
+        "sha256": "3da92277b69c46b80b06125e08cef13166122b17867ec59a2bb532b6b0c73c48"
+      },
+      {
+        "file": "dist/dream.css",
+        "bytes": 64955,
+        "sha256": "a6a19381a2b375ffcd1ee71b996bde69f1dfbd2a12c4625dbb565fd500065ca1"
+      },
+      {
+        "file": "dist/dream.html",
+        "bytes": 25444,
+        "sha256": "11e71a0c7e099fc6a93405e3b5775d7fe32464c3498bb86011b808077e5290cf"
+      },
+      {
+        "file": "dist/engine.js",
+        "bytes": 40797,
+        "sha256": "3af6579235e5cce9ef65e476d65e30aeab837f1ac6d842b8721ab44f795b514a"
+      },
+      {
+        "file": "dist/favicon.svg",
+        "bytes": 382,
+        "sha256": "87d7f408dd19dd027b53625a0b97daa5e22459fcaad1af334da5faab4b54ff46"
+      },
+      {
+        "file": "dist/festival-hub.js",
+        "bytes": 21507,
+        "sha256": "5f5d5c69ea925f137a1b3b8da88d3be92535cf4b594f515f23e4d61ea65f8e25"
+      },
+      {
+        "file": "dist/festival.css",
+        "bytes": 21046,
+        "sha256": "707931f9ffa5167b0192fc125c77665f5ef60d8ea907722fa5334a9dc36bada7"
+      },
+      {
+        "file": "dist/game-shell.css",
+        "bytes": 8510,
+        "sha256": "d3a32538ad73198046c4dee50e18fdcef746b5c17528f5e47b7225a5d4eee80c"
+      },
+      {
+        "file": "dist/game-shell.js",
+        "bytes": 7726,
+        "sha256": "109f0b136dca39253395e47a0eca84c6a392d17a17e998bb37ea420d846d91c9"
+      },
+      {
+        "file": "dist/index.html",
+        "bytes": 25444,
+        "sha256": "11e71a0c7e099fc6a93405e3b5775d7fe32464c3498bb86011b808077e5290cf"
+      },
+      {
+        "file": "dist/lost-evidence.js",
+        "bytes": 7147,
+        "sha256": "a681f0d4b2234d00cef0837eab1f223988dfab5198b518d06b1d6fdaaa7548c5"
+      },
+      {
+        "file": "dist/lost-play.css",
+        "bytes": 7354,
+        "sha256": "13acb839c240ce9f75ac5802842dcf2ff334e484aeae6163c25d3b1aa87bbfa9"
+      },
+      {
+        "file": "dist/lost-progress.js",
+        "bytes": 9956,
+        "sha256": "f81f1a0dfad558be5efa220eebd13688a0f9e183ac9fc1d569c62b4f9c5c5efb"
+      },
+      {
+        "file": "dist/play-rewards.js",
+        "bytes": 20803,
+        "sha256": "d2133a6ea631fcd32dabb3e65242dd3da1ce8809d09cdb056c881bcc6d89c0fb"
+      },
+      {
+        "file": "dist/portal.css",
+        "bytes": 2729,
+        "sha256": "5c06d5415242abb37b02cc8e43c516b4631e5cbb42af4a8593bcead103ae965f"
+      },
+      {
+        "file": "dist/style.css",
+        "bytes": 36943,
+        "sha256": "6e6d7748ac71de73ceffa3d4ea1e8e8b260207e426a0354158d3b21fc5fb28b3"
+      },
+      {
+        "file": "dist/survivor-play.css",
+        "bytes": 8562,
+        "sha256": "c2ef15377a4075d4d6816802ba57dc2abf2944fb26df2de3d9845249b4bb4507"
+      },
+      {
+        "file": "dist/survivor.html",
+        "bytes": 17033,
+        "sha256": "273740232f25cc37ae685208be2bc022473f1d2231db6274e66bfdefe3127258"
+      },
+      {
+        "file": "package.json",
+        "bytes": 452,
+        "sha256": "9723b5ca848b138ca91cc6e1e40e8c2eb5237b082029c822139efb311390b7e7"
+      },
+      {
+        "file": "scripts/browser-smoke.py",
+        "bytes": 125103,
+        "sha256": "c1125cf022f4111c435b6889ec7df9965ce170e97e2c0f4d881062811edeff37"
+      },
+      {
+        "file": "scripts/browser_coast_v27.py",
+        "bytes": 24069,
+        "sha256": "3446b23d0e8dbb625ff8c76dc7ce65dcea3abc9ff5cdcf1b953a2efa6e417f8a"
+      },
+      {
+        "file": "scripts/browser_library_v26.py",
+        "bytes": 30721,
+        "sha256": "aa04f5302d9d84ad9034728c35c6d044bc8ba0dc10ab900d7e1dd443e032f2e0"
+      },
+      {
+        "file": "scripts/build-cap-portraits.mjs",
+        "bytes": 23291,
+        "sha256": "85995b94bb366112b3d615b2d6469a44adbb9faca2eddde858b64e2fb1a662d3"
+      },
+      {
+        "file": "scripts/build-festival-portraits.mjs",
+        "bytes": 28550,
+        "sha256": "653106f22903b4d16a801440a5bf8d3b6c7c43ed0cb1e00c4ab7201555c1f027"
+      },
+      {
+        "file": "scripts/check.mjs",
+        "bytes": 1575,
+        "sha256": "7e6ceee8c65a071e062a451d00e1465da43eceac9e398ab692f8be5e60e6ac95"
+      },
+      {
+        "file": "scripts/render-cap-activities.mjs",
+        "bytes": 7073,
+        "sha256": "1f681da64278491592e294ce74a38855cea21d9d25951e30c275e73e3dbf39f4"
+      },
+      {
+        "file": "scripts/render-lost-cases.mjs",
+        "bytes": 14005,
+        "sha256": "d4674c453341396fece9f606fe9ec6db2af78441635ccee382acc394ce1146c1"
+      },
+      {
+        "file": "scripts/render-lost-encores.mjs",
+        "bytes": 11081,
+        "sha256": "141532ee053ad51fa49de9a95138856aed002b8609fcad161026f809067228e0"
+      },
+      {
+        "file": "scripts/render-moon-play.mjs",
+        "bytes": 5541,
+        "sha256": "23d2d3574c370d5b30307bdca8507ac6e35e94ec96cd163647a7df962bd6b6cd"
+      },
+      {
+        "file": "scripts/render-scene-backdrops.mjs",
+        "bytes": 4695,
+        "sha256": "9ae21b2dfffd2bd5e63280e06a1461d54b41370da8f648e8ef46e89ed0077b00"
+      },
+      {
+        "file": "scripts/render-story-awakenings.mjs",
+        "bytes": 14764,
+        "sha256": "ac6b7a5d49c29f14dbb8bb6be37c4a552bfd2c62d1def7fbff3e08c31997a5f6"
+      },
+      {
+        "file": "scripts/render-story-encounters.mjs",
+        "bytes": 8721,
+        "sha256": "c88d3a0d6f2f0d23a35779456b1ba240d35d03b8eb1e3d67ed3645a345743e00"
+      },
+      {
+        "file": "scripts/render-v13-scenes.mjs",
+        "bytes": 8007,
+        "sha256": "7d1ead3b14882c5264354e578c5a0c420fac413611127cb8fb104db80d9416db"
+      },
+      {
+        "file": "scripts/render-v14-art.mjs",
+        "bytes": 8703,
+        "sha256": "d5ce6f41d85a3307cf31874fa887b869b26542a3607b472415da13f0250cddae"
+      },
+      {
+        "file": "scripts/render-v14-scenes.mjs",
+        "bytes": 15278,
+        "sha256": "eafc95159df8b534b89cfd832e1db6a8046c0aff632b354e679da38bd82a1405"
+      },
+      {
+        "file": "scripts/render-v16-traveler.mjs",
+        "bytes": 6858,
+        "sha256": "97d729b3bfb755b81a326195abd9b5ea5979493c09e3f89f9d875b54e6fb0ba9"
+      },
+      {
+        "file": "scripts/render-v17-greenhouse.mjs",
+        "bytes": 7126,
+        "sha256": "ed33eda0b4896e016ad76d754d0468f2ee6c5f378d544872f07f365deb5751b2"
+      },
+      {
+        "file": "scripts/render-v18-keeper.mjs",
+        "bytes": 5833,
+        "sha256": "0494fcb4039c0d715eba055564f77b463ec270c4df2064e4cfbc1d8af70c4dd6"
+      },
+      {
+        "file": "scripts/render-v18-letter-echo.mjs",
+        "bytes": 4789,
+        "sha256": "88798bbf88a1a061aab1f26fb967c01a0d012844f5cd7ec2b90e5f2f952009eb"
+      },
+      {
+        "file": "scripts/render-v19-theatre.mjs",
+        "bytes": 6733,
+        "sha256": "435ff9ae9b5de3805a828de2d93a6139a0afe3fd1ba37f29fd0ed666d3245f10"
+      },
+      {
+        "file": "scripts/render-v22-theatre.mjs",
+        "bytes": 9145,
+        "sha256": "f2a3f55836ad71887225d5abf44817770c22545ccf678add7e6e3b1191dd0188"
+      },
+      {
+        "file": "scripts/render-v25-traveler.mjs",
+        "bytes": 10774,
+        "sha256": "b6158cb19726ee8a28ced20c988b1eb8e1024dc5f829b171482aa5af952307e3"
+      },
+      {
+        "file": "scripts/version-assets.mjs",
+        "bytes": 2524,
+        "sha256": "e0ea89d7150e5a3d5781cbc37cbfd7830ce986724e2e6012b34a36f9f29dd45c"
+      },
+      {
+        "file": "tests/browser-coast-route-v27.test.mjs",
+        "bytes": 5264,
+        "sha256": "bb7492668189a18010126b7b5adc41adcd9ef5597338bddb8d901c6433aab6c4"
+      },
+      {
+        "file": "tests/browser-driver-boundary.test.mjs",
+        "bytes": 2081,
+        "sha256": "ced40df6a455d06c10c437822abc40650612864a3c370dcca4112ba5bca72f53"
+      },
+      {
+        "file": "tests/browser-hud-energy.test.mjs",
+        "bytes": 4672,
+        "sha256": "ec9b0a57c1ed6234292b1afd652d205493d0a200799a39c83c8744cdc14ecd7c"
+      },
+      {
+        "file": "tests/browser-hud-geometry.test.mjs",
+        "bytes": 5788,
+        "sha256": "1762f2122167041302cb18a4097218ab085f8240b95601b6dcf27f6602586f2a"
+      },
+      {
+        "file": "tests/browser-library-route-v27.test.mjs",
+        "bytes": 8486,
+        "sha256": "9fe7733947e96821da91148ef978db3f6614fd683af0e756503059370a23d375"
+      },
+      {
+        "file": "tests/browser-portrait-sequence.test.mjs",
+        "bytes": 9066,
+        "sha256": "0a7ad69e3d2b35011160af39fc00d43179f1af4f61758d5edffa97a8d1873c6b"
+      },
+      {
+        "file": "tests/browser-theatre-alight.test.mjs",
+        "bytes": 7957,
+        "sha256": "7822d90555ad936da9bec5cce6543013257cb55c3c8fc4f5c90208f146cd765a"
+      },
+      {
+        "file": "tests/browser-traveler-performance.test.mjs",
+        "bytes": 25150,
+        "sha256": "bf872eeef28fab8e7952b6955b71ee0e80bea2aac8ec305215be8a62d4d60dfe"
+      },
+      {
+        "file": "tests/cap-activities.test.mjs",
+        "bytes": 7878,
+        "sha256": "ce4f930a46822919d1a68e11bd09b415302cfd7affe7856f40341f57234c1585"
+      },
+      {
+        "file": "tests/cap-activity-engine.test.mjs",
+        "bytes": 27905,
+        "sha256": "e7018a300f68343a54787ecdf953200608ec335a5e4dfc98ed1852ced6083413"
+      },
+      {
+        "file": "tests/cap-activity-growth.test.mjs",
+        "bytes": 4046,
+        "sha256": "b9614d0dc2a585b964ea7dec1d118bfbf015ae17a240e9e45f478e126f2ea156"
+      },
+      {
+        "file": "tests/cap-activity-progress.test.mjs",
+        "bytes": 16186,
+        "sha256": "3bda059d332644101cdc34c82a721e959212436417ab437a4ea805c2837a6ad5"
+      },
+      {
+        "file": "tests/cap-character-motion.test.mjs",
+        "bytes": 11939,
+        "sha256": "ea0f8a1f72381c21df6ae4a4d7612965de76f3cba2bc1bad046a29143aa89dba"
+      },
+      {
+        "file": "tests/cap-engine.test.mjs",
+        "bytes": 14161,
+        "sha256": "0123a8e9d8f403ffe2086dbdc8b2173a06c4510b655aee71b0c67be97446b67c"
+      },
+      {
+        "file": "tests/cap-progress.test.mjs",
+        "bytes": 4190,
+        "sha256": "ef240d7325173970a1b8a4bbef088c8c431119d726be73e47b3b919ad5feaa02"
+      },
+      {
+        "file": "tests/cap-story.test.mjs",
+        "bytes": 9438,
+        "sha256": "9ba0467939739cb2c047916a5d1d6ed56bcff0af685978c3151bb62e2d989362"
+      },
+      {
+        "file": "tests/clock-echo-v27.test.mjs",
+        "bytes": 13963,
+        "sha256": "fe229e4114e58719b3f7d30c519f551fa6c4c3e9205562c8ce3a6202fe231a0b"
+      },
+      {
+        "file": "tests/coast-presentation-v27.test.mjs",
+        "bytes": 18571,
+        "sha256": "b16868a37fc1b87cc2440ffaf8e55ca43b0583fb9b7246cfa61e9f331f0cc50d"
+      },
+      {
+        "file": "tests/dream-app-energy.test.mjs",
+        "bytes": 10837,
+        "sha256": "7c68206bc5b87bc4e43b9765fb00cfccb5f9b31ee557a85efb8eb04c828ff54e"
+      },
+      {
+        "file": "tests/dream-awakening-engine.test.mjs",
+        "bytes": 19589,
+        "sha256": "84fb28ea1fa51e5ba29c11ad88b52944351a06a37ead22450fd3691d3a6f0d1d"
+      },
+      {
+        "file": "tests/dream-awakenings.test.mjs",
+        "bytes": 5987,
+        "sha256": "c9b43af9165fc3d4ea1161d28e00269bc358cff1f9fd951cbf5ec5c69320436e"
+      },
+      {
+        "file": "tests/dream-direction-input.test.mjs",
+        "bytes": 6172,
+        "sha256": "fc391b2eec076c368084cccbccf026ffe14d2b9735ac3635550606dfc3681182"
+      },
+      {
+        "file": "tests/dream-encounter-engine.test.mjs",
+        "bytes": 13812,
+        "sha256": "eebcb486c372a631feb4f6f1be43abdc82c93489a8c79765a462687098dc0d28"
+      },
+      {
+        "file": "tests/dream-encounters.test.mjs",
+        "bytes": 7258,
+        "sha256": "cf43d854230aaf532a6d4e1f5f6eb4ce9ca6ab0ce4e8219143f8fc938e77398d"
+      },
+      {
+        "file": "tests/dream-engine.test.mjs",
+        "bytes": 11048,
+        "sha256": "dd3c76b42214073fb8efdc0e92412e2b905c6606c1c83c97ecc283cceacb39ed"
+      },
+      {
+        "file": "tests/dream-journey.test.mjs",
+        "bytes": 19341,
+        "sha256": "37bcbd0331467d126802f0818d9eaa1dec086490a493b83b7e0c64c742769025"
+      },
+      {
+        "file": "tests/dream-moon-play.test.mjs",
+        "bytes": 12734,
+        "sha256": "2080f743a6e5bc340b6687f7290ecd375cd88fba9a85ff8f2167be6881d826ce"
+      },
+      {
+        "file": "tests/dream-story-portrait-v24.test.mjs",
+        "bytes": 2952,
+        "sha256": "d74ef9098b7bc294d5211cec1cb7acbc1333c057b6ef343228200f087ba8cdfc"
+      },
+      {
+        "file": "tests/dream-story.test.mjs",
+        "bytes": 11165,
+        "sha256": "5fb0ae26be1776009ee234819337fcb53eac935d6b7bbecba58790f46500cf9a"
+      },
+      {
+        "file": "tests/dream-ui.test.mjs",
+        "bytes": 6013,
+        "sha256": "cedb5f3ef1bd57723744637d7a844ea8126b876a98d0acaeae112023887e749d"
+      },
+      {
+        "file": "tests/engine.test.mjs",
+        "bytes": 5471,
+        "sha256": "c2b453f508d30f83e51f6042fd92e8272583cd370cbdcab8891082d331653234"
+      },
+      {
+        "file": "tests/festival-engine.test.mjs",
+        "bytes": 9732,
+        "sha256": "707d31001e329d51a91ebcf2550306791617ababeac8cf498fe6073c6edeae25"
+      },
+      {
+        "file": "tests/festivals.test.mjs",
+        "bytes": 18570,
+        "sha256": "1279a13d30f415c2465c9de266c3175157f8f81f68e20faba152af0f67feabc9"
+      },
+      {
+        "file": "tests/first-ticket-engine.test.mjs",
+        "bytes": 13252,
+        "sha256": "bde95635a08d69520c37aec16923784034f14bed389ea033489ce09b0837ab0c"
+      },
+      {
+        "file": "tests/greenhouse-engine.test.mjs",
+        "bytes": 12939,
+        "sha256": "7210b2952978c9d7f3943f0b795a2fee8b7cfcf9d6fa894840ec2329d539abc7"
+      },
+      {
+        "file": "tests/greenhouse-materials.test.mjs",
+        "bytes": 7875,
+        "sha256": "19d79ac4a57855054be75717de5de521cf49b9bd021b704dbb2ea35cf916b45c"
+      },
+      {
+        "file": "tests/greenhouse-scene.test.mjs",
+        "bytes": 9223,
+        "sha256": "bb5dfefc81a884ff16ef00098739e959589d1ed39d5284d2efda6302fcfe0c3b"
+      },
+      {
+        "file": "tests/ground-shadow.test.mjs",
+        "bytes": 7858,
+        "sha256": "1ef74d0088b6a4a6fcf7b463874509d2d5a248cd899a24ba20734fcdfeac6994"
+      },
+      {
+        "file": "tests/journey-engine.test.mjs",
+        "bytes": 14855,
+        "sha256": "152184ed49055a390f8e4d6bbee810416488bf9efc1de90bca1e6da40698aaa3"
+      },
+      {
+        "file": "tests/letter-echo.test.mjs",
+        "bytes": 13939,
+        "sha256": "adb7db29a7ed256c84d9d3f8771c7a0851f7fcac6f4d441ebbaf45fbee154908"
+      },
+      {
+        "file": "tests/library-finish-v26.test.mjs",
+        "bytes": 5440,
+        "sha256": "0aa2e7cf53621173217b1fbae6b12331365a43ba182b1064f491f8a8f9945d55"
+      },
+      {
+        "file": "tests/lost-cases.test.mjs",
+        "bytes": 23577,
+        "sha256": "a989c0268ed60b7a8d772d2d481ed322a32457abdd1e48bb57740e90f094a6e7"
+      },
+      {
+        "file": "tests/lost-encores.test.mjs",
+        "bytes": 4358,
+        "sha256": "5c164cb6cb100c05ea1898e5ae9077b9956070886985e4b514f15ef26ed8dfe8"
+      },
+      {
+        "file": "tests/lost-engine.test.mjs",
+        "bytes": 36641,
+        "sha256": "3ae9d227458eb53f4e9197d94b56c9b456076e5828ce46994cf8e29b58e7778b"
+      },
+      {
+        "file": "tests/lost-evidence.test.mjs",
+        "bytes": 14038,
+        "sha256": "3bb1433f6c99aa681b4ed149544429785b4c6273de3efa67abf440714e0438a2"
+      },
+      {
+        "file": "tests/lost-progress.test.mjs",
+        "bytes": 20108,
+        "sha256": "46a0310ef01ef6bb32e3d034b46b5cae25757bfbc87b9470db23798de0847d3f"
+      },
+      {
+        "file": "tests/moon-play-engine.test.mjs",
+        "bytes": 15662,
+        "sha256": "e2935467047b01275a27f5c7867852fdc1a267126981a24543d7cade3fe6ab01"
+      },
+      {
+        "file": "tests/painted-scene.test.mjs",
+        "bytes": 11736,
+        "sha256": "a1ca059babe17572ea9cd177bd35e1baecbb4c80ccebefd37c3593d2926dd644"
+      },
+      {
+        "file": "tests/painted-station-integration.test.mjs",
+        "bytes": 15649,
+        "sha256": "35bcc27bf80bc73ae509dd71e8f2f92654ea2c91464688bd6d3e1e5202b496b5"
+      },
+      {
+        "file": "tests/play-rewards.test.mjs",
+        "bytes": 18876,
+        "sha256": "ebe7652ce3cf89b0c91be273c20eb5a0c0f9952a085d2d9450fda50413d6e374"
+      },
+      {
+        "file": "tests/progression.test.mjs",
+        "bytes": 7155,
+        "sha256": "58781164a6e5112b351964a961437f19f7a39680724be6f781078c7dbb27c566"
+      },
+      {
+        "file": "tests/scene-backdrop-integration.test.mjs",
+        "bytes": 11928,
+        "sha256": "5be312677e85d06db9c0784eb0fd9c831988a195f9f210b30fab587d11c1dd08"
+      },
+      {
+        "file": "tests/soul-art-v22.test.mjs",
+        "bytes": 23832,
+        "sha256": "908ca72257cf644b6039924fa77ee08e0c806974df8628e9cf89916366265d6e"
+      },
+      {
+        "file": "tests/station-finish.test.mjs",
+        "bytes": 5714,
+        "sha256": "f50b55dfe3b401759c8184667b7e75815db585f1dd6c44adc79e507ec8b58998"
+      },
+      {
+        "file": "tests/theatre-art.test.mjs",
+        "bytes": 8685,
+        "sha256": "f41c681827fdac410c706b7d0673a9754549fb2327935a3a47a9258e40701b31"
+      },
+      {
+        "file": "tests/theatre-assets-v22.test.mjs",
+        "bytes": 14283,
+        "sha256": "ac24c7f302ae49baaa1247cf8de5bbdc3bb1faac8005776b5834e2a87b8d8ff6"
+      },
+      {
+        "file": "tests/theatre-encore-v21.test.mjs",
+        "bytes": 3799,
+        "sha256": "83b91a7bc59163c88ff3a01cfbea7a9aac38c3f55b235e12aa5805b33c56601e"
+      },
+      {
+        "file": "tests/theatre-encore-v22.test.mjs",
+        "bytes": 9346,
+        "sha256": "0452b1ce82a6f3ea8df553b43ea6eef2ce71ea44bbadfc0296402dec041c754a"
+      },
+      {
+        "file": "tests/theatre-engine.test.mjs",
+        "bytes": 5615,
+        "sha256": "14ea4b91fef356eb45cbd1010264d6e72511b74f54f91d95d04c1bec54011465"
+      },
+      {
+        "file": "tests/theatre-guidance.test.mjs",
+        "bytes": 6488,
+        "sha256": "2d1747b62ccfd1b91a9a40509286f19e57472b895202ba43e7b5544c964d9907"
+      },
+      {
+        "file": "tests/theatre-npc-art-v24.test.mjs",
+        "bytes": 3011,
+        "sha256": "dfbadc45089e6e0069aa9b8c91ed0cd6a912638e828428e3de9c5c428c982ff2"
+      },
+      {
+        "file": "tests/theatre-painted-v20.test.mjs",
+        "bytes": 6561,
+        "sha256": "36253470e374427d66ed68ffb579a37d09dad1b2cd6608f31c50db3a477581c7"
+      },
+      {
+        "file": "tests/traveler-motion.test.mjs",
+        "bytes": 5087,
+        "sha256": "5b7fb2b242d8d776d319457fde01c05a20272d5cb3621587c7878340f69981bd"
+      },
+      {
+        "file": "tests/traveler-performance.test.mjs",
+        "bytes": 15060,
+        "sha256": "7c35a33e72abc488e3dc5e7a673c47b2da6b950e716b2ca33a7ddf27710b8006"
+      }
+    ]
+  },
+  "reports": [
+    {
+      "file": "/tmp/tougaigu-v27-release-40871791153/candidate/report.json",
+      "bytes": 1965514,
+      "sha256": "6ada41f3c8e593eeb6a65764ef81ce5d7cf0a036444e259a56193e02243a1c15",
+      "url": "http://127.0.0.1:8080/",
+      "cases": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "version": "27.0.0",
+          "pageErrors": [],
+          "httpErrors": [],
+          "networkFailureCount": 7,
+          "finalExactNetworkMatch": true,
+          "finalImagesLoaded": true,
+          "hudSamples": 54
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "version": "27.0.0",
+          "pageErrors": [],
+          "httpErrors": [],
+          "networkFailureCount": 0,
+          "finalExactNetworkMatch": true,
+          "finalImagesLoaded": true,
+          "hudSamples": 5
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "version": "27.0.0",
+          "pageErrors": [],
+          "httpErrors": [],
+          "networkFailureCount": 0,
+          "finalExactNetworkMatch": true,
+          "finalImagesLoaded": true,
+          "hudSamples": 5
+        }
+      ],
+      "laterChapterPortraitGroups": [
+        {
+          "path": "cases[0].library.introDecoded",
+          "count": 3,
+          "pages": [
+            "01 / 03",
+            "02 / 03",
+            "03 / 03"
+          ],
+          "images": [
+            "./assets/portrait-whale.svg",
+            "./assets/portrait-hero-curious.svg",
+            "./assets/portrait-whale.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.npc.portraits",
+          "count": 2,
+          "pages": [
+            "01 / 02",
+            "02 / 02"
+          ],
+          "images": [
+            "./assets/portrait-whale.svg",
+            "./assets/portrait-soul-brave.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.twoLampNPC.portraits",
+          "count": 1,
+          "pages": [
+            "01 / 01"
+          ],
+          "images": [
+            "./assets/portrait-whale.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.outroDecoded",
+          "count": 3,
+          "pages": [
+            "01 / 03",
+            "02 / 03",
+            "03 / 03"
+          ],
+          "images": [
+            "./assets/portrait-whale.svg",
+            "./assets/portrait-hero-tender.svg",
+            "./assets/portrait-soul-brave.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.clockReplyPortraits.release",
+          "count": 1,
+          "pages": [
+            "01 / 01"
+          ],
+          "images": [
+            "./assets/portrait-soul.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.clockReplyPortraits.hold",
+          "count": 1,
+          "pages": [
+            "01 / 01"
+          ],
+          "images": [
+            "./assets/portrait-soul.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].coast.releaseReply.replyPortraits",
+          "count": 1,
+          "pages": [
+            "01 / 01"
+          ],
+          "images": [
+            "./assets/portrait-soul.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].coast.holdReply.replyPortraits",
+          "count": 1,
+          "pages": [
+            "01 / 01"
+          ],
+          "images": [
+            "./assets/portrait-soul.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].coast.desktopRoute.introPortraits",
+          "count": 3,
+          "pages": [
+            "01 / 03",
+            "02 / 03",
+            "03 / 03"
+          ],
+          "images": [
+            "./assets/portrait-keeper.svg",
+            "./assets/portrait-hero-tender.svg",
+            "./assets/portrait-keeper.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].coast.desktopRoute.npcPortraits",
+          "count": 2,
+          "pages": [
+            "01 / 02",
+            "02 / 02"
+          ],
+          "images": [
+            "./assets/portrait-keeper.svg",
+            "./assets/portrait-soul-brave.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].coast.outroPortraits",
+          "count": 3,
+          "pages": [
+            "01 / 03",
+            "02 / 03",
+            "03 / 03"
+          ],
+          "images": [
+            "./assets/portrait-keeper.svg",
+            "./assets/portrait-hero-open.svg",
+            "./assets/portrait-soul-brave.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.touch390.npc.portraits",
+          "count": 2,
+          "pages": [
+            "01 / 02",
+            "02 / 02"
+          ],
+          "images": [
+            "./assets/portrait-whale.svg",
+            "./assets/portrait-soul-brave.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.touch320.npc.portraits",
+          "count": 2,
+          "pages": [
+            "01 / 02",
+            "02 / 02"
+          ],
+          "images": [
+            "./assets/portrait-whale.svg",
+            "./assets/portrait-soul-brave.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.resourceCases.failedPrimary.route.npc.portraits",
+          "count": 2,
+          "pages": [
+            "01 / 02",
+            "02 / 02"
+          ],
+          "images": [
+            "./assets/portrait-whale.svg",
+            "./assets/portrait-soul-brave.svg"
+          ],
+          "allDecodedVisible": true
+        }
+      ],
+      "libraryBookCarries": [
+        {
+          "path": "cases[0].library.bookA.carry",
+          "samples": 9,
+          "seconds": 0.6666666666666998,
+          "fullCycle": false,
+          "verticalTravel": 8.554517666549941,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        },
+        {
+          "path": "cases[0].library.bookB.carry",
+          "samples": 9,
+          "seconds": 0.6666666666666288,
+          "fullCycle": false,
+          "verticalTravel": 6.541677787015487,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        },
+        {
+          "path": "cases[0].library.touch390.bookA.carry",
+          "samples": 90,
+          "seconds": 7.416666666666957,
+          "fullCycle": true,
+          "verticalTravel": 123.97885384310996,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        },
+        {
+          "path": "cases[0].library.touch390.bookB.carry",
+          "samples": 102,
+          "seconds": 8.399999999999526,
+          "fullCycle": true,
+          "verticalTravel": 143.97427134055425,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        },
+        {
+          "path": "cases[0].library.touch320.bookA.carry",
+          "samples": 92,
+          "seconds": 7.4666666666669546,
+          "fullCycle": true,
+          "verticalTravel": 123.94814594213801,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        },
+        {
+          "path": "cases[0].library.touch320.bookB.carry",
+          "samples": 104,
+          "seconds": 8.449999999999523,
+          "fullCycle": true,
+          "verticalTravel": 143.99264388698703,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        },
+        {
+          "path": "cases[0].library.resourceCases.failedPrimary.route.bookA.carry",
+          "samples": 9,
+          "seconds": 0.7333333333333698,
+          "fullCycle": false,
+          "verticalTravel": 11.45528717346565,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        },
+        {
+          "path": "cases[0].library.resourceCases.failedPrimary.route.bookB.carry",
+          "samples": 9,
+          "seconds": 0.7166666666666259,
+          "fullCycle": false,
+          "verticalTravel": 8.94353019192954,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        }
+      ],
+      "libraryPause": {
+        "passiveFrames": 6,
+        "stateAndCanvasFrozen": true,
+        "bodyPlatform": "book-a"
+      },
+      "libraryResourceCases": {
+        "failedPrimary": {
+          "url": "http://127.0.0.1:8080/assets/library-painted-v26.webp",
+          "requestCount": 1,
+          "aborted": true,
+          "failure": "net::ERR_FAILED"
+        },
+        "delayed-current": {
+          "label": "library-delayed-current",
+          "url": "http://127.0.0.1:8080/assets/library-painted-v26.webp",
+          "requestCount": 1,
+          "obsolete": false,
+          "obsoleteAtFailure": false,
+          "fulfilled": true,
+          "failure": null,
+          "handlerError": null
+        },
+        "late-after-leaving": {
+          "label": "library-late-after-leaving",
+          "url": "http://127.0.0.1:8080/assets/library-painted-v26.webp",
+          "requestCount": 1,
+          "obsolete": true,
+          "obsoleteAtFailure": false,
+          "fulfilled": true,
+          "failure": null,
+          "handlerError": null
+        }
+      },
+      "clockEchoes": [
+        {
+          "path": "cases[0].coast.releaseEcho",
+          "choice": "release",
+          "playingSeconds": 0.21666666666666665,
+          "pause": {
+            "passiveFrames": 6,
+            "stateAndCanvasFrozen": true,
+            "atSeconds": 0.21666666666666665
+          },
+          "settled": {
+            "choice": "release",
+            "phase": "settled",
+            "elapsed": 2.8
+          },
+          "reopenSamples": 17,
+          "reopenChecked": true,
+          "scope": "desktop actual keyboard; same-run reopening checked"
+        },
+        {
+          "path": "cases[0].coast.holdEcho",
+          "choice": "hold",
+          "playingSeconds": 0.2333333333333333,
+          "pause": {
+            "passiveFrames": 6,
+            "stateAndCanvasFrozen": true,
+            "atSeconds": 0.2333333333333333
+          },
+          "settled": {
+            "choice": "hold",
+            "phase": "settled",
+            "elapsed": 2.8
+          },
+          "reopenSamples": 17,
+          "reopenChecked": true,
+          "scope": "desktop actual keyboard; same-run reopening checked"
+        },
+        {
+          "path": "cases[0].coast.touch390",
+          "choice": "hold",
+          "playingSeconds": 0.3333333333333333,
+          "pause": {
+            "passiveFrames": 6,
+            "stateAndCanvasFrozen": true,
+            "atSeconds": 0.3333333333333333
+          },
+          "settled": {
+            "choice": "hold",
+            "phase": "settled",
+            "elapsed": 2.8
+          },
+          "reopenSamples": 0,
+          "reopenChecked": false,
+          "scope": "actual safe-entry touch movement, cap opening, branch, pause, return and HUD; no phone pendulum crossing or chapter completion"
+        },
+        {
+          "path": "cases[0].coast.touch320",
+          "choice": "release",
+          "playingSeconds": 0.31666666666666665,
+          "pause": {
+            "passiveFrames": 6,
+            "stateAndCanvasFrozen": true,
+            "atSeconds": 0.31666666666666665
+          },
+          "settled": {
+            "choice": "release",
+            "phase": "settled",
+            "elapsed": 2.8
+          },
+          "reopenSamples": 0,
+          "reopenChecked": false,
+          "scope": "actual safe-entry touch movement, cap opening, branch, pause, return and HUD; no phone pendulum crossing or chapter completion"
+        }
+      ],
+      "coastCrossings": [
+        {
+          "path": "cases[0].coast.desktopRoute.firstTwoCrossing",
+          "samples": 88,
+          "runId": 1,
+          "bodyIdentity": 5,
+          "deaths": 0,
+          "crossings": [
+            {
+              "index": 0,
+              "fullSweepRight": 1041.039166752461,
+              "bodyX": 1041.625,
+              "remainingFreeze": 1.233333333333345,
+              "time": 14.150000000000283
+            },
+            {
+              "index": 1,
+              "fullSweepRight": 1346.798938511471,
+              "bodyX": 1353.625,
+              "remainingFreeze": 1.1166666666666787,
+              "time": 15.450000000000347
+            }
+          ],
+          "sameRunBodyAndMonotonicTimes": true
+        },
+        {
+          "path": "cases[0].coast.desktopRoute.thirdCrossing",
+          "samples": 59,
+          "runId": 1,
+          "bodyIdentity": 5,
+          "deaths": 0,
+          "crossings": [
+            {
+              "index": 2,
+              "fullSweepRight": 1927.0330409685043,
+              "bodyX": 1929.625,
+              "remainingFreeze": 2.1333333333333417,
+              "time": 23.866666666666593
+            }
+          ],
+          "sameRunBodyAndMonotonicTimes": true
+        }
+      ],
+      "coastPrimaryFailureScope": "exact primary WebP failure, actual safe-entry body movement, normal UI restart and native image recovery; no failed-image browser completion",
+      "strictJumps": [
+        {
+          "path": "cases[0].stationBodyJump",
+          "frames": 52,
+          "droppedFrames": 0,
+          "activeMs": 869.3000000000175,
+          "elapsedMs": 913.3000000000175,
+          "runId": 1,
+          "bodyIdentity": 1,
+          "times": {
+            "rise": 3.1999999999999935,
+            "fall": 3.7166666666666583,
+            "landed": 4.083333333333324
+          },
+          "sameRunBodyNoRespawn": true,
+          "monotonicSampleTimes": true,
+          "observerCleanup": {
+            "pendingFrame": false,
+            "pendingTimer": false,
+            "oldPosesCleared": true,
+            "removed": true
+          },
+          "pauseFrames": 0
+        },
+        {
+          "path": "cases[0].theatre.travelerPerformance.normalJump",
+          "frames": 76,
+          "droppedFrames": 0,
+          "activeMs": 860.6000000000349,
+          "elapsedMs": 1781.7999999999884,
+          "runId": 1,
+          "bodyIdentity": 2,
+          "times": {
+            "rise": 2.466666666666663,
+            "fall": 2.9833333333333276,
+            "landed": 3.349999999999993
+          },
+          "sameRunBodyNoRespawn": true,
+          "monotonicSampleTimes": true,
+          "observerCleanup": {
+            "pendingFrame": false,
+            "pendingTimer": false,
+            "oldPosesCleared": true,
+            "removed": true
+          },
+          "pauseFrames": 6
+        },
+        {
+          "path": "cases[0].theatre.travelerPerformance.reducedMotionJump",
+          "frames": 55,
+          "droppedFrames": 0,
+          "activeMs": 860.4000000000233,
+          "elapsedMs": 890.4000000000233,
+          "runId": 1,
+          "bodyIdentity": 2,
+          "times": {
+            "rise": 3.599999999999992,
+            "fall": 4.133333333333324,
+            "landed": 4.499999999999989
+          },
+          "sameRunBodyNoRespawn": true,
+          "monotonicSampleTimes": true,
+          "observerCleanup": {
+            "pendingFrame": false,
+            "pendingTimer": false,
+            "oldPosesCleared": true,
+            "removed": true
+          },
+          "pauseFrames": 0
+        }
+      ],
+      "exactFullSessionNetworkFailures": {
+        "actual": [
+          {
+            "url": "http://127.0.0.1:8080/assets/portrait-hero-curious.svg",
+            "failure": "net::ERR_ABORTED"
+          },
+          {
+            "url": "http://127.0.0.1:8080/assets/portrait-hero-curious.svg",
+            "failure": "net::ERR_ABORTED"
+          },
+          {
+            "url": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "http://127.0.0.1:8080/assets/library-painted-v26.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "http://127.0.0.1:8080/assets/coast-painted-v27.webp",
+            "failure": "net::ERR_FAILED"
+          }
+        ],
+        "expected": [
+          {
+            "url": "http://127.0.0.1:8080/assets/portrait-hero-curious.svg",
+            "failure": "net::ERR_ABORTED"
+          },
+          {
+            "url": "http://127.0.0.1:8080/assets/portrait-hero-curious.svg",
+            "failure": "net::ERR_ABORTED"
+          },
+          {
+            "url": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "http://127.0.0.1:8080/assets/library-painted-v26.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "http://127.0.0.1:8080/assets/coast-painted-v27.webp",
+            "failure": "net::ERR_FAILED"
+          }
+        ],
+        "exactMatch": true
+      },
+      "scopeBoundaries": [
+        "Candidate report is local served production HTML, not deployed domain evidence.",
+        "Phone library cases cover both real books and puzzles, full carry cycles, and return; they do not complete the chapter.",
+        "Phone coast cases cover safe-entry movement, choice, cap playback, pause and return; they do not cross pendulums or complete the chapter.",
+        "Coast failed primary WebP browser case covers safe-entry body movement and native recovery; full failed-paint completion is only the separate offline route.",
+        "Coast delayed/late browser resource behavior is not included; library delayed-current and late-after-leaving are included.",
+        "Chromium emulated touch and CI timings are not physical-device performance measurements."
+      ],
+      "artifactPath": "candidate/report.json",
+      "repositoryPath": "docs/verification-v27-candidate-full.json",
+      "theatrePhoneCarries": [
+        {
+          "path": "cases[0].theatre.touch390",
+          "input": "CDP emulated touch controls",
+          "noInputCarryDistance": 176.5420404383242,
+          "relativeRideOffsetDrift": 0.0,
+          "noRespawns": true,
+          "chapterCompleted": false,
+          "scope": "first moving-stage crossing only; not chapter completion"
+        },
+        {
+          "path": "cases[0].theatre.touch320",
+          "input": "CDP emulated touch controls",
+          "noInputCarryDistance": 176.5420404383242,
+          "relativeRideOffsetDrift": 0.0,
+          "noRespawns": true,
+          "chapterCompleted": false,
+          "scope": "first moving-stage crossing only; not chapter completion"
+        }
+      ]
+    },
+    {
+      "file": "/tmp/tougaigu-v27-release-40871791153/live/report.json",
+      "bytes": 1956753,
+      "sha256": "204bf948891f3a3dd15376181b74c64e5e93864e5f29e33ee12cfc73f5cf245e",
+      "url": "https://tougaigu.com/?qa=73fe30b751e6fa46d01ded252fb6f3c34c19cc04",
+      "cases": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "version": "27.0.0",
+          "pageErrors": [],
+          "httpErrors": [],
+          "networkFailureCount": 7,
+          "finalExactNetworkMatch": true,
+          "finalImagesLoaded": true,
+          "hudSamples": 54
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "version": "27.0.0",
+          "pageErrors": [],
+          "httpErrors": [],
+          "networkFailureCount": 0,
+          "finalExactNetworkMatch": true,
+          "finalImagesLoaded": true,
+          "hudSamples": 5
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "version": "27.0.0",
+          "pageErrors": [],
+          "httpErrors": [],
+          "networkFailureCount": 0,
+          "finalExactNetworkMatch": true,
+          "finalImagesLoaded": true,
+          "hudSamples": 5
+        }
+      ],
+      "laterChapterPortraitGroups": [
+        {
+          "path": "cases[0].library.introDecoded",
+          "count": 3,
+          "pages": [
+            "01 / 03",
+            "02 / 03",
+            "03 / 03"
+          ],
+          "images": [
+            "./assets/portrait-whale.svg",
+            "./assets/portrait-hero-curious.svg",
+            "./assets/portrait-whale.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.npc.portraits",
+          "count": 2,
+          "pages": [
+            "01 / 02",
+            "02 / 02"
+          ],
+          "images": [
+            "./assets/portrait-whale.svg",
+            "./assets/portrait-soul-brave.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.twoLampNPC.portraits",
+          "count": 1,
+          "pages": [
+            "01 / 01"
+          ],
+          "images": [
+            "./assets/portrait-whale.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.outroDecoded",
+          "count": 3,
+          "pages": [
+            "01 / 03",
+            "02 / 03",
+            "03 / 03"
+          ],
+          "images": [
+            "./assets/portrait-whale.svg",
+            "./assets/portrait-hero-tender.svg",
+            "./assets/portrait-soul-brave.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.clockReplyPortraits.release",
+          "count": 1,
+          "pages": [
+            "01 / 01"
+          ],
+          "images": [
+            "./assets/portrait-soul.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.clockReplyPortraits.hold",
+          "count": 1,
+          "pages": [
+            "01 / 01"
+          ],
+          "images": [
+            "./assets/portrait-soul.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].coast.releaseReply.replyPortraits",
+          "count": 1,
+          "pages": [
+            "01 / 01"
+          ],
+          "images": [
+            "./assets/portrait-soul.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].coast.holdReply.replyPortraits",
+          "count": 1,
+          "pages": [
+            "01 / 01"
+          ],
+          "images": [
+            "./assets/portrait-soul.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].coast.desktopRoute.introPortraits",
+          "count": 3,
+          "pages": [
+            "01 / 03",
+            "02 / 03",
+            "03 / 03"
+          ],
+          "images": [
+            "./assets/portrait-keeper.svg",
+            "./assets/portrait-hero-tender.svg",
+            "./assets/portrait-keeper.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].coast.desktopRoute.npcPortraits",
+          "count": 2,
+          "pages": [
+            "01 / 02",
+            "02 / 02"
+          ],
+          "images": [
+            "./assets/portrait-keeper.svg",
+            "./assets/portrait-soul-brave.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].coast.outroPortraits",
+          "count": 3,
+          "pages": [
+            "01 / 03",
+            "02 / 03",
+            "03 / 03"
+          ],
+          "images": [
+            "./assets/portrait-keeper.svg",
+            "./assets/portrait-hero-open.svg",
+            "./assets/portrait-soul-brave.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.touch390.npc.portraits",
+          "count": 2,
+          "pages": [
+            "01 / 02",
+            "02 / 02"
+          ],
+          "images": [
+            "./assets/portrait-whale.svg",
+            "./assets/portrait-soul-brave.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.touch320.npc.portraits",
+          "count": 2,
+          "pages": [
+            "01 / 02",
+            "02 / 02"
+          ],
+          "images": [
+            "./assets/portrait-whale.svg",
+            "./assets/portrait-soul-brave.svg"
+          ],
+          "allDecodedVisible": true
+        },
+        {
+          "path": "cases[0].library.resourceCases.failedPrimary.route.npc.portraits",
+          "count": 2,
+          "pages": [
+            "01 / 02",
+            "02 / 02"
+          ],
+          "images": [
+            "./assets/portrait-whale.svg",
+            "./assets/portrait-soul-brave.svg"
+          ],
+          "allDecodedVisible": true
+        }
+      ],
+      "libraryBookCarries": [
+        {
+          "path": "cases[0].library.bookA.carry",
+          "samples": 9,
+          "seconds": 0.6666666666666998,
+          "fullCycle": false,
+          "verticalTravel": 8.554517666549941,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        },
+        {
+          "path": "cases[0].library.bookB.carry",
+          "samples": 9,
+          "seconds": 0.6833333333332945,
+          "fullCycle": false,
+          "verticalTravel": 6.921677251025699,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        },
+        {
+          "path": "cases[0].library.touch390.bookA.carry",
+          "samples": 90,
+          "seconds": 7.416666666666957,
+          "fullCycle": true,
+          "verticalTravel": 123.97885384310996,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        },
+        {
+          "path": "cases[0].library.touch390.bookB.carry",
+          "samples": 102,
+          "seconds": 8.433333333332858,
+          "fullCycle": true,
+          "verticalTravel": 143.99264388698703,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        },
+        {
+          "path": "cases[0].library.touch320.bookA.carry",
+          "samples": 92,
+          "seconds": 7.4666666666669546,
+          "fullCycle": true,
+          "verticalTravel": 123.96877676017795,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        },
+        {
+          "path": "cases[0].library.touch320.bookB.carry",
+          "samples": 103,
+          "seconds": 8.38333333333286,
+          "fullCycle": true,
+          "verticalTravel": 143.99953839288617,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        },
+        {
+          "path": "cases[0].library.resourceCases.failedPrimary.route.bookA.carry",
+          "samples": 8,
+          "seconds": 0.6500000000000323,
+          "fullCycle": false,
+          "verticalTravel": 9.960364780080681,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        },
+        {
+          "path": "cases[0].library.resourceCases.failedPrimary.route.bookB.carry",
+          "samples": 9,
+          "seconds": 0.7333333333332916,
+          "fullCycle": false,
+          "verticalTravel": 9.383591829031388,
+          "maxSoleError": 0,
+          "maxRelativeHorizontalDrift": 0,
+          "sameRunBodyNoDeathsThroughout": true
+        }
+      ],
+      "libraryPause": {
+        "passiveFrames": 6,
+        "stateAndCanvasFrozen": true,
+        "bodyPlatform": "book-a"
+      },
+      "libraryResourceCases": {
+        "failedPrimary": {
+          "url": "https://tougaigu.com/assets/library-painted-v26.webp",
+          "requestCount": 1,
+          "aborted": true,
+          "failure": "net::ERR_FAILED"
+        },
+        "delayed-current": {
+          "label": "library-delayed-current",
+          "url": "https://tougaigu.com/assets/library-painted-v26.webp",
+          "requestCount": 1,
+          "obsolete": false,
+          "obsoleteAtFailure": false,
+          "fulfilled": true,
+          "failure": null,
+          "handlerError": null
+        },
+        "late-after-leaving": {
+          "label": "library-late-after-leaving",
+          "url": "https://tougaigu.com/assets/library-painted-v26.webp",
+          "requestCount": 1,
+          "obsolete": true,
+          "obsoleteAtFailure": false,
+          "fulfilled": true,
+          "failure": null,
+          "handlerError": null
+        }
+      },
+      "clockEchoes": [
+        {
+          "path": "cases[0].coast.releaseEcho",
+          "choice": "release",
+          "playingSeconds": 0.2333333333333333,
+          "pause": {
+            "passiveFrames": 6,
+            "stateAndCanvasFrozen": true,
+            "atSeconds": 0.2333333333333333
+          },
+          "settled": {
+            "choice": "release",
+            "phase": "settled",
+            "elapsed": 2.8
+          },
+          "reopenSamples": 17,
+          "reopenChecked": true,
+          "scope": "desktop actual keyboard; same-run reopening checked"
+        },
+        {
+          "path": "cases[0].coast.holdEcho",
+          "choice": "hold",
+          "playingSeconds": 0.2333333333333333,
+          "pause": {
+            "passiveFrames": 6,
+            "stateAndCanvasFrozen": true,
+            "atSeconds": 0.2333333333333333
+          },
+          "settled": {
+            "choice": "hold",
+            "phase": "settled",
+            "elapsed": 2.8
+          },
+          "reopenSamples": 17,
+          "reopenChecked": true,
+          "scope": "desktop actual keyboard; same-run reopening checked"
+        },
+        {
+          "path": "cases[0].coast.touch390",
+          "choice": "hold",
+          "playingSeconds": 0.36666666666666664,
+          "pause": {
+            "passiveFrames": 6,
+            "stateAndCanvasFrozen": true,
+            "atSeconds": 0.36666666666666664
+          },
+          "settled": {
+            "choice": "hold",
+            "phase": "settled",
+            "elapsed": 2.8
+          },
+          "reopenSamples": 0,
+          "reopenChecked": false,
+          "scope": "actual safe-entry touch movement, cap opening, branch, pause, return and HUD; no phone pendulum crossing or chapter completion"
+        },
+        {
+          "path": "cases[0].coast.touch320",
+          "choice": "release",
+          "playingSeconds": 0.3333333333333333,
+          "pause": {
+            "passiveFrames": 6,
+            "stateAndCanvasFrozen": true,
+            "atSeconds": 0.3333333333333333
+          },
+          "settled": {
+            "choice": "release",
+            "phase": "settled",
+            "elapsed": 2.8
+          },
+          "reopenSamples": 0,
+          "reopenChecked": false,
+          "scope": "actual safe-entry touch movement, cap opening, branch, pause, return and HUD; no phone pendulum crossing or chapter completion"
+        }
+      ],
+      "coastCrossings": [
+        {
+          "path": "cases[0].coast.desktopRoute.firstTwoCrossing",
+          "samples": 86,
+          "runId": 1,
+          "bodyIdentity": 5,
+          "deaths": 0,
+          "crossings": [
+            {
+              "index": 0,
+              "fullSweepRight": 1041.039166752461,
+              "bodyX": 1048.8333333333333,
+              "remainingFreeze": 1.0833333333333455,
+              "time": 14.483333333333633
+            },
+            {
+              "index": 1,
+              "fullSweepRight": 1346.798938511471,
+              "bodyX": 1352.8333333333333,
+              "remainingFreeze": 1.150000000000012,
+              "time": 15.750000000000362
+            }
+          ],
+          "sameRunBodyAndMonotonicTimes": true
+        },
+        {
+          "path": "cases[0].coast.desktopRoute.thirdCrossing",
+          "samples": 59,
+          "runId": 1,
+          "bodyIdentity": 5,
+          "deaths": 0,
+          "crossings": [
+            {
+              "index": 2,
+              "fullSweepRight": 1927.0330409685043,
+              "bodyX": 1936.8333333333333,
+              "remainingFreeze": 2.0500000000000087,
+              "time": 23.99999999999992
+            }
+          ],
+          "sameRunBodyAndMonotonicTimes": true
+        }
+      ],
+      "coastPrimaryFailureScope": "exact primary WebP failure, actual safe-entry body movement, normal UI restart and native image recovery; no failed-image browser completion",
+      "strictJumps": [
+        {
+          "path": "cases[0].stationBodyJump",
+          "frames": 55,
+          "droppedFrames": 0,
+          "activeMs": 881.5999999999767,
+          "elapsedMs": 916.5999999999767,
+          "runId": 1,
+          "bodyIdentity": 1,
+          "times": {
+            "rise": 2.9499999999999944,
+            "fall": 3.4666666666666592,
+            "landed": 3.8333333333333246
+          },
+          "sameRunBodyNoRespawn": true,
+          "monotonicSampleTimes": true,
+          "observerCleanup": {
+            "pendingFrame": false,
+            "pendingTimer": false,
+            "oldPosesCleared": true,
+            "removed": true
+          },
+          "pauseFrames": 0
+        },
+        {
+          "path": "cases[0].theatre.travelerPerformance.normalJump",
+          "frames": 79,
+          "droppedFrames": 0,
+          "activeMs": 890.800000000163,
+          "elapsedMs": 1827.9000000000233,
+          "runId": 1,
+          "bodyIdentity": 2,
+          "times": {
+            "rise": 2.5666666666666624,
+            "fall": 3.0833333333333273,
+            "landed": 3.4499999999999926
+          },
+          "sameRunBodyNoRespawn": true,
+          "monotonicSampleTimes": true,
+          "observerCleanup": {
+            "pendingFrame": false,
+            "pendingTimer": false,
+            "oldPosesCleared": true,
+            "removed": true
+          },
+          "pauseFrames": 6
+        },
+        {
+          "path": "cases[0].theatre.travelerPerformance.reducedMotionJump",
+          "frames": 55,
+          "droppedFrames": 0,
+          "activeMs": 867.2000000000698,
+          "elapsedMs": 895.0999999999767,
+          "runId": 1,
+          "bodyIdentity": 2,
+          "times": {
+            "rise": 3.6999999999999917,
+            "fall": 4.216666666666657,
+            "landed": 4.599999999999989
+          },
+          "sameRunBodyNoRespawn": true,
+          "monotonicSampleTimes": true,
+          "observerCleanup": {
+            "pendingFrame": false,
+            "pendingTimer": false,
+            "oldPosesCleared": true,
+            "removed": true
+          },
+          "pauseFrames": 0
+        }
+      ],
+      "exactFullSessionNetworkFailures": {
+        "actual": [
+          {
+            "url": "https://tougaigu.com/assets/portrait-hero-curious.svg",
+            "failure": "net::ERR_ABORTED"
+          },
+          {
+            "url": "https://tougaigu.com/assets/portrait-hero-curious.svg",
+            "failure": "net::ERR_ABORTED"
+          },
+          {
+            "url": "https://tougaigu.com/assets/theatre-painted-v22.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://tougaigu.com/assets/theatre-painted-v22.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://tougaigu.com/assets/theatre-painted-v20.svg",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://tougaigu.com/assets/library-painted-v26.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://tougaigu.com/assets/coast-painted-v27.webp",
+            "failure": "net::ERR_FAILED"
+          }
+        ],
+        "expected": [
+          {
+            "url": "https://tougaigu.com/assets/portrait-hero-curious.svg",
+            "failure": "net::ERR_ABORTED"
+          },
+          {
+            "url": "https://tougaigu.com/assets/portrait-hero-curious.svg",
+            "failure": "net::ERR_ABORTED"
+          },
+          {
+            "url": "https://tougaigu.com/assets/theatre-painted-v22.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://tougaigu.com/assets/theatre-painted-v22.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://tougaigu.com/assets/theatre-painted-v20.svg",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://tougaigu.com/assets/library-painted-v26.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://tougaigu.com/assets/coast-painted-v27.webp",
+            "failure": "net::ERR_FAILED"
+          }
+        ],
+        "exactMatch": true
+      },
+      "scopeBoundaries": [
+        "Public report uses the deployed HTTPS URL, with read-only coordinate instrumentation and actual UI input.",
+        "Phone library cases cover both real books and puzzles, full carry cycles, and return; they do not complete the chapter.",
+        "Phone coast cases cover safe-entry movement, choice, cap playback, pause and return; they do not cross pendulums or complete the chapter.",
+        "Coast failed primary WebP browser case covers safe-entry body movement and native recovery; full failed-paint completion is only the separate offline route.",
+        "Coast delayed/late browser resource behavior is not included; library delayed-current and late-after-leaving are included.",
+        "Chromium emulated touch and CI timings are not physical-device performance measurements."
+      ],
+      "artifactPath": "live/report.json",
+      "repositoryPath": "docs/verification-v27-public-full.json",
+      "theatrePhoneCarries": [
+        {
+          "path": "cases[0].theatre.touch390",
+          "input": "CDP emulated touch controls",
+          "noInputCarryDistance": 180.95217833846073,
+          "relativeRideOffsetDrift": 0.0,
+          "noRespawns": true,
+          "chapterCompleted": false,
+          "scope": "first moving-stage crossing only; not chapter completion"
+        },
+        {
+          "path": "cases[0].theatre.touch320",
+          "input": "CDP emulated touch controls",
+          "noInputCarryDistance": 179.8825156082179,
+          "relativeRideOffsetDrift": 0.0,
+          "noRespawns": true,
+          "chapterCompleted": false,
+          "scope": "first moving-stage crossing only; not chapter completion"
+        }
+      ]
+    }
+  ],
+  "auditTimeUTC": "2026-10-29T12:37:29.869756+00:00",
+  "auditScope": "Original final-main artifact checksum/path/source identity plus actual candidate and deployed HTTPS report data. Image bytes/dimensions are preserved; root performs the original-frame visual review separately. No artifact code was executed.",
+  "archiveVerification": {
+    "artifactId": 12896194998,
+    "archivePath": "/tmp/tougaigu-v27-release-40871791153.zip",
+    "bytes": 223874243,
+    "sha256": "992cdee35d2f7deb68d9a1510754e007ef4ca2db72a71db057e7157a1719b227",
+    "checksumVerified": true,
+    "safeEntryPathsVerified": true,
+    "entryCount": 287,
+    "uncompressedBytes": 231654191,
+    "commit": "73fe30b751e6fa46d01ded252fb6f3c34c19cc04",
+    "reports": [
+      "candidate/report.json",
+      "live/report.json"
+    ],
+    "artifactCodeExecuted": false,
+    "extractedRoot": "/tmp/tougaigu-v27-release-40871791153"
+  },
+  "sourceTree": "34f4cfdeac136d0656e6dece0a7b73a7597f18ee",
+  "publicDeploymentTested": true,
+  "publicURL": "https://tougaigu.com/",
+  "ci": {
+    "runId": 40871791153,
+    "jobId": 123440408098,
+    "headSha": "73fe30b751e6fa46d01ded252fb6f3c34c19cc04",
+    "branch": "main",
+    "conclusion": "success",
+    "runUrl": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40871791153",
+    "startedAt": "2026-10-29T12:15:36Z",
+    "updatedAt": "2026-10-29T12:33:26Z",
+    "candidateBrowser": {
+      "startedAt": "2026-10-29T12:16:36.9321434Z",
+      "reportFinishedAt": "2026-10-29T12:24:54.4196515Z",
+      "elapsedSeconds": 497.4875081,
+      "conclusion": "success"
+    },
+    "publicBrowser": {
+      "startedAt": "2026-10-29T12:24:54.4258779Z",
+      "reportFinishedAt": "2026-10-29T12:33:13.0627266Z",
+      "elapsedSeconds": 498.6368487,
+      "conclusion": "success"
+    },
+    "timingScope": "Step shell start through final complete report output, including startup/output overhead; original job logs independently read by library_route_audit."
+  },
+  "pages": {
+    "runId": 40871794254,
+    "headSha": "8ee328d1741f737755e7f6c7082bcf951163a7b9",
+    "headBranch": "gh-pages",
+    "status": "completed",
+    "conclusion": "success",
+    "startedAt": "2026-10-29T12:15:37Z",
+    "updatedAt": "2026-10-29T12:17:03Z",
+    "url": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40871794254"
+  },
+  "initialCandidate": {
+    "runId": 40870056725,
+    "sourceCommit": "f0a86fca370153668141f11de25b7285b9e09eaa",
+    "auditRepositoryPath": "docs/v27-candidate-artifact-audit.json",
+    "auditSha256": "24f8df9a09dae67155e38e2b261b2ccca7aaa787ac2b21bb7e4f4f31373e6837",
+    "all224ReviewedRuntimeScriptTestPackageWorkflowFilesMatchFinalSource": true
+  },
+  "archivedOriginalFiles": [
+    {
+      "artifactPath": "live/1280-coast-npc-before-crossing.png",
+      "repositoryPath": "docs/v27-live-coast-entrance-keeper.png",
+      "originalLocalPath": "/tmp/tougaigu-v27-release-40871791153/live/1280-coast-npc-before-crossing.png",
+      "localPath": "/workspace/scratch/2b18af2db412/tougaigu-v27/docs/v27-live-coast-entrance-keeper.png",
+      "bytes": 997528,
+      "sha256": "71106b929d195e7eea90a0cf4c96583be29d32eda321edf69a622cfc2d8c5b04",
+      "copiedOriginalBytes": true,
+      "width": 1280,
+      "height": 800,
+      "scope": "original full-page browser screenshot"
+    },
+    {
+      "artifactPath": "live/1280-coast-two-lamps.png",
+      "repositoryPath": "docs/v27-live-coast-two-lamps.png",
+      "originalLocalPath": "/tmp/tougaigu-v27-release-40871791153/live/1280-coast-two-lamps.png",
+      "localPath": "/workspace/scratch/2b18af2db412/tougaigu-v27/docs/v27-live-coast-two-lamps.png",
+      "bytes": 974987,
+      "sha256": "2f8be3041bf9ed34b2db40f0285b98fd99387cb21f6d22bf7cddab8d478d5156",
+      "copiedOriginalBytes": true,
+      "width": 1280,
+      "height": 800,
+      "scope": "original full-page browser screenshot"
+    },
+    {
+      "artifactPath": "live/1280-coast-entry-320.png",
+      "repositoryPath": "docs/v27-live-coast-entry-320.png",
+      "originalLocalPath": "/tmp/tougaigu-v27-release-40871791153/live/1280-coast-entry-320.png",
+      "localPath": "/workspace/scratch/2b18af2db412/tougaigu-v27/docs/v27-live-coast-entry-320.png",
+      "bytes": 225673,
+      "sha256": "61e4c4484807b4847ee2f1fa58022d5c82d66aeafb80b7201290f1e9719b6616",
+      "copiedOriginalBytes": true,
+      "width": 320,
+      "height": 680,
+      "scope": "original full-page browser screenshot"
+    },
+    {
+      "artifactPath": "live/1280-clock-release-playing-paused-canvas.png",
+      "repositoryPath": "docs/v27-live-clock-release-playing-canvas.png",
+      "originalLocalPath": "/tmp/tougaigu-v27-release-40871791153/live/1280-clock-release-playing-paused-canvas.png",
+      "localPath": "/workspace/scratch/2b18af2db412/tougaigu-v27/docs/v27-live-clock-release-playing-canvas.png",
+      "bytes": 1441846,
+      "sha256": "65ec8f7e6bfa59160e76c9d57996e26bfb18f48bb5bc1ca23dcd4524865a3cb2",
+      "copiedOriginalBytes": true,
+      "width": 1280,
+      "height": 677,
+      "scope": "native complete Canvas export without outer DOM HUD"
+    },
+    {
+      "artifactPath": "live/1280-clock-hold-playing-paused-canvas.png",
+      "repositoryPath": "docs/v27-live-clock-hold-playing-canvas.png",
+      "originalLocalPath": "/tmp/tougaigu-v27-release-40871791153/live/1280-clock-hold-playing-paused-canvas.png",
+      "localPath": "/workspace/scratch/2b18af2db412/tougaigu-v27/docs/v27-live-clock-hold-playing-canvas.png",
+      "bytes": 1444619,
+      "sha256": "fd205a8ec524b61ac212a825ed88d76072e9456a76587c5fe2a10e82a155f379",
+      "copiedOriginalBytes": true,
+      "width": 1280,
+      "height": 677,
+      "scope": "native complete Canvas export without outer DOM HUD"
+    },
+    {
+      "artifactPath": "live/1280-touch-320-library-book-b-riding.png",
+      "repositoryPath": "docs/v27-live-library-book-b-320.png",
+      "originalLocalPath": "/tmp/tougaigu-v27-release-40871791153/live/1280-touch-320-library-book-b-riding.png",
+      "localPath": "/workspace/scratch/2b18af2db412/tougaigu-v27/docs/v27-live-library-book-b-320.png",
+      "bytes": 236350,
+      "sha256": "58dfdfb86fc34c1a378c97977e093c7e4be18c052a4ead0ecc82be1311819181",
+      "copiedOriginalBytes": true,
+      "width": 320,
+      "height": 680,
+      "scope": "original full-page browser screenshot"
+    },
+    {
+      "artifactPath": "candidate/report.json",
+      "repositoryPath": "docs/verification-v27-candidate-full.json",
+      "originalLocalPath": "/tmp/tougaigu-v27-release-40871791153/candidate/report.json",
+      "localPath": "/workspace/scratch/2b18af2db412/tougaigu-v27/docs/verification-v27-candidate-full.json",
+      "bytes": 1965514,
+      "sha256": "6ada41f3c8e593eeb6a65764ef81ce5d7cf0a036444e259a56193e02243a1c15",
+      "copiedOriginalBytes": true
+    },
+    {
+      "artifactPath": "live/report.json",
+      "repositoryPath": "docs/verification-v27-public-full.json",
+      "originalLocalPath": "/tmp/tougaigu-v27-release-40871791153/live/report.json",
+      "localPath": "/workspace/scratch/2b18af2db412/tougaigu-v27/docs/verification-v27-public-full.json",
+      "bytes": 1956753,
+      "sha256": "204bf948891f3a3dd15376181b74c64e5e93864e5f29e33ee12cfc73f5cf245e",
+      "copiedOriginalBytes": true
+    }
+  ],
+  "allOriginalArtifactScreenshots": [
+    {
+      "artifactPath": "candidate/1280-clock-hold-playing-paused-canvas.png",
+      "bytes": 1443358,
+      "sha256": "a0664f3222f79a980fbc5780e872313a3d10d939875f4cc4568e317ae3f75a8e",
+      "width": 1280,
+      "height": 677
+    },
+    {
+      "artifactPath": "candidate/1280-clock-hold-reduced-320.png",
+      "bytes": 223916,
+      "sha256": "85b9a5b0800b224a8c62a747955c5d71fc30a965ea51fd083059988ac4008884",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-clock-hold-settled.png",
+      "bytes": 1015607,
+      "sha256": "a68f4075e229aa74a917ec01ab1cf070088e4489c18f33fb8af6789ac691c2ab",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-clock-release-playing-paused-canvas.png",
+      "bytes": 1440625,
+      "sha256": "129f1e84fd23840620ac03f2ca165ba0c1b2878fd4340f299b502d4394136ae2",
+      "width": 1280,
+      "height": 677
+    },
+    {
+      "artifactPath": "candidate/1280-clock-release-settled.png",
+      "bytes": 1019464,
+      "sha256": "a32a1c7bd34eae45708a1ebe1612e4e881856c5d114790862a589d7134edb9ac",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-coast-all-pendulums-cleared.png",
+      "bytes": 962909,
+      "sha256": "d2d8ca72dddbc3fd70a61d03253e4e9a0e8b0638779f1b06976be24af215c6d5",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-coast-complete.png",
+      "bytes": 281016,
+      "sha256": "b5234a345c245c6dc071a38136eb6e0335c14dc43a234e1f20fc5d12e0ea5e63",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-coast-entry-320.png",
+      "bytes": 225676,
+      "sha256": "d99563771ecc0027acd207d631a88c41d36f9890a2bc0a76399b18cbd44b3474",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-coast-entry-390.png",
+      "bytes": 328891,
+      "sha256": "0a39add9f29110dfdac992387a7b7a5ba9809b786695e144a156aa9788f84bde",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-coast-first-lamp.png",
+      "bytes": 1024080,
+      "sha256": "444774dd5fdd6e0189df1debf180c2adcc5c8bdaf8d9485db8234fdeddad86f9",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-coast-first-two-pendulums-cleared.png",
+      "bytes": 962108,
+      "sha256": "4d3df2ab48e173c2fb2312f0f67c8bab94d455e3a97ede9263b3c5a583cdcfa3",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-coast-npc-before-crossing.png",
+      "bytes": 997535,
+      "sha256": "cb895d568081ba9f238b4e396a240b9d64d40ef9a905a55b5a56e8e627df8bf6",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-coast-primary-failed-safe-movement.png",
+      "bytes": 672405,
+      "sha256": "596a4b99f1272a2309b4a7fd960801fec924b3793f082f2b13d94102f7298e6a",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-coast-two-lamps.png",
+      "bytes": 979913,
+      "sha256": "2e6eda5c9388ca7f5772e4b2a325ed5dafdbd3e78d89cd314d6a258f17783b57",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-coast-wind-memory.png",
+      "bytes": 972634,
+      "sha256": "efba56b4dde8479d8fd459efc3e357a0a335f9126b7dd0ded94873c31d4906c8",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-complete.png",
+      "bytes": 263092,
+      "sha256": "c5093b0b205c852a88606a7e0e08b70cfe7b7526ffbbc8db91d4caba52a2b0f3",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-fallback-library-book-a-riding.png",
+      "bytes": 725277,
+      "sha256": "1179826ae153175f5a1f3089699992de11a717ae9207cf1841add8800a622ea3",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-fallback-library-book-b-riding.png",
+      "bytes": 720468,
+      "sha256": "a132514ad982be1edceba4900ff9fc1e051ffc44f5518afe987a51c40659c7a5",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-fallback-library-complete.png",
+      "bytes": 226570,
+      "sha256": "9f59183e2754dccfa7df2b97c70258088434d5c0d1cc7b47481268a68e70158b",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-fallback-library-first-lamp.png",
+      "bytes": 744266,
+      "sha256": "bcbaf4bf24b166a82e98d031c54c4d5362546b9ba55a3f105abd0de3e54a6178",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-fallback-library-npc-0-lamps.png",
+      "bytes": 211226,
+      "sha256": "a5e071e139b352a9033258cb83bab257b5ef631f71a3fe586e53762e8699b134",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-fallback-library-npc-cap.png",
+      "bytes": 719632,
+      "sha256": "58b3ad7a928083a966da0140b1e37b942da35c19eabb87fc64c954f6d8d5b8c9",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-fallback-library-two-lamps.png",
+      "bytes": 735071,
+      "sha256": "a9152907806925577ee7c864c8882bbb727a5c6093fcfb30cf18defdc9b1505e",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-fallback-procedural-lamp.png",
+      "bytes": 762158,
+      "sha256": "0e7e3155ec3999aaa06c82f237ea4581b27f1bf78420f6be57ccf9abeb745dfc",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-fallback-procedural-theatre-left-bank.png",
+      "bytes": 682589,
+      "sha256": "252570b7e09dfab53a6c439c580c9f4fdfb6d4cad58911e44359009e4c15f80e",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-fallback-procedural-theatre-midstage.png",
+      "bytes": 659036,
+      "sha256": "cee7a800e09c42c6e43faa797a9e0524d3145a3767336d8a2667e589d2546475",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-fallback-procedural-theatre-right-bank.png",
+      "bytes": 685983,
+      "sha256": "f4fdfb6cb82d5f86dfb314ca2483e165c7d6b04e7a91726a300fcde4463b92db",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-fallback-svg-lamp.png",
+      "bytes": 836897,
+      "sha256": "f2026ff4cf59a4028da1de3cf86f29c530e2ebac1b1be97429647f45eb68c319",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-fallback-svg-theatre-left-bank.png",
+      "bytes": 752549,
+      "sha256": "f2c47dfcff94f6f4e5db6e43374fb5b61f501e1ea4a5a33a7348feccf9bdc302",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-fallback-svg-theatre-midstage.png",
+      "bytes": 708151,
+      "sha256": "e5203954f27cdee4e0ef94bc109555a2a2f6149771d43b3255475a8963b52c3a",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-fallback-svg-theatre-right-bank.png",
+      "bytes": 718181,
+      "sha256": "660d950c84eee2003d948d9c6cc49f930abf93ee74b08b762ee689136f6b4d93",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-greenhouse-complete.png",
+      "bytes": 282086,
+      "sha256": "9de69b3e0a066bbf6f48918bff71e4912748f3392edefa4f5e2c0741e7791220",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-greenhouse-flower.png",
+      "bytes": 1287801,
+      "sha256": "3565d4fa44f9d323c698a7e2266f3d6f86745294e3cbff9bbf6adb6673d1c03a",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-greenhouse-leaves.png",
+      "bytes": 1295848,
+      "sha256": "47e4d0e9e0d610316bbde4f7d1f91a88f1f3891b4d661c7456bef0261d40998d",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-greenhouse-root-crossed.png",
+      "bytes": 1278970,
+      "sha256": "965d96533c10bc89836a971dc044018d1e19d79b821f2491cb26f7866c75042e",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-greenhouse-seed-held-hud-320.png",
+      "bytes": 250446,
+      "sha256": "73ee0e6c3f34da03bc2866525f7549115766c52e141104c6f108f5e799835cd8",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-greenhouse-seed-held-hud-390.png",
+      "bytes": 395891,
+      "sha256": "12527fbd7ba7469f1c834559e787f7cbb67b44902988f534183a861af0fa4c8c",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-greenhouse-seed-held.png",
+      "bytes": 1275277,
+      "sha256": "fb6654f5b37fa6c97352ac4649f362013bded7e97915bf23fa37c70ba765ac2e",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-greenhouse-seed-planted.png",
+      "bytes": 1295009,
+      "sha256": "ce7fcff53d126f667fa64c35fc6fd0c09aa988a5acf6b59b13428a1776f08e26",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-greenhouse-start.png",
+      "bytes": 1292870,
+      "sha256": "a4c25e8247bf51eccff45283a30a6f5b42b291823c740e71ff0738c13dcb5c96",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-home.png",
+      "bytes": 1065226,
+      "sha256": "50b664bbced2653591124aa143d00f3d0fa98a1b31e42eb3423f8736f01b65c2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-both-lamps-hud-320.png",
+      "bytes": 223749,
+      "sha256": "7e1efb211e2d2c44e78ca524658c20257243d7d4869621e941d11c31c8a5b675",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-both-lamps-hud-390.png",
+      "bytes": 328293,
+      "sha256": "b5013f68ba70b7208469bbdb829f3320f473d43ff041df2d784028ed58c54618",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-exit-instruction-hud-320.png",
+      "bytes": 231820,
+      "sha256": "64a713aff0fbcb8df323798ba0250999a4e641a8f992917289088e84409e5d12",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-exit-instruction-hud-390.png",
+      "bytes": 335909,
+      "sha256": "0d34861749da7fc4c417815677ea48aa8cdaa72dbccb2d6efc408b5d71ae8df0",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-first-lamp-reachable-hud-320.png",
+      "bytes": 237048,
+      "sha256": "c4ff88404f0b7b0f121abf00a69b36f6749ceb1d28fcffbe5131343a47524690",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-first-lamp-reachable-hud-390.png",
+      "bytes": 352336,
+      "sha256": "6a1a39d05432ae7500f1a84db92de92500a5169d9a04cfe3de42a65609f185c0",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-moon-row-hud-320.png",
+      "bytes": 233141,
+      "sha256": "155aa77e955a8b372bccbd8934a06c21ac8f99f317944ed6fbe031f4dc59f53e",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-moon-row-hud-390.png",
+      "bytes": 338811,
+      "sha256": "806b0072dcce70806cf7a56b6cef3fe9bc463759055afd54036c4f01b2187148",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-theatre-completed.png",
+      "bytes": 270619,
+      "sha256": "00ac0dbe5fffebf3ca80c9b7bbed945e8fc19b15c23e791bd097b2a8b0f04caa",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-theatre-first-lamp-lit.png",
+      "bytes": 1111246,
+      "sha256": "b8895a1b9b681e8c34d3199d1142f2b3dc2d29742e9816afa9ec05090e74353a",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-theatre-left-bank.png",
+      "bytes": 1088489,
+      "sha256": "fbc1f5ec5dad2ab0070608770bd74cfe9f7a98f56d353496783e0629cc1aeff1",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-theatre-midstage.png",
+      "bytes": 1069676,
+      "sha256": "cb0c935da8d7e466c4fe242f32da647180fbd2da2a56323edf90eaa1ba72a16a",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-theatre-outro-1-decoded.png",
+      "bytes": 255668,
+      "sha256": "4557cbf042c139e58ab7944152b479c439320af53eec4d45e3275e0333a87ea9",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-theatre-outro-2-decoded.png",
+      "bytes": 289536,
+      "sha256": "f2de8455172d90787c31fbd20a4d98b87b07f10cad54a6a147211ee624ad0603",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-theatre-outro-3-decoded.png",
+      "bytes": 287529,
+      "sha256": "a11e68e07a0d03435bf6c406a7087785b14bc7a52a71250f4c334ef7922e7814",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-theatre-outro.png",
+      "bytes": 289147,
+      "sha256": "713aed6d73d0756f7c5dcefa2e3f290e939b6340bc35275fe5e9dc600a572c3e",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-theatre-right-bank.png",
+      "bytes": 1056434,
+      "sha256": "f534f940272d70fa38a5a90c3a520db1bd4efd43865036ecd6ba7d12d4c3940c",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-keyboard-theatre-two-lamps-lit.png",
+      "bytes": 1096186,
+      "sha256": "f463e88fef3f837c3f8d2e530a5cbe50851acdfb3a8f5dcc7183921d7d944192",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-lamp.png",
+      "bytes": 1062991,
+      "sha256": "21d7f826482e1a70ab311a26bbdc484130c3f81e3fad8bf28ec99b682ca095b9",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-letter-keep-playing.png",
+      "bytes": 1291393,
+      "sha256": "257e3def9cad87383fb99e632a0c87dcefdaaaa4d1dab68f6a2fc54d90b8bebb",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-letter-keep-reload.png",
+      "bytes": 1298488,
+      "sha256": "69376c9189aeb196e71e42bf7dde2cdded18de1ff1058d97dd2690fca4c11622",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-letter-keep-settled.png",
+      "bytes": 1316118,
+      "sha256": "f40641d7178471c97df1843825979d010bcca455fd0b071ea413a8d58f4647a8",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-letter-send-playing.png",
+      "bytes": 1291636,
+      "sha256": "f3408b9c0971a5fe7cc466479295daa4c8148fb7872b5846e2208617487458e5",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-letter-send-settled.png",
+      "bytes": 1315943,
+      "sha256": "2f980b5889bb96bda3b704d542f5fcec2f791c3bddeb95c77ce172ac939d6735",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-library-book-a-riding.png",
+      "bytes": 1097457,
+      "sha256": "5bb49d74a180e064fad42bec20e8fb77dfe7d0e3966f6a18bb6904579e4caf09",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-library-book-b-riding.png",
+      "bytes": 1082554,
+      "sha256": "284274df5e53b538007e017018a1d50ff24a6427222aeec5bfc0e510dae36836",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-library-complete.png",
+      "bytes": 308326,
+      "sha256": "14413e7768ada1c24820859cec10542bd7ae21bb2374236dc251094a3829f942",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-library-delay-ready.png",
+      "bytes": 1083568,
+      "sha256": "88afe1cac1906db40852cd40f4f60bef8cca9306f86fa10b974500470edbc86a",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-library-delayed-current.png",
+      "bytes": 710657,
+      "sha256": "4fab622cb064362128f779364273b28ca2766c775bef2c694cc7205204b1aecf",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-library-entry-320.png",
+      "bytes": 228521,
+      "sha256": "2d7f5e7ccf3f628d7cfc657e43698e39b4d1dbe54526a05402a011fec587bbe6",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-library-entry-390.png",
+      "bytes": 332645,
+      "sha256": "824a7b27797a680b77a9e24ee450c5d6f94c66c7402ccaa1c1c2e0094e24b9c8",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-library-entry.png",
+      "bytes": 1082302,
+      "sha256": "8701df9096ad01bd5ee416f3c5aa0e6f965f03cb7cecab69d39eacd2a369f42e",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-library-first-lamp.png",
+      "bytes": 1105833,
+      "sha256": "96e97d9d70f2700a574b36b425bda784efd68dcb1d96186e11957386a69ffaf7",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-library-late-after-leaving.png",
+      "bytes": 711393,
+      "sha256": "bf3eb983ae45fe658b020401f76348f8f337cc0915ba59babec89ca0c4b9b3d2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-library-npc-0-lamps.png",
+      "bytes": 304240,
+      "sha256": "619e4e94104e5d4b5920ac7285f9c06942fdaaf6bf654aa0dd3cc0a8bed9eeea",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-library-npc-2-lamps.png",
+      "bytes": 303151,
+      "sha256": "ea2a85169cf56ee3c58cb43e243cd88f237c1fa546d2a9caa216f78b9718a1b9",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-library-npc-cap.png",
+      "bytes": 1095925,
+      "sha256": "d327dd68f3a9e62441f657a0052405ec9140bdf0534ec7fb526a3e3ed262caa1",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-library-paused-canvas.png",
+      "bytes": 1543109,
+      "sha256": "22bab22b45f567f10cb015746e785e9bf8170569e05c96e83dbef95b54b16e75",
+      "width": 1280,
+      "height": 677
+    },
+    {
+      "artifactPath": "candidate/1280-library-two-lamps.png",
+      "bytes": 1098169,
+      "sha256": "d82283b9d1a92b4207e0b39bb016e01a7aeb969f3df5ed93291b5d8b6ce6f5fc",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-low-energy-hud-320.png",
+      "bytes": 248636,
+      "sha256": "7a777c632279551a671b8e83fb8e292c7cb0f28a0a35f68d4f85b459fb9c1258",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-low-energy-hud-390.png",
+      "bytes": 360366,
+      "sha256": "16e58cba0902d70827e64ab1876d73bfd42f442f1c1cbc3ddd6a3cd235db5c76",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-plate-hud-320.png",
+      "bytes": 247853,
+      "sha256": "2ecf1acf9bac88b358e3a5c01e8a2de64ec0f6614f9f61bda23badda553385c5",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-plate-hud-390.png",
+      "bytes": 364627,
+      "sha256": "1393992c6f1a706123837a069bef60383fec00fa4c4fd6794c7c96bfec6c04c0",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-plate.png",
+      "bytes": 1073900,
+      "sha256": "c5ee4637ee2adc1cb5c7b6d9fa99691d468a4a3eb4b44b1e82c52dedf700b242",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-portrait-escape-reopen-pending.png",
+      "bytes": 255321,
+      "sha256": "b2b9076f53f137f8f2bc8d2e3cfd199fc22af8b758f6099915213efcdd32212b",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-portrait-escape-reopen-settled.png",
+      "bytes": 276326,
+      "sha256": "dc8fbb5e01d0929d0fd27abf8717fd95f5f6b44d2a49863c424701b566c69050",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-portrait-rapid-next-pending.png",
+      "bytes": 255869,
+      "sha256": "1ef91e2f949a9136b54e380ac460a8b565585f27a56607426da1e6abebc0c44a",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-portrait-rapid-next-settled.png",
+      "bytes": 278867,
+      "sha256": "37705a7c413526cd7730437e77c507ab46a705b356fad13b6fa0b37cd3c31e87",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-portrait-slow-current-pending.png",
+      "bytes": 255741,
+      "sha256": "bb7241637f3549bd9dc2e39f18b4c62f10fe0e52a075a6c07aff65d325bcf4cd",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-portrait-slow-current-settled.png",
+      "bytes": 281396,
+      "sha256": "56cdc60a19be11a5b2dc543387aa1bed04e218e063b5f58376f8f6cfcfc04a90",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-recovering-energy-hud-320.png",
+      "bytes": 239602,
+      "sha256": "5103a531c9689064acd9376aa7ba42935fc9eb0cc9096cba0487e21a3a9f4008",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-recovering-energy-hud-390.png",
+      "bytes": 356315,
+      "sha256": "ad06ea1e8499aa58268997a4a55fcb980f48a49350248013d424d48060601943",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-second-light.png",
+      "bytes": 1071513,
+      "sha256": "1df7476c88f8f1cd46cda7e0098143874170ebef861b79d5b36173da5ad49ba2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-start.png",
+      "bytes": 1077678,
+      "sha256": "0063b481a042fc7d8388e9b84fbb4eb3fd335a2d5a76101d665ac6e7d081bf61",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-theatre-rongrong-320-body.png",
+      "bytes": 245428,
+      "sha256": "147ae406179f5c2ebfe70c9639ee7f2b471e4182a5b45f5e540a0254afcbc81b",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-theatre-rongrong-320-invite.png",
+      "bytes": 239707,
+      "sha256": "747902130de1d716e1e819cc98913a1c50fd0339a8b2b65e036a68951655845c",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-theatre-rongrong-390-body.png",
+      "bytes": 353056,
+      "sha256": "45e4d28ad3f161aedbc0cee4d2e6ac939623f4d45d77e84cde560a3a30196237",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-theatre-rongrong-390-invite.png",
+      "bytes": 346973,
+      "sha256": "f9e350bc8c704c8081a8f4e8125c704b25d8e6a1b8c4b95584648adf27ec6d7c",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-theatre-rongrong-body.png",
+      "bytes": 1066897,
+      "sha256": "b338c7f503b63748bd7a383cf6560fde3169aceebd5a23dc74a7343263f4cc68",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-theatre-rongrong-invite.png",
+      "bytes": 1074595,
+      "sha256": "fdd72f66fd67ac79197d1700b3c002755346ce0d61d52167156fbdad8e49f782",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-ticket-held-hud-320.png",
+      "bytes": 233908,
+      "sha256": "93e51b9609231c1e6ca2b0df9ca90e5cdd52d4eb77f3cc81c0da4090b63c2b02",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-ticket-held-hud-390.png",
+      "bytes": 359311,
+      "sha256": "f39132299c2b661c13d3d53dfa6c4e90b2df33006c3ae7499a89a0fe5753c430",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-ticket.png",
+      "bytes": 1060784,
+      "sha256": "4378dbdf826451d92cbe522ec02a4e9e3dcfcbf1ffc18fa79ea02e2d32e25dea",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/1280-touch-320-clock-release-playing-paused-canvas.png",
+      "bytes": 266897,
+      "sha256": "18eb1cbc30c188a8a6b35740bfa33e7366701b3da34b9f8cb7b6dfa3b82a6e85",
+      "width": 320,
+      "height": 431
+    },
+    {
+      "artifactPath": "candidate/1280-touch-320-clock-release-settled.png",
+      "bytes": 231296,
+      "sha256": "2df8c52e6ba67a7b0e82390b229c48814ba92bf16010a5294a2976ad11f7adc4",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-touch-320-library-book-a-riding.png",
+      "bytes": 238454,
+      "sha256": "b329e7438e4fa5d9e8c58a35f052a10547ba6e8187b53bdfc536180662b7791a",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-touch-320-library-book-b-riding.png",
+      "bytes": 236181,
+      "sha256": "a4bc37143887b1f8245837768f9c0e9da9284bceac5929098de05ec18228c534",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-touch-320-library-first-lamp.png",
+      "bytes": 237020,
+      "sha256": "8e00b6d646b3b0707e1288eb7b79dd8d943ffbbba2a91731779aa8b17ddc40cf",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-touch-320-library-npc-0-lamps.png",
+      "bytes": 87626,
+      "sha256": "140dd17625d95075285946ac65b2d82fa17ee9a0b2c859fffee63c4f3a5b308b",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-touch-320-library-npc-cap.png",
+      "bytes": 224282,
+      "sha256": "b193dae4f78f4d6243f9e82ed2b0b8d870f07529b859bbb2912a5d70f85e3085",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-touch-320-library-two-lamps.png",
+      "bytes": 226989,
+      "sha256": "11bc937d43e20c385d2a105f5c5507e59b736425763215a5dbde9c71976fd8de",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-touch-320-theatre-left-bank.png",
+      "bytes": 228936,
+      "sha256": "b968018e500214df871a982c2e36ecc1b3fb11cd707bf91cdac54fc57c8a7483",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-touch-320-theatre-midstage.png",
+      "bytes": 220821,
+      "sha256": "43ee7d086c986e18e7f89a17a6fe648038fc5a31ff749b8f67a4a945f3757886",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-touch-320-theatre-right-bank.png",
+      "bytes": 229877,
+      "sha256": "d89b795bc1959d627c1621129b7c349d06108a3eea7c35416c80b4464f33bd92",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/1280-touch-390-clock-hold-playing-paused-canvas.png",
+      "bytes": 420823,
+      "sha256": "57f4ee3366049f7d481248ddb8d82172a03fea65fad630b4727264fdf1a81efb",
+      "width": 390,
+      "height": 595
+    },
+    {
+      "artifactPath": "candidate/1280-touch-390-clock-hold-settled.png",
+      "bytes": 336655,
+      "sha256": "dceb74d3eb6d54c02dc38a7c53402fe16292fada6a4f1517eb84aa8eefe36d5e",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-touch-390-library-book-a-riding.png",
+      "bytes": 345157,
+      "sha256": "85d0dc3d6684036ba5c138659401f6e32c8ef01300ef70f61c90db4a44c7af96",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-touch-390-library-book-b-riding.png",
+      "bytes": 340844,
+      "sha256": "69ce2a8d970cb89d9b14b3b0270f374c1e2e109d762d8c06ef96125efcd05165",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-touch-390-library-first-lamp.png",
+      "bytes": 352344,
+      "sha256": "e189b5c27fa49b27644e11fde1f098569c8a68e7aeac0b72e005a17499ac2c6e",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-touch-390-library-npc-0-lamps.png",
+      "bytes": 116223,
+      "sha256": "4f2dda9c779dbbe5999584cf4cb96d9d925c9dfd8389fc1dfa65164c9483df2a",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-touch-390-library-npc-cap.png",
+      "bytes": 334367,
+      "sha256": "decdfa5fa0b26f77b09a5afec976b10785c229c0ef8d1f0589809f075273fb2a",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-touch-390-library-two-lamps.png",
+      "bytes": 327460,
+      "sha256": "7265221522d6de2262f5f913ffdbf5aa6a21cb702a815475060ba40ed9c4d138",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-touch-390-theatre-left-bank.png",
+      "bytes": 330124,
+      "sha256": "2803282d99b5a3ba60911432fe79629721996a22e74c5fbc1a655dcd1b340c01",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-touch-390-theatre-midstage.png",
+      "bytes": 312389,
+      "sha256": "a8fd4e69c6136bed4afbaf2bbc9adf3ec00911bf2dc6243829187f013eb61d1c",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-touch-390-theatre-right-bank.png",
+      "bytes": 328275,
+      "sha256": "832851b092eb933b7977295b26e7250b1ab244e34961b165cfb6c737f5a3ce3e",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/1280-traveler-airborne-canvas.png",
+      "bytes": 1515555,
+      "sha256": "ca04eb5afd04d884a1812c0017b4a90c735c4f51c0cd50d486d254b3db9ac0a4",
+      "width": 1280,
+      "height": 677
+    },
+    {
+      "artifactPath": "candidate/1280-traveler-airborne-paused.png",
+      "bytes": 248153,
+      "sha256": "aeae0453b75e010ae02ebd6bdd327f35c83284f72f0b7486f4cf47e68ebc1986",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "candidate/320-festival-hud.png",
+      "bytes": 183035,
+      "sha256": "8ca50aa9a4dc31a4ed802ae581ba12816fc4e6b12805a553ec23489174e57b7b",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/320-festival-return.png",
+      "bytes": 236586,
+      "sha256": "e4af83a564fc87b4bbf1cc43ea9b86882520f0725e05dfcdc4c890596cab68f1",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/320-home.png",
+      "bytes": 239802,
+      "sha256": "df8bab216279e5f548020e0f7bd9eb4f3f7b1018757da5132b6e1755e0a2da30",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/320-start.png",
+      "bytes": 240347,
+      "sha256": "480830cfc71035c4c89e762820972520608306f5885289ca3a50c51cd0e7a9a0",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/320-ticket.png",
+      "bytes": 234061,
+      "sha256": "cd605a33cb72a02e0f5f2dfb3152d2c51e9262aced7095e01ad7a3178204a1a9",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "candidate/390-festival-hud.png",
+      "bytes": 254957,
+      "sha256": "976fc17e097216c85561f299347ce11ea74cddab1961b2dc4a4386125512ab99",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/390-festival-return.png",
+      "bytes": 349980,
+      "sha256": "1a1119bc5dcba54bb688ff86b72210e9ed44c898281dc4698b721d26675c00c4",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/390-home.png",
+      "bytes": 355644,
+      "sha256": "da3fd9fa7a24cb796aac811bf97fc24fbabf769f012bbc82f5f10b9de406d7af",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/390-start.png",
+      "bytes": 351839,
+      "sha256": "1f563a70bd93353acc9071c5f915ff1926841d7be9a25dd28e1d0243404beb12",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "candidate/390-ticket.png",
+      "bytes": 352617,
+      "sha256": "df85991581741754be3a848d6ee885d49f73b0a314c20d7a1a46a52fca0aa012",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-clock-hold-playing-paused-canvas.png",
+      "bytes": 1444619,
+      "sha256": "fd205a8ec524b61ac212a825ed88d76072e9456a76587c5fe2a10e82a155f379",
+      "width": 1280,
+      "height": 677
+    },
+    {
+      "artifactPath": "live/1280-clock-hold-reduced-320.png",
+      "bytes": 223939,
+      "sha256": "14817f6ce14bcb573858efc2320c4b497be327f63be946f9df189e001b638674",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-clock-hold-settled.png",
+      "bytes": 1015210,
+      "sha256": "becc2494a785b16caa20e7861ee117730d2d5cc79169b867e3329222811353b8",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-clock-release-playing-paused-canvas.png",
+      "bytes": 1441846,
+      "sha256": "65ec8f7e6bfa59160e76c9d57996e26bfb18f48bb5bc1ca23dcd4524865a3cb2",
+      "width": 1280,
+      "height": 677
+    },
+    {
+      "artifactPath": "live/1280-clock-release-settled.png",
+      "bytes": 1018834,
+      "sha256": "7b9a324cee1197e1de30ae7941511cbd93f0ede0c421e9a7c312778bf5e5841a",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-coast-all-pendulums-cleared.png",
+      "bytes": 970606,
+      "sha256": "990505a983d5837a90c3b89ba5bd40fabf09713646370f86ab1593c8eb7f4c59",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-coast-complete.png",
+      "bytes": 280890,
+      "sha256": "db8e40e6166bdb149a2faf7db3762bfdf4ad9261ad018f7a317d7cff380e1a62",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-coast-entry-320.png",
+      "bytes": 225673,
+      "sha256": "61e4c4484807b4847ee2f1fa58022d5c82d66aeafb80b7201290f1e9719b6616",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-coast-entry-390.png",
+      "bytes": 329780,
+      "sha256": "6841fd49f97b4ff9047e271225b912b422f534f7406cba77c05074d8b0716d4c",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-coast-first-lamp.png",
+      "bytes": 1028956,
+      "sha256": "60c4cf3a566092a00138707698d4da8e6332a55e8bf8088ec6e411f1e1f13c78",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-coast-first-two-pendulums-cleared.png",
+      "bytes": 962902,
+      "sha256": "a0ee49350805d878b2d5d429ab0967119bde6695cfe227292d5a56ac0d291e86",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-coast-npc-before-crossing.png",
+      "bytes": 997528,
+      "sha256": "71106b929d195e7eea90a0cf4c96583be29d32eda321edf69a622cfc2d8c5b04",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-coast-primary-failed-safe-movement.png",
+      "bytes": 672720,
+      "sha256": "02a549ec8a7c3c418a10cee9c0f8d9c0a944626865740946362bacfa67a1a4e0",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-coast-two-lamps.png",
+      "bytes": 974987,
+      "sha256": "2f8be3041bf9ed34b2db40f0285b98fd99387cb21f6d22bf7cddab8d478d5156",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-coast-wind-memory.png",
+      "bytes": 977303,
+      "sha256": "4126c77b999cb0ad420e8373db8ba5cffd7df44f6ea510f3bdade2bbe6c17e44",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-complete.png",
+      "bytes": 247695,
+      "sha256": "d4a6db5839c27d395bda371c61ae0981f6d2486ef26f0fefbb45a96f2f3e08b1",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-fallback-library-book-a-riding.png",
+      "bytes": 724936,
+      "sha256": "2f83a45ffa296e897524b8340d53195d1104582e5afc3bba031e16958b6327c3",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-fallback-library-book-b-riding.png",
+      "bytes": 720432,
+      "sha256": "1a352f08f3b08018fdffedaaccefd86d1a8244bc83662127e271be2d159608af",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-fallback-library-complete.png",
+      "bytes": 208280,
+      "sha256": "520496932185380b378b71de0e7c25ab9a663f0ac6660888b99620363a5a0984",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-fallback-library-first-lamp.png",
+      "bytes": 730297,
+      "sha256": "ffe63a47e256d693d389a45bbf4ab4bd64ddcfb57b39b7ff696fb0c00af41219",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-fallback-library-npc-0-lamps.png",
+      "bytes": 239735,
+      "sha256": "419b2ff48cfe8524aeae65a9e59d86c33ce7f9f50896daa36eeb6ce285f04f99",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-fallback-library-npc-cap.png",
+      "bytes": 721222,
+      "sha256": "7efe577462590c2dc6857c570b30e904e12a11a4f6034fc19e5205af4c34d2a0",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-fallback-library-two-lamps.png",
+      "bytes": 750752,
+      "sha256": "b264346c55c4e5ffff2f28221a9e8c99bdce580d7396b81e06a4a9c05ec97369",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-fallback-procedural-lamp.png",
+      "bytes": 770630,
+      "sha256": "69281abe1bc789d74d5bccbae7dfc2aa8ccda91fd9cfceab46ac70dad57b722a",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-fallback-procedural-theatre-left-bank.png",
+      "bytes": 682550,
+      "sha256": "1a4d466c6eb38f9c16a1c0f82e2677ad1a3742660e8a72b26652a0fa1bda326d",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-fallback-procedural-theatre-midstage.png",
+      "bytes": 659496,
+      "sha256": "a830549e13d117821d9e0c7082c9bf0b8ec476df685d205201f215a4e8ecc632",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-fallback-procedural-theatre-right-bank.png",
+      "bytes": 684283,
+      "sha256": "21b49cd89e1549b8980e3f7dcc84835646432c21d4bee209c922252473896072",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-fallback-svg-lamp.png",
+      "bytes": 824913,
+      "sha256": "860d3c5fdc4b9b0e6dad2de35f32cbbd2cd709edafea8f4f73a3c312e744d20a",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-fallback-svg-theatre-left-bank.png",
+      "bytes": 746904,
+      "sha256": "2e03d2f0ecc34971246208bbd75e4bc43424ff2f722820dc9f686fa15de0d1c1",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-fallback-svg-theatre-midstage.png",
+      "bytes": 708967,
+      "sha256": "03c7ef314f86049d303319d93c7896827c84e1491dd47b11a28fa9f20553127c",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-fallback-svg-theatre-right-bank.png",
+      "bytes": 717828,
+      "sha256": "dd11b0aab049e74554d44261b6f44f5a814710601a9817b162e5cfdbe6c43025",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-greenhouse-complete.png",
+      "bytes": 297118,
+      "sha256": "9a967563d3f90d9affdf851635655c9223a5a7037e226ebc18c7ce2d9ef2d443",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-greenhouse-flower.png",
+      "bytes": 1286513,
+      "sha256": "7d39c86b3cadee16f94fc8ad2cd493d1a5e8c5e2d9caf13a6173e6810ada0556",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-greenhouse-leaves.png",
+      "bytes": 1296668,
+      "sha256": "e9b5bb57ba53f7e558d0799aae5f5720828f3fe8cadaacbb4769073cc87293e6",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-greenhouse-root-crossed.png",
+      "bytes": 1279524,
+      "sha256": "b7379c7079bbe4740413b1b77f05e8a86cdffc3d16ac5c57eee35209d5724789",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-greenhouse-seed-held-hud-320.png",
+      "bytes": 250465,
+      "sha256": "9c44376fa4a2f8095818afca61b5e0b1ee90f4b234cca08eb7bf97e6d7e53328",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-greenhouse-seed-held-hud-390.png",
+      "bytes": 396003,
+      "sha256": "c8b47b00ce790d3a34337f178aa524d99601ede79d0de63e60156e4d798977d3",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-greenhouse-seed-held.png",
+      "bytes": 1276502,
+      "sha256": "f80b0d13e8e5b174c66f80e28778efb261e527642e588f8ea085c4aac55dfda4",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-greenhouse-seed-planted.png",
+      "bytes": 1294806,
+      "sha256": "ecb802dc2ba8d05a08a5b3b93ba63b94f8eb7a0cc40057b0a1cea95796126de3",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-greenhouse-start.png",
+      "bytes": 1292416,
+      "sha256": "a921f14c4133b4d97c25b4f62651dc77851b133a04ca35dd6ce8b206fd282067",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-home.png",
+      "bytes": 1066056,
+      "sha256": "80d6dfa2b6a7ffe19f2c132624cd58c74c6e926325602745ca5eedd54f6e11c8",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-keyboard-both-lamps-hud-320.png",
+      "bytes": 223236,
+      "sha256": "e0ed1e599a20c77da55e8f2a0aaa592ef3cf55e53feea2b462f15635462a4c4d",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-keyboard-both-lamps-hud-390.png",
+      "bytes": 328475,
+      "sha256": "5d1352cae3be88488737a81eea33b8c312bce69fffc74c08722ebfd9e29dd688",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-keyboard-exit-instruction-hud-320.png",
+      "bytes": 231848,
+      "sha256": "0cea3e80636a38f36ad85fe7605249977706d9edc86a608202ed1b569efce960",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-keyboard-exit-instruction-hud-390.png",
+      "bytes": 334008,
+      "sha256": "db1d23714ce92968adf949f7ccdc600b147ed2f0227e11c77471c17aaa8bee46",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-keyboard-first-lamp-reachable-hud-320.png",
+      "bytes": 236930,
+      "sha256": "de6cd6be22dcaafb1d572af360d740afb87c11f699a5bdfc85784d671c75cafe",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-keyboard-first-lamp-reachable-hud-390.png",
+      "bytes": 352658,
+      "sha256": "ba8967dcc477612f2c6981aa47c0342f795aacc5e6d2c63d0ec7b1943d973b34",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-keyboard-moon-row-hud-320.png",
+      "bytes": 233424,
+      "sha256": "9362942e8fa2c5d2100508263ab05aba59828db28a70e4b817c71494c2d6033b",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-keyboard-moon-row-hud-390.png",
+      "bytes": 338607,
+      "sha256": "0eaa84cb31dd6daed924b485dae662bb52178a2f571abee2a567a67496a4adbc",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-keyboard-theatre-completed.png",
+      "bytes": 245597,
+      "sha256": "b998a9178774395b75610d07cdd0942ecb5d5d9e07bb3c205b53a80465c4e868",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-keyboard-theatre-first-lamp-lit.png",
+      "bytes": 1110934,
+      "sha256": "2099ae1efb537131a2e356eb5a3cabfb4d382e5b288dbcd3d69fb412b565ad34",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-keyboard-theatre-left-bank.png",
+      "bytes": 1088635,
+      "sha256": "c453c328eab9655603c2d1ffb60722f0fe433177c782ed0103f46bb9545661c7",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-keyboard-theatre-midstage.png",
+      "bytes": 1069940,
+      "sha256": "d582923a25d24319dac4a665ddbe61fa2cbfc1a58573e4e800cbaefa761e63ba",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-keyboard-theatre-outro-1-decoded.png",
+      "bytes": 265044,
+      "sha256": "be63d5a0fc0a502dc622d6cf25e38fcec545cf6cd1d9b5c80272a65ec6e70bf0",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-keyboard-theatre-outro-2-decoded.png",
+      "bytes": 287977,
+      "sha256": "8f8ba43ca01beb4d4b9f264e519e883900c97917956e5d64f9387c18445ea1c2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-keyboard-theatre-outro-3-decoded.png",
+      "bytes": 286719,
+      "sha256": "69cd85a1d28af250cb076d21e86886b56542207b223bd4b70ba74334976c1c21",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-keyboard-theatre-outro.png",
+      "bytes": 288445,
+      "sha256": "ac62944c378fdb1210ff6fc8dabcc41db128f149d6a1bc998c053a60c148cf19",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-keyboard-theatre-right-bank.png",
+      "bytes": 1057774,
+      "sha256": "7bba417fd7c5246d1ed480cb6316bb8e23336254671012316c49afb87b614fa3",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-keyboard-theatre-two-lamps-lit.png",
+      "bytes": 1093908,
+      "sha256": "059d48c19656544fde8c4fcdc6a334becd316c0207750931406efe16bbb508fc",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-lamp.png",
+      "bytes": 1066000,
+      "sha256": "2dd7c2ebc9ab4a39d8d9042838318145dff015a2153d0d67e7cc8ba2f24e9179",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-letter-keep-playing.png",
+      "bytes": 1291369,
+      "sha256": "374320d3584334d7506031fb422cdbce10bc26bca0fee4051cea578727b03c6c",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-letter-keep-reload.png",
+      "bytes": 1297677,
+      "sha256": "2c7b082b465b729393082227d0084a23d67b887449acc34d2ba13a3ef6a6180a",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-letter-keep-settled.png",
+      "bytes": 1316086,
+      "sha256": "0e8dbca4d3b8bd8aacd50b17d87c706f2169bd68c045038fef722d2bda9fa657",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-letter-send-playing.png",
+      "bytes": 1291640,
+      "sha256": "2edbd069a3f39c2d26c857fff2b326b5d5cabf4e705ba9b4986f0b4095e050e0",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-letter-send-settled.png",
+      "bytes": 1315946,
+      "sha256": "4f9b3b8dd37f0267923434562ecd73229222d5c53f58cb4a5c57190a164c7ff8",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-library-book-a-riding.png",
+      "bytes": 1097897,
+      "sha256": "7de02a850f06eea591164032768783bb1c6126c08d467275d8bc79f38bce0e70",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-library-book-b-riding.png",
+      "bytes": 1081795,
+      "sha256": "436745e591516f85e9869197cefd264f2fa4455c1f194e88493fe524a8ce97d4",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-library-complete.png",
+      "bytes": 274948,
+      "sha256": "3a030bce122e6f0683056a51a4b769316b8a9180829e2bc3aa609eee62312ab0",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-library-delay-ready.png",
+      "bytes": 1083114,
+      "sha256": "3034d4cbf6d1eba6ea044f1312ee1517fb7f09ee51fc0b562dae61e094ec3e78",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-library-delayed-current.png",
+      "bytes": 711883,
+      "sha256": "38d4bb0ba3d8070a400fe9866d21737af19e7a55dddf984bd6c215fb62a07548",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-library-entry-320.png",
+      "bytes": 228521,
+      "sha256": "2d7f5e7ccf3f628d7cfc657e43698e39b4d1dbe54526a05402a011fec587bbe6",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-library-entry-390.png",
+      "bytes": 332751,
+      "sha256": "cd4653eac4ceadc466875a3faeec53f06baf77775c78758ea96a87bc0583fbca",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-library-entry.png",
+      "bytes": 1082157,
+      "sha256": "50d8424adc7477c19f813ea1910f9e450fbc23356abe0b873c8272113ae3e9cd",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-library-first-lamp.png",
+      "bytes": 1100848,
+      "sha256": "d5c393e3a3a5f518f4616e033f9e03ee4f32c9a63087d422e47fdae7b1101edd",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-library-late-after-leaving.png",
+      "bytes": 711313,
+      "sha256": "029d63f9130fd9004ac7f790fc5d7f38ac73e7b93af828cecc6d33ebf26f33b8",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-library-npc-0-lamps.png",
+      "bytes": 282167,
+      "sha256": "dc415dad71fb1275cd3d9a191a06bffbe9c5261c551ba0b87399e762888f23f0",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-library-npc-2-lamps.png",
+      "bytes": 284003,
+      "sha256": "d7ef9ff2e716914c07d6ad5ce370486ac9b4f56d9ccc9a3f06a4562276d61cf6",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-library-npc-cap.png",
+      "bytes": 1095968,
+      "sha256": "33a51a3af67bc17c6517009d83710f17861dec8238987971bdc4ab8ef974b646",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-library-paused-canvas.png",
+      "bytes": 1542620,
+      "sha256": "4646d33caecf81f0a661ad8ed50c1ddc7676ef59545ea441d2dfad1539d8f06f",
+      "width": 1280,
+      "height": 677
+    },
+    {
+      "artifactPath": "live/1280-library-two-lamps.png",
+      "bytes": 1099461,
+      "sha256": "741af2e696fdb9ab41bf5d5f78ea90e4cb604b2df1a4c96d0b3beb7aa16f0dd6",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-low-energy-hud-320.png",
+      "bytes": 248902,
+      "sha256": "ae2556f309a82bac71d2ce772e22489177f9f3bbfb73f4c2b26ef455027816fd",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-low-energy-hud-390.png",
+      "bytes": 360917,
+      "sha256": "668be225fd6a134d6907ead302831d2ef4a0e5da98f45f71853ca14b33ab929f",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-plate-hud-320.png",
+      "bytes": 247707,
+      "sha256": "9326f45c757509a10f3e7bf99698a3ac3b83fa520c54a5fbe6f2d050ce39d6e9",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-plate-hud-390.png",
+      "bytes": 364719,
+      "sha256": "cba5ecb2bd28c77b1dac15d8f284c4eea2332e015262af3d2b452bf2725eddb1",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-plate.png",
+      "bytes": 1073606,
+      "sha256": "bb0554facf187dce52962c0ee00d7aa25414a8668e441a519c7136df25edf4c4",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-portrait-escape-reopen-pending.png",
+      "bytes": 255124,
+      "sha256": "4d1b47110cc667e5e5c30183820a1cb608e01ac495ba0293e031f451d49d67bb",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-portrait-escape-reopen-settled.png",
+      "bytes": 276844,
+      "sha256": "31856c87cb948c76996f48a0bd689246d98677091ded97b84f58bfab6b15118d",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-portrait-rapid-next-pending.png",
+      "bytes": 255321,
+      "sha256": "b2b9076f53f137f8f2bc8d2e3cfd199fc22af8b758f6099915213efcdd32212b",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-portrait-rapid-next-settled.png",
+      "bytes": 278493,
+      "sha256": "ded33f9f9114eff9c48bc2170671d81ec15ae73d8b3e44b088d990b7e65a9e5c",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-portrait-slow-current-pending.png",
+      "bytes": 255106,
+      "sha256": "57b739541deeaab88d3cb1df54580e0b243bab4b8b9bd0294ceb86c01b09e2ed",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-portrait-slow-current-settled.png",
+      "bytes": 280426,
+      "sha256": "ca8dc5427dababbad8395d06f8a6493f2f3ebc14f668e2f7c360c4bdb35c867e",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-recovering-energy-hud-320.png",
+      "bytes": 239793,
+      "sha256": "8ef7989751dfe1f11716027e53a6c5b28742ee6a258adcec6ea2bc92b2fd8773",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-recovering-energy-hud-390.png",
+      "bytes": 356182,
+      "sha256": "ae462536d1a92b4aeb258292e9ac434cd4d26062e59e886476a5ab8364466f93",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-second-light.png",
+      "bytes": 1071494,
+      "sha256": "7edacf55a7f4288310e0436aac853eec5926297fc832db3b5fd72b66873568c0",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-start.png",
+      "bytes": 1077578,
+      "sha256": "03d7e70bba35ecd67b9afd3e5c36c3e02a338ef446ab269e3289942c41042a31",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-theatre-rongrong-320-body.png",
+      "bytes": 245428,
+      "sha256": "147ae406179f5c2ebfe70c9639ee7f2b471e4182a5b45f5e540a0254afcbc81b",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-theatre-rongrong-320-invite.png",
+      "bytes": 239787,
+      "sha256": "5c1adc367c104157b5e6b0209956d3d968e975ce3dccf391a6264cf32d900939",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-theatre-rongrong-390-body.png",
+      "bytes": 353041,
+      "sha256": "d83013198277ecec8b6f5cace5e8b368ee8726e99207cf42daafe8edb76906c5",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-theatre-rongrong-390-invite.png",
+      "bytes": 346568,
+      "sha256": "b436408793dda30b1d8a3991cea3e9c0c6f2915f73ebd7be93c827d7375e753e",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-theatre-rongrong-body.png",
+      "bytes": 1066638,
+      "sha256": "541c9df361b9a0c39ad77570f572b5fc698fb2570a5045a69609f66d6d7087c4",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-theatre-rongrong-invite.png",
+      "bytes": 1075039,
+      "sha256": "35c9b0fac7877e8d9df3093636737c751f220667970c5d68504884e87c65e066",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-ticket-held-hud-320.png",
+      "bytes": 234083,
+      "sha256": "b1d7e15747894d0237393d645786585085c0d3ea0995160475bd0e41619d0b5a",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-ticket-held-hud-390.png",
+      "bytes": 359600,
+      "sha256": "34e5159d8207b994af407d386a8249ae6b1b8d3ab9915f69c31c8da6d322043e",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-ticket.png",
+      "bytes": 1062542,
+      "sha256": "fd6e2369b2326a1d54c4912a873e2971f5c68e595d50a4fe35f67391e21bcc22",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/1280-touch-320-clock-release-playing-paused-canvas.png",
+      "bytes": 266887,
+      "sha256": "aaa74fbf9a0d112092bef77e9fd656ebaba551548d6a66f78b538d152e38ca4d",
+      "width": 320,
+      "height": 431
+    },
+    {
+      "artifactPath": "live/1280-touch-320-clock-release-settled.png",
+      "bytes": 231198,
+      "sha256": "4acbba8dc51fd26a353d6aeb474d0c9aa31ce76125acd6fe215566e7848575ef",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-touch-320-library-book-a-riding.png",
+      "bytes": 238384,
+      "sha256": "d327162b38ecdf7a3115f0896cd2b70df16e072e990208f4a30545cb559c0687",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-touch-320-library-book-b-riding.png",
+      "bytes": 236350,
+      "sha256": "58dfdfb86fc34c1a378c97977e093c7e4be18c052a4ead0ecc82be1311819181",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-touch-320-library-first-lamp.png",
+      "bytes": 236734,
+      "sha256": "220ad0feb3784f86d820cf678f32ddd201d3d43d79e91629f5fdade426f14f2d",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-touch-320-library-npc-0-lamps.png",
+      "bytes": 87564,
+      "sha256": "36b4981a4525304203c30130b99620b3d6eeec5063f9271e3ef63df9703fa5c9",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-touch-320-library-npc-cap.png",
+      "bytes": 224180,
+      "sha256": "75290754f05a5f4e47cf04241caeed55c3a3ae3b6221113806142f9b75d1dbb3",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-touch-320-library-two-lamps.png",
+      "bytes": 226705,
+      "sha256": "f37ddfa455f85c7006f5cc01abe5d123126bf8c246332f6d18195d8f949b2a51",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-touch-320-theatre-left-bank.png",
+      "bytes": 227554,
+      "sha256": "17c71584537fa2eb0560a50ab36310ceb92d578875203c500f883d447b05cb09",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-touch-320-theatre-midstage.png",
+      "bytes": 220763,
+      "sha256": "aebbe7ec65176c76b5ebedb3b1277ddfe4a0c77c886fac1a0897b0e6d6ffd238",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-touch-320-theatre-right-bank.png",
+      "bytes": 228351,
+      "sha256": "55df4c922b501c3e653116200a4cd065d8ece5f20dc3ddaf9f57667b784bc624",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/1280-touch-390-clock-hold-playing-paused-canvas.png",
+      "bytes": 420278,
+      "sha256": "ee11bd704e2b263cbbaebbdab122d05b69d8be39a33524c9eeb3f9be461e3230",
+      "width": 390,
+      "height": 595
+    },
+    {
+      "artifactPath": "live/1280-touch-390-clock-hold-settled.png",
+      "bytes": 336161,
+      "sha256": "3967f7281e838b6cabd7522e4b4ec35ede61b86d6419f7dffb9ce64f71a49e4b",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-touch-390-library-book-a-riding.png",
+      "bytes": 344950,
+      "sha256": "49b22e15f0740aeb26b6c2feaf2a58acbe4af20068e620955c9b468f35998fb7",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-touch-390-library-book-b-riding.png",
+      "bytes": 342369,
+      "sha256": "ff3d515119f93b61070a80bc5ac47bbfdc4a5ec0dcd5891875a802a41e390249",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-touch-390-library-first-lamp.png",
+      "bytes": 351350,
+      "sha256": "78b154d9ae73f1a17d8bf812028aaa2928031a92c1306b6f00bc050129ddee0d",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-touch-390-library-npc-0-lamps.png",
+      "bytes": 117058,
+      "sha256": "4c057909f259408156c0286b212973e43c50c6c5bf1fb9f85dd38e82b34ead92",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-touch-390-library-npc-cap.png",
+      "bytes": 334254,
+      "sha256": "0d35a8d4bfbab6462b6c385f063b0790a3cd3e8f3f21e48fa9868b2d4d7735ba",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-touch-390-library-two-lamps.png",
+      "bytes": 328192,
+      "sha256": "c34c17cc33f8d8b154651c2e4b3100ed09f93a4aa7c8f28699799eed2f0faee5",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-touch-390-theatre-left-bank.png",
+      "bytes": 325733,
+      "sha256": "73ee3b6622707e7993440222ed269dae929ba45d5deecb6c707a464633ad5c27",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-touch-390-theatre-midstage.png",
+      "bytes": 312083,
+      "sha256": "522d998922703f69accc110cc9cd7800a300f999d1a556e2776bca99952d3a7f",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-touch-390-theatre-right-bank.png",
+      "bytes": 328411,
+      "sha256": "c8b050d89ca9875be06e9a325952f8182db84be26963fa9c4bac491cd0b99bc4",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/1280-traveler-airborne-canvas.png",
+      "bytes": 1514440,
+      "sha256": "b2f2efab6b7af9c3b64d0be6ad1c5c917e7da0e5b5ef77dfc7dc7af911567b0a",
+      "width": 1280,
+      "height": 677
+    },
+    {
+      "artifactPath": "live/1280-traveler-airborne-paused.png",
+      "bytes": 247733,
+      "sha256": "17a71edb44fe49c527072aff4afaa5c4a3ba081ce5f68599a051a701a08e8b82",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "artifactPath": "live/320-festival-hud.png",
+      "bytes": 183020,
+      "sha256": "e69f0d038db08f3004c70d7e440684897598eec010ce4a8fceef7d4e29b4b82a",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/320-festival-return.png",
+      "bytes": 236586,
+      "sha256": "e4af83a564fc87b4bbf1cc43ea9b86882520f0725e05dfcdc4c890596cab68f1",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/320-home.png",
+      "bytes": 239830,
+      "sha256": "5928c6716fa39935a432bbf44a5efae98e234eb7d45d83ff10986518f784c077",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/320-start.png",
+      "bytes": 240347,
+      "sha256": "480830cfc71035c4c89e762820972520608306f5885289ca3a50c51cd0e7a9a0",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/320-ticket.png",
+      "bytes": 234770,
+      "sha256": "27de1081deb12180cf3e4ea97998ccae2a670d8b0cf9d87a5179a492b6ce4208",
+      "width": 320,
+      "height": 680
+    },
+    {
+      "artifactPath": "live/390-festival-hud.png",
+      "bytes": 255124,
+      "sha256": "3e6218546e4fe94999a9f098d24859dc373f5a7c5bb99e68e6d92554d5192751",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/390-festival-return.png",
+      "bytes": 350237,
+      "sha256": "d20aefd40bdbbc54cb6ab02a51c0240a2fa4ba93941d7cc379177e4499c892e5",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/390-home.png",
+      "bytes": 355592,
+      "sha256": "f1bf67bc93a18e6c352d1dc9b709442ad7c1e7ed94736f2d5c7896ee5fa8c03b",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/390-start.png",
+      "bytes": 351946,
+      "sha256": "cbea89eeb67bc0a87092c429bcae52e1f10bf3c107a0295520a4f4b2f37e2d76",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "artifactPath": "live/390-ticket.png",
+      "bytes": 352512,
+      "sha256": "a3ef5cab785d52176ea7b7c35ac9c45dadbaf946fc1ac06f557f8eb0e5554a5d",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "screenshotArchiveScope": "The six selected live PNGs and both original full report JSON files are copied into repository docs. Other original PNGs remain in the verified artifact/local extraction, with exact identity recorded here. Native playing-paused-canvas exports contain the full Canvas without outer DOM HUD; other selected PNGs are full-page screenshots. No images were cropped, resized, combined or edited.",
+  "pendingScope": [
+    "The 390/320 coast browser cases do not cross all pendulums or finish chapter five.",
+    "The coast failed-paint browser case checks safe-entry movement and native image recovery, not full completion; separate offline failed-loader routes complete the chapter.",
+    "There is no coast delayed-current/late-after-leaving browser case in v27; library has both.",
+    "Chromium touch is emulated; no physical mobile-device performance benchmark is claimed.",
+    "The sixth chapter is only naturally entered here to prove coast/clock state does not leak; its full gameplay and ending are not part of v27 browser verification."
+  ]
+}

@@ -18,8 +18,15 @@
   },
   "publicFullRun": {
     "id": 40871791153,
-    "status": "in_progress_at_recording",
-    "sourceCommit": "73fe30b751e6fa46d01ded252fb6f3c34c19cc04"
+    "status": "completed",
+    "sourceCommit": "73fe30b751e6fa46d01ded252fb6f3c34c19cc04",
+    "conclusion": "success",
+    "completedAt": "2026-10-29T12:33:26Z",
+    "candidateSeconds": 497.4875081,
+    "publicSeconds": 498.6368487,
+    "tests": 605,
+    "passed": 605,
+    "failed": 0
   },
   "sourceTree": "34f4cfdeac136d0656e6dece0a7b73a7597f18ee",
   "deploymentTree": "8dba9bb420db723e3eb6afeae43d986a6c1a12ad",
@@ -845,5 +852,6 @@
       "type": "blob",
       "sha": "bcf6dca82ed6f77840562d184edd9b682e625ebf"
     }
-  ]
+  ],
+  "finalAudit": "docs/verification-v27-release.json"
 }

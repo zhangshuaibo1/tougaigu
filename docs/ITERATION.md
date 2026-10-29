@@ -8,15 +8,15 @@
 
 切换域名不自动迁移浏览器本地存档，先在旧地址导出旅途备份，新域名正常导入；生存成长需在原《再活一局》另行导出和导入。以下历史记录中的“原地址不变”和“仅额外保留.nojekyll”描述当时发布，不覆盖本条新域名约束；历史版本与证据完整保留。
 
-## 最新公开版本：v27；正式完整回归中；下一轮v28预备
+## 最新正式版本：v27已完成；下一轮v28预备
 
 v27「钟摆海岸·向前一秒」候选f0a86fca370153668141f11de25b7285b9e09eaa，[40870056725](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40870056725)success：605/605测试、61模块/157本地/209版本引用、完整真实浏览器通过。原始报告与截图已复核。
 
-源码main `73fe30b751e6fa46d01ded252fb6f3c34c19cc04`，Pages `8ee328d1741f737755e7f6c7082bcf951163a7b9`，[部署40871794254](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40871794254)success；134运行blob与候选dist一致，CNAME/.nojekyll保留，连接Chrome已重载确认正式27.0.0。最终main候选＋公网[40871791153](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40871791153)仍执行中，不能提前记为正式全通过。当前根会话继续完成此闭环；其他续跑先查refs/CI和[在途登记](IN-PROGRESS-v27.md)，不要竞争覆盖。
+源码main `73fe30b751e6fa46d01ded252fb6f3c34c19cc04`，Pages `8ee328d1741f737755e7f6c7082bcf951163a7b9`，[部署40871794254](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40871794254)success；134运行blob与候选dist一致，CNAME/.nojekyll保留，连接Chrome已重载确认正式27.0.0。最终main候选＋公网[40871791153](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40871791153) **success**（12:33:26 UTC）：605/605，双侧共6case均27.0.0、无页面/HTTP错误、精确预期7项故障无额外失败。原始ZIP/报告/源快照与6张正式图已审计，v27闭环已完成；[登记已关闭](IN-PROGRESS-v27.md)。
 
 第五章精绘/角色/铜钟摆和clock回响已落地；第四章此前漏测的手机双浮书、逐页头像、失败图通关、迟到请求、hold重载及最终网络账单均由本轮候选实际补齐。细节及手机海岸有限覆盖范围见[QA-v27](QA-v27.md)。
 
-下一轮[PLAN-v28](PLAN-v28.md)已明确“黎明邮局·最后一封，一起送”。独立worktree/本地分支`iteration-v28-post-20261029`以73fe30b开始，仅做原画与完整第六章输入基线预备，版本仍27.0.0；v28未开发完成/未发布，后续承接必须先继承v27最终验收记录。
+下一轮[PLAN-v28](PLAN-v28.md)已明确“黎明邮局·最后一封，一起送”。独立远端分支[iteration-v28-post-20261029](https://github.com/zhangshuaibo1/tougaigu/tree/iteration-v28-post-20261029)已保存预备提交218fc8c18abe2b11dce655b269cca88f1c8c40b2：68个文件包含原创原画/提示/源字节、3个尺寸完整第六章相同输入基线与计划。运行时仍27.0.0；原134运行blob未变，仅加尚未引用的下一轮WebP，v28未开发完成/未发布。原画无需重生成，基线2465步/2灯3记忆/0死/一次3星；后续从该分支的最新head接续并保留本轮最终验收记录。
 
 ## v26已完成归档与v27开发起点（历史）
 
