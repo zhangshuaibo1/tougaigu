@@ -7,7 +7,7 @@ save injection, direct updates, or engine solving calls.
 import argparse,asyncio,json,re,shutil,time
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
-from playwright.async_api import async_playwright
+from playwright.async_api import async_playwright, expect
 
 
 PROBE="""
@@ -15,7 +15,10 @@ window.__qaRead=()=>{
   if(!game)return null;
   const a=game.form==='soul'?game.soul:game.body,b=game.body,p=game.greenhousePlant;
   return {
-    form:game.form,state:game.state,chapterIndex:game.chapterIndex,
+    form:game.form,state:game.state,chapterIndex:game.chapterIndex,mode:game.mode,festivalId:game.festivalId,controlSource,
+    energy:game.energy,maxEnergy:game.maxEnergy,
+    seals:game.lanterns.filter(l=>l.lit).length,memories:game.memories.filter(m=>m.collected).length,
+    firstTicket:game.firstTicket?{...game.firstTicket}:null,
     x:a.x,y:a.y,vx:a.vx,vy:a.vy,time:game.time,deaths:game.deaths,camera:game.camera,
     body:{x:b.x,y:b.y,w:b.w,h:b.h,vx:b.vx,vy:b.vy,grounded:b.grounded,platform:b.platform},capPhase:game.cap?.phase,
     theatrePaint:game.isTheatreFinish()?{
@@ -41,6 +44,162 @@ window.__qaRead=()=>{
   };
 };
 """
+
+# Observation only: this evaluates real layout, glyph rectangles, semantics and
+# hit targets without changing a DOM attribute or assigning any game state.
+HUD_PROBE="""()=>{
+  const selectors={hud:'.stage-hud',chapter:'.stage-hud-left',title:'#stage-chapter-title',
+    story:'#stage-story',goals:'.stage-goals',sealGroup:'.stage-goals>span:nth-child(1)',
+    memoryGroup:'.stage-goals>span:nth-child(2)',seals:'#stage-seals',memories:'#stage-memories',
+    form:'.stage-form',formName:'#stage-form-name',energy:'#stage-energy-meter',
+    energyLabel:'#stage-energy-label',objectiveBox:'.stage-objective',objective:'#stage-objective',
+    hint:'#stage-near-hint',bubble:'#cap-bubble',bubbleLines:'#cap-bubble-lines',
+    activity:'#stage-cap-activity',activityName:'#stage-cap-activity-name',activityCount:'#stage-cap-activity-count',
+    festivalBar:'.stage-festival-bar',seasonButton:'#stage-season',backStory:'#stage-back-story'};
+  const rect=r=>({left:r.left,top:r.top,right:r.right,bottom:r.bottom,width:r.width,height:r.height});
+  function read(el){
+    if(!el)return null;
+    const style=getComputedStyle(el),box=el.getBoundingClientRect(),range=document.createRange();
+    range.selectNodeContents(el);
+    return {rect:rect(box),text:el.textContent.trim(),visible:!!el.getClientRects().length&&box.width>0&&box.height>0&&style.display!=='none'&&style.visibility==='visible'&&Number(style.opacity)>0,
+      clientWidth:el.clientWidth,clientHeight:el.clientHeight,scrollWidth:el.scrollWidth,scrollHeight:el.scrollHeight,
+      whiteSpace:style.whiteSpace,textOverflow:style.textOverflow,lineClamp:style.webkitLineClamp,
+      fontSize:parseFloat(style.fontSize),textRects:[...range.getClientRects()].map(rect)};
+  }
+  const elements=Object.fromEntries(Object.entries(selectors).map(([name,selector])=>[name,read(document.querySelector(selector))]));
+  const meter=document.querySelector('#stage-energy-meter'),cap=document.querySelector('#stage-cap-label');
+  const buttons=[...document.querySelectorAll('#stage-story,#stage-toggle,#stage-jump,#stage-interact,#stage-season,#stage-back-story,#stage-touch-move>button,.game-shell [data-shell-action="events"]')]
+    .map(el=>{const state=read(el),r=state.rect,hit=document.elementFromPoint((r.left+r.right)/2,(r.top+r.bottom)/2);
+      return {...state,id:el.id||el.dataset.direction||el.dataset.shellAction,centerHits:hit===el||el.contains(hit)};});
+  const game=window.__qaRead();
+  return {viewport:{width:innerWidth,height:innerHeight},elements,buttons,
+    runtime:{form:game.form,mode:game.mode,festivalId:game.festivalId,energy:game.energy,maxEnergy:game.maxEnergy,seals:game.seals,memories:game.memories,controlSource:game.controlSource},
+    meter:{role:meter?.getAttribute('role'),name:meter?.getAttribute('aria-label'),min:meter?.getAttribute('aria-valuemin'),max:meter?.getAttribute('aria-valuemax'),value:meter?.getAttribute('aria-valuenow'),text:meter?.getAttribute('aria-valuetext')},
+    cap:{text:cap?.textContent.trim(),display:cap?getComputedStyle(cap).display:null,descriptionIds:document.querySelector('#stage-toggle')?.getAttribute('aria-describedby')},
+    horizontalOverflow:document.documentElement.scrollWidth>innerWidth};
+}"""
+HUD_OBSERVATIONS=[]
+
+def rectangles_overlap(a,b,tolerance=1):
+    return min(a['right'],b['right'])-max(a['left'],b['left'])>tolerance and min(a['bottom'],b['bottom'])-max(a['top'],b['top'])>tolerance
+
+def rect_contains(outer,inner,tolerance=1.5):
+    return inner['left']>=outer['left']-tolerance and inner['right']<=outer['right']+tolerance and inner['top']>=outer['top']-tolerance and inner['bottom']<=outer['bottom']+tolerance
+
+def validate_hud_geometry(snapshot):
+    """Pure checks over observed DOM rectangles; fixtures never enter the game."""
+    e=snapshot['elements'];phone=snapshot['viewport']['width']<=640
+    assert not snapshot['horizontalOverflow'],'page has horizontal overflow'
+    required=['hud','chapter','title','story','goals','sealGroup','memoryGroup','seals','memories','form','formName','energy','energyLabel','objectiveBox','objective','hint']
+    for name in required:
+        assert e.get(name) and e[name]['visible'],name+' is not visibly readable'
+        r=e[name]['rect']
+        assert r['left']>=-1 and r['right']<=snapshot['viewport']['width']+1,name+' leaves the viewport'
+    for names in [('chapter','goals','form'),('title','story'),('sealGroup','memoryGroup'),('formName','energy','energyLabel')]:
+        for i,a in enumerate(names):
+            for b in names[i+1:]:
+                assert not rectangles_overlap(e[a]['rect'],e[b]['rect']),a+' overlaps '+b
+    for name in ['objective','hint','energyLabel']:
+        item=e[name]
+        assert item['text'] and item['textRects'],name+' has no visible text rectangles'
+        if phone:
+            assert item['fontSize']>=10,name+' was made too small to free space'
+            if name!='energyLabel':
+                assert item['whiteSpace']!='nowrap' and item['textOverflow']!='ellipsis',name+' still uses single-line truncation'
+                assert item['lineClamp'] in ['none','0','',None],name+' still clamps lines'
+        if item['clientWidth']:
+            assert item['scrollWidth']<=item['clientWidth']+1,name+' hides horizontal text'
+        if item['clientHeight']:
+            assert item['scrollHeight']<=item['clientHeight']+1,name+' hides vertical text'
+        for line in item['textRects']:
+            if line['width'] and line['height']:
+                assert rect_contains(item['rect'],line),name+' has a clipped text line'
+    for name in ['objective','hint']:
+        assert rect_contains(e['objectiveBox']['rect'],e[name]['rect']),name+' escapes the objective panel'
+    if e.get('activity') and e['activity']['visible']:
+        assert e['activityName']['visible'] and e['activityCount']['visible'],'nearby activity lost its name or count'
+        assert not rectangles_overlap(e['activityName']['rect'],e['activityCount']['rect']),'activity name overlaps its actual progress'
+        assert rect_contains(e['objectiveBox']['rect'],e['activity']['rect']),'activity escaped the reading panel'
+    if e.get('festivalBar') and e['festivalBar']['visible']:
+        assert rect_contains(e['objectiveBox']['rect'],e['festivalBar']['rect']),'festival return bar escaped the reading panel'
+        for name in ['seasonButton','backStory']:
+            if e[name]['visible']:
+                assert rect_contains(e['festivalBar']['rect'],e[name]['rect']),name+' escaped the festival return bar'
+        if e['seasonButton']['visible'] and e['backStory']['visible']:
+            assert not rectangles_overlap(e['seasonButton']['rect'],e['backStory']['rect']),'festival story and return buttons overlap'
+    gap=e['objectiveBox']['rect']['top']-e['hud']['rect']['bottom']
+    if phone:
+        assert gap>=5.5,'HUD and objective need at least 6px separation'
+    bubble=e.get('bubble')
+    bubble_gap=None
+    if bubble and bubble['visible']:
+        assert not rectangles_overlap(bubble['rect'],e['objectiveBox']['rect']),'speech bubble covers the current instruction'
+        if phone:
+            bubble_gap=bubble['rect']['top']-e['objectiveBox']['rect']['bottom']
+            assert bubble_gap>=5.5,'speech bubble needs at least 6px after the objective'
+            # Flavor speech keeps its existing two-line visual limit. Only
+            # the current objective and action hint must expose every glyph.
+    for button in snapshot['buttons']:
+        if not button['visible']:continue
+        assert button['centerHits'],button['id']+' is covered at its actual input center'
+        if bubble and bubble['visible']:
+            assert not rectangles_overlap(button['rect'],bubble['rect']),button['id']+' is covered by the speech bubble'
+    return {'hudToObjectivePx':gap,'objectiveToBubblePx':bubble_gap}
+
+async def assert_hud_readable(page,label,form=None,hint=None,objective=None,cap=None,need_bubble=False):
+    if form:
+        await page.wait_for_function("form=>window.__qaRead()?.form===form",arg=form)
+        await wait_text(page,'#stage-form-name','灵魂' if form=='soul' else '身体')
+    if hint:await wait_text(page,'#stage-near-hint',hint)
+    if objective:await wait_text(page,'#stage-objective',objective)
+    snapshot=await page.evaluate(HUD_PROBE)
+    try:gaps=validate_hud_geometry(snapshot)
+    except AssertionError as error:raise AssertionError(label+': '+str(error)+'; '+json.dumps(snapshot,ensure_ascii=False)) from error
+    e=snapshot['elements'];runtime=snapshot['runtime'];meter=snapshot['meter']
+    if need_bubble:assert e['bubble']['visible'],label+': expected the naturally triggered speech bubble'
+    assert meter['role']=='progressbar' and meter['name']=='拾光灵光'
+    assert meter['min']=='0' and meter['max']=='100'
+    value=int(meter['value']);actual=max(0,min(100,runtime['energy']/runtime['maxEnergy']*100))
+    assert 0<=value<=100 and abs(value-actual)<=3,'accessible energy is stale or unrelated to actual energy'
+    visible_energy=e['energyLabel']['text']
+    expected_energy=visible_energy if '%' in visible_energy else visible_energy+' '+str(value)+'%'
+    assert meter['text']==expected_energy,'accessible energy must retain the visible state and its actual percent'
+    assert ('灵魂' if runtime['form']=='soul' else '身体') in e['formName']['text']
+    if runtime['form']=='soul':assert re.fullmatch(r'灵光\s+\d+%',visible_energy)
+    elif actual<96:assert re.fullmatch(r'恢复中\s+\d+%',visible_energy)
+    else:assert visible_energy=='灵光充足' or re.fullmatch(r'恢复中\s+\d+%',visible_energy)
+    await expect(page.locator('.stage-goals>span').nth(0)).to_have_accessible_name(re.compile(r'^谜灯\s*'+str(runtime['seals'])+r'\s*/\s*2$'),timeout=1500)
+    memory_category='礼物' if runtime['mode']=='festival' else '记忆'
+    await expect(page.locator('.stage-goals>span').nth(1)).to_have_accessible_name(re.compile('^'+memory_category+r'\s*'+str(runtime['memories'])+r'\s*/\s*3$'),timeout=1500)
+    aria=await page.locator('.stage-hud').aria_snapshot(timeout=1500)
+    assert '谜灯' in aria and memory_category in aria and '拾光灵光' in aria and meter['text'].split()[0] in aria
+    assert ('灵魂' if runtime['form']=='soul' else '身体') in aria,'actual form category is missing from the accessibility tree'
+    assert 'stage-cap-label' in (snapshot['cap']['descriptionIds'] or '').split()
+    assert snapshot['cap']['display']!='none','cap status was removed from the accessible control description'
+    if cap:
+        assert cap in snapshot['cap']['text']
+        await expect(page.locator('#stage-toggle')).to_have_accessible_description(re.compile(re.escape(cap)),timeout=1500)
+    if runtime['controlSource']=='buttons':
+        assert not re.search(r'\b[EQ]\b|空格|WASD|方向键',e['hint']['text']),'button input left keyboard-only hints'
+    record={'label':label,'viewport':snapshot['viewport'],'form':runtime['form'],'mode':runtime['mode'],'memoryCategory':memory_category,'actualEnergy':runtime['energy'],
+            'accessibleEnergy':meter,'gaps':gaps,'bubbleVisible':e['bubble']['visible'],
+            'objective':e['objective']['text'],'nearHint':e['hint']['text'],'capDescription':snapshot['cap']['text'],
+            'ariaSnapshot':aria,'objectiveAndHintUnclipped':True,'inputCentersUncovered':True,
+            'rects':{name:e[name]['rect'] for name in ['hud','goals','form','objectiveBox','bubble']}}
+    HUD_OBSERVATIONS.append(record)
+    return record
+
+async def sample_phone_hud(page,output,label,**expectations):
+    """Resize a normally reached, stationary state; no coordinate/save mutation."""
+    viewport=page.viewport_size
+    try:
+        for width,height in [(390,844),(320,680)]:
+            await page.set_viewport_size({'width':width,'height':height})
+            await page.wait_for_timeout(100)
+            await assert_hud_readable(page,label+'-'+str(width),**expectations)
+            await page.screenshot(path=str(Path(output)/(label+'-hud-'+str(width)+'.png')),full_page=True)
+    finally:await page.set_viewport_size(viewport)
+
 async def drive_to(page,x,y=None,touch=False,until=None,limit=10,observe=None):
     session=await page.context.new_cdp_session(page) if touch else None
     held=None
@@ -132,6 +291,7 @@ async def exercise(page,output,label,touch=False,full=False):
     output=Path(output);output.mkdir(parents=True,exist_ok=True)
     await page.locator('#stage-chapter-title').filter(has_text='苔灯站台').wait_for()
     await page.wait_for_timeout(500)
+    await assert_hud_readable(page,label+'-station-body',form='body')
     assert await page.evaluate('document.documentElement.scrollWidth<=innerWidth'), 'horizontal overflow'
     assert '上海九喵科技有限公司' in await page.locator('.corporate-footer').inner_text()
     await page.screenshot(path=str(output/(label+'-start.png')),full_page=True)
@@ -144,8 +304,18 @@ async def exercise(page,output,label,touch=False,full=False):
     await drive_to(page,270,420,touch=touch,until=ticket)
     await page.wait_for_timeout(120)
     assert await ticket(), 'actual flight did not collect ticket'
+    await assert_hud_readable(page,label+'-ticket-held',form='soul',objective='去程票抱好了',cap='去程票抱好了',need_bubble=True)
     await page.screenshot(path=str(output/(label+'-ticket.png')),full_page=True)
-    await toggle(page,touch);await page.wait_for_timeout(900)
+    if full:
+        await sample_phone_hud(page,output,label+'-ticket-held',form='soul',objective='去程票抱好了',cap='去程票抱好了',need_bubble=True)
+        # One natural depletion, reused at both phone widths. No assignment to
+        # energy and no extra low-energy wait in the independent phone cases.
+        await page.wait_for_function("()=>{const a=window.__qaRead();return a?.form==='soul'&&a.energy<=23;}",timeout=21000)
+        await sample_phone_hud(page,output,label+'-low-energy',form='soul',hint='灵光快用完了')
+    await toggle(page,touch)
+    if full:await sample_phone_hud(page,output,label+'-recovering-energy',form='body')
+    else:await assert_hud_readable(page,label+'-recovering-energy',form='body')
+    await page.wait_for_timeout(900)
     await toggle(page,touch);await page.wait_for_timeout(750)
     assert await ticket(), 'reopening counted ticket twice'
     await page.screenshot(path=str(output/(label+'-home.png')),full_page=True)
@@ -162,6 +332,7 @@ async def exercise(page,output,label,touch=False,full=False):
         await drive_to(page,420,touch=touch)
         await page.wait_for_timeout(180)
         assert await pressed(), 'plate did not remain depressed after stopping'
+        await sample_phone_hud(page,output,label+'-plate',form='body',hint='踏板压住了')
         await page.screenshot(path=str(output/(label+'-plate.png')),full_page=True)
         await toggle(page,touch)
         async def reachable():return await page.locator('#stage-interact-label').inner_text()=='解谜'
@@ -218,6 +389,7 @@ async def exercise_greenhouse(page,output,label):
     held=await page.evaluate('window.__qaRead()')
     assert held['form']=='soul' and held['greenhousePlant']['stage']==0
     await wait_text(page,'#stage-cap-label','种子抱好了')
+    await sample_phone_hud(page,output,label+'-greenhouse-seed-held',form='soul',hint='种子托好了',cap='种子抱好了',need_bubble=True)
     seed_count=await page.locator('#stage-memories').inner_text()
     assert re.match(r'1\s*/',seed_count)
     await page.screenshot(path=str(output/(label+'-greenhouse-seed-held.png')),full_page=True)
@@ -490,6 +662,7 @@ async def theatre_hint(page,phrase):
     await wait_text(page,'#stage-near-hint',phrase)
     snapshot=await page.evaluate('window.__qaRead()')
     assert phrase in snapshot['nearHint'], 'visible platform hint disagrees with the live engine hint'
+    await assert_hud_readable(page,'theatre-'+phrase,form='body',hint=phrase)
     return snapshot
 
 async def assert_theatre_paint(page,kind='primary'):
@@ -604,6 +777,7 @@ async def verify_first_theatre_lamp(page,output,label):
     assert near['chapterIndex']==2 and near['theatrePaint']['lampLit']==[False,False]
     assert abs(near['x']-515)<35 and abs(near['y']-285)<35
     assert '诗灯' in near['nearHint'], 'first real lamp did not offer an interaction hint'
+    await sample_phone_hud(page,output,label+'-first-lamp-reachable',form='soul',hint='诗灯',objective='与眼前的诗灯共鸣')
     await puzzle(page,'低头思故乡')
     await page.wait_for_function("()=>{const a=window.__qaRead()?.theatrePaint;return a?.lampLit?.[0]===true&&a.lightAmounts[0]>.5;}",timeout=4000)
     first=await page.evaluate('window.__qaRead()')
@@ -643,6 +817,7 @@ async def verify_theatre_lamp(page,output,label):
     assert lit['theatrePaint']['lampLit']==[True,True]
     assert lit['theatrePaint']['lightAmounts'][0]>.5 and lit['theatrePaint']['lightAmounts'][1]>.5
     assert lit['theatrePaint']['frame'] is True
+    await sample_phone_hud(page,output,label+'-both-lamps',form='soul',objective='两盏诗灯已亮')
     await page.screenshot(path=str(Path(output)/(label+'-theatre-two-lamps-lit.png')),full_page=True)
     await page.keyboard.press('Escape')
     await page.locator('#pause-dialog[open]').wait_for()
@@ -656,8 +831,79 @@ async def verify_theatre_lamp(page,output,label):
     return {'secondPoemSolvedWithActualSoulAndUI':True,'bothLightPoolsLit':True,'curtainCallFinishedDuringSoulFlight':True,
             'afterRealPuzzle':lit['theatrePaint'],'pauseFrozen':True}
 
+async def finish_theatre_from_real_exit(page,output,label):
+    """The third chapter has three outro pages, but no story-choice dialog."""
+    read_save="JSON.parse(localStorage.getItem('tougaigu.dream.v1'))"
+    before=await page.evaluate(read_save);grants=await read_reward_grants(page)
+    earlier_collections=await read_cap_collections(page)
+    assert not before['chapters'][2]['completed']
+    assert before['choices']['letter']=='keep' and before['choices']['clock'] is None
+    assert (await page.evaluate('window.__qaRead()'))['theatrePaint']['lampLit']==[True,True]
+    await toggle(page,False)
+    await page.wait_for_function("()=>{const a=window.__qaRead();return a?.form==='body'&&a.capPhase==='closed';}")
+    # A normal stop on the route exposes the optional activity row without
+    # activating or solving the moon scene, so its nearby priority is genuine.
+    await drive_to(page,1460)
+    await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.grounded&&Math.abs(b.y-560)<2;}")
+    await sample_phone_hud(page,output,label+'-moon-row',form='body',objective='借月追光')
+    assert await page.locator('#stage-cap-activity').is_visible()
+    await drive_to(page,1995,limit=7)
+    await sample_phone_hud(page,output,label+'-exit-instruction',form='body',hint='带着身体走进门',objective='两盏诗灯已亮')
+    async def complete():return await page.locator('#result-dialog[open]').is_visible()
+    await drive_to(page,2115,until=complete,limit=4)
+    await page.locator('#result-dialog[open]').wait_for()
+    actual=await page.evaluate('window.__qaRead()')
+    assert actual['chapterIndex']==2 and actual['state']=='complete' and actual['deaths']==0
+    assert '借月剧场' in await page.locator('#result-kicker').inner_text()
+    assert '借月镜' in await page.locator('#result-keepsake').inner_text()
+    settled=await page.evaluate(read_save)
+    assert settled['chapters'][2]['completed'] and settled['chapters'][2]['runs']==before['chapters'][2]['runs']+1
+    for index in [0,1,3,4,5]:assert settled['chapters'][index]==before['chapters'][index],'third-chapter exit changed another result'
+    assert settled['lastChapter']==3,'normal completion must unlock the fourth chapter'
+    assert settled['choices']==before['choices'] and settled['discoveredEndings']==before['discoveredEndings']
+    assert await read_reward_grants(page)==grants,'chapter completion unexpectedly granted or claimed reward items'
+    await page.screenshot(path=str(Path(output)/(label+'-theatre-completed.png')),full_page=True)
+    await page.locator('#result-story').click()
+    await page.locator('#story-dialog[open]').wait_for()
+    pages=[]
+    for index,word in enumerate(['最后一排','围巾','小满'],1):
+        counter=await page.locator('#story-page').inner_text()
+        assert counter==f'0{index} / 03'
+        text=await page.locator('#story-dialog-text').inner_text()
+        assert word in text and '借月剧场' in await page.locator('#story-chapter-label').inner_text()
+        pages.append({'page':counter,'text':text})
+        if index==3:
+            assert '收好这封信' in await page.locator('#story-next').inner_text()
+            await page.screenshot(path=str(Path(output)/(label+'-theatre-outro.png')),full_page=True)
+        await page.locator('#story-next').click()
+    await page.locator('#map-dialog[open]').wait_for()
+    assert not await page.locator('#story-dialog[open],#choice-dialog[open],#ending-dialog[open]').count()
+    assert await page.locator('#chapter-grid [data-chapter="3"]').is_enabled()
+    assert not await page.locator('#chapter-grid [data-chapter="4"]').is_enabled()
+    after_outro=await page.evaluate(read_save)
+    assert after_outro['chapters']==settled['chapters'] and after_outro['choices']==settled['choices']
+    assert after_outro['discoveredEndings']==settled['discoveredEndings']
+    assert await read_reward_grants(page)==grants and await read_cap_collections(page)==earlier_collections
+    # A real map revisit sets lastChapter back to 2. Reloading the result
+    # directly would correctly start chapter 4, so no save value is replaced.
+    await page.locator('#chapter-grid [data-chapter="2"]').click()
+    await assert_theatre_paint(page)
+    await page.reload(wait_until='networkidle')
+    await page.wait_for_function("()=>window.__qaRead?.()?.chapterIndex===2")
+    fresh=await assert_theatre_paint(page)
+    assert fresh['lampLit']==[False,False] and fresh['lightAmounts']==[0,0]
+    reloaded=await page.evaluate(read_save)
+    assert reloaded['lastChapter']==2 and reloaded['chapters']==settled['chapters']
+    assert reloaded['choices']==settled['choices'] and reloaded['discoveredEndings']==settled['discoveredEndings']
+    assert await read_reward_grants(page)==grants and await read_cap_collections(page)==earlier_collections
+    return {'actualBodyExitReached':True,'noRespawns':True,'thirdChapterCompleted':True,
+            'chapterRunsIncreasedExactlyOnce':True,'fourthChapterUnlocked':True,'fifthChapterStillLocked':True,
+            'outroPages':pages,'chapterHasNoChoice':True,'existingLetterChoicePreserved':'keep','clockAndEndingsUnchanged':True,
+            'mapRevisitAndReloadPreservedResults':True,'revisitResetBothLightPools':True,
+            'rewardGrantsUnchanged':True,'earlierCollectionsUnchanged':True,'settledChapters':settled['chapters']}
+
 async def exercise_theatre(page,output,label):
-    """Earn both lamp solves, then restart two real touch crossings in same save."""
+    """Finish the real chapter, then revisit for two genuine touch crossings."""
     print(label,'enter the normally unlocked theatre chapter',flush=True)
     chapters=await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).chapters")
     assert chapters[0]['completed'] and chapters[1]['completed'] and not chapters[2]['completed']
@@ -670,6 +916,8 @@ async def exercise_theatre(page,output,label):
     first=await verify_first_theatre_lamp(page,output,label+'-keyboard')
     desktop=await cross_theatre_stage(page,output,label+'-keyboard',expected_lamps=[True,False])
     second=await verify_theatre_lamp(page,output,label+'-keyboard')
+    completion=await finish_theatre_from_real_exit(page,output,label+'-keyboard')
+    settled_chapters=completion['settledChapters']
     viewport=page.viewport_size
     emulation=await page.context.new_cdp_session(page)
     touch_results={}
@@ -677,7 +925,7 @@ async def exercise_theatre(page,output,label):
         await emulation.send('Emulation.setTouchEmulationEnabled',{'enabled':True,'maxTouchPoints':5})
         for width,height in [(390,844),(320,680)]:
             await page.set_viewport_size({'width':width,'height':height})
-            # Genuine pause/restart resets BOTH lamp effects without editing the save.
+            # Genuine pause/restart on the completed chapter's normal revisit.
             if (await page.evaluate('window.__qaRead()'))['state']=='playing':
                 await tap_control(page,'[data-shell-action="pause"]')
             await page.locator('#pause-dialog[open]').wait_for()
@@ -690,11 +938,12 @@ async def exercise_theatre(page,output,label):
         await emulation.send('Emulation.setTouchEmulationEnabled',{'enabled':False})
         await emulation.detach()
         await page.set_viewport_size(viewport)
-    assert await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).chapters")==chapters, 'a stage crossing falsely settled chapter rewards'
+    assert await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).chapters")==settled_chapters, 'a revisit crossing falsely settled chapter rewards again'
     return {'enteredViaUnlockedChapterMap':True,'keyboard':desktop,'firstLamp':first,'secondLamp':second,
+            'completion':completion,
             'touch390':touch_results['390'],'touch320':touch_results['320'],
             'touchScope':'resized Chromium and CDP touch controls, naturally earned chapter unlock; not a physical phone or full mobile chapter clear',
-            'normalRestartResetBothLightPools':True,'chapterResultsUnchanged':True}
+            'normalRevisitResetBothLightPools':True,'normalRestartKeptBothLightPoolsClear':True,'revisitChapterResultsUnchanged':True}
 
 async def exercise_theatre_fallbacks(page,output,label):
     """Fail only the named illustration requests; keep the genuinely earned save."""
@@ -741,12 +990,55 @@ async def exercise_theatre_fallbacks(page,output,label):
     return {'cases':results,'primaryRecoveredAfterUnblocking':True,'recovered':restored,
             'deliberatelyAbortedRequests':expected_failures}
 
+async def exercise_festival_hud(page,output,label):
+    """A real gift-hub visit at the end of each independent phone case."""
+    before=await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1'))")
+    rewards=await read_reward_grants(page)
+    collections=await page.evaluate("(()=>{const r=JSON.parse(localStorage.getItem('tougaigu.capbook.v1')).scenes['story-0'];return {memories:r.memories,seals:r.seals};})()")
+    await expect(page.locator('.stage-festival-bar')).to_be_hidden()
+    await page.locator('.game-shell [data-shell-action="events"]').tap()
+    await page.locator('#festival-hub[open]').wait_for()
+    # The same festival is always revisit-able; choosing the actual card makes
+    # the route independent of today's active seasonal default.
+    await page.locator('[data-festival-select="halloween"]').tap()
+    await page.locator('[data-festival-enter="halloween"]').tap()
+    await page.locator('#festival-hub[open]').wait_for(state='hidden')
+    await page.wait_for_function("()=>{const a=window.__qaRead();return a?.mode==='festival'&&a.festivalId==='halloween'&&a.state==='playing';}")
+    await expect(page.locator('#stage-chapter-title')).to_have_text('南瓜夜邮')
+    await expect(page.locator('.stage-festival-bar')).to_be_visible()
+    await expect(page.locator('#stage-back-story')).to_have_accessible_name('返回主线')
+    await expect(page.locator('#stage-back-story')).to_be_visible()
+    festival=await assert_hud_readable(page,label+'-festival-hud',form='body')
+    bar=await page.evaluate(HUD_PROBE)
+    back=next(b for b in bar['buttons'] if b['id']=='stage-back-story')
+    assert back['visible'] and back['centerHits'] and back['rect']['height']>=36
+    assert bar['runtime']['seals']==0 and bar['runtime']['memories']==0
+    await page.screenshot(path=str(Path(output)/(label+'-festival-hud.png')),full_page=True)
+    await page.locator('#stage-back-story').tap()
+    await page.wait_for_function("index=>{const a=window.__qaRead();return a?.mode==='story'&&a.chapterIndex===index&&a.state==='playing';}",arg=before['lastChapter'])
+    await expect(page.locator('.stage-festival-bar')).to_be_hidden()
+    await expect(page.locator('#stage-back-story')).to_be_hidden()
+    main_hud=await assert_hud_readable(page,label+'-festival-return',form='body')
+    after=await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1'))")
+    for key in ['chapters','choices','discoveredEndings','lastChapter']:
+        assert after[key]==before[key],'short festival visit changed '+key
+    assert await read_reward_grants(page)==rewards,'opening a festival granted or claimed rewards'
+    assert await page.evaluate("(()=>{const r=JSON.parse(localStorage.getItem('tougaigu.capbook.v1')).scenes['story-0'];return {memories:r.memories,seals:r.seals};})()")==collections
+    await page.screenshot(path=str(Path(output)/(label+'-festival-return.png')),full_page=True)
+    return {'festivalId':'halloween','input':'emulated Chromium touch',
+            'festival':festival,'returnedMain':main_hud,'returnButton':back['rect'],
+            'giftCategoryAccessible':True,'mainMemoryCategoryRestored':True,
+            'returnButtonCenterUncovered':True,'mainFestivalBarHidden':True,
+            'chaptersChoicesAndCollectionsUnchanged':True,'rewardGrantsUnchanged':True,
+            'scope':'real gift entry and normal return; no festival puzzles, completion, gift claims or purchases'}
+
 async def main(args):
     output=Path(args.output);output.mkdir(parents=True,exist_ok=True)
     report={'url':args.url,'source':'served production HTML; app module has a read-only coordinate probe appended in-memory; all actions use DOM/input','cases':[]}
     async with async_playwright() as p:
         b=await p.chromium.launch(headless=True,executable_path=args.chromium or None,args=['--no-sandbox'])
         for w,h,touch,full in [(1280,800,False,True),(390,844,True,False),(320,680,True,False)]:
+            HUD_OBSERVATIONS.clear()
             context=await b.new_context(viewport={'width':w,'height':h},has_touch=touch,is_mobile=touch,device_scale_factor=1)
             page=await context.new_page();errors=[];failed=[];instrumented_app_urls=[];art_requests=[];request_failures=[]
             page.on('pageerror',lambda e:errors.append(str(e)))
@@ -770,6 +1062,8 @@ async def main(args):
                 station_record=json.loads(station_saved)['scenes']['story-0']
                 result['greenhouse']=await exercise_greenhouse(page,output,str(w))
                 result['letterEcho']=await exercise_letter_echo(page,output,str(w))
+            else:
+                result['festivalHud']=await exercise_festival_hud(page,output,str(w))
             assert not errors,errors
             assert not failed,failed
             result['pageErrors']=errors;result['httpErrors']=failed
@@ -812,6 +1106,8 @@ async def main(args):
                 assert not request_failures,request_failures
             assert not errors,errors
             assert not failed,failed
+            result['hudReadability']={'scope':'real DOM rectangles, complete objective/hint text ranges, actual accessible names and energy, uncovered input centers',
+                                     'samples':list(HUD_OBSERVATIONS),'minimumPhoneHeightTested':680}
             report['cases'].append(result)
             await context.close()
         await b.close()

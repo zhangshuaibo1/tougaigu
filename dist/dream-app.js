@@ -622,7 +622,12 @@ function onHud(snapshot) {
   const energy = Math.max(0, Math.min(100, snapshot.energy / Math.max(1, snapshot.maxEnergy) * 100));
   $('#stage-energy').style.width = energy + '%';
   $('#stage-energy').style.background = energy < 25 ? 'var(--dream-orange)' : 'var(--dream-mint)';
-  $('#stage-energy-label').textContent = soul ? '灵光 ' + Math.ceil(energy) + '%' : energy < 99 ? '恢复中 ' + Math.ceil(energy) + '%' : '灵光充足';
+  const energyText = soul ? '灵光 ' + Math.ceil(energy) + '%' : energy < 99 ? '恢复中 ' + Math.ceil(energy) + '%' : '灵光充足';
+  $('#stage-energy-label').textContent = energyText;
+  const energyMeter = $('#stage-energy-meter'), energyValue = String(Math.ceil(energy));
+  const energyDescription = energyText.includes('%') ? energyText : energyText + ' ' + energyValue + '%';
+  if (energyMeter.getAttribute('aria-valuenow') !== energyValue) energyMeter.setAttribute('aria-valuenow', energyValue);
+  if (energyMeter.getAttribute('aria-valuetext') !== energyDescription) energyMeter.setAttribute('aria-valuetext', energyDescription);
   const capPhase = snapshot.cap?.phase || (soul ? 'open' : 'closed');
   $('#stage-cap-status').dataset.phase = capPhase;
   $('#stage-cap-label').textContent = ({ closed: 'E · 掀开脑洞', opening: '咔哒 · 脑洞打开', open: '脑洞打开 · 念头出发', returning: '拾光回家 · 轻轻扣盖' })[capPhase] || '';
