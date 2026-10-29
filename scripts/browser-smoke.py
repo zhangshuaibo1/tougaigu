@@ -6,6 +6,7 @@ save injection, direct updates, or engine solving calls.
 """
 import argparse,asyncio,json,re,shutil,time
 from pathlib import Path
+from urllib.parse import urljoin, urlparse
 from playwright.async_api import async_playwright
 
 
@@ -15,11 +16,15 @@ window.__qaRead=()=>{
   const a=game.form==='soul'?game.soul:game.body,b=game.body,p=game.greenhousePlant;
   return {
     form:game.form,state:game.state,chapterIndex:game.chapterIndex,
-    x:a.x,y:a.y,vx:a.vx,vy:a.vy,time:game.time,deaths:game.deaths,
+    x:a.x,y:a.y,vx:a.vx,vy:a.vy,time:game.time,deaths:game.deaths,camera:game.camera,
     body:{x:b.x,y:b.y,w:b.w,h:b.h,vx:b.vx,vy:b.vy,grounded:b.grounded,platform:b.platform},capPhase:game.cap?.phase,
     theatrePaint:game.isTheatreFinish()?{
       phase:game.theatreScenes?.getStatus(),frame:game.theatrePaintedFrame,
       decodedWidth:game.getPaintedTheatreImage()?.naturalWidth??0,
+      decodedHeight:game.getPaintedTheatreImage()?.naturalHeight??0,
+      complete:game.getPaintedTheatreImage()?.complete===true,
+      source:game.theatreScenes?.getSource()??null,
+      imageSource:game.getPaintedTheatreImage()?.currentSrc||game.getPaintedTheatreImage()?.src||null,
       lampLit:game.lanterns.slice(0,2).map(l=>l.lit===true),
       lightAmounts:[...(game.theatreLight?.amounts||[])],
       encore:game.getTheatreEncoreView()
@@ -484,17 +489,30 @@ async def theatre_hint(page,phrase):
     assert phrase in snapshot['nearHint'], 'visible platform hint disagrees with the live engine hint'
     return snapshot
 
-async def cross_theatre_stage(page,output,label,touch=False,expected_lamps=None):
+async def assert_theatre_paint(page,kind='primary'):
+    expected={'primary':['ready',True,2172,724,'theatre-painted-v22.webp'],
+              'svg':['ready',True,2400,750,'theatre-painted-v20.svg'],
+              'procedural':['failed',False,0,0,None]}[kind]
+    await page.wait_for_function("([phase,frame,w,h])=>{const p=window.__qaRead()?.theatrePaint;return p?.phase===phase&&p.frame===frame&&p.decodedWidth===w&&p.decodedHeight===h;}",arg=expected[:4],timeout=12000)
+    p=(await page.evaluate('window.__qaRead()'))['theatrePaint']
+    if expected[4]:
+        assert p['complete'] and urlparse(p['source']).path.endswith('/'+expected[4])
+        assert p['imageSource']==p['source'], 'ready cache does not match the actual decoded image'
+    else:
+        assert p['source'] is None and p['imageSource'] is None and not p['complete']
+    return p
+
+async def cross_theatre_stage(page,output,label,touch=False,expected_lamps=None,paint='primary'):
     """Walk/jump to the left bank, board on contact, ride without input, alight."""
     output=Path(output)
     await wait_text(page,'#stage-chapter-title','借月剧场')
     await page.wait_for_function("()=>{const a=window.__qaRead();return a?.chapterIndex===2&&a.state==='playing'&&a.form==='body';}")
-    await page.wait_for_function("()=>{const p=window.__qaRead()?.theatrePaint;return p?.phase==='ready'&&p.frame===true&&p.decodedWidth===2400;}",timeout=12000)
+    await assert_theatre_paint(page,paint)
     initial=await page.evaluate('window.__qaRead()')
     assert initial['body']['x']<(530 if expected_lamps else 200) and initial['deaths']==0
     assert initial['theatrePaint']['lampLit']==(expected_lamps or [False,False])
     assert (initial['theatrePaint']['lightAmounts'][0]>0 if expected_lamps else initial['theatrePaint']['lightAmounts']==[0,0])
-    assert initial['theatrePaint']['frame'], 'real decoded theatre painting was not rendered'
+    assert initial['theatrePaint']['frame']==(paint!='procedural'), 'background does not match the explicit expected source'
     banks=[p for p in initial['platforms'] if p['y']==465 and p['kind'] is None]
     left=next((p for p in banks if p['x']==565),None)
     right=next((p for p in banks if p['x']==1130),None)
@@ -611,6 +629,7 @@ async def verify_theatre_lamp(page,output,label):
     await toggle(page,False)
     await page.wait_for_function("()=>window.__qaRead()?.form==='soul'")
     await drive_to(page,1720,275,limit=9)
+    await page.wait_for_function("()=>{const a=window.__qaRead();return a?.form==='soul'&&a.theatrePaint?.encore?.phase==='done';}",timeout=4000)
     near=await page.evaluate('window.__qaRead()')
     assert near['theatrePaint']['lampLit']==[True,False]
     assert abs(near['x']-1720)<35 and abs(near['y']-275)<35
@@ -631,7 +650,7 @@ async def verify_theatre_lamp(page,output,label):
     assert frozen['time']==paused['time']
     await page.locator('#stage-resume').click()
     await page.wait_for_function("()=>window.__qaRead()?.state==='playing'")
-    return {'secondPoemSolvedWithActualSoulAndUI':True,'bothLightPoolsLit':True,
+    return {'secondPoemSolvedWithActualSoulAndUI':True,'bothLightPoolsLit':True,'curtainCallFinishedDuringSoulFlight':True,
             'afterRealPuzzle':lit['theatrePaint'],'pauseFrozen':True}
 
 async def exercise_theatre(page,output,label):
@@ -644,6 +663,7 @@ async def exercise_theatre(page,output,label):
     chapter=page.locator('#chapter-grid [data-chapter="2"]')
     assert await chapter.is_enabled(), 'real greenhouse completion did not unlock the theatre'
     await chapter.click()
+    await assert_theatre_paint(page)
     first=await verify_first_theatre_lamp(page,output,label+'-keyboard')
     desktop=await cross_theatre_stage(page,output,label+'-keyboard',expected_lamps=[True,False])
     second=await verify_theatre_lamp(page,output,label+'-keyboard')
@@ -673,6 +693,51 @@ async def exercise_theatre(page,output,label):
             'touchScope':'resized Chromium and CDP touch controls, naturally earned chapter unlock; not a physical phone or full mobile chapter clear',
             'normalRestartResetBothLightPools':True,'chapterResultsUnchanged':True}
 
+async def exercise_theatre_fallbacks(page,output,label):
+    """Fail only the named illustration requests; keep the genuinely earned save."""
+    primary=urljoin(page.url,'assets/theatre-painted-v22.webp')
+    fallback=urljoin(page.url,'assets/theatre-painted-v20.svg')
+    pattern=re.compile(r'/assets/theatre-painted-(?:v22\.webp|v20\.svg)(?:\?[^#]*)?$')
+    expected_failures=[];results={}
+    chapters=await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).chapters")
+    rewards=await read_reward_grants(page)
+    for kind,blocked in [('svg',{primary}),('procedural',{primary,fallback})]:
+        attempts=[]
+        async def block_art(route):
+            url=route.request.url
+            if url in blocked:
+                attempts.append(url);expected_failures.append(url)
+                await route.abort('failed')
+            else:await route.continue_()
+        await page.route(pattern,block_art)
+        try:
+            await page.reload(wait_until='networkidle')
+            await page.wait_for_function("()=>window.__qaRead?.()?.chapterIndex===2")
+            initial=await assert_theatre_paint(page,kind)
+            crossing=await cross_theatre_stage(page,output,label+'-fallback-'+kind,paint=kind)
+            await toggle(page,False)
+            await page.wait_for_function("()=>window.__qaRead()?.form==='soul'")
+            await drive_to(page,1720,275,limit=9)
+            await puzzle(page,'月亮')
+            await page.wait_for_function("()=>window.__qaRead()?.theatrePaint?.lampLit[1]===true")
+            lit=await assert_theatre_paint(page,kind)
+            assert lit['lampLit']==[False,True], 'resource failure changed the actual puzzle route'
+            assert attempts==([primary] if kind=='svg' else [primary,fallback]), 'illustration failure retried during the route'
+            assert await read_reward_grants(page)==rewards, 'replaying after resource failure duplicated rewards'
+            assert await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).chapters")==chapters
+            await page.screenshot(path=str(Path(output)/(label+'-fallback-'+kind+'-lamp.png')),full_page=True)
+            results[kind]={'background':initial,'crossing':crossing,'actualSecondPuzzleSolved':True,
+                           'noRepeatedRequests':True,'unchangedRewardsAndChapterResults':True,'blockedRequests':list(attempts)}
+        finally:
+            await page.unroute(pattern,block_art)
+    await page.reload(wait_until='networkidle')
+    await page.wait_for_function("()=>window.__qaRead?.()?.chapterIndex===2")
+    restored=await assert_theatre_paint(page)
+    assert restored['lampLit']==[False,False] and restored['lightAmounts']==[0,0]
+    assert await read_reward_grants(page)==rewards
+    return {'cases':results,'primaryRecoveredAfterUnblocking':True,'recovered':restored,
+            'deliberatelyAbortedRequests':expected_failures}
+
 async def main(args):
     output=Path(args.output);output.mkdir(parents=True,exist_ok=True)
     report={'url':args.url,'source':'served production HTML; app module has a read-only coordinate probe appended in-memory; all actions use DOM/input','cases':[]}
@@ -680,9 +745,11 @@ async def main(args):
         b=await p.chromium.launch(headless=True,executable_path=args.chromium or None,args=['--no-sandbox'])
         for w,h,touch,full in [(1280,800,False,True),(390,844,True,False),(320,680,True,False)]:
             context=await b.new_context(viewport={'width':w,'height':h},has_touch=touch,is_mobile=touch,device_scale_factor=1)
-            page=await context.new_page();errors=[];failed=[];instrumented_app_urls=[]
+            page=await context.new_page();errors=[];failed=[];instrumented_app_urls=[];art_requests=[];request_failures=[]
             page.on('pageerror',lambda e:errors.append(str(e)))
             page.on('response',lambda r:failed.append({'url':r.url,'status':r.status}) if r.status>=400 else None)
+            page.on('request',lambda r:art_requests.append(r.url) if re.search(r'/assets/theatre-painted-(?:v22\.webp|v20\.svg)(?:\?|$)',r.url) else None)
+            page.on('requestfailed',lambda r:request_failures.append({'url':r.url,'failure':r.failure}))
             async def instrument(route):
                 response=await route.fetch()
                 await route.fulfill(response=response,body=(await response.text())+PROBE)
@@ -729,7 +796,17 @@ async def main(args):
                 result['greenhouse']['stationRecordPreserved']=True
                 result['greenhouse']['reloadPreservedSeedAndLamps']=True
                 result['letterEcho']['reloadRestoredKeep']=True
+                assert art_requests==[], 'theatre artwork was requested during the first two chapters'
                 result['theatre']=await exercise_theatre(page,output,str(w))
+                assert all(urlparse(url).path.endswith('/theatre-painted-v22.webp') for url in art_requests), 'normal play unexpectedly needed the old SVG'
+                result['theatreArt']={'notRequestedBeforeThirdChapter':True,'normalRequests':list(art_requests)}
+                result['theatreArt']['fallbacks']=await exercise_theatre_fallbacks(page,output,str(w))
+                intentional=result['theatreArt']['fallbacks']['deliberatelyAbortedRequests']
+                assert [item['url'] for item in request_failures]==intentional, 'an unplanned resource request failed'
+                result['theatreArt']['expectedRequestFailures']=request_failures
+            else:
+                assert art_requests==[], 'an independent chapter-one phone run requested the theatre art'
+                assert not request_failures,request_failures
             assert not errors,errors
             assert not failed,failed
             report['cases'].append(result)

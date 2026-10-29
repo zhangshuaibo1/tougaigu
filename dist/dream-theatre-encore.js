@@ -15,7 +15,7 @@ export function getTheatreEncoreView(s){
 }
 export function advanceTheatreEncore(s,context={},dt=0){
   if(!s||context.state!=='playing'||context.mode!=='story'||context.chapterIndex!==2
-     ||context.form!=='body'||!finite(dt)||dt<=0)return s;
+     ||!finite(dt)||dt<=0)return s;
   const deaths=finite(context.deaths)?context.deaths:0;
   if(s.deaths===null)s.deaths=deaths;
   if(s.deaths!==deaths){Object.assign(s,createTheatreEncore(),{deaths});return s;}
@@ -24,6 +24,9 @@ export function advanceTheatreEncore(s,context={},dt=0){
     s.age=Math.min(duration,s.age+Math.min(dt,.05));
     if(s.age>=duration)s.phase='done';return s;
   }
+  // Body form earns the bow; once earned, its playing clock also runs during
+  // soul flight. Pause and death remain governed by the checks above.
+  if(context.form!=='body')return s;
   const b=context.body,stage=context.movers?.find(p=>p.id==='stage'&&valid(p));
   const banks=context.level?.platforms?.filter(p=>valid(p)&&Math.abs(p.y-stage?.y)<12)||[];
   const left=banks.find(p=>p.x===565),right=banks.find(p=>p.x===1130);

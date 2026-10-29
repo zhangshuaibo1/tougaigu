@@ -12,6 +12,7 @@ import { getTheatreGuidance } from './dream-theatre-guidance.js';
 import { getGroundShadowView } from './dream-ground-shadow.js';
 import { createTheatrePaintedAssets, drawPaintedTheatre, drawPaintedTheatreLights } from './dream-theatre-painted.js';
 import { drawTheatreLantern } from './dream-theatre-lantern.js';
+import { drawRefinedSoul } from './dream-soul-art.js';
 import { createTheatreEncore, advanceTheatreEncore, drawTheatreEncore, getTheatreEncoreView } from './dream-theatre-encore.js';
 export { DREAM_LEVELS, DREAM_PHYSICS, createDreamRng, getDreamStars } from './dream-engine-base.js';
 
@@ -111,7 +112,7 @@ export class DreamGame extends BaseDreamGame {
         c.fillStyle=sky;c.fillRect(0,view.viewport.top,w,view.viewport.bottom-view.viewport.top);c.restore();
         if(drawPaintedTheatre(c,view,image)){
           this.theatrePaintedFrame=true;
-          drawPaintedTheatreLights(c,view,this.theatreLight?.amounts||[0,0]);return;
+          drawPaintedTheatreLights(c,view,this.theatreLight?.amounts||[0,0],image);return;
         }
       }
       super.drawBackground(c,w,h,t);return;
@@ -147,7 +148,7 @@ export class DreamGame extends BaseDreamGame {
   drawArchitecture(c,t){
     if(this.isStationFinish()){if(!this.paintedFrame)drawStationArchitecture(c,this);}
     else if((!this.isGreenhouseFinish()||!this.greenhousePaintedFrame)&&(!this.isTheatreFinish()||!this.theatrePaintedFrame))super.drawArchitecture(c,t);
-    if(this.isTheatreFinish()){drawTheatreRigging(c,{movers:this.movers,camera:this.camera,viewWidth:this.viewWidth});drawTheatreEncore(c,this.theatreEncore,{camera:this.camera,reducedMotion:this.options.reducedMotion});}
+    if(this.isTheatreFinish()){drawTheatreRigging(c,{movers:this.movers,camera:this.camera,viewWidth:this.viewWidth});drawTheatreEncore(c,this.theatreEncore,{reducedMotion:this.options.reducedMotion});}
     if(this.letterEcho)drawLetterSceneWindow(c,this.letterEcho.choice,t);
   }
   drawPlatform(c,p,t){
@@ -173,6 +174,10 @@ export class DreamGame extends BaseDreamGame {
     else super.drawLantern(c,l,index,t);
   }
   drawStationRim(c){drawCapFrontRim(c,this.capScene,this.capOpen);}
+  drawSoul(c,s,t){
+    if(this.mode==='story'&&this.chapterIndex<=2&&drawRefinedSoul(c,this,s,t))return;
+    super.drawSoul(c,s,t);
+  }
   drawCharacter(c,b,t,shown=null,character=null){
     const presentation=character||this.getCharacterPresentation(t);
     if(this.letterEcho)drawLetterEcho(c,this.letterEcho,{opening:presentation.rig.openingWorld,face:b.face,camera:this.camera,width:this.viewWidth});
