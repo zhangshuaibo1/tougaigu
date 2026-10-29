@@ -17,6 +17,12 @@ window.__qaRead=()=>{
     form:game.form,state:game.state,chapterIndex:game.chapterIndex,
     x:a.x,y:a.y,vx:a.vx,vy:a.vy,time:game.time,deaths:game.deaths,
     body:{x:b.x,y:b.y,w:b.w,h:b.h,vx:b.vx,vy:b.vy,grounded:b.grounded,platform:b.platform},capPhase:game.cap?.phase,
+    theatrePaint:game.isTheatreFinish()?{
+      phase:game.theatreScenes?.getStatus(),frame:game.theatrePaintedFrame,
+      decodedWidth:game.getPaintedTheatreImage()?.naturalWidth??0,
+      lampLit:game.lanterns.slice(0,2).map(l=>l.lit===true),
+      lightAmounts:[...(game.theatreLight?.amounts||[])]
+    }:null,
     nearHint:game.getNearHint(),
     movers:(game.movers||[]).map(p=>({id:p.id,x:p.x,y:p.y,w:p.w,h:p.h,dx:p.dx,dy:p.dy})),
     platforms:(game.level?.platforms||[]).map(p=>({x:p.x,y:p.y,w:p.w,h:p.h,kind:p.kind||null})),
@@ -482,8 +488,11 @@ async def cross_theatre_stage(page,output,label,touch=False):
     output=Path(output)
     await wait_text(page,'#stage-chapter-title','借月剧场')
     await page.wait_for_function("()=>{const a=window.__qaRead();return a?.chapterIndex===2&&a.state==='playing'&&a.form==='body';}")
+    await page.wait_for_function("()=>{const p=window.__qaRead()?.theatrePaint;return p?.phase==='ready'&&p.frame===true&&p.decodedWidth===2400;}",timeout=12000)
     initial=await page.evaluate('window.__qaRead()')
     assert initial['body']['x']<200 and initial['deaths']==0
+    assert initial['theatrePaint']['lampLit']==[False,False] and initial['theatrePaint']['lightAmounts']==[0,0]
+    assert initial['theatrePaint']['frame'], 'real decoded theatre painting was not rendered'
     banks=[p for p in initial['platforms'] if p['y']==465 and p['kind'] is None]
     left=next((p for p in banks if p['x']==565),None)
     right=next((p for p in banks if p['x']==1130),None)
@@ -556,6 +565,41 @@ async def cross_theatre_stage(page,output,label,touch=False):
             'rightBankReached':True,'noRespawns':True,'noHorizontalOverflow':True,'chapterCompleted':False,
             'evidence':{'waiting':waiting,'boarding':boarding,'rideStart':ride_start,'riding':riding,'alighting':alighting,'landed':landed}}
 
+
+async def verify_theatre_lamp(page,output,label):
+    """Real soul flight, Q interaction, correct poem puzzle and environment light."""
+    print(label,'fly to the real second poem lamp and solve its moon riddle',flush=True)
+    before=await page.evaluate('window.__qaRead()')
+    assert before['chapterIndex']==2 and before['theatrePaint']['lampLit']==[False,False]
+    await toggle(page,False)
+    await page.wait_for_function("()=>window.__qaRead()?.form==='soul'")
+    async def lamp_near():
+        state=await page.evaluate('window.__qaRead()')
+        return state['form']=='soul' and abs(state['x']-1720)<80 and abs(state['y']-275)<80
+    await drive_to(page,1720,275,until=lamp_near,limit=9)
+    near=await page.evaluate('window.__qaRead()')
+    assert near['theatrePaint']['lampLit']==[False,False]
+    assert abs(near['x']-1720)<80 and abs(near['y']-275)<80
+    await puzzle(page,'月亮')
+    await page.wait_for_function("()=>{const p=window.__qaRead()?.theatrePaint;return p?.lampLit?.[1]===true&&p.lightAmounts[1]>.15;}",timeout=4000)
+    lit=await page.evaluate('window.__qaRead()')
+    assert lit['theatrePaint']['lampLit']==[False,True]
+    assert lit['theatrePaint']['lightAmounts'][0]==0
+    assert lit['theatrePaint']['lightAmounts'][1]>0
+    assert lit['theatrePaint']['frame'] is True
+    await page.screenshot(path=str(Path(output)/(label+'-theatre-moon-lamp-lit.png')),full_page=True)
+    await page.keyboard.press('Escape')
+    await page.locator('#pause-dialog[open]').wait_for()
+    paused=await page.evaluate('window.__qaRead()')
+    await page.wait_for_timeout(240)
+    frozen=await page.evaluate('window.__qaRead()')
+    assert frozen['theatrePaint']['lightAmounts']==paused['theatrePaint']['lightAmounts'], 'paused light transition moved'
+    assert frozen['time']==paused['time']
+    await page.locator('#stage-resume').click()
+    await page.wait_for_function("()=>window.__qaRead()?.state==='playing'")
+    return {'secondPoemSolvedWithActualSoulAndUI':True,'afterRealPuzzle':lit['theatrePaint'],
+            'pauseFrozen':True,'noOldCollectionLit':lit['theatrePaint']['lampLit'][0] is False}
+
 async def exercise_theatre(page,output,label):
     """Keep earned progress; resize the same session for a second touch crossing."""
     print(label,'enter the normally unlocked theatre chapter',flush=True)
@@ -567,6 +611,7 @@ async def exercise_theatre(page,output,label):
     assert await chapter.is_enabled(), 'real greenhouse completion did not unlock the theatre'
     await chapter.click()
     desktop=await cross_theatre_stage(page,output,label+'-keyboard')
+    lamp=await verify_theatre_lamp(page,output,label+'-keyboard')
     viewport=page.viewport_size
     emulation=await page.context.new_cdp_session(page)
     try:
@@ -585,7 +630,7 @@ async def exercise_theatre(page,output,label):
         await emulation.detach()
         await page.set_viewport_size(viewport)
     assert await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).chapters")==chapters, 'a stage crossing falsely settled chapter rewards'
-    return {'enteredViaUnlockedChapterMap':True,'keyboard':desktop,'touch390':touch,
+    return {'enteredViaUnlockedChapterMap':True,'keyboard':desktop,'lamp':lamp,'touch390':touch,
             'touchScope':'390x844 resized desktop Chromium context, real touch events; chapters 1-2 were earned with keyboard; no physical-phone or full mobile-playthrough claim',
             'chapterResultsUnchanged':True}
 

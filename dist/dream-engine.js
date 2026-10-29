@@ -10,6 +10,8 @@ import { normalizeLetterChoice, createLetterEcho, advanceLetterEcho, settleLette
 import { drawTheatrePlatform, drawTheatreRigging } from './dream-theatre-art.js';
 import { getTheatreGuidance } from './dream-theatre-guidance.js';
 import { getGroundShadowView } from './dream-ground-shadow.js';
+import { createTheatrePaintedAssets, drawPaintedTheatre, drawPaintedTheatreLights } from './dream-theatre-painted.js';
+import { drawTheatreLantern } from './dream-theatre-lantern.js';
 export { DREAM_LEVELS, DREAM_PHYSICS, createDreamRng, getDreamStars } from './dream-engine-base.js';
 
 export class DreamGame extends BaseDreamGame {
@@ -17,19 +19,22 @@ export class DreamGame extends BaseDreamGame {
     super(canvas,callbacks);
     this.paintedScenes=createPaintedSceneAssets({loadImage:resources.loadImage});
     this.greenhouseScenes=createGreenhouseSceneAssets({loadImage:resources.loadImage});
-    this.paintedFrame=false;this.greenhousePaintedFrame=false;this.letterEcho=null;
+    this.theatreScenes=createTheatrePaintedAssets({loadImage:resources.loadTheatreImage});
+    this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.theatreLight=null;this.letterEcho=null;
   }
   isStationFinish(){return this.mode==='story'&&this.chapterIndex===0;}
   isGreenhouseFinish(){return this.mode==='story'&&this.chapterIndex===1;}
   isTheatreFinish(){return this.mode==='story'&&this.chapterIndex===2;}
   start(options={}){
     if(this.destroyed)return;
-    this.stationSignal=null;this.paintedFrame=false;this.greenhousePaintedFrame=false;this.letterEcho=null;
+    this.stationSignal=null;this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.theatreLight=null;this.letterEcho=null;
     super.start(options);
     if(this.destroyed)return;
     this.stationSignal={amount:this.stationSignalOpen()?1:0};
     this.paintedScenes.request({mode:this.mode,chapterIndex:this.chapterIndex});
     this.greenhouseScenes.request({mode:this.mode,chapterIndex:this.chapterIndex});
+    this.theatreScenes.request({mode:this.mode,chapterIndex:this.chapterIndex});
+    this.theatreLight=this.isTheatreFinish()?{amounts:this.lanterns.slice(0,2).map(l=>l.lit?1:0)}:null;
     this.letterEcho=this.isGreenhouseFinish()?createLetterEcho(this.options.letterChoice,this.options.reducedMotion):null;
     this.syncLetterMiniature();
     if(this.letterEcho)this.emitHud(true);
@@ -74,17 +79,39 @@ export class DreamGame extends BaseDreamGame {
     this.stationSignal.amount=this.options.reducedMotion?target:this.stationSignal.amount<target?Math.min(target,this.stationSignal.amount+step):Math.max(target,this.stationSignal.amount-step);
     advanceLetterEcho(this.letterEcho,dt,{playing:this.state==='playing',reducedMotion:this.options.reducedMotion,capPhase:this.cap.phase,capAge:this.cap.age,capOpen:this.capOpen});
     this.syncLetterMiniature();
+    if(this.theatreLight){
+      const step=Math.max(0,Math.min(.04,Number(dt)||0))*3.6;
+      for(let i=0;i<2;i++){
+        const target=this.lanterns[i]?.lit?1:0,current=this.theatreLight.amounts[i]||0;
+        this.theatreLight.amounts[i]=this.options.reducedMotion?target:
+          current<target?Math.min(target,current+step):Math.max(target,current-step);
+      }
+    }
   }
-  setReducedMotion(value){super.setReducedMotion(value);if(value&&this.stationSignal)this.stationSignal.amount=this.stationSignalOpen()?1:0;if(value){settleLetterEcho(this.letterEcho);this.syncLetterMiniature();}}
+  setReducedMotion(value){super.setReducedMotion(value);if(value&&this.stationSignal)this.stationSignal.amount=this.stationSignalOpen()?1:0;if(value){settleLetterEcho(this.letterEcho);this.syncLetterMiniature();if(this.theatreLight)this.theatreLight.amounts=this.lanterns.slice(0,2).map(l=>l.lit?1:0);}}
   getPaintedStationImage(){return this.paintedScenes.getImage({mode:this.mode,chapterIndex:this.chapterIndex});}
   getPaintedGreenhouseImage(){return this.greenhouseScenes.getImage({mode:this.mode,chapterIndex:this.chapterIndex});}
-  destroy(){super.destroy();this.paintedScenes.destroy();this.greenhouseScenes.destroy();this.paintedFrame=false;this.greenhousePaintedFrame=false;this.letterEcho=null;this.syncLetterMiniature();}
+  getPaintedTheatreImage(){return this.theatreScenes.getImage({mode:this.mode,chapterIndex:this.chapterIndex});}
+  destroy(){super.destroy();this.paintedScenes.destroy();this.greenhouseScenes.destroy();this.theatreScenes.destroy();this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.theatreLight=null;this.letterEcho=null;this.syncLetterMiniature();}
   getStoryNPCView(npc){
     const view=super.getStoryNPCView(npc);
     return view&&this.paintedFrame&&this.isStationFinish()?{...view,lighting:'painted-station'}:view;
   }
   drawBackground(c,w,h,t){
-    this.paintedFrame=false;this.greenhousePaintedFrame=false;
+    this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;
+    if(this.isTheatreFinish()){
+      const view=this.getSceneBackdropView(),image=this.getPaintedTheatreImage();
+      if(image){
+        c.save();const sky=c.createLinearGradient(0,view.viewport.top,0,view.viewport.bottom);
+        sky.addColorStop(0,'#111829');sky.addColorStop(.55,'#29243a');sky.addColorStop(1,'#181d30');
+        c.fillStyle=sky;c.fillRect(0,view.viewport.top,w,view.viewport.bottom-view.viewport.top);c.restore();
+        if(drawPaintedTheatre(c,view,image)){
+          this.theatrePaintedFrame=true;
+          drawPaintedTheatreLights(c,view,this.theatreLight?.amounts||[0,0]);return;
+        }
+      }
+      super.drawBackground(c,w,h,t);return;
+    }
     if(this.isGreenhouseFinish()){
       const view=this.getSceneBackdropView(),image=this.getPaintedGreenhouseImage();
       if(image){
@@ -115,7 +142,7 @@ export class DreamGame extends BaseDreamGame {
   }
   drawArchitecture(c,t){
     if(this.isStationFinish()){if(!this.paintedFrame)drawStationArchitecture(c,this);}
-    else if(!this.isGreenhouseFinish()||!this.greenhousePaintedFrame)super.drawArchitecture(c,t);
+    else if((!this.isGreenhouseFinish()||!this.greenhousePaintedFrame)&&(!this.isTheatreFinish()||!this.theatrePaintedFrame))super.drawArchitecture(c,t);
     if(this.isTheatreFinish())drawTheatreRigging(c,{movers:this.movers,camera:this.camera,viewWidth:this.viewWidth});
     if(this.letterEcho)drawLetterSceneWindow(c,this.letterEcho.choice,t);
   }
@@ -129,6 +156,7 @@ export class DreamGame extends BaseDreamGame {
   }
   drawPlate(c,p,t){if(this.isStationFinish())drawStationSignal(c,this,p);else super.drawPlate(c,p,t);}
   drawLantern(c,l,index,t){
+    if(this.isTheatreFinish()){if(drawTheatreLantern(c,this,l,index,t))return;super.drawLantern(c,l,index,t);return;}
     if(!this.isStationFinish()&&!this.isGreenhouseFinish()){super.drawLantern(c,l,index,t);return;}
     if(this.paintedFrame||this.greenhousePaintedFrame){
       const y=l.y+(this.options.reducedMotion?0:Math.sin(t*1.2+index)*4);
