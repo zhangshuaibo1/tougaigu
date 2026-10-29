@@ -19,7 +19,7 @@ window.__qaRead=()=>{
   const character=game.getCharacterPresentation();
   return {
     form:game.form,state:game.state,chapterIndex:game.chapterIndex,mode:game.mode,festivalId:game.festivalId,controlSource,
-    runId:game.runId,bodyIdentity:__qaBodyIdentities.get(b),
+    runId:game.runId,bodyIdentity:__qaBodyIdentities.get(b),input:{...game.input},
     inputAvailable:typeof gameplayAvailable==='function'?gameplayAvailable():null,
     energy:game.energy,maxEnergy:game.maxEnergy,
     hudSample:currentHud?{form:currentHud.form,state:currentHud.state,time:currentHud.time,energy:currentHud.energy,maxEnergy:currentHud.maxEnergy}:null,
@@ -27,8 +27,8 @@ window.__qaRead=()=>{
     seals:game.lanterns.filter(l=>l.lit).length,memories:game.memories.filter(m=>m.collected).length,
     firstTicket:game.firstTicket?{...game.firstTicket}:null,
     x:a.x,y:a.y,vx:a.vx,vy:a.vy,time:game.time,visualTime:game.visualTime,deaths:game.deaths,camera:game.camera,
-    reducedMotion:game.options.reducedMotion,
-    body:{x:b.x,y:b.y,w:b.w,h:b.h,vx:b.vx,vy:b.vy,grounded:b.grounded,platform:b.platform,face:b.face,land:b.land},capPhase:game.cap?.phase,
+    reducedMotion:game.options.reducedMotion,storyNPC:game.getStoryNPCView(),
+    body:{x:b.x,y:b.y,w:b.w,h:b.h,vx:b.vx,vy:b.vy,grounded:b.grounded,platform:b.platform,face:b.face,land:b.land},capPhase:game.cap?.phase,capAge:game.cap?.age,capAmount:game.capOpen,
     travelerPerformance:game.getTravelerPerformanceView(),
     characterPose:{walking:character.walking,step:character.step,hop:character.hop,scaleY:character.scaleY,tilt:character.tilt,
       bodyMatrix:[...character.rig.bodyMatrix],openingWorld:{...character.rig.openingWorld},
@@ -49,16 +49,28 @@ window.__qaRead=()=>{
     libraryPaint:game.isLibraryFinish()?{
       status:game.libraryScenes?.getSnapshot()?.status,frame:game.libraryPaintedFrame,
       width:game.getPaintedLibraryImage()?.naturalWidth||0,height:game.getPaintedLibraryImage()?.naturalHeight||0,
+      complete:game.getPaintedLibraryImage()?.complete===true,
+      imageSource:game.getPaintedLibraryImage()?.currentSrc||game.getPaintedLibraryImage()?.src||null,
       lampLit:game.lanterns.slice(0,2).map(l=>l.lit===true),
       lightAmounts:[...(game.libraryLight?.amounts||[])],
       gateOpen:game.barrierOpen(game.level.barriers[0]),
       npcNear:game.getStoryNPCView()?.near===true,
       hazards:(game.hazards||[]).map(h=>({x:h.px,y:h.py,frozen:h.frozen}))
     }:null,
+    coastPaint:game.isCoastFinish?.()?{
+      status:game.coastScenes?.getSnapshot()?.status,frame:game.coastPaintedFrame,
+      width:game.getPaintedCoastImage()?.naturalWidth||0,height:game.getPaintedCoastImage()?.naturalHeight||0,
+      complete:game.getPaintedCoastImage()?.complete===true,
+      imageSource:game.getPaintedCoastImage()?.currentSrc||game.getPaintedCoastImage()?.src||null,
+      lampLit:game.getCoastLightView()?.lamps,lightAmounts:game.getCoastLightView()?.amounts
+    }:null,
+    hazards:(game.hazards||[]).map(h=>({kind:h.kind,x:h.x,y:h.y,px:h.px,py:h.py,
+      r:h.r,length:h.length,swing:h.swing,speed:h.speed,phase:h.phase,frozen:h.frozen})),
     nearHint:game.getNearHint(),
     movers:(game.movers||[]).map(p=>({id:p.id,x:p.x,y:p.y,w:p.w,h:p.h,dx:p.dx,dy:p.dy,range:p.range,speed:p.speed})),
     platforms:(game.level?.platforms||[]).map(p=>({x:p.x,y:p.y,w:p.w,h:p.h,kind:p.kind||null})),
     letterChoice:save.choices.letter??null,
+    clockChoice:save.choices.clock??null,clockEcho:game.getClockEchoView?.()??null,
     letterEcho:game.letterEcho?{...game.letterEcho}:null,
     greenhousePlant:p?{...p,knownSeals:[...p.knownSeals]}:null,
     seedCollected:game.chapterIndex===1&&game.memories?.[1]?.collected===true,
@@ -1123,11 +1135,11 @@ async def exercise_letter_echo(page,output,label):
 
 async def tap_control(page,selector):
     """Send actual touch input in the already-earned, resized desktop context."""
-    target=page.locator(selector)
+    target=page.locator(selector) if isinstance(selector,str) else selector
     await target.wait_for(state='visible')
     await target.scroll_into_view_if_needed()
     box=await target.bounding_box()
-    assert box, 'touch target has no visible bounds: '+selector
+    assert box, 'touch target has no visible bounds: '+str(selector)
     session=await page.context.new_cdp_session(page)
     try:
         await session.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[
@@ -1603,6 +1615,11 @@ async def exercise_festival_hud(page,output,label):
             'chaptersChoicesAndCollectionsUnchanged':True,'rewardGrantsUnchanged':True,
             'scope':'real gift entry and normal return; no festival puzzles, completion, gift claims or purchases'}
 
+def validate_request_failures(actual,expected):
+    """The full session must have exactly the already-proven fault identities."""
+    assert actual==expected,'unplanned, missing, repeated or reordered request failure: '+json.dumps({'actual':actual,'expected':expected},ensure_ascii=False)
+    return {'actual':list(actual),'expected':list(expected),'exactMatch':True}
+
 async def main(args):
     output=Path(args.output);output.mkdir(parents=True,exist_ok=True)
     report={'url':args.url,'source':'served production HTML; app module has a read-only coordinate probe appended in-memory; all actions use DOM/input','cases':[]}
@@ -1611,10 +1628,11 @@ async def main(args):
         for w,h,touch,full in [(1280,800,False,True),(390,844,True,False),(320,680,True,False)]:
             HUD_OBSERVATIONS.clear()
             context=await b.new_context(viewport={'width':w,'height':h},has_touch=touch,is_mobile=touch,device_scale_factor=1)
-            page=await context.new_page();errors=[];failed=[];instrumented_app_urls=[];art_requests=[];request_failures=[]
+            page=await context.new_page();errors=[];failed=[];instrumented_app_urls=[];art_requests=[];request_failures=[];later_art_requests=[]
             page.on('pageerror',lambda e:errors.append(str(e)))
             page.on('response',lambda r:failed.append({'url':r.url,'status':r.status}) if r.status>=400 else None)
             page.on('request',lambda r:art_requests.append(r.url) if re.search(r'/assets/theatre-painted-(?:v22\.webp|v20\.svg)(?:\?|$)',r.url) else None)
+            page.on('request',lambda r:later_art_requests.append(r.url) if re.search(r'/assets/(?:library-painted-v26|coast-painted-v27)\.webp(?:\?|$)',r.url) else None)
             page.on('requestfailed',lambda r:request_failures.append({'url':r.url,'failure':r.failure}))
             async def instrument(route):
                 response=await route.fetch()
@@ -1667,6 +1685,7 @@ async def main(args):
                 result['greenhouse']['reloadPreservedSeedAndLamps']=True
                 result['letterEcho']['reloadRestoredKeep']=True
                 assert art_requests==[], 'theatre artwork was requested during the first two chapters'
+                assert later_art_requests==[], 'later chapter artwork was requested before its chapter'
                 result['theatre']=await exercise_theatre(page,output,str(w))
                 assert all(urlparse(url).path.endswith('/theatre-painted-v22.webp') for url in art_requests), 'normal play unexpectedly needed the old SVG'
                 result['theatreArt']={'notRequestedBeforeThirdChapter':True,'normalRequests':list(art_requests)}
@@ -1678,13 +1697,30 @@ async def main(args):
                 assert [item['url'] for item in theatre_failures]==intentional, 'an unplanned resource request failed: '+json.dumps(request_failures,ensure_ascii=False)
                 assert len(theatre_failures)==3 and all(item['failure']=='net::ERR_FAILED' for item in theatre_failures),'theatre faults differ from the three exact deliberate aborts'
                 result['theatreArt']['expectedRequestFailures']=theatre_failures
+                expected_failures=portrait_failures+theatre_failures
+                assert later_art_requests==[], 'library or coast artwork was requested during third-chapter verification'
                 if args.version and int(args.version.split('.')[0])>=26:
                     import __main__
                     from browser_library_v26 import exercise_library
-                    result['library']=await exercise_library(page,output,str(w),__main__)
+                    result['library']=await exercise_library(page,output,str(w),__main__,later_art_requests)
+                    result['library']['notRequestedBeforeFourthChapter']=True
+                    expected_failures+=result['library']['expectedRequestFailures']
+                if args.version and int(args.version.split('.')[0])>=27:
+                    from browser_coast_v27 import exercise_coast
+                    result['coast']=await exercise_coast(page,output,str(w),__main__)
+                    expected_failures+=result['coast']['expectedRequestFailures']
             else:
                 assert art_requests==[], 'an independent chapter-one phone run requested the theatre art'
+                assert later_art_requests==[], 'an independent chapter-one phone run requested library or coast art'
                 assert not request_failures,request_failures
+                expected_failures=[]
+            # This gate deliberately follows ALL later chapters and fault cases.
+            # The older first/third-chapter checks above remain unchanged.
+            await page.wait_for_load_state('networkidle')
+            result['networkFailures']=validate_request_failures(request_failures,expected_failures)
+            result['finalResources']=await page.evaluate("performance.getEntriesByType('resource').map(e=>({name:e.name.split('/').pop(),duration:e.duration,transferSize:e.transferSize}))")
+            result['finalImagesLoaded']=await page.locator('img').evaluate_all('(els)=>els.filter(e=>e.getBoundingClientRect().width>0).every(e=>e.complete&&e.naturalWidth>0)')
+            assert result['finalImagesLoaded'],'visible image failed to load after the final chapter'
             assert not errors,errors
             assert not failed,failed
             result['hudReadability']={'scope':'real DOM rectangles, complete objective/hint text ranges, actual accessible names and energy, uncovered input centers',

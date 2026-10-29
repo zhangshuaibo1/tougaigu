@@ -3,6 +3,7 @@
 import { drawFirstTicket } from './dream-first-ticket-art.js';
 import { drawGreenhouseSeed } from './dream-greenhouse-art.js';
 import { drawLetterMiniature } from './dream-letter-echo.js';
+import { drawClockMiniature } from './dream-clock-echo.js';
 const TAU=Math.PI*2;
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 const STORY_MOTIFS=['station','sprout','moon','whale','clock','dawn'];
@@ -142,6 +143,7 @@ export function drawCapMiniature(c,input,t=0){
       c.beginPath();c.moveTo(-23,4);c.bezierCurveTo(-8,15,10,13,21,4);c.bezierCurveTo(11,22,-17,20,-23,4);c.fillStyle=ivory+'bb';c.fill();oval(c,-14,-5,2.5,3,ink);oval(c,-12,-7,1,1,ivory);leaf(c,0,8,10,4,accent,-.5);stroke(c,[[-4,-20],[-4,-28]],color,1.5);curve(c,[-4,-25,-10,-30,-14,-29,-13,-27],color,1.5);curve(c,[-4,-25,2,-30,5,-29,6,-27],color,1.5);c.restore();star(c,38,-39,3,accent);break;
     }
     case 'clock': {
+      if(scene.clockEcho){drawClockMiniature(c,scene.clockEcho,t);break;}
       oval(c,0,-44,7,7,accent);oval(c,0,-44,4,4,ink);oval(c,0,-16,27,29,accent);oval(c,0,-16,23,25,ink);oval(c,0,-16,19,21,color+'33');
       for(let i=0;i<12;i++){const a=i*TAU/12;stroke(c,[[Math.sin(a)*17,-16+Math.cos(a)*19],[Math.sin(a)*20,-16+Math.cos(a)*22]],ivory,1.2);}
       const a=t*.16;stroke(c,[[Math.sin(a)*12,-16-Math.cos(a)*14],[0,-16],[10,-11]],ivory,2);oval(c,0,-16,2.5,2.5,accent);
