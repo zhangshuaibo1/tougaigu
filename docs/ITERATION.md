@@ -2,9 +2,9 @@
 
 ## 域名发布约束：tougaigu.com
 
-用户已购买`tougaigu.com`并要求绑定现有游戏。域名配置与DNS、HTTPS的实际结果以[域名记录](DOMAIN-tougaigu.com.md)为准；本条是发布约束，不代表尚待验证的配置已经生效。
+用户购买的`tougaigu.com`已完成现有游戏绑定，Spaceship DNS、GitHub Pages自定义域名、Enforce HTTPS及入口跳转均已验证。新域名完整验收[40860849477](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40860849477)成功，565项测试及候选/公网检查通过；完整配置、首次失败与修正、原始报告见[域名记录](DOMAIN-tougaigu.com.md)和[验收清单](verification-domain-release.json)。
 
-正式入口为`https://tougaigu.com/`，旧GitHub Pages地址保留作旧入口。`main/dist/CNAME`必须保持单行`tougaigu.com`；每轮将`dist/`同步到`gh-pages`根目录时包含`CNAME`并保留`.nojekyll`，不得因重建部署树移除域名。正式公网CI使用新域名，在域名及HTTPS生效后验收。后续候选合入时必须继承这批域名配置，不覆盖其他会话的游戏更新。
+正式入口为`https://tougaigu.com/`，旧GitHub Pages地址保留作旧入口。`main/dist/CNAME`必须保持单行`tougaigu.com`；每轮将`dist/`同步到`gh-pages`根目录时包含`CNAME`并保留`.nojekyll`，不得因重建部署树移除域名。正式公网CI使用新域名。后续候选合入时必须继承这批域名配置及`923facef`的普通读信逐页解码等待与测试，不覆盖其他会话的游戏更新；保留刻意rapid-next/Escape竞态与严格网络失败清单。域名验收已完成，可以继续现有v26候选，先合入最新main再发布。
 
 切换域名不自动迁移浏览器本地存档，先在旧地址导出旅途备份，新域名正常导入；生存成长需在原《再活一局》另行导出和导入。以下历史记录中的“原地址不变”和“仅额外保留.nojekyll”描述当时发布，不覆盖本条新域名约束；历史版本与证据完整保留。
 

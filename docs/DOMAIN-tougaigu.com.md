@@ -2,14 +2,16 @@
 
 ## 当前状态
 
-**DNS与域名绑定已完成，HTTPS主域名已能正常打开25.0.0游戏，GitHub的Enforce HTTPS已开启并在刷新后确认保存。CI正式验收地址和README主链接也已切换；全部入口的最终HTTPS跳转和8项网络检查均已通过。首次完整公网回归在严格网络检查中发现头像请求取消，普通故事阅读测试的等待缺口已修复并提交，修复后的完整回归待验收。**
+**DNS与域名绑定已完成，HTTPS主域名已能正常打开游戏，GitHub的Enforce HTTPS已开启并在刷新后确认保存。CI正式验收地址和README主链接也已切换；全部入口的最终HTTPS跳转和8项网络检查均已通过。首次完整公网回归发现的普通故事阅读等待缺口已修复；修复后的565项测试、候选浏览器和新域名完整公网回归全部通过，原始证据已归档。**
 
 - 用户已告知在Spaceship购买`tougaigu.com`并要求绑定游戏。
 - 现有仓库：`zhangshuaibo1/tougaigu`；现有托管为GitHub Pages，发布内容来自`gh-pages`根目录。
 - 正式入口：`https://tougaigu.com/`；HTTPS版`www.tougaigu.com`已验证跳转至主域名。旧入口为`https://zhangshuaibo1.github.io/tougaigu/`。
 - 本轮验收源码为`923facef7056c97b8eb0be0a7ab803363dfe5d5e`，已进入main并包含域名配置和本轮普通故事阅读测试修正。域名文件、发布约束、CI正式URL和README更新已在`03a46bc4fb2abd02399287307c089501f40e7c63`发布；初始绑定提交`b7fd2dc268a81bdf07a5fef689c989a5e45b77f0`和随后记录保留在历史中。
-- Pages仍为`aae84037876d1f736c9430482703941d036a3574`，只新增根目录`CNAME`，原126个运行时blob未改；[Pages部署40856251385](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40856251385)成功。
-- 首次新域名完整验证[40858951757](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40858951757)未通过：564项逻辑测试、资源检查和候选浏览器检查成功，公网步骤在末尾严格网络检查中发现额外的`portrait-keeper.svg`请求取消。修复提交`923facef7056c97b8eb0be0a7ab803363dfe5d5e`已进入main，新的完整回归待验收，不能将首轮或修复后结果称为全绿。
+- 本次域名验收时Pages为`aae84037876d1f736c9430482703941d036a3574`，只新增根目录`CNAME`，原126个运行时blob未改；[Pages部署40856251385](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40856251385)成功。
+- 首次新域名完整验证[40858951757](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40858951757)未通过：564项逻辑测试、资源检查和候选浏览器检查成功，公网步骤在末尾严格网络检查中发现额外的`portrait-keeper.svg`请求取消。修复提交`923facef7056c97b8eb0be0a7ab803363dfe5d5e`已进入main，修复后的[40860849477](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40860849477)已全部成功；首轮失败仍单独保留。
+
+本记录的完整游戏验收固定于上述25.0.0源码和发布快照。验收结束后，既有v26迭代已合并本轮域名与严格普通阅读修正：观察到main为`ae2c35ed255dbbe6470f2c9850664666d0b7b6e6`、后续Pages树为`b02381bc89875cf63b5f4815e43c2a2e3e87a482`，130个dist文件的blob与模式均匹配，源与发布的CNAME仍为单行`tougaigu.com`，额外保留`.nojekyll`。随后新查询参数的HTTPS首页请求返回200、正常证书校验通过，25267字节与该v26源码首页逐字节一致。v26的完整游戏验收与归档以其独立工作流、QA和在途记录为准，本记录不把25.0.0报告当作v26完整通过。
 
 ## 已完成的配置
 
@@ -49,7 +51,7 @@ Cloudflare和Google公共DNS查询均已返回根域名全部四条正确A记录
 
 随后主会话在真实Chrome新标签页中依次导航`http://tougaigu.com/`、`http://www.tougaigu.com/`和`https://zhangshuaibo1.github.io/tougaigu/`，三者最终URL均为`https://tougaigu.com/`，游戏标题正确且没有证书警告。这证明这些浏览器导航已到达HTTPS目标，不单凭最终URL推断具体服务器301链。另对未使用过的`http://tougaigu.com/dream.html`路径进行独立网络检查，实际取得HTTP 301到HTTPS、HTTPS 200的两步响应，`Age=0`。
 
-网络证据和两张HTTPS截图均已实际保存，域名入口和重定向验证已经完成；DNS配置和GitHub登录、HTTPS开关不再是用户待办。当前待完成的是测试修正提交`923facef7056c97b8eb0be0a7ab803363dfe5d5e`的新一轮完整回归验收。
+网络证据和两张HTTPS截图均已实际保存，域名入口和重定向验证已经完成；DNS配置和GitHub登录、HTTPS开关不再是用户待办。测试修正提交`923facef7056c97b8eb0be0a7ab803363dfe5d5e`的新一轮完整回归现已成功；本次域名绑定、HTTPS启用与新域名游戏验收已经完成。
 
 ## 完整公网回归与测试修正
 
@@ -61,7 +63,13 @@ Cloudflare和Google公共DNS查询均已返回根域名全部四条正确A记录
 
 此修正保留rapid-next与Escape/reopen场景的精确请求失败规则，也保留严格traveler逐帧采样要求；没有扩大网络错误忽略范围。生产`dist/`、游戏版本和Pages发布内容均未改变。[首轮失败原始摘录与产物校验](verification-domain-first-ci-failure.json)保留失败列表、原日志栈、产物字节数和SHA-256，没有改写为成功。
 
-修复后工作流[40860849477](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40860849477)正在对同一25.0.0版本进行候选和新域名完整验收。结果确认前，后续迭代可继续候选开发，但应保持Pages版本稳定，避免中途替换正在验收的公开游戏；先读取该工作流最终结果和本记录，再承接最新main发布。完整结果取得后更新此段。
+修复后工作流[40860849477](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40860849477)于2026-10-29 11:00:37 UTC完成，整体success：565项测试通过、0失败、0跳过，资源检查、候选浏览器及新域名完整公网浏览器全部通过。验收期间Pages保持`aae84037876d1f736c9430482703941d036a3574`的25.0.0版本。后续迭代可以承接最新main继续发布，保留域名与本轮普通阅读同步修正。
+
+[最终验收清单](verification-domain-release.json)关联全部证据。[候选原始报告](verification-domain-candidate-full.json)926739字节，SHA-256为`3921b8653ea7f982114794af3d16857464c4f3fb7ea2c92139155bbc4dc8668c`；[公网原始报告](verification-domain-public-full.json)925715字节，SHA-256为`808d0f6bebf6893239ac94942ae92ee6a2c97fb569d113c05bef4e771eac1a1b`。两份均按产物原字节归档。原始artifact为12892355477，132905065字节、181个文件；实际下载后核对SHA-256为`e6a25d77653095872c413319b27fbbaae74a8f83a8edc2bce38dc384d617dcad`。
+
+两份报告均包含1280×800、390×844和320×680三种视口，版本均25.0.0，页面错误与HTTP错误为空，可见图片均正常加载。第二章三页收尾和send/keep两页回音共5份头像快照均已解码；公网归先生快照为正确HTTPS地址、150×150、ready且visible。最终严格请求清单只含两次故意过期的hero-curious取消和三次故意剧场美术故障，没有额外keeper失败。
+
+公网第一章、第三章正常、第三章减动三次真实单跳分别记录55、79、54条观测，均为同一run/body、时间有序、实际vy=-600/97.5/0，且观察器完整清理。第三章正常跳跃暂停6个被动RAF后姿态与Canvas像素保持；桌面前三章真实通关、第四章解锁、读信选项保存与奖励不重复通过。390与320模拟触摸覆盖正常解锁后的首台过河，相对漂移分别为`1.1368683772161603e-13`和`0`，保留原`abs < 1`门槛；这不是实体手机或手机完整通章报告。
 
 ## 后续发布必须保留
 
@@ -95,7 +103,7 @@ Cloudflare和Google公共DNS查询均已返回根域名全部四条正确A记录
 | Pages工作流 | [40856251385](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40856251385) success；这是域名文件发布结果 |
 | 首次新域名完整公网回归 | [40858951757](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40858951757)未通过；564项逻辑、资源和候选浏览器成功，公网末尾严格网络检查发现额外`portrait-keeper.svg`的`net::ERR_ABORTED` |
 | 普通故事阅读测试修正 | [923facef](https://github.com/zhangshuaibo1/tougaigu/commit/923facef7056c97b8eb0be0a7ab803363dfe5d5e)已提交main；逐页expected、ready/decode等待及证据、准确页数回归，严格网络与traveler规则保持 |
-| 修复后完整公网回归 | [40860849477](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40860849477)运行中；最终结果待验收 |
+| 修复后完整公网回归 | [40860849477](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40860849477) success；565项测试、资源、候选和公网完整检查均成功，三个视口版本25.0.0且页面/HTTP错误为空 |
 | 当前浏览器存档导出 | 上一轮正常导出按钮均显示成功：故事页面0/6、生存页面0骨片，导出时保留原页。下载文件未读取核验，未在新域名导入，也未检查其他浏览器或设备 |
 
 旅途导出覆盖故事、画册、借景、失物、节日及奖励；生存成长需在原《再活一局》中另行导出。以上仅记录当前浏览器的UI导出结果，不声称用户所有设备的存档已经迁移。

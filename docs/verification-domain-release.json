@@ -1,0 +1,327 @@
+{
+  "schema": 1,
+  "canonicalURL": "https://tougaigu.com/",
+  "acceptedAtUTC": "2026-10-29T11:00:37Z",
+  "gameVersionAtAcceptance": "25.0.0",
+  "sourceCommit": "923facef7056c97b8eb0be0a7ab803363dfe5d5e",
+  "pagesCommit": "aae84037876d1f736c9430482703941d036a3574",
+  "domain": {
+    "registrarDNS": "Spaceship",
+    "nameservers": [
+      "launch1.spaceship.net",
+      "launch2.spaceship.net"
+    ],
+    "records": [
+      {
+        "type": "A",
+        "name": "@",
+        "value": "185.199.108.153",
+        "ttlSeconds": 1800
+      },
+      {
+        "type": "A",
+        "name": "@",
+        "value": "185.199.109.153",
+        "ttlSeconds": 1800
+      },
+      {
+        "type": "A",
+        "name": "@",
+        "value": "185.199.110.153",
+        "ttlSeconds": 1800
+      },
+      {
+        "type": "A",
+        "name": "@",
+        "value": "185.199.111.153",
+        "ttlSeconds": 1800
+      },
+      {
+        "type": "CNAME",
+        "name": "www",
+        "value": "zhangshuaibo1.github.io",
+        "ttlSeconds": 1800
+      }
+    ],
+    "githubPagesSource": "gh-pages / (root)",
+    "customDomain": "tougaigu.com",
+    "dnsCheck": "successful",
+    "enforceHTTPS": true,
+    "enforceHTTPSObservedAfterReload": true
+  },
+  "deployment": {
+    "workflowRun": 40856251385,
+    "conclusion": "success",
+    "sourceDistBlobs": 127,
+    "allSourceDistModesAndBlobSHAsMatchPages": true,
+    "pagesOnlyExtraPaths": [
+      ".nojekyll"
+    ],
+    "runtimeBlobsUnchangedDuringDomainWork": 126
+  },
+  "network": {
+    "report": "docs/verification-domain-tougaigu-network.json",
+    "sha256": "9b5da4d89f167c8fa71e1ab1f9a32b2909299a1643d74b6176bf7db1549c0577",
+    "checksPassed": 8,
+    "allPassed": true,
+    "attemptHistoryPreserved": 4,
+    "tlsVerificationDisabled": false,
+    "finalHTTPSHTMLVersion": "25.0.0",
+    "htmlJavaScriptAndBackgroundSourceBytesEqual": true
+  },
+  "manualBrowser": {
+    "browser": "Chrome",
+    "servedURL": "https://tougaigu.com/",
+    "version": "25.0.0",
+    "capOpenSoulAndReturnBodyViaActualButtons": true,
+    "consoleWarningsAndErrors": [],
+    "redirectInputs": [
+      "http://tougaigu.com/",
+      "http://www.tougaigu.com/",
+      "https://zhangshuaibo1.github.io/tougaigu/"
+    ],
+    "redirectFinalURL": "https://tougaigu.com/",
+    "settingsScreenshot": "docs/domain-tougaigu-https-settings.png",
+    "gameScreenshot": "docs/domain-tougaigu-https-game.png"
+  },
+  "ci": {
+    "runId": 40860849477,
+    "url": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40860849477",
+    "jobId": 123403391079,
+    "conclusion": "success",
+    "logicTests": {
+      "total": 565,
+      "passed": 565,
+      "failed": 0,
+      "skipped": 0
+    },
+    "candidateBrowser": "success",
+    "publicBrowser": "success",
+    "artifact": {
+      "id": 12892355477,
+      "bytes": 132905065,
+      "sha256": "e6a25d77653095872c413319b27fbbaae74a8f83a8edc2bce38dc384d617dcad",
+      "files": 181
+    },
+    "reports": {
+      "candidate": {
+        "path": "docs/verification-domain-candidate-full.json",
+        "bytes": 926739,
+        "sha256": "3921b8653ea7f982114794af3d16857464c4f3fb7ea2c92139155bbc4dc8668c",
+        "url": "http://127.0.0.1:8080/",
+        "cases": [
+          {
+            "viewport": {
+              "width": 1280,
+              "height": 800
+            },
+            "version": "25.0.0",
+            "pageErrors": [],
+            "httpErrors": [],
+            "imagesLoaded": true
+          },
+          {
+            "viewport": {
+              "width": 390,
+              "height": 844
+            },
+            "version": "25.0.0",
+            "pageErrors": [],
+            "httpErrors": [],
+            "imagesLoaded": true
+          },
+          {
+            "viewport": {
+              "width": 320,
+              "height": 680
+            },
+            "version": "25.0.0",
+            "pageErrors": [],
+            "httpErrors": [],
+            "imagesLoaded": true
+          }
+        ],
+        "portraitsDecoded": 5,
+        "keeperPortrait": {
+          "open": true,
+          "page": "02 / 03",
+          "speaker": "归先生",
+          "text": "我们不知道他何时回来。信可以送出去，也可以再保管一晚；让她自己选花期。",
+          "source": "./assets/portrait-keeper.svg",
+          "currentSrc": "http://127.0.0.1:8080/assets/portrait-keeper.svg",
+          "alt": "归先生",
+          "complete": true,
+          "naturalWidth": 150,
+          "naturalHeight": 150,
+          "pending": false,
+          "phase": "ready",
+          "visibility": "visible",
+          "display": "block",
+          "placeholder": {
+            "content": "none",
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": 1,
+            "width": 180,
+            "height": 200
+          }
+        },
+        "expectedPortraitFailures": [
+          {
+            "url": "http://127.0.0.1:8080/assets/portrait-hero-curious.svg",
+            "failure": "net::ERR_ABORTED"
+          },
+          {
+            "url": "http://127.0.0.1:8080/assets/portrait-hero-curious.svg",
+            "failure": "net::ERR_ABORTED"
+          }
+        ],
+        "expectedTheatreFailures": [
+          {
+            "url": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+            "failure": "net::ERR_FAILED"
+          }
+        ],
+        "relativeRideOffsetDrift": {
+          "touch390": 0.0,
+          "touch320": 0.0
+        }
+      },
+      "live": {
+        "path": "docs/verification-domain-public-full.json",
+        "bytes": 925715,
+        "sha256": "808d0f6bebf6893239ac94942ae92ee6a2c97fb569d113c05bef4e771eac1a1b",
+        "url": "https://tougaigu.com/?qa=923facef7056c97b8eb0be0a7ab803363dfe5d5e",
+        "cases": [
+          {
+            "viewport": {
+              "width": 1280,
+              "height": 800
+            },
+            "version": "25.0.0",
+            "pageErrors": [],
+            "httpErrors": [],
+            "imagesLoaded": true
+          },
+          {
+            "viewport": {
+              "width": 390,
+              "height": 844
+            },
+            "version": "25.0.0",
+            "pageErrors": [],
+            "httpErrors": [],
+            "imagesLoaded": true
+          },
+          {
+            "viewport": {
+              "width": 320,
+              "height": 680
+            },
+            "version": "25.0.0",
+            "pageErrors": [],
+            "httpErrors": [],
+            "imagesLoaded": true
+          }
+        ],
+        "portraitsDecoded": 5,
+        "keeperPortrait": {
+          "open": true,
+          "page": "02 / 03",
+          "speaker": "归先生",
+          "text": "我们不知道他何时回来。信可以送出去，也可以再保管一晚；让她自己选花期。",
+          "source": "./assets/portrait-keeper.svg",
+          "currentSrc": "https://tougaigu.com/assets/portrait-keeper.svg",
+          "alt": "归先生",
+          "complete": true,
+          "naturalWidth": 150,
+          "naturalHeight": 150,
+          "pending": false,
+          "phase": "ready",
+          "visibility": "visible",
+          "display": "block",
+          "placeholder": {
+            "content": "none",
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": 1,
+            "width": 180,
+            "height": 200
+          }
+        },
+        "expectedPortraitFailures": [
+          {
+            "url": "https://tougaigu.com/assets/portrait-hero-curious.svg",
+            "failure": "net::ERR_ABORTED"
+          },
+          {
+            "url": "https://tougaigu.com/assets/portrait-hero-curious.svg",
+            "failure": "net::ERR_ABORTED"
+          }
+        ],
+        "expectedTheatreFailures": [
+          {
+            "url": "https://tougaigu.com/assets/theatre-painted-v22.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://tougaigu.com/assets/theatre-painted-v22.webp",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://tougaigu.com/assets/theatre-painted-v20.svg",
+            "failure": "net::ERR_FAILED"
+          }
+        ],
+        "relativeRideOffsetDrift": {
+          "touch390": 1.1368683772161603e-13,
+          "touch320": 0.0
+        }
+      }
+    }
+  },
+  "priorFailure": {
+    "runId": 40858951757,
+    "conclusion": "failure",
+    "evidence": "docs/verification-domain-first-ci-failure.json",
+    "fixCommit": "923facef7056c97b8eb0be0a7ab803363dfe5d5e",
+    "scope": "Normal dialogue test synchronization only; no production runtime change, extra failure exemptions, or relaxed traveler sampling."
+  },
+  "scope": {
+    "desktop": "Chromium 1280x800, real input through first three chapters and normal fourth-chapter unlock, letter send/keep/save/reload, strict portrait races and resource fallbacks",
+    "narrowScreens": "Chromium emulated touch at 390x844 and 320x680; independent chapter-one checks plus normally unlocked theatre first-stage crossing",
+    "notClaimed": [
+      "physical phone testing",
+      "Safari testing",
+      "full chapter completion by phone",
+      "automatic old-origin player-save migration"
+    ]
+  },
+  "subsequentIterationObserved": {
+    "version": "26.0.0",
+    "sourceCommit": "ae2c35ed255dbbe6470f2c9850664666d0b7b6e6",
+    "pagesCommit": "b02381bc89875cf63b5f4815e43c2a2e3e87a482",
+    "sourceDistBlobs": 130,
+    "allSourceDistModesAndBlobSHAsMatchPages": true,
+    "CNAMEAndNojekyllPreserved": true,
+    "gameValidationScope": "Separate v26 workflow and QA; this domain acceptance CI remains pinned to 25.0.0.",
+    "postPublishHTTPS": {
+      "url": "https://tougaigu.com/?domain-final-handoff=923facef-20261029",
+      "status": 200,
+      "tlsVerifyResult": 0,
+      "bytes": 25267,
+      "sha256": "4c3dbfea1959598f9efb384afda9140af71b7aa0224a3d666f0f39229c209b2e",
+      "version": "26.0.0",
+      "sourceBytesEqual": true,
+      "scope": "Fresh HTTPS home response after subsequent deployment; independent v26 full CI owns its game validation."
+    }
+  }
+}
