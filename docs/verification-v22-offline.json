@@ -1,0 +1,135 @@
+{
+  "theatre": {
+    "checks": 204,
+    "frames": [
+      "desktop-arrival.png",
+      "desktop-wait-bank.png",
+      "desktop-first-lamp.png",
+      "desktop-left-dock.png",
+      "desktop-aboard.png",
+      "desktop-midway.png",
+      "desktop-right-dock.png",
+      "desktop-landed.png",
+      "desktop-both-lamps.png",
+      "phone-390-arrival.png",
+      "phone-390-wait-bank.png",
+      "phone-390-first-lamp.png",
+      "phone-390-left-dock.png",
+      "phone-390-aboard.png",
+      "phone-390-midway.png",
+      "phone-390-right-dock.png",
+      "phone-390-landed.png",
+      "phone-390-both-lamps.png",
+      "phone-320-arrival.png",
+      "phone-320-wait-bank.png",
+      "phone-320-first-lamp.png",
+      "phone-320-left-dock.png",
+      "phone-320-aboard.png",
+      "phone-320-midway.png",
+      "phone-320-right-dock.png",
+      "phone-320-landed.png",
+      "phone-320-both-lamps.png"
+    ],
+    "routes": [
+      {
+        "viewport": {
+          "width": 1100,
+          "height": 640
+        },
+        "actualInputCrossing": true,
+        "deaths": 0,
+        "seconds": 18.750000000000217,
+        "finishedX": 1398.7728281437323
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 595
+        },
+        "actualInputCrossing": true,
+        "deaths": 0,
+        "seconds": 18.750000000000217,
+        "finishedX": 1398.7728281437323
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 431
+        },
+        "actualInputCrossing": true,
+        "deaths": 0,
+        "seconds": 18.750000000000217,
+        "finishedX": 1398.7728281437323
+      }
+    ],
+    "productionRenderer": true,
+    "actualAsset": "dist/assets/theatre-painted-v22.webp",
+    "normalEngineInput": true,
+    "puzzleAnswerViaEngineCallback": true,
+    "browserQA": false
+  },
+  "soul": {
+    "frames": [
+      "soul-pose-comparison.png",
+      "desktop-peek.png",
+      "desktop-ticket-held.png",
+      "desktop-ticket-returning.png",
+      "phone-390-peek.png",
+      "phone-390-ticket-held.png",
+      "phone-390-ticket-returning.png",
+      "phone-320-peek.png",
+      "phone-320-ticket-held.png",
+      "phone-320-ticket-returning.png",
+      "phone-390-theatre-free.png"
+    ],
+    "rasterChecks": [
+      "quiet: real Canvas transform/alpha/dash/input retained",
+      "fly right: real Canvas transform/alpha/dash/input retained",
+      "fly left: real Canvas transform/alpha/dash/input retained",
+      "peek: real Canvas transform/alpha/dash/input retained",
+      "low energy: real Canvas transform/alpha/dash/input retained",
+      "return smile: real Canvas transform/alpha/dash/input retained",
+      "held ticket: real Canvas transform/alpha/dash/input retained",
+      "held seed: real Canvas transform/alpha/dash/input retained",
+      "9 extreme flight poses: opaque body remains within original play-size envelope",
+      "theatre: real walk/flight near first lamp; unlit state and zero deaths retained"
+    ],
+    "routes": [
+      {
+        "width": 1100,
+        "height": 640,
+        "realInput": true,
+        "collectedTicket": true,
+        "returnedTicket": "stowed",
+        "deaths": 0,
+        "pausedPixelsEqual": true,
+        "reducedMotionPixelsEqual": true
+      },
+      {
+        "width": 390,
+        "height": 595,
+        "realInput": true,
+        "collectedTicket": true,
+        "returnedTicket": "stowed",
+        "deaths": 0,
+        "pausedPixelsEqual": true,
+        "reducedMotionPixelsEqual": true
+      },
+      {
+        "width": 320,
+        "height": 431,
+        "realInput": true,
+        "collectedTicket": true,
+        "returnedTicket": "stowed",
+        "deaths": 0,
+        "pausedPixelsEqual": true,
+        "reducedMotionPixelsEqual": true
+      }
+    ],
+    "poseSheetUsesExplicitFixtures": true,
+    "productionEngineWithLocalPainterOverride": true,
+    "browserQA": false,
+    "note": "Offline Canvas only; webpage HUD and physical touch are not covered. Chinese Canvas fonts may be unavailable."
+  },
+  "scope": "offline production Canvas, not browser or physical device"
+}

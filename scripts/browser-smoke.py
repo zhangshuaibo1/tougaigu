@@ -65,7 +65,10 @@ async def drive_to(page,x,y=None,touch=False,until=None,limit=10,observe=None):
             if observe:observe(a)
             if a['state']=='complete':return
             dx=x-a['x'];dy=0 if y is None else y-a['y']
-            if abs(dx)<12 and abs(dy)<12 and abs(a['vx'])<40 and (y is None or abs(a['vy'])<40):return
+            # Match the <=12 dead zone used by change(direction) below. At
+            # exactly 12px the driver releases input; that stopped point must
+            # also count as arrived instead of waiting until the route times out.
+            if abs(dx)<=12 and abs(dy)<=12 and abs(a['vx'])<40 and (y is None or abs(a['vy'])<40):return
             predictedX=a['x']+(a['vx']/7 if a['form']=='soul' else a['vx']*abs(a['vx'])/3300)
             predictedY=a['y']+a['vy']/7
             ex=x-predictedX;ey=0 if y is None else y-predictedY

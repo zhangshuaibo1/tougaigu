@@ -19,9 +19,18 @@
 
 ## 发布状态
 
-- 候选测试已验收通过。**main/Pages部署提交、产物SHA对齐及公网实操核验待最终追加；在此之前不要声称新版本已公开上线。**
+
+- v21主分支代码与开发文档 `843764926919d671c46e45485d546270e944dad4`；Pages部署 `14cf1f168f0c2eae8b4aa8a01a266141d63784b4`，[Pages工作流40823041823](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40823041823) **success**。源码 `dist/` 共**122个实际blob**逐个与Pages根目录同名文件SHA完全一致；Pages仅多 `.nojekyll`，没有将测试、管理脚本或敏感凭据发布到站点根目录。
+- [main及公开游戏浏览器验收40823002066](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40823002066) **success**，候选与原公网各1280×800、390×844、320×680读取21.0.0；六个case全部没有脚本异常、HTTP失败或水平溢出。公开游戏真正解开主线第一灯 `lampLit=[true,false]`, `lightAmounts=[0.54,0]`，随后第二灯 `lampLit=[true,true]`, `lightAmounts=[1,0.54]`；两次暂停冻结，正常重新开始两灯及光照同时清零。
+- 公网真实第一座台面：键盘无输入随台行进188.49世界像素，390px CDP触摸183.03、320px CDP触摸184.03；三种均零死亡、零平台相对漂移且触发一次真右岸谢幕；本章未误结算。存档、原收藏与前两章奖励不变。
+- 已目视检查完整1280×800桌面、320×680手机布局、真实角色/移动台/绒带谢幕/灯芯画面；原始截图和所有报告在上述成功工作流的 `game-verification-843764926919d671c46e45485d546270e944dad4` artifact中，GitHub artifact有保留期限。长期可读的结果在 [verification-v21-public.json](verification-v21-public.json)。
+
 
 ## 明确边界及后续
 
 - 本轮320/390的“真正触摸”是**托管Chromium的CDP模拟触控**，第三章覆盖第一座移动台及双灯、单次谢幕，不是整个第三章通关；没有实体iPhone、Android、Safari或低端GPU测试。
 - 320px顶部剧情/HUD状态稍显密集，后续需优化层次但不能遮蔽玩家或牺牲辅助阅读文本。下一轮按 [ITERATION.md](ITERATION.md) 的v22优先级继续，保持原世界、玩家存档与企业页脚。
+
+## v22接续时发现的文档提交重复验收
+
+最终文档提交14ba657的自动复跑 [40823661874](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40823661874) 在候选浏览器阶段失败，公网步骤未执行。失败为驾驶器停在目标恰好12像素边界（x433，目标445），输入死区已停止但到达判据仍严格小于12。v21此前8437649的正式公网 [40823002066](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40823002066) 确实成功，两者不得混为同一次运行。v22已登记并修复该验收边界，保留原路线与互动断言，详见QA-v22。

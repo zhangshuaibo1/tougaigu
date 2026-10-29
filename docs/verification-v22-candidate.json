@@ -1,0 +1,4746 @@
+{
+  "runtimeCommit": "d6fa435b4b3f4fde06bcfc66552633eed063ce3b",
+  "runId": 40823545596,
+  "report": {
+    "url": "http://127.0.0.1:8080/",
+    "source": "served production HTML; app module has a read-only coordinate probe appended in-memory; all actions use DOM/input",
+    "cases": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "version": "22.0.0",
+        "ticketCollectedAndReturned": true,
+        "pauseFrozen": true,
+        "noHorizontalOverflow": true,
+        "chapterCompleted": true,
+        "input": "keyboard",
+        "rafIntervalMs": {
+          "samples": 60,
+          "p50": 16.699999999999818,
+          "p95": 16.799999999999955
+        },
+        "frameSamplePhase": "initial active idle; not a physical-device benchmark",
+        "greenhouse": {
+          "enteredViaChapterMap": true,
+          "input": "keyboard",
+          "seedCollectedAndPlanted": true,
+          "seedMemoryIndex": 1,
+          "pot": "ticket",
+          "observedPlantStages": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "seedReturnPauseFrozen": true,
+          "wrongAnswersRejected": 2,
+          "mushroomBounceObserved": true,
+          "rootCrossed": true,
+          "routeEvidence": {
+            "mushroomBounce": {
+              "body": {
+                "x": 749.5,
+                "y": 546.2083333333334,
+                "w": 30,
+                "h": 58,
+                "vx": 240,
+                "vy": -827.5,
+                "grounded": false,
+                "platform": null
+              },
+              "mushroom": {
+                "x": 745,
+                "y": 560,
+                "w": 115,
+                "boing": 0.7333333333333333,
+                "cooldown": 0.5833333333333333
+              }
+            },
+            "aboveRoot": {
+              "body": {
+                "x": 901.5,
+                "y": 299.99999999999943,
+                "w": 30,
+                "h": 58,
+                "vx": 240,
+                "vy": 27.5,
+                "grounded": false,
+                "platform": null
+              },
+              "root": {
+                "x": 895,
+                "y": 385,
+                "w": 145,
+                "h": 175
+              }
+            },
+            "landedBeyondRoot": {
+              "x": 1217,
+              "y": 560,
+              "w": 30,
+              "h": 58,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "platform": null
+            },
+            "shelfLanding": {
+              "x": 1381,
+              "y": 445,
+              "w": 30,
+              "h": 58,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "platform": null
+            },
+            "pastShadow": {
+              "x": 1611.375,
+              "y": 560,
+              "w": 30,
+              "h": 58,
+              "vx": 20,
+              "vy": 0,
+              "grounded": true,
+              "platform": null
+            }
+          },
+          "chapterCompleted": true,
+          "noRespawns": true,
+          "noHorizontalOverflow": true,
+          "stationRecordPreserved": true,
+          "reloadPreservedSeedAndLamps": true
+        },
+        "letterEcho": {
+          "choiceViaCompletedOutro": true,
+          "outroPagesRead": [
+            "01 / 03",
+            "02 / 03",
+            "03 / 03"
+          ],
+          "revisitedViaChapterMap": true,
+          "rewrittenViaDiary": true,
+          "send": {
+            "choice": "send",
+            "observedPlaying": true,
+            "pausedAtSeconds": 0.5833333333333335,
+            "pauseFrozen": true,
+            "settledSeconds": 2.8,
+            "reopenDidNotReplay": true
+          },
+          "keep": {
+            "choice": "keep",
+            "observedPlaying": true,
+            "pausedAtSeconds": 0.6166666666666669,
+            "pauseFrozen": true,
+            "settledSeconds": 2.8,
+            "reopenDidNotReplay": true
+          },
+          "storedChoice": "keep",
+          "rewardGrantsUnchanged": true,
+          "collectiblesUnchanged": true,
+          "chapterResultsUnchanged": true,
+          "noHorizontalOverflow": true,
+          "reloadRestoredKeep": true
+        },
+        "pageErrors": [],
+        "httpErrors": [],
+        "instrumentedAppURLs": [
+          "http://127.0.0.1:8080/dream-app.js?v=22.0.0",
+          "http://127.0.0.1:8080/dream-app.js?v=22.0.0",
+          "http://127.0.0.1:8080/dream-app.js?v=22.0.0",
+          "http://127.0.0.1:8080/dream-app.js?v=22.0.0",
+          "http://127.0.0.1:8080/dream-app.js?v=22.0.0"
+        ],
+        "resources": [
+          {
+            "name": "dream.css?v=22.0.0",
+            "duration": 11.5,
+            "transferSize": 65255
+          },
+          {
+            "name": "company-footer.css?v=22.0.0",
+            "duration": 17.60000000000582,
+            "transferSize": 2085
+          },
+          {
+            "name": "game-shell.css?v=22.0.0",
+            "duration": 17.79999999998836,
+            "transferSize": 8810
+          },
+          {
+            "name": "festival.css?v=22.0.0",
+            "duration": 17.199999999982538,
+            "transferSize": 20489
+          },
+          {
+            "name": "dream-play.css?v=22.0.0",
+            "duration": 17.5,
+            "transferSize": 11605
+          },
+          {
+            "name": "cap-play.css?v=22.0.0",
+            "duration": 17.20000000001164,
+            "transferSize": 9533
+          },
+          {
+            "name": "cap-portraits.css?v=22.0.0",
+            "duration": 22.60000000000582,
+            "transferSize": 2503
+          },
+          {
+            "name": "cap-activities.css?v=22.0.0",
+            "duration": 23,
+            "transferSize": 4211
+          },
+          {
+            "name": "lost-play.css?v=22.0.0",
+            "duration": 22.300000000017462,
+            "transferSize": 7654
+          },
+          {
+            "name": "portrait-hero-open.svg",
+            "duration": 26,
+            "transferSize": 13008
+          },
+          {
+            "name": "portrait-hero.svg",
+            "duration": 26.10000000000582,
+            "transferSize": 11898
+          },
+          {
+            "name": "portrait-moth.svg",
+            "duration": 25.60000000000582,
+            "transferSize": 3875
+          },
+          {
+            "name": "dream-app.js?v=22.0.0",
+            "duration": 45.39999999999418,
+            "transferSize": 64565
+          },
+          {
+            "name": "company-wordmark.webp",
+            "duration": 7.899999999994179,
+            "transferSize": 7452
+          },
+          {
+            "name": "dream-engine.js?v=22.0.0",
+            "duration": 14.89999999999418,
+            "transferSize": 13008
+          },
+          {
+            "name": "festival-hub.js?v=22.0.0",
+            "duration": 13.799999999988358,
+            "transferSize": 21807
+          },
+          {
+            "name": "game-shell.js?v=22.0.0",
+            "duration": 15.700000000011642,
+            "transferSize": 8026
+          },
+          {
+            "name": "dream-festivals.js?v=22.0.0",
+            "duration": 11.199999999982538,
+            "transferSize": 53830
+          },
+          {
+            "name": "cap-book.js?v=22.0.0",
+            "duration": 14.60000000000582,
+            "transferSize": 17710
+          },
+          {
+            "name": "dream-cap-story.js?v=22.0.0",
+            "duration": 15.39999999999418,
+            "transferSize": 14780
+          },
+          {
+            "name": "dream-cap-activities.js?v=22.0.0",
+            "duration": 18,
+            "transferSize": 14037
+          },
+          {
+            "name": "cap-activity-progress.js?v=22.0.0",
+            "duration": 20.20000000001164,
+            "transferSize": 11465
+          },
+          {
+            "name": "dream-lost-cases.js?v=22.0.0",
+            "duration": 24.800000000017462,
+            "transferSize": 27267
+          },
+          {
+            "name": "dream-encounters.js?v=22.0.0",
+            "duration": 20.5,
+            "transferSize": 17094
+          },
+          {
+            "name": "lost-evidence.js?v=22.0.0",
+            "duration": 27.10000000000582,
+            "transferSize": 7447
+          },
+          {
+            "name": "dream-journey.js?v=22.0.0",
+            "duration": 25.39999999999418,
+            "transferSize": 10412
+          },
+          {
+            "name": "dream-ui.js?v=22.0.0",
+            "duration": 29.29999999998836,
+            "transferSize": 4722
+          },
+          {
+            "name": "dream-direction-input.js?v=22.0.0",
+            "duration": 29,
+            "transferSize": 2220
+          },
+          {
+            "name": "lost-progress.js?v=22.0.0",
+            "duration": 37,
+            "transferSize": 10256
+          },
+          {
+            "name": "dream-story.js?v=22.0.0",
+            "duration": 37.39999999999418,
+            "transferSize": 31300
+          },
+          {
+            "name": "dream-cap-art.js?v=22.0.0",
+            "duration": 17,
+            "transferSize": 22979
+          },
+          {
+            "name": "dream-lost-encores.js?v=22.0.0",
+            "duration": 17.39999999999418,
+            "transferSize": 3030
+          },
+          {
+            "name": "dream-lost-encore-art.js?v=22.0.0",
+            "duration": 24.5,
+            "transferSize": 15825
+          },
+          {
+            "name": "cap-progress.js?v=22.0.0",
+            "duration": 24.60000000000582,
+            "transferSize": 4874
+          },
+          {
+            "name": "dream-engine-base.js?v=22.0.0",
+            "duration": 25.199999999982538,
+            "transferSize": 95072
+          },
+          {
+            "name": "dream-painted-scene.js?v=22.0.0",
+            "duration": 24.39999999999418,
+            "transferSize": 7497
+          },
+          {
+            "name": "dream-station-art.js?v=22.0.0",
+            "duration": 24.70000000001164,
+            "transferSize": 16750
+          },
+          {
+            "name": "dream-greenhouse-scene.js?v=22.0.0",
+            "duration": 26.300000000017462,
+            "transferSize": 4746
+          },
+          {
+            "name": "dream-greenhouse-finish.js?v=22.0.0",
+            "duration": 31.39999999999418,
+            "transferSize": 11299
+          },
+          {
+            "name": "dream-letter-echo.js?v=22.0.0",
+            "duration": 32.29999999998836,
+            "transferSize": 9199
+          },
+          {
+            "name": "dream-theatre-art.js?v=22.0.0",
+            "duration": 31.300000000017462,
+            "transferSize": 11672
+          },
+          {
+            "name": "dream-theatre-guidance.js?v=22.0.0",
+            "duration": 34,
+            "transferSize": 3886
+          },
+          {
+            "name": "dream-ground-shadow.js?v=22.0.0",
+            "duration": 29.29999999998836,
+            "transferSize": 3709
+          },
+          {
+            "name": "dream-theatre-painted.js?v=22.0.0",
+            "duration": 31.60000000000582,
+            "transferSize": 7150
+          },
+          {
+            "name": "dream-soul-art.js?v=22.0.0",
+            "duration": 38.89999999999418,
+            "transferSize": 10233
+          },
+          {
+            "name": "dream-theatre-lantern.js?v=22.0.0",
+            "duration": 40.19999999998254,
+            "transferSize": 5806
+          },
+          {
+            "name": "dream-theatre-encore.js?v=22.0.0",
+            "duration": 36.5,
+            "transferSize": 4946
+          },
+          {
+            "name": "play-rewards.js?v=22.0.0",
+            "duration": 38.90000000002328,
+            "transferSize": 21103
+          },
+          {
+            "name": "dream-levels.js?v=22.0.0",
+            "duration": 30.800000000017462,
+            "transferSize": 9042
+          },
+          {
+            "name": "dream-first-ticket-art.js?v=22.0.0",
+            "duration": 23.29999999998836,
+            "transferSize": 4629
+          },
+          {
+            "name": "dream-greenhouse-art.js?v=22.0.0",
+            "duration": 24.29999999998836,
+            "transferSize": 4180
+          },
+          {
+            "name": "dream-festival-levels.js?v=22.0.0",
+            "duration": 19.79999999998836,
+            "transferSize": 6974
+          },
+          {
+            "name": "dream-festival-art.js?v=22.0.0",
+            "duration": 20.60000000000582,
+            "transferSize": 31664
+          },
+          {
+            "name": "dream-cap-activity-engine.js?v=22.0.0",
+            "duration": 20.70000000001164,
+            "transferSize": 15927
+          },
+          {
+            "name": "dream-lost-engine.js?v=22.0.0",
+            "duration": 21.29999999998836,
+            "transferSize": 13039
+          },
+          {
+            "name": "dream-scene-backdrop.js?v=22.0.0",
+            "duration": 21.10000000000582,
+            "transferSize": 19410
+          },
+          {
+            "name": "dream-cap-activity-art.js?v=22.0.0",
+            "duration": 20.79999999998836,
+            "transferSize": 33206
+          },
+          {
+            "name": "dream-lost-art.js?v=22.0.0",
+            "duration": 27.29999999998836,
+            "transferSize": 41860
+          },
+          {
+            "name": "dream-encounter-art.js?v=22.0.0",
+            "duration": 27.60000000000582,
+            "transferSize": 28809
+          },
+          {
+            "name": "dream-awakening-art.js?v=22.0.0",
+            "duration": 26.5,
+            "transferSize": 26322
+          },
+          {
+            "name": "dream-awakenings.js?v=22.0.0",
+            "duration": 26.199999999982538,
+            "transferSize": 4132
+          },
+          {
+            "name": "dream-moon-play.js?v=22.0.0",
+            "duration": 27,
+            "transferSize": 12956
+          },
+          {
+            "name": "dream-moon-art.js?v=22.0.0",
+            "duration": 27.199999999982538,
+            "transferSize": 15041
+          },
+          {
+            "name": "dream-traveler-art.js?v=22.0.0",
+            "duration": 28.5,
+            "transferSize": 8609
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 3.7999999999883585,
+            "transferSize": 4453
+          },
+          {
+            "name": "station-painted-v16.webp",
+            "duration": 6.099999999976717,
+            "transferSize": 266628
+          },
+          {
+            "name": "portrait-hero-open.svg",
+            "duration": 4.899999999994179,
+            "transferSize": 13008
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 4.2999999999883585,
+            "transferSize": 7066
+          },
+          {
+            "name": "portrait-soul-joy.svg",
+            "duration": 21.70000000001164,
+            "transferSize": 7193
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 14.700000000011642,
+            "transferSize": 4453
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 8,
+            "transferSize": 7066
+          },
+          {
+            "name": "portrait-soul-peek.svg",
+            "duration": 8.299999999988358,
+            "transferSize": 7102
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 4.699999999982538,
+            "transferSize": 4453
+          },
+          {
+            "name": "portrait-soul-peek.svg",
+            "duration": 7.100000000005821,
+            "transferSize": 7102
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 8.299999999988358,
+            "transferSize": 7066
+          },
+          {
+            "name": "portrait-moth.svg",
+            "duration": 10.89999999999418,
+            "transferSize": 3875
+          },
+          {
+            "name": "portrait-hero-open.svg",
+            "duration": 4.5,
+            "transferSize": 13008
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 2.6000000000058208,
+            "transferSize": 4453
+          },
+          {
+            "name": "portrait-soul-peek.svg",
+            "duration": 3.3999999999941792,
+            "transferSize": 7102
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 3.7000000000116415,
+            "transferSize": 7066
+          },
+          {
+            "name": "portrait-moth.svg",
+            "duration": 6.2000000000116415,
+            "transferSize": 3875
+          },
+          {
+            "name": "portrait-soul-brave.svg",
+            "duration": 4.2000000000116415,
+            "transferSize": 7504
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 5.2999999999883585,
+            "transferSize": 4453
+          },
+          {
+            "name": "portrait-hero-joy.svg",
+            "duration": 5.5,
+            "transferSize": 11904
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 5.399999999994179,
+            "transferSize": 4453
+          },
+          {
+            "name": "greenhouse-painted-v17.webp",
+            "duration": 7.900000000023283,
+            "transferSize": 508966
+          },
+          {
+            "name": "portrait-soul-peek.svg",
+            "duration": 2.8999999999941792,
+            "transferSize": 7102
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 4.7999999999883585,
+            "transferSize": 7066
+          },
+          {
+            "name": "portrait-soul-joy.svg",
+            "duration": 14.60000000000582,
+            "transferSize": 7193
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 5.399999999994179,
+            "transferSize": 4453
+          },
+          {
+            "name": "portrait-soul-brave.svg",
+            "duration": 3.8999999999941792,
+            "transferSize": 7504
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 3.7000000000116415,
+            "transferSize": 7066
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 10,
+            "transferSize": 7066
+          },
+          {
+            "name": "portrait-hero-joy.svg",
+            "duration": 4.199999999982538,
+            "transferSize": 11904
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 2.6999999999825377,
+            "transferSize": 4453
+          },
+          {
+            "name": "portrait-hero-joy.svg",
+            "duration": 4.7999999999883585,
+            "transferSize": 11904
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 6.199999999982538,
+            "transferSize": 7066
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 6.899999999994179,
+            "transferSize": 7066
+          },
+          {
+            "name": "portrait-soul-joy.svg",
+            "duration": 3.8000000000174623,
+            "transferSize": 7193
+          },
+          {
+            "name": "portrait-soul-joy.svg",
+            "duration": 3.6000000000058208,
+            "transferSize": 7193
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 3.5,
+            "transferSize": 4453
+          },
+          {
+            "name": "portrait-hero-tender.svg",
+            "duration": 3.1999999999825377,
+            "transferSize": 11973
+          },
+          {
+            "name": "portrait-keeper.svg",
+            "duration": 4.100000000005821,
+            "transferSize": 3353
+          },
+          {
+            "name": "portrait-soul-joy.svg",
+            "duration": 3.8999999999941792,
+            "transferSize": 7193
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 7.099999999976717,
+            "transferSize": 7066
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 6.900000000023283,
+            "transferSize": 4453
+          },
+          {
+            "name": "greenhouse-painted-v17.webp",
+            "duration": 9.39999999999418,
+            "transferSize": 508966
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 3.3000000000174623,
+            "transferSize": 7066
+          },
+          {
+            "name": "portrait-soul-joy.svg",
+            "duration": 4.099999999976717,
+            "transferSize": 7193
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 4.199999999982538,
+            "transferSize": 4453
+          },
+          {
+            "name": "portrait-soul-joy.svg",
+            "duration": 3.8999999999941792,
+            "transferSize": 7193
+          },
+          {
+            "name": "portrait-soul-joy.svg",
+            "duration": 4.7999999999883585,
+            "transferSize": 7193
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 3.7000000000116415,
+            "transferSize": 7066
+          },
+          {
+            "name": "portrait-soul-joy.svg",
+            "duration": 3.8000000000174623,
+            "transferSize": 7193
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 3.7000000000116415,
+            "transferSize": 4453
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 18.39999999999418,
+            "transferSize": 4453
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 3.3999999999941792,
+            "transferSize": 7066
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 8.5,
+            "transferSize": 4453
+          },
+          {
+            "name": "portrait-soul-joy.svg",
+            "duration": 3.7000000000116415,
+            "transferSize": 7193
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 3.2999999999883585,
+            "transferSize": 7066
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 4.7000000000116415,
+            "transferSize": 4453
+          },
+          {
+            "name": "portrait-soul-joy.svg",
+            "duration": 8.400000000023283,
+            "transferSize": 7193
+          },
+          {
+            "name": "portrait-soul-joy.svg",
+            "duration": 4.399999999965075,
+            "transferSize": 7193
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 4,
+            "transferSize": 7066
+          },
+          {
+            "name": "portrait-soul-joy.svg",
+            "duration": 4.7000000000116415,
+            "transferSize": 7193
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 4.7000000000116415,
+            "transferSize": 4453
+          }
+        ],
+        "imagesLoaded": true,
+        "reloadPreservedCapBook": true,
+        "theatre": {
+          "enteredViaUnlockedChapterMap": true,
+          "keyboard": {
+            "viewport": {
+              "width": 1280,
+              "height": 800
+            },
+            "input": "keyboard",
+            "scope": "first moving-stage crossing only; not chapter completion",
+            "leftBankReachedByJump": true,
+            "waitHintMatchedGap": true,
+            "boardHintMatchedContact": true,
+            "bodyPlatformObserved": "stage",
+            "noInputCarryDistance": 185.967011191457,
+            "relativeRideOffsetDrift": 0,
+            "alightHintMatchedContact": true,
+            "rightBankReached": true,
+            "earnedShortCurtainCall": true,
+            "noRespawns": true,
+            "noHorizontalOverflow": true,
+            "chapterCompleted": false,
+            "evidence": {
+              "waiting": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 703.8333333333333,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 4.699999999999989,
+                "deaths": 0,
+                "camera": 158.87299194078147,
+                "body": {
+                  "x": 703.8333333333333,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": null
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    true,
+                    false
+                  ],
+                  "lightAmounts": [
+                    1,
+                    0
+                  ],
+                  "encore": null
+                },
+                "nearHint": "在踏台上等一等，舞台会回来接你。",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 1172.4396386165606,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 0.7859999909605904,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              },
+              "boarding": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 703.8333333333333,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 10.483333333333434,
+                "deaths": 0,
+                "camera": 183.51427868045275,
+                "body": {
+                  "x": 703.8333333333333,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": null
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    true,
+                    false
+                  ],
+                  "lightAmounts": [
+                    1,
+                    0
+                  ],
+                  "encore": null
+                },
+                "nearHint": "舞台靠近了 · 向右走上去，或轻轻一跳。",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 695.005688882668,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 0.004445976444912958,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              },
+              "rideStart": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 828.1575090317127,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 11.133333333333466,
+                "deaths": 0,
+                "camera": 279.23263934261064,
+                "body": {
+                  "x": 828.1575090317127,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": "stage"
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    true,
+                    false
+                  ],
+                  "lightAmounts": [
+                    1,
+                    0
+                  ],
+                  "encore": null
+                },
+                "nearHint": "站稳就好，舞台会载你去下一幕。",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 714.037299600453,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 0.9355683261645709,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              },
+              "riding": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 1014.1245202231697,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 12.816666666666883,
+                "deaths": 0,
+                "camera": 470.5172156652276,
+                "body": {
+                  "x": 1014.1245202231697,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": "stage"
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    true,
+                    false
+                  ],
+                  "lightAmounts": [
+                    1,
+                    0
+                  ],
+                  "encore": null
+                },
+                "nearHint": "站稳就好，舞台会载你去下一幕。",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 900.00431079191,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 2.4150934732532505,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              },
+              "alighting": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 1134.904244309017,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 13.650000000000258,
+                "deaths": 0,
+                "camera": 591.0867711233369,
+                "body": {
+                  "x": 1134.904244309017,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": "stage"
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    true,
+                    false
+                  ],
+                  "lightAmounts": [
+                    1,
+                    0
+                  ],
+                  "encore": null
+                },
+                "nearHint": "右侧踏台到了 · 向右走下舞台。",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 1020.784034877757,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 2.316984399485932,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              },
+              "landed": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 1299.6514058225368,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 14.250000000000288,
+                "deaths": 0,
+                "camera": 748.1206069466618,
+                "body": {
+                  "x": 1299.6514058225368,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": null
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    true,
+                    false
+                  ],
+                  "lightAmounts": [
+                    1,
+                    0
+                  ],
+                  "encore": {
+                    "phase": "active",
+                    "age": 0.16666666666666666,
+                    "duration": 2.1
+                  }
+                },
+                "nearHint": "",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 1097.0859804467848,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 1.887955732504679,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              }
+            }
+          },
+          "firstLamp": {
+            "firstPoemSolvedWithActualSoulAndUI": true,
+            "afterRealPuzzle": {
+              "phase": "ready",
+              "frame": true,
+              "decodedWidth": 2172,
+              "decodedHeight": 724,
+              "complete": true,
+              "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+              "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+              "lampLit": [
+                true,
+                false
+              ],
+              "lightAmounts": [
+                0.54,
+                0
+              ],
+              "encore": null
+            },
+            "secondZoneStillDark": true,
+            "pauseFrozen": true
+          },
+          "secondLamp": {
+            "secondPoemSolvedWithActualSoulAndUI": true,
+            "bothLightPoolsLit": true,
+            "curtainCallFinishedDuringSoulFlight": true,
+            "afterRealPuzzle": {
+              "phase": "ready",
+              "frame": true,
+              "decodedWidth": 2172,
+              "decodedHeight": 724,
+              "complete": true,
+              "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+              "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+              "lampLit": [
+                true,
+                true
+              ],
+              "lightAmounts": [
+                1,
+                0.54
+              ],
+              "encore": {
+                "phase": "done",
+                "age": 2.1,
+                "duration": 2.1
+              }
+            },
+            "pauseFrozen": true
+          },
+          "touch390": {
+            "viewport": {
+              "width": 390,
+              "height": 844
+            },
+            "input": "CDP emulated touch controls",
+            "scope": "first moving-stage crossing only; not chapter completion",
+            "leftBankReachedByJump": true,
+            "waitHintMatchedGap": true,
+            "boardHintMatchedContact": true,
+            "bodyPlatformObserved": "stage",
+            "noInputCarryDistance": 184.02818210955536,
+            "relativeRideOffsetDrift": 0,
+            "alightHintMatchedContact": true,
+            "rightBankReached": true,
+            "earnedShortCurtainCall": true,
+            "noRespawns": true,
+            "noHorizontalOverflow": true,
+            "chapterCompleted": false,
+            "evidence": {
+              "waiting": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 709,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 3.099999999999994,
+                "deaths": 0,
+                "camera": 506.0544108913077,
+                "body": {
+                  "x": 709,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": null
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    false,
+                    false
+                  ],
+                  "lightAmounts": [
+                    0,
+                    0
+                  ],
+                  "encore": null
+                },
+                "nearHint": "在踏台上等一等，舞台会回来接你。",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 1009.8713195150292,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 2.351709043024357,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              },
+              "boarding": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 709,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 10.483333333333434,
+                "deaths": 0,
+                "camera": 528.6168067226885,
+                "body": {
+                  "x": 709,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": null
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    false,
+                    false
+                  ],
+                  "lightAmounts": [
+                    0,
+                    0
+                  ],
+                  "encore": null
+                },
+                "nearHint": "舞台靠近了 · 向右走上去，或轻轻一跳。",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 695.005688882668,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 0.004445976444912958,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              },
+              "rideStart": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 839.2630047802811,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 11.166666666666801,
+                "deaths": 0,
+                "camera": 629.3625051401062,
+                "body": {
+                  "x": 839.2630047802811,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": "stage"
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    false,
+                    false
+                  ],
+                  "lightAmounts": [
+                    0,
+                    0
+                  ],
+                  "encore": null
+                },
+                "nearHint": "站稳就好，舞台会载你去下一幕。",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 715.9761286823547,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 0.980664673998831,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              },
+              "riding": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 1023.2911868898365,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 12.816666666666883,
+                "deaths": 0,
+                "camera": 819.6194324990785,
+                "body": {
+                  "x": 1023.2911868898365,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": "stage"
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    false,
+                    false
+                  ],
+                  "lightAmounts": [
+                    0,
+                    0
+                  ],
+                  "encore": null
+                },
+                "nearHint": "站稳就好，舞台会载你去下一幕。",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 900.00431079191,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 2.4150934732532505,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              },
+              "alighting": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 1144.070910975684,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 13.650000000000258,
+                "deaths": 0,
+                "camera": 940.1892966227634,
+                "body": {
+                  "x": 1144.070910975684,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": "stage"
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    false,
+                    false
+                  ],
+                  "lightAmounts": [
+                    0,
+                    0
+                  ],
+                  "encore": null
+                },
+                "nearHint": "右侧踏台到了 · 向右走下舞台。",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 1020.784034877757,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 2.316984399485932,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              },
+              "landed": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 1304.8180724892038,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 14.283333333333623,
+                "deaths": 0,
+                "camera": 1094.8340539524947,
+                "body": {
+                  "x": 1304.8180724892038,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": null
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    false,
+                    false
+                  ],
+                  "lightAmounts": [
+                    0,
+                    0
+                  ],
+                  "encore": {
+                    "phase": "active",
+                    "age": 0.19999999999999998,
+                    "duration": 2.1
+                  }
+                },
+                "nearHint": "",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 1100.8145792872072,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 1.8563515750579427,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              }
+            }
+          },
+          "touch320": {
+            "viewport": {
+              "width": 320,
+              "height": 680
+            },
+            "input": "CDP emulated touch controls",
+            "scope": "first moving-stage crossing only; not chapter completion",
+            "leftBankReachedByJump": true,
+            "waitHintMatchedGap": true,
+            "boardHintMatchedContact": true,
+            "bodyPlatformObserved": "stage",
+            "noInputCarryDistance": 184.02818210955536,
+            "relativeRideOffsetDrift": 0,
+            "alightHintMatchedContact": true,
+            "rightBankReached": true,
+            "earnedShortCurtainCall": true,
+            "noRespawns": true,
+            "noHorizontalOverflow": true,
+            "chapterCompleted": false,
+            "evidence": {
+              "waiting": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 705,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 3.049999999999994,
+                "deaths": 0,
+                "camera": 475.8679518062639,
+                "body": {
+                  "x": 705,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": null
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    false,
+                    false
+                  ],
+                  "lightAmounts": [
+                    0,
+                    0
+                  ],
+                  "encore": null
+                },
+                "nearHint": "在踏台上等一等，舞台会回来接你。",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 1002.7961725157422,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 2.371256573378787,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              },
+              "boarding": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 705,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 10.483333333333434,
+                "deaths": 0,
+                "camera": 500.67517401392087,
+                "body": {
+                  "x": 705,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": null
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    false,
+                    false
+                  ],
+                  "lightAmounts": [
+                    0,
+                    0
+                  ],
+                  "encore": null
+                },
+                "nearHint": "舞台靠近了 · 向右走上去，或轻轻一跳。",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 695.005688882668,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 0.004445976444912958,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              },
+              "rideStart": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 834.5347370793389,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 11.166666666666801,
+                "deaths": 0,
+                "camera": 600.9223433841986,
+                "body": {
+                  "x": 834.5347370793389,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": "stage"
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    false,
+                    false
+                  ],
+                  "lightAmounts": [
+                    0,
+                    0
+                  ],
+                  "encore": null
+                },
+                "nearHint": "站稳就好，舞台会载你去下一幕。",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 715.9761286823547,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 0.980664673998831,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              },
+              "riding": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 1018.5629191888943,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 12.816666666666883,
+                "deaths": 0,
+                "camera": 790.9495489748715,
+                "body": {
+                  "x": 1018.5629191888943,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": "stage"
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    false,
+                    false
+                  ],
+                  "lightAmounts": [
+                    0,
+                    0
+                  ],
+                  "encore": null
+                },
+                "nearHint": "站稳就好，舞台会载你去下一幕。",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 900.00431079191,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 2.4150934732532505,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              },
+              "alighting": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 1139.3426432747415,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 13.650000000000258,
+                "deaths": 0,
+                "camera": 911.5193963510205,
+                "body": {
+                  "x": 1139.3426432747415,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": "stage"
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    false,
+                    false
+                  ],
+                  "lightAmounts": [
+                    0,
+                    0
+                  ],
+                  "encore": null
+                },
+                "nearHint": "右侧踏台到了 · 向右走下舞台。",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 1020.784034877757,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 2.316984399485932,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              },
+              "landed": {
+                "form": "body",
+                "state": "playing",
+                "chapterIndex": 2,
+                "x": 1308.0898047882613,
+                "y": 465,
+                "vx": 0,
+                "vy": 0,
+                "time": 14.30000000000029,
+                "deaths": 0,
+                "camera": 1074.4213505674718,
+                "body": {
+                  "x": 1308.0898047882613,
+                  "y": 465,
+                  "w": 30,
+                  "h": 58,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "platform": null
+                },
+                "capPhase": "closed",
+                "theatrePaint": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2172,
+                  "decodedHeight": 724,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "lampLit": [
+                    false,
+                    false
+                  ],
+                  "lightAmounts": [
+                    0,
+                    0
+                  ],
+                  "encore": {
+                    "phase": "active",
+                    "age": 0.21666666666666665,
+                    "duration": 2.1
+                  }
+                },
+                "nearHint": "",
+                "movers": [
+                  {
+                    "id": "stage",
+                    "x": 1102.6548495383486,
+                    "y": 465,
+                    "w": 185,
+                    "h": 20,
+                    "dx": 1.840270251141419,
+                    "dy": 0
+                  }
+                ],
+                "platforms": [
+                  {
+                    "x": 0,
+                    "y": 560,
+                    "w": 735,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 1200,
+                    "y": 560,
+                    "w": 1060,
+                    "h": 100,
+                    "kind": "ground"
+                  },
+                  {
+                    "x": 565,
+                    "y": 465,
+                    "w": 220,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1130,
+                    "y": 465,
+                    "w": 225,
+                    "h": 18,
+                    "kind": null
+                  },
+                  {
+                    "x": 1550,
+                    "y": 435,
+                    "w": 155,
+                    "h": 18,
+                    "kind": null
+                  }
+                ],
+                "letterChoice": "keep",
+                "letterEcho": null,
+                "greenhousePlant": null,
+                "seedCollected": false,
+                "mushrooms": [],
+                "roots": []
+              }
+            }
+          },
+          "touchScope": "resized Chromium and CDP touch controls, naturally earned chapter unlock; not a physical phone or full mobile chapter clear",
+          "normalRestartResetBothLightPools": true,
+          "chapterResultsUnchanged": true
+        },
+        "theatreArt": {
+          "notRequestedBeforeThirdChapter": true,
+          "normalRequests": [
+            "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+            "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+            "http://127.0.0.1:8080/assets/theatre-painted-v22.webp"
+          ],
+          "fallbacks": {
+            "cases": {
+              "svg": {
+                "background": {
+                  "phase": "ready",
+                  "frame": true,
+                  "decodedWidth": 2400,
+                  "decodedHeight": 750,
+                  "complete": true,
+                  "source": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+                  "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+                  "lampLit": [
+                    false,
+                    false
+                  ],
+                  "lightAmounts": [
+                    0,
+                    0
+                  ],
+                  "encore": null
+                },
+                "crossing": {
+                  "viewport": {
+                    "width": 1280,
+                    "height": 800
+                  },
+                  "input": "keyboard",
+                  "scope": "first moving-stage crossing only; not chapter completion",
+                  "leftBankReachedByJump": true,
+                  "waitHintMatchedGap": true,
+                  "boardHintMatchedContact": true,
+                  "bodyPlatformObserved": "stage",
+                  "noInputCarryDistance": 185.79412198445596,
+                  "relativeRideOffsetDrift": -2.2737367544323206e-13,
+                  "alightHintMatchedContact": true,
+                  "rightBankReached": true,
+                  "earnedShortCurtainCall": true,
+                  "noRespawns": true,
+                  "noHorizontalOverflow": true,
+                  "chapterCompleted": false,
+                  "evidence": {
+                    "waiting": {
+                      "form": "body",
+                      "state": "playing",
+                      "chapterIndex": 2,
+                      "x": 705,
+                      "y": 465,
+                      "vx": 0,
+                      "vy": 0,
+                      "time": 3.9666666666666575,
+                      "deaths": 0,
+                      "camera": 174.3054403060447,
+                      "body": {
+                        "x": 705,
+                        "y": 465,
+                        "w": 30,
+                        "h": 58,
+                        "vx": 0,
+                        "vy": 0,
+                        "grounded": true,
+                        "platform": null
+                      },
+                      "capPhase": "closed",
+                      "theatrePaint": {
+                        "phase": "ready",
+                        "frame": true,
+                        "decodedWidth": 2400,
+                        "decodedHeight": 750,
+                        "complete": true,
+                        "source": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+                        "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+                        "lampLit": [
+                          false,
+                          false
+                        ],
+                        "lightAmounts": [
+                          0,
+                          0
+                        ],
+                        "encore": null
+                      },
+                      "nearHint": "在踏台上等一等，舞台会回来接你。",
+                      "movers": [
+                        {
+                          "id": "stage",
+                          "x": 1117.3157802821283,
+                          "y": 465,
+                          "w": 185,
+                          "h": 20,
+                          "dx": 1.6995212469262242,
+                          "dy": 0
+                        }
+                      ],
+                      "platforms": [
+                        {
+                          "x": 0,
+                          "y": 560,
+                          "w": 735,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 1200,
+                          "y": 560,
+                          "w": 1060,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 565,
+                          "y": 465,
+                          "w": 220,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1130,
+                          "y": 465,
+                          "w": 225,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1550,
+                          "y": 435,
+                          "w": 155,
+                          "h": 18,
+                          "kind": null
+                        }
+                      ],
+                      "letterChoice": "keep",
+                      "letterEcho": null,
+                      "greenhousePlant": null,
+                      "seedCollected": false,
+                      "mushrooms": [],
+                      "roots": []
+                    },
+                    "boarding": {
+                      "form": "body",
+                      "state": "playing",
+                      "chapterIndex": 2,
+                      "x": 705,
+                      "y": 465,
+                      "vx": 0,
+                      "vy": 0,
+                      "time": 10.516666666666769,
+                      "deaths": 0,
+                      "camera": 184.6809453471195,
+                      "body": {
+                        "x": 705,
+                        "y": 465,
+                        "w": 30,
+                        "h": 58,
+                        "vx": 0,
+                        "vy": 0,
+                        "grounded": true,
+                        "platform": null
+                      },
+                      "capPhase": "closed",
+                      "theatrePaint": {
+                        "phase": "ready",
+                        "frame": true,
+                        "decodedWidth": 2400,
+                        "decodedHeight": 750,
+                        "complete": true,
+                        "source": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+                        "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+                        "lampLit": [
+                          false,
+                          false
+                        ],
+                        "lightAmounts": [
+                          0,
+                          0
+                        ],
+                        "encore": null
+                      },
+                      "nearHint": "舞台靠近了 · 向右走上去，或轻轻一跳。",
+                      "movers": [
+                        {
+                          "id": "stage",
+                          "x": 695.0880756219133,
+                          "y": 465,
+                          "w": 185,
+                          "h": 20,
+                          "dx": 0.05344153584974265,
+                          "dy": 0
+                        }
+                      ],
+                      "platforms": [
+                        {
+                          "x": 0,
+                          "y": 560,
+                          "w": 735,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 1200,
+                          "y": 560,
+                          "w": 1060,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 565,
+                          "y": 465,
+                          "w": 220,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1130,
+                          "y": 465,
+                          "w": 225,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1550,
+                          "y": 435,
+                          "w": 155,
+                          "h": 18,
+                          "kind": null
+                        }
+                      ],
+                      "letterChoice": "keep",
+                      "letterEcho": null,
+                      "greenhousePlant": null,
+                      "seedCollected": false,
+                      "mushrooms": [],
+                      "roots": []
+                    },
+                    "rideStart": {
+                      "form": "body",
+                      "state": "playing",
+                      "chapterIndex": 2,
+                      "x": 844.8591174832833,
+                      "y": 465,
+                      "vx": 0,
+                      "vy": 0,
+                      "time": 11.216666666666804,
+                      "deaths": 0,
+                      "camera": 294.09475161701846,
+                      "body": {
+                        "x": 844.8591174832833,
+                        "y": 465,
+                        "w": 30,
+                        "h": 58,
+                        "vx": 0,
+                        "vy": 0,
+                        "grounded": true,
+                        "platform": "stage"
+                      },
+                      "capPhase": "closed",
+                      "theatrePaint": {
+                        "phase": "ready",
+                        "frame": true,
+                        "decodedWidth": 2400,
+                        "decodedHeight": 750,
+                        "complete": true,
+                        "source": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+                        "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+                        "lampLit": [
+                          false,
+                          false
+                        ],
+                        "lightAmounts": [
+                          0,
+                          0
+                        ],
+                        "encore": null
+                      },
+                      "nearHint": "站稳就好，舞台会载你去下一幕。",
+                      "movers": [
+                        {
+                          "id": "stage",
+                          "x": 719.0521324534493,
+                          "y": 465,
+                          "w": 185,
+                          "h": 20,
+                          "dx": 1.0475681276109299,
+                          "dy": 0
+                        }
+                      ],
+                      "platforms": [
+                        {
+                          "x": 0,
+                          "y": 560,
+                          "w": 735,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 1200,
+                          "y": 560,
+                          "w": 1060,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 565,
+                          "y": 465,
+                          "w": 220,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1130,
+                          "y": 465,
+                          "w": 225,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1550,
+                          "y": 435,
+                          "w": 155,
+                          "h": 18,
+                          "kind": null
+                        }
+                      ],
+                      "letterChoice": "keep",
+                      "letterEcho": null,
+                      "greenhousePlant": null,
+                      "seedCollected": false,
+                      "mushrooms": [],
+                      "roots": []
+                    },
+                    "riding": {
+                      "form": "body",
+                      "state": "playing",
+                      "chapterIndex": 2,
+                      "x": 1030.6532394677392,
+                      "y": 465,
+                      "vx": 0,
+                      "vy": 0,
+                      "time": 12.850000000000218,
+                      "deaths": 0,
+                      "camera": 486.9223616537393,
+                      "body": {
+                        "x": 1030.6532394677392,
+                        "y": 465,
+                        "w": 30,
+                        "h": 58,
+                        "vx": 0,
+                        "vy": 0,
+                        "grounded": true,
+                        "platform": "stage"
+                      },
+                      "capPhase": "closed",
+                      "theatrePaint": {
+                        "phase": "ready",
+                        "frame": true,
+                        "decodedWidth": 2400,
+                        "decodedHeight": 750,
+                        "complete": true,
+                        "source": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+                        "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+                        "lampLit": [
+                          false,
+                          false
+                        ],
+                        "lightAmounts": [
+                          0,
+                          0
+                        ],
+                        "encore": null
+                      },
+                      "nearHint": "站稳就好，舞台会载你去下一幕。",
+                      "movers": [
+                        {
+                          "id": "stage",
+                          "x": 904.8462544379055,
+                          "y": 465,
+                          "w": 185,
+                          "h": 20,
+                          "dx": 2.422850637150873,
+                          "dy": 0
+                        }
+                      ],
+                      "platforms": [
+                        {
+                          "x": 0,
+                          "y": 560,
+                          "w": 735,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 1200,
+                          "y": 560,
+                          "w": 1060,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 565,
+                          "y": 465,
+                          "w": 220,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1130,
+                          "y": 465,
+                          "w": 225,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1550,
+                          "y": 435,
+                          "w": 155,
+                          "h": 18,
+                          "kind": null
+                        }
+                      ],
+                      "letterChoice": "keep",
+                      "letterEcho": null,
+                      "greenhousePlant": null,
+                      "seedCollected": false,
+                      "mushrooms": [],
+                      "roots": []
+                    },
+                    "alighting": {
+                      "form": "body",
+                      "state": "playing",
+                      "chapterIndex": 2,
+                      "x": 1151.2005228093774,
+                      "y": 465,
+                      "vx": 0,
+                      "vy": 0,
+                      "time": 13.683333333333593,
+                      "deaths": 0,
+                      "camera": 607.4989184785647,
+                      "body": {
+                        "x": 1151.2005228093774,
+                        "y": 465,
+                        "w": 30,
+                        "h": 58,
+                        "vx": 0,
+                        "vy": 0,
+                        "grounded": true,
+                        "platform": "stage"
+                      },
+                      "capPhase": "closed",
+                      "theatrePaint": {
+                        "phase": "ready",
+                        "frame": true,
+                        "decodedWidth": 2400,
+                        "decodedHeight": 750,
+                        "complete": true,
+                        "source": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+                        "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+                        "lampLit": [
+                          false,
+                          false
+                        ],
+                        "lightAmounts": [
+                          0,
+                          0
+                        ],
+                        "encore": null
+                      },
+                      "nearHint": "右侧踏台到了 · 向右走下舞台。",
+                      "movers": [
+                        {
+                          "id": "stage",
+                          "x": 1025.3935377795433,
+                          "y": 465,
+                          "w": 185,
+                          "h": 20,
+                          "dx": 2.3005968384677544,
+                          "dy": 0
+                        }
+                      ],
+                      "platforms": [
+                        {
+                          "x": 0,
+                          "y": 560,
+                          "w": 735,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 1200,
+                          "y": 560,
+                          "w": 1060,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 565,
+                          "y": 465,
+                          "w": 220,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1130,
+                          "y": 465,
+                          "w": 225,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1550,
+                          "y": 435,
+                          "w": 155,
+                          "h": 18,
+                          "kind": null
+                        }
+                      ],
+                      "letterChoice": "keep",
+                      "letterEcho": null,
+                      "greenhousePlant": null,
+                      "seedCollected": false,
+                      "mushrooms": [],
+                      "roots": []
+                    },
+                    "landed": {
+                      "form": "body",
+                      "state": "playing",
+                      "chapterIndex": 2,
+                      "x": 1299.338181421111,
+                      "y": 465,
+                      "vx": 0,
+                      "vy": 0,
+                      "time": 14.250000000000288,
+                      "deaths": 0,
+                      "camera": 748.429133768433,
+                      "body": {
+                        "x": 1299.338181421111,
+                        "y": 465,
+                        "w": 30,
+                        "h": 58,
+                        "vx": 0,
+                        "vy": 0,
+                        "grounded": true,
+                        "platform": null
+                      },
+                      "capPhase": "closed",
+                      "theatrePaint": {
+                        "phase": "ready",
+                        "frame": true,
+                        "decodedWidth": 2400,
+                        "decodedHeight": 750,
+                        "complete": true,
+                        "source": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+                        "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+                        "lampLit": [
+                          false,
+                          false
+                        ],
+                        "lightAmounts": [
+                          0,
+                          0
+                        ],
+                        "encore": {
+                          "phase": "active",
+                          "age": 0.16666666666666666,
+                          "duration": 2.1
+                        }
+                      },
+                      "nearHint": "",
+                      "movers": [
+                        {
+                          "id": "stage",
+                          "x": 1097.0859804467848,
+                          "y": 465,
+                          "w": 185,
+                          "h": 20,
+                          "dx": 1.887955732504679,
+                          "dy": 0
+                        }
+                      ],
+                      "platforms": [
+                        {
+                          "x": 0,
+                          "y": 560,
+                          "w": 735,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 1200,
+                          "y": 560,
+                          "w": 1060,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 565,
+                          "y": 465,
+                          "w": 220,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1130,
+                          "y": 465,
+                          "w": 225,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1550,
+                          "y": 435,
+                          "w": 155,
+                          "h": 18,
+                          "kind": null
+                        }
+                      ],
+                      "letterChoice": "keep",
+                      "letterEcho": null,
+                      "greenhousePlant": null,
+                      "seedCollected": false,
+                      "mushrooms": [],
+                      "roots": []
+                    }
+                  }
+                },
+                "actualSecondPuzzleSolved": true,
+                "noRepeatedRequests": true,
+                "unchangedRewardsAndChapterResults": true,
+                "blockedRequests": [
+                  "http://127.0.0.1:8080/assets/theatre-painted-v22.webp"
+                ]
+              },
+              "procedural": {
+                "background": {
+                  "phase": "failed",
+                  "frame": false,
+                  "decodedWidth": 0,
+                  "decodedHeight": 0,
+                  "complete": false,
+                  "source": null,
+                  "imageSource": null,
+                  "lampLit": [
+                    false,
+                    false
+                  ],
+                  "lightAmounts": [
+                    0,
+                    0
+                  ],
+                  "encore": null
+                },
+                "crossing": {
+                  "viewport": {
+                    "width": 1280,
+                    "height": 800
+                  },
+                  "input": "keyboard",
+                  "scope": "first moving-stage crossing only; not chapter completion",
+                  "leftBankReachedByJump": true,
+                  "waitHintMatchedGap": true,
+                  "boardHintMatchedContact": true,
+                  "bodyPlatformObserved": "stage",
+                  "noInputCarryDistance": 187.42793979239877,
+                  "relativeRideOffsetDrift": 0,
+                  "alightHintMatchedContact": true,
+                  "rightBankReached": true,
+                  "earnedShortCurtainCall": true,
+                  "noRespawns": true,
+                  "noHorizontalOverflow": true,
+                  "chapterCompleted": false,
+                  "evidence": {
+                    "waiting": {
+                      "form": "body",
+                      "state": "playing",
+                      "chapterIndex": 2,
+                      "x": 702,
+                      "y": 465,
+                      "vx": 0,
+                      "vy": 0,
+                      "time": 3.599999999999992,
+                      "deaths": 0,
+                      "camera": 161.36139095273188,
+                      "body": {
+                        "x": 702,
+                        "y": 465,
+                        "w": 30,
+                        "h": 58,
+                        "vx": 0,
+                        "vy": 0,
+                        "grounded": true,
+                        "platform": null
+                      },
+                      "capPhase": "closed",
+                      "theatrePaint": {
+                        "phase": "failed",
+                        "frame": false,
+                        "decodedWidth": 0,
+                        "decodedHeight": 0,
+                        "complete": false,
+                        "source": null,
+                        "imageSource": null,
+                        "lampLit": [
+                          false,
+                          false
+                        ],
+                        "lightAmounts": [
+                          0,
+                          0
+                        ],
+                        "encore": null
+                      },
+                      "nearHint": "在踏台上等一等，舞台会回来接你。",
+                      "movers": [
+                        {
+                          "id": "stage",
+                          "x": 1076.146290831399,
+                          "y": 465,
+                          "w": 185,
+                          "h": 20,
+                          "dx": 2.043662788733627,
+                          "dy": 0
+                        }
+                      ],
+                      "platforms": [
+                        {
+                          "x": 0,
+                          "y": 560,
+                          "w": 735,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 1200,
+                          "y": 560,
+                          "w": 1060,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 565,
+                          "y": 465,
+                          "w": 220,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1130,
+                          "y": 465,
+                          "w": 225,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1550,
+                          "y": 435,
+                          "w": 155,
+                          "h": 18,
+                          "kind": null
+                        }
+                      ],
+                      "letterChoice": "keep",
+                      "letterEcho": null,
+                      "greenhousePlant": null,
+                      "seedCollected": false,
+                      "mushrooms": [],
+                      "roots": []
+                    },
+                    "boarding": {
+                      "form": "body",
+                      "state": "playing",
+                      "chapterIndex": 2,
+                      "x": 702,
+                      "y": 465,
+                      "vx": 0,
+                      "vy": 0,
+                      "time": 10.483333333333434,
+                      "deaths": 0,
+                      "camera": 181.6809453471195,
+                      "body": {
+                        "x": 702,
+                        "y": 465,
+                        "w": 30,
+                        "h": 58,
+                        "vx": 0,
+                        "vy": 0,
+                        "grounded": true,
+                        "platform": null
+                      },
+                      "capPhase": "closed",
+                      "theatrePaint": {
+                        "phase": "failed",
+                        "frame": false,
+                        "decodedWidth": 0,
+                        "decodedHeight": 0,
+                        "complete": false,
+                        "source": null,
+                        "imageSource": null,
+                        "lampLit": [
+                          false,
+                          false
+                        ],
+                        "lightAmounts": [
+                          0,
+                          0
+                        ],
+                        "encore": null
+                      },
+                      "nearHint": "舞台靠近了 · 向右走上去，或轻轻一跳。",
+                      "movers": [
+                        {
+                          "id": "stage",
+                          "x": 695.005688882668,
+                          "y": 465,
+                          "w": 185,
+                          "h": 20,
+                          "dx": 0.004445976444912958,
+                          "dy": 0
+                        }
+                      ],
+                      "platforms": [
+                        {
+                          "x": 0,
+                          "y": 560,
+                          "w": 735,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 1200,
+                          "y": 560,
+                          "w": 1060,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 565,
+                          "y": 465,
+                          "w": 220,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1130,
+                          "y": 465,
+                          "w": 225,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1550,
+                          "y": 435,
+                          "w": 155,
+                          "h": 18,
+                          "kind": null
+                        }
+                      ],
+                      "letterChoice": "keep",
+                      "letterEcho": null,
+                      "greenhousePlant": null,
+                      "seedCollected": false,
+                      "mushrooms": [],
+                      "roots": []
+                    },
+                    "rideStart": {
+                      "form": "body",
+                      "state": "playing",
+                      "chapterIndex": 2,
+                      "x": 830.5540724053401,
+                      "y": 465,
+                      "vx": 0,
+                      "vy": 0,
+                      "time": 11.150000000000134,
+                      "deaths": 0,
+                      "camera": 281.34825146552487,
+                      "body": {
+                        "x": 830.5540724053401,
+                        "y": 465,
+                        "w": 30,
+                        "h": 58,
+                        "vx": 0,
+                        "vy": 0,
+                        "grounded": true,
+                        "platform": "stage"
+                      },
+                      "capPhase": "closed",
+                      "theatrePaint": {
+                        "phase": "failed",
+                        "frame": false,
+                        "decodedWidth": 0,
+                        "decodedHeight": 0,
+                        "complete": false,
+                        "source": null,
+                        "imageSource": null,
+                        "lampLit": [
+                          false,
+                          false
+                        ],
+                        "lightAmounts": [
+                          0,
+                          0
+                        ],
+                        "encore": null
+                      },
+                      "nearHint": "站稳就好，舞台会载你去下一幕。",
+                      "movers": [
+                        {
+                          "id": "stage",
+                          "x": 714.9954640083558,
+                          "y": 465,
+                          "w": 185,
+                          "h": 20,
+                          "dx": 0.9581644079028138,
+                          "dy": 0
+                        }
+                      ],
+                      "platforms": [
+                        {
+                          "x": 0,
+                          "y": 560,
+                          "w": 735,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 1200,
+                          "y": 560,
+                          "w": 1060,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 565,
+                          "y": 465,
+                          "w": 220,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1130,
+                          "y": 465,
+                          "w": 225,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1550,
+                          "y": 435,
+                          "w": 155,
+                          "h": 18,
+                          "kind": null
+                        }
+                      ],
+                      "letterChoice": "keep",
+                      "letterEcho": null,
+                      "greenhousePlant": null,
+                      "seedCollected": false,
+                      "mushrooms": [],
+                      "roots": []
+                    },
+                    "riding": {
+                      "form": "body",
+                      "state": "playing",
+                      "chapterIndex": 2,
+                      "x": 1017.9820121977389,
+                      "y": 465,
+                      "vx": 0,
+                      "vy": 0,
+                      "time": 12.83333333333355,
+                      "deaths": 0,
+                      "camera": 474.31199779143276,
+                      "body": {
+                        "x": 1017.9820121977389,
+                        "y": 465,
+                        "w": 30,
+                        "h": 58,
+                        "vx": 0,
+                        "vy": 0,
+                        "grounded": true,
+                        "platform": "stage"
+                      },
+                      "capPhase": "closed",
+                      "theatrePaint": {
+                        "phase": "failed",
+                        "frame": false,
+                        "decodedWidth": 0,
+                        "decodedHeight": 0,
+                        "complete": false,
+                        "source": null,
+                        "imageSource": null,
+                        "lampLit": [
+                          false,
+                          false
+                        ],
+                        "lightAmounts": [
+                          0,
+                          0
+                        ],
+                        "encore": null
+                      },
+                      "nearHint": "站稳就好，舞台会载你去下一幕。",
+                      "movers": [
+                        {
+                          "id": "stage",
+                          "x": 902.4234038007546,
+                          "y": 465,
+                          "w": 185,
+                          "h": 20,
+                          "dx": 2.419093008844584,
+                          "dy": 0
+                        }
+                      ],
+                      "platforms": [
+                        {
+                          "x": 0,
+                          "y": 560,
+                          "w": 735,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 1200,
+                          "y": 560,
+                          "w": 1060,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 565,
+                          "y": 465,
+                          "w": 220,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1130,
+                          "y": 465,
+                          "w": 225,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1550,
+                          "y": 435,
+                          "w": 155,
+                          "h": 18,
+                          "kind": null
+                        }
+                      ],
+                      "letterChoice": "keep",
+                      "letterEcho": null,
+                      "greenhousePlant": null,
+                      "seedCollected": false,
+                      "mushrooms": [],
+                      "roots": []
+                    },
+                    "alighting": {
+                      "form": "body",
+                      "state": "playing",
+                      "chapterIndex": 2,
+                      "x": 1136.3426432747415,
+                      "y": 465,
+                      "vx": 0,
+                      "vy": 0,
+                      "time": 13.650000000000258,
+                      "deaths": 0,
+                      "camera": 592.5251689801769,
+                      "body": {
+                        "x": 1136.3426432747415,
+                        "y": 465,
+                        "w": 30,
+                        "h": 58,
+                        "vx": 0,
+                        "vy": 0,
+                        "grounded": true,
+                        "platform": "stage"
+                      },
+                      "capPhase": "closed",
+                      "theatrePaint": {
+                        "phase": "failed",
+                        "frame": false,
+                        "decodedWidth": 0,
+                        "decodedHeight": 0,
+                        "complete": false,
+                        "source": null,
+                        "imageSource": null,
+                        "lampLit": [
+                          false,
+                          false
+                        ],
+                        "lightAmounts": [
+                          0,
+                          0
+                        ],
+                        "encore": null
+                      },
+                      "nearHint": "右侧踏台到了 · 向右走下舞台。",
+                      "movers": [
+                        {
+                          "id": "stage",
+                          "x": 1020.784034877757,
+                          "y": 465,
+                          "w": 185,
+                          "h": 20,
+                          "dx": 2.316984399485932,
+                          "dy": 0
+                        }
+                      ],
+                      "platforms": [
+                        {
+                          "x": 0,
+                          "y": 560,
+                          "w": 735,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 1200,
+                          "y": 560,
+                          "w": 1060,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 565,
+                          "y": 465,
+                          "w": 220,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1130,
+                          "y": 465,
+                          "w": 225,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1550,
+                          "y": 435,
+                          "w": 155,
+                          "h": 18,
+                          "kind": null
+                        }
+                      ],
+                      "letterChoice": "keep",
+                      "letterEcho": null,
+                      "greenhousePlant": null,
+                      "seedCollected": false,
+                      "mushrooms": [],
+                      "roots": []
+                    },
+                    "landed": {
+                      "form": "body",
+                      "state": "playing",
+                      "chapterIndex": 2,
+                      "x": 1291.0553977755326,
+                      "y": 465,
+                      "vx": 0,
+                      "vy": 0,
+                      "time": 14.216666666666953,
+                      "deaths": 0,
+                      "camera": 739.0502233209469,
+                      "body": {
+                        "x": 1291.0553977755326,
+                        "y": 465,
+                        "w": 30,
+                        "h": 58,
+                        "vx": 0,
+                        "vy": 0,
+                        "grounded": true,
+                        "platform": null
+                      },
+                      "capPhase": "closed",
+                      "theatrePaint": {
+                        "phase": "failed",
+                        "frame": false,
+                        "decodedWidth": 0,
+                        "decodedHeight": 0,
+                        "complete": false,
+                        "source": null,
+                        "imageSource": null,
+                        "lampLit": [
+                          false,
+                          false
+                        ],
+                        "lightAmounts": [
+                          0,
+                          0
+                        ],
+                        "encore": {
+                          "phase": "active",
+                          "age": 0.15,
+                          "duration": 2.1
+                        }
+                      },
+                      "nearHint": "",
+                      "movers": [
+                        {
+                          "id": "stage",
+                          "x": 1093.2945493086352,
+                          "y": 465,
+                          "w": 185,
+                          "h": 20,
+                          "dx": 1.918804732830722,
+                          "dy": 0
+                        }
+                      ],
+                      "platforms": [
+                        {
+                          "x": 0,
+                          "y": 560,
+                          "w": 735,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 1200,
+                          "y": 560,
+                          "w": 1060,
+                          "h": 100,
+                          "kind": "ground"
+                        },
+                        {
+                          "x": 565,
+                          "y": 465,
+                          "w": 220,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1130,
+                          "y": 465,
+                          "w": 225,
+                          "h": 18,
+                          "kind": null
+                        },
+                        {
+                          "x": 1550,
+                          "y": 435,
+                          "w": 155,
+                          "h": 18,
+                          "kind": null
+                        }
+                      ],
+                      "letterChoice": "keep",
+                      "letterEcho": null,
+                      "greenhousePlant": null,
+                      "seedCollected": false,
+                      "mushrooms": [],
+                      "roots": []
+                    }
+                  }
+                },
+                "actualSecondPuzzleSolved": true,
+                "noRepeatedRequests": true,
+                "unchangedRewardsAndChapterResults": true,
+                "blockedRequests": [
+                  "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+                  "http://127.0.0.1:8080/assets/theatre-painted-v20.svg"
+                ]
+              }
+            },
+            "primaryRecoveredAfterUnblocking": true,
+            "recovered": {
+              "phase": "ready",
+              "frame": true,
+              "decodedWidth": 2172,
+              "decodedHeight": 724,
+              "complete": true,
+              "source": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+              "imageSource": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+              "lampLit": [
+                false,
+                false
+              ],
+              "lightAmounts": [
+                0,
+                0
+              ],
+              "encore": null
+            },
+            "deliberatelyAbortedRequests": [
+              "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+              "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+              "http://127.0.0.1:8080/assets/theatre-painted-v20.svg"
+            ]
+          },
+          "expectedRequestFailures": [
+            {
+              "url": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+              "failure": "net::ERR_FAILED"
+            },
+            {
+              "url": "http://127.0.0.1:8080/assets/theatre-painted-v22.webp",
+              "failure": "net::ERR_FAILED"
+            },
+            {
+              "url": "http://127.0.0.1:8080/assets/theatre-painted-v20.svg",
+              "failure": "net::ERR_FAILED"
+            }
+          ]
+        }
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "version": "22.0.0",
+        "ticketCollectedAndReturned": true,
+        "pauseFrozen": true,
+        "noHorizontalOverflow": true,
+        "chapterCompleted": false,
+        "input": "emulated Chromium touch",
+        "rafIntervalMs": {
+          "samples": 60,
+          "p50": 16.699999999999818,
+          "p95": 16.700000000000273
+        },
+        "frameSamplePhase": "initial active idle; not a physical-device benchmark",
+        "pageErrors": [],
+        "httpErrors": [],
+        "instrumentedAppURLs": [
+          "http://127.0.0.1:8080/dream-app.js?v=22.0.0"
+        ],
+        "resources": [
+          {
+            "name": "dream.css?v=22.0.0",
+            "duration": 8.900000000023283,
+            "transferSize": 65255
+          },
+          {
+            "name": "company-footer.css?v=22.0.0",
+            "duration": 9.5,
+            "transferSize": 2085
+          },
+          {
+            "name": "game-shell.css?v=22.0.0",
+            "duration": 13.399999999965075,
+            "transferSize": 8810
+          },
+          {
+            "name": "dream-play.css?v=22.0.0",
+            "duration": 16,
+            "transferSize": 11605
+          },
+          {
+            "name": "festival.css?v=22.0.0",
+            "duration": 15.200000000011642,
+            "transferSize": 20489
+          },
+          {
+            "name": "cap-play.css?v=22.0.0",
+            "duration": 15.600000000034925,
+            "transferSize": 9533
+          },
+          {
+            "name": "cap-portraits.css?v=22.0.0",
+            "duration": 15.899999999965075,
+            "transferSize": 2503
+          },
+          {
+            "name": "cap-activities.css?v=22.0.0",
+            "duration": 18.599999999976717,
+            "transferSize": 4211
+          },
+          {
+            "name": "lost-play.css?v=22.0.0",
+            "duration": 18.900000000023283,
+            "transferSize": 7654
+          },
+          {
+            "name": "portrait-hero-open.svg",
+            "duration": 23.20000000001164,
+            "transferSize": 13008
+          },
+          {
+            "name": "portrait-moth.svg",
+            "duration": 22.29999999998836,
+            "transferSize": 3875
+          },
+          {
+            "name": "portrait-hero.svg",
+            "duration": 22.70000000001164,
+            "transferSize": 11898
+          },
+          {
+            "name": "dream-app.js?v=22.0.0",
+            "duration": 15.799999999988358,
+            "transferSize": 64565
+          },
+          {
+            "name": "dream-engine.js?v=22.0.0",
+            "duration": 11.400000000023283,
+            "transferSize": 13008
+          },
+          {
+            "name": "game-shell.js?v=22.0.0",
+            "duration": 14.200000000011642,
+            "transferSize": 8026
+          },
+          {
+            "name": "festival-hub.js?v=22.0.0",
+            "duration": 11.799999999988358,
+            "transferSize": 21807
+          },
+          {
+            "name": "dream-festivals.js?v=22.0.0",
+            "duration": 14.299999999988358,
+            "transferSize": 53830
+          },
+          {
+            "name": "dream-cap-story.js?v=22.0.0",
+            "duration": 14.5,
+            "transferSize": 14780
+          },
+          {
+            "name": "cap-book.js?v=22.0.0",
+            "duration": 14.799999999988358,
+            "transferSize": 17710
+          },
+          {
+            "name": "cap-activity-progress.js?v=22.0.0",
+            "duration": 18.29999999998836,
+            "transferSize": 11465
+          },
+          {
+            "name": "dream-cap-activities.js?v=22.0.0",
+            "duration": 19.100000000034925,
+            "transferSize": 14037
+          },
+          {
+            "name": "dream-lost-cases.js?v=22.0.0",
+            "duration": 20.5,
+            "transferSize": 27267
+          },
+          {
+            "name": "dream-encounters.js?v=22.0.0",
+            "duration": 20.599999999976717,
+            "transferSize": 17094
+          },
+          {
+            "name": "dream-journey.js?v=22.0.0",
+            "duration": 21.79999999998836,
+            "transferSize": 10412
+          },
+          {
+            "name": "lost-evidence.js?v=22.0.0",
+            "duration": 21.599999999976717,
+            "transferSize": 7447
+          },
+          {
+            "name": "dream-ui.js?v=22.0.0",
+            "duration": 22.099999999976717,
+            "transferSize": 4722
+          },
+          {
+            "name": "dream-direction-input.js?v=22.0.0",
+            "duration": 22.599999999976717,
+            "transferSize": 2220
+          },
+          {
+            "name": "lost-progress.js?v=22.0.0",
+            "duration": 24.600000000034925,
+            "transferSize": 10256
+          },
+          {
+            "name": "dream-story.js?v=22.0.0",
+            "duration": 24.300000000046566,
+            "transferSize": 31300
+          },
+          {
+            "name": "company-wordmark.webp",
+            "duration": 8.799999999988358,
+            "transferSize": 7452
+          },
+          {
+            "name": "dream-engine-base.js?v=22.0.0",
+            "duration": 12.799999999988358,
+            "transferSize": 95072
+          },
+          {
+            "name": "dream-cap-art.js?v=22.0.0",
+            "duration": 15.099999999976717,
+            "transferSize": 22979
+          },
+          {
+            "name": "dream-station-art.js?v=22.0.0",
+            "duration": 17.29999999998836,
+            "transferSize": 16750
+          },
+          {
+            "name": "dream-painted-scene.js?v=22.0.0",
+            "duration": 25.400000000023283,
+            "transferSize": 7497
+          },
+          {
+            "name": "dream-greenhouse-scene.js?v=22.0.0",
+            "duration": 13,
+            "transferSize": 4746
+          },
+          {
+            "name": "dream-greenhouse-finish.js?v=22.0.0",
+            "duration": 16.800000000046566,
+            "transferSize": 11299
+          },
+          {
+            "name": "dream-letter-echo.js?v=22.0.0",
+            "duration": 18,
+            "transferSize": 9199
+          },
+          {
+            "name": "dream-theatre-guidance.js?v=22.0.0",
+            "duration": 24.599999999976717,
+            "transferSize": 3886
+          },
+          {
+            "name": "dream-theatre-art.js?v=22.0.0",
+            "duration": 25.399999999965075,
+            "transferSize": 11672
+          },
+          {
+            "name": "dream-ground-shadow.js?v=22.0.0",
+            "duration": 25.5,
+            "transferSize": 3709
+          },
+          {
+            "name": "dream-theatre-lantern.js?v=22.0.0",
+            "duration": 28.100000000034925,
+            "transferSize": 5806
+          },
+          {
+            "name": "dream-soul-art.js?v=22.0.0",
+            "duration": 29.29999999998836,
+            "transferSize": 10233
+          },
+          {
+            "name": "dream-theatre-painted.js?v=22.0.0",
+            "duration": 31,
+            "transferSize": 7150
+          },
+          {
+            "name": "dream-theatre-encore.js?v=22.0.0",
+            "duration": 31.399999999965075,
+            "transferSize": 4946
+          },
+          {
+            "name": "play-rewards.js?v=22.0.0",
+            "duration": 31.79999999998836,
+            "transferSize": 21103
+          },
+          {
+            "name": "dream-lost-encores.js?v=22.0.0",
+            "duration": 32.399999999965075,
+            "transferSize": 3030
+          },
+          {
+            "name": "dream-lost-encore-art.js?v=22.0.0",
+            "duration": 35.70000000001164,
+            "transferSize": 15825
+          },
+          {
+            "name": "cap-progress.js?v=22.0.0",
+            "duration": 35.40000000002328,
+            "transferSize": 4874
+          },
+          {
+            "name": "dream-levels.js?v=22.0.0",
+            "duration": 36.09999999997672,
+            "transferSize": 9042
+          },
+          {
+            "name": "dream-festival-levels.js?v=22.0.0",
+            "duration": 22.20000000001164,
+            "transferSize": 6974
+          },
+          {
+            "name": "dream-festival-art.js?v=22.0.0",
+            "duration": 23.79999999998836,
+            "transferSize": 31664
+          },
+          {
+            "name": "dream-cap-activity-engine.js?v=22.0.0",
+            "duration": 23.400000000023283,
+            "transferSize": 15927
+          },
+          {
+            "name": "dream-cap-activity-art.js?v=22.0.0",
+            "duration": 24.599999999976717,
+            "transferSize": 33206
+          },
+          {
+            "name": "dream-scene-backdrop.js?v=22.0.0",
+            "duration": 25.20000000001164,
+            "transferSize": 19410
+          },
+          {
+            "name": "dream-lost-engine.js?v=22.0.0",
+            "duration": 25.70000000001164,
+            "transferSize": 13039
+          },
+          {
+            "name": "dream-lost-art.js?v=22.0.0",
+            "duration": 28.600000000034925,
+            "transferSize": 41860
+          },
+          {
+            "name": "dream-encounter-art.js?v=22.0.0",
+            "duration": 28,
+            "transferSize": 28809
+          },
+          {
+            "name": "dream-awakenings.js?v=22.0.0",
+            "duration": 25.899999999965075,
+            "transferSize": 4132
+          },
+          {
+            "name": "dream-awakening-art.js?v=22.0.0",
+            "duration": 29.70000000001164,
+            "transferSize": 26322
+          },
+          {
+            "name": "dream-moon-play.js?v=22.0.0",
+            "duration": 29.400000000023283,
+            "transferSize": 12956
+          },
+          {
+            "name": "dream-moon-art.js?v=22.0.0",
+            "duration": 29.79999999998836,
+            "transferSize": 15041
+          },
+          {
+            "name": "dream-greenhouse-art.js?v=22.0.0",
+            "duration": 33.29999999998836,
+            "transferSize": 4180
+          },
+          {
+            "name": "dream-first-ticket-art.js?v=22.0.0",
+            "duration": 33.79999999998836,
+            "transferSize": 4629
+          },
+          {
+            "name": "dream-traveler-art.js?v=22.0.0",
+            "duration": 28.5,
+            "transferSize": 8609
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 4.2999999999883585,
+            "transferSize": 4453
+          },
+          {
+            "name": "station-painted-v16.webp",
+            "duration": 4.7999999999883585,
+            "transferSize": 266628
+          },
+          {
+            "name": "portrait-hero-open.svg",
+            "duration": 8,
+            "transferSize": 13008
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 3.800000000046566,
+            "transferSize": 7066
+          },
+          {
+            "name": "portrait-soul-joy.svg",
+            "duration": 7.400000000023283,
+            "transferSize": 7193
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 3.800000000046566,
+            "transferSize": 4453
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 4.7999999999883585,
+            "transferSize": 7066
+          },
+          {
+            "name": "portrait-soul-peek.svg",
+            "duration": 3,
+            "transferSize": 7102
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 3,
+            "transferSize": 4453
+          }
+        ],
+        "imagesLoaded": true
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 680
+        },
+        "version": "22.0.0",
+        "ticketCollectedAndReturned": true,
+        "pauseFrozen": true,
+        "noHorizontalOverflow": true,
+        "chapterCompleted": false,
+        "input": "emulated Chromium touch",
+        "rafIntervalMs": {
+          "samples": 60,
+          "p50": 16.699999999999818,
+          "p95": 16.799999999999955
+        },
+        "frameSamplePhase": "initial active idle; not a physical-device benchmark",
+        "pageErrors": [],
+        "httpErrors": [],
+        "instrumentedAppURLs": [
+          "http://127.0.0.1:8080/dream-app.js?v=22.0.0"
+        ],
+        "resources": [
+          {
+            "name": "dream.css?v=22.0.0",
+            "duration": 4.7000000000116415,
+            "transferSize": 65255
+          },
+          {
+            "name": "company-footer.css?v=22.0.0",
+            "duration": 6.099999999976717,
+            "transferSize": 2085
+          },
+          {
+            "name": "game-shell.css?v=22.0.0",
+            "duration": 6.599999999976717,
+            "transferSize": 8810
+          },
+          {
+            "name": "dream-play.css?v=22.0.0",
+            "duration": 8.899999999965075,
+            "transferSize": 11605
+          },
+          {
+            "name": "festival.css?v=22.0.0",
+            "duration": 9.400000000023283,
+            "transferSize": 20489
+          },
+          {
+            "name": "cap-play.css?v=22.0.0",
+            "duration": 8.700000000011642,
+            "transferSize": 9533
+          },
+          {
+            "name": "cap-portraits.css?v=22.0.0",
+            "duration": 9.5,
+            "transferSize": 2503
+          },
+          {
+            "name": "cap-activities.css?v=22.0.0",
+            "duration": 11.299999999988358,
+            "transferSize": 4211
+          },
+          {
+            "name": "lost-play.css?v=22.0.0",
+            "duration": 11.599999999976717,
+            "transferSize": 7654
+          },
+          {
+            "name": "portrait-hero-open.svg",
+            "duration": 11.799999999988358,
+            "transferSize": 13008
+          },
+          {
+            "name": "portrait-hero.svg",
+            "duration": 13.799999999988358,
+            "transferSize": 11898
+          },
+          {
+            "name": "portrait-moth.svg",
+            "duration": 12.200000000011642,
+            "transferSize": 3875
+          },
+          {
+            "name": "dream-app.js?v=22.0.0",
+            "duration": 18.29999999998836,
+            "transferSize": 64565
+          },
+          {
+            "name": "dream-engine.js?v=22.0.0",
+            "duration": 8.799999999988358,
+            "transferSize": 13008
+          },
+          {
+            "name": "game-shell.js?v=22.0.0",
+            "duration": 8.899999999965075,
+            "transferSize": 8026
+          },
+          {
+            "name": "festival-hub.js?v=22.0.0",
+            "duration": 10.299999999988358,
+            "transferSize": 21807
+          },
+          {
+            "name": "dream-festivals.js?v=22.0.0",
+            "duration": 11.899999999965075,
+            "transferSize": 53830
+          },
+          {
+            "name": "dream-cap-story.js?v=22.0.0",
+            "duration": 10.099999999976717,
+            "transferSize": 14780
+          },
+          {
+            "name": "cap-book.js?v=22.0.0",
+            "duration": 11.300000000046566,
+            "transferSize": 17710
+          },
+          {
+            "name": "dream-cap-activities.js?v=22.0.0",
+            "duration": 14,
+            "transferSize": 14037
+          },
+          {
+            "name": "cap-activity-progress.js?v=22.0.0",
+            "duration": 14.099999999976717,
+            "transferSize": 11465
+          },
+          {
+            "name": "dream-lost-cases.js?v=22.0.0",
+            "duration": 15.200000000011642,
+            "transferSize": 27267
+          },
+          {
+            "name": "lost-evidence.js?v=22.0.0",
+            "duration": 16.100000000034925,
+            "transferSize": 7447
+          },
+          {
+            "name": "dream-encounters.js?v=22.0.0",
+            "duration": 16.899999999965075,
+            "transferSize": 17094
+          },
+          {
+            "name": "dream-journey.js?v=22.0.0",
+            "duration": 18,
+            "transferSize": 10412
+          },
+          {
+            "name": "dream-direction-input.js?v=22.0.0",
+            "duration": 19.20000000001164,
+            "transferSize": 2220
+          },
+          {
+            "name": "dream-ui.js?v=22.0.0",
+            "duration": 19.400000000023283,
+            "transferSize": 4722
+          },
+          {
+            "name": "lost-progress.js?v=22.0.0",
+            "duration": 19.399999999965075,
+            "transferSize": 10256
+          },
+          {
+            "name": "dream-story.js?v=22.0.0",
+            "duration": 21.900000000023283,
+            "transferSize": 31300
+          },
+          {
+            "name": "company-wordmark.webp",
+            "duration": 3.199999999953434,
+            "transferSize": 7452
+          },
+          {
+            "name": "dream-cap-art.js?v=22.0.0",
+            "duration": 15.599999999976717,
+            "transferSize": 22979
+          },
+          {
+            "name": "dream-engine-base.js?v=22.0.0",
+            "duration": 15.699999999953434,
+            "transferSize": 95072
+          },
+          {
+            "name": "dream-station-art.js?v=22.0.0",
+            "duration": 13.599999999976717,
+            "transferSize": 16750
+          },
+          {
+            "name": "dream-greenhouse-scene.js?v=22.0.0",
+            "duration": 16.29999999998836,
+            "transferSize": 4746
+          },
+          {
+            "name": "dream-painted-scene.js?v=22.0.0",
+            "duration": 15.900000000023283,
+            "transferSize": 7497
+          },
+          {
+            "name": "dream-greenhouse-finish.js?v=22.0.0",
+            "duration": 15.200000000011642,
+            "transferSize": 11299
+          },
+          {
+            "name": "dream-theatre-guidance.js?v=22.0.0",
+            "duration": 21.099999999976717,
+            "transferSize": 3886
+          },
+          {
+            "name": "dream-letter-echo.js?v=22.0.0",
+            "duration": 28.70000000001164,
+            "transferSize": 9199
+          },
+          {
+            "name": "dream-theatre-art.js?v=22.0.0",
+            "duration": 29.099999999976717,
+            "transferSize": 11672
+          },
+          {
+            "name": "dream-ground-shadow.js?v=22.0.0",
+            "duration": 22.70000000001164,
+            "transferSize": 3709
+          },
+          {
+            "name": "dream-theatre-painted.js?v=22.0.0",
+            "duration": 29.5,
+            "transferSize": 7150
+          },
+          {
+            "name": "dream-theatre-lantern.js?v=22.0.0",
+            "duration": 29.099999999976717,
+            "transferSize": 5806
+          },
+          {
+            "name": "dream-soul-art.js?v=22.0.0",
+            "duration": 33.199999999953434,
+            "transferSize": 10233
+          },
+          {
+            "name": "dream-theatre-encore.js?v=22.0.0",
+            "duration": 37.699999999953434,
+            "transferSize": 4946
+          },
+          {
+            "name": "dream-lost-encores.js?v=22.0.0",
+            "duration": 35.399999999965075,
+            "transferSize": 3030
+          },
+          {
+            "name": "play-rewards.js?v=22.0.0",
+            "duration": 37.09999999997672,
+            "transferSize": 21103
+          },
+          {
+            "name": "dream-lost-encore-art.js?v=22.0.0",
+            "duration": 36.5,
+            "transferSize": 15825
+          },
+          {
+            "name": "cap-progress.js?v=22.0.0",
+            "duration": 36.59999999997672,
+            "transferSize": 4874
+          },
+          {
+            "name": "dream-levels.js?v=22.0.0",
+            "duration": 44.29999999998836,
+            "transferSize": 9042
+          },
+          {
+            "name": "dream-festival-art.js?v=22.0.0",
+            "duration": 23.399999999965075,
+            "transferSize": 31664
+          },
+          {
+            "name": "dream-traveler-art.js?v=22.0.0",
+            "duration": 25.199999999953434,
+            "transferSize": 8609
+          },
+          {
+            "name": "dream-first-ticket-art.js?v=22.0.0",
+            "duration": 18.79999999998836,
+            "transferSize": 4629
+          },
+          {
+            "name": "dream-greenhouse-art.js?v=22.0.0",
+            "duration": 24.29999999998836,
+            "transferSize": 4180
+          },
+          {
+            "name": "dream-festival-levels.js?v=22.0.0",
+            "duration": 24.099999999976717,
+            "transferSize": 6974
+          },
+          {
+            "name": "dream-cap-activity-engine.js?v=22.0.0",
+            "duration": 23.79999999998836,
+            "transferSize": 15927
+          },
+          {
+            "name": "dream-scene-backdrop.js?v=22.0.0",
+            "duration": 26.100000000034925,
+            "transferSize": 19410
+          },
+          {
+            "name": "dream-cap-activity-art.js?v=22.0.0",
+            "duration": 30.79999999998836,
+            "transferSize": 33206
+          },
+          {
+            "name": "dream-lost-art.js?v=22.0.0",
+            "duration": 27.099999999976717,
+            "transferSize": 41860
+          },
+          {
+            "name": "dream-lost-engine.js?v=22.0.0",
+            "duration": 31.79999999998836,
+            "transferSize": 13039
+          },
+          {
+            "name": "dream-encounter-art.js?v=22.0.0",
+            "duration": 29.79999999998836,
+            "transferSize": 28809
+          },
+          {
+            "name": "dream-awakenings.js?v=22.0.0",
+            "duration": 29.5,
+            "transferSize": 4132
+          },
+          {
+            "name": "dream-awakening-art.js?v=22.0.0",
+            "duration": 32.90000000002328,
+            "transferSize": 26322
+          },
+          {
+            "name": "dream-moon-play.js?v=22.0.0",
+            "duration": 32.70000000001164,
+            "transferSize": 12956
+          },
+          {
+            "name": "dream-moon-art.js?v=22.0.0",
+            "duration": 33.899999999965075,
+            "transferSize": 15041
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 4.5,
+            "transferSize": 4453
+          },
+          {
+            "name": "station-painted-v16.webp",
+            "duration": 5.400000000023283,
+            "transferSize": 266628
+          },
+          {
+            "name": "portrait-hero-open.svg",
+            "duration": 7.800000000046566,
+            "transferSize": 13008
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 4.400000000023283,
+            "transferSize": 7066
+          },
+          {
+            "name": "portrait-soul-joy.svg",
+            "duration": 6.099999999976717,
+            "transferSize": 7193
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 3.8999999999650754,
+            "transferSize": 4453
+          },
+          {
+            "name": "portrait-soul-peek.svg",
+            "duration": 2.7000000000116415,
+            "transferSize": 7102
+          },
+          {
+            "name": "portrait-soul.svg",
+            "duration": 3.3999999999650754,
+            "transferSize": 7066
+          },
+          {
+            "name": "festival-hero-halloween.svg",
+            "duration": 2.8999999999650754,
+            "transferSize": 4453
+          }
+        ],
+        "imagesLoaded": true
+      }
+    ]
+  }
+}
