@@ -1,13 +1,14 @@
-// v20 Borrowed Moon Theatre. The image is original locally hosted SVG art.
+// Borrowed Moon Theatre: locally hosted painting with the original SVG fallback.
 // No gameplay state, timers, remote fetches or new animation loop live here.
-export const THEATRE_PAINT_URL = new URL('./assets/theatre-painted-v20.svg', import.meta.url).href;
+export const THEATRE_PAINT_URL = new URL('./assets/theatre-painted-v22.webp', import.meta.url).href;
+export const THEATRE_FALLBACK_URL = new URL('./assets/theatre-painted-v20.svg', import.meta.url).href;
 export const THEATRE_PAINT_PARALLAX = 0.7;
 const finite = Number.isFinite;
 const positive = n => finite(n) && n > 0;
 const clamp = (v,a,b) => Math.max(a,Math.min(b,v));
 const eligible = context => context?.mode === 'story' && context?.chapterIndex === 2;
 
-export function getTheatrePaintedLayout(view){
+export function getTheatrePaintedLayout(view,image=null){
   const v=view?.viewport;
   if(!positive(v?.width)||!positive(view?.worldWidth)||!finite(view?.cameraX)||
     !finite(v.top)||!finite(v.bottom)||v.bottom<=v.top)return null;
@@ -15,7 +16,11 @@ export function getTheatrePaintedLayout(view){
   const camera=clamp(view.cameraX,0,travel);
   // Reserve the parallax travel at both ends; no exposed side strips.
   const width=Math.max(2400,v.width+THEATRE_PAINT_PARALLAX*travel+30);
-  const height=width*750/2400;
+  // Keep the new 3:1 painting and the retained SVG's native proportions.
+  // The source dimensions are decoded pixels, never DOM layout dimensions.
+  const sourceWidth=ready(image)?('naturalWidth'in image?image.naturalWidth:image.width):3;
+  const sourceHeight=ready(image)?('naturalHeight'in image?image.naturalHeight:image.height):1;
+  const height=width*sourceHeight/sourceWidth;
   const layout={x:-THEATRE_PAINT_PARALLAX*camera,y:-52,width,height,cameraX:camera,parallax:THEATRE_PAINT_PARALLAX};
   return Object.values(layout).every(finite)?Object.freeze(layout):null;
 }
@@ -29,7 +34,7 @@ const ready = image => {
 };
 
 export function drawPaintedTheatre(c,view,image){
-  const l=getTheatrePaintedLayout(view);
+  const l=getTheatrePaintedLayout(view,image);
   if(!l||!ready(image)||typeof c?.drawImage!=='function'||typeof c?.save!=='function')return false;
   let saved=false;
   try{
@@ -50,8 +55,8 @@ export const THEATRE_LIGHT_ZONES=Object.freeze([
   Object.freeze({x:.284,y:.595,rx:.124,ry:.255}),
   Object.freeze({x:.729,y:.568,rx:.145,ry:.28})
 ]);
-export function drawPaintedTheatreLights(c,view,amounts=[]){
-  const l=getTheatrePaintedLayout(view);
+export function drawPaintedTheatreLights(c,view,amounts=[],image=null){
+  const l=getTheatrePaintedLayout(view,image);
   if(!l||typeof c?.createRadialGradient!=='function'||typeof c?.save!=='function')return false;
   c.save();
   try{
@@ -84,32 +89,48 @@ function browserImage(src){
     const Constructor=globalThis.Image;
     if(typeof Constructor!=='function'){reject(new Error('No browser Image'));return;}
     const image=new Constructor();
+    const clear=()=>{image.onload=null;image.onerror=null;};
     image.decoding='async';
-    image.onload=()=>resolve(image);
-    image.onerror=()=>reject(new Error('Theatre illustration unavailable'));
-    image.src=src;
+    image.onload=()=>{clear();resolve(image);};
+    image.onerror=()=>{clear();reject(new Error('Theatre illustration unavailable'));};
+    try{image.src=src;}catch(error){clear();reject(error);}
   });
 }
-// Lazy by chapter. Failed decoding leaves the existing playable procedural
-// theatre intact, and never creates retries on every frame.
-export function createTheatrePaintedAssets({loadImage=browserImage,src=THEATRE_PAINT_URL}={}){
-  let image=null,phase='idle',pending=null,generation=0;
+// Lazy by chapter. Try the painting once, then the SVG once; both failing
+// leaves the playable procedural theatre intact, without per-frame retries.
+// Destruction is terminal, including before a loader's first microtask and
+// between sources. A late result cannot repopulate a disposed game's cache.
+export function createTheatrePaintedAssets({loadImage=browserImage,src=THEATRE_PAINT_URL,fallbackSrc=THEATRE_FALLBACK_URL}={}){
+  let image=null,source=null,phase='idle',pending=null;
   return {
     request(context){
-      if(!eligible(context))return Promise.resolve(false);
+      if(phase==='destroyed'||!eligible(context))return Promise.resolve(false);
       if(phase==='ready')return Promise.resolve(true);
       if(phase==='failed')return Promise.resolve(false);
       if(pending)return pending;
-      phase='loading';const gen=generation;
-      pending=Promise.resolve().then(()=>loadImage(src)).then(candidate=>{
-        if(gen!==generation)return false;
-        if(!ready(candidate))throw new Error('Theatre image has no decoded pixels');
-        image=candidate;phase='ready';pending=null;return true;
-      }).catch(()=>{if(gen===generation){image=null;phase='failed';pending=null;}return false;});
+      phase='loading';
+      pending=Promise.resolve().then(async()=>{
+        const sources=src===fallbackSrc?[src]:[src,fallbackSrc];
+        for(let index=0;index<sources.length;index++){
+          // Leave a cancellation boundary before beginning the fallback.
+          if(index>0)await Promise.resolve();
+          if(phase==='destroyed')return false;
+          try{
+            const candidate=await loadImage(sources[index]);
+            if(phase==='destroyed')return false;
+            if(!ready(candidate))throw new Error('Theatre image has no decoded pixels');
+            image=candidate;source=sources[index];phase='ready';pending=null;return true;
+          }catch{
+            if(phase==='destroyed')return false;
+          }
+        }
+        phase='failed';image=null;source=null;pending=null;return false;
+      });
       return pending;
     },
     getImage(context){return eligible(context)&&phase==='ready'?image:null;},
     getStatus(){return phase;},
-    destroy(){generation++;image=null;phase='idle';pending=null;}
+    getSource(){return phase==='ready'?source:null;},
+    destroy(){image=null;source=null;phase='destroyed';pending=null;}
   };
 }
