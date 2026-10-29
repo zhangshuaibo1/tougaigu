@@ -1,5 +1,6 @@
 import { DreamGame } from './dream-engine.js';
 import { createStoryPortraitController } from './dream-story-portrait.js';
+import { renderEndingScene } from './dream-ending-scene.js';
 import { mountGameShell } from './game-shell.js';
 import { createFestivalHub } from './festival-hub.js';
 import { getFestival, getFestivalPuzzle } from './dream-festivals.js';
@@ -505,6 +506,7 @@ function showEnding() {
   if (!ending) { returnLobby(); return; }
   persist();
   $('#ending-dialog').style.setProperty('--ending-color', ending.color);
+  renderEndingScene($('#ending-scene'), save);
   $('#ending-eyebrow').textContent = ending.eyebrow;
   $('#ending-title').textContent = ending.title;
   $('#ending-text').innerHTML = ending.text.map(text => '<p>' + escapeHtml(text) + '</p>').join('');
