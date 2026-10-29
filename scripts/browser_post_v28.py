@@ -24,6 +24,112 @@ POST_OUTRO=[
 ]
 READ_SAVE="JSON.parse(localStorage.getItem('tougaigu.dream.v1'))"
 
+POST_MUSHROOM_OBSERVER="""()=>{
+ if(window.__qaPostMushroom)throw new Error('previous post-mushroom observer was not removed');
+ const frames=[],events=[],nativeEvents=[],marks=[],types=['keydown','keyup','pointerdown','pointerup','pointercancel','click'];
+ let phase='approach-1420',raf=0,totalFrames=0,totalEvents=0,bounce=null,holdInput=null,continuityFailure=null;
+ const read=()=>{
+  const s=window.__qaRead();
+  return {at:performance.now(),phase,runId:s.runId,bodyIdentity:s.bodyIdentity,chapterIndex:s.chapterIndex,
+    mode:s.mode,state:s.state,form:s.form,time:s.time,deaths:s.deaths,body:s.body,input:s.input,mushrooms:s.mushrooms};
+ };
+ const initial=read();
+ const sample=()=>{
+  const s=read();totalFrames++;frames.push(s);if(frames.length>240)frames.shift();
+  if(!continuityFailure&&(s.runId!==initial.runId||s.bodyIdentity!==initial.bodyIdentity||
+      s.chapterIndex!==5||s.mode!=='story'||s.state!=='playing'||s.form!=='body'||s.deaths!==0))continuityFailure=s;
+  // Capture actual rendered-frame state before the next protocol round trip.
+  // Neither a boing alone nor an inferred velocity qualifies as a bounce.
+  if(!bounce&&s.body.vy<-800)bounce=s;
+  raf=requestAnimationFrame(sample);
+ };
+ const observe=event=>{
+  const target=event.target?.closest?.('button'),s=window.__qaRead();
+  const record={type:event.type,code:event.code||null,pointerId:Number.isFinite(event.pointerId)?event.pointerId:null,
+    pointerType:event.pointerType||null,isTrusted:event.isTrusted,targetId:target?.id||event.target?.id||null,
+    direction:target?.dataset.direction||null,phase,at:performance.now(),time:s.time,
+    runId:s.runId,bodyIdentity:s.bodyIdentity,form:s.form,state:s.state,input:s.input,
+    focusedId:document.activeElement?.id||null,dialogs:[...document.querySelectorAll('dialog[open]')].map(d=>d.id)};
+  totalEvents++;events.push(record);nativeEvents.push(event);
+  if(events.length>32){events.shift();nativeEvents.shift();}
+  if(!holdInput&&phase==='await-bounce'&&((event.type==='keydown'&&event.code==='ArrowRight')||
+      (event.type==='pointerdown'&&record.direction==='right')))holdInput=record;
+ };
+ for(const type of types)window.addEventListener(type,observe,true);
+ raf=requestAnimationFrame(sample);
+ window.__qaPostMushroom={
+  mark:value=>{phase=value;marks.push({phase,at:performance.now(),time:window.__qaRead().time});},
+  bounced:()=>bounce!==null,
+  read:()=>({initial,bounce,holdInput,continuityFailure,frames,totalFrames,droppedFrames:Math.max(0,totalFrames-frames.length),
+    events:events.map((event,index)=>({...event,defaultPreventedAfter:nativeEvents[index].defaultPrevented})),
+    totalEvents,droppedEvents:Math.max(0,totalEvents-events.length),marks,after:read()}),
+  stop:()=>{cancelAnimationFrame(raf);for(const type of types)window.removeEventListener(type,observe,true);}
+ };
+}"""
+
+async def stop_post_mushroom_observer(page):
+ return await page.evaluate("""()=>{
+  const observer=window.__qaPostMushroom;
+  if(!observer)return null;
+  const evidence=observer.read();observer.stop();delete window.__qaPostMushroom;return evidence;
+ }""")
+
+def validate_post_mushroom(evidence):
+ """Keep the original velocity gate and identify when the real bounce happened."""
+ initial=evidence['initial'];bounce=evidence['bounce'];after=evidence['after']
+ assert bounce is not None,'no actual mushroom frame with vy < -800 was observed'
+ assert evidence['continuityFailure'] is None,'mushroom approach changed run, body or gameplay state'
+ assert 1<=len(evidence['frames'])<=240 and len(evidence['events'])<=32,'mushroom observation exceeded its bounded sample budget'
+ origin=(initial['runId'],initial['bodyIdentity'],5,'story','playing','body',0)
+ previous=initial['time']
+ for s in [initial,*evidence['frames'],after]:
+  assert (s['runId'],s['bodyIdentity'],s['chapterIndex'],s['mode'],s['state'],s['form'],s['deaths'])==origin,'mushroom approach changed run, body, chapter, form or deaths'
+  assert s['time']>=previous,'mushroom observation time reversed'
+  previous=s['time']
+ assert (bounce['runId'],bounce['bodyIdentity'],bounce['chapterIndex'],bounce['mode'],bounce['state'],bounce['form'],bounce['deaths'])==origin,'bounce belongs to another run or body'
+ assert initial['time']<=bounce['time']<=after['time'] and initial['at']<=bounce['at']<=after['at'],'bounce was not observed during this real approach'
+ assert bounce['body']['vy']<-800 and not bounce['body']['grounded'],'actual mushroom upward velocity was not observed'
+ pad=next((p for p in bounce['mushrooms'] if (p['x'],p['y'],p['w'])==(1450,560,115)),None)
+ assert pad and pad['boing']>0 and pad['cooldown']>0,'upward frame has no active original mushroom'
+ assert initial['body']['x']<1450,'mushroom observer started after the actual approach'
+ hold=evidence['holdInput'];before_hold=hold is None or bounce['at']<hold['at']
+ if hold is not None:
+  assert hold['isTrusted'] and (hold['runId'],hold['bodyIdentity'])==origin[:2],'final mushroom hold was not actual input for this body'
+  assert hold['phase']=='await-bounce' and ((hold['type']=='keydown' and hold['code']=='ArrowRight') or
+    (hold['type']=='pointerdown' and hold['direction']=='right' and hold['pointerType']=='touch')),'wrong input identified as the final right hold'
+  assert initial['at']<=hold['at']<=after['at'],'final mushroom hold time is outside the observation'
+ return {**evidence,'observedBeforeFinalHoldInput':before_hold,
+         'actualTriggerStage':'preceding approach movement' if before_hold else 'final right hold',
+         'sameRunAndBody':True,'originalVelocityGate':-800,'actualOriginalMushroom':pad}
+
+async def approach_post_mushroom(page,output,label,driver,touch=False):
+ """Observe before both real approach moves; do not retry or manufacture a bounce."""
+ await page.evaluate(POST_MUSHROOM_OBSERVER)
+ evidence=None
+ try:
+  await driver.drive_to(page,1420,limit=6,touch=touch)
+  await page.evaluate("window.__qaPostMushroom.mark('approach-1440')")
+  await driver.drive_to(page,1440,limit=5,touch=touch)
+  await page.evaluate("window.__qaPostMushroom.mark('focus-before-hold')")
+  if not touch:await page.locator('#dream-canvas').focus()
+  await page.evaluate("window.__qaPostMushroom.mark('await-bounce')")
+  async def mushroom_bounced():
+   return await page.evaluate('window.__qaPostMushroom.bounced()')
+  # hold() checks the condition before pressing. A bounce already observed
+  # during the real approach is kept as such, never renamed a later input.
+  await driver.hold(page,'right',until=mushroom_bounced,touch=touch,limit=2.8)
+  evidence=await stop_post_mushroom_observer(page)
+  return validate_post_mushroom(evidence)
+ except Exception as error:
+  remaining=await stop_post_mushroom_observer(page)
+  if remaining is not None:evidence=remaining
+  trace={'label':label,'error':str(error),'observation':evidence,'failureSnapshot':await page.evaluate(POST_EXIT_UI)}
+  Path(output,label+'-post-mushroom-failure.json').write_text(json.dumps(trace,ensure_ascii=False,indent=2))
+  print(label,'post mushroom failure',json.dumps(trace,ensure_ascii=False),flush=True)
+  await page.screenshot(path=str(Path(output)/(label+'-post-mushroom-failure.png')),full_page=True)
+  raise
+ finally:await stop_post_mushroom_observer(page)
+
 POST_EXIT_INPUT_OBSERVER="""()=>{
  if(window.__qaPostExitInput)throw new Error('previous post-exit observer was not removed');
  const events=[],nativeEvents=[],types=['pointerdown','pointerup','pointercancel','click','gotpointercapture','lostpointercapture'];
@@ -382,16 +488,8 @@ async def play_route(page,output,label,driver,touch=False,paint='ready',full_sto
  await page.wait_for_function("()=>{const s=window.__qaRead();return s?.body.grounded&&Math.abs(s.body.y-465)<1;}",timeout=1800)
  landed=await page.evaluate('window.__qaRead()')
  assert landed['body']['grounded'] and abs(landed['body']['y']-465)<1 and landed['body']['platform'] is None
- await driver.drive_to(page,1420,limit=6,touch=touch)
- await driver.drive_to(page,1440,limit=5,touch=touch)
- if not touch:await page.locator('#dream-canvas').focus()
- bounce_samples=[]
- async def mushroom_bounced():
-  s=await page.evaluate('window.__qaRead()')
-  if s['body']['vy']<-800:bounce_samples.append(s);return True
-  return False
- await driver.hold(page,'right',until=mushroom_bounced,touch=touch,limit=2.8)
- bounced=bounce_samples[-1]
+ mushroom=await approach_post_mushroom(page,output,label,driver,touch)
+ bounced=mushroom['bounce']
  await driver.drive_to(page,1680,limit=6,touch=touch)
  await page.wait_for_function("()=>{const s=window.__qaRead();return s?.body.grounded&&Math.abs(s.body.y-390)<1;}",timeout=1800)
  root=await page.evaluate('window.__qaRead()')
@@ -423,11 +521,14 @@ async def play_route(page,output,label,driver,touch=False,paint='ready',full_sto
  await page.screenshot(path=str(Path(output)/(label+'-post-body-exit.png')),full_page=True)
  seconds=round(time.monotonic()-began,3)
  print(label,'post full route complete',{'wallSeconds':seconds,'input':'CDP touch' if touch else 'keyboard','paint':paint},flush=True)
- return {'intro':intro['portraits'] if intro else None,'npc':npc['portraits'] if npc else None,'book':ride,'boarded':boarded['body'],
+ route={'intro':intro['portraits'] if intro else None,'npc':npc['portraits'] if npc else None,'book':ride,'boarded':boarded['body'],
          'rootLanding':root['body'],'firstLamp':lamp1,'secondLamp':lamp2,'fullBodyExit':True,
-         'mushroomBounce':bounced['body'],'windCorridorSamples':wind,'finalExit':exit_trace,'finalInputEvents':exit_input,
+         'mushroomBounce':bounced['body'],'mushroomObservation':mushroom,'windCorridorSamples':wind,'finalExit':exit_trace,'finalInputEvents':exit_input,
          'realSunStampBeforeDanger':True,'oneFinalPendulumFrozen':True,'deaths':0,
          'paint':paint,'input':'Chromium CDP simulated touch' if touch else 'keyboard','wallSeconds':seconds}
+ # Keep the already verified real input evidence even if a later route fails.
+ Path(output,label+'-post-route.json').write_text(json.dumps(route,ensure_ascii=False,indent=2))
+ return route
 async def exercise_post(page,output,label,driver):
  print(label,'verify sixth chapter post office earned from fifth',flush=True)
  start=await page.evaluate('window.__qaRead()')
@@ -579,11 +680,12 @@ async def exercise_post_extended(page,output,label,driver):
    settlement=validate_post_settlement(checkpoint,settled)
    assert await driver.read_reward_grants(page)==grants
    outro=await finish_post_ending(page,driver,touch=True)
-   await wait_ending_art_settled(page)
-   await page.screenshot(path=str(Path(output)/(label+'-post-full-touch-'+str(width)+'-ending.png')),full_page=True)
    phones[str(width)]={'viewport':{'width':width,'height':height},'painted':image,'route':route,'outro':outro,
                       'settlement':settlement,'rewardGrantsUnchanged':True,
                       'scope':'complete earned chapter-six replay using Chromium CDP simulated touch for controls, puzzles, map and dialogue; not a physical device'}
+   Path(output,label+'-post-full-touch-'+str(width)+'.json').write_text(json.dumps(phones[str(width)],ensure_ascii=False,indent=2))
+   await wait_ending_art_settled(page)
+   await page.screenshot(path=str(Path(output)/(label+'-post-full-touch-'+str(width)+'-ending.png')),full_page=True)
  finally:
   await emulation.send('Emulation.setTouchEmulationEnabled',{'enabled':False})
   await emulation.detach()

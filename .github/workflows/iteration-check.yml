@@ -11,7 +11,10 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    # The v29 candidate already spends over ten minutes before the final
+    # fallback/reload/ending checks. main runs the full candidate AND HTTPS
+    # route; allow both to finish while retaining every local action timeout.
+    timeout-minutes: 35
     defaults:
       run:
         shell: bash

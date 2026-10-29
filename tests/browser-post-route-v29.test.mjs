@@ -7,7 +7,7 @@ import ast,copy,json,math
 from pathlib import Path
 from urllib.parse import urlparse
 tree=ast.parse(Path('scripts/browser_post_v28.py').read_text())
-names={'validate_post_exit','validate_post_rider','validate_post_settlement','validate_post','validate_post_exit_input','validate_fresh_result_touch'}
+names={'validate_post_exit','validate_post_rider','validate_post_settlement','validate_post','validate_post_exit_input','validate_fresh_result_touch','validate_post_mushroom'}
 exec(compile(ast.Module(body=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in names],type_ignores=[]),'actual-post-browser-gates','exec'))
 POST_FILE='post-painted-v28.webp'
 `;
@@ -83,6 +83,63 @@ reject(lambda f,s,d:s.pop(),'too few actual')
 print('real early terminal exit accepted; ten missing or unsafe approaches rejected')
 `);
   assert.match(output,/ten missing or unsafe/);
+});
+
+test('an actual short mushroom impulse is retained without inventing a later hold or weakening velocity',()=>{
+  const output=run(String.raw`
+def frame(at,t,x,vy=0,phase='approach-1420',active=False):
+    return dict(at=at,time=t,phase=phase,runId=3,bodyIdentity=13,chapterIndex=5,mode='story',state='playing',form='body',deaths=0,
+        body=dict(x=x,y=560,w=30,vy=vy,grounded=vy==0),input=dict(x=1,y=0),
+        mushrooms=[dict(x=1450,y=560,w=115,boing=.75 if active else 0,cooldown=.6 if active else 0)])
+initial=frame(1000,10,1280)
+bounce=frame(1900,10.9,1452,-850,'await-bounce',True)
+after=frame(1950,10.95,1460,-782.5,'await-bounce',True)
+hold=dict(type='keydown',code='ArrowRight',pointerType=None,direction=None,isTrusted=True,
+          runId=3,bodyIdentity=13,phase='await-bounce',at=1850)
+evidence=dict(initial=initial,bounce=bounce,after=after,frames=[frame(1800,10.8,1440),bounce,after],
+              events=[hold],holdInput=hold,continuityFailure=None)
+result=validate_post_mushroom(evidence)
+assert result['actualTriggerStage']=='final right hold' and not result['observedBeforeFinalHoldInput']
+assert result['bounce']['body']['vy']<-800 and result['after']['body']['vy']>-800
+# The old protocol poll could arrive after the impulse's strict window. The
+# earlier actual RAF sample is evidence, not a reconstructed or lowered speed.
+early=copy.deepcopy(evidence);early['holdInput']=None;early['events']=[]
+early['bounce']['phase']='approach-1440'
+assert validate_post_mushroom(early)['actualTriggerStage']=='preceding approach movement'
+late_hold=copy.deepcopy(evidence);late_hold['holdInput']['at']=1920
+assert validate_post_mushroom(late_hold)['observedBeforeFinalHoldInput']
+touch=copy.deepcopy(evidence)
+touch['holdInput'].update(type='pointerdown',code=None,pointerType='touch',direction='right')
+assert not validate_post_mushroom(touch)['observedBeforeFinalHoldInput']
+def reject(change):
+    bad=copy.deepcopy(evidence);change(bad)
+    try:validate_post_mushroom(bad)
+    except AssertionError:pass
+    else:raise AssertionError('unproven mushroom impulse accepted')
+reject(lambda e:e.update(bounce=None))
+reject(lambda e:e['bounce']['body'].update(vy=-800))
+reject(lambda e:e['bounce']['body'].update(grounded=True))
+reject(lambda e:e['bounce']['mushrooms'][0].update(boing=0))
+reject(lambda e:e['bounce']['mushrooms'][0].update(cooldown=0))
+reject(lambda e:e['bounce']['mushrooms'][0].update(x=745))
+reject(lambda e:e['bounce'].update(bodyIdentity=14))
+reject(lambda e:e['bounce'].update(runId=4))
+reject(lambda e:e['bounce'].update(time=9))
+reject(lambda e:e['bounce'].update(at=900))
+reject(lambda e:e['initial']['body'].update(x=1451))
+reject(lambda e:e['frames'][0].update(deaths=1))
+reject(lambda e:e['frames'][0].update(form='soul'))
+reject(lambda e:e['frames'][0].update(time=11))
+reject(lambda e:e.update(continuityFailure={'bodyIdentity':14}))
+reject(lambda e:e.update(frames=[copy.deepcopy(initial)]*241))
+reject(lambda e:e.update(events=[copy.deepcopy(hold)]*33))
+reject(lambda e:e['holdInput'].update(isTrusted=False))
+reject(lambda e:e['holdInput'].update(code='Space'))
+reject(lambda e:e['holdInput'].update(at=2000))
+reject(lambda e:e['holdInput'].update(type='pointerdown',code=None,pointerType='mouse',direction='right'))
+print('actual impulse retained with exact before/after-input provenance; 21 misleading traces rejected')
+`);
+  assert.match(output,/21 misleading traces rejected/);
 });
 
 test('each legitimate full replay adds exactly one chapter run without changing other chapter results or choices',()=>{
