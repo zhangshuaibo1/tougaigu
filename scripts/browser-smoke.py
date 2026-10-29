@@ -954,7 +954,14 @@ async def finish_theatre_from_real_exit(page,output,label):
         assert counter==f'0{index} / 03'
         text=await page.locator('#story-dialog-text').inner_text()
         assert word in text and '借月剧场' in await page.locator('#story-chapter-label').inner_text()
-        pages.append({'page':counter,'text':text})
+        # The image must have decoded for the CURRENT speaker, not merely
+        # match the src attribute while pixels still belong to the old line.
+        expected=['portrait-moth.svg','portrait-hero-tender.svg','portrait-soul-peek.svg'][index-1]
+        await page.wait_for_function("""()=>{const p=document.querySelector('#story-portrait');return p?.complete&&p.naturalWidth>0&&!p.classList.contains('story-portrait-pending')&&p.closest('.story-portrait-wrap')?.dataset.portrait==='ready';}""",timeout=6500)
+        portrait=await page.locator('#story-portrait').evaluate("""p=>({source:p.getAttribute('src'),currentSrc:p.currentSrc,complete:p.complete,naturalWidth:p.naturalWidth,pending:p.classList.contains('story-portrait-pending')})""")
+        assert expected in portrait['source'] and expected in portrait['currentSrc'] and portrait['naturalWidth']>0, f'wrong decoded portrait on page {index}: {portrait}'
+        pages.append({'page':counter,'text':text,'portrait':portrait})
+        await page.screenshot(path=str(Path(output)/(label+f'-theatre-outro-{index}-decoded.png')),full_page=True)
         if index==3:
             assert '收好这封信' in await page.locator('#story-next').inner_text()
             await page.screenshot(path=str(Path(output)/(label+'-theatre-outro.png')),full_page=True)
@@ -996,6 +1003,13 @@ async def exercise_theatre(page,output,label):
     assert await chapter.is_enabled(), 'real greenhouse completion did not unlock the theatre'
     await chapter.click()
     await assert_theatre_paint(page)
+    assert '绒绒' in await page.locator('#stage-near-hint').inner_text()
+    await page.screenshot(path=str(Path(output)/(label+'-theatre-rongrong-body.png')),full_page=True)
+    await toggle(page,False)
+    await page.wait_for_function("()=>{const a=window.__qaRead();return a?.form==='soul'&&a.capPhase==='open'&&a.chapterIndex===2;}")
+    await page.screenshot(path=str(Path(output)/(label+'-theatre-rongrong-invite.png')),full_page=True)
+    await toggle(page,False)
+    await page.wait_for_function("()=>window.__qaRead()?.form==='body'")
     first=await verify_first_theatre_lamp(page,output,label+'-keyboard')
     desktop=await cross_theatre_stage(page,output,label+'-keyboard',expected_lamps=[True,False])
     second=await verify_theatre_lamp(page,output,label+'-keyboard')
@@ -1015,6 +1029,12 @@ async def exercise_theatre(page,output,label):
             await tap_control(page,'#stage-restart')
             await page.locator('#pause-dialog[open]').wait_for(state='hidden')
             await page.wait_for_function("()=>{const p=window.__qaRead()?.theatrePaint;return p?.lampLit?.every(l=>!l)&&p.lightAmounts.every(l=>l===0);}")
+            await page.screenshot(path=str(Path(output)/(label+f'-theatre-rongrong-{width}-body.png')),full_page=True)
+            await toggle(page,True)
+            await page.wait_for_function("()=>window.__qaRead()?.form==='soul'&&window.__qaRead()?.capPhase==='open'")
+            await page.screenshot(path=str(Path(output)/(label+f'-theatre-rongrong-{width}-invite.png')),full_page=True)
+            await toggle(page,True)
+            await page.wait_for_function("()=>window.__qaRead()?.form==='body'")
             touch_results[str(width)]=await cross_theatre_stage(page,output,label+f'-touch-{width}',touch=True)
             assert await page.evaluate('document.documentElement.scrollWidth<=innerWidth'), 'phone HUD overflow'
     finally:
