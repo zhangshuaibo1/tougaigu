@@ -146,7 +146,7 @@ test('the first story chapter requests its painting once, independently of the g
 test('a ready first-chapter image cannot alter the final chapter or ten festival draw sequences', async () => {
   const h = makeGame(() => image), base = makeGame(undefined, BaseGame);
   h.game.start({ sound: false }); await h.game.paintedScenes.request(station); render(h);
-  for (const options of otherScenes.filter(options => options.chapterIndex !== 4)) {
+  for (const options of otherScenes.filter(options => options.chapterIndex !== 4 && options.chapterIndex !== 5)) {
     h.game.start({ sound: false, ...options }); base.game.start({ sound: false, ...options });
     assert.deepEqual(render(h), render(base));
     assert.equal(h.game.paintedFrame, false); assert.equal(h.game.getPaintedStationImage(), null);

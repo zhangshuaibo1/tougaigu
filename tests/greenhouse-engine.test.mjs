@@ -123,7 +123,7 @@ test('painted greenhouse pause and reduced motion share existing simulation time
 
 test('the final story chapter and all festivals retain the exact prior renderer after both paintings were cached',async()=>{
   const a=fixture(()=>image),b=fixture(undefined,BaseGame);a.game.start({sound:false});await a.game.paintedScenes.request(station);a.game.start({chapterIndex:1,sound:false});await a.game.greenhouseScenes.request(greenhouse);
-  const scenes=[5].map(chapterIndex=>({chapterIndex})).concat(FESTIVAL_LEVELS.map(level=>({festival:getFestival(level.festivalId)})));
+  const scenes=FESTIVAL_LEVELS.map(level=>({festival:getFestival(level.festivalId)})); // Sixth chapter has new art; festivals retain their renderer.
   for(const options of scenes){a.game.start({sound:false,...options});b.game.start({sound:false,...options});assert.deepEqual(render(a),render(b));assert.equal(a.game.getPaintedGreenhouseImage(),null);assert.equal(a.game.greenhousePaintedFrame,false);}
   a.game.destroy();b.game.destroy();
 });

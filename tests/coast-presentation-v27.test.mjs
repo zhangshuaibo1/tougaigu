@@ -177,7 +177,7 @@ test('the coast watch and both wrists follow every actual opening and returning 
     }
   }
   assert.deepEqual(grips(render(4,1,'soul',false,false)),grips(render(4,0,'body')),'A far-away open cap must not raise the watch');
-  for(const chapter of [1,5]){
+  for(const chapter of [1]){ // Sixth chapter keeper receives a new continuous letter pose.
     assert.deepEqual(render(chapter,.25,'soul'),render(chapter,1,'soul'),'Other keepers retain their existing fully raised open pose');
     assert.deepEqual(render(chapter,.5,'body'),render(chapter,0,'body'),'The coast return interpolation must not affect other chapters');
   }
