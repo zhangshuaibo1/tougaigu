@@ -1,0 +1,828 @@
+{
+  "status": "complete",
+  "ending": "dawn",
+  "layoutSamples": [
+    {
+      "open": true,
+      "ending": "dawn",
+      "sceneId": "dawn",
+      "savedChoices": {
+        "letter": "send",
+        "clock": "release"
+      },
+      "sceneChoice": {
+        "ending": "dawn",
+        "letter": "send",
+        "clock": "release"
+      },
+      "choiceLabels": {
+        "letter": "信已寄出",
+        "clock": "钟声向前",
+        "sky": "晨光正升起"
+      },
+      "art": {
+        "sun": 1,
+        "lamps": 0,
+        "emptyChair": 0,
+        "slot": 1,
+        "train": 1,
+        "bench": 0,
+        "blankPage": 0,
+        "whale": 0,
+        "ashi": 1,
+        "shiguang": 1
+      },
+      "sceneCount": 1,
+      "sceneSvgCount": 1,
+      "sceneLabel": "一起向前 · 日出的第一封信",
+      "sceneRect": {
+        "left": 33,
+        "right": 287,
+        "top": 31,
+        "bottom": 233.078125,
+        "width": 254,
+        "height": 202.078125
+      },
+      "title": "天亮了。你也还在。",
+      "eyebrow": "ENDING 01 · 一起向前",
+      "paragraphs": [
+        {
+          "text": "第一班列车带来晨风。归先生捧着茶走下楼梯，终于赶上答应小满的日出。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 330.265625,
+            "bottom": 384.859375,
+            "width": 254,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "text": "阿拾轻扣头盖骨。小火车载着嫩芽、纸月亮和小鲸，绕那轮太阳开了整整一圈。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 397.859375,
+            "bottom": 452.453125,
+            "width": 254,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "text": "拾光把“未完待续”挂在脑内剧场门口。阿拾收好小满的信，又接过一封新的。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 465.453125,
+            "bottom": 520.046875,
+            "width": 254,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        }
+      ],
+      "lastLine": "头盖骨不再锁住明天。下一封信，出发。",
+      "collection": "你已收好 3 / 3 种天色",
+      "collectionFont": 11,
+      "home": {
+        "rect": {
+          "left": 33,
+          "right": 287,
+          "top": 609.1875,
+          "bottom": 657.1875,
+          "width": 254,
+          "height": 48
+        },
+        "fullyVisible": true,
+        "centerHits": true
+      },
+      "note": {
+        "text": "你可以重访章节、收集遗漏残页，或在记忆信箱里写下不同的回信。",
+        "rect": {
+          "left": 33,
+          "right": 287,
+          "top": 674.1875,
+          "bottom": 713.78125,
+          "width": 254,
+          "height": 39.59375
+        },
+        "fullyVisible": false,
+        "fontSize": 11,
+        "lineHeight": 19.8,
+        "scrollWidth": 254,
+        "clientWidth": 254
+      },
+      "dialog": {
+        "left": 17,
+        "right": 303,
+        "top": 12,
+        "bottom": 668,
+        "width": 286,
+        "height": 656
+      },
+      "scrollTop": 0,
+      "scrollHeight": 723,
+      "clientHeight": 654,
+      "padding": {
+        "top": 18,
+        "right": 15,
+        "bottom": 22,
+        "left": 15
+      },
+      "scrollWidth": 284,
+      "clientWidth": 284,
+      "overflowY": "auto",
+      "pageWidth": 320,
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "reducedMotion": "false",
+      "mediaReduced": false,
+      "activeAnimations": []
+    },
+    {
+      "open": true,
+      "ending": "dawn",
+      "sceneId": "dawn",
+      "savedChoices": {
+        "letter": "send",
+        "clock": "release"
+      },
+      "sceneChoice": {
+        "ending": "dawn",
+        "letter": "send",
+        "clock": "release"
+      },
+      "choiceLabels": {
+        "letter": "信已寄出",
+        "clock": "钟声向前",
+        "sky": "晨光正升起"
+      },
+      "art": {
+        "sun": 1,
+        "lamps": 0,
+        "emptyChair": 0,
+        "slot": 1,
+        "train": 1,
+        "bench": 0,
+        "blankPage": 0,
+        "whale": 0,
+        "ashi": 1,
+        "shiguang": 1
+      },
+      "sceneCount": 1,
+      "sceneSvgCount": 1,
+      "sceneLabel": "一起向前 · 日出的第一封信",
+      "sceneRect": {
+        "left": 33,
+        "right": 287,
+        "top": -38,
+        "bottom": 164.078125,
+        "width": 254,
+        "height": 202.078125
+      },
+      "title": "天亮了。你也还在。",
+      "eyebrow": "ENDING 01 · 一起向前",
+      "paragraphs": [
+        {
+          "text": "第一班列车带来晨风。归先生捧着茶走下楼梯，终于赶上答应小满的日出。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 261.265625,
+            "bottom": 315.859375,
+            "width": 254,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "text": "阿拾轻扣头盖骨。小火车载着嫩芽、纸月亮和小鲸，绕那轮太阳开了整整一圈。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 328.859375,
+            "bottom": 383.453125,
+            "width": 254,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "text": "拾光把“未完待续”挂在脑内剧场门口。阿拾收好小满的信，又接过一封新的。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 396.453125,
+            "bottom": 451.046875,
+            "width": 254,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        }
+      ],
+      "lastLine": "头盖骨不再锁住明天。下一封信，出发。",
+      "collection": "你已收好 3 / 3 种天色",
+      "collectionFont": 11,
+      "home": {
+        "rect": {
+          "left": 33,
+          "right": 287,
+          "top": 540.1875,
+          "bottom": 588.1875,
+          "width": 254,
+          "height": 48
+        },
+        "fullyVisible": true,
+        "centerHits": true
+      },
+      "note": {
+        "text": "你可以重访章节、收集遗漏残页，或在记忆信箱里写下不同的回信。",
+        "rect": {
+          "left": 33,
+          "right": 287,
+          "top": 605.1875,
+          "bottom": 644.78125,
+          "width": 254,
+          "height": 39.59375
+        },
+        "fullyVisible": true,
+        "fontSize": 11,
+        "lineHeight": 19.8,
+        "scrollWidth": 254,
+        "clientWidth": 254
+      },
+      "dialog": {
+        "left": 17,
+        "right": 303,
+        "top": 12,
+        "bottom": 668,
+        "width": 286,
+        "height": 656
+      },
+      "scrollTop": 69,
+      "scrollHeight": 723,
+      "clientHeight": 654,
+      "padding": {
+        "top": 18,
+        "right": 15,
+        "bottom": 22,
+        "left": 15
+      },
+      "scrollWidth": 284,
+      "clientWidth": 284,
+      "overflowY": "auto",
+      "pageWidth": 320,
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "reducedMotion": "false",
+      "mediaReduced": false,
+      "activeAnimations": []
+    }
+  ],
+  "gestureAttempts": [
+    {
+      "index": 1,
+      "status": "complete",
+      "dispatches": [
+        {
+          "type": "touchStart",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 510.56,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.006589863000044716
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 492.52,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.05199533700010761
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 474.48,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.13419943100007004
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 456.44,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.18978691800009528
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 438.4,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.2571940220000215
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 420.36,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.3236434380000901
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 402.32,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.3897372510000423
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 384.28,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.45636341400006586
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 366.24,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.5229790530000855
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 348.2,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.5897285900000497
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 330.15999999999997,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.6564915700000711
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 312.12,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.7242763060000925
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 294.08,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.7905566090000775
+        },
+        {
+          "type": "touchEnd",
+          "touchPoints": [],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.8568960060000563
+        }
+      ],
+      "plannedMoveSteps": 12,
+      "inputSource": "Chromium CDP simulated touch; acknowledgements are not a native event trace",
+      "cleanup": {
+        "sessionCreated": true,
+        "touchEndAttempted": true,
+        "touchEndAcknowledged": true,
+        "detachAttempted": true,
+        "sessionDetached": true
+      },
+      "beforeView": {
+        "open": true,
+        "ending": "dawn",
+        "sceneId": "dawn",
+        "savedChoices": {
+          "letter": "send",
+          "clock": "release"
+        },
+        "sceneChoice": {
+          "ending": "dawn",
+          "letter": "send",
+          "clock": "release"
+        },
+        "choiceLabels": {
+          "letter": "信已寄出",
+          "clock": "钟声向前",
+          "sky": "晨光正升起"
+        },
+        "art": {
+          "sun": 1,
+          "lamps": 0,
+          "emptyChair": 0,
+          "slot": 1,
+          "train": 1,
+          "bench": 0,
+          "blankPage": 0,
+          "whale": 0,
+          "ashi": 1,
+          "shiguang": 1
+        },
+        "sceneCount": 1,
+        "sceneSvgCount": 1,
+        "sceneLabel": "一起向前 · 日出的第一封信",
+        "sceneRect": {
+          "left": 33,
+          "right": 287,
+          "top": 31,
+          "bottom": 233.078125,
+          "width": 254,
+          "height": 202.078125
+        },
+        "title": "天亮了。你也还在。",
+        "eyebrow": "ENDING 01 · 一起向前",
+        "paragraphs": [
+          {
+            "text": "第一班列车带来晨风。归先生捧着茶走下楼梯，终于赶上答应小满的日出。",
+            "rect": {
+              "left": 33,
+              "right": 287,
+              "top": 330.265625,
+              "bottom": 384.859375,
+              "width": 254,
+              "height": 54.59375
+            },
+            "fontSize": 14,
+            "lineHeight": 27.3,
+            "fullyVisible": true,
+            "scrollWidth": 254,
+            "clientWidth": 254
+          },
+          {
+            "text": "阿拾轻扣头盖骨。小火车载着嫩芽、纸月亮和小鲸，绕那轮太阳开了整整一圈。",
+            "rect": {
+              "left": 33,
+              "right": 287,
+              "top": 397.859375,
+              "bottom": 452.453125,
+              "width": 254,
+              "height": 54.59375
+            },
+            "fontSize": 14,
+            "lineHeight": 27.3,
+            "fullyVisible": true,
+            "scrollWidth": 254,
+            "clientWidth": 254
+          },
+          {
+            "text": "拾光把“未完待续”挂在脑内剧场门口。阿拾收好小满的信，又接过一封新的。",
+            "rect": {
+              "left": 33,
+              "right": 287,
+              "top": 465.453125,
+              "bottom": 520.046875,
+              "width": 254,
+              "height": 54.59375
+            },
+            "fontSize": 14,
+            "lineHeight": 27.3,
+            "fullyVisible": true,
+            "scrollWidth": 254,
+            "clientWidth": 254
+          }
+        ],
+        "lastLine": "头盖骨不再锁住明天。下一封信，出发。",
+        "collection": "你已收好 3 / 3 种天色",
+        "collectionFont": 11,
+        "home": {
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 609.1875,
+            "bottom": 657.1875,
+            "width": 254,
+            "height": 48
+          },
+          "fullyVisible": true,
+          "centerHits": true
+        },
+        "note": {
+          "text": "你可以重访章节、收集遗漏残页，或在记忆信箱里写下不同的回信。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 674.1875,
+            "bottom": 713.78125,
+            "width": 254,
+            "height": 39.59375
+          },
+          "fullyVisible": false,
+          "fontSize": 11,
+          "lineHeight": 19.8,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        "dialog": {
+          "left": 17,
+          "right": 303,
+          "top": 12,
+          "bottom": 668,
+          "width": 286,
+          "height": 656
+        },
+        "scrollTop": 0,
+        "scrollHeight": 723,
+        "clientHeight": 654,
+        "padding": {
+          "top": 18,
+          "right": 15,
+          "bottom": 22,
+          "left": 15
+        },
+        "scrollWidth": 284,
+        "clientWidth": 284,
+        "overflowY": "auto",
+        "pageWidth": 320,
+        "viewport": {
+          "width": 320,
+          "height": 680
+        },
+        "reducedMotion": "false",
+        "mediaReduced": false,
+        "activeAnimations": []
+      },
+      "gesture": {
+        "x": 281,
+        "startY": 510.56,
+        "endY": 294.08,
+        "touchId": 49
+      },
+      "elapsedWallSeconds": 1.0101269860000457,
+      "afterView": {
+        "open": true,
+        "ending": "dawn",
+        "sceneId": "dawn",
+        "savedChoices": {
+          "letter": "send",
+          "clock": "release"
+        },
+        "sceneChoice": {
+          "ending": "dawn",
+          "letter": "send",
+          "clock": "release"
+        },
+        "choiceLabels": {
+          "letter": "信已寄出",
+          "clock": "钟声向前",
+          "sky": "晨光正升起"
+        },
+        "art": {
+          "sun": 1,
+          "lamps": 0,
+          "emptyChair": 0,
+          "slot": 1,
+          "train": 1,
+          "bench": 0,
+          "blankPage": 0,
+          "whale": 0,
+          "ashi": 1,
+          "shiguang": 1
+        },
+        "sceneCount": 1,
+        "sceneSvgCount": 1,
+        "sceneLabel": "一起向前 · 日出的第一封信",
+        "sceneRect": {
+          "left": 33,
+          "right": 287,
+          "top": -38,
+          "bottom": 164.078125,
+          "width": 254,
+          "height": 202.078125
+        },
+        "title": "天亮了。你也还在。",
+        "eyebrow": "ENDING 01 · 一起向前",
+        "paragraphs": [
+          {
+            "text": "第一班列车带来晨风。归先生捧着茶走下楼梯，终于赶上答应小满的日出。",
+            "rect": {
+              "left": 33,
+              "right": 287,
+              "top": 261.265625,
+              "bottom": 315.859375,
+              "width": 254,
+              "height": 54.59375
+            },
+            "fontSize": 14,
+            "lineHeight": 27.3,
+            "fullyVisible": true,
+            "scrollWidth": 254,
+            "clientWidth": 254
+          },
+          {
+            "text": "阿拾轻扣头盖骨。小火车载着嫩芽、纸月亮和小鲸，绕那轮太阳开了整整一圈。",
+            "rect": {
+              "left": 33,
+              "right": 287,
+              "top": 328.859375,
+              "bottom": 383.453125,
+              "width": 254,
+              "height": 54.59375
+            },
+            "fontSize": 14,
+            "lineHeight": 27.3,
+            "fullyVisible": true,
+            "scrollWidth": 254,
+            "clientWidth": 254
+          },
+          {
+            "text": "拾光把“未完待续”挂在脑内剧场门口。阿拾收好小满的信，又接过一封新的。",
+            "rect": {
+              "left": 33,
+              "right": 287,
+              "top": 396.453125,
+              "bottom": 451.046875,
+              "width": 254,
+              "height": 54.59375
+            },
+            "fontSize": 14,
+            "lineHeight": 27.3,
+            "fullyVisible": true,
+            "scrollWidth": 254,
+            "clientWidth": 254
+          }
+        ],
+        "lastLine": "头盖骨不再锁住明天。下一封信，出发。",
+        "collection": "你已收好 3 / 3 种天色",
+        "collectionFont": 11,
+        "home": {
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 540.1875,
+            "bottom": 588.1875,
+            "width": 254,
+            "height": 48
+          },
+          "fullyVisible": true,
+          "centerHits": true
+        },
+        "note": {
+          "text": "你可以重访章节、收集遗漏残页，或在记忆信箱里写下不同的回信。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 605.1875,
+            "bottom": 644.78125,
+            "width": 254,
+            "height": 39.59375
+          },
+          "fullyVisible": true,
+          "fontSize": 11,
+          "lineHeight": 19.8,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        "dialog": {
+          "left": 17,
+          "right": 303,
+          "top": 12,
+          "bottom": 668,
+          "width": 286,
+          "height": 656
+        },
+        "scrollTop": 69,
+        "scrollHeight": 723,
+        "clientHeight": 654,
+        "padding": {
+          "top": 18,
+          "right": 15,
+          "bottom": 22,
+          "left": 15
+        },
+        "scrollWidth": 284,
+        "clientWidth": 284,
+        "overflowY": "auto",
+        "pageWidth": 320,
+        "viewport": {
+          "width": 320,
+          "height": 680
+        },
+        "reducedMotion": "false",
+        "mediaReduced": false,
+        "activeAnimations": []
+      }
+    }
+  ],
+  "maxGestureAttempts": 9,
+  "scope": "actual dialog measurements and bounded CDP touch attempts; not a physical phone",
+  "initialOverflowPixels": 69,
+  "requiresActualScroll": true,
+  "gestureAttemptCount": 1,
+  "inputCleanup": {
+    "gestureSessionsCreated": 1,
+    "gestureSessionsDetached": 1,
+    "touchEndAcknowledged": 1,
+    "allCreatedGestureSessionsDetached": true,
+    "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+  },
+  "reading": {
+    "fullyReadParagraphs": [
+      0,
+      1,
+      2
+    ],
+    "homeFullyVisibleAndUncovered": true,
+    "finalNoteFullyVisible": true,
+    "scrollSamples": 2,
+    "maxScrollTop": 69,
+    "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+  }
+}

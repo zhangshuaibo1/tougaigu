@@ -1,0 +1,1869 @@
+{
+  "schemaVersion": 1,
+  "scope": "candidate-only; public HTTPS verification pending and not represented in this archive",
+  "candidateCommit": "9f372f3910a6141ddb4e5c6a5707438f7c8607d0",
+  "workflow": {
+    "runId": 40924856127,
+    "jobId": 123627511600,
+    "conclusion": "success",
+    "publicStep": "skipped"
+  },
+  "officialArtifactZip": {
+    "id": 12921870111,
+    "bytes": 181040692,
+    "sha256": "5c262973a206c158038527f52aacf5174468bfc0237281dfd9b3933af77a4949"
+  },
+  "originalAudit": {
+    "path": "/tmp/tougaigu-v29-sixth-candidate/artifact-audit.json",
+    "bytes": 1986218,
+    "sha256": "f2381a0fe9f1846822f2c39d2a1d0a241b1673021b0df0b8638ebf5de481626b"
+  },
+  "sourceFilesCount": 697,
+  "zipFilesCount": 213,
+  "tests": {
+    "tests": 648,
+    "pass": 648,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0
+  },
+  "fullReport": {
+    "repositoryPath": "docs/verification-v29-candidate-full.json",
+    "source": {
+      "artifactMember": "candidate/report.json",
+      "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/report.json",
+      "bytes": 4042345,
+      "sha256": "a0fa9913f9b7cd1bf2c683b2088bae1a821e273fadc96449e4f674fabe2b514c",
+      "byteIdentical": true
+    }
+  },
+  "compactAudit": {
+    "repositoryPath": "docs/verification-v29-candidate-audit.json",
+    "path": "/tmp/v29-candidate-archive-staging/docs/verification-v29-candidate-audit.json",
+    "bytes": 155389,
+    "sha256": "62773c528240d35ea79fa09d331832a1004df44f996701299b684424c3819acf"
+  },
+  "immediateJsonArchive": {
+    "repositoryPath": "docs/v29-sixth-candidate/immediate-json-lossless.zip",
+    "path": "/tmp/v29-candidate-archive-staging/docs/v29-sixth-candidate/immediate-json-lossless.zip",
+    "bytes": 162769,
+    "sha256": "6a3f94c1508d48962f28d9558a2a15cf8ee753544674844abb619e4b82899cdb",
+    "memberCount": 26,
+    "uncompressedBytes": 2689145,
+    "members": [
+      {
+        "member": "candidate/1280-ending-dawn-320-case.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-dawn-320-case.json",
+        "bytes": 23619,
+        "sha256": "d48b78bd9ee57746ec55406110af96e3b3b2e20c872a8bba6e4f2248744cfea4"
+      },
+      {
+        "member": "candidate/1280-ending-dawn-320-reading.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-dawn-320-reading.json",
+        "bytes": 21960,
+        "sha256": "97fb3c971a4401617e83b5956f3c453497055a2e1c22c0a6ad8fc73e4582eb1b"
+      },
+      {
+        "member": "candidate/1280-ending-dawn-390-case.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-dawn-390-case.json",
+        "bytes": 6564,
+        "sha256": "ecb806a0644c8f5bb6f5cebf26a97d1cfa9b21bcd1f201afecd1c4adc325a16b"
+      },
+      {
+        "member": "candidate/1280-ending-dawn-390-reading.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-dawn-390-reading.json",
+        "bytes": 4905,
+        "sha256": "2896682e1922923d958ec891d89f6030c45a02ef5610ba9f77d54f16de28608c"
+      },
+      {
+        "member": "candidate/1280-ending-keep-hold.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-keep-hold.json",
+        "bytes": 9806,
+        "sha256": "0a652dd933a207ab5e646015cf1adbf89d95bd7bda8c901a4f2a07679c09b0b1"
+      },
+      {
+        "member": "candidate/1280-ending-keep-release.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-keep-release.json",
+        "bytes": 9761,
+        "sha256": "5de2b8690e2aead9676c2d46bc1dfc8b86256f595d031a4005f85dfb5ab23420"
+      },
+      {
+        "member": "candidate/1280-ending-lanterns-320-case.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-lanterns-320-case.json",
+        "bytes": 23749,
+        "sha256": "2252d9eb607f2516bb8e28014e4f0a315972890747ed16db58e2dcf6abdcfb00"
+      },
+      {
+        "member": "candidate/1280-ending-lanterns-320-reading.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-lanterns-320-reading.json",
+        "bytes": 22084,
+        "sha256": "9748303afcab660c58d758df40c32cc6a0f9d5a3cccb143afc462b3f451050f0"
+      },
+      {
+        "member": "candidate/1280-ending-lanterns-390-case.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-lanterns-390-case.json",
+        "bytes": 6609,
+        "sha256": "d82bed31a76b34bfd7c384e1aa2e9ee0c51fc595286c0d21a2da31fa4bc85df4"
+      },
+      {
+        "member": "candidate/1280-ending-lanterns-390-reading.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-lanterns-390-reading.json",
+        "bytes": 4943,
+        "sha256": "586f10e01f510bd09cbd25d3798bcc2638072553ce627dd89b7df3d2cd8b5590"
+      },
+      {
+        "member": "candidate/1280-ending-send-hold.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-send-hold.json",
+        "bytes": 9749,
+        "sha256": "f5e7bb6edc724fe5ad90211b4e2d400d7074110bfb202aba65433d5b9b9d85d8"
+      },
+      {
+        "member": "candidate/1280-ending-send-release.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-send-release.json",
+        "bytes": 9718,
+        "sha256": "e524c40b3cb6873fa3b1497cc10eac74109af731e7b52df6849bbd7ac5377889"
+      },
+      {
+        "member": "candidate/1280-ending-tender-320-case.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-tender-320-case.json",
+        "bytes": 23645,
+        "sha256": "e3835d80ce4d2752adc721b7dd8b8e3a23771897f64f27e616d7f2995fe1b546"
+      },
+      {
+        "member": "candidate/1280-ending-tender-320-reading.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-tender-320-reading.json",
+        "bytes": 21982,
+        "sha256": "75462f479480ebada23056f03ddba6b64852a5000231b5231afa0b4836c6077f"
+      },
+      {
+        "member": "candidate/1280-ending-tender-390-case.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-tender-390-case.json",
+        "bytes": 6574,
+        "sha256": "a17cda1b4904847bb474225750583a9b8f2eb23455360c8eb290ca997c3d8e62"
+      },
+      {
+        "member": "candidate/1280-ending-tender-390-reading.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-tender-390-reading.json",
+        "bytes": 4910,
+        "sha256": "898bc45886e04fc3a8acf485ef7e50f6fdd103ca9e974df6e3185c9bd4849a44"
+      },
+      {
+        "member": "candidate/1280-full-fallback-post-mushroom-crossing.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-full-fallback-post-mushroom-crossing.json",
+        "bytes": 122215,
+        "sha256": "479a94a1b21c99967699a0ac7cba2db5e57f84be63ba758e6d87e055c36ca432"
+      },
+      {
+        "member": "candidate/1280-full-fallback-post-route.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-full-fallback-post-route.json",
+        "bytes": 269776,
+        "sha256": "b9442192a01d5d0268be83bc23a305fd0f1e7f34e4c1e0ae4e951484ee7cdf56"
+      },
+      {
+        "member": "candidate/1280-full-touch-320-post-mushroom-crossing.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-full-touch-320-post-mushroom-crossing.json",
+        "bytes": 131734,
+        "sha256": "ec5912d34c9856aab23cedcad1c0b37ce4f46d9663c99ddef94c3067f89a640e"
+      },
+      {
+        "member": "candidate/1280-full-touch-320-post-route.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-full-touch-320-post-route.json",
+        "bytes": 330905,
+        "sha256": "99b549d253dbc69a947270a68bf53b748ded5b2d5c61129d94bf5bf7cb2265d6"
+      },
+      {
+        "member": "candidate/1280-full-touch-390-post-mushroom-crossing.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-full-touch-390-post-mushroom-crossing.json",
+        "bytes": 130905,
+        "sha256": "cfc1e691e527924231241aa33382ea805845c3e7e22becbe452666d1a1d3d6f4"
+      },
+      {
+        "member": "candidate/1280-full-touch-390-post-route.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-full-touch-390-post-route.json",
+        "bytes": 328315,
+        "sha256": "2aba0a4abb25328c775a012a95d15c16764968b851c70557392c6d526148bbde"
+      },
+      {
+        "member": "candidate/1280-post-full-touch-320.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-post-full-touch-320.json",
+        "bytes": 368744,
+        "sha256": "53a7eb27eade2a0bf745896b7a61f26951f121000f3e2ccbeed59b7bf900bd19"
+      },
+      {
+        "member": "candidate/1280-post-full-touch-390.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-post-full-touch-390.json",
+        "bytes": 365928,
+        "sha256": "37ceaf1269b7c4864da0e144a04a5cdd570495ea5b5f8778e25df613da49b9be"
+      },
+      {
+        "member": "candidate/1280-post-mushroom-crossing.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-post-mushroom-crossing.json",
+        "bytes": 127459,
+        "sha256": "1133b1251c315c56b6da79985903c29ede3d95a0be81b553d55265961774e077"
+      },
+      {
+        "member": "candidate/1280-post-route.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-post-route.json",
+        "bytes": 302586,
+        "sha256": "c95b37af4031fa379651f7fa94f5a9fc3a0f3476ae4f270e12ade55c4249ac87"
+      }
+    ],
+    "readbackByteIdentical": true,
+    "format": "ZIP_DEFLATED level 9; stable sorted members; fixed 1980-01-01 timestamps; original member bytes"
+  },
+  "readingChecks": [
+    {
+      "width": 390,
+      "ending": "dawn",
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-dawn-390-reading.json",
+        "bytes": 4905,
+        "sha256": "2896682e1922923d958ec891d89f6030c45a02ef5610ba9f77d54f16de28608c"
+      },
+      "caseSource": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-dawn-390-case.json",
+        "bytes": 6564,
+        "sha256": "ecb806a0644c8f5bb6f5cebf26a97d1cfa9b21bcd1f201afecd1c4adc325a16b"
+      },
+      "fullReportObject": "cases[0].endings.phoneReadings.390[0]",
+      "objectsComparedExactly": [
+        "layoutSamples",
+        "reading",
+        "gestureAttempts",
+        "inputCleanup"
+      ],
+      "allObjectsEqual": true,
+      "entireImmediateCaseEqualsFullReportObject": true,
+      "scrollHeight": 758,
+      "clientHeight": 758,
+      "initialScrollTop": 0,
+      "finalScrollTop": 0,
+      "gestureAttempts": 0,
+      "maxGestureAttempts": 9,
+      "reading": {
+        "fullyReadParagraphs": [
+          0,
+          1,
+          2
+        ],
+        "homeFullyVisibleAndUncovered": true,
+        "finalNoteFullyVisible": true,
+        "scrollSamples": 1,
+        "maxScrollTop": 0,
+        "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+      },
+      "inputCleanup": {
+        "gestureSessionsCreated": 0,
+        "gestureSessionsDetached": 0,
+        "touchEndAcknowledged": 0,
+        "allCreatedGestureSessionsDetached": true,
+        "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+      },
+      "evidenceType": "CDP touch command acknowledgements plus actual DOM scroll/rectangle measurements; not a native pointer event trace"
+    },
+    {
+      "width": 390,
+      "ending": "lanterns",
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-lanterns-390-reading.json",
+        "bytes": 4943,
+        "sha256": "586f10e01f510bd09cbd25d3798bcc2638072553ce627dd89b7df3d2cd8b5590"
+      },
+      "caseSource": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-lanterns-390-case.json",
+        "bytes": 6609,
+        "sha256": "d82bed31a76b34bfd7c384e1aa2e9ee0c51fc595286c0d21a2da31fa4bc85df4"
+      },
+      "fullReportObject": "cases[0].endings.phoneReadings.390[1]",
+      "objectsComparedExactly": [
+        "layoutSamples",
+        "reading",
+        "gestureAttempts",
+        "inputCleanup"
+      ],
+      "allObjectsEqual": true,
+      "entireImmediateCaseEqualsFullReportObject": true,
+      "scrollHeight": 792,
+      "clientHeight": 792,
+      "initialScrollTop": 0,
+      "finalScrollTop": 0,
+      "gestureAttempts": 0,
+      "maxGestureAttempts": 9,
+      "reading": {
+        "fullyReadParagraphs": [
+          0,
+          1,
+          2
+        ],
+        "homeFullyVisibleAndUncovered": true,
+        "finalNoteFullyVisible": true,
+        "scrollSamples": 1,
+        "maxScrollTop": 0,
+        "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+      },
+      "inputCleanup": {
+        "gestureSessionsCreated": 0,
+        "gestureSessionsDetached": 0,
+        "touchEndAcknowledged": 0,
+        "allCreatedGestureSessionsDetached": true,
+        "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+      },
+      "evidenceType": "CDP touch command acknowledgements plus actual DOM scroll/rectangle measurements; not a native pointer event trace"
+    },
+    {
+      "width": 390,
+      "ending": "tender",
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-tender-390-reading.json",
+        "bytes": 4910,
+        "sha256": "898bc45886e04fc3a8acf485ef7e50f6fdd103ca9e974df6e3185c9bd4849a44"
+      },
+      "caseSource": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-tender-390-case.json",
+        "bytes": 6574,
+        "sha256": "a17cda1b4904847bb474225750583a9b8f2eb23455360c8eb290ca997c3d8e62"
+      },
+      "fullReportObject": "cases[0].endings.phoneReadings.390[2]",
+      "objectsComparedExactly": [
+        "layoutSamples",
+        "reading",
+        "gestureAttempts",
+        "inputCleanup"
+      ],
+      "allObjectsEqual": true,
+      "entireImmediateCaseEqualsFullReportObject": true,
+      "scrollHeight": 758,
+      "clientHeight": 758,
+      "initialScrollTop": 0,
+      "finalScrollTop": 0,
+      "gestureAttempts": 0,
+      "maxGestureAttempts": 9,
+      "reading": {
+        "fullyReadParagraphs": [
+          0,
+          1,
+          2
+        ],
+        "homeFullyVisibleAndUncovered": true,
+        "finalNoteFullyVisible": true,
+        "scrollSamples": 1,
+        "maxScrollTop": 0,
+        "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+      },
+      "inputCleanup": {
+        "gestureSessionsCreated": 0,
+        "gestureSessionsDetached": 0,
+        "touchEndAcknowledged": 0,
+        "allCreatedGestureSessionsDetached": true,
+        "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+      },
+      "evidenceType": "CDP touch command acknowledgements plus actual DOM scroll/rectangle measurements; not a native pointer event trace"
+    },
+    {
+      "width": 320,
+      "ending": "dawn",
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-dawn-320-reading.json",
+        "bytes": 21960,
+        "sha256": "97fb3c971a4401617e83b5956f3c453497055a2e1c22c0a6ad8fc73e4582eb1b"
+      },
+      "caseSource": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-dawn-320-case.json",
+        "bytes": 23619,
+        "sha256": "d48b78bd9ee57746ec55406110af96e3b3b2e20c872a8bba6e4f2248744cfea4"
+      },
+      "fullReportObject": "cases[0].endings.phoneReadings.320[0]",
+      "objectsComparedExactly": [
+        "layoutSamples",
+        "reading",
+        "gestureAttempts",
+        "inputCleanup"
+      ],
+      "allObjectsEqual": true,
+      "entireImmediateCaseEqualsFullReportObject": true,
+      "scrollHeight": 723,
+      "clientHeight": 654,
+      "initialScrollTop": 0,
+      "finalScrollTop": 69,
+      "gestureAttempts": 1,
+      "maxGestureAttempts": 9,
+      "reading": {
+        "fullyReadParagraphs": [
+          0,
+          1,
+          2
+        ],
+        "homeFullyVisibleAndUncovered": true,
+        "finalNoteFullyVisible": true,
+        "scrollSamples": 2,
+        "maxScrollTop": 69,
+        "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+      },
+      "inputCleanup": {
+        "gestureSessionsCreated": 1,
+        "gestureSessionsDetached": 1,
+        "touchEndAcknowledged": 1,
+        "allCreatedGestureSessionsDetached": true,
+        "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+      },
+      "evidenceType": "CDP touch command acknowledgements plus actual DOM scroll/rectangle measurements; not a native pointer event trace"
+    },
+    {
+      "width": 320,
+      "ending": "lanterns",
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-lanterns-320-reading.json",
+        "bytes": 22084,
+        "sha256": "9748303afcab660c58d758df40c32cc6a0f9d5a3cccb143afc462b3f451050f0"
+      },
+      "caseSource": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-lanterns-320-case.json",
+        "bytes": 23749,
+        "sha256": "2252d9eb607f2516bb8e28014e4f0a315972890747ed16db58e2dcf6abdcfb00"
+      },
+      "fullReportObject": "cases[0].endings.phoneReadings.320[1]",
+      "objectsComparedExactly": [
+        "layoutSamples",
+        "reading",
+        "gestureAttempts",
+        "inputCleanup"
+      ],
+      "allObjectsEqual": true,
+      "entireImmediateCaseEqualsFullReportObject": true,
+      "scrollHeight": 757,
+      "clientHeight": 654,
+      "initialScrollTop": 0,
+      "finalScrollTop": 103,
+      "gestureAttempts": 1,
+      "maxGestureAttempts": 9,
+      "reading": {
+        "fullyReadParagraphs": [
+          0,
+          1,
+          2
+        ],
+        "homeFullyVisibleAndUncovered": true,
+        "finalNoteFullyVisible": true,
+        "scrollSamples": 2,
+        "maxScrollTop": 103,
+        "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+      },
+      "inputCleanup": {
+        "gestureSessionsCreated": 1,
+        "gestureSessionsDetached": 1,
+        "touchEndAcknowledged": 1,
+        "allCreatedGestureSessionsDetached": true,
+        "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+      },
+      "evidenceType": "CDP touch command acknowledgements plus actual DOM scroll/rectangle measurements; not a native pointer event trace"
+    },
+    {
+      "width": 320,
+      "ending": "tender",
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-tender-320-reading.json",
+        "bytes": 21982,
+        "sha256": "75462f479480ebada23056f03ddba6b64852a5000231b5231afa0b4836c6077f"
+      },
+      "caseSource": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-tender-320-case.json",
+        "bytes": 23645,
+        "sha256": "e3835d80ce4d2752adc721b7dd8b8e3a23771897f64f27e616d7f2995fe1b546"
+      },
+      "fullReportObject": "cases[0].endings.phoneReadings.320[2]",
+      "objectsComparedExactly": [
+        "layoutSamples",
+        "reading",
+        "gestureAttempts",
+        "inputCleanup"
+      ],
+      "allObjectsEqual": true,
+      "entireImmediateCaseEqualsFullReportObject": true,
+      "scrollHeight": 757,
+      "clientHeight": 654,
+      "initialScrollTop": 0,
+      "finalScrollTop": 103,
+      "gestureAttempts": 1,
+      "maxGestureAttempts": 9,
+      "reading": {
+        "fullyReadParagraphs": [
+          0,
+          1,
+          2
+        ],
+        "homeFullyVisibleAndUncovered": true,
+        "finalNoteFullyVisible": true,
+        "scrollSamples": 2,
+        "maxScrollTop": 103,
+        "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+      },
+      "inputCleanup": {
+        "gestureSessionsCreated": 1,
+        "gestureSessionsDetached": 1,
+        "touchEndAcknowledged": 1,
+        "allCreatedGestureSessionsDetached": true,
+        "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+      },
+      "evidenceType": "CDP touch command acknowledgements plus actual DOM scroll/rectangle measurements; not a native pointer event trace"
+    }
+  ],
+  "nativePostPointerFacts": [
+    {
+      "width": 390,
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-post-full-touch-390.json",
+        "bytes": 365928,
+        "sha256": "37ceaf1269b7c4864da0e144a04a5cdd570495ea5b5f8778e25df613da49b9be"
+      },
+      "entirePhoneObjectEqualsFullReport": true,
+      "fullReportObject": "cases[0].postExtended.phoneFullRoutes.390",
+      "nativeHeldPointerId": 90,
+      "nativeOldClickCount": 1,
+      "nativeOldResultButtonClickCount": 0,
+      "resultRetained": true,
+      "releaseAtComplete": true,
+      "heldGestureNativeEvents": [
+        {
+          "type": "pointerdown",
+          "pointerType": "touch",
+          "pointerId": 90,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": null,
+          "direction": "right",
+          "shellAction": null,
+          "at": 128845.40000000002,
+          "eventTimeStamp": 128818.70000000007,
+          "state": "playing",
+          "form": "body",
+          "time": 31.649999999999483,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "dialogs": [],
+          "defaultPreventedAfter": true,
+          "dialogsAfter": []
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerType": "touch",
+          "pointerId": 90,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "cancelable": false,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": null,
+          "direction": "right",
+          "shellAction": null,
+          "at": 130530.5,
+          "eventTimeStamp": 130508.80000000005,
+          "state": "complete",
+          "form": "body",
+          "time": 33.28333333333273,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "dialogs": [
+            "result-dialog"
+          ],
+          "defaultPreventedAfter": false,
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "pointerup",
+          "pointerType": "touch",
+          "pointerId": 90,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": null,
+          "direction": "right",
+          "shellAction": null,
+          "at": 130530.70000000007,
+          "eventTimeStamp": 130508.80000000005,
+          "state": "complete",
+          "form": "body",
+          "time": 33.28333333333273,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "dialogs": [
+            "result-dialog"
+          ],
+          "defaultPreventedAfter": false,
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerType": "touch",
+          "pointerId": 90,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "cancelable": false,
+          "eventPhase": 1,
+          "targetHasPointerCapture": false,
+          "targetId": null,
+          "direction": "right",
+          "shellAction": null,
+          "at": 130530.80000000005,
+          "eventTimeStamp": 130508.80000000005,
+          "state": "complete",
+          "form": "body",
+          "time": 33.28333333333273,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "dialogs": [
+            "result-dialog"
+          ],
+          "defaultPreventedAfter": false,
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "click",
+          "pointerType": "touch",
+          "pointerId": 90,
+          "detail": 1,
+          "isPrimary": false,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": false,
+          "targetId": null,
+          "direction": null,
+          "shellAction": null,
+          "at": 130531.70000000007,
+          "eventTimeStamp": 130508.80000000005,
+          "state": "complete",
+          "form": "body",
+          "time": 33.28333333333273,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "dialogs": [
+            "result-dialog"
+          ],
+          "defaultPreventedAfter": true,
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        }
+      ],
+      "freshResultTouch": {
+        "freshDownUpClick": true,
+        "pointerId": 91,
+        "intentionalClickAllowed": true,
+        "realOutroOpened": true,
+        "events": [
+          {
+            "type": "pointerdown",
+            "pointerType": "touch",
+            "pointerId": 91,
+            "detail": 0,
+            "isPrimary": true,
+            "isTrusted": true,
+            "defaultPrevented": false,
+            "cancelable": true,
+            "eventPhase": 1,
+            "targetHasPointerCapture": true,
+            "targetId": "result-story",
+            "direction": null,
+            "shellAction": null,
+            "at": 130811.20000000007,
+            "eventTimeStamp": 130776,
+            "state": "complete",
+            "form": "body",
+            "time": 33.28333333333273,
+            "runId": 1,
+            "bodyIdentity": 11,
+            "dialogs": [
+              "result-dialog"
+            ],
+            "defaultPreventedAfter": false,
+            "dialogsAfter": [
+              "result-dialog"
+            ]
+          },
+          {
+            "type": "gotpointercapture",
+            "pointerType": "touch",
+            "pointerId": 91,
+            "detail": 0,
+            "isPrimary": true,
+            "isTrusted": true,
+            "defaultPrevented": false,
+            "cancelable": false,
+            "eventPhase": 1,
+            "targetHasPointerCapture": true,
+            "targetId": "result-story",
+            "direction": null,
+            "shellAction": null,
+            "at": 130844.1000000001,
+            "eventTimeStamp": 130813.90000000002,
+            "state": "complete",
+            "form": "body",
+            "time": 33.28333333333273,
+            "runId": 1,
+            "bodyIdentity": 11,
+            "dialogs": [
+              "result-dialog"
+            ],
+            "defaultPreventedAfter": false,
+            "dialogsAfter": [
+              "result-dialog"
+            ]
+          },
+          {
+            "type": "pointerup",
+            "pointerType": "touch",
+            "pointerId": 91,
+            "detail": 0,
+            "isPrimary": true,
+            "isTrusted": true,
+            "defaultPrevented": false,
+            "cancelable": true,
+            "eventPhase": 1,
+            "targetHasPointerCapture": true,
+            "targetId": "result-story",
+            "direction": null,
+            "shellAction": null,
+            "at": 130844.30000000005,
+            "eventTimeStamp": 130813.90000000002,
+            "state": "complete",
+            "form": "body",
+            "time": 33.28333333333273,
+            "runId": 1,
+            "bodyIdentity": 11,
+            "dialogs": [
+              "result-dialog"
+            ],
+            "defaultPreventedAfter": false,
+            "dialogsAfter": [
+              "result-dialog"
+            ]
+          },
+          {
+            "type": "lostpointercapture",
+            "pointerType": "touch",
+            "pointerId": 91,
+            "detail": 0,
+            "isPrimary": true,
+            "isTrusted": true,
+            "defaultPrevented": false,
+            "cancelable": false,
+            "eventPhase": 1,
+            "targetHasPointerCapture": false,
+            "targetId": "result-story",
+            "direction": null,
+            "shellAction": null,
+            "at": 130844.40000000002,
+            "eventTimeStamp": 130813.90000000002,
+            "state": "complete",
+            "form": "body",
+            "time": 33.28333333333273,
+            "runId": 1,
+            "bodyIdentity": 11,
+            "dialogs": [
+              "result-dialog"
+            ],
+            "defaultPreventedAfter": false,
+            "dialogsAfter": [
+              "result-dialog"
+            ]
+          },
+          {
+            "type": "click",
+            "pointerType": "touch",
+            "pointerId": 91,
+            "detail": 1,
+            "isPrimary": false,
+            "isTrusted": true,
+            "defaultPrevented": false,
+            "cancelable": true,
+            "eventPhase": 1,
+            "targetHasPointerCapture": false,
+            "targetId": "result-story",
+            "direction": null,
+            "shellAction": null,
+            "at": 130845.90000000002,
+            "eventTimeStamp": 130813.90000000002,
+            "state": "complete",
+            "form": "body",
+            "time": 33.28333333333273,
+            "runId": 1,
+            "bodyIdentity": 11,
+            "dialogs": [
+              "result-dialog"
+            ],
+            "defaultPreventedAfter": false,
+            "dialogsAfter": [
+              "result-dialog"
+            ]
+          }
+        ]
+      },
+      "evidenceType": "captured native trusted PointerEvents from Chromium CDP simulated touch, with final defaultPrevented sampled in a microtask",
+      "interpretationBoundary": "realOutroOpened is the original independent post-dispatch UI assertion; capture/microtask dialogsAfter alone does not prove that a fresh click opened the outro"
+    },
+    {
+      "width": 320,
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-post-full-touch-320.json",
+        "bytes": 368744,
+        "sha256": "53a7eb27eade2a0bf745896b7a61f26951f121000f3e2ccbeed59b7bf900bd19"
+      },
+      "entirePhoneObjectEqualsFullReport": true,
+      "fullReportObject": "cases[0].postExtended.phoneFullRoutes.320",
+      "nativeHeldPointerId": 153,
+      "nativeOldClickCount": 1,
+      "nativeOldResultButtonClickCount": 1,
+      "resultRetained": true,
+      "releaseAtComplete": true,
+      "heldGestureNativeEvents": [
+        {
+          "type": "pointerdown",
+          "pointerType": "touch",
+          "pointerId": 153,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": null,
+          "direction": "right",
+          "shellAction": null,
+          "at": 165676.5,
+          "eventTimeStamp": 165640.80000000005,
+          "state": "playing",
+          "form": "body",
+          "time": 31.499999999999492,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "dialogs": [],
+          "defaultPreventedAfter": true,
+          "dialogsAfter": []
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerType": "touch",
+          "pointerId": 153,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "cancelable": false,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": null,
+          "direction": "right",
+          "shellAction": null,
+          "at": 167375.30000000005,
+          "eventTimeStamp": 167339,
+          "state": "complete",
+          "form": "body",
+          "time": 33.1499999999994,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "dialogs": [
+            "result-dialog"
+          ],
+          "defaultPreventedAfter": false,
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "pointerup",
+          "pointerType": "touch",
+          "pointerId": 153,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": null,
+          "direction": "right",
+          "shellAction": null,
+          "at": 167375.6000000001,
+          "eventTimeStamp": 167339,
+          "state": "complete",
+          "form": "body",
+          "time": 33.1499999999994,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "dialogs": [
+            "result-dialog"
+          ],
+          "defaultPreventedAfter": false,
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerType": "touch",
+          "pointerId": 153,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "cancelable": false,
+          "eventPhase": 1,
+          "targetHasPointerCapture": false,
+          "targetId": null,
+          "direction": "right",
+          "shellAction": null,
+          "at": 167375.70000000007,
+          "eventTimeStamp": 167339,
+          "state": "complete",
+          "form": "body",
+          "time": 33.1499999999994,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "dialogs": [
+            "result-dialog"
+          ],
+          "defaultPreventedAfter": false,
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "click",
+          "pointerType": "touch",
+          "pointerId": 153,
+          "detail": 1,
+          "isPrimary": false,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": false,
+          "targetId": "result-story",
+          "direction": null,
+          "shellAction": null,
+          "at": 167377,
+          "eventTimeStamp": 167339,
+          "state": "complete",
+          "form": "body",
+          "time": 33.1499999999994,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "dialogs": [
+            "result-dialog"
+          ],
+          "defaultPreventedAfter": true,
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        }
+      ],
+      "freshResultTouch": {
+        "freshDownUpClick": true,
+        "pointerId": 154,
+        "intentionalClickAllowed": true,
+        "realOutroOpened": true,
+        "events": [
+          {
+            "type": "pointerdown",
+            "pointerType": "touch",
+            "pointerId": 154,
+            "detail": 0,
+            "isPrimary": true,
+            "isTrusted": true,
+            "defaultPrevented": false,
+            "cancelable": true,
+            "eventPhase": 1,
+            "targetHasPointerCapture": true,
+            "targetId": "result-story",
+            "direction": null,
+            "shellAction": null,
+            "at": 167624.80000000005,
+            "eventTimeStamp": 167589.90000000002,
+            "state": "complete",
+            "form": "body",
+            "time": 33.1499999999994,
+            "runId": 1,
+            "bodyIdentity": 12,
+            "dialogs": [
+              "result-dialog"
+            ],
+            "defaultPreventedAfter": false,
+            "dialogsAfter": [
+              "result-dialog"
+            ]
+          },
+          {
+            "type": "gotpointercapture",
+            "pointerType": "touch",
+            "pointerId": 154,
+            "detail": 0,
+            "isPrimary": true,
+            "isTrusted": true,
+            "defaultPrevented": false,
+            "cancelable": false,
+            "eventPhase": 1,
+            "targetHasPointerCapture": true,
+            "targetId": "result-story",
+            "direction": null,
+            "shellAction": null,
+            "at": 167658.20000000007,
+            "eventTimeStamp": 167626.80000000005,
+            "state": "complete",
+            "form": "body",
+            "time": 33.1499999999994,
+            "runId": 1,
+            "bodyIdentity": 12,
+            "dialogs": [
+              "result-dialog"
+            ],
+            "defaultPreventedAfter": false,
+            "dialogsAfter": [
+              "result-dialog"
+            ]
+          },
+          {
+            "type": "pointerup",
+            "pointerType": "touch",
+            "pointerId": 154,
+            "detail": 0,
+            "isPrimary": true,
+            "isTrusted": true,
+            "defaultPrevented": false,
+            "cancelable": true,
+            "eventPhase": 1,
+            "targetHasPointerCapture": true,
+            "targetId": "result-story",
+            "direction": null,
+            "shellAction": null,
+            "at": 167658.30000000005,
+            "eventTimeStamp": 167626.80000000005,
+            "state": "complete",
+            "form": "body",
+            "time": 33.1499999999994,
+            "runId": 1,
+            "bodyIdentity": 12,
+            "dialogs": [
+              "result-dialog"
+            ],
+            "defaultPreventedAfter": false,
+            "dialogsAfter": [
+              "result-dialog"
+            ]
+          },
+          {
+            "type": "lostpointercapture",
+            "pointerType": "touch",
+            "pointerId": 154,
+            "detail": 0,
+            "isPrimary": true,
+            "isTrusted": true,
+            "defaultPrevented": false,
+            "cancelable": false,
+            "eventPhase": 1,
+            "targetHasPointerCapture": false,
+            "targetId": "result-story",
+            "direction": null,
+            "shellAction": null,
+            "at": 167658.40000000002,
+            "eventTimeStamp": 167626.80000000005,
+            "state": "complete",
+            "form": "body",
+            "time": 33.1499999999994,
+            "runId": 1,
+            "bodyIdentity": 12,
+            "dialogs": [
+              "result-dialog"
+            ],
+            "defaultPreventedAfter": false,
+            "dialogsAfter": [
+              "result-dialog"
+            ]
+          },
+          {
+            "type": "click",
+            "pointerType": "touch",
+            "pointerId": 154,
+            "detail": 1,
+            "isPrimary": false,
+            "isTrusted": true,
+            "defaultPrevented": false,
+            "cancelable": true,
+            "eventPhase": 1,
+            "targetHasPointerCapture": false,
+            "targetId": "result-story",
+            "direction": null,
+            "shellAction": null,
+            "at": 167660,
+            "eventTimeStamp": 167626.80000000005,
+            "state": "complete",
+            "form": "body",
+            "time": 33.1499999999994,
+            "runId": 1,
+            "bodyIdentity": 12,
+            "dialogs": [
+              "result-dialog"
+            ],
+            "defaultPreventedAfter": false,
+            "dialogsAfter": [
+              "result-dialog"
+            ]
+          }
+        ]
+      },
+      "evidenceType": "captured native trusted PointerEvents from Chromium CDP simulated touch, with final defaultPrevented sampled in a microtask",
+      "interpretationBoundary": "realOutroOpened is the original independent post-dispatch UI assertion; capture/microtask dialogsAfter alone does not prove that a fresh click opened the outro"
+    }
+  ],
+  "routeAndCrossingChecks": [
+    {
+      "route": "desktop",
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-post-route.json",
+        "bytes": 302586,
+        "sha256": "c95b37af4031fa379651f7fa94f5a9fc3a0f3476ae4f270e12ade55c4249ac87"
+      },
+      "crossingSource": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-post-mushroom-crossing.json",
+        "bytes": 127459,
+        "sha256": "1133b1251c315c56b6da79985903c29ede3d95a0be81b553d55265961774e077"
+      },
+      "fullReportObject": "cases[0].post.route",
+      "routeObjectExactlyEqual": true,
+      "crossingObjectExactlyEqual": true,
+      "wallSeconds": 36.012,
+      "input": "keyboard",
+      "paint": "ready",
+      "deaths": 0,
+      "bounceWallSeconds": 0.24129999999993015,
+      "rootWallSeconds": 1.2575999999999767,
+      "bounceBody": {
+        "x": 1453.0306204927263,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -850,
+        "grounded": false,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "actualRootBody": {
+        "x": 1676.5306204927263,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0.12
+      },
+      "nativeHoldInput": {
+        "type": "keydown",
+        "code": "ArrowRight",
+        "repeat": false,
+        "pointerId": null,
+        "pointerType": null,
+        "isTrusted": true,
+        "targetId": "dream-canvas",
+        "direction": null,
+        "phase": "continuous-right",
+        "at": 82368.1000000001,
+        "time": 23.433333333333284,
+        "runId": 1,
+        "bodyIdentity": 10,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 0,
+          "y": 0
+        },
+        "body": {
+          "x": 1408.5306204927263,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.07916666666666666
+        },
+        "focusedId": "dream-canvas",
+        "dialogs": []
+      },
+      "nativeReleaseInput": {
+        "type": "keyup",
+        "code": "ArrowRight",
+        "repeat": false,
+        "pointerId": null,
+        "pointerType": null,
+        "isTrusted": true,
+        "targetId": "dream-canvas",
+        "direction": null,
+        "phase": "continuous-right",
+        "at": 83485.40000000002,
+        "time": 24.549999999999887,
+        "runId": 1,
+        "bodyIdentity": 10,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 1,
+          "y": 0
+        },
+        "body": {
+          "x": 1661.0306204927263,
+          "y": 340.0833333333325,
+          "w": 30,
+          "h": 58,
+          "vx": 240,
+          "vy": 320,
+          "grounded": false,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "focusedId": "dream-canvas",
+        "dialogs": []
+      },
+      "observerCleanup": {
+        "pendingFrame": false,
+        "removed": true
+      },
+      "singleContinuousRightInput": true,
+      "originalVelocityGate": -800,
+      "sameRunAndBody": true,
+      "remainingFreezeAtExit": 2.666666666666673,
+      "originalExitReachedWhileFrozen": true
+    },
+    {
+      "route": "touch-390",
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-full-touch-390-post-route.json",
+        "bytes": 328315,
+        "sha256": "2aba0a4abb25328c775a012a95d15c16764968b851c70557392c6d526148bbde"
+      },
+      "crossingSource": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-full-touch-390-post-mushroom-crossing.json",
+        "bytes": 130905,
+        "sha256": "cfc1e691e527924231241aa33382ea805845c3e7e22becbe452666d1a1d3d6f4"
+      },
+      "fullReportObject": "cases[0].postExtended.phoneFullRoutes.390.route",
+      "routeObjectExactlyEqual": true,
+      "crossingObjectExactlyEqual": true,
+      "wallSeconds": 34.626,
+      "input": "Chromium CDP simulated touch",
+      "paint": "ready",
+      "deaths": 0,
+      "bounceWallSeconds": 0.15070000000006986,
+      "rootWallSeconds": 1.2503000000000466,
+      "bounceBody": {
+        "x": 1450.7346450758746,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -850,
+        "grounded": false,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "actualRootBody": {
+        "x": 1694.2346450758746,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "nativeHoldInput": {
+        "type": "pointerdown",
+        "code": null,
+        "repeat": false,
+        "pointerId": 71,
+        "pointerType": "touch",
+        "isTrusted": true,
+        "targetId": null,
+        "direction": "right",
+        "phase": "continuous-right",
+        "at": 119823.90000000002,
+        "time": 23.183333333333298,
+        "runId": 1,
+        "bodyIdentity": 11,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 0,
+          "y": 0
+        },
+        "body": {
+          "x": 1426.2346450758746,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.07916666666666666
+        },
+        "focusedId": "dream-canvas",
+        "dialogs": []
+      },
+      "nativeReleaseInput": {
+        "type": "pointerup",
+        "code": null,
+        "repeat": false,
+        "pointerId": 71,
+        "pointerType": "touch",
+        "isTrusted": true,
+        "targetId": null,
+        "direction": "right",
+        "phase": "continuous-right",
+        "at": 120926.80000000005,
+        "time": 24.2999999999999,
+        "runId": 1,
+        "bodyIdentity": 11,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 1,
+          "y": 0
+        },
+        "body": {
+          "x": 1678.7346450758746,
+          "y": 372.3749999999991,
+          "w": 30,
+          "h": 58,
+          "vx": 240,
+          "vy": 432.5,
+          "grounded": false,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "focusedId": "dream-canvas",
+        "dialogs": []
+      },
+      "observerCleanup": {
+        "pendingFrame": false,
+        "removed": true
+      },
+      "singleContinuousRightInput": true,
+      "originalVelocityGate": -800,
+      "sameRunAndBody": true,
+      "remainingFreezeAtExit": 2.63333333333334,
+      "originalExitReachedWhileFrozen": true
+    },
+    {
+      "route": "touch-320",
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-full-touch-320-post-route.json",
+        "bytes": 330905,
+        "sha256": "99b549d253dbc69a947270a68bf53b748ded5b2d5c61129d94bf5bf7cb2265d6"
+      },
+      "crossingSource": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-full-touch-320-post-mushroom-crossing.json",
+        "bytes": 131734,
+        "sha256": "ec5912d34c9856aab23cedcad1c0b37ce4f46d9663c99ddef94c3067f89a640e"
+      },
+      "fullReportObject": "cases[0].postExtended.phoneFullRoutes.320.route",
+      "routeObjectExactlyEqual": true,
+      "crossingObjectExactlyEqual": true,
+      "wallSeconds": 34.416,
+      "input": "Chromium CDP simulated touch",
+      "paint": "ready",
+      "deaths": 0,
+      "bounceWallSeconds": 0.198,
+      "rootWallSeconds": 1.2645,
+      "bounceBody": {
+        "x": 1450.3535745214476,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -850,
+        "grounded": false,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "actualRootBody": {
+        "x": 1685.8535745214476,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "nativeHoldInput": {
+        "type": "pointerdown",
+        "code": null,
+        "repeat": false,
+        "pointerId": 133,
+        "pointerType": "touch",
+        "isTrusted": true,
+        "targetId": null,
+        "direction": "right",
+        "phase": "continuous-right",
+        "at": 156791.6000000001,
+        "time": 23.166666666666632,
+        "runId": 1,
+        "bodyIdentity": 12,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 0,
+          "y": 0
+        },
+        "body": {
+          "x": 1417.8535745214476,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.0325
+        },
+        "focusedId": "dream-canvas",
+        "dialogs": []
+      },
+      "nativeReleaseInput": {
+        "type": "pointerup",
+        "code": null,
+        "repeat": false,
+        "pointerId": 133,
+        "pointerType": "touch",
+        "isTrusted": true,
+        "targetId": null,
+        "direction": "right",
+        "phase": "continuous-right",
+        "at": 157909.5,
+        "time": 24.283333333333236,
+        "runId": 1,
+        "bodyIdentity": 12,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 1,
+          "y": 0
+        },
+        "body": {
+          "x": 1670.3535745214476,
+          "y": 358.33333333333246,
+          "w": 30,
+          "h": 58,
+          "vx": 240,
+          "vy": 387.5,
+          "grounded": false,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "focusedId": "dream-canvas",
+        "dialogs": []
+      },
+      "observerCleanup": {
+        "pendingFrame": false,
+        "removed": true
+      },
+      "singleContinuousRightInput": true,
+      "originalVelocityGate": -800,
+      "sameRunAndBody": true,
+      "remainingFreezeAtExit": 2.6166666666666734,
+      "originalExitReachedWhileFrozen": true
+    },
+    {
+      "route": "failed-primary",
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-full-fallback-post-route.json",
+        "bytes": 269776,
+        "sha256": "b9442192a01d5d0268be83bc23a305fd0f1e7f34e4c1e0ae4e951484ee7cdf56"
+      },
+      "crossingSource": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-full-fallback-post-mushroom-crossing.json",
+        "bytes": 122215,
+        "sha256": "479a94a1b21c99967699a0ac7cba2db5e57f84be63ba758e6d87e055c36ca432"
+      },
+      "fullReportObject": "cases[0].postExtended.failedPrimaryFullRoute.route",
+      "routeObjectExactlyEqual": true,
+      "crossingObjectExactlyEqual": true,
+      "wallSeconds": 35.251,
+      "input": "keyboard",
+      "paint": "error",
+      "deaths": 0,
+      "bounceWallSeconds": 0.20230000000004655,
+      "rootWallSeconds": 1.231,
+      "bounceBody": {
+        "x": 1452.9609888925095,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -850,
+        "grounded": false,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "actualRootBody": {
+        "x": 1680.4609888925095,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0.07333333333333333
+      },
+      "nativeHoldInput": {
+        "type": "keydown",
+        "code": "ArrowRight",
+        "repeat": false,
+        "pointerId": null,
+        "pointerType": null,
+        "isTrusted": true,
+        "targetId": "dream-canvas",
+        "direction": null,
+        "phase": "continuous-right",
+        "at": 193596.40000000002,
+        "time": 23.549999999999944,
+        "runId": 1,
+        "bodyIdentity": 13,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 0,
+          "y": 0
+        },
+        "body": {
+          "x": 1416.4609888925095,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "focusedId": "dream-canvas",
+        "dialogs": []
+      },
+      "nativeReleaseInput": {
+        "type": "keyup",
+        "code": "ArrowRight",
+        "repeat": false,
+        "pointerId": null,
+        "pointerType": null,
+        "isTrusted": true,
+        "targetId": "dream-canvas",
+        "direction": null,
+        "phase": "continuous-right",
+        "at": 194702,
+        "time": 24.64999999999988,
+        "runId": 1,
+        "bodyIdentity": 13,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 1,
+          "y": 0
+        },
+        "body": {
+          "x": 1664.9609888925095,
+          "y": 345.79166666666583,
+          "w": 30,
+          "h": 58,
+          "vx": 240,
+          "vy": 342.5,
+          "grounded": false,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "focusedId": "dream-canvas",
+        "dialogs": []
+      },
+      "observerCleanup": {
+        "pendingFrame": false,
+        "removed": true
+      },
+      "singleContinuousRightInput": true,
+      "originalVelocityGate": -800,
+      "sameRunAndBody": true,
+      "remainingFreezeAtExit": 2.58333333333334,
+      "originalExitReachedWhileFrozen": true
+    }
+  ],
+  "desktopReloadChecks": [
+    {
+      "choices": {
+        "letter": "send",
+        "clock": "release"
+      },
+      "ending": "dawn",
+      "firstViewEnding": "dawn",
+      "afterRealReloadEnding": "dawn",
+      "repeatReadDidNotDuplicateDiscovery": true,
+      "originalImmediateCaseEqualsFullReport": true,
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-send-release.json",
+        "bytes": 9718,
+        "sha256": "e524c40b3cb6873fa3b1497cc10eac74109af731e7b52df6849bbd7ac5377889"
+      }
+    },
+    {
+      "choices": {
+        "letter": "keep",
+        "clock": "hold"
+      },
+      "ending": "lanterns",
+      "firstViewEnding": "lanterns",
+      "afterRealReloadEnding": "lanterns",
+      "repeatReadDidNotDuplicateDiscovery": true,
+      "originalImmediateCaseEqualsFullReport": true,
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-keep-hold.json",
+        "bytes": 9806,
+        "sha256": "0a652dd933a207ab5e646015cf1adbf89d95bd7bda8c901a4f2a07679c09b0b1"
+      }
+    },
+    {
+      "choices": {
+        "letter": "keep",
+        "clock": "release"
+      },
+      "ending": "tender",
+      "firstViewEnding": "tender",
+      "afterRealReloadEnding": "tender",
+      "repeatReadDidNotDuplicateDiscovery": true,
+      "originalImmediateCaseEqualsFullReport": true,
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-keep-release.json",
+        "bytes": 9761,
+        "sha256": "5de2b8690e2aead9676c2d46bc1dfc8b86256f595d031a4005f85dfb5ab23420"
+      }
+    },
+    {
+      "choices": {
+        "letter": "send",
+        "clock": "hold"
+      },
+      "ending": "tender",
+      "firstViewEnding": "tender",
+      "afterRealReloadEnding": "tender",
+      "repeatReadDidNotDuplicateDiscovery": true,
+      "originalImmediateCaseEqualsFullReport": true,
+      "source": {
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-send-hold.json",
+        "bytes": 9749,
+        "sha256": "f5e7bb6edc724fe5ad90211b4e2d400d7074110bfb202aba65433d5b9b9d85d8"
+      }
+    }
+  ],
+  "selectedOriginalFiles": [
+    {
+      "repositoryPath": "docs/v29-sixth-candidate/1280-ending-dawn-390-reading.json",
+      "source": {
+        "artifactMember": "candidate/1280-ending-dawn-390-reading.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-dawn-390-reading.json",
+        "bytes": 4905,
+        "sha256": "2896682e1922923d958ec891d89f6030c45a02ef5610ba9f77d54f16de28608c",
+        "byteIdentical": true
+      }
+    },
+    {
+      "repositoryPath": "docs/v29-sixth-candidate/1280-ending-lanterns-390-reading.json",
+      "source": {
+        "artifactMember": "candidate/1280-ending-lanterns-390-reading.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-lanterns-390-reading.json",
+        "bytes": 4943,
+        "sha256": "586f10e01f510bd09cbd25d3798bcc2638072553ce627dd89b7df3d2cd8b5590",
+        "byteIdentical": true
+      }
+    },
+    {
+      "repositoryPath": "docs/v29-sixth-candidate/1280-ending-tender-390-reading.json",
+      "source": {
+        "artifactMember": "candidate/1280-ending-tender-390-reading.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-tender-390-reading.json",
+        "bytes": 4910,
+        "sha256": "898bc45886e04fc3a8acf485ef7e50f6fdd103ca9e974df6e3185c9bd4849a44",
+        "byteIdentical": true
+      }
+    },
+    {
+      "repositoryPath": "docs/v29-sixth-candidate/1280-ending-dawn-320-reading.json",
+      "source": {
+        "artifactMember": "candidate/1280-ending-dawn-320-reading.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-dawn-320-reading.json",
+        "bytes": 21960,
+        "sha256": "97fb3c971a4401617e83b5956f3c453497055a2e1c22c0a6ad8fc73e4582eb1b",
+        "byteIdentical": true
+      }
+    },
+    {
+      "repositoryPath": "docs/v29-sixth-candidate/1280-ending-lanterns-320-reading.json",
+      "source": {
+        "artifactMember": "candidate/1280-ending-lanterns-320-reading.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-lanterns-320-reading.json",
+        "bytes": 22084,
+        "sha256": "9748303afcab660c58d758df40c32cc6a0f9d5a3cccb143afc462b3f451050f0",
+        "byteIdentical": true
+      }
+    },
+    {
+      "repositoryPath": "docs/v29-sixth-candidate/1280-ending-tender-320-reading.json",
+      "source": {
+        "artifactMember": "candidate/1280-ending-tender-320-reading.json",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-tender-320-reading.json",
+        "bytes": 21982,
+        "sha256": "75462f479480ebada23056f03ddba6b64852a5000231b5231afa0b4836c6077f",
+        "byteIdentical": true
+      }
+    },
+    {
+      "repositoryPath": "docs/v29-sixth-candidate/1280-ending-send-release.png",
+      "source": {
+        "artifactMember": "candidate/1280-ending-send-release.png",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-send-release.png",
+        "bytes": 385570,
+        "sha256": "093172a7000b73881a885950ecc3c43a49f3aec805133aa07b9398210387160c",
+        "byteIdentical": true
+      }
+    },
+    {
+      "repositoryPath": "docs/v29-sixth-candidate/1280-ending-keep-hold.png",
+      "source": {
+        "artifactMember": "candidate/1280-ending-keep-hold.png",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-keep-hold.png",
+        "bytes": 390091,
+        "sha256": "de59029f57fb3c187d807969276ef464842d7c5564441c4191e4c865ef319ead",
+        "byteIdentical": true
+      }
+    },
+    {
+      "repositoryPath": "docs/v29-sixth-candidate/1280-ending-keep-release.png",
+      "source": {
+        "artifactMember": "candidate/1280-ending-keep-release.png",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-keep-release.png",
+        "bytes": 360503,
+        "sha256": "1418816d6595a4ccb4111b9d895021fad567eecb4961b630b4239ba5616b1e64",
+        "byteIdentical": true
+      }
+    },
+    {
+      "repositoryPath": "docs/v29-sixth-candidate/1280-ending-dawn-320-top.png",
+      "source": {
+        "artifactMember": "candidate/1280-ending-dawn-320-top.png",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-dawn-320-top.png",
+        "bytes": 138160,
+        "sha256": "7d32fa3f62e459be4f7d82a59f87ac23800526cb6fbf01fdbd65e565cd98b343",
+        "byteIdentical": true
+      }
+    },
+    {
+      "repositoryPath": "docs/v29-sixth-candidate/1280-ending-dawn-320-read.png",
+      "source": {
+        "artifactMember": "candidate/1280-ending-dawn-320-read.png",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-dawn-320-read.png",
+        "bytes": 138778,
+        "sha256": "ec4f261b93c798bb1ff9dad22b78300fd91e9287bca64d60b4416d02f2582591",
+        "byteIdentical": true
+      }
+    },
+    {
+      "repositoryPath": "docs/v29-sixth-candidate/1280-ending-lanterns-320-top.png",
+      "source": {
+        "artifactMember": "candidate/1280-ending-lanterns-320-top.png",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-lanterns-320-top.png",
+        "bytes": 142881,
+        "sha256": "28de3fe637e7030ab8abf6daed3598ad60b4bfaef58863bdc16adcfa96a66ae8",
+        "byteIdentical": true
+      }
+    },
+    {
+      "repositoryPath": "docs/v29-sixth-candidate/1280-ending-lanterns-320-read.png",
+      "source": {
+        "artifactMember": "candidate/1280-ending-lanterns-320-read.png",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-lanterns-320-read.png",
+        "bytes": 135678,
+        "sha256": "dcfe2825a6800a51f29de13619b08e0dc5808f23a022960681680fb20d6f758f",
+        "byteIdentical": true
+      }
+    },
+    {
+      "repositoryPath": "docs/v29-sixth-candidate/1280-ending-tender-320-top.png",
+      "source": {
+        "artifactMember": "candidate/1280-ending-tender-320-top.png",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-tender-320-top.png",
+        "bytes": 134564,
+        "sha256": "44eaa0d845338819540ec22dec91b092d62df5f6b441d238c4cdf659ff06d20f",
+        "byteIdentical": true
+      }
+    },
+    {
+      "repositoryPath": "docs/v29-sixth-candidate/1280-ending-tender-320-read.png",
+      "source": {
+        "artifactMember": "candidate/1280-ending-tender-320-read.png",
+        "path": "/tmp/tougaigu-v29-sixth-candidate/candidate/1280-ending-tender-320-read.png",
+        "bytes": 132608,
+        "sha256": "c24b05535db4ebb949bfef4ce2ceab8655d85ec8140aeb9b13dd38898fc5b4fb",
+        "byteIdentical": true
+      }
+    }
+  ],
+  "evidenceBoundaries": [
+    "Candidate-only localhost CI run; the public HTTPS workflow step was skipped. No public run result is claimed.",
+    "All copied JSON and PNG files retain original bytes. The compact audit, this manifest and README are derived descriptions.",
+    "The ZIP is a lossless subset containing all 26 immediate JSON files except report.json; it is not the original 181040692-byte official artifact ZIP.",
+    "Six standalone reading JSON files also appear in the immediate JSON ZIP intentionally for convenient review.",
+    "Post pointer facts are captured native trusted events in simulated touch Chromium. This is not a physical-phone test.",
+    "Ending scroll evidence consists of CDP send acknowledgements and actual DOM measurements. It is not a separate native pointer event trace.",
+    "Native capture/microtask dialog snapshots do not replace the independent UI assertion realOutroOpened after fresh result-button activation.",
+    "The main post route settles once; the three extended routes are legitimate completed replays and add three chapter runs."
+  ]
+}

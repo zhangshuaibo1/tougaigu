@@ -1,0 +1,184 @@
+{
+  "status": "complete",
+  "ending": "lanterns",
+  "layoutSamples": [
+    {
+      "open": true,
+      "ending": "lanterns",
+      "sceneId": "lanterns",
+      "savedChoices": {
+        "letter": "keep",
+        "clock": "hold"
+      },
+      "sceneChoice": {
+        "ending": "lanterns",
+        "letter": "keep",
+        "clock": "hold"
+      },
+      "choiceLabels": {
+        "letter": "信留窗边",
+        "clock": "为想念留灯",
+        "sky": "长夜的窗灯亮着，太阳尚未升起"
+      },
+      "art": {
+        "sun": 0,
+        "lamps": 3,
+        "emptyChair": 1,
+        "slot": 0,
+        "train": 0,
+        "bench": 0,
+        "blankPage": 0,
+        "whale": 0,
+        "ashi": 1,
+        "shiguang": 1
+      },
+      "sceneCount": 1,
+      "sceneSvgCount": 1,
+      "sceneLabel": "长夜有灯 · 留给明天的座位",
+      "sceneRect": {
+        "left": 36,
+        "right": 354,
+        "top": 43.78125,
+        "bottom": 314,
+        "width": 318,
+        "height": 270.21875
+      },
+      "title": "这一夜，不再只有你。",
+      "eyebrow": "ENDING 03 · 长夜有灯",
+      "paragraphs": [
+        {
+          "text": "太阳还没升起，小镇已经摆好长桌。归先生把守钟的椅子搬来，坐在朋友中间。",
+          "rect": {
+            "left": 36,
+            "right": 354,
+            "top": 412.6875,
+            "bottom": 467.28125,
+            "width": 318,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 318,
+          "clientWidth": 318
+        },
+        {
+          "text": "阿拾掀起头盖骨，请大家看脑内小剧场。纸月亮亮着，小鲸笨拙地谢了三次幕。",
+          "rect": {
+            "left": 36,
+            "right": 354,
+            "top": 480.28125,
+            "bottom": 534.875,
+            "width": 318,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 318,
+          "clientWidth": 318
+        },
+        {
+          "text": "小满的信放在空座旁。拾光替还没准备出发的人留灯，也替想去远方的人开窗。",
+          "rect": {
+            "left": 36,
+            "right": 354,
+            "top": 547.875,
+            "bottom": 602.46875,
+            "width": 318,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 318,
+          "clientWidth": 318
+        }
+      ],
+      "lastLine": "头顶的窗开着。明天，随时可以进来。",
+      "collection": "你已收好 3 / 3 种天色",
+      "collectionFont": 11,
+      "home": {
+        "rect": {
+          "left": 36,
+          "right": 354,
+          "top": 691.609375,
+          "bottom": 739.609375,
+          "width": 318,
+          "height": 48
+        },
+        "fullyVisible": true,
+        "centerHits": true
+      },
+      "note": {
+        "text": "你可以重访章节、收集遗漏残页，或在记忆信箱里写下不同的回信。",
+        "rect": {
+          "left": 36,
+          "right": 354,
+          "top": 756.609375,
+          "bottom": 796.203125,
+          "width": 318,
+          "height": 39.59375
+        },
+        "fullyVisible": true,
+        "fontSize": 11,
+        "lineHeight": 19.8,
+        "scrollWidth": 318,
+        "clientWidth": 318
+      },
+      "dialog": {
+        "left": 17,
+        "right": 373,
+        "top": 24.78125,
+        "bottom": 819.203125,
+        "width": 356,
+        "height": 794.421875
+      },
+      "scrollTop": 0,
+      "scrollHeight": 792,
+      "clientHeight": 792,
+      "padding": {
+        "top": 18,
+        "right": 18,
+        "bottom": 22,
+        "left": 18
+      },
+      "scrollWidth": 354,
+      "clientWidth": 354,
+      "overflowY": "auto",
+      "pageWidth": 390,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "false",
+      "mediaReduced": false,
+      "activeAnimations": []
+    }
+  ],
+  "gestureAttempts": [],
+  "maxGestureAttempts": 9,
+  "scope": "actual dialog measurements and bounded CDP touch attempts; not a physical phone",
+  "initialOverflowPixels": 0,
+  "requiresActualScroll": false,
+  "gestureAttemptCount": 0,
+  "inputCleanup": {
+    "gestureSessionsCreated": 0,
+    "gestureSessionsDetached": 0,
+    "touchEndAcknowledged": 0,
+    "allCreatedGestureSessionsDetached": true,
+    "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+  },
+  "reading": {
+    "fullyReadParagraphs": [
+      0,
+      1,
+      2
+    ],
+    "homeFullyVisibleAndUncovered": true,
+    "finalNoteFullyVisible": true,
+    "scrollSamples": 1,
+    "maxScrollTop": 0,
+    "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+  }
+}

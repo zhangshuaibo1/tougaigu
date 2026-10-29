@@ -1,0 +1,184 @@
+{
+  "status": "complete",
+  "ending": "tender",
+  "layoutSamples": [
+    {
+      "open": true,
+      "ending": "tender",
+      "sceneId": "tender",
+      "savedChoices": {
+        "letter": "keep",
+        "clock": "release"
+      },
+      "sceneChoice": {
+        "ending": "tender",
+        "letter": "keep",
+        "clock": "release"
+      },
+      "choiceLabels": {
+        "letter": "信留窗边",
+        "clock": "钟声向前",
+        "sky": "晨光刚抵达窗沿"
+      },
+      "art": {
+        "sun": 0,
+        "lamps": 0,
+        "emptyChair": 0,
+        "slot": 0,
+        "train": 0,
+        "bench": 1,
+        "blankPage": 1,
+        "whale": 1,
+        "ashi": 1,
+        "shiguang": 1
+      },
+      "sceneCount": 1,
+      "sceneSvgCount": 1,
+      "sceneLabel": "慢慢天亮 · 并肩读完这一页",
+      "sceneRect": {
+        "left": 36,
+        "right": 354,
+        "top": 60.859375,
+        "bottom": 296.9375,
+        "width": 318,
+        "height": 236.078125
+      },
+      "title": "不用一下子，走出长夜。",
+      "eyebrow": "ENDING 02 · 慢慢天亮",
+      "paragraphs": [
+        {
+          "text": "黎明先落在窗沿。归先生让钟多走一秒，阿拾就把头顶的窗再推开一点。",
+          "rect": {
+            "left": 36,
+            "right": 354,
+            "top": 395.625,
+            "bottom": 450.21875,
+            "width": 318,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 318,
+          "clientWidth": 318
+        },
+        {
+          "text": "还没寄出的信住在靠窗的位置。小鲸替它压住折角，嫩芽负责每天报一次天气。",
+          "rect": {
+            "left": 36,
+            "right": 354,
+            "top": 463.21875,
+            "bottom": 517.8125,
+            "width": 318,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 318,
+          "clientWidth": 318
+        },
+        {
+          "text": "拾光没催谁出发。它陪阿拾把小满的字读完，再给明天留出一张空白信纸。",
+          "rect": {
+            "left": 36,
+            "right": 354,
+            "top": 530.8125,
+            "bottom": 585.40625,
+            "width": 318,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 318,
+          "clientWidth": 318
+        }
+      ],
+      "lastLine": "盖子可以慢慢开，明天不必再锁着。",
+      "collection": "你已收好 3 / 3 种天色",
+      "collectionFont": 11,
+      "home": {
+        "rect": {
+          "left": 36,
+          "right": 354,
+          "top": 674.546875,
+          "bottom": 722.546875,
+          "width": 318,
+          "height": 48
+        },
+        "fullyVisible": true,
+        "centerHits": true
+      },
+      "note": {
+        "text": "你可以重访章节、收集遗漏残页，或在记忆信箱里写下不同的回信。",
+        "rect": {
+          "left": 36,
+          "right": 354,
+          "top": 739.546875,
+          "bottom": 779.140625,
+          "width": 318,
+          "height": 39.59375
+        },
+        "fullyVisible": true,
+        "fontSize": 11,
+        "lineHeight": 19.8,
+        "scrollWidth": 318,
+        "clientWidth": 318
+      },
+      "dialog": {
+        "left": 17,
+        "right": 373,
+        "top": 41.859375,
+        "bottom": 802.140625,
+        "width": 356,
+        "height": 760.28125
+      },
+      "scrollTop": 0,
+      "scrollHeight": 758,
+      "clientHeight": 758,
+      "padding": {
+        "top": 18,
+        "right": 18,
+        "bottom": 22,
+        "left": 18
+      },
+      "scrollWidth": 354,
+      "clientWidth": 354,
+      "overflowY": "auto",
+      "pageWidth": 390,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "false",
+      "mediaReduced": false,
+      "activeAnimations": []
+    }
+  ],
+  "gestureAttempts": [],
+  "maxGestureAttempts": 9,
+  "scope": "actual dialog measurements and bounded CDP touch attempts; not a physical phone",
+  "initialOverflowPixels": 0,
+  "requiresActualScroll": false,
+  "gestureAttemptCount": 0,
+  "inputCleanup": {
+    "gestureSessionsCreated": 0,
+    "gestureSessionsDetached": 0,
+    "touchEndAcknowledged": 0,
+    "allCreatedGestureSessionsDetached": true,
+    "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+  },
+  "reading": {
+    "fullyReadParagraphs": [
+      0,
+      1,
+      2
+    ],
+    "homeFullyVisibleAndUncovered": true,
+    "finalNoteFullyVisible": true,
+    "scrollSamples": 1,
+    "maxScrollTop": 0,
+    "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+  }
+}

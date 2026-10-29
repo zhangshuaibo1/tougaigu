@@ -1,5 +1,5 @@
 {
-  "status": "candidate-passed-pages-submitted-public-verification-pending",
+  "status": "candidate-passed-and-linked-formal-release-verified",
   "sourceCommit": "9f372f3910a6141ddb4e5c6a5707438f7c8607d0",
   "candidateRun": 40924856127,
   "candidateJob": 123627511600,
@@ -231,6 +231,14 @@
   "runtimeBlobCount": 142,
   "additionalHostingFile": ".nojekyll",
   "CNAME": "tougaigu.com\n",
-  "publicVerification": "not yet run",
-  "scopeLimit": "Chromium simulated touch; not physical phones, Safari or low-end GPU evidence"
+  "publicVerification": {
+    "status": "success",
+    "sourceCommit": "b13bc250c1c597dc9b46d06541f461c055ec6ae6",
+    "runId": 40928071569,
+    "report": "v29-release/public-report.json.gz",
+    "releaseSummary": "verification-v29-release-summary.json",
+    "candidateAndPublicAreSeparateExecutions": true
+  },
+  "scopeLimit": "Chromium simulated touch; not physical phones, Safari or low-end GPU evidence",
+  "candidateEvidenceScope": "All candidate cases and input IDs in this file remain the original sixth-candidate run40924856127; later main candidate/live details are in the linked release summary."
 }

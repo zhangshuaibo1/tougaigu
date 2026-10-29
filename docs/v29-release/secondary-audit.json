@@ -1,0 +1,549 @@
+{
+  "commit": "b13bc250c1c597dc9b46d06541f461c055ec6ae6",
+  "artifactId": 12923740740,
+  "runId": 40928071569,
+  "zipBytes": 282572410,
+  "zipSha256": "2620dfb0315b4f81c5f0b6c1f9368e1e912d4f0b71e7b1bd5ad16f252e22f0b1",
+  "sourceFiles": 698,
+  "safeArtifactPaths": 421,
+  "tests": {
+    "tests": 648,
+    "pass": 648,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0
+  },
+  "scope": "original candidate and actual https://tougaigu.com browser runs; phone input is Chromium CDP simulated touch, not physical devices",
+  "reports": {
+    "candidate": {
+      "url": "http://127.0.0.1:8080/",
+      "bytes": 4074156,
+      "sha256": "47ec84d801027fe69f6b6b9814e2a70290ac7f9e45df1be2309af58fa45ce893",
+      "viewports": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "version": "29.0.0",
+          "noHorizontalOverflow": true,
+          "pageErrors": [],
+          "httpErrors": [],
+          "finalImagesLoaded": true,
+          "exactNetworkMatch": true,
+          "intentionalRequestFailures": 9
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "version": "29.0.0",
+          "noHorizontalOverflow": true,
+          "pageErrors": [],
+          "httpErrors": [],
+          "finalImagesLoaded": true,
+          "exactNetworkMatch": true,
+          "intentionalRequestFailures": 0
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "version": "29.0.0",
+          "noHorizontalOverflow": true,
+          "pageErrors": [],
+          "httpErrors": [],
+          "finalImagesLoaded": true,
+          "exactNetworkMatch": true,
+          "intentionalRequestFailures": 0
+        }
+      ],
+      "postRoutes": [
+        {
+          "name": "desktop",
+          "wallSeconds": 45.637,
+          "deaths": 0,
+          "resultRetained": true,
+          "actualExitState": "complete",
+          "mushroomSameBodyContinuousInput": true
+        },
+        {
+          "name": "390",
+          "wallSeconds": 34.718,
+          "deaths": 0,
+          "resultRetained": true,
+          "actualExitState": "complete",
+          "mushroomSameBodyContinuousInput": true
+        },
+        {
+          "name": "320",
+          "wallSeconds": 34.527,
+          "deaths": 0,
+          "resultRetained": true,
+          "actualExitState": "complete",
+          "mushroomSameBodyContinuousInput": true
+        },
+        {
+          "name": "fallback",
+          "wallSeconds": 34.717,
+          "deaths": 0,
+          "resultRetained": true,
+          "actualExitState": "complete",
+          "mushroomSameBodyContinuousInput": true
+        }
+      ],
+      "phoneInputBoundary": [
+        {
+          "width": 390,
+          "heldPointerId": 92,
+          "oldClicks": [
+            {
+              "targetId": null,
+              "defaultPreventedAfter": true,
+              "dialogsAfter": [
+                "result-dialog"
+              ]
+            }
+          ],
+          "freshPointerId": 93,
+          "freshClickAllowed": true,
+          "realOutroOpened": true
+        },
+        {
+          "width": 320,
+          "heldPointerId": 153,
+          "oldClicks": [
+            {
+              "targetId": "result-story",
+              "defaultPreventedAfter": true,
+              "dialogsAfter": [
+                "result-dialog"
+              ]
+            }
+          ],
+          "freshPointerId": 154,
+          "freshClickAllowed": true,
+          "realOutroOpened": true
+        }
+      ],
+      "readings": [
+        {
+          "width": 390,
+          "ending": "dawn",
+          "gestureCount": 0,
+          "initialScrollTop": 0,
+          "finalScrollTop": 0,
+          "fullyVisibleParagraphs": 3,
+          "homeFullyVisibleAndHit": true,
+          "footnoteFullyVisible": true,
+          "gestureCleanupComplete": true
+        },
+        {
+          "width": 390,
+          "ending": "lanterns",
+          "gestureCount": 0,
+          "initialScrollTop": 0,
+          "finalScrollTop": 0,
+          "fullyVisibleParagraphs": 3,
+          "homeFullyVisibleAndHit": true,
+          "footnoteFullyVisible": true,
+          "gestureCleanupComplete": true
+        },
+        {
+          "width": 390,
+          "ending": "tender",
+          "gestureCount": 0,
+          "initialScrollTop": 0,
+          "finalScrollTop": 0,
+          "fullyVisibleParagraphs": 3,
+          "homeFullyVisibleAndHit": true,
+          "footnoteFullyVisible": true,
+          "gestureCleanupComplete": true
+        },
+        {
+          "width": 320,
+          "ending": "dawn",
+          "gestureCount": 1,
+          "initialScrollTop": 0,
+          "finalScrollTop": 69,
+          "fullyVisibleParagraphs": 3,
+          "homeFullyVisibleAndHit": true,
+          "footnoteFullyVisible": true,
+          "gestureCleanupComplete": true
+        },
+        {
+          "width": 320,
+          "ending": "lanterns",
+          "gestureCount": 1,
+          "initialScrollTop": 0,
+          "finalScrollTop": 103,
+          "fullyVisibleParagraphs": 3,
+          "homeFullyVisibleAndHit": true,
+          "footnoteFullyVisible": true,
+          "gestureCleanupComplete": true
+        },
+        {
+          "width": 320,
+          "ending": "tender",
+          "gestureCount": 1,
+          "initialScrollTop": 0,
+          "finalScrollTop": 103,
+          "fullyVisibleParagraphs": 3,
+          "homeFullyVisibleAndHit": true,
+          "footnoteFullyVisible": true,
+          "gestureCleanupComplete": true
+        }
+      ],
+      "desktopReplyReloads": [
+        {
+          "choices": {
+            "letter": "send",
+            "clock": "release"
+          },
+          "ending": "dawn",
+          "realReloadPreserved": true,
+          "progressAndRewardsUnchanged": true,
+          "noDuplicateDiscovery": true
+        },
+        {
+          "choices": {
+            "letter": "keep",
+            "clock": "hold"
+          },
+          "ending": "lanterns",
+          "realReloadPreserved": true,
+          "progressAndRewardsUnchanged": true,
+          "noDuplicateDiscovery": true
+        },
+        {
+          "choices": {
+            "letter": "keep",
+            "clock": "release"
+          },
+          "ending": "tender",
+          "realReloadPreserved": true,
+          "progressAndRewardsUnchanged": true,
+          "noDuplicateDiscovery": true
+        },
+        {
+          "choices": {
+            "letter": "send",
+            "clock": "hold"
+          },
+          "ending": "tender",
+          "realReloadPreserved": true,
+          "progressAndRewardsUnchanged": true,
+          "noDuplicateDiscovery": true
+        }
+      ],
+      "chapterSettlement": {
+        "before": 1,
+        "after": 4,
+        "legitimateCompletedRunsAdded": 3,
+        "otherProgressAndRewardsUnchanged": true,
+        "extendedWallSeconds": 116.605
+      },
+      "delayedResources": {
+        "moveWhileLoading": true,
+        "sameBodyAfterResponse": true,
+        "lateAfterLeavingNoLeak": true,
+        "recovered": true,
+        "stateAndRewardsUnchanged": true
+      },
+      "systemReducedMotion": {
+        "mediaReduced": true,
+        "activeAnimations": [],
+        "paragraphCount": 3,
+        "ending": "tender"
+      },
+      "finalEndingInvariants": {
+        "chaptersAndScoresUnchanged": true,
+        "riddlesAndSettingsUnchanged": true,
+        "collectionsUnchanged": true,
+        "rewardGrantsUnchanged": true,
+        "actualChoices": {
+          "letter": "keep",
+          "clock": "release"
+        },
+        "discoveredEndings": [
+          "dawn",
+          "lanterns",
+          "tender"
+        ]
+      },
+      "standaloneObjectsCompared": 26,
+      "secondaryAuditPassed": true
+    },
+    "live": {
+      "url": "https://tougaigu.com/?qa=b13bc250c1c597dc9b46d06541f461c055ec6ae6",
+      "bytes": 4074422,
+      "sha256": "63dde4ea58aaf0b0c5d47db60c4bc328c62c1ba8bb632de673ce3d3aa6e05cda",
+      "viewports": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "version": "29.0.0",
+          "noHorizontalOverflow": true,
+          "pageErrors": [],
+          "httpErrors": [],
+          "finalImagesLoaded": true,
+          "exactNetworkMatch": true,
+          "intentionalRequestFailures": 9
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "version": "29.0.0",
+          "noHorizontalOverflow": true,
+          "pageErrors": [],
+          "httpErrors": [],
+          "finalImagesLoaded": true,
+          "exactNetworkMatch": true,
+          "intentionalRequestFailures": 0
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "version": "29.0.0",
+          "noHorizontalOverflow": true,
+          "pageErrors": [],
+          "httpErrors": [],
+          "finalImagesLoaded": true,
+          "exactNetworkMatch": true,
+          "intentionalRequestFailures": 0
+        }
+      ],
+      "postRoutes": [
+        {
+          "name": "desktop",
+          "wallSeconds": 36.183,
+          "deaths": 0,
+          "resultRetained": true,
+          "actualExitState": "complete",
+          "mushroomSameBodyContinuousInput": true
+        },
+        {
+          "name": "390",
+          "wallSeconds": 34.91,
+          "deaths": 0,
+          "resultRetained": true,
+          "actualExitState": "complete",
+          "mushroomSameBodyContinuousInput": true
+        },
+        {
+          "name": "320",
+          "wallSeconds": 34.264,
+          "deaths": 0,
+          "resultRetained": true,
+          "actualExitState": "complete",
+          "mushroomSameBodyContinuousInput": true
+        },
+        {
+          "name": "fallback",
+          "wallSeconds": 35.168,
+          "deaths": 0,
+          "resultRetained": true,
+          "actualExitState": "complete",
+          "mushroomSameBodyContinuousInput": true
+        }
+      ],
+      "phoneInputBoundary": [
+        {
+          "width": 390,
+          "heldPointerId": 91,
+          "oldClicks": [
+            {
+              "targetId": null,
+              "defaultPreventedAfter": true,
+              "dialogsAfter": [
+                "result-dialog"
+              ]
+            }
+          ],
+          "freshPointerId": 92,
+          "freshClickAllowed": true,
+          "realOutroOpened": true
+        },
+        {
+          "width": 320,
+          "heldPointerId": 151,
+          "oldClicks": [
+            {
+              "targetId": "result-story",
+              "defaultPreventedAfter": true,
+              "dialogsAfter": [
+                "result-dialog"
+              ]
+            }
+          ],
+          "freshPointerId": 152,
+          "freshClickAllowed": true,
+          "realOutroOpened": true
+        }
+      ],
+      "readings": [
+        {
+          "width": 390,
+          "ending": "dawn",
+          "gestureCount": 0,
+          "initialScrollTop": 0,
+          "finalScrollTop": 0,
+          "fullyVisibleParagraphs": 3,
+          "homeFullyVisibleAndHit": true,
+          "footnoteFullyVisible": true,
+          "gestureCleanupComplete": true
+        },
+        {
+          "width": 390,
+          "ending": "lanterns",
+          "gestureCount": 0,
+          "initialScrollTop": 0,
+          "finalScrollTop": 0,
+          "fullyVisibleParagraphs": 3,
+          "homeFullyVisibleAndHit": true,
+          "footnoteFullyVisible": true,
+          "gestureCleanupComplete": true
+        },
+        {
+          "width": 390,
+          "ending": "tender",
+          "gestureCount": 0,
+          "initialScrollTop": 0,
+          "finalScrollTop": 0,
+          "fullyVisibleParagraphs": 3,
+          "homeFullyVisibleAndHit": true,
+          "footnoteFullyVisible": true,
+          "gestureCleanupComplete": true
+        },
+        {
+          "width": 320,
+          "ending": "dawn",
+          "gestureCount": 1,
+          "initialScrollTop": 0,
+          "finalScrollTop": 69,
+          "fullyVisibleParagraphs": 3,
+          "homeFullyVisibleAndHit": true,
+          "footnoteFullyVisible": true,
+          "gestureCleanupComplete": true
+        },
+        {
+          "width": 320,
+          "ending": "lanterns",
+          "gestureCount": 1,
+          "initialScrollTop": 0,
+          "finalScrollTop": 103,
+          "fullyVisibleParagraphs": 3,
+          "homeFullyVisibleAndHit": true,
+          "footnoteFullyVisible": true,
+          "gestureCleanupComplete": true
+        },
+        {
+          "width": 320,
+          "ending": "tender",
+          "gestureCount": 1,
+          "initialScrollTop": 0,
+          "finalScrollTop": 103,
+          "fullyVisibleParagraphs": 3,
+          "homeFullyVisibleAndHit": true,
+          "footnoteFullyVisible": true,
+          "gestureCleanupComplete": true
+        }
+      ],
+      "desktopReplyReloads": [
+        {
+          "choices": {
+            "letter": "send",
+            "clock": "release"
+          },
+          "ending": "dawn",
+          "realReloadPreserved": true,
+          "progressAndRewardsUnchanged": true,
+          "noDuplicateDiscovery": true
+        },
+        {
+          "choices": {
+            "letter": "keep",
+            "clock": "hold"
+          },
+          "ending": "lanterns",
+          "realReloadPreserved": true,
+          "progressAndRewardsUnchanged": true,
+          "noDuplicateDiscovery": true
+        },
+        {
+          "choices": {
+            "letter": "keep",
+            "clock": "release"
+          },
+          "ending": "tender",
+          "realReloadPreserved": true,
+          "progressAndRewardsUnchanged": true,
+          "noDuplicateDiscovery": true
+        },
+        {
+          "choices": {
+            "letter": "send",
+            "clock": "hold"
+          },
+          "ending": "tender",
+          "realReloadPreserved": true,
+          "progressAndRewardsUnchanged": true,
+          "noDuplicateDiscovery": true
+        }
+      ],
+      "chapterSettlement": {
+        "before": 1,
+        "after": 4,
+        "legitimateCompletedRunsAdded": 3,
+        "otherProgressAndRewardsUnchanged": true,
+        "extendedWallSeconds": 116.887
+      },
+      "delayedResources": {
+        "moveWhileLoading": true,
+        "sameBodyAfterResponse": true,
+        "lateAfterLeavingNoLeak": true,
+        "recovered": true,
+        "stateAndRewardsUnchanged": true
+      },
+      "systemReducedMotion": {
+        "mediaReduced": true,
+        "activeAnimations": [],
+        "paragraphCount": 3,
+        "ending": "tender"
+      },
+      "finalEndingInvariants": {
+        "chaptersAndScoresUnchanged": true,
+        "riddlesAndSettingsUnchanged": true,
+        "collectionsUnchanged": true,
+        "rewardGrantsUnchanged": true,
+        "actualChoices": {
+          "letter": "keep",
+          "clock": "release"
+        },
+        "discoveredEndings": [
+          "dawn",
+          "lanterns",
+          "tender"
+        ]
+      },
+      "standaloneObjectsCompared": 26,
+      "secondaryAuditPassed": true
+    }
+  },
+  "viewedPublicScreenshots": [
+    "live/1280-ending-keep-hold.png",
+    "live/1280-ending-dawn-320-read.png",
+    "live/1280-ending-lanterns-320-read.png",
+    "live/1280-ending-tender-320-read.png"
+  ],
+  "visualReview": "Original public PNGs inspected: distinct night illustration and three readable phone endings; no visible horizontal clipping or blocked phone return button in these inspected frames. Desktop initial screenshot is naturally scrollable and does not by itself prove all lower content visible."
+}

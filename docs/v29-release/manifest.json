@@ -1,0 +1,123 @@
+{
+  "runId": 40928071569,
+  "commit": "b13bc250c1c597dc9b46d06541f461c055ec6ae6",
+  "productVersion": "29.0.0",
+  "scope": "formal main candidate and actual HTTPS complete release verification",
+  "files": [
+    {
+      "file": "1280-ending-dawn-320-read.png",
+      "bytes": 138770,
+      "sha256": "4467b5f8cd998e20da9af00160e4e7dfef700b0aac2297bf534566670007cec5"
+    },
+    {
+      "file": "1280-ending-keep-hold.png",
+      "bytes": 390192,
+      "sha256": "8bfca96b73cd7f6d771e228535a21cabee87cc824a2e9f123ba825a0e8bdfa01"
+    },
+    {
+      "file": "1280-ending-lanterns-320-read.png",
+      "bytes": 135693,
+      "sha256": "cca89186227bc6b2a935abccaacfa867cc8f26ef76d3c4f7f0fe8afd3f792f0d"
+    },
+    {
+      "file": "1280-ending-tender-320-read.png",
+      "bytes": 132605,
+      "sha256": "8787bf911086ae084e4449008c5de9c376041e50865653e8ebac5f9b7962a464"
+    },
+    {
+      "file": "README.md",
+      "bytes": 4051,
+      "sha256": "e100aee9049da8bb8c8bc5ec32714c64b7960f458015752681e1944faeaf8fa8"
+    },
+    {
+      "file": "audit-compact.json",
+      "bytes": 148959,
+      "sha256": "05403606d779eb1fea445600a49cad458088f2832471c81eab077a5a92f50326"
+    },
+    {
+      "file": "candidate-main-report.json.gz",
+      "bytes": 193440,
+      "sha256": "9f436a95f5d098d7b6589dd8f27264d477bdcfc67d40a9f13788511e38c377d8"
+    },
+    {
+      "file": "official-metadata.json",
+      "bytes": 3238,
+      "sha256": "0a15a014cfe488bb851f19c92b3f03bf8eba846b9fa0a132b43790e5ba819b86"
+    },
+    {
+      "file": "public-report.json.gz",
+      "bytes": 193265,
+      "sha256": "ce9b532f63d9b2f8a48754731254f399b07f4e1e0c2395e0aa152128e710544e"
+    },
+    {
+      "file": "secondary-audit.json",
+      "bytes": 15637,
+      "sha256": "8b3e8cc1254deec8a07443017c183b4c4e59d6cd6984b3840af1448395f4cc11"
+    }
+  ],
+  "totalBytesExcludingManifest": 1355850,
+  "compressedReports": [
+    {
+      "scope": "candidate",
+      "file": "candidate-main-report.json.gz",
+      "rawArtifactPath": "candidate/report.json",
+      "rawBytes": 4074156,
+      "rawSha256": "47ec84d801027fe69f6b6b9814e2a70290ac7f9e45df1be2309af58fa45ce893",
+      "gzipBytes": 193440,
+      "gzipSha256": "9f436a95f5d098d7b6589dd8f27264d477bdcfc67d40a9f13788511e38c377d8",
+      "gzipMtime": 0,
+      "gzipFilename": "",
+      "decompressedBytesExact": true,
+      "secondCompressionIdentical": true
+    },
+    {
+      "scope": "live",
+      "file": "public-report.json.gz",
+      "rawArtifactPath": "live/report.json",
+      "rawBytes": 4074422,
+      "rawSha256": "63dde4ea58aaf0b0c5d47db60c4bc328c62c1ba8bb632de673ce3d3aa6e05cda",
+      "gzipBytes": 193265,
+      "gzipSha256": "ce9b532f63d9b2f8a48754731254f399b07f4e1e0c2395e0aa152128e710544e",
+      "gzipMtime": 0,
+      "gzipFilename": "",
+      "decompressedBytesExact": true,
+      "secondCompressionIdentical": true
+    }
+  ],
+  "originalPublicImages": [
+    {
+      "file": "1280-ending-keep-hold.png",
+      "sourceArtifactRelativePath": "live/1280-ending-keep-hold.png",
+      "bytes": 390192,
+      "sha256": "8bfca96b73cd7f6d771e228535a21cabee87cc824a2e9f123ba825a0e8bdfa01",
+      "unalteredArtifactPNG": true,
+      "reviewedByIndependentAuditor": true
+    },
+    {
+      "file": "1280-ending-dawn-320-read.png",
+      "sourceArtifactRelativePath": "live/1280-ending-dawn-320-read.png",
+      "bytes": 138770,
+      "sha256": "4467b5f8cd998e20da9af00160e4e7dfef700b0aac2297bf534566670007cec5",
+      "unalteredArtifactPNG": true,
+      "reviewedByIndependentAuditor": true
+    },
+    {
+      "file": "1280-ending-lanterns-320-read.png",
+      "sourceArtifactRelativePath": "live/1280-ending-lanterns-320-read.png",
+      "bytes": 135693,
+      "sha256": "cca89186227bc6b2a935abccaacfa867cc8f26ef76d3c4f7f0fe8afd3f792f0d",
+      "unalteredArtifactPNG": true,
+      "reviewedByIndependentAuditor": true
+    },
+    {
+      "file": "1280-ending-tender-320-read.png",
+      "sourceArtifactRelativePath": "live/1280-ending-tender-320-read.png",
+      "bytes": 132605,
+      "sha256": "8787bf911086ae084e4449008c5de9c376041e50865653e8ebac5f9b7962a464",
+      "unalteredArtifactPNG": true,
+      "reviewedByIndependentAuditor": true
+    }
+  ],
+  "runtimeModifiedByThisArchive": false,
+  "gitRefsModifiedByThisArchive": false
+}

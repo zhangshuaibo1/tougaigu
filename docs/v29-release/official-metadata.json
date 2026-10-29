@@ -1,0 +1,108 @@
+{
+  "run": {
+    "id": 40928071569,
+    "status": "completed",
+    "conclusion": "success",
+    "head_sha": "b13bc250c1c597dc9b46d06541f461c055ec6ae6",
+    "created_at": "2026-10-29T18:09:06Z",
+    "updated_at": "2026-10-29T18:34:14Z",
+    "html_url": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40928071569"
+  },
+  "jobs": {
+    "jobs": [
+      {
+        "id": 123638830148,
+        "name": "verify",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 40928071569,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Verify game logic and local references",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Install browser test tools (not game dependencies)",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Test candidate with real browser input",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Test public deployment",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Preserve source snapshot",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 16
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 17
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "artifacts": [
+      {
+        "id": 12923740740,
+        "name": "game-verification-b13bc250c1c597dc9b46d06541f461c055ec6ae6",
+        "size_in_bytes": 282572410,
+        "url": "https://api.github.com/repos/zhangshuaibo1/tougaigu/actions/artifacts/12923740740",
+        "archive_download_url": "https://api.github.com/repos/zhangshuaibo1/tougaigu/actions/artifacts/12923740740/zip",
+        "expired": false,
+        "created_at": "2026-10-29T18:34:10Z",
+        "expires_at": "2026-11-01T18:34:00Z",
+        "updated_at": "2026-10-29T18:34:10Z",
+        "digest": "sha256:2620dfb0315b4f81c5f0b6c1f9368e1e912d4f0b71e7b1bd5ad16f252e22f0b1",
+        "workflow_run": {
+          "id": 40928071569,
+          "repository_id": 1437053091,
+          "head_repository_id": 1437053091,
+          "head_branch": "main",
+          "head_sha": "b13bc250c1c597dc9b46d06541f461c055ec6ae6"
+        }
+      }
+    ]
+  }
+}

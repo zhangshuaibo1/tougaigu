@@ -1,0 +1,828 @@
+{
+  "status": "complete",
+  "ending": "tender",
+  "layoutSamples": [
+    {
+      "open": true,
+      "ending": "tender",
+      "sceneId": "tender",
+      "savedChoices": {
+        "letter": "keep",
+        "clock": "release"
+      },
+      "sceneChoice": {
+        "ending": "tender",
+        "letter": "keep",
+        "clock": "release"
+      },
+      "choiceLabels": {
+        "letter": "信留窗边",
+        "clock": "钟声向前",
+        "sky": "晨光刚抵达窗沿"
+      },
+      "art": {
+        "sun": 0,
+        "lamps": 0,
+        "emptyChair": 0,
+        "slot": 0,
+        "train": 0,
+        "bench": 1,
+        "blankPage": 1,
+        "whale": 1,
+        "ashi": 1,
+        "shiguang": 1
+      },
+      "sceneCount": 1,
+      "sceneSvgCount": 1,
+      "sceneLabel": "慢慢天亮 · 并肩读完这一页",
+      "sceneRect": {
+        "left": 33,
+        "right": 287,
+        "top": 31,
+        "bottom": 233.078125,
+        "width": 254,
+        "height": 202.078125
+      },
+      "title": "不用一下子，走出长夜。",
+      "eyebrow": "ENDING 02 · 慢慢天亮",
+      "paragraphs": [
+        {
+          "text": "黎明先落在窗沿。归先生让钟多走一秒，阿拾就把头顶的窗再推开一点。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 364.765625,
+            "bottom": 419.359375,
+            "width": 254,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "text": "还没寄出的信住在靠窗的位置。小鲸替它压住折角，嫩芽负责每天报一次天气。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 432.359375,
+            "bottom": 486.953125,
+            "width": 254,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "text": "拾光没催谁出发。它陪阿拾把小满的字读完，再给明天留出一张空白信纸。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 499.953125,
+            "bottom": 554.546875,
+            "width": 254,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        }
+      ],
+      "lastLine": "盖子可以慢慢开，明天不必再锁着。",
+      "collection": "你已收好 3 / 3 种天色",
+      "collectionFont": 11,
+      "home": {
+        "rect": {
+          "left": 33,
+          "right": 287,
+          "top": 643.6875,
+          "bottom": 691.6875,
+          "width": 254,
+          "height": 48
+        },
+        "fullyVisible": false,
+        "centerHits": false
+      },
+      "note": {
+        "text": "你可以重访章节、收集遗漏残页，或在记忆信箱里写下不同的回信。",
+        "rect": {
+          "left": 33,
+          "right": 287,
+          "top": 708.6875,
+          "bottom": 748.28125,
+          "width": 254,
+          "height": 39.59375
+        },
+        "fullyVisible": false,
+        "fontSize": 11,
+        "lineHeight": 19.8,
+        "scrollWidth": 254,
+        "clientWidth": 254
+      },
+      "dialog": {
+        "left": 17,
+        "right": 303,
+        "top": 12,
+        "bottom": 668,
+        "width": 286,
+        "height": 656
+      },
+      "scrollTop": 0,
+      "scrollHeight": 757,
+      "clientHeight": 654,
+      "padding": {
+        "top": 18,
+        "right": 15,
+        "bottom": 22,
+        "left": 15
+      },
+      "scrollWidth": 284,
+      "clientWidth": 284,
+      "overflowY": "auto",
+      "pageWidth": 320,
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "reducedMotion": "false",
+      "mediaReduced": false,
+      "activeAnimations": []
+    },
+    {
+      "open": true,
+      "ending": "tender",
+      "sceneId": "tender",
+      "savedChoices": {
+        "letter": "keep",
+        "clock": "release"
+      },
+      "sceneChoice": {
+        "ending": "tender",
+        "letter": "keep",
+        "clock": "release"
+      },
+      "choiceLabels": {
+        "letter": "信留窗边",
+        "clock": "钟声向前",
+        "sky": "晨光刚抵达窗沿"
+      },
+      "art": {
+        "sun": 0,
+        "lamps": 0,
+        "emptyChair": 0,
+        "slot": 0,
+        "train": 0,
+        "bench": 1,
+        "blankPage": 1,
+        "whale": 1,
+        "ashi": 1,
+        "shiguang": 1
+      },
+      "sceneCount": 1,
+      "sceneSvgCount": 1,
+      "sceneLabel": "慢慢天亮 · 并肩读完这一页",
+      "sceneRect": {
+        "left": 33,
+        "right": 287,
+        "top": -72,
+        "bottom": 130.078125,
+        "width": 254,
+        "height": 202.078125
+      },
+      "title": "不用一下子，走出长夜。",
+      "eyebrow": "ENDING 02 · 慢慢天亮",
+      "paragraphs": [
+        {
+          "text": "黎明先落在窗沿。归先生让钟多走一秒，阿拾就把头顶的窗再推开一点。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 261.765625,
+            "bottom": 316.359375,
+            "width": 254,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "text": "还没寄出的信住在靠窗的位置。小鲸替它压住折角，嫩芽负责每天报一次天气。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 329.359375,
+            "bottom": 383.953125,
+            "width": 254,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        {
+          "text": "拾光没催谁出发。它陪阿拾把小满的字读完，再给明天留出一张空白信纸。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 396.953125,
+            "bottom": 451.546875,
+            "width": 254,
+            "height": 54.59375
+          },
+          "fontSize": 14,
+          "lineHeight": 27.3,
+          "fullyVisible": true,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        }
+      ],
+      "lastLine": "盖子可以慢慢开，明天不必再锁着。",
+      "collection": "你已收好 3 / 3 种天色",
+      "collectionFont": 11,
+      "home": {
+        "rect": {
+          "left": 33,
+          "right": 287,
+          "top": 540.6875,
+          "bottom": 588.6875,
+          "width": 254,
+          "height": 48
+        },
+        "fullyVisible": true,
+        "centerHits": true
+      },
+      "note": {
+        "text": "你可以重访章节、收集遗漏残页，或在记忆信箱里写下不同的回信。",
+        "rect": {
+          "left": 33,
+          "right": 287,
+          "top": 605.6875,
+          "bottom": 645.28125,
+          "width": 254,
+          "height": 39.59375
+        },
+        "fullyVisible": true,
+        "fontSize": 11,
+        "lineHeight": 19.8,
+        "scrollWidth": 254,
+        "clientWidth": 254
+      },
+      "dialog": {
+        "left": 17,
+        "right": 303,
+        "top": 12,
+        "bottom": 668,
+        "width": 286,
+        "height": 656
+      },
+      "scrollTop": 103,
+      "scrollHeight": 757,
+      "clientHeight": 654,
+      "padding": {
+        "top": 18,
+        "right": 15,
+        "bottom": 22,
+        "left": 15
+      },
+      "scrollWidth": 284,
+      "clientWidth": 284,
+      "overflowY": "auto",
+      "pageWidth": 320,
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "reducedMotion": "false",
+      "mediaReduced": false,
+      "activeAnimations": []
+    }
+  ],
+  "gestureAttempts": [
+    {
+      "index": 1,
+      "status": "complete",
+      "dispatches": [
+        {
+          "type": "touchStart",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 510.56,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.007911949000003915
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 492.52,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.05364209700007905
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 474.48,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.13516522300005818
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 456.44,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.1920701569999892
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 438.4,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.25867535000008957
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 420.36,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.3253301870000769
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 402.32,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.39199255599999105
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 384.28,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.4586605670000381
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 366.24,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.5254498450000256
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 348.2,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.5920931599999903
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 330.15999999999997,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.6587207640000088
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 312.12,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.7258814799999982
+        },
+        {
+          "type": "touchMove",
+          "touchPoints": [
+            {
+              "x": 281,
+              "y": 294.08,
+              "id": 49
+            }
+          ],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.7921024739999893
+        },
+        {
+          "type": "touchEnd",
+          "touchPoints": [],
+          "acknowledged": true,
+          "elapsedWallSeconds": 0.8585496210000656
+        }
+      ],
+      "plannedMoveSteps": 12,
+      "inputSource": "Chromium CDP simulated touch; acknowledgements are not a native event trace",
+      "cleanup": {
+        "sessionCreated": true,
+        "touchEndAttempted": true,
+        "touchEndAcknowledged": true,
+        "detachAttempted": true,
+        "sessionDetached": true
+      },
+      "beforeView": {
+        "open": true,
+        "ending": "tender",
+        "sceneId": "tender",
+        "savedChoices": {
+          "letter": "keep",
+          "clock": "release"
+        },
+        "sceneChoice": {
+          "ending": "tender",
+          "letter": "keep",
+          "clock": "release"
+        },
+        "choiceLabels": {
+          "letter": "信留窗边",
+          "clock": "钟声向前",
+          "sky": "晨光刚抵达窗沿"
+        },
+        "art": {
+          "sun": 0,
+          "lamps": 0,
+          "emptyChair": 0,
+          "slot": 0,
+          "train": 0,
+          "bench": 1,
+          "blankPage": 1,
+          "whale": 1,
+          "ashi": 1,
+          "shiguang": 1
+        },
+        "sceneCount": 1,
+        "sceneSvgCount": 1,
+        "sceneLabel": "慢慢天亮 · 并肩读完这一页",
+        "sceneRect": {
+          "left": 33,
+          "right": 287,
+          "top": 31,
+          "bottom": 233.078125,
+          "width": 254,
+          "height": 202.078125
+        },
+        "title": "不用一下子，走出长夜。",
+        "eyebrow": "ENDING 02 · 慢慢天亮",
+        "paragraphs": [
+          {
+            "text": "黎明先落在窗沿。归先生让钟多走一秒，阿拾就把头顶的窗再推开一点。",
+            "rect": {
+              "left": 33,
+              "right": 287,
+              "top": 364.765625,
+              "bottom": 419.359375,
+              "width": 254,
+              "height": 54.59375
+            },
+            "fontSize": 14,
+            "lineHeight": 27.3,
+            "fullyVisible": true,
+            "scrollWidth": 254,
+            "clientWidth": 254
+          },
+          {
+            "text": "还没寄出的信住在靠窗的位置。小鲸替它压住折角，嫩芽负责每天报一次天气。",
+            "rect": {
+              "left": 33,
+              "right": 287,
+              "top": 432.359375,
+              "bottom": 486.953125,
+              "width": 254,
+              "height": 54.59375
+            },
+            "fontSize": 14,
+            "lineHeight": 27.3,
+            "fullyVisible": true,
+            "scrollWidth": 254,
+            "clientWidth": 254
+          },
+          {
+            "text": "拾光没催谁出发。它陪阿拾把小满的字读完，再给明天留出一张空白信纸。",
+            "rect": {
+              "left": 33,
+              "right": 287,
+              "top": 499.953125,
+              "bottom": 554.546875,
+              "width": 254,
+              "height": 54.59375
+            },
+            "fontSize": 14,
+            "lineHeight": 27.3,
+            "fullyVisible": true,
+            "scrollWidth": 254,
+            "clientWidth": 254
+          }
+        ],
+        "lastLine": "盖子可以慢慢开，明天不必再锁着。",
+        "collection": "你已收好 3 / 3 种天色",
+        "collectionFont": 11,
+        "home": {
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 643.6875,
+            "bottom": 691.6875,
+            "width": 254,
+            "height": 48
+          },
+          "fullyVisible": false,
+          "centerHits": false
+        },
+        "note": {
+          "text": "你可以重访章节、收集遗漏残页，或在记忆信箱里写下不同的回信。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 708.6875,
+            "bottom": 748.28125,
+            "width": 254,
+            "height": 39.59375
+          },
+          "fullyVisible": false,
+          "fontSize": 11,
+          "lineHeight": 19.8,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        "dialog": {
+          "left": 17,
+          "right": 303,
+          "top": 12,
+          "bottom": 668,
+          "width": 286,
+          "height": 656
+        },
+        "scrollTop": 0,
+        "scrollHeight": 757,
+        "clientHeight": 654,
+        "padding": {
+          "top": 18,
+          "right": 15,
+          "bottom": 22,
+          "left": 15
+        },
+        "scrollWidth": 284,
+        "clientWidth": 284,
+        "overflowY": "auto",
+        "pageWidth": 320,
+        "viewport": {
+          "width": 320,
+          "height": 680
+        },
+        "reducedMotion": "false",
+        "mediaReduced": false,
+        "activeAnimations": []
+      },
+      "gesture": {
+        "x": 281,
+        "startY": 510.56,
+        "endY": 294.08,
+        "touchId": 49
+      },
+      "elapsedWallSeconds": 1.0113899360000005,
+      "afterView": {
+        "open": true,
+        "ending": "tender",
+        "sceneId": "tender",
+        "savedChoices": {
+          "letter": "keep",
+          "clock": "release"
+        },
+        "sceneChoice": {
+          "ending": "tender",
+          "letter": "keep",
+          "clock": "release"
+        },
+        "choiceLabels": {
+          "letter": "信留窗边",
+          "clock": "钟声向前",
+          "sky": "晨光刚抵达窗沿"
+        },
+        "art": {
+          "sun": 0,
+          "lamps": 0,
+          "emptyChair": 0,
+          "slot": 0,
+          "train": 0,
+          "bench": 1,
+          "blankPage": 1,
+          "whale": 1,
+          "ashi": 1,
+          "shiguang": 1
+        },
+        "sceneCount": 1,
+        "sceneSvgCount": 1,
+        "sceneLabel": "慢慢天亮 · 并肩读完这一页",
+        "sceneRect": {
+          "left": 33,
+          "right": 287,
+          "top": -72,
+          "bottom": 130.078125,
+          "width": 254,
+          "height": 202.078125
+        },
+        "title": "不用一下子，走出长夜。",
+        "eyebrow": "ENDING 02 · 慢慢天亮",
+        "paragraphs": [
+          {
+            "text": "黎明先落在窗沿。归先生让钟多走一秒，阿拾就把头顶的窗再推开一点。",
+            "rect": {
+              "left": 33,
+              "right": 287,
+              "top": 261.765625,
+              "bottom": 316.359375,
+              "width": 254,
+              "height": 54.59375
+            },
+            "fontSize": 14,
+            "lineHeight": 27.3,
+            "fullyVisible": true,
+            "scrollWidth": 254,
+            "clientWidth": 254
+          },
+          {
+            "text": "还没寄出的信住在靠窗的位置。小鲸替它压住折角，嫩芽负责每天报一次天气。",
+            "rect": {
+              "left": 33,
+              "right": 287,
+              "top": 329.359375,
+              "bottom": 383.953125,
+              "width": 254,
+              "height": 54.59375
+            },
+            "fontSize": 14,
+            "lineHeight": 27.3,
+            "fullyVisible": true,
+            "scrollWidth": 254,
+            "clientWidth": 254
+          },
+          {
+            "text": "拾光没催谁出发。它陪阿拾把小满的字读完，再给明天留出一张空白信纸。",
+            "rect": {
+              "left": 33,
+              "right": 287,
+              "top": 396.953125,
+              "bottom": 451.546875,
+              "width": 254,
+              "height": 54.59375
+            },
+            "fontSize": 14,
+            "lineHeight": 27.3,
+            "fullyVisible": true,
+            "scrollWidth": 254,
+            "clientWidth": 254
+          }
+        ],
+        "lastLine": "盖子可以慢慢开，明天不必再锁着。",
+        "collection": "你已收好 3 / 3 种天色",
+        "collectionFont": 11,
+        "home": {
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 540.6875,
+            "bottom": 588.6875,
+            "width": 254,
+            "height": 48
+          },
+          "fullyVisible": true,
+          "centerHits": true
+        },
+        "note": {
+          "text": "你可以重访章节、收集遗漏残页，或在记忆信箱里写下不同的回信。",
+          "rect": {
+            "left": 33,
+            "right": 287,
+            "top": 605.6875,
+            "bottom": 645.28125,
+            "width": 254,
+            "height": 39.59375
+          },
+          "fullyVisible": true,
+          "fontSize": 11,
+          "lineHeight": 19.8,
+          "scrollWidth": 254,
+          "clientWidth": 254
+        },
+        "dialog": {
+          "left": 17,
+          "right": 303,
+          "top": 12,
+          "bottom": 668,
+          "width": 286,
+          "height": 656
+        },
+        "scrollTop": 103,
+        "scrollHeight": 757,
+        "clientHeight": 654,
+        "padding": {
+          "top": 18,
+          "right": 15,
+          "bottom": 22,
+          "left": 15
+        },
+        "scrollWidth": 284,
+        "clientWidth": 284,
+        "overflowY": "auto",
+        "pageWidth": 320,
+        "viewport": {
+          "width": 320,
+          "height": 680
+        },
+        "reducedMotion": "false",
+        "mediaReduced": false,
+        "activeAnimations": []
+      }
+    }
+  ],
+  "maxGestureAttempts": 9,
+  "scope": "actual dialog measurements and bounded CDP touch attempts; not a physical phone",
+  "initialOverflowPixels": 103,
+  "requiresActualScroll": true,
+  "gestureAttemptCount": 1,
+  "inputCleanup": {
+    "gestureSessionsCreated": 1,
+    "gestureSessionsDetached": 1,
+    "touchEndAcknowledged": 1,
+    "allCreatedGestureSessionsDetached": true,
+    "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+  },
+  "reading": {
+    "fullyReadParagraphs": [
+      0,
+      1,
+      2
+    ],
+    "homeFullyVisibleAndUncovered": true,
+    "finalNoteFullyVisible": true,
+    "scrollSamples": 2,
+    "maxScrollTop": 103,
+    "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+  }
+}
