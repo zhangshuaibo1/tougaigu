@@ -1,0 +1,61 @@
+{
+  "checks": 66,
+  "frames": [
+    "desktop-arrival.png",
+    "desktop-wait-bank.png",
+    "desktop-left-dock.png",
+    "desktop-aboard.png",
+    "desktop-midway.png",
+    "desktop-right-dock.png",
+    "desktop-landed.png",
+    "phone-390-arrival.png",
+    "phone-390-wait-bank.png",
+    "phone-390-left-dock.png",
+    "phone-390-aboard.png",
+    "phone-390-midway.png",
+    "phone-390-right-dock.png",
+    "phone-390-landed.png",
+    "phone-320-arrival.png",
+    "phone-320-wait-bank.png",
+    "phone-320-left-dock.png",
+    "phone-320-aboard.png",
+    "phone-320-midway.png",
+    "phone-320-right-dock.png",
+    "phone-320-landed.png"
+  ],
+  "routes": [
+    {
+      "viewport": {
+        "width": 1100,
+        "height": 640
+      },
+      "actualInputCrossing": true,
+      "deaths": 0,
+      "seconds": 15.283333333333672,
+      "finishedX": 1398.7728281437323
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "actualInputCrossing": true,
+      "deaths": 0,
+      "seconds": 15.283333333333672,
+      "finishedX": 1398.7728281437323
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 431
+      },
+      "actualInputCrossing": true,
+      "deaths": 0,
+      "seconds": 15.283333333333672,
+      "finishedX": 1398.7728281437323
+    }
+  ],
+  "productionRenderer": true,
+  "normalEngineInput": true,
+  "browserQA": false
+}

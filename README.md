@@ -3,11 +3,21 @@
 原创 2D 横向叙事机关冒险。阿拾负责站稳、跳跃与压住机关；掀开头盖骨，让小光灵拾光飞出，穿过薄幕、收集记忆并解开诗灯。
 
 - 游戏：[掀起你的头盖骨](https://zhangshuaibo1.github.io/tougaigu/)
-- 当前公开版本：**18.0.0「头顶的小信窗」**，部署与公网验收完成。
+- 本轮候选版本：**19.0.0「借月剧场·稳稳登台」**；公开站点仍为18.0.0，候选浏览器验收和发布状态见[QA-v19](docs/QA-v19.md)。
 - 原生 JavaScript / Canvas，无运行时第三方 JavaScript 依赖；原《再活一局》保留在 `survivor.html`。
 - 六章、十个节日、原有存档与奖励规则保留。企业页脚与原地址不变。
 
 ## 本轮可玩变化
+
+### 借月剧场 · 稳稳登台
+
+第三章的移动舞台、两岸踏台与地面前缘使用统一暖木材、紫褐裙板和黄铜连接件。吊索滑轮跟随实际台位转动；台面顶边和左右宽度严格贴合原有碰撞，舞台与岸边真正接合时，实际重叠的一段顶边才亮起来。
+
+阿拾在第三章复用已精修的邮差步态、衣料、背包与骨质细节，增加紫色月光反射。阴影投到脚下最近的真实可站立表面，随高度变淡、收拢，并裁在平台内；坑洞下没有承载面时不画悬空地面阴影。
+
+左岸等台、舞台靠近、随台渡过、右岸下台使用原有提示位置显示简短反馈。提示由真实身体与平台位置决定，不覆盖朋友交谈、诗灯或借月追光。关卡几何、平台周期、移动承载、存档和奖励规则保持原样。
+
+完整验证记录：[QA-v19](docs/QA-v19.md)。这一轮后继续提升剧场背景与角色、前景之间的完成度。
 
 ### 倒流温室 · 玻璃与新芽
 
@@ -65,7 +75,7 @@ npm run check
 ```sh
 python -m pip install playwright==1.55.0
 python -m playwright install chromium
-python scripts/browser-smoke.py --url http://127.0.0.1:8080/ --version 18.0.0 --output verification/browser
+python scripts/browser-smoke.py --url http://127.0.0.1:8080/ --version 19.0.0 --output verification/browser
 ```
 
 浏览器脚本在测试请求中追加只读坐标/状态查询。移动、跳跃、答题、剧情选择均使用正常键盘、触控与DOM按钮，不注入坐标、存档、完成状态或奖励。生产模块不包含测试查询接口。
@@ -74,11 +84,11 @@ python scripts/browser-smoke.py --url http://127.0.0.1:8080/ --version 18.0.0 --
 
 `main`保存源码、测试和文档；`gh-pages`根目录部署`dist/`内容并保留`.nojekyll`。更新分支前读取精确SHA并使用并发保护；发现其他会话已发布同一候选，继续其验证流程。
 
-原v14物理保留于`dream-engine-base.js`，第一、二章表现由`dream-engine.js`薄子类接入。信件演出在`dream-letter-echo.js`，NPC绘制在`dream-encounter-art.js`；全部使用原有更新循环。
+原v14物理保留于`dream-engine-base.js`，前三章表现由`dream-engine.js`薄子类接入。信件演出在`dream-letter-echo.js`，NPC绘制在`dream-encounter-art.js`，第三章平台、提示和投影在`dream-theatre-art.js`、`dream-theatre-guidance.js`、`dream-ground-shadow.js`；全部使用原有更新循环。
 
-存档仍在当前浏览器本地保存，可由顶部设置导出旅途备份；不是账号云同步。v17/v18不清空或迁移旧存档，不新增奖励结算。
+存档仍在当前浏览器本地保存，可由顶部设置导出旅途备份；不是账号云同步。v17–v19不清空或迁移旧存档，不新增奖励结算。
 
-下一轮为 **v19「借月剧场·稳稳登台」**：移动舞台落脚边对齐真实碰撞，角色阴影落到真实下方平台，并改善登台/下台提示与操作验证。执行前读取 [迭代交接](docs/ITERATION.md) 和最新远端状态。
+当前 **v19「借月剧场·稳稳登台」** 已完成实现与离线检查，浏览器候选验证和部署尚待完成。后续执行前读取 [迭代交接](docs/ITERATION.md)、[QA-v19](docs/QA-v19.md) 和最新远端状态，先续完未完成的发布，再启动下一轮。
 
 [完整v2–v14历史](docs/README-v14.md) · [v16验收](docs/QA-v16.md) · [素材来源](docs/CREDITS.md)
 

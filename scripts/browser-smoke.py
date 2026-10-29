@@ -16,7 +16,10 @@ window.__qaRead=()=>{
   return {
     form:game.form,state:game.state,chapterIndex:game.chapterIndex,
     x:a.x,y:a.y,vx:a.vx,vy:a.vy,time:game.time,deaths:game.deaths,
-    body:{x:b.x,y:b.y,vx:b.vx,vy:b.vy,grounded:b.grounded},capPhase:game.cap?.phase,
+    body:{x:b.x,y:b.y,w:b.w,h:b.h,vx:b.vx,vy:b.vy,grounded:b.grounded,platform:b.platform},capPhase:game.cap?.phase,
+    nearHint:game.getNearHint(),
+    movers:(game.movers||[]).map(p=>({id:p.id,x:p.x,y:p.y,w:p.w,h:p.h,dx:p.dx,dy:p.dy})),
+    platforms:(game.level?.platforms||[]).map(p=>({x:p.x,y:p.y,w:p.w,h:p.h,kind:p.kind||null})),
     letterChoice:save.choices.letter??null,
     letterEcho:game.letterEcho?{...game.letterEcho}:null,
     greenhousePlant:p?{...p,knownSeals:[...p.knownSeals]}:null,
@@ -441,6 +444,151 @@ async def exercise_letter_echo(page,output,label):
             'rewardGrantsUnchanged':True,'collectiblesUnchanged':True,'chapterResultsUnchanged':True,
             'noHorizontalOverflow':True}
 
+async def tap_control(page,selector):
+    """Send actual touch input in the already-earned, resized desktop context."""
+    target=page.locator(selector)
+    await target.wait_for(state='visible')
+    await target.scroll_into_view_if_needed()
+    box=await target.bounding_box()
+    assert box, 'touch target has no visible bounds: '+selector
+    session=await page.context.new_cdp_session(page)
+    try:
+        await session.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[
+            {'x':box['x']+box['width']/2,'y':box['y']+box['height']/2,'id':41}]})
+        await session.send('Input.dispatchTouchEvent',{'type':'touchEnd','touchPoints':[]})
+    finally:
+        await session.detach()
+
+def theatre_mover(snapshot):
+    mover=next((p for p in snapshot['movers'] if p['id']=='stage'),None)
+    assert mover, 'the authored travelling stage is missing'
+    return mover
+
+def assert_theatre_rider(snapshot):
+    body=snapshot['body'];mover=theatre_mover(snapshot)
+    assert snapshot['form']=='body' and snapshot['state']=='playing'
+    assert body['platform']=='stage' and body['grounded'], 'body did not stand on the real moving stage'
+    assert abs(body['y']-mover['y'])<2
+    assert mover['x']-body['w']/2<body['x']<mover['x']+mover['w']+body['w']/2
+
+async def theatre_hint(page,phrase):
+    await wait_text(page,'#stage-near-hint',phrase)
+    snapshot=await page.evaluate('window.__qaRead()')
+    assert phrase in snapshot['nearHint'], 'visible platform hint disagrees with the live engine hint'
+    return snapshot
+
+async def cross_theatre_stage(page,output,label,touch=False):
+    """Walk/jump to the left bank, board on contact, ride without input, alight."""
+    output=Path(output)
+    await wait_text(page,'#stage-chapter-title','借月剧场')
+    await page.wait_for_function("()=>{const a=window.__qaRead();return a?.chapterIndex===2&&a.state==='playing'&&a.form==='body';}")
+    initial=await page.evaluate('window.__qaRead()')
+    assert initial['body']['x']<200 and initial['deaths']==0
+    banks=[p for p in initial['platforms'] if p['y']==465 and p['kind'] is None]
+    left=next((p for p in banks if p['x']==565),None)
+    right=next((p for p in banks if p['x']==1130),None)
+    assert left and right and left['w']==220 and right['w']==225
+    assert theatre_mover(initial)['w']==185, 'the test expects the original moving-platform geometry'
+
+    print(label,'jump onto the actual left-bank shelf',flush=True)
+    await drive_to(page,490,touch=touch)
+    await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.grounded&&Math.abs(b.vx)<1;}")
+    if touch:await tap_control(page,'#stage-jump')
+    else:await page.keyboard.press('Space')
+    await drive_to(page,710,touch=touch)
+    await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.grounded&&b.platform===null&&Math.abs(b.y-465)<2&&Math.abs(b.vx)<1;}")
+    # Observe a genuinely absent platform, not a canned waiting line at spawn.
+    await page.wait_for_function("()=>window.__qaRead()?.movers.find(p=>p.id==='stage')?.x>925",timeout=15000)
+    waiting=await theatre_hint(page,'在踏台上等一等')
+    wb=waiting['body'];wm=theatre_mover(waiting)
+    assert left['x']<wb['x']<left['x']+left['w'] and abs(wb['y']-left['y'])<2
+    assert wm['x']>wb['x']+wb['w']/2+100, 'waiting hint was not observed across a real gap'
+    await page.screenshot(path=str(output/(label+'-theatre-left-bank.png')),full_page=True)
+
+    print(label,'wait for an outward-moving dock and walk aboard',flush=True)
+    await page.wait_for_function("()=>{const p=window.__qaRead()?.movers.find(p=>p.id==='stage');return p&&p.x<=725&&p.dx>0;}",timeout=15000)
+    boarding=await theatre_hint(page,'舞台靠近了')
+    bm=theatre_mover(boarding)
+    assert abs(bm['y']-left['y'])<2 and min(bm['x']+bm['w'],left['x']+left['w'])>max(bm['x'],left['x']), 'boarding hint had no actual same-height dock contact'
+    assert bm['dx']>0 and bm['x']<760
+    async def aboard():return (await page.evaluate('window.__qaRead()'))['body']['platform']=='stage'
+    await hold(page,'right',until=aboard,touch=touch,limit=5)
+    await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.platform==='stage'&&b.grounded&&Math.abs(b.vx)<1;}",timeout=3000)
+    ride_start=await page.evaluate('window.__qaRead()')
+    assert_theatre_rider(ride_start)
+    start_mover=theatre_mover(ride_start)
+    relative_start=ride_start['body']['x']-start_mover['x']
+
+    # All direction keys/touches have been released by hold(). Only the real
+    # platform may carry the player through this interval.
+    await page.wait_for_function("()=>window.__qaRead()?.movers.find(p=>p.id==='stage')?.x>=900",timeout=10000)
+    riding=await theatre_hint(page,'站稳就好')
+    assert_theatre_rider(riding)
+    rm=theatre_mover(riding);rb=riding['body']
+    assert rm['x']-start_mover['x']>100 and rb['x']-ride_start['body']['x']>100
+    assert abs(rb['vx'])<1 and abs((rb['x']-rm['x'])-relative_start)<1, 'standing rider slid relative to the moving stage'
+    assert left['x']+left['w']<rb['x']<right['x'], 'midstage evidence was not over the gap'
+    await page.screenshot(path=str(output/(label+'-theatre-midstage.png')),full_page=True)
+
+    await page.wait_for_function("()=>{const p=window.__qaRead()?.movers.find(p=>p.id==='stage');return p&&p.x>=1020&&p.dx>0;}",timeout=10000)
+    alighting=await theatre_hint(page,'右侧踏台到了')
+    assert_theatre_rider(alighting)
+    am=theatre_mover(alighting);ab=alighting['body']
+    assert abs(am['y']-right['y'])<2 and min(am['x']+am['w'],right['x']+right['w'])>max(am['x'],right['x']), 'alighting hint had no real dock contact'
+    assert right['x']-(ab['x']+ab['w']/2)<=55
+    async def ashore():
+        b=(await page.evaluate('window.__qaRead()'))['body']
+        return b['platform'] is None and b['grounded'] and b['x']>1220 and abs(b['y']-right['y'])<2
+    await hold(page,'right',until=ashore,touch=touch,limit=5)
+    await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.grounded&&b.platform===null&&Math.abs(b.vx)<1;}",timeout=3000)
+    landed=await page.evaluate('window.__qaRead()')
+    lb=landed['body']
+    assert right['x']<lb['x']<right['x']+right['w'] and abs(lb['y']-right['y'])<2
+    assert landed['deaths']==initial['deaths'] and landed['state']=='playing'
+    assert re.match(r'0\s*/',await page.locator('#stage-seals').inner_text()), 'platform route falsely solved a poem lamp'
+    assert await page.evaluate('document.documentElement.scrollWidth<=innerWidth'), 'theatre route horizontal overflow'
+    await page.screenshot(path=str(output/(label+'-theatre-right-bank.png')),full_page=True)
+    return {'viewport':page.viewport_size,'input':'CDP emulated touch controls' if touch else 'keyboard',
+            'scope':'first moving-stage crossing only; not chapter completion',
+            'leftBankReachedByJump':True,'waitHintMatchedGap':True,'boardHintMatchedContact':True,
+            'bodyPlatformObserved':'stage','noInputCarryDistance':rb['x']-ride_start['body']['x'],
+            'relativeRideOffsetDrift':(rb['x']-rm['x'])-relative_start,'alightHintMatchedContact':True,
+            'rightBankReached':True,'noRespawns':True,'noHorizontalOverflow':True,'chapterCompleted':False,
+            'evidence':{'waiting':waiting,'boarding':boarding,'rideStart':ride_start,'riding':riding,'alighting':alighting,'landed':landed}}
+
+async def exercise_theatre(page,output,label):
+    """Keep earned progress; resize the same session for a second touch crossing."""
+    print(label,'enter the normally unlocked theatre chapter',flush=True)
+    chapters=await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).chapters")
+    assert chapters[0]['completed'] and chapters[1]['completed'] and not chapters[2]['completed']
+    await page.locator('[data-shell-action="map"]').click()
+    await page.locator('#map-dialog[open]').wait_for()
+    chapter=page.locator('#chapter-grid [data-chapter="2"]')
+    assert await chapter.is_enabled(), 'real greenhouse completion did not unlock the theatre'
+    await chapter.click()
+    desktop=await cross_theatre_stage(page,output,label+'-keyboard')
+    viewport=page.viewport_size
+    emulation=await page.context.new_cdp_session(page)
+    try:
+        await page.set_viewport_size({'width':390,'height':844})
+        await emulation.send('Emulation.setTouchEmulationEnabled',{'enabled':True,'maxTouchPoints':5})
+        # This is a normal restart in the same actual save. No storage state,
+        # progress or body coordinates are injected into a second context.
+        if (await page.evaluate('window.__qaRead()'))['state']=='playing':
+            await tap_control(page,'[data-shell-action="pause"]')
+        await page.locator('#pause-dialog[open]').wait_for()
+        await tap_control(page,'#stage-restart')
+        await page.locator('#pause-dialog[open]').wait_for(state='hidden')
+        touch=await cross_theatre_stage(page,output,label+'-touch-390',touch=True)
+    finally:
+        await emulation.send('Emulation.setTouchEmulationEnabled',{'enabled':False})
+        await emulation.detach()
+        await page.set_viewport_size(viewport)
+    assert await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).chapters")==chapters, 'a stage crossing falsely settled chapter rewards'
+    return {'enteredViaUnlockedChapterMap':True,'keyboard':desktop,'touch390':touch,
+            'touchScope':'390x844 resized desktop Chromium context, real touch events; chapters 1-2 were earned with keyboard; no physical-phone or full mobile-playthrough claim',
+            'chapterResultsUnchanged':True}
+
 async def main(args):
     output=Path(args.output);output.mkdir(parents=True,exist_ok=True)
     report={'url':args.url,'source':'served production HTML; app module has a read-only coordinate probe appended in-memory; all actions use DOM/input','cases':[]}
@@ -497,6 +645,7 @@ async def main(args):
                 result['greenhouse']['stationRecordPreserved']=True
                 result['greenhouse']['reloadPreservedSeedAndLamps']=True
                 result['letterEcho']['reloadRestoredKeep']=True
+                result['theatre']=await exercise_theatre(page,output,str(w))
             assert not errors,errors
             assert not failed,failed
             report['cases'].append(result)

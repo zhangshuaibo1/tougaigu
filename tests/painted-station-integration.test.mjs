@@ -16,7 +16,7 @@ globalThis.requestAnimationFrame = () => ++requestedFrames;
 globalThis.cancelAnimationFrame = noop;
 const station = Object.freeze({ mode: 'story', chapterIndex: 0 });
 const image = Object.freeze({ complete: true, naturalWidth: 2172, naturalHeight: 724 });
-const otherScenes = [2, 3, 4, 5].map(chapterIndex => ({ chapterIndex })).concat(
+const otherScenes = [3, 4, 5].map(chapterIndex => ({ chapterIndex })).concat(
   FESTIVAL_LEVELS.map(level => ({ festival: getFestival(level.festivalId) })),
 );
 const deferred = () => {
@@ -143,7 +143,7 @@ test('the first story chapter requests its painting once, independently of the g
   assert.deepEqual(sources, [PAINTED_STATION_URL, PAINTED_GREENHOUSE_URL]); h.game.destroy();
 });
 
-test('a ready first-chapter image cannot alter the four remaining chapters or ten festival draw sequences', async () => {
+test('a ready first-chapter image cannot alter the final three chapters or ten festival draw sequences', async () => {
   const h = makeGame(() => image), base = makeGame(undefined, BaseGame);
   h.game.start({ sound: false }); await h.game.paintedScenes.request(station); render(h);
   for (const options of otherScenes) {
