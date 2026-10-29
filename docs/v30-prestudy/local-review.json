@@ -1,0 +1,50 @@
+{
+  "status": "local-prestudy-only",
+  "version": "29.0.0 (not yet bumped for v30)",
+  "baseCommit": "172bde595381dc21193563d8587fdd9d6c9e7df4",
+  "checks": {
+    "npmTest": {
+      "passedTestFiles": 71,
+      "failedTestFiles": 0,
+      "note": "Local Node runner reports files; individual CI assertions not yet observed for v30."
+    },
+    "npmRunCheck": {
+      "javascriptModules": 67,
+      "localReferences": 169,
+      "versionedAssetReferences": 229,
+      "staleFiles": 0
+    }
+  },
+  "sourceSha256": {
+    "dist/dream-engine.js": "ec03967f529ce408a3fad751834d18ef90869afe0962b00ea7d8a25c37f825f6",
+    "dist/dream-traveler-performance.js": "ff4f258632c6136fed2a4b95fa8aa828c25817d3db6318663b924ee93ecf2c5c",
+    "scripts/browser-smoke.py": "ac6d533c5080500d758629f0cfb3816810fa7c81e444728b3a47a9dc6db93dc0",
+    "scripts/browser_library_v26.py": "065a0ab28f7eef6d1e8e8125873f2866408f0a35b3813d050ba1e4bb9c7482ca",
+    "scripts/browser_coast_v27.py": "7f05ac3f6e8914e01407a357b54efa3f339362773fe056256636a9a2afe71365",
+    "scripts/browser_post_v28.py": "5ebf70976aa48807749ed0848d7d0013704d2f9e788a54d7e09ba6f19ee41740"
+  },
+  "visualReview": {
+    "rootReviewedOriginalRiderPNGs": [
+      "phone-320-book-b-up.png",
+      "phone-320-book-b-down.png",
+      "phone-320-last-stage-right.png",
+      "phone-390-post-root-land.png"
+    ],
+    "scope": "Native production Canvas outputs at 320/390 from deterministic offline authored-spawn fixtures; not browser, normal unlocking, full touch route or public release."
+  },
+  "independentReview": {
+    "postPoseReadsSamePhysicalFrame": true,
+    "initialLandOptionalThenRide": true,
+    "entryJumpAndPauseBeforeRouteHazards": true,
+    "v29MushroomAndModalAndFinalExitGatesPreserved": true,
+    "noAdditionalTestExpansionDuringReview": true
+  },
+  "pending": [
+    "v29 complete candidate and HTTPS release before publishing v30",
+    "Align to final v29 commit without overwriting research",
+    "Bump v30 version and all cache references",
+    "Run real v30 candidate browser route and inspect original images",
+    "Publish matching runtime blobs and run complete HTTPS route"
+  ],
+  "reviewRecordedAtUtc": "2026-10-29T17:02:26Z"
+}

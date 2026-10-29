@@ -22,13 +22,30 @@ test('post-office book evidence requires the same actual rider for a complete ho
 period=2*math.pi/.7
 samples=[]
 for i in range(121):
-    t=(period+.1)*i/120;x=1010+185*math.sin(.7*t)
-    samples.append(dict(runId=4,bodyIdentity=9,chapterIndex=5,mode='story',state='playing',form='body',deaths=0,time=t,
-        body=dict(x=x+36,y=465,w=30,vx=0,grounded=True,platform='last-stage'),input=dict(x=0,y=0),
-        mover=dict(id='last-stage',x=x,y=465,w=190,h=20,dx=185*.7*math.cos(.7*t)/60,range=185,speed=.7)))
+    t=(period+.1)*i/120;x=1010+185*math.sin(.7*t);velocity=185*.7*math.cos(.7*t)
+    sample=dict(runId=4,bodyIdentity=9,chapterIndex=5,mode='story',state='playing',form='body',deaths=0,time=t,visualTime=t,
+        body=dict(x=x+36,y=465,w=30,vx=0,walk=14,face=1,grounded=True,platform='last-stage'),input=dict(x=0,y=0),
+        mover=dict(id='last-stage',kind='book',axis='x',x=x,y=465,w=190,h=20,dx=velocity/60,dy=0,range=185,speed=.7))
+    sample['travelerPose']={key:copy.deepcopy(sample[key]) for key in ['runId','bodyIdentity','chapterIndex','mode','state','form','deaths','time','visualTime','body']}
+    sample['travelerPose'].update(reducedMotion=False,travelerPerformance=dict(phase='ride',platformId='last-stage',platformKind='book',platformAxis='x',platformVelocity=velocity,balance=velocity/180,landingAge=None))
+    samples.append(sample)
 result=validate_post_rider(samples)
 assert result['fullCycle'] and result['elapsed']>=period and result['horizontalTravel']>365
 assert result['maxSoleError']==0 and result['maxRelativeHorizontalDrift']<1e-9
+assert result['actualWalkingCycleUnchanged'] and result['actualRideSamples']==121 and min(result['horizontalPoseDirections'].values())>0
+contact=copy.deepcopy(samples)
+for sample in contact[:2]:sample['travelerPose']['travelerPerformance'].update(phase='land',landingAge=sample['time']+.01)
+assert validate_post_rider(contact)['actualLandingSamples']==2
+reduced=copy.deepcopy(samples)
+for sample in reduced:
+    sample['travelerPose']['reducedMotion']=True
+    sample['travelerPose']['travelerPerformance']['balance']=0
+assert validate_post_rider(reduced)['actualRideSamples']==121
+left_facing=copy.deepcopy(samples)
+for sample in left_facing:
+    sample['body']['face']=sample['travelerPose']['body']['face']=-1
+    sample['travelerPose']['travelerPerformance']['balance']*=-1
+assert validate_post_rider(left_facing)['actualRideSamples']==121
 def reject(change,needle):
     bad=copy.deepcopy(samples);change(bad)
     try:validate_post_rider(bad)
@@ -47,10 +64,24 @@ reject(lambda s:s[40]['body'].update(x=s[40]['body']['x']+2),'contact or relativ
 reject(lambda s:s[40]['input'].update(x=1),'held direction input')
 reject(lambda s:s[40]['body'].update(vx=1),'held direction input')
 reject(lambda s:s.__delitem__(slice(-4,None)),'omitted part')
-reject(lambda s:[p['mover'].update(dx=1) for p in s],'both actual floating-book')
-print('full actual horizontal period accepted; 14 misleading rider traces rejected')
+reject(lambda s:[(p['mover'].update(dx=1),p['travelerPose']['travelerPerformance'].update(platformVelocity=60,balance=1/3)) for p in s],'both actual floating-book')
+reject(lambda s:s[40]['body'].update(walk=15),'actual walking cycle')
+reject(lambda s:s[40]['travelerPose'].update(time=s[40]['time']+.01),'different actual frame')
+reject(lambda s:s[40]['travelerPose']['body'].update(y=466),'different actual frame')
+reject(lambda s:s[40]['mover'].update(axis='y'),'actual horizontal book')
+reject(lambda s:s[40]['travelerPose']['travelerPerformance'].update(platformAxis='y'),'actual horizontal support')
+reject(lambda s:s[40]['travelerPose']['travelerPerformance'].update(platformKind='stage'),'actual horizontal support')
+reject(lambda s:s[40]['travelerPose']['travelerPerformance'].update(phase='rise'),'neither actual contact nor established riding')
+reject(lambda s:s[40]['travelerPose']['travelerPerformance'].update(phase='land',landingAge=.01),'restarted its landing response')
+reject(lambda s:s[40]['travelerPose']['travelerPerformance'].update(platformVelocity=-s[40]['travelerPose']['travelerPerformance']['platformVelocity']),'actual horizontal travel direction')
+reject(lambda s:s[40]['travelerPose']['travelerPerformance'].update(balance=-s[40]['travelerPose']['travelerPerformance']['balance']),'opposed the actual horizontal travel direction')
+reject(lambda s:s[40]['travelerPose'].update(reducedMotion=True),'motion setting changed')
+reject(lambda s:[sample['travelerPose']['travelerPerformance'].update(phase='land',landingAge=.01) for sample in s[:2]],'same contact')
+reject(lambda s:s[40]['mover'].update(kind='stage'),'actual horizontal book')
+reject(lambda s:s[40].update(visualTime=-1),'time reversed')
+print('normal, initial contact, reduced and left-facing horizontal periods accepted; 28 misleading rider traces rejected')
 `);
-  assert.match(output,/14 misleading rider/);
+  assert.match(output,/28 misleading rider/);
 });
 
 test('final post-office exit is the authored early exit while frozen, never a fictitious full-swing crossing',()=>{

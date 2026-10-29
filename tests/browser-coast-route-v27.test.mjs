@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
 
 const helpers=String.raw`
-import ast,copy,json,math
+import ast,asyncio,copy,json,math
 from pathlib import Path
 from urllib.parse import urlparse
 tree=ast.parse(Path('scripts/browser_coast_v27.py').read_text())
@@ -87,4 +87,44 @@ for sample,kind,change in [(ready,'ready',dict(imageSource='https://example.test
 print('only the actual decoded, drawn coast resource passes the ready gate')
 `);
   assert.match(output,/actual decoded, drawn coast/);
+});
+
+test('the coast performs its one existing jump observation only at the fresh safe body entry',()=>{
+  const output=run(String.raw`
+route=next(n for n in tree.body if isinstance(n,ast.AsyncFunctionDef) and n.name=='play_coast_route')
+calls=[n for n in ast.walk(route) if isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute) and n.func.attr=='sample_body_jump']
+assert len(calls)==1,'the complete coast route must not repeat this jump'
+jump=next(i for i,n in enumerate(route.body) if any(isinstance(c,ast.Call) and isinstance(c.func,ast.Attribute) and c.func.attr=='sample_body_jump' for c in ast.walk(n)))
+# Execute the unmodified real entry statements; the remaining route belongs
+# to the independent full pendulum/crossing browser checks, not this unit stub.
+prefix=copy.deepcopy(route);prefix.body=prefix.body[:jump+1]+[ast.Return(value=ast.Name(id='entry_jump',ctx=ast.Load()))]
+exec(compile(ast.fix_missing_locations(ast.Module(body=[prefix],type_ignores=[])),'actual-coast-entry','exec'))
+start=dict(chapterIndex=4,state='playing',form='body',body=dict(x=105,y=560,grounded=True,vx=0),
+           seals=0,memories=0,deaths=0,reducedMotion=False)
+class Page:
+    def __init__(self,changes=None):self.snapshot=copy.deepcopy(start);self.snapshot.update(changes or {});self.calls=[]
+    async def evaluate(self,expression):assert expression=='window.__qaRead()';self.calls.append('read');return self.snapshot
+    def locator(self,selector):raise AssertionError('the jump must precede any story or route action')
+async def assert_coast_paint(page):page.calls.append('paint-ready')
+class Driver:
+    async def sample_body_jump(self,page,label,reduced_motion=None):
+        assert page.calls==['read','paint-ready'] and label=='candidate-coast-entry'
+        assert reduced_motion is page.snapshot['reducedMotion']
+        page.calls.append('original-one-Space-driver')
+        return dict(rise='captured',fall='captured',landed='captured',observerCleanup=dict(removed=True))
+async def main():
+    for reduced in [False,True]:
+        page=Page(dict(reducedMotion=reduced));result=await play_coast_route(page,None,'candidate',Driver())
+        assert result['observerCleanup']['removed'] and page.calls[-1]=='original-one-Space-driver'
+    for changes in [dict(chapterIndex=3),dict(state='paused'),dict(form='soul'),dict(body={**start['body'],'x':201}),
+                    dict(seals=1),dict(memories=1),dict(deaths=1)]:
+        page=Page(changes)
+        try:await play_coast_route(page,None,'candidate',Driver())
+        except AssertionError:pass
+        else:raise AssertionError('unsafe or non-fresh coast entry reached the extra jump')
+        assert page.calls==['read']
+    print('one original jump at fresh safe entry; seven wrong contexts rejected before input')
+asyncio.run(main())
+`);
+  assert.match(output,/seven wrong contexts rejected before input/);
 });

@@ -104,15 +104,20 @@ async def talk_bluepage(page,output,label,driver,touch=False,repeated=False):
     read=await driver.finish_story_from_ui(page,expected)
     return {'lamps':lamps,'repeated':repeated,'firstPortrait':first,'portraits':read['portraits']}
 
-def rider_sample(a,book):
+def rider_sample(a,book,driver):
     mover=next((p for p in a['movers'] if p['id']==book),None)
     assert mover,'the authored floating book is missing'
-    return {key:a[key] for key in ['runId','bodyIdentity','chapterIndex','mode','state','form','deaths','time','visualTime','body','input']}|{'mover':mover}
+    view=a['travelerPerformance']
+    assert view and view['phase'] in ['land','ride'],'floating-book carry lost its actual contact performance'
+    # Validate this already-read frame synchronously; no new browser round
+    # trip or wait is inserted into the existing physical cycle observation.
+    pose=driver.validate_traveler_pose(a,view['phase'],a['reducedMotion'])
+    return {key:a[key] for key in ['runId','bodyIdentity','chapterIndex','mode','state','form','deaths','time','visualTime','body','input']}|{'mover':mover,'travelerPose':pose}
 
 def validate_library_rider_trace(samples,book,full_cycle=False):
     assert len(samples)>=2,'a single still cannot prove actual book carry'
     first=samples[0];last=first;ys=[]
-    relative=first['body']['x']-first['mover']['x'];drift=0;sole=0
+    relative=first['body']['x']-first['mover']['x'];drift=0;sole=0;landings=0;rides=0;directions={'up':0,'down':0}
     for s in samples:
         detail=json.dumps(s,ensure_ascii=False)
         assert (s['runId'],s['bodyIdentity'],s['chapterIndex'],s['mode'],s['deaths'])==(first['runId'],first['bodyIdentity'],3,'story',first['deaths']),'library carry changed run, body, scene or deaths; '+detail
@@ -121,19 +126,38 @@ def validate_library_rider_trace(samples,book,full_cycle=False):
         b=s['body'];p=s['mover']
         assert p['id']==book and b['platform']==book and b['grounded'],'body lost actual book attachment; '+detail
         assert abs(b['vx'])<1 and s['input']=={'x':0,'y':0},'carry used held direction input; '+detail
+        assert b['walk']==first['body']['walk'],'platform carry advanced the actual walking cycle; '+detail
         assert b['x']+b['w']/2>p['x'] and b['x']-b['w']/2<p['x']+p['w'],'book no longer overlaps the body; '+detail
         sole=max(sole,abs(b['y']-p['y']));drift=max(drift,abs((b['x']-p['x'])-relative))
         assert sole<.1 and drift<1,'drawn rider separated from the real support; '+detail
+        pose=s['travelerPose'];view=pose['travelerPerformance']
+        assert all(pose[key]==s[key] for key in ['runId','bodyIdentity','chapterIndex','mode','state','form','deaths','time','visualTime','body']),'book carry used a different frame for its performance; '+detail
+        assert (view['platformId'],view['platformKind'],view['platformAxis'])==(book,'book','y'),'book performance lost its actual vertical support; '+detail
+        assert pose['reducedMotion']==first['travelerPose']['reducedMotion'],'book motion setting changed within one carry; '+detail
+        assert view['phase'] in ['land','ride'],'book carry is neither contact nor established riding; '+detail
+        if view['phase']=='land':
+            assert rides==0 and 0<=view['landingAge']<.2 and s['visualTime']-first['visualTime']<.2,'stationary book carry restarted the landing response; '+detail
+            landings+=1
+        else:
+            rides+=1
+            if p['dy']:
+                assert view['platformVerticalVelocity']*p['dy']>0,'book performance lost the real vertical travel direction; '+detail
+                if pose['reducedMotion']:assert view['verticalBalance']==0,'reduced book carry retained vertical acting; '+detail
+                else:assert view['verticalBalance']*p['dy']>0,'book balance opposed the real vertical travel direction; '+detail
+                directions['up' if p['dy']<0 else 'down']+=1
         ys.append(p['y']);last=s
     elapsed=samples[-1]['time']-first['time']
     assert max(ys)-min(ys)>1,'no physical vertical travel was observed'
+    assert rides>0,'book observation never reached actual established riding'
     if full_cycle:
         period=2*math.pi/abs(first['mover']['speed'])
         assert elapsed>=period,'floating-book observation omitted part of its actual cycle'
         assert min(s['mover']['dy'] for s in samples)<0<max(s['mover']['dy'] for s in samples),'both physical travel directions were not observed'
+        assert directions['up']>0 and directions['down']>0,'both real vertical riding performances were not observed'
         assert max(ys)-min(ys)>first['mover']['range']*1.7,'a complete floating-book excursion was not observed'
     return {'support':book,'gameSeconds':elapsed,'samples':samples,'fullCycle':full_cycle,
-            'maxSoleError':sole,'maxRelativeHorizontalDrift':drift,'verticalTravel':max(ys)-min(ys)}
+            'maxSoleError':sole,'maxRelativeHorizontalDrift':drift,'verticalTravel':max(ys)-min(ys),
+            'actualLandingSamples':landings,'actualRideSamples':rides,'verticalPoseDirections':directions}
 
 async def board_library_book(page,output,label,driver,book,x,low,touch=False,full_cycle=False):
     await driver.drive_to(page,x,limit=13,touch=touch)
@@ -141,13 +165,13 @@ async def board_library_book(page,output,label,driver,book,x,low,touch=False,ful
     await action(page,driver,'Space','#stage-jump',touch)
     await page.wait_for_function("id=>{const s=window.__qaRead();return s?.body.platform===id&&s.body.grounded;}",arg=book,timeout=3000)
     state=await page.evaluate('window.__qaRead()')
-    samples=[rider_sample(state,book)]
+    samples=[rider_sample(state,book,driver)]
     duration=2*math.pi/abs(samples[0]['mover']['speed']) if full_cycle else .65
     deadline=time.monotonic()+duration+4
     while samples[-1]['time']-samples[0]['time']<duration:
         assert time.monotonic()<deadline,'floating-book observation exceeded its bounded wall time'
         await page.wait_for_timeout(75)
-        samples.append(rider_sample(await page.evaluate('window.__qaRead()'),book))
+        samples.append(rider_sample(await page.evaluate('window.__qaRead()'),book,driver))
     carry=validate_library_rider_trace(samples,book,full_cycle)
     await page.screenshot(path=str(Path(output)/(label+'-library-'+book+'-riding.png')),full_page=True)
     return {'support':book,'bodyX':state['body']['x'],'bodyY':state['body']['y'],
@@ -158,16 +182,19 @@ async def pause_library(page,output,label,driver,touch=False):
     await page.locator('#pause-dialog[open]').wait_for()
     before=await page.evaluate('window.__qaRead()')
     assert before['state']=='paused' and before['chapterIndex']==3
+    pose_before=driver.validate_traveler_pose(before,before['travelerPerformance']['phase'],before['reducedMotion'])
     pixels=await page.locator('#dream-canvas').evaluate("canvas=>canvas.toDataURL('image/png')")
     await page.evaluate("async()=>{for(let i=0;i<6;i++)await new Promise(resolve=>requestAnimationFrame(resolve));}")
     after=await page.evaluate('window.__qaRead()')
     for key in ['runId','bodyIdentity','time','visualTime','body','movers','libraryPaint','storyNPC']:
         assert after[key]==before[key],'paused library advanced '+key
+    assert driver.validate_traveler_pose(after,after['travelerPerformance']['phase'],after['reducedMotion'])==pose_before,'paused library advanced the actual full traveler pose'
     assert await page.locator('#dream-canvas').evaluate("canvas=>canvas.toDataURL('image/png')")==pixels,'paused library canvas changed'
     Path(output,(label+'-library-paused-canvas.png')).write_bytes(base64.b64decode(pixels.split(',',1)[1]))
     await click_input(page,'#stage-resume',driver,touch)
     await page.wait_for_function("()=>window.__qaRead()?.state==='playing'")
-    return {'passiveFrames':6,'stateAndCanvasFrozen':True,'bodyPlatform':before['body']['platform']}
+    return {'passiveFrames':6,'stateAndCanvasFrozen':True,'bodyPlatform':before['body']['platform'],
+            'fullTravelerPoseFrozen':True,'travelerPose':pose_before}
 
 async def play_library_route(page,output,label,driver,touch=False,full_cycle=False,complete=True,
                              revisit_npc=False,read_intro=False,paint='ready',pause_check=False):

@@ -1,0 +1,40 @@
+{
+  "scope": "Selected unmodified original PNGs from offline paired production Canvas. Full generated-frame metadata is retained in motion-v30-report.json; unselected images can be reproduced with the script. Not browser or published-game evidence.",
+  "files": [
+    {
+      "file": "phone-320-chapter-1-fall-v29.png",
+      "bytes": 182985,
+      "sha256": "2cb71ef4f4625a1d308869691dba0394fdc54a1ae3c32abb773f6f3acc584756"
+    },
+    {
+      "file": "phone-320-chapter-1-fall.png",
+      "bytes": 183106,
+      "sha256": "eb291a205892d3f2bfa0a43097ba27cd7b7cd8cd85e22f032b94fc041570373c"
+    },
+    {
+      "file": "phone-390-chapter-2-settle-v29.png",
+      "bytes": 388372,
+      "sha256": "aa8a4364740c305c77242160d4eca7be6a2420e0aa9a4c0ef66d03ec7d4ca789"
+    },
+    {
+      "file": "phone-390-chapter-2-settle.png",
+      "bytes": 388454,
+      "sha256": "0462a99d2246d00322181157081c01975a852825ed8fceb9b336e663c1b05e7a"
+    },
+    {
+      "file": "desktop-chapter-2-settle.png",
+      "bytes": 1024628,
+      "sha256": "263d28b01c49e8b56a8d47918a90f688bc0522a263538cc1684ccb7dc5da4bf6"
+    },
+    {
+      "file": "desktop-chapter-4-fall.png",
+      "bytes": 809656,
+      "sha256": "fe8e1cc4c885ed4f69b27c7f61cc915f9ea4e0baba33c0c105bbe23f0ca11c50"
+    },
+    {
+      "file": "phone-390-chapter-6-fall.png",
+      "bytes": 291289,
+      "sha256": "65523e18dceb04b759048c9ec84e8cac97a1b19d4278ffbb58e47e68c5294d58"
+    }
+  ]
+}

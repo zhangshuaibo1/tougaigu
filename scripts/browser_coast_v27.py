@@ -247,6 +247,7 @@ async def play_coast_route(page,output,label,driver):
     assert start['chapterIndex']==4 and start['state']=='playing' and start['form']=='body' and start['body']['x']<200
     assert start['seals']==start['memories']==start['deaths']==0
     await assert_coast_paint(page)
+    entry_jump=await driver.sample_body_jump(page,label+'-coast-entry',reduced_motion=start['reducedMotion'])
     await page.locator('#stage-story').click()
     intro=await driver.finish_story_from_ui(page,COAST_INTRO)
     await driver.drive_to(page,120,limit=5)
@@ -292,7 +293,7 @@ async def play_coast_route(page,output,label,driver):
     assert completed['deaths']==0 and completed['bodyIdentity']==start['bodyIdentity']
     await page.screenshot(path=str(Path(output)/(label+'-coast-complete.png')),full_page=True)
     return {'scope':'desktop, earned fifth chapter, keyboard and real puzzle DOM, complete body route',
-            'introPortraits':intro['portraits'],'npcPortraits':npc['portraits'],'firstLamp':lamp1,'secondLamp':lamp2,
+            'entryBodyJump':entry_jump,'introPortraits':intro['portraits'],'npcPortraits':npc['portraits'],'firstLamp':lamp1,'secondLamp':lamp2,
             'freezes':[freeze1,freeze2,freeze3],'firstTwoCrossing':first_cross,'thirdCrossing':last_cross,
             'zeroDeaths':True,'threeRealMemories':True,'twoRealPuzzleLamps':True,'normalBodyExit':True}
 
