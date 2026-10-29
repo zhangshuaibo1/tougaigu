@@ -57,6 +57,15 @@ window.__qaRead=()=>{
       npcNear:game.getStoryNPCView()?.near===true,
       hazards:(game.hazards||[]).map(h=>({x:h.px,y:h.py,frozen:h.frozen}))
     }:null,
+    postPaint:game.isPostFinish?.()?{
+      status:game.postScenes?.getSnapshot()?.status,frame:game.postPaintedFrame,
+      width:game.getPaintedPostImage()?.naturalWidth||0,height:game.getPaintedPostImage()?.naturalHeight||0,
+      complete:game.getPaintedPostImage()?.complete===true,
+      imageSource:game.getPaintedPostImage()?.currentSrc||game.getPaintedPostImage()?.src||null,
+      lampLit:game.lanterns.slice(0,2).map(l=>l.lit===true),
+      lightAmounts:[...(game.postLight?.amounts||[])]
+    }:null,
+    postDelivery:game.getPostDeliveryView?.()??null,
     coastPaint:game.isCoastFinish?.()?{
       status:game.coastScenes?.getSnapshot()?.status,frame:game.coastPaintedFrame,
       width:game.getPaintedCoastImage()?.naturalWidth||0,height:game.getPaintedCoastImage()?.naturalHeight||0,
@@ -1632,7 +1641,7 @@ async def main(args):
             page.on('pageerror',lambda e:errors.append(str(e)))
             page.on('response',lambda r:failed.append({'url':r.url,'status':r.status}) if r.status>=400 else None)
             page.on('request',lambda r:art_requests.append(r.url) if re.search(r'/assets/theatre-painted-(?:v22\.webp|v20\.svg)(?:\?|$)',r.url) else None)
-            page.on('request',lambda r:later_art_requests.append(r.url) if re.search(r'/assets/(?:library-painted-v26|coast-painted-v27)\.webp(?:\?|$)',r.url) else None)
+            page.on('request',lambda r:later_art_requests.append(r.url) if re.search(r'/assets/(?:library-painted-v26|coast-painted-v27|post-painted-v28)\.webp(?:\?|$)',r.url) else None)
             page.on('requestfailed',lambda r:request_failures.append({'url':r.url,'failure':r.failure}))
             async def instrument(route):
                 response=await route.fetch()
@@ -1709,6 +1718,10 @@ async def main(args):
                     from browser_coast_v27 import exercise_coast
                     result['coast']=await exercise_coast(page,output,str(w),__main__)
                     expected_failures+=result['coast']['expectedRequestFailures']
+                if args.version and int(args.version.split('.')[0])>=28:
+                    from browser_post_v28 import exercise_post
+                    result['post']=await exercise_post(page,output,str(w),__main__)
+                    expected_failures+=result['post']['expectedRequestFailures']
             else:
                 assert art_requests==[], 'an independent chapter-one phone run requested the theatre art'
                 assert later_art_requests==[], 'an independent chapter-one phone run requested library or coast art'
