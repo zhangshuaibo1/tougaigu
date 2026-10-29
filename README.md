@@ -2,8 +2,8 @@
 
 原创 2D 横向叙事机关冒险。阿拾负责站稳、跳跃与压住机关；掀开头盖骨，让小光灵拾光飞出，穿过薄幕、收集记忆并解开诗灯。
 
-- 游戏：https://zhangshuaibo1.github.io/tougaigu/
-- 版本：16.0.0「灯下的邮差」
+- 游戏：[掀起你的头盖骨](https://zhangshuaibo1.github.io/tougaigu/)
+- 已发布并完成本轮验收：16.0.0「灯下的邮差」
 - 原生 JavaScript / Canvas，无运行时第三方依赖；原《再活一局》仍在 `survivor.html`。
 - 企业版权、原地址、六章、十个节日、全部本地存档与奖励规则保留。
 
@@ -17,9 +17,17 @@
 
 三份入口统一生成资源版本映射，更新时将入口、样式与所有依赖模块一起切换到本版本。主线六章、十个节日、前两章车票/种子/纸盆与旧存档都保留。
 
-![v16 生产引擎离线整屏](docs/v16-desktop-arrival.jpg)
+![v16 公开页面，桌面 Chrome 实际画面](docs/v16-live-desktop.png)
 
-这张图是生产 Canvas 离线合成，不包含 HTML 菜单，也不代替公网浏览器验收。实际发布状态与验证范围见 [QA-v16](docs/QA-v16.md)。
+上图是公开页面的 1920×824 Chrome 截图，包含实际中文界面和菜单。窄视口与对话截图、离线动作夹具、完整证据见 [QA-v16](docs/QA-v16.md)。
+
+## v16 发布与验收
+
+运行时代码为 [c6438b7](https://github.com/zhangshuaibo1/tougaigu/commit/c6438b744da7f26f0fe8cd0f30a3eb93edf099de)，Pages 提交为 [d09c300](https://github.com/zhangshuaibo1/tougaigu/commit/d09c3009d996472d2979f697ae05bf5cfda300df)，111 个运行时文件一致。[Pages 工作流](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40798348886) 与修复测试脚本后的 [完整验收工作流](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40798906987) 均成功。
+
+439 项逻辑测试、资源与版本检查、73 项离线绘制检查通过。CI 的本地 HTTP 候选站点和公开页面各验证三个视口：1280×800 用真实键盘事件完成第一章，覆盖错误答案、收票归位、暂停与重载存档；390×844 和 320×680 用模拟触屏验证收票归位、暂停与无横向溢出。六个 case 均为 16.0.0，无页面或 HTTP 错误。两个窄屏 case 的范围不包含整章通关。原始结果见 [公网与候选报告](docs/verification-v16-public.json)。
+
+首次 CI 因测试插桩未匹配 `dream-app.js?v=16.0.0` 而失败；[9099206](https://github.com/zhangshuaibo1/tougaigu/commit/9099206986d2e81d3e3e989998302fb50c694f5b) 修复 URL 匹配、增加探针就绪检查并记录实际入口 URL，保留所有原验收断言后完整重跑通过。连接 Chrome 的人工检查另确认中文界面与 390px NPC 对话正常。以上是桌面浏览器和模拟触屏结果，尚未进行物理手机、Safari 或低端 GPU 性能实测。
 
 ## 操作
 
@@ -54,6 +62,10 @@ python scripts/browser-smoke.py --url http://127.0.0.1:8080/ --version 16.0.0 --
 `main` 保存源码、测试与文档；`gh-pages` 根目录只部署 `dist/` 内容并保留 `.nojekyll`。CI 不自动发布，只验证候选版本和实际公开页面。发布前需检查远端 SHA，禁止覆盖并发修改。
 
 存档仍为当前浏览器本地存储，不是账号云同步。顶部设置可导出旅途备份。v16 不新增存档键、不迁移或清空旧进度，不增加奖励结算。
+
+## 下一轮
+
+**v17 倒流温室精绘与材质**已列为下一轮目标，尚未完成、发布或验收。将第一章成熟的景深、材质和轮廓方法推广到温室，重点让票纸盆、种子、嫩芽和小花在正常比例与窄屏中更清楚，并保留真实生长、机关和收藏逻辑。具体顺序见 [迭代交接](docs/ITERATION.md)。
 
 [本轮验收与限制](docs/QA-v16.md) · [迭代交接](docs/ITERATION.md) · [完整 v2–v14 功能与部署历史](docs/README-v14.md) · [素材来源](docs/CREDITS.md)
 

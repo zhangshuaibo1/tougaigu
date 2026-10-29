@@ -1,0 +1,2237 @@
+{
+  "version": "16.0.0",
+  "sourceCommit": "c6438b744da7f26f0fe8cd0f30a3eb93edf099de",
+  "verifiedCommit": "9099206986d2e81d3e3e989998302fb50c694f5b",
+  "pagesCommit": "d09c3009d996472d2979f697ae05bf5cfda300df",
+  "runtimeFileMatch": {
+    "files": 111,
+    "identical": true,
+    "additionalPagesFiles": [
+      ".nojekyll"
+    ]
+  },
+  "pagesRun": {
+    "id": 40798348886,
+    "conclusion": "success",
+    "url": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40798348886"
+  },
+  "verificationRun": {
+    "id": 40798906987,
+    "job": 123201995711,
+    "conclusion": "success",
+    "url": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40798906987"
+  },
+  "previousFailedRun": {
+    "id": 40798347185,
+    "reason": "The test instrumentation only matched an unversioned dream-app.js, so __qaRead was unavailable for dream-app.js?v=16.0.0. The harness now matches the exact module with optional query, gates probe readiness and records instrumented URLs; all original acceptance assertions remain."
+  },
+  "artifact": {
+    "id": 12865441588,
+    "url": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40798906987/artifacts/12865441588",
+    "retentionDays": 3
+  },
+  "manualBrowser": {
+    "browser": "connected Chrome",
+    "viewports": [
+      {
+        "width": 1920,
+        "height": 824
+      },
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 320,
+        "height": 680
+      }
+    ],
+    "observed": [
+      "painted station with Chinese interface",
+      "390px two-line NPC conversation and return to game",
+      "no horizontal overflow at 390px and 320px",
+      "existing profile remains 1/6 chapter, 3/18 memory"
+    ],
+    "screenshots": [
+      "v16-live-desktop.png",
+      "v16-live-phone-390.png",
+      "v16-live-phone-dialogue.png"
+    ],
+    "consoleErrors": [],
+    "limits": "Desktop Chrome viewport overrides, not physical phones or Safari; no low-end GPU claim."
+  },
+  "reports": [
+    {
+      "url": "http://127.0.0.1:8080/",
+      "source": "served production HTML; app module has a read-only coordinate probe appended in-memory; all actions use DOM/input",
+      "cases": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "version": "16.0.0",
+          "ticketCollectedAndReturned": true,
+          "pauseFrozen": true,
+          "noHorizontalOverflow": true,
+          "chapterCompleted": true,
+          "input": "keyboard",
+          "rafIntervalMs": {
+            "samples": 60,
+            "p50": 16.699999999999818,
+            "p95": 16.799999999999955
+          },
+          "frameSamplePhase": "initial active idle; not a physical-device benchmark",
+          "pageErrors": [],
+          "httpErrors": [],
+          "instrumentedAppURLs": [
+            "http://127.0.0.1:8080/dream-app.js?v=16.0.0",
+            "http://127.0.0.1:8080/dream-app.js?v=16.0.0"
+          ],
+          "resources": [
+            {
+              "name": "dream.css?v=16.0.0",
+              "duration": 15.200000000004366,
+              "transferSize": 65255
+            },
+            {
+              "name": "company-footer.css?v=16.0.0",
+              "duration": 14.599999999998545,
+              "transferSize": 2085
+            },
+            {
+              "name": "game-shell.css?v=16.0.0",
+              "duration": 15.19999999999709,
+              "transferSize": 8810
+            },
+            {
+              "name": "dream-play.css?v=16.0.0",
+              "duration": 15.599999999998545,
+              "transferSize": 11605
+            },
+            {
+              "name": "festival.css?v=16.0.0",
+              "duration": 15.80000000000291,
+              "transferSize": 20489
+            },
+            {
+              "name": "cap-play.css?v=16.0.0",
+              "duration": 14.69999999999709,
+              "transferSize": 9533
+            },
+            {
+              "name": "cap-portraits.css?v=16.0.0",
+              "duration": 16.700000000004366,
+              "transferSize": 2503
+            },
+            {
+              "name": "cap-activities.css?v=16.0.0",
+              "duration": 22.80000000000291,
+              "transferSize": 4211
+            },
+            {
+              "name": "lost-play.css?v=16.0.0",
+              "duration": 23.5,
+              "transferSize": 7654
+            },
+            {
+              "name": "portrait-hero-open.svg",
+              "duration": 23.599999999998545,
+              "transferSize": 13008
+            },
+            {
+              "name": "portrait-hero.svg",
+              "duration": 23.400000000001455,
+              "transferSize": 11898
+            },
+            {
+              "name": "portrait-moth.svg",
+              "duration": 27.200000000004366,
+              "transferSize": 3875
+            },
+            {
+              "name": "dream-app.js?v=16.0.0",
+              "duration": 33.69999999999709,
+              "transferSize": 62884
+            },
+            {
+              "name": "company-wordmark.webp",
+              "duration": 6.80000000000291,
+              "transferSize": 7452
+            },
+            {
+              "name": "game-shell.js?v=16.0.0",
+              "duration": 8.10000000000582,
+              "transferSize": 8026
+            },
+            {
+              "name": "dream-engine.js?v=16.0.0",
+              "duration": 8.700000000004366,
+              "transferSize": 4722
+            },
+            {
+              "name": "dream-festivals.js?v=16.0.0",
+              "duration": 10.5,
+              "transferSize": 53830
+            },
+            {
+              "name": "festival-hub.js?v=16.0.0",
+              "duration": 8.900000000001455,
+              "transferSize": 21807
+            },
+            {
+              "name": "cap-book.js?v=16.0.0",
+              "duration": 11.89999999999418,
+              "transferSize": 17710
+            },
+            {
+              "name": "dream-cap-story.js?v=16.0.0",
+              "duration": 11.599999999998545,
+              "transferSize": 14780
+            },
+            {
+              "name": "cap-activity-progress.js?v=16.0.0",
+              "duration": 13.19999999999709,
+              "transferSize": 11465
+            },
+            {
+              "name": "lost-evidence.js?v=16.0.0",
+              "duration": 13.900000000001455,
+              "transferSize": 7447
+            },
+            {
+              "name": "dream-lost-cases.js?v=16.0.0",
+              "duration": 13.5,
+              "transferSize": 27267
+            },
+            {
+              "name": "dream-cap-activities.js?v=16.0.0",
+              "duration": 13.69999999999709,
+              "transferSize": 14037
+            },
+            {
+              "name": "dream-encounters.js?v=16.0.0",
+              "duration": 14.099999999998545,
+              "transferSize": 16672
+            },
+            {
+              "name": "dream-journey.js?v=16.0.0",
+              "duration": 15.099999999998545,
+              "transferSize": 10229
+            },
+            {
+              "name": "dream-ui.js?v=16.0.0",
+              "duration": 19.099999999998545,
+              "transferSize": 4722
+            },
+            {
+              "name": "dream-direction-input.js?v=16.0.0",
+              "duration": 18.200000000004366,
+              "transferSize": 2220
+            },
+            {
+              "name": "lost-progress.js?v=16.0.0",
+              "duration": 19,
+              "transferSize": 10256
+            },
+            {
+              "name": "dream-story.js?v=16.0.0",
+              "duration": 19.099999999998545,
+              "transferSize": 31300
+            },
+            {
+              "name": "dream-engine-base.js?v=16.0.0",
+              "duration": 7.80000000000291,
+              "transferSize": 95072
+            },
+            {
+              "name": "dream-painted-scene.js?v=16.0.0",
+              "duration": 7.5,
+              "transferSize": 7264
+            },
+            {
+              "name": "dream-station-art.js?v=16.0.0",
+              "duration": 7.69999999999709,
+              "transferSize": 16591
+            },
+            {
+              "name": "dream-cap-art.js?v=16.0.0",
+              "duration": 10.799999999995634,
+              "transferSize": 22866
+            },
+            {
+              "name": "play-rewards.js?v=16.0.0",
+              "duration": 13.80000000000291,
+              "transferSize": 21103
+            },
+            {
+              "name": "dream-lost-encores.js?v=16.0.0",
+              "duration": 16.799999999995634,
+              "transferSize": 3030
+            },
+            {
+              "name": "dream-lost-encore-art.js?v=16.0.0",
+              "duration": 17.19999999999709,
+              "transferSize": 15825
+            },
+            {
+              "name": "cap-progress.js?v=16.0.0",
+              "duration": 12.400000000001455,
+              "transferSize": 4874
+            },
+            {
+              "name": "dream-levels.js?v=16.0.0",
+              "duration": 17.400000000001455,
+              "transferSize": 9042
+            },
+            {
+              "name": "dream-traveler-art.js?v=16.0.0",
+              "duration": 15.5,
+              "transferSize": 8609
+            },
+            {
+              "name": "dream-festival-art.js?v=16.0.0",
+              "duration": 15,
+              "transferSize": 31664
+            },
+            {
+              "name": "dream-festival-levels.js?v=16.0.0",
+              "duration": 10.39999999999418,
+              "transferSize": 6974
+            },
+            {
+              "name": "dream-cap-activity-engine.js?v=16.0.0",
+              "duration": 13.599999999998545,
+              "transferSize": 15927
+            },
+            {
+              "name": "dream-cap-activity-art.js?v=16.0.0",
+              "duration": 13.400000000001455,
+              "transferSize": 33206
+            },
+            {
+              "name": "dream-lost-art.js?v=16.0.0",
+              "duration": 17.799999999995634,
+              "transferSize": 41860
+            },
+            {
+              "name": "dream-scene-backdrop.js?v=16.0.0",
+              "duration": 18.400000000001455,
+              "transferSize": 19410
+            },
+            {
+              "name": "dream-lost-engine.js?v=16.0.0",
+              "duration": 18.400000000001455,
+              "transferSize": 13039
+            },
+            {
+              "name": "dream-encounter-art.js?v=16.0.0",
+              "duration": 18.099999999998545,
+              "transferSize": 19095
+            },
+            {
+              "name": "dream-awakenings.js?v=16.0.0",
+              "duration": 17.5,
+              "transferSize": 4132
+            },
+            {
+              "name": "dream-moon-art.js?v=16.0.0",
+              "duration": 22.400000000001455,
+              "transferSize": 15041
+            },
+            {
+              "name": "dream-awakening-art.js?v=16.0.0",
+              "duration": 19.599999999998545,
+              "transferSize": 26322
+            },
+            {
+              "name": "dream-moon-play.js?v=16.0.0",
+              "duration": 22.599999999998545,
+              "transferSize": 12956
+            },
+            {
+              "name": "dream-greenhouse-art.js?v=16.0.0",
+              "duration": 22.400000000001455,
+              "transferSize": 4180
+            },
+            {
+              "name": "dream-first-ticket-art.js?v=16.0.0",
+              "duration": 22.5,
+              "transferSize": 4629
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 3.6000000000058208,
+              "transferSize": 4453
+            },
+            {
+              "name": "station-painted-v16.webp",
+              "duration": 4.099999999998545,
+              "transferSize": 266628
+            },
+            {
+              "name": "portrait-hero-open.svg",
+              "duration": 6,
+              "transferSize": 13008
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 5.400000000001455,
+              "transferSize": 7066
+            },
+            {
+              "name": "portrait-soul-joy.svg",
+              "duration": 11.89999999999418,
+              "transferSize": 7193
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 2.8000000000029104,
+              "transferSize": 4453
+            },
+            {
+              "name": "portrait-soul-peek.svg",
+              "duration": 3.099999999998545,
+              "transferSize": 7102
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 3.2000000000043656,
+              "transferSize": 7066
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 2.7000000000043656,
+              "transferSize": 4453
+            },
+            {
+              "name": "portrait-soul-peek.svg",
+              "duration": 4,
+              "transferSize": 7102
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 3,
+              "transferSize": 7066
+            },
+            {
+              "name": "portrait-moth.svg",
+              "duration": 9.69999999999709,
+              "transferSize": 3875
+            },
+            {
+              "name": "portrait-hero-open.svg",
+              "duration": 3.8000000000029104,
+              "transferSize": 13008
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 2.5,
+              "transferSize": 4453
+            },
+            {
+              "name": "portrait-soul-peek.svg",
+              "duration": 14.30000000000291,
+              "transferSize": 7102
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 14.39999999999418,
+              "transferSize": 7066
+            },
+            {
+              "name": "portrait-moth.svg",
+              "duration": 7.80000000000291,
+              "transferSize": 3875
+            },
+            {
+              "name": "portrait-soul-brave.svg",
+              "duration": 5.5,
+              "transferSize": 7504
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 3.1000000000058208,
+              "transferSize": 4453
+            },
+            {
+              "name": "portrait-hero-joy.svg",
+              "duration": 3.2999999999883585,
+              "transferSize": 11904
+            }
+          ],
+          "imagesLoaded": true,
+          "reloadPreservedCapBook": true
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "version": "16.0.0",
+          "ticketCollectedAndReturned": true,
+          "pauseFrozen": true,
+          "noHorizontalOverflow": true,
+          "chapterCompleted": false,
+          "input": "emulated Chromium touch",
+          "rafIntervalMs": {
+            "samples": 60,
+            "p50": 16.700000000000045,
+            "p95": 16.700000000000273
+          },
+          "frameSamplePhase": "initial active idle; not a physical-device benchmark",
+          "pageErrors": [],
+          "httpErrors": [],
+          "instrumentedAppURLs": [
+            "http://127.0.0.1:8080/dream-app.js?v=16.0.0"
+          ],
+          "resources": [
+            {
+              "name": "dream.css?v=16.0.0",
+              "duration": 7,
+              "transferSize": 65255
+            },
+            {
+              "name": "company-footer.css?v=16.0.0",
+              "duration": 11.5,
+              "transferSize": 2085
+            },
+            {
+              "name": "game-shell.css?v=16.0.0",
+              "duration": 12.89999999999418,
+              "transferSize": 8810
+            },
+            {
+              "name": "dream-play.css?v=16.0.0",
+              "duration": 10.200000000011642,
+              "transferSize": 11605
+            },
+            {
+              "name": "festival.css?v=16.0.0",
+              "duration": 11.60000000000582,
+              "transferSize": 20489
+            },
+            {
+              "name": "cap-play.css?v=16.0.0",
+              "duration": 12.39999999999418,
+              "transferSize": 9533
+            },
+            {
+              "name": "cap-portraits.css?v=16.0.0",
+              "duration": 11,
+              "transferSize": 2503
+            },
+            {
+              "name": "cap-activities.css?v=16.0.0",
+              "duration": 15.400000000008731,
+              "transferSize": 4211
+            },
+            {
+              "name": "lost-play.css?v=16.0.0",
+              "duration": 16.10000000000582,
+              "transferSize": 7654
+            },
+            {
+              "name": "portrait-hero-open.svg",
+              "duration": 19.40000000000873,
+              "transferSize": 13008
+            },
+            {
+              "name": "portrait-moth.svg",
+              "duration": 18.80000000000291,
+              "transferSize": 3875
+            },
+            {
+              "name": "portrait-hero.svg",
+              "duration": 19.09999999999127,
+              "transferSize": 11898
+            },
+            {
+              "name": "dream-app.js?v=16.0.0",
+              "duration": 18,
+              "transferSize": 62884
+            },
+            {
+              "name": "company-wordmark.webp",
+              "duration": 37.30000000000291,
+              "transferSize": 7452
+            },
+            {
+              "name": "dream-engine.js?v=16.0.0",
+              "duration": 9.099999999991269,
+              "transferSize": 4722
+            },
+            {
+              "name": "game-shell.js?v=16.0.0",
+              "duration": 8.89999999999418,
+              "transferSize": 8026
+            },
+            {
+              "name": "festival-hub.js?v=16.0.0",
+              "duration": 10.30000000000291,
+              "transferSize": 21807
+            },
+            {
+              "name": "dream-festivals.js?v=16.0.0",
+              "duration": 12.10000000000582,
+              "transferSize": 53830
+            },
+            {
+              "name": "dream-cap-story.js?v=16.0.0",
+              "duration": 8.10000000000582,
+              "transferSize": 14780
+            },
+            {
+              "name": "cap-book.js?v=16.0.0",
+              "duration": 7.5,
+              "transferSize": 17710
+            },
+            {
+              "name": "cap-activity-progress.js?v=16.0.0",
+              "duration": 13.19999999999709,
+              "transferSize": 11465
+            },
+            {
+              "name": "dream-cap-activities.js?v=16.0.0",
+              "duration": 12.19999999999709,
+              "transferSize": 14037
+            },
+            {
+              "name": "dream-lost-cases.js?v=16.0.0",
+              "duration": 21.09999999999127,
+              "transferSize": 27267
+            },
+            {
+              "name": "lost-evidence.js?v=16.0.0",
+              "duration": 15.5,
+              "transferSize": 7447
+            },
+            {
+              "name": "dream-journey.js?v=16.0.0",
+              "duration": 15.69999999999709,
+              "transferSize": 10229
+            },
+            {
+              "name": "dream-encounters.js?v=16.0.0",
+              "duration": 21.30000000000291,
+              "transferSize": 16672
+            },
+            {
+              "name": "dream-direction-input.js?v=16.0.0",
+              "duration": 23.80000000000291,
+              "transferSize": 2220
+            },
+            {
+              "name": "dream-ui.js?v=16.0.0",
+              "duration": 22.19999999999709,
+              "transferSize": 4722
+            },
+            {
+              "name": "lost-progress.js?v=16.0.0",
+              "duration": 24.30000000000291,
+              "transferSize": 10256
+            },
+            {
+              "name": "dream-story.js?v=16.0.0",
+              "duration": 25,
+              "transferSize": 31300
+            },
+            {
+              "name": "dream-cap-art.js?v=16.0.0",
+              "duration": 18.69999999999709,
+              "transferSize": 22866
+            },
+            {
+              "name": "cap-progress.js?v=16.0.0",
+              "duration": 13.599999999991269,
+              "transferSize": 4874
+            },
+            {
+              "name": "dream-lost-encore-art.js?v=16.0.0",
+              "duration": 13.69999999999709,
+              "transferSize": 15825
+            },
+            {
+              "name": "dream-lost-encores.js?v=16.0.0",
+              "duration": 17.59999999999127,
+              "transferSize": 3030
+            },
+            {
+              "name": "dream-station-art.js?v=16.0.0",
+              "duration": 16.30000000000291,
+              "transferSize": 16591
+            },
+            {
+              "name": "dream-painted-scene.js?v=16.0.0",
+              "duration": 18.19999999999709,
+              "transferSize": 7264
+            },
+            {
+              "name": "dream-engine-base.js?v=16.0.0",
+              "duration": 19.5,
+              "transferSize": 95072
+            },
+            {
+              "name": "play-rewards.js?v=16.0.0",
+              "duration": 17.80000000000291,
+              "transferSize": 21103
+            },
+            {
+              "name": "dream-levels.js?v=16.0.0",
+              "duration": 11.099999999991269,
+              "transferSize": 9042
+            },
+            {
+              "name": "dream-festival-art.js?v=16.0.0",
+              "duration": 10.60000000000582,
+              "transferSize": 31664
+            },
+            {
+              "name": "dream-traveler-art.js?v=16.0.0",
+              "duration": 10.69999999999709,
+              "transferSize": 8609
+            },
+            {
+              "name": "dream-first-ticket-art.js?v=16.0.0",
+              "duration": 6.80000000000291,
+              "transferSize": 4629
+            },
+            {
+              "name": "dream-greenhouse-art.js?v=16.0.0",
+              "duration": 8.60000000000582,
+              "transferSize": 4180
+            },
+            {
+              "name": "dream-festival-levels.js?v=16.0.0",
+              "duration": 9,
+              "transferSize": 6974
+            },
+            {
+              "name": "dream-cap-activity-engine.js?v=16.0.0",
+              "duration": 8.60000000000582,
+              "transferSize": 15927
+            },
+            {
+              "name": "dream-lost-art.js?v=16.0.0",
+              "duration": 13.10000000000582,
+              "transferSize": 41860
+            },
+            {
+              "name": "dream-encounter-art.js?v=16.0.0",
+              "duration": 14,
+              "transferSize": 19095
+            },
+            {
+              "name": "dream-scene-backdrop.js?v=16.0.0",
+              "duration": 13.69999999999709,
+              "transferSize": 19410
+            },
+            {
+              "name": "dream-lost-engine.js?v=16.0.0",
+              "duration": 14.5,
+              "transferSize": 13039
+            },
+            {
+              "name": "dream-cap-activity-art.js?v=16.0.0",
+              "duration": 14.10000000000582,
+              "transferSize": 33206
+            },
+            {
+              "name": "dream-awakenings.js?v=16.0.0",
+              "duration": 13.39999999999418,
+              "transferSize": 4132
+            },
+            {
+              "name": "dream-awakening-art.js?v=16.0.0",
+              "duration": 18.09999999999127,
+              "transferSize": 26322
+            },
+            {
+              "name": "dream-moon-play.js?v=16.0.0",
+              "duration": 18.30000000000291,
+              "transferSize": 12956
+            },
+            {
+              "name": "dream-moon-art.js?v=16.0.0",
+              "duration": 18.90000000000873,
+              "transferSize": 15041
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 3.599999999991269,
+              "transferSize": 4453
+            },
+            {
+              "name": "station-painted-v16.webp",
+              "duration": 4.399999999994179,
+              "transferSize": 266628
+            },
+            {
+              "name": "portrait-hero-open.svg",
+              "duration": 6.69999999999709,
+              "transferSize": 13008
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 3.3999999999941792,
+              "transferSize": 7066
+            },
+            {
+              "name": "portrait-soul-joy.svg",
+              "duration": 6.100000000005821,
+              "transferSize": 7193
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 4.19999999999709,
+              "transferSize": 4453
+            },
+            {
+              "name": "portrait-soul-peek.svg",
+              "duration": 3.3999999999941792,
+              "transferSize": 7102
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 3.6999999999970896,
+              "transferSize": 7066
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 3,
+              "transferSize": 4453
+            }
+          ],
+          "imagesLoaded": true
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "version": "16.0.0",
+          "ticketCollectedAndReturned": true,
+          "pauseFrozen": true,
+          "noHorizontalOverflow": true,
+          "chapterCompleted": false,
+          "input": "emulated Chromium touch",
+          "rafIntervalMs": {
+            "samples": 60,
+            "p50": 16.700000000000045,
+            "p95": 16.799999999999955
+          },
+          "frameSamplePhase": "initial active idle; not a physical-device benchmark",
+          "pageErrors": [],
+          "httpErrors": [],
+          "instrumentedAppURLs": [
+            "http://127.0.0.1:8080/dream-app.js?v=16.0.0"
+          ],
+          "resources": [
+            {
+              "name": "dream.css?v=16.0.0",
+              "duration": 7,
+              "transferSize": 65255
+            },
+            {
+              "name": "company-footer.css?v=16.0.0",
+              "duration": 15.10000000000582,
+              "transferSize": 2085
+            },
+            {
+              "name": "game-shell.css?v=16.0.0",
+              "duration": 7.899999999994179,
+              "transferSize": 8810
+            },
+            {
+              "name": "dream-play.css?v=16.0.0",
+              "duration": 9.39999999999418,
+              "transferSize": 11605
+            },
+            {
+              "name": "festival.css?v=16.0.0",
+              "duration": 7,
+              "transferSize": 20489
+            },
+            {
+              "name": "cap-play.css?v=16.0.0",
+              "duration": 8,
+              "transferSize": 9533
+            },
+            {
+              "name": "cap-activities.css?v=16.0.0",
+              "duration": 12.19999999999709,
+              "transferSize": 4211
+            },
+            {
+              "name": "cap-portraits.css?v=16.0.0",
+              "duration": 12.69999999999709,
+              "transferSize": 2503
+            },
+            {
+              "name": "lost-play.css?v=16.0.0",
+              "duration": 14.799999999988358,
+              "transferSize": 7654
+            },
+            {
+              "name": "portrait-hero.svg",
+              "duration": 14.89999999999418,
+              "transferSize": 11898
+            },
+            {
+              "name": "portrait-hero-open.svg",
+              "duration": 15,
+              "transferSize": 13008
+            },
+            {
+              "name": "portrait-moth.svg",
+              "duration": 16.10000000000582,
+              "transferSize": 3875
+            },
+            {
+              "name": "dream-app.js?v=16.0.0",
+              "duration": 12.89999999999418,
+              "transferSize": 62884
+            },
+            {
+              "name": "dream-engine.js?v=16.0.0",
+              "duration": 5.30000000000291,
+              "transferSize": 4722
+            },
+            {
+              "name": "game-shell.js?v=16.0.0",
+              "duration": 8.60000000000582,
+              "transferSize": 8026
+            },
+            {
+              "name": "festival-hub.js?v=16.0.0",
+              "duration": 6.100000000005821,
+              "transferSize": 21807
+            },
+            {
+              "name": "dream-festivals.js?v=16.0.0",
+              "duration": 6.600000000005821,
+              "transferSize": 53830
+            },
+            {
+              "name": "dream-cap-story.js?v=16.0.0",
+              "duration": 9,
+              "transferSize": 14780
+            },
+            {
+              "name": "cap-book.js?v=16.0.0",
+              "duration": 10.099999999991269,
+              "transferSize": 17710
+            },
+            {
+              "name": "dream-cap-activities.js?v=16.0.0",
+              "duration": 10.39999999999418,
+              "transferSize": 14037
+            },
+            {
+              "name": "cap-activity-progress.js?v=16.0.0",
+              "duration": 11.799999999988358,
+              "transferSize": 11465
+            },
+            {
+              "name": "lost-evidence.js?v=16.0.0",
+              "duration": 13.89999999999418,
+              "transferSize": 7447
+            },
+            {
+              "name": "dream-encounters.js?v=16.0.0",
+              "duration": 13.5,
+              "transferSize": 16672
+            },
+            {
+              "name": "dream-lost-cases.js?v=16.0.0",
+              "duration": 14,
+              "transferSize": 27267
+            },
+            {
+              "name": "dream-journey.js?v=16.0.0",
+              "duration": 13.10000000000582,
+              "transferSize": 10229
+            },
+            {
+              "name": "dream-ui.js?v=16.0.0",
+              "duration": 15.400000000008731,
+              "transferSize": 4722
+            },
+            {
+              "name": "dream-direction-input.js?v=16.0.0",
+              "duration": 14,
+              "transferSize": 2220
+            },
+            {
+              "name": "lost-progress.js?v=16.0.0",
+              "duration": 15.599999999991269,
+              "transferSize": 10256
+            },
+            {
+              "name": "dream-story.js?v=16.0.0",
+              "duration": 15.80000000000291,
+              "transferSize": 31300
+            },
+            {
+              "name": "company-wordmark.webp",
+              "duration": 8.10000000000582,
+              "transferSize": 7452
+            },
+            {
+              "name": "dream-engine-base.js?v=16.0.0",
+              "duration": 9.80000000000291,
+              "transferSize": 95072
+            },
+            {
+              "name": "dream-station-art.js?v=16.0.0",
+              "duration": 10.69999999999709,
+              "transferSize": 16591
+            },
+            {
+              "name": "dream-painted-scene.js?v=16.0.0",
+              "duration": 10.5,
+              "transferSize": 7264
+            },
+            {
+              "name": "dream-cap-art.js?v=16.0.0",
+              "duration": 15.69999999999709,
+              "transferSize": 22866
+            },
+            {
+              "name": "play-rewards.js?v=16.0.0",
+              "duration": 13.60000000000582,
+              "transferSize": 21103
+            },
+            {
+              "name": "dream-lost-encores.js?v=16.0.0",
+              "duration": 14.60000000000582,
+              "transferSize": 3030
+            },
+            {
+              "name": "dream-lost-encore-art.js?v=16.0.0",
+              "duration": 15.400000000008731,
+              "transferSize": 15825
+            },
+            {
+              "name": "cap-progress.js?v=16.0.0",
+              "duration": 15.30000000000291,
+              "transferSize": 4874
+            },
+            {
+              "name": "dream-levels.js?v=16.0.0",
+              "duration": 15.39999999999418,
+              "transferSize": 9042
+            },
+            {
+              "name": "dream-festival-art.js?v=16.0.0",
+              "duration": 8.39999999999418,
+              "transferSize": 31664
+            },
+            {
+              "name": "dream-traveler-art.js?v=16.0.0",
+              "duration": 9.89999999999418,
+              "transferSize": 8609
+            },
+            {
+              "name": "dream-festival-levels.js?v=16.0.0",
+              "duration": 9.700000000011642,
+              "transferSize": 6974
+            },
+            {
+              "name": "dream-scene-backdrop.js?v=16.0.0",
+              "duration": 9.30000000000291,
+              "transferSize": 19410
+            },
+            {
+              "name": "dream-cap-activity-art.js?v=16.0.0",
+              "duration": 9.5,
+              "transferSize": 33206
+            },
+            {
+              "name": "dream-cap-activity-engine.js?v=16.0.0",
+              "duration": 9.89999999999418,
+              "transferSize": 15927
+            },
+            {
+              "name": "dream-lost-engine.js?v=16.0.0",
+              "duration": 11.89999999999418,
+              "transferSize": 13039
+            },
+            {
+              "name": "dream-lost-art.js?v=16.0.0",
+              "duration": 12,
+              "transferSize": 41860
+            },
+            {
+              "name": "dream-awakenings.js?v=16.0.0",
+              "duration": 12.39999999999418,
+              "transferSize": 4132
+            },
+            {
+              "name": "dream-encounter-art.js?v=16.0.0",
+              "duration": 13.89999999999418,
+              "transferSize": 19095
+            },
+            {
+              "name": "dream-moon-play.js?v=16.0.0",
+              "duration": 14.60000000000582,
+              "transferSize": 12956
+            },
+            {
+              "name": "dream-awakening-art.js?v=16.0.0",
+              "duration": 14.400000000008731,
+              "transferSize": 26322
+            },
+            {
+              "name": "dream-moon-art.js?v=16.0.0",
+              "duration": 14.60000000000582,
+              "transferSize": 15041
+            },
+            {
+              "name": "dream-first-ticket-art.js?v=16.0.0",
+              "duration": 14.80000000000291,
+              "transferSize": 4629
+            },
+            {
+              "name": "dream-greenhouse-art.js?v=16.0.0",
+              "duration": 16.80000000000291,
+              "transferSize": 4180
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 4,
+              "transferSize": 4453
+            },
+            {
+              "name": "station-painted-v16.webp",
+              "duration": 4.899999999994179,
+              "transferSize": 266628
+            },
+            {
+              "name": "portrait-hero-open.svg",
+              "duration": 5.899999999994179,
+              "transferSize": 13008
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 5.19999999999709,
+              "transferSize": 7066
+            },
+            {
+              "name": "portrait-soul-joy.svg",
+              "duration": 6.30000000000291,
+              "transferSize": 7193
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 3.900000000008731,
+              "transferSize": 4453
+            },
+            {
+              "name": "portrait-soul-peek.svg",
+              "duration": 3.3000000000029104,
+              "transferSize": 7102
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 3.400000000008731,
+              "transferSize": 7066
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 2.8000000000029104,
+              "transferSize": 4453
+            }
+          ],
+          "imagesLoaded": true
+        }
+      ]
+    },
+    {
+      "url": "https://zhangshuaibo1.github.io/tougaigu/?qa=9099206986d2e81d3e3e989998302fb50c694f5b",
+      "source": "served production HTML; app module has a read-only coordinate probe appended in-memory; all actions use DOM/input",
+      "cases": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "version": "16.0.0",
+          "ticketCollectedAndReturned": true,
+          "pauseFrozen": true,
+          "noHorizontalOverflow": true,
+          "chapterCompleted": true,
+          "input": "keyboard",
+          "rafIntervalMs": {
+            "samples": 60,
+            "p50": 16.699999999999818,
+            "p95": 16.799999999999727
+          },
+          "frameSamplePhase": "initial active idle; not a physical-device benchmark",
+          "pageErrors": [],
+          "httpErrors": [],
+          "instrumentedAppURLs": [
+            "https://zhangshuaibo1.github.io/tougaigu/dream-app.js?v=16.0.0",
+            "https://zhangshuaibo1.github.io/tougaigu/dream-app.js?v=16.0.0"
+          ],
+          "resources": [
+            {
+              "name": "dream.css?v=16.0.0",
+              "duration": 146.1999999999971,
+              "transferSize": 15055
+            },
+            {
+              "name": "company-footer.css?v=16.0.0",
+              "duration": 130.90000000000873,
+              "transferSize": 1078
+            },
+            {
+              "name": "game-shell.css?v=16.0.0",
+              "duration": 97.5,
+              "transferSize": 2807
+            },
+            {
+              "name": "dream-play.css?v=16.0.0",
+              "duration": 133.60000000000582,
+              "transferSize": 3204
+            },
+            {
+              "name": "cap-play.css?v=16.0.0",
+              "duration": 106.59999999999127,
+              "transferSize": 3086
+            },
+            {
+              "name": "cap-portraits.css?v=16.0.0",
+              "duration": 117,
+              "transferSize": 910
+            },
+            {
+              "name": "festival.css?v=16.0.0",
+              "duration": 131.09999999999127,
+              "transferSize": 5546
+            },
+            {
+              "name": "lost-play.css?v=16.0.0",
+              "duration": 120.80000000000291,
+              "transferSize": 2407
+            },
+            {
+              "name": "cap-activities.css?v=16.0.0",
+              "duration": 122,
+              "transferSize": 1584
+            },
+            {
+              "name": "portrait-hero-open.svg",
+              "duration": 130.60000000000582,
+              "transferSize": 4288
+            },
+            {
+              "name": "portrait-hero.svg",
+              "duration": 120.80000000000291,
+              "transferSize": 3921
+            },
+            {
+              "name": "portrait-moth.svg",
+              "duration": 122.20000000001164,
+              "transferSize": 1696
+            },
+            {
+              "name": "dream-app.js?v=16.0.0",
+              "duration": 147.90000000000873,
+              "transferSize": 62884
+            },
+            {
+              "name": "company-wordmark.webp",
+              "duration": 119.19999999999709,
+              "transferSize": 7452
+            },
+            {
+              "name": "dream-engine.js?v=16.0.0",
+              "duration": 127.89999999999418,
+              "transferSize": 1803
+            },
+            {
+              "name": "game-shell.js?v=16.0.0",
+              "duration": 94.90000000000873,
+              "transferSize": 3182
+            },
+            {
+              "name": "dream-festivals.js?v=16.0.0",
+              "duration": 100.10000000000582,
+              "transferSize": 20544
+            },
+            {
+              "name": "festival-hub.js?v=16.0.0",
+              "duration": 102.90000000000873,
+              "transferSize": 7678
+            },
+            {
+              "name": "dream-cap-story.js?v=16.0.0",
+              "duration": 102.89999999999418,
+              "transferSize": 6181
+            },
+            {
+              "name": "dream-encounters.js?v=16.0.0",
+              "duration": 88.70000000001164,
+              "transferSize": 5809
+            },
+            {
+              "name": "dream-cap-activities.js?v=16.0.0",
+              "duration": 89.70000000001164,
+              "transferSize": 5475
+            },
+            {
+              "name": "dream-lost-cases.js?v=16.0.0",
+              "duration": 94.90000000000873,
+              "transferSize": 8406
+            },
+            {
+              "name": "cap-activity-progress.js?v=16.0.0",
+              "duration": 105.40000000000873,
+              "transferSize": 3485
+            },
+            {
+              "name": "lost-evidence.js?v=16.0.0",
+              "duration": 116.40000000000873,
+              "transferSize": 2743
+            },
+            {
+              "name": "cap-book.js?v=16.0.0",
+              "duration": 122.90000000000873,
+              "transferSize": 6279
+            },
+            {
+              "name": "dream-journey.js?v=16.0.0",
+              "duration": 103.39999999999418,
+              "transferSize": 3847
+            },
+            {
+              "name": "dream-ui.js?v=16.0.0",
+              "duration": 95.69999999999709,
+              "transferSize": 2109
+            },
+            {
+              "name": "dream-direction-input.js?v=16.0.0",
+              "duration": 127.39999999999418,
+              "transferSize": 1027
+            },
+            {
+              "name": "lost-progress.js?v=16.0.0",
+              "duration": 83.19999999999709,
+              "transferSize": 3710
+            },
+            {
+              "name": "dream-story.js?v=16.0.0",
+              "duration": 135.10000000000582,
+              "transferSize": 12123
+            },
+            {
+              "name": "dream-levels.js?v=16.0.0",
+              "duration": 78.90000000000873,
+              "transferSize": 3976
+            },
+            {
+              "name": "play-rewards.js?v=16.0.0",
+              "duration": 86.70000000001164,
+              "transferSize": 6925
+            },
+            {
+              "name": "dream-cap-art.js?v=16.0.0",
+              "duration": 233.09999999999127,
+              "transferSize": 8218
+            },
+            {
+              "name": "cap-progress.js?v=16.0.0",
+              "duration": 87.90000000000873,
+              "transferSize": 1781
+            },
+            {
+              "name": "dream-lost-encores.js?v=16.0.0",
+              "duration": 90.60000000000582,
+              "transferSize": 1529
+            },
+            {
+              "name": "dream-lost-encore-art.js?v=16.0.0",
+              "duration": 103.40000000000873,
+              "transferSize": 6099
+            },
+            {
+              "name": "dream-engine-base.js?v=16.0.0",
+              "duration": 84.5,
+              "transferSize": 29979
+            },
+            {
+              "name": "dream-painted-scene.js?v=16.0.0",
+              "duration": 89.09999999999127,
+              "transferSize": 3113
+            },
+            {
+              "name": "dream-station-art.js?v=16.0.0",
+              "duration": 237.5,
+              "transferSize": 6902
+            },
+            {
+              "name": "dream-festival-levels.js?v=16.0.0",
+              "duration": 83.39999999999418,
+              "transferSize": 3343
+            },
+            {
+              "name": "dream-festival-art.js?v=16.0.0",
+              "duration": 83.5,
+              "transferSize": 10734
+            },
+            {
+              "name": "dream-cap-activity-art.js?v=16.0.0",
+              "duration": 128.5,
+              "transferSize": 10794
+            },
+            {
+              "name": "dream-cap-activity-engine.js?v=16.0.0",
+              "duration": 134.1999999999971,
+              "transferSize": 5255
+            },
+            {
+              "name": "dream-lost-engine.js?v=16.0.0",
+              "duration": 105,
+              "transferSize": 4355
+            },
+            {
+              "name": "dream-scene-backdrop.js?v=16.0.0",
+              "duration": 123.89999999999418,
+              "transferSize": 6673
+            },
+            {
+              "name": "dream-awakenings.js?v=16.0.0",
+              "duration": 92.70000000001164,
+              "transferSize": 1790
+            },
+            {
+              "name": "dream-awakening-art.js?v=16.0.0",
+              "duration": 99.90000000000873,
+              "transferSize": 8220
+            },
+            {
+              "name": "dream-lost-art.js?v=16.0.0",
+              "duration": 107,
+              "transferSize": 14439
+            },
+            {
+              "name": "dream-encounter-art.js?v=16.0.0",
+              "duration": 107.60000000000582,
+              "transferSize": 7038
+            },
+            {
+              "name": "dream-moon-art.js?v=16.0.0",
+              "duration": 89.80000000000291,
+              "transferSize": 5658
+            },
+            {
+              "name": "dream-moon-play.js?v=16.0.0",
+              "duration": 94.19999999999709,
+              "transferSize": 4332
+            },
+            {
+              "name": "dream-greenhouse-art.js?v=16.0.0",
+              "duration": 80.79999999998836,
+              "transferSize": 2021
+            },
+            {
+              "name": "dream-first-ticket-art.js?v=16.0.0",
+              "duration": 119.39999999999418,
+              "transferSize": 1881
+            },
+            {
+              "name": "dream-traveler-art.js?v=16.0.0",
+              "duration": 78,
+              "transferSize": 3483
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 88.19999999999709,
+              "transferSize": 1669
+            },
+            {
+              "name": "station-painted-v16.webp",
+              "duration": 103.80000000000291,
+              "transferSize": 266628
+            },
+            {
+              "name": "portrait-hero-open.svg",
+              "duration": 20.19999999999709,
+              "transferSize": 4288
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 93,
+              "transferSize": 2479
+            },
+            {
+              "name": "portrait-soul-joy.svg",
+              "duration": 87.30000000000291,
+              "transferSize": 2551
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 13.5,
+              "transferSize": 1669
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 13.39999999999418,
+              "transferSize": 2479
+            },
+            {
+              "name": "portrait-soul-peek.svg",
+              "duration": 101.70000000001164,
+              "transferSize": 2501
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 13.19999999999709,
+              "transferSize": 1669
+            },
+            {
+              "name": "portrait-soul-peek.svg",
+              "duration": 15.60000000000582,
+              "transferSize": 2501
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 12,
+              "transferSize": 2479
+            },
+            {
+              "name": "portrait-moth.svg",
+              "duration": 20.69999999999709,
+              "transferSize": 1696
+            },
+            {
+              "name": "portrait-hero-open.svg",
+              "duration": 16.30000000000291,
+              "transferSize": 4288
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 14.400000000008731,
+              "transferSize": 1669
+            },
+            {
+              "name": "portrait-soul-peek.svg",
+              "duration": 12.19999999999709,
+              "transferSize": 2501
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 13.19999999999709,
+              "transferSize": 2479
+            },
+            {
+              "name": "portrait-moth.svg",
+              "duration": 18.90000000000873,
+              "transferSize": 1696
+            },
+            {
+              "name": "portrait-soul-brave.svg",
+              "duration": 86.39999999999418,
+              "transferSize": 2636
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 35.80000000000291,
+              "transferSize": 1669
+            },
+            {
+              "name": "portrait-hero-joy.svg",
+              "duration": 123.69999999999709,
+              "transferSize": 4005
+            }
+          ],
+          "imagesLoaded": true,
+          "reloadPreservedCapBook": true
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "version": "16.0.0",
+          "ticketCollectedAndReturned": true,
+          "pauseFrozen": true,
+          "noHorizontalOverflow": true,
+          "chapterCompleted": false,
+          "input": "emulated Chromium touch",
+          "rafIntervalMs": {
+            "samples": 60,
+            "p50": 16.699999999999818,
+            "p95": 16.700000000000273
+          },
+          "frameSamplePhase": "initial active idle; not a physical-device benchmark",
+          "pageErrors": [],
+          "httpErrors": [],
+          "instrumentedAppURLs": [
+            "https://zhangshuaibo1.github.io/tougaigu/dream-app.js?v=16.0.0"
+          ],
+          "resources": [
+            {
+              "name": "dream.css?v=16.0.0",
+              "duration": 89.09999999999127,
+              "transferSize": 15055
+            },
+            {
+              "name": "dream-play.css?v=16.0.0",
+              "duration": 78,
+              "transferSize": 3204
+            },
+            {
+              "name": "game-shell.css?v=16.0.0",
+              "duration": 83.69999999999709,
+              "transferSize": 2807
+            },
+            {
+              "name": "company-footer.css?v=16.0.0",
+              "duration": 96.69999999999709,
+              "transferSize": 1078
+            },
+            {
+              "name": "festival.css?v=16.0.0",
+              "duration": 275.3999999999942,
+              "transferSize": 5546
+            },
+            {
+              "name": "cap-play.css?v=16.0.0",
+              "duration": 92.30000000000291,
+              "transferSize": 3086
+            },
+            {
+              "name": "cap-activities.css?v=16.0.0",
+              "duration": 103.69999999999709,
+              "transferSize": 1584
+            },
+            {
+              "name": "cap-portraits.css?v=16.0.0",
+              "duration": 106,
+              "transferSize": 910
+            },
+            {
+              "name": "lost-play.css?v=16.0.0",
+              "duration": 288.5,
+              "transferSize": 2407
+            },
+            {
+              "name": "portrait-hero.svg",
+              "duration": 111.09999999999127,
+              "transferSize": 3921
+            },
+            {
+              "name": "portrait-moth.svg",
+              "duration": 116.89999999999418,
+              "transferSize": 1696
+            },
+            {
+              "name": "portrait-hero-open.svg",
+              "duration": 153.6999999999971,
+              "transferSize": 4288
+            },
+            {
+              "name": "dream-app.js?v=16.0.0",
+              "duration": 10.599999999991269,
+              "transferSize": 62884
+            },
+            {
+              "name": "dream-engine.js?v=16.0.0",
+              "duration": 139.6999999999971,
+              "transferSize": 1803
+            },
+            {
+              "name": "festival-hub.js?v=16.0.0",
+              "duration": 75.79999999998836,
+              "transferSize": 7678
+            },
+            {
+              "name": "dream-festivals.js?v=16.0.0",
+              "duration": 102.79999999998836,
+              "transferSize": 20544
+            },
+            {
+              "name": "game-shell.js?v=16.0.0",
+              "duration": 117.89999999999418,
+              "transferSize": 3182
+            },
+            {
+              "name": "cap-activity-progress.js?v=16.0.0",
+              "duration": 94.5,
+              "transferSize": 3485
+            },
+            {
+              "name": "dream-cap-story.js?v=16.0.0",
+              "duration": 120.5,
+              "transferSize": 6181
+            },
+            {
+              "name": "dream-cap-activities.js?v=16.0.0",
+              "duration": 122.5,
+              "transferSize": 5475
+            },
+            {
+              "name": "cap-book.js?v=16.0.0",
+              "duration": 178.3000000000029,
+              "transferSize": 6279
+            },
+            {
+              "name": "dream-journey.js?v=16.0.0",
+              "duration": 93.39999999999418,
+              "transferSize": 3847
+            },
+            {
+              "name": "dream-ui.js?v=16.0.0",
+              "duration": 100.5,
+              "transferSize": 2109
+            },
+            {
+              "name": "dream-encounters.js?v=16.0.0",
+              "duration": 103.59999999999127,
+              "transferSize": 5809
+            },
+            {
+              "name": "dream-lost-cases.js?v=16.0.0",
+              "duration": 111,
+              "transferSize": 8406
+            },
+            {
+              "name": "lost-evidence.js?v=16.0.0",
+              "duration": 139.89999999999418,
+              "transferSize": 2743
+            },
+            {
+              "name": "dream-direction-input.js?v=16.0.0",
+              "duration": 156.8000000000029,
+              "transferSize": 1027
+            },
+            {
+              "name": "dream-story.js?v=16.0.0",
+              "duration": 107.19999999999709,
+              "transferSize": 12123
+            },
+            {
+              "name": "lost-progress.js?v=16.0.0",
+              "duration": 194.5,
+              "transferSize": 3710
+            },
+            {
+              "name": "play-rewards.js?v=16.0.0",
+              "duration": 110,
+              "transferSize": 6925
+            },
+            {
+              "name": "dream-levels.js?v=16.0.0",
+              "duration": 94.40000000000873,
+              "transferSize": 3976
+            },
+            {
+              "name": "dream-cap-art.js?v=16.0.0",
+              "duration": 88.30000000000291,
+              "transferSize": 8218
+            },
+            {
+              "name": "dream-engine-base.js?v=16.0.0",
+              "duration": 112.30000000000291,
+              "transferSize": 29979
+            },
+            {
+              "name": "dream-painted-scene.js?v=16.0.0",
+              "duration": 74.70000000001164,
+              "transferSize": 3113
+            },
+            {
+              "name": "dream-station-art.js?v=16.0.0",
+              "duration": 82.60000000000582,
+              "transferSize": 6902
+            },
+            {
+              "name": "dream-lost-encores.js?v=16.0.0",
+              "duration": 73,
+              "transferSize": 1529
+            },
+            {
+              "name": "dream-lost-encore-art.js?v=16.0.0",
+              "duration": 82.20000000001164,
+              "transferSize": 6099
+            },
+            {
+              "name": "cap-progress.js?v=16.0.0",
+              "duration": 86.80000000000291,
+              "transferSize": 1781
+            },
+            {
+              "name": "dream-festival-art.js?v=16.0.0",
+              "duration": 74.20000000001164,
+              "transferSize": 10734
+            },
+            {
+              "name": "dream-traveler-art.js?v=16.0.0",
+              "duration": 76.70000000001164,
+              "transferSize": 3483
+            },
+            {
+              "name": "dream-first-ticket-art.js?v=16.0.0",
+              "duration": 123.5,
+              "transferSize": 1881
+            },
+            {
+              "name": "dream-greenhouse-art.js?v=16.0.0",
+              "duration": 79.19999999999709,
+              "transferSize": 2021
+            },
+            {
+              "name": "dream-festival-levels.js?v=16.0.0",
+              "duration": 86.69999999999709,
+              "transferSize": 3343
+            },
+            {
+              "name": "dream-scene-backdrop.js?v=16.0.0",
+              "duration": 78.30000000000291,
+              "transferSize": 6673
+            },
+            {
+              "name": "dream-lost-engine.js?v=16.0.0",
+              "duration": 87.19999999999709,
+              "transferSize": 4355
+            },
+            {
+              "name": "dream-cap-activity-art.js?v=16.0.0",
+              "duration": 132.6999999999971,
+              "transferSize": 10794
+            },
+            {
+              "name": "dream-cap-activity-engine.js?v=16.0.0",
+              "duration": 243.3000000000029,
+              "transferSize": 5255
+            },
+            {
+              "name": "dream-lost-art.js?v=16.0.0",
+              "duration": 135.3000000000029,
+              "transferSize": 14439
+            },
+            {
+              "name": "dream-encounter-art.js?v=16.0.0",
+              "duration": 136.5,
+              "transferSize": 7038
+            },
+            {
+              "name": "dream-moon-play.js?v=16.0.0",
+              "duration": 92.60000000000582,
+              "transferSize": 4332
+            },
+            {
+              "name": "dream-awakening-art.js?v=16.0.0",
+              "duration": 95.69999999999709,
+              "transferSize": 8220
+            },
+            {
+              "name": "dream-moon-art.js?v=16.0.0",
+              "duration": 99.69999999999709,
+              "transferSize": 5658
+            },
+            {
+              "name": "dream-awakenings.js?v=16.0.0",
+              "duration": 131.8000000000029,
+              "transferSize": 1790
+            },
+            {
+              "name": "company-wordmark.webp",
+              "duration": 104,
+              "transferSize": 7452
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 74.5,
+              "transferSize": 1669
+            },
+            {
+              "name": "station-painted-v16.webp",
+              "duration": 398.1999999999971,
+              "transferSize": 266628
+            },
+            {
+              "name": "portrait-hero-open.svg",
+              "duration": 9.599999999991269,
+              "transferSize": 4288
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 77.40000000000873,
+              "transferSize": 2479
+            },
+            {
+              "name": "portrait-soul-joy.svg",
+              "duration": 92,
+              "transferSize": 2551
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 11.900000000023283,
+              "transferSize": 1669
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 7.699999999982538,
+              "transferSize": 2479
+            },
+            {
+              "name": "portrait-soul-peek.svg",
+              "duration": 76.19999999998254,
+              "transferSize": 2501
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 5.100000000005821,
+              "transferSize": 1669
+            }
+          ],
+          "imagesLoaded": true
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "version": "16.0.0",
+          "ticketCollectedAndReturned": true,
+          "pauseFrozen": true,
+          "noHorizontalOverflow": true,
+          "chapterCompleted": false,
+          "input": "emulated Chromium touch",
+          "rafIntervalMs": {
+            "samples": 60,
+            "p50": 16.699999999999818,
+            "p95": 16.799999999999955
+          },
+          "frameSamplePhase": "initial active idle; not a physical-device benchmark",
+          "pageErrors": [],
+          "httpErrors": [],
+          "instrumentedAppURLs": [
+            "https://zhangshuaibo1.github.io/tougaigu/dream-app.js?v=16.0.0"
+          ],
+          "resources": [
+            {
+              "name": "dream.css?v=16.0.0",
+              "duration": 103.79999999998836,
+              "transferSize": 15055
+            },
+            {
+              "name": "company-footer.css?v=16.0.0",
+              "duration": 88.10000000000582,
+              "transferSize": 1078
+            },
+            {
+              "name": "game-shell.css?v=16.0.0",
+              "duration": 104.60000000000582,
+              "transferSize": 2807
+            },
+            {
+              "name": "dream-play.css?v=16.0.0",
+              "duration": 93.80000000001746,
+              "transferSize": 3204
+            },
+            {
+              "name": "festival.css?v=16.0.0",
+              "duration": 111.5,
+              "transferSize": 5546
+            },
+            {
+              "name": "lost-play.css?v=16.0.0",
+              "duration": 81,
+              "transferSize": 2407
+            },
+            {
+              "name": "cap-play.css?v=16.0.0",
+              "duration": 96.79999999998836,
+              "transferSize": 3086
+            },
+            {
+              "name": "cap-activities.css?v=16.0.0",
+              "duration": 104.5,
+              "transferSize": 1584
+            },
+            {
+              "name": "cap-portraits.css?v=16.0.0",
+              "duration": 109.70000000001164,
+              "transferSize": 910
+            },
+            {
+              "name": "portrait-hero-open.svg",
+              "duration": 109.89999999999418,
+              "transferSize": 4288
+            },
+            {
+              "name": "portrait-hero.svg",
+              "duration": 103.79999999998836,
+              "transferSize": 3921
+            },
+            {
+              "name": "portrait-moth.svg",
+              "duration": 86.69999999998254,
+              "transferSize": 1696
+            },
+            {
+              "name": "dream-app.js?v=16.0.0",
+              "duration": 87.89999999999418,
+              "transferSize": 62884
+            },
+            {
+              "name": "dream-engine.js?v=16.0.0",
+              "duration": 78,
+              "transferSize": 1803
+            },
+            {
+              "name": "game-shell.js?v=16.0.0",
+              "duration": 138.80000000001746,
+              "transferSize": 3182
+            },
+            {
+              "name": "dream-cap-story.js?v=16.0.0",
+              "duration": 88.79999999998836,
+              "transferSize": 6181
+            },
+            {
+              "name": "dream-festivals.js?v=16.0.0",
+              "duration": 94.20000000001164,
+              "transferSize": 20544
+            },
+            {
+              "name": "festival-hub.js?v=16.0.0",
+              "duration": 99.60000000000582,
+              "transferSize": 7678
+            },
+            {
+              "name": "cap-book.js?v=16.0.0",
+              "duration": 119.79999999998836,
+              "transferSize": 6279
+            },
+            {
+              "name": "dream-cap-activities.js?v=16.0.0",
+              "duration": 103.60000000000582,
+              "transferSize": 5475
+            },
+            {
+              "name": "dream-lost-cases.js?v=16.0.0",
+              "duration": 82.39999999999418,
+              "transferSize": 8406
+            },
+            {
+              "name": "lost-evidence.js?v=16.0.0",
+              "duration": 86.39999999999418,
+              "transferSize": 2743
+            },
+            {
+              "name": "cap-activity-progress.js?v=16.0.0",
+              "duration": 140,
+              "transferSize": 3485
+            },
+            {
+              "name": "dream-direction-input.js?v=16.0.0",
+              "duration": 92.20000000001164,
+              "transferSize": 1027
+            },
+            {
+              "name": "dream-journey.js?v=16.0.0",
+              "duration": 94.70000000001164,
+              "transferSize": 3847
+            },
+            {
+              "name": "dream-encounters.js?v=16.0.0",
+              "duration": 101.10000000000582,
+              "transferSize": 5809
+            },
+            {
+              "name": "dream-ui.js?v=16.0.0",
+              "duration": 111.40000000002328,
+              "transferSize": 2109
+            },
+            {
+              "name": "lost-progress.js?v=16.0.0",
+              "duration": 82.5,
+              "transferSize": 3710
+            },
+            {
+              "name": "dream-story.js?v=16.0.0",
+              "duration": 98.30000000001746,
+              "transferSize": 12123
+            },
+            {
+              "name": "company-wordmark.webp",
+              "duration": 105.29999999998836,
+              "transferSize": 7452
+            },
+            {
+              "name": "dream-engine-base.js?v=16.0.0",
+              "duration": 80.5,
+              "transferSize": 29979
+            },
+            {
+              "name": "dream-station-art.js?v=16.0.0",
+              "duration": 76.29999999998836,
+              "transferSize": 6902
+            },
+            {
+              "name": "dream-painted-scene.js?v=16.0.0",
+              "duration": 80.89999999999418,
+              "transferSize": 3113
+            },
+            {
+              "name": "dream-cap-art.js?v=16.0.0",
+              "duration": 81.5,
+              "transferSize": 8218
+            },
+            {
+              "name": "play-rewards.js?v=16.0.0",
+              "duration": 75.29999999998836,
+              "transferSize": 6925
+            },
+            {
+              "name": "dream-levels.js?v=16.0.0",
+              "duration": 84.60000000000582,
+              "transferSize": 3976
+            },
+            {
+              "name": "dream-lost-encores.js?v=16.0.0",
+              "duration": 75.60000000000582,
+              "transferSize": 1529
+            },
+            {
+              "name": "cap-progress.js?v=16.0.0",
+              "duration": 77.10000000000582,
+              "transferSize": 1781
+            },
+            {
+              "name": "dream-lost-encore-art.js?v=16.0.0",
+              "duration": 79.40000000002328,
+              "transferSize": 6099
+            },
+            {
+              "name": "dream-festival-art.js?v=16.0.0",
+              "duration": 84.89999999999418,
+              "transferSize": 10734
+            },
+            {
+              "name": "dream-traveler-art.js?v=16.0.0",
+              "duration": 92.5,
+              "transferSize": 3483
+            },
+            {
+              "name": "dream-festival-levels.js?v=16.0.0",
+              "duration": 105,
+              "transferSize": 3343
+            },
+            {
+              "name": "dream-scene-backdrop.js?v=16.0.0",
+              "duration": 83,
+              "transferSize": 6673
+            },
+            {
+              "name": "dream-cap-activity-art.js?v=16.0.0",
+              "duration": 94.80000000001746,
+              "transferSize": 10794
+            },
+            {
+              "name": "dream-cap-activity-engine.js?v=16.0.0",
+              "duration": 96.40000000002328,
+              "transferSize": 5255
+            },
+            {
+              "name": "dream-encounter-art.js?v=16.0.0",
+              "duration": 84.30000000001746,
+              "transferSize": 7038
+            },
+            {
+              "name": "dream-awakenings.js?v=16.0.0",
+              "duration": 95.10000000000582,
+              "transferSize": 1790
+            },
+            {
+              "name": "dream-lost-art.js?v=16.0.0",
+              "duration": 103.20000000001164,
+              "transferSize": 14439
+            },
+            {
+              "name": "dream-lost-engine.js?v=16.0.0",
+              "duration": 107.30000000001746,
+              "transferSize": 4355
+            },
+            {
+              "name": "dream-awakening-art.js?v=16.0.0",
+              "duration": 98.29999999998836,
+              "transferSize": 8220
+            },
+            {
+              "name": "dream-moon-play.js?v=16.0.0",
+              "duration": 132.20000000001164,
+              "transferSize": 4332
+            },
+            {
+              "name": "dream-moon-art.js?v=16.0.0",
+              "duration": 80.60000000000582,
+              "transferSize": 5658
+            },
+            {
+              "name": "dream-first-ticket-art.js?v=16.0.0",
+              "duration": 124.10000000000582,
+              "transferSize": 1881
+            },
+            {
+              "name": "dream-greenhouse-art.js?v=16.0.0",
+              "duration": 84.09999999997672,
+              "transferSize": 2021
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 89.5,
+              "transferSize": 1669
+            },
+            {
+              "name": "station-painted-v16.webp",
+              "duration": 88.89999999999418,
+              "transferSize": 266628
+            },
+            {
+              "name": "portrait-hero-open.svg",
+              "duration": 16.29999999998836,
+              "transferSize": 4288
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 84,
+              "transferSize": 2479
+            },
+            {
+              "name": "portrait-soul-joy.svg",
+              "duration": 84.40000000002328,
+              "transferSize": 2551
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 12.699999999982538,
+              "transferSize": 1669
+            },
+            {
+              "name": "portrait-soul.svg",
+              "duration": 15.799999999988358,
+              "transferSize": 2479
+            },
+            {
+              "name": "portrait-soul-peek.svg",
+              "duration": 87.69999999998254,
+              "transferSize": 2501
+            },
+            {
+              "name": "festival-hero-halloween.svg",
+              "duration": 16.099999999976717,
+              "transferSize": 1669
+            }
+          ],
+          "imagesLoaded": true
+        }
+      ]
+    }
+  ]
+}
