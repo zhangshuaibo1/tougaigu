@@ -4,11 +4,22 @@
 
 用户购买的`tougaigu.com`已完成现有游戏绑定，Spaceship DNS、GitHub Pages自定义域名、Enforce HTTPS及入口跳转均已验证。新域名完整验收[40860849477](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40860849477)成功，565项测试及候选/公网检查通过；完整配置、首次失败与修正、原始报告见[域名记录](DOMAIN-tougaigu.com.md)和[验收清单](verification-domain-release.json)。
 
-正式入口为`https://tougaigu.com/`，旧GitHub Pages地址保留作旧入口。`main/dist/CNAME`必须保持单行`tougaigu.com`；每轮将`dist/`同步到`gh-pages`根目录时包含`CNAME`并保留`.nojekyll`，不得因重建部署树移除域名。正式公网CI使用新域名。后续候选合入时必须继承这批域名配置及`923facef`的普通读信逐页解码等待与测试，不覆盖其他会话的游戏更新；保留刻意rapid-next/Escape竞态与严格网络失败清单。域名验收已完成，可以继续现有v26候选，先合入最新main再发布。
+正式入口为`https://tougaigu.com/`，旧GitHub Pages地址保留作旧入口。`main/dist/CNAME`必须保持单行`tougaigu.com`；每轮将`dist/`同步到`gh-pages`根目录时包含`CNAME`并保留`.nojekyll`，不得因重建部署树移除域名。正式公网CI使用新域名。后续候选合入时必须继承这批域名配置及`923facef`的普通读信逐页解码等待与测试，不覆盖其他会话的游戏更新；保留刻意rapid-next/Escape竞态与严格网络失败清单。域名验收已完成；后续每轮先核对最新main和当前候选，再保留域名配置发布。
 
 切换域名不自动迁移浏览器本地存档，先在旧地址导出旅途备份，新域名正常导入；生存成长需在原《再活一局》另行导出和导入。以下历史记录中的“原地址不变”和“仅额外保留.nojekyll”描述当时发布，不覆盖本条新域名约束；历史版本与证据完整保留。
 
-## 最新正式版本：v26；当前开发：v27
+## 最新公开版本：v27；正式完整回归中；下一轮v28预备
+
+v27「钟摆海岸·向前一秒」候选f0a86fca370153668141f11de25b7285b9e09eaa，[40870056725](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40870056725)success：605/605测试、61模块/157本地/209版本引用、完整真实浏览器通过。原始报告与截图已复核。
+
+源码main `73fe30b751e6fa46d01ded252fb6f3c34c19cc04`，Pages `8ee328d1741f737755e7f6c7082bcf951163a7b9`，[部署40871794254](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40871794254)success；134运行blob与候选dist一致，CNAME/.nojekyll保留，连接Chrome已重载确认正式27.0.0。最终main候选＋公网[40871791153](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40871791153)仍执行中，不能提前记为正式全通过。当前根会话继续完成此闭环；其他续跑先查refs/CI和[在途登记](IN-PROGRESS-v27.md)，不要竞争覆盖。
+
+第五章精绘/角色/铜钟摆和clock回响已落地；第四章此前漏测的手机双浮书、逐页头像、失败图通关、迟到请求、hold重载及最终网络账单均由本轮候选实际补齐。细节及手机海岸有限覆盖范围见[QA-v27](QA-v27.md)。
+
+下一轮[PLAN-v28](PLAN-v28.md)已明确“黎明邮局·最后一封，一起送”。独立worktree/本地分支`iteration-v28-post-20261029`以73fe30b开始，仅做原画与完整第六章输入基线预备，版本仍27.0.0；v28未开发完成/未发布，后续承接必须先继承v27最终验收记录。
+
+## v26已完成归档与v27开发起点（历史）
+
 
 v26「鲸落图书馆·路上慢读」已发布：源码ae2c35ed255dbbe6470f2c9850664666d0b7b6e6，Pages b02381bc89875cf63b5f4815e43c2a2e3e87a482；候选40861470337、Pages40862243927、main/公网40862236514全部success。570项测试，58模块/151本地/200版本引用通过。130运行blob与dist一致，CNAME/.nojekyll保留。原始报告与截图见[QA-v26](QA-v26.md)、[发布清单](verification-v26-release.json)。
 
@@ -20,7 +31,7 @@ v26「鲸落图书馆·路上慢读」已发布：源码ae2c35ed255dbbe6470f2c98
 
 用户授权持续设计、开发、部署、验证，直到明确要求停止。每轮从远端最新代码和验收记录接续，不依赖对话中的旧版本号。参考《马里奥》《愤怒的小鸟》《植物大战僵尸》的制作完成度，保留阿拾、拾光和原创世界身份。先把第一章做成可复用的可玩美术样板，不以概念图或文档代替代码。
 
-## 当前检查点：v25 阿拾·稳稳落脚（已发布并完成公网回归）
+## 历史检查点：v25 阿拾·稳稳落脚（已发布并完成公网回归）
 
 最终源码`9b0f2cb565ed07ad6eadd4ca19fccb3b1c197043`、Pages `e11fc55c6c02f91b76e6863aca0d5f61f265ca2f`。第三章新增真实上升收臂、下降展开、约0.2秒落地承重和实际移动舞台平衡；原统一头盖rig、抓握、物理和存档保持。暂停冻结，减动清除装饰幅度且不补播。护符恢复替换身体时不会误触发落地。
 
