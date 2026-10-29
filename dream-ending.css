@@ -1,0 +1,147 @@
+/* The epilogue alone owns these styles. No gameplay surface is affected. */
+#ending-dialog {
+  width: min(720px, calc(100vw - 28px));
+  max-height: calc(100dvh - 28px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 28px 34px 30px;
+  border: 1px solid #8f7b92;
+  border-radius: 22px;
+  color: #fff1dc;
+  background: linear-gradient(155deg, #302d43, #242436 65%, #202536);
+  box-shadow: 0 22px 80px #070e1c66, inset 0 1px #ead5bc1f;
+  scrollbar-color: #8d8199 #282a3c;
+}
+#ending-dialog .ending-vignette {
+  margin: 0 0 21px;
+  padding: 0;
+  width: 100%;
+  isolation: isolate;
+}
+#ending-dialog .ending-vignette-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 32 / 17;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #374961;
+  box-shadow: 0 8px 23px #10172b33;
+}
+#ending-dialog .ending-vignette-caption {
+  margin-top: 12px;
+  color: #dfd5d3;
+  font-size: 13px;
+  line-height: 1.75;
+  letter-spacing: .4px;
+}
+#ending-dialog .ending-choice-labels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 9px;
+  color: #d9cdd8;
+  font-size: 11px;
+  line-height: 1.65;
+  letter-spacing: 0;
+}
+#ending-dialog .ending-choice-labels > span {
+  border: 1px solid #82708a66;
+  border-radius: 6px;
+  background: #44384e55;
+  padding: 4px 8px;
+}
+#ending-dialog .ending-choice-labels > span:empty { display: none; }
+#ending-dialog .dialog-eyebrow {
+  margin-top: 0;
+  color: var(--ending-color, #f7cc8c);
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: 1px;
+}
+#ending-dialog h2 {
+  margin-top: 9px;
+  color: #fff2df;
+  font-size: clamp(24px, 4.5vw, 31px);
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+#ending-dialog .ending-text {
+  margin: 21px 0;
+  gap: 14px;
+  text-align: left;
+}
+#ending-dialog .ending-text p {
+  color: #e7dce5;
+  font-size: 15px;
+  line-height: 1.95;
+}
+#ending-dialog #ending-last-line {
+  color: var(--ending-color, #f7cc8c);
+  font-size: 15px;
+  line-height: 1.85;
+  margin: 22px 0 14px;
+}
+#ending-dialog .ending-collection {
+  color: #c5bbd2;
+  font-size: 12px;
+  line-height: 1.75;
+  margin: 13px 0;
+  letter-spacing: .5px;
+}
+#ending-dialog > .dream-primary {
+  min-height: 48px;
+  width: 100%;
+  max-width: 355px;
+  padding: 12px 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  gap: 12px;
+}
+#ending-dialog .dialog-note {
+  color: #bdb2ca;
+  font-size: 12px !important;
+  line-height: 1.85;
+  margin-top: 17px;
+}
+/* One entrance, no perpetual motion. The app setting and OS preference both
+   produce the complete static composition immediately. */
+#ending-dialog[open] .ending-vignette-art {
+  animation: tougaigu-ending-arrive 620ms cubic-bezier(.2, .65, .3, 1) 1 both;
+}
+@keyframes tougaigu-ending-arrive {
+  from { opacity: .35; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+#ending-dialog[open][data-reduced-motion="true"] .ending-vignette-art,
+[data-reduced-motion="true"] #ending-dialog[open] .ending-vignette-art {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  #ending-dialog[open] .ending-vignette-art { animation: none; }
+}
+@media (max-width: 600px) {
+  #ending-dialog {
+    padding: 18px 18px 22px;
+    border-radius: 18px;
+    max-height: calc(100dvh - 24px);
+  }
+  #ending-dialog .ending-vignette { margin-bottom: 17px; }
+  #ending-dialog .ending-vignette-art { border-radius: 13px; }
+  #ending-dialog .ending-vignette-caption { font-size: 12px; margin-top: 9px; }
+  #ending-dialog .dialog-eyebrow { font-size: 11px; letter-spacing: .6px; }
+  #ending-dialog h2 { font-size: 24px; line-height: 1.5; }
+  #ending-dialog .ending-text { gap: 13px; margin: 18px 0; }
+  #ending-dialog .ending-text p { font-size: 14px; line-height: 1.95; }
+  #ending-dialog #ending-last-line { font-size: 14px; margin: 18px 0 13px; }
+  #ending-dialog .ending-collection { font-size: 11px; }
+  #ending-dialog > .dream-primary { min-height: 48px; font-size: 13px; padding: 12px; }
+  #ending-dialog .dialog-note { font-size: 11px !important; }
+}
+@media (max-width: 360px) {
+  #ending-dialog { padding-inline: 15px; }
+  #ending-dialog h2 { font-size: 23px; }
+  #ending-dialog .ending-vignette-caption { letter-spacing: 0; }
+}

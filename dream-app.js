@@ -1,5 +1,7 @@
 import { DreamGame } from './dream-engine.js';
 import { createStoryPortraitController } from './dream-story-portrait.js';
+import { renderEndingScene as renderEndingArtwork } from './dream-ending-art.js';
+import { getEndingScene, renderEndingScene } from './dream-ending-scene.js';
 import { mountGameShell } from './game-shell.js';
 import { createFestivalHub } from './festival-hub.js';
 import { getFestival, getFestivalPuzzle } from './dream-festivals.js';
@@ -13,6 +15,7 @@ import { getStoryEncounter } from './dream-encounters.js';
 import { getJourneyFacts, getDiscoveredLetter, resolveChapterStory, getJourneyCapLines } from './dream-journey.js';
 import { getStageObjective, getStageActions, formatControlHint } from './dream-ui.js';
 import { createDirectionInput } from './dream-direction-input.js';
+import { createModalInputGuard } from './dream-modal-input.js';
 import { LOST_SAVE_KEY, lostRevision, loadLostSave, persistLostSave, validateLostSave, mergeLostSaves, replaceLostSave, getLostRecord, getLostStats, recordLostEvent } from './lost-progress.js';
 import {
   CHAPTERS, CAST, STORY_CHOICES, ENDINGS, STAMPS, STORY_ITEMS, PUZZLES, DREAM_SAVE_KEY,
@@ -47,6 +50,7 @@ const directionInput = createDirectionInput({
   onChange: syncInput,
   onUp: () => { if (currentHud?.form === 'body') game?.jump(); },
 });
+const modalInput = createModalInputGuard({ maxRecords: 32 });
 let lastHudAt = 0;
 let shell = null;
 let overlayResumeGame = null;
@@ -346,6 +350,7 @@ function openDialog(id) {
   closeDialogs();
   const dialog = $(id);
   dialog.scrollTop = 0;
+  modalInput.open(dialog);
   dialog.showModal();
 }
 
@@ -505,12 +510,21 @@ function showEnding() {
   if (!ending) { returnLobby(); return; }
   persist();
   $('#ending-dialog').style.setProperty('--ending-color', ending.color);
+  $('#ending-dialog').dataset.ending = ending.id;
+  $('#ending-dialog').dataset.reducedMotion = String(save.settings.reducedMotion);
+  const endingScene = getEndingScene(save);
+  $('#ending-scene').innerHTML = renderEndingArtwork(ending.id, endingScene);
+  renderEndingScene($('#ending-scene'), save);
   $('#ending-eyebrow').textContent = ending.eyebrow;
   $('#ending-title').textContent = ending.title;
   $('#ending-text').innerHTML = ending.text.map(text => '<p>' + escapeHtml(text) + '</p>').join('');
   $('#ending-last-line').textContent = ending.lastLine;
   $('#ending-collection').textContent = '你已收好 ' + save.discoveredEndings.length + ' / ' + Object.keys(ENDINGS).length + ' 种天色';
   openDialog('#ending-dialog');
+  // Start the letter at its heading on short screens. The sole action at the
+  // bottom must not pull the initial modal focus past the story and scene.
+  $('#ending-title').focus({ preventScroll: true });
+  $('#ending-dialog').scrollTop = 0;
 }
 
 function beginChapter(index) {
@@ -944,6 +958,20 @@ $('#ending-dialog').addEventListener('cancel', event => { event.preventDefault()
 $('#letter-back').addEventListener('click', openJournal);
 $('#letter-dialog').addEventListener('cancel', event => { event.preventDefault(); openJournal(); });
 
+// A held movement touch may end after a result dialog appears. Keep its
+// original UI boundary until click; clearing gameplay input is independent.
+document.addEventListener('pointerdown', event => {
+  modalInput.pointerDown(event, event.target?.closest?.('dialog[open]') || null);
+}, true);
+document.addEventListener('pointerup', event => modalInput.pointerUp(event), true);
+document.addEventListener('pointercancel', event => modalInput.pointerCancel(event), true);
+document.addEventListener('click', event => {
+  const dialog = event.target?.closest?.('dialog[open]') || null;
+  if (modalInput.allowClick(event, dialog)) return;
+  event.preventDefault();
+  event.stopImmediatePropagation();
+}, true);
+
 $('#stage-toggle').addEventListener('click', () => { if (gameplayAvailable()) { resetInput(); game.toggleSoul(); $('#dream-canvas').focus({ preventScroll: true }); } });
 $('#stage-jump').addEventListener('click', () => { if (gameplayAvailable()) { game.jump(); $('#dream-canvas').focus({ preventScroll: true }); } });
 $('#stage-interact').addEventListener('click', () => { if (gameplayAvailable()) { game.interact(); if (!activePuzzle && !pendingTalk) $('#dream-canvas').focus({ preventScroll: true }); } });
@@ -982,8 +1010,8 @@ document.addEventListener('keydown', event => {
   if (event.code === 'KeyQ') { event.preventDefault(); if (!event.repeat) game.interact(); }
 });
 document.addEventListener('keyup', event => { if (heldKeys.delete(event.code)) syncInput(); });
-window.addEventListener('blur', resetInput);
-document.addEventListener('visibilitychange', () => { if (document.hidden) resetInput(); else resumeAfterOverlay(); });
+window.addEventListener('blur', () => { resetInput(); modalInput.reset(); });
+document.addEventListener('visibilitychange', () => { if (document.hidden) { resetInput(); modalInput.reset(); } else resumeAfterOverlay(); });
 
 $('#dream-pref-sound').addEventListener('change', event => { save.settings.sound = event.target.checked; persist(); renderSettings(); });
 $('#dream-pref-motion').addEventListener('change', event => { save.settings.reducedMotion = event.target.checked; persist(); renderSettings(); });
