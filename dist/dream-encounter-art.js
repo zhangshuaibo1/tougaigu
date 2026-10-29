@@ -221,6 +221,30 @@ function pocketWatch(c, pose) {
   c.restore();
 }
 
+function finishedCoastWatch(c,pose) {
+  c.save();c.translate(0,-26-pose.lift);
+  path(c,p=>{p.moveTo(3,-18);p.bezierCurveTo(20,-24,22,-8,12,-6);},null,'#416373',2);
+  path(c,p=>{p.moveTo(3,-18);p.bezierCurveTo(20,-24,22,-8,12,-6);},null,'#dbc090',.9);
+  const brass=material(c,-13,-14,13,14,[[0,'#f0d7a1'],[.24,'#ad8d65'],[.5,'#e8cf99'],[.78,'#8b8165'],[1,'#446a71']]);
+  box(c,-3,-18,6,5,1.2,brass,'#596f6e',.7);
+  ellipse(c,0,-16,4,3.4,null,0,'#d5bb86');
+  ellipse(c,0,0,13.4,14,brass,0,'#294b5d');
+  ellipse(c,0,0,10.8,11.4,'#e3d5b4',0,'#bc986b');
+  ellipse(c,0,0,9.5,10.2,material(c,-8,-10,9,10,[[0,'#f4e4bd'],[.6,'#d6c8ab'],[1,'#a7b4a2']]));
+  for(let i=0;i<12;i++){
+    const a=i*TAU/12,r=i%3?8.5:8;
+    line(c,[[Math.sin(a)*r,-Math.cos(a)*r],[Math.sin(a)*9.4,-Math.cos(a)*9.6]],'#73807a',i%3?.55:.8);
+  }
+  // Both remembered replies allow the watch to move forwards. Visual time is
+  // the existing paused/reduced-motion clock; there is no second timer here.
+  const turn=pose.reduced?0:pose.time*.16;
+  line(c,[[Math.sin(turn)*6.5,-Math.cos(turn)*7.3],[0,0],[4.8,2.8]],'#4c6468',1.05);
+  ellipse(c,0,0,1.4,1.4,'#a58a5d');ellipse(c,-.35,-.4,.5,.5,'#f8eac5');
+  path(c,p=>{p.moveTo(-6,-7);p.quadraticCurveTo(-9,-3,-7,2);},null,'#fff6d8a1',1);
+  path(c,p=>{p.moveTo(9,2);p.quadraticCurveTo(8,8,3,10);},null,'#3b68794d',.8);
+  c.restore();
+}
+
 // The greenhouse keeper uses the same authored silhouette and interaction
 // pose. Cloth, bone and aged enamel are painted inside it; no new particles,
 // collision, clock or saved state belongs to this finish.
@@ -321,21 +345,21 @@ function greenhouseKeeper(c,pose){
 
   // The wrists are the rotated can's own grip points. Raising or tipping the
   // prop cannot leave either hand floating beside its handle.
-  const can=greenhouseCanPose(pose);
+  const can=pose.coast?{hands:[{x:-11,y:-26-pose.lift},{x:11,y:-26-pose.lift}]}:greenhouseCanPose(pose);
   for(const [index,side]of[-1,1].entries()){
     const hand=can.hands[index],elbowX=side*21,elbowY=hand.y+5;
     path(c,p=>{p.moveTo(side*16,-43);p.quadraticCurveTo(elbowX,elbowY,hand.x,hand.y);},null,'#2f4953',7.4);
     path(c,p=>{p.moveTo(side*16,-43);p.quadraticCurveTo(elbowX,elbowY,hand.x,hand.y);},null,side<0?'#688180':'#849690',5.4);
     path(c,p=>{p.moveTo(side*16-1,-43);p.quadraticCurveTo(elbowX-1,elbowY-2,hand.x-1,hand.y-1);},null,'#bdc4ad7a',.8);
   }
-  finishedWateringCan(c,pose,can);
+  if(pose.coast)finishedCoastWatch(c,pose);else finishedWateringCan(c,pose,can);
   for(const hand of can.hands){
     ellipse(c,hand.x,hand.y,3.1,3.5,material(c,hand.x-3,hand.y-3,hand.x+3,hand.y+3,[[0,'#fff0ce'],[.5,'#dfceab'],[1,'#ab9f86']]),-.1,'#9d9c7b');
     line(c,[[hand.x-.6,hand.y+.5],[hand.x-.5,hand.y+2]],'#b7a88b',.6);
   }
 }
 function keeper(c,pose) {
-  if(pose.greenhouse){greenhouseKeeper(c,pose);return;}
+  if(pose.greenhouse||pose.coast){greenhouseKeeper(c,pose);return;}
   line(c,[[-7,-12],[-8,-2],[-14,-1]],'#cfc0a6',3.3);line(c,[[7,-12],[8,-2],[14,-1]],'#cfc0a6',3.3);
   path(c,p=>{p.moveTo(-16,-49);p.quadraticCurveTo(0,-60,16,-49);p.lineTo(25,-8);p.quadraticCurveTo(0,-1,-25,-8);p.closePath();},'#43546b','#2a364d',1.1);
   path(c,p=>{p.moveTo(-15,-49);p.lineTo(-5,-37);p.lineTo(0,-44);p.lineTo(7,-36);p.lineTo(17,-49);},'#6f8093','#8996a3',.8);
@@ -414,7 +438,7 @@ function label(c,view) {
   const talkable=view.near&&view.form==='body';
   c.font=`${talkable?'10':'9'}px ${FONT}`;c.textAlign='center';c.textBaseline='alphabetic';
   if(talkable) {
-    const text=view.talking?name+' · …':'Q · '+name;
+    const text=view.talking?name+' · …':'交谈 · '+name;
     const width=Math.min(82,Math.max(48,c.measureText(text).width+14));
     box(c,-width/2,-116,width,17,7,'#1b2533e8','#d5c49a55',.75);
     c.fillStyle='#e9dcc0';c.fillText(text,0,-104);
@@ -437,17 +461,20 @@ export function drawStoryNPC(c,view,time=0,reducedMotion=false) {
   const notice=!!ticket&&greeting==='notice'&&ticket.fresh===true?progress*progress*(3-2*progress):0;
   const warm=!!ticket&&['held','returning','stowed'].includes(ticket.phase);
   const theatre=view.chapterIndex===2&&view.motif==='moth'&&view.prop==='theatre-ticket';
+  const coast=view.chapterIndex===4&&view.prop==='coast-watch';
+  const coastOpen=coast&&view.near?clamp(finite(view.capOpen),0,1):0;
   const theatreLamps=theatre?clamp(finite(view.seals),0,2):0;
   const invite=theatre&&open?clamp(finite(view.capOpen),0,1):0;
   const pose={time:t,reduced:!!reducedMotion,prop:view.prop,open,talking:!!view.talking,salute,warm,propX:salute*21,
     greenhouse:view.chapterIndex===1&&view.prop==='greenhouse-can',
+    coast,
     painted:(view.lighting==='painted-station'&&view.chapterIndex===0)||theatre,
     library:view.chapterIndex===3&&view.motif==='whale'&&view.prop==='library-book',seals:clamp(finite(view.seals),0,2),
     theatre,theatreLamps,invite,
     smile:(welcome&&!reducedMotion&&progress>.24&&progress<.81)||(theatre&&theatreLamps===2),
     gazeX:clamp((finite(look.x,x)-x)/140,-1,1),gazeY:clamp((finite(look.y,y-65)-(y-65))/100-(invite*.45),-1.2,1.2),
     blink:!reducedMotion&&Math.sin(t*1.67+view.chapterIndex*.4)>.992,
-    lift:(open?11:view.talking?3:0)+notice*2+salute*14+invite*2};
+    lift:(coast?coastOpen*11+(view.talking?3*(1-coastOpen):0):(open?11:view.talking?3:0))+notice*2+salute*14+invite*2};
   c.save();c.translate(x,y);c.lineCap='round';c.lineJoin='round';c.lineWidth=1;
   ellipse(c,0,2,view.motif==='whale'?34:27,4,'#10202a55');
   // Body breathing is deliberately tiny; the first platform is just above us.
