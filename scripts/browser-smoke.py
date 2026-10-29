@@ -1030,10 +1030,10 @@ async def exercise_theatre(page,output,label):
             await page.locator('#pause-dialog[open]').wait_for(state='hidden')
             await page.wait_for_function("()=>{const p=window.__qaRead()?.theatrePaint;return p?.lampLit?.every(l=>!l)&&p.lightAmounts.every(l=>l===0);}")
             await page.screenshot(path=str(Path(output)/(label+f'-theatre-rongrong-{width}-body.png')),full_page=True)
-            await toggle(page,True)
+            await tap_control(page,'#stage-toggle')
             await page.wait_for_function("()=>window.__qaRead()?.form==='soul'&&window.__qaRead()?.capPhase==='open'")
             await page.screenshot(path=str(Path(output)/(label+f'-theatre-rongrong-{width}-invite.png')),full_page=True)
-            await toggle(page,True)
+            await tap_control(page,'#stage-toggle')
             await page.wait_for_function("()=>window.__qaRead()?.form==='body'")
             touch_results[str(width)]=await cross_theatre_stage(page,output,label+f'-touch-{width}',touch=True)
             assert await page.evaluate('document.documentElement.scrollWidth<=innerWidth'), 'phone HUD overflow'
