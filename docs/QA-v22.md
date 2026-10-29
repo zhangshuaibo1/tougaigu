@@ -38,3 +38,13 @@
 ## 验证边界
 
 模拟触摸使用托管Chromium的CDP触摸事件，第三章为正常解锁后的首台路线与诗灯交互；不等于整章手机通关。离线Canvas不含网页HUD，不能据此证明中文排版正常。尚无实体iPhone、Android、Safari或低端GPU测试结论。
+
+
+## 发布后的公网验收与CI修正
+
+- 正式运行时代码 `d43b8abb03b459464b5449fa5c5ea3844511430f`（在完整继承v21后的v22版本）；候选验收 [40824263780](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40824263780) **success**，含新增的恰好12px边界测试。
+- Pages `1b60bbee8584035bf802a82d01a7ee0b97b51db6`，[40824640490](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40824640490) **success**。实际读取双方递归Git树：main `dist/` **124个blob** 与 gh-pages 根目录 **124个文件SHA完全一致**；仅另保留 `.nojekyll`。没有将开发脚本、测试或凭据放到发布根目录。
+- 首次main工作流 [40824643192](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40824643192) **failure**，原因是公网版本轮询中的 `curl -fsS "$url" | grep -q ...` 在 `set -o pipefail` 下引发 `curl (23) Failure writing output to destination`，60次重试后退出，未启动公网浏览器。因此不把它记为成功，也不是游戏玩法出错。仅修改CI的提交 `22a889196c3fb6110b0aca2d7f2db429cb20ed26` 将网页先完整写入 `verification/public-index.html` 再 `grep -Fq`，避免SIGPIPE；运行时字节未改。
+- 修正后 [main候选 + 公网工作流40825313256](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40825313256) **success**；**540/540 Node测试**、**54模块/144本地/188版本引用**均通过。公开地址经CDP Chrome载入，**1280×800、390×844、320×680**版本都是 **22.0.0**，可见图片全部成功加载，页面脚本错误0、HTTP错误0、水平溢出0；两种窄屏独立测试成功真实模拟触摸收票、归位及暂停，不声称整章手机通关。
+- 公网1280桌面使用实际键盘正常解锁前两章，确认寄出/保管、温室、谜题、存档重载和无重复奖励；第三章实际靠近解开两盏灯，键盘跨移动台188像素量级并落右岸；390、320经Chromium模拟触摸完成同一首台跨越，0死亡、相对台面漂移0，真实谢幕会结束；第三章未误结算。主图在运行中真实解码 **2172×724**。人为精确阻断WebP与备用SVG后，真实浏览器分别看到备用SVG和程序绘制继续可玩，解除拦截后精绘恢复。暂停冻结、减动静态和拾光灵魂形态动画收尾均验证。
+- 公网原始图、完整报告及源码快照位于 [成功工作流的保留期内artifact](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40825313256)；长期摘要为 [verification-v22-public.json](verification-v22-public.json)。60帧rAF采样的典型间隔约16.7ms，仅是托管Chromium闲置片段，不等于实体手机帧率。尚未测试物理iPhone/Android、Safari与低端GPU。320px顶部HUD文字仍偏拥挤，下一轮优先解决，具体 [PLAN-v23](PLAN-v23.md)。

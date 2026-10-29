@@ -1,0 +1,77 @@
+{
+  "version": "22.0.0",
+  "verified_utc_date": "2026-10-29",
+  "source_commit": "d43b8abb03b459464b5449fa5c5ea3844511430f",
+  "ci_only_fix_commit": "22a889196c3fb6110b0aca2d7f2db429cb20ed26",
+  "pages_commit": "1b60bbee8584035bf802a82d01a7ee0b97b51db6",
+  "jobs": {
+    "candidate": 40824263780,
+    "pages": 40824640490,
+    "first_public_failed": 40824643192,
+    "public_success": 40825313256
+  },
+  "first_public_failure": "curl|grep -q under pipefail causes curl exit 23 before public browser; corrected by full response download",
+  "deployed_tree": {
+    "source_dist_blob_count": 124,
+    "pages_root_file_count": 124,
+    "all_blob_hashes_identical": true,
+    "extra_file": ".nojekyll"
+  },
+  "node": {
+    "tests": 540,
+    "pass": 540,
+    "modules": 54,
+    "local_references": 144,
+    "version_references": 188
+  },
+  "public_browser": {
+    "url": "https://zhangshuaibo1.github.io/tougaigu/",
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 800,
+        "version": "22.0.0",
+        "real_keyboard": true,
+        "first_chapter_cleared": true,
+        "greenhouse_cleared": true,
+        "third_chapter_first_moving_stage_crossed": true,
+        "third_chapter_fully_cleared": false
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "version": "22.0.0",
+        "simulated_touch": true,
+        "first_chapter_ticket_and_pause": true
+      },
+      {
+        "width": 320,
+        "height": 680,
+        "version": "22.0.0",
+        "simulated_touch": true,
+        "first_chapter_ticket_and_pause": true
+      }
+    ],
+    "third_chapter_simulated_touch_moving_stage_crossings_on_resized_chromium": [
+      390,
+      320
+    ],
+    "third_chapter_lamps_solved": true,
+    "scene_asset_decoded_pixels": [
+      2172,
+      724
+    ],
+    "webp_svg_and_program_fallbacks_verified": true,
+    "no_uncaught_page_errors": true,
+    "no_http_errors": true,
+    "no_horizontal_overflow": true,
+    "images_loaded": true
+  },
+  "limitations": [
+    "Chromium CDP touch simulation is not a physical device",
+    "Third chapter crossing and lamps are not the complete third chapter mobile clear",
+    "Idle requestAnimationFrame sampling is not a low-end GPU benchmark",
+    "Safari, physical iOS and Android not tested"
+  ],
+  "source_artifact_url": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40825313256"
+}
