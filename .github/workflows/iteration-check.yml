@@ -49,7 +49,8 @@ jobs:
           url="https://zhangshuaibo1.github.io/tougaigu/?qa=$CHECK_SHA"
           found=false
           for i in $(seq 1 60); do
-            if curl -fsS "$url" | grep -q "name=\"application-version\" content=\"$version\""; then found=true; break; fi
+            # Capture the whole response before grepping. `curl | grep -q` races SIGPIPE under pipefail.
+            if curl -fsS "$url" -o verification/public-index.html && grep -Fq "name=\"application-version\" content=\"$version\"" verification/public-index.html; then found=true; break; fi
             sleep 2
           done
           [ "$found" = true ]
