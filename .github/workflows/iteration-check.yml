@@ -12,21 +12,56 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
       - name: Verify game logic and local references
         run: |
+          set -euo pipefail
           mkdir -p verification
           node --version | tee verification/node.txt
           npm test | tee verification/tests.txt
           npm run check | tee verification/references.txt
           cmp dist/index.html dist/dream.html
           git diff --check
+      - name: Install browser test tools (not game dependencies)
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Test candidate with real browser input
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8080 --bind 127.0.0.1 --directory dist > verification/server.txt 2>&1 &
+          server=$!
+          trap 'kill "$server"' EXIT
+          python scripts/browser-smoke.py --url http://127.0.0.1:8080/ --version "$(node -p 'JSON.parse(require("fs").readFileSync("package.json")).version')" --output verification/candidate | tee verification/browser-candidate.txt
+      - name: Test public deployment
+        env:
+          BRANCH: ${{ github.ref_name }}
+          CHECK_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          version=$(node -p 'JSON.parse(require("fs").readFileSync("package.json")).version')
+          url="https://zhangshuaibo1.github.io/tougaigu/?qa=$CHECK_SHA"
+          if [ "$BRANCH" = main ]; then
+            found=false
+            for i in $(seq 1 60); do
+              if curl -fsS "$url" | grep -q "name=\"application-version\" content=\"$version\""; then found=true; break; fi
+              sleep 2
+            done
+            [ "$found" = true ]
+            python scripts/browser-smoke.py --url "$url" --version "$version" --output verification/live | tee verification/browser-live.txt
+          else
+            python scripts/browser-smoke.py --url "$url" --output verification/live | tee verification/browser-live.txt
+          fi
       - name: Preserve source snapshot
         if: always()
         run: |
+          mkdir -p verification
           git rev-parse HEAD > verification/commit.txt
           git archive --format=tar.gz HEAD > verification/source.tar.gz
       - uses: actions/upload-artifact@v4

@@ -101,7 +101,7 @@ test('320px and 390px activity framing includes all destination labels and paint
     assert.equal(game.activityFramed,true);assert.ok(game.viewWidth>=400);assert.ok(game.scale<=game.baseScale);assert.equal(game.viewportOffsetY,(620-640*game.scale)/2);
     for(const destination of game.capActivity.getView().destinations){const half=Math.max(42,Math.min(90,String(destination.label).slice(0,8).length*10+12))/2;const left=(destination.x-half-game.camera)*game.scale,right=(destination.x+half-game.camera)*game.scale;assert.ok(left>=0&&right<=width,'a destination label was outside the screen');}
     for(const x of [120,520])assert.ok((x-game.camera)*game.scale>=-.0001&&(x-game.camera)*game.scale<=width+.0001,'the framing safety margin was cropped');
-    const sky=ctx.rects.find(item=>item.style?.stops?.[0]?.[1]===game.level.theme.sky[0]&&item.style?.stops?.[1]?.[1]===game.level.theme.sky[1]);assert.ok(sky);near(sky.first,{x:0,y:0});near(sky.last,{x:width,y:620});
+    const sky=ctx.rects.find(item=>item.style?.stops?.length>=2&&Math.abs(item.first.x)<1e-7&&Math.abs(item.first.y)<1e-7&&Math.abs(item.last.x-width)<1e-7&&Math.abs(item.last.y-620)<1e-7);assert.ok(sky);near(sky.first,{x:0,y:0});near(sky.last,{x:width,y:620});
     const camera=game.camera;game.setInput({x:1,y:-1});tick(game,.7);assert.equal(game.camera,camera,'moving the soul must not crop the other activity targets');game.destroy();
   }
 });

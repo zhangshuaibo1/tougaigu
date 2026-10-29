@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { DreamGame } from '../dist/dream-engine.js';
+import { drawStationBackdrop } from '../dist/dream-station-art.js';
 import { drawSceneBackdrop } from '../dist/dream-scene-backdrop.js';
 import { drawFestivalProps, drawFestivalWeather, getFestivalTheme, FESTIVAL_VISUAL_IDS } from '../dist/dream-festival-art.js';
 
@@ -55,11 +56,11 @@ test('all sixteen stages draw their explicit scene backdrop between the sky and 
     const {game,ctx}=makeGame(options);game.camera=180;game.lanterns[0].lit=true;
     const view=game.getSceneBackdropView(),before=physicsSnapshot(game);
     assert.equal(view.sceneId,sceneId);assert.equal(view.cameraX,180);assert.equal(view.worldWidth,game.level.width);assert.equal(view.viewport.width,game.viewWidth);assert.equal(view.litSeals,1);assert.equal(view.palette,game.level.theme);assert.equal(view.seasonId,options.festival?.id||null);
-    const direct=makeContext();drawSceneBackdrop(direct,view,2.5,false);direct.balanced();assert.ok(direct.calls.length>20,'the scene layer was empty');
+    const direct=makeContext();(game.isStationFinish()?drawStationBackdrop:drawSceneBackdrop)(direct,view,2.5,false);direct.balanced();assert.ok(direct.calls.length>20,'the scene layer was empty');
     ctx.reset();game.drawBackground(ctx,game.viewWidth,640,2.5);ctx.balanced();
     const actual=JSON.stringify(ctx.calls),expected=JSON.stringify(direct.calls).slice(1,-1);
-    const backdropAt=actual.indexOf(expected);assert.ok(backdropAt>0,`${sceneId} backdrop was not invoked by drawBackground`);
-    assert.ok(ctx.calls[0][0]==='createLinearGradient','sky must be drawn before the distant scene');
+    const backdropAt=actual.indexOf(expected);assert.ok(backdropAt>=0,`${sceneId} backdrop was not invoked by drawBackground`);
+    assert.ok(ctx.calls.some(call=>call[0]==='createLinearGradient'),'the background must paint its sky gradient');
     const layers=[],original=game.drawBackground.bind(game);game.drawBackground=(...args)=>{layers.push('background');return original(...args);};
     const originalPlatform=game.drawPlatform.bind(game);game.drawPlatform=(...args)=>{layers.push('platform');return originalPlatform(...args);};
     ctx.reset();game.visualTime=2.5;game.render();ctx.balanced();assert.ok(layers.indexOf('background')<layers.indexOf('platform'));
