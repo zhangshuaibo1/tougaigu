@@ -592,9 +592,15 @@ async def play_route(page,output,label,driver,touch=False,paint='ready',full_sto
  root=mushroom['actualRootLanding']
  assert root['body']['grounded'] and abs(root['body']['y']-390)<1 and root['deaths']==0
  if not compact:await page.screenshot(path=str(Path(output)/(label+'-post-root-landing.png')),full_page=True)
- await driver.drive_to(page,2110,limit=10,touch=touch)
+ # Leave a real safety buffer before the un-frozen final pendulum.
+ # Steering toward 2110 could coast beyond the existing <2120 pre-freeze
+ # guard on a narrow simulated-touch viewport. This is ordinary movement
+ # to an earlier valid position, not a teleport, bounce retry, or
+ # relaxation of the final pendulum / freeze assertions.
+ await driver.drive_to(page,2050,limit=10,touch=touch)
  safe=await page.evaluate('window.__qaRead()')
- assert safe['body']['x']<2120 and safe['deaths']==0
+ assert (safe['runId'],safe['bodyIdentity'],safe['chapterIndex'],safe['mode'],safe['state'],safe['form'])==(start['runId'],start['bodyIdentity'],5,'story','playing','body') and 2000<=safe['body']['x']<2120 and safe['deaths']==0, \
+     'unsafe pre-freeze body approach: '+json.dumps({'x':safe['body']['x'],'y':safe['body']['y'],'vx':safe['body']['vx'],'grounded':safe['body']['grounded'],'deaths':safe['deaths'],'runId':safe['runId'],'bodyIdentity':safe['bodyIdentity']},ensure_ascii=False)
  await open_cap(page,driver,touch)
  wind=[]
  await driver.drive_to(page,2130,260,limit=8,touch=touch,observe=lambda s:wind.append({'time':s['time'],'x':s['x'],'y':s['y'],'form':s['form']}))
