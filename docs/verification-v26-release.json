@@ -1,0 +1,230 @@
+{
+  "auditTimeUTC": "2026-10-29T11:18:53.133255+00:00",
+  "repository": "zhangshuaibo1/tougaigu",
+  "sourceCommit": "ae2c35ed255dbbe6470f2c9850664666d0b7b6e6",
+  "ci": {
+    "verification": {
+      "runId": 40862236514,
+      "jobId": 123408080126,
+      "headSha": "ae2c35ed255dbbe6470f2c9850664666d0b7b6e6",
+      "conclusion": "success",
+      "url": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40862236514",
+      "startedAt": "2026-10-29T11:02:14Z",
+      "updatedAt": "2026-10-29T11:12:36Z",
+      "allJobStepsSuccess": true,
+      "browserStepLogBounds": {
+        "candidate": {
+          "stepStartedAt": "2026-10-29T11:02:53.9573373Z",
+          "lastReportLineAt": "2026-10-29T11:07:45.5126354Z",
+          "elapsedSeconds": 291.5552981,
+          "scope": "Step startup through final report output; includes local server startup and one-second wait."
+        },
+        "public": {
+          "stepStartedAt": "2026-10-29T11:07:45.5187753Z",
+          "lastReportLineAt": "2026-10-29T11:12:27.3333324Z",
+          "elapsedSeconds": 281.8145571,
+          "scope": "Step startup through final report output; includes public deployment version-availability wait."
+        }
+      }
+    },
+    "pages": {
+      "runId": 40862243927,
+      "headSha": "b02381bc89875cf63b5f4815e43c2a2e3e87a482",
+      "branch": "gh-pages",
+      "conclusion": "success",
+      "url": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40862243927",
+      "startedAt": "2026-10-29T11:02:18Z",
+      "updatedAt": "2026-10-29T11:03:18Z"
+    }
+  },
+  "checks": {
+    "nodeTests": {
+      "tests": 570,
+      "suites": 0,
+      "pass": 570,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "javascriptModules": 58,
+    "localReferences": 151,
+    "versionedAssetReferences": 200,
+    "assetVersion": "26.0.0",
+    "filesNeedingAssetVersionChanges": 0
+  },
+  "sourceMatches": {
+    "scripts/browser-smoke.py": {
+      "archiveSha256": "525592662e791751429cdc29677b573f64de25d2825be96a2686824a8a9116e3",
+      "matchesWorkingFile": true
+    },
+    "scripts/browser_library_v26.py": {
+      "archiveSha256": "8db791c8b3dfc71d6daaa077963ef02fa625f498799a501f7d1b505eaabda66a",
+      "matchesWorkingFile": true
+    },
+    "tests/library-finish-v26.test.mjs": {
+      "archiveSha256": "0aa2e7cf53621173217b1fbae6b12331365a43ba182b1064f491f8a8f9945d55",
+      "matchesWorkingFile": true
+    }
+  },
+  "scopeBoundaries": [
+    {
+      "id": "library_mobile_route",
+      "status": "not_demonstrated",
+      "observed": "Desktop browser context resized to 390 x 844 and 320 x 680 at library entry; HUD/overflow checked and screenshots captured. Independent touch cases stay in chapter 1.",
+      "remaining": "Real CDP touch crossings of both floating books, wind/second lamp and soul return at 390 and 320.",
+      "source": "scripts/browser_library_v26.py:24-34"
+    },
+    {
+      "id": "library_requestfailed_gate",
+      "status": "missing_after_library",
+      "observed": "Exact two portrait aborts plus three theatre aborts checked before library. Final pageErrors/httpErrors are empty, but requestfailed is not checked or exported after library.",
+      "remaining": "Bounded exact request-failure accounting through the entire library route; no generic ERR_ABORTED exemption.",
+      "source": "scripts/browser-smoke.py:1674-1689"
+    },
+    {
+      "id": "library_real_resource_fallback",
+      "status": "not_demonstrated",
+      "observed": "New library WebP loaded ready at 2172 x 724. Existing browser abort/fallback exercises are for third-chapter theatre assets only. Unit tests cover synchronous loader throw/draw failure.",
+      "remaining": "Real-browser delayed decode, library primary/all-new-resource failures, unchanged playable fallback route/puzzles/exit, and leaving/destroying before late completion.",
+      "source": "scripts/browser_library_v26.py; tests/library-finish-v26.test.mjs"
+    },
+    {
+      "id": "library_book_full_cycles",
+      "status": "not_demonstrated",
+      "observed": "Each book has one real support snapshot with bodyY exactly equal to moverY and deaths 0.",
+      "remaining": "No-input complete rise/fall cycle and relative drift observations on each book; report snapshot alone cannot establish whole-cycle carry.",
+      "source": "scripts/browser_library_v26.py:63-75"
+    },
+    {
+      "id": "library_npc_clock_portrait_decode",
+      "status": "partial",
+      "observed": "All three intro and all three outro pages are explicitly ready/decoded. NPC talk and each clock reply advance without per-page decode evidence.",
+      "remaining": "Expected speaker/image/text and ready/decode checks on both NPC pages and release/hold reply pages.",
+      "source": "scripts/browser_library_v26.py:49-55, 133-151"
+    },
+    {
+      "id": "library_after_two_lamps_npc",
+      "status": "not_demonstrated",
+      "observed": "Initial NPC conversation is exercised before lamps.",
+      "remaining": "Return to Bluepage after both lamps and verify the changed conversation."
+    },
+    {
+      "id": "clock_hold_reload",
+      "status": "partial",
+      "observed": "Release is checked after reload; journal changes to hold and checks chapter/reward values without a second reload.",
+      "remaining": "Reload after hold to demonstrate persistence.",
+      "source": "scripts/browser_library_v26.py:136-151"
+    },
+    {
+      "id": "library_full_route_physics_equivalence",
+      "status": "partial",
+      "observed": "New desktop library route is input-driven and zero-death; separate unit comparison covers 140 update steps against BaseGame.",
+      "remaining": "Same-input full-route BaseGame comparison of new library integration, separate from old preparation baseline."
+    },
+    {
+      "id": "library_npc_pixel_bounds",
+      "status": "not_demonstrated",
+      "observed": "Actual full-page NPC screenshot is preserved; no pixel-envelope assertion in browser driver.",
+      "remaining": "Real rendered pixel bounds check, independent of declared bounds constants."
+    },
+    {
+      "id": "library_pause_reduced_browser",
+      "status": "unit_only",
+      "observed": "Library lamp pause/reset/reduced motion tested in engine unit test. Existing strict browser pause/reduced-motion coverage is chapter 3 traveler.",
+      "remaining": "Library-specific real browser pause/reduced-motion lamp/scene observation."
+    }
+  ],
+  "artifact": {
+    "id": 12892262582,
+    "name": "game-verification-ae2c35ed255dbbe6470f2c9850664666d0b7b6e6",
+    "bytes": 150495891,
+    "sha256": "ce8685449ccd7cca419fcd433dbdb7926fdbd350f363c556c086fa2b3d9ab464",
+    "expectedBytes": 150495891,
+    "expectedSha256": "ce8685449ccd7cca419fcd433dbdb7926fdbd350f363c556c086fa2b3d9ab464",
+    "checksumVerified": true,
+    "entryCount": 207,
+    "safeEntryPathsVerified": true,
+    "artifactCodeExecuted": false
+  },
+  "artifacts": [
+    {
+      "archivePath": "candidate/report.json",
+      "bytes": 939923,
+      "sha256": "67b0b365bd62816601bc9e9d12060565ca680914d6f983fd1001652fa1a45ad8",
+      "originalBytesPreserved": true,
+      "path": "docs/verification-v26-candidate-full.json"
+    },
+    {
+      "archivePath": "live/report.json",
+      "bytes": 941621,
+      "sha256": "a57ae2e901534d9ebabc33ed86d6746fb0f8aa8d93470ae1ceee365014e77464",
+      "originalBytesPreserved": true,
+      "path": "docs/verification-v26-public-full.json"
+    },
+    {
+      "archivePath": "live/1280-library-entry.png",
+      "bytes": 1081817,
+      "sha256": "277ed2ba269a27a0623a2e38686c7a606d5095c0884a558304723a0ec9127537",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "originalBytesPreserved": true,
+      "captureFullPage": true,
+      "path": "docs/v26-live-entry.png"
+    },
+    {
+      "archivePath": "live/1280-library-two-lamps.png",
+      "bytes": 1099426,
+      "sha256": "be14464e4be22e8baf47a2654f418cb78da72fbff36fe4c2e5325ab4e468c8d9",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "originalBytesPreserved": true,
+      "captureFullPage": true,
+      "path": "docs/v26-live-two-lamps.png"
+    },
+    {
+      "archivePath": "live/1280-library-entry-320.png",
+      "bytes": 228323,
+      "sha256": "080acedb12fbd0abf74e0fdcd8cff550d8e0e74f3ad07090411c548e34a71e12",
+      "dimensions": [
+        320,
+        680
+      ],
+      "originalBytesPreserved": true,
+      "captureFullPage": true,
+      "path": "docs/v26-live-entry-320.png"
+    },
+    {
+      "archivePath": "live/1280-library-npc-talk.png",
+      "bytes": 283373,
+      "sha256": "092dddd5062f5ee1c976fc752f2f59f669df8998a25d369f66611757c91386a7",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "originalBytesPreserved": true,
+      "captureFullPage": true,
+      "path": "docs/v26-live-npc-talk.png"
+    }
+  ],
+  "candidateRun": {
+    "id": 40861470337,
+    "conclusion": "success",
+    "source": "ae2c35ed255dbbe6470f2c9850664666d0b7b6e6"
+  },
+  "deployment": {
+    "pagesSha": "b02381bc89875cf63b5f4815e43c2a2e3e87a482",
+    "runtimeBlobCount": 130,
+    "sourceDistMatchesPages": true,
+    "extraFiles": [
+      ".nojekyll"
+    ],
+    "cname": "tougaigu.com",
+    "url": "https://tougaigu.com/"
+  },
+  "scopeNote": "v26 is deployed and the existing strict workflow succeeded; uncovered library touch, exact final network accounting, resource failure and portrait cases remain explicitly assigned to v27, not retroactively passed."
+}
