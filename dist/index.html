@@ -43,6 +43,7 @@
 <main id="dream-stage" aria-label="掀起你的头盖骨 · 故事解谜关卡">
   <canvas id="dream-canvas" tabindex="0" aria-describedby="stage-objective stage-near-hint" aria-label="回声旅途。方向键移动，身体形态空格跳跃，E 掀开头盖骨或返回身体，灵魂形态空格发出脉冲，Q 互动，Escape 暂停。"></canvas>
   <div class="stage-vignette"></div>
+  <div class="stage-communications">
   <div class="stage-reading">
     <header class="stage-hud" aria-label="关卡状态">
       <div class="stage-hud-left">
@@ -72,6 +73,7 @@
     <div id="cap-bubble" class="cap-bubble" role="status" aria-live="polite" aria-atomic="true"><img id="cap-bubble-portrait" src="./assets/portrait-hero-open.svg" width="49" height="49" alt=""><div id="cap-bubble-lines" class="cap-bubble-lines"></div></div>
   </div>
   <div id="stage-announcement" class="stage-announcement" role="status" aria-live="polite"></div>
+  </div>
   <aside id="stage-lost-evidence" class="stage-lost-evidence" role="status" aria-live="polite" aria-atomic="true" hidden></aside>
   <div id="stage-touch-move" class="stage-touch-move" role="group" aria-label="方向控制，按住移动；键盘或读屏激活移动一小步"><button data-direction="up" aria-label="向上飞行或跳跃">↑</button><button data-direction="left" aria-label="向左移动">←</button><span></span><button data-direction="right" aria-label="向右移动">→</button><button data-direction="down" aria-label="向下飞行">↓</button></div>
   <div class="stage-actions"><button id="stage-interact" class="stage-action secondary-action"><svg><use href="#d-letter"/></svg><span id="stage-interact-label">互动</span><kbd>Q</kbd></button><button id="stage-toggle" class="stage-action soul-action" aria-describedby="stage-cap-label"><svg><use href="#d-cap"/></svg><span id="stage-toggle-label">掀开头盖骨</span><kbd>E</kbd></button><button id="stage-jump" class="stage-action jump-action"><span class="action-glyph" id="stage-action-glyph">↑</span><span id="stage-action-label">跳跃</span><kbd>SPACE</kbd></button></div>

@@ -7,7 +7,7 @@ body.dream-play{--play-top:var(--shell-top);--play-bottom:var(--shell-bottom);ba
 #dream-stage [data-direction]:focus-visible{outline:2px solid #f3d39c;outline-offset:3px}
 #letter-fragments p>small{display:block;margin-bottom:6px;font-size:10px;color:#a7c9b9;letter-spacing:1px}
 #dream-stage .stage-vignette{background:linear-gradient(180deg,#15151d70 0,transparent 26%,transparent 80%,#15131f66)}
-.stage-reading{display:contents}
+.stage-communications,.stage-reading{display:contents}
 #dream-stage .stage-hud{top:15px;left:24px;right:24px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
 #dream-stage .stage-hud-left{gap:13px;align-items:center}
 #dream-stage .stage-hud-left>div>span{font-size:9px;letter-spacing:2px;color:#a7a6b2}
@@ -134,3 +134,19 @@ body.dream-play{--play-top:var(--shell-top);--play-bottom:var(--shell-bottom);ba
 }
 
 @media(max-width:640px){body.dream-play>.corporate-footer{padding-bottom:calc(6px + env(safe-area-inset-bottom,0px))}}
+
+/* Story desktop reading stays above the action. The neutral wrapper generates
+   no box at smaller widths, so the existing phone reading/announcement anchors
+   remain attached to the stage. Speech spans the two right-hand reading rows;
+   all tracks still size from content. Very long speech needs browser review. */
+@media(min-width:900px){
+  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications{position:absolute;top:15px;left:24px;right:24px;display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);grid-template-rows:auto auto auto;gap:10px 24px;align-items:start;pointer-events:none}
+  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications .stage-hud{position:static;inset:auto;grid-column:1/-1;grid-row:1;min-width:0}
+  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications .stage-objective{position:static;inset:auto;transform:none;grid-column:2;grid-row:2;justify-self:center;min-width:0;width:100%;max-width:580px;margin:0}
+  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications #stage-objective,
+  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications #stage-near-hint{max-width:none;white-space:normal;overflow-wrap:anywhere}
+  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications .stage-announcement{position:static;inset:auto;transform:none;grid-column:2;grid-row:3;justify-self:center;min-width:0;width:fit-content;max-width:100%;margin:0;white-space:normal;overflow-wrap:anywhere}
+}
+@media(min-width:900px) and (max-height:520px){
+  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications{top:8px;row-gap:6px}
+}
