@@ -1,0 +1,98 @@
+{
+  "version": "20.0.0",
+  "recordedDateUTC": "2026-10-29",
+  "sourceCommit": "d84f831438154d10d654dc52c39c9fd944149a3e",
+  "deployCommit": "139db0666f61412c892048f5494a8d9ca09cb458",
+  "flows": {
+    "candidate": {
+      "id": 40819850374,
+      "conclusion": "success"
+    },
+    "pages": {
+      "id": 40820190835,
+      "conclusion": "success"
+    },
+    "public": {
+      "id": 40820253697,
+      "conclusion": "success"
+    }
+  },
+  "checks": {
+    "nodePassed": 509,
+    "nodeFailed": 0,
+    "jsModules": 52,
+    "localReferences": 139,
+    "versionReferences": 182,
+    "sourceDistBlobCount": 121,
+    "publicSiteBlobCount": 122,
+    "onlyExtraFile": ".nojekyll",
+    "allSourceRuntimeBlobsIdenticalToPages": true,
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 800
+      },
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 320,
+        "height": 680
+      }
+    ],
+    "allViewportsReturnedVersion": "20.0.0",
+    "pageErrors": 0,
+    "httpErrors": 0,
+    "visibleImagesLoaded": true,
+    "horizontalOverflow": false
+  },
+  "theatrePublic": {
+    "source": "real public-site Chromium browser; no player position, game state or save injection",
+    "loadedLocalSVG": {
+      "naturalWidth": 2400,
+      "sourceBytes": 58148,
+      "sha256": "059b3c68d84666f292e4c8fab3b379e894eaff484a6907eb9dbba1faabe32cea"
+    },
+    "firstPlatformKeyboard": {
+      "actuallyCrossed": true,
+      "noInputCarryDistanceWorldPx": 190.6501266599662,
+      "relativeOffsetDriftPx": 0,
+      "noRespawns": true
+    },
+    "firstPlatformTouch390": {
+      "actuallyCrossed": true,
+      "noInputCarryDistanceWorldPx": 184.02818210955536,
+      "relativeOffsetDriftPx": 0,
+      "noRespawns": true
+    },
+    "secondMainLantern": {
+      "actualSoulControl": true,
+      "answerChosenViaDOM": "月亮",
+      "litStates": [
+        false,
+        true
+      ],
+      "lightValuesObserved": [
+        0,
+        0.72
+      ],
+      "pauseFrozen": true
+    },
+    "wholeThirdChapterCompleted": false
+  },
+  "limits": [
+    "320px case only first-chapter touch, not chapter-three stage crossing",
+    "first main lantern independently drawn/tested but no full public dual-lamp solve",
+    "no physical iPhone/Android, Safari or low-end GPU data",
+    "public browser RAF timing limited to 60 initial active idle frames; not end-to-end FPS benchmark"
+  ],
+  "evidenceScreenshots": [
+    "live/1280-keyboard-theatre-midstage.png",
+    "live/1280-keyboard-theatre-moon-lamp-lit.png",
+    "live/1280-touch-390-theatre-midstage.png",
+    "live/1280-touch-390-theatre-right-bank.png",
+    "live/320-home.png"
+  ],
+  "artifact": "game-verification-d84f831438154d10d654dc52c39c9fd944149a3e"
+}
