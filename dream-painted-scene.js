@@ -13,7 +13,6 @@ export const PAINTED_STATION_CONFIG=Object.freeze({
 
 const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
 const positive=value=>Number.isFinite(value)&&value>0;
-const isStation=context=>context?.mode==='story'&&context?.chapterIndex===0;
 
 /**
  * Read getSceneBackdropView() without modifying it. Coordinates are logical
@@ -121,16 +120,19 @@ function loadBrowserImage(src){
 
 /**
  * loadImage(src) may return an image or a promise for one (e.g. an offline
- * Canvas loader). Each instance makes at most one attempt, only for story/0.
+ * Canvas loader). Each instance makes at most one attempt for its story chapter
+ * (chapterIndex defaults to 0, preserving the original station contract).
  * request(context) resolves to readiness; failure is stable and never blocks
- * gameplay. getImage(context) is null outside story/0 or before readiness.
+ * gameplay. getImage(context) is null outside its story chapter or before readiness.
  */
 export function createPaintedSceneAssets(options={}){
   const loadImage=options?.loadImage===undefined?loadBrowserImage:options.loadImage;
   const src=typeof options?.src==='string'&&options.src.length?options.src:PAINTED_STATION_URL;
+  const chapterIndex=Number.isInteger(options?.chapterIndex)&&options.chapterIndex>=0&&options.chapterIndex<=5?options.chapterIndex:0;
+  const eligible=context=>context?.mode==='story'&&context?.chapterIndex===chapterIndex;
   let status='idle',image=null,pending=null;
   function request(context){
-    if(status==='destroyed'||!isStation(context))return Promise.resolve(false);
+    if(status==='destroyed'||!eligible(context))return Promise.resolve(false);
     if(pending)return pending;
     status='loading';
     pending=Promise.resolve().then(()=>{
@@ -150,7 +152,7 @@ export function createPaintedSceneAssets(options={}){
   }
   return Object.freeze({
     request,
-    getImage(context){return status==='ready'&&isStation(context)?image:null;},
+    getImage(context){return status==='ready'&&eligible(context)?image:null;},
     getSnapshot(){return Object.freeze({status});},
     destroy(){image=null;status='destroyed';},
   });
