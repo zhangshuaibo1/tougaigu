@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "status": "asset-ready-for-runtime-composition-v28-not-released",
+  "preparedAt": "2026-10-29T12:24:29.980Z",
+  "sourceTool": "built-in image_gen",
+  "mode": "generate",
+  "sourceOutput": "/workspace/scratch/2b18af2db412/generated_images/exec-a5952c0e-e644-4b20-910e-d4504dce6446.png",
+  "sourceSha256": "01261019f0670296e6ec34fb429aea6aad558cefe6f70ded99d7f877b46aa4ba",
+  "referenceImagesAttached": false,
+  "contextualImagesViewed": [
+    "docs/art/coast-v27/coast-painted-original-v27.png",
+    "docs/v26-live-entry.png"
+  ],
+  "generationCount": 1,
+  "imageEditCount": 0,
+  "originalToolOutputPreserved": true,
+  "originalArchiveIsByteIdentical": true,
+  "productionAndArchiveWebpAreByteIdentical": true,
+  "requestedAspectRatio": "approximately 3:1",
+  "actualAspectRatio": 3,
+  "dimensionsWereMeasuredAfterGeneration": true,
+  "productionEncoding": {
+    "format": "WebP",
+    "tool": "ImageMagick convert",
+    "quality": 88,
+    "method": 6,
+    "resize": false,
+    "crop": false,
+    "colorEditing": false,
+    "command": "convert post-painted-original-v28.png -quality 88 -define webp:method=6 post-painted-v28.webp"
+  },
+  "files": [
+    {
+      "path": "docs/art/post-v28/post-painted-original-v28.png",
+      "width": 2172,
+      "height": 724,
+      "channels": "RGB opaque",
+      "bytes": 2307344,
+      "sha256": "01261019f0670296e6ec34fb429aea6aad558cefe6f70ded99d7f877b46aa4ba",
+      "gitBlobSha": "ec6b4fb752116bae299177d351d94f687eed6168"
+    },
+    {
+      "path": "docs/art/post-v28/post-painted-v28.webp",
+      "width": 2172,
+      "height": 724,
+      "channels": "RGB opaque",
+      "bytes": 101798,
+      "sha256": "90cb512f70f4404b34b56f2951a0559c078eaa766e7d7460f98cbf646b05a201",
+      "gitBlobSha": "809dc7a584504d1eb49277fc9f292c3853aab96c"
+    },
+    {
+      "path": "dist/assets/post-painted-v28.webp",
+      "width": 2172,
+      "height": 724,
+      "channels": "RGB opaque",
+      "bytes": 101798,
+      "sha256": "90cb512f70f4404b34b56f2951a0559c078eaa766e7d7460f98cbf646b05a201",
+      "gitBlobSha": "809dc7a584504d1eb49277fc9f292c3853aab96c"
+    }
+  ],
+  "documents": {
+    "prompt": "docs/art/post-v28/prompt.txt",
+    "promptSha256": "c0029773d26a2c65d61adfbb3a464ffb98a9f8ddf0ffc43df60233339a989267",
+    "artNotes": "docs/art/post-v28/art-notes-v28.md",
+    "inspectionScript": "docs/art/post-v28/inspect-crops.mjs",
+    "cropReport": "docs/art/post-v28/crop-report-v28.json"
+  },
+  "inspectionScope": {
+    "fullOriginalViewed": true,
+    "comparisonSheetsViewed": 3,
+    "windowsViewed": 9,
+    "previewViewportPixels": [
+      [
+        1100,
+        640
+      ],
+      [
+        390,
+        595
+      ],
+      [
+        320,
+        431
+      ]
+    ],
+    "previewDisplayLayout": {
+      "width": 2400,
+      "height": 800,
+      "y": -52
+    },
+    "allPreviewWindowsOpaque": true,
+    "sourceArtworkAlteredForInspection": false,
+    "gameCompositionPerformed": false,
+    "realBrowserOrDeviceTestPerformed": false,
+    "productionLayoutVerified": false
+  },
+  "integrationPerformedByAssetTask": false,
+  "publicationPerformedByAssetTask": false,
+  "notes": [
+    "No visible sun disk; the painting remains predawn for all three authored endings.",
+    "Architectural window warmth is permanent ambient artwork and does not indicate a solved puzzle lamp.",
+    "Actual doors, ground, platforms, lamps, memories, hazards and characters must remain program-drawn game objects.",
+    "Inspection sheets are picture crops under an explicit preview layout, not screenshots of the game or browser.",
+    "Git blob hashes are local byte identities only; this asset task created no remote blobs or refs."
+  ]
+}

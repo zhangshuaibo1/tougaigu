@@ -1,0 +1,165 @@
+{
+  "status": "asset-only-preview-not-runtime-or-release-validation",
+  "purpose": "Background-only left/middle/right crop inspection, not gameplay, HUD, browser or device validation.",
+  "source": "docs/art/post-v28/post-painted-v28.webp",
+  "sourceSha256": "90cb512f70f4404b34b56f2951a0559c078eaa766e7d7460f98cbf646b05a201",
+  "sourcePixels": {
+    "width": 2172,
+    "height": 724
+  },
+  "previewLayout": {
+    "width": 2400,
+    "height": 800,
+    "y": -52
+  },
+  "productionLayoutImplementedByThisTask": false,
+  "productionLayoutVerified": false,
+  "gameCompositionPerformed": false,
+  "note": "Preview dimensions reuse prior offline review sizes. Positions sample the painting itself, not an implemented sixth-chapter camera or parallax.",
+  "sheets": [
+    {
+      "file": "docs/art/post-v28/inspection/desktop-left-middle-right.png",
+      "width": 3300,
+      "height": 640,
+      "bytes": 1817936,
+      "sha256": "6e21ec451b71ea93478cb092cdbbabb241a8b3b1b90785dea0f34046a40be7d7",
+      "windows": [
+        {
+          "position": "left",
+          "scale": 1,
+          "viewWidth": 1100,
+          "horizontalOffset": 0,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 47.06,
+            "width": 995.5,
+            "height": 579.2
+          }
+        },
+        {
+          "position": "middle",
+          "scale": 1,
+          "viewWidth": 1100,
+          "horizontalOffset": 650,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 588.25,
+            "y": 47.06,
+            "width": 995.5,
+            "height": 579.2
+          }
+        },
+        {
+          "position": "right",
+          "scale": 1,
+          "viewWidth": 1100,
+          "horizontalOffset": 1300,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 1176.5,
+            "y": 47.06,
+            "width": 995.5,
+            "height": 579.2
+          }
+        }
+      ]
+    },
+    {
+      "file": "docs/art/post-v28/inspection/phone-390-left-middle-right.png",
+      "width": 1170,
+      "height": 595,
+      "bytes": 824503,
+      "sha256": "6b5d9ccafd82fdf071f0b204a9f1df1157cb1e7c2a1ee8bf7e051f69c3d7447a",
+      "windows": [
+        {
+          "position": "left",
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "horizontalOffset": 0,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 47.06,
+            "width": 379.64369747899156,
+            "height": 579.2
+          }
+        },
+        {
+          "position": "middle",
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "horizontalOffset": 990.2521008403362,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 896.1781512605043,
+            "y": 47.06,
+            "width": 379.64369747899156,
+            "height": 579.2
+          }
+        },
+        {
+          "position": "right",
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "horizontalOffset": 1980.5042016806724,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 1792.3563025210085,
+            "y": 47.06,
+            "width": 379.64369747899156,
+            "height": 579.2
+          }
+        }
+      ]
+    },
+    {
+      "file": "docs/art/post-v28/inspection/phone-320-left-middle-right.png",
+      "width": 960,
+      "height": 431,
+      "bytes": 569512,
+      "sha256": "76ac1bbd770cf931ea4140b8de50f654078739e642f9ef765b0b6f4480af33bc",
+      "windows": [
+        {
+          "position": "left",
+          "scale": 0.6734375,
+          "viewWidth": 475.17401392111367,
+          "horizontalOffset": 0,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 47.06,
+            "width": 430.0324825986078,
+            "height": 579.2
+          }
+        },
+        {
+          "position": "middle",
+          "scale": 0.6734375,
+          "viewWidth": 475.17401392111367,
+          "horizontalOffset": 962.4129930394431,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 870.983758700696,
+            "y": 47.06,
+            "width": 430.0324825986078,
+            "height": 579.2
+          }
+        },
+        {
+          "position": "right",
+          "scale": 0.6734375,
+          "viewWidth": 475.17401392111367,
+          "horizontalOffset": 1924.8259860788862,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 1741.967517401392,
+            "y": 47.06,
+            "width": 430.0324825986078,
+            "height": 579.2
+          }
+        }
+      ]
+    }
+  ]
+}

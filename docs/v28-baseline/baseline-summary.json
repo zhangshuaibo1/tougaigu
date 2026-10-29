@@ -1,0 +1,240 @@
+{
+  "status": "passed",
+  "createdAtUTC": "2026-10-29T12:24:44.411577+00:00",
+  "sourceCommit": "73fe30b751e6fa46d01ded252fb6f3c34c19cc04",
+  "sourceVersion": "27.0.0",
+  "sourceHashes": {
+    "dream-engine.js": "e77686edebb672eb764894e9e56b48e7443f52e980a38e1123e9353d00887e77",
+    "dream-engine-base.js": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699",
+    "dream-levels.js": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0",
+    "dream-story.js": "a91aaf6b497cf956a85c9119e97871ed8b4cc119dd06c6ebe765aa3ed02fb9de",
+    "dream-encounters.js": "6d3d3b962c9d9d27deb2ccfbcb52255b18bb3caeb8d77dce4a4a0e9e745c1f20",
+    "dream-encounter-art.js": "5be256ba3df0332e583661241b108dd6da182f32628c3f33bf04f5d6ac555ee4",
+    "dream-cap-art.js": "066d3671464b18366aa3b716a1bcf3c75e3f96d79607fb56dfe85e60f3d6912f",
+    "dream-station-art.js": "73a257203b10d12dd52f7b66f60fe3d65e08200aa64b1b4e5c3f223f654d31ee"
+  },
+  "fixture": {
+    "method": "start",
+    "options": {
+      "chapterIndex": 5,
+      "sound": false
+    }
+  },
+  "scope": "Offline Node Canvas gameplay with explicit chapterIndex:5 entry fixture; NOT browser unlock, HUD, touch, save, clock-choice, delayed-asset or browser-network verification.",
+  "sameInputTapeBytesAcrossAllThreeSizes": true,
+  "inputTapeSha256": "90aa7105a044d74c0d0e57c850ede863deb9e41f5c1ae7af53ab436ffa6f7cc6",
+  "originalPNGCount": 42,
+  "fontEvidence": {
+    "cjkProbeText": "归先生",
+    "nontransparentPixels": 0,
+    "note": "Offline font probe, not evidence of browser Chinese glyph rendering."
+  },
+  "runs": [
+    {
+      "label": "desktop",
+      "viewport": {
+        "label": "desktop",
+        "width": 1100,
+        "height": 640
+      },
+      "report": "desktop/route-report.json",
+      "reportSha256": "42e9eaeef580ac3c6c3978a7984747bdec4052da7b7f9c10dd531e7f84b33d31",
+      "updates": 2465,
+      "simulationSeconds": 41.083333333332284,
+      "inputSteps": 3634,
+      "comparisonChecks": 3648,
+      "callbacksCompared": 391,
+      "trace": {
+        "file": "physics-trace.jsonl.gz",
+        "rows": 2481,
+        "compressedBytes": 309660,
+        "compressedSha256": "39882db45ce6369b019e966ac243e79ad0fb554fff5c9150d9fe8e6e21be266c",
+        "uncompressedBytes": 7534575,
+        "uncompressedSha256": "f4b846656e193ac00a94bca69af2e2a42febd9c8235c3703ddead40478fcde64",
+        "contents": "Every fixed update and non-direction public action; integrated and BaseGame physical state, energy, hazards, inputs and callback equality position."
+      },
+      "inputTape": {
+        "file": "input-tape.json",
+        "steps": 3634,
+        "bytes": 459225,
+        "sha256": "90aa7105a044d74c0d0e57c850ede863deb9e41f5c1ae7af53ab436ffa6f7cc6"
+      },
+      "captures": 14,
+      "minimumEnergy": 90.6116666666659,
+      "finalEnergy": 100,
+      "completions": [
+        {
+          "name": "onComplete",
+          "event": {
+            "chapterIndex": 5,
+            "time": 41.1,
+            "memories": 3,
+            "deaths": 0,
+            "mode": "story",
+            "festivalId": null,
+            "gifts": 3,
+            "stars": 3
+          },
+          "update": 2464
+        }
+      ],
+      "respawns": 0,
+      "exactPhysicsAndCallbacks": true,
+      "bookCycle": {
+        "noInputFrames": 548,
+        "noInputSeconds": 9.133333333333333,
+        "minX": 825.001319866118,
+        "maxX": 1194.9980171462967,
+        "maxContactError": 0,
+        "maxRelativeXDrift": 7.958078640513122e-13,
+        "leftFrames": 270,
+        "rightFrames": 278,
+        "normalJumpToFixedRightPlatform": true
+      },
+      "lastCrossing": {
+        "elapsed": 1.6499999999999062,
+        "remainingFreezeAtCompletion": 2.850000000000006,
+        "bodyX": 2489.338556177942,
+        "scope": "Normal body exit occurs while the last pendulum is still frozen, before the full sweep right edge; not a full-sweep traversal claim."
+      }
+    },
+    {
+      "label": "phone-390",
+      "viewport": {
+        "label": "phone-390",
+        "width": 390,
+        "height": 595
+      },
+      "report": "phone-390/route-report.json",
+      "reportSha256": "7572559f10d976a3ef28ac031248ff738cffe2c902a41d2bd23a3ce518992967",
+      "updates": 2465,
+      "simulationSeconds": 41.083333333332284,
+      "inputSteps": 3634,
+      "comparisonChecks": 3648,
+      "callbacksCompared": 391,
+      "trace": {
+        "file": "physics-trace.jsonl.gz",
+        "rows": 2481,
+        "compressedBytes": 313118,
+        "compressedSha256": "ce711c7736f01826acfbb71cea711fee92b913d27f1b969f6a14db12b64ecad8",
+        "uncompressedBytes": 7645291,
+        "uncompressedSha256": "7f3947d75bc2f34d151addea984581a330f67c2bc7701074e4a71b5ada88aa2e",
+        "contents": "Every fixed update and non-direction public action; integrated and BaseGame physical state, energy, hazards, inputs and callback equality position."
+      },
+      "inputTape": {
+        "file": "input-tape.json",
+        "steps": 3634,
+        "bytes": 459225,
+        "sha256": "90aa7105a044d74c0d0e57c850ede863deb9e41f5c1ae7af53ab436ffa6f7cc6"
+      },
+      "captures": 14,
+      "minimumEnergy": 90.6116666666659,
+      "finalEnergy": 100,
+      "completions": [
+        {
+          "name": "onComplete",
+          "event": {
+            "chapterIndex": 5,
+            "time": 41.1,
+            "memories": 3,
+            "deaths": 0,
+            "mode": "story",
+            "festivalId": null,
+            "gifts": 3,
+            "stars": 3
+          },
+          "update": 2464
+        }
+      ],
+      "respawns": 0,
+      "exactPhysicsAndCallbacks": true,
+      "bookCycle": {
+        "noInputFrames": 548,
+        "noInputSeconds": 9.133333333333333,
+        "minX": 825.001319866118,
+        "maxX": 1194.9980171462967,
+        "maxContactError": 0,
+        "maxRelativeXDrift": 7.958078640513122e-13,
+        "leftFrames": 270,
+        "rightFrames": 278,
+        "normalJumpToFixedRightPlatform": true
+      },
+      "lastCrossing": {
+        "elapsed": 1.6499999999999062,
+        "remainingFreezeAtCompletion": 2.850000000000006,
+        "bodyX": 2489.338556177942,
+        "scope": "Normal body exit occurs while the last pendulum is still frozen, before the full sweep right edge; not a full-sweep traversal claim."
+      }
+    },
+    {
+      "label": "phone-320",
+      "viewport": {
+        "label": "phone-320",
+        "width": 320,
+        "height": 431
+      },
+      "report": "phone-320/route-report.json",
+      "reportSha256": "a58942126eeb29f62733ed1e6f5d085150a60b91d5114b5c6e71a1428efbe3ab",
+      "updates": 2465,
+      "simulationSeconds": 41.083333333332284,
+      "inputSteps": 3634,
+      "comparisonChecks": 3648,
+      "callbacksCompared": 391,
+      "trace": {
+        "file": "physics-trace.jsonl.gz",
+        "rows": 2481,
+        "compressedBytes": 312909,
+        "compressedSha256": "0f67273482bbc0b36c468c16cdfae922b62a1a2783d37ca6d3b04f24beefd02c",
+        "uncompressedBytes": 7650001,
+        "uncompressedSha256": "b9cd01d490cdfe32bc2ec017be46003b9ba65ac0544082d72a5960073b0d1f0c",
+        "contents": "Every fixed update and non-direction public action; integrated and BaseGame physical state, energy, hazards, inputs and callback equality position."
+      },
+      "inputTape": {
+        "file": "input-tape.json",
+        "steps": 3634,
+        "bytes": 459225,
+        "sha256": "90aa7105a044d74c0d0e57c850ede863deb9e41f5c1ae7af53ab436ffa6f7cc6"
+      },
+      "captures": 14,
+      "minimumEnergy": 90.6116666666659,
+      "finalEnergy": 100,
+      "completions": [
+        {
+          "name": "onComplete",
+          "event": {
+            "chapterIndex": 5,
+            "time": 41.1,
+            "memories": 3,
+            "deaths": 0,
+            "mode": "story",
+            "festivalId": null,
+            "gifts": 3,
+            "stars": 3
+          },
+          "update": 2464
+        }
+      ],
+      "respawns": 0,
+      "exactPhysicsAndCallbacks": true,
+      "bookCycle": {
+        "noInputFrames": 548,
+        "noInputSeconds": 9.133333333333333,
+        "minX": 825.001319866118,
+        "maxX": 1194.9980171462967,
+        "maxContactError": 0,
+        "maxRelativeXDrift": 7.958078640513122e-13,
+        "leftFrames": 270,
+        "rightFrames": 278,
+        "normalJumpToFixedRightPlatform": true
+      },
+      "lastCrossing": {
+        "elapsed": 1.6499999999999062,
+        "remainingFreezeAtCompletion": 2.850000000000006,
+        "bodyX": 2489.338556177942,
+        "scope": "Normal body exit occurs while the last pendulum is still frozen, before the full sweep right edge; not a full-sweep traversal claim."
+      }
+    }
+  ],
+  "productionFilesModified": false,
+  "browserUsed": false
+}

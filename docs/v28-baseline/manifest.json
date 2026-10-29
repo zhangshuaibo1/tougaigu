@@ -1,0 +1,278 @@
+{
+  "sourceCommit": "73fe30b751e6fa46d01ded252fb6f3c34c19cc04",
+  "sourceVersion": "27.0.0",
+  "scope": "Immutable chapter-six BEFORE baseline produced by actual offline normal inputs; original full Canvas PNGs, raw reports, compressed full traces and control tapes. Not browser evidence.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5613,
+      "sha256": "2c4db44e6f9f9d5b6a9a84ae9a95bbc851771949dbad435ddd19553bb6774066"
+    },
+    {
+      "path": "baseline-summary.json",
+      "bytes": 8704,
+      "sha256": "bdcf6ed9a2207acc381ffce129d6eb7e3fcf2c87d0145b8ea634e5fafc473c0a"
+    },
+    {
+      "path": "desktop/body-on-letter-plate.png",
+      "bytes": 211367,
+      "sha256": "585e207def77a8e601cae13625de37099d4c6b6a43d5961642f937e3f6146847"
+    },
+    {
+      "path": "desktop/complete.png",
+      "bytes": 259704,
+      "sha256": "96083a7811c326db7de13881edcb52a689d8dd6a502a8e9605d0165f00055aa3"
+    },
+    {
+      "path": "desktop/entry.png",
+      "bytes": 218135,
+      "sha256": "9b0ded6f3f58ff516c40c4896e5fc4817775c9dc1f0fba7a1d817586a90e947d"
+    },
+    {
+      "path": "desktop/floating-book-boarded.png",
+      "bytes": 229847,
+      "sha256": "05d356fa111c8cbf387497c380e2592d6133f4c5d24f3335e0fb3813d64a4c0c"
+    },
+    {
+      "path": "desktop/floating-book-second-memory.png",
+      "bytes": 239000,
+      "sha256": "367a6ac9c7d6e176102045978ea49cb85584f68bd05bc50efbd95be70b19f130"
+    },
+    {
+      "path": "desktop/input-tape.json",
+      "bytes": 459225,
+      "sha256": "90aa7105a044d74c0d0e57c850ede863deb9e41f5c1ae7af53ab436ffa6f7cc6"
+    },
+    {
+      "path": "desktop/keeper-talk.png",
+      "bytes": 216526,
+      "sha256": "ac8f2291da92e884f2ffde9243fb601a17f38f3ae511e7a58dbc07a9d123e720"
+    },
+    {
+      "path": "desktop/lamp-1-lit.png",
+      "bytes": 234816,
+      "sha256": "900af1bb4d4e2ef2f9af2b5a7876086a58d1796729bb8043a3b6296931d32c5e"
+    },
+    {
+      "path": "desktop/lamp-2-lit.png",
+      "bytes": 279724,
+      "sha256": "453820b9ef9eda5be0ba0144a38478686bd2073ea6cbc7b4c545a77a80b1eb1b"
+    },
+    {
+      "path": "desktop/last-pendulum-frozen.png",
+      "bytes": 279544,
+      "sha256": "ccbeda95edd851b338c69c89228b1e7bb77dfc0db6af3943c096bdf991cd9d1a"
+    },
+    {
+      "path": "desktop/left-fixed-platform.png",
+      "bytes": 228437,
+      "sha256": "0b8c233c3ec72a4234e84b69d02ab72b518457efe25dcd0c5f0ba0c5f46afde3"
+    },
+    {
+      "path": "desktop/mushroom-launched-body.png",
+      "bytes": 198234,
+      "sha256": "896a29da172debe37c5ce26b3512f4a4bf44abb2cd4f9f5b856fcb367ddb761a"
+    },
+    {
+      "path": "desktop/physics-trace.jsonl.gz",
+      "bytes": 309660,
+      "sha256": "39882db45ce6369b019e966ac243e79ad0fb554fff5c9150d9fe8e6e21be266c"
+    },
+    {
+      "path": "desktop/right-fixed-platform.png",
+      "bytes": 199217,
+      "sha256": "8c027ae95c0c132346222abdbb0b36b73ec19033c2ad888c54af0785ced6a94f"
+    },
+    {
+      "path": "desktop/root-platform-landing.png",
+      "bytes": 213241,
+      "sha256": "7202c3637988f0a2dec723c68e34c38041fe22183aef79558dcc7d0511ce73b2"
+    },
+    {
+      "path": "desktop/route-report.json",
+      "bytes": 1839519,
+      "sha256": "42e9eaeef580ac3c6c3978a7984747bdec4052da7b7f9c10dd531e7f84b33d31"
+    },
+    {
+      "path": "desktop/wind-and-third-memory.png",
+      "bytes": 279101,
+      "sha256": "16f9f8621d412b3f889ade4a301a505f441df677c6f2c18ffcac21b1cf62d7d9"
+    },
+    {
+      "path": "explore-post.mjs",
+      "bytes": 18435,
+      "sha256": "874604dcea3b802ceef3893fa226f59785bd4230b5f13ecb2bc71e315470eb84"
+    },
+    {
+      "path": "phone-320/body-on-letter-plate.png",
+      "bytes": 81999,
+      "sha256": "f4e866432b594f996ecc51e78c5195208695e6e38d20819f0d955ebd50e807af"
+    },
+    {
+      "path": "phone-320/complete.png",
+      "bytes": 95384,
+      "sha256": "5e721aa2238b95790afeb4facbc49a4f3290ce2e00ba6ca06b266a71108add4f"
+    },
+    {
+      "path": "phone-320/entry.png",
+      "bytes": 77851,
+      "sha256": "177f7dd30c1af6e9b520e0ce57fab27b99c67d8e52fa997662e01a5249a1b15d"
+    },
+    {
+      "path": "phone-320/floating-book-boarded.png",
+      "bytes": 80417,
+      "sha256": "eef54f9928774fb58493405a87b9552349bbb9d6b9e6cc62f34506916a8ee152"
+    },
+    {
+      "path": "phone-320/floating-book-second-memory.png",
+      "bytes": 82895,
+      "sha256": "61a4d6518ae514e3516e57c51abc6d610113fd16c556eab3cb5e8f1850fcd010"
+    },
+    {
+      "path": "phone-320/input-tape.json",
+      "bytes": 459225,
+      "sha256": "90aa7105a044d74c0d0e57c850ede863deb9e41f5c1ae7af53ab436ffa6f7cc6"
+    },
+    {
+      "path": "phone-320/keeper-talk.png",
+      "bytes": 78129,
+      "sha256": "4be8380f677c0142ff0e5722c1d84afb17d61ae269bb5b8694a548217f50e865"
+    },
+    {
+      "path": "phone-320/lamp-1-lit.png",
+      "bytes": 85945,
+      "sha256": "81f3806706625f0b2787653949da56723aeb933451c9f12aa87132359d901f98"
+    },
+    {
+      "path": "phone-320/lamp-2-lit.png",
+      "bytes": 97688,
+      "sha256": "4313d9e8beffc59a307588543301251048594b117d3ce50da9e5a2824b0eb6af"
+    },
+    {
+      "path": "phone-320/last-pendulum-frozen.png",
+      "bytes": 99901,
+      "sha256": "bd738ddb91db6f2c9d918df55f173f202147f81b770f8092fe5e9c8b1724cb4e"
+    },
+    {
+      "path": "phone-320/left-fixed-platform.png",
+      "bytes": 86205,
+      "sha256": "cfd7229e275d8977737b701f5e8acb33a4393d1c3d1aa83b34a89e01dc8537ac"
+    },
+    {
+      "path": "phone-320/mushroom-launched-body.png",
+      "bytes": 79851,
+      "sha256": "5487d06e694bf47d9a63a8616480bda466ebab0098c2930c7eb2c94d2947d214"
+    },
+    {
+      "path": "phone-320/physics-trace.jsonl.gz",
+      "bytes": 312909,
+      "sha256": "0f67273482bbc0b36c468c16cdfae922b62a1a2783d37ca6d3b04f24beefd02c"
+    },
+    {
+      "path": "phone-320/right-fixed-platform.png",
+      "bytes": 76721,
+      "sha256": "268d89683af4ec14e96a26bd74fb4f5b20df399f497ec8b46c39475e4a12f983"
+    },
+    {
+      "path": "phone-320/root-platform-landing.png",
+      "bytes": 78552,
+      "sha256": "c4af2a54b162b79bbce438655a3696825d196ccc80aba58b0288744859ab3f81"
+    },
+    {
+      "path": "phone-320/route-report.json",
+      "bytes": 1840436,
+      "sha256": "a58942126eeb29f62733ed1e6f5d085150a60b91d5114b5c6e71a1428efbe3ab"
+    },
+    {
+      "path": "phone-320/wind-and-third-memory.png",
+      "bytes": 101302,
+      "sha256": "6c3acda41de35cf4cb4fb1c998096646c209658bddece9f2fc039b6931452a18"
+    },
+    {
+      "path": "phone-390/body-on-letter-plate.png",
+      "bytes": 107422,
+      "sha256": "b86d383e1f17534bd390361d04da3c6f77698c64b324e5256821194cefd46961"
+    },
+    {
+      "path": "phone-390/complete.png",
+      "bytes": 132122,
+      "sha256": "7404e3fbaf61b4b4ff9ccba7451f34729903d5bd9cae0e6d5bb217ca0d127ae4"
+    },
+    {
+      "path": "phone-390/entry.png",
+      "bytes": 103242,
+      "sha256": "2d17c494b3e05a177cfb65b603770fa91dabc140fbed7e5aa325d0c29581ded1"
+    },
+    {
+      "path": "phone-390/floating-book-boarded.png",
+      "bytes": 108964,
+      "sha256": "210cc214ebaf0dd350cd46ebffbb7aeed5ec37ddc963e57596603d3c92e1fb27"
+    },
+    {
+      "path": "phone-390/floating-book-second-memory.png",
+      "bytes": 114263,
+      "sha256": "615a0e3436a38f3dd6130ca13fd73d21facc9bf6b6a8acc3702c554c23dd9c52"
+    },
+    {
+      "path": "phone-390/input-tape.json",
+      "bytes": 459225,
+      "sha256": "90aa7105a044d74c0d0e57c850ede863deb9e41f5c1ae7af53ab436ffa6f7cc6"
+    },
+    {
+      "path": "phone-390/keeper-talk.png",
+      "bytes": 103769,
+      "sha256": "c21c7425b0a62026b45b144df42b9602d3a48cab171c6014c06a6d6bb6970337"
+    },
+    {
+      "path": "phone-390/lamp-1-lit.png",
+      "bytes": 117551,
+      "sha256": "4dded9d2c3bfc77bdb0b767efd8d4f64a08d9706bc558c9e66d02d29e6194512"
+    },
+    {
+      "path": "phone-390/lamp-2-lit.png",
+      "bytes": 134016,
+      "sha256": "adf4a05113d37f93549de26016864f36e50fbdac6b7bfabc63bb1f984f2ad2ba"
+    },
+    {
+      "path": "phone-390/last-pendulum-frozen.png",
+      "bytes": 137141,
+      "sha256": "82c6f90a8e6db85415a474b94c844ec95ad2874ae4dff2f26a233ed09d14561d"
+    },
+    {
+      "path": "phone-390/left-fixed-platform.png",
+      "bytes": 115266,
+      "sha256": "1da84516bf2505de810faca07a166d4357e007ee0015201e10247b06d197a45f"
+    },
+    {
+      "path": "phone-390/mushroom-launched-body.png",
+      "bytes": 106989,
+      "sha256": "513331b30d95a38e68e42351d7ef83795e056a180643d8191f2c4fae0fa8d7bc"
+    },
+    {
+      "path": "phone-390/physics-trace.jsonl.gz",
+      "bytes": 313118,
+      "sha256": "ce711c7736f01826acfbb71cea711fee92b913d27f1b969f6a14db12b64ecad8"
+    },
+    {
+      "path": "phone-390/right-fixed-platform.png",
+      "bytes": 100331,
+      "sha256": "f94d7d55f91353c57b3cc19ce51a62986d03eea4faad4a655244a2df8ba399ad"
+    },
+    {
+      "path": "phone-390/root-platform-landing.png",
+      "bytes": 104960,
+      "sha256": "0ee9ab35e621c27b5f4f29d291d7c75dd307262af1ac652cf84407c024049426"
+    },
+    {
+      "path": "phone-390/route-report.json",
+      "bytes": 1840399,
+      "sha256": "7572559f10d976a3ef28ac031248ff738cffe2c902a41d2bd23a3ce518992967"
+    },
+    {
+      "path": "phone-390/wind-and-third-memory.png",
+      "bytes": 137911,
+      "sha256": "d2c69f5f8bc32bb33bc16e0cc02520766b9cb5b673331c40e1a1eea71e40c0ae"
+    }
+  ],
+  "totalBytes": 13980148
+}
