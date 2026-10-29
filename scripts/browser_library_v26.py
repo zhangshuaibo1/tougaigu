@@ -20,6 +20,19 @@ async def exercise_library(page,output,label,driver):
     assert first['libraryPaint']['gateOpen'] is False
     assert await page.evaluate("document.documentElement.scrollWidth<=innerWidth")
     await page.screenshot(path=str(output/(label+'-library-entry.png')),full_page=True)
+
+    # Observe the entire playable page at two realistic narrow viewports;
+    # no DOM state, save, stage geometry or gameplay changes.
+    desktop=page.viewport_size
+    try:
+        for width,height in [(390,844),(320,680)]:
+            await page.set_viewport_size({'width':width,'height':height})
+            await page.wait_for_timeout(100)
+            assert await page.evaluate("document.documentElement.scrollWidth<=innerWidth")
+            await driver.assert_hud_readable(page,label+'-library-'+str(width),form='body')
+            await page.screenshot(path=str(output/(label+f'-library-entry-{width}.png')),full_page=True)
+    finally:
+        await page.set_viewport_size(desktop)
     intro=[]
     await page.locator('#stage-story').click()
     await page.locator('#story-dialog[open]').wait_for()
