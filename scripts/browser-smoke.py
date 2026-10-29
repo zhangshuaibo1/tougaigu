@@ -1722,6 +1722,9 @@ async def main(args):
                     from browser_post_v28 import exercise_post
                     result['post']=await exercise_post(page,output,str(w),__main__)
                     expected_failures+=result['post']['expectedRequestFailures']
+                if args.version and int(args.version.split('.')[0])>=29:
+                    from browser_ending_v29 import exercise_ending
+                    result['endingPostcard']=await exercise_ending(page,output,str(w),__main__)
             else:
                 assert art_requests==[], 'an independent chapter-one phone run requested the theatre art'
                 assert later_art_requests==[], 'an independent chapter-one phone run requested library or coast art'
