@@ -1,5 +1,7 @@
 import { DreamGame } from './dream-engine.js';
 import { createStoryPortraitController } from './dream-story-portrait.js';
+import { renderEndingScene as renderEndingArtwork } from './dream-ending-art.js';
+import { getEndingScene, renderEndingScene } from './dream-ending-scene.js';
 import { mountGameShell } from './game-shell.js';
 import { createFestivalHub } from './festival-hub.js';
 import { getFestival, getFestivalPuzzle } from './dream-festivals.js';
@@ -505,12 +507,21 @@ function showEnding() {
   if (!ending) { returnLobby(); return; }
   persist();
   $('#ending-dialog').style.setProperty('--ending-color', ending.color);
+  $('#ending-dialog').dataset.ending = ending.id;
+  $('#ending-dialog').dataset.reducedMotion = String(save.settings.reducedMotion);
+  const endingScene = getEndingScene(save);
+  $('#ending-scene').innerHTML = renderEndingArtwork(ending.id, endingScene);
+  renderEndingScene($('#ending-scene'), save);
   $('#ending-eyebrow').textContent = ending.eyebrow;
   $('#ending-title').textContent = ending.title;
   $('#ending-text').innerHTML = ending.text.map(text => '<p>' + escapeHtml(text) + '</p>').join('');
   $('#ending-last-line').textContent = ending.lastLine;
   $('#ending-collection').textContent = '你已收好 ' + save.discoveredEndings.length + ' / ' + Object.keys(ENDINGS).length + ' 种天色';
   openDialog('#ending-dialog');
+  // Start the letter at its heading on short screens. The sole action at the
+  // bottom must not pull the initial modal focus past the story and scene.
+  $('#ending-title').focus({ preventScroll: true });
+  $('#ending-dialog').scrollTop = 0;
 }
 
 function beginChapter(index) {
