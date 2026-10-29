@@ -4,6 +4,7 @@ import { DREAM_PHYSICS } from './dream-engine-base.js';
 import { drawCapInterior } from './dream-cap-art.js';
 import { getOutfitPalette, drawOutfitBack } from './dream-festival-art.js';
 import { getTravelerMotion, drawTravelerBack, drawTravelerLegs, drawTravelerCoat } from './dream-traveler-art.js';
+import { drawGroundShadow } from './dream-ground-shadow.js';
 const TAU=Math.PI*2;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 function path(c,points,color,width=1){c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.strokeStyle=color;c.lineWidth=width;c.stroke();}
@@ -182,11 +183,12 @@ export function drawStationSignal(c,game,p){
 }
 
 /** Same rig/occlusion contract as the base renderer, with richer small-scale materials. */
-export function drawStationCharacter(game,c,b,t,shown,p){
+export function drawStationCharacter(game,c,b,t,shown,p,paint={}){
   const {rig,walking}=p,outfit=game.getOutfitId(),dress=getOutfitPalette(outfit);
   const motion=getTravelerMotion(b,{time:t,hop:p.hop,reducedMotion:game.options.reducedMotion});
   const opacity=b.invulnerable>0&&!game.options.reducedMotion&&Math.floor(t*13)%2===0?.48:1;
-  c.save();oval(c,b.x,b.y+2,b.grounded?24:18,4,'#0a223b68');c.restore();
+  if(paint.shadow===undefined){c.save();oval(c,b.x,b.y+2,b.grounded?24:18,4,'#0a223b68');c.restore();}
+  else drawGroundShadow(c,paint.shadow);
   c.save();c.transform(...rig.bodyMatrix);c.globalAlpha*=opacity;
   drawOutfitBack(c,outfit,t,walking);
   if(game.featherCharges){for(let i=0;i<3;i++){const a=t*.55+i*TAU/3;oval(c,Math.cos(a)*30,-39+Math.sin(a)*22,2,2,'#d6e8ecaa');}}
@@ -201,7 +203,7 @@ export function drawStationCharacter(game,c,b,t,shown,p){
   c.save();c.transform(...rig.bodyMatrix);c.globalAlpha*=shown?.layer==='inside'?1:opacity;
   c.save();c.transform(...rig.headLocalMatrix);game.drawSkullFront(c,b,t,shown);
   // Small reflected rim, placed outside the eyes, not a second face or sprite.
-  curve(c,[-21,-8,-24,3,-19,10,-15,12],'#fff6dcad',1.4);curve(c,[21,-6,23,3,20,8,16,11],'#75b9b761',1.5);
+  curve(c,[-21,-8,-24,3,-19,10,-15,12],'#fff6dcad',1.4);curve(c,[21,-6,23,3,20,8,16,11],paint.reflection||'#75b9b761',1.5);
   game.drawStationRim(c);game.drawCapLid(c,t,rig,outfit);c.restore();game.drawCharacterHands(c,p);c.restore();
 }
 

@@ -1,5 +1,5 @@
 // One simulation and one animation loop. The unchanged v14 physics lives in
-// dream-engine-base.js; this subclass adds presentation for the first two chapters.
+// dream-engine-base.js; this subclass adds presentation for the first three chapters.
 import { DreamGame as BaseDreamGame } from './dream-engine-base.js';
 import { drawCapFrontRim } from './dream-cap-art.js';
 import { drawStationBackdrop, drawStationArchitecture, drawStationPlatform, drawStationSignal, drawStationCharacter, drawStationLantern } from './dream-station-art.js';
@@ -7,6 +7,9 @@ import { createPaintedSceneAssets, drawPaintedStation, drawPaintedStationLights 
 import { createGreenhouseSceneAssets, drawPaintedGreenhouse, drawPaintedGreenhouseLights } from './dream-greenhouse-scene.js';
 import { drawGreenhousePlatform, drawGreenhouseMushroom } from './dream-greenhouse-finish.js';
 import { normalizeLetterChoice, createLetterEcho, advanceLetterEcho, settleLetterEcho, getLetterEchoSnapshot, drawLetterEcho, drawLetterSceneWindow } from './dream-letter-echo.js';
+import { drawTheatrePlatform, drawTheatreRigging } from './dream-theatre-art.js';
+import { getTheatreGuidance } from './dream-theatre-guidance.js';
+import { getGroundShadowView } from './dream-ground-shadow.js';
 export { DREAM_LEVELS, DREAM_PHYSICS, createDreamRng, getDreamStars } from './dream-engine-base.js';
 
 export class DreamGame extends BaseDreamGame {
@@ -18,6 +21,7 @@ export class DreamGame extends BaseDreamGame {
   }
   isStationFinish(){return this.mode==='story'&&this.chapterIndex===0;}
   isGreenhouseFinish(){return this.mode==='story'&&this.chapterIndex===1;}
+  isTheatreFinish(){return this.mode==='story'&&this.chapterIndex===2;}
   start(options={}){
     if(this.destroyed)return;
     this.stationSignal=null;this.paintedFrame=false;this.greenhousePaintedFrame=false;this.letterEcho=null;
@@ -48,6 +52,14 @@ export class DreamGame extends BaseDreamGame {
   getJourneyContext(){
     const facts=super.getJourneyContext();
     return this.isGreenhouseFinish()&&this.letterEcho?{...facts,letterChoice:this.letterEcho.choice}:facts;
+  }
+  getTheatreGuidance(nearHint){
+    if(!this.isTheatreFinish()||!this.level)return null;
+    return getTheatreGuidance({mode:this.mode,chapterIndex:this.chapterIndex,form:this.form,body:this.body,level:this.level,movers:this.movers,nearHint:nearHint??super.getNearHint()});
+  }
+  getNearHint(){
+    const existing=super.getNearHint();
+    return this.getTheatreGuidance(existing)?.text||existing;
   }
   getSnapshot(){
     const snapshot=super.getSnapshot();
@@ -104,10 +116,12 @@ export class DreamGame extends BaseDreamGame {
   drawArchitecture(c,t){
     if(this.isStationFinish()){if(!this.paintedFrame)drawStationArchitecture(c,this);}
     else if(!this.isGreenhouseFinish()||!this.greenhousePaintedFrame)super.drawArchitecture(c,t);
+    if(this.isTheatreFinish())drawTheatreRigging(c,{movers:this.movers,camera:this.camera,viewWidth:this.viewWidth});
     if(this.letterEcho)drawLetterSceneWindow(c,this.letterEcho.choice,t);
   }
   drawPlatform(c,p,t){
     if(this.isStationFinish())drawStationPlatform(c,p,this.camera,this.viewWidth);
+    else if(this.isTheatreFinish()&&drawTheatrePlatform(c,p,{camera:this.camera,viewWidth:this.viewWidth,platforms:this.level.platforms,movers:this.movers}))return;
     else if(!this.isGreenhouseFinish()||!drawGreenhousePlatform(c,p,this.camera,this.viewWidth))super.drawPlatform(c,p,t);
   }
   drawMushroom(c,p,t){
@@ -130,7 +144,11 @@ export class DreamGame extends BaseDreamGame {
   drawCharacter(c,b,t,shown=null,character=null){
     const presentation=character||this.getCharacterPresentation(t);
     if(this.letterEcho)drawLetterEcho(c,this.letterEcho,{opening:presentation.rig.openingWorld,face:b.face,camera:this.camera,width:this.viewWidth});
-    if(this.isStationFinish()||this.isGreenhouseFinish())drawStationCharacter(this,c,b,t,shown,presentation);
+    if(this.isTheatreFinish()){
+      const shadow=getGroundShadowView({body:b,level:this.level,movers:this.movers,closedBarriers:this.level.barriers.filter(barrier=>!this.barrierOpen(barrier))});
+      drawStationCharacter(this,c,b,t,shown,presentation,{shadow,reflection:'#baa1ed61'});
+    }
+    else if(this.isStationFinish()||this.isGreenhouseFinish())drawStationCharacter(this,c,b,t,shown,presentation);
     else super.drawCharacter(c,b,t,shown,character);
   }
 }
