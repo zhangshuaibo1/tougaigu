@@ -1,0 +1,38 @@
+name: Game iteration verification
+on:
+  push:
+    branches: [main, 'agent/v15-station-finish-20261028']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: game-check-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify game logic and local references
+        run: |
+          mkdir -p verification
+          node --version | tee verification/node.txt
+          npm test | tee verification/tests.txt
+          npm run check | tee verification/references.txt
+          cmp dist/index.html dist/dream.html
+          git diff --check
+      - name: Preserve source snapshot
+        if: always()
+        run: |
+          git rev-parse HEAD > verification/commit.txt
+          git archive --format=tar.gz HEAD > verification/source.tar.gz
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: game-verification-${{ github.sha }}
+          path: verification/
+          retention-days: 3
+          if-no-files-found: error
