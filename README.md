@@ -3,18 +3,18 @@
 原创 2D 横向叙事机关冒险。阿拾负责站稳、跳跃与压住机关；掀开头盖骨，让小光灵拾光飞出，穿过薄幕、收集记忆并解开诗灯。
 
 - 游戏：[掀起你的头盖骨](https://zhangshuaibo1.github.io/tougaigu/)
-- 当前公开版本：17.0.0「倒流温室·玻璃与新芽」，公网验收进行中。
-- 本轮候选：18.0.0「头顶的小信窗」。
+- 当前公开版本：18.0.0「头顶的小信窗」，已完成 Pages 和公网浏览器验收。
+- 本轮验证：474 项逻辑测试；桌面两章完整通关与来信选择闭环；390/320 像素模拟触摸验证。
 - 原生 JavaScript / Canvas，无运行时第三方依赖；原《再活一局》仍在 `survivor.html`。
 - 企业版权、原地址、六章、十个节日、全部本地存档与奖励规则保留。
 
-## v18：头顶的小信窗（候选）
+## v18：头顶的小信窗（已发布）
 
 第二章结尾“让风把它送出去／先替她好好保管”留下场景回响。重访温室时先能看见不同的小窗；第一次掀盖，信封会沿风飞出或回到头内靠窗位置。回响只跟随实际保存的选择，旅途日记里的重新回信也会同步更新。重复掀盖不重复演出，暂停与减动保持一致。
 
 归先生的骨质、银发、蓝色斗篷、黄铜单片镜和绿釉洒水壶完成细化，握壶双手跟随壶体旋转。六章、十个节日、存档、奖励及碰撞规则保持兼容。
 
-[QA-v18](docs/QA-v18.md) 记录本轮实际验证与限制。剧情选择和角色精修为生产 Canvas 实装，不是静态概念画。
+[QA-v18](docs/QA-v18.md) 记录已通过的发布、候选/公网浏览器与限制。生产 Canvas 中实现了真实的选择回响与归先生材质，不是静态概念画。v18 源码 [ff385419](https://github.com/zhangshuaibo1/tougaigu/commit/ff385419e5f6a6927c1429c78aec191b2a0c6152)，发布 [88bdf804](https://github.com/zhangshuaibo1/tougaigu/commit/88bdf804719c1a4d2a32f2c2d71a3b10aadf2677)，[公网验收](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40814043011) 已成功。
 
 ## v17：倒流温室·玻璃与新芽
 
@@ -22,7 +22,7 @@
 
 去程票折成的纸盆、种子归位、嫩芽到小花的成长沿用真实游戏事件。资源按需加载，失败使用原温室场景。原稿和提示见 [温室素材说明](docs/ART-DIRECTION-v17.md)。
 
-462 项逻辑测试、静态资源检查和 156 项离线 Canvas 检查已通过；真实浏览器与发布状态见 [QA-v17](docs/QA-v17.md)。以下 v16 是历史已发布证据，不能作为 v17 通过的证明。
+462 项逻辑测试、静态资源检查和 156 项离线 Canvas 检查通过；[v17 公网验收](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40813319511) 通过两个章节的桌面操作与两个窄屏模拟触摸。详情见 [QA-v17](docs/QA-v17.md)。
 
 ## v16：精绘站房与邮差步态
 
@@ -67,22 +67,22 @@ npm run check
 ```sh
 python -m pip install playwright==1.55.0
 python -m playwright install chromium
-python scripts/browser-smoke.py --url http://127.0.0.1:8080/ --version 16.0.0 --output verification/browser
+python scripts/browser-smoke.py --url http://127.0.0.1:8080/ --version 18.0.0 --output verification/browser
 ```
 
 浏览器脚本通过真实键盘与模拟触摸进行操作，桌面从起点走到第一章出口，窄屏验证拾票、归位、暂停和布局。为可靠定位，测试会在浏览器内给 app 模块临时附加一个只读坐标查询，不修改游戏坐标、进度、奖励或解谜状态；生产文件没有该查询接口。物理手机性能不由这些测试代替。
 
 ## 源码与发布
 
-`dist/dream-engine-base.js` 原样保留 v14 的物理与原场景实现。`dist/dream-engine.js` 是只增加第一章表现的薄子类：仍是同一实例、同一物理更新和一个动画循环。站台绘制集中在 `dream-station-art.js`，邮差动作和材质在 `dream-traveler-art.js`，图片生命周期在 `dream-painted-scene.js`；其他五章与十个节日继续使用原表现。
+`dist/dream-engine-base.js` 原样保留 v14 的物理与原场景实现。`dist/dream-engine.js` 是在同一游戏实例与动画循环中增加前两章表现的薄子类。站台绘制集中在 `dream-station-art.js`，温室绘制在 `dream-greenhouse-*`，归先生的造型在 `dream-encounter-art.js`，选择回响在 `dream-letter-echo.js`，邮差动作在 `dream-traveler-art.js`；不改变原物理、奖励和存档权威。
 
 `main` 保存源码、测试与文档；`gh-pages` 根目录只部署 `dist/` 内容并保留 `.nojekyll`。CI 不自动发布，只验证候选版本和实际公开页面。发布前需检查远端 SHA，禁止覆盖并发修改。
 
-存档仍为当前浏览器本地存储，不是账号云同步。顶部设置可导出旅途备份。v16 不新增存档键、不迁移或清空旧进度，不增加奖励结算。
+存档仍为当前浏览器本地存储，不是账号云同步。顶部设置可导出旅途备份。v18 不新增存档键、不迁移或清空旧进度，不增加奖励结算。
 
 ## 下一轮
 
-先完成 v18 真实选择、日记改选、桌面与窄屏的浏览器验收，发布并核实原地址；下一轮继续伙伴与影子的统一造型、第三章场景和动作手感。具体顺序见 [迭代交接](docs/ITERATION.md)。
+v18 已发布并通过公开浏览器验证。下一轮优先改善拾光、伙伴及影子的统一质感，第三章前中后景与机关反馈，并扩大手机端第二章真实触摸路径覆盖。具体顺序见 [迭代交接](docs/ITERATION.md)。
 
 [本轮验收与限制](docs/QA-v16.md) · [迭代交接](docs/ITERATION.md) · [完整 v2–v14 功能与部署历史](docs/README-v14.md) · [素材来源](docs/CREDITS.md)
 

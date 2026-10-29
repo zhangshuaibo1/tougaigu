@@ -1,0 +1,50 @@
+{
+  "version": "17.0.0",
+  "sourceCommit": "80007d24052caf7114be8744f5d6bb796744a060",
+  "pagesCommit": "fed37ac54e51cf4a25c3b57366502571610ef1b8",
+  "candidateWorkflow": 40813054860,
+  "publicWorkflow": 40813319511,
+  "nodeTests": 462,
+  "modules": 46,
+  "staticReferences": 128,
+  "versionReferences": 164,
+  "canvasAssertions": 156,
+  "publicCases": [
+    {
+      "viewport": "1280x800",
+      "input": "keyboard",
+      "chapter1Complete": true,
+      "chapter2Complete": true,
+      "seedPlanted": true,
+      "wrongAnswersRejected": true,
+      "mushroomBounce": true,
+      "reloadPreserved": true
+    },
+    {
+      "viewport": "390x844",
+      "input": "emulated Chromium touch",
+      "chapter1TicketReturn": true,
+      "pause": true,
+      "chapterCompleteNotTested": true
+    },
+    {
+      "viewport": "320x680",
+      "input": "emulated Chromium touch",
+      "chapter1TicketReturn": true,
+      "pause": true,
+      "chapterCompleteNotTested": true
+    }
+  ],
+  "allCases": {
+    "version": "17.0.0",
+    "httpErrors": 0,
+    "pageErrors": 0,
+    "imagesLoaded": true,
+    "noHorizontalOverflow": true
+  },
+  "limitations": [
+    "Physical phones not tested",
+    "Safari not tested",
+    "Frame intervals from initial idle samples only"
+  ]
+}

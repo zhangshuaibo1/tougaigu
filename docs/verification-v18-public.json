@@ -1,0 +1,64 @@
+{
+  "version": "18.0.0",
+  "sourceCommit": "ff385419e5f6a6927c1429c78aec191b2a0c6152",
+  "pagesCommit": "88bdf804719c1a4d2a32f2c2d71a3b10aadf2677",
+  "candidateWorkflow": 40813493108,
+  "publicWorkflow": 40814043011,
+  "pagesWorkflow": 40814084678,
+  "nodeTests": 474,
+  "testFiles": 40,
+  "modules": 47,
+  "staticReferences": 131,
+  "versionReferences": 167,
+  "distFiles": 115,
+  "pagesExtraFiles": [
+    ".nojekyll"
+  ],
+  "distMatchesPagesArtifact": true,
+  "canvasAssertions": {
+    "letterEcho": 54,
+    "keeper": 92
+  },
+  "publicCases": [
+    {
+      "viewport": "1280x800",
+      "input": "keyboard",
+      "chapter1Complete": true,
+      "chapter2Complete": true,
+      "wrongAnswersRejected": 2,
+      "mushroomBounce": true,
+      "letterSentObserved": true,
+      "letterKeptObserved": true,
+      "diaryRewritten": true,
+      "letterAnimationPauseFrozen": true,
+      "noDuplicateReplay": true,
+      "reloadRestoredKeep": true
+    },
+    {
+      "viewport": "390x844",
+      "input": "emulated Chromium touch",
+      "chapter1TicketReturn": true,
+      "pause": true,
+      "chapter2NotTested": true
+    },
+    {
+      "viewport": "320x680",
+      "input": "emulated Chromium touch",
+      "chapter1TicketReturn": true,
+      "pause": true,
+      "chapter2NotTested": true
+    }
+  ],
+  "allCases": {
+    "version": "18.0.0",
+    "pageErrors": 0,
+    "httpErrors": 0,
+    "imagesLoaded": true,
+    "noHorizontalOverflow": true
+  },
+  "limitations": [
+    "No physical phone performance measurement",
+    "No Safari validation",
+    "Frame interval only from initial active idle sample"
+  ]
+}
