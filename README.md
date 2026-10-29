@@ -3,15 +3,21 @@
 原创 2D 横向叙事机关冒险。阿拾负责站稳、跳跃与压住机关；掀开头盖骨，让小光灵拾光飞出，穿过薄幕、收集记忆并解开诗灯。
 
 - 游戏：[掀起你的头盖骨](https://zhangshuaibo1.github.io/tougaigu/)
-- 当前公开版本：**22.0.0「借月剧场·绒光与拾光」**，源码、Pages 及公网 Chromium 浏览器验收已完成，详见 [QA-v22](docs/QA-v22.md)。
+- 当前公开版本：**23.0.0「借月剧场·轻装看戏」**，候选、Pages及公网Chromium回归已完成，详见 [QA-v23](docs/QA-v23.md)。
 - 原生 JavaScript / Canvas，无运行时第三方 JavaScript 依赖；原《再活一局》保留在 `survivor.html`。
 - 六章、十个节日、原有存档与奖励规则保留。企业页脚与原地址不变。
 
-## 借月剧场·轻装看戏（v23，候选验收中）
+## 借月剧场·轻装看戏（v23）
 
 手机画面把章节与计数、角色形态与能量分成清楚的两行；当前目标和附近动作允许自然换行，角色对白跟随真实提示高度。计数保留可访问类别，能量条提供真实百分比，顶部礼物入口继续可用。减少重复推广行，让场景与当前行动更容易阅读。
 
-本轮同时扩展第三章真实出口、三页谢幕来信、解锁与重载验收。公开版本仍以上方已完成的版本及[QA-v23](docs/QA-v23.md)最终记录为准，候选不提前登记为发布。
+灵光条、可见状态和辅助阅读百分比在真实补帧时同步更新。547项测试通过；公网1280/390/320三个视口无页面或HTTP错误。第三章桌面已实际完成双灯、出口、三页谢幕来信及一次结算，手机覆盖真实首台跨越和节日进入/返回；不把模拟触摸当作实体手机或全程手机通关。
+
+![v23公开地址实际320px触摸：清楚的形态、灵光与乘台指令](docs/v23-live-theatre-320.png)
+
+[桌面剧场](docs/v23-live-desktop.png) · [抱票对白与动作提示](docs/v23-live-ticket-320.png) · [节日返回入口](docs/v23-live-festival-320.png) · [完整公网报告](docs/verification-v23-public-full.json)。
+
+下一轮按[PLAN-v24](docs/PLAN-v24.md)先复核结尾翻页截图中的头像与台词不同步，再精修绒绒的绒翅、外套、票扇和真实掀盖反应；已知观察、失败修复及验收范围均保留在[QA-v23](docs/QA-v23.md)。
 
 ## 借月剧场·绒光与拾光（v22）
 
@@ -21,7 +27,7 @@
 
 ![v22 公开地址实际键盘游玩：精绘绒幕与移动舞台](docs/v22-live-desktop.png)
 
-上图为成功公网验收 40825313256 的 1280×800 Chromium 实际游戏画面。[双灯与拾光](docs/v22-live-two-lamps.png) · [320px 模拟触摸实景](docs/v22-live-320.png) · [完整公网原始报告](docs/verification-v22-public-full.json)。手机顶部提示仍需整理，下一轮按 [v23 计划](docs/PLAN-v23.md) 接续。
+上图为成功公网验收 40825313256 的 1280×800 Chromium 实际游戏画面。[双灯与拾光](docs/v22-live-two-lamps.png) · [320px 模拟触摸实景](docs/v22-live-320.png) · [完整公网原始报告](docs/verification-v22-public-full.json)。手机顶部提示已由v23承接整理。
 
 [完整验收与边界](docs/QA-v22.md) · [原创美术与提示](docs/art/theatre-painted-v22-prompt.md) · [离线合成记录](docs/verification-v22-offline.json)
 
