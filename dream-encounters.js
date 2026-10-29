@@ -198,7 +198,7 @@ export function getStoryEncounterKey(chapterIndex, options = {}) {
   const reaction = !journey ? 'default' : chapterIndex === 0
     ? 'ticket-' + journey.ticketPhase
     : [journey.hasTicket ? 'ticket-pot' : 'plain-pot', journey.seedPhase, journey.plantStage].join(':');
-  return npc.id + ':lamps-' + stage + ':' + reaction;
+  return npc.id + ':lamps-' + stage + ':' + reaction + (chapterIndex === 1 && journey?.letterChoice ? ':letter-' + journey.letterChoice : '');
 }
 
 const dialogue = (speaker, text, mood) => ({speaker, text, ...(mood ? {mood} : {})});
@@ -297,7 +297,11 @@ function greenhouseJourneyLines(stage, repeated, journey) {
     response = '这回，头里有一朵自己带回的花。' + direction;
     short = '花会记得你给的光。' + direction;
   }
-  return repeated ? [dialogue('keeper', short)] : [dialogue('keeper', first), dialogue('ashi', response, journey.plantStage === 3 ? 'joy' : 'tender')];
+  const lines = repeated ? [dialogue('keeper', short)] : [dialogue('keeper', first), dialogue('ashi', response, journey.plantStage === 3 ? 'joy' : 'tender')];
+  if (!repeated && journey.letterChoice) lines.push(dialogue('keeper', journey.letterChoice === 'send'
+    ? '你托风寄走的信，给窗边留下了一阵回音。再掀盖看看，风还记得路。'
+    : '信在头里的靠窗格住下了。再掀盖看看；保管信，不用把窗也锁起来。'));
+  return lines;
 }
 
 export function getStoryEncounter(chapterIndex, options = {}) {

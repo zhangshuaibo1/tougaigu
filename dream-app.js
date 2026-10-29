@@ -480,6 +480,7 @@ function resolveChoice(id) {
   const option = choice.options.find(item => item.id === id);
   activeChoice = null;
   persist();
+  if (key === 'letter') game?.setLetterChoice(save.choices.letter);
   openStory([{ speaker: 'light', text: option.reply }], choice.chapterIndex, onDone, '把这份回音收好', null);
 }
 
@@ -558,7 +559,7 @@ function launchScene(index, festival) {
   const capScene = getCapScene({ chapterIndex: index, festivalId: festival?.id });
   const lost = getLostCase(capScene.id);
   game = new DreamGame($('#dream-canvas'), { onHud, onComplete: finishChapter, onPause: showPause, onEvent: announce, onPuzzle: showPuzzle, onTalk: showEncounter, onCapEvent, onCapActivity, onLostCase });
-  game.start({ chapterIndex: index, festival, capScene, firstTicketCollected: capBook?.getRecord('story-0')?.memories.includes(0) === true, greenhouseRecord: capBook?.getRecord('story-1'), capActivityRecord: getCapActivityRecord(capActivitySave, capScene.id), capActivityRevision: capActivityRevision(capActivitySave), lostCaseRecord: lost ? getLostRecord(lostSave, lost.id) : null, lostCaseRevision: lostRevision(lostSave), season: hub?.getSeason(), outfit: hub?.getOutfit() || 'auto', sound: save.settings.sound, reducedMotion: save.settings.reducedMotion });
+  game.start({ chapterIndex: index, festival, capScene, letterChoice: save.choices.letter, firstTicketCollected: capBook?.getRecord('story-0')?.memories.includes(0) === true, greenhouseRecord: capBook?.getRecord('story-1'), capActivityRecord: getCapActivityRecord(capActivitySave, capScene.id), capActivityRevision: capActivityRevision(capActivitySave), lostCaseRecord: lost ? getLostRecord(lostSave, lost.id) : null, lostCaseRevision: lostRevision(lostSave), season: hub?.getSeason(), outfit: hub?.getOutfit() || 'auto', sound: save.settings.sound, reducedMotion: save.settings.reducedMotion });
   updateSeasonLabel();
   $('#dream-canvas').focus({ preventScroll: true });
 }
