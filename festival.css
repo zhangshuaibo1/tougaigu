@@ -26,4 +26,16 @@
 @media(prefers-reduced-motion:reduce){.festival-hub button{transition:none}.gift-claimed .hub-wallet svg{animation:none}.festival-hub::backdrop{backdrop-filter:none}}
 .reduced-motion .festival-hub button{transition:none}.reduced-motion .gift-claimed .hub-wallet svg{animation:none}
 
+/* The toolbar already opens the same gift hub. Keep the in-scene return link
+   for festival visits, and reserve real space for any active item badges. */
+@media(max-width:640px){
+  .dream-play:not(.festival-session) #dream-stage .stage-festival-bar{display:none}
+  .festival-session #dream-stage .stage-reading .stage-festival-bar{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .festival-session #dream-stage .stage-reading .stage-season-button,
+  .festival-session #dream-stage .stage-reading .stage-back-story{min-height:36px;font-size:11px}
+  #dream-stage .stage-reading .stage-buffs{position:static;inset:auto;grid-column:1/-1;justify-self:end;flex-wrap:wrap;gap:6px;margin:4px 0 0}
+  #dream-stage .stage-reading .stage-buffs:empty{display:none}
+  #dream-stage .stage-reading .stage-buffs span{font-size:9px;line-height:1.5;padding:1px 5px}
+}
+
 .travel-supply{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:18px;margin-top:17px;border:1px solid #b4d4c52b;border-radius:13px;background:#9ec9b006}.travel-supply h3{font-size:13px}.travel-supply p{font-size:10px;color:#aaa0b5;margin-top:4px}.travel-supply small{display:block;font-size:9px;color:#bcb594;margin-top:7px}.travel-supply button{border:1px solid #c8d4ad44;background:#b6ca9910;color:#cadbb7;font-size:10px;min-height:36px;border-radius:8px;padding:7px 13px;white-space:nowrap}.travel-supply button:disabled{opacity:.5}@media(max-width:640px){.travel-supply{padding:13px;gap:10px;align-items:flex-start;flex-direction:column}.travel-supply button{align-self:flex-end;font-size:9px}.travel-supply p{font-size:9px}}

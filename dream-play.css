@@ -7,6 +7,7 @@ body.dream-play{--play-top:var(--shell-top);--play-bottom:var(--shell-bottom);ba
 #dream-stage [data-direction]:focus-visible{outline:2px solid #f3d39c;outline-offset:3px}
 #letter-fragments p>small{display:block;margin-bottom:6px;font-size:10px;color:#a7c9b9;letter-spacing:1px}
 #dream-stage .stage-vignette{background:linear-gradient(180deg,#15151d70 0,transparent 26%,transparent 80%,#15131f66)}
+.stage-reading{display:contents}
 #dream-stage .stage-hud{top:15px;left:24px;right:24px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
 #dream-stage .stage-hud-left{gap:13px;align-items:center}
 #dream-stage .stage-hud-left>div>span{font-size:9px;letter-spacing:2px;color:#a7a6b2}
@@ -69,20 +70,34 @@ body.dream-play{--play-top:var(--shell-top);--play-bottom:var(--shell-bottom);ba
 @media(max-width:640px){
   #dream-stage{background:linear-gradient(180deg,#11252b,#141d29)}
   #dream-stage canvas{height:calc(100% - 112px)}
-  #dream-stage .stage-hud{left:14px;right:14px;top:10px;grid-template-columns:1fr auto;gap:8px;align-items:start}
-  #dream-stage .stage-hud-left{gap:10px;grid-column:1;grid-row:1;align-items:center}
-  #dream-stage .stage-hud-left h2{font-size:16px;letter-spacing:0;margin-top:2px}
+  /* Real rows reserve the status height. The next instruction and any cap
+     dialogue follow their actual text height, including large system fonts. */
+  #dream-stage .stage-reading{position:absolute;top:10px;left:14px;right:14px;display:grid;grid-template-columns:minmax(0,1fr);gap:8px;pointer-events:none}
+  #dream-stage .stage-reading .stage-hud{position:static;inset:auto;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;align-items:center;min-width:0}
+  #dream-stage .stage-reading .stage-hud-left{gap:10px;grid-column:1;grid-row:1;align-items:center;min-width:0}
+  #dream-stage .stage-hud-left>div{min-width:0}
+  #dream-stage .stage-hud-left h2{font-size:16px;letter-spacing:0;margin-top:2px;overflow-wrap:anywhere}
   #dream-stage .stage-hud-left>div>span{font-size:8px;letter-spacing:1px}
-  .stage-story-button{font-size:9px;padding:6px 8px;gap:4px;align-self:end}.stage-story-button svg{width:13px;height:13px}
-  #dream-stage .stage-goals{grid-column:2;grid-row:1;justify-self:end;gap:9px;border:0;background:none;padding:4px 0}
-  #dream-stage .stage-goals>span{gap:4px}#dream-stage .stage-goals b{font-size:11px}
-  #dream-stage .stage-time{display:none}#dream-stage .stage-goals small{display:none}
-  #dream-stage .stage-form{grid-column:2;grid-row:1;min-width:0;align-self:end;transform:translateY(24px)}
-  #dream-stage .stage-form>span{font-size:8px;line-height:1}#dream-stage .stage-form small{display:none}
-  #dream-stage .energy-track{width:74px;height:3px;margin:4px 0 0 auto}
-  #dream-stage .stage-objective{top:69px;left:16px;right:16px;transform:none;width:auto;max-width:none;text-align:left}
-  #dream-stage .stage-objective>span{font-size:11px;line-height:1.6}
-  #dream-stage .stage-objective>small{font-size:10px;line-height:1.5;margin-top:4px;max-width:320px;color:#b9c7bd}
+  .stage-story-button{font-size:11px;padding:6px 8px;gap:4px;min-height:36px;flex:none;align-self:center}.stage-story-button svg{width:13px;height:13px}
+  #dream-stage .stage-reading .stage-goals{grid-column:2;grid-row:1;justify-self:end;gap:9px;border:0;background:none;padding:4px 0}
+  #dream-stage .stage-goals>span{gap:4px}#dream-stage .stage-goals b{font-size:12px}
+  #dream-stage .stage-time{display:none}
+  /* The compact counters still name their categories to assistive reading. */
+  #dream-stage .stage-reading .stage-goals small{display:block;position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+  #dream-stage .stage-reading .stage-form{display:grid;grid-template-columns:auto minmax(44px,1fr) auto;grid-column:1/-1;grid-row:2;align-items:center;column-gap:8px;min-width:0;max-width:none;justify-self:stretch;text-align:left;transform:none}
+  #dream-stage .stage-reading .stage-form>span{font-size:11px;line-height:1.4;white-space:nowrap}
+  #dream-stage .stage-reading #stage-energy-label{display:block;font-size:11px;line-height:1.4;white-space:nowrap;text-align:right;color:#c1cec5}
+  #dream-stage .stage-reading .energy-track{width:100%;height:4px;margin:0}
+  #dream-stage .stage-reading .stage-objective,
+  .lost-inspecting #dream-stage .stage-reading .stage-objective{position:static;inset:auto;transform:none;width:auto;min-width:0;max-width:none;margin:0;text-align:left}
+  #dream-stage .stage-reading #stage-objective{font-size:11px;line-height:1.6;font-weight:500;color:#c6d0c6}
+  #dream-stage .stage-reading #stage-near-hint{font-size:11px;line-height:1.55;font-weight:600;margin-top:4px;max-width:none;color:#edf1df}
+  #dream-stage .stage-reading #stage-cap-activity{gap:6px;max-width:100%;font-size:10px;line-height:1.5;padding:4px 8px;margin:6px 0 0;box-shadow:none}
+  #dream-stage .stage-reading #stage-cap-activity-name{min-width:0;white-space:normal;overflow-wrap:anywhere}
+  #dream-stage .stage-reading #stage-cap-activity-count{flex:none;font-size:10px;white-space:nowrap}
+  #dream-stage .stage-reading #stage-cap-activity-progress,
+  #dream-stage .stage-reading #stage-cap-activity>i{display:none}
+  #dream-stage .stage-reading #stage-lost-case{max-width:100%;font-size:10px;white-space:normal;overflow-wrap:anywhere}
   #dream-stage .stage-announcement{top:29%;font-size:11px;width:auto;max-width:calc(100% - 42px);padding:10px 12px;white-space:normal;text-align:center}
   #dream-stage .stage-touch-move{display:grid;left:14px;bottom:17px;width:123px;height:123px;padding:0}
   #dream-stage .stage-touch-move>button{font-size:22px}
