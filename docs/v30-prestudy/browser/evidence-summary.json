@@ -1,0 +1,929 @@
+{
+  "runId": 40926668988,
+  "commit": "83439440ae9ce22248ef29d9349297276fe2cb59",
+  "productVersion": "29.0.0",
+  "scope": "Unversioned v30 pre-study real Chromium browser; no formal version bump or public/live check",
+  "artifact": {
+    "zipBytes": 189292044,
+    "zipSha256": "e13ce0b320efd2e9871d20fc093e827c0b15d2c63894b71a99f20792793591f8",
+    "sourceFilesExact": 726,
+    "zipFiles": 215,
+    "tests": {
+      "tests": 662,
+      "pass": 662,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "todo": 0
+    },
+    "reportBytes": 14677086,
+    "reportSha256": "89f78589e5e446bc97889b4644ad09bd7d80ba73cebbd6d64bf23fd4f99ab466",
+    "liveReportPresent": false,
+    "artifactSourceCodeExecuted": false,
+    "additionalRevalidation": "Selected pure validators loaded from the trusted local repo only after exact git-source comparison; no extracted program executed"
+  },
+  "recordCounts": {
+    "snapshotOccurrencesRevalidated": 1114,
+    "byChapterIndex": {
+      "0": 4,
+      "1": 3,
+      "2": 79,
+      "3": 421,
+      "4": 4,
+      "5": 603
+    },
+    "byMode": {
+      "story": 1114
+    },
+    "phaseOccurrences": [
+      {
+        "chapterIndex": 0,
+        "phase": "fall",
+        "reducedMotion": false,
+        "count": 1
+      },
+      {
+        "chapterIndex": 0,
+        "phase": "land",
+        "reducedMotion": false,
+        "count": 1
+      },
+      {
+        "chapterIndex": 0,
+        "phase": "rise",
+        "reducedMotion": false,
+        "count": 2
+      },
+      {
+        "chapterIndex": 1,
+        "phase": "fall",
+        "reducedMotion": false,
+        "count": 1
+      },
+      {
+        "chapterIndex": 1,
+        "phase": "land",
+        "reducedMotion": false,
+        "count": 1
+      },
+      {
+        "chapterIndex": 1,
+        "phase": "rise",
+        "reducedMotion": false,
+        "count": 1
+      },
+      {
+        "chapterIndex": 2,
+        "phase": "fall",
+        "reducedMotion": false,
+        "count": 6
+      },
+      {
+        "chapterIndex": 2,
+        "phase": "fall",
+        "reducedMotion": true,
+        "count": 1
+      },
+      {
+        "chapterIndex": 2,
+        "phase": "idle",
+        "reducedMotion": false,
+        "count": 30
+      },
+      {
+        "chapterIndex": 2,
+        "phase": "idle",
+        "reducedMotion": true,
+        "count": 1
+      },
+      {
+        "chapterIndex": 2,
+        "phase": "land",
+        "reducedMotion": false,
+        "count": 1
+      },
+      {
+        "chapterIndex": 2,
+        "phase": "ride",
+        "reducedMotion": false,
+        "count": 30
+      },
+      {
+        "chapterIndex": 2,
+        "phase": "rise",
+        "reducedMotion": false,
+        "count": 8
+      },
+      {
+        "chapterIndex": 2,
+        "phase": "rise",
+        "reducedMotion": true,
+        "count": 2
+      },
+      {
+        "chapterIndex": 3,
+        "phase": "land",
+        "reducedMotion": false,
+        "count": 18
+      },
+      {
+        "chapterIndex": 3,
+        "phase": "ride",
+        "reducedMotion": false,
+        "count": 211
+      },
+      {
+        "chapterIndex": 3,
+        "phase": "ride",
+        "reducedMotion": true,
+        "count": 192
+      },
+      {
+        "chapterIndex": 4,
+        "phase": "fall",
+        "reducedMotion": false,
+        "count": 1
+      },
+      {
+        "chapterIndex": 4,
+        "phase": "land",
+        "reducedMotion": false,
+        "count": 1
+      },
+      {
+        "chapterIndex": 4,
+        "phase": "rise",
+        "reducedMotion": false,
+        "count": 2
+      },
+      {
+        "chapterIndex": 5,
+        "phase": "fall",
+        "reducedMotion": false,
+        "count": 1
+      },
+      {
+        "chapterIndex": 5,
+        "phase": "land",
+        "reducedMotion": false,
+        "count": 1
+      },
+      {
+        "chapterIndex": 5,
+        "phase": "ride",
+        "reducedMotion": false,
+        "count": 598
+      },
+      {
+        "chapterIndex": 5,
+        "phase": "rise",
+        "reducedMotion": false,
+        "count": 3
+      }
+    ],
+    "maxActualPlantedWorldSoleError": 0,
+    "note": "Counts include repeated saved snapshots at different report paths; they are not unique RAF frames."
+  },
+  "originalStrictDefinitions": [
+    {
+      "name": "TRAVELER_FRAME_SAMPLER",
+      "sha256": "f3d426c270566dd3d81addfedbb1dec1625dcee99d0d5771f36e682b0d2ec80e",
+      "identicalToV29Candidate": true
+    },
+    {
+      "name": "await_traveler_pose",
+      "sha256": "7690f1de8d7e6a8c377981724fa74b171fdd35eb716410cfcd0befd60a100fe6",
+      "identicalToV29Candidate": true
+    },
+    {
+      "name": "sample_body_jump",
+      "sha256": "2e510a112c7d6f76ec88a343dc4b52235b5c84adaed10071a343ce705918cbd9",
+      "identicalToV29Candidate": true
+    }
+  ],
+  "jumps": [
+    {
+      "label": "station",
+      "chapterIndex": 0,
+      "oneSpaceOriginalObserverContract": true,
+      "runId": 1,
+      "bodyIdentity": 1,
+      "deaths": 0,
+      "reducedMotion": false,
+      "riseVy": -600,
+      "fallVy": 97.5,
+      "landingY": 560,
+      "riseTime": 3.349999999999993,
+      "fallTime": 3.866666666666658,
+      "landingTime": 4.233333333333324,
+      "landingPhase": "land",
+      "landingAge": 0,
+      "observedFrames": 54,
+      "activeMs": 885.0999999999913,
+      "elapsedMs": 939.8000000000029,
+      "pause": null,
+      "observerCleanup": {
+        "pendingFrame": false,
+        "pendingTimer": false,
+        "oldPosesCleared": true,
+        "removed": true
+      }
+    },
+    {
+      "label": "greenhouse-shelf",
+      "chapterIndex": 1,
+      "oneSpaceOriginalObserverContract": true,
+      "runId": 1,
+      "bodyIdentity": 2,
+      "deaths": 0,
+      "reducedMotion": false,
+      "riseVy": -600,
+      "fallVy": 97.5,
+      "landingY": 445,
+      "riseTime": 15.133333333333665,
+      "fallTime": 15.650000000000357,
+      "landingTime": 15.716666666667027,
+      "landingPhase": "land",
+      "landingAge": 0,
+      "observedFrames": 37,
+      "activeMs": 577.0999999999767,
+      "elapsedMs": 1166.5,
+      "pause": null,
+      "observerCleanup": {
+        "pendingFrame": false,
+        "pendingTimer": false,
+        "oldPosesCleared": true,
+        "removed": true
+      }
+    },
+    {
+      "label": "theatre-normal",
+      "chapterIndex": 2,
+      "oneSpaceOriginalObserverContract": true,
+      "runId": 1,
+      "bodyIdentity": 2,
+      "deaths": 0,
+      "reducedMotion": false,
+      "riseVy": -600,
+      "fallVy": 97.5,
+      "landingY": 560,
+      "riseTime": 2.4833333333333294,
+      "fallTime": 2.9999999999999942,
+      "landingTime": 3.3666666666666596,
+      "landingPhase": "land",
+      "landingAge": 0,
+      "observedFrames": 77,
+      "activeMs": 875.2999999999884,
+      "elapsedMs": 1775.3999999999942,
+      "pause": {
+        "passiveFrames": 6,
+        "fullPoseAndCanvasFrozen": true
+      },
+      "observerCleanup": {
+        "pendingFrame": false,
+        "pendingTimer": false,
+        "oldPosesCleared": true,
+        "removed": true
+      }
+    },
+    {
+      "label": "theatre-reduced",
+      "chapterIndex": 2,
+      "oneSpaceOriginalObserverContract": true,
+      "runId": 1,
+      "bodyIdentity": 2,
+      "deaths": 0,
+      "reducedMotion": true,
+      "riseVy": -600,
+      "fallVy": 120,
+      "landingY": 560,
+      "riseTime": 3.683333333333325,
+      "fallTime": 4.216666666666657,
+      "landingTime": 4.566666666666656,
+      "landingPhase": "idle",
+      "landingAge": null,
+      "observedFrames": 55,
+      "activeMs": 870.2999999999884,
+      "elapsedMs": 914.1999999999825,
+      "pause": null,
+      "observerCleanup": {
+        "pendingFrame": false,
+        "pendingTimer": false,
+        "oldPosesCleared": true,
+        "removed": true
+      }
+    },
+    {
+      "label": "coast-entry",
+      "chapterIndex": 4,
+      "oneSpaceOriginalObserverContract": true,
+      "runId": 1,
+      "bodyIdentity": 5,
+      "deaths": 0,
+      "reducedMotion": false,
+      "riseVy": -600,
+      "fallVy": 97.5,
+      "landingY": 560,
+      "riseTime": 0.19999999999999998,
+      "fallTime": 0.7166666666666672,
+      "landingTime": 1.100000000000001,
+      "landingPhase": "land",
+      "landingAge": 0.016666666666666607,
+      "observedFrames": 57,
+      "activeMs": 902.3999999999651,
+      "elapsedMs": 946.7999999999884,
+      "pause": null,
+      "observerCleanup": {
+        "pendingFrame": false,
+        "pendingTimer": false,
+        "oldPosesCleared": true,
+        "removed": true
+      }
+    },
+    {
+      "label": "post-entry",
+      "chapterIndex": 5,
+      "oneSpaceOriginalObserverContract": true,
+      "runId": 1,
+      "bodyIdentity": 10,
+      "deaths": 0,
+      "reducedMotion": false,
+      "riseVy": -600,
+      "fallVy": 97.5,
+      "landingY": 560,
+      "riseTime": 0.16666666666666666,
+      "fallTime": 0.6833333333333338,
+      "landingTime": 1.0500000000000012,
+      "landingPhase": "land",
+      "landingAge": 0,
+      "observedFrames": 75,
+      "activeMs": 843.3000000000466,
+      "elapsedMs": 1715.5999999999767,
+      "pause": {
+        "passiveFrames": 6,
+        "fullPoseAndCanvasFrozen": true
+      },
+      "observerCleanup": {
+        "pendingFrame": false,
+        "pendingTimer": false,
+        "oldPosesCleared": true,
+        "removed": true
+      }
+    }
+  ],
+  "libraryCarries": [
+    {
+      "path": "library.bookA.carry",
+      "support": "book-a",
+      "gameSeconds": 0.6833333333333673,
+      "fullCycle": false,
+      "maxSoleError": 0,
+      "maxRelativeHorizontalDrift": 0,
+      "verticalTravel": 9.005922156574343,
+      "actualLandingSamples": 3,
+      "actualRideSamples": 6,
+      "verticalPoseDirections": {
+        "up": 6,
+        "down": 0
+      },
+      "sampleCount": 9,
+      "actualPeriod": 7.391982714328925,
+      "reducedMotion": false,
+      "allSoleAndWalkAndSameFrameChecksRevalidated": true
+    },
+    {
+      "path": "library.bookB.carry",
+      "support": "book-b",
+      "gameSeconds": 0.6666666666666288,
+      "fullCycle": false,
+      "maxSoleError": 0,
+      "maxRelativeHorizontalDrift": 0,
+      "verticalTravel": 6.159214185664894,
+      "actualLandingSamples": 3,
+      "actualRideSamples": 6,
+      "verticalPoseDirections": {
+        "up": 6,
+        "down": 0
+      },
+      "sampleCount": 9,
+      "actualPeriod": 8.377580409572781,
+      "reducedMotion": false,
+      "allSoleAndWalkAndSameFrameChecksRevalidated": true
+    },
+    {
+      "path": "library.touch390.bookA.carry",
+      "support": "book-a",
+      "gameSeconds": 7.416666666666957,
+      "fullCycle": true,
+      "maxSoleError": 0,
+      "maxRelativeHorizontalDrift": 0,
+      "verticalTravel": 123.97885384310996,
+      "actualLandingSamples": 3,
+      "actualRideSamples": 87,
+      "verticalPoseDirections": {
+        "up": 42,
+        "down": 45
+      },
+      "sampleCount": 90,
+      "actualPeriod": 7.391982714328925,
+      "reducedMotion": false,
+      "allSoleAndWalkAndSameFrameChecksRevalidated": true
+    },
+    {
+      "path": "library.touch390.bookB.carry",
+      "support": "book-b",
+      "gameSeconds": 8.433333333332858,
+      "fullCycle": true,
+      "maxSoleError": 0,
+      "maxRelativeHorizontalDrift": 0,
+      "verticalTravel": 143.99341389176163,
+      "actualLandingSamples": 3,
+      "actualRideSamples": 99,
+      "verticalPoseDirections": {
+        "up": 48,
+        "down": 51
+      },
+      "sampleCount": 102,
+      "actualPeriod": 8.377580409572781,
+      "reducedMotion": false,
+      "allSoleAndWalkAndSameFrameChecksRevalidated": true
+    },
+    {
+      "path": "library.touch320.bookA.carry",
+      "support": "book-a",
+      "gameSeconds": 7.416666666666957,
+      "fullCycle": true,
+      "maxSoleError": 0,
+      "maxRelativeHorizontalDrift": 0,
+      "verticalTravel": 123.97885384310996,
+      "actualLandingSamples": 0,
+      "actualRideSamples": 90,
+      "verticalPoseDirections": {
+        "up": 45,
+        "down": 45
+      },
+      "sampleCount": 90,
+      "actualPeriod": 7.391982714328925,
+      "reducedMotion": true,
+      "allSoleAndWalkAndSameFrameChecksRevalidated": true
+    },
+    {
+      "path": "library.touch320.bookB.carry",
+      "support": "book-b",
+      "gameSeconds": 8.449999999999523,
+      "fullCycle": true,
+      "maxSoleError": 0,
+      "maxRelativeHorizontalDrift": 0,
+      "verticalTravel": 143.99441304222756,
+      "actualLandingSamples": 0,
+      "actualRideSamples": 102,
+      "verticalPoseDirections": {
+        "up": 51,
+        "down": 51
+      },
+      "sampleCount": 102,
+      "actualPeriod": 8.377580409572781,
+      "reducedMotion": true,
+      "allSoleAndWalkAndSameFrameChecksRevalidated": true
+    },
+    {
+      "path": "library.resourceCases.failedPrimary.route.bookA.carry",
+      "support": "book-a",
+      "gameSeconds": 0.7333333333333698,
+      "fullCycle": false,
+      "maxSoleError": 0,
+      "maxRelativeHorizontalDrift": 0,
+      "verticalTravel": 11.967767883665147,
+      "actualLandingSamples": 3,
+      "actualRideSamples": 6,
+      "verticalPoseDirections": {
+        "up": 6,
+        "down": 0
+      },
+      "sampleCount": 9,
+      "actualPeriod": 7.391982714328925,
+      "reducedMotion": false,
+      "allSoleAndWalkAndSameFrameChecksRevalidated": true
+    },
+    {
+      "path": "library.resourceCases.failedPrimary.route.bookB.carry",
+      "support": "book-b",
+      "gameSeconds": 0.7333333333332916,
+      "fullCycle": false,
+      "maxSoleError": 0,
+      "maxRelativeHorizontalDrift": 0,
+      "verticalTravel": 9.383591829031388,
+      "actualLandingSamples": 3,
+      "actualRideSamples": 6,
+      "verticalPoseDirections": {
+        "up": 6,
+        "down": 0
+      },
+      "sampleCount": 9,
+      "actualPeriod": 8.377580409572781,
+      "reducedMotion": false,
+      "allSoleAndWalkAndSameFrameChecksRevalidated": true
+    }
+  ],
+  "libraryPause": {
+    "scope": "desktop book-a only",
+    "bodyPlatform": "book-a",
+    "passiveFrames": 6,
+    "stateAndCanvasFrozen": true,
+    "fullTravelerPoseFrozen": true
+  },
+  "settlement": {
+    "legitimateCompletedRunsAdded": 3,
+    "previousChapterResultsAndChoicesUnchanged": true
+  },
+  "postRunsBefore": 1,
+  "postRunsAfter": 4,
+  "phoneEndings": [
+    {
+      "width": 390,
+      "ending": "dawn",
+      "paragraphs": [
+        0,
+        1,
+        2
+      ],
+      "initialScrollTop": 0,
+      "scrollSamples": 1,
+      "maxScrollTop": 0,
+      "gestureAttempts": 0,
+      "createdAndDetachedTouchSessions": 0,
+      "homeFullyVisibleAndUncovered": true,
+      "finalNoteFullyVisible": true,
+      "immediateEvidenceInOriginalZIP": "candidate/1280-ending-dawn-390-reading.json"
+    },
+    {
+      "width": 390,
+      "ending": "lanterns",
+      "paragraphs": [
+        0,
+        1,
+        2
+      ],
+      "initialScrollTop": 0,
+      "scrollSamples": 1,
+      "maxScrollTop": 0,
+      "gestureAttempts": 0,
+      "createdAndDetachedTouchSessions": 0,
+      "homeFullyVisibleAndUncovered": true,
+      "finalNoteFullyVisible": true,
+      "immediateEvidenceInOriginalZIP": "candidate/1280-ending-lanterns-390-reading.json"
+    },
+    {
+      "width": 390,
+      "ending": "tender",
+      "paragraphs": [
+        0,
+        1,
+        2
+      ],
+      "initialScrollTop": 0,
+      "scrollSamples": 1,
+      "maxScrollTop": 0,
+      "gestureAttempts": 0,
+      "createdAndDetachedTouchSessions": 0,
+      "homeFullyVisibleAndUncovered": true,
+      "finalNoteFullyVisible": true,
+      "immediateEvidenceInOriginalZIP": "candidate/1280-ending-tender-390-reading.json"
+    },
+    {
+      "width": 320,
+      "ending": "dawn",
+      "paragraphs": [
+        0,
+        1,
+        2
+      ],
+      "initialScrollTop": 0,
+      "scrollSamples": 2,
+      "maxScrollTop": 69,
+      "gestureAttempts": 1,
+      "createdAndDetachedTouchSessions": 1,
+      "homeFullyVisibleAndUncovered": true,
+      "finalNoteFullyVisible": true,
+      "immediateEvidenceInOriginalZIP": "candidate/1280-ending-dawn-320-reading.json"
+    },
+    {
+      "width": 320,
+      "ending": "lanterns",
+      "paragraphs": [
+        0,
+        1,
+        2
+      ],
+      "initialScrollTop": 0,
+      "scrollSamples": 2,
+      "maxScrollTop": 103,
+      "gestureAttempts": 1,
+      "createdAndDetachedTouchSessions": 1,
+      "homeFullyVisibleAndUncovered": true,
+      "finalNoteFullyVisible": true,
+      "immediateEvidenceInOriginalZIP": "candidate/1280-ending-lanterns-320-reading.json"
+    },
+    {
+      "width": 320,
+      "ending": "tender",
+      "paragraphs": [
+        0,
+        1,
+        2
+      ],
+      "initialScrollTop": 0,
+      "scrollSamples": 2,
+      "maxScrollTop": 103,
+      "gestureAttempts": 1,
+      "createdAndDetachedTouchSessions": 1,
+      "homeFullyVisibleAndUncovered": true,
+      "finalNoteFullyVisible": true,
+      "immediateEvidenceInOriginalZIP": "candidate/1280-ending-tender-320-reading.json"
+    }
+  ],
+  "desktopEndingCombinations": [
+    {
+      "choices": {
+        "letter": "send",
+        "clock": "release"
+      },
+      "ending": "dawn",
+      "afterReloadSameEnding": true,
+      "noDuplicateRewardsOrDiscovery": true
+    },
+    {
+      "choices": {
+        "letter": "keep",
+        "clock": "hold"
+      },
+      "ending": "lanterns",
+      "afterReloadSameEnding": true,
+      "noDuplicateRewardsOrDiscovery": true
+    },
+    {
+      "choices": {
+        "letter": "keep",
+        "clock": "release"
+      },
+      "ending": "tender",
+      "afterReloadSameEnding": true,
+      "noDuplicateRewardsOrDiscovery": true
+    },
+    {
+      "choices": {
+        "letter": "send",
+        "clock": "hold"
+      },
+      "ending": "tender",
+      "afterReloadSameEnding": true,
+      "noDuplicateRewardsOrDiscovery": true
+    }
+  ],
+  "systemReducedEndingNoRunningAnimation": true,
+  "finalEndingInvariants": {
+    "chaptersAndScoresUnchanged": true,
+    "riddlesAndSettingsUnchanged": true,
+    "collectionsUnchanged": true,
+    "rewardGrantsUnchanged": true,
+    "actualChoices": {
+      "letter": "keep",
+      "clock": "release"
+    },
+    "discoveredEndings": [
+      "dawn",
+      "lanterns",
+      "tender"
+    ]
+  },
+  "network": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "actualFailureCount": 9,
+      "expectedFailureCount": 9,
+      "exactCounterMatchRecomputed": true,
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "finalImagesLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actualFailureCount": 0,
+      "expectedFailureCount": 0,
+      "exactCounterMatchRecomputed": true,
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "finalImagesLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "actualFailureCount": 0,
+      "expectedFailureCount": 0,
+      "exactCounterMatchRecomputed": true,
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "finalImagesLoaded": true
+    }
+  ],
+  "limits": [
+    "Greenhouse new single-jump capture lands on the actual y445 shelf; it is not evidence that the new observer captured the earlier y385 root landing.",
+    "Coast entry jump ran normally but has pause:null. Do not claim an airborne coast pause from this run; separate existing clock-echo pauses have different scope.",
+    "Library complete vertical periods are in 390 and 320 touch routes. Desktop book carries are short segments; 320 cycles use real reducedMotion=true, while 390 supplies normal directional acting.",
+    "Library full-pose/Canvas pause is desktop book-a only. Phone book cycle records do not contain that pause.",
+    "Post entry jump/pause is the normal desktop route only; phone and failed-image routes intentionally contain no extra entry jump.",
+    "390 ending pages fit fully without scrolling. 320 has one actual scroll gesture per ending; all note/paragraph/home checks are present.",
+    "This is a candidate-only CI at localhost and version29.0.0. Formal v30 version/cache update, main/Pages publication, HTTPS run and physical-phone/Safari/low-end-GPU evidence remain outside this result."
+  ],
+  "postRoutes": [
+    {
+      "label": "desktop",
+      "input": "keyboard",
+      "paint": "ready",
+      "wallSeconds": 45.476,
+      "complete": true,
+      "deaths": 0,
+      "rootLandingY": 390,
+      "book": {
+        "elapsed": 9.116666666666148,
+        "actualPeriod": 8.975979010256552,
+        "sampleCount": 149,
+        "maxSoleError": 0,
+        "maxRelativeHorizontalDrift": 6.821210263296962e-13,
+        "horizontalTravel": 369.9600458022428,
+        "relativeDriftBound": 1e-05,
+        "twoDirections": true,
+        "actualMoverSupport": true,
+        "fullCycle": true,
+        "actualLandingSamples": 0,
+        "actualRideSamples": 149,
+        "horizontalPoseDirections": {
+          "left": 73,
+          "right": 76
+        },
+        "actualWalkingCycleUnchanged": true
+      },
+      "bookReducedMotion": false,
+      "entryJumpPresent": true
+    },
+    {
+      "label": "390",
+      "input": "Chromium CDP simulated touch",
+      "paint": "ready",
+      "wallSeconds": 34.759,
+      "complete": true,
+      "deaths": 0,
+      "rootLandingY": 390,
+      "book": {
+        "elapsed": 9.050000000000113,
+        "actualPeriod": 8.975979010256552,
+        "sampleCount": 157,
+        "maxSoleError": 0,
+        "maxRelativeHorizontalDrift": 7.958078640513122e-13,
+        "horizontalTravel": 369.9383869573594,
+        "relativeDriftBound": 1e-05,
+        "twoDirections": true,
+        "actualMoverSupport": true,
+        "fullCycle": true,
+        "actualLandingSamples": 0,
+        "actualRideSamples": 157,
+        "horizontalPoseDirections": {
+          "left": 77,
+          "right": 80
+        },
+        "actualWalkingCycleUnchanged": true
+      },
+      "bookReducedMotion": false,
+      "entryJumpPresent": false
+    },
+    {
+      "label": "320",
+      "input": "Chromium CDP simulated touch",
+      "paint": "ready",
+      "wallSeconds": 34.545,
+      "complete": true,
+      "deaths": 0,
+      "rootLandingY": 390,
+      "book": {
+        "elapsed": 9.100000000000106,
+        "actualPeriod": 8.975979010256552,
+        "sampleCount": 159,
+        "maxSoleError": 0,
+        "maxRelativeHorizontalDrift": 6.821210263296962e-13,
+        "horizontalTravel": 369.9731978411735,
+        "relativeDriftBound": 1e-05,
+        "twoDirections": true,
+        "actualMoverSupport": true,
+        "fullCycle": true,
+        "actualLandingSamples": 0,
+        "actualRideSamples": 159,
+        "horizontalPoseDirections": {
+          "left": 77,
+          "right": 82
+        },
+        "actualWalkingCycleUnchanged": true
+      },
+      "bookReducedMotion": false,
+      "entryJumpPresent": false
+    },
+    {
+      "label": "desktop-failed-primary",
+      "input": "keyboard",
+      "paint": "error",
+      "wallSeconds": 35.096,
+      "complete": true,
+      "deaths": 0,
+      "rootLandingY": 390,
+      "book": {
+        "elapsed": 9.066666666666803,
+        "actualPeriod": 8.975979010256552,
+        "sampleCount": 133,
+        "maxSoleError": 0,
+        "maxRelativeHorizontalDrift": 9.094947017729282e-13,
+        "horizontalTravel": 369.9898643156871,
+        "relativeDriftBound": 1e-05,
+        "twoDirections": true,
+        "actualMoverSupport": true,
+        "fullCycle": true,
+        "actualLandingSamples": 0,
+        "actualRideSamples": 133,
+        "horizontalPoseDirections": {
+          "left": 65,
+          "right": 68
+        },
+        "actualWalkingCycleUnchanged": true
+      },
+      "bookReducedMotion": false,
+      "entryJumpPresent": false
+    }
+  ],
+  "compression": {
+    "file": "candidate-report.json.gz",
+    "rawBytes": 14677086,
+    "rawSha256": "89f78589e5e446bc97889b4644ad09bd7d80ba73cebbd6d64bf23fd4f99ab466",
+    "gzipBytes": 580767,
+    "gzipSha256": "4f01ef8904656f23f1fce0cf2a978c9dd69a9d9fd34b24e2a183344d3533f6c2",
+    "gzipMtime": 0,
+    "gzipFilename": "",
+    "decompressedBytesExact": true,
+    "secondCompressionIdentical": true
+  },
+  "auditMethod": {
+    "officialMetadataMatchedZIP": true,
+    "completeSourceSetComparedToExpectedGitCommit": true,
+    "artifactCodeExecuted": false,
+    "pureValidatorsFromTrustedLocalCommitOnly": true,
+    "recordOccurrencesNotDistinctFrames": true,
+    "allDetailsPreservedInRawReport": true
+  },
+  "nativeImages": [
+    {
+      "file": "1280-touch-320-library-book-b-riding.png",
+      "sourceArtifactRelativePath": "candidate/1280-touch-320-library-book-b-riding.png",
+      "bytes": 236217,
+      "sha256": "161d0e07711087555cba0ca9682a3bcc9ffa26de4ac54304c2b61915eb8e06c7",
+      "width": 320,
+      "height": 680,
+      "unalteredArtifactPNG": true,
+      "scope": "320 reduced-motion vertical-book support; not normal-motion proof"
+    },
+    {
+      "file": "1280-full-touch-320-post-book-riding.png",
+      "sourceArtifactRelativePath": "candidate/1280-full-touch-320-post-book-riding.png",
+      "bytes": 218154,
+      "sha256": "05bfd2bdc458e2b1bbed5d9327e86ab012c9e92e2f9a1d21b77f12f63ab8b1e1",
+      "width": 320,
+      "height": 680,
+      "unalteredArtifactPNG": true,
+      "scope": "320 actual horizontal-book route and planted soles"
+    },
+    {
+      "file": "1280-post-entry-traveler-airborne-canvas.png",
+      "sourceArtifactRelativePath": "candidate/1280-post-entry-traveler-airborne-canvas.png",
+      "bytes": 1500898,
+      "sha256": "bfc34161c3fd97872d21d20b66176d844b7a813c8cf9b7bec97580ed04efa6e3",
+      "width": 1280,
+      "height": 677,
+      "unalteredArtifactPNG": true,
+      "scope": "post safe-entry actual airborne production Canvas"
+    },
+    {
+      "file": "1280-greenhouse-root-crossed.png",
+      "sourceArtifactRelativePath": "candidate/1280-greenhouse-root-crossed.png",
+      "bytes": 1279658,
+      "sha256": "bb781624a53d5d27c305c5b75f9a54c929735a3192c6407fb6bf76edd60c8a83",
+      "width": 1280,
+      "height": 800,
+      "unalteredArtifactPNG": true,
+      "scope": "actual greenhouse traversal; shelf land is temporal JSON evidence, not this still"
+    }
+  ]
+}

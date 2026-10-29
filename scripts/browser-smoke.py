@@ -11,12 +11,16 @@ from playwright.async_api import async_playwright, expect
 
 
 PROBE="""
+import {getTravelerMotion as __qaGetTravelerMotion} from './dream-traveler-art.js';
+import {transformCapPoint as __qaTransformCapPoint} from './dream-cap-art.js';
 const __qaBodyIdentities=new WeakMap();let __qaBodySequence=0;
 window.__qaRead=()=>{
   if(!game)return null;
   const a=game.form==='soul'?game.soul:game.body,b=game.body,p=game.greenhousePlant;
   if(!__qaBodyIdentities.has(b))__qaBodyIdentities.set(b,++__qaBodySequence);
   const character=game.getCharacterPresentation();
+  const motion=__qaGetTravelerMotion(b,{time:game.options.reducedMotion?0:game.visualTime,
+    hop:character.hop,reducedMotion:game.options.reducedMotion,performance:character.performance});
   return {
     form:game.form,state:game.state,chapterIndex:game.chapterIndex,mode:game.mode,festivalId:game.festivalId,controlSource,
     runId:game.runId,bodyIdentity:__qaBodyIdentities.get(b),input:{...game.input},
@@ -28,12 +32,14 @@ window.__qaRead=()=>{
     firstTicket:game.firstTicket?{...game.firstTicket}:null,
     x:a.x,y:a.y,vx:a.vx,vy:a.vy,time:game.time,visualTime:game.visualTime,deaths:game.deaths,camera:game.camera,
     reducedMotion:game.options.reducedMotion,storyNPC:game.getStoryNPCView(),
-    body:{x:b.x,y:b.y,w:b.w,h:b.h,vx:b.vx,vy:b.vy,grounded:b.grounded,platform:b.platform,face:b.face,land:b.land},capPhase:game.cap?.phase,capAge:game.cap?.age,capAmount:game.capOpen,
+    body:{x:b.x,y:b.y,w:b.w,h:b.h,vx:b.vx,vy:b.vy,grounded:b.grounded,platform:b.platform,face:b.face,land:b.land,walk:b.walk},capPhase:game.cap?.phase,capAge:game.cap?.age,capAmount:game.capOpen,
     travelerPerformance:game.getTravelerPerformanceView(),
+    travelerStepSeconds:game.travelerPerformance?.stepSeconds??null,
     characterPose:{walking:character.walking,step:character.step,hop:character.hop,scaleY:character.scaleY,tilt:character.tilt,
       bodyMatrix:[...character.rig.bodyMatrix],openingWorld:{...character.rig.openingWorld},
       grip:character.grip,clasp:character.clasp,catching:character.catching,
-      arms:character.arms,performance:character.performance??null},
+      arms:character.arms,performance:character.performance??null,
+      legs:motion.legs.map(leg=>({...leg,worldFoot:__qaTransformCapPoint(character.rig.bodyMatrix,leg.foot)}))},
     theatrePaint:game.isTheatreFinish()?{
       phase:game.theatreScenes?.getStatus(),frame:game.theatrePaintedFrame,
       decodedWidth:game.getPaintedTheatreImage()?.naturalWidth??0,
@@ -76,7 +82,7 @@ window.__qaRead=()=>{
     hazards:(game.hazards||[]).map(h=>({kind:h.kind,x:h.x,y:h.y,px:h.px,py:h.py,
       r:h.r,length:h.length,swing:h.swing,speed:h.speed,phase:h.phase,frozen:h.frozen})),
     nearHint:game.getNearHint(),
-    movers:(game.movers||[]).map(p=>({id:p.id,x:p.x,y:p.y,w:p.w,h:p.h,dx:p.dx,dy:p.dy,range:p.range,speed:p.speed})),
+    movers:(game.movers||[]).map(p=>({id:p.id,kind:p.kind,axis:p.axis,x:p.x,y:p.y,w:p.w,h:p.h,dx:p.dx,dy:p.dy,range:p.range,speed:p.speed})),
     platforms:(game.level?.platforms||[]).map(p=>({x:p.x,y:p.y,w:p.w,h:p.h,kind:p.kind||null})),
     letterChoice:save.choices.letter??null,
     clockChoice:save.choices.clock??null,clockEcho:game.getClockEchoView?.()??null,
@@ -483,29 +489,35 @@ async def exercise_portrait_sequence(page,output,label):
             'scope':'real first-chapter dialogue and original delayed image responses; fast Next and normal Escape/reopen; no network bytes, DOM, coordinates or saves replaced'}
 
 def traveler_pose_record(snapshot):
-    return {key:snapshot[key] for key in ['runId','bodyIdentity','chapterIndex','mode','state','form','time','visualTime','deaths','reducedMotion','body','travelerPerformance','characterPose']}
+    return {key:snapshot[key] for key in ['runId','bodyIdentity','chapterIndex','mode','state','form','time','visualTime','deaths','reducedMotion','body','travelerPerformance','travelerStepSeconds','characterPose','platforms','movers']}
 
 def validate_traveler_pose(snapshot,phase=None,reduced_motion=None):
     """Compare the actual drawing view with independently observed physics."""
     body=snapshot['body'];view=snapshot['travelerPerformance'];pose=snapshot['characterPose']
     detail=json.dumps(traveler_pose_record(snapshot),ensure_ascii=False)
-    assert all(math.isfinite(n) for n in pose['bodyMatrix']) and len(pose['bodyMatrix'])==6,'invalid character rig; '+detail
+    def finite(n):return type(n) in [int,float] and math.isfinite(n)
+    def standing(surface):
+        return isinstance(surface,dict) and all(finite(surface.get(key)) for key in ['x','y','w','h']) and surface['w']>0 and surface['h']>0 and body['grounded'] is True and abs(body['y']-surface['y'])<.05 and body['x']+body['w']/2>surface['x']+1 and body['x']-body['w']/2<surface['x']+surface['w']-1
+    assert all(finite(body.get(key)) for key in ['x','y','w','h','vx','vy']) and body['w']>0 and body['h']>0,'invalid actual body; '+detail
+    assert all(finite(n) for n in pose['bodyMatrix']) and len(pose['bodyMatrix'])==6,'invalid character rig; '+detail
     for side in ['left','right']:
         for point in ['shoulder','elbow','wrist','requested','world']:
-            assert all(math.isfinite(pose['arms'][side][point][axis]) for axis in ['x','y']),'non-finite actual arm; '+detail
-    if snapshot['mode']!='story' or snapshot['chapterIndex']!=2:
-        assert view is None and pose['performance'] is None,'third-chapter acting leaked outside its scope; '+detail
+            assert all(finite(pose['arms'][side][point][axis]) for axis in ['x','y']),'non-finite actual arm; '+detail
+    chapter=snapshot['chapterIndex'];in_scope=snapshot['mode']=='story' and type(chapter) is int and 0<=chapter<=5
+    if not in_scope:
+        assert view is None and pose['performance'] is None,'main-story acting leaked outside its six-chapter scope; '+detail
     else:
         assert view and pose['performance']==view,'actual drawing presentation lost the production performance view; '+detail
         assert view['reducedMotion']==snapshot['reducedMotion'],'view and real reduced-motion setting disagree; '+detail
         assert view['phase'] in ['idle','rise','fall','land','ride'],'unknown actual performance phase; '+detail
         for key in ['rise','fall','landing','ride']:
-            assert 0<=view[key]<=1,'performance amount outside its range; '+detail
-        assert -1<=view['balance']<=1 and math.isfinite(view['platformVelocity']),'invalid physical platform balance; '+detail
+            assert finite(view[key]) and 0<=view[key]<=1,'performance amount outside its range; '+detail
+        assert all(finite(view.get(key)) and -1<=view[key]<=1 for key in ['balance','verticalBalance']),'invalid physical platform balance; '+detail
+        assert all(finite(view.get(key)) for key in ['platformVelocity','platformVerticalVelocity']),'non-finite physical platform velocity; '+detail
         if phase:assert view['phase']==phase,'performance phase disagrees with the observed transition; '+detail
         if reduced_motion is not None:assert view['reducedMotion'] is reduced_motion,'wrong actual reduced-motion setting; '+detail
         if view['reducedMotion']:
-            assert all(view[key]==0 for key in ['rise','fall','landing','ride','balance']),'reduced motion retained decorative amplitude; '+detail
+            assert all(view[key]==0 for key in ['rise','fall','landing','ride','balance','verticalBalance']),'reduced motion retained decorative amplitude; '+detail
             assert view['landingAge'] is None and view['freeArms']=={'left':{'x':-16,'y':-16},'right':{'x':17,'y':-16}},'reduced motion retained a free-arm animation; '+detail
         elif phase in ['rise','fall','ride'] and max(pose['grip'],pose['clasp'],pose['catching'])<.001 and abs(body['vx'])<1:
             # This catches a renderer accidentally returning the old base arms
@@ -513,16 +525,57 @@ def validate_traveler_pose(snapshot,phase=None,reduced_motion=None):
             for side in ['left','right']:
                 for axis in ['x','y']:
                     assert abs(pose['arms'][side]['requested'][axis]-view['freeArms'][side][axis])<.001,'actual free arm did not use its performance target; '+detail
+
+        # Match the current runtime mover, not authored coordinates or a
+        # platform-shaped decoration. The chapter's real ID/kind/axis remain
+        # independent evidence even when the presentation reports "ride".
+        authored={2:{'stage':('stage','x')},3:{'book-a':('book','y'),'book-b':('book','y')},5:{'last-stage':('book','x')}}
+        contacts=[surface for surface in snapshot['movers'] if body['platform'] is not None and surface.get('id')==body['platform'] and standing(surface)]
+        assert len(contacts)<=1,'ambiguous runtime mover attachment; '+detail
+        attached=contacts[0] if contacts else None
+        if attached:
+            contract=authored.get(chapter,{}).get(attached['id'])
+            assert contract and (attached.get('kind'),attached.get('axis'))==contract,'runtime moving support ID, kind or axis disagrees with this chapter; '+detail
+            assert (view['platformId'],view['platformKind'],view['platformAxis'])==(attached['id'],attached['kind'],attached['axis']),'performance lost the actual mover attachment; '+detail
+            step=snapshot['travelerStepSeconds']
+            assert finite(step) and 0<step<=.04,'moving support lacks the actual consumed step; '+detail
+            assert all(finite(attached.get(key)) for key in ['dx','dy']),'non-finite actual mover displacement; '+detail
+            vx=attached['dx']/step;vy=attached['dy']/step
+            assert abs(view['platformVelocity']-vx)<.000001 and abs(view['platformVerticalVelocity']-vy)<.000001,'platform velocity disagrees with its real displacement and consumed step; '+detail
+            u=min(abs(body['vx'])/120,1);ride=0 if view['reducedMotion'] else 1-u*u*(3-2*u)
+            assert abs(view['ride']-ride)<.000001,'platform transport fabricated a walking or standing amount; '+detail
+            horizontal=max(-1,min(1,vx/180))*(-1 if body['face']==-1 else 1)*ride if attached['axis']=='x' else 0
+            vertical=max(-1,min(1,vy/90))*ride if attached['axis']=='y' else 0
+            assert abs(view['balance']-horizontal)<.000001 and abs(view['verticalBalance']-vertical)<.000001,'platform balance disagrees with the real movement axis; '+detail
+        else:
+            assert all(view.get(key) is None for key in ['platformId','platformKind','platformAxis']),'riding pose lacks actual mover attachment; '+detail
+            assert all(view[key]==0 for key in ['ride','platformVelocity','platformVerticalVelocity','balance','verticalBalance']),'detached body retained platform performance; '+detail
+        if view['phase']=='ride':assert attached is not None,'riding pose lacks actual mover attachment; '+detail
+
+        # These legs come from the same pure getTravelerMotion used by the
+        # renderer, transformed by its real body matrix. Reading them does not
+        # advance gait, physics or the animation clock.
+        assert len(pose['legs'])==2,'actual traveler legs are missing; '+detail
+        a,b,c,d,e,f=pose['bodyMatrix']
+        for leg in pose['legs']:
+            for point in ['hip','knee','ankle','foot','worldFoot']:
+                assert all(finite(leg[point][axis]) for axis in ['x','y']),'non-finite actual leg; '+detail
+            assert type(leg['planted']) is bool and finite(leg['foot']['angle']),'invalid actual foot state; '+detail
+            assert abs(leg['worldFoot']['x']-(a*leg['foot']['x']+c*leg['foot']['y']+e))<.000001 and abs(leg['worldFoot']['y']-(b*leg['foot']['x']+d*leg['foot']['y']+f))<.000001,'sole does not use the actual body matrix; '+detail
+            if body['grounded'] and leg['planted']:
+                assert abs(leg['worldFoot']['y']-body['y'])<.001,'planted sole left the real body contact height; '+detail
+                if attached:assert abs(leg['worldFoot']['y']-attached['y'])<.001,'planted sole left its actual moving support; '+detail
+        if body['grounded']:assert any(leg['planted'] for leg in pose['legs']),'grounded traveler has no planted sole; '+detail
+        if attached and abs(body['vx'])<1:
+            assert pose['walking'] is False and all(leg['planted'] for leg in pose['legs']),'stationary platform rider acquired a walking cycle; '+detail
     if phase=='rise':assert not body['grounded'] and body['vy']<0,'rise lacks real upward motion; '+detail
     if phase=='fall':assert not body['grounded'] and body['vy']>0,'fall lacks real downward motion; '+detail
     if phase in ['land','idle','ride']:
         assert body['grounded'] and abs(body['vy'])<.01,'ground pose is physically airborne; '+detail
         surfaces=snapshot['platforms']+snapshot['movers']
-        assert any(abs(body['y']-surface['y'])<.05 and body['x']+body['w']/2>surface['x']+1 and body['x']-body['w']/2<surface['x']+surface['w']-1 for surface in surfaces),'ground pose has no real support; '+detail
+        assert any(standing(surface) for surface in surfaces),'ground pose has no real support; '+detail
     if view and phase=='land':
         assert 0<=view['landingAge']<view['landingDuration']==.2 and view['landing']>0,'landing is not the short current contact response; '+detail
-    if phase=='ride':
-        assert body['platform']=='stage' and view['platformId']=='stage','riding pose lacks actual stage attachment; '+detail
     return traveler_pose_record(snapshot)
 
 TRAVELER_FRAME_SAMPLER="""token=>{
@@ -695,6 +748,53 @@ async def sample_body_jump(page,label,pause=False,output=None,reduced_motion=Non
     return {'label':label,'input':'actual Space key','rise':traveler_pose_record(rise),'fall':traveler_pose_record(fall),
             'landed':traveler_pose_record(landed),'pause':paused_evidence,'noRespawns':True,'samePhysicalFloor':True,
             'keyboardFocusBefore':focus_before,'keyboardTargetVerified':'dream-canvas','immediatelyAfterKeydown':traveler_pose_record(after_input),
+            'frameObservation':{key:sampled[key] for key in ['token','status','activeMs','elapsedMs','initial','frames','droppedFrames','input']},
+            'observerCleanup':cleanup}
+
+async def sample_greenhouse_shelf_jump(page,label):
+    """Latch the one real shelf jump before its short landing can settle."""
+    await page.wait_for_function("()=>{const s=window.__qaRead();return s?.chapterIndex===1&&s.state==='playing'&&s.form==='body'&&s.body.grounded&&Math.abs(s.body.vx)<1;}",timeout=3500)
+    before=await page.evaluate('window.__qaRead()')
+    assert before['mode']=='story' and before['chapterIndex']==1 and abs(before['body']['y']-560)<.05
+    assert before['reducedMotion'] is False,'the ordinary shelf jump must expose its actual landing response'
+    canvas=page.locator('#dream-canvas')
+    await canvas.focus()
+    assert await canvas.evaluate('(canvas)=>document.activeElement===canvas'),'Space target is not the actual game canvas'
+    token=label+':shelf:'+str(time.monotonic_ns())
+    await page.evaluate(TRAVELER_FRAME_SAMPLER,token)
+    try:
+        # Keep the original movement route immediately after the only Space.
+        # The unchanged in-page observer retains rise/fall/contact while the
+        # Python driver continues walking to the same x=1390 stopping point.
+        try:await page.keyboard.down('Space')
+        finally:await page.keyboard.up('Space')
+        await drive_to(page,1390)
+        await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.grounded&&Math.abs(b.y-445)<2;}",timeout=5000)
+        settled=await page.evaluate('window.__qaRead()')
+        rise=await await_traveler_pose(page,token,'rise',False)
+        fall=await await_traveler_pose(page,token,'fall',False)
+        landed=await await_traveler_pose(page,token,'land',False)
+        assert abs(landed['body']['y']-445)<.05 and landed['body']['platform'] is None,'the captured contact was not the actual greenhouse shelf'
+        assert rise['time']<fall['time']<landed['time']<=settled['time'],'shelf phase evidence is not ordered within its real jump'
+        for s in [rise,fall,landed,settled]:
+            assert (s['runId'],s['bodyIdentity'],s['deaths'])==(before['runId'],before['bodyIdentity'],before['deaths']),'shelf jump changed the actual run or body'
+        sampled=await page.evaluate('token=>window.__qaTravelerFrames.read(token)',token)
+        assert sampled['token']==token and sampled['status']=='complete' and not sampled['pendingFrame'] and not sampled['pendingTimer']
+    except Exception:
+        trace=await page.evaluate("token=>{const view=window.__qaTravelerFrames?.read(token);return view&&{token:view.token,status:view.status,reason:view.reason,activeMs:view.activeMs,frames:view.frames,droppedFrames:view.droppedFrames,input:view.input};}",token)
+        print(label,'shelf jump observation failure',json.dumps(trace,ensure_ascii=False),flush=True)
+        raise
+    finally:
+        cleanup=await page.evaluate("""token=>{
+          const sampler=window.__qaTravelerFrames;
+          if(!sampler||sampler.token!==token)throw new Error('traveler observer ownership was lost');
+          const stopped=sampler.stop(token);delete window.__qaTravelerFrames;
+          return {pendingFrame:stopped.pendingFrame,pendingTimer:stopped.pendingTimer,
+            oldPosesCleared:Object.keys(sampler.read(token).poses).length===0,removed:!window.__qaTravelerFrames};
+        }""",token)
+        assert cleanup=={'pendingFrame':False,'pendingTimer':False,'oldPosesCleared':True,'removed':True},'shelf observer was not fully cleaned up'
+    return {'rise':traveler_pose_record(rise),'fall':traveler_pose_record(fall),'landed':traveler_pose_record(landed),
+            'settledBody':settled['body'],'input':'one actual Space key followed by the original walk to x=1390',
             'frameObservation':{key:sampled[key] for key in ['token','status','activeMs','elapsedMs','initial','frames','droppedFrames','input']},
             'observerCleanup':cleanup}
 
@@ -944,19 +1044,10 @@ async def exercise_greenhouse(page,output,label):
 
     # Two player jumps use the existing shelf to cross above the drifting
     # shadow. Stopping on the shelf makes the route independent of its phase.
-    jump_poses={}
-    def observe_shelf_jump(a):
-        b=a['body']
-        phase='rise' if not b['grounded'] and b['vy']<-80 else 'fall' if not b['grounded'] and b['vy']>80 else None
-        if phase and phase not in jump_poses:jump_poses[phase]=validate_traveler_pose(a,phase)
-    await page.keyboard.press('Space')
-    await drive_to(page,1390,observe=observe_shelf_jump)
-    await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.grounded&&Math.abs(b.y-445)<2;}",timeout=5000)
-    shelf=await page.evaluate('window.__qaRead()')
-    route['shelfLanding']=shelf['body']
-    jump_poses['landed']=validate_traveler_pose(shelf,'land')
-    assert 'rise' in jump_poses and 'fall' in jump_poses,'greenhouse jump did not expose both physical directions'
-    route['shelfJumpPoses']=jump_poses
+    shelf_jump=await sample_greenhouse_shelf_jump(page,label)
+    route['shelfLanding']=shelf_jump['settledBody']
+    route['shelfJumpPoses']={key:shelf_jump[key] for key in ['rise','fall','landed']}
+    route['shelfJumpObservation']={key:shelf_jump[key] for key in ['input','frameObservation','observerCleanup']}
     await page.keyboard.press('Space')
     await drive_to(page,1610)
     await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.grounded&&b.x>1585&&Math.abs(b.y-560)<2;}",timeout=5000)

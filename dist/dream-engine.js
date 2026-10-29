@@ -1,5 +1,5 @@
 // One simulation and one animation loop. The unchanged v14 physics lives in
-// dream-engine-base.js; this subclass adds presentation for the first five chapters.
+// dream-engine-base.js; this subclass adds presentation for the six story chapters.
 import { DreamGame as BaseDreamGame } from './dream-engine-base.js';
 import { drawCapFrontRim } from './dream-cap-art.js';
 import { drawStationBackdrop, drawStationArchitecture, drawStationPlatform, drawStationSignal, drawStationCharacter, drawStationLantern } from './dream-station-art.js';
@@ -22,7 +22,7 @@ import {createPostDelivery,beginPostReturn,advancePostDelivery,clearPostDelivery
 import { normalizeClockChoice, createClockEcho, advanceClockEcho, settleClockEcho, getClockEchoSnapshot, drawClockEcho } from './dream-clock-echo.js';
 import { drawRefinedSoul } from './dream-soul-art.js';
 import { createTheatreEncore, advanceTheatreEncore, drawTheatreEncore, getTheatreEncoreView } from './dream-theatre-encore.js';
-import { createTravelerPerformance, advanceTravelerPerformance, settleTravelerPerformance, getTravelerPerformanceView, applyTravelerPerformance } from './dream-traveler-performance.js';
+import { createTravelerPerformance, advanceTravelerPerformance, settleTravelerPerformance, getTravelerPerformanceView, applyTravelerPerformance, isTravelerPerformanceScene } from './dream-traveler-performance.js';
 export { DREAM_LEVELS, DREAM_PHYSICS, createDreamRng, getDreamStars } from './dream-engine-base.js';
 
 export class DreamGame extends BaseDreamGame {
@@ -52,7 +52,7 @@ export class DreamGame extends BaseDreamGame {
     this.travelerPerformance=createTravelerPerformance();
     super.start(options);
     if(this.destroyed)return;
-    if(!this.isTheatreFinish())this.travelerPerformance=null;
+    if(!isTravelerPerformanceScene(this))this.travelerPerformance=null;
     this.stationSignal={amount:this.stationSignalOpen()?1:0};
     this.paintedScenes.request({mode:this.mode,chapterIndex:this.chapterIndex});
     this.greenhouseScenes.request({mode:this.mode,chapterIndex:this.chapterIndex});
@@ -221,7 +221,7 @@ export class DreamGame extends BaseDreamGame {
       time:this.visualTime,reducedMotion:this.options?.reducedMotion,runId:this.runId,deaths:this.deaths};
   }
   getTravelerPerformanceView(){
-    return this.isTheatreFinish()&&!this.destroyed?getTravelerPerformanceView(this.travelerPerformance,this.getTravelerPerformanceContext()):null;
+    return isTravelerPerformanceScene(this)&&!this.destroyed?getTravelerPerformanceView(this.travelerPerformance,this.getTravelerPerformanceContext()):null;
   }
   getCharacterPresentation(t=this.options.reducedMotion?0:this.visualTime){
     return applyTravelerPerformance(super.getCharacterPresentation(t),this.getTravelerPerformanceView());
@@ -373,7 +373,10 @@ export class DreamGame extends BaseDreamGame {
       const shadow=getGroundShadowView({body:b,level:this.level,movers:this.movers,closedBarriers:this.level.barriers.filter(barrier=>!this.barrierOpen(barrier))});
       drawStationCharacter(this,c,b,t,shown,presentation,{shadow,reflection:this.isPostFinish()?'#f1c8ab62':this.isCoastFinish()?'#a6dce065':this.isLibraryFinish()?'#9adbd258':'#baa1ed61'});
     }
-    else if(this.isStationFinish()||this.isGreenhouseFinish())drawStationCharacter(this,c,b,t,shown,presentation);
+    else if(this.isStationFinish()||this.isGreenhouseFinish()){
+      const shadow=getGroundShadowView({body:b,level:this.level,movers:this.movers,closedBarriers:this.level.barriers.filter(barrier=>!this.barrierOpen(barrier))});
+      drawStationCharacter(this,c,b,t,shown,presentation,{shadow});
+    }
     else super.drawCharacter(c,b,t,shown,character);
   }
 }

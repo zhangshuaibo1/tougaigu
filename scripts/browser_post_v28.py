@@ -369,35 +369,62 @@ def validate_post_settlement(before,after,added=1):
  assert after['choices']==before['choices'],'post replay changed a narrative choice'
  return {'legitimateCompletedRunsAdded':added,'previousChapterResultsAndChoicesUnchanged':True}
 
-def post_rider_record(s):
+def post_rider_record(s,driver):
  p=next(q for q in s['movers'] if q['id']=='last-stage')
- return {**{key:s[key] for key in ['runId','bodyIdentity','chapterIndex','mode','state','form','time','deaths','body','input']},'mover':p}
+ phase=s['travelerPerformance']['phase']
+ assert phase in ['land','ride'],'actual post rider is neither landing nor established riding'
+ pose=driver.validate_traveler_pose(s,phase,s['reducedMotion'])
+ return {**{key:s[key] for key in ['runId','bodyIdentity','chapterIndex','mode','state','form','time','visualTime','deaths','body','input']},
+         'mover':p,'travelerPose':pose}
 
 def validate_post_rider(samples):
  assert len(samples)>=3,'one endpoint is not a complete actual floating-book ride'
  first=samples[0];period=2*math.pi/abs(first['mover']['speed'])
- relative=first['body']['x']-first['mover']['x'];previous=first['time']
- sole=drift=0;left=right=0
+ relative=first['body']['x']-first['mover']['x'];previous=first
+ sole=drift=0;left=right=landings=rides=0;pose_directions={'left':0,'right':0};landing_origin=None
  for s in samples:
   p=s['mover'];b=s['body']
   assert (s['runId'],s['bodyIdentity'],s['chapterIndex'],s['mode'],s['deaths'])==(first['runId'],first['bodyIdentity'],5,'story',first['deaths']),'floating-book ride changed run, body, chapter or deaths'
   assert s['state']=='playing' and s['form']=='body','floating-book ride interrupted'
-  assert s['time']>=previous,'floating-book time reversed'
+  assert s['time']>=previous['time'] and s['visualTime']>=previous['visualTime'],'floating-book time reversed'
   assert b['platform']=='last-stage' and b['grounded'] and p['id']=='last-stage','body lost its actual floating-book attachment'
+  assert (p['kind'],p['axis'])==('book','x'),'post rider lost the actual horizontal book'
   assert s['input']=={'x':0,'y':0} and abs(b['vx'])<.001,'rider had held direction input or residual acceleration'
+  assert b['walk']==first['body']['walk'],'post book transport advanced the actual walking cycle'
   assert b['x']+b['w']/2>=p['x'] and b['x']-b['w']/2<=p['x']+p['w'],'actual floating book no longer overlaps body'
   sole=max(sole,abs(b['y']-p['y']));drift=max(drift,abs(b['x']-p['x']-relative))
   assert sole<.001 and drift<1e-5,'book contact or relative carry drifted'
   if p['dx']<0:left+=1
   if p['dx']>0:right+=1
-  previous=s['time']
+  pose=s['travelerPose'];view=pose['travelerPerformance']
+  assert all(pose[key]==s[key] for key in ['runId','bodyIdentity','chapterIndex','mode','state','form','time','visualTime','deaths','body']),'post rider pose belongs to a different actual frame'
+  assert (view['platformId'],view['platformKind'],view['platformAxis'])==('last-stage','book','x'),'post pose lost its actual horizontal support'
+  assert pose['reducedMotion']==first['travelerPose']['reducedMotion'],'post motion setting changed within one carry'
+  assert view['phase'] in ['land','ride'],'post rider pose is neither actual contact nor established riding'
+  if view['phase']=='land':
+   assert rides==0 and 0<=view['landingAge']<.2 and s['time']-first['time']<.2,'stationary post carry restarted its landing response'
+   current_origin=s['time']-view['landingAge']
+   if landing_origin is None:landing_origin=current_origin
+   assert abs(current_origin-landing_origin)<1e-6,'post landing age does not follow the same contact'
+   landings+=1
+  else:
+   rides+=1
+   if p['dx']:
+    assert view['platformVelocity']*p['dx']>0,'post pose lost the actual horizontal travel direction'
+    if pose['reducedMotion']:assert view['balance']==0,'reduced post carry retained decorative balance'
+    else:assert view['balance']*p['dx']*(-1 if b['face']==-1 else 1)>0,'post balance opposed the actual horizontal travel direction'
+    pose_directions['left' if p['dx']<0 else 'right']+=1
+  previous=s
  elapsed=samples[-1]['time']-first['time']
  travel=max(s['mover']['x'] for s in samples)-min(s['mover']['x'] for s in samples)
  assert elapsed>=period,'floating-book observation omitted part of the actual period'
  assert left and right and travel>max(365,first['mover']['range']*1.97),'both actual floating-book travel directions and full excursion were not observed'
+ assert rides>0 and min(pose_directions.values())>0,'both actual horizontal riding performances were not observed'
  return {'elapsed':elapsed,'actualPeriod':period,'sampleCount':len(samples),'samples':samples,
          'maxSoleError':sole,'maxRelativeHorizontalDrift':drift,'horizontalTravel':travel,
-         'relativeDriftBound':1e-5,'twoDirections':True,'actualMoverSupport':True,'fullCycle':True}
+         'relativeDriftBound':1e-5,'twoDirections':True,'actualMoverSupport':True,'fullCycle':True,
+         'actualLandingSamples':landings,'actualRideSamples':rides,'horizontalPoseDirections':pose_directions,
+         'actualWalkingCycleUnchanged':True}
 
 async def finish_post_story(page,driver,expected,touch=False):
  if not touch:return await driver.finish_story_from_ui(page,expected)
@@ -499,15 +526,15 @@ async def wait_board(page,driver,touch=False):
  assert s['form']=='body' and s['body']['grounded'] and s['body']['platform']=='last-stage'
  assert s['input']['x']==0 and abs(s['body']['vx'])<.001,'input not settled before measuring rider carry'
  return s
-async def ride_cycle(page):
+async def ride_cycle(page,driver):
  first=await page.evaluate('window.__qaRead()')
  initial=next(p for p in first['movers'] if p['id']=='last-stage')
  duration=max(9.05,2*math.pi/abs(initial['speed'])+.05)
- start=first['time'];samples=[post_rider_record(first)]
+ start=first['time'];samples=[post_rider_record(first,driver)]
  deadline=time.monotonic()+15
  while True:
   s=await page.evaluate('window.__qaRead()')
-  samples.append(post_rider_record(s))
+  samples.append(post_rider_record(s,driver))
   if s['time']-start>=duration:break
   assert time.monotonic()<deadline,'book full-cycle observation exceeded wall budget'
   await page.wait_for_timeout(50)
@@ -518,8 +545,11 @@ async def play_route(page,output,label,driver,touch=False,paint='ready',full_sto
  start=await page.evaluate('window.__qaRead()')
  assert start['chapterIndex']==5 and start['form']=='body' and start['seals']==0 and start['memories']==0 and start['deaths']==0
  await post_paint(page,paint)
- intro=None;npc=None
+ intro=None;npc=None;entry_body_jump=None
  if full_story:
+  # One actual jump and pause at the normally reached safe spawn. All pose
+  # observations finish here, before the route approaches its final pendulum.
+  entry_body_jump=await driver.sample_body_jump(page,label+'-post-entry',pause=True,output=output,reduced_motion=start['reducedMotion'])
   await click_input(page,'#stage-story',driver,touch)
   intro=await finish_post_story(page,driver,POST_INTRO,touch)
   await driver.drive_to(page,120,limit=5,touch=touch)
@@ -545,7 +575,7 @@ async def play_route(page,output,label,driver,touch=False,paint='ready',full_sto
  await page.wait_for_function("()=>{const s=window.__qaRead();return s?.body.grounded&&Math.abs(s.body.y-465)<1;}",timeout=2700)
  await driver.drive_to(page,845,limit=4,touch=touch)
  boarded=await wait_board(page,driver,touch)
- ride=await ride_cycle(page)
+ ride=await ride_cycle(page,driver)
  await page.screenshot(path=str(Path(output)/(label+'-post-book-riding.png')),full_page=True)
  await open_cap(page,driver,touch)
  await driver.drive_to(page,1100,305,limit=7,touch=touch)
@@ -588,7 +618,7 @@ async def play_route(page,output,label,driver,touch=False,paint='ready',full_sto
  await page.screenshot(path=str(Path(output)/(label+'-post-body-exit.png')),full_page=True)
  seconds=round(time.monotonic()-began,3)
  print(label,'post full route complete',{'wallSeconds':seconds,'input':'CDP touch' if touch else 'keyboard','paint':paint},flush=True)
- route={'intro':intro['portraits'] if intro else None,'npc':npc['portraits'] if npc else None,'book':ride,'boarded':boarded['body'],
+ route={'intro':intro['portraits'] if intro else None,'npc':npc['portraits'] if npc else None,'entryBodyJump':entry_body_jump,'book':ride,'boarded':boarded['body'],
          'rootLanding':root['body'],'firstLamp':lamp1,'secondLamp':lamp2,'fullBodyExit':True,
          'mushroomBounce':bounced['body'],'mushroomObservation':mushroom,'windCorridorSamples':wind,'finalExit':exit_trace,'finalInputEvents':exit_input,
          'realSunStampBeforeDanger':True,'oneFinalPendulumFrozen':True,'deaths':0,

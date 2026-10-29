@@ -1,0 +1,109 @@
+{
+  "scope": "Eight unmodified production Canvas PNGs selected from four actual-control offline routes at native 390/320 dimensions; not browser, normal unlocking, touch, full completion or release evidence.",
+  "script": "scripts/render-v30-riders.mjs",
+  "scriptSha256": "15333c78d1f2217b9f48f2a45a02e97fa7de5161e0b8a60eebb1f3082f001cc7",
+  "baselineCommit": "bfe9fd55400c89a06c5f0b677cf02a6380e0a624",
+  "rawOutputDirectory": "/tmp/tougaigu-v30-riders",
+  "reportSha256": "8b04981e11ad38d3018a871cdf5337788e37aa0fb1ca48e3b59094b2fd1a9812",
+  "reviewedNewFrames": [
+    "phone-390-book-a-up.png",
+    "phone-390-book-a-down.png",
+    "phone-390-book-a-open.png",
+    "phone-390-book-a-catch.png",
+    "phone-390-book-b-up.png",
+    "phone-390-book-b-down.png",
+    "phone-390-last-stage-right.png",
+    "phone-390-last-stage-left.png",
+    "phone-390-last-stage-open.png",
+    "phone-390-last-stage-catch.png",
+    "phone-390-post-root-land.png",
+    "phone-320-book-a-up.png",
+    "phone-320-book-a-down.png",
+    "phone-320-book-a-open.png",
+    "phone-320-book-a-catch.png",
+    "phone-320-book-b-up.png",
+    "phone-320-book-b-down.png",
+    "phone-320-last-stage-right.png",
+    "phone-320-last-stage-left.png",
+    "phone-320-last-stage-open.png",
+    "phone-320-last-stage-catch.png",
+    "phone-320-post-root-land.png"
+  ],
+  "reviewedAblatedFrames": [
+    "phone-390-book-a-up-ablated.png"
+  ],
+  "files": [
+    {
+      "file": "phone-390-book-a-up.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 293239,
+      "sha256": "762eb6323739c2225a9f38385bc641ca906ce1193d1b9f40218981ea4cea1c95",
+      "nativeSizeReviewed": true,
+      "unalteredCopy": true
+    },
+    {
+      "file": "phone-390-book-a-up-ablated.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 293182,
+      "sha256": "a6024e455ca8369a06f1c38b2fdbf17f45bd6883328efbc55b5a504821fb6722",
+      "nativeSizeReviewed": true,
+      "unalteredCopy": true
+    },
+    {
+      "file": "phone-390-book-a-down.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 291581,
+      "sha256": "792aeb9e24130ff716b2d6eb4e10d9fbbe638c0bc3f9e3e97186d941df48ac43",
+      "nativeSizeReviewed": true,
+      "unalteredCopy": true
+    },
+    {
+      "file": "phone-320-book-b-up.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 196690,
+      "sha256": "c6babf6114353befa068344f94f0ac900e3a0b2897f703c66d531c0c2a705490",
+      "nativeSizeReviewed": true,
+      "unalteredCopy": true
+    },
+    {
+      "file": "phone-320-book-b-down.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 196211,
+      "sha256": "68dc70bd2033011a9e1f9ea3c7e5f6ccd9dcab7cdc8408af13be6d8a7797ba90",
+      "nativeSizeReviewed": true,
+      "unalteredCopy": true
+    },
+    {
+      "file": "phone-320-last-stage-right.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 172116,
+      "sha256": "91692cff2376cfc1be8609de22f717985f8b882bc01ad31b008296167ebeb217",
+      "nativeSizeReviewed": true,
+      "unalteredCopy": true
+    },
+    {
+      "file": "phone-320-last-stage-left.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 178393,
+      "sha256": "3f22ebe396ee1d3eb4f06643810ad21016ce415455220ceec58e1a281ad49dae",
+      "nativeSizeReviewed": true,
+      "unalteredCopy": true
+    },
+    {
+      "file": "phone-390-post-root-land.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 250712,
+      "sha256": "56eaaf48c6cf3d11c9165a6d2141c6eedc17db92c70e3173e8e3578c50850c17",
+      "nativeSizeReviewed": true,
+      "unalteredCopy": true
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "runId": 40926668988,
+  "commit": "83439440ae9ce22248ef29d9349297276fe2cb59",
+  "productVersion": "29.0.0",
+  "scope": "unversioned pre-study candidate browser only",
+  "files": [
+    {
+      "file": "1280-full-touch-320-post-book-riding.png",
+      "bytes": 218154,
+      "sha256": "05bfd2bdc458e2b1bbed5d9327e86ab012c9e92e2f9a1d21b77f12f63ab8b1e1"
+    },
+    {
+      "file": "1280-greenhouse-root-crossed.png",
+      "bytes": 1279658,
+      "sha256": "bb781624a53d5d27c305c5b75f9a54c929735a3192c6407fb6bf76edd60c8a83"
+    },
+    {
+      "file": "1280-post-entry-traveler-airborne-canvas.png",
+      "bytes": 1500898,
+      "sha256": "bfc34161c3fd97872d21d20b66176d844b7a813c8cf9b7bec97580ed04efa6e3"
+    },
+    {
+      "file": "1280-touch-320-library-book-b-riding.png",
+      "bytes": 236217,
+      "sha256": "161d0e07711087555cba0ca9682a3bcc9ffa26de4ac54304c2b61915eb8e06c7"
+    },
+    {
+      "file": "README.md",
+      "bytes": 3870,
+      "sha256": "6f2ba900c877afcf2ce9f8bdaf6884c0239b341baa7d77983dd465ff5634d083"
+    },
+    {
+      "file": "audit-compact.json",
+      "bytes": 119194,
+      "sha256": "954ebe1e22f9243ce833d514be5c610fcd4de635d2ce4dda827a880b5259932b"
+    },
+    {
+      "file": "candidate-report.json.gz",
+      "bytes": 580767,
+      "sha256": "4f01ef8904656f23f1fce0cf2a978c9dd69a9d9fd34b24e2a183344d3533f6c2"
+    },
+    {
+      "file": "evidence-summary.json",
+      "bytes": 25936,
+      "sha256": "a4940514ca4f6b2cea71d812e048545aa05cb07ddeaff41ed2c046ffca507bad"
+    },
+    {
+      "file": "official-metadata.json",
+      "bytes": 2489,
+      "sha256": "8a801b08744e2e2ad814eb1c4fa53b84b49e641a84278cb23e3083a2022c845d"
+    }
+  ],
+  "totalBytesExcludingManifest": 3967183,
+  "sourceWorktreeModified": false,
+  "gitRefsModified": false
+}

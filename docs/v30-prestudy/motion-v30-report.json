@@ -1,0 +1,7126 @@
+{
+  "scope": "Offline paired production Canvas, authored-spawn chapter fixtures and normal one-jump input. Not browser unlocking, HUD, touch, a full route, or physical-device performance.",
+  "baselineCommit": "bfe9fd55400c89a06c5f0b677cf02a6380e0a624",
+  "sources": [
+    {
+      "name": "dream-engine-base.js",
+      "currentSha256": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699",
+      "baselineSha256": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699"
+    },
+    {
+      "name": "dream-levels.js",
+      "currentSha256": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0",
+      "baselineSha256": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0"
+    },
+    {
+      "name": "dream-engine.js",
+      "currentSha256": "ec03967f529ce408a3fad751834d18ef90869afe0962b00ea7d8a25c37f825f6",
+      "baselineSha256": "cae31ba6843ab4dc7fc3324ef383e93eecc47dafe5bfea2d2a5ecf7925be6529"
+    },
+    {
+      "name": "dream-traveler-performance.js",
+      "currentSha256": "ff4f258632c6136fed2a4b95fa8aa828c25817d3db6318663b924ee93ecf2c5c",
+      "baselineSha256": "4a4ebf035a94863e1be4ccceeaf23d1cbdec221808d46b596b7f3b911939ae14"
+    },
+    {
+      "name": "dream-traveler-art.js",
+      "currentSha256": "e7c1315bdf28b22705887d8fc478472e1d4952df0c1f9e598abf5f2f6ca0e8ac",
+      "baselineSha256": "e7c1315bdf28b22705887d8fc478472e1d4952df0c1f9e598abf5f2f6ca0e8ac"
+    },
+    {
+      "name": "dream-station-art.js",
+      "currentSha256": "73a257203b10d12dd52f7b66f60fe3d65e08200aa64b1b4e5c3f223f654d31ee",
+      "baselineSha256": "73a257203b10d12dd52f7b66f60fe3d65e08200aa64b1b4e5c3f223f654d31ee"
+    },
+    {
+      "name": "dream-ground-shadow.js",
+      "currentSha256": "ede6c52978710e0e8286a1b5fdf51eeb09e1e17a1d9df3171cca8176c90d94bc",
+      "baselineSha256": "ede6c52978710e0e8286a1b5fdf51eeb09e1e17a1d9df3171cca8176c90d94bc"
+    }
+  ],
+  "comparedUpdates": 1728,
+  "routes": [
+    {
+      "viewport": {
+        "width": 1100,
+        "height": 640
+      },
+      "chapterIndex": 0,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 1100,
+        "height": 640
+      },
+      "chapterIndex": 1,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 1100,
+        "height": 640
+      },
+      "chapterIndex": 2,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 1100,
+        "height": 640
+      },
+      "chapterIndex": 3,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 1100,
+        "height": 640
+      },
+      "chapterIndex": 4,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 1100,
+        "height": 640
+      },
+      "chapterIndex": 5,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "chapterIndex": 0,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "chapterIndex": 1,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "chapterIndex": 2,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "chapterIndex": 3,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "chapterIndex": 4,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "chapterIndex": 5,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 431
+      },
+      "chapterIndex": 0,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 431
+      },
+      "chapterIndex": 1,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 431
+      },
+      "chapterIndex": 2,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 431
+      },
+      "chapterIndex": 3,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 431
+      },
+      "chapterIndex": 4,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 431
+      },
+      "chapterIndex": 5,
+      "normalJumpFromAuthoredSpawn": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "deaths": 0,
+      "pausedCanvasAndViewFrozen": true
+    }
+  ],
+  "frames": [
+    {
+      "file": "desktop-chapter-1-rise.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 713339,
+      "sha256": "96c650971a14b58a0cde8abc34924709711393821c0276ce04bbf6ea0ccbec5f",
+      "chapterIndex": 0,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 967,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-1-fall.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 711745,
+      "sha256": "6d4ce2b1d1f127f49496e5ea7b1bb2be25f79c48b4c9ddd1449e33bd2a1cf666",
+      "chapterIndex": 0,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 757,
+      "outsideAllowedRegions": 0,
+      "baselineFile": "desktop-chapter-1-fall-v29.png",
+      "baselineSha256": "5677276f4c112cece808dddbf423bbf5a0a511d303bc4d0c327a3f784ebbb683"
+    },
+    {
+      "file": "desktop-chapter-1-land.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 713408,
+      "sha256": "5e7f266d2527d6a07a1fa6921d717ba3d819eea3b9bab08d885907c2a1b827e3",
+      "chapterIndex": 0,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 10
+        }
+      },
+      "changedPixels": 1184,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-1-settle.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 713925,
+      "sha256": "ab1417153b7968356ad1d1c83bf375c0607200547473d1f0a09d49d44140d862",
+      "chapterIndex": 0,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 10
+        }
+      },
+      "changedPixels": 1276,
+      "outsideAllowedRegions": 0,
+      "baselineFile": "desktop-chapter-1-settle-v29.png",
+      "baselineSha256": "02cbf4a472e18759387a858b9d087aecda8527a316cd9f5348984ef66c98bf1c"
+    },
+    {
+      "file": "desktop-chapter-1-settled.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 714572,
+      "sha256": "f48d8aa3edbaa12f2fe4f435757103f0b1ddfdf05c689579aaa4fea9b6fef4a9",
+      "chapterIndex": 0,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 10
+        }
+      },
+      "changedPixels": 296,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-2-rise.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 1023176,
+      "sha256": "529cb9399da38aae8b34d0b77d7d95d0ffe01368039517111de052d0ecc56bf0",
+      "chapterIndex": 1,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 964,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-2-fall.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 1021233,
+      "sha256": "e6dcde78c5038b0c59d7d06f148cfb925c844e0925934107bfa30faa3a6516da",
+      "chapterIndex": 1,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 763,
+      "outsideAllowedRegions": 0,
+      "baselineFile": "desktop-chapter-2-fall-v29.png",
+      "baselineSha256": "790d6c09115fd175cf607f6b17e5c8ca3b9b283071ddb0a777629f4e9a12b3f6"
+    },
+    {
+      "file": "desktop-chapter-2-land.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 1025155,
+      "sha256": "533597f307b6ac8dea5f28d18612739784d3879e46dbb0705de3fc5faff3f54b",
+      "chapterIndex": 1,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 10
+        }
+      },
+      "changedPixels": 1177,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-2-settle.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 1024628,
+      "sha256": "263d28b01c49e8b56a8d47918a90f688bc0522a263538cc1684ccb7dc5da4bf6",
+      "chapterIndex": 1,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 10
+        }
+      },
+      "changedPixels": 1276,
+      "outsideAllowedRegions": 0,
+      "baselineFile": "desktop-chapter-2-settle-v29.png",
+      "baselineSha256": "2898e36adf67c29d08a9562ef4c0fa75fb54b80967f6fba307334f12f030c2b2"
+    },
+    {
+      "file": "desktop-chapter-2-settled.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 1024792,
+      "sha256": "d9e90ecc45ebb19cca0495fb8dfb4cf5bb9c35febdbcd3bfa8955b74835a32e0",
+      "chapterIndex": 1,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 10
+        }
+      },
+      "changedPixels": 296,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-3-rise.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 798890,
+      "sha256": "68abd0f1587cbea04c5fe7b6ce2220f4cc162200fe1a28e91f89184c3b587514",
+      "chapterIndex": 2,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-3-fall.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 795036,
+      "sha256": "5defe773c23a6492bd2adde9fb05f952e4f249bfbeff4a2fca036a58d824cc0b",
+      "chapterIndex": 2,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-3-land.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 799270,
+      "sha256": "2f990662b6824007fc4a4b8c285430b97bf6c07b71922ad8d4b1e610ac872ec1",
+      "chapterIndex": 2,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-3-settle.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 800148,
+      "sha256": "ad7cb0c6dfb4d6424c449fc436fe4d81e8f516501f5a6306175711a9b83e8c18",
+      "chapterIndex": 2,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-3-settled.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 799743,
+      "sha256": "2cd9448e73c77b8a8e6b30a3c313c07b628012e27f770ff4967a09db3fa3e1a5",
+      "chapterIndex": 2,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-4-rise.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 812034,
+      "sha256": "931b3a9f6da6b68bcc5fc427a2065ae48ca1afcb7cc8685fbb42ca9929882073",
+      "chapterIndex": 3,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 486,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-4-fall.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 809656,
+      "sha256": "fe8e1cc4c885ed4f69b27c7f61cc915f9ea4e0baba33c0c105bbe23f0ca11c50",
+      "chapterIndex": 3,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 297,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-4-land.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 813141,
+      "sha256": "d553f3ed11582d3f309dac678a96bd372b3c36e9f9ac0ac9eb1d34becb713377",
+      "chapterIndex": 3,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 10
+        }
+      },
+      "changedPixels": 907,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-4-settle.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 814063,
+      "sha256": "1cd6eafe0eeb9fb27781a1e98650b56bc18ddb3675f5a9239c554bda401f5a50",
+      "chapterIndex": 3,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 10
+        }
+      },
+      "changedPixels": 986,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-4-settled.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 814115,
+      "sha256": "d7f87804be044866425cd41b1914845b52a1e991269e471865e0c7a2a5a4d8b2",
+      "chapterIndex": 3,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-5-rise.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 696625,
+      "sha256": "e782657b5bf67fa5f402cb7f074a8564009874591fd98fa32770b1fd922dbfa1",
+      "chapterIndex": 4,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 486,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-5-fall.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 696364,
+      "sha256": "4d8f3cb599484936046df3803fd7974caa24211573158dbe1cbbdd26b4e7e483",
+      "chapterIndex": 4,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 299,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-5-land.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 697223,
+      "sha256": "fed14452f796bd746d868dc906d83eca223aabcd04d6fac676b636264965d001",
+      "chapterIndex": 4,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 10
+        }
+      },
+      "changedPixels": 907,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-5-settle.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 698270,
+      "sha256": "67c0a11b9fb7cddc551f4ce26404be717428a0f287375e1da8e2f363dbd393fe",
+      "chapterIndex": 4,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 10
+        }
+      },
+      "changedPixels": 990,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-5-settled.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 699949,
+      "sha256": "74869ba0b103058bb1c1753d770ad9f95ef20e67c252c1edff95b28cfeaa049e",
+      "chapterIndex": 4,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-6-rise.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 776049,
+      "sha256": "88fada8fdfaf6a5ae8ccfeec5b90ba730fc23ba51405acbe1b03385287a64801",
+      "chapterIndex": 5,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 486,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-6-fall.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 774716,
+      "sha256": "1fb7e89269183f24a6ad6481114c54078c1673d2a2147d2857bf6fb4b403f310",
+      "chapterIndex": 5,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 297,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-6-land.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 775846,
+      "sha256": "6c8a40a6fa41aed853f7d8928ca17bee42a790041f424eec27339b7b435ee567",
+      "chapterIndex": 5,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 10
+        }
+      },
+      "changedPixels": 909,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-6-settle.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 776443,
+      "sha256": "81fd2e053a1ec59756984ae6c0d74c56a54670e17b88effde38770c50fc50e75",
+      "chapterIndex": 5,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 10
+        }
+      },
+      "changedPixels": 992,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "desktop-chapter-6-settled.png",
+      "width": 1100,
+      "height": 640,
+      "bytes": 776500,
+      "sha256": "e65f734e53ff55ba46761388c4c32dcb40176c908968e2a8037c6805c2dbf1a6",
+      "chapterIndex": 5,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-1-rise.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 274140,
+      "sha256": "273991704270f6a7b170dc776b392e2ff0c00b039341dbdebacfa1a165809713",
+      "chapterIndex": 0,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 891,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-1-fall.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 273224,
+      "sha256": "43f3e229f1f4c5622a544b3156f4c19132027ec266d2e5614cfc9c4dcddbb438",
+      "chapterIndex": 0,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 704,
+      "outsideAllowedRegions": 0,
+      "baselineFile": "phone-390-chapter-1-fall-v29.png",
+      "baselineSha256": "22b7279a5f0ff0f7d103b56b308fcfce0695e98240f400d84623a64775d7e3d8"
+    },
+    {
+      "file": "phone-390-chapter-1-land.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 275264,
+      "sha256": "848436c20387b9a9370fa00b338ca2d06063c2cc1ebd3c10843a1b95729a3458",
+      "chapterIndex": 0,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 10
+        }
+      },
+      "changedPixels": 1057,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-1-settle.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 275442,
+      "sha256": "2294914d9d97f8c3bd291464348ae76b2942a6bc7f58e3ccafee0402fddbaa78",
+      "chapterIndex": 0,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 10
+        }
+      },
+      "changedPixels": 1105,
+      "outsideAllowedRegions": 0,
+      "baselineFile": "phone-390-chapter-1-settle-v29.png",
+      "baselineSha256": "b467e5720a178419a036e6bcf2032193a012396ba63651c8cd976a2db93a0bc0"
+    },
+    {
+      "file": "phone-390-chapter-1-settled.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 276054,
+      "sha256": "270f82b959352aa22b3ef95b50cbb31aa9fda9205cad40ae54cc96b2c13c9ea3",
+      "chapterIndex": 0,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 10
+        }
+      },
+      "changedPixels": 254,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-2-rise.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 388707,
+      "sha256": "02ca8d80e94ae5138fd87da284bede61237a5107b3aa9757fc2468183f72e2b6",
+      "chapterIndex": 1,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 893,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-2-fall.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 388352,
+      "sha256": "2efd7e66087f4d8a5f15d1c8542d08f06025a556e3f7e7f395992d27760c7a4a",
+      "chapterIndex": 1,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 701,
+      "outsideAllowedRegions": 0,
+      "baselineFile": "phone-390-chapter-2-fall-v29.png",
+      "baselineSha256": "bde97ffe29fccf4acf09303b86589e0a59dd1c5c621b4a6ae2bc7e31d16e508e"
+    },
+    {
+      "file": "phone-390-chapter-2-land.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 388714,
+      "sha256": "9db3680afe22c6a3e50f58cfb75a17a6a960bcca416886135d72fa2428f02235",
+      "chapterIndex": 1,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 10
+        }
+      },
+      "changedPixels": 1053,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-2-settle.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 388454,
+      "sha256": "0462a99d2246d00322181157081c01975a852825ed8fceb9b336e663c1b05e7a",
+      "chapterIndex": 1,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 10
+        }
+      },
+      "changedPixels": 1111,
+      "outsideAllowedRegions": 0,
+      "baselineFile": "phone-390-chapter-2-settle-v29.png",
+      "baselineSha256": "aa8a4364740c305c77242160d4eca7be6a2420e0aa9a4c0ef66d03ec7d4ca789"
+    },
+    {
+      "file": "phone-390-chapter-2-settled.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 389135,
+      "sha256": "ace6bfa87f0a5ab6a4f645a9cbbd90ce22a032949eaa7657f517e33a15bf6d1c",
+      "chapterIndex": 1,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 10
+        }
+      },
+      "changedPixels": 256,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-3-rise.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 303880,
+      "sha256": "2725eddbba6bc34ced886717d3b018b880f9d0b290f4ec4517bb5aa0a4b5cd3d",
+      "chapterIndex": 2,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-3-fall.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 301281,
+      "sha256": "d93d391876790eada656c0c678756d93375b8e15af56bcf54b6be0f132fc82d4",
+      "chapterIndex": 2,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-3-land.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 305079,
+      "sha256": "c6b3210b76e3b23801fe63f4e189edb2bb4d654df7cc6ae7c8c208f91ddd592b",
+      "chapterIndex": 2,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-3-settle.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 306154,
+      "sha256": "dcc1ec62f0ebb65b8bd6fc0510b76c522ed8cc77d8af7295861beace011d4eb5",
+      "chapterIndex": 2,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-3-settled.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 305964,
+      "sha256": "85489ab62cf9949f6cee01f3ba74ad171e72e2ca0a4e296d5eaa8de95a0ab9ac",
+      "chapterIndex": 2,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-4-rise.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 275050,
+      "sha256": "42afded9d0b90b22c30c6df95658904e67563cc7f0a4921c192741f0d773b8af",
+      "chapterIndex": 3,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 444,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-4-fall.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 273120,
+      "sha256": "475c54a2912172d3592416cc5717818bed7622fa4881bab714791d52980dd3a4",
+      "chapterIndex": 3,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 281,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-4-land.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 275612,
+      "sha256": "251f8f162b3ed9e764505d868e11e8c66690a96b0e977670fa7656f51f92c68d",
+      "chapterIndex": 3,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 10
+        }
+      },
+      "changedPixels": 797,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-4-settle.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 276275,
+      "sha256": "5732f1222033fb3768f6accd9448275f5c2c9a0d7b80df3338955aea2725e4e9",
+      "chapterIndex": 3,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 10
+        }
+      },
+      "changedPixels": 861,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-4-settled.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 276244,
+      "sha256": "2d04676c3b84f8bd84bdeeaae8e1c7d7f7c5862d72800778ef7cc888fa3eac81",
+      "chapterIndex": 3,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-5-rise.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 276260,
+      "sha256": "547ee5897bbc83fba9a6af048c54ea49c62832f4f53b5223d4222e7087955f1d",
+      "chapterIndex": 4,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 442,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-5-fall.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 275807,
+      "sha256": "a03b180aba5a8b46e392048a0cfb8269f2dbd8470d51a26ff78e5b80f03fcbcf",
+      "chapterIndex": 4,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 281,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-5-land.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 275218,
+      "sha256": "c0cdd735b41dfa820d082c4ec5af8918274a855ab139afe0faff3f9afd237175",
+      "chapterIndex": 4,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 10
+        }
+      },
+      "changedPixels": 795,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-5-settle.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 275708,
+      "sha256": "35610046fecaef59fb7a2bbf71dccad428307a51a25dd108a5c30926f6e31a54",
+      "chapterIndex": 4,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 10
+        }
+      },
+      "changedPixels": 859,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-5-settled.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 275703,
+      "sha256": "9740cc34fc744a7ceaabdd91d98710af6be1f9e78bf6926d3c2fa8e7c692acf1",
+      "chapterIndex": 4,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-6-rise.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 292516,
+      "sha256": "5d4b16bcb0b4ebd0ecb89881aa752940d5a93a4470945695b87038c75713b181",
+      "chapterIndex": 5,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 444,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-6-fall.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 291289,
+      "sha256": "65523e18dceb04b759048c9ec84e8cac97a1b19d4278ffbb58e47e68c5294d58",
+      "chapterIndex": 5,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 280,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-6-land.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 293188,
+      "sha256": "f503adfb240829a498e332dca1a5c044ac95811be47fe2c9eca70974c19a32bb",
+      "chapterIndex": 5,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 10
+        }
+      },
+      "changedPixels": 792,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-6-settle.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 293414,
+      "sha256": "a5861aa1fe5b4721154febb5d5853846a1d735280e96d414939797936022d9da",
+      "chapterIndex": 5,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 10
+        }
+      },
+      "changedPixels": 862,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-390-chapter-6-settled.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 293643,
+      "sha256": "1617634c57e5f14ec919fd15fbf04ea89f6b8e4af2a07439fb83390faed21f2d",
+      "chapterIndex": 5,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-1-rise.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 183933,
+      "sha256": "e75dd1dc29f4a6c156cb1c9d6ea97ff75976e8360930ddf44f959d8b576c36c5",
+      "chapterIndex": 0,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 487,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-1-fall.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 183106,
+      "sha256": "eb291a205892d3f2bfa0a43097ba27cd7b7cd8cd85e22f032b94fc041570373c",
+      "chapterIndex": 0,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 395,
+      "outsideAllowedRegions": 0,
+      "baselineFile": "phone-320-chapter-1-fall-v29.png",
+      "baselineSha256": "2cb71ef4f4625a1d308869691dba0394fdc54a1ae3c32abb773f6f3acc584756"
+    },
+    {
+      "file": "phone-320-chapter-1-land.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 184581,
+      "sha256": "efbed25c9054976abc2eedf2509731bfb5c2f9766ff05b0d06c9f215d5481076",
+      "chapterIndex": 0,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 10
+        }
+      },
+      "changedPixels": 596,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-1-settle.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 184657,
+      "sha256": "aa1c77be67bc5735817c6945aab4a1a9088ca301227e0cb3dca26b4df9d1b1ce",
+      "chapterIndex": 0,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 10
+        }
+      },
+      "changedPixels": 633,
+      "outsideAllowedRegions": 0,
+      "baselineFile": "phone-320-chapter-1-settle-v29.png",
+      "baselineSha256": "454fac277b943d8027f981d1d4b2dd287b30f150a6a5f69c0ce20a70db8a21e4"
+    },
+    {
+      "file": "phone-320-chapter-1-settled.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 184871,
+      "sha256": "198f3f3dd5d14d6e606e241125c04e0060199727e0b1e9f4b5a14ea7daeb7cbc",
+      "chapterIndex": 0,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 10
+        }
+      },
+      "changedPixels": 137,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-2-rise.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 252597,
+      "sha256": "13be7f9e69a452304cbcbfa99d2de73577da111315bff083ee8973947199946a",
+      "chapterIndex": 1,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 492,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-2-fall.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 252497,
+      "sha256": "7707097383f5298422a072d309ee3af14a6fddda88d648bfd7fa54b9512eff62",
+      "chapterIndex": 1,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 396,
+      "outsideAllowedRegions": 0,
+      "baselineFile": "phone-320-chapter-2-fall-v29.png",
+      "baselineSha256": "26bd610f8e2204c4f116091a72fdf2af36b33be1e8824c5e96fbc37cdcbbffd7"
+    },
+    {
+      "file": "phone-320-chapter-2-land.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 253137,
+      "sha256": "edee18b87fe845a78c389e80c2a10978efec09cd4c8661c32e76873e471c5678",
+      "chapterIndex": 1,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 10
+        }
+      },
+      "changedPixels": 597,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-2-settle.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 253108,
+      "sha256": "e5f09ac8cfe57fb79a1ece6c97f41235e5256d1d4c6fe224502854f2181280ad",
+      "chapterIndex": 1,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 10
+        }
+      },
+      "changedPixels": 632,
+      "outsideAllowedRegions": 0,
+      "baselineFile": "phone-320-chapter-2-settle-v29.png",
+      "baselineSha256": "1738b9e82787134164cfe12aebcab12c21626910d640fe7af468382aa16fdbe9"
+    },
+    {
+      "file": "phone-320-chapter-2-settled.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 253407,
+      "sha256": "7b1d619b9da2f302bf6b961ec16c42616d43f2a99c3e07e7783b71bcc2a5e2db",
+      "chapterIndex": 1,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2180,
+          "h": 10
+        }
+      },
+      "changedPixels": 136,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-3-rise.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 207926,
+      "sha256": "1ef5c82962d56abc0917365b5821de8dc64a6e0c5d65d168df3387d3c042b2a2",
+      "chapterIndex": 2,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-3-fall.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 206653,
+      "sha256": "cca58103eb4e42806cfb026c058f7a31b0aa27b98619aec73d6f0c923ed3e955",
+      "chapterIndex": 2,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-3-land.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 208705,
+      "sha256": "2117d9ffb6ece243d1b2de5c3e93a9b52dc77087089f56b7f6de31263603b45a",
+      "chapterIndex": 2,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-3-settle.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 209242,
+      "sha256": "fa2692af8fe47c5f5493a3f27338d744a257579cd81b4956e60d57de1251e611",
+      "chapterIndex": 2,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-3-settled.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 209192,
+      "sha256": "f4d9f3eb2dd0acbf45773b8070de20aa7dc2f022ccc9bc18a68fd9644172cecd",
+      "chapterIndex": 2,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 735,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-4-rise.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 187107,
+      "sha256": "0cbf967f92638c457769928480daced3fb8f3fb4c4dc7684021db42db2eab4e5",
+      "chapterIndex": 3,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 255,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-4-fall.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 186138,
+      "sha256": "0a443299a601eec7dfdd1a0df40cdf195f30322af97bb573e5f1298cae0ad187",
+      "chapterIndex": 3,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 169,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-4-land.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 187496,
+      "sha256": "275d08f43e11bfe3122e1d0d732a469e4d12dd6dd66ee2396680c7692045abc9",
+      "chapterIndex": 3,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 10
+        }
+      },
+      "changedPixels": 452,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-4-settle.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 187911,
+      "sha256": "f994da305d352a48a7baf4eb5bd6901de2e78fc971289b62fbb3ba3395b24e07",
+      "chapterIndex": 3,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 10
+        }
+      },
+      "changedPixels": 500,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-4-settled.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 187815,
+      "sha256": "6cf97b50a0e20d205a49d23f74e39a806ee3fc35a501bf1f5c4afa4e76c7fd9b",
+      "chapterIndex": 3,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2340,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-5-rise.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 187567,
+      "sha256": "85e1293e3d994249601c15a4496f4cbbefb9739a5d11c0f8466e9f21512bc93d",
+      "chapterIndex": 4,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 253,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-5-fall.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 187143,
+      "sha256": "1e9aeb2263e708da4969647e3a38355c0facfd55ab4f4709ec84b1baaa5816b1",
+      "chapterIndex": 4,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 168,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-5-land.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 186960,
+      "sha256": "c78d9fba648450cc823da3ba742ca648962cce11d896b5a41aa0f9c258aeeaa1",
+      "chapterIndex": 4,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 10
+        }
+      },
+      "changedPixels": 453,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-5-settle.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 187190,
+      "sha256": "9f8ef175425f834f106e2d8ea170c02141de44b65f7d58a7bb4ddc4402874912",
+      "chapterIndex": 4,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 10
+        }
+      },
+      "changedPixels": 497,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-5-settled.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 187213,
+      "sha256": "be795c22b3ff61fd6d1bd7f15ec262b7ce7080e73ff72f27a57998948790f206",
+      "chapterIndex": 4,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 2260,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-6-rise.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 197929,
+      "sha256": "a0457a9282ee95ee839976dee31f33e247f0233fbc713bbdef06e498f17cf9d5",
+      "chapterIndex": 5,
+      "phase": "rise",
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 507.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": -465,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0.3999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 22.08875,
+        "radiusY": 3.7104166666666667,
+        "opacity": 0.3321675295632105,
+        "distance": 52.125,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 9.420833333333334
+        }
+      },
+      "changedPixels": 254,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-6-fall.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 196918,
+      "sha256": "7df958d9eb2cb16411bb725cd27a64797da7d3357120ad40a6fa266828b375b5",
+      "chapterIndex": 5,
+      "phase": "fall",
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 443.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 165,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 19.714583333333334,
+        "radiusY": 3.3506944444444446,
+        "opacity": 0.23309876215360037,
+        "distance": 116.875,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 8.70138888888889
+        }
+      },
+      "changedPixels": 170,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-6-land.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 198471,
+      "sha256": "0ac73e1666261be799240e635430be6c05d05251ab26c126b5a15b21f1352910",
+      "chapterIndex": 5,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.95,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.75,
+            "y": -13.15
+          },
+          "right": {
+            "x": 21.75,
+            "y": -13.15
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0.1975
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 10
+        }
+      },
+      "changedPixels": 448,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-6-settle.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 198845,
+      "sha256": "6151e3cbf89bee5a09b570fea586e8ef103b42d9117b3033824bb0fb46771c8e",
+      "chapterIndex": 5,
+      "phase": "land",
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.47500000000000253,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.375000000000014,
+            "y": -14.574999999999992
+          },
+          "right": {
+            "x": 19.375000000000014,
+            "y": -14.574999999999992
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 10
+        }
+      },
+      "changedPixels": 493,
+      "outsideAllowedRegions": 0
+    },
+    {
+      "file": "phone-320-chapter-6-settled.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 198833,
+      "sha256": "1a3fe8215cfb70f342b3799a1c5c8376470249f92c90e86180b3d2e03bb32176",
+      "chapterIndex": 5,
+      "phase": "idle",
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "shadow": {
+        "x": 105,
+        "y": 562,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "ground",
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 10
+        }
+      },
+      "changedPixels": 0,
+      "outsideAllowedRegions": 0
+    }
+  ]
+}
