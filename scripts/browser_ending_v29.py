@@ -61,6 +61,7 @@ LETTER_LABELS = {'send': '信已寄出', 'keep': '信留窗边'}
 CLOCK_LABELS = {'release': '钟声向前', 'hold': '为想念留灯'}
 SKY_LABELS = {'dawn': '晨光正升起', 'tender': '晨光刚抵达窗沿',
               'lanterns': '长夜的窗灯亮着，太阳尚未升起'}
+ENDING_NOTE = '你可以重访章节、收集遗漏残页，或在记忆信箱里写下不同的回信。'
 
 READ_PROGRESS = """()=>{
   const dream=JSON.parse(localStorage.getItem('tougaigu.dream.v1')||'null');
@@ -87,6 +88,7 @@ ENDING_PROBE = """()=>{
   const home=d.querySelector('#ending-home');const hr=rect(home);
   const hit=document.elementFromPoint(hr.left+hr.width/2,hr.top+hr.height/2);
   const collection=d.querySelector('#ending-collection');
+  const note=d.querySelector(':scope > .dialog-note'),noteStyle=note?getComputedStyle(note):null;
   return {open:d.open,ending:d.dataset.ending,sceneId:scene?.dataset.endingScene||null,
     savedChoices:JSON.parse(localStorage.getItem('tougaigu.dream.v1')||'null')?.choices,
     sceneChoice:{ending:host?.dataset.ending,letter:host?.dataset.letter,clock:host?.dataset.clock},
@@ -112,7 +114,12 @@ ENDING_PROBE = """()=>{
     paragraphs,lastLine:d.querySelector('#ending-last-line').textContent,
     collection:collection.textContent,collectionFont:parseFloat(getComputedStyle(collection).fontSize),
     home:{rect:hr,fullyVisible:fullyVisible(home),centerHits:hit===home||home.contains(hit)},
+    note:{text:note?.textContent||'',rect:note?rect(note):null,fullyVisible:!!note&&fullyVisible(note),
+      fontSize:noteStyle?parseFloat(noteStyle.fontSize):null,lineHeight:noteStyle?parseFloat(noteStyle.lineHeight):null,
+      scrollWidth:note?.scrollWidth??null,clientWidth:note?.clientWidth??null},
     dialog:dr,scrollTop:d.scrollTop,scrollHeight:d.scrollHeight,clientHeight:d.clientHeight,
+    padding:{top:parseFloat(style.paddingTop),right:parseFloat(style.paddingRight),
+      bottom:parseFloat(style.paddingBottom),left:parseFloat(style.paddingLeft)},
     scrollWidth:d.scrollWidth,clientWidth:d.clientWidth,overflowY:style.overflowY,
     pageWidth:document.documentElement.scrollWidth,viewport:{width:innerWidth,height:innerHeight},
     reducedMotion:d.dataset.reducedMotion,mediaReduced:matchMedia('(prefers-reduced-motion: reduce)').matches,
@@ -178,6 +185,10 @@ def validate_ending_view(view, expected, discovered, phone=False, at_top=False):
     assert view['pageWidth'] <= width and view['scrollWidth'] <= view['clientWidth']+1, 'ending creates horizontal overflow; '+detail
     assert view['overflowY'] in ('auto', 'scroll'), 'long ending cannot scroll; '+detail
     assert view['home']['rect']['height'] >= 44 and view['home']['rect']['width'] >= 44, 'ending dismissal is not a usable touch target; '+detail
+    note = view['note']
+    assert note['text'] == ENDING_NOTE and note['rect'], 'ending lost its original final note; '+detail
+    assert d['left'] <= note['rect']['left'] and note['rect']['right'] <= d['right'], 'ending note is clipped horizontally; '+detail
+    assert note['scrollWidth'] <= note['clientWidth']+1, 'ending note text overflows its own line box; '+detail
     for p in view['paragraphs']:
         assert d['left'] <= p['rect']['left'] and p['rect']['right'] <= d['right'], 'ending paragraph is clipped horizontally; '+detail
         assert p['scrollWidth'] <= p['clientWidth']+1, 'ending paragraph text overflows its own line box; '+detail
@@ -202,9 +213,11 @@ def validate_reading_coverage(samples):
         seen.update(i for i, p in enumerate(sample['paragraphs']) if p['fullyVisible'])
     assert seen == {0, 1, 2}, 'phone scrolling never exposed all three complete paragraphs'
     assert samples[-1]['home']['fullyVisible'] and samples[-1]['home']['centerHits'], 'final ending button is clipped or covered'
+    assert samples[-1]['note']['fullyVisible'], 'final ending note was not fully readable'
     if first['scrollHeight'] > first['clientHeight']+1:
         assert max(s['scrollTop'] for s in samples) > first['scrollTop']+1, 'long phone ending did not actually scroll'
     return {'fullyReadParagraphs': sorted(seen), 'homeFullyVisibleAndUncovered': True,
+            'finalNoteFullyVisible': True,
             'scrollSamples': len(samples), 'maxScrollTop': max(s['scrollTop'] for s in samples),
             'input': 'Chromium CDP simulated touch scroll and tap; not a physical phone'}
 
@@ -262,26 +275,70 @@ async def open_ending(page, driver, expected, discovered, touch=False):
     return final
 
 
-async def swipe_ending_up(page):
+def write_ending_evidence(output, filename, evidence):
+    Path(output, filename).write_text(json.dumps(evidence, ensure_ascii=False, indent=2), encoding='utf-8')
+
+
+async def swipe_ending_up(page, attempt):
     """Scroll the native dialog by a real bounded CDP touch gesture."""
-    view = await page.evaluate(ENDING_PROBE)
-    d = view['dialog']
-    x = d['right']-22
-    start = d['top']+d['height']*.76
-    end = d['top']+d['height']*.43
-    session = await page.context.new_cdp_session(page)
+    began = time.monotonic()
+    attempt.update({'status': 'started', 'dispatches': [], 'plannedMoveSteps': 12,
+                    'inputSource': 'Chromium CDP simulated touch; acknowledgements are not a native event trace',
+                    'cleanup': {'sessionCreated': False, 'touchEndAttempted': False,
+                                'touchEndAcknowledged': False, 'detachAttempted': False,
+                                'sessionDetached': False}})
     try:
-        await session.send('Input.dispatchTouchEvent', {'type': 'touchStart', 'touchPoints': [
-            {'x': x, 'y': start, 'id': 49}]})
-        for step in range(1, 13):
-            await session.send('Input.dispatchTouchEvent', {'type': 'touchMove', 'touchPoints': [
-                {'x': x, 'y': start+(end-start)*step/12, 'id': 49}]})
-            await page.wait_for_timeout(16)
-        await session.send('Input.dispatchTouchEvent', {'type': 'touchEnd', 'touchPoints': []})
-        # Let the native gesture reach a resting point before reading rectangles.
-        await page.wait_for_timeout(100)
+        view = await page.evaluate(ENDING_PROBE)
+        attempt['beforeView'] = view
+        d = view['dialog']
+        x = d['right']-22
+        start = d['top']+d['height']*.76
+        end = d['top']+d['height']*.43
+        attempt['gesture'] = {'x': x, 'startY': start, 'endY': end, 'touchId': 49}
+        session = await page.context.new_cdp_session(page)
+        attempt['cleanup']['sessionCreated'] = True
+
+        async def dispatch(kind, points):
+            command = {'type': kind, 'touchPoints': points, 'acknowledged': False,
+                       'elapsedWallSeconds': time.monotonic()-began}
+            attempt['dispatches'].append(command)
+            try:
+                await session.send('Input.dispatchTouchEvent', {'type': kind, 'touchPoints': points})
+            except Exception as error:
+                command['error'] = {'type': type(error).__name__, 'message': str(error)}
+                raise
+            command['acknowledged'] = True
+
+        try:
+            try:
+                await dispatch('touchStart', [{'x': x, 'y': start, 'id': 49}])
+                for step in range(1, 13):
+                    await dispatch('touchMove', [{'x': x, 'y': start+(end-start)*step/12, 'id': 49}])
+                    await page.wait_for_timeout(16)
+            finally:
+                # The start may have reached Chromium even if its response
+                # failed. Attempt the normal release once, also after a move
+                # error, and record its actual acknowledgement separately.
+                attempt['cleanup']['touchEndAttempted'] = True
+                await dispatch('touchEnd', [])
+                attempt['cleanup']['touchEndAcknowledged'] = True
+            # Keep the existing resting interval before measuring rectangles.
+            await page.wait_for_timeout(100)
+        finally:
+            attempt['cleanup']['detachAttempted'] = True
+            try:
+                await session.detach()
+            except Exception as error:
+                attempt['cleanup']['detachError'] = {'type': type(error).__name__, 'message': str(error)}
+                raise
+            attempt['cleanup']['sessionDetached'] = True
+        attempt['status'] = 'complete'
+    except Exception as error:
+        attempt['status'] = 'failed'
+        attempt['error'] = {'type': type(error).__name__, 'message': str(error)}
+        raise
     finally:
-        await session.detach()
+        attempt['elapsedWallSeconds'] = time.monotonic()-began
 
 
 @asynccontextmanager
@@ -299,22 +356,72 @@ async def ending_touch_environment(page):
 
 
 async def phone_reading(page, output, label, driver, expected, discovered):
-    samples = [validate_ending_view(await page.evaluate(ENDING_PROBE), expected, discovered,
-                                    phone=True, at_top=True)]
-    width = samples[0]['viewport']['width']
-    await page.screenshot(path=str(Path(output)/(f'{label}-ending-{expected}-{width}-top.png')), full_page=True)
-    seen = set(i for i, p in enumerate(samples[0]['paragraphs']) if p['fullyVisible'])
-    for _ in range(9):
-        last = samples[-1]
-        if seen == {0, 1, 2} and last['home']['fullyVisible'] and last['home']['centerHits']:
-            break
-        await swipe_ending_up(page)
-        sample = validate_ending_view(await page.evaluate(ENDING_PROBE), expected, discovered, phone=True)
-        samples.append(sample)
-        seen.update(i for i, p in enumerate(sample['paragraphs']) if p['fullyVisible'])
-    evidence = validate_reading_coverage(samples)
-    await page.screenshot(path=str(Path(output)/(f'{label}-ending-{expected}-{width}-read.png')), full_page=True)
-    return {'layoutSamples': samples, 'reading': evidence}
+    samples, attempts = [], []
+    stem = f'{label}-ending-{expected}-{page.viewport_size["width"]}'
+    trace = {'status': 'observing', 'ending': expected, 'layoutSamples': samples,
+             'gestureAttempts': attempts, 'maxGestureAttempts': 9,
+             'scope': 'actual dialog measurements and bounded CDP touch attempts; not a physical phone'}
+
+    def checkpoint():
+        cleanup = [attempt.get('cleanup', {}) for attempt in attempts]
+        trace['gestureAttemptCount'] = len(attempts)
+        trace['inputCleanup'] = {
+            'gestureSessionsCreated': sum(bool(item.get('sessionCreated')) for item in cleanup),
+            'gestureSessionsDetached': sum(bool(item.get('sessionDetached')) for item in cleanup),
+            'touchEndAcknowledged': sum(bool(item.get('touchEndAcknowledged')) for item in cleanup),
+            'allCreatedGestureSessionsDetached': all(not item.get('sessionCreated') or item.get('sessionDetached') for item in cleanup),
+            'touchEnvironmentOwner': 'outer verify_endings context; not released between reading cases'}
+        write_ending_evidence(output, stem+'-reading.json', trace)
+
+    try:
+        first = await page.evaluate(ENDING_PROBE)
+        samples.append(first)
+        stem = f'{label}-ending-{expected}-{first["viewport"]["width"]}'
+        trace['initialOverflowPixels'] = first['scrollHeight']-first['clientHeight']
+        trace['requiresActualScroll'] = first['scrollHeight'] > first['clientHeight']+1
+        checkpoint()
+        validate_ending_view(first, expected, discovered, phone=True, at_top=True)
+        await page.screenshot(path=str(Path(output)/(stem+'-top.png')), full_page=True)
+        seen = set(i for i, p in enumerate(first['paragraphs']) if p['fullyVisible'])
+        for _ in range(9):
+            last = samples[-1]
+            did_scroll = max(sample['scrollTop'] for sample in samples) > first['scrollTop']+1
+            if (seen == {0, 1, 2} and last['home']['fullyVisible'] and last['home']['centerHits']
+                    and last['note']['fullyVisible'] and (not trace['requiresActualScroll'] or did_scroll)):
+                break
+            attempt = {'index': len(attempts)+1}
+            attempts.append(attempt)
+            checkpoint()
+            await swipe_ending_up(page, attempt)
+            sample = await page.evaluate(ENDING_PROBE)
+            samples.append(sample)
+            attempt['afterView'] = sample
+            checkpoint()
+            validate_ending_view(sample, expected, discovered, phone=True)
+            seen.update(i for i, p in enumerate(sample['paragraphs']) if p['fullyVisible'])
+        evidence = validate_reading_coverage(samples)
+        trace.update(status='complete', reading=evidence)
+        checkpoint()
+        await page.screenshot(path=str(Path(output)/(stem+'-read.png')), full_page=True)
+        return {'layoutSamples': samples, 'reading': evidence, 'gestureAttempts': attempts,
+                'inputCleanup': trace['inputCleanup'], 'readingEvidenceFile': stem+'-reading.json'}
+    except Exception as error:
+        trace.update(status='failed', error={'type': type(error).__name__, 'message': str(error)})
+        try:
+            trace['failureView'] = await page.evaluate(ENDING_PROBE)
+        except Exception as observation_error:
+            trace['failureObservationError'] = str(observation_error)
+        checkpoint()
+        try:
+            await page.screenshot(path=str(Path(output)/(stem+'-failure.png')), full_page=True)
+            trace['failureScreenshot'] = stem+'-failure.png'
+        except Exception as screenshot_error:
+            trace['failureScreenshotError'] = str(screenshot_error)
+        checkpoint()
+        print(label, 'phone ending reading failed', json.dumps({'ending': expected,
+              'evidenceFile': stem+'-reading.json', 'gestureAttempts': len(attempts),
+              'error': trace['error']}, ensure_ascii=False), flush=True)
+        raise
 
 
 async def verify_endings(page, output, label, driver):
@@ -356,11 +463,13 @@ async def verify_endings(page, output, label, driver):
             await click_input(page, '[data-shell-action="profile"]', driver)
             await page.locator('#journal-dialog[open]').wait_for()
             repeated = await open_ending(page, driver, expected, discovered)
-            validate_progress(before, await read_progress(page), choices, discovered,
-                              grants, await driver.read_reward_grants(page))
-            desktop.append({'choices': choices, 'ending': expected, 'replyPortraits': replies,
-                            'firstView': first, 'afterRealReload': repeated, 'invariants': invariant,
-                            'repeatReadDidNotDuplicateDiscovery': True})
+            reloaded_invariant = validate_progress(before, await read_progress(page), choices, discovered,
+                                                   grants, await driver.read_reward_grants(page))
+            case = {'choices': choices, 'ending': expected, 'replyPortraits': replies,
+                    'firstView': first, 'afterRealReload': repeated, 'invariants': invariant,
+                    'afterReloadInvariants': reloaded_invariant, 'repeatReadDidNotDuplicateDiscovery': True}
+            desktop.append(case)
+            write_ending_evidence(output, f'{label}-ending-{letter}-{clock}.json', case)
             await leave_ending(page, driver)
 
         assert discovered == set(ENDING_CONTENT), 'four real combinations did not discover exactly three endings'
@@ -376,8 +485,10 @@ async def verify_endings(page, output, label, driver):
                     invariant = validate_progress(before, await read_progress(page),
                                                   {'letter': letter, 'clock': clock}, discovered,
                                                   grants, await driver.read_reward_grants(page))
-                    cases.append({'ending': expected, 'choices': {'letter': letter, 'clock': clock},
-                                  'replyPortraits': replies, 'invariants': invariant, **evidence})
+                    case = {'ending': expected, 'choices': {'letter': letter, 'clock': clock},
+                            'replyPortraits': replies, 'invariants': invariant, **evidence}
+                    cases.append(case)
+                    write_ending_evidence(output, f'{label}-ending-{expected}-{width}-case.json', case)
                     await leave_ending(page, driver, touch=True)
                 phones[str(width)] = cases
 

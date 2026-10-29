@@ -1,0 +1,117 @@
+{
+  "status": "failed-candidate-with-verified-partial-evidence",
+  "sourceCommit": "1ba8ce9a4261d74f7278f14ded776cd23681bfcd",
+  "runId": 40920128799,
+  "jobId": 123610793753,
+  "artifactId": 12917888541,
+  "originalArtifactZipBytes": 175490059,
+  "originalArtifactZipSha256": "bdc0c770baf66da42189306f86925bd710242bd839759ecb9ef1c7f259b50a49",
+  "allTenOriginalJSONArchive": {
+    "file": "original-partial-json.zip",
+    "bytes": 125486,
+    "sha256": "6d100729d4d0b09fe242b738a7e7bcc67c56abe6678fed8a24edf10e4d546723",
+    "files": [
+      {
+        "artifactPath": "candidate/1280-full-fallback-post-mushroom-crossing.json",
+        "bytes": 129376,
+        "sha256": "4de011436a583a80f7b80ef3af00cf9995dfbaccb5e2f58c66cee4b3cacfb732"
+      },
+      {
+        "artifactPath": "candidate/1280-full-fallback-post-route.json",
+        "bytes": 285455,
+        "sha256": "e4566bfb71c880074f65d00055cd798d77c00ec3122e923a924d42240919e81c"
+      },
+      {
+        "artifactPath": "candidate/1280-full-touch-320-post-mushroom-crossing.json",
+        "bytes": 133435,
+        "sha256": "d7d53ed760928881733ae7006e2c3a4dad735b8f8211fc81b4ef1e327994b2cb"
+      },
+      {
+        "artifactPath": "candidate/1280-full-touch-320-post-route.json",
+        "bytes": 337244,
+        "sha256": "13d0bdc24fff07e1d997dcc54a8547688a254b1cf7e7c00677a8c729f550d30e"
+      },
+      {
+        "artifactPath": "candidate/1280-full-touch-390-post-mushroom-crossing.json",
+        "bytes": 132442,
+        "sha256": "7904bcf785e7ece5d2d6e9e7907edeac4d354005bfab5deba92475e273e0b007"
+      },
+      {
+        "artifactPath": "candidate/1280-full-touch-390-post-route.json",
+        "bytes": 334393,
+        "sha256": "369e075bcdf029656dcde9ae3fef5291d1ec31350ce8565d1433dd769177dd42"
+      },
+      {
+        "artifactPath": "candidate/1280-post-full-touch-320.json",
+        "bytes": 375682,
+        "sha256": "def388d4970554f48cbe687904fbb2eb9e20893fdf25668770b55e5ff2d0464a"
+      },
+      {
+        "artifactPath": "candidate/1280-post-full-touch-390.json",
+        "bytes": 372588,
+        "sha256": "a24cdaeb34e5c2955f5af039caa76b01c1b5ddea30368cd7e945c00408a27090"
+      },
+      {
+        "artifactPath": "candidate/1280-post-mushroom-crossing.json",
+        "bytes": 126804,
+        "sha256": "431c9974eade843928d5dbc066ca001c455caf79e476a362826a81ce8b4db217"
+      },
+      {
+        "artifactPath": "candidate/1280-post-route.json",
+        "bytes": 308757,
+        "sha256": "d31dfdd70bb0e4460852b7646d8a167d67122e1baf00695a3e8f3a59b79fd5bb"
+      }
+    ]
+  },
+  "selectedUnmodifiedFiles": [
+    {
+      "file": "1280-post-full-touch-390.json",
+      "bytes": 372588,
+      "sha256": "a24cdaeb34e5c2955f5af039caa76b01c1b5ddea30368cd7e945c00408a27090",
+      "unalteredCopy": true
+    },
+    {
+      "file": "1280-post-full-touch-320.json",
+      "bytes": 375682,
+      "sha256": "def388d4970554f48cbe687904fbb2eb9e20893fdf25668770b55e5ff2d0464a",
+      "unalteredCopy": true
+    },
+    {
+      "file": "1280-ending-dawn-320-top.png",
+      "bytes": 138157,
+      "sha256": "aa3e8a4f94052a1e7aeb07386939a4c5fd384d5762bcbb17c410b9f34d687fc4",
+      "unalteredCopy": true
+    },
+    {
+      "file": "1280-ending-send-release.png",
+      "bytes": 385509,
+      "sha256": "f5e197145d6869aebef36ed7ba4df557af792463efbcab51a8a192f00742c3f0",
+      "unalteredCopy": true
+    },
+    {
+      "file": "1280-ending-keep-release.png",
+      "bytes": 360410,
+      "sha256": "48a18f34884982148e9ff6eaf007f99cf3a0c7a0d849e4273db67707aa07f027",
+      "unalteredCopy": true
+    },
+    {
+      "file": "1280-ending-keep-hold.png",
+      "bytes": 389280,
+      "sha256": "f4a8e5a895f2a976e36f4758de2f84074c84144f47ad1254cebd745a1afea0d6",
+      "unalteredCopy": true
+    },
+    {
+      "file": "1280-ending-tender-390-read.png",
+      "bytes": 174890,
+      "sha256": "ec20a7df1d29b73859b23f14681f3ab33097935bc1026097421fb87bbfae3b1c",
+      "unalteredCopy": true
+    }
+  ],
+  "boundary": "No completed report.json; final global error ledger and 320 ending reading / reduced-motion suite did not finish. The 320 dawn top image is before the failed scrolling coverage assertion, not proof of complete reading.",
+  "postEvidenceSummary": {
+    "file": "post-evidence-summary.json",
+    "bytes": 76003,
+    "sha256": "491f00a39b38eec3c4eda663edaf1fb684e21643ac5632d3f79a96b04a2947ff",
+    "scope": "Derived without modifying runtime/scripts from ten original JSON files, the exact 1ba validator and original CI log."
+  }
+}

@@ -1,0 +1,2675 @@
+{
+  "commit": "1ba8ce9a4261d74f7278f14ded776cd23681bfcd",
+  "runId": 40920128799,
+  "jobId": 123610793753,
+  "artifactId": 12917888541,
+  "artifactZipBytes": 175490059,
+  "artifactZipSha256": "bdc0c770baf66da42189306f86925bd710242bd839759ecb9ef1c7f259b50a49",
+  "scope": "Read-only audit of ten raw successful post-route JSON files. The overall candidate failed later in phone ending reading; no final global network or final page-error gate was reached.",
+  "sourceValidator": {
+    "gitPath": "scripts/browser_post_v28.py",
+    "commit": "1ba8ce9a4261d74f7278f14ded776cd23681bfcd",
+    "sha256": "b3d0adda90e0cea10842ca1532aa6d9556004eacfc81e3ffd300543f4daf10e2"
+  },
+  "sources": [
+    {
+      "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-full-fallback-post-mushroom-crossing.json",
+      "artifactPath": "candidate/1280-full-fallback-post-mushroom-crossing.json",
+      "bytes": 129376,
+      "sha256": "4de011436a583a80f7b80ef3af00cf9995dfbaccb5e2f58c66cee4b3cacfb732"
+    },
+    {
+      "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-full-fallback-post-route.json",
+      "artifactPath": "candidate/1280-full-fallback-post-route.json",
+      "bytes": 285455,
+      "sha256": "e4566bfb71c880074f65d00055cd798d77c00ec3122e923a924d42240919e81c"
+    },
+    {
+      "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-full-touch-320-post-mushroom-crossing.json",
+      "artifactPath": "candidate/1280-full-touch-320-post-mushroom-crossing.json",
+      "bytes": 133435,
+      "sha256": "d7d53ed760928881733ae7006e2c3a4dad735b8f8211fc81b4ef1e327994b2cb"
+    },
+    {
+      "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-full-touch-320-post-route.json",
+      "artifactPath": "candidate/1280-full-touch-320-post-route.json",
+      "bytes": 337244,
+      "sha256": "13d0bdc24fff07e1d997dcc54a8547688a254b1cf7e7c00677a8c729f550d30e"
+    },
+    {
+      "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-full-touch-390-post-mushroom-crossing.json",
+      "artifactPath": "candidate/1280-full-touch-390-post-mushroom-crossing.json",
+      "bytes": 132442,
+      "sha256": "7904bcf785e7ece5d2d6e9e7907edeac4d354005bfab5deba92475e273e0b007"
+    },
+    {
+      "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-full-touch-390-post-route.json",
+      "artifactPath": "candidate/1280-full-touch-390-post-route.json",
+      "bytes": 334393,
+      "sha256": "369e075bcdf029656dcde9ae3fef5291d1ec31350ce8565d1433dd769177dd42"
+    },
+    {
+      "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-post-full-touch-320.json",
+      "artifactPath": "candidate/1280-post-full-touch-320.json",
+      "bytes": 375682,
+      "sha256": "def388d4970554f48cbe687904fbb2eb9e20893fdf25668770b55e5ff2d0464a"
+    },
+    {
+      "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-post-full-touch-390.json",
+      "artifactPath": "candidate/1280-post-full-touch-390.json",
+      "bytes": 372588,
+      "sha256": "a24cdaeb34e5c2955f5af039caa76b01c1b5ddea30368cd7e945c00408a27090"
+    },
+    {
+      "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-post-mushroom-crossing.json",
+      "artifactPath": "candidate/1280-post-mushroom-crossing.json",
+      "bytes": 126804,
+      "sha256": "431c9974eade843928d5dbc066ca001c455caf79e476a362826a81ce8b4db217"
+    },
+    {
+      "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-post-route.json",
+      "artifactPath": "candidate/1280-post-route.json",
+      "bytes": 308757,
+      "sha256": "d31dfdd70bb0e4460852b7646d8a167d67122e1baf00695a3e8f3a59b79fd5bb"
+    }
+  ],
+  "crossings": {
+    "desktop": {
+      "source": {
+        "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-post-mushroom-crossing.json",
+        "artifactPath": "candidate/1280-post-mushroom-crossing.json",
+        "bytes": 126804,
+        "sha256": "431c9974eade843928d5dbc066ca001c455caf79e476a362826a81ce8b4db217"
+      },
+      "originalValidatorReappliedToRawEvidence": true,
+      "inputSource": "native keyboard",
+      "initial": {
+        "at": 79891.30000000005,
+        "phase": "approach-1420",
+        "time": 22.416666666666675,
+        "runId": 1,
+        "bodyIdentity": 10,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1278.8131913265893,
+          "y": 465,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.1975
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "safeStart": {
+        "at": 80809.30000000005,
+        "phase": "continuous-right",
+        "time": 23.33333333333329,
+        "runId": 1,
+        "bodyIdentity": 10,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1411.2195329837489,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.1725
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "nativeDown": {
+        "type": "keydown",
+        "code": "ArrowRight",
+        "repeat": false,
+        "pointerType": null,
+        "pointerId": null,
+        "isTrusted": true,
+        "targetId": "dream-canvas",
+        "direction": null,
+        "phase": "continuous-right",
+        "at": 80821.80000000005,
+        "time": 23.349999999999955,
+        "runId": 1,
+        "bodyIdentity": 10,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 0,
+          "y": 0
+        },
+        "dialogs": []
+      },
+      "bounce": {
+        "at": 81046.20000000007,
+        "phase": "continuous-right",
+        "time": 23.583333333333275,
+        "runId": 1,
+        "bodyIdentity": 10,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1451.7195329837489,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 240,
+          "vy": -850,
+          "grounded": false,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "input": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "boing": 0.75,
+        "cooldown": 0.6
+      },
+      "clearanceBeforeRelease": {
+        "at": 81927.6000000001,
+        "phase": "continuous-right",
+        "time": 24.46666666666656,
+        "runId": 1,
+        "bodyIdentity": 10,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1663.7195329837489,
+          "y": 345.79166666666583,
+          "w": 30,
+          "h": 58,
+          "vx": 240,
+          "vy": 342.5,
+          "grounded": false,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "input": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      "nativeUp": {
+        "type": "keyup",
+        "code": "ArrowRight",
+        "repeat": false,
+        "pointerType": null,
+        "pointerId": null,
+        "isTrusted": true,
+        "targetId": "dream-canvas",
+        "direction": null,
+        "phase": "continuous-right",
+        "at": 81955.1000000001,
+        "time": 24.483333333333224,
+        "runId": 1,
+        "bodyIdentity": 10,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 1,
+          "y": 0
+        },
+        "dialogs": []
+      },
+      "firstGroundContact": {
+        "at": 82044.1000000001,
+        "phase": "natural-root-landing",
+        "time": 24.58333333333322,
+        "runId": 1,
+        "bodyIdentity": 10,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1682.0945329837489,
+          "y": 390,
+          "w": 30,
+          "h": 58,
+          "vx": 75,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.16666666666666666
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": {
+        "at": 82094.40000000002,
+        "phase": "natural-root-landing",
+        "time": 24.633333333333216,
+        "runId": 1,
+        "bodyIdentity": 10,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1683.2195329837489,
+          "y": 390,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.026666666666666672
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "after": {
+        "at": 82104.1000000001,
+        "phase": "natural-root-landing",
+        "time": 24.633333333333216,
+        "runId": 1,
+        "bodyIdentity": 10,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1683.2195329837489,
+          "y": 390,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.026666666666666672
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "nativeInputEvents": [
+        {
+          "type": "keydown",
+          "code": "ArrowRight",
+          "repeat": false,
+          "pointerType": null,
+          "pointerId": null,
+          "isTrusted": true,
+          "defaultPreventedAfter": true,
+          "targetId": "dream-canvas",
+          "direction": null,
+          "phase": "continuous-right",
+          "at": 80821.80000000005,
+          "time": 23.349999999999955,
+          "runId": 1,
+          "bodyIdentity": 10,
+          "form": "body",
+          "state": "playing",
+          "input": {
+            "x": 0,
+            "y": 0
+          },
+          "dialogs": []
+        },
+        {
+          "type": "keyup",
+          "code": "ArrowRight",
+          "repeat": false,
+          "pointerType": null,
+          "pointerId": null,
+          "isTrusted": true,
+          "defaultPreventedAfter": false,
+          "targetId": "dream-canvas",
+          "direction": null,
+          "phase": "continuous-right",
+          "at": 81955.1000000001,
+          "time": 24.483333333333224,
+          "runId": 1,
+          "bodyIdentity": 10,
+          "form": "body",
+          "state": "playing",
+          "input": {
+            "x": 1,
+            "y": 0
+          },
+          "dialogs": []
+        }
+      ],
+      "bounceWallSeconds": 0.22440000000002328,
+      "rootWallSeconds": 1.2725999999999766,
+      "rightFootprintMargin": 31.780467016251123,
+      "singleContinuousRightInput": true,
+      "repeatedBounce": null,
+      "continuityFailure": null,
+      "observerCleanup": {
+        "pendingFrame": false,
+        "removed": true
+      },
+      "totalFrames": 133,
+      "droppedFrames": 0,
+      "totalEvents": 4,
+      "droppedEvents": 0
+    },
+    "phone390": {
+      "source": {
+        "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-full-touch-390-post-mushroom-crossing.json",
+        "artifactPath": "candidate/1280-full-touch-390-post-mushroom-crossing.json",
+        "bytes": 132442,
+        "sha256": "7904bcf785e7ece5d2d6e9e7907edeac4d354005bfab5deba92475e273e0b007"
+      },
+      "originalValidatorReappliedToRawEvidence": true,
+      "inputSource": "Chromium CDP simulated touch",
+      "initial": {
+        "at": 117049.5,
+        "phase": "approach-1420",
+        "time": 22.20000000000002,
+        "runId": 1,
+        "bodyIdentity": 11,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1277.5773299087562,
+          "y": 465,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.1975
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "safeStart": {
+        "at": 118031.6000000001,
+        "phase": "continuous-right",
+        "time": 23.183333333333298,
+        "runId": 1,
+        "bodyIdentity": 11,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1418.2388688028202,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.1725
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "nativeDown": {
+        "type": "pointerdown",
+        "code": null,
+        "repeat": false,
+        "pointerType": "touch",
+        "pointerId": 72,
+        "isTrusted": true,
+        "targetId": null,
+        "direction": "right",
+        "phase": "continuous-right",
+        "at": 118080.20000000007,
+        "time": 23.233333333333295,
+        "runId": 1,
+        "bodyIdentity": 11,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 0,
+          "y": 0
+        },
+        "dialogs": []
+      },
+      "bounce": {
+        "at": 118276,
+        "phase": "continuous-right",
+        "time": 23.433333333333284,
+        "runId": 1,
+        "bodyIdentity": 11,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1450.7388688028202,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 240,
+          "vy": -850,
+          "grounded": false,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "input": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "boing": 0.75,
+        "cooldown": 0.6
+      },
+      "clearanceBeforeRelease": {
+        "at": 119158.80000000005,
+        "phase": "continuous-right",
+        "time": 24.316666666666567,
+        "runId": 1,
+        "bodyIdentity": 11,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1662.7388688028202,
+          "y": 345.79166666666583,
+          "w": 30,
+          "h": 58,
+          "vx": 240,
+          "vy": 342.5,
+          "grounded": false,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "input": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      "nativeUp": {
+        "type": "pointerup",
+        "code": null,
+        "repeat": false,
+        "pointerType": "touch",
+        "pointerId": 72,
+        "isTrusted": true,
+        "targetId": null,
+        "direction": "right",
+        "phase": "continuous-right",
+        "at": 119195.5,
+        "time": 24.3499999999999,
+        "runId": 1,
+        "bodyIdentity": 11,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 1,
+          "y": 0
+        },
+        "dialogs": []
+      },
+      "firstGroundContact": {
+        "at": 119275.80000000005,
+        "phase": "natural-root-landing",
+        "time": 24.433333333333227,
+        "runId": 1,
+        "bodyIdentity": 11,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1683.8638688028202,
+          "y": 390,
+          "w": 30,
+          "h": 58,
+          "vx": 102.5,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.16666666666666666
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": {
+        "at": 119342.20000000007,
+        "phase": "natural-root-landing",
+        "time": 24.49999999999989,
+        "runId": 1,
+        "bodyIdentity": 11,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1686.2388688028202,
+          "y": 390,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "after": {
+        "at": 119346,
+        "phase": "natural-root-landing",
+        "time": 24.49999999999989,
+        "runId": 1,
+        "bodyIdentity": 11,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1686.2388688028202,
+          "y": 390,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "nativeInputEvents": [
+        {
+          "type": "pointerdown",
+          "code": null,
+          "repeat": false,
+          "pointerType": "touch",
+          "pointerId": 72,
+          "isTrusted": true,
+          "defaultPreventedAfter": true,
+          "targetId": null,
+          "direction": "right",
+          "phase": "continuous-right",
+          "at": 118080.20000000007,
+          "time": 23.233333333333295,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "playing",
+          "input": {
+            "x": 0,
+            "y": 0
+          },
+          "dialogs": []
+        },
+        {
+          "type": "pointerup",
+          "code": null,
+          "repeat": false,
+          "pointerType": "touch",
+          "pointerId": 72,
+          "isTrusted": true,
+          "defaultPreventedAfter": false,
+          "targetId": null,
+          "direction": "right",
+          "phase": "continuous-right",
+          "at": 119195.5,
+          "time": 24.3499999999999,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "playing",
+          "input": {
+            "x": 1,
+            "y": 0
+          },
+          "dialogs": []
+        },
+        {
+          "type": "click",
+          "code": null,
+          "repeat": false,
+          "pointerType": "touch",
+          "pointerId": 72,
+          "isTrusted": true,
+          "defaultPreventedAfter": false,
+          "targetId": null,
+          "direction": "right",
+          "phase": "continuous-right",
+          "at": 119197.30000000005,
+          "time": 24.3499999999999,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "playing",
+          "input": {
+            "x": 0,
+            "y": 0
+          },
+          "dialogs": []
+        }
+      ],
+      "bounceWallSeconds": 0.19579999999993014,
+      "rootWallSeconds": 1.262,
+      "rightFootprintMargin": 28.761131197179793,
+      "singleContinuousRightInput": true,
+      "repeatedBounce": null,
+      "continuityFailure": null,
+      "observerCleanup": {
+        "pendingFrame": false,
+        "removed": true
+      },
+      "totalFrames": 138,
+      "droppedFrames": 0,
+      "totalEvents": 6,
+      "droppedEvents": 0
+    },
+    "phone320": {
+      "source": {
+        "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-full-touch-320-post-mushroom-crossing.json",
+        "artifactPath": "candidate/1280-full-touch-320-post-mushroom-crossing.json",
+        "bytes": 133435,
+        "sha256": "d7d53ed760928881733ae7006e2c3a4dad735b8f8211fc81b4ef1e327994b2cb"
+      },
+      "originalValidatorReappliedToRawEvidence": true,
+      "inputSource": "Chromium CDP simulated touch",
+      "initial": {
+        "at": 153798.1000000001,
+        "phase": "approach-1420",
+        "time": 22.100000000000026,
+        "runId": 1,
+        "bodyIdentity": 12,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1277.0005233166805,
+          "y": 465,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.1975
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "safeStart": {
+        "at": 154795.6000000001,
+        "phase": "continuous-right",
+        "time": 23.09999999999997,
+        "runId": 1,
+        "bodyIdentity": 12,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1418.2727236239778,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.1725
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "nativeDown": {
+        "type": "pointerdown",
+        "code": null,
+        "repeat": false,
+        "pointerType": "touch",
+        "pointerId": 133,
+        "isTrusted": true,
+        "targetId": null,
+        "direction": "right",
+        "phase": "continuous-right",
+        "at": 154843.6000000001,
+        "time": 23.149999999999967,
+        "runId": 1,
+        "bodyIdentity": 12,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 0,
+          "y": 0
+        },
+        "dialogs": []
+      },
+      "bounce": {
+        "at": 155041.6000000001,
+        "phase": "continuous-right",
+        "time": 23.349999999999955,
+        "runId": 1,
+        "bodyIdentity": 12,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1450.7727236239778,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 240,
+          "vy": -850,
+          "grounded": false,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "input": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "boing": 0.75,
+        "cooldown": 0.6
+      },
+      "clearanceBeforeRelease": {
+        "at": 155924.1000000001,
+        "phase": "continuous-right",
+        "time": 24.23333333333324,
+        "runId": 1,
+        "bodyIdentity": 12,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1662.7727236239778,
+          "y": 345.79166666666583,
+          "w": 30,
+          "h": 58,
+          "vx": 240,
+          "vy": 342.5,
+          "grounded": false,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "input": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      "nativeUp": {
+        "type": "pointerup",
+        "code": null,
+        "repeat": false,
+        "pointerType": "touch",
+        "pointerId": 133,
+        "isTrusted": true,
+        "targetId": null,
+        "direction": "right",
+        "phase": "continuous-right",
+        "at": 155959.20000000007,
+        "time": 24.26666666666657,
+        "runId": 1,
+        "bodyIdentity": 12,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 1,
+          "y": 0
+        },
+        "dialogs": []
+      },
+      "firstGroundContact": {
+        "at": 156041,
+        "phase": "natural-root-landing",
+        "time": 24.3499999999999,
+        "runId": 1,
+        "bodyIdentity": 12,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1683.8977236239778,
+          "y": 390,
+          "w": 30,
+          "h": 58,
+          "vx": 102.5,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.16666666666666666
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": {
+        "at": 156107.70000000007,
+        "phase": "natural-root-landing",
+        "time": 24.41666666666656,
+        "runId": 1,
+        "bodyIdentity": 12,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1686.2727236239778,
+          "y": 390,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "after": {
+        "at": 156110.5,
+        "phase": "natural-root-landing",
+        "time": 24.41666666666656,
+        "runId": 1,
+        "bodyIdentity": 12,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1686.2727236239778,
+          "y": 390,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "nativeInputEvents": [
+        {
+          "type": "pointerdown",
+          "code": null,
+          "repeat": false,
+          "pointerType": "touch",
+          "pointerId": 133,
+          "isTrusted": true,
+          "defaultPreventedAfter": true,
+          "targetId": null,
+          "direction": "right",
+          "phase": "continuous-right",
+          "at": 154843.6000000001,
+          "time": 23.149999999999967,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "playing",
+          "input": {
+            "x": 0,
+            "y": 0
+          },
+          "dialogs": []
+        },
+        {
+          "type": "pointerup",
+          "code": null,
+          "repeat": false,
+          "pointerType": "touch",
+          "pointerId": 133,
+          "isTrusted": true,
+          "defaultPreventedAfter": false,
+          "targetId": null,
+          "direction": "right",
+          "phase": "continuous-right",
+          "at": 155959.20000000007,
+          "time": 24.26666666666657,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "playing",
+          "input": {
+            "x": 1,
+            "y": 0
+          },
+          "dialogs": []
+        },
+        {
+          "type": "click",
+          "code": null,
+          "repeat": false,
+          "pointerType": "touch",
+          "pointerId": 133,
+          "isTrusted": true,
+          "defaultPreventedAfter": false,
+          "targetId": null,
+          "direction": "right",
+          "phase": "continuous-right",
+          "at": 155961,
+          "time": 24.26666666666657,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "playing",
+          "input": {
+            "x": 0,
+            "y": 0
+          },
+          "dialogs": []
+        }
+      ],
+      "bounceWallSeconds": 0.198,
+      "rootWallSeconds": 1.2640999999999767,
+      "rightFootprintMargin": 28.727276376022246,
+      "singleContinuousRightInput": true,
+      "repeatedBounce": null,
+      "continuityFailure": null,
+      "observerCleanup": {
+        "pendingFrame": false,
+        "removed": true
+      },
+      "totalFrames": 139,
+      "droppedFrames": 0,
+      "totalEvents": 6,
+      "droppedEvents": 0
+    },
+    "failedPrimary": {
+      "source": {
+        "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-full-fallback-post-mushroom-crossing.json",
+        "artifactPath": "candidate/1280-full-fallback-post-mushroom-crossing.json",
+        "bytes": 129376,
+        "sha256": "4de011436a583a80f7b80ef3af00cf9995dfbaccb5e2f58c66cee4b3cacfb732"
+      },
+      "originalValidatorReappliedToRawEvidence": true,
+      "inputSource": "native keyboard",
+      "initial": {
+        "at": 190524.30000000005,
+        "phase": "approach-1420",
+        "time": 22.350000000000012,
+        "runId": 1,
+        "bodyIdentity": 13,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1286.7732459727551,
+          "y": 465,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.15083333333333335
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "safeStart": {
+        "at": 191485.70000000007,
+        "phase": "continuous-right",
+        "time": 23.316666666666624,
+        "runId": 1,
+        "bodyIdentity": 13,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1411.1077013081838,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.0325
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "nativeDown": {
+        "type": "keydown",
+        "code": "ArrowRight",
+        "repeat": false,
+        "pointerType": null,
+        "pointerId": null,
+        "isTrusted": true,
+        "targetId": "dream-canvas",
+        "direction": null,
+        "phase": "continuous-right",
+        "at": 191505.6000000001,
+        "time": 23.33333333333329,
+        "runId": 1,
+        "bodyIdentity": 13,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 0,
+          "y": 0
+        },
+        "dialogs": []
+      },
+      "bounce": {
+        "at": 191723.6000000001,
+        "phase": "continuous-right",
+        "time": 23.56666666666661,
+        "runId": 1,
+        "bodyIdentity": 13,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1451.6077013081838,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 240,
+          "vy": -850,
+          "grounded": false,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "input": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "boing": 0.75,
+        "cooldown": 0.6
+      },
+      "clearanceBeforeRelease": {
+        "at": 192607.40000000002,
+        "phase": "continuous-right",
+        "time": 24.449999999999893,
+        "runId": 1,
+        "bodyIdentity": 13,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1663.6077013081838,
+          "y": 345.79166666666583,
+          "w": 30,
+          "h": 58,
+          "vx": 240,
+          "vy": 342.5,
+          "grounded": false,
+          "platform": null,
+          "face": 1,
+          "land": 0
+        },
+        "input": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      "nativeUp": {
+        "type": "keyup",
+        "code": "ArrowRight",
+        "repeat": false,
+        "pointerType": null,
+        "pointerId": null,
+        "isTrusted": true,
+        "targetId": "dream-canvas",
+        "direction": null,
+        "phase": "continuous-right",
+        "at": 192639.20000000007,
+        "time": 24.46666666666656,
+        "runId": 1,
+        "bodyIdentity": 13,
+        "form": "body",
+        "state": "playing",
+        "input": {
+          "x": 1,
+          "y": 0
+        },
+        "dialogs": []
+      },
+      "firstGroundContact": {
+        "at": 192728.70000000007,
+        "phase": "natural-root-landing",
+        "time": 24.566666666666553,
+        "runId": 1,
+        "bodyIdentity": 13,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1681.9827013081838,
+          "y": 390,
+          "w": 30,
+          "h": 58,
+          "vx": 75,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.16666666666666666
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": {
+        "at": 192781.90000000002,
+        "phase": "natural-root-landing",
+        "time": 24.61666666666655,
+        "runId": 1,
+        "bodyIdentity": 13,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1683.1077013081838,
+          "y": 390,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.026666666666666672
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "after": {
+        "at": 192797.90000000002,
+        "phase": "natural-root-landing",
+        "time": 24.61666666666655,
+        "runId": 1,
+        "bodyIdentity": 13,
+        "chapterIndex": 5,
+        "mode": "story",
+        "state": "playing",
+        "form": "body",
+        "deaths": 0,
+        "body": {
+          "x": 1683.1077013081838,
+          "y": 390,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "platform": null,
+          "face": 1,
+          "land": 0.026666666666666672
+        },
+        "input": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "nativeInputEvents": [
+        {
+          "type": "keydown",
+          "code": "ArrowRight",
+          "repeat": false,
+          "pointerType": null,
+          "pointerId": null,
+          "isTrusted": true,
+          "defaultPreventedAfter": true,
+          "targetId": "dream-canvas",
+          "direction": null,
+          "phase": "continuous-right",
+          "at": 191505.6000000001,
+          "time": 23.33333333333329,
+          "runId": 1,
+          "bodyIdentity": 13,
+          "form": "body",
+          "state": "playing",
+          "input": {
+            "x": 0,
+            "y": 0
+          },
+          "dialogs": []
+        },
+        {
+          "type": "keyup",
+          "code": "ArrowRight",
+          "repeat": false,
+          "pointerType": null,
+          "pointerId": null,
+          "isTrusted": true,
+          "defaultPreventedAfter": false,
+          "targetId": "dream-canvas",
+          "direction": null,
+          "phase": "continuous-right",
+          "at": 192639.20000000007,
+          "time": 24.46666666666656,
+          "runId": 1,
+          "bodyIdentity": 13,
+          "form": "body",
+          "state": "playing",
+          "input": {
+            "x": 1,
+            "y": 0
+          },
+          "dialogs": []
+        }
+      ],
+      "bounceWallSeconds": 0.218,
+      "rootWallSeconds": 1.27629999999993,
+      "rightFootprintMargin": 31.892298691816222,
+      "singleContinuousRightInput": true,
+      "repeatedBounce": null,
+      "continuityFailure": null,
+      "observerCleanup": {
+        "pendingFrame": false,
+        "removed": true
+      },
+      "totalFrames": 136,
+      "droppedFrames": 0,
+      "totalEvents": 4,
+      "droppedEvents": 0
+    }
+  },
+  "routes": {
+    "desktop": {
+      "source": {
+        "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-post-route.json",
+        "artifactPath": "candidate/1280-post-route.json",
+        "bytes": 308757,
+        "sha256": "d31dfdd70bb0e4460852b7646d8a167d67122e1baf00695a3e8f3a59b79fd5bb"
+      },
+      "wallSeconds": 35.865,
+      "input": "keyboard",
+      "paint": "ready",
+      "deaths": 0,
+      "rootLanding": {
+        "x": 1683.2195329837489,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0.026666666666666672
+      },
+      "fullBodyExit": true,
+      "realSunStampBeforeDanger": true,
+      "book": {
+        "elapsed": 9.100000000000081,
+        "actualPeriod": 8.975979010256552,
+        "sampleCount": 154,
+        "maxSoleError": 0,
+        "maxRelativeHorizontalDrift": 4.547473508864641e-13,
+        "horizontalTravel": 369.9672814919253,
+        "twoDirections": true,
+        "actualMoverSupport": true,
+        "fullCycle": true
+      },
+      "finalBody": {
+        "x": 2491.7195329837486,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "finalRunId": 1,
+      "finalBodyIdentity": 10,
+      "remainingFreezeAtExit": 2.7333333333333396,
+      "fullSwingRight": 2564.887420405481,
+      "bodyExitBeforeFullSwingRight": true,
+      "inputBoundary": {
+        "input": "keyboard",
+        "resultRetained": true,
+        "oldGestureBlockedClicks": []
+      }
+    },
+    "phone390": {
+      "source": {
+        "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-full-touch-390-post-route.json",
+        "artifactPath": "candidate/1280-full-touch-390-post-route.json",
+        "bytes": 334393,
+        "sha256": "369e075bcdf029656dcde9ae3fef5291d1ec31350ce8565d1433dd769177dd42"
+      },
+      "wallSeconds": 34.609,
+      "input": "Chromium CDP simulated touch",
+      "paint": "ready",
+      "deaths": 0,
+      "rootLanding": {
+        "x": 1686.2388688028202,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "fullBodyExit": true,
+      "realSunStampBeforeDanger": true,
+      "book": {
+        "elapsed": 9.066666666666787,
+        "actualPeriod": 8.975979010256552,
+        "sampleCount": 165,
+        "maxSoleError": 0,
+        "maxRelativeHorizontalDrift": 9.094947017729282e-13,
+        "horizontalTravel": 369.9898643156871,
+        "twoDirections": true,
+        "actualMoverSupport": true,
+        "fullCycle": true
+      },
+      "finalBody": {
+        "x": 2490.7388688028204,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "finalRunId": 1,
+      "finalBodyIdentity": 11,
+      "remainingFreezeAtExit": 2.6500000000000066,
+      "fullSwingRight": 2564.887420405481,
+      "bodyExitBeforeFullSwingRight": true,
+      "inputBoundary": {
+        "input": "Chromium CDP simulated touch",
+        "resultRetained": true,
+        "heldPointerId": 92,
+        "releaseAtComplete": true,
+        "oldGestureBlockedClicks": []
+      }
+    },
+    "phone320": {
+      "source": {
+        "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-full-touch-320-post-route.json",
+        "artifactPath": "candidate/1280-full-touch-320-post-route.json",
+        "bytes": 337244,
+        "sha256": "13d0bdc24fff07e1d997dcc54a8547688a254b1cf7e7c00677a8c729f550d30e"
+      },
+      "wallSeconds": 34.282,
+      "input": "Chromium CDP simulated touch",
+      "paint": "ready",
+      "deaths": 0,
+      "rootLanding": {
+        "x": 1686.2727236239778,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "fullBodyExit": true,
+      "realSunStampBeforeDanger": true,
+      "book": {
+        "elapsed": 9.050000000000136,
+        "actualPeriod": 8.975979010256552,
+        "sampleCount": 165,
+        "maxSoleError": 0,
+        "maxRelativeHorizontalDrift": 7.958078640513122e-13,
+        "horizontalTravel": 369.9476577484195,
+        "twoDirections": true,
+        "actualMoverSupport": true,
+        "fullCycle": true
+      },
+      "finalBody": {
+        "x": 2490.772723623978,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "finalRunId": 1,
+      "finalBodyIdentity": 12,
+      "remainingFreezeAtExit": 2.666666666666673,
+      "fullSwingRight": 2564.887420405481,
+      "bodyExitBeforeFullSwingRight": true,
+      "inputBoundary": {
+        "input": "Chromium CDP simulated touch",
+        "resultRetained": true,
+        "heldPointerId": 151,
+        "releaseAtComplete": true,
+        "oldGestureBlockedClicks": [
+          {
+            "type": "click",
+            "pointerType": "touch",
+            "pointerId": 151,
+            "detail": 1,
+            "isPrimary": false,
+            "isTrusted": true,
+            "defaultPrevented": false,
+            "cancelable": true,
+            "eventPhase": 1,
+            "targetHasPointerCapture": false,
+            "targetId": "result-story",
+            "direction": null,
+            "shellAction": null,
+            "at": 165344.6000000001,
+            "eventTimeStamp": 165307,
+            "state": "complete",
+            "form": "body",
+            "time": 33.04999999999941,
+            "runId": 1,
+            "bodyIdentity": 12,
+            "dialogs": [
+              "result-dialog"
+            ],
+            "defaultPreventedAfter": true,
+            "dialogsAfter": [
+              "result-dialog"
+            ]
+          }
+        ]
+      }
+    },
+    "failedPrimary": {
+      "source": {
+        "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-full-fallback-post-route.json",
+        "artifactPath": "candidate/1280-full-fallback-post-route.json",
+        "bytes": 285455,
+        "sha256": "e4566bfb71c880074f65d00055cd798d77c00ec3122e923a924d42240919e81c"
+      },
+      "wallSeconds": 34.978,
+      "input": "keyboard",
+      "paint": "error",
+      "deaths": 0,
+      "rootLanding": {
+        "x": 1683.1077013081838,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0.026666666666666672
+      },
+      "fullBodyExit": true,
+      "realSunStampBeforeDanger": true,
+      "book": {
+        "elapsed": 9.100000000000113,
+        "actualPeriod": 8.975979010256552,
+        "sampleCount": 139,
+        "maxSoleError": 0,
+        "maxRelativeHorizontalDrift": 6.821210263296962e-13,
+        "horizontalTravel": 369.9898643156871,
+        "twoDirections": true,
+        "actualMoverSupport": true,
+        "fullCycle": true
+      },
+      "finalBody": {
+        "x": 2491.607701308184,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "finalRunId": 1,
+      "finalBodyIdentity": 13,
+      "remainingFreezeAtExit": 2.5666666666666735,
+      "fullSwingRight": 2564.887420405481,
+      "bodyExitBeforeFullSwingRight": true,
+      "inputBoundary": {
+        "input": "keyboard",
+        "resultRetained": true,
+        "oldGestureBlockedClicks": []
+      }
+    }
+  },
+  "phones": {
+    "390": {
+      "source": {
+        "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-post-full-touch-390.json",
+        "artifactPath": "candidate/1280-post-full-touch-390.json",
+        "bytes": 372588,
+        "sha256": "a24cdaeb34e5c2955f5af039caa76b01c1b5ddea30368cd7e945c00408a27090"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "heldPointerId": 92,
+      "movementGestureNativeEvents": [
+        {
+          "type": "pointerdown",
+          "pointerType": "touch",
+          "pointerId": 92,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": true,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": null,
+          "direction": "right",
+          "at": 127113.5,
+          "eventTimeStamp": 127077.40000000002,
+          "time": 31.66666666666615,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "playing",
+          "dialogs": [],
+          "dialogsAfter": []
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerType": "touch",
+          "pointerId": 92,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": false,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": null,
+          "direction": "right",
+          "at": 128797.6000000001,
+          "eventTimeStamp": 128759.40000000002,
+          "time": 33.29999999999939,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "pointerup",
+          "pointerType": "touch",
+          "pointerId": 92,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": null,
+          "direction": "right",
+          "at": 128797.70000000007,
+          "eventTimeStamp": 128759.40000000002,
+          "time": 33.29999999999939,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerType": "touch",
+          "pointerId": 92,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": false,
+          "eventPhase": 1,
+          "targetHasPointerCapture": false,
+          "targetId": null,
+          "direction": "right",
+          "at": 128797.90000000002,
+          "eventTimeStamp": 128759.40000000002,
+          "time": 33.29999999999939,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "click",
+          "pointerType": "touch",
+          "pointerId": 92,
+          "detail": 1,
+          "isPrimary": false,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": true,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": false,
+          "targetId": null,
+          "direction": null,
+          "at": 128798.80000000005,
+          "eventTimeStamp": 128759.40000000002,
+          "time": 33.29999999999939,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        }
+      ],
+      "resultRetainedByActualExitAssertion": true,
+      "oldRetargetedClickCount": 0,
+      "oldRetargetedClicks": [],
+      "freshPointerId": 93,
+      "freshDownUpClickNativeEvents": [
+        {
+          "type": "pointerdown",
+          "pointerType": "touch",
+          "pointerId": 93,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 129078.20000000007,
+          "eventTimeStamp": 129042,
+          "time": 33.29999999999939,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "pointerup",
+          "pointerType": "touch",
+          "pointerId": 93,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 129111.70000000007,
+          "eventTimeStamp": 129079.80000000005,
+          "time": 33.29999999999939,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "click",
+          "pointerType": "touch",
+          "pointerId": 93,
+          "detail": 1,
+          "isPrimary": false,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": false,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 129113.70000000007,
+          "eventTimeStamp": 129079.80000000005,
+          "time": 33.29999999999939,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        }
+      ],
+      "freshAllEvents": [
+        {
+          "type": "pointerdown",
+          "pointerType": "touch",
+          "pointerId": 93,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 129078.20000000007,
+          "eventTimeStamp": 129042,
+          "time": 33.29999999999939,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerType": "touch",
+          "pointerId": 93,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": false,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 129111.6000000001,
+          "eventTimeStamp": 129079.80000000005,
+          "time": 33.29999999999939,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "pointerup",
+          "pointerType": "touch",
+          "pointerId": 93,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 129111.70000000007,
+          "eventTimeStamp": 129079.80000000005,
+          "time": 33.29999999999939,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerType": "touch",
+          "pointerId": 93,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": false,
+          "eventPhase": 1,
+          "targetHasPointerCapture": false,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 129111.80000000005,
+          "eventTimeStamp": 129079.80000000005,
+          "time": 33.29999999999939,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "click",
+          "pointerType": "touch",
+          "pointerId": 93,
+          "detail": 1,
+          "isPrimary": false,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": false,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 129113.70000000007,
+          "eventTimeStamp": 129079.80000000005,
+          "time": 33.29999999999939,
+          "runId": 1,
+          "bodyIdentity": 11,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        }
+      ],
+      "intentionalClickAllowed": true,
+      "actualImmediateUiAssertedStoryDialog": true,
+      "immediateUiEvidenceNote": "The original successful validator checked its independent post-dispatch UI read. Its boolean is saved; the capture-event dialogsAfter field may precede the target handler and is not substituted for that independent read.",
+      "outroPortraits": [
+        {
+          "open": true,
+          "page": "01 / 03",
+          "speaker": "阿拾",
+          "text": "“爸爸，我要是没赶回来，你先去看日出。记得带茶，别只带怀表。”",
+          "source": "./assets/portrait-hero-tender.svg",
+          "currentSrc": "http://127.0.0.1:8080/assets/portrait-hero-tender.svg",
+          "alt": "阿拾",
+          "complete": true,
+          "naturalWidth": 256,
+          "naturalHeight": 256,
+          "pending": false,
+          "phase": "ready",
+          "visibility": "visible",
+          "display": "block",
+          "placeholder": {
+            "content": "none",
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": 1,
+            "width": 135,
+            "height": 116
+          }
+        },
+        {
+          "open": true,
+          "page": "02 / 03",
+          "speaker": "拾光",
+          "text": "“阿拾，头顶扣好也别上锁。还没说完的话，明天可以接着说。”",
+          "source": "./assets/portrait-soul-joy.svg",
+          "currentSrc": "http://127.0.0.1:8080/assets/portrait-soul-joy.svg",
+          "alt": "拾光",
+          "complete": true,
+          "naturalWidth": 256,
+          "naturalHeight": 256,
+          "pending": false,
+          "phase": "ready",
+          "visibility": "visible",
+          "display": "block",
+          "placeholder": {
+            "content": "none",
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": 1,
+            "width": 135,
+            "height": 116
+          }
+        },
+        {
+          "open": true,
+          "page": "03 / 03",
+          "speaker": "归先生",
+          "text": "我收到了，小满。阿拾，给我也留个座位吧；我想看看你头里那场日出。",
+          "source": "./assets/portrait-keeper.svg",
+          "currentSrc": "http://127.0.0.1:8080/assets/portrait-keeper.svg",
+          "alt": "归先生",
+          "complete": true,
+          "naturalWidth": 150,
+          "naturalHeight": 150,
+          "pending": false,
+          "phase": "ready",
+          "visibility": "visible",
+          "display": "block",
+          "placeholder": {
+            "content": "none",
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": 1,
+            "width": 135,
+            "height": 116
+          }
+        }
+      ],
+      "endingTitle": "这一夜，不再只有你。",
+      "settlement": {
+        "legitimateCompletedRunsAdded": 1,
+        "previousChapterResultsAndChoicesUnchanged": true
+      },
+      "rewardGrantsUnchanged": true,
+      "scope": "complete earned chapter-six replay using Chromium CDP simulated touch for controls, puzzles, map and dialogue; not a physical device"
+    },
+    "320": {
+      "source": {
+        "path": "/tmp/tougaigu-v29-fifth-candidate/candidate/1280-post-full-touch-320.json",
+        "artifactPath": "candidate/1280-post-full-touch-320.json",
+        "bytes": 375682,
+        "sha256": "def388d4970554f48cbe687904fbb2eb9e20893fdf25668770b55e5ff2d0464a"
+      },
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "heldPointerId": 151,
+      "movementGestureNativeEvents": [
+        {
+          "type": "pointerdown",
+          "pointerType": "touch",
+          "pointerId": 151,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": true,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": null,
+          "direction": "right",
+          "at": 163644.5,
+          "eventTimeStamp": 163620.20000000007,
+          "time": 31.399999999999498,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "playing",
+          "dialogs": [],
+          "dialogsAfter": []
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerType": "touch",
+          "pointerId": 151,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": false,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": null,
+          "direction": "right",
+          "at": 165343.20000000007,
+          "eventTimeStamp": 165307,
+          "time": 33.04999999999941,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "pointerup",
+          "pointerType": "touch",
+          "pointerId": 151,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": null,
+          "direction": "right",
+          "at": 165343.30000000005,
+          "eventTimeStamp": 165307,
+          "time": 33.04999999999941,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerType": "touch",
+          "pointerId": 151,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": false,
+          "eventPhase": 1,
+          "targetHasPointerCapture": false,
+          "targetId": null,
+          "direction": "right",
+          "at": 165343.40000000002,
+          "eventTimeStamp": 165307,
+          "time": 33.04999999999941,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "click",
+          "pointerType": "touch",
+          "pointerId": 151,
+          "detail": 1,
+          "isPrimary": false,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": true,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": false,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 165344.6000000001,
+          "eventTimeStamp": 165307,
+          "time": 33.04999999999941,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        }
+      ],
+      "resultRetainedByActualExitAssertion": true,
+      "oldRetargetedClickCount": 1,
+      "oldRetargetedClicks": [
+        {
+          "type": "click",
+          "pointerType": "touch",
+          "pointerId": 151,
+          "detail": 1,
+          "isPrimary": false,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": true,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": false,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 165344.6000000001,
+          "eventTimeStamp": 165307,
+          "time": 33.04999999999941,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        }
+      ],
+      "freshPointerId": 152,
+      "freshDownUpClickNativeEvents": [
+        {
+          "type": "pointerdown",
+          "pointerType": "touch",
+          "pointerId": 152,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 165559.20000000007,
+          "eventTimeStamp": 165539,
+          "time": 33.04999999999941,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "pointerup",
+          "pointerType": "touch",
+          "pointerId": 152,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 165592.70000000007,
+          "eventTimeStamp": 165560.80000000005,
+          "time": 33.04999999999941,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "click",
+          "pointerType": "touch",
+          "pointerId": 152,
+          "detail": 1,
+          "isPrimary": false,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": false,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 165594.5,
+          "eventTimeStamp": 165560.80000000005,
+          "time": 33.04999999999941,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        }
+      ],
+      "freshAllEvents": [
+        {
+          "type": "pointerdown",
+          "pointerType": "touch",
+          "pointerId": 152,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 165559.20000000007,
+          "eventTimeStamp": 165539,
+          "time": 33.04999999999941,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerType": "touch",
+          "pointerId": 152,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": false,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 165592.6000000001,
+          "eventTimeStamp": 165560.80000000005,
+          "time": 33.04999999999941,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "pointerup",
+          "pointerType": "touch",
+          "pointerId": 152,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": true,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 165592.70000000007,
+          "eventTimeStamp": 165560.80000000005,
+          "time": 33.04999999999941,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerType": "touch",
+          "pointerId": 152,
+          "detail": 0,
+          "isPrimary": true,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": false,
+          "eventPhase": 1,
+          "targetHasPointerCapture": false,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 165592.80000000005,
+          "eventTimeStamp": 165560.80000000005,
+          "time": 33.04999999999941,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        },
+        {
+          "type": "click",
+          "pointerType": "touch",
+          "pointerId": 152,
+          "detail": 1,
+          "isPrimary": false,
+          "isTrusted": true,
+          "defaultPrevented": false,
+          "defaultPreventedAfter": false,
+          "cancelable": true,
+          "eventPhase": 1,
+          "targetHasPointerCapture": false,
+          "targetId": "result-story",
+          "direction": null,
+          "at": 165594.5,
+          "eventTimeStamp": 165560.80000000005,
+          "time": 33.04999999999941,
+          "runId": 1,
+          "bodyIdentity": 12,
+          "form": "body",
+          "state": "complete",
+          "dialogs": [
+            "result-dialog"
+          ],
+          "dialogsAfter": [
+            "result-dialog"
+          ]
+        }
+      ],
+      "intentionalClickAllowed": true,
+      "actualImmediateUiAssertedStoryDialog": true,
+      "immediateUiEvidenceNote": "The original successful validator checked its independent post-dispatch UI read. Its boolean is saved; the capture-event dialogsAfter field may precede the target handler and is not substituted for that independent read.",
+      "outroPortraits": [
+        {
+          "open": true,
+          "page": "01 / 03",
+          "speaker": "阿拾",
+          "text": "“爸爸，我要是没赶回来，你先去看日出。记得带茶，别只带怀表。”",
+          "source": "./assets/portrait-hero-tender.svg",
+          "currentSrc": "http://127.0.0.1:8080/assets/portrait-hero-tender.svg",
+          "alt": "阿拾",
+          "complete": true,
+          "naturalWidth": 256,
+          "naturalHeight": 256,
+          "pending": false,
+          "phase": "ready",
+          "visibility": "visible",
+          "display": "block",
+          "placeholder": {
+            "content": "none",
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": 1,
+            "width": 135,
+            "height": 116.00001525878906
+          }
+        },
+        {
+          "open": true,
+          "page": "02 / 03",
+          "speaker": "拾光",
+          "text": "“阿拾，头顶扣好也别上锁。还没说完的话，明天可以接着说。”",
+          "source": "./assets/portrait-soul-joy.svg",
+          "currentSrc": "http://127.0.0.1:8080/assets/portrait-soul-joy.svg",
+          "alt": "拾光",
+          "complete": true,
+          "naturalWidth": 256,
+          "naturalHeight": 256,
+          "pending": false,
+          "phase": "ready",
+          "visibility": "visible",
+          "display": "block",
+          "placeholder": {
+            "content": "none",
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": 1,
+            "width": 135,
+            "height": 116
+          }
+        },
+        {
+          "open": true,
+          "page": "03 / 03",
+          "speaker": "归先生",
+          "text": "我收到了，小满。阿拾，给我也留个座位吧；我想看看你头里那场日出。",
+          "source": "./assets/portrait-keeper.svg",
+          "currentSrc": "http://127.0.0.1:8080/assets/portrait-keeper.svg",
+          "alt": "归先生",
+          "complete": true,
+          "naturalWidth": 150,
+          "naturalHeight": 150,
+          "pending": false,
+          "phase": "ready",
+          "visibility": "visible",
+          "display": "block",
+          "placeholder": {
+            "content": "none",
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": 1,
+            "width": 135,
+            "height": 116
+          }
+        }
+      ],
+      "endingTitle": "这一夜，不再只有你。",
+      "settlement": {
+        "legitimateCompletedRunsAdded": 1,
+        "previousChapterResultsAndChoicesUnchanged": true
+      },
+      "rewardGrantsUnchanged": true,
+      "scope": "complete earned chapter-six replay using Chromium CDP simulated touch for controls, puzzles, map and dialogue; not a physical device"
+    }
+  },
+  "phaseLogs": {
+    "sourcePath": "/tmp/tougaigu-v29-fifth-job-123610793753.log",
+    "sha256": "e13c40c59dfee9a6e46ad31449405e652970ac930268dadc5dd4fecdb0739b5c",
+    "successfulPostMilestones": [
+      "2026-10-29T17:28:01.5019140Z 1280 post mushroom crossing complete {'bounceWallSeconds': 0.22440000000002328, 'rootWallSeconds': 1.2725999999999766, 'landingX': 1683.2195329837489, 'singleContinuousRightInput': True}",
+      "2026-10-29T17:28:11.0280749Z 1280 post full route complete {'wallSeconds': 35.865, 'input': 'keyboard', 'paint': 'ready'}",
+      "2026-10-29T17:28:38.7700032Z 1280-full-touch-390 post mushroom crossing complete {'bounceWallSeconds': 0.19579999999993014, 'rootWallSeconds': 1.262, 'landingX': 1686.2388688028202, 'singleContinuousRightInput': True}",
+      "2026-10-29T17:28:48.2848521Z 1280-full-touch-390 post full route complete {'wallSeconds': 34.609, 'input': 'CDP touch', 'paint': 'ready'}",
+      "2026-10-29T17:29:15.4968047Z 1280-full-touch-320 post mushroom crossing complete {'bounceWallSeconds': 0.198, 'rootWallSeconds': 1.2640999999999767, 'landingX': 1686.2727236239778, 'singleContinuousRightInput': True}",
+      "2026-10-29T17:29:24.8017726Z 1280-full-touch-320 post full route complete {'wallSeconds': 34.282, 'input': 'CDP touch', 'paint': 'ready'}",
+      "2026-10-29T17:29:52.2414408Z 1280-full-fallback post mushroom crossing complete {'bounceWallSeconds': 0.218, 'rootWallSeconds': 1.27629999999993, 'landingX': 1683.1077013081838, 'singleContinuousRightInput': True}",
+      "2026-10-29T17:30:02.0872986Z 1280-full-fallback post full route complete {'wallSeconds': 34.978, 'input': 'keyboard', 'paint': 'error'}",
+      "2026-10-29T17:30:05.7224802Z 1280 post resource case complete delayed-current",
+      "2026-10-29T17:30:07.6960764Z 1280 post resource case complete late-after-leaving",
+      "2026-10-29T17:30:08.5037628Z 1280 post extended verification complete {'wallSeconds': 115.45, 'legitimateAdditionalRuns': 3}"
+    ],
+    "endingEntry": [
+      "2026-10-29T17:30:08.5038657Z 1280 read all earned endings, rewrite actual replies and reload"
+    ],
+    "failure": [
+      "2026-10-29T17:30:45.3898730Z AssertionError: long phone ending did not actually scroll"
+    ]
+  },
+  "verifiedScope": {
+    "postFullRoutes": 4,
+    "phoneFreshResultTouches": 2,
+    "delayedResourceCases": [
+      "delayed-current",
+      "late-after-leaving"
+    ],
+    "legitimateAdditionalRunsByOriginalExtendedAssertion": 3,
+    "desktopEndingCombinationsAndReloadsReachedBeforePhoneLoop": 4,
+    "phone320EndingCoverageComplete": false,
+    "finalGlobalNetworkGateExecuted": false,
+    "finalGlobalPageErrorGateExecuted": false,
+    "completeReportProduced": false,
+    "overallCandidateConclusion": "failure in later phone ending reading"
+  }
+}
