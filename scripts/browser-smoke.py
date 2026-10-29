@@ -515,8 +515,27 @@ async def sample_body_jump(page,label,pause=False,output=None,reduced_motion=Non
     # the actual focusable canvas before issuing an ordinary player's jump.
     await page.locator('#dream-canvas').focus()
     await expect(page.locator('#dream-canvas')).to_be_focused()
-    # Read the jump on its real Space keydown, before polling can miss a
-    # transient airborne phase. No character or save state is injected.
+    # Start a passive per-frame record *before* the ordinary Space keydown.
+    # A short fall/contact phase can finish between two host-side Playwright
+    # commands. Collecting the real game state on each page RAF avoids a test
+    # timing race, without assigning position, physics, saves or completion.
+    await page.evaluate("""()=>{
+      const watch={active:true,rise:null,fall:null,land:null};
+      window.__qaJumpWatch=watch;
+      const sample=()=>{
+        if(!watch.active)return;
+        const a=window.__qaRead(),b=a?.body;
+        if(a?.state==='playing'&&a.form==='body'&&b){
+          if(!b.grounded&&b.vy<-80&&!watch.rise)watch.rise=a;
+          if(watch.rise&&!b.grounded&&b.vy>0&&!watch.fall)watch.fall=a;
+          if(watch.fall&&b.grounded){watch.land=a;watch.active=false;return;}
+        }
+        requestAnimationFrame(sample);
+      };
+      requestAnimationFrame(sample);
+    }""")
+    # Read the rise on the actual keydown as well; the listener above will
+    # independently capture fall/landing even while Python checks the rise.
     await page.keyboard.down('Space')
     try:
         rise=await page.evaluate('window.__qaRead()')
@@ -540,9 +559,18 @@ async def sample_body_jump(page,label,pause=False,output=None,reduced_motion=Non
         paused_evidence={'observed':traveler_pose_record(paused),'passiveFrames':6,'fullPoseFrozen':True,'canvasPixelsFrozen':True}
         if output:await page.screenshot(path=str(Path(output)/(label+'-traveler-airborne-paused.png')),full_page=True)
         await page.locator('#stage-resume').click()
-    fall=await await_traveler_pose(page,'fall',reduced_motion)
+    try:
+        await page.wait_for_function("()=>window.__qaJumpWatch?.land!==null",timeout=3500)
+        observed=await page.evaluate("()=>({fall:window.__qaJumpWatch.fall,land:window.__qaJumpWatch.land})")
+    except Exception as error:
+        sample=await page.evaluate("()=>({watch:window.__qaJumpWatch,now:window.__qaRead()})")
+        raise AssertionError('real jump never produced both falling and landing frames; '+json.dumps(sample,ensure_ascii=False)) from error
+    finally:
+        await page.evaluate("()=>{if(window.__qaJumpWatch)window.__qaJumpWatch.active=false;delete window.__qaJumpWatch}")
+    fall=observed['fall'];landed=observed['land']
+    validate_traveler_pose(fall,'fall',reduced_motion)
     end_phase='idle' if reduced_motion else 'land'
-    landed=await await_traveler_pose(page,end_phase,reduced_motion)
+    validate_traveler_pose(landed,end_phase,reduced_motion)
     for axis in ['x','y']:
         assert abs(landed['body'][axis]-before['body'][axis])<.1,'vertical jump did not return to its real floor'
     assert landed['deaths']==before['deaths'],'pose route respawned'
