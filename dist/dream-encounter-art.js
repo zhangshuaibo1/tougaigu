@@ -44,18 +44,32 @@ function envelope(c, x, y, width, height, wax = '#aa91b0', open = 0) {
   if (!open) { ellipse(c, 0, 2, 3.1, 3.1, wax); star(c, 0, 2, 1.7, '#f1dfbe'); }
   c.restore();
 }
+function material(c,x1,y1,x2,y2,stops){
+  const g=c.createLinearGradient(x1,y1,x2,y2);
+  for(const [at,color] of stops)g.addColorStop(at,color);
+  return g;
+}
 function lantern(c, pose) {
   const sway = pose.reduced ? 0 : Math.sin(pose.time * 1.45) * .8;
   c.save(); c.translate(sway+pose.propX, -27 - pose.lift);
   const light = c.createRadialGradient(0, 1, 0, 0, 1, 20);
-  light.addColorStop(0, pose.warm?'#ffe1a55c':'#f7d59635'); light.addColorStop(1, '#f7d59600');
+  light.addColorStop(0, pose.painted?(pose.warm?'#ffdc9473':'#efd29d46'):pose.warm?'#ffe1a55c':'#f7d59635'); light.addColorStop(1, '#f7d59600');
   ellipse(c, 0, 0, 20, 23, light);
-  path(c, p => { p.moveTo(-6, -10); p.lineTo(-6, -15); p.quadraticCurveTo(0, -21, 6, -15); p.lineTo(6, -10); }, null, '#bca17d', 1.2);
-  box(c, -10, -10, 20, 25, 3, '#8e758b', '#cfb99a', 1.1);
-  box(c, -7, -7, 14, 18, 2, pose.warm?'#ffe1a1':pose.open ? '#f4d793' : '#d8b784');
-  line(c, [[-3, -6], [-3, 10]], '#f8e7bf', .8); line(c, [[3, -6], [3, 10]], '#a98e76', .8);
+  path(c, p => { p.moveTo(-6, -10); p.lineTo(-6, -15); p.quadraticCurveTo(0, -21, 6, -15); p.lineTo(6, -10); }, null, pose.painted?'#d5bb90':'#bca17d', 1.2);
+  const frame=pose.painted?material(c,-10,-10,10,15,[[0,'#727081'],[.48,'#a18a80'],[1,'#a48a68']]):'#8e758b';
+  box(c, -10, -10, 20, 25, 3, frame, pose.painted?'#dfc69d':'#cfb99a', 1.1);
+  const glass=pose.painted?material(c,-6,-7,7,11,[[0,pose.warm?'#e8ba70':'#c6a47b'],[.48,pose.warm||pose.open?'#ffe9b0':'#ead2a4'],[1,'#b68e61']]):pose.warm?'#ffe1a1':pose.open ? '#f4d793' : '#d8b784';
+  box(c, -7, -7, 14, 18, 2, glass);
+  if(pose.painted){
+    // Two broad glass reflections, not a texture. They stay inside the glass
+    // and move with the exact same hand-held frame throughout the greeting.
+    path(c,p=>{p.moveTo(-5.7,-5.5);p.lineTo(-1.4,-6.1);p.lineTo(-4,8.4);p.lineTo(-5.7,8.4);p.closePath();},'#fff5d55c');
+    line(c,[[5.4,-3],[5.4,7]],'#fff1c978',.65);
+  }
+  line(c, [[-3, -6], [-3, 10]], pose.painted?'#f8e7bf9c':'#f8e7bf', .8); line(c, [[3, -6], [3, 10]], pose.painted?'#a98e768c':'#a98e76', .8);
   star(c, 0, 2, pose.open||pose.warm ? 4 : 3, '#fff0c4');
-  box(c, -11, -11, 22, 3, 1, '#d4b98e'); box(c, -9, 13, 18, 3, 1, '#c0a782');
+  const brass=pose.painted?material(c,-11,0,11,0,[[0,'#ab916d'],[.42,'#f0d7a7'],[1,'#b49a74']]):'#d4b98e';
+  box(c, -11, -11, 22, 3, 1, brass); box(c, -9, 13, 18, 3, 1, pose.painted?brass:'#c0a782');
   c.restore();
 }
 function tickets(c, pose) {
@@ -70,21 +84,33 @@ function tickets(c, pose) {
   }
   c.restore();
 }
+function mothWing(c){
+  c.moveTo(0,0);c.bezierCurveTo(15,-38,39,-35,28,-13);c.bezierCurveTo(23,-2,13,3,2,2);
+  c.bezierCurveTo(24,7,24,26,12,25);c.bezierCurveTo(5,24,0,13,0,0);
+}
 function moth(c, pose) {
   const wing = pose.reduced ? 0 : Math.sin(pose.time * 1.8) * .035;
   for (const side of [-1, 1]) {
     c.save(); c.scale(side, 1); c.translate(10, -49); c.rotate(wing + (pose.open ? -.04 : 0)-pose.salute*.07);c.scale(1+pose.salute*.055,1+pose.salute*.035);
-    path(c, p => { p.moveTo(0, 0); p.bezierCurveTo(15, -38, 39, -35, 28, -13); p.bezierCurveTo(23, -2, 13, 3, 2, 2); p.bezierCurveTo(24, 7, 24, 26, 12, 25); p.bezierCurveTo(5, 24, 0, 13, 0, 0); }, side < 0 ? '#d7bba1' : '#e5cfad', '#9b8291', 1.1);
-    line(c, [[3, -1], [24, -23], [11, -9], [29, -15]], '#b39794', .9);
-    line(c, [[3, 4], [13, 18], [12, 7]], '#b39794', .9);
-    line(c, [[19, -22], [22, -16], [26, -18]], '#f0ddbd', 1.5);
-    for (const [x, y] of [[18,-12],[12,14]]) ellipse(c, x, y, 2.4, 1.6, '#bb969f', -.3);
+    const membrane=pose.painted?material(c,0,16,29,-27,[[0,side<0?'#998998':'#b39c9a'],[.45,side<0?'#c9b5ad':'#dbc3ab'],[1,'#f0d9b2']]):side < 0 ? '#d7bba1' : '#e5cfad';
+    path(c,mothWing,membrane,pose.painted?'#978896':'#9b8291',1.1);
+    if(pose.painted){
+      path(c,p=>{p.moveTo(8,-15);p.bezierCurveTo(17,-31,31,-31,31,-21);},null,'#fff0d095',.8);
+      path(c,p=>{p.moveTo(6,7);p.quadraticCurveTo(21,14,15,22);},null,'#ead5ba75',.8);
+      path(c,p=>{p.moveTo(4,-3);p.quadraticCurveTo(15,-15,28,-16);},null,'#8d87944d',2.2);
+    }
+    line(c, [[3, -1], [24, -23], [11, -9], [29, -15]], pose.painted?'#9a87918a':'#b39794', .9);
+    line(c, [[3, 4], [13, 18], [12, 7]], pose.painted?'#96818d80':'#b39794', .9);
+    line(c, [[19, -22], [22, -16], [26, -18]], pose.painted?'#f5e4c978':'#f0ddbd', 1.5);
+    for (const [x, y] of [[18,-12],[12,14]]) ellipse(c, x, y, 2.4, 1.6, pose.painted?'#b08a9675':'#bb969f', -.3);
     c.restore();
   }
   line(c, [[-7,-12],[-8,-2],[-13,-1]], '#c9bbad', 3.3);
   line(c, [[7,-12],[8,-2],[13,-1]], '#c9bbad', 3.3);
-  path(c, p => { p.moveTo(-11,-49); p.quadraticCurveTo(0,-55,11,-49); p.quadraticCurveTo(19,-31,14,-10); p.quadraticCurveTo(0,-4,-14,-10); p.quadraticCurveTo(-18,-31,-11,-49); }, '#8c7799', '#67556f', 1.1);
-  for (const y of [-38, -27, -17]) path(c, p => { p.moveTo(-12,y); p.quadraticCurveTo(0,y+4,12,y); }, null, '#b99db4', 2);
+  const coat=pose.painted?material(c,-17,-30,16,-23,[[0,'#68667f'],[.42,'#9586a2'],[.78,'#b49aab'],[1,'#897489']]):'#8c7799';
+  path(c, p => { p.moveTo(-11,-49); p.quadraticCurveTo(0,-55,11,-49); p.quadraticCurveTo(19,-31,14,-10); p.quadraticCurveTo(0,-4,-14,-10); p.quadraticCurveTo(-18,-31,-11,-49); }, coat, pose.painted?'#625a73':'#67556f', 1.1);
+  if(pose.painted)path(c,p=>{p.moveTo(11,-45);p.quadraticCurveTo(16,-28,12.5,-13);},null,'#e3c5b366',1.15);
+  for (const y of [-38, -27, -17]) path(c, p => { p.moveTo(-12,y); p.quadraticCurveTo(0,y+4,12,y); }, null, pose.painted?'#ceb2be9c':'#b99db4', 2);
   line(c, [[-9,-43],[-11,-15]], '#d4b9bd', .7);
   for (const y of [-39,-33,-27,-21]) line(c, [[-11,y],[-9,y+1]], '#e4d2bd', .7);
   // Head and antennae tilt very slightly toward the light, without moving feet.
@@ -94,8 +120,15 @@ function moth(c, pose) {
     path(c, p => { p.moveTo(side*7,-79); p.quadraticCurveTo(side*7,-85,side*13,antennaTop); }, null, '#b3a0ac', 1.3);
     ellipse(c,side*13,antennaTop,2,2,'#e8d4b3');
   }
-  ellipse(c,0,-65,16.3,19,'#e8d4b1',0,'#a78d94');
-  path(c,p=>{p.moveTo(-13,-76);p.bezierCurveTo(-17,-84,-8,-88,-5,-81);p.bezierCurveTo(-3,-90,5,-90,6,-82);p.bezierCurveTo(13,-88,18,-82,13,-76);},'#f3e6cd','#b8a2a3',.9);
+  let face='#e8d4b1';
+  if(pose.painted){face=c.createRadialGradient(5,-73,2,1,-65,23);face.addColorStop(0,'#f9e9c8');face.addColorStop(.58,'#ead3b0');face.addColorStop(1,'#bda69d');}
+  ellipse(c,0,-65,16.3,19,face,0,pose.painted?'#a39599':'#a78d94');
+  if(pose.painted){
+    path(c,p=>{p.moveTo(9,-79);p.quadraticCurveTo(16,-72,14.5,-61);},null,'#fff0cd9c',.85);
+    path(c,p=>{p.moveTo(-12,-75);p.quadraticCurveTo(-17,-65,-11,-55);},null,'#8b97aa55',.9);
+  }
+  const fur=pose.painted?material(c,-8,-87,9,-75,[[0,'#f8ecd5'],[.5,'#f2e0be'],[1,'#d3bca5']]):'#f3e6cd';
+  path(c,p=>{p.moveTo(-13,-76);p.bezierCurveTo(-17,-84,-8,-88,-5,-81);p.bezierCurveTo(-3,-90,5,-90,6,-82);p.bezierCurveTo(13,-88,18,-82,13,-76);},fur,'#b8a2a3',.9);
   for (const side of [-1,1]) {
     ellipse(c,side*7.5,-65,6.6,7.3,null,0,'#806b80');
     if(pose.smile)path(c,p=>{p.moveTo(side*7.5-2.5,-64.5);p.quadraticCurveTo(side*7.5,-68,side*7.5+2.5,-64.5);},null,'#4f4358',1.4);
@@ -111,7 +144,11 @@ function moth(c, pose) {
   const propSway=pose.prop==='theatre-ticket'?0:pose.reduced?0:Math.sin(pose.time*1.45)*.8;
   const propX=pose.propX+propSway;
   const handY = -28 - pose.lift;
-  for (const side of [-1,1]) { line(c,[[side*12,-43],[side*17+propX*.55,handY+4],[side*10+propX,handY]],'#cab5a5',3.1); }
+  for (const side of [-1,1]) {
+    const arm=[[side*12,-43],[side*17+propX*.55,handY+4],[side*10+propX,handY]];
+    line(c,arm,pose.painted?'#b29d99':'#cab5a5',3.1);
+    if(pose.painted)line(c,arm,'#eed8b6bb',1.1);
+  }
   if(pose.prop==='theatre-ticket') tickets(c,pose); else lantern(c,pose);
   for(const side of [-1,1]) ellipse(c,side*11+propX,handY,2.6,3.2,'#ead7b5');
 }
@@ -235,6 +272,7 @@ export function drawStoryNPC(c,view,time=0,reducedMotion=false) {
   const notice=!!ticket&&greeting==='notice'&&ticket.fresh===true?progress*progress*(3-2*progress):0;
   const warm=!!ticket&&['held','returning','stowed'].includes(ticket.phase);
   const pose={time:t,reduced:!!reducedMotion,prop:view.prop,open,talking:!!view.talking,salute,warm,propX:salute*21,
+    painted:view.lighting==='painted-station'&&view.chapterIndex===0,
     smile:welcome&&!reducedMotion&&progress>.24&&progress<.81,
     gazeX:clamp((finite(look.x,x)-x)/140,-1,1),gazeY:clamp((finite(look.y,y-65)-(y-65))/100,-1.2,1.2),
     blink:!reducedMotion&&Math.sin(t*1.67+view.chapterIndex*.4)>.992,

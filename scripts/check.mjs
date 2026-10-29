@@ -18,7 +18,9 @@ for (const path of walk(dist)) {
   if (!['.html', '.js'].includes(extname(path))) continue;
   const content = readFileSync(path, 'utf8');
   const pattern = extname(path) === '.html' ? /\b(?:src|href)=["']([^"']+)["']/g : /\bfrom\s+["'](\.[^"']+)["']/g;
-  for (const [, value] of content.matchAll(pattern)) {
+  const matches=[...content.matchAll(pattern)];
+  if(extname(path)==='.js')matches.push(...content.matchAll(/\bnew\s+URL\(\s*["'](\.[^"']+)["']/g));
+  for (const [, value] of matches) {
     if (/^(?:[a-z]+:|\/\/|#)/i.test(value)) continue;
     const local = value.split(/[?#]/)[0];
     if (!local) continue;

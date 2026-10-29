@@ -1,0 +1,214 @@
+{
+  "files": 36,
+  "tests": 439,
+  "passedFiles": 36,
+  "results": [
+    {
+      "file": "tests/cap-activities.test.mjs",
+      "code": 0,
+      "tests": 8
+    },
+    {
+      "file": "tests/cap-activity-engine.test.mjs",
+      "code": 0,
+      "tests": 24
+    },
+    {
+      "file": "tests/cap-activity-growth.test.mjs",
+      "code": 0,
+      "tests": 4
+    },
+    {
+      "file": "tests/cap-activity-progress.test.mjs",
+      "code": 0,
+      "tests": 19
+    },
+    {
+      "file": "tests/cap-character-motion.test.mjs",
+      "code": 0,
+      "tests": 7
+    },
+    {
+      "file": "tests/cap-engine.test.mjs",
+      "code": 0,
+      "tests": 13
+    },
+    {
+      "file": "tests/cap-progress.test.mjs",
+      "code": 0,
+      "tests": 7
+    },
+    {
+      "file": "tests/cap-story.test.mjs",
+      "code": 0,
+      "tests": 8
+    },
+    {
+      "file": "tests/dream-awakening-engine.test.mjs",
+      "code": 0,
+      "tests": 17
+    },
+    {
+      "file": "tests/dream-awakenings.test.mjs",
+      "code": 0,
+      "tests": 6
+    },
+    {
+      "file": "tests/dream-direction-input.test.mjs",
+      "code": 0,
+      "tests": 7
+    },
+    {
+      "file": "tests/dream-encounter-engine.test.mjs",
+      "code": 0,
+      "tests": 9
+    },
+    {
+      "file": "tests/dream-encounters.test.mjs",
+      "code": 0,
+      "tests": 8
+    },
+    {
+      "file": "tests/dream-engine.test.mjs",
+      "code": 0,
+      "tests": 22
+    },
+    {
+      "file": "tests/dream-journey.test.mjs",
+      "code": 0,
+      "tests": 18
+    },
+    {
+      "file": "tests/dream-moon-play.test.mjs",
+      "code": 0,
+      "tests": 13
+    },
+    {
+      "file": "tests/dream-story.test.mjs",
+      "code": 0,
+      "tests": 12
+    },
+    {
+      "file": "tests/dream-ui.test.mjs",
+      "code": 0,
+      "tests": 8
+    },
+    {
+      "file": "tests/engine.test.mjs",
+      "code": 0,
+      "tests": 9
+    },
+    {
+      "file": "tests/festival-engine.test.mjs",
+      "code": 0,
+      "tests": 17
+    },
+    {
+      "file": "tests/festivals.test.mjs",
+      "code": 0,
+      "tests": 23
+    },
+    {
+      "file": "tests/first-ticket-engine.test.mjs",
+      "code": 0,
+      "tests": 15
+    },
+    {
+      "file": "tests/journey-engine.test.mjs",
+      "code": 0,
+      "tests": 15
+    },
+    {
+      "file": "tests/lost-cases.test.mjs",
+      "code": 0,
+      "tests": 13
+    },
+    {
+      "file": "tests/lost-encores.test.mjs",
+      "code": 0,
+      "tests": 6
+    },
+    {
+      "file": "tests/lost-engine.test.mjs",
+      "code": 0,
+      "tests": 21
+    },
+    {
+      "file": "tests/lost-evidence.test.mjs",
+      "code": 0,
+      "tests": 9
+    },
+    {
+      "file": "tests/lost-progress.test.mjs",
+      "code": 0,
+      "tests": 14
+    },
+    {
+      "file": "tests/moon-play-engine.test.mjs",
+      "code": 0,
+      "tests": 7
+    },
+    {
+      "file": "tests/painted-scene.test.mjs",
+      "code": 0,
+      "tests": 13
+    },
+    {
+      "file": "tests/painted-station-integration.test.mjs",
+      "code": 0,
+      "tests": 8
+    },
+    {
+      "file": "tests/play-rewards.test.mjs",
+      "code": 0,
+      "tests": 27
+    },
+    {
+      "file": "tests/progression.test.mjs",
+      "code": 0,
+      "tests": 11
+    },
+    {
+      "file": "tests/scene-backdrop-integration.test.mjs",
+      "code": 0,
+      "tests": 5
+    },
+    {
+      "file": "tests/station-finish.test.mjs",
+      "code": 0,
+      "tests": 9
+    },
+    {
+      "file": "tests/traveler-motion.test.mjs",
+      "code": 0,
+      "tests": 7
+    }
+  ],
+  "version": "16.0.0",
+  "runtimeBaseline": "a73c459ae10e839b89bb71577f51d9ab527e4f93",
+  "sourceBaseline": "cb5d13d7ac2ebdf249e9ee6494f73c155f3b0f52",
+  "staticChecks": {
+    "modules": 44,
+    "localReferences": 124,
+    "versionReferences": 158
+  },
+  "canvas": {
+    "checks": 73,
+    "fullFrames": 12,
+    "poseFixtures": 6,
+    "widths": [
+      1100,
+      320,
+      390
+    ],
+    "realTicketInput": true,
+    "browserQA": false
+  },
+  "productionPainting": {
+    "path": "dist/assets/station-painted-v16.webp",
+    "bytes": 266328,
+    "width": 2172,
+    "height": 724,
+    "sha256": "51406de059d3d092b0bf7c8f80f285f82dcc7fb17bcfbd77b5fcd000bb888fba"
+  }
+}
