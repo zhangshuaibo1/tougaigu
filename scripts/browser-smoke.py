@@ -510,6 +510,11 @@ async def sample_body_jump(page,label,pause=False,output=None,reduced_motion=Non
     """One real vertical Space jump from a naturally reached safe floor."""
     before=await page.evaluate('window.__qaRead()')
     assert before['form']=='body' and before['body']['grounded'] and abs(before['body']['vx'])<1
+    # Starting a chapter from a button can leave the hidden launcher focused.
+    # Keyboard controls intentionally ignore button targets, so put focus on
+    # the actual focusable canvas before issuing an ordinary player's jump.
+    await page.locator('#dream-canvas').focus()
+    await expect(page.locator('#dream-canvas')).to_be_focused()
     await page.keyboard.press('Space')
     rise=await await_traveler_pose(page,'rise',reduced_motion)
     paused_evidence=None
