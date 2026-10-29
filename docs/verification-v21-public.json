@@ -1,0 +1,126 @@
+{
+  "version": "21.0.0",
+  "dateUtc": "2026-10-29",
+  "sourceCommit": "843764926919d671c46e45485d546270e944dad4",
+  "candidateCodeCommit": "e467f3e4876310aa5cc144a35b8658b7f4c5bd2d",
+  "pagesCommit": "14cf1f168f0c2eae8b4aa8a01a266141d63784b4",
+  "candidateRun": 40822398455,
+  "pagesRun": 40823041823,
+  "publicRun": 40823002066,
+  "conclusions": {
+    "candidate": "success",
+    "pages": "success",
+    "public": "success"
+  },
+  "nodeTests": {
+    "passed": 513,
+    "failed": 0,
+    "jsModules": 53,
+    "localReferences": 140,
+    "versionedReferences": 185
+  },
+  "deployment": {
+    "sourceDistBlobs": 122,
+    "pagesRuntimeBlobs": 122,
+    "differences": 0,
+    "onlyExtra": ".nojekyll"
+  },
+  "browser": {
+    "candidate": [
+      {
+        "width": 1280,
+        "height": 800,
+        "version": "21.0.0",
+        "pageErrors": 0,
+        "httpErrors": 0
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "version": "21.0.0",
+        "pageErrors": 0,
+        "httpErrors": 0
+      },
+      {
+        "width": 320,
+        "height": 680,
+        "version": "21.0.0",
+        "pageErrors": 0,
+        "httpErrors": 0
+      }
+    ],
+    "public": [
+      {
+        "width": 1280,
+        "height": 800,
+        "version": "21.0.0",
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "noHorizontalOverflow": true
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "version": "21.0.0",
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "noHorizontalOverflow": true
+      },
+      {
+        "width": 320,
+        "height": 680,
+        "version": "21.0.0",
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "noHorizontalOverflow": true
+      }
+    ],
+    "firstRealPoem": {
+      "answer": "低头思故乡",
+      "lampLit": [
+        true,
+        false
+      ],
+      "lightAmounts": [
+        0.54,
+        0
+      ]
+    },
+    "secondRealPoem": {
+      "answer": "月亮",
+      "lampLit": [
+        true,
+        true
+      ],
+      "lightAmounts": [
+        1,
+        0.54
+      ]
+    },
+    "restartedBothLampsDark": true,
+    "pauseFrozen": true,
+    "stageCrossing": {
+      "keyboard": {
+        "noInputCarryWorldPx": 188.49,
+        "relativeDrift": 0
+      },
+      "touch390": {
+        "noInputCarryWorldPx": 183.03,
+        "relativeDrift": 0
+      },
+      "touch320": {
+        "noInputCarryWorldPx": 184.03,
+        "relativeDrift": 0
+      },
+      "noFalls": true,
+      "earnedBow": true,
+      "chapterCompletionNotForged": true
+    }
+  },
+  "limitations": [
+    "Browser CDP simulated touch, not physical Android/iOS",
+    "First stage + two lamps is not entire third-chapter completion",
+    "No Safari or low-end GPU physical benchmark",
+    "320px upper HUD feels dense"
+  ]
+}

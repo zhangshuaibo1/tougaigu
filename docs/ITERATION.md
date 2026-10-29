@@ -4,9 +4,9 @@
 
 用户授权持续设计、开发、部署、验证，直到明确要求停止。每轮从远端最新代码和验收记录接续，不依赖对话中的旧版本号。参考《马里奥》《愤怒的小鸟》《植物大战僵尸》的制作完成度，保留阿拾、拾光和原创世界身份。先把第一章做成可复用的可玩美术样板，不以概念图或文档代替代码。
 
-## 当前检查点：v21 借月剧场·双灯谢幕（候选通过，待发布核对）
+## 当前检查点：v21 借月剧场·双灯谢幕已正式发布并完成公网验收
 
-从已发布v20 main `6a38610ccde5ad57d8925041f6db2f19d17fd630` 承接，独立候选分支 `iteration-v21-theatre-double-lights-20261029` 的 `e467f3e4876310aa5cc144a35b8658b7f4c5bd2d` [候选CI 40822398455](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40822398455) **success**：513/513逻辑测试、53模块/140本地/185版本引用检查通过，1280键盘真正解两盏诗灯、390及320模拟触摸真正越过第一座移动台，三视口无HTTP/页面错误；跨台后短谢幕真实出现。后续发布与公网复验状态以 [QA-v21](QA-v21.md) 的最新补充为准；不应把候选通过当作已上线。
+从已发布v20 main `6a38610ccde5ad57d8925041f6db2f19d17fd630` 承接，独立候选分支 `iteration-v21-theatre-double-lights-20261029` 的 `e467f3e4876310aa5cc144a35b8658b7f4c5bd2d` [候选CI 40822398455](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40822398455) **success**：513/513逻辑测试、53模块/140本地/185版本引用检查通过，1280键盘真正解两盏诗灯、390及320模拟触摸真正越过第一座移动台，三视口无HTTP/页面错误；跨台后短谢幕真实出现。正式源代码和文档 `843764926919d671c46e45485d546270e944dad4` 已合入main；Pages `14cf1f168f0c2eae8b4aa8a01a266141d63784b4` [40823041823](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40823041823) success；main/公网[40823002066](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40823002066) success。源码dist 122个blob与gh-pages根目录逐一一致，仅额外保留.nojekyll；公开游戏三个视口都是真实21.0.0，无页面或HTTP错误，1280/390/320真实首台过河、双灯真实解题和小谢幕已验收。具体见[QA-v21](QA-v21.md)与[公网结构化摘要](verification-v21-public.json)。最新远端另有 `iteration-v22-theatre-painting-20261029` 分支在做工作；下一轮应先检查其远端SHA及相对v21 main的差异、CI，防止从旧v20基础覆盖v21发布。
 
 ### 下一轮优先：v22 借月剧场·演员与月影
 
