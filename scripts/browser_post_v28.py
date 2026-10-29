@@ -88,8 +88,18 @@ async def wait_board(page,driver):
  try:
   await page.wait_for_function("()=>window.__qaRead()?.body.platform==='last-stage'",timeout=3800)
  finally:await page.keyboard.up('ArrowRight')
+ # A real ArrowRight release does not instantly erase vx. Original physics
+ # brakes at 1650 px/s²; recording relative book offset before that decays
+ # misclassifies normal player travel as unwanted platform carry drift.
+ # Do not weaken the strict no-input drift assertions in ride_cycle().
+ await page.wait_for_function("""()=>{
+   const s=window.__qaRead();
+   return s?.form==='body'&&s.body?.grounded&&
+     s.body.platform==='last-stage'&&s.input.x===0&&Math.abs(s.body.vx)<.001;
+ }""",timeout=2400)
  s=await page.evaluate('window.__qaRead()')
  assert s['form']=='body' and s['body']['grounded'] and s['body']['platform']=='last-stage'
+ assert s['input']['x']==0 and abs(s['body']['vx'])<.001,'input not settled before measuring rider carry'
  return s
 async def ride_cycle(page):
  first=await page.evaluate('window.__qaRead()')
