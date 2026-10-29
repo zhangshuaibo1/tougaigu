@@ -1,0 +1,82 @@
+{
+  "status": "v26 not implemented; archived pre-change offline route evidence only",
+  "sourceCommit": "9b0f2cb565ed07ad6eadd4ca19fccb3b1c197043",
+  "runtimeCommit": "dd12ac6ba1211d6802632c8c763a6736c6914db7",
+  "imagesArchived": 4,
+  "originalCaptureCount": 69,
+  "reportsPreservedUnchanged": 3,
+  "pathChangeReplays": 1,
+  "files": [
+    {
+      "path": "desktop/route-report.json",
+      "bytes": 167210,
+      "sha256": "fd53bd98ea343fcaa01ca844787990570f5ec8b96796543996d24e90d4c90454"
+    },
+    {
+      "path": "explore-library.mjs",
+      "bytes": 10847,
+      "sha256": "4a6243eecbc5f31d12e60b7b7516b075ab7e06da7f699717a63517ee69e40bae"
+    },
+    {
+      "path": "images/desktop-book-a-upper.png",
+      "bytes": 241453,
+      "sha256": "59245963b1a25c057cecbccf25d3d704af52f2f7e1ad6b401955c632bbd95a5d",
+      "pixels": {
+        "width": 1100,
+        "height": 640
+      }
+    },
+    {
+      "path": "images/desktop-lanye-open.png",
+      "bytes": 238671,
+      "sha256": "a538aea2231d964e8754f46b6cd596bde7ea2cd1536fda1e7c0541fd9eb2c9f1",
+      "pixels": {
+        "width": 1100,
+        "height": 640
+      }
+    },
+    {
+      "path": "images/phone-320-book-b-lower.png",
+      "bytes": 84663,
+      "sha256": "51f84b8ca84b5d570510bab136e9b4a1aee2a85e6d61be4bd78981f6f2a281f5",
+      "pixels": {
+        "width": 320,
+        "height": 431
+      }
+    },
+    {
+      "path": "images/phone-320-lanye-open.png",
+      "bytes": 83571,
+      "sha256": "ab9c25d614a6d6613c764e025ba7c35a500c95ca8891d826d6c4006c5d8ab5c4",
+      "pixels": {
+        "width": 320,
+        "height": 431
+      }
+    },
+    {
+      "path": "phone-320/route-report.json",
+      "bytes": 167220,
+      "sha256": "6d4ed1244c336c3928e4f82c10de7a5620af894668cc3fc2a48c342396829f7f"
+    },
+    {
+      "path": "phone-390/route-report.json",
+      "bytes": 167224,
+      "sha256": "86684277d77455b57035beb18455655d1cc6545b066eb46aae3fa7943bf7b302"
+    },
+    {
+      "path": "replay-verification.json",
+      "bytes": 2083,
+      "sha256": "627d777dc3528046b411bf19a3b758832c0c6393343686b48744ffda48d8591d"
+    },
+    {
+      "path": "route-notes.md",
+      "bytes": 11743,
+      "sha256": "d0a80a9ec592f7636118bc6f4856f53c740e1548ebe5d868643b0e650c227735"
+    },
+    {
+      "path": "route-summary.json",
+      "bytes": 4746,
+      "sha256": "427fdeabc32b32625d8a3fbf3e3dd5b33bbe2a33971384ca5665d184e05dc32d"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "sourceTool": "built-in image_gen",
+  "sourceOutput": "/workspace/scratch/2b18af2db412/generated_images/exec-da5ae703-ff69-455c-a066-b1a66459d31d.png",
+  "productionEncoding": {
+    "format": "WebP",
+    "quality": 88,
+    "method": 6,
+    "resize": false,
+    "crop": false,
+    "colorEditing": false
+  },
+  "files": [
+    {
+      "path": "docs/art/library-v26/library-painted-original-v26.png",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGB",
+      "bytes": 2162301,
+      "sha256": "b0df1b05425543ebdc3d2a05ca8761ee03063a64fc2aa0fc44f2be597897f9da",
+      "sourcePrepPath": "/tmp/tougaigu-v26-art-prep/library-painted-original-v26.png"
+    },
+    {
+      "path": "docs/art/library-v26/library-painted-v26.webp",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGB",
+      "bytes": 178156,
+      "sha256": "6e32b91fc56890f6362590eb2bfe0ccd0858389aeeb5de5aac72b5cb02dcab03",
+      "sourcePrepPath": "/tmp/tougaigu-v26-art-prep/library-painted-v26.webp"
+    }
+  ],
+  "schemaVersion": 1,
+  "status": "archived-material-only",
+  "runtimeIntegrated": false,
+  "v26Published": false,
+  "archiveDirectory": "docs/art/library-v26",
+  "generationCount": 1,
+  "imageEditCount": 0,
+  "originalToolOutputPreserved": true,
+  "documents": {
+    "prompt": "docs/art/library-v26/prompt.txt",
+    "artNotes": "docs/art/library-v26/art-notes-v26.md",
+    "originalCropReport": "docs/art/library-v26/crop-report-v26.json",
+    "inspectionScript": "docs/art/library-v26/inspect-crops.mjs"
+  },
+  "inspectionScope": {
+    "gameCompositionPerformed": false,
+    "productionLayoutImplemented": false,
+    "previewImagesArchived": false,
+    "actualWarmWindowCentersXApprox": [
+      0.27,
+      0.77
+    ]
+  }
+}

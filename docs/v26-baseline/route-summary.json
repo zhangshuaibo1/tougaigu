@@ -1,0 +1,182 @@
+{
+  "scope": "Offline chapter-start fixture + genuine public engine inputs. Not browser unlock, save, touch or clock UI evidence.",
+  "routes": [
+    {
+      "viewport": {
+        "label": "desktop",
+        "width": 1100,
+        "height": 640
+      },
+      "status": "passed",
+      "updates": 3221,
+      "result": {
+        "chapterIndex": 3,
+        "time": 53.7,
+        "memories": 3,
+        "deaths": 0,
+        "mode": "story",
+        "festivalId": null,
+        "gifts": 3,
+        "stars": 3,
+        "update": 3220
+      },
+      "npcBodyX": 118.77900066082812,
+      "rides": [
+        {
+          "id": "book-a",
+          "x": 692.5,
+          "noInputFrames": 453,
+          "noInputSeconds": 7.55,
+          "minY": 368.0001556780866,
+          "maxY": 491.9999578254126,
+          "maxContactError": 0,
+          "maxRelativeXError": 0,
+          "lostAttachment": 0,
+          "upFrames": 229,
+          "downFrames": 224,
+          "topCaptured": true,
+          "bottomCaptured": true
+        },
+        {
+          "id": "book-b",
+          "x": 1440,
+          "noInputFrames": 512,
+          "noInputSeconds": 8.533333333333333,
+          "minY": 343.00085373339425,
+          "maxY": 486.999978258075,
+          "maxContactError": 0,
+          "maxRelativeXError": 0,
+          "lostAttachment": 0,
+          "upFrames": 255,
+          "downFrames": 257,
+          "topCaptured": true,
+          "bottomCaptured": true
+        }
+      ],
+      "report": "desktop/route-report.json"
+    },
+    {
+      "viewport": {
+        "label": "phone-390",
+        "width": 390,
+        "height": 595
+      },
+      "status": "passed",
+      "updates": 3221,
+      "result": {
+        "chapterIndex": 3,
+        "time": 53.7,
+        "memories": 3,
+        "deaths": 0,
+        "mode": "story",
+        "festivalId": null,
+        "gifts": 3,
+        "stars": 3,
+        "update": 3220
+      },
+      "npcBodyX": 118.77900066082812,
+      "rides": [
+        {
+          "id": "book-a",
+          "x": 692.5,
+          "noInputFrames": 453,
+          "noInputSeconds": 7.55,
+          "minY": 368.0001556780866,
+          "maxY": 491.9999578254126,
+          "maxContactError": 0,
+          "maxRelativeXError": 0,
+          "lostAttachment": 0,
+          "upFrames": 229,
+          "downFrames": 224,
+          "topCaptured": true,
+          "bottomCaptured": true
+        },
+        {
+          "id": "book-b",
+          "x": 1440,
+          "noInputFrames": 512,
+          "noInputSeconds": 8.533333333333333,
+          "minY": 343.00085373339425,
+          "maxY": 486.999978258075,
+          "maxContactError": 0,
+          "maxRelativeXError": 0,
+          "lostAttachment": 0,
+          "upFrames": 255,
+          "downFrames": 257,
+          "topCaptured": true,
+          "bottomCaptured": true
+        }
+      ],
+      "report": "phone-390/route-report.json"
+    },
+    {
+      "viewport": {
+        "label": "phone-320",
+        "width": 320,
+        "height": 431
+      },
+      "status": "passed",
+      "updates": 3221,
+      "result": {
+        "chapterIndex": 3,
+        "time": 53.7,
+        "memories": 3,
+        "deaths": 0,
+        "mode": "story",
+        "festivalId": null,
+        "gifts": 3,
+        "stars": 3,
+        "update": 3220
+      },
+      "npcBodyX": 118.77900066082812,
+      "rides": [
+        {
+          "id": "book-a",
+          "x": 692.5,
+          "noInputFrames": 453,
+          "noInputSeconds": 7.55,
+          "minY": 368.0001556780866,
+          "maxY": 491.9999578254126,
+          "maxContactError": 0,
+          "maxRelativeXError": 0,
+          "lostAttachment": 0,
+          "upFrames": 229,
+          "downFrames": 224,
+          "topCaptured": true,
+          "bottomCaptured": true
+        },
+        {
+          "id": "book-b",
+          "x": 1440,
+          "noInputFrames": 512,
+          "noInputSeconds": 8.533333333333333,
+          "minY": 343.00085373339425,
+          "maxY": 486.999978258075,
+          "maxContactError": 0,
+          "maxRelativeXError": 0,
+          "lostAttachment": 0,
+          "upFrames": 255,
+          "downFrames": 257,
+          "topCaptured": true,
+          "bottomCaptured": true
+        }
+      ],
+      "report": "phone-320/route-report.json"
+    }
+  ],
+  "baselinePngs": 69,
+  "archive": {
+    "v26Implemented": false,
+    "sourceCommit": "9b0f2cb565ed07ad6eadd4ca19fccb3b1c197043",
+    "runtimeCommit": "dd12ac6ba1211d6802632c8c763a6736c6914db7",
+    "reportsCopiedUnchanged": true,
+    "originalPngCount": 69,
+    "archivedPngCount": 4,
+    "images": [
+      "images/desktop-lanye-open.png",
+      "images/phone-320-lanye-open.png",
+      "images/desktop-book-a-upper.png",
+      "images/phone-320-book-b-lower.png"
+    ]
+  }
+}

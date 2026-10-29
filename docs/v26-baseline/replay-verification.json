@@ -1,0 +1,67 @@
+{
+  "replayCount": 1,
+  "viewport": "desktop",
+  "launchCwd": "/tmp",
+  "defaultCheckoutResolvedFromScript": true,
+  "outputRootArgumentAccepted": true,
+  "fullReportMatchesOriginal": true,
+  "archivedDesktopPngsMatchReplay": true,
+  "updates": 3221,
+  "result": {
+    "chapterIndex": 3,
+    "time": 53.7,
+    "memories": 3,
+    "deaths": 0,
+    "mode": "story",
+    "festivalId": null,
+    "gifts": 3,
+    "stars": 3,
+    "update": 3220
+  },
+  "sourceHashes": {
+    "dream-engine.js": "a5d6eae8a8348620922f9cc38541b81f9b7746355e09f1278569f76eae2212f3",
+    "dream-engine-base.js": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699",
+    "dream-levels.js": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0"
+  },
+  "unchangedOriginalReports": [
+    {
+      "file": "desktop/route-report.json",
+      "bytesPreserved": true,
+      "sha256": "fd53bd98ea343fcaa01ca844787990570f5ec8b96796543996d24e90d4c90454"
+    },
+    {
+      "file": "phone-390/route-report.json",
+      "bytesPreserved": true,
+      "sha256": "86684277d77455b57035beb18455655d1cc6545b066eb46aae3fa7943bf7b302"
+    },
+    {
+      "file": "phone-320/route-report.json",
+      "bytesPreserved": true,
+      "sha256": "6d4ed1244c336c3928e4f82c10de7a5620af894668cc3fc2a48c342396829f7f"
+    }
+  ],
+  "unchangedOriginalImages": [
+    {
+      "file": "images/desktop-lanye-open.png",
+      "bytesPreserved": true,
+      "sha256": "a538aea2231d964e8754f46b6cd596bde7ea2cd1536fda1e7c0541fd9eb2c9f1"
+    },
+    {
+      "file": "images/phone-320-lanye-open.png",
+      "bytesPreserved": true,
+      "sha256": "ab9c25d614a6d6613c764e025ba7c35a500c95ca8891d826d6c4006c5d8ab5c4"
+    },
+    {
+      "file": "images/desktop-book-a-upper.png",
+      "bytesPreserved": true,
+      "sha256": "59245963b1a25c057cecbccf25d3d704af52f2f7e1ad6b401955c632bbd95a5d"
+    },
+    {
+      "file": "images/phone-320-book-b-lower.png",
+      "bytesPreserved": true,
+      "sha256": "51f84b8ca84b5d570510bab136e9b4a1aee2a85e6d61be4bd78981f6f2a281f5"
+    }
+  ],
+  "browserEvidence": false,
+  "v26Implemented": false
+}

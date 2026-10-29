@@ -1,0 +1,142 @@
+{
+  "version": "25.0.0",
+  "title": "阿拾·稳稳落脚",
+  "sourceCommit": "9b0f2cb565ed07ad6eadd4ca19fccb3b1c197043",
+  "runtimeOriginCommit": "dd12ac6ba1211d6802632c8c763a6736c6914db7",
+  "pagesCommit": "e11fc55c6c02f91b76e6863aca0d5f61f265ca2f",
+  "sourceDistTree": "d1d9da13f42d49fde1e26e9538873469e77c8232",
+  "pagesTree": "3fcb2b8b1c346b9d7e2494104e1491f9b44428c0",
+  "runtimeBlobCount": 126,
+  "extraDeploymentBlobs": [
+    ".nojekyll"
+  ],
+  "ci": {
+    "candidate": 40847861569,
+    "pages": 40848602400,
+    "mainAndPublic": 40848605534,
+    "allConclusions": "success",
+    "testCount": 564
+  },
+  "artifact": {
+    "id": 12887160438,
+    "bytes": 125797486,
+    "zipSha256": "f0dfadb933bdde548956dcb3cceb1bb5539810b1252ed443fb37405187357f20",
+    "downloadedAndVerified": true,
+    "sourceCommitFileVerified": true
+  },
+  "publicReport": {
+    "path": "docs/verification-v25-public-full.json",
+    "bytes": 921202,
+    "sha256": "dd4641aa8f25bf921fe114818d0a70d3aaf99f5bcff9876a96f51084c8d86e1f",
+    "url": "https://zhangshuaibo1.github.io/tougaigu/?qa=9b0f2cb565ed07ad6eadd4ca19fccb3b1c197043"
+  },
+  "cases": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "version": "25.0.0",
+      "pageErrors": [],
+      "httpErrors": [],
+      "rafIntervalMs": {
+        "samples": 60,
+        "p50": 16.699999999999818,
+        "p95": 16.800000000000182
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "25.0.0",
+      "pageErrors": [],
+      "httpErrors": [],
+      "rafIntervalMs": {
+        "samples": 60,
+        "p50": 16.699999999999818,
+        "p95": 16.800000000000182
+      }
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "version": "25.0.0",
+      "pageErrors": [],
+      "httpErrors": [],
+      "rafIntervalMs": {
+        "samples": 60,
+        "p50": 16.699999999999818,
+        "p95": 16.700000000000273
+      }
+    }
+  ],
+  "images": [
+    {
+      "path": "docs/v25-live-desktop.png",
+      "artifactPath": "live/1280-keyboard-theatre-midstage.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1069691,
+      "sha256": "ef21c38205fe728bb93d266bbd17c27fa88cfec317851229d23feb045ff93fcd"
+    },
+    {
+      "path": "docs/v25-live-390.png",
+      "artifactPath": "live/1280-touch-390-theatre-midstage.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 312302,
+      "sha256": "9505496811b58efa7d6dac8def3537a7ae15c1f9dc46306bb21f7eb3dc0a863f"
+    },
+    {
+      "path": "docs/v25-live-320.png",
+      "artifactPath": "live/1280-touch-320-theatre-midstage.png",
+      "width": 320,
+      "height": 680,
+      "bytes": 220740,
+      "sha256": "1e0f0aed698892c3029dc8d71a104d8e85f2c333e0cdd76e4311e847f3e8b90d"
+    },
+    {
+      "path": "docs/v25-live-airborne.png",
+      "artifactPath": "live/1280-traveler-airborne-canvas.png",
+      "width": 1280,
+      "height": 677,
+      "bytes": 1514722,
+      "sha256": "0fcf1d322df60dceb9ba67d0fc6c79b06f90dd0b69ea5262555f5af8a6034aeb"
+    },
+    {
+      "path": "docs/v25-live-portrait-pending.png",
+      "artifactPath": "live/1280-portrait-slow-current-pending.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 254951,
+      "sha256": "012979c1cc84da4ff54df3e742f8dcd66b65a5fb28e289a5ef36c6133c2ca7aa"
+    },
+    {
+      "path": "docs/v25-live-portrait-ready.png",
+      "artifactPath": "live/1280-portrait-slow-current-settled.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 281004,
+      "sha256": "12a67ef6dd047bcac871103bb9b7da551c25fd8a13afabc6f2ae9d47475c1e71"
+    },
+    {
+      "path": "docs/v25-live-outro.png",
+      "artifactPath": "live/1280-keyboard-theatre-outro-3-decoded.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 286402,
+      "sha256": "25e4a1cc26d7bd319fb0a2a0ab53904474f56c8cab1749d0733e7d062a0f7011"
+    }
+  ],
+  "scopeNotes": [
+    "Chromium 390/320 viewports and CDP touch are emulation, not physical phones or Safari.",
+    "Third-chapter desktop completion is separate from the phone-sized first-stage crossings.",
+    "Airborne PNG is the original frozen Canvas export, without the pause-modal backdrop blur.",
+    "The 60 RAF-interval observations are taken in chapter one, not a whole-game performance benchmark.",
+    "Prepared v26 background and offline baseline are documentation assets only; v26 is not implemented or deployed."
+  ]
+}

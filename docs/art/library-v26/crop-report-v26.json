@@ -1,0 +1,192 @@
+{
+  "purpose": "Unmodified background crop/resize inspection; no game state, gameplay objects or HUD. Not a browser/device test.",
+  "productionLayoutImplemented": false,
+  "source": "library-painted-v26.webp",
+  "sourcePixels": {
+    "width": 2172,
+    "height": 724
+  },
+  "previewLayout": {
+    "width": 2400,
+    "height": 800,
+    "y": -52
+  },
+  "note": "Canvas heights reuse prior offline review sizes only. Fractions sample the image itself, not the actual game camera/parallax mapping.",
+  "crops": [
+    {
+      "file": "desktop-left.png",
+      "width": 1100,
+      "height": 640,
+      "position": "left",
+      "scale": 1,
+      "viewWidth": 1100,
+      "horizontalOffset": 0,
+      "sourceRect": {
+        "x": 0,
+        "y": 47.06,
+        "width": 995.5,
+        "height": 579.2
+      }
+    },
+    {
+      "file": "desktop-middle.png",
+      "width": 1100,
+      "height": 640,
+      "position": "middle",
+      "scale": 1,
+      "viewWidth": 1100,
+      "horizontalOffset": 650,
+      "sourceRect": {
+        "x": 588.25,
+        "y": 47.06,
+        "width": 995.5,
+        "height": 579.2
+      }
+    },
+    {
+      "file": "desktop-right.png",
+      "width": 1100,
+      "height": 640,
+      "position": "right",
+      "scale": 1,
+      "viewWidth": 1100,
+      "horizontalOffset": 1300,
+      "sourceRect": {
+        "x": 1176.5,
+        "y": 47.06,
+        "width": 995.5,
+        "height": 579.2
+      }
+    },
+    {
+      "file": "phone-390-left.png",
+      "width": 390,
+      "height": 595,
+      "position": "left",
+      "scale": 0.9296875,
+      "viewWidth": 419.4957983193277,
+      "horizontalOffset": 0,
+      "sourceRect": {
+        "x": 0,
+        "y": 47.06,
+        "width": 379.64369747899156,
+        "height": 579.2
+      }
+    },
+    {
+      "file": "phone-390-middle.png",
+      "width": 390,
+      "height": 595,
+      "position": "middle",
+      "scale": 0.9296875,
+      "viewWidth": 419.4957983193277,
+      "horizontalOffset": 990.2521008403362,
+      "sourceRect": {
+        "x": 896.1781512605043,
+        "y": 47.06,
+        "width": 379.64369747899156,
+        "height": 579.2
+      }
+    },
+    {
+      "file": "phone-390-right.png",
+      "width": 390,
+      "height": 595,
+      "position": "right",
+      "scale": 0.9296875,
+      "viewWidth": 419.4957983193277,
+      "horizontalOffset": 1980.5042016806724,
+      "sourceRect": {
+        "x": 1792.3563025210085,
+        "y": 47.06,
+        "width": 379.64369747899156,
+        "height": 579.2
+      }
+    },
+    {
+      "file": "phone-390-paper-window-1.png",
+      "width": 390,
+      "height": 595,
+      "position": "paper-window-1",
+      "approximateSourceCenterX": 0.27,
+      "scale": 0.9296875,
+      "viewWidth": 419.4957983193277,
+      "horizontalOffset": 438.25210084033614
+    },
+    {
+      "file": "phone-390-paper-window-2.png",
+      "width": 390,
+      "height": 595,
+      "position": "paper-window-2",
+      "approximateSourceCenterX": 0.77,
+      "scale": 0.9296875,
+      "viewWidth": 419.4957983193277,
+      "horizontalOffset": 1638.2521008403362
+    },
+    {
+      "file": "phone-320-left.png",
+      "width": 320,
+      "height": 431,
+      "position": "left",
+      "scale": 0.6734375,
+      "viewWidth": 475.17401392111367,
+      "horizontalOffset": 0,
+      "sourceRect": {
+        "x": 0,
+        "y": 47.06,
+        "width": 430.0324825986078,
+        "height": 579.2
+      }
+    },
+    {
+      "file": "phone-320-middle.png",
+      "width": 320,
+      "height": 431,
+      "position": "middle",
+      "scale": 0.6734375,
+      "viewWidth": 475.17401392111367,
+      "horizontalOffset": 962.4129930394431,
+      "sourceRect": {
+        "x": 870.983758700696,
+        "y": 47.06,
+        "width": 430.0324825986078,
+        "height": 579.2
+      }
+    },
+    {
+      "file": "phone-320-right.png",
+      "width": 320,
+      "height": 431,
+      "position": "right",
+      "scale": 0.6734375,
+      "viewWidth": 475.17401392111367,
+      "horizontalOffset": 1924.8259860788862,
+      "sourceRect": {
+        "x": 1741.967517401392,
+        "y": 47.06,
+        "width": 430.0324825986078,
+        "height": 579.2
+      }
+    },
+    {
+      "file": "phone-320-paper-window-1.png",
+      "width": 320,
+      "height": 431,
+      "position": "paper-window-1",
+      "approximateSourceCenterX": 0.27,
+      "scale": 0.6734375,
+      "viewWidth": 475.17401392111367,
+      "horizontalOffset": 410.41299303944317
+    },
+    {
+      "file": "phone-320-paper-window-2.png",
+      "width": 320,
+      "height": 431,
+      "position": "paper-window-2",
+      "approximateSourceCenterX": 0.77,
+      "scale": 0.6734375,
+      "viewWidth": 475.17401392111367,
+      "horizontalOffset": 1610.412993039443
+    }
+  ]
+}

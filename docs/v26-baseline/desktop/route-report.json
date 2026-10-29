@@ -1,0 +1,7388 @@
+{
+  "status": "passed",
+  "sourceRoot": "/workspace/scratch/2b18af2db412/tougaigu-v25",
+  "viewport": {
+    "label": "desktop",
+    "width": 1100,
+    "height": 640
+  },
+  "scope": "Offline actual engine inputs after explicit chapterIndex:3 start fixture. Not browser unlock, HUD, touch, save or clock-choice verification.",
+  "mutations": "Only public start, setInput, jump, toggleSoul, recall, interact, pulse, resolveTalk and resolvePuzzle controls; fixed-step update and render. No body/soul/lantern/save assignments.",
+  "sourceHashes": {
+    "dream-engine.js": "a5d6eae8a8348620922f9cc38541b81f9b7746355e09f1278569f76eae2212f3",
+    "dream-engine-base.js": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699",
+    "dream-levels.js": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0"
+  },
+  "actions": [
+    {
+      "name": "start",
+      "args": [
+        {
+          "chapterIndex": 3,
+          "sound": false
+        }
+      ],
+      "result": null,
+      "before": {
+        "form": "body"
+      },
+      "update": 0
+    },
+    {
+      "name": "walk-feedback",
+      "target": 120,
+      "rule": "setInput.x=clamp((target-body.x)/35,-1,1), then brake to zero",
+      "before": {
+        "update": 30,
+        "time": 0.49999999999999994,
+        "state": "playing",
+        "form": "body",
+        "body": {
+          "x": 105,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": null,
+          "invulnerable": 0.4999999999999985,
+          "walk": 0,
+          "land": 0
+        },
+        "soul": {
+          "x": 105,
+          "y": 502,
+          "vx": 0,
+          "vy": 0
+        },
+        "energy": 100,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 455.56388846809233,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 454.7611543242229,
+            "dx": 0,
+            "dy": 0.8027341438694293
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 485.5040401641253,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 485.68103605356595,
+            "dx": 0,
+            "dy": -0.17699588944066136
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": false,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": false,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": false
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": false
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 0.49999999999999994,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1619.1468980700108,
+            "py": 521.7317678784632
+          }
+        ],
+        "checkpoint": {
+          "x": 105,
+          "y": 560,
+          "index": -1
+        },
+        "camera": 0,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": true,
+          "talking": false,
+          "talked": false,
+          "seals": 0,
+          "form": "body",
+          "look": {
+            "x": 105,
+            "y": 525
+          },
+          "capOpen": 0,
+          "stationTicket": null
+        },
+        "nearHint": "Q：与蓝页聊一聊",
+        "gateOpen": false
+      }
+    },
+    {
+      "name": "interact",
+      "args": [],
+      "result": true,
+      "before": {
+        "time": 1.0333333333333345,
+        "x": 118.77900066082812,
+        "y": 560,
+        "form": "body"
+      },
+      "update": 62
+    },
+    {
+      "name": "resolveTalk",
+      "args": [],
+      "result": true,
+      "before": {
+        "time": 1.0333333333333345,
+        "x": 118.77900066082812,
+        "y": 560,
+        "form": "body"
+      },
+      "update": 62
+    },
+    {
+      "name": "toggleSoul",
+      "args": [],
+      "result": true,
+      "before": {
+        "time": 1.0333333333333345,
+        "x": 118.77900066082812,
+        "y": 560,
+        "form": "body"
+      },
+      "update": 62
+    },
+    {
+      "name": "recall",
+      "args": [],
+      "result": true,
+      "before": {
+        "time": 1.6999999999999988,
+        "x": 118.77900066082812,
+        "y": 560,
+        "form": "soul"
+      },
+      "update": 102
+    },
+    {
+      "name": "walk-feedback",
+      "target": 692.5,
+      "rule": "setInput.x=clamp((target-body.x)/35,-1,1), then brake to zero",
+      "before": {
+        "update": 162,
+        "time": 2.6999999999999953,
+        "state": "playing",
+        "form": "body",
+        "body": {
+          "x": 118.77900066082812,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": null,
+          "invulnerable": 0,
+          "walk": 0.681072617949974,
+          "land": 0
+        },
+        "soul": {
+          "x": 118.77900066082812,
+          "y": 473.24077880353985,
+          "vx": 0,
+          "vy": 0
+        },
+        "energy": 100,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 476.43968994061265,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 477.0169407083034,
+            "dx": 0,
+            "dy": -0.5772507676907708
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 394.86673455176134,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 395.7323823398851,
+            "dx": 0,
+            "dy": -0.8656477881237379
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": false,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": false,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": false
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": false
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 2.6999999999999953,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1638.773667641504,
+            "py": 508.81788409955203
+          }
+        ],
+        "checkpoint": {
+          "x": 105,
+          "y": 560,
+          "index": -1
+        },
+        "camera": 0,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": true,
+          "talking": false,
+          "talked": true,
+          "seals": 0,
+          "form": "body",
+          "look": {
+            "x": 118.77900066082812,
+            "y": 525
+          },
+          "capOpen": 0,
+          "stationTicket": null
+        },
+        "nearHint": "Q：与蓝页聊一聊",
+        "gateOpen": false
+      }
+    },
+    {
+      "name": "jump",
+      "args": [],
+      "result": true,
+      "before": {
+        "time": 8.45,
+        "x": 691.2458738351564,
+        "y": 560,
+        "form": "body"
+      },
+      "update": 507
+    },
+    {
+      "name": "toggleSoul",
+      "args": [],
+      "result": true,
+      "before": {
+        "time": 16.75000000000033,
+        "x": 691.2458738351564,
+        "y": 491.68819330072245,
+        "form": "body"
+      },
+      "update": 1005
+    },
+    {
+      "name": "fly-feedback",
+      "target": {
+        "x": 375,
+        "y": 420
+      },
+      "rule": "setInput axes from soul-target error, offset by actual authored wind / soulSpeed",
+      "before": {
+        "update": 1030,
+        "time": 17.166666666666973,
+        "state": "playing",
+        "form": "soul",
+        "body": {
+          "x": 691.2458738351564,
+          "y": 485.7058075879207,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": "book-a",
+          "invulnerable": 0,
+          "walk": 29.296325140118956,
+          "land": 0
+        },
+        "soul": {
+          "x": 691.2458738351564,
+          "y": 405.07279809964007,
+          "vx": 0,
+          "vy": -1.349698406517567
+        },
+        "energy": 98.20833333333319,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 485.7058075879207,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 486.0858045083433,
+            "dx": 0,
+            "dy": -0.3799969204226272
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 486.31715580511553,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 486.43523834866494,
+            "dx": 0,
+            "dy": -0.11808254354940573
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": false,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": false,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": false
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": false
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 17.166666666666973,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1602.9600568330916,
+            "py": 516.77850132524
+          }
+        ],
+        "checkpoint": {
+          "x": 570,
+          "y": 560,
+          "index": 0
+        },
+        "camera": 218.2458738351563,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 0,
+          "form": "soul",
+          "look": {
+            "x": 691.2458738351564,
+            "y": 450.7058075879207
+          },
+          "capOpen": 0.9730495812319545,
+          "stationTicket": null
+        },
+        "nearHint": "WASD / 方向键飞行 · E 回到身体",
+        "gateOpen": false
+      }
+    },
+    {
+      "name": "fly-feedback",
+      "target": {
+        "x": 990,
+        "y": 270
+      },
+      "rule": "setInput axes from soul-target error, offset by actual authored wind / soulSpeed",
+      "before": {
+        "update": 1104,
+        "time": 18.400000000000237,
+        "state": "playing",
+        "form": "soul",
+        "body": {
+          "x": 691.2458738351564,
+          "y": 434.2104794937221,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": "book-a",
+          "invulnerable": 0,
+          "walk": 29.296325140118956,
+          "land": 0
+        },
+        "soul": {
+          "x": 368.6879586719353,
+          "y": 419.9805363540277,
+          "vx": -54.644065880303955,
+          "vy": -0.8450920027580973
+        },
+        "energy": 98.92499999999991,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 434.2104794937221,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 435.0863332801966,
+            "dx": 0,
+            "dy": -0.8758537864744653
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 450.02070559746227,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 450.8043124471217,
+            "dx": 0,
+            "dy": -0.7836068496594066
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": false,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": false,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": true
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": false
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 18.400000000000237,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1512.2639250699622,
+            "py": 508.73780389159714
+          }
+        ],
+        "checkpoint": {
+          "x": 570,
+          "y": 560,
+          "index": 0
+        },
+        "camera": 3.748786563619417,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 0,
+          "form": "soul",
+          "look": {
+            "x": 691.2458738351564,
+            "y": 399.2104794937221
+          },
+          "capOpen": 1,
+          "stationTicket": null
+        },
+        "nearHint": "WASD / 方向键飞行 · E 回到身体",
+        "gateOpen": false
+      }
+    },
+    {
+      "name": "fly-feedback",
+      "target": {
+        "x": 835,
+        "y": 205
+      },
+      "rule": "setInput axes from soul-target error, offset by actual authored wind / soulSpeed",
+      "before": {
+        "update": 1244,
+        "time": 20.733333333333437,
+        "state": "playing",
+        "form": "soul",
+        "body": {
+          "x": 691.2458738351564,
+          "y": 371.6443893074828,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": "book-a",
+          "invulnerable": 0,
+          "walk": 29.296325140118956,
+          "land": 0
+        },
+        "soul": {
+          "x": 997.0111045360164,
+          "y": 269.98780562940414,
+          "vx": 45.888248153133155,
+          "vy": -0.24321530402049726
+        },
+        "energy": 98.85333333333324,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 371.6443893074828,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 371.3535579075287,
+            "dx": 0,
+            "dy": 0.2908313999541292
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 346.8560636578071,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 347.1519621394863,
+            "dx": 0,
+            "dy": -0.2958984816791599
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": false,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": false,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": true
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": true
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 20.733333333333437,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1563.0419489504848,
+            "py": 510.3129817090292
+          }
+        ],
+        "checkpoint": {
+          "x": 570,
+          "y": 560,
+          "index": 0
+        },
+        "camera": 497.8128473111397,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 0,
+          "form": "soul",
+          "look": {
+            "x": 691.2458738351564,
+            "y": 336.6443893074828
+          },
+          "capOpen": 1,
+          "stationTicket": null
+        },
+        "nearHint": "WASD / 方向键飞行 · E 回到身体",
+        "gateOpen": false
+      }
+    },
+    {
+      "name": "pulse",
+      "args": [],
+      "result": true,
+      "before": {
+        "time": 21.58333333333339,
+        "x": 691.2458738351564,
+        "y": 400.07327656271127,
+        "form": "soul"
+      },
+      "update": 1295
+    },
+    {
+      "name": "resolvePuzzle",
+      "args": [
+        true
+      ],
+      "result": true,
+      "before": {
+        "time": 21.58333333333339,
+        "x": 691.2458738351564,
+        "y": 400.07327656271127,
+        "form": "soul"
+      },
+      "update": 1295
+    },
+    {
+      "name": "recall",
+      "args": [],
+      "result": true,
+      "before": {
+        "time": 21.58333333333339,
+        "x": 691.2458738351564,
+        "y": 400.07327656271127,
+        "form": "soul"
+      },
+      "update": 1295
+    },
+    {
+      "name": "walk-feedback",
+      "target": 1245,
+      "rule": "setInput.x=clamp((target-body.x)/35,-1,1), then brake to zero",
+      "before": {
+        "update": 1355,
+        "time": 22.583333333333332,
+        "state": "playing",
+        "form": "body",
+        "body": {
+          "x": 691.2458738351564,
+          "y": 451.0427095960761,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": "book-a",
+          "invulnerable": 0,
+          "walk": 29.296325140118956,
+          "land": 0
+        },
+        "soul": {
+          "x": 829.6221948696043,
+          "y": 201.47663765181517,
+          "vx": 0,
+          "vy": 0
+        },
+        "energy": 100,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 451.0427095960761,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 450.2144278787232,
+            "dx": 0,
+            "dy": 0.8282817173529224
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 379.7221234144029,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 378.9403347850528,
+            "dx": 0,
+            "dy": 0.7817886293501033
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": true,
+            "glow": 0.5999999999999974
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": false,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": true
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": true
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 22.583333333333332,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1669.5911675944983,
+            "py": 522.4100931023683
+          }
+        ],
+        "checkpoint": {
+          "x": 570,
+          "y": 560,
+          "index": 0
+        },
+        "camera": 218.75561916246343,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 1,
+          "form": "body",
+          "look": {
+            "x": 691.2458738351564,
+            "y": 416.0427095960761
+          },
+          "capOpen": 0,
+          "stationTicket": null
+        },
+        "nearHint": "",
+        "gateOpen": true
+      }
+    },
+    {
+      "name": "walk-feedback",
+      "target": 1440,
+      "rule": "setInput.x=clamp((target-body.x)/35,-1,1), then brake to zero",
+      "before": {
+        "update": 1526,
+        "time": 25.43333333333317,
+        "state": "playing",
+        "form": "body",
+        "body": {
+          "x": 1243.7446232641423,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": null,
+          "invulnerable": 0,
+          "walk": 56.91316340682108,
+          "land": 0
+        },
+        "soul": {
+          "x": 829.6221948696043,
+          "y": 201.47663765181517,
+          "vx": 0,
+          "vy": 0
+        },
+        "energy": 100,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 452.58280078892176,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 453.39850411186336,
+            "dx": 0,
+            "dy": -0.8157033229416015
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 486.892517189237,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 486.9360578796431,
+            "dx": 0,
+            "dy": -0.043540690406075555
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": true,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": false,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": true
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": true
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 25.43333333333317,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1509.5648815391246,
+            "py": 519.5249555784461
+          }
+        ],
+        "checkpoint": {
+          "x": 570,
+          "y": 560,
+          "index": 0
+        },
+        "camera": 767.4653288760212,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 1,
+          "form": "body",
+          "look": {
+            "x": 1243.7446232641423,
+            "y": 525
+          },
+          "capOpen": 0,
+          "stationTicket": null
+        },
+        "nearHint": "",
+        "gateOpen": true
+      }
+    },
+    {
+      "name": "jump",
+      "args": [],
+      "result": true,
+      "before": {
+        "time": 32.899999999999416,
+        "x": 1438.8012025637067,
+        "y": 560,
+        "form": "body"
+      },
+      "update": 1974
+    },
+    {
+      "name": "toggleSoul",
+      "args": [],
+      "result": true,
+      "before": {
+        "time": 42.166666666665556,
+        "x": 1438.8012025637067,
+        "y": 486.9472614269312,
+        "form": "body"
+      },
+      "update": 2530
+    },
+    {
+      "name": "fly-feedback",
+      "target": {
+        "x": 1590,
+        "y": 320
+      },
+      "rule": "setInput axes from soul-target error, offset by actual authored wind / soulSpeed",
+      "before": {
+        "update": 2555,
+        "time": 42.5833333333322,
+        "state": "playing",
+        "form": "soul",
+        "body": {
+          "x": 1438.8012025637067,
+          "y": 482.6156284383246,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": "book-b",
+          "invulnerable": 0,
+          "walk": 66.6582581947911,
+          "land": 0
+        },
+        "soul": {
+          "x": 1424.5858348854383,
+          "y": 370.71651689612327,
+          "vx": -45.840482549571895,
+          "vy": -96.85070371812569
+        },
+        "energy": 98.20833333333319,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 368.14126464722005,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 368.0882157753055,
+            "dx": 0,
+            "dy": 0.053048871914540996
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 482.6156284383246,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 482.91960293529746,
+            "dx": 0,
+            "dy": -0.30397449697284173
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": true,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": false,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": true
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": true
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 42.5833333333322,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1632.723557412597,
+            "py": 512.3044795271503
+          }
+        ],
+        "checkpoint": {
+          "x": 1280,
+          "y": 560,
+          "index": 1
+        },
+        "camera": 957.6308135352799,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 1,
+          "form": "soul",
+          "look": {
+            "x": 1438.8012025637067,
+            "y": 447.6156284383246
+          },
+          "capOpen": 0.9730495812319545,
+          "stationTicket": null
+        },
+        "nearHint": "WASD / 方向键飞行 · E 回到身体",
+        "gateOpen": true
+      }
+    },
+    {
+      "name": "fly-feedback",
+      "target": {
+        "x": 1830,
+        "y": 200
+      },
+      "rule": "setInput axes from soul-target error, offset by actual authored wind / soulSpeed",
+      "before": {
+        "update": 2609,
+        "time": 43.48333333333215,
+        "state": "playing",
+        "form": "soul",
+        "body": {
+          "x": 1438.8012025637067,
+          "y": 452.3272839902425,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": "book-b",
+          "invulnerable": 0,
+          "walk": 66.6582581947911,
+          "land": 0
+        },
+        "soul": {
+          "x": 1594.8198445000085,
+          "y": 318.15783005151667,
+          "vx": 47.33764553357683,
+          "vy": 11.523945645812042
+        },
+        "energy": 94.33833333333287,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 388.2730299050231,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 387.6275986092084,
+            "dx": 0,
+            "dy": 0.645431295814717
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 452.3272839902425,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 453.09395340069597,
+            "dx": 0,
+            "dy": -0.7666694104534599
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": true,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": false,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": true
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": true
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 43.48333333333215,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1669.1822317824617,
+            "py": 508.27720420426255
+          }
+        ],
+        "checkpoint": {
+          "x": 1280,
+          "y": 560,
+          "index": 1
+        },
+        "camera": 1099.4160247482223,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 1,
+          "form": "soul",
+          "look": {
+            "x": 1438.8012025637067,
+            "y": 417.3272839902425
+          },
+          "capOpen": 1,
+          "stationTicket": null
+        },
+        "nearHint": "空格：共鸣让影子与钟摆暂停",
+        "gateOpen": true
+      }
+    },
+    {
+      "name": "pulse",
+      "args": [],
+      "result": true,
+      "before": {
+        "time": 44.68333333333208,
+        "x": 1438.8012025637067,
+        "y": 389.97478920051174,
+        "form": "soul"
+      },
+      "update": 2681
+    },
+    {
+      "name": "resolvePuzzle",
+      "args": [
+        true
+      ],
+      "result": true,
+      "before": {
+        "time": 44.68333333333208,
+        "x": 1438.8012025637067,
+        "y": 389.97478920051174,
+        "form": "soul"
+      },
+      "update": 2681
+    },
+    {
+      "name": "fly-feedback",
+      "target": {
+        "x": 1600,
+        "y": 410
+      },
+      "rule": "setInput axes from soul-target error, offset by actual authored wind / soulSpeed",
+      "before": {
+        "update": 2681,
+        "time": 44.68333333333208,
+        "state": "playing",
+        "form": "soul",
+        "body": {
+          "x": 1438.8012025637067,
+          "y": 389.97478920051174,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": "book-b",
+          "invulnerable": 0,
+          "walk": 66.6582581947911,
+          "land": 0
+        },
+        "soul": {
+          "x": 1834.9839591895677,
+          "y": 198.6823331867934,
+          "vx": 0,
+          "vy": 0
+        },
+        "energy": 100,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 447.23660052111416,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 446.39119121138856,
+            "dx": 0,
+            "dy": 0.8454093097255964
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 389.97478920051174,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 390.8206101364294,
+            "dx": 0,
+            "dy": -0.8458209359176863
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": true,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": true,
+            "glow": 1
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": true
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": true
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 44.68333333333208,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1632.710160366142,
+            "py": 522.8863987822756
+          }
+        ],
+        "checkpoint": {
+          "x": 1280,
+          "y": 560,
+          "index": 1
+        },
+        "camera": 1238.7448827451808,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 2,
+          "form": "soul",
+          "look": {
+            "x": 1438.8012025637067,
+            "y": 354.97478920051174
+          },
+          "capOpen": 1,
+          "stationTicket": null
+        },
+        "nearHint": "WASD / 方向键飞行 · E 回到身体",
+        "gateOpen": true
+      }
+    },
+    {
+      "name": "pulse",
+      "args": [],
+      "result": true,
+      "before": {
+        "time": 46.16666666666533,
+        "x": 1438.8012025637067,
+        "y": 343.38392576520164,
+        "form": "soul"
+      },
+      "update": 2770
+    },
+    {
+      "name": "recall",
+      "args": [],
+      "result": true,
+      "before": {
+        "time": 46.16666666666533,
+        "x": 1438.8012025637067,
+        "y": 343.38392576520164,
+        "form": "soul"
+      },
+      "update": 2770
+    },
+    {
+      "name": "walk-feedback",
+      "target": 1750,
+      "rule": "setInput.x=clamp((target-body.x)/35,-1,1), then brake to zero",
+      "before": {
+        "update": 2820,
+        "time": 46.999999999998614,
+        "state": "playing",
+        "form": "body",
+        "body": {
+          "x": 1438.8012025637067,
+          "y": 352.577370710046,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": "book-b",
+          "invulnerable": 0,
+          "walk": 66.6582581947911,
+          "land": 0
+        },
+        "soul": {
+          "x": 1596.514747603999,
+          "y": 413.5736313118322,
+          "vx": 0,
+          "vy": 0
+        },
+        "energy": 100,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 478.2059283464341,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 478.7534252083097,
+            "dx": 0,
+            "dy": -0.5474968618755724
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 352.577370710046,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 352.13375196070604,
+            "dx": 0,
+            "dy": 0.4436187493399757
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": true,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": true,
+            "glow": 0.07333333333333086
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": true
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": true
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 46.16666666666533,
+            "frozen": 3.6666666666666696,
+            "hitCooldown": 0,
+            "px": 1521.3830588696344,
+            "py": 507.4677505752571
+          }
+        ],
+        "checkpoint": {
+          "x": 1280,
+          "y": 560,
+          "index": 1
+        },
+        "camera": 967.0993708612176,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 2,
+          "form": "body",
+          "look": {
+            "x": 1438.8012025637067,
+            "y": 317.577370710046
+          },
+          "capOpen": 0,
+          "stationTicket": null
+        },
+        "nearHint": "",
+        "gateOpen": true
+      }
+    },
+    {
+      "name": "walk-feedback",
+      "target": 2010,
+      "rule": "setInput.x=clamp((target-body.x)/35,-1,1), then brake to zero",
+      "before": {
+        "update": 2931,
+        "time": 48.84999999999851,
+        "state": "playing",
+        "form": "body",
+        "body": {
+          "x": 1748.8397899872355,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": null,
+          "invulnerable": 0,
+          "walk": 82.15270234007892,
+          "land": 0
+        },
+        "soul": {
+          "x": 1596.514747603999,
+          "y": 413.5736313118322,
+          "vx": 0,
+          "vy": 0
+        },
+        "energy": 100,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 390.92833506493673,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 391.61420822050394,
+            "dx": 0,
+            "dy": -0.685873155567208
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 438.9016302647429,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 438.0508232098512,
+            "dx": 0,
+            "dy": 0.8508070548916749
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": true,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": true,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": true
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": true
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 46.16666666666533,
+            "frozen": 1.8166666666666762,
+            "hitCooldown": 0,
+            "px": 1521.3830588696344,
+            "py": 507.4677505752571
+          }
+        ],
+        "checkpoint": {
+          "x": 1280,
+          "y": 560,
+          "index": 1
+        },
+        "camera": 1239.0289151440545,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 2,
+          "form": "body",
+          "look": {
+            "x": 1748.8397899872355,
+            "y": 525
+          },
+          "capOpen": 0,
+          "stationTicket": null
+        },
+        "nearHint": "",
+        "gateOpen": true
+      }
+    },
+    {
+      "name": "toggleSoul",
+      "args": [],
+      "result": true,
+      "before": {
+        "time": 50.48333333333175,
+        "x": 2008.767044196711,
+        "y": 560,
+        "form": "body"
+      },
+      "update": 3029
+    },
+    {
+      "name": "fly-feedback",
+      "target": {
+        "x": 2060,
+        "y": 390
+      },
+      "rule": "setInput axes from soul-target error, offset by actual authored wind / soulSpeed",
+      "before": {
+        "update": 3054,
+        "time": 50.89999999999839,
+        "state": "playing",
+        "form": "soul",
+        "body": {
+          "x": 2008.767044196711,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": null,
+          "invulnerable": 0,
+          "walk": 95.14111049698323,
+          "land": 0
+        },
+        "soul": {
+          "x": 2008.767044196711,
+          "y": 473.3846047989176,
+          "vx": 0,
+          "vy": -1.349698406517567
+        },
+        "energy": 98.20833333333319,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 389.2442846244304,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 388.58649741915934,
+            "dx": 0,
+            "dy": 0.6577872052710632
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 483.6749948261739,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 483.93996531118967,
+            "dx": 0,
+            "dy": -0.26497048501579457
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": true,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": true,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": true
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": true
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 46.39999999999865,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1508.4342838080622,
+            "py": 507.06045615416963
+          }
+        ],
+        "checkpoint": {
+          "x": 1920,
+          "y": 560,
+          "index": 2
+        },
+        "camera": 1239.999992897305,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 2,
+          "form": "soul",
+          "look": {
+            "x": 2008.767044196711,
+            "y": 525
+          },
+          "capOpen": 0.9730495812319545,
+          "stationTicket": null
+        },
+        "nearHint": "WASD / 方向键飞行 · E 回到身体",
+        "gateOpen": true
+      }
+    },
+    {
+      "name": "recall",
+      "args": [],
+      "result": true,
+      "before": {
+        "time": 51.49999999999836,
+        "x": 2008.767044196711,
+        "y": 560,
+        "form": "soul"
+      },
+      "update": 3090
+    },
+    {
+      "name": "walk-feedback",
+      "target": 2130,
+      "rule": "setInput.x=clamp((target-body.x)/35,-1,1), then brake to zero",
+      "before": {
+        "update": 3150,
+        "time": 52.4999999999983,
+        "state": "playing",
+        "form": "body",
+        "body": {
+          "x": 2008.767044196711,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": null,
+          "invulnerable": 0,
+          "walk": 95.14111049698323,
+          "land": 0
+        },
+        "soul": {
+          "x": 2062.33774305725,
+          "y": 386.4225163380222,
+          "vx": 0,
+          "vy": 0
+        },
+        "energy": 100,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 467.160394502989,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 466.453602015099,
+            "dx": 0,
+            "dy": 0.7067924878899703
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 419.7273206752733,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 420.62498598380677,
+            "dx": 0,
+            "dy": -0.897665308533476
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": true,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": true,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": true
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": true
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": true
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 47.99999999999856,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1516.5580426326346,
+            "py": 522.8687019634789
+          }
+        ],
+        "checkpoint": {
+          "x": 1920,
+          "y": 560,
+          "index": 2
+        },
+        "camera": 1239.9999999993033,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 2,
+          "form": "body",
+          "look": {
+            "x": 2008.767044196711,
+            "y": 525
+          },
+          "capOpen": 0,
+          "stationTicket": null
+        },
+        "nearHint": "",
+        "gateOpen": true
+      }
+    },
+    {
+      "name": "walk-feedback",
+      "target": 2195,
+      "rule": "setInput.x=clamp((target-body.x)/35,-1,1), then brake to zero",
+      "before": {
+        "update": 3213,
+        "time": 53.54999999999824,
+        "state": "playing",
+        "form": "body",
+        "body": {
+          "x": 2128.7642979698935,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": null,
+          "invulnerable": 0,
+          "walk": 101.13300091448048,
+          "land": 0
+        },
+        "soul": {
+          "x": 2062.33774305725,
+          "y": 386.4225163380222,
+          "vx": 0,
+          "vy": 0
+        },
+        "energy": 100,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 491.96073038226666,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 491.92325760793943,
+            "dx": 0,
+            "dy": 0.0374727743272274
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 367.42718957932675,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 368.10644709571363,
+            "dx": 0,
+            "dy": -0.6792575163868833
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": true,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": true,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": true
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": true
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": true
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 49.0499999999985,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1594.578735358889,
+            "py": 509.7815224346469
+          }
+        ],
+        "checkpoint": {
+          "x": 1920,
+          "y": 560,
+          "index": 2
+        },
+        "camera": 1239.9999999999984,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 2,
+          "form": "body",
+          "look": {
+            "x": 2128.7642979698935,
+            "y": 525
+          },
+          "capOpen": 0,
+          "stationTicket": null
+        },
+        "nearHint": "带着身体走进门，送出这一封信",
+        "gateOpen": true
+      }
+    }
+  ],
+  "captures": [
+    {
+      "name": "entry",
+      "file": "entry.png",
+      "update": 30,
+      "time": 0.49999999999999994,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0.4999999999999985,
+        "walk": 0,
+        "land": 0
+      },
+      "soul": {
+        "x": 105,
+        "y": 502,
+        "vx": 0,
+        "vy": 0
+      },
+      "energy": 100,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 455.56388846809233,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 454.7611543242229,
+          "dx": 0,
+          "dy": 0.8027341438694293
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 485.5040401641253,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 485.68103605356595,
+          "dx": 0,
+          "dy": -0.17699588944066136
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": false,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": false
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": false
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 0.49999999999999994,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1619.1468980700108,
+          "py": 521.7317678784632
+        }
+      ],
+      "checkpoint": {
+        "x": 105,
+        "y": 560,
+        "index": -1
+      },
+      "camera": 0,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": true,
+        "talking": false,
+        "talked": false,
+        "seals": 0,
+        "form": "body",
+        "look": {
+          "x": 105,
+          "y": 525
+        },
+        "capOpen": 0,
+        "stationTicket": null
+      },
+      "nearHint": "Q：与蓝页聊一聊",
+      "gateOpen": false
+    },
+    {
+      "name": "lanye-near",
+      "file": "lanye-near.png",
+      "update": 62,
+      "time": 1.0333333333333345,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 118.77900066082812,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0.681072617949974,
+        "land": 0
+      },
+      "soul": {
+        "x": 105,
+        "y": 502,
+        "vx": 0,
+        "vy": 0
+      },
+      "energy": 100,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 477.71990520148404,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 477.154376891691,
+          "dx": 0,
+          "dy": 0.5655283097930237
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 474.25274252390983,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 474.75939637275235,
+          "dx": 0,
+          "dy": -0.5066538488425181
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": false,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": false
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": false
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 1.0333333333333345,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1652.14579467954,
+          "py": 522.0364395009404
+        }
+      ],
+      "checkpoint": {
+        "x": 105,
+        "y": 560,
+        "index": -1
+      },
+      "camera": 0,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": true,
+        "talking": false,
+        "talked": false,
+        "seals": 0,
+        "form": "body",
+        "look": {
+          "x": 118.77900066082812,
+          "y": 525
+        },
+        "capOpen": 0,
+        "stationTicket": null
+      },
+      "nearHint": "Q：与蓝页聊一聊",
+      "gateOpen": false
+    },
+    {
+      "name": "lanye-talking",
+      "file": "lanye-talking.png",
+      "update": 62,
+      "time": 1.0333333333333345,
+      "state": "paused",
+      "form": "body",
+      "body": {
+        "x": 118.77900066082812,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0.681072617949974,
+        "land": 0
+      },
+      "soul": {
+        "x": 105,
+        "y": 502,
+        "vx": 0,
+        "vy": 0
+      },
+      "energy": 100,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 477.71990520148404,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 477.154376891691,
+          "dx": 0,
+          "dy": 0.5655283097930237
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 474.25274252390983,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 474.75939637275235,
+          "dx": 0,
+          "dy": -0.5066538488425181
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": false,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": false
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": false
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 1.0333333333333345,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1652.14579467954,
+          "py": 522.0364395009404
+        }
+      ],
+      "checkpoint": {
+        "x": 105,
+        "y": 560,
+        "index": -1
+      },
+      "camera": 0,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": true,
+        "talking": true,
+        "talked": false,
+        "seals": 0,
+        "form": "body",
+        "look": {
+          "x": 118.77900066082812,
+          "y": 525
+        },
+        "capOpen": 0,
+        "stationTicket": null
+      },
+      "nearHint": "蓝页正在和你说话。",
+      "gateOpen": false
+    },
+    {
+      "name": "lanye-open",
+      "file": "lanye-open.png",
+      "update": 102,
+      "time": 1.6999999999999988,
+      "state": "playing",
+      "form": "soul",
+      "body": {
+        "x": 118.77900066082812,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0.681072617949974,
+        "land": 0
+      },
+      "soul": {
+        "x": 118.77900066082812,
+        "y": 473.24077880353985,
+        "vx": 0,
+        "vy": -0.20994523559886108
+      },
+      "energy": 97.1333333333331,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 491.51008039051055,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 491.3937118916182,
+          "dx": 0,
+          "dy": 0.11636849889237055
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 447.3888961777572,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 448.19014052128006,
+          "dx": 0,
+          "dy": -0.8012443435228533
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": false,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": false
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": false
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 1.6999999999999988,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1669.9251150744328,
+          "py": 512.9556711837854
+        }
+      ],
+      "checkpoint": {
+        "x": 105,
+        "y": 560,
+        "index": -1
+      },
+      "camera": 0,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": true,
+        "talking": false,
+        "talked": true,
+        "seals": 0,
+        "form": "soul",
+        "look": {
+          "x": 118.77900066082812,
+          "y": 473.24077880353985
+        },
+        "capOpen": 1,
+        "stationTicket": null
+      },
+      "nearHint": "WASD / 方向键飞行 · E 回到身体",
+      "gateOpen": false
+    },
+    {
+      "name": "book-a-boarded",
+      "file": "book-a-boarded.png",
+      "update": 552,
+      "time": 9.200000000000037,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 691.2458738351564,
+        "y": 491.9642061497408,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": "book-a",
+        "invulnerable": 0,
+        "walk": 29.296325140118956,
+        "land": 0.1375
+      },
+      "soul": {
+        "x": 118.77900066082812,
+        "y": 473.24077880353985,
+        "vx": 0,
+        "vy": 0
+      },
+      "energy": 100,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 491.9642061497408,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 491.92814785810435,
+          "dx": 0,
+          "dy": 0.03605829163643648
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 479.95637203045226,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 480.3395264301219,
+          "dx": 0,
+          "dy": -0.3831543996696496
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": false,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": false
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": false
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 9.200000000000037,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1661.9556530431146,
+          "py": 511.52347502342536
+        }
+      ],
+      "checkpoint": {
+        "x": 570,
+        "y": 560,
+        "index": 0
+      },
+      "camera": 218.2458738313696,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 0,
+        "form": "body",
+        "look": {
+          "x": 691.2458738351564,
+          "y": 456.9642061497408
+        },
+        "capOpen": 0,
+        "stationTicket": null
+      },
+      "nearHint": "",
+      "gateOpen": false
+    },
+    {
+      "name": "book-a-lower",
+      "file": "book-a-lower.png",
+      "update": 553,
+      "time": 9.216666666666704,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 691.2458738351564,
+        "y": 491.9878287774314,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-a",
+        "invulnerable": 0,
+        "walk": 29.296325140118956,
+        "land": 0.09083333333333335
+      },
+      "soul": {
+        "x": 118.77900066082812,
+        "y": 473.24077880353985,
+        "vx": 0,
+        "vy": 0
+      },
+      "energy": 100,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 491.9878287774314,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 491.9642061497408,
+          "dx": 0,
+          "dy": 0.02362262769059953
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 479.5630683298063,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 479.95637203045226,
+          "dx": 0,
+          "dy": -0.39330370064595854
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": false,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": false
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": false
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 9.216666666666704,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1661.3885688682728,
+          "py": 511.76553248641204
+        }
+      ],
+      "checkpoint": {
+        "x": 570,
+        "y": 560,
+        "index": 0
+      },
+      "camera": 218.24587383171672,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 0,
+        "form": "body",
+        "look": {
+          "x": 691.2458738351564,
+          "y": 456.9878287774314
+        },
+        "capOpen": 0,
+        "stationTicket": null
+      },
+      "nearHint": "",
+      "gateOpen": false
+    },
+    {
+      "name": "book-a-upper",
+      "file": "book-a-upper.png",
+      "update": 759,
+      "time": 12.650000000000208,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 691.2458738351564,
+        "y": 369.82263758466,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-a",
+        "invulnerable": 0,
+        "walk": 29.296325140118956,
+        "land": 0
+      },
+      "soul": {
+        "x": 118.77900066082812,
+        "y": 473.24077880353985,
+        "vx": 0,
+        "vy": 0
+      },
+      "energy": 100,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 369.82263758466,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 370.0400730477169,
+          "dx": 0,
+          "dy": -0.21743546305685868
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 343.42007274726154,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 343.5227399505876,
+          "dx": 0,
+          "dy": -0.10266720332606383
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": false,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": false
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": false
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 12.650000000000208,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1496.7385479676618,
+          "py": 516.3318400283006
+        }
+      ],
+      "checkpoint": {
+        "x": 570,
+        "y": 560,
+        "index": 0
+      },
+      "camera": 218.2458738351563,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 0,
+        "form": "body",
+        "look": {
+          "x": 691.2458738351564,
+          "y": 334.82263758466
+        },
+        "capOpen": 0,
+        "stationTicket": null
+      },
+      "nearHint": "",
+      "gateOpen": false
+    },
+    {
+      "name": "memory-1",
+      "file": "memory-1.png",
+      "update": 1104,
+      "time": 18.400000000000237,
+      "state": "playing",
+      "form": "soul",
+      "body": {
+        "x": 691.2458738351564,
+        "y": 434.2104794937221,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-a",
+        "invulnerable": 0,
+        "walk": 29.296325140118956,
+        "land": 0
+      },
+      "soul": {
+        "x": 368.6879586719353,
+        "y": 419.9805363540277,
+        "vx": -54.644065880303955,
+        "vy": -0.8450920027580973
+      },
+      "energy": 98.92499999999991,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 434.2104794937221,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 435.0863332801966,
+          "dx": 0,
+          "dy": -0.8758537864744653
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 450.02070559746227,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 450.8043124471217,
+          "dx": 0,
+          "dy": -0.7836068496594066
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": false,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": false
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 18.400000000000237,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1512.2639250699622,
+          "py": 508.73780389159714
+        }
+      ],
+      "checkpoint": {
+        "x": 570,
+        "y": 560,
+        "index": 0
+      },
+      "camera": 3.748786563619417,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 0,
+        "form": "soul",
+        "look": {
+          "x": 691.2458738351564,
+          "y": 399.2104794937221
+        },
+        "capOpen": 1,
+        "stationTicket": null
+      },
+      "nearHint": "WASD / 方向键飞行 · E 回到身体",
+      "gateOpen": false
+    },
+    {
+      "name": "memory-2",
+      "file": "memory-2.png",
+      "update": 1244,
+      "time": 20.733333333333437,
+      "state": "playing",
+      "form": "soul",
+      "body": {
+        "x": 691.2458738351564,
+        "y": 371.6443893074828,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-a",
+        "invulnerable": 0,
+        "walk": 29.296325140118956,
+        "land": 0
+      },
+      "soul": {
+        "x": 997.0111045360164,
+        "y": 269.98780562940414,
+        "vx": 45.888248153133155,
+        "vy": -0.24321530402049726
+      },
+      "energy": 98.85333333333324,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 371.6443893074828,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 371.3535579075287,
+          "dx": 0,
+          "dy": 0.2908313999541292
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 346.8560636578071,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 347.1519621394863,
+          "dx": 0,
+          "dy": -0.2958984816791599
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": false,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": true
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 20.733333333333437,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1563.0419489504848,
+          "py": 510.3129817090292
+        }
+      ],
+      "checkpoint": {
+        "x": 570,
+        "y": 560,
+        "index": 0
+      },
+      "camera": 497.8128473111397,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 0,
+        "form": "soul",
+        "look": {
+          "x": 691.2458738351564,
+          "y": 336.6443893074828
+        },
+        "capOpen": 1,
+        "stationTicket": null
+      },
+      "nearHint": "WASD / 方向键飞行 · E 回到身体",
+      "gateOpen": false
+    },
+    {
+      "name": "lamp-1-near",
+      "file": "lamp-1-near.png",
+      "update": 1295,
+      "time": 21.58333333333339,
+      "state": "playing",
+      "form": "soul",
+      "body": {
+        "x": 691.2458738351564,
+        "y": 400.07327656271127,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-a",
+        "invulnerable": 0,
+        "walk": 29.296325140118956,
+        "land": 0
+      },
+      "soul": {
+        "x": 829.6221948696043,
+        "y": 201.47663765181517,
+        "vx": -54.3058236737875,
+        "vy": 6.531826510285946
+      },
+      "energy": 95.19833333333294,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 400.07327656271127,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 399.30706819127687,
+          "dx": 0,
+          "dy": 0.7662083714344021
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 346.4043713514608,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 346.1362644804445,
+          "dx": 0,
+          "dy": 0.2681068710163004
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": false,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": true
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 21.58333333333339,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1628.9786663846714,
+          "py": 509.1747369384067
+        }
+      ],
+      "checkpoint": {
+        "x": 570,
+        "y": 560,
+        "index": 0
+      },
+      "camera": 381.41505714932595,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 0,
+        "form": "soul",
+        "look": {
+          "x": 691.2458738351564,
+          "y": 365.07327656271127
+        },
+        "capOpen": 1,
+        "stationTicket": null
+      },
+      "nearHint": "空格 / Q：与诗灯共鸣",
+      "gateOpen": false
+    },
+    {
+      "name": "lamp-1-lit",
+      "file": "lamp-1-lit.png",
+      "update": 1295,
+      "time": 21.58333333333339,
+      "state": "playing",
+      "form": "soul",
+      "body": {
+        "x": 691.2458738351564,
+        "y": 400.07327656271127,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-a",
+        "invulnerable": 0,
+        "walk": 29.296325140118956,
+        "land": 0
+      },
+      "soul": {
+        "x": 829.6221948696043,
+        "y": 201.47663765181517,
+        "vx": 0,
+        "vy": 0
+      },
+      "energy": 100,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 400.07327656271127,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 399.30706819127687,
+          "dx": 0,
+          "dy": 0.7662083714344021
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 346.4043713514608,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 346.1362644804445,
+          "dx": 0,
+          "dy": 0.2681068710163004
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": true,
+          "glow": 1
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": true
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 21.58333333333339,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1628.9786663846714,
+          "py": 509.1747369384067
+        }
+      ],
+      "checkpoint": {
+        "x": 570,
+        "y": 560,
+        "index": 0
+      },
+      "camera": 381.41505714932595,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 1,
+        "form": "soul",
+        "look": {
+          "x": 691.2458738351564,
+          "y": 365.07327656271127
+        },
+        "capOpen": 1,
+        "stationTicket": null
+      },
+      "nearHint": "WASD / 方向键飞行 · E 回到身体",
+      "gateOpen": true
+    },
+    {
+      "name": "catalogue-open",
+      "file": "catalogue-open.png",
+      "update": 1526,
+      "time": 25.43333333333317,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1243.7446232641423,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 56.91316340682108,
+        "land": 0
+      },
+      "soul": {
+        "x": 829.6221948696043,
+        "y": 201.47663765181517,
+        "vx": 0,
+        "vy": 0
+      },
+      "energy": 100,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 452.58280078892176,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 453.39850411186336,
+          "dx": 0,
+          "dy": -0.8157033229416015
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 486.892517189237,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 486.9360578796431,
+          "dx": 0,
+          "dy": -0.043540690406075555
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": true,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": true
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 25.43333333333317,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1509.5648815391246,
+          "py": 519.5249555784461
+        }
+      ],
+      "checkpoint": {
+        "x": 570,
+        "y": 560,
+        "index": 0
+      },
+      "camera": 767.4653288760212,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 1,
+        "form": "body",
+        "look": {
+          "x": 1243.7446232641423,
+          "y": 525
+        },
+        "capOpen": 0,
+        "stationTicket": null
+      },
+      "nearHint": "",
+      "gateOpen": true
+    },
+    {
+      "name": "book-b-boarded",
+      "file": "book-b-boarded.png",
+      "update": 2018,
+      "time": 33.63333333333271,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1438.8012025637067,
+        "y": 486.77806080013215,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": "book-b",
+        "invulnerable": 0,
+        "walk": 66.6582581947911,
+        "land": 0.13
+      },
+      "soul": {
+        "x": 829.6221948696043,
+        "y": 201.47663765181517,
+        "vx": 0,
+        "vy": 0
+      },
+      "energy": 100,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 410.8503701261513,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 411.68765176977604,
+          "dx": 0,
+          "dy": -0.837281643624749
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 486.77806080013215,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 486.7018438932821,
+          "dx": 0,
+          "dy": 0.07621690685004978
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": true,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": true
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 33.63333333333271,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1498.0016828164817,
+          "py": 507.3062186507264
+        }
+      ],
+      "checkpoint": {
+        "x": 1280,
+        "y": 560,
+        "index": 1
+      },
+      "camera": 965.8012025637062,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 1,
+        "form": "body",
+        "look": {
+          "x": 1438.8012025637067,
+          "y": 451.77806080013215
+        },
+        "capOpen": 0,
+        "stationTicket": null
+      },
+      "nearHint": "",
+      "gateOpen": true
+    },
+    {
+      "name": "book-b-lower",
+      "file": "book-b-lower.png",
+      "update": 2019,
+      "time": 33.64999999999937,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1438.8012025637067,
+        "y": 486.8430625310142,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-b",
+        "invulnerable": 0,
+        "walk": 66.6582581947911,
+        "land": 0.08333333333333334
+      },
+      "soul": {
+        "x": 829.6221948696043,
+        "y": 201.47663765181517,
+        "vx": 0,
+        "vy": 0
+      },
+      "energy": 100,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 410.01693164257983,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 410.8503701261513,
+          "dx": 0,
+          "dy": -0.8334384835714559
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 486.8430625310142,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 486.77806080013215,
+          "dx": 0,
+          "dy": 0.0650017308820452
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": true,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": true
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 33.64999999999937,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1498.5673594928621,
+          "py": 507.2374328693793
+        }
+      ],
+      "checkpoint": {
+        "x": 1280,
+        "y": 560,
+        "index": 1
+      },
+      "camera": 965.8012025637062,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 1,
+        "form": "body",
+        "look": {
+          "x": 1438.8012025637067,
+          "y": 451.8430625310142
+        },
+        "capOpen": 0,
+        "stationTicket": null
+      },
+      "nearHint": "",
+      "gateOpen": true
+    },
+    {
+      "name": "book-b-upper",
+      "file": "book-b-upper.png",
+      "update": 2257,
+      "time": 37.616666666665814,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1438.8012025637067,
+        "y": 344.93943525552453,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-b",
+        "invulnerable": 0,
+        "walk": 66.6582581947911,
+        "land": 0
+      },
+      "soul": {
+        "x": 829.6221948696043,
+        "y": 201.47663765181517,
+        "vx": 0,
+        "vy": 0
+      },
+      "energy": 100,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 462.8410477104392,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 462.0927848416561,
+          "dx": 0,
+          "dy": 0.7482628687831152
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 344.93943525552453,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 345.1523871730938,
+          "dx": 0,
+          "dy": -0.2129519175692849
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": true,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": true
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 37.616666666665814,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1638.152818105544,
+          "py": 513.6868466238741
+        }
+      ],
+      "checkpoint": {
+        "x": 1280,
+        "y": 560,
+        "index": 1
+      },
+      "camera": 965.8012025637062,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 1,
+        "form": "body",
+        "look": {
+          "x": 1438.8012025637067,
+          "y": 309.93943525552453
+        },
+        "capOpen": 0,
+        "stationTicket": null
+      },
+      "nearHint": "",
+      "gateOpen": true
+    },
+    {
+      "name": "wind-corridor",
+      "file": "wind-corridor.png",
+      "update": 2609,
+      "time": 43.48333333333215,
+      "state": "playing",
+      "form": "soul",
+      "body": {
+        "x": 1438.8012025637067,
+        "y": 452.3272839902425,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-b",
+        "invulnerable": 0,
+        "walk": 66.6582581947911,
+        "land": 0
+      },
+      "soul": {
+        "x": 1594.8198445000085,
+        "y": 318.15783005151667,
+        "vx": 47.33764553357683,
+        "vy": 11.523945645812042
+      },
+      "energy": 94.33833333333287,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 388.2730299050231,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 387.6275986092084,
+          "dx": 0,
+          "dy": 0.645431295814717
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 452.3272839902425,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 453.09395340069597,
+          "dx": 0,
+          "dy": -0.7666694104534599
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": true,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": true
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 43.48333333333215,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1669.1822317824617,
+          "py": 508.27720420426255
+        }
+      ],
+      "checkpoint": {
+        "x": 1280,
+        "y": 560,
+        "index": 1
+      },
+      "camera": 1099.4160247482223,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 1,
+        "form": "soul",
+        "look": {
+          "x": 1438.8012025637067,
+          "y": 417.3272839902425
+        },
+        "capOpen": 1,
+        "stationTicket": null
+      },
+      "nearHint": "空格：共鸣让影子与钟摆暂停",
+      "gateOpen": true
+    },
+    {
+      "name": "lamp-2-near",
+      "file": "lamp-2-near.png",
+      "update": 2681,
+      "time": 44.68333333333208,
+      "state": "playing",
+      "form": "soul",
+      "body": {
+        "x": 1438.8012025637067,
+        "y": 389.97478920051174,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-b",
+        "invulnerable": 0,
+        "walk": 66.6582581947911,
+        "land": 0
+      },
+      "soul": {
+        "x": 1834.9839591895677,
+        "y": 198.6823331867934,
+        "vx": 44.49921821370585,
+        "vy": 14.566487651472778
+      },
+      "energy": 89.17833333333245,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 447.23660052111416,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 446.39119121138856,
+          "dx": 0,
+          "dy": 0.8454093097255964
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 389.97478920051174,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 390.8206101364294,
+          "dx": 0,
+          "dy": -0.8458209359176863
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": true,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": false,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": true
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 44.68333333333208,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1632.710160366142,
+          "py": 522.8863987822756
+        }
+      ],
+      "checkpoint": {
+        "x": 1280,
+        "y": 560,
+        "index": 1
+      },
+      "camera": 1238.7448827451808,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 1,
+        "form": "soul",
+        "look": {
+          "x": 1438.8012025637067,
+          "y": 354.97478920051174
+        },
+        "capOpen": 1,
+        "stationTicket": null
+      },
+      "nearHint": "空格 / Q：与诗灯共鸣",
+      "gateOpen": true
+    },
+    {
+      "name": "lamp-2-lit",
+      "file": "lamp-2-lit.png",
+      "update": 2681,
+      "time": 44.68333333333208,
+      "state": "playing",
+      "form": "soul",
+      "body": {
+        "x": 1438.8012025637067,
+        "y": 389.97478920051174,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-b",
+        "invulnerable": 0,
+        "walk": 66.6582581947911,
+        "land": 0
+      },
+      "soul": {
+        "x": 1834.9839591895677,
+        "y": 198.6823331867934,
+        "vx": 0,
+        "vy": 0
+      },
+      "energy": 100,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 447.23660052111416,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 446.39119121138856,
+          "dx": 0,
+          "dy": 0.8454093097255964
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 389.97478920051174,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 390.8206101364294,
+          "dx": 0,
+          "dy": -0.8458209359176863
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": true,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": true,
+          "glow": 1
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": true
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 44.68333333333208,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1632.710160366142,
+          "py": 522.8863987822756
+        }
+      ],
+      "checkpoint": {
+        "x": 1280,
+        "y": 560,
+        "index": 1
+      },
+      "camera": 1238.7448827451808,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 2,
+        "form": "soul",
+        "look": {
+          "x": 1438.8012025637067,
+          "y": 354.97478920051174
+        },
+        "capOpen": 1,
+        "stationTicket": null
+      },
+      "nearHint": "WASD / 方向键飞行 · E 回到身体",
+      "gateOpen": true
+    },
+    {
+      "name": "drifter-frozen",
+      "file": "drifter-frozen.png",
+      "update": 2770,
+      "time": 46.16666666666533,
+      "state": "playing",
+      "form": "soul",
+      "body": {
+        "x": 1438.8012025637067,
+        "y": 343.38392576520164,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-b",
+        "invulnerable": 0,
+        "walk": 66.6582581947911,
+        "land": 0
+      },
+      "soul": {
+        "x": 1596.514747603999,
+        "y": 413.5736313118322,
+        "vx": 18.465628142642167,
+        "vy": 44.91776420957509
+      },
+      "energy": 93.62166666666614,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 491.9752765857075,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 491.94425631608425,
+          "dx": 0,
+          "dy": 0.031020269623240893
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 343.38392576520164,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 343.48233691397587,
+          "dx": 0,
+          "dy": -0.09841114877423252
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": true,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": true,
+          "glow": 0.4066666666666637
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": true
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 46.16666666666533,
+          "frozen": 4.5,
+          "hitCooldown": 0,
+          "px": 1521.3830588696344,
+          "py": 507.4677505752571
+        }
+      ],
+      "checkpoint": {
+        "x": 1280,
+        "y": 560,
+        "index": 1
+      },
+      "camera": 1124.680900108017,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 2,
+        "form": "soul",
+        "look": {
+          "x": 1438.8012025637067,
+          "y": 308.38392576520164
+        },
+        "capOpen": 1,
+        "stationTicket": null
+      },
+      "nearHint": "WASD / 方向键飞行 · E 回到身体",
+      "gateOpen": true
+    },
+    {
+      "name": "hazard-passed",
+      "file": "hazard-passed.png",
+      "update": 2931,
+      "time": 48.84999999999851,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1748.8397899872355,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 82.15270234007892,
+        "land": 0
+      },
+      "soul": {
+        "x": 1596.514747603999,
+        "y": 413.5736313118322,
+        "vx": 0,
+        "vy": 0
+      },
+      "energy": 100,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 390.92833506493673,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 391.61420822050394,
+          "dx": 0,
+          "dy": -0.685873155567208
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 438.9016302647429,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 438.0508232098512,
+          "dx": 0,
+          "dy": 0.8508070548916749
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": true,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": true,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": true
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": false
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 46.16666666666533,
+          "frozen": 1.8166666666666762,
+          "hitCooldown": 0,
+          "px": 1521.3830588696344,
+          "py": 507.4677505752571
+        }
+      ],
+      "checkpoint": {
+        "x": 1280,
+        "y": 560,
+        "index": 1
+      },
+      "camera": 1239.0289151440545,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 2,
+        "form": "body",
+        "look": {
+          "x": 1748.8397899872355,
+          "y": 525
+        },
+        "capOpen": 0,
+        "stationTicket": null
+      },
+      "nearHint": "",
+      "gateOpen": true
+    },
+    {
+      "name": "memory-3",
+      "file": "memory-3.png",
+      "update": 3090,
+      "time": 51.49999999999836,
+      "state": "playing",
+      "form": "soul",
+      "body": {
+        "x": 2008.767044196711,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 95.14111049698323,
+        "land": 0
+      },
+      "soul": {
+        "x": 2062.33774305725,
+        "y": 386.4225163380222,
+        "vx": 24.658457072534286,
+        "vy": -42.47414656772742
+      },
+      "energy": 98.78166666666657,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 417.2394283968229,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 416.3812087140182,
+          "dx": 0,
+          "dy": 0.8582196828047017
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 467.43101991762904,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 468.0437277233706,
+          "dx": 0,
+          "dy": -0.612707805741536
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": true,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": true,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": true
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": true
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 46.999999999998614,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1490.5588801333633,
+          "py": 513.0379841162372
+        }
+      ],
+      "checkpoint": {
+        "x": 1920,
+        "y": 560,
+        "index": 2
+      },
+      "camera": 1239.999999777027,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 2,
+        "form": "soul",
+        "look": {
+          "x": 2008.767044196711,
+          "y": 525
+        },
+        "capOpen": 1,
+        "stationTicket": null
+      },
+      "nearHint": "WASD / 方向键飞行 · E 回到身体",
+      "gateOpen": true
+    },
+    {
+      "name": "exit-approach",
+      "file": "exit-approach.png",
+      "update": 3213,
+      "time": 53.54999999999824,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 2128.7642979698935,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 101.13300091448048,
+        "land": 0
+      },
+      "soul": {
+        "x": 2062.33774305725,
+        "y": 386.4225163380222,
+        "vx": 0,
+        "vy": 0
+      },
+      "energy": 100,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 491.96073038226666,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 491.92325760793943,
+          "dx": 0,
+          "dy": 0.0374727743272274
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 367.42718957932675,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 368.10644709571363,
+          "dx": 0,
+          "dy": -0.6792575163868833
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": true,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": true,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": true
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": true
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 49.0499999999985,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1594.578735358889,
+          "py": 509.7815224346469
+        }
+      ],
+      "checkpoint": {
+        "x": 1920,
+        "y": 560,
+        "index": 2
+      },
+      "camera": 1239.9999999999984,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 2,
+        "form": "body",
+        "look": {
+          "x": 2128.7642979698935,
+          "y": 525
+        },
+        "capOpen": 0,
+        "stationTicket": null
+      },
+      "nearHint": "带着身体走进门，送出这一封信",
+      "gateOpen": true
+    },
+    {
+      "name": "complete",
+      "file": "complete.png",
+      "update": 3221,
+      "time": 53.68333333333157,
+      "state": "complete",
+      "form": "body",
+      "body": {
+        "x": 2145.2642979698935,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 220,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 101.95800091448046,
+        "land": 0
+      },
+      "soul": {
+        "x": 2062.33774305725,
+        "y": 386.4225163380222,
+        "vx": 0,
+        "vy": 0
+      },
+      "energy": 100,
+      "deaths": 0,
+      "movers": [
+        {
+          "id": "book-a",
+          "x": 615,
+          "y": 491.8127462910359,
+          "w": 155,
+          "h": 18,
+          "axis": "y",
+          "range": 62,
+          "speed": 0.85,
+          "phase": 0,
+          "kind": "book",
+          "baseX": 615,
+          "baseY": 430,
+          "prevX": 615,
+          "prevY": 491.8747541272528,
+          "dx": 0,
+          "dy": -0.06200783621687833
+        },
+        {
+          "id": "book-b",
+          "x": 1410,
+          "y": 362.26939016989206,
+          "w": 170,
+          "h": 18,
+          "axis": "y",
+          "range": 72,
+          "speed": 0.75,
+          "phase": 1.4,
+          "kind": "book",
+          "baseX": 1410,
+          "baseY": 415,
+          "prevX": 1410,
+          "prevY": 362.886310336687,
+          "dx": 0,
+          "dy": -0.6169201667949551
+        }
+      ],
+      "lanterns": [
+        {
+          "x": 835,
+          "y": 205,
+          "id": "name",
+          "lit": true,
+          "glow": 0
+        },
+        {
+          "x": 1830,
+          "y": 200,
+          "id": "voice",
+          "lit": true,
+          "glow": 0
+        }
+      ],
+      "memories": [
+        {
+          "x": 375,
+          "y": 420,
+          "id": "m1",
+          "collected": true
+        },
+        {
+          "x": 990,
+          "y": 270,
+          "id": "m2",
+          "collected": true
+        },
+        {
+          "x": 2060,
+          "y": 390,
+          "id": "m3",
+          "collected": true
+        }
+      ],
+      "hazards": [
+        {
+          "kind": "drifter",
+          "x": 1580,
+          "y": 515,
+          "range": 90,
+          "speed": 0.9,
+          "r": 22,
+          "clock": 49.183333333331824,
+          "frozen": 0,
+          "hitCooldown": 0,
+          "px": 1605.105700196109,
+          "py": 508.3681019567533
+        }
+      ],
+      "checkpoint": {
+        "x": 1920,
+        "y": 560,
+        "index": 2
+      },
+      "camera": 1239.9999999999989,
+      "npc": {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "near": false,
+        "talking": false,
+        "talked": true,
+        "seals": 2,
+        "form": "body",
+        "look": {
+          "x": 2145.2642979698935,
+          "y": 525
+        },
+        "capOpen": 0,
+        "stationTicket": null
+      },
+      "nearHint": "带着身体走进门，送出这一封信",
+      "gateOpen": true
+    }
+  ],
+  "talks": [
+    {
+      "mode": "story",
+      "chapterIndex": 3,
+      "npcId": "story-npc-3",
+      "repeated": false,
+      "seals": 0,
+      "update": 62,
+      "lines": [
+        {
+          "speaker": "whale",
+          "text": "你的脑袋能借书，不能当书架住下。身体踩浮书，拾光去借灯。"
+        },
+        {
+          "speaker": "light",
+          "text": "风廊会推我，按住方向就能稳稳飞。你替我守着落脚点。",
+          "mood": "brave"
+        }
+      ]
+    }
+  ],
+  "puzzles": [
+    {
+      "chapterIndex": 3,
+      "sealIndex": 0,
+      "id": "name",
+      "mode": "story",
+      "festivalId": null,
+      "update": 1295,
+      "answer": {
+        "id": "library-0",
+        "optionIndex": 0,
+        "text": "更上一层楼",
+        "adapter": "resolvePuzzle(true) only after normal pulse creates the real pendingSeal; no DOM answer UI is rendered offline"
+      }
+    },
+    {
+      "chapterIndex": 3,
+      "sealIndex": 1,
+      "id": "voice",
+      "mode": "story",
+      "festivalId": null,
+      "update": 2681,
+      "answer": {
+        "id": "library-1",
+        "optionIndex": 1,
+        "text": "一枚书签",
+        "adapter": "resolvePuzzle(true) only after normal pulse creates the real pendingSeal; no DOM answer UI is rendered offline"
+      }
+    }
+  ],
+  "events": [
+    {
+      "type": "tutorial",
+      "text": "书会浮起来，也会轻轻落下。身体能站在书上；灵魂进入风廊后，按住方向修正航线。",
+      "update": 0
+    },
+    {
+      "type": "checkpoint",
+      "text": "暖灯记住了这里。散架后，会从这里再出发。",
+      "update": 278
+    },
+    {
+      "type": "memory",
+      "text": "拾到一页记忆。有人把没说完的话，留在了这里。",
+      "update": 1088
+    },
+    {
+      "type": "memory",
+      "text": "拾到一页记忆。有人把没说完的话，留在了这里。",
+      "update": 1227
+    },
+    {
+      "type": "seal",
+      "text": "一盏诗灯亮了。它记住了你的答案，也为身体打开了路。",
+      "update": 1295
+    },
+    {
+      "type": "checkpoint",
+      "text": "暖灯记住了这里。散架后，会从这里再出发。",
+      "update": 1538
+    },
+    {
+      "type": "seal",
+      "text": "两盏诗灯都醒了。按 E 回到身体，走向发光的门。",
+      "update": 2681
+    },
+    {
+      "type": "freeze",
+      "text": "嘘——时间睡着了。现在回到身体，通过钟摆。",
+      "update": 2770
+    },
+    {
+      "type": "checkpoint",
+      "text": "暖灯记住了这里。散架后，会从这里再出发。",
+      "update": 2977
+    },
+    {
+      "type": "memory",
+      "text": "拾到一页记忆。有人把没说完的话，留在了这里。",
+      "update": 3072
+    }
+  ],
+  "completions": [
+    {
+      "chapterIndex": 3,
+      "time": 53.7,
+      "memories": 3,
+      "deaths": 0,
+      "mode": "story",
+      "festivalId": null,
+      "gifts": 3,
+      "stars": 3,
+      "update": 3220
+    }
+  ],
+  "rides": [
+    {
+      "id": "book-a",
+      "x": 692.5,
+      "launch": {
+        "update": 507,
+        "time": 8.45,
+        "state": "playing",
+        "form": "body",
+        "body": {
+          "x": 691.2458738351564,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": null,
+          "invulnerable": 0,
+          "walk": 29.296325140118956,
+          "land": 0
+        },
+        "soul": {
+          "x": 118.77900066082812,
+          "y": 473.24077880353985,
+          "vx": 0,
+          "vy": 0
+        },
+        "energy": 100,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 478.5398453804988,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 477.98854076771624,
+            "dx": 0,
+            "dy": 0.5513046127825305
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 486.51210506188227,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 486.401924406835,
+            "dx": 0,
+            "dy": 0.11018065504725882
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": false,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": false,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": false
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": false
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 8.45,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1667.2247480335218,
+            "py": 507.56700789812504
+          }
+        ],
+        "checkpoint": {
+          "x": 570,
+          "y": 560,
+          "index": 0
+        },
+        "camera": 218.24587354858178,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 0,
+          "form": "body",
+          "look": {
+            "x": 691.2458738351564,
+            "y": 525
+          },
+          "capOpen": 0,
+          "stationTicket": null
+        },
+        "nearHint": "",
+        "gateOpen": false
+      },
+      "landed": {
+        "update": 552,
+        "time": 9.200000000000037,
+        "state": "playing",
+        "form": "body",
+        "body": {
+          "x": 691.2458738351564,
+          "y": 491.9642061497408,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0,
+          "platform": "book-a",
+          "invulnerable": 0,
+          "walk": 29.296325140118956,
+          "land": 0.1375
+        },
+        "soul": {
+          "x": 118.77900066082812,
+          "y": 473.24077880353985,
+          "vx": 0,
+          "vy": 0
+        },
+        "energy": 100,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 491.9642061497408,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 491.92814785810435,
+            "dx": 0,
+            "dy": 0.03605829163643648
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 479.95637203045226,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 480.3395264301219,
+            "dx": 0,
+            "dy": -0.3831543996696496
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": false,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": false,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": false
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": false
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 9.200000000000037,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1661.9556530431146,
+            "py": 511.52347502342536
+          }
+        ],
+        "checkpoint": {
+          "x": 570,
+          "y": 560,
+          "index": 0
+        },
+        "camera": 218.2458738313696,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 0,
+          "form": "body",
+          "look": {
+            "x": 691.2458738351564,
+            "y": 456.9642061497408
+          },
+          "capOpen": 0,
+          "stationTicket": null
+        },
+        "nearHint": "",
+        "gateOpen": false
+      },
+      "noInputFrames": 453,
+      "noInputSeconds": 7.55,
+      "minY": 368.0001556780866,
+      "maxY": 491.9999578254126,
+      "maxContactError": 0,
+      "maxRelativeXError": 0,
+      "lostAttachment": 0,
+      "upFrames": 229,
+      "downFrames": 224,
+      "topCaptured": true,
+      "bottomCaptured": true,
+      "end": {
+        "update": 1005,
+        "time": 16.75000000000033,
+        "state": "playing",
+        "form": "body",
+        "body": {
+          "x": 691.2458738351564,
+          "y": 491.68819330072245,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": "book-a",
+          "invulnerable": 0,
+          "walk": 29.296325140118956,
+          "land": 0
+        },
+        "soul": {
+          "x": 118.77900066082812,
+          "y": 473.24077880353985,
+          "vx": 0,
+          "vy": 0
+        },
+        "energy": 100,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 491.68819330072245,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 491.76997831062715,
+            "dx": 0,
+            "dy": -0.08178500990470638
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 485.90448202304634,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 485.742544615004,
+            "dx": 0,
+            "dy": 0.16193740804231993
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": false,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": false,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": false
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": false
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 16.75000000000033,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1633.238291284666,
+            "py": 521.9691200013508
+          }
+        ],
+        "checkpoint": {
+          "x": 570,
+          "y": 560,
+          "index": 0
+        },
+        "camera": 218.2458738351563,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 0,
+          "form": "body",
+          "look": {
+            "x": 691.2458738351564,
+            "y": 456.68819330072245
+          },
+          "capOpen": 0,
+          "stationTicket": null
+        },
+        "nearHint": "",
+        "gateOpen": false
+      }
+    },
+    {
+      "id": "book-b",
+      "x": 1440,
+      "launch": {
+        "update": 1974,
+        "time": 32.899999999999416,
+        "state": "playing",
+        "form": "body",
+        "body": {
+          "x": 1438.8012025637067,
+          "y": 560,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": null,
+          "invulnerable": 0,
+          "walk": 66.6582581947911,
+          "land": 0
+        },
+        "soul": {
+          "x": 829.6221948696043,
+          "y": 201.47663765181517,
+          "vx": 0,
+          "vy": 0
+        },
+        "energy": 100,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 448.8743005594746,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 449.70902323779035,
+            "dx": 0,
+            "dy": -0.8347226783157566
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 473.2399529506821,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 472.706250604187,
+            "dx": 0,
+            "dy": 0.5337023464950903
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": true,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": false,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": true
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": true
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 32.899999999999416,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1492.47643866691,
+            "py": 516.3806191395757
+          }
+        ],
+        "checkpoint": {
+          "x": 1280,
+          "y": 560,
+          "index": 1
+        },
+        "camera": 965.8012025637062,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 1,
+          "form": "body",
+          "look": {
+            "x": 1438.8012025637067,
+            "y": 525
+          },
+          "capOpen": 0,
+          "stationTicket": null
+        },
+        "nearHint": "",
+        "gateOpen": true
+      },
+      "landed": {
+        "update": 2018,
+        "time": 33.63333333333271,
+        "state": "playing",
+        "form": "body",
+        "body": {
+          "x": 1438.8012025637067,
+          "y": 486.77806080013215,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0,
+          "platform": "book-b",
+          "invulnerable": 0,
+          "walk": 66.6582581947911,
+          "land": 0.13
+        },
+        "soul": {
+          "x": 829.6221948696043,
+          "y": 201.47663765181517,
+          "vx": 0,
+          "vy": 0
+        },
+        "energy": 100,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 410.8503701261513,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 411.68765176977604,
+            "dx": 0,
+            "dy": -0.837281643624749
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 486.77806080013215,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 486.7018438932821,
+            "dx": 0,
+            "dy": 0.07621690685004978
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": true,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": false,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": true
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": true
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 33.63333333333271,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1498.0016828164817,
+            "py": 507.3062186507264
+          }
+        ],
+        "checkpoint": {
+          "x": 1280,
+          "y": 560,
+          "index": 1
+        },
+        "camera": 965.8012025637062,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 1,
+          "form": "body",
+          "look": {
+            "x": 1438.8012025637067,
+            "y": 451.77806080013215
+          },
+          "capOpen": 0,
+          "stationTicket": null
+        },
+        "nearHint": "",
+        "gateOpen": true
+      },
+      "noInputFrames": 512,
+      "noInputSeconds": 8.533333333333333,
+      "minY": 343.00085373339425,
+      "maxY": 486.999978258075,
+      "maxContactError": 0,
+      "maxRelativeXError": 0,
+      "lostAttachment": 0,
+      "upFrames": 255,
+      "downFrames": 257,
+      "topCaptured": true,
+      "bottomCaptured": true,
+      "end": {
+        "update": 2530,
+        "time": 42.166666666665556,
+        "state": "playing",
+        "form": "body",
+        "body": {
+          "x": 1438.8012025637067,
+          "y": 486.9472614269312,
+          "w": 30,
+          "h": 58,
+          "vx": 0,
+          "vy": 0,
+          "face": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "platform": "book-b",
+          "invulnerable": 0,
+          "walk": 66.6582581947911,
+          "land": 0
+        },
+        "soul": {
+          "x": 829.6221948696043,
+          "y": 201.47663765181517,
+          "vx": 0,
+          "vy": 0
+        },
+        "energy": 100,
+        "deaths": 0,
+        "movers": [
+          {
+            "id": "book-a",
+            "x": 615,
+            "y": 370.5298007564089,
+            "w": 155,
+            "h": 18,
+            "axis": "y",
+            "range": 62,
+            "speed": 0.85,
+            "phase": 0,
+            "kind": "book",
+            "baseX": 615,
+            "baseY": 430,
+            "prevX": 615,
+            "prevY": 370.784099464316,
+            "dx": 0,
+            "dy": -0.25429870790708264
+          },
+          {
+            "id": "book-b",
+            "x": 1410,
+            "y": 486.9472614269312,
+            "w": 170,
+            "h": 18,
+            "axis": "y",
+            "range": 72,
+            "speed": 0.75,
+            "phase": 1.4,
+            "kind": "book",
+            "baseX": 1410,
+            "baseY": 415,
+            "prevX": 1410,
+            "prevY": 486.9760807354176,
+            "dx": 0,
+            "dy": -0.028819308486390582
+          }
+        ],
+        "lanterns": [
+          {
+            "x": 835,
+            "y": 205,
+            "id": "name",
+            "lit": true,
+            "glow": 0
+          },
+          {
+            "x": 1830,
+            "y": 200,
+            "id": "voice",
+            "lit": false,
+            "glow": 0
+          }
+        ],
+        "memories": [
+          {
+            "x": 375,
+            "y": 420,
+            "id": "m1",
+            "collected": true
+          },
+          {
+            "x": 990,
+            "y": 270,
+            "id": "m2",
+            "collected": true
+          },
+          {
+            "x": 2060,
+            "y": 390,
+            "id": "m3",
+            "collected": false
+          }
+        ],
+        "hazards": [
+          {
+            "kind": "drifter",
+            "x": 1580,
+            "y": 515,
+            "range": 90,
+            "speed": 0.9,
+            "r": 22,
+            "clock": 42.166666666665556,
+            "frozen": 0,
+            "hitCooldown": 0,
+            "px": 1602.3437967052503,
+            "py": 518.7626656357838
+          }
+        ],
+        "checkpoint": {
+          "x": 1280,
+          "y": 560,
+          "index": 1
+        },
+        "camera": 965.8012025637062,
+        "npc": {
+          "id": "story-npc-3",
+          "chapterIndex": 3,
+          "speaker": "whale",
+          "name": "蓝页",
+          "motif": "whale",
+          "prop": "library-book",
+          "x": 190,
+          "y": 560,
+          "accent": "#9fd8e1",
+          "near": false,
+          "talking": false,
+          "talked": true,
+          "seals": 1,
+          "form": "body",
+          "look": {
+            "x": 1438.8012025637067,
+            "y": 451.9472614269312
+          },
+          "capOpen": 0,
+          "stationTicket": null
+        },
+        "nearHint": "",
+        "gateOpen": true
+      }
+    }
+  ],
+  "respawns": [],
+  "authoredGeometry": {
+    "levelId": "whalefall-library",
+    "width": 2340,
+    "spawn": {
+      "x": 105,
+      "y": 560
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 560,
+        "w": 2340,
+        "h": 100,
+        "solid": true,
+        "kind": "ground"
+      },
+      {
+        "x": 300,
+        "y": 465,
+        "w": 145,
+        "h": 18
+      },
+      {
+        "x": 950,
+        "y": 445,
+        "w": 155,
+        "h": 18
+      },
+      {
+        "x": 1700,
+        "y": 460,
+        "w": 175,
+        "h": 18
+      }
+    ],
+    "movers": [
+      {
+        "id": "book-a",
+        "x": 615,
+        "y": 430,
+        "w": 155,
+        "h": 18,
+        "axis": "y",
+        "range": 62,
+        "speed": 0.85,
+        "phase": 0,
+        "kind": "book"
+      },
+      {
+        "id": "book-b",
+        "x": 1410,
+        "y": 415,
+        "w": 170,
+        "h": 18,
+        "axis": "y",
+        "range": 72,
+        "speed": 0.75,
+        "phase": 1.4,
+        "kind": "book"
+      }
+    ],
+    "barriers": [
+      {
+        "id": "catalogue",
+        "x": 1180,
+        "y": 390,
+        "w": 38,
+        "h": 170,
+        "latchedBy": 0
+      }
+    ],
+    "winds": [
+      {
+        "x": 1350,
+        "y": 95,
+        "w": 590,
+        "h": 370,
+        "dx": -48,
+        "dy": -100
+      }
+    ],
+    "lanterns": [
+      {
+        "x": 835,
+        "y": 205,
+        "id": "name"
+      },
+      {
+        "x": 1830,
+        "y": 200,
+        "id": "voice"
+      }
+    ],
+    "memories": [
+      {
+        "x": 375,
+        "y": 420,
+        "id": "m1"
+      },
+      {
+        "x": 990,
+        "y": 270,
+        "id": "m2"
+      },
+      {
+        "x": 2060,
+        "y": 390,
+        "id": "m3"
+      }
+    ],
+    "hazards": [
+      {
+        "kind": "drifter",
+        "x": 1580,
+        "y": 515,
+        "range": 90,
+        "speed": 0.9,
+        "r": 22
+      }
+    ],
+    "npcs": [
+      {
+        "id": "story-npc-3",
+        "chapterIndex": 3,
+        "sceneId": "story-3",
+        "speaker": "whale",
+        "name": "蓝页",
+        "motif": "whale",
+        "prop": "library-book",
+        "x": 190,
+        "y": 560,
+        "accent": "#9fd8e1",
+        "lines": [
+          [
+            {
+              "speaker": "whale",
+              "text": "你的脑袋能借书，不能当书架住下。身体踩浮书，拾光去借灯。"
+            },
+            {
+              "speaker": "light",
+              "text": "风廊会推我，按住方向就能稳稳飞。你替我守着落脚点。",
+              "mood": "brave"
+            }
+          ],
+          [
+            {
+              "speaker": "whale",
+              "text": "一盏灯记住你了。另一盏还在风廊那边，别让身体等得太远。"
+            },
+            {
+              "speaker": "ashi",
+              "text": "我把头盖留一道缝，读不完的这一页，路上慢慢读。",
+              "mood": "tender"
+            }
+          ],
+          [
+            {
+              "speaker": "whale",
+              "text": "两盏灯都亮了，借阅手续齐。拾光归位，带着身体走向出口。"
+            },
+            {
+              "speaker": "ashi",
+              "text": "今天借一片海，归还一个肯出门的脑袋。",
+              "mood": "joy"
+            }
+          ]
+        ],
+        "repeat": [
+          [
+            {
+              "speaker": "whale",
+              "text": "书可以踩，借阅卡不用踩。让身体稳住，再开头顶的小窗。"
+            }
+          ],
+          [
+            {
+              "speaker": "whale",
+              "text": "另一盏灯还在等。风往哪吹，拾光就往需要的方向修正。"
+            }
+          ],
+          [
+            {
+              "speaker": "whale",
+              "text": "催还章改成路上慢读了。带好拾光和身体，从出口出发。"
+            }
+          ]
+        ]
+      }
+    ],
+    "exit": {
+      "x": 2195,
+      "y": 560
+    }
+  },
+  "final": {
+    "update": 3221,
+    "time": 53.68333333333157,
+    "state": "complete",
+    "form": "body",
+    "body": {
+      "x": 2145.2642979698935,
+      "y": 560,
+      "w": 30,
+      "h": 58,
+      "vx": 220,
+      "vy": 0,
+      "face": 1,
+      "grounded": true,
+      "coyote": 0.12,
+      "platform": null,
+      "invulnerable": 0,
+      "walk": 101.95800091448046,
+      "land": 0
+    },
+    "soul": {
+      "x": 2062.33774305725,
+      "y": 386.4225163380222,
+      "vx": 0,
+      "vy": 0
+    },
+    "energy": 100,
+    "deaths": 0,
+    "movers": [
+      {
+        "id": "book-a",
+        "x": 615,
+        "y": 491.8127462910359,
+        "w": 155,
+        "h": 18,
+        "axis": "y",
+        "range": 62,
+        "speed": 0.85,
+        "phase": 0,
+        "kind": "book",
+        "baseX": 615,
+        "baseY": 430,
+        "prevX": 615,
+        "prevY": 491.8747541272528,
+        "dx": 0,
+        "dy": -0.06200783621687833
+      },
+      {
+        "id": "book-b",
+        "x": 1410,
+        "y": 362.26939016989206,
+        "w": 170,
+        "h": 18,
+        "axis": "y",
+        "range": 72,
+        "speed": 0.75,
+        "phase": 1.4,
+        "kind": "book",
+        "baseX": 1410,
+        "baseY": 415,
+        "prevX": 1410,
+        "prevY": 362.886310336687,
+        "dx": 0,
+        "dy": -0.6169201667949551
+      }
+    ],
+    "lanterns": [
+      {
+        "x": 835,
+        "y": 205,
+        "id": "name",
+        "lit": true,
+        "glow": 0
+      },
+      {
+        "x": 1830,
+        "y": 200,
+        "id": "voice",
+        "lit": true,
+        "glow": 0
+      }
+    ],
+    "memories": [
+      {
+        "x": 375,
+        "y": 420,
+        "id": "m1",
+        "collected": true
+      },
+      {
+        "x": 990,
+        "y": 270,
+        "id": "m2",
+        "collected": true
+      },
+      {
+        "x": 2060,
+        "y": 390,
+        "id": "m3",
+        "collected": true
+      }
+    ],
+    "hazards": [
+      {
+        "kind": "drifter",
+        "x": 1580,
+        "y": 515,
+        "range": 90,
+        "speed": 0.9,
+        "r": 22,
+        "clock": 49.183333333331824,
+        "frozen": 0,
+        "hitCooldown": 0,
+        "px": 1605.105700196109,
+        "py": 508.3681019567533
+      }
+    ],
+    "checkpoint": {
+      "x": 1920,
+      "y": 560,
+      "index": 2
+    },
+    "camera": 1239.9999999999989,
+    "npc": {
+      "id": "story-npc-3",
+      "chapterIndex": 3,
+      "speaker": "whale",
+      "name": "蓝页",
+      "motif": "whale",
+      "prop": "library-book",
+      "x": 190,
+      "y": 560,
+      "accent": "#9fd8e1",
+      "near": false,
+      "talking": false,
+      "talked": true,
+      "seals": 2,
+      "form": "body",
+      "look": {
+        "x": 2145.2642979698935,
+        "y": 525
+      },
+      "capOpen": 0,
+      "stationTicket": null
+    },
+    "nearHint": "带着身体走进门，送出这一封信",
+    "gateOpen": true
+  },
+  "updates": 3221
+}
