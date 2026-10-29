@@ -15,7 +15,7 @@ function oval(c,x,y,rx,ry,color){c.beginPath();c.ellipse(x,y,rx,ry,0,0,TAU);c.fi
 function line(c,points,color,width){c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.strokeStyle=color;c.lineWidth=width;c.stroke();}
 function gradient(c,x0,y0,x1,y1,stops){const fill=c.createLinearGradient(x0,y0,x1,y1);for(const [offset,color] of stops)fill.addColorStop(offset,color);return fill;}
 
-export function getTravelerMotion(body={}, {time=0,hop=0,reducedMotion=false}={}){
+export function getTravelerMotion(body={}, {time=0,hop=0,reducedMotion=false,performance=null}={}){
   const speed=clamp(Math.abs(finite(body.vx))/240,0,1),grounded=body.grounded!==false;
   const amount=reducedMotion?0:ease(clamp((speed-.035)/.2,0,1));
   // `walk` already integrates travelled distance / 20. A 60px cycle gives
@@ -24,6 +24,8 @@ export function getTravelerMotion(body={}, {time=0,hop=0,reducedMotion=false}={}
   const rise=grounded||reducedMotion?0:clamp(-finite(body.vy)/600,0,1);
   const fall=grounded||reducedMotion?0:clamp(finite(body.vy)/650,0,1);
   const landing=reducedMotion?0:clamp(finite(body.land),0,.22)/.22;
+  const settle=reducedMotion?0:clamp(finite(performance?.landing),0,1),riding=reducedMotion?0:clamp(finite(performance?.ride),0,1);
+  const balance=reducedMotion?0:clamp(finite(performance?.balance),-1,1),airRise=reducedMotion?0:clamp(finite(performance?.rise),0,1);
   const clock=reducedMotion?0:finite(time),breathe=reducedMotion?0:Math.sin(clock*1.8);
   const legs=[-7,7].map((x,index)=>{
     const cycle=mod(phase+index*Math.PI,TAU),stance=cycle<=Math.PI;
@@ -33,16 +35,17 @@ export function getTravelerMotion(body={}, {time=0,hop=0,reducedMotion=false}={}
     const swingAngle=stance?0:-.24*Math.sin(Math.PI*u)*Math.cos(Math.PI*u);
     let soleX=x+(grounded?travel*amount:(index?1:-1)*(rise*4+fall*2));
     let soleY=grounded?finite(hop)-lift*amount:-3-rise*(index?9:6)+fall*2.2;
+    if(!grounded)soleY-=airRise*(index?3:2);
     if(reducedMotion){soleX=x;soleY=finite(hop);}
     const hip={x,y:-21},ankle={x:soleX,y:soleY-4.8};
-    const knee={x:mix(hip.x,ankle.x,.48)+(grounded?2+landing*2:3+rise*3),y:mix(hip.y,ankle.y,.53)};
+    const knee={x:mix(hip.x,ankle.x,.48)+(grounded?2+landing*2:3+rise*3)+(index?1:-1)*(settle*2.2+riding),y:mix(hip.y,ankle.y,.53)+settle*2.8};
     return {hip,knee,ankle,foot:{x:soleX,y:soleY,angle:reducedMotion?0:grounded?swingAngle*amount:(index?-.08:.12)*rise},planted:grounded&&(stance||amount===0),lift:grounded?lift*amount:rise*7};
   });
   return {legs,speed,phase,landing,rise,fall,
-    hem:reducedMotion?0:(grounded?Math.sin(phase)*amount*1.3:rise*1.7-fall*.9),
-    scarfLift:reducedMotion?0:speed*3.5+fall*4-rise*2,
-    scarfWave:reducedMotion?0:Math.sin(clock*3+travelledPhase*.16)*(1+speed*1.3),
-    satchelAngle:reducedMotion?-.14:-.14+Math.sin(phase-.45)*amount*.1+rise*.08-fall*.06,
+    hem:reducedMotion?0:(grounded?Math.sin(phase)*amount*1.3:rise*1.7-fall*.9)+settle*1.2,
+    scarfLift:reducedMotion?0:speed*3.5+fall*4-rise*2-settle*3+riding*Math.abs(balance)*1.5,
+    scarfWave:reducedMotion?0:Math.sin(clock*3+travelledPhase*.16)*(1+speed*1.3)+balance*1.4,
+    satchelAngle:reducedMotion?-.14:-.14+Math.sin(phase-.45)*amount*.1+rise*.08-fall*.06-settle*.16-balance*.025,
     breathe};
 }
 

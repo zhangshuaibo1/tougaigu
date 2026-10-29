@@ -14,6 +14,7 @@ import { createTheatrePaintedAssets, drawPaintedTheatre, drawPaintedTheatreLight
 import { drawTheatreLantern } from './dream-theatre-lantern.js';
 import { drawRefinedSoul } from './dream-soul-art.js';
 import { createTheatreEncore, advanceTheatreEncore, drawTheatreEncore, getTheatreEncoreView } from './dream-theatre-encore.js';
+import { createTravelerPerformance, advanceTravelerPerformance, settleTravelerPerformance, getTravelerPerformanceView, applyTravelerPerformance } from './dream-traveler-performance.js';
 export { DREAM_LEVELS, DREAM_PHYSICS, createDreamRng, getDreamStars } from './dream-engine-base.js';
 
 export class DreamGame extends BaseDreamGame {
@@ -22,7 +23,7 @@ export class DreamGame extends BaseDreamGame {
     this.paintedScenes=createPaintedSceneAssets({loadImage:resources.loadImage});
     this.greenhouseScenes=createGreenhouseSceneAssets({loadImage:resources.loadImage});
     this.theatreScenes=createTheatrePaintedAssets({loadImage:resources.loadTheatreImage});
-    this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.theatreLight=null;this.theatreEncore=null;this.letterEcho=null;
+    this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.theatreLight=null;this.theatreEncore=null;this.letterEcho=null;this.travelerPerformance=null;
   }
   isStationFinish(){return this.mode==='story'&&this.chapterIndex===0;}
   isGreenhouseFinish(){return this.mode==='story'&&this.chapterIndex===1;}
@@ -30,8 +31,10 @@ export class DreamGame extends BaseDreamGame {
   start(options={}){
     if(this.destroyed)return;
     this.stationSignal=null;this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.theatreLight=null;this.theatreEncore=null;this.letterEcho=null;
+    this.travelerPerformance=createTravelerPerformance();
     super.start(options);
     if(this.destroyed)return;
+    if(!this.isTheatreFinish())this.travelerPerformance=null;
     this.stationSignal={amount:this.stationSignalOpen()?1:0};
     this.paintedScenes.request({mode:this.mode,chapterIndex:this.chapterIndex});
     this.greenhouseScenes.request({mode:this.mode,chapterIndex:this.chapterIndex});
@@ -76,8 +79,10 @@ export class DreamGame extends BaseDreamGame {
   stationSignalOpen(){return !!(this.lanterns?.[0]?.lit||this.plateState?.get('ticket'));}
   update(dt){
     const active=this.state==='playing'&&!this.destroyed,run=this.runId;
+    const travelerBefore=active&&this.travelerPerformance?{body:this.body,runId:run,deaths:this.deaths,form:this.form,grounded:this.body.grounded,vy:this.body.vy}:null;
     super.update(dt);
     if(!active||this.destroyed||run!==this.runId||!this.stationSignal)return;
+    if(travelerBefore)advanceTravelerPerformance(this.travelerPerformance,travelerBefore,this.getTravelerPerformanceContext(),Math.max(0,Math.min(.04,Number(dt)||0)));
     const target=this.stationSignalOpen()?1:0,step=Math.max(0,Math.min(.04,Number(dt)||0))*6;
     this.stationSignal.amount=this.options.reducedMotion?target:this.stationSignal.amount<target?Math.min(target,this.stationSignal.amount+step):Math.max(target,this.stationSignal.amount-step);
     advanceLetterEcho(this.letterEcho,dt,{playing:this.state==='playing',reducedMotion:this.options.reducedMotion,capPhase:this.cap.phase,capAge:this.cap.age,capOpen:this.capOpen});
@@ -92,12 +97,23 @@ export class DreamGame extends BaseDreamGame {
       }
     }
   }
-  setReducedMotion(value){super.setReducedMotion(value);if(value&&this.stationSignal)this.stationSignal.amount=this.stationSignalOpen()?1:0;if(value){settleLetterEcho(this.letterEcho);this.syncLetterMiniature();if(this.theatreLight)this.theatreLight.amounts=this.lanterns.slice(0,2).map(l=>l.lit?1:0);}}
+  setReducedMotion(value){super.setReducedMotion(value);if(value&&this.stationSignal)this.stationSignal.amount=this.stationSignalOpen()?1:0;if(value){settleTravelerPerformance(this.travelerPerformance);settleLetterEcho(this.letterEcho);this.syncLetterMiniature();if(this.theatreLight)this.theatreLight.amounts=this.lanterns.slice(0,2).map(l=>l.lit?1:0);}}
   getPaintedStationImage(){return this.paintedScenes.getImage({mode:this.mode,chapterIndex:this.chapterIndex});}
   getPaintedGreenhouseImage(){return this.greenhouseScenes.getImage({mode:this.mode,chapterIndex:this.chapterIndex});}
   getPaintedTheatreImage(){return this.theatreScenes.getImage({mode:this.mode,chapterIndex:this.chapterIndex});}
   getTheatreEncoreView(){return getTheatreEncoreView(this.theatreEncore);}
-  destroy(){super.destroy();this.paintedScenes.destroy();this.greenhouseScenes.destroy();this.theatreScenes.destroy();this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.theatreLight=null;this.theatreEncore=null;this.letterEcho=null;this.syncLetterMiniature();}
+  destroy(){super.destroy();this.paintedScenes.destroy();this.greenhouseScenes.destroy();this.theatreScenes.destroy();this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.theatreLight=null;this.theatreEncore=null;this.letterEcho=null;this.travelerPerformance=null;this.syncLetterMiniature();}
+  getTravelerPerformanceContext(){
+    return {mode:this.mode,chapterIndex:this.chapterIndex,state:this.state,form:this.form,body:this.body,
+      level:this.level,movers:this.movers,closedBarriers:this.level?.barriers.filter(b=>!this.barrierOpen(b))||[],
+      time:this.visualTime,reducedMotion:this.options?.reducedMotion,runId:this.runId,deaths:this.deaths};
+  }
+  getTravelerPerformanceView(){
+    return this.isTheatreFinish()&&!this.destroyed?getTravelerPerformanceView(this.travelerPerformance,this.getTravelerPerformanceContext()):null;
+  }
+  getCharacterPresentation(t=this.options.reducedMotion?0:this.visualTime){
+    return applyTravelerPerformance(super.getCharacterPresentation(t),this.getTravelerPerformanceView());
+  }
   getStoryNPCView(npc){
     const view=super.getStoryNPCView(npc);
     return view&&this.paintedFrame&&this.isStationFinish()?{...view,lighting:'painted-station'}:view;
