@@ -33,7 +33,7 @@ window.__qaRead=()=>{
       encore:game.getTheatreEncoreView()
     }:null,
     nearHint:game.getNearHint(),
-    movers:(game.movers||[]).map(p=>({id:p.id,x:p.x,y:p.y,w:p.w,h:p.h,dx:p.dx,dy:p.dy})),
+    movers:(game.movers||[]).map(p=>({id:p.id,x:p.x,y:p.y,w:p.w,h:p.h,dx:p.dx,dy:p.dy,range:p.range,speed:p.speed})),
     platforms:(game.level?.platforms||[]).map(p=>({x:p.x,y:p.y,w:p.w,h:p.h,kind:p.kind||null})),
     letterChoice:save.choices.letter??null,
     letterEcho:game.letterEcho?{...game.letterEcho}:null,
@@ -244,6 +244,9 @@ async def wait_text(page,selector,text,timeout=5000):
     await page.wait_for_function("([s,t])=>document.querySelector(s)?.textContent.includes(t)",arg=[selector,text],timeout=timeout)
 
 async def hold(page,direction,seconds=None,until=None,touch=False,limit=5):
+    # A condition may become true during preceding read-only HUD work. Do not
+    # introduce another key/touch pulse when the actor has already arrived.
+    if seconds is None and until is not None and await until():return
     keys={'up':'ArrowUp','down':'ArrowDown','left':'ArrowLeft','right':'ArrowRight'}
     session=None
     if touch:
@@ -663,7 +666,40 @@ async def theatre_hint(page,phrase):
     snapshot=await page.evaluate('window.__qaRead()')
     assert phrase in snapshot['nearHint'], 'visible platform hint disagrees with the live engine hint'
     await assert_hud_readable(page,'theatre-'+phrase,form='body',hint=phrase)
+    # This is evidence at the observed hint, not a current input position:
+    # accessibility queries above take time while the real stage keeps moving.
     return snapshot
+
+def theatre_alight_window(snapshot,right):
+    """Fresh, read-only walking/braking clearance on the authored real dock."""
+    b=snapshot['body'];p=theatre_mover(snapshot)
+    if snapshot['form']!='body' or snapshot['state']!='playing':return False
+    if not b['grounded'] or b['platform']!='stage' or abs(b['vx'])>=1:return False
+    if abs(b['y']-p['y'])>=2 or abs(p['y']-right['y'])>.01 or p['dx']<=0:return False
+    if min(p['x']+p['w'],right['x']+right['w'])-max(p['x'],right['x'])<=1:return False
+    # Base physics retains the old mover during same-height overlap. The
+    # body must clear its RIGHT edge, then brake, before the bank ends. These
+    # are the unchanged walk speed / acceleration also used by drive_to().
+    walk_speed=240;acceleration=1650;input_budget=.10
+    edge=p['x']+p['w']+b['w']/2-1
+    distance=max(0,edge-b['x'])
+    walk_seconds=distance/walk_speed+walk_speed/(2*acceleration)
+    carry_speed=abs(p['range']*p['speed']) # maximum of the actual sine mover
+    projected_stop=edge+carry_speed*(walk_seconds+input_budget)+walk_speed*input_budget+walk_speed**2/(2*acceleration)
+    return projected_stop<right['x']+right['w']-b['w']/2
+
+async def wait_theatre_alight_window(page,right):
+    # An accessibility observation can outlast this departure's safe window.
+    # A standing rider may take the NEXT genuine round trip; no state is reset.
+    snapshot=await page.evaluate('window.__qaRead()')
+    period=6.283185307179586/abs(theatre_mover(snapshot)['speed'])
+    end=time.monotonic()+period+1
+    while True:
+        if theatre_alight_window(snapshot,right):return snapshot
+        if time.monotonic()>=end:
+            raise AssertionError('no real outward dock with walking/braking room: '+json.dumps({'right':right,'actual':snapshot},ensure_ascii=False))
+        await page.wait_for_timeout(30)
+        snapshot=await page.evaluate('window.__qaRead()')
 
 async def assert_theatre_paint(page,kind='primary'):
     expected={'primary':['ready',True,2172,724,'theatre-painted-v22.webp'],
@@ -716,6 +752,10 @@ async def cross_theatre_stage(page,output,label,touch=False,expected_lamps=None,
     bm=theatre_mover(boarding)
     assert abs(bm['y']-left['y'])<2 and min(bm['x']+bm['w'],left['x']+left['w'])>max(bm['x'],left['x']), 'boarding hint had no actual same-height dock contact'
     assert bm['dx']>0 and bm['x']<760
+    # HUD/AX observation above must not consume the window used for INPUT.
+    # Re-observe the next real outward contact before pressing a direction.
+    await page.wait_for_function("()=>{const a=window.__qaRead(),p=a?.movers.find(p=>p.id==='stage'),b=a?.body;return p&&b?.grounded&&b.platform===null&&Math.abs(b.y-p.y)<2&&p.x<=725&&p.dx>0;}",timeout=15000)
+    board_input=await page.evaluate('window.__qaRead()')
     async def aboard():return (await page.evaluate('window.__qaRead()'))['body']['platform']=='stage'
     await hold(page,'right',until=aboard,touch=touch,limit=5)
     await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.platform==='stage'&&b.grounded&&Math.abs(b.vx)<1;}",timeout=3000)
@@ -735,21 +775,31 @@ async def cross_theatre_stage(page,output,label,touch=False,expected_lamps=None,
     assert left['x']+left['w']<rb['x']<right['x'], 'midstage evidence was not over the gap'
     await page.screenshot(path=str(output/(label+'-theatre-midstage.png')),full_page=True)
 
-    await page.wait_for_function("()=>{const p=window.__qaRead()?.movers.find(p=>p.id==='stage');return p&&p.x>=1020&&p.dx>0;}",timeout=10000)
+    await page.wait_for_function("()=>{const p=window.__qaRead()?.movers.find(p=>p.id==='stage');return p&&p.x>=970&&p.dx>0;}",timeout=10000)
     alighting=await theatre_hint(page,'右侧踏台到了')
     assert_theatre_rider(alighting)
     am=theatre_mover(alighting);ab=alighting['body']
     assert abs(am['y']-right['y'])<2 and min(am['x']+am['w'],right['x']+right['w'])>max(am['x'],right['x']), 'alighting hint had no real dock contact'
     assert right['x']-(ab['x']+ab['w']/2)<=55
+    alight_input=await wait_theatre_alight_window(page,right)
+    assert_theatre_rider(alight_input)
     async def ashore():
         b=(await page.evaluate('window.__qaRead()'))['body']
         return b['platform'] is None and b['grounded'] and b['x']>1220 and abs(b['y']-right['y'])<2
-    await hold(page,'right',until=ashore,touch=touch,limit=5)
-    await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.grounded&&b.platform===null&&Math.abs(b.vx)<1;}",timeout=3000)
+    key_release=None
+    try:
+        await hold(page,'right',until=ashore,touch=touch,limit=5)
+        key_release=await page.evaluate('window.__qaRead()')
+        await page.wait_for_function("right=>{const b=window.__qaRead()?.body;return b?.grounded&&b.platform===null&&Math.abs(b.vx)<1&&b.x>right.x&&b.x<right.x+right.w&&Math.abs(b.y-right.y)<2;}",arg=right,timeout=3000)
+    except Exception as error:
+        actual=await page.evaluate('window.__qaRead()')
+        raise AssertionError(label+': actual right-bank landing failed; '+json.dumps({'right':right,'hintObservation':alighting,'inputStart':alight_input,'keyRelease':key_release,'actual':actual},ensure_ascii=False)) from error
     landed=await page.evaluate('window.__qaRead()')
     lb=landed['body']
-    assert right['x']<lb['x']<right['x']+right['w'] and abs(lb['y']-right['y'])<2
-    assert landed['deaths']==initial['deaths'] and landed['state']=='playing'
+    landing_evidence=json.dumps({'right':right,'hintObservation':alighting,'inputStart':alight_input,'keyRelease':key_release,'actual':landed},ensure_ascii=False)
+    assert right['x']<lb['x']<right['x']+right['w'] and abs(lb['y']-right['y'])<2, label+': landed outside the real bank; '+landing_evidence
+    assert lb['grounded'] and lb['platform'] is None and abs(lb['vx'])<1, label+': did not stop on the fixed right bank; '+landing_evidence
+    assert landed['deaths']==initial['deaths'] and landed['state']=='playing', label+': failed crossing; '+landing_evidence
     expected_seals=1 if expected_lamps else 0
     assert re.match(rf'{expected_seals}\s*/',await page.locator('#stage-seals').inner_text()), 'platform route falsely solved a poem lamp'
     assert await page.evaluate('document.documentElement.scrollWidth<=innerWidth'), 'theatre route horizontal overflow'
@@ -763,7 +813,7 @@ async def cross_theatre_stage(page,output,label,touch=False,expected_lamps=None,
             'bodyPlatformObserved':'stage','noInputCarryDistance':rb['x']-ride_start['body']['x'],
             'relativeRideOffsetDrift':(rb['x']-rm['x'])-relative_start,'alightHintMatchedContact':True,
             'rightBankReached':True,'earnedShortCurtainCall':True,'noRespawns':True,'noHorizontalOverflow':True,'chapterCompleted':False,
-            'evidence':{'waiting':waiting,'boarding':boarding,'rideStart':ride_start,'riding':riding,'alighting':alighting,'landed':landed}}
+            'evidence':{'waiting':waiting,'boarding':boarding,'boardInput':board_input,'rideStart':ride_start,'riding':riding,'alighting':alighting,'alightInput':alight_input,'keyRelease':key_release,'landed':landed}}
 
 
 async def verify_first_theatre_lamp(page,output,label):
