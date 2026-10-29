@@ -1,0 +1,120 @@
+{
+  "scope": "Offline rasterization of production SVG. Not browser, dialog, Chinese-text, input, animation, or real-device evidence.",
+  "moduleSha256": "80f61137dfb5ad0f6b906855d1e5678dac2c30aeff218cf41541c17052a8d95c",
+  "files": [
+    {
+      "id": "dawn",
+      "label": "native",
+      "name": "dawn-native.png",
+      "width": 640,
+      "height": 340,
+      "bytes": 87874,
+      "sha256": "1962854a9b4682192b76a1335d5b9c5a8f1f7e29c102abf9b59fa1b9e69d1110",
+      "markupSha256": "5bf0645c1c1c81a6a9759670040e8d698662b72070f6c55799d51637adfad969",
+      "svgSha256": "002731a158e7c3c1215f1c6d282cddf07f00ebf4028a15adc6c7596a21d82b69",
+      "opaqueFraction": 0.9887913602941176,
+      "distinctColors": 15699,
+      "haloPixel": [
+        105,
+        125,
+        141,
+        255
+      ]
+    },
+    {
+      "id": "dawn",
+      "label": "phone-art",
+      "name": "dawn-phone-art.png",
+      "width": 260,
+      "height": 138,
+      "bytes": 27845,
+      "sha256": "56b0ee5dc495e0b1bf1076910a59f1d274df304505dcafb652b6f31df6a4eac7",
+      "markupSha256": "5bf0645c1c1c81a6a9759670040e8d698662b72070f6c55799d51637adfad969",
+      "svgSha256": "002731a158e7c3c1215f1c6d282cddf07f00ebf4028a15adc6c7596a21d82b69",
+      "opaqueFraction": 0.9766164994425864,
+      "distinctColors": 7290,
+      "haloPixel": [
+        103,
+        124,
+        141,
+        255
+      ]
+    },
+    {
+      "id": "lanterns",
+      "label": "native",
+      "name": "lanterns-native.png",
+      "width": 640,
+      "height": 340,
+      "bytes": 86373,
+      "sha256": "e307b1f75ad2c06d7826d5b79206a6d21f4ffa5a2b87f666bcb943e0b32fdbf1",
+      "markupSha256": "75d2c540b97a23a994bf9e0dd1a0a7098e94a33c37a7449c782e551d816ed2c1",
+      "svgSha256": "3794a4d2a2119953e95dfe84e9d0eacd73e9e030c5c3b38b976cdad346d3020d",
+      "opaqueFraction": 0.9887913602941176,
+      "distinctColors": 16752,
+      "haloPixel": [
+        86,
+        105,
+        121,
+        255
+      ]
+    },
+    {
+      "id": "lanterns",
+      "label": "phone-art",
+      "name": "lanterns-phone-art.png",
+      "width": 260,
+      "height": 138,
+      "bytes": 26856,
+      "sha256": "1d2e2f1cb1b749468fbb726d192f1243ac31b8a24a6635ef7961f914b29a1667",
+      "markupSha256": "75d2c540b97a23a994bf9e0dd1a0a7098e94a33c37a7449c782e551d816ed2c1",
+      "svgSha256": "3794a4d2a2119953e95dfe84e9d0eacd73e9e030c5c3b38b976cdad346d3020d",
+      "opaqueFraction": 0.9766164994425864,
+      "distinctColors": 6836,
+      "haloPixel": [
+        85,
+        104,
+        120,
+        255
+      ]
+    },
+    {
+      "id": "tender",
+      "label": "native",
+      "name": "tender-native.png",
+      "width": 640,
+      "height": 340,
+      "bytes": 64030,
+      "sha256": "33e05b71c993eeb227ce527a246be1df35cc9982268e85f5a043c9f50cd509ae",
+      "markupSha256": "5c5b3c7f554cd4f93fe6e138b56051319980e6730fad3de6f771e1e474410814",
+      "svgSha256": "5bfc95778762881ed1cd4b5ca1b1dae32a35ad9ab17541c3cc357c999f0cfe04",
+      "opaqueFraction": 0.9887913602941176,
+      "distinctColors": 10810,
+      "haloPixel": [
+        141,
+        148,
+        158,
+        255
+      ]
+    },
+    {
+      "id": "tender",
+      "label": "phone-art",
+      "name": "tender-phone-art.png",
+      "width": 260,
+      "height": 138,
+      "bytes": 22107,
+      "sha256": "c8cca5f0fddb9c0a64a3543fb6afc4f8820c3686c7aceb3d20b6595d54c68b64",
+      "markupSha256": "5c5b3c7f554cd4f93fe6e138b56051319980e6730fad3de6f771e1e474410814",
+      "svgSha256": "5bfc95778762881ed1cd4b5ca1b1dae32a35ad9ab17541c3cc357c999f0cfe04",
+      "opaqueFraction": 0.9766164994425864,
+      "distinctColors": 4531,
+      "haloPixel": [
+        141,
+        147,
+        158,
+        255
+      ]
+    }
+  ]
+}

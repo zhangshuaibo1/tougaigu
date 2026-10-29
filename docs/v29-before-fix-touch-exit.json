@@ -1,0 +1,2616 @@
+{
+  "label": "1280-full-touch-320",
+  "input": "CDP simulated touch",
+  "walkingSamples": [
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 31.716666666666146,
+      "deaths": 0,
+      "body": {
+        "x": 2105.7009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 4.333333333333334
+        }
+      ],
+      "input": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 31.799999999999475,
+      "deaths": 0,
+      "body": {
+        "x": 2107.0759121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 55,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 4.250000000000001
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 31.833333333332806,
+      "deaths": 0,
+      "body": {
+        "x": 2110.284245446451,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 110,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 4.216666666666668
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 31.883333333332804,
+      "deaths": 0,
+      "body": {
+        "x": 2118.534245446451,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 192.5,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 4.166666666666668
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 31.916666666666135,
+      "deaths": 0,
+      "body": {
+        "x": 2126.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 4.133333333333335
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 31.966666666666132,
+      "deaths": 0,
+      "body": {
+        "x": 2138.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 4.083333333333335
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 31.999999999999464,
+      "deaths": 0,
+      "body": {
+        "x": 2146.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 4.050000000000002
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.049999999999464,
+      "deaths": 0,
+      "body": {
+        "x": 2158.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 4.000000000000002
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.083333333332796,
+      "deaths": 0,
+      "body": {
+        "x": 2166.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.9666666666666686
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.13333333333279,
+      "deaths": 0,
+      "body": {
+        "x": 2178.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.9166666666666687
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.166666666666124,
+      "deaths": 0,
+      "body": {
+        "x": 2186.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.8833333333333355
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.199999999999456,
+      "deaths": 0,
+      "body": {
+        "x": 2194.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.8500000000000023
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.24999999999945,
+      "deaths": 0,
+      "body": {
+        "x": 2206.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.8000000000000025
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.283333333332784,
+      "deaths": 0,
+      "body": {
+        "x": 2214.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.7666666666666693
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.33333333333278,
+      "deaths": 0,
+      "body": {
+        "x": 2226.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.7166666666666694
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.36666666666611,
+      "deaths": 0,
+      "body": {
+        "x": 2234.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.6833333333333362
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.41666666666611,
+      "deaths": 0,
+      "body": {
+        "x": 2246.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.6333333333333364
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.44999999999944,
+      "deaths": 0,
+      "body": {
+        "x": 2254.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.600000000000003
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.48333333333277,
+      "deaths": 0,
+      "body": {
+        "x": 2262.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.56666666666667
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.53333333333277,
+      "deaths": 0,
+      "body": {
+        "x": 2274.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.51666666666667
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.5666666666661,
+      "deaths": 0,
+      "body": {
+        "x": 2282.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.483333333333337
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.59999999999943,
+      "deaths": 0,
+      "body": {
+        "x": 2290.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.4500000000000037
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.64999999999943,
+      "deaths": 0,
+      "body": {
+        "x": 2302.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.400000000000004
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.68333333333276,
+      "deaths": 0,
+      "body": {
+        "x": 2310.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.3666666666666707
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.73333333333276,
+      "deaths": 0,
+      "body": {
+        "x": 2322.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.316666666666671
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.76666666666609,
+      "deaths": 0,
+      "body": {
+        "x": 2330.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.2833333333333377
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.81666666666609,
+      "deaths": 0,
+      "body": {
+        "x": 2342.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.233333333333338
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.84999999999942,
+      "deaths": 0,
+      "body": {
+        "x": 2350.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.2000000000000046
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.899999999999416,
+      "deaths": 0,
+      "body": {
+        "x": 2362.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.150000000000005
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.93333333333275,
+      "deaths": 0,
+      "body": {
+        "x": 2370.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.1166666666666716
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 32.983333333332745,
+      "deaths": 0,
+      "body": {
+        "x": 2382.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.0666666666666718
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 33.016666666666076,
+      "deaths": 0,
+      "body": {
+        "x": 2390.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.0333333333333385
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 33.04999999999941,
+      "deaths": 0,
+      "body": {
+        "x": 2398.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 3.0000000000000053
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 33.099999999999405,
+      "deaths": 0,
+      "body": {
+        "x": 2410.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 2.9500000000000055
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 33.133333333332736,
+      "deaths": 0,
+      "body": {
+        "x": 2418.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 2.9166666666666723
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 33.18333333333273,
+      "deaths": 0,
+      "body": {
+        "x": 2430.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 2.8666666666666725
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 33.216666666666065,
+      "deaths": 0,
+      "body": {
+        "x": 2438.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 2.8333333333333393
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 33.249999999999396,
+      "deaths": 0,
+      "body": {
+        "x": 2446.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 2.800000000000006
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 33.29999999999939,
+      "deaths": 0,
+      "body": {
+        "x": 2458.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 2.750000000000006
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 33.333333333332725,
+      "deaths": 0,
+      "body": {
+        "x": 2466.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 2.716666666666673
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 33.366666666666056,
+      "deaths": 0,
+      "body": {
+        "x": 2474.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 2.68333333333334
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "runId": 1,
+      "bodyIdentity": 12,
+      "chapterIndex": 5,
+      "mode": "story",
+      "state": "playing",
+      "form": "body",
+      "time": 33.41666666666605,
+      "deaths": 0,
+      "body": {
+        "x": 2486.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 2.63333333333334
+        }
+      ],
+      "input": {
+        "x": 1,
+        "y": 0
+      }
+    }
+  ],
+  "frozen": {
+    "runId": 1,
+    "bodyIdentity": 12,
+    "chapterIndex": 5,
+    "mode": "story",
+    "state": "playing",
+    "form": "soul",
+    "time": 31.54999999999949,
+    "deaths": 0,
+    "body": {
+      "x": 2105.7009121131177,
+      "y": 560,
+      "w": 30,
+      "h": 58,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "platform": null,
+      "face": 1,
+      "land": 0
+    },
+    "hazards": [
+      {
+        "kind": "pendulum",
+        "x": 2350,
+        "y": 215,
+        "px": 2505.5269635303644,
+        "py": 483.16294228514255,
+        "r": 30,
+        "length": 310,
+        "swing": 0.58,
+        "speed": 1,
+        "phase": 1,
+        "frozen": 4.5
+      }
+    ],
+    "input": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "afterRecall": {
+    "runId": 1,
+    "bodyIdentity": 12,
+    "chapterIndex": 5,
+    "mode": "story",
+    "state": "playing",
+    "form": "body",
+    "time": 31.69999999999948,
+    "deaths": 0,
+    "body": {
+      "x": 2105.7009121131177,
+      "y": 560,
+      "w": 30,
+      "h": 58,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "platform": null,
+      "face": 1,
+      "land": 0
+    },
+    "hazards": [
+      {
+        "kind": "pendulum",
+        "x": 2350,
+        "y": 215,
+        "px": 2505.5269635303644,
+        "py": 483.16294228514255,
+        "r": 30,
+        "length": 310,
+        "swing": 0.58,
+        "speed": 1,
+        "phase": 1,
+        "frozen": 4.3500000000000005
+      }
+    ],
+    "input": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "afterDrive": {
+    "game": {
+      "form": "body",
+      "state": "complete",
+      "chapterIndex": 5,
+      "mode": "story",
+      "festivalId": null,
+      "controlSource": "buttons",
+      "runId": 1,
+      "bodyIdentity": 12,
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "inputAvailable": false,
+      "energy": 100,
+      "maxEnergy": 100,
+      "hudSample": {
+        "form": "body",
+        "state": "complete",
+        "time": 33.43333333333272,
+        "energy": 100,
+        "maxEnergy": 100
+      },
+      "observedAt": 168215.60000000003,
+      "fullHudWrittenAt": 168139.00000000006,
+      "seals": 2,
+      "memories": 3,
+      "firstTicket": {
+        "phase": "missing",
+        "collected": false,
+        "newlyCollected": false,
+        "settledAge": 99
+      },
+      "x": 2490.2009121131177,
+      "y": 560,
+      "vx": 240,
+      "vy": 0,
+      "time": 33.43333333333272,
+      "visualTime": 33.43333333333272,
+      "deaths": 0,
+      "camera": 2198.616141109571,
+      "reducedMotion": false,
+      "storyNPC": {
+        "id": "story-npc-5",
+        "chapterIndex": 5,
+        "speaker": "keeper",
+        "name": "归先生",
+        "motif": "keeper",
+        "prop": "post-letter",
+        "x": 190,
+        "y": 560,
+        "accent": "#e5c598",
+        "near": false,
+        "talking": false,
+        "talked": false,
+        "seals": 2,
+        "form": "body",
+        "look": {
+          "x": 2490.2009121131177,
+          "y": 525
+        },
+        "capOpen": 0,
+        "stationTicket": null,
+        "lighting": "painted-post"
+      },
+      "body": {
+        "x": 2490.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "capPhase": "closed",
+      "capAge": 0,
+      "capAmount": 0,
+      "travelerPerformance": null,
+      "characterPose": {
+        "walking": true,
+        "step": -0.9999999215505174,
+        "hop": 0.0009506513577901573,
+        "scaleY": 1,
+        "tilt": 0.055,
+        "bodyMatrix": [
+          1,
+          0,
+          0,
+          1,
+          2490.2009121131177,
+          559.9990493486422
+        ],
+        "openingWorld": {
+          "x": 2491.080468513551,
+          "y": 495.02324324884063
+        },
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "arms": {
+          "left": {
+            "shoulder": {
+              "x": -13,
+              "y": -35
+            },
+            "elbow": {
+              "x": 5.068295956152797,
+              "y": -26.424646873692463
+            },
+            "wrist": {
+              "x": -12.00000031379793,
+              "y": -16
+            },
+            "requested": {
+              "x": -12.00000031379793,
+              "y": -16
+            },
+            "length": 20,
+            "world": {
+              "x": 2478.20091179932,
+              "y": 543.9990493486422
+            }
+          },
+          "right": {
+            "shoulder": {
+              "x": 13,
+              "y": -35
+            },
+            "elbow": {
+              "x": -4.599715749899078,
+              "y": -25.499999709328716
+            },
+            "wrist": {
+              "x": 13.00000031379793,
+              "y": -16
+            },
+            "requested": {
+              "x": 13.00000031379793,
+              "y": -16
+            },
+            "length": 20,
+            "world": {
+              "x": 2503.2009124269157,
+              "y": 543.9990493486422
+            }
+          }
+        },
+        "performance": null
+      },
+      "theatrePaint": null,
+      "libraryPaint": null,
+      "postPaint": {
+        "status": "ready",
+        "frame": true,
+        "width": 2172,
+        "height": 724,
+        "complete": true,
+        "imageSource": "http://127.0.0.1:8080/assets/post-painted-v28.webp",
+        "lampLit": [
+          true,
+          true
+        ],
+        "lightAmounts": [
+          1,
+          1
+        ]
+      },
+      "postDelivery": {
+        "phase": "waiting"
+      },
+      "coastPaint": null,
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 2.6166666666666734
+        }
+      ],
+      "nearHint": "带着身体走进门，送出这一封信",
+      "movers": [
+        {
+          "id": "last-stage",
+          "x": 1039.2202608829352,
+          "y": 465,
+          "w": 190,
+          "h": 20,
+          "dx": -2.1292040020689456,
+          "dy": 0,
+          "range": 185,
+          "speed": 0.7
+        }
+      ],
+      "platforms": [
+        {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "kind": "ground"
+        },
+        {
+          "x": 1240,
+          "y": 560,
+          "w": 1440,
+          "h": 100,
+          "kind": "ground"
+        },
+        {
+          "x": 700,
+          "y": 465,
+          "w": 210,
+          "h": 18,
+          "kind": null
+        },
+        {
+          "x": 1180,
+          "y": 465,
+          "w": 175,
+          "h": 18,
+          "kind": null
+        },
+        {
+          "x": 1600,
+          "y": 390,
+          "w": 130,
+          "h": 170,
+          "kind": "root"
+        },
+        {
+          "x": 2070,
+          "y": 450,
+          "w": 170,
+          "h": 18,
+          "kind": null
+        }
+      ],
+      "letterChoice": "keep",
+      "clockChoice": "hold",
+      "clockEcho": null,
+      "letterEcho": null,
+      "greenhousePlant": null,
+      "seedCollected": false,
+      "mushrooms": [
+        {
+          "x": 1450,
+          "y": 560,
+          "w": 115,
+          "boing": 0,
+          "cooldown": 0
+        }
+      ],
+      "roots": [
+        {
+          "x": 1600,
+          "y": 390,
+          "w": 130,
+          "h": 170
+        }
+      ]
+    },
+    "dialogs": [
+      "story-dialog"
+    ],
+    "result": {
+      "open": false,
+      "visible": false
+    },
+    "buttons": [
+      {
+        "id": "",
+        "direction": "right",
+        "rect": {
+          "x": 85.49195861816406,
+          "y": 528.491943359375,
+          "width": 36.016082763671875,
+          "height": 36.01611328125
+        }
+      },
+      {
+        "id": "stage-toggle",
+        "direction": null,
+        "rect": {
+          "x": 180,
+          "y": 536,
+          "width": 62,
+          "height": 64
+        }
+      },
+      {
+        "id": "stage-jump",
+        "direction": null,
+        "rect": {
+          "x": 248,
+          "y": 536,
+          "width": 62,
+          "height": 64
+        }
+      },
+      {
+        "id": "result-story",
+        "direction": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      {
+        "id": "result-map",
+        "direction": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        }
+      }
+    ]
+  },
+  "error": "post final movement returned without a visible result; state=complete, form=body, body={'x': 2490.2009121131177, 'y': 560, 'w': 30, 'h': 58, 'vx': 240, 'vy': 0, 'grounded': True, 'platform': None, 'face': 1, 'land': 0}, dialogs=['story-dialog']",
+  "failureSnapshot": {
+    "game": {
+      "form": "body",
+      "state": "complete",
+      "chapterIndex": 5,
+      "mode": "story",
+      "festivalId": null,
+      "controlSource": "buttons",
+      "runId": 1,
+      "bodyIdentity": 12,
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "inputAvailable": false,
+      "energy": 100,
+      "maxEnergy": 100,
+      "hudSample": {
+        "form": "body",
+        "state": "complete",
+        "time": 33.43333333333272,
+        "energy": 100,
+        "maxEnergy": 100
+      },
+      "observedAt": 168221.3,
+      "fullHudWrittenAt": 168139.00000000006,
+      "seals": 2,
+      "memories": 3,
+      "firstTicket": {
+        "phase": "missing",
+        "collected": false,
+        "newlyCollected": false,
+        "settledAge": 99
+      },
+      "x": 2490.2009121131177,
+      "y": 560,
+      "vx": 240,
+      "vy": 0,
+      "time": 33.43333333333272,
+      "visualTime": 33.43333333333272,
+      "deaths": 0,
+      "camera": 2198.616141109571,
+      "reducedMotion": false,
+      "storyNPC": {
+        "id": "story-npc-5",
+        "chapterIndex": 5,
+        "speaker": "keeper",
+        "name": "归先生",
+        "motif": "keeper",
+        "prop": "post-letter",
+        "x": 190,
+        "y": 560,
+        "accent": "#e5c598",
+        "near": false,
+        "talking": false,
+        "talked": false,
+        "seals": 2,
+        "form": "body",
+        "look": {
+          "x": 2490.2009121131177,
+          "y": 525
+        },
+        "capOpen": 0,
+        "stationTicket": null,
+        "lighting": "painted-post"
+      },
+      "body": {
+        "x": 2490.2009121131177,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0
+      },
+      "capPhase": "closed",
+      "capAge": 0,
+      "capAmount": 0,
+      "travelerPerformance": null,
+      "characterPose": {
+        "walking": true,
+        "step": -0.9999999215505174,
+        "hop": 0.0009506513577901573,
+        "scaleY": 1,
+        "tilt": 0.055,
+        "bodyMatrix": [
+          1,
+          0,
+          0,
+          1,
+          2490.2009121131177,
+          559.9990493486422
+        ],
+        "openingWorld": {
+          "x": 2491.080468513551,
+          "y": 495.02324324884063
+        },
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "arms": {
+          "left": {
+            "shoulder": {
+              "x": -13,
+              "y": -35
+            },
+            "elbow": {
+              "x": 5.068295956152797,
+              "y": -26.424646873692463
+            },
+            "wrist": {
+              "x": -12.00000031379793,
+              "y": -16
+            },
+            "requested": {
+              "x": -12.00000031379793,
+              "y": -16
+            },
+            "length": 20,
+            "world": {
+              "x": 2478.20091179932,
+              "y": 543.9990493486422
+            }
+          },
+          "right": {
+            "shoulder": {
+              "x": 13,
+              "y": -35
+            },
+            "elbow": {
+              "x": -4.599715749899078,
+              "y": -25.499999709328716
+            },
+            "wrist": {
+              "x": 13.00000031379793,
+              "y": -16
+            },
+            "requested": {
+              "x": 13.00000031379793,
+              "y": -16
+            },
+            "length": 20,
+            "world": {
+              "x": 2503.2009124269157,
+              "y": 543.9990493486422
+            }
+          }
+        },
+        "performance": null
+      },
+      "theatrePaint": null,
+      "libraryPaint": null,
+      "postPaint": {
+        "status": "ready",
+        "frame": true,
+        "width": 2172,
+        "height": 724,
+        "complete": true,
+        "imageSource": "http://127.0.0.1:8080/assets/post-painted-v28.webp",
+        "lampLit": [
+          true,
+          true
+        ],
+        "lightAmounts": [
+          1,
+          1
+        ]
+      },
+      "postDelivery": {
+        "phase": "waiting"
+      },
+      "coastPaint": null,
+      "hazards": [
+        {
+          "kind": "pendulum",
+          "x": 2350,
+          "y": 215,
+          "px": 2505.5269635303644,
+          "py": 483.16294228514255,
+          "r": 30,
+          "length": 310,
+          "swing": 0.58,
+          "speed": 1,
+          "phase": 1,
+          "frozen": 2.6166666666666734
+        }
+      ],
+      "nearHint": "带着身体走进门，送出这一封信",
+      "movers": [
+        {
+          "id": "last-stage",
+          "x": 1039.2202608829352,
+          "y": 465,
+          "w": 190,
+          "h": 20,
+          "dx": -2.1292040020689456,
+          "dy": 0,
+          "range": 185,
+          "speed": 0.7
+        }
+      ],
+      "platforms": [
+        {
+          "x": 0,
+          "y": 560,
+          "w": 870,
+          "h": 100,
+          "kind": "ground"
+        },
+        {
+          "x": 1240,
+          "y": 560,
+          "w": 1440,
+          "h": 100,
+          "kind": "ground"
+        },
+        {
+          "x": 700,
+          "y": 465,
+          "w": 210,
+          "h": 18,
+          "kind": null
+        },
+        {
+          "x": 1180,
+          "y": 465,
+          "w": 175,
+          "h": 18,
+          "kind": null
+        },
+        {
+          "x": 1600,
+          "y": 390,
+          "w": 130,
+          "h": 170,
+          "kind": "root"
+        },
+        {
+          "x": 2070,
+          "y": 450,
+          "w": 170,
+          "h": 18,
+          "kind": null
+        }
+      ],
+      "letterChoice": "keep",
+      "clockChoice": "hold",
+      "clockEcho": null,
+      "letterEcho": null,
+      "greenhousePlant": null,
+      "seedCollected": false,
+      "mushrooms": [
+        {
+          "x": 1450,
+          "y": 560,
+          "w": 115,
+          "boing": 0,
+          "cooldown": 0
+        }
+      ],
+      "roots": [
+        {
+          "x": 1600,
+          "y": 390,
+          "w": 130,
+          "h": 170
+        }
+      ]
+    },
+    "dialogs": [
+      "story-dialog"
+    ],
+    "result": {
+      "open": false,
+      "visible": false
+    },
+    "buttons": [
+      {
+        "id": "",
+        "direction": "right",
+        "rect": {
+          "x": 85.49195861816406,
+          "y": 528.491943359375,
+          "width": 36.016082763671875,
+          "height": 36.01611328125
+        }
+      },
+      {
+        "id": "stage-toggle",
+        "direction": null,
+        "rect": {
+          "x": 180,
+          "y": 536,
+          "width": 62,
+          "height": 64
+        }
+      },
+      {
+        "id": "stage-jump",
+        "direction": null,
+        "rect": {
+          "x": 248,
+          "y": 536,
+          "width": 62,
+          "height": 64
+        }
+      },
+      {
+        "id": "result-story",
+        "direction": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      {
+        "id": "result-map",
+        "direction": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        }
+      }
+    ]
+  },
+  "inputEvents": [
+    {
+      "type": "pointerdown",
+      "pointerType": "touch",
+      "isTrusted": true,
+      "targetId": "stage-jump",
+      "direction": null,
+      "shellAction": null,
+      "at": 166228.3,
+      "state": "playing",
+      "form": "soul",
+      "time": 31.516666666666158,
+      "runId": 1,
+      "bodyIdentity": 12,
+      "dialogs": []
+    },
+    {
+      "type": "pointerup",
+      "pointerType": "touch",
+      "isTrusted": true,
+      "targetId": "stage-jump",
+      "direction": null,
+      "shellAction": null,
+      "at": 166259.89999999997,
+      "state": "playing",
+      "form": "soul",
+      "time": 31.54999999999949,
+      "runId": 1,
+      "bodyIdentity": 12,
+      "dialogs": []
+    },
+    {
+      "type": "click",
+      "pointerType": "touch",
+      "isTrusted": true,
+      "targetId": "stage-jump",
+      "direction": null,
+      "shellAction": null,
+      "at": 166261.7,
+      "state": "playing",
+      "form": "soul",
+      "time": 31.54999999999949,
+      "runId": 1,
+      "bodyIdentity": 12,
+      "dialogs": []
+    },
+    {
+      "type": "pointerdown",
+      "pointerType": "touch",
+      "isTrusted": true,
+      "targetId": "stage-toggle",
+      "direction": null,
+      "shellAction": null,
+      "at": 166361.10000000003,
+      "state": "playing",
+      "form": "soul",
+      "time": 31.649999999999483,
+      "runId": 1,
+      "bodyIdentity": 12,
+      "dialogs": []
+    },
+    {
+      "type": "pointerup",
+      "pointerType": "touch",
+      "isTrusted": true,
+      "targetId": "stage-toggle",
+      "direction": null,
+      "shellAction": null,
+      "at": 166393.39999999997,
+      "state": "playing",
+      "form": "soul",
+      "time": 31.683333333332815,
+      "runId": 1,
+      "bodyIdentity": 12,
+      "dialogs": []
+    },
+    {
+      "type": "click",
+      "pointerType": "touch",
+      "isTrusted": true,
+      "targetId": "stage-toggle",
+      "direction": null,
+      "shellAction": null,
+      "at": 166395.3,
+      "state": "playing",
+      "form": "soul",
+      "time": 31.683333333332815,
+      "runId": 1,
+      "bodyIdentity": 12,
+      "dialogs": []
+    },
+    {
+      "type": "pointerdown",
+      "pointerType": "touch",
+      "isTrusted": true,
+      "targetId": null,
+      "direction": "right",
+      "shellAction": null,
+      "at": 166477.39999999997,
+      "state": "playing",
+      "form": "body",
+      "time": 31.766666666666143,
+      "runId": 1,
+      "bodyIdentity": 12,
+      "dialogs": []
+    },
+    {
+      "type": "pointerup",
+      "pointerType": "touch",
+      "isTrusted": true,
+      "targetId": null,
+      "direction": "right",
+      "shellAction": null,
+      "at": 168193.10000000003,
+      "state": "complete",
+      "form": "body",
+      "time": 33.43333333333272,
+      "runId": 1,
+      "bodyIdentity": 12,
+      "dialogs": [
+        "result-dialog"
+      ]
+    },
+    {
+      "type": "click",
+      "pointerType": "touch",
+      "isTrusted": true,
+      "targetId": "result-story",
+      "direction": null,
+      "shellAction": null,
+      "at": 168194.8,
+      "state": "complete",
+      "form": "body",
+      "time": 33.43333333333272,
+      "runId": 1,
+      "bodyIdentity": 12,
+      "dialogs": [
+        "result-dialog"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5194 @@
+{
+  "kind": "continuous-release",
+  "config": {
+    "poll": 5,
+    "gap": 3,
+    "handoff": 0
+  },
+  "outcome": "root-landed",
+  "holdStart": {
+    "time": 22.98333333333331,
+    "phase": "one-continuous-right",
+    "runId": 1,
+    "sameBody": true,
+    "deaths": 0,
+    "state": "playing",
+    "form": "body",
+    "body": {
+      "x": 1420.4199162256862,
+      "y": 560,
+      "w": 30,
+      "h": 58,
+      "vx": 0,
+      "vy": 0,
+      "face": 1,
+      "grounded": true,
+      "coyote": 0,
+      "platform": null,
+      "invulnerable": 0,
+      "walk": 51.46666666666683,
+      "land": 0.1725
+    },
+    "input": {
+      "x": 0,
+      "y": 0
+    },
+    "mushroom": {
+      "x": 1450,
+      "y": 560,
+      "w": 115,
+      "power": 850,
+      "boing": 0,
+      "cooldown": 0
+    }
+  },
+  "releaseDecision": {
+    "time": 24.06666666666658,
+    "phase": "one-continuous-right",
+    "runId": 1,
+    "sameBody": true,
+    "deaths": 0,
+    "state": "playing",
+    "form": "body",
+    "body": {
+      "x": 1664.9199162256862,
+      "y": 345.79166666666583,
+      "w": 30,
+      "h": 58,
+      "vx": 240,
+      "vy": 342.5,
+      "face": 1,
+      "grounded": false,
+      "coyote": 0,
+      "platform": null,
+      "invulnerable": 0,
+      "walk": 63.691666666667004,
+      "land": 0
+    },
+    "input": {
+      "x": 1,
+      "y": 0
+    },
+    "mushroom": {
+      "x": 1450,
+      "y": 560,
+      "w": 115,
+      "power": 850,
+      "boing": 0,
+      "cooldown": 0
+    }
+  },
+  "releaseInput": {
+    "time": 24.11666666666658,
+    "phase": "one-continuous-right",
+    "runId": 1,
+    "sameBody": true,
+    "deaths": 0,
+    "state": "playing",
+    "form": "body",
+    "body": {
+      "x": 1676.9199162256862,
+      "y": 365.1666666666658,
+      "w": 30,
+      "h": 58,
+      "vx": 240,
+      "vy": 410,
+      "face": 1,
+      "grounded": false,
+      "coyote": 0,
+      "platform": null,
+      "invulnerable": 0,
+      "walk": 64.29166666666701,
+      "land": 0
+    },
+    "input": {
+      "x": 1,
+      "y": 0
+    },
+    "mushroom": {
+      "x": 1450,
+      "y": 560,
+      "w": 115,
+      "power": 850,
+      "boing": 0,
+      "cooldown": 0
+    }
+  },
+  "bounce": {
+    "time": 23.183333333333298,
+    "phase": "one-continuous-right",
+    "runId": 1,
+    "sameBody": true,
+    "deaths": 0,
+    "state": "playing",
+    "form": "body",
+    "body": {
+      "x": 1452.9199162256862,
+      "y": 560,
+      "w": 30,
+      "h": 58,
+      "vx": 240,
+      "vy": -850,
+      "face": 1,
+      "grounded": false,
+      "coyote": 0,
+      "platform": null,
+      "invulnerable": 0,
+      "walk": 53.09166666666685,
+      "land": 0
+    },
+    "input": {
+      "x": 1,
+      "y": 0
+    },
+    "mushroom": {
+      "x": 1450,
+      "y": 560,
+      "w": 115,
+      "power": 850,
+      "boing": 0.75,
+      "cooldown": 0.6
+    }
+  },
+  "landing": {
+    "time": 24.18333333333324,
+    "phase": "one-continuous-right",
+    "runId": 1,
+    "sameBody": true,
+    "deaths": 0,
+    "state": "playing",
+    "form": "body",
+    "body": {
+      "x": 1688.336582892353,
+      "y": 390,
+      "w": 30,
+      "h": 58,
+      "vx": 130,
+      "vy": 0,
+      "face": 1,
+      "grounded": true,
+      "coyote": 0,
+      "platform": null,
+      "invulnerable": 0,
+      "walk": 64.86250000000034,
+      "land": 0.16666666666666666
+    },
+    "input": {
+      "x": 0,
+      "y": 0
+    },
+    "mushroom": {
+      "x": 1450,
+      "y": 560,
+      "w": 115,
+      "power": 850,
+      "boing": 0,
+      "cooldown": 0
+    }
+  },
+  "final": {
+    "time": 24.26666666666657,
+    "phase": "one-continuous-right",
+    "runId": 1,
+    "sameBody": true,
+    "deaths": 0,
+    "state": "playing",
+    "form": "body",
+    "body": {
+      "x": 1692.4199162256862,
+      "y": 390,
+      "w": 30,
+      "h": 58,
+      "vx": 0,
+      "vy": 0,
+      "face": 1,
+      "grounded": true,
+      "coyote": 0.12,
+      "platform": null,
+      "invulnerable": 0,
+      "walk": 65.066666666667,
+      "land": 0
+    },
+    "input": {
+      "x": 0,
+      "y": 0
+    },
+    "mushroom": {
+      "x": 1450,
+      "y": 560,
+      "w": 115,
+      "power": 850,
+      "boing": 0,
+      "cooldown": 0
+    }
+  },
+  "bounceBeforeFinalHold": false,
+  "secondsHoldToBounce": 0.19999999999998863,
+  "secondsHoldToLanding": 1.1999999999999318,
+  "commands": [
+    {
+      "time": 22.000000000000032,
+      "phase": "approach-1420",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "time": 22.63333333333333,
+      "phase": "approach-1420",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "time": 22.766666666666655,
+      "phase": "settle-safe-before-mushroom",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "time": 22.98333333333331,
+      "phase": "one-continuous-right",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "time": 24.11666666666658,
+      "phase": "one-continuous-right",
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "samples": [
+    {
+      "time": 22.000000000000032,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1269.7482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 43.86666666666673,
+        "land": 0.1975
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.016666666666698,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1270.206619569516,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 27.5,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 43.8895833333334,
+        "land": 0.15083333333333335
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.033333333333363,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1271.1232862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 55,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 43.93541666666673,
+        "land": 0.10416666666666669
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.05000000000003,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1272.4982862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 82.5,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 44.004166666666734,
+        "land": 0.05750000000000002
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.066666666666695,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1274.331619569516,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 110,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 44.0958333333334,
+        "land": 0.010833333333333361
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.08333333333336,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1276.6232862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 137.5,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 44.21041666666674,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.100000000000026,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1279.3732862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 165,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 44.34791666666674,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.116666666666692,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1282.581619569516,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 192.5,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 44.50833333333341,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.133333333333358,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1286.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 220,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 44.69166666666674,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.150000000000023,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1290.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 44.891666666666744,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.16666666666669,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1294.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 45.09166666666675,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.183333333333355,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1298.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 45.29166666666675,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.20000000000002,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1302.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 45.49166666666675,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.216666666666686,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1306.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 45.691666666666755,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.233333333333352,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1310.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 45.89166666666676,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.250000000000018,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1314.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 46.09166666666676,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.266666666666683,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1318.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 46.291666666666764,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.28333333333335,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1322.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 46.49166666666677,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.300000000000015,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1326.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 46.69166666666677,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.31666666666668,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1330.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 46.89166666666677,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.333333333333346,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1334.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 47.091666666666775,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.350000000000012,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1338.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 47.29166666666678,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.366666666666678,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1342.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 47.49166666666678,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.383333333333344,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1346.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 47.691666666666784,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.40000000000001,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1350.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 47.89166666666679,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.416666666666675,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1354.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 48.09166666666679,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.43333333333334,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1358.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 48.29166666666679,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.450000000000006,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1362.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 48.491666666666795,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.466666666666672,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1366.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 48.6916666666668,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.483333333333338,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1370.2482862361828,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 48.8916666666668,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.500000000000004,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1374.1701647451675,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 49.091666666666804,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.51666666666667,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1378.066885228794,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 49.291666666666806,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.533333333333335,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1381.9384617443927,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 49.49166666666681,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.55,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1385.7849117716282,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 49.69166666666681,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.566666666666666,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1389.606256210121,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 49.891666666666815,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.583333333333332,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1393.4025193766024,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 50.09166666666682,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.599999999999998,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1397.1737290016044,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 50.29166666666682,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.616666666666664,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1400.9199162256862,
+        "y": 465.375,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 22.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 50.49166666666682,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.63333333333333,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1404.9199162256862,
+        "y": 466.125,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 45,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0.10333333333333333,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 50.691666666666826,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.649999999999995,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1408.461582892353,
+        "y": 467.25,
+        "w": 30,
+        "h": 58,
+        "vx": 212.5,
+        "vy": 67.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0.08666666666666667,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 50.86875000000016,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.66666666666666,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1411.5449162256862,
+        "y": 468.75,
+        "w": 30,
+        "h": 58,
+        "vx": 185,
+        "vy": 90,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0.07,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.02291666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.683333333333326,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1414.1699162256862,
+        "y": 470.625,
+        "w": 30,
+        "h": 58,
+        "vx": 157.5,
+        "vy": 112.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0.053333333333333344,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.15416666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.699999999999992,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1416.336582892353,
+        "y": 472.875,
+        "w": 30,
+        "h": 58,
+        "vx": 130,
+        "vy": 135,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0.03666666666666668,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.262500000000166,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.716666666666658,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1418.0449162256862,
+        "y": 475.5,
+        "w": 30,
+        "h": 58,
+        "vx": 102.5,
+        "vy": 157.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0.020000000000000014,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.34791666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.733333333333324,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1419.2949162256862,
+        "y": 478.5,
+        "w": 30,
+        "h": 58,
+        "vx": 75,
+        "vy": 180,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0.003333333333333348,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.41041666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.74999999999999,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.086582892353,
+        "y": 481.875,
+        "w": 30,
+        "h": 58,
+        "vx": 47.5,
+        "vy": 202.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.450000000000166,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.766666666666655,
+      "phase": "approach-1420",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.4199162256862,
+        "y": 485.625,
+        "w": 30,
+        "h": 58,
+        "vx": 20,
+        "vy": 225,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.46666666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.78333333333332,
+      "phase": "settle-safe-before-mushroom",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.4199162256862,
+        "y": 489.75,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 247.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.46666666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.799999999999986,
+      "phase": "settle-safe-before-mushroom",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.4199162256862,
+        "y": 494.25,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 270,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.46666666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.816666666666652,
+      "phase": "settle-safe-before-mushroom",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.4199162256862,
+        "y": 499.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 292.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.46666666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.833333333333318,
+      "phase": "settle-safe-before-mushroom",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.4199162256862,
+        "y": 504.375,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 315,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.46666666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.849999999999984,
+      "phase": "settle-safe-before-mushroom",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.4199162256862,
+        "y": 510,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 337.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.46666666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.86666666666665,
+      "phase": "settle-safe-before-mushroom",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.4199162256862,
+        "y": 516,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 360,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.46666666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.883333333333315,
+      "phase": "settle-safe-before-mushroom",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.4199162256862,
+        "y": 522.375,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 382.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.46666666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.89999999999998,
+      "phase": "settle-safe-before-mushroom",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.4199162256862,
+        "y": 529.125,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 405,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.46666666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.916666666666647,
+      "phase": "settle-safe-before-mushroom",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.4199162256862,
+        "y": 536.25,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 427.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.46666666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.933333333333312,
+      "phase": "settle-safe-before-mushroom",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.4199162256862,
+        "y": 543.75,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 450,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.46666666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.949999999999978,
+      "phase": "settle-safe-before-mushroom",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.4199162256862,
+        "y": 551.625,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 472.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.46666666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.966666666666644,
+      "phase": "settle-safe-before-mushroom",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.4199162256862,
+        "y": 559.875,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 495,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.46666666666683,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.98333333333331,
+      "phase": "settle-safe-before-mushroom",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.4199162256862,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.46666666666683,
+        "land": 0.1725
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 22.999999999999975,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1420.8782495590194,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 27.5,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.4895833333335,
+        "land": 0.12583333333333332
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.01666666666664,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1421.7949162256862,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 55,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.53541666666683,
+        "land": 0.07916666666666666
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.033333333333307,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1423.1699162256862,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 82.5,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.604166666666835,
+        "land": 0.0325
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.049999999999972,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1425.0032495590194,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 110,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.6958333333335,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.066666666666638,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1427.2949162256862,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 137.5,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.81041666666684,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.083333333333304,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1430.0449162256862,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 165,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 51.94791666666684,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.09999999999997,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1433.2532495590194,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 192.5,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 52.10833333333351,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.116666666666635,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1436.9199162256862,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 220,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 52.29166666666684,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.1333333333333,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1440.9199162256862,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 52.491666666666845,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.149999999999967,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1444.9199162256862,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 52.69166666666685,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.166666666666632,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1448.9199162256862,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 52.89166666666685,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.183333333333298,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1452.9199162256862,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -850,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 53.09166666666685,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.75,
+        "cooldown": 0.6
+      }
+    },
+    {
+      "time": 23.199999999999964,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1456.9199162256862,
+        "y": 546.2083333333334,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -827.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 53.291666666666856,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.7333333333333333,
+        "cooldown": 0.5833333333333333
+      }
+    },
+    {
+      "time": 23.21666666666663,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1460.9199162256862,
+        "y": 532.7916666666667,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -805,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 53.49166666666686,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.7166666666666666,
+        "cooldown": 0.5666666666666665
+      }
+    },
+    {
+      "time": 23.233333333333295,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1464.9199162256862,
+        "y": 519.7500000000001,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -782.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 53.69166666666686,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.6999999999999998,
+        "cooldown": 0.5499999999999998
+      }
+    },
+    {
+      "time": 23.24999999999996,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1468.9199162256862,
+        "y": 507.0833333333334,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -760,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 53.891666666666865,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.6833333333333331,
+        "cooldown": 0.5333333333333331
+      }
+    },
+    {
+      "time": 23.266666666666627,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1472.9199162256862,
+        "y": 494.79166666666674,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -737.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 54.09166666666687,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.6666666666666664,
+        "cooldown": 0.5166666666666664
+      }
+    },
+    {
+      "time": 23.283333333333292,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1476.9199162256862,
+        "y": 482.87500000000006,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -715,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 54.29166666666687,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.6499999999999997,
+        "cooldown": 0.4999999999999997
+      }
+    },
+    {
+      "time": 23.299999999999958,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1480.9199162256862,
+        "y": 471.33333333333337,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -692.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 54.49166666666687,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.633333333333333,
+        "cooldown": 0.48333333333333306
+      }
+    },
+    {
+      "time": 23.316666666666624,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1484.9199162256862,
+        "y": 460.1666666666667,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -670,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 54.691666666666876,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.6166666666666663,
+        "cooldown": 0.4666666666666664
+      }
+    },
+    {
+      "time": 23.33333333333329,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1488.9199162256862,
+        "y": 449.375,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -647.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 54.89166666666688,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.5999999999999995,
+        "cooldown": 0.44999999999999973
+      }
+    },
+    {
+      "time": 23.349999999999955,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1492.9199162256862,
+        "y": 438.9583333333333,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -625,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 55.09166666666688,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.5833333333333328,
+        "cooldown": 0.43333333333333307
+      }
+    },
+    {
+      "time": 23.36666666666662,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1496.9199162256862,
+        "y": 428.91666666666663,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -602.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 55.291666666666885,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.5666666666666661,
+        "cooldown": 0.4166666666666664
+      }
+    },
+    {
+      "time": 23.383333333333287,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1500.9199162256862,
+        "y": 419.24999999999994,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -580,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 55.49166666666689,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.5499999999999994,
+        "cooldown": 0.39999999999999974
+      }
+    },
+    {
+      "time": 23.399999999999952,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1504.9199162256862,
+        "y": 409.95833333333326,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -557.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 55.69166666666689,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.5333333333333327,
+        "cooldown": 0.3833333333333331
+      }
+    },
+    {
+      "time": 23.416666666666618,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1508.9199162256862,
+        "y": 401.0416666666666,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -535,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 55.89166666666689,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.5166666666666659,
+        "cooldown": 0.3666666666666664
+      }
+    },
+    {
+      "time": 23.433333333333284,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1512.9199162256862,
+        "y": 392.4999999999999,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -512.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 56.091666666666896,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.4999999999999993,
+        "cooldown": 0.34999999999999976
+      }
+    },
+    {
+      "time": 23.44999999999995,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1516.9199162256862,
+        "y": 384.3333333333332,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -490,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 56.2916666666669,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.4833333333333326,
+        "cooldown": 0.3333333333333331
+      }
+    },
+    {
+      "time": 23.466666666666615,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1520.9199162256862,
+        "y": 376.5416666666665,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -467.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 56.4916666666669,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.46666666666666595,
+        "cooldown": 0.31666666666666643
+      }
+    },
+    {
+      "time": 23.48333333333328,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1524.9199162256862,
+        "y": 369.12499999999983,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -445,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 56.691666666666904,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.4499999999999993,
+        "cooldown": 0.29999999999999977
+      }
+    },
+    {
+      "time": 23.499999999999947,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1528.9199162256862,
+        "y": 362.08333333333314,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -422.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 56.89166666666691,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.4333333333333326,
+        "cooldown": 0.2833333333333331
+      }
+    },
+    {
+      "time": 23.516666666666612,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1532.9199162256862,
+        "y": 355.41666666666646,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -400,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 57.09166666666691,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.41666666666666596,
+        "cooldown": 0.26666666666666644
+      }
+    },
+    {
+      "time": 23.533333333333278,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1536.9199162256862,
+        "y": 349.1249999999998,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -377.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 57.29166666666691,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.3999999999999993,
+        "cooldown": 0.24999999999999978
+      }
+    },
+    {
+      "time": 23.549999999999944,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1540.9199162256862,
+        "y": 343.2083333333331,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -355,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 57.491666666666916,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.38333333333333264,
+        "cooldown": 0.23333333333333311
+      }
+    },
+    {
+      "time": 23.56666666666661,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1544.9199162256862,
+        "y": 337.6666666666664,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -332.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 57.69166666666692,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.366666666666666,
+        "cooldown": 0.21666666666666645
+      }
+    },
+    {
+      "time": 23.583333333333275,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1548.9199162256862,
+        "y": 332.4999999999997,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -310,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 57.89166666666692,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.3499999999999993,
+        "cooldown": 0.1999999999999998
+      }
+    },
+    {
+      "time": 23.59999999999994,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1552.9199162256862,
+        "y": 327.70833333333303,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -287.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 58.091666666666924,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.33333333333333265,
+        "cooldown": 0.18333333333333313
+      }
+    },
+    {
+      "time": 23.616666666666607,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1556.9199162256862,
+        "y": 323.29166666666634,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -265,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 58.29166666666693,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.316666666666666,
+        "cooldown": 0.16666666666666646
+      }
+    },
+    {
+      "time": 23.633333333333272,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1560.9199162256862,
+        "y": 319.24999999999966,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -242.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 58.49166666666693,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.2999999999999993,
+        "cooldown": 0.1499999999999998
+      }
+    },
+    {
+      "time": 23.649999999999938,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1564.9199162256862,
+        "y": 315.583333333333,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -220,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 58.69166666666693,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.28333333333333266,
+        "cooldown": 0.13333333333333314
+      }
+    },
+    {
+      "time": 23.666666666666604,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1568.9199162256862,
+        "y": 312.2916666666663,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -197.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 58.891666666666936,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.266666666666666,
+        "cooldown": 0.11666666666666647
+      }
+    },
+    {
+      "time": 23.68333333333327,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1572.9199162256862,
+        "y": 309.3749999999996,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -175,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 59.09166666666694,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.24999999999999933,
+        "cooldown": 0.09999999999999981
+      }
+    },
+    {
+      "time": 23.699999999999935,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1576.9199162256862,
+        "y": 306.8333333333329,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -152.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 59.29166666666694,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.23333333333333267,
+        "cooldown": 0.08333333333333315
+      }
+    },
+    {
+      "time": 23.7166666666666,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1580.9199162256862,
+        "y": 304.66666666666623,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -130,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 59.491666666666944,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.216666666666666,
+        "cooldown": 0.06666666666666649
+      }
+    },
+    {
+      "time": 23.733333333333267,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1584.9199162256862,
+        "y": 302.87499999999955,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -107.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 59.69166666666695,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.19999999999999934,
+        "cooldown": 0.04999999999999982
+      }
+    },
+    {
+      "time": 23.749999999999932,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1588.9199162256862,
+        "y": 301.45833333333286,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -85,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 59.89166666666695,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.18333333333333268,
+        "cooldown": 0.03333333333333316
+      }
+    },
+    {
+      "time": 23.766666666666598,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1592.9199162256862,
+        "y": 300.4166666666662,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -62.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 60.09166666666695,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.16666666666666602,
+        "cooldown": 0.016666666666666493
+      }
+    },
+    {
+      "time": 23.783333333333264,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1596.9199162256862,
+        "y": 299.7499999999995,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -40,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 60.291666666666956,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.14999999999999936,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.79999999999993,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1600.9199162256862,
+        "y": 299.4583333333328,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": -17.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 60.49166666666696,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.1333333333333327,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.816666666666595,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1604.9199162256862,
+        "y": 299.5416666666661,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 60.69166666666696,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.11666666666666603,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.83333333333326,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1608.9199162256862,
+        "y": 299.99999999999943,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 27.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 60.891666666666964,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.09999999999999937,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.849999999999927,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1612.9199162256862,
+        "y": 300.83333333333275,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 50,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 61.09166666666697,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.0833333333333327,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.866666666666593,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1616.9199162256862,
+        "y": 302.04166666666606,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 72.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 61.29166666666697,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.06666666666666604,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.88333333333326,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1620.9199162256862,
+        "y": 303.6249999999994,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 95,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 61.49166666666697,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.04999999999999938,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.899999999999924,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1624.9199162256862,
+        "y": 305.5833333333327,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 117.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 61.691666666666976,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.033333333333332715,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.91666666666659,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1628.9199162256862,
+        "y": 307.916666666666,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 140,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 61.89166666666698,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0.01666666666666605,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.933333333333255,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1632.9199162256862,
+        "y": 310.6249999999993,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 162.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 62.09166666666698,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.94999999999992,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1636.9199162256862,
+        "y": 313.70833333333263,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 185,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 62.291666666666984,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.966666666666587,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1640.9199162256862,
+        "y": 317.16666666666595,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 207.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 62.49166666666699,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.983333333333253,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1644.9199162256862,
+        "y": 320.99999999999926,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 230,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 62.69166666666699,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 23.99999999999992,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1648.9199162256862,
+        "y": 325.2083333333326,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 252.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 62.89166666666699,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.016666666666584,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1652.9199162256862,
+        "y": 329.7916666666659,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 275,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 63.091666666666995,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.03333333333325,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1656.9199162256862,
+        "y": 334.7499999999992,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 297.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 63.291666666667,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.049999999999915,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1660.9199162256862,
+        "y": 340.0833333333325,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 320,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 63.491666666667,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.06666666666658,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1664.9199162256862,
+        "y": 345.79166666666583,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 342.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 63.691666666667004,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.083333333333247,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1668.9199162256862,
+        "y": 351.87499999999915,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 365,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 63.89166666666701,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.099999999999913,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1672.9199162256862,
+        "y": 358.33333333333246,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 387.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 64.09166666666701,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.11666666666658,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1676.9199162256862,
+        "y": 365.1666666666658,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 410,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 64.29166666666701,
+        "land": 0
+      },
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.133333333333244,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1680.461582892353,
+        "y": 372.3749999999991,
+        "w": 30,
+        "h": 58,
+        "vx": 212.5,
+        "vy": 432.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 64.46875000000034,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.14999999999991,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1683.5449162256862,
+        "y": 379.9583333333324,
+        "w": 30,
+        "h": 58,
+        "vx": 185,
+        "vy": 455,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 64.62291666666701,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.166666666666575,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1686.1699162256862,
+        "y": 387.9166666666657,
+        "w": 30,
+        "h": 58,
+        "vx": 157.5,
+        "vy": 477.5,
+        "face": 1,
+        "grounded": false,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 64.754166666667,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.18333333333324,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1688.336582892353,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 130,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 64.86250000000034,
+        "land": 0.16666666666666666
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.199999999999907,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1690.0449162256862,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 102.5,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 64.947916666667,
+        "land": 0.12
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.216666666666573,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1691.2949162256862,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 75,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 65.010416666667,
+        "land": 0.07333333333333333
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.23333333333324,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1692.086582892353,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 47.5,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 65.05000000000034,
+        "land": 0.026666666666666672
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.249999999999904,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1692.4199162256862,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 20,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 65.066666666667,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    },
+    {
+      "time": 24.26666666666657,
+      "phase": "one-continuous-right",
+      "runId": 1,
+      "sameBody": true,
+      "deaths": 0,
+      "state": "playing",
+      "form": "body",
+      "body": {
+        "x": 1692.4199162256862,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 65.066666666667,
+        "land": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "mushroom": {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "power": 850,
+        "boing": 0,
+        "cooldown": 0
+      }
+    }
+  ]
+}

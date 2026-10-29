@@ -1,0 +1,236 @@
+{
+  "status": "candidate-passed-pages-submitted-public-verification-pending",
+  "sourceCommit": "9f372f3910a6141ddb4e5c6a5707438f7c8607d0",
+  "candidateRun": 40924856127,
+  "candidateJob": 123627511600,
+  "artifactId": 12921870111,
+  "artifactZipBytes": 181040692,
+  "artifactZipSha256": "5c262973a206c158038527f52aacf5174468bfc0237281dfd9b3933af77a4949",
+  "auditedSourceFiles": 697,
+  "auditedArtifactPaths": 213,
+  "tests": {
+    "tests": 648,
+    "pass": 648,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0
+  },
+  "cases": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "version": "29.0.0",
+      "noHorizontalOverflow": true,
+      "pageErrors": [],
+      "httpErrors": [],
+      "finalImagesLoaded": true,
+      "expectedRequestFailureCount": 9,
+      "exactNetworkLedger": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "29.0.0",
+      "noHorizontalOverflow": true,
+      "pageErrors": [],
+      "httpErrors": [],
+      "finalImagesLoaded": true,
+      "expectedRequestFailureCount": 0,
+      "exactNetworkLedger": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "version": "29.0.0",
+      "noHorizontalOverflow": true,
+      "pageErrors": [],
+      "httpErrors": [],
+      "finalImagesLoaded": true,
+      "expectedRequestFailureCount": 0,
+      "exactNetworkLedger": true
+    }
+  ],
+  "phoneReading": [
+    {
+      "width": 390,
+      "ending": "dawn",
+      "reading": {
+        "fullyReadParagraphs": [
+          0,
+          1,
+          2
+        ],
+        "homeFullyVisibleAndUncovered": true,
+        "finalNoteFullyVisible": true,
+        "scrollSamples": 1,
+        "maxScrollTop": 0,
+        "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+      },
+      "gestureCount": 0,
+      "inputCleanup": {
+        "gestureSessionsCreated": 0,
+        "gestureSessionsDetached": 0,
+        "touchEndAcknowledged": 0,
+        "allCreatedGestureSessionsDetached": true,
+        "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+      }
+    },
+    {
+      "width": 390,
+      "ending": "lanterns",
+      "reading": {
+        "fullyReadParagraphs": [
+          0,
+          1,
+          2
+        ],
+        "homeFullyVisibleAndUncovered": true,
+        "finalNoteFullyVisible": true,
+        "scrollSamples": 1,
+        "maxScrollTop": 0,
+        "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+      },
+      "gestureCount": 0,
+      "inputCleanup": {
+        "gestureSessionsCreated": 0,
+        "gestureSessionsDetached": 0,
+        "touchEndAcknowledged": 0,
+        "allCreatedGestureSessionsDetached": true,
+        "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+      }
+    },
+    {
+      "width": 390,
+      "ending": "tender",
+      "reading": {
+        "fullyReadParagraphs": [
+          0,
+          1,
+          2
+        ],
+        "homeFullyVisibleAndUncovered": true,
+        "finalNoteFullyVisible": true,
+        "scrollSamples": 1,
+        "maxScrollTop": 0,
+        "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+      },
+      "gestureCount": 0,
+      "inputCleanup": {
+        "gestureSessionsCreated": 0,
+        "gestureSessionsDetached": 0,
+        "touchEndAcknowledged": 0,
+        "allCreatedGestureSessionsDetached": true,
+        "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+      }
+    },
+    {
+      "width": 320,
+      "ending": "dawn",
+      "reading": {
+        "fullyReadParagraphs": [
+          0,
+          1,
+          2
+        ],
+        "homeFullyVisibleAndUncovered": true,
+        "finalNoteFullyVisible": true,
+        "scrollSamples": 2,
+        "maxScrollTop": 69,
+        "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+      },
+      "gestureCount": 1,
+      "inputCleanup": {
+        "gestureSessionsCreated": 1,
+        "gestureSessionsDetached": 1,
+        "touchEndAcknowledged": 1,
+        "allCreatedGestureSessionsDetached": true,
+        "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+      }
+    },
+    {
+      "width": 320,
+      "ending": "lanterns",
+      "reading": {
+        "fullyReadParagraphs": [
+          0,
+          1,
+          2
+        ],
+        "homeFullyVisibleAndUncovered": true,
+        "finalNoteFullyVisible": true,
+        "scrollSamples": 2,
+        "maxScrollTop": 103,
+        "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+      },
+      "gestureCount": 1,
+      "inputCleanup": {
+        "gestureSessionsCreated": 1,
+        "gestureSessionsDetached": 1,
+        "touchEndAcknowledged": 1,
+        "allCreatedGestureSessionsDetached": true,
+        "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+      }
+    },
+    {
+      "width": 320,
+      "ending": "tender",
+      "reading": {
+        "fullyReadParagraphs": [
+          0,
+          1,
+          2
+        ],
+        "homeFullyVisibleAndUncovered": true,
+        "finalNoteFullyVisible": true,
+        "scrollSamples": 2,
+        "maxScrollTop": 103,
+        "input": "Chromium CDP simulated touch scroll and tap; not a physical phone"
+      },
+      "gestureCount": 1,
+      "inputCleanup": {
+        "gestureSessionsCreated": 1,
+        "gestureSessionsDetached": 1,
+        "touchEndAcknowledged": 1,
+        "allCreatedGestureSessionsDetached": true,
+        "touchEnvironmentOwner": "outer verify_endings context; not released between reading cases"
+      }
+    }
+  ],
+  "desktopReplyCombinations": 4,
+  "actualReloadForEach": true,
+  "endingInvariants": {
+    "chaptersAndScoresUnchanged": true,
+    "riddlesAndSettingsUnchanged": true,
+    "collectionsUnchanged": true,
+    "rewardGrantsUnchanged": true,
+    "actualChoices": {
+      "letter": "keep",
+      "clock": "release"
+    },
+    "discoveredEndings": [
+      "dawn",
+      "lanterns",
+      "tender"
+    ]
+  },
+  "osReducedMotion": {
+    "mediaReduced": true,
+    "activeAnimations": [],
+    "paragraphCount": 3
+  },
+  "pagesCommit": "c9d9439863b581f149c0e318519792654a6e9f22",
+  "pagesTree": "41852bed652ceb68ccfe3cb9fd9c410a21369904",
+  "distSubtree": "a58f73d5d1105ee3b0c66dee1f6e9f5b212107a8",
+  "runtimeBlobCount": 142,
+  "additionalHostingFile": ".nojekyll",
+  "CNAME": "tougaigu.com\n",
+  "publicVerification": "not yet run",
+  "scopeLimit": "Chromium simulated touch; not physical phones, Safari or low-end GPU evidence"
+}

@@ -1,0 +1,280 @@
+{
+  "provenance": "State parsed without value changes from the exact GitHub Actions job-log AssertionError line; not a separately emitted browser JSON or a full mushroom trace.",
+  "runId": 40915770290,
+  "jobId": 123595450528,
+  "sourceCommit": "172bde595381dc21193563d8587fdd9d6c9e7df4",
+  "fullLogSha256": "83a221de8fc0b57b1c973b8079066744adfa354fee13d46d36d11d8ba772582d",
+  "originalFailureLine": "2026-10-29T17:02:39.5377314Z AssertionError: Could not steer to (1680, None); {'form': 'body', 'state': 'playing', 'chapterIndex': 5, 'mode': 'story', 'festivalId': None, 'controlSource': 'buttons', 'runId': 1, 'bodyIdentity': 11, 'input': {'x': 1, 'y': 0}, 'inputAvailable': True, 'energy': 100, 'maxEnergy': 100, 'hudSample': {'form': 'body', 'state': 'playing', 'time': 29.649999999999597, 'energy': 100, 'maxEnergy': 100}, 'observedAt': 136670.99999999994, 'fullHudWrittenAt': 136640.2, 'seals': 1, 'memories': 2, 'firstTicket': {'phase': 'missing', 'collected': False, 'newlyCollected': False, 'settledAge': 99}, 'x': 1585, 'y': 560, 'vx': 0, 'vy': 0, 'time': 29.666666666666263, 'visualTime': 29.666666666666263, 'deaths': 0, 'camera': 1404.6168067226868, 'reducedMotion': False, 'storyNPC': {'id': 'story-npc-5', 'chapterIndex': 5, 'speaker': 'keeper', 'name': '归先生', 'motif': 'keeper', 'prop': 'post-letter', 'x': 190, 'y': 560, 'accent': '#e5c598', 'near': False, 'talking': False, 'talked': False, 'seals': 1, 'form': 'body', 'look': {'x': 1585, 'y': 525}, 'capOpen': 0, 'stationTicket': None, 'lighting': 'painted-post'}, 'body': {'x': 1585, 'y': 560, 'w': 30, 'h': 58, 'vx': 0, 'vy': 0, 'grounded': True, 'platform': None, 'face': 1, 'land': 0}, 'capPhase': 'closed', 'capAge': 9.083333333333364, 'capAmount': 0, 'travelerPerformance': None, 'characterPose': {'walking': False, 'step': 0, 'hop': 0.007782557200721241, 'scaleY': 1, 'tilt': 0, 'bodyMatrix': [1, 0, 0, 1, 1585, 559.9922174427993], 'openingWorld': {'x': 1585, 'y': 494.9922174427993}, 'grip': 0, 'clasp': 0, 'catching': 0, 'arms': {'left': {'shoulder': {'x': -13, 'y': -35}, 'elbow': {'x': 2.821093218104629, 'y': -22.765090544509796}, 'wrist': {'x': -16, 'y': -16}, 'requested': {'x': -16, 'y': -16}, 'length': 20, 'world': {'x': 1569, 'y': 543.9922174427993}}, 'right': {'shoulder': {'x': 13, 'y': -35}, 'elbow': {'x': -2.1106362441332074, 'y': -21.897760790708798}, 'wrist': {'x': 17, 'y': -16}, 'requested': {'x': 17, 'y': -16}, 'length': 20, 'world': {'x': 1602, 'y': 543.9922174427993}}}, 'performance': None}, 'theatrePaint': None, 'libraryPaint': None, 'postPaint': {'status': 'ready', 'frame': True, 'width': 2172, 'height': 724, 'complete': True, 'imageSource': 'http://127.0.0.1:8080/assets/post-painted-v28.webp', 'lampLit': [True, False], 'lightAmounts': [1, 0]}, 'postDelivery': {'phase': 'waiting'}, 'coastPaint': None, 'hazards': [{'kind': 'pendulum', 'x': 2350, 'y': 215, 'px': 2230.699081877734, 'py': 501.12460735697715, 'r': 30, 'length': 310, 'swing': 0.58, 'speed': 1, 'phase': 1, 'frozen': 0}], 'nearHint': '踩上蘑菇，保持方向，借力跳上高台', 'movers': [{'id': 'last-stage', 'x': 1072.7951700401882, 'y': 465, 'w': 190, 'h': 20, 'dx': 2.0344207728776382, 'dy': 0, 'range': 185, 'speed': 0.7}], 'platforms': [{'x': 0, 'y': 560, 'w': 870, 'h': 100, 'kind': 'ground'}, {'x': 1240, 'y': 560, 'w': 1440, 'h': 100, 'kind': 'ground'}, {'x': 700, 'y': 465, 'w': 210, 'h': 18, 'kind': None}, {'x': 1180, 'y': 465, 'w': 175, 'h': 18, 'kind': None}, {'x': 1600, 'y': 390, 'w': 130, 'h': 170, 'kind': 'root'}, {'x': 2070, 'y': 450, 'w': 170, 'h': 18, 'kind': None}], 'letterChoice': 'keep', 'clockChoice': 'hold', 'clockEcho': None, 'letterEcho': None, 'greenhousePlant': None, 'seedCollected': False, 'mushrooms': [{'x': 1450, 'y': 560, 'w': 115, 'boing': 0, 'cooldown': 0}], 'roots': [{'x': 1600, 'y': 390, 'w': 130, 'h': 170}]}",
+  "failureSnapshot": {
+    "form": "body",
+    "state": "playing",
+    "chapterIndex": 5,
+    "mode": "story",
+    "festivalId": null,
+    "controlSource": "buttons",
+    "runId": 1,
+    "bodyIdentity": 11,
+    "input": {
+      "x": 1,
+      "y": 0
+    },
+    "inputAvailable": true,
+    "energy": 100,
+    "maxEnergy": 100,
+    "hudSample": {
+      "form": "body",
+      "state": "playing",
+      "time": 29.649999999999597,
+      "energy": 100,
+      "maxEnergy": 100
+    },
+    "observedAt": 136670.99999999994,
+    "fullHudWrittenAt": 136640.2,
+    "seals": 1,
+    "memories": 2,
+    "firstTicket": {
+      "phase": "missing",
+      "collected": false,
+      "newlyCollected": false,
+      "settledAge": 99
+    },
+    "x": 1585,
+    "y": 560,
+    "vx": 0,
+    "vy": 0,
+    "time": 29.666666666666263,
+    "visualTime": 29.666666666666263,
+    "deaths": 0,
+    "camera": 1404.6168067226868,
+    "reducedMotion": false,
+    "storyNPC": {
+      "id": "story-npc-5",
+      "chapterIndex": 5,
+      "speaker": "keeper",
+      "name": "归先生",
+      "motif": "keeper",
+      "prop": "post-letter",
+      "x": 190,
+      "y": 560,
+      "accent": "#e5c598",
+      "near": false,
+      "talking": false,
+      "talked": false,
+      "seals": 1,
+      "form": "body",
+      "look": {
+        "x": 1585,
+        "y": 525
+      },
+      "capOpen": 0,
+      "stationTicket": null,
+      "lighting": "painted-post"
+    },
+    "body": {
+      "x": 1585,
+      "y": 560,
+      "w": 30,
+      "h": 58,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "platform": null,
+      "face": 1,
+      "land": 0
+    },
+    "capPhase": "closed",
+    "capAge": 9.083333333333364,
+    "capAmount": 0,
+    "travelerPerformance": null,
+    "characterPose": {
+      "walking": false,
+      "step": 0,
+      "hop": 0.007782557200721241,
+      "scaleY": 1,
+      "tilt": 0,
+      "bodyMatrix": [
+        1,
+        0,
+        0,
+        1,
+        1585,
+        559.9922174427993
+      ],
+      "openingWorld": {
+        "x": 1585,
+        "y": 494.9922174427993
+      },
+      "grip": 0,
+      "clasp": 0,
+      "catching": 0,
+      "arms": {
+        "left": {
+          "shoulder": {
+            "x": -13,
+            "y": -35
+          },
+          "elbow": {
+            "x": 2.821093218104629,
+            "y": -22.765090544509796
+          },
+          "wrist": {
+            "x": -16,
+            "y": -16
+          },
+          "requested": {
+            "x": -16,
+            "y": -16
+          },
+          "length": 20,
+          "world": {
+            "x": 1569,
+            "y": 543.9922174427993
+          }
+        },
+        "right": {
+          "shoulder": {
+            "x": 13,
+            "y": -35
+          },
+          "elbow": {
+            "x": -2.1106362441332074,
+            "y": -21.897760790708798
+          },
+          "wrist": {
+            "x": 17,
+            "y": -16
+          },
+          "requested": {
+            "x": 17,
+            "y": -16
+          },
+          "length": 20,
+          "world": {
+            "x": 1602,
+            "y": 543.9922174427993
+          }
+        }
+      },
+      "performance": null
+    },
+    "theatrePaint": null,
+    "libraryPaint": null,
+    "postPaint": {
+      "status": "ready",
+      "frame": true,
+      "width": 2172,
+      "height": 724,
+      "complete": true,
+      "imageSource": "http://127.0.0.1:8080/assets/post-painted-v28.webp",
+      "lampLit": [
+        true,
+        false
+      ],
+      "lightAmounts": [
+        1,
+        0
+      ]
+    },
+    "postDelivery": {
+      "phase": "waiting"
+    },
+    "coastPaint": null,
+    "hazards": [
+      {
+        "kind": "pendulum",
+        "x": 2350,
+        "y": 215,
+        "px": 2230.699081877734,
+        "py": 501.12460735697715,
+        "r": 30,
+        "length": 310,
+        "swing": 0.58,
+        "speed": 1,
+        "phase": 1,
+        "frozen": 0
+      }
+    ],
+    "nearHint": "踩上蘑菇，保持方向，借力跳上高台",
+    "movers": [
+      {
+        "id": "last-stage",
+        "x": 1072.7951700401882,
+        "y": 465,
+        "w": 190,
+        "h": 20,
+        "dx": 2.0344207728776382,
+        "dy": 0,
+        "range": 185,
+        "speed": 0.7
+      }
+    ],
+    "platforms": [
+      {
+        "x": 0,
+        "y": 560,
+        "w": 870,
+        "h": 100,
+        "kind": "ground"
+      },
+      {
+        "x": 1240,
+        "y": 560,
+        "w": 1440,
+        "h": 100,
+        "kind": "ground"
+      },
+      {
+        "x": 700,
+        "y": 465,
+        "w": 210,
+        "h": 18,
+        "kind": null
+      },
+      {
+        "x": 1180,
+        "y": 465,
+        "w": 175,
+        "h": 18,
+        "kind": null
+      },
+      {
+        "x": 1600,
+        "y": 390,
+        "w": 130,
+        "h": 170,
+        "kind": "root"
+      },
+      {
+        "x": 2070,
+        "y": 450,
+        "w": 170,
+        "h": 18,
+        "kind": null
+      }
+    ],
+    "letterChoice": "keep",
+    "clockChoice": "hold",
+    "clockEcho": null,
+    "letterEcho": null,
+    "greenhousePlant": null,
+    "seedCollected": false,
+    "mushrooms": [
+      {
+        "x": 1450,
+        "y": 560,
+        "w": 115,
+        "boing": 0,
+        "cooldown": 0
+      }
+    ],
+    "roots": [
+      {
+        "x": 1600,
+        "y": 390,
+        "w": 130,
+        "h": 170
+      }
+    ]
+  },
+  "unknown": "This failed 390 route did not yet emit its successful mushroom observation before the later root approach failed. Its exact bounce timing cannot be reconstructed from this state."
+}

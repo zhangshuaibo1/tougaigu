@@ -1,0 +1,433 @@
+{
+  "scope": "Offline real production engine with ordinary input APIs and synthetic timing. This does not reconstruct the failed 390-pixel browser sequence.",
+  "engineSourceCommit": "172bde595381dc21193563d8587fdd9d6c9e7df4",
+  "uncompressedTrace": {
+    "bytes": 33992472,
+    "sha256": "fc9cd641ca2032fda26d2819e653cb3d656c77df705f850bc6741499977aa561"
+  },
+  "gzipTrace": {
+    "path": "docs/verification-v29-mushroom-input/all-synthetic-delay-traces.json.gz",
+    "bytes": 1166733,
+    "sha256": "63d5494a966be03fd03ef8223c3773c5bceb787200ee92d34a833b2d23472348",
+    "mtime": 0,
+    "filenameHeader": ""
+  },
+  "cases": {
+    "perStrategy": 80,
+    "strategies": 3,
+    "total": 240
+  },
+  "syntheticDelayFrames": {
+    "poll": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "inputGap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "handoff": [
+      0,
+      2,
+      4,
+      8
+    ],
+    "fixedStepSeconds": 0.016666666666666666
+  },
+  "runtimeJavaScriptSources": [
+    {
+      "path": "dist/app.js",
+      "bytes": 26222,
+      "sha256": "b92bfcf99fc9f5121caeaa1697f5f640193eedc0f294b2e1a53db023bdcfa300"
+    },
+    {
+      "path": "dist/cap-activity-progress.js",
+      "bytes": 11165,
+      "sha256": "30190693766ddaedd1f5c1c46f73374e28041851d6c71f65ea6cb9111178d967"
+    },
+    {
+      "path": "dist/cap-book.js",
+      "bytes": 17410,
+      "sha256": "210950f7a4cdf2a99bb6ea3943bf739ce79f5d517081621fe90994a1faa38f87"
+    },
+    {
+      "path": "dist/cap-progress.js",
+      "bytes": 4574,
+      "sha256": "5ab3326cea09d614e65e1c11c941fbbe97e90cfd7889d23a65495151cbd0f681"
+    },
+    {
+      "path": "dist/content.js",
+      "bytes": 19739,
+      "sha256": "cc7726e290e6bb2ea9100a28d977f1b1f3f3f2146282d222dfa5d1fe094512ff"
+    },
+    {
+      "path": "dist/dream-app.js",
+      "bytes": 65492,
+      "sha256": "51db406e50ca21c487a3259bb76f9aaf7e85eaaf773f0fe2b7160701579d7505"
+    },
+    {
+      "path": "dist/dream-awakening-art.js",
+      "bytes": 26022,
+      "sha256": "a9255f851e92b8649798c23de42167c6137a8745829dbf5e71ca1ba22df6cdd6"
+    },
+    {
+      "path": "dist/dream-awakenings.js",
+      "bytes": 3832,
+      "sha256": "a96bf35c9379612d0cda50073b8c12e56b263b5ae8dbf90362b0dcfc9ed30e1b"
+    },
+    {
+      "path": "dist/dream-cap-activities.js",
+      "bytes": 13737,
+      "sha256": "041c66d52a0a17f80e75bc4da31054f2d01d5c440567d380533be10076a69749"
+    },
+    {
+      "path": "dist/dream-cap-activity-art.js",
+      "bytes": 32906,
+      "sha256": "fe5127ec3b28ee9ce891fa864ae3e277c2be23b88053c3f345fc99a6bc5a163d"
+    },
+    {
+      "path": "dist/dream-cap-activity-engine.js",
+      "bytes": 15627,
+      "sha256": "e29d1cd2a3e1853aee323fdfb36890e2965924c5d3c070bb01155a1a7bdaf31a"
+    },
+    {
+      "path": "dist/dream-cap-art.js",
+      "bytes": 23249,
+      "sha256": "dad5b4a0e2c0ffb13c008c473068465d25f701509114b31ab100629e459063ed"
+    },
+    {
+      "path": "dist/dream-cap-story.js",
+      "bytes": 14480,
+      "sha256": "cb17da0fc2a46ec8476910953a4bf3094aaef351f58183eb83745334f4345c19"
+    },
+    {
+      "path": "dist/dream-clock-echo.js",
+      "bytes": 8888,
+      "sha256": "51a27018ea27ff0817b38cec88d52b28f4836e9691a8fdbe624dc3c7ed008171"
+    },
+    {
+      "path": "dist/dream-coast-finish.js",
+      "bytes": 6742,
+      "sha256": "39b1818d3158c415546c2ae1b6b44ec379d765a7e089caa0cd578b3ba0bd8902"
+    },
+    {
+      "path": "dist/dream-coast-scene.js",
+      "bytes": 4219,
+      "sha256": "5927d816f86835dbbf9e5d0237a251ed14953f11a80869609b43d30727257fc7"
+    },
+    {
+      "path": "dist/dream-direction-input.js",
+      "bytes": 1920,
+      "sha256": "ebbe509a6ce3114fe1f0689ef4252b19bf9ddfd2e8b3e367626ef21c891401de"
+    },
+    {
+      "path": "dist/dream-encounter-art.js",
+      "bytes": 34104,
+      "sha256": "f98a01bbf775e1c7f52d5f01184bd2429096daa625bcf4a44f249d234ba56efc"
+    },
+    {
+      "path": "dist/dream-encounters.js",
+      "bytes": 16794,
+      "sha256": "6d3d3b962c9d9d27deb2ccfbcb52255b18bb3caeb8d77dce4a4a0e9e745c1f20"
+    },
+    {
+      "path": "dist/dream-ending-art.js",
+      "bytes": 21986,
+      "sha256": "80f61137dfb5ad0f6b906855d1e5678dac2c30aeff218cf41541c17052a8d95c"
+    },
+    {
+      "path": "dist/dream-ending-scene.js",
+      "bytes": 1771,
+      "sha256": "92213dae9ec72e37d9e6a61d92e240d2cb5792899217638d5d8a414b89160818"
+    },
+    {
+      "path": "dist/dream-engine-base.js",
+      "bytes": 94772,
+      "sha256": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699"
+    },
+    {
+      "path": "dist/dream-engine.js",
+      "bytes": 25553,
+      "sha256": "cae31ba6843ab4dc7fc3324ef383e93eecc47dafe5bfea2d2a5ecf7925be6529"
+    },
+    {
+      "path": "dist/dream-festival-art.js",
+      "bytes": 31364,
+      "sha256": "9ede1ae7d2c0499bc2a22aa61fb1f44a3c97b4efe327023406f15d2c695881e5"
+    },
+    {
+      "path": "dist/dream-festival-levels.js",
+      "bytes": 6674,
+      "sha256": "ab633cf46ea8b2c1f925692c9ae21bf104522d647a1b05be782ebf2418c346c5"
+    },
+    {
+      "path": "dist/dream-festivals.js",
+      "bytes": 53530,
+      "sha256": "3ea4f05fc6a260ec6a0e0cdc1bda849bdca199ef664ad1dd353002508c15f86c"
+    },
+    {
+      "path": "dist/dream-first-ticket-art.js",
+      "bytes": 4329,
+      "sha256": "44c9b420d544f7db1ed9c79cb2a0291563db8e83442f6ce4df5e1aaf4f56dd04"
+    },
+    {
+      "path": "dist/dream-greenhouse-art.js",
+      "bytes": 3880,
+      "sha256": "38a4f9044a7f403a5d121ef6189aa83108d72f0b4a2c8b0e0aeabc03dbe3db83"
+    },
+    {
+      "path": "dist/dream-greenhouse-finish.js",
+      "bytes": 10999,
+      "sha256": "af7d94a6222491b2712b7af10db2f79ef45db9f899a92e939d5fb6eba664ab56"
+    },
+    {
+      "path": "dist/dream-greenhouse-scene.js",
+      "bytes": 4446,
+      "sha256": "b4a4c84440ed43bd52ba8405c719cb3d426d134e6c8285bcb584533879a6c8e6"
+    },
+    {
+      "path": "dist/dream-ground-shadow.js",
+      "bytes": 3409,
+      "sha256": "ede6c52978710e0e8286a1b5fdf51eeb09e1e17a1d9df3171cca8176c90d94bc"
+    },
+    {
+      "path": "dist/dream-journey.js",
+      "bytes": 10112,
+      "sha256": "62947008e6c4edd0f1817b92a5338d7d0ebdf0a2a065d3049b280ea36d22434c"
+    },
+    {
+      "path": "dist/dream-letter-echo.js",
+      "bytes": 8899,
+      "sha256": "10c446ba05235b9123f09667cf2fd2e9e96be57b9fc87da6e8b1c8c5696e1f2f"
+    },
+    {
+      "path": "dist/dream-levels.js",
+      "bytes": 8742,
+      "sha256": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0"
+    },
+    {
+      "path": "dist/dream-library-finish.js",
+      "bytes": 2485,
+      "sha256": "0295efbb70a84b616301e0b3d9e68bdfd87706c33c5e1736403b624d5d8316f8"
+    },
+    {
+      "path": "dist/dream-library-scene.js",
+      "bytes": 3661,
+      "sha256": "9564ec3fa13e9f4de038d8db6ec44cd3421cbc1bf26d89256a22921307ca23ea"
+    },
+    {
+      "path": "dist/dream-lost-art.js",
+      "bytes": 41560,
+      "sha256": "f572fc0d082178d8bb28ac3fc45561aacfc0b090da6f1f6c5f0cdb0815f0c235"
+    },
+    {
+      "path": "dist/dream-lost-cases.js",
+      "bytes": 26967,
+      "sha256": "8c82de1b2021734f9355fae64475386f235b6b8451dd495fd3afc839adfea79f"
+    },
+    {
+      "path": "dist/dream-lost-encore-art.js",
+      "bytes": 15525,
+      "sha256": "2eeecf0c00e9f965a66034089b18d8fa7795641855c5269d8c6e5aaac235dda2"
+    },
+    {
+      "path": "dist/dream-lost-encores.js",
+      "bytes": 2730,
+      "sha256": "0bbba9148430c6efae7bbee811bcd9170296bfff07cdb98a8aa4509d73be5576"
+    },
+    {
+      "path": "dist/dream-lost-engine.js",
+      "bytes": 12739,
+      "sha256": "42239bd2c4df5e4aa465d70a1d8d598faa4ef882b1477484fbe18a1d2eb636d5"
+    },
+    {
+      "path": "dist/dream-modal-input.js",
+      "bytes": 5458,
+      "sha256": "9453aa3d43e06b2b27274c7390a735a37ed04c85c600a12f41d6c553dd9f7e74"
+    },
+    {
+      "path": "dist/dream-moon-art.js",
+      "bytes": 14741,
+      "sha256": "1f6941a32a0ec6d448b29920816d026778b09c71a951f54cd9107cd05ce05b32"
+    },
+    {
+      "path": "dist/dream-moon-play.js",
+      "bytes": 12656,
+      "sha256": "4f43c1b14750211498edda61d70a1c3fef54c9aa56c66c7b48006604650e5095"
+    },
+    {
+      "path": "dist/dream-painted-scene.js",
+      "bytes": 7197,
+      "sha256": "ba9551548f431ecf4b7d13f63e62e9f329d9643a0afac292729fa3b598722ce7"
+    },
+    {
+      "path": "dist/dream-post-delivery.js",
+      "bytes": 1988,
+      "sha256": "d8a1cfe4067d332f0dbee0602ff48d0463ed1c434c2185c50b3722b11f17de1a"
+    },
+    {
+      "path": "dist/dream-post-finish.js",
+      "bytes": 4432,
+      "sha256": "b75eb3a683d841d1e6e68ac6fad40ae257a9c1c4df979feb76c0b847eae62f7e"
+    },
+    {
+      "path": "dist/dream-post-scene.js",
+      "bytes": 3462,
+      "sha256": "d6af0e2711f354765e31b186e9d1f20d1240d974d51d71347e2b2559f5674275"
+    },
+    {
+      "path": "dist/dream-scene-backdrop.js",
+      "bytes": 19110,
+      "sha256": "39f31d372405896f580ee297c9168a1d8a12dcd5af134c2c09ea908f28cbedd8"
+    },
+    {
+      "path": "dist/dream-soul-art.js",
+      "bytes": 9933,
+      "sha256": "f43fa8d0030c6c33899a4fe484072e029ada03568d5f494f776da66a1bf342cd"
+    },
+    {
+      "path": "dist/dream-station-art.js",
+      "bytes": 16476,
+      "sha256": "73a257203b10d12dd52f7b66f60fe3d65e08200aa64b1b4e5c3f223f654d31ee"
+    },
+    {
+      "path": "dist/dream-story-portrait.js",
+      "bytes": 1526,
+      "sha256": "fe82cc56695db356b71b572cbc9563cddc7c455e7bae1e56db46dba9905a62ef"
+    },
+    {
+      "path": "dist/dream-story.js",
+      "bytes": 31000,
+      "sha256": "a91aaf6b497cf956a85c9119e97871ed8b4cc119dd06c6ebe765aa3ed02fb9de"
+    },
+    {
+      "path": "dist/dream-theatre-art.js",
+      "bytes": 11372,
+      "sha256": "a92c905952383c801559103f3b80d34537acdde4eb4d2292d3fc88e7c51bf213"
+    },
+    {
+      "path": "dist/dream-theatre-encore.js",
+      "bytes": 4646,
+      "sha256": "62ca4f474e0261e31980bedfae4d02f97b879ceaa83e8670596253d6d190456d"
+    },
+    {
+      "path": "dist/dream-theatre-guidance.js",
+      "bytes": 3586,
+      "sha256": "ee0db2c0c396d45dc6386e81921f90369092a3361927295a4bf160a2ba5c9a28"
+    },
+    {
+      "path": "dist/dream-theatre-lantern.js",
+      "bytes": 5506,
+      "sha256": "84be352475290b6fb2f0f9b85d0f77d9bf262be89fc3d5443ea1cd9af0da1904"
+    },
+    {
+      "path": "dist/dream-theatre-painted.js",
+      "bytes": 6850,
+      "sha256": "240e8e0990fbd65fa24f920daaa24a6c0225b4714f04496d5e5d33c7b001fd6e"
+    },
+    {
+      "path": "dist/dream-traveler-art.js",
+      "bytes": 8767,
+      "sha256": "e7c1315bdf28b22705887d8fc478472e1d4952df0c1f9e598abf5f2f6ca0e8ac"
+    },
+    {
+      "path": "dist/dream-traveler-performance.js",
+      "bytes": 6069,
+      "sha256": "4a4ebf035a94863e1be4ccceeaf23d1cbdec221808d46b596b7f3b911939ae14"
+    },
+    {
+      "path": "dist/dream-ui.js",
+      "bytes": 4422,
+      "sha256": "3da92277b69c46b80b06125e08cef13166122b17867ec59a2bb532b6b0c73c48"
+    },
+    {
+      "path": "dist/engine.js",
+      "bytes": 40797,
+      "sha256": "3af6579235e5cce9ef65e476d65e30aeab837f1ac6d842b8721ab44f795b514a"
+    },
+    {
+      "path": "dist/festival-hub.js",
+      "bytes": 21507,
+      "sha256": "5f5d5c69ea925f137a1b3b8da88d3be92535cf4b594f515f23e4d61ea65f8e25"
+    },
+    {
+      "path": "dist/game-shell.js",
+      "bytes": 7726,
+      "sha256": "109f0b136dca39253395e47a0eca84c6a392d17a17e998bb37ea420d846d91c9"
+    },
+    {
+      "path": "dist/lost-evidence.js",
+      "bytes": 7147,
+      "sha256": "a681f0d4b2234d00cef0837eab1f223988dfab5198b518d06b1d6fdaaa7548c5"
+    },
+    {
+      "path": "dist/lost-progress.js",
+      "bytes": 9956,
+      "sha256": "f81f1a0dfad558be5efa220eebd13688a0f9e183ac9fc1d569c62b4f9c5c5efb"
+    },
+    {
+      "path": "dist/play-rewards.js",
+      "bytes": 20803,
+      "sha256": "d2133a6ea631fcd32dabb3e65242dd3da1ce8809d09cdb056c881bcc6d89c0fb"
+    }
+  ],
+  "evidenceFiles": [
+    {
+      "path": "docs/verification-v29-mushroom-input/README.md",
+      "bytes": 4424,
+      "sha256": "5c454c118b7b0f522be100bc30adc3922147891092b2a5602fbe96ad83a826a0"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/all-synthetic-delay-traces.json.gz",
+      "bytes": 1166733,
+      "sha256": "63d5494a966be03fd03ef8223c3773c5bceb787200ee92d34a833b2d23472348"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/continuous-release-success.json",
+      "bytes": 105941,
+      "sha256": "fee08755edf25fef95581d22623c5379a2f749d4a8b9c44aef6f02e6b38ea720"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/normal-input-analysis.mjs",
+      "bytes": 7676,
+      "sha256": "98d60392674475da67a98122acf69c40abebb7244488206c12f1da66eeed3c87"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/old-approach-wall-failure.json",
+      "bytes": 317004,
+      "sha256": "1fcf4aeae97dfa94aa6eaf7bd9847741887a826c11ff27847d376b000b3bb763"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/original-analysis.mjs.txt",
+      "bytes": 7550,
+      "sha256": "0073bbb46fe1ffe35b79e473dc3c8b6310c442e4a83bd04a52909a743c7f3b7d"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/source-runtime/dream-engine-base.js",
+      "bytes": 94772,
+      "sha256": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/source-runtime/dream-engine.js",
+      "bytes": 25553,
+      "sha256": "cae31ba6843ab4dc7fc3324ef383e93eecc47dafe5bfea2d2a5ecf7925be6529"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/source-runtime/dream-levels.js",
+      "bytes": 8742,
+      "sha256": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/summary.json",
+      "bytes": 2023,
+      "sha256": "4115e4de50948961b7d01b73b7180d7cb0d4542479e0eb8083c8f1eeea937bdb"
+    }
+  ],
+  "reproduction": "node docs/verification-v29-mushroom-input/normal-input-analysis.mjs; emits the full matrix at /tmp/tougaigu-v29-mushroom-input-analysis.json. Use the recorded engine commit and verify source hashes.",
+  "portableReplayByteIdentical": true
+}
