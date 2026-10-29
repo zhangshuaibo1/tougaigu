@@ -7,8 +7,8 @@ import ast,asyncio,copy,json
 from pathlib import Path
 from urllib.parse import urlparse
 tree=ast.parse(Path('scripts/browser-smoke.py').read_text())
-names={'validate_story_portrait','validate_portrait_request','PortraitRequestGate'}
-exec(compile(ast.Module(body=[n for n in tree.body if isinstance(n,(ast.FunctionDef,ast.ClassDef)) and n.name in names],type_ignores=[]),'actual-portrait-browser-gates','exec'))
+names={'validate_story_portrait','validate_portrait_request','PortraitRequestGate','finish_story_from_ui'}
+exec(compile(ast.Module(body=[n for n in tree.body if isinstance(n,(ast.FunctionDef,ast.AsyncFunctionDef,ast.ClassDef)) and n.name in names],type_ignores=[]),'actual-portrait-browser-gates','exec'))
 `;
 function run(script){
   const result=spawnSync('python3',['-c',helpers+script],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
@@ -101,4 +101,55 @@ async def run():
 asyncio.run(run())
 `);
   assert.match(output,/six broader failure cases rejected/);
+});
+
+test('normal story reading cannot advance past a pending or rejected current portrait',()=>{
+  const output=run(String.raw`
+class Page:
+    def __init__(self,total):
+        self.total=total;self.index=0;self.clicks=[];self.decoded=set()
+        self.arrived=[asyncio.Event() for _ in range(total)]
+        self.release=[asyncio.Event() for _ in range(total)]
+        self.reject=None
+    def locator(self,selector):return Locator(self,selector)
+class Locator:
+    def __init__(self,page,selector):self.page=page;self.selector=selector
+    async def wait_for(self):
+        assert self.selector=='#story-dialog[open]' and self.page.index<self.page.total
+    async def is_visible(self):return self.page.index<self.page.total
+    async def click(self):
+        assert self.selector=='#story-next'
+        assert self.page.index in self.page.decoded,'Next cancelled a still-pending portrait'
+        self.page.clicks.append(self.page.index);self.page.index+=1
+async def read_ready_story_portrait(page,expected):
+    index=page.index;page.arrived[index].set()
+    await page.release[index].wait()
+    if page.reject==index:raise AssertionError('current portrait failed its decoded evidence check')
+    page.decoded.add(index)
+    return {'page':expected['page'],'currentSrc':expected['file'],'phase':'ready'}
+async def run():
+    expected=[{'page':'01 / 02','file':'portrait-hero-tender.svg'},
+              {'page':'02 / 02','file':'portrait-keeper.svg'}]
+    page=Page(2);task=asyncio.create_task(finish_story_from_ui(page,expected))
+    await asyncio.wait_for(page.arrived[0].wait(),1)
+    assert page.clicks==[] and not task.done()
+    page.release[0].set()
+    await asyncio.wait_for(page.arrived[1].wait(),1)
+    assert page.clicks==[0] and not task.done(),'the pending keeper page was skipped'
+    page.release[1].set();result=await task
+    assert page.clicks==[0,1] and result['pages']==['01 / 02','02 / 02']
+    assert [p['currentSrc'] for p in result['portraits']]==[p['file'] for p in expected]
+    rejected=Page(1);rejected.reject=0;rejected.release[0].set()
+    try:await finish_story_from_ui(rejected,expected[:1])
+    except AssertionError as error:assert 'decoded evidence' in str(error)
+    else:raise AssertionError('a failed portrait was silently advanced')
+    assert rejected.clicks==[]
+    extra=Page(2);extra.release[0].set()
+    try:await finish_story_from_ui(extra,expected[:1])
+    except AssertionError as error:assert 'unexpected extra page' in str(error)
+    else:raise AssertionError('unread story page was accepted')
+    print('pending current portraits block Next; rejection propagates; evidence and exact page count retained')
+asyncio.run(run())
+`);
+  assert.match(output,/pending current portraits block Next/);
 });

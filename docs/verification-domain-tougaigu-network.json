@@ -1,0 +1,843 @@
+{
+  "startedAtUTC": "2026-10-29T10:38:45.653658+00:00",
+  "completedAtUTC": "2026-10-29T10:42:45.358102+00:00",
+  "sourceCommit": "03a46bc4fb2abd02399287307c089501f40e7c63",
+  "scope": "Public domain HTTPS and redirect GET requests with a fresh non-sensitive query parameter; exact response bytes compared with released source; no certificate bypass, no credentials, no game/save mutation. Browser Settings and gameplay verification are separate.",
+  "allPassed": true,
+  "checks": [
+    {
+      "label": "apex-http",
+      "requestURL": "http://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-apex-http",
+      "requestHeaders": {
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache"
+      },
+      "curlExit": 0,
+      "redirectChain": [
+        {
+          "url": "http://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-apex-http",
+          "status": 301,
+          "location": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-apex-http",
+          "content-type": "text/html",
+          "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+          "age": "0"
+        },
+        {
+          "url": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-apex-http",
+          "status": 200,
+          "content-type": "text/html; charset=utf-8",
+          "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+          "age": "0",
+          "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+        }
+      ],
+      "finalURL": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-apex-http",
+      "finalStatus": 200,
+      "tlsVerifyResult": 0,
+      "redirectCount": 1,
+      "responseBytes": 25139,
+      "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+      "sourcePath": "dist/index.html",
+      "sourceBytes": 25139,
+      "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+      "sourceBytesEqual": true,
+      "applicationVersion": "25.0.0",
+      "error": null,
+      "passed": true
+    },
+    {
+      "label": "apex-https",
+      "requestURL": "https://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-apex-https",
+      "curlExit": 0,
+      "redirectChain": [
+        {
+          "url": "https://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-apex-https",
+          "status": 200,
+          "content-type": "text/html; charset=utf-8",
+          "date": "Thu, 29 Oct 2026 10:38:46 GMT",
+          "age": "417",
+          "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+        }
+      ],
+      "finalURL": "https://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-apex-https",
+      "finalStatus": 200,
+      "tlsVerifyResult": 0,
+      "redirectCount": 0,
+      "responseBytes": 25139,
+      "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+      "sourcePath": "dist/index.html",
+      "sourceBytes": 25139,
+      "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+      "sourceBytesEqual": true,
+      "error": null,
+      "applicationVersion": "25.0.0",
+      "passed": true
+    },
+    {
+      "label": "www-http",
+      "requestURL": "http://www.tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-www-http",
+      "requestHeaders": {
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache"
+      },
+      "curlExit": 0,
+      "redirectChain": [
+        {
+          "url": "http://www.tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-www-http",
+          "status": 301,
+          "location": "http://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-www-http",
+          "content-type": "text/html",
+          "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+          "age": "1175"
+        },
+        {
+          "url": "http://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-www-http",
+          "status": 301,
+          "location": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-www-http",
+          "content-type": "text/html",
+          "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+          "age": "0"
+        },
+        {
+          "url": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-www-http",
+          "status": 200,
+          "content-type": "text/html; charset=utf-8",
+          "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+          "age": "0",
+          "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+        }
+      ],
+      "finalURL": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-www-http",
+      "finalStatus": 200,
+      "tlsVerifyResult": 0,
+      "redirectCount": 2,
+      "responseBytes": 25139,
+      "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+      "sourcePath": "dist/index.html",
+      "sourceBytes": 25139,
+      "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+      "sourceBytesEqual": true,
+      "applicationVersion": "25.0.0",
+      "error": null,
+      "passed": true
+    },
+    {
+      "label": "www-https",
+      "requestURL": "https://www.tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-www-https",
+      "curlExit": 0,
+      "redirectChain": [
+        {
+          "url": "https://www.tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-www-https",
+          "status": 301,
+          "location": "https://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-www-https",
+          "content-type": "text/html",
+          "date": "Thu, 29 Oct 2026 10:38:45 GMT",
+          "age": "417"
+        },
+        {
+          "url": "https://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-www-https",
+          "status": 200,
+          "content-type": "text/html; charset=utf-8",
+          "date": "Thu, 29 Oct 2026 10:38:46 GMT",
+          "age": "417",
+          "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+        }
+      ],
+      "finalURL": "https://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-www-https",
+      "finalStatus": 200,
+      "tlsVerifyResult": 0,
+      "redirectCount": 1,
+      "responseBytes": 25139,
+      "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+      "sourcePath": "dist/index.html",
+      "sourceBytes": 25139,
+      "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+      "sourceBytesEqual": true,
+      "error": null,
+      "applicationVersion": "25.0.0",
+      "passed": true
+    },
+    {
+      "label": "old-github-https",
+      "requestURL": "https://zhangshuaibo1.github.io/tougaigu/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-old-github-https",
+      "requestHeaders": {
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache"
+      },
+      "curlExit": 0,
+      "redirectChain": [
+        {
+          "url": "https://zhangshuaibo1.github.io/tougaigu/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-old-github-https",
+          "status": 301,
+          "location": "http://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-old-github-https",
+          "content-type": "text/html",
+          "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+          "age": "1438"
+        },
+        {
+          "url": "http://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-old-github-https",
+          "status": 301,
+          "location": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-old-github-https",
+          "content-type": "text/html",
+          "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+          "age": "0"
+        },
+        {
+          "url": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-old-github-https",
+          "status": 200,
+          "content-type": "text/html; charset=utf-8",
+          "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+          "age": "0",
+          "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+        }
+      ],
+      "finalURL": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-old-github-https",
+      "finalStatus": 200,
+      "tlsVerifyResult": 0,
+      "redirectCount": 2,
+      "responseBytes": 25139,
+      "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+      "sourcePath": "dist/index.html",
+      "sourceBytes": 25139,
+      "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+      "sourceBytesEqual": true,
+      "applicationVersion": "25.0.0",
+      "error": null,
+      "passed": true
+    },
+    {
+      "label": "game-module",
+      "requestURL": "https://tougaigu.com/dream-app.js?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-game-module",
+      "curlExit": 0,
+      "redirectChain": [
+        {
+          "url": "https://tougaigu.com/dream-app.js?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-game-module",
+          "status": 200,
+          "content-type": "application/javascript; charset=utf-8",
+          "date": "Thu, 29 Oct 2026 10:38:45 GMT",
+          "age": "0",
+          "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+        }
+      ],
+      "finalURL": "https://tougaigu.com/dream-app.js?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-game-module",
+      "finalStatus": 200,
+      "tlsVerifyResult": 0,
+      "redirectCount": 0,
+      "responseBytes": 63772,
+      "responseSHA256": "078cd17e6aaa6a194aa941c8d2b3823e3da73d669f80f4e027a0bcc2448f67a6",
+      "sourcePath": "dist/dream-app.js",
+      "sourceBytes": 63772,
+      "sourceSHA256": "078cd17e6aaa6a194aa941c8d2b3823e3da73d669f80f4e027a0bcc2448f67a6",
+      "sourceBytesEqual": true,
+      "error": null,
+      "passed": true
+    },
+    {
+      "label": "station-background",
+      "requestURL": "https://tougaigu.com/assets/station-painted-v16.webp?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-station-background",
+      "curlExit": 0,
+      "redirectChain": [
+        {
+          "url": "https://tougaigu.com/assets/station-painted-v16.webp?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-station-background",
+          "status": 200,
+          "content-type": "image/webp",
+          "date": "Thu, 29 Oct 2026 10:38:45 GMT",
+          "age": "0",
+          "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+        }
+      ],
+      "finalURL": "https://tougaigu.com/assets/station-painted-v16.webp?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-station-background",
+      "finalStatus": 200,
+      "tlsVerifyResult": 0,
+      "redirectCount": 0,
+      "responseBytes": 266328,
+      "responseSHA256": "51406de059d3d092b0bf7c8f80f285f82dcc7fb17bcfbd77b5fcd000bb888fba",
+      "sourcePath": "dist/assets/station-painted-v16.webp",
+      "sourceBytes": 266328,
+      "sourceSHA256": "51406de059d3d092b0bf7c8f80f285f82dcc7fb17bcfbd77b5fcd000bb888fba",
+      "sourceBytesEqual": true,
+      "error": null,
+      "passed": true
+    },
+    {
+      "label": "apex-http-dream-existing-path",
+      "requestURL": "http://tougaigu.com/dream.html?domain-path-check=63d39ebde1704744a942bc9bc421a002",
+      "requestHeaders": {
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache"
+      },
+      "curlExit": 0,
+      "redirectChain": [
+        {
+          "url": "http://tougaigu.com/dream.html?domain-path-check=63d39ebde1704744a942bc9bc421a002",
+          "status": 301,
+          "location": "https://tougaigu.com/dream.html?domain-path-check=63d39ebde1704744a942bc9bc421a002",
+          "content-type": "text/html",
+          "date": "Thu, 29 Oct 2026 10:40:05 GMT",
+          "age": "0"
+        },
+        {
+          "url": "https://tougaigu.com/dream.html?domain-path-check=63d39ebde1704744a942bc9bc421a002",
+          "status": 200,
+          "content-type": "text/html; charset=utf-8",
+          "date": "Thu, 29 Oct 2026 10:40:05 GMT",
+          "age": "0",
+          "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+        }
+      ],
+      "finalURL": "https://tougaigu.com/dream.html?domain-path-check=63d39ebde1704744a942bc9bc421a002",
+      "finalStatus": 200,
+      "tlsVerifyResult": 0,
+      "redirectCount": 1,
+      "responseBytes": 25139,
+      "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+      "sourcePath": "dist/dream.html",
+      "sourceBytes": 25139,
+      "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+      "sourceBytesEqual": true,
+      "applicationVersion": "25.0.0",
+      "error": null,
+      "passed": true
+    }
+  ],
+  "attempts": [
+    {
+      "startedAtUTC": "2026-10-29T10:38:45.653658+00:00",
+      "completedAtUTC": "2026-10-29T10:38:46.108310+00:00",
+      "method": "Unique non-sensitive query parameter",
+      "allPassed": false,
+      "checks": [
+        {
+          "label": "apex-http",
+          "requestURL": "http://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-apex-http",
+          "curlExit": 0,
+          "redirectChain": [
+            {
+              "url": "http://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-apex-http",
+              "status": 200,
+              "content-type": "text/html; charset=utf-8",
+              "date": "Thu, 29 Oct 2026 10:38:45 GMT",
+              "age": "380",
+              "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+            }
+          ],
+          "finalURL": "http://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-apex-http",
+          "finalStatus": 200,
+          "tlsVerifyResult": 0,
+          "redirectCount": 0,
+          "responseBytes": 25139,
+          "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourcePath": "dist/index.html",
+          "sourceBytes": 25139,
+          "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourceBytesEqual": true,
+          "error": null,
+          "applicationVersion": "25.0.0",
+          "passed": false
+        },
+        {
+          "label": "apex-https",
+          "requestURL": "https://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-apex-https",
+          "curlExit": 0,
+          "redirectChain": [
+            {
+              "url": "https://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-apex-https",
+              "status": 200,
+              "content-type": "text/html; charset=utf-8",
+              "date": "Thu, 29 Oct 2026 10:38:46 GMT",
+              "age": "417",
+              "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+            }
+          ],
+          "finalURL": "https://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-apex-https",
+          "finalStatus": 200,
+          "tlsVerifyResult": 0,
+          "redirectCount": 0,
+          "responseBytes": 25139,
+          "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourcePath": "dist/index.html",
+          "sourceBytes": 25139,
+          "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourceBytesEqual": true,
+          "error": null,
+          "applicationVersion": "25.0.0",
+          "passed": true
+        },
+        {
+          "label": "www-http",
+          "requestURL": "http://www.tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-www-http",
+          "curlExit": 0,
+          "redirectChain": [
+            {
+              "url": "http://www.tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-www-http",
+              "status": 301,
+              "location": "http://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-www-http",
+              "content-type": "text/html",
+              "date": "Thu, 29 Oct 2026 10:38:45 GMT",
+              "age": "935"
+            },
+            {
+              "url": "http://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-www-http",
+              "status": 200,
+              "content-type": "text/html; charset=utf-8",
+              "date": "Thu, 29 Oct 2026 10:38:46 GMT",
+              "age": "380",
+              "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+            }
+          ],
+          "finalURL": "http://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-www-http",
+          "finalStatus": 200,
+          "tlsVerifyResult": 0,
+          "redirectCount": 1,
+          "responseBytes": 25139,
+          "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourcePath": "dist/index.html",
+          "sourceBytes": 25139,
+          "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourceBytesEqual": true,
+          "error": null,
+          "applicationVersion": "25.0.0",
+          "passed": false
+        },
+        {
+          "label": "www-https",
+          "requestURL": "https://www.tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-www-https",
+          "curlExit": 0,
+          "redirectChain": [
+            {
+              "url": "https://www.tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-www-https",
+              "status": 301,
+              "location": "https://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-www-https",
+              "content-type": "text/html",
+              "date": "Thu, 29 Oct 2026 10:38:45 GMT",
+              "age": "417"
+            },
+            {
+              "url": "https://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-www-https",
+              "status": 200,
+              "content-type": "text/html; charset=utf-8",
+              "date": "Thu, 29 Oct 2026 10:38:46 GMT",
+              "age": "417",
+              "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+            }
+          ],
+          "finalURL": "https://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-www-https",
+          "finalStatus": 200,
+          "tlsVerifyResult": 0,
+          "redirectCount": 1,
+          "responseBytes": 25139,
+          "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourcePath": "dist/index.html",
+          "sourceBytes": 25139,
+          "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourceBytesEqual": true,
+          "error": null,
+          "applicationVersion": "25.0.0",
+          "passed": true
+        },
+        {
+          "label": "old-github-https",
+          "requestURL": "https://zhangshuaibo1.github.io/tougaigu/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-old-github-https",
+          "curlExit": 0,
+          "redirectChain": [
+            {
+              "url": "https://zhangshuaibo1.github.io/tougaigu/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-old-github-https",
+              "status": 301,
+              "location": "http://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-old-github-https",
+              "content-type": "text/html",
+              "date": "Thu, 29 Oct 2026 10:38:45 GMT",
+              "age": "1199"
+            },
+            {
+              "url": "http://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-old-github-https",
+              "status": 200,
+              "content-type": "text/html; charset=utf-8",
+              "date": "Thu, 29 Oct 2026 10:38:45 GMT",
+              "age": "380",
+              "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+            }
+          ],
+          "finalURL": "http://tougaigu.com/?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-old-github-https",
+          "finalStatus": 200,
+          "tlsVerifyResult": 0,
+          "redirectCount": 1,
+          "responseBytes": 25139,
+          "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourcePath": "dist/index.html",
+          "sourceBytes": 25139,
+          "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourceBytesEqual": true,
+          "error": null,
+          "applicationVersion": "25.0.0",
+          "passed": false
+        },
+        {
+          "label": "game-module",
+          "requestURL": "https://tougaigu.com/dream-app.js?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-game-module",
+          "curlExit": 0,
+          "redirectChain": [
+            {
+              "url": "https://tougaigu.com/dream-app.js?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-game-module",
+              "status": 200,
+              "content-type": "application/javascript; charset=utf-8",
+              "date": "Thu, 29 Oct 2026 10:38:45 GMT",
+              "age": "0",
+              "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+            }
+          ],
+          "finalURL": "https://tougaigu.com/dream-app.js?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-game-module",
+          "finalStatus": 200,
+          "tlsVerifyResult": 0,
+          "redirectCount": 0,
+          "responseBytes": 63772,
+          "responseSHA256": "078cd17e6aaa6a194aa941c8d2b3823e3da73d669f80f4e027a0bcc2448f67a6",
+          "sourcePath": "dist/dream-app.js",
+          "sourceBytes": 63772,
+          "sourceSHA256": "078cd17e6aaa6a194aa941c8d2b3823e3da73d669f80f4e027a0bcc2448f67a6",
+          "sourceBytesEqual": true,
+          "error": null,
+          "passed": true
+        },
+        {
+          "label": "station-background",
+          "requestURL": "https://tougaigu.com/assets/station-painted-v16.webp?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-station-background",
+          "curlExit": 0,
+          "redirectChain": [
+            {
+              "url": "https://tougaigu.com/assets/station-painted-v16.webp?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-station-background",
+              "status": 200,
+              "content-type": "image/webp",
+              "date": "Thu, 29 Oct 2026 10:38:45 GMT",
+              "age": "0",
+              "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+            }
+          ],
+          "finalURL": "https://tougaigu.com/assets/station-painted-v16.webp?domain-final-check=6043b893cf8f41d896d712073ebe2ffb-station-background",
+          "finalStatus": 200,
+          "tlsVerifyResult": 0,
+          "redirectCount": 0,
+          "responseBytes": 266328,
+          "responseSHA256": "51406de059d3d092b0bf7c8f80f285f82dcc7fb17bcfbd77b5fcd000bb888fba",
+          "sourcePath": "dist/assets/station-painted-v16.webp",
+          "sourceBytes": 266328,
+          "sourceSHA256": "51406de059d3d092b0bf7c8f80f285f82dcc7fb17bcfbd77b5fcd000bb888fba",
+          "sourceBytesEqual": true,
+          "error": null,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "startedAtUTC": "2026-10-29T10:39:30.869082+00:00",
+      "completedAtUTC": "2026-10-29T10:39:30.958270+00:00",
+      "method": "Bounded revalidation of three stale redirect responses using a new query parameter plus Cache-Control: no-cache and Pragma: no-cache",
+      "allPassed": false,
+      "checks": [
+        {
+          "label": "apex-http",
+          "requestURL": "http://tougaigu.com/?domain-final-revalidate=2d5a30119e7648f7982cc53b604720c4-apex-http",
+          "requestHeaders": {
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache"
+          },
+          "curlExit": 0,
+          "redirectChain": [
+            {
+              "url": "http://tougaigu.com/?domain-final-revalidate=2d5a30119e7648f7982cc53b604720c4-apex-http",
+              "status": 200,
+              "content-type": "text/html; charset=utf-8",
+              "date": "Thu, 29 Oct 2026 10:39:30 GMT",
+              "age": "425",
+              "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+            }
+          ],
+          "finalURL": "http://tougaigu.com/?domain-final-revalidate=2d5a30119e7648f7982cc53b604720c4-apex-http",
+          "finalStatus": 200,
+          "tlsVerifyResult": 0,
+          "redirectCount": 0,
+          "responseBytes": 25139,
+          "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourcePath": "dist/index.html",
+          "sourceBytes": 25139,
+          "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourceBytesEqual": true,
+          "applicationVersion": "25.0.0",
+          "error": null,
+          "passed": false
+        },
+        {
+          "label": "www-http",
+          "requestURL": "http://www.tougaigu.com/?domain-final-revalidate=2d5a30119e7648f7982cc53b604720c4-www-http",
+          "requestHeaders": {
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache"
+          },
+          "curlExit": 0,
+          "redirectChain": [
+            {
+              "url": "http://www.tougaigu.com/?domain-final-revalidate=2d5a30119e7648f7982cc53b604720c4-www-http",
+              "status": 301,
+              "location": "http://tougaigu.com/?domain-final-revalidate=2d5a30119e7648f7982cc53b604720c4-www-http",
+              "content-type": "text/html",
+              "date": "Thu, 29 Oct 2026 10:39:30 GMT",
+              "age": "980"
+            },
+            {
+              "url": "http://tougaigu.com/?domain-final-revalidate=2d5a30119e7648f7982cc53b604720c4-www-http",
+              "status": 200,
+              "content-type": "text/html; charset=utf-8",
+              "date": "Thu, 29 Oct 2026 10:39:30 GMT",
+              "age": "425",
+              "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+            }
+          ],
+          "finalURL": "http://tougaigu.com/?domain-final-revalidate=2d5a30119e7648f7982cc53b604720c4-www-http",
+          "finalStatus": 200,
+          "tlsVerifyResult": 0,
+          "redirectCount": 1,
+          "responseBytes": 25139,
+          "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourcePath": "dist/index.html",
+          "sourceBytes": 25139,
+          "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourceBytesEqual": true,
+          "applicationVersion": "25.0.0",
+          "error": null,
+          "passed": false
+        },
+        {
+          "label": "old-github-https",
+          "requestURL": "https://zhangshuaibo1.github.io/tougaigu/?domain-final-revalidate=2d5a30119e7648f7982cc53b604720c4-old-github-https",
+          "requestHeaders": {
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache"
+          },
+          "curlExit": 0,
+          "redirectChain": [
+            {
+              "url": "https://zhangshuaibo1.github.io/tougaigu/?domain-final-revalidate=2d5a30119e7648f7982cc53b604720c4-old-github-https",
+              "status": 301,
+              "location": "http://tougaigu.com/?domain-final-revalidate=2d5a30119e7648f7982cc53b604720c4-old-github-https",
+              "content-type": "text/html",
+              "date": "Thu, 29 Oct 2026 10:39:30 GMT",
+              "age": "1244"
+            },
+            {
+              "url": "http://tougaigu.com/?domain-final-revalidate=2d5a30119e7648f7982cc53b604720c4-old-github-https",
+              "status": 200,
+              "content-type": "text/html; charset=utf-8",
+              "date": "Thu, 29 Oct 2026 10:39:30 GMT",
+              "age": "425",
+              "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+            }
+          ],
+          "finalURL": "http://tougaigu.com/?domain-final-revalidate=2d5a30119e7648f7982cc53b604720c4-old-github-https",
+          "finalStatus": 200,
+          "tlsVerifyResult": 0,
+          "redirectCount": 1,
+          "responseBytes": 25139,
+          "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourcePath": "dist/index.html",
+          "sourceBytes": 25139,
+          "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourceBytesEqual": true,
+          "applicationVersion": "25.0.0",
+          "error": null,
+          "passed": false
+        }
+      ]
+    },
+    {
+      "startedAtUTC": "2026-10-29T10:40:05.000609+00:00",
+      "completedAtUTC": "2026-10-29T10:40:05.158716+00:00",
+      "method": "One existing real dream.html path as a fresh-path control after root URL still served cached HTTP",
+      "allPassed": true,
+      "checks": [
+        {
+          "label": "apex-http-dream-existing-path",
+          "requestURL": "http://tougaigu.com/dream.html?domain-path-check=63d39ebde1704744a942bc9bc421a002",
+          "requestHeaders": {
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache"
+          },
+          "curlExit": 0,
+          "redirectChain": [
+            {
+              "url": "http://tougaigu.com/dream.html?domain-path-check=63d39ebde1704744a942bc9bc421a002",
+              "status": 301,
+              "location": "https://tougaigu.com/dream.html?domain-path-check=63d39ebde1704744a942bc9bc421a002",
+              "content-type": "text/html",
+              "date": "Thu, 29 Oct 2026 10:40:05 GMT",
+              "age": "0"
+            },
+            {
+              "url": "https://tougaigu.com/dream.html?domain-path-check=63d39ebde1704744a942bc9bc421a002",
+              "status": 200,
+              "content-type": "text/html; charset=utf-8",
+              "date": "Thu, 29 Oct 2026 10:40:05 GMT",
+              "age": "0",
+              "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+            }
+          ],
+          "finalURL": "https://tougaigu.com/dream.html?domain-path-check=63d39ebde1704744a942bc9bc421a002",
+          "finalStatus": 200,
+          "tlsVerifyResult": 0,
+          "redirectCount": 1,
+          "responseBytes": 25139,
+          "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourcePath": "dist/dream.html",
+          "sourceBytes": 25139,
+          "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourceBytesEqual": true,
+          "applicationVersion": "25.0.0",
+          "error": null,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "startedAtUTC": "2026-10-29T10:42:45.211361+00:00",
+      "completedAtUTC": "2026-10-29T10:42:45.358102+00:00",
+      "method": "Final bounded command-line recheck of exactly the three previously cached chains; fresh query parameter and no-cache headers; other checks were not repeated",
+      "allPassed": true,
+      "checks": [
+        {
+          "label": "apex-http",
+          "requestURL": "http://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-apex-http",
+          "requestHeaders": {
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache"
+          },
+          "curlExit": 0,
+          "redirectChain": [
+            {
+              "url": "http://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-apex-http",
+              "status": 301,
+              "location": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-apex-http",
+              "content-type": "text/html",
+              "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+              "age": "0"
+            },
+            {
+              "url": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-apex-http",
+              "status": 200,
+              "content-type": "text/html; charset=utf-8",
+              "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+              "age": "0",
+              "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+            }
+          ],
+          "finalURL": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-apex-http",
+          "finalStatus": 200,
+          "tlsVerifyResult": 0,
+          "redirectCount": 1,
+          "responseBytes": 25139,
+          "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourcePath": "dist/index.html",
+          "sourceBytes": 25139,
+          "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourceBytesEqual": true,
+          "applicationVersion": "25.0.0",
+          "error": null,
+          "passed": true
+        },
+        {
+          "label": "www-http",
+          "requestURL": "http://www.tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-www-http",
+          "requestHeaders": {
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache"
+          },
+          "curlExit": 0,
+          "redirectChain": [
+            {
+              "url": "http://www.tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-www-http",
+              "status": 301,
+              "location": "http://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-www-http",
+              "content-type": "text/html",
+              "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+              "age": "1175"
+            },
+            {
+              "url": "http://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-www-http",
+              "status": 301,
+              "location": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-www-http",
+              "content-type": "text/html",
+              "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+              "age": "0"
+            },
+            {
+              "url": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-www-http",
+              "status": 200,
+              "content-type": "text/html; charset=utf-8",
+              "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+              "age": "0",
+              "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+            }
+          ],
+          "finalURL": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-www-http",
+          "finalStatus": 200,
+          "tlsVerifyResult": 0,
+          "redirectCount": 2,
+          "responseBytes": 25139,
+          "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourcePath": "dist/index.html",
+          "sourceBytes": 25139,
+          "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourceBytesEqual": true,
+          "applicationVersion": "25.0.0",
+          "error": null,
+          "passed": true
+        },
+        {
+          "label": "old-github-https",
+          "requestURL": "https://zhangshuaibo1.github.io/tougaigu/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-old-github-https",
+          "requestHeaders": {
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache"
+          },
+          "curlExit": 0,
+          "redirectChain": [
+            {
+              "url": "https://zhangshuaibo1.github.io/tougaigu/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-old-github-https",
+              "status": 301,
+              "location": "http://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-old-github-https",
+              "content-type": "text/html",
+              "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+              "age": "1438"
+            },
+            {
+              "url": "http://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-old-github-https",
+              "status": 301,
+              "location": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-old-github-https",
+              "content-type": "text/html",
+              "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+              "age": "0"
+            },
+            {
+              "url": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-old-github-https",
+              "status": 200,
+              "content-type": "text/html; charset=utf-8",
+              "date": "Thu, 29 Oct 2026 10:42:45 GMT",
+              "age": "0",
+              "last-modified": "Thu, 29 Oct 2026 10:17:31 GMT"
+            }
+          ],
+          "finalURL": "https://tougaigu.com/?domain-final-recheck=c0997245c8f24d72b0ef28a80a44da81-old-github-https",
+          "finalStatus": 200,
+          "tlsVerifyResult": 0,
+          "redirectCount": 2,
+          "responseBytes": 25139,
+          "responseSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourcePath": "dist/index.html",
+          "sourceBytes": 25139,
+          "sourceSHA256": "b7401262acab8f93b3f4094829468ecb22ad1ea046b2c3cc2c2a8bab169e1c73",
+          "sourceBytesEqual": true,
+          "applicationVersion": "25.0.0",
+          "error": null,
+          "passed": true
+        }
+      ]
+    }
+  ]
+}
