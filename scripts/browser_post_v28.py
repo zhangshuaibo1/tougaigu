@@ -24,6 +24,82 @@ POST_OUTRO=[
 ]
 READ_SAVE="JSON.parse(localStorage.getItem('tougaigu.dream.v1'))"
 
+POST_EXIT_INPUT_OBSERVER="""()=>{
+ if(window.__qaPostExitInput)throw new Error('previous post-exit observer was not removed');
+ const events=[],types=['pointerdown','pointerup','pointercancel','click'];
+ const observe=event=>{
+  if(events.length>=24)return;
+  const target=event.target?.closest?.('button'),s=window.__qaRead?.();
+  events.push({type:event.type,pointerType:event.pointerType||null,isTrusted:event.isTrusted,
+    targetId:target?.id||null,direction:target?.dataset.direction||null,
+    shellAction:target?.dataset.shellAction||null,at:performance.now(),
+    state:s?.state,form:s?.form,time:s?.time,runId:s?.runId,bodyIdentity:s?.bodyIdentity,
+    dialogs:[...document.querySelectorAll('dialog[open]')].map(dialog=>dialog.id)});
+ };
+ for(const type of types)document.addEventListener(type,observe,true);
+ window.__qaPostExitInput={read:()=>events.map(event=>({...event,dialogs:[...event.dialogs]})),
+   stop:()=>{for(const type of types)document.removeEventListener(type,observe,true);}};
+}"""
+
+POST_EXIT_UI="""()=>{
+ const result=document.querySelector('#result-dialog');
+ const rect=element=>{const r=element.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height};};
+ return {game:window.__qaRead?.(),dialogs:[...document.querySelectorAll('dialog[open]')].map(dialog=>dialog.id),
+  result:{open:result?.open,visible:!!result?.open&&result.getBoundingClientRect().width>0&&
+    result.getBoundingClientRect().height>0&&getComputedStyle(result).visibility==='visible'},
+  buttons:[...document.querySelectorAll('#stage-toggle,#stage-jump,#result-story,#result-map,[data-direction="right"]')]
+    .map(button=>({id:button.id,direction:button.dataset.direction||null,rect:rect(button)}))};
+}"""
+
+async def stop_post_exit_observer(page):
+ return await page.evaluate("""()=>{
+  const observer=window.__qaPostExitInput;
+  if(!observer)return [];
+  const events=observer.read();observer.stop();delete window.__qaPostExitInput;
+  return events;
+ }""")
+
+async def complete_post_approach(page,output,label,driver,touch=False):
+ """Single pulse, single recall and real walk, with bounded passive evidence."""
+ await page.evaluate(POST_EXIT_INPUT_OBSERVER)
+ trace={'label':label,'input':'CDP simulated touch' if touch else 'keyboard','walkingSamples':[]}
+ try:
+  # HOT PATH: no screenshots, AX reads, artificial animation waits or input
+  # retries. The observer does not cancel/retarget/prevent any native event.
+  await action(page,driver,'Space','#stage-jump',touch)
+  frozen=await page.evaluate('window.__qaRead()');trace['frozen']=post_record(frozen)
+  assert frozen['hazards'][0]['frozen']>3.8,'actual single pulse did not stop last pendulum'
+  await return_body(page,driver,touch,settle=False)
+  # A successful recall changes form synchronously. Confirm that this actual
+  # input took effect without waiting for the .72-second cap closure.
+  await page.wait_for_function("()=>window.__qaRead()?.form==='body'",timeout=500)
+  recalled=await page.evaluate('window.__qaRead()');trace['afterRecall']=post_record(recalled)
+  assert recalled['bodyIdentity']==frozen['bodyIdentity'] and recalled['deaths']==frozen['deaths'],'single recall replaced the actual body'
+  await driver.drive_to(page,2540,until=lambda:page.locator('#result-dialog[open]').is_visible(),
+                        limit=5,touch=touch,observe=lambda s:trace['walkingSamples'].append(post_record(s)))
+  # Read before any screenshot or long timeout. This distinguishes a missed
+  # recall, failed exit, and a result closed/advanced by a native trailing tap.
+  current=await page.evaluate(POST_EXIT_UI);trace['afterDrive']=current
+  done=current['game']
+  assert current['result']['visible'],('post final movement returned without a visible result; state='+str(done['state'])+
+       ', form='+str(done['form'])+', body='+str(done['body'])+', dialogs='+str(current['dialogs']))
+  assert done['chapterIndex']==5 and done['state']=='complete' and done['seals']==2 and done['memories']==3 and done['deaths']==0
+  trace['verifiedExit']=validate_post_exit(trace['frozen'],trace['walkingSamples'],post_record(done))
+  trace['inputEvents']=await stop_post_exit_observer(page)
+  return done,trace['verifiedExit'],trace['inputEvents']
+ except Exception as error:
+  # Failure-only capture runs after the input has already been released. Do not
+  # use it to rescue the run, alter the frozen window or synthesize success.
+  trace['error']=str(error)
+  trace['failureSnapshot']=await page.evaluate(POST_EXIT_UI)
+  trace['inputEvents']=await stop_post_exit_observer(page)
+  Path(output,label+'-post-exit-failure.json').write_text(json.dumps(trace,ensure_ascii=False,indent=2))
+  print(label,'post exit failure',json.dumps(trace,ensure_ascii=False),flush=True)
+  await page.screenshot(path=str(Path(output)/(label+'-post-exit-failure.png')),full_page=True)
+  raise
+ finally:
+  await stop_post_exit_observer(page)
+
 def post_record(s):
  return {key:s[key] for key in ['runId','bodyIdentity','chapterIndex','mode','state','form','time','deaths','body','hazards','input']}
 
@@ -99,6 +175,19 @@ async def finish_post_story(page,driver,expected,touch=False):
   await click_input(page,'#story-next',driver,True)
  assert not await page.locator('#story-dialog[open]').is_visible(),'post story has an unexpected extra page'
  return {'portraits':portraits,'pages':[p['page'] for p in portraits]}
+
+async def wait_ending_art_settled(page):
+ """Observe the finite CSS entrance naturally; never seek or finish it.
+ The sixth-chapter result has already stopped the game, so this visual-only
+ wait cannot consume a hazard freeze or change the route's physical evidence.
+ """
+ await page.wait_for_function("""()=>{
+  const dialog=document.querySelector('#ending-dialog');
+  if(!dialog?.open)return false;
+  const scene=dialog.querySelector('#ending-scene');
+  return !scene||scene.getAnimations({subtree:true})
+    .every(animation=>animation.playState!=='running'&&!animation.pending);
+ }""",timeout=2000)
 
 def validate_post(p,kind='ready'):
  detail=json.dumps({'expected':kind,'actual':p},ensure_ascii=False)
@@ -270,25 +359,15 @@ async def play_route(page,output,label,driver,touch=False,paint='ready',full_sto
  await driver.drive_to(page,2350,400,limit=8,touch=touch)
  await page.wait_for_function('()=>window.__qaRead()?.memories===3',timeout=2500)
  await driver.drive_to(page,2350,380,limit=4,touch=touch)
- # Danger HOT PATH. No screenshots, AX or slow waits while frozen.
- await action(page,driver,'Space','#stage-jump',touch)
- frozen=await page.evaluate('window.__qaRead()')
- assert frozen['hazards'][0]['frozen']>3.8,'actual player pulse did not stop last pendulum'
- await return_body(page,driver,touch,settle=False)
- exit_samples=[]
- await driver.drive_to(page,2540,until=lambda:page.locator('#result-dialog[open]').is_visible(),limit=5,touch=touch,observe=lambda s:exit_samples.append(post_record(s)))
- await page.locator('#result-dialog[open]').wait_for()
- done=await page.evaluate('window.__qaRead()')
- assert done['chapterIndex']==5 and done['state']=='complete' and done['seals']==2 and done['memories']==3 and done['deaths']==0
+ done,exit_trace,exit_input=await complete_post_approach(page,output,label,driver,touch)
  assert done['bodyIdentity']==start['bodyIdentity']
- exit_trace=validate_post_exit(post_record(frozen),exit_samples,post_record(done))
  validate_post(done['postPaint'],paint)
  await page.screenshot(path=str(Path(output)/(label+'-post-body-exit.png')),full_page=True)
  seconds=round(time.monotonic()-began,3)
  print(label,'post full route complete',{'wallSeconds':seconds,'input':'CDP touch' if touch else 'keyboard','paint':paint},flush=True)
  return {'intro':intro['portraits'] if intro else None,'npc':npc['portraits'] if npc else None,'book':ride,'boarded':boarded['body'],
          'rootLanding':root['body'],'firstLamp':lamp1,'secondLamp':lamp2,'fullBodyExit':True,
-         'mushroomBounce':bounced['body'],'windCorridorSamples':wind,'finalExit':exit_trace,
+         'mushroomBounce':bounced['body'],'windCorridorSamples':wind,'finalExit':exit_trace,'finalInputEvents':exit_input,
          'realSunStampBeforeDanger':True,'oneFinalPendulumFrozen':True,'deaths':0,
          'paint':paint,'input':'Chromium CDP simulated touch' if touch else 'keyboard','wallSeconds':seconds}
 async def exercise_post(page,output,label,driver):
@@ -314,6 +393,7 @@ async def exercise_post(page,output,label,driver):
  ending={'title':await page.locator('#ending-title').text_content(),
          'text':await page.locator('#ending-text').text_content()}
  assert ending['title'] and '小满' in ending['text']
+ await wait_ending_art_settled(page)
  await page.screenshot(path=str(Path(output)/(label+'-post-ending.png')),full_page=True)
  after=await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1'))")
  assert len(after['discoveredEndings'])>=1
@@ -427,6 +507,7 @@ async def exercise_post_extended(page,output,label,driver):
    settlement=validate_post_settlement(checkpoint,settled)
    assert await driver.read_reward_grants(page)==grants
    outro=await finish_post_ending(page,driver,touch=True)
+   await wait_ending_art_settled(page)
    await page.screenshot(path=str(Path(output)/(label+'-post-full-touch-'+str(width)+'-ending.png')),full_page=True)
    phones[str(width)]={'viewport':{'width':width,'height':height},'painted':image,'route':route,'outro':outro,
                       'settlement':settlement,'rewardGrantsUnchanged':True,

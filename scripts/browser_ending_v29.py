@@ -6,6 +6,7 @@ It adds no intentional request failures to the caller's final network ledger.
 """
 import json
 import time
+from contextlib import asynccontextmanager
 from pathlib import Path
 
 from browser_library_v26 import click_input
@@ -245,8 +246,20 @@ async def open_ending(page, driver, expected, discovered, touch=False):
     await page.locator('#ending-dialog[open]').wait_for()
     # Observe one real painted frame.  Do not seek or finish an animation.
     await page.evaluate('()=>new Promise(resolve=>requestAnimationFrame(()=>resolve()))')
-    return validate_ending_view(await page.evaluate(ENDING_PROBE), expected, discovered,
+    validate_ending_view(await page.evaluate(ENDING_PROBE), expected, discovered,
+                        phone=touch, at_top=True)
+    # The original one-shot entrance is 620 ms.  Capture its natural final
+    # artwork, not a translucent transition frame.  This bounded observation
+    # never finishes/cancels/seeks animations or advances the paused game.
+    await page.wait_for_function("""()=>{
+      const scene=document.querySelector('#ending-dialog[open] #ending-scene');
+      return scene&&scene.getAnimations({subtree:true})
+        .every(animation=>animation.playState!=='running'&&!animation.pending);
+    }""", timeout=2000)
+    final = validate_ending_view(await page.evaluate(ENDING_PROBE), expected, discovered,
                                 phone=touch, at_top=True)
+    assert not final['activeAnimations'], 'ending entrance did not naturally settle before capture'
+    return final
 
 
 async def swipe_ending_up(page):
@@ -269,6 +282,20 @@ async def swipe_ending_up(page):
         await page.wait_for_timeout(100)
     finally:
         await session.detach()
+
+
+@asynccontextmanager
+async def ending_touch_environment(page):
+    """Own the input emulation lease; the preceding route restores it to off."""
+    session = await page.context.new_cdp_session(page)
+    try:
+        await session.send('Emulation.setTouchEmulationEnabled', {'enabled': True, 'maxTouchPoints': 5})
+        yield
+    finally:
+        try:
+            await session.send('Emulation.setTouchEmulationEnabled', {'enabled': False})
+        finally:
+            await session.detach()
 
 
 async def phone_reading(page, output, label, driver, expected, discovered):
@@ -337,30 +364,31 @@ async def verify_endings(page, output, label, driver):
             await leave_ending(page, driver)
 
         assert discovered == set(ENDING_CONTENT), 'four real combinations did not discover exactly three endings'
-        for width, height in [(390, 844), (320, 680)]:
-            await page.set_viewport_size({'width': width, 'height': height})
-            cases = []
-            for letter, clock, expected in COMBINATIONS[:3]:
-                replies = [await choose_reply(page, driver, 'letter', letter, touch=True),
-                           await choose_reply(page, driver, 'clock', clock, touch=True)]
-                await open_ending(page, driver, expected, discovered, touch=True)
-                evidence = await phone_reading(page, output, label, driver, expected, discovered)
-                invariant = validate_progress(before, await read_progress(page),
-                                              {'letter': letter, 'clock': clock}, discovered,
-                                              grants, await driver.read_reward_grants(page))
-                cases.append({'ending': expected, 'choices': {'letter': letter, 'clock': clock},
-                              'replyPortraits': replies, 'invariants': invariant, **evidence})
-                await leave_ending(page, driver, touch=True)
-            phones[str(width)] = cases
+        async with ending_touch_environment(page):
+            for width, height in [(390, 844), (320, 680)]:
+                await page.set_viewport_size({'width': width, 'height': height})
+                cases = []
+                for letter, clock, expected in COMBINATIONS[:3]:
+                    replies = [await choose_reply(page, driver, 'letter', letter, touch=True),
+                               await choose_reply(page, driver, 'clock', clock, touch=True)]
+                    await open_ending(page, driver, expected, discovered, touch=True)
+                    evidence = await phone_reading(page, output, label, driver, expected, discovered)
+                    invariant = validate_progress(before, await read_progress(page),
+                                                  {'letter': letter, 'clock': clock}, discovered,
+                                                  grants, await driver.read_reward_grants(page))
+                    cases.append({'ending': expected, 'choices': {'letter': letter, 'clock': clock},
+                                  'replyPortraits': replies, 'invariants': invariant, **evidence})
+                    await leave_ending(page, driver, touch=True)
+                phones[str(width)] = cases
 
-        # Actual platform reduced-motion preference: verify the final visible
-        # illustration respects it while all three prose paragraphs remain.
-        await page.emulate_media(reduced_motion='reduce')
-        await open_ending(page, driver, 'tender', discovered, touch=True)
-        reduced = validate_ending_view(await page.evaluate(ENDING_PROBE), 'tender', discovered,
-                                      phone=True, at_top=True)
-        assert reduced['mediaReduced'] and not reduced['activeAnimations'], 'reduced-motion ending still animates'
-        await leave_ending(page, driver, touch=True, continue_to_journal=False)
+            # Actual platform reduced-motion preference: verify the final visible
+            # illustration respects it while all three prose paragraphs remain.
+            await page.emulate_media(reduced_motion='reduce')
+            await open_ending(page, driver, 'tender', discovered, touch=True)
+            reduced = validate_ending_view(await page.evaluate(ENDING_PROBE), 'tender', discovered,
+                                          phone=True, at_top=True)
+            assert reduced['mediaReduced'] and not reduced['activeAnimations'], 'reduced-motion ending still animates'
+            await leave_ending(page, driver, touch=True, continue_to_journal=False)
     finally:
         await page.emulate_media(reduced_motion='no-preference')
         await page.set_viewport_size(original_viewport)

@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 
 const helpers = String.raw`
-import copy,sys
+import asyncio,copy,sys
 sys.path.insert(0,'scripts')
 from browser_ending_v29 import (ENDING_CONTENT,ending_for_choices,validate_progress,
-    validate_ending_view,validate_reading_coverage)
+    validate_ending_view,validate_reading_coverage,ending_touch_environment)
 `;
 function run(script) {
   const result = spawnSync('python3', ['-c', helpers + script], {
@@ -130,4 +130,35 @@ for change in changes:
 print('all paragraphs and actual dialog scroll proven; 6 false reading sequences rejected')
 `);
   assert.match(output, /6 false reading sequences rejected/);
+});
+
+test('ending touch input is enabled after the route and restored even when a phone assertion fails', () => {
+  const output = run(String.raw`
+class Session:
+    def __init__(self):self.events=[];self.detached=False
+    async def send(self,method,params):self.events.append((method,params))
+    async def detach(self):self.detached=True
+class Page:
+    def __init__(self):self.context=self;self.session=Session()
+    async def new_cdp_session(self,page):
+        assert page is self
+        return self.session
+async def run():
+    for fail in [False,True]:
+        page=Page()
+        try:
+            async with ending_touch_environment(page):
+                assert page.session.events==[('Emulation.setTouchEmulationEnabled',dict(enabled=True,maxTouchPoints=5))]
+                if fail:raise ValueError('strict phone layout assertion failed')
+        except ValueError as error:
+            assert fail and str(error)=='strict phone layout assertion failed'
+        else:assert not fail
+        assert page.session.detached
+        assert page.session.events==[
+            ('Emulation.setTouchEmulationEnabled',dict(enabled=True,maxTouchPoints=5)),
+            ('Emulation.setTouchEmulationEnabled',dict(enabled=False))]
+    print('normal and failed phone checks restore their own native touch environment')
+asyncio.run(run())
+`);
+  assert.match(output, /normal and failed phone checks restore/);
 });
