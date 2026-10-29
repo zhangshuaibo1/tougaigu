@@ -1,5 +1,9 @@
 # 持续迭代记录
 
+## 当前在途：v31「眼窝里的笑」正式候选，未经发布
+
+唯一候选 `iteration-v31-face-20261029`，提交 `05adb5da528dd449b85c7874313ac45262908921`，从已归档 v30 main `3c8c6ad2` 和 v31 pre-study `09905331` 无损整合。正式候选 CI [40963548412](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40963548412) 已启动，**最终结论以远端最新状态为准**。截至创建该记录尚未发布v31，正式站保持 v30.0.0。完整测试、原尺寸截图与候选网络门槛未通过前不得发布；已成功的预研候选不能替代正式分支。正式 Pages 树仅预创建未引用：`89c590e390f02c089b67cfa6f3539c35fa836201`（143个运行blob＋空 .nojekyll，原CNAME），**不是已发布证据**。下一次执行先复核候选CI及main新SHA，勿创建竞争版本。
+
 ## 域名发布约束：tougaigu.com
 
 用户购买的`tougaigu.com`已完成现有游戏绑定，Spaceship DNS、GitHub Pages自定义域名、Enforce HTTPS及入口跳转均已验证。新域名完整验收[40860849477](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40860849477)成功，565项测试及候选/公网检查通过；完整配置、首次失败与修正、原始报告见[域名记录](DOMAIN-tougaigu.com.md)和[验收清单](verification-domain-release.json)。
