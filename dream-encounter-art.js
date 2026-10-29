@@ -385,9 +385,16 @@ function keeper(c,pose) {
   for(const side of [-1,1])line(c,[[side*17,-43],[side*21,handY+4],[side*12,handY]],'#6c7d90',5.5);
   if(pose.prop==='greenhouse-can')wateringCan(c,pose);
   else if(pose.prop==='post-letter') {
-    c.save();c.translate(0,-27-pose.lift);c.rotate(pose.open?pose.gazeX*.1:0);
-    envelope(c,0,0,26,18,'#a4b4ad',pose.open?.7:0);
-    if(pose.open)star(c,1,-12,2.2,'#e9d5a2');c.restore();
+    const a=clamp(pose.postOpen||0,0,1);
+    c.save();c.translate(0,-27-pose.lift);c.rotate(a*pose.gazeX*.08);
+    ellipse(c,0,4,17,11,'#322e4068');
+    envelope(c,0,0,30,20,'#ba8d6e',a*.72);
+    line(c,[[-12,-6],[10,-6]],'#fff5dea8',.8);
+    for(const y of [-3,0,3])line(c,[[-11,y],[11,y]],'#bda48f50',.5);
+    if(a>0){ellipse(c,0,-1,3.1,3.1,'#d99f77');star(c,0,-1,2,'#fff1cc');}
+    if(a>.25)star(c,1,-13,2.2,'#f7d8a6');
+    for(const side of [-1,1])ellipse(c,side*14,1,3.2,3.1,'#ead6b6',side*.14);
+    c.restore();
   } else pocketWatch(c,pose);
   for(const side of [-1,1])ellipse(c,side*12,handY,3.2,3.5,'#e6d0ac');
 }
@@ -462,19 +469,21 @@ export function drawStoryNPC(c,view,time=0,reducedMotion=false) {
   const warm=!!ticket&&['held','returning','stowed'].includes(ticket.phase);
   const theatre=view.chapterIndex===2&&view.motif==='moth'&&view.prop==='theatre-ticket';
   const coast=view.chapterIndex===4&&view.prop==='coast-watch';
+  const post=view.chapterIndex===5&&view.prop==='post-letter';
+  const postOpen=post&&view.near?clamp(finite(view.capOpen),0,1):0;
   const coastOpen=coast&&view.near?clamp(finite(view.capOpen),0,1):0;
   const theatreLamps=theatre?clamp(finite(view.seals),0,2):0;
   const invite=theatre&&open?clamp(finite(view.capOpen),0,1):0;
   const pose={time:t,reduced:!!reducedMotion,prop:view.prop,open,talking:!!view.talking,salute,warm,propX:salute*21,
     greenhouse:view.chapterIndex===1&&view.prop==='greenhouse-can',
-    coast,
+    coast,postOpen,
     painted:(view.lighting==='painted-station'&&view.chapterIndex===0)||theatre,
     library:view.chapterIndex===3&&view.motif==='whale'&&view.prop==='library-book',seals:clamp(finite(view.seals),0,2),
     theatre,theatreLamps,invite,
     smile:(welcome&&!reducedMotion&&progress>.24&&progress<.81)||(theatre&&theatreLamps===2),
     gazeX:clamp((finite(look.x,x)-x)/140,-1,1),gazeY:clamp((finite(look.y,y-65)-(y-65))/100-(invite*.45),-1.2,1.2),
     blink:!reducedMotion&&Math.sin(t*1.67+view.chapterIndex*.4)>.992,
-    lift:(coast?coastOpen*11+(view.talking?3*(1-coastOpen):0):(open?11:view.talking?3:0))+notice*2+salute*14+invite*2};
+    lift:(post?postOpen*11+(view.talking?3*(1-postOpen):0):coast?coastOpen*11+(view.talking?3*(1-coastOpen):0):(open?11:view.talking?3:0))+notice*2+salute*14+invite*2};
   c.save();c.translate(x,y);c.lineCap='round';c.lineJoin='round';c.lineWidth=1;
   ellipse(c,0,2,view.motif==='whale'?34:27,4,'#10202a55');
   // Body breathing is deliberately tiny; the first platform is just above us.

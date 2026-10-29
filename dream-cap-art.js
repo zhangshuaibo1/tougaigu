@@ -152,7 +152,15 @@ export function drawCapMiniature(c,input,t=0){
     case 'dawn': {
       const rise=small*.5;oval(c,0,-15+rise,24,24,accent+'44');oval(c,0,-15+rise,18,18,accent);
       for(let i=0;i<7;i++){const a=Math.PI+i*Math.PI/6;stroke(c,[[Math.cos(a)*29,-15+Math.sin(a)*29],[Math.cos(a)*35,-15+Math.sin(a)*35]],accent,1.5);}
-      rect(c,-45,10,90,4,color);envelope(c,0,8,50,ivory,accent);littleBird(c,-33,-31,color);littleBird(c,32,-25,color);star(c,28,0,3,ivory);break;
+      rect(c,-45,10,90,4,color);envelope(c,0,8,50,ivory,accent);
+      if(scene.postDelivery?.phase==='settled'){
+        oval(c,0,10,8,8,'#f4c77d');oval(c,0,10,5.8,5.8,'#f7e2a8');
+        for(let i=0;i<8;i++){const a=i*TAU/8;stroke(c,[[Math.cos(a)*9,10+Math.sin(a)*9],[Math.cos(a)*12,10+Math.sin(a)*12]],'#e3a56f',1);}
+        star(c,0,10,3,'#fff4c9');
+      }else if(scene.postDelivery?.phase==='ready'||scene.postDelivery?.phase==='returning'){
+        oval(c,0,10,7,7,'#fee1b466');
+      }
+      littleBird(c,-33,-31,color);littleBird(c,32,-25,color);star(c,28,0,3,ivory);break;
     }
     case 'pumpkin': {
       stroke(c,[[-31,14],[-31,-37]],accent,2);curve(c,[-31,-37,-31,-49,-17,-49,-17,-39],accent,2);stroke(c,[[-17,-40],[-17,-31]],accent,1);
