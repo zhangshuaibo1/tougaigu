@@ -64,3 +64,4 @@ export function drawPaintedLibraryLights(c,view,amounts=[]) {
     success=true;
   }catch{success=false;}finally{if(saved)try{c.restore();}catch{success=false;}}
   return success;
+}
