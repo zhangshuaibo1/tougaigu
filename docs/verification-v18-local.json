@@ -1,0 +1,54 @@
+{
+  "version": "18.0.0",
+  "node_test_files": 40,
+  "new_letter_behavior_tests": 12,
+  "full_suite_exit_code": 0,
+  "resources": {
+    "js_modules": 47,
+    "local_references": 131,
+    "versioned_references": 167
+  },
+  "letter_canvas": {
+    "checks": 54,
+    "frames": [
+      "desktop-send-arrival.png",
+      "desktop-send-echo.png",
+      "desktop-send-settled.png",
+      "desktop-keep-arrival.png",
+      "desktop-keep-echo.png",
+      "desktop-keep-settled.png",
+      "phone-390-send-arrival.png",
+      "phone-390-send-echo.png",
+      "phone-390-send-settled.png",
+      "phone-390-keep-arrival.png",
+      "phone-390-keep-echo.png",
+      "phone-390-keep-settled.png",
+      "phone-320-send-arrival.png",
+      "phone-320-send-echo.png",
+      "phone-320-send-settled.png",
+      "phone-320-keep-arrival.png",
+      "phone-320-keep-echo.png",
+      "phone-320-keep-settled.png",
+      "letter-miniature-details.png"
+    ],
+    "productionRenderer": true,
+    "normalCapInput": true,
+    "chosenSaveFixture": true,
+    "newRunPlantStage": 0,
+    "browserQA": false
+  },
+  "keeper_canvas": {
+    "checks": 92,
+    "frames": [
+      "desktop-idle.png",
+      "desktop-open.png",
+      "phone-390-idle.png",
+      "phone-390-open.png",
+      "phone-320-idle.png",
+      "phone-320-open.png"
+    ],
+    "productionRenderer": true,
+    "browserQA": false
+  },
+  "browserQA": false
+}

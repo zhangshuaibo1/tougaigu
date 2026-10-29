@@ -17,6 +17,8 @@ window.__qaRead=()=>{
     form:game.form,state:game.state,chapterIndex:game.chapterIndex,
     x:a.x,y:a.y,vx:a.vx,vy:a.vy,time:game.time,deaths:game.deaths,
     body:{x:b.x,y:b.y,vx:b.vx,vy:b.vy,grounded:b.grounded},capPhase:game.cap?.phase,
+    letterChoice:save.choices.letter??null,
+    letterEcho:game.letterEcho?{...game.letterEcho}:null,
     greenhousePlant:p?{...p,knownSeals:[...p.knownSeals]}:null,
     seedCollected:game.chapterIndex===1&&game.memories?.[1]?.collected===true,
     mushrooms:(game.pads||[]).map(p=>({x:p.x,y:p.y,w:p.w,boing:p.boing,cooldown:p.cooldown})),
@@ -179,6 +181,7 @@ async def exercise_greenhouse(page,output,label):
     await wait_text(page,'#stage-chapter-title','倒流温室')
     await page.wait_for_function("()=>{const a=window.__qaRead();return a?.chapterIndex===1&&a.state==='playing';}")
     initial=await page.evaluate('window.__qaRead()')
+    assert initial['letterChoice'] is None and initial['letterEcho'] is None, 'an unmade letter choice created an echo'
     assert initial['greenhousePlant']['phase']=='missing' and initial['greenhousePlant']['stage']==0
     assert initial['greenhousePlant']['pot']=='ticket', 'the actual station ticket did not carry into the greenhouse'
     assert not initial['seedCollected']
@@ -296,6 +299,148 @@ async def exercise_greenhouse(page,output,label):
             'rootCrossed':True,'routeEvidence':route,'chapterCompleted':True,
             'noRespawns':True,'noHorizontalOverflow':True}
 
+async def finish_story_from_ui(page):
+    """Read every real story page instead of invoking its completion callback."""
+    await page.locator('#story-dialog[open]').wait_for()
+    pages=[]
+    for _ in range(12):
+        if not await page.locator('#story-dialog[open]').is_visible():
+            return pages
+        pages.append(await page.locator('#story-page').inner_text())
+        await page.locator('#story-next').click()
+    raise AssertionError('story dialogue did not finish through its next-page button')
+
+async def read_reward_grants(page):
+    """Normal play time may increase; an echo must never grant or claim items."""
+    return await page.evaluate('''()=>{
+      const r=JSON.parse(localStorage.getItem('tougaigu.rewards.v1')||'null')||{};
+      return {
+        stardust:r.stardust||0,
+        inventory:r.inventory||{glow_candy:0,star_compass:0,feather_charm:0},
+        claimedBase:r.claimedBase||[],supplyClaims:r.supplyClaims||0,
+        outfits:r.outfits||[],badges:r.badges||[],
+        festivals:Object.fromEntries(Object.entries(r.festivals||{})
+          .filter(([,f])=>f.welcomed||(f.claimed||[]).length)
+          .map(([key,f])=>[key,{welcomed:f.welcomed,claimed:f.claimed}]))
+      };
+    }''')
+
+async def read_cap_collections(page):
+    return await page.evaluate('''()=>{
+      const s=JSON.parse(localStorage.getItem('tougaigu.capbook.v1')).scenes;
+      return Object.fromEntries(['story-0','story-1'].map(id=>
+        [id,{memories:s[id].memories,seals:s[id].seals}]));
+    }''')
+
+async def play_letter_echo(page,output,label,choice):
+    """Open the cap, freeze the actual performance, then prove it stays settled."""
+    initial=await page.evaluate('window.__qaRead()')
+    assert initial['state']=='playing' and initial['form']=='body' and initial['capPhase']=='closed'
+    assert initial['letterChoice']==choice
+    assert initial['letterEcho']=={'choice':choice,'phase':'waiting','elapsed':0}
+    await toggle(page,False)
+    await page.wait_for_function("choice=>{const a=window.__qaRead();return a?.letterEcho?.choice===choice&&a.letterEcho.phase==='playing'&&a.letterEcho.elapsed>=.2;}",arg=choice,timeout=8000)
+    await page.screenshot(path=str(output/(label+'-letter-'+choice+'-playing.png')),full_page=True)
+    await page.keyboard.press('Escape')
+    await page.locator('#pause-dialog[open]').wait_for()
+    paused=await page.evaluate('window.__qaRead()')
+    assert paused['state']=='paused' and paused['letterEcho']['phase']=='playing', 'letter finished before its pause check'
+    assert paused['letterEcho']['choice']==choice and paused['letterEcho']['elapsed']>0
+    await page.wait_for_timeout(350)
+    frozen=await page.evaluate('window.__qaRead()')
+    assert frozen['time']==paused['time'] and frozen['letterEcho']==paused['letterEcho'], 'paused letter presentation advanced'
+    assert frozen['capPhase']==paused['capPhase']
+    await page.locator('#stage-resume').click()
+    await page.wait_for_function("choice=>{const e=window.__qaRead()?.letterEcho;return e?.choice===choice&&e.phase==='settled';}",arg=choice,timeout=5000)
+    settled=(await page.evaluate('window.__qaRead()'))['letterEcho']
+    assert settled=={'choice':choice,'phase':'settled','elapsed':2.8}
+    await page.screenshot(path=str(output/(label+'-letter-'+choice+'-settled.png')),full_page=True)
+
+    await toggle(page,False)
+    await page.wait_for_function("()=>{const a=window.__qaRead();return a?.form==='body'&&a.capPhase==='closed';}")
+    await toggle(page,False)
+    await page.wait_for_function("()=>window.__qaRead()?.capPhase==='open'")
+    # The performance normally starts after 1.4s of open-cap time. Sample across
+    # that threshold so a replay cannot be hidden by checking only its end.
+    for _ in range(20):
+        await page.wait_for_timeout(100)
+        assert (await page.evaluate('window.__qaRead()'))['letterEcho']==settled, 'reopening replayed the same letter choice'
+    await toggle(page,False)
+    await page.wait_for_function("()=>{const a=window.__qaRead();return a?.form==='body'&&a.capPhase==='closed';}")
+    return {'choice':choice,'observedPlaying':True,'pausedAtSeconds':paused['letterEcho']['elapsed'],
+            'pauseFrozen':True,'settledSeconds':settled['elapsed'],'reopenDidNotReplay':True}
+
+async def exercise_letter_echo(page,output,label):
+    """Choose send after real completion, revisit, and rewrite keep in the diary."""
+    output=Path(output)
+    print(label,'read the greenhouse outro and choose send',flush=True)
+    await page.locator('#result-dialog[open]').wait_for()
+    initial=await page.evaluate('window.__qaRead()')
+    assert initial['chapterIndex']==1 and initial['state']=='complete'
+    assert initial['letterChoice'] is None and initial['letterEcho'] is None
+    grants=await read_reward_grants(page)
+    collections=await read_cap_collections(page)
+    chapters=await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).chapters")
+    assert chapters[1]['completed'] and chapters[1]['runs']==1
+    await page.locator('#result-story').click()
+    outro_pages=await finish_story_from_ui(page)
+    await page.locator('#choice-dialog[open]').wait_for()
+    assert await page.locator('#choice-title').inner_text()=='这封信，交给谁？'
+    send=page.locator('#choice-options [data-choice="send"]')
+    assert '让风把它送出去' in await send.inner_text()
+    await send.click()
+    await page.locator('#story-dialog[open]').wait_for()
+    assert (await page.evaluate('window.__qaRead()'))['letterChoice']=='send'
+    assert await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).choices.letter")=='send'
+    await finish_story_from_ui(page)
+    await page.locator('#map-dialog[open]').wait_for()
+    chapter=page.locator('#chapter-grid [data-chapter="1"]')
+    assert await chapter.is_enabled()
+    assert '重新游玩' in await chapter.get_attribute('aria-label')
+    await chapter.click()
+    await page.wait_for_function("()=>{const a=window.__qaRead();return a?.chapterIndex===1&&a.state==='playing'&&a.letterEcho?.choice==='send';}")
+    await wait_text(page,'#stage-chapter-title','倒流温室')
+    revisited=await page.evaluate('window.__qaRead()')
+    assert revisited['greenhousePlant']['phase']=='planted' and revisited['greenhousePlant']['stage']==3
+    assert not revisited['seedCollected'], 'a remembered seed became a current-run pickup'
+    assert re.match(r'0\s*/',await page.locator('#stage-seals').inner_text()), 'a saved choice completed current-run lamps'
+    sent=await play_letter_echo(page,output,label,'send')
+    assert await read_reward_grants(page)==grants, 'send or reopening granted a reward'
+    assert await read_cap_collections(page)==collections, 'send or reopening duplicated a collectible'
+
+    print(label,'rewrite the actual diary reply to keep',flush=True)
+    await page.locator('[data-shell-action="profile"]').click()
+    await page.locator('#journal-dialog[open]').wait_for()
+    row=page.locator('#journal-choices .journal-choice').filter(has=page.locator('[data-reply="letter"]'))
+    assert '让风把它送出去' in await row.inner_text()
+    reply=page.locator('#journal-choices [data-reply="letter"]')
+    assert await reply.inner_text()=='重新回信' and await reply.is_enabled()
+    await reply.click()
+    await page.locator('#choice-dialog[open]').wait_for()
+    assert 'selected' in (await page.locator('#choice-options [data-choice="send"]').get_attribute('class') or '')
+    keep=page.locator('#choice-options [data-choice="keep"]')
+    assert '先替她好好保管' in await keep.inner_text()
+    await keep.click()
+    await page.locator('#story-dialog[open]').wait_for()
+    changed=await page.evaluate('window.__qaRead()')
+    assert changed['state']=='paused' and changed['letterChoice']=='keep'
+    assert changed['letterEcho']=={'choice':'keep','phase':'waiting','elapsed':0}, 'rewriting retained the previous send performance'
+    assert await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).choices.letter")=='keep'
+    await finish_story_from_ui(page)
+    await page.locator('#journal-dialog[open]').wait_for()
+    assert '先替她好好保管' in await row.inner_text()
+    await page.locator('[data-close="journal-dialog"]').click()
+    await page.wait_for_function("()=>window.__qaRead()?.state==='playing'")
+    kept=await play_letter_echo(page,output,label,'keep')
+    assert await read_reward_grants(page)==grants, 'rewriting keep or reopening granted a reward'
+    assert await read_cap_collections(page)==collections, 'rewriting keep changed earned seed, ticket or lamps'
+    assert await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).chapters")==chapters, 'rewriting a reply completed or rewarded a chapter again'
+    assert await page.evaluate('document.documentElement.scrollWidth<=innerWidth'), 'letter echo horizontal overflow'
+    return {'choiceViaCompletedOutro':True,'outroPagesRead':outro_pages,'revisitedViaChapterMap':True,
+            'rewrittenViaDiary':True,'send':sent,'keep':kept,'storedChoice':'keep',
+            'rewardGrantsUnchanged':True,'collectiblesUnchanged':True,'chapterResultsUnchanged':True,
+            'noHorizontalOverflow':True}
+
 async def main(args):
     output=Path(args.output);output.mkdir(parents=True,exist_ok=True)
     report={'url':args.url,'source':'served production HTML; app module has a read-only coordinate probe appended in-memory; all actions use DOM/input','cases':[]}
@@ -322,6 +467,7 @@ async def main(args):
                 assert station_saved and 'memories' in station_saved
                 station_record=json.loads(station_saved)['scenes']['story-0']
                 result['greenhouse']=await exercise_greenhouse(page,output,str(w))
+                result['letterEcho']=await exercise_letter_echo(page,output,str(w))
             assert not errors,errors
             assert not failed,failed
             result['pageErrors']=errors;result['httpErrors']=failed
@@ -336,12 +482,21 @@ async def main(args):
                 scenes=json.loads(saved)['scenes']
                 assert scenes['story-0']==station_record, 'greenhouse play changed the station cap-book record'
                 assert 1 in scenes['story-1']['memories'] and scenes['story-1']['seals']==[0,1]
+                saved_grants=await read_reward_grants(page)
+                assert await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).choices.letter")=='keep'
                 await page.reload(wait_until='networkidle')
                 await page.wait_for_function("typeof window.__qaRead === 'function'",timeout=5000)
                 assert await page.evaluate("localStorage.getItem('tougaigu.capbook.v1')")==saved
+                restored=await page.evaluate('window.__qaRead()')
+                assert restored['chapterIndex']==1 and restored['letterChoice']=='keep'
+                assert restored['letterEcho']=={'choice':'keep','phase':'waiting','elapsed':0}
+                assert restored['form']=='body' and restored['capPhase']=='closed'
+                assert await read_reward_grants(page)==saved_grants, 'reload granted a letter reward'
+                await page.screenshot(path=str(output/(str(w)+'-letter-keep-reload.png')),full_page=True)
                 result['reloadPreservedCapBook']=True
                 result['greenhouse']['stationRecordPreserved']=True
                 result['greenhouse']['reloadPreservedSeedAndLamps']=True
+                result['letterEcho']['reloadRestoredKeep']=True
             assert not errors,errors
             assert not failed,failed
             report['cases'].append(result)

@@ -1,6 +1,7 @@
 // Read-only links between the first two chapters. Exact cap-book evidence owns
 // discoveries; chapter totals cannot invent a ticket, seed or readable fragment.
 import { CHAPTERS } from './dream-story.js';
+import { normalizeLetterChoice } from './dream-letter-echo.js';
 
 function record(value) {
   if (!value || typeof value !== 'object') return false;
@@ -81,9 +82,11 @@ export function normalizeJourneyContext(input = {}) {
   const plantStage = seedPhase !== 'planted' ? 0
     : Number.isInteger(requestedStage) && requestedStage >= 1 && requestedStage <= 3 ? requestedStage
       : getGreenhouseStage({seedPlanted: true, seals: own(input, 'greenhouseSeals')});
+  const letterChoice = normalizeLetterChoice(own(input, 'letterChoice'));
   return freeze({
     hasTicket: ticketPhase === 'stowed', ticketPhase,
     hasSeed: seedPhase !== 'missing', seedPhase, plantStage,
+    ...(letterChoice ? {letterChoice} : {}),
   });
 }
 

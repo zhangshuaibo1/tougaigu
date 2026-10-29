@@ -2,6 +2,7 @@
 // Every miniature lives in x [-60, 60], y [-60, 30], without game state or assets.
 import { drawFirstTicket } from './dream-first-ticket-art.js';
 import { drawGreenhouseSeed } from './dream-greenhouse-art.js';
+import { drawLetterMiniature } from './dream-letter-echo.js';
 const TAU=Math.PI*2;
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 const STORY_MOTIFS=['station','sprout','moon','whale','clock','dawn'];
@@ -51,8 +52,9 @@ function face(c,x,y,color,smile=true){oval(c,x-5,y,1.8,2.3,color);oval(c,x+5,y,1
 function moon(c,x,y,r,color){oval(c,x,y,r,r,color);oval(c,x+r*.45,y-r*.25,r*.78,r*.78,'#274548');}
 function flame(c,x,y,color){c.beginPath();c.moveTo(x,y-7);c.bezierCurveTo(x-8,y+1,x-3,y+7,x,y+6);c.bezierCurveTo(x+7,y+6,x+5,y,x,y-7);c.fillStyle=color;c.fill();}
 
-function greenhouseMiniature(c,scene){
+function greenhouseMiniature(c,scene,t=0){
   const state=scene.greenhouse,color=scene.color,accent=scene.accent;
+  drawLetterMiniature(c,scene.letterEcho,t);
   const stage=Number.isInteger(state.stage)?clamp(state.stage,0,3):0;
   const from=Number.isInteger(state.fromStage)?clamp(state.fromStage,0,stage):stage;
   const progress=Number.isFinite(state.progress)?clamp(state.progress,0,1):1;
@@ -121,7 +123,7 @@ export function drawCapMiniature(c,input,t=0){
       break;
     }
     case 'sprout': {
-      if(scene.greenhouse&&typeof scene.greenhouse==='object'&&!Array.isArray(scene.greenhouse)){greenhouseMiniature(c,scene);break;}
+      if(scene.greenhouse&&typeof scene.greenhouse==='object'&&!Array.isArray(scene.greenhouse)){greenhouseMiniature(c,scene,t);break;}
       book(c,-35,8,52,8,accent);book(c,-29,0,49,8,color);
       c.beginPath();c.moveTo(-13,-8);c.lineTo(13,-8);c.lineTo(9,8);c.quadraticCurveTo(0,13,-9,8);c.closePath();c.fillStyle='#d79c80';c.fill();rect(c,-16,-11,32,6,'#f0ba94');
       curve(c,[0,-8,-6,-24,6+sway,-34,2+sway,-49],color,2.5);

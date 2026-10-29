@@ -178,7 +178,122 @@ function pocketWatch(c, pose) {
   path(c,p=>{p.moveTo(-6,-7);p.quadraticCurveTo(-9,-2,-7,3);},null,'#fff1d699',1.1);
   c.restore();
 }
+
+// The greenhouse keeper uses the same authored silhouette and interaction
+// pose. Cloth, bone and aged enamel are painted inside it; no new particles,
+// collision, clock or saved state belongs to this finish.
+function greenhouseCanPose(pose){
+  const angle=pose.open?-.14:0,co=Math.cos(angle),si=Math.sin(angle),y=-27-pose.lift;
+  const point=(x,yy)=>({x:-1+x*co-yy*si,y:y+x*si+yy*co});
+  return {x:-1,y,angle,hands:[point(-12,0),point(12,-1)]};
+}
+function finishedWateringCan(c,pose,can){
+  c.save();c.translate(can.x,can.y);c.rotate(can.angle);
+  const brass=material(c,-16,-14,17,11,[[0,'#e0c99b'],[.32,'#b49e73'],[.64,'#ecdbad'],[1,'#887754']]);
+  // A broad enamel handle has a shaded inner edge rather than a flat loop.
+  path(c,p=>{p.moveTo(10,-8);p.bezierCurveTo(24,-17,27,4,11,5);},null,'#3e655e',4.2);
+  path(c,p=>{p.moveTo(10,-8);p.bezierCurveTo(24,-17,27,4,11,5);},null,'#a9b89a',2.3);
+  path(c,p=>{p.moveTo(13,-9);p.quadraticCurveTo(22,-12,22,-4);},null,'#e0d8b184',.8);
+  path(c,p=>{p.moveTo(-10,-1);p.lineTo(-21,-11);p.lineTo(-25,-10);p.lineTo(-12,8);p.closePath();},material(c,-23,-10,-12,5,[[0,'#c6cdb0'],[.35,'#97b39c'],[1,'#4e7b6d']]),'#3e645c',.85);
+  line(c,[[-22,-9],[-12,1]],'#e0ddbb99',.8);
+  box(c,-11,-10,23,22,4,material(c,-11,-8,13,11,[[0,'#9cb29b'],[.27,'#c1c9a4'],[.55,'#8fae94'],[1,'#547e6d']]),'#405e53',1);
+  path(c,p=>{p.moveTo(-9,-8);p.quadraticCurveTo(-10,1,-8,8);},null,'#dce2bd9c',1.1);
+  path(c,p=>{p.moveTo(9,-7);p.lineTo(9,7);p.quadraticCurveTo(7,10,4,10);},null,'#3e655e80',1.15);
+  // Rolled copper rims, a recessed filling mouth and a tiny embossed leaf.
+  ellipse(c,.5,-10,10.6,2.8,brass,0,'#77876c');
+  ellipse(c,.5,-10.1,7.8,1.65,'#466d60');
+  path(c,p=>{p.moveTo(-6,-10.5);p.quadraticCurveTo(0,-12,6,-10.5);},null,'#ced6b6',.6);
+  path(c,p=>{p.moveTo(-9,10);p.quadraticCurveTo(1,12,10,9.7);},null,brass,1.4);
+  ellipse(c,-23.5,-10.5,3.9,1.8,brass,.64,'#577868');
+  for(const [x,y]of[[-24.2,-11.2],[-22.7,-10.4],[-24,-9.8]])ellipse(c,x,y,.45,.45,'#617866');
+  path(c,p=>{p.moveTo(-1,5);p.quadraticCurveTo(-6,-1,3,-5);p.quadraticCurveTo(7,2,-1,5);},'#d7ddba','#7c9b7e',.7);
+  path(c,p=>{p.moveTo(-1,6);p.quadraticCurveTo(0,2,3,-3);},null,'#72917a',.8);
+  // Two small enamel chips are fixed to the object, never screen-space noise.
+  line(c,[[7,5],[8,6]],'#dcd6ad',.8);line(c,[[-5,8],[-3,8.4]],'#577c68',.7);
+  if(pose.open)for(let i=0;i<3;i++){
+    const offset=pose.reduced?i*4:((pose.time*9+i*4)%13),x=-26-offset*.25,y=-6+offset;
+    path(c,p=>{p.moveTo(x,y-2);p.quadraticCurveTo(x+1.6,y+.2,x,y+1.6);p.quadraticCurveTo(x-1.6,y+.2,x,y-2);},'#bce2cfaa');
+    ellipse(c,x-.25,y+.2,.35,.65,'#f0f4dba8');
+  }
+  c.restore();
+}
+function greenhouseKeeper(c,pose){
+  const cloth=material(c,-23,-44,24,-13,[[0,'#304b58'],[.28,'#55717a'],[.55,'#72848a'],[.78,'#4c6671'],[1,'#2c4754']]);
+  // Small grounded shoes and narrow bone ankles retain the original height.
+  for(const side of [-1,1]){
+    line(c,[[side*7,-13],[side*8,-4]],'#c6b89c',3.4);
+    path(c,p=>{p.moveTo(side*5,-5);p.lineTo(side*9,-6);p.quadraticCurveTo(side*11,-3,side*15,-3);p.lineTo(side*16,-.7);p.quadraticCurveTo(side*10,1,side*5,-.4);p.closePath();},material(c,0,-6,0,1,[[0,'#627066'],[.4,'#354d47'],[1,'#233e38']]),'#203a36',.65);
+    line(c,[[side*6,.2],[side*15,.2]],'#a59e7c',.7);
+  }
+  path(c,p=>{p.moveTo(-16,-49);p.quadraticCurveTo(-3,-58,16,-49);p.bezierCurveTo(18,-37,19,-18,25,-8);p.quadraticCurveTo(13,-3,1,-6);p.quadraticCurveTo(-13,-2,-25,-8);p.bezierCurveTo(-20,-21,-19,-39,-16,-49);p.closePath();},cloth,'#263f4a',1.1);
+  path(c,p=>{p.moveTo(-15,-44);p.quadraticCurveTo(-11,-28,-17,-8);p.lineTo(-23,-9);p.quadraticCurveTo(-19,-23,-15,-44);},'#1f3a4859');
+  path(c,p=>{p.moveTo(9,-42);p.quadraticCurveTo(11,-22,18,-7);p.quadraticCurveTo(13,-6,9,-7);p.quadraticCurveTo(4,-29,9,-42);},'#a8b4ad22');
+  path(c,p=>{p.moveTo(-13,-42);p.quadraticCurveTo(-12,-27,-14,-15);},null,'#9aa9a470',.85);
+  path(c,p=>{p.moveTo(15,-42);p.quadraticCurveTo(17,-20,22,-10);},null,'#c0c1a94d',.85);
+  path(c,p=>{p.moveTo(-22,-9);p.quadraticCurveTo(-11,-5,0,-7);p.quadraticCurveTo(13,-4.6,22,-8.8);},null,'#b8b4a57d',.85);
+  path(c,p=>{p.moveTo(-15,-49);p.lineTo(-5,-37);p.lineTo(0,-44);p.lineTo(7,-36);p.lineTo(17,-49);},material(c,-15,-49,17,-36,[[0,'#81928f'],[.48,'#a5aca0'],[1,'#4c666e']]),'#394e58',.8);
+  line(c,[[-13,-48],[-5,-39],[-1,-44]],'#d0cbb167',.75);line(c,[[2,-44],[7,-38],[14,-47]],'#d7d2ba79',.7);
+  path(c,p=>{p.moveTo(-2,-37);p.quadraticCurveTo(-1,-21,-2,-8);},null,'#2e4652',2.3);
+  line(c,[[-1.3,-36],[-1.3,-9]],'#b9b6aa80',.7);
+  for(const y of [-31,-23,-15]){ellipse(c,2,y,1.5,1.6,'#5e695b');ellipse(c,2,y-.25,1.2,1.15,'#c7b484');ellipse(c,1.7,y-.7,.45,.4,'#ece0b4');}
+  // The pocket is cloth; its warm stitching stays broad enough for 1x pixels.
+  path(c,p=>{p.moveTo(-19,-18);p.lineTo(-11,-17);p.lineTo(-12,-10);p.quadraticCurveTo(-16,-9,-19,-12);p.closePath();},'#3b586258','#a9ad997a',.7);
+  line(c,[[-18,-16],[-13,-15.5]],'#c4c3a86c',.65);
+
+  c.save();c.translate(0,pose.open?-1:0);c.translate(0,-66);c.rotate(pose.gazeX*.045);c.translate(0,66);
+  // The hood remains behind the bone face. Silver hair is made of soft locks,
+  // not a hard helmet edge, while preserving the keeper's recognizable fringe.
+  path(c,p=>{p.moveTo(-18,-51);p.bezierCurveTo(-25,-70,-18,-89,0,-90);p.bezierCurveTo(20,-90,25,-73,18,-51);},material(c,-21,-78,21,-58,[[0,'#2b424d'],[.5,'#51616a'],[1,'#273d49']]),'#253641',1);
+  path(c,p=>{p.moveTo(-18,-53);p.quadraticCurveTo(-22,-72,-14,-81);},null,'#7f929259',.95);
+  const bone=c.createRadialGradient(7,-73,3,0,-64,26);bone.addColorStop(0,'#fff0d0');bone.addColorStop(.48,'#e9d6b4');bone.addColorStop(.82,'#cdbb9c');bone.addColorStop(1,'#a39482');
+  path(c,p=>{p.moveTo(-14,-78);p.bezierCurveTo(-19,-66,-16,-53,-9,-49);p.quadraticCurveTo(-4,-46,1,-47);p.quadraticCurveTo(12,-46,16,-58);p.quadraticCurveTo(19,-70,14,-79);p.closePath();},bone,'#968d7d',.85);
+  path(c,p=>{p.moveTo(12,-76);p.quadraticCurveTo(17,-67,13,-57);},null,'#fff4d59c',.9);
+  path(c,p=>{p.moveTo(-14,-71);p.quadraticCurveTo(-16,-63,-11,-57);},null,'#72958c40',1.1);
+  const hair=material(c,-13,-85,15,-66,[[0,'#d7d8cc'],[.36,'#bfc3bd'],[.7,'#9ba8a6'],[1,'#6e8589']]);
+  path(c,p=>{p.moveTo(-18,-65);p.quadraticCurveTo(-19,-77,-13,-84);p.quadraticCurveTo(-8,-89,-3,-85);p.quadraticCurveTo(3,-91,8,-86);p.quadraticCurveTo(17,-86,19,-75);p.lineTo(18,-65);p.quadraticCurveTo(13,-68,11,-76);p.quadraticCurveTo(8,-72,5,-77);p.quadraticCurveTo(1,-76,-4,-81);p.quadraticCurveTo(-7,-75,-11,-77);p.quadraticCurveTo(-12,-68,-18,-65);p.closePath();},hair,'#6a7b80',.8);
+  for(const [x,y,x2,y2,x3,y3]of[[-15,-78,-13,-85,-7,-84],[-3,-84,2,-88,7,-84],[9,-83,15,-81,16,-75],[-15,-73,-15,-69,-17,-67]])path(c,p=>{p.moveTo(x,y);p.quadraticCurveTo(x2,y2,x3,y3);},null,'#f0ead66b',.8);
+  for(const side of [-1,1]){
+    const x=side*7.8;
+    ellipse(c,x,-65,5.5,6.3,material(c,x-3,-70,x+4,-59,[[0,'#343d45'],[.6,'#455052'],[1,'#6a6a5b']]),side*.16,'#b7a58a');
+    if(pose.blink)path(c,p=>{p.moveTo(x-2.7,-64.6);p.quadraticCurveTo(x,-63.5,x+2.7,-64.6);},null,'#dec69f',1.25);
+    else{
+      const irisX=x+pose.gazeX*1.3,irisY=-65+pose.gazeY;
+      ellipse(c,irisX,irisY,1.85,2.7,'#d8c492');ellipse(c,irisX+.45,irisY-1,.6,.85,'#fff1c7');
+    }
+    const brow=pose.open?-1.1:pose.talking?-.5:0;
+    path(c,p=>{p.moveTo(x-3.6,-73+brow);p.quadraticCurveTo(x,-75+brow,x+3.4,-72.7+brow);},null,'#c6c7b9',1.7);
+    ellipse(c,side*12,-55.5,3,1.1,'#be9f8261');
+  }
+  // Brass rim and one quiet glass reflection keep the eye clearly readable.
+  const rim=material(c,1,-73,16,-56,[[0,'#e8d7a2'],[.32,'#a99669'],[.58,'#f4e5b7'],[1,'#a38e61']]);
+  ellipse(c,8,-65,8.2,8.6,null,0,'#61736a');c.lineWidth=1.3;ellipse(c,8,-65,7.8,8.2,null,0,rim);
+  path(c,p=>{p.moveTo(4,-71);p.quadraticCurveTo(2,-68,2.5,-65);},null,'#fff6d860',.9);
+  path(c,p=>{p.moveTo(14,-58);p.bezierCurveTo(18,-50,15,-44,20,-39);},null,'#6c7361',1.7);
+  path(c,p=>{p.moveTo(14,-58);p.bezierCurveTo(18,-50,15,-44,20,-39);},null,'#c4b183',.85);
+  path(c,p=>{p.moveTo(-1,-59);p.lineTo(-3,-54);p.quadraticCurveTo(0,-53,3,-54);},null,'#a18e78',.85);
+  path(c,p=>{p.moveTo(-8,-50);p.quadraticCurveTo(0,pose.talking?-44.5:pose.open?-45.5:-47,9,-50);},null,'#947e6c',1);
+  for(const x of [-4,1,6])line(c,[[x,-48],[x,-45]],'#b69e80',.7);
+  path(c,p=>{p.moveTo(-10,-44);p.quadraticCurveTo(0,-40,10,-44);p.quadraticCurveTo(9,-36,5,-32);p.lineTo(0,-36);p.lineTo(-4,-32);p.quadraticCurveTo(-8,-38,-10,-44);},material(c,-9,-43,9,-33,[[0,'#d5d7ca'],[.45,'#b7c0b7'],[1,'#809797']]),'#74878b',.7);
+  line(c,[[-5,-41],[-3,-36]],'#eef0d573',.75);line(c,[[4,-41],[3,-36]],'#dee3cc73',.75);
+  c.restore();
+
+  // The wrists are the rotated can's own grip points. Raising or tipping the
+  // prop cannot leave either hand floating beside its handle.
+  const can=greenhouseCanPose(pose);
+  for(const [index,side]of[-1,1].entries()){
+    const hand=can.hands[index],elbowX=side*21,elbowY=hand.y+5;
+    path(c,p=>{p.moveTo(side*16,-43);p.quadraticCurveTo(elbowX,elbowY,hand.x,hand.y);},null,'#2f4953',7.4);
+    path(c,p=>{p.moveTo(side*16,-43);p.quadraticCurveTo(elbowX,elbowY,hand.x,hand.y);},null,side<0?'#688180':'#849690',5.4);
+    path(c,p=>{p.moveTo(side*16-1,-43);p.quadraticCurveTo(elbowX-1,elbowY-2,hand.x-1,hand.y-1);},null,'#bdc4ad7a',.8);
+  }
+  finishedWateringCan(c,pose,can);
+  for(const hand of can.hands){
+    ellipse(c,hand.x,hand.y,3.1,3.5,material(c,hand.x-3,hand.y-3,hand.x+3,hand.y+3,[[0,'#fff0ce'],[.5,'#dfceab'],[1,'#ab9f86']]),-.1,'#9d9c7b');
+    line(c,[[hand.x-.6,hand.y+.5],[hand.x-.5,hand.y+2]],'#b7a88b',.6);
+  }
+}
 function keeper(c,pose) {
+  if(pose.greenhouse){greenhouseKeeper(c,pose);return;}
   line(c,[[-7,-12],[-8,-2],[-14,-1]],'#cfc0a6',3.3);line(c,[[7,-12],[8,-2],[14,-1]],'#cfc0a6',3.3);
   path(c,p=>{p.moveTo(-16,-49);p.quadraticCurveTo(0,-60,16,-49);p.lineTo(25,-8);p.quadraticCurveTo(0,-1,-25,-8);p.closePath();},'#43546b','#2a364d',1.1);
   path(c,p=>{p.moveTo(-15,-49);p.lineTo(-5,-37);p.lineTo(0,-44);p.lineTo(7,-36);p.lineTo(17,-49);},'#6f8093','#8996a3',.8);
@@ -272,6 +387,7 @@ export function drawStoryNPC(c,view,time=0,reducedMotion=false) {
   const notice=!!ticket&&greeting==='notice'&&ticket.fresh===true?progress*progress*(3-2*progress):0;
   const warm=!!ticket&&['held','returning','stowed'].includes(ticket.phase);
   const pose={time:t,reduced:!!reducedMotion,prop:view.prop,open,talking:!!view.talking,salute,warm,propX:salute*21,
+    greenhouse:view.chapterIndex===1&&view.prop==='greenhouse-can',
     painted:view.lighting==='painted-station'&&view.chapterIndex===0,
     smile:welcome&&!reducedMotion&&progress>.24&&progress<.81,
     gazeX:clamp((finite(look.x,x)-x)/140,-1,1),gazeY:clamp((finite(look.y,y-65)-(y-65))/100,-1.2,1.2),
