@@ -1,0 +1,127 @@
+--- a/dist/dream-engine.js
++++ b/dist/dream-engine.js
+@@ -1,5 +1,5 @@
+ // One simulation and one animation loop. The unchanged v14 physics lives in
+-// dream-engine-base.js; this subclass adds presentation for the first five chapters.
++// dream-engine-base.js; this subclass adds presentation for the six story chapters.
+ import { DreamGame as BaseDreamGame } from './dream-engine-base.js';
+ import { drawCapFrontRim } from './dream-cap-art.js';
+ import { drawStationBackdrop, drawStationArchitecture, drawStationPlatform, drawStationSignal, drawStationCharacter, drawStationLantern } from './dream-station-art.js';
+@@ -22,7 +22,7 @@
+ import { normalizeClockChoice, createClockEcho, advanceClockEcho, settleClockEcho, getClockEchoSnapshot, drawClockEcho } from './dream-clock-echo.js';
+ import { drawRefinedSoul } from './dream-soul-art.js';
+ import { createTheatreEncore, advanceTheatreEncore, drawTheatreEncore, getTheatreEncoreView } from './dream-theatre-encore.js';
+-import { createTravelerPerformance, advanceTravelerPerformance, settleTravelerPerformance, getTravelerPerformanceView, applyTravelerPerformance } from './dream-traveler-performance.js';
++import { createTravelerPerformance, advanceTravelerPerformance, settleTravelerPerformance, getTravelerPerformanceView, applyTravelerPerformance, isTravelerPerformanceScene } from './dream-traveler-performance.js';
+ export { DREAM_LEVELS, DREAM_PHYSICS, createDreamRng, getDreamStars } from './dream-engine-base.js';
+ 
+ export class DreamGame extends BaseDreamGame {
+@@ -52,7 +52,7 @@
+     this.travelerPerformance=createTravelerPerformance();
+     super.start(options);
+     if(this.destroyed)return;
+-    if(!this.isTheatreFinish())this.travelerPerformance=null;
++    if(!isTravelerPerformanceScene(this))this.travelerPerformance=null;
+     this.stationSignal={amount:this.stationSignalOpen()?1:0};
+     this.paintedScenes.request({mode:this.mode,chapterIndex:this.chapterIndex});
+     this.greenhouseScenes.request({mode:this.mode,chapterIndex:this.chapterIndex});
+@@ -221,7 +221,7 @@
+       time:this.visualTime,reducedMotion:this.options?.reducedMotion,runId:this.runId,deaths:this.deaths};
+   }
+   getTravelerPerformanceView(){
+-    return this.isTheatreFinish()&&!this.destroyed?getTravelerPerformanceView(this.travelerPerformance,this.getTravelerPerformanceContext()):null;
++    return isTravelerPerformanceScene(this)&&!this.destroyed?getTravelerPerformanceView(this.travelerPerformance,this.getTravelerPerformanceContext()):null;
+   }
+   getCharacterPresentation(t=this.options.reducedMotion?0:this.visualTime){
+     return applyTravelerPerformance(super.getCharacterPresentation(t),this.getTravelerPerformanceView());
+@@ -373,7 +373,10 @@
+       const shadow=getGroundShadowView({body:b,level:this.level,movers:this.movers,closedBarriers:this.level.barriers.filter(barrier=>!this.barrierOpen(barrier))});
+       drawStationCharacter(this,c,b,t,shown,presentation,{shadow,reflection:this.isPostFinish()?'#f1c8ab62':this.isCoastFinish()?'#a6dce065':this.isLibraryFinish()?'#9adbd258':'#baa1ed61'});
+     }
+-    else if(this.isStationFinish()||this.isGreenhouseFinish())drawStationCharacter(this,c,b,t,shown,presentation);
++    else if(this.isStationFinish()||this.isGreenhouseFinish()){
++      const shadow=getGroundShadowView({body:b,level:this.level,movers:this.movers,closedBarriers:this.level.barriers.filter(barrier=>!this.barrierOpen(barrier))});
++      drawStationCharacter(this,c,b,t,shown,presentation,{shadow});
++    }
+     else super.drawCharacter(c,b,t,shown,character);
+   }
+ }
+--- a/dist/dream-traveler-performance.js
++++ b/dist/dream-traveler-performance.js
+@@ -1,4 +1,4 @@
+-// Third-chapter body acting. Existing simulation samples and visualTime are the
++// Main-story body acting. Existing simulation samples and visualTime are the
+ // only inputs; this module never moves an actor, owns a clock, or grants progress.
+ import { solveCapArm, transformCapPoint } from './dream-cap-art.js';
+ 
+@@ -8,9 +8,17 @@
+ const number = (value, fallback = 0) => finite(value) ? value : fallback;
+ const ease = value => value * value * (3 - 2 * value);
+ const rect = p => p && [p.x, p.y, p.w, p.h].every(finite) && p.w > 2 && p.h > 0;
++const list = value => Array.isArray(value) ? value : [];
+ const standing = (b, p) => rect(b) && rect(p) && b.grounded === true
+   && Math.abs(b.y - p.y) < .05 && b.x + b.w / 2 > p.x + 1 && b.x - b.w / 2 < p.x + p.w - 1;
+-const inScope = context => context?.mode === 'story' && context.chapterIndex === 2 && rect(context.body);
++// Festival levels also use chapterIndex=0. The explicit mode and integer
++// range are part of this contract, not a truthy/coerced chapter shortcut.
++export const isTravelerPerformanceScene = context => context?.mode === 'story'
++  && Number.isInteger(context.chapterIndex) && context.chapterIndex >= 0 && context.chapterIndex <= 5;
++const inScope = context => isTravelerPerformanceScene(context) && rect(context.body);
++const riding = (body, p) => p && ['stage', 'book'].includes(p.kind)
++  && ['x', 'y'].includes(p.axis) && typeof p.id === 'string' && p.id.length > 0
++  && p.id === body.platform && standing(body, p);
+ 
+ export function createTravelerPerformance() {
+   return { landingAt: null, landingStrength: 0, landingRunId: null, landingDeaths: null, landingBody: null, stepSeconds: 1 / 60 };
+@@ -36,7 +44,7 @@
+   // falling while its soul is out are not new landing performances.
+   if (before.form !== 'body' || context.form !== 'body' || before.grounded !== false
+       || context.body.grounded !== true || !finite(before.vy) || before.vy <= 0) return;
+-  const surfaces = [...(context.level?.platforms || []), ...(context.movers || []), ...(context.closedBarriers || [])];
++  const surfaces = [...list(context.level?.platforms), ...list(context.movers), ...list(context.closedBarriers)];
+   if (!surfaces.some(surface => standing(context.body, surface))) return;
+   state.landingAt = now;
+   state.landingStrength = clamp(before.vy / 600, .3, 1);
+@@ -50,7 +58,7 @@
+   if (!inScope(context)) return null;
+   const b = context.body, reducedMotion = Boolean(context.reducedMotion);
+   const grounded = b.grounded === true, airborne = !grounded;
+-  const attached = (context.movers || []).find(p => p.kind === 'stage' && p.id === b.platform && standing(b, p));
++  const attached = list(context.movers).find(p => riding(b, p));
+   const sameVisit = state?.landingBody === b && state?.landingRunId === context.runId && state?.landingDeaths === context.deaths;
+   const elapsed = sameVisit && finite(state?.landingAt) ? Math.max(0, number(context.time) - state.landingAt) : null;
+   const landingAge = !reducedMotion && grounded && elapsed !== null && elapsed < TRAVELER_LANDING_DURATION ? elapsed : null;
+@@ -60,19 +68,28 @@
+   const ride = reducedMotion || !attached ? 0 : 1 - ease(clamp(Math.abs(number(b.vx)) / 120, 0, 1));
+   // dx belongs to the real moving surface; vx belongs to walking. Never turn
+   // platform transport into a false walking cycle or an independent sway clock.
+-  const platformVelocity = attached ? number(attached.dx) / Math.max(.0001, number(state?.stepSeconds, 1 / 60)) : 0;
+-  const balance = reducedMotion ? 0 : clamp(platformVelocity / 180, -1, 1) * (b.face === -1 ? -1 : 1) * ride;
++  const step = Math.max(.0001, number(state?.stepSeconds, 1 / 60));
++  const platformVelocity = attached ? number(number(attached.dx) / step) : 0;
++  const platformVerticalVelocity = attached ? number(number(attached.dy) / step) : 0;
++  const platformAxis = attached?.axis || null;
++  const balance = reducedMotion || platformAxis !== 'x' ? 0 : clamp(platformVelocity / 180, -1, 1) * (b.face === -1 ? -1 : 1) * ride;
++  // A rising book has negative dy even though its grounded rider has vy=0.
++  // Read that real displacement separately: vertical travel never becomes
++  // a sideways sway, a walking cycle, or an extra body/foot translation.
++  const verticalBalance = reducedMotion || platformAxis !== 'y' || ride === 0 ? 0 : clamp(platformVerticalVelocity / 90, -1, 1) * ride;
++  const verticalRide = platformAxis === 'y' ? ride : 0;
+   const air = reducedMotion ? 0 : Number(airborne);
+   const spread = air * (5 + fall * 9 - rise) + landing * 5;
+   const lift = air * (5 + rise * 10 + fall * 4) - landing * 3;
+   const freeArms = Object.freeze({
+-    left: Object.freeze({ x: -16 - spread - ride * (6 + balance * 2), y: -16 - lift - ride * (6 - balance * 2) }),
+-    right: Object.freeze({ x: 17 + spread + ride * (7 - balance * 2), y: -16 - lift - ride * (2 + balance * 2) }),
++    left: Object.freeze({ x: -16 - spread - ride * (6 + balance * 2), y: -16 - lift - ride * (6 - balance * 2) + verticalBalance * 3 }),
++    right: Object.freeze({ x: 17 + spread + ride * (7 - balance * 2), y: -16 - lift - ride * (2 + balance * 2) - verticalRide * 4 + verticalBalance * 3 }),
+   });
+   const phase = airborne ? (number(b.vy) < 0 ? 'rise' : 'fall') : landingAge !== null ? 'land' : attached ? 'ride' : 'idle';
+   return Object.freeze({ phase, reducedMotion, rise, fall, landing, ride, landingAge,
+     landingDuration: TRAVELER_LANDING_DURATION, platformId: attached?.id || null,
+-    platformVelocity, balance, freeArms });
++    platformAxis, platformKind: attached?.kind || null,
++    platformVelocity, platformVerticalVelocity, balance, verticalBalance, freeArms });
+ }
+ 
+ /** Retain the exact original rig. Only unoccupied portions of each arm act. */
