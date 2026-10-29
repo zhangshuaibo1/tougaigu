@@ -3,6 +3,7 @@
 // carried objects and clock. In particular, this painter never advances a return.
 import { drawFirstTicket } from './dream-first-ticket-art.js';
 import { drawGreenhouseSeed } from './dream-greenhouse-art.js';
+import { hasSoulJoy } from './dream-traveler-face.js';
 
 const TAU = Math.PI * 2;
 const clamp = (value, low, high) => Math.max(low, Math.min(high, value));
@@ -80,7 +81,7 @@ function pearlBody(c, tailX, tailY, spirit) {
   oval(c, -10.6, -16.2, 1.4, .8, '#fffdeac4');
 }
 
-function soulFace(c, { time, vx, vy, sleepy, returning, peeking, light }) {
+function soulFace(c, { time, vx, vy, sleepy, returning, peeking, joyful, light }) {
   const lookX = clamp(vx / 250, -1.2, 1.2), lookY = clamp(vy / 340, -1, 1) * .45;
   // A narrow, smooth blink uses only the supplied render clock. Low energy
   // remains a held expression; returning gets a relieved, small smile.
@@ -92,6 +93,13 @@ function soulFace(c, { time, vx, vy, sleepy, returning, peeking, light }) {
       const rise = sleepy ? 2.3 : 3.8, y = sleepy ? -4.9 : -4.4;
       curve(c, [x - 3, y, x - 1.3, y - rise, x + 1.3, y - rise, x + 3, y], '#35545d', 1.7);
       curve(c, [x - 2.1, y + 1.2, x - .8, y + 1.5, x + .8, y + 1.5, x + 2.1, y + .8], '#9ed2b75b', .65);
+    } else if (joyful && eyelid > .3) {
+      // A real success has a broad closed-eye crescent, distinct from both the
+      // round gaze and the low-energy half lid at the native phone size.
+      c.beginPath(); c.moveTo(x - 4.3, -3.5);
+      c.bezierCurveTo(x - 4.6, -9.6, x + 4.6, -9.6, x + 4.3, -3.5);
+      c.bezierCurveTo(x + 2.3, -6.7, x - 2.3, -6.7, x - 4.3, -3.5);
+      c.closePath(); c.fillStyle = eye; c.fill();
     } else {
       oval(c, x, -6, 4, 5 * eyelid, eye);
       if (eyelid > .3) {
@@ -114,6 +122,11 @@ function soulFace(c, { time, vx, vy, sleepy, returning, peeking, light }) {
   } else if (sleepy || peeking) {
     oval(c, 1, sleepy ? 4 : 3, sleepy ? 2.3 : 2, sleepy ? 3 : 2.6, '#65968b');
     oval(c, 1.2, sleepy ? 5.1 : 4, .9, .6, '#a4d1bcb0');
+  } else if (joyful) {
+    c.beginPath(); c.moveTo(-4.9, 1.8); c.quadraticCurveTo(1, 4.2, 6.7, 1.8);
+    c.bezierCurveTo(6.6, 8.3, -4.9, 8.3, -4.9, 1.8); c.closePath();
+    c.fillStyle = '#35545d'; c.fill();
+    oval(c, 1, 5.2, 2.6, 1, '#efc4a3');
   } else {
     curve(c, [-3, 3, -.8, 7.5, 2.8, 7.5, 5, 3], '#5e9081', 1.15);
   }
@@ -161,7 +174,7 @@ export function drawRefinedSoul(c, game, presentedSoul, t = 0) {
       // coordinates nor held-object anchors are reconstructed from game.soul.
       c.translate(s.x, s.y + bob * size); c.rotate(tilt); c.scale(size, size);
       pearlBody(c, tailX, tailY, spirit);
-      soulFace(c, { time, vx, vy, sleepy, returning, peeking, light });
+      soulFace(c, { time, vx, vy, sleepy, returning, peeking, joyful: hasSoulJoy(game, s), light });
       if (finite(game.emoteTime) > 0) {
         star(c, -23, -12, 3, light + 'bb'); star(c, 23, -18, 2.5, light + 'bb');
       }
