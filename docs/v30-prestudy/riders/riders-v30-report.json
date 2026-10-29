@@ -1,0 +1,4797 @@
+{
+  "scope": "Local pre-study: actual production Canvas at native 390/320 sizes. Direct chapter fixtures followed by original control methods; not browser unlocking, real touch, full-chapter completion, physical-device testing, or a release.",
+  "baselineCommit": "bfe9fd55400c89a06c5f0b677cf02a6380e0a624",
+  "scriptSha256": "15333c78d1f2217b9f48f2a45a02e97fa7de5161e0b8a60eebb1f3082f001cc7",
+  "sources": [
+    {
+      "name": "dream-engine-base.js",
+      "currentSha256": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699",
+      "baselineSha256": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699"
+    },
+    {
+      "name": "dream-levels.js",
+      "currentSha256": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0",
+      "baselineSha256": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0"
+    },
+    {
+      "name": "dream-engine.js",
+      "currentSha256": "ec03967f529ce408a3fad751834d18ef90869afe0962b00ea7d8a25c37f825f6",
+      "baselineSha256": "cae31ba6843ab4dc7fc3324ef383e93eecc47dafe5bfea2d2a5ecf7925be6529"
+    },
+    {
+      "name": "dream-traveler-performance.js",
+      "currentSha256": "ff4f258632c6136fed2a4b95fa8aa828c25817d3db6318663b924ee93ecf2c5c",
+      "baselineSha256": "4a4ebf035a94863e1be4ccceeaf23d1cbdec221808d46b596b7f3b911939ae14"
+    },
+    {
+      "name": "dream-traveler-art.js",
+      "currentSha256": "e7c1315bdf28b22705887d8fc478472e1d4952df0c1f9e598abf5f2f6ca0e8ac",
+      "baselineSha256": "e7c1315bdf28b22705887d8fc478472e1d4952df0c1f9e598abf5f2f6ca0e8ac"
+    },
+    {
+      "name": "dream-cap-art.js",
+      "currentSha256": "dad5b4a0e2c0ffb13c008c473068465d25f701509114b31ab100629e459063ed",
+      "baselineSha256": "dad5b4a0e2c0ffb13c008c473068465d25f701509114b31ab100629e459063ed"
+    },
+    {
+      "name": "dream-station-art.js",
+      "currentSha256": "73a257203b10d12dd52f7b66f60fe3d65e08200aa64b1b4e5c3f223f654d31ee",
+      "baselineSha256": "73a257203b10d12dd52f7b66f60fe3d65e08200aa64b1b4e5c3f223f654d31ee"
+    },
+    {
+      "name": "dream-ground-shadow.js",
+      "currentSha256": "ede6c52978710e0e8286a1b5fdf51eeb09e1e17a1d9df3171cca8176c90d94bc",
+      "baselineSha256": "ede6c52978710e0e8286a1b5fdf51eeb09e1e17a1d9df3171cca8176c90d94bc"
+    },
+    {
+      "name": "dream-library-scene.js",
+      "currentSha256": "9564ec3fa13e9f4de038d8db6ec44cd3421cbc1bf26d89256a22921307ca23ea",
+      "baselineSha256": "9564ec3fa13e9f4de038d8db6ec44cd3421cbc1bf26d89256a22921307ca23ea"
+    },
+    {
+      "name": "dream-post-scene.js",
+      "currentSha256": "d6af0e2711f354765e31b186e9d1f20d1240d974d51d71347e2b2559f5674275",
+      "baselineSha256": "d6af0e2711f354765e31b186e9d1f20d1240d974d51d71347e2b2559f5674275"
+    },
+    {
+      "name": "assets/library-painted-v26.webp",
+      "currentSha256": "6e32b91fc56890f6362590eb2bfe0ccd0858389aeeb5de5aac72b5cb02dcab03",
+      "baselineSha256": "6e32b91fc56890f6362590eb2bfe0ccd0858389aeeb5de5aac72b5cb02dcab03"
+    },
+    {
+      "name": "assets/post-painted-v28.webp",
+      "currentSha256": "90cb512f70f4404b34b56f2951a0559c078eaa766e7d7460f98cbf646b05a201",
+      "baselineSha256": "90cb512f70f4404b34b56f2951a0559c078eaa766e7d7460f98cbf646b05a201"
+    }
+  ],
+  "comparedUpdates": 7088,
+  "coreFrames": 14,
+  "frameCount": 22,
+  "pngCount": 44,
+  "routes": [
+    {
+      "label": "phone-390",
+      "chapterIndex": 3,
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "actualControlMethods": true,
+      "coordinateInjection": false,
+      "directChapterFixture": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "updates": 2064,
+      "activeUpdates": 2040,
+      "physicsTime": 33.99999999999935,
+      "deaths": 0,
+      "body": {
+        "x": 1437.7631011528524,
+        "y": 485.6149538376578,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-b",
+        "invulnerable": 0,
+        "walk": 66.62201597656062,
+        "land": 0
+      },
+      "inputTapeSha256": "1de0ca97d592147d3fcb1a5503a28efd6bf526ca592abe8eec5bce0be503783c",
+      "inputTapeEntries": 2318,
+      "geometry": {
+        "maxSoleError": 0,
+        "maxGripError": 1.2710574864626038e-13,
+        "maxRightPriorityError": 0,
+        "gripSamples": 177,
+        "catchSamples": 43,
+        "claspSamples": 38
+      },
+      "cycles": [
+        {
+          "id": "book-a",
+          "cycleFrames": 453,
+          "up": 231,
+          "down": 222,
+          "maxRelativeDrift": 0
+        },
+        {
+          "id": "book-b",
+          "cycleFrames": 512,
+          "up": 261,
+          "down": 251,
+          "maxRelativeDrift": 0
+        }
+      ]
+    },
+    {
+      "label": "phone-390",
+      "chapterIndex": 5,
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "actualControlMethods": true,
+      "coordinateInjection": false,
+      "directChapterFixture": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "updates": 1480,
+      "activeUpdates": 1462,
+      "physicsTime": 24.366666666666564,
+      "deaths": 0,
+      "body": {
+        "x": 1671.3781607692592,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 66.74972307670292,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 63.913082331150996,
+        "land": 0.16666666666666666
+      },
+      "inputTapeSha256": "fb872eeb9ee2ef1dcb529e3645d67b6e3bab692376a4d51ac97121cd242bef67",
+      "inputTapeEntries": 1813,
+      "geometry": {
+        "maxSoleError": 0,
+        "maxGripError": 2.2737367544323206e-13,
+        "maxRightPriorityError": 0,
+        "gripSamples": 204,
+        "catchSamples": 43,
+        "claspSamples": 38
+      },
+      "cycle": {
+        "id": "last-stage",
+        "cycleFrames": 548,
+        "left": 269,
+        "right": 279,
+        "maxRelativeDrift": 9.094947017729282e-13
+      },
+      "actualMushroomVelocity": -850,
+      "actualRootY": 390,
+      "firstContactCaptured": true
+    },
+    {
+      "label": "phone-320",
+      "chapterIndex": 3,
+      "viewport": {
+        "width": 320,
+        "height": 431
+      },
+      "actualControlMethods": true,
+      "coordinateInjection": false,
+      "directChapterFixture": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "updates": 2064,
+      "activeUpdates": 2040,
+      "physicsTime": 33.99999999999935,
+      "deaths": 0,
+      "body": {
+        "x": 1437.7631011528524,
+        "y": 485.6149538376578,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-b",
+        "invulnerable": 0,
+        "walk": 66.62201597656062,
+        "land": 0
+      },
+      "inputTapeSha256": "1de0ca97d592147d3fcb1a5503a28efd6bf526ca592abe8eec5bce0be503783c",
+      "inputTapeEntries": 2318,
+      "geometry": {
+        "maxSoleError": 0,
+        "maxGripError": 1.2710574864626038e-13,
+        "maxRightPriorityError": 0,
+        "gripSamples": 177,
+        "catchSamples": 43,
+        "claspSamples": 38
+      },
+      "cycles": [
+        {
+          "id": "book-a",
+          "cycleFrames": 453,
+          "up": 231,
+          "down": 222,
+          "maxRelativeDrift": 0
+        },
+        {
+          "id": "book-b",
+          "cycleFrames": 512,
+          "up": 261,
+          "down": 251,
+          "maxRelativeDrift": 0
+        }
+      ]
+    },
+    {
+      "label": "phone-320",
+      "chapterIndex": 5,
+      "viewport": {
+        "width": 320,
+        "height": 431
+      },
+      "actualControlMethods": true,
+      "coordinateInjection": false,
+      "directChapterFixture": true,
+      "browserUnlocking": false,
+      "completeChapter": false,
+      "updates": 1480,
+      "activeUpdates": 1462,
+      "physicsTime": 24.366666666666564,
+      "deaths": 0,
+      "body": {
+        "x": 1671.3781607692592,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 66.74972307670292,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 63.913082331150996,
+        "land": 0.16666666666666666
+      },
+      "inputTapeSha256": "fb872eeb9ee2ef1dcb529e3645d67b6e3bab692376a4d51ac97121cd242bef67",
+      "inputTapeEntries": 1813,
+      "geometry": {
+        "maxSoleError": 0,
+        "maxGripError": 2.2737367544323206e-13,
+        "maxRightPriorityError": 0,
+        "gripSamples": 204,
+        "catchSamples": 43,
+        "claspSamples": 38
+      },
+      "cycle": {
+        "id": "last-stage",
+        "cycleFrames": 548,
+        "left": 269,
+        "right": 279,
+        "maxRelativeDrift": 9.094947017729282e-13
+      },
+      "actualMushroomVelocity": -850,
+      "actualRootY": 390,
+      "firstContactCaptured": true
+    }
+  ],
+  "frames": [
+    {
+      "file": "phone-390-book-a-up.png",
+      "ablatedFile": "phone-390-book-a-up-ablated.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 293239,
+      "sha256": "762eb6323739c2225a9f38385bc641ca906ce1193d1b9f40218981ea4cea1c95",
+      "ablatedBytes": 293182,
+      "ablatedSha256": "a6024e455ca8369a06f1c38b2fdbf17f45bd6883328efbc55b5a504821fb6722",
+      "core": true,
+      "chapterIndex": 3,
+      "physicsTime": 10.466666666666766,
+      "form": "body",
+      "capPhase": "closed",
+      "body": {
+        "x": 689.7353412793722,
+        "y": 461.2419768053876,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-a",
+        "invulnerable": 0,
+        "walk": 29.22860797544836,
+        "land": 0
+      },
+      "platform": {
+        "id": "book-a",
+        "x": 615,
+        "y": 461.2419768053876,
+        "w": 155,
+        "h": 18,
+        "axis": "y",
+        "range": 62,
+        "speed": 0.85,
+        "phase": 0,
+        "kind": "book",
+        "baseX": 615,
+        "baseY": 430,
+        "prevX": 615,
+        "prevY": 461.99748592979705,
+        "dx": 0,
+        "dy": -0.755509124409457
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "book-a",
+        "platformAxis": "y",
+        "platformKind": "book",
+        "platformVelocity": 0,
+        "platformVerticalVelocity": -45.33054746456742,
+        "balance": 0,
+        "verticalBalance": -0.5036727496063046,
+        "freeArms": {
+          "left": {
+            "x": -22,
+            "y": -23.511018248818914
+          },
+          "right": {
+            "x": 24,
+            "y": -23.511018248818914
+          }
+        }
+      },
+      "shadow": {
+        "x": 689.7353412793722,
+        "y": 463.2419768053876,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "book-a",
+          "kind": "book",
+          "x": 615,
+          "y": 461.2419768053876,
+          "w": 155,
+          "h": 18,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 615,
+          "y": 461.2419768053876,
+          "w": 155,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": 0,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            461.25248815910317
+          ],
+          "headLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            412.25248815910317
+          ],
+          "capLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "capMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            412.25248815910317
+          ],
+          "gripHead": {
+            "x": -13,
+            "y": -13
+          },
+          "gripBody": {
+            "x": -13,
+            "y": -62
+          },
+          "gripWorld": {
+            "x": 676.7353412793722,
+            "y": 399.25248815910317
+          },
+          "claspBody": {
+            "x": 22.5,
+            "y": -59
+          },
+          "catchBody": {
+            "x": 0,
+            "y": -66
+          },
+          "openingWorld": {
+            "x": 689.7353412793722,
+            "y": 396.25248815910317
+          }
+        },
+        "soles": [
+          {
+            "x": 682.7353412793722,
+            "y": 461.2419768053876
+          },
+          {
+            "x": 696.7353412793722,
+            "y": 461.2419768053876
+          }
+        ],
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "left": {
+          "x": 667.7353412793722,
+          "y": 437.74146991028425
+        },
+        "right": {
+          "x": 713.7353412793722,
+          "y": 437.74146991028425
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 161.19218750000024,
+          "y": 428.81090031125876
+        },
+        {
+          "x": 174.20781250000024,
+          "y": 428.81090031125876
+        }
+      ],
+      "changedPixels": 353,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-390-book-a-down.png",
+      "ablatedFile": "phone-390-book-a-down-ablated.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 291581,
+      "sha256": "792aeb9e24130ff716b2d6eb4e10d9fbbe638c0bc3f9e3e97186d941df48ac43",
+      "ablatedBytes": 291578,
+      "ablatedSha256": "44e9b224d712b099bca088a390e4e98be224658298d0907c2136a5479446c91a",
+      "core": true,
+      "chapterIndex": 3,
+      "physicsTime": 14.150000000000283,
+      "form": "body",
+      "capPhase": "closed",
+      "body": {
+        "x": 689.7353412793722,
+        "y": 398.1836472339965,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-a",
+        "invulnerable": 0,
+        "walk": 29.22860797544836,
+        "land": 0
+      },
+      "platform": {
+        "id": "book-a",
+        "x": 615,
+        "y": 398.1836472339965,
+        "w": 155,
+        "h": 18,
+        "axis": "y",
+        "range": 62,
+        "speed": 0.85,
+        "phase": 0,
+        "kind": "book",
+        "baseX": 615,
+        "baseY": 430,
+        "prevX": 615,
+        "prevY": 397.43300142333675,
+        "dx": 0,
+        "dy": 0.750645810659762
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "book-a",
+        "platformAxis": "y",
+        "platformKind": "book",
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 45.03874863958572,
+        "balance": 0,
+        "verticalBalance": 0.5004305404398414,
+        "freeArms": {
+          "left": {
+            "x": -22,
+            "y": -20.498708378680476
+          },
+          "right": {
+            "x": 24,
+            "y": -20.498708378680476
+          }
+        }
+      },
+      "shadow": {
+        "x": 689.7353412793722,
+        "y": 400.1836472339965,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "book-a",
+          "kind": "book",
+          "x": 615,
+          "y": 398.1836472339965,
+          "w": 155,
+          "h": 18,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 615,
+          "y": 398.1836472339965,
+          "w": 155,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": 0,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            397.8196555441234
+          ],
+          "headLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            348.8196555441234
+          ],
+          "capLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "capMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            348.8196555441234
+          ],
+          "gripHead": {
+            "x": -13,
+            "y": -13
+          },
+          "gripBody": {
+            "x": -13,
+            "y": -62
+          },
+          "gripWorld": {
+            "x": 676.7353412793722,
+            "y": 335.8196555441234
+          },
+          "claspBody": {
+            "x": 22.5,
+            "y": -59
+          },
+          "catchBody": {
+            "x": 0,
+            "y": -66
+          },
+          "openingWorld": {
+            "x": 689.7353412793722,
+            "y": 332.8196555441234
+          }
+        },
+        "soles": [
+          {
+            "x": 682.7353412793722,
+            "y": 398.1836472339965
+          },
+          {
+            "x": 696.7353412793722,
+            "y": 398.1836472339965
+          }
+        ],
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "left": {
+          "x": 667.7353412793722,
+          "y": 377.32094716544293
+        },
+        "right": {
+          "x": 713.7353412793722,
+          "y": 377.32094716544293
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 161.19218750000024,
+          "y": 370.1863595378561
+        },
+        {
+          "x": 174.20781250000024,
+          "y": 370.1863595378561
+        }
+      ],
+      "changedPixels": 329,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-390-book-a-open.png",
+      "ablatedFile": "phone-390-book-a-open-ablated.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 296843,
+      "sha256": "a9c1352cfe8d21a581f43cf9988eb27830d694dff7a50c2da20540df75937ce2",
+      "ablatedBytes": 296669,
+      "ablatedSha256": "b696258ca7fc85f0e61e674cce23712d059a0d966ea528e389a906dd5227dc2d",
+      "core": false,
+      "chapterIndex": 3,
+      "physicsTime": 17.633333333333614,
+      "form": "soul",
+      "capPhase": "open",
+      "body": {
+        "x": 689.7353412793722,
+        "y": 470.86459739214257,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-a",
+        "invulnerable": 0,
+        "walk": 29.22860797544836,
+        "land": 0
+      },
+      "platform": {
+        "id": "book-a",
+        "x": 615,
+        "y": 470.86459739214257,
+        "w": 155,
+        "h": 18,
+        "axis": "y",
+        "range": 62,
+        "speed": 0.85,
+        "phase": 0,
+        "kind": "book",
+        "baseX": 615,
+        "baseY": 430,
+        "prevX": 615,
+        "prevY": 471.52102503108466,
+        "dx": 0,
+        "dy": -0.6564276389420911
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "book-a",
+        "platformAxis": "y",
+        "platformKind": "book",
+        "platformVelocity": 0,
+        "platformVerticalVelocity": -39.385658336525466,
+        "balance": 0,
+        "verticalBalance": -0.43761842596139405,
+        "freeArms": {
+          "left": {
+            "x": -22,
+            "y": -23.312855277884182
+          },
+          "right": {
+            "x": 24,
+            "y": -23.312855277884182
+          }
+        }
+      },
+      "shadow": {
+        "x": 689.7353412793722,
+        "y": 472.86459739214257,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "book-a",
+          "kind": "book",
+          "x": 615,
+          "y": 470.86459739214257,
+          "w": 155,
+          "h": 18,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 615,
+          "y": 470.86459739214257,
+          "w": 155,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": -1.16,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            470.5143237139837
+          ],
+          "headLocalMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            689.7353412793722,
+            421.5143237139837
+          ],
+          "capLocalMatrix": [
+            0.3993395294062732,
+            -0.9168031087717669,
+            0.9168031087717669,
+            0.3993395294062732,
+            -1.296089939029022,
+            -27.97825451069732
+          ],
+          "capMatrix": [
+            0.37629705201705826,
+            -0.9264990710428539,
+            0.9264990710428539,
+            0.37629705201705826,
+            687.7402728423478,
+            393.5772108258022
+          ],
+          "gripHead": {
+            "x": -18.40594423534354,
+            "y": -21.251227978945902
+          },
+          "gripBody": {
+            "x": -18.931418036803194,
+            "y": -69.78448664084615
+          },
+          "gripWorld": {
+            "x": 670.803923242569,
+            "y": 400.7298370731375
+          },
+          "claspBody": {
+            "x": 22.242995157056185,
+            "y": -59.55931657083806
+          },
+          "catchBody": {
+            "x": -0.42495573055010966,
+            "y": -65.99468777668694
+          },
+          "openingWorld": {
+            "x": 689.3353829447368,
+            "y": 405.51932345357244
+          }
+        },
+        "soles": [
+          {
+            "x": 682.7353412793722,
+            "y": 470.86459739214257
+          },
+          {
+            "x": 696.7353412793722,
+            "y": 470.86459739214257
+          }
+        ],
+        "grip": 1,
+        "clasp": 0.25,
+        "catching": 0,
+        "left": {
+          "x": 670.803923242569,
+          "y": 400.72983707313756
+        },
+        "right": {
+          "x": 723.2972985676209,
+          "y": 439.5110134774643
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 161.19218750000024,
+          "y": 437.75693038800756
+        },
+        {
+          "x": 174.20781250000024,
+          "y": 437.75693038800756
+        }
+      ],
+      "changedPixels": 330,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-390-book-a-catch.png",
+      "ablatedFile": "phone-390-book-a-catch-ablated.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 294245,
+      "sha256": "9be07db38458183ec242cd0649f4fb9eca6a5c6160723cdf80c1efb7bb3085fe",
+      "ablatedBytes": 294240,
+      "ablatedSha256": "3ece847e2133453a944d70de3783641157d7d39c049671c14c347c0ae2865f9a",
+      "core": false,
+      "chapterIndex": 3,
+      "physicsTime": 17.80000000000027,
+      "form": "body",
+      "capPhase": "returning",
+      "body": {
+        "x": 689.7353412793722,
+        "y": 463.8717873622293,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-a",
+        "invulnerable": 0,
+        "walk": 29.22860797544836,
+        "land": 0
+      },
+      "platform": {
+        "id": "book-a",
+        "x": 615,
+        "y": 463.8717873622293,
+        "w": 155,
+        "h": 18,
+        "axis": "y",
+        "range": 62,
+        "speed": 0.85,
+        "phase": 0,
+        "kind": "book",
+        "baseX": 615,
+        "baseY": 430,
+        "prevX": 615,
+        "prevY": 464.6040357512515,
+        "dx": 0,
+        "dy": -0.7322483890221747
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "book-a",
+        "platformAxis": "y",
+        "platformKind": "book",
+        "platformVelocity": 0,
+        "platformVerticalVelocity": -43.93490334133048,
+        "balance": 0,
+        "verticalBalance": -0.4881655926814498,
+        "freeArms": {
+          "left": {
+            "x": -22,
+            "y": -23.46449677804435
+          },
+          "right": {
+            "x": 24,
+            "y": -23.46449677804435
+          }
+        }
+      },
+      "shadow": {
+        "x": 689.7353412793722,
+        "y": 465.8717873622293,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "book-a",
+          "kind": "book",
+          "x": 615,
+          "y": 463.8717873622293,
+          "w": 155,
+          "h": 18,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 615,
+          "y": 463.8717873622293,
+          "w": 155,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": -1.16,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            463.2290071632207
+          ],
+          "headLocalMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            689.7353412793722,
+            414.2290071632207
+          ],
+          "capLocalMatrix": [
+            0.3993395294062732,
+            -0.9168031087717669,
+            0.9168031087717669,
+            0.3993395294062732,
+            -1.296089939029022,
+            -27.97825451069732
+          ],
+          "capMatrix": [
+            0.37629705201705826,
+            -0.9264990710428539,
+            0.9264990710428539,
+            0.37629705201705826,
+            687.7402728423478,
+            386.29189427503917
+          ],
+          "gripHead": {
+            "x": -18.40594423534354,
+            "y": -21.251227978945902
+          },
+          "gripBody": {
+            "x": -18.931418036803194,
+            "y": -69.78448664084615
+          },
+          "gripWorld": {
+            "x": 670.803923242569,
+            "y": 393.4445205223745
+          },
+          "claspBody": {
+            "x": 22.242995157056185,
+            "y": -59.55931657083806
+          },
+          "catchBody": {
+            "x": -0.42495573055010966,
+            "y": -65.99468777668694
+          },
+          "openingWorld": {
+            "x": 689.3353829447368,
+            "y": 398.2340069028094
+          }
+        },
+        "soles": [
+          {
+            "x": 682.7353412793722,
+            "y": 463.8717873622293
+          },
+          {
+            "x": 696.7353412793722,
+            "y": 463.8717873622293
+          }
+        ],
+        "grip": 1,
+        "clasp": 0.8,
+        "catching": 1,
+        "left": {
+          "x": 670.803923242569,
+          "y": 393.44452052237455
+        },
+        "right": {
+          "x": 702.1999407316116,
+          "y": 407.2332569418711
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 161.19218750000024,
+          "y": 431.2558023133226
+        },
+        {
+          "x": 174.20781250000024,
+          "y": 431.2558023133226
+        }
+      ],
+      "changedPixels": 82,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-390-book-b-up.png",
+      "ablatedFile": "phone-390-book-b-up-ablated.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 290207,
+      "sha256": "eaeb780e0762ea51d73bb7b9eaf29be4999372a7efb8129908592240b01e09f7",
+      "ablatedBytes": 290134,
+      "ablatedSha256": "29700bdf161caa6a2a9ed756e8489ea1782693a0a0ae358d38b150f8ad63714d",
+      "core": true,
+      "chapterIndex": 3,
+      "physicsTime": 26.6833333333331,
+      "form": "body",
+      "capPhase": "closed",
+      "body": {
+        "x": 1437.7631011528524,
+        "y": 454.37629745911744,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-b",
+        "invulnerable": 0,
+        "walk": 66.62201597656062,
+        "land": 0
+      },
+      "platform": {
+        "id": "book-b",
+        "x": 1410,
+        "y": 454.37629745911744,
+        "w": 170,
+        "h": 18,
+        "axis": "y",
+        "range": 72,
+        "speed": 0.75,
+        "phase": 1.4,
+        "kind": "book",
+        "baseX": 1410,
+        "baseY": 415,
+        "prevX": 1410,
+        "prevY": 455.12668385328203,
+        "dx": 0,
+        "dy": -0.7503863941645932
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "book-b",
+        "platformAxis": "y",
+        "platformKind": "book",
+        "platformVelocity": 0,
+        "platformVerticalVelocity": -45.02318364987559,
+        "balance": 0,
+        "verticalBalance": -0.5002575961097288,
+        "freeArms": {
+          "left": {
+            "x": -22,
+            "y": -23.500772788329186
+          },
+          "right": {
+            "x": 24,
+            "y": -23.500772788329186
+          }
+        }
+      },
+      "shadow": {
+        "x": 1437.7631011528524,
+        "y": 456.37629745911744,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "book-b",
+          "kind": "book",
+          "x": 1410,
+          "y": 454.37629745911744,
+          "w": 170,
+          "h": 18,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 1410,
+          "y": 454.37629745911744,
+          "w": 170,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": 0,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1437.7631011528524,
+            455.242118923667
+          ],
+          "headLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1437.7631011528524,
+            406.242118923667
+          ],
+          "capLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "capMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1437.7631011528524,
+            406.242118923667
+          ],
+          "gripHead": {
+            "x": -13,
+            "y": -13
+          },
+          "gripBody": {
+            "x": -13,
+            "y": -62
+          },
+          "gripWorld": {
+            "x": 1424.7631011528524,
+            "y": 393.242118923667
+          },
+          "claspBody": {
+            "x": 22.5,
+            "y": -59
+          },
+          "catchBody": {
+            "x": 0,
+            "y": -66
+          },
+          "openingWorld": {
+            "x": 1437.7631011528524,
+            "y": 390.242118923667
+          }
+        },
+        "soles": [
+          {
+            "x": 1430.7631011528524,
+            "y": 454.37629745911744
+          },
+          {
+            "x": 1444.7631011528524,
+            "y": 454.37629745911744
+          }
+        ],
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "left": {
+          "x": 1415.7631011528524,
+          "y": 431.74134613533784
+        },
+        "right": {
+          "x": 1461.7631011528524,
+          "y": 431.74134613533784
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 161.19219180768266,
+          "y": 422.42796404402327
+        },
+        {
+          "x": 174.20781680768266,
+          "y": 422.42796404402327
+        }
+      ],
+      "changedPixels": 338,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-390-book-b-down.png",
+      "ablatedFile": "phone-390-book-b-down-ablated.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 288766,
+      "sha256": "8b1866321818aeb272769c1fa31c387f3e13a5319a566d364ec0d2d16afac369",
+      "ablatedBytes": 288711,
+      "ablatedSha256": "e5fb9a547be5e4547a92eed25f5b86d99844ce0c9a58637787dd066dddf17dfd",
+      "core": true,
+      "chapterIndex": 3,
+      "physicsTime": 30.88333333333286,
+      "form": "body",
+      "capPhase": "closed",
+      "body": {
+        "x": 1437.7631011528524,
+        "y": 376.13187109183116,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-b",
+        "invulnerable": 0,
+        "walk": 66.62201597656062,
+        "land": 0
+      },
+      "platform": {
+        "id": "book-b",
+        "x": 1410,
+        "y": 376.13187109183116,
+        "w": 170,
+        "h": 18,
+        "axis": "y",
+        "range": 72,
+        "speed": 0.75,
+        "phase": 1.4,
+        "kind": "book",
+        "baseX": 1410,
+        "baseY": 415,
+        "prevX": 1410,
+        "prevY": 375.3773336553839,
+        "dx": 0,
+        "dy": 0.754537436447265
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "book-b",
+        "platformAxis": "y",
+        "platformKind": "book",
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 45.2722461868359,
+        "balance": 0,
+        "verticalBalance": 0.50302495763151,
+        "freeArms": {
+          "left": {
+            "x": -22,
+            "y": -20.49092512710547
+          },
+          "right": {
+            "x": 24,
+            "y": -20.49092512710547
+          }
+        }
+      },
+      "shadow": {
+        "x": 1437.7631011528524,
+        "y": 378.13187109183116,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "book-b",
+          "kind": "book",
+          "x": 1410,
+          "y": 376.13187109183116,
+          "w": 170,
+          "h": 18,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 1410,
+          "y": 376.13187109183116,
+          "w": 170,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": 0,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1437.7631011528524,
+            377.0321405475623
+          ],
+          "headLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1437.7631011528524,
+            328.0321405475623
+          ],
+          "capLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "capMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1437.7631011528524,
+            328.0321405475623
+          ],
+          "gripHead": {
+            "x": -13,
+            "y": -13
+          },
+          "gripBody": {
+            "x": -13,
+            "y": -62
+          },
+          "gripWorld": {
+            "x": 1424.7631011528524,
+            "y": 315.0321405475623
+          },
+          "claspBody": {
+            "x": 22.5,
+            "y": -59
+          },
+          "catchBody": {
+            "x": 0,
+            "y": -66
+          },
+          "openingWorld": {
+            "x": 1437.7631011528524,
+            "y": 312.0321405475623
+          }
+        },
+        "soles": [
+          {
+            "x": 1430.7631011528524,
+            "y": 376.13187109183116
+          },
+          {
+            "x": 1444.7631011528524,
+            "y": 376.13187109183116
+          }
+        ],
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "left": {
+          "x": 1415.7631011528524,
+          "y": 356.5412154204568
+        },
+        "right": {
+          "x": 1461.7631011528524,
+          "y": 356.5412154204568
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 161.1921875000011,
+          "y": 349.6850989056868
+        },
+        {
+          "x": 174.2078125000011,
+          "y": 349.6850989056868
+        }
+      ],
+      "changedPixels": 331,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-390-last-stage-right.png",
+      "ablatedFile": "phone-390-last-stage-right-ablated.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 248767,
+      "sha256": "cf9f0a001bac913ee4132662ed4e99c0ed6c5d9799a88970b09e116249f6bfa2",
+      "ablatedBytes": 248719,
+      "ablatedSha256": "09d5f426529cf6047a8fea9f411fcbc736806359b11e2cd53d724212493c6e9e",
+      "core": true,
+      "chapterIndex": 5,
+      "physicsTime": 9.783333333333399,
+      "form": "body",
+      "capPhase": "closed",
+      "body": {
+        "x": 960.4055288946136,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 41.712857724525584,
+        "land": 0
+      },
+      "platform": {
+        "id": "last-stage",
+        "x": 853.7657729090947,
+        "y": 465,
+        "w": 190,
+        "h": 20,
+        "axis": "x",
+        "range": 185,
+        "speed": 0.7,
+        "phase": -1.5707963267948966,
+        "kind": "book",
+        "baseX": 1010,
+        "baseY": 465,
+        "prevX": 852.6205559890326,
+        "prevY": 465,
+        "dx": 1.1452169200621256,
+        "dy": 0
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "last-stage",
+        "platformAxis": "x",
+        "platformKind": "book",
+        "platformVelocity": 68.71301520372754,
+        "platformVerticalVelocity": 0,
+        "balance": 0.3817389733540419,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -22.763477946708083,
+            "y": -21.236522053291917
+          },
+          "right": {
+            "x": 23.236522053291917,
+            "y": -18.763477946708083
+          }
+        }
+      },
+      "shadow": {
+        "x": 960.4055288946136,
+        "y": 467,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "last-stage",
+          "kind": "book",
+          "x": 853.7657729090947,
+          "y": 465,
+          "w": 190,
+          "h": 20,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 853.7657729090947,
+          "y": 465,
+          "w": 190,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": 0,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            960.4055288946136,
+            466.04020363827937
+          ],
+          "headLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            1,
+            0,
+            0,
+            1,
+            960.4055288946136,
+            417.04020363827937
+          ],
+          "capLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "capMatrix": [
+            1,
+            0,
+            0,
+            1,
+            960.4055288946136,
+            417.04020363827937
+          ],
+          "gripHead": {
+            "x": -13,
+            "y": -13
+          },
+          "gripBody": {
+            "x": -13,
+            "y": -62
+          },
+          "gripWorld": {
+            "x": 947.4055288946136,
+            "y": 404.04020363827937
+          },
+          "claspBody": {
+            "x": 22.5,
+            "y": -59
+          },
+          "catchBody": {
+            "x": 0,
+            "y": -66
+          },
+          "openingWorld": {
+            "x": 960.4055288946136,
+            "y": 401.04020363827937
+          }
+        },
+        "soles": [
+          {
+            "x": 953.4055288946136,
+            "y": 465
+          },
+          {
+            "x": 967.4055288946136,
+            "y": 465
+          }
+        ],
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "left": {
+          "x": 937.6420509479054,
+          "y": 444.80368158498743
+        },
+        "right": {
+          "x": 983.6420509479054,
+          "y": 447.2767256915713
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 174.7310794432789,
+          "y": 432.3046875
+        },
+        {
+          "x": 187.7467044432789,
+          "y": 432.3046875
+        }
+      ],
+      "changedPixels": 706,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-390-last-stage-left.png",
+      "ablatedFile": "phone-390-last-stage-left-ablated.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 258816,
+      "sha256": "8a5e5a65b2ea140929682217c40851807275709fb49b86f056c2c0c90d3acd00",
+      "ablatedBytes": 258776,
+      "ablatedSha256": "509e07ac3783ebd68f1f7546354eadd288244e6600f4c8af3558e2ab3c08c538",
+      "core": true,
+      "chapterIndex": 5,
+      "physicsTime": 14.16666666666695,
+      "form": "body",
+      "capPhase": "closed",
+      "body": {
+        "x": 1279.706602115845,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 41.712857724525584,
+        "land": 0
+      },
+      "platform": {
+        "id": "last-stage",
+        "x": 1173.0668461303258,
+        "y": 465,
+        "w": 190,
+        "h": 20,
+        "axis": "x",
+        "range": 185,
+        "speed": 0.7,
+        "phase": -1.5707963267948966,
+        "kind": "book",
+        "baseX": 1010,
+        "baseY": 465,
+        "prevX": 1174.0750880470937,
+        "prevY": 465,
+        "dx": -1.008241916767929,
+        "dy": 0
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "last-stage",
+        "platformAxis": "x",
+        "platformKind": "book",
+        "platformVelocity": -60.494515006075744,
+        "platformVerticalVelocity": 0,
+        "balance": -0.336080638922643,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -21.327838722154713,
+            "y": -22.672161277845287
+          },
+          "right": {
+            "x": 24.672161277845287,
+            "y": -17.327838722154713
+          }
+        }
+      },
+      "shadow": {
+        "x": 1279.706602115845,
+        "y": 467,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "last-stage",
+          "kind": "book",
+          "x": 1173.0668461303258,
+          "y": 465,
+          "w": 190,
+          "h": 20,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 1173.0668461303258,
+          "y": 465,
+          "w": 190,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": 0,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1279.706602115845,
+            464.6050358105751
+          ],
+          "headLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1279.706602115845,
+            415.6050358105751
+          ],
+          "capLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "capMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1279.706602115845,
+            415.6050358105751
+          ],
+          "gripHead": {
+            "x": -13,
+            "y": -13
+          },
+          "gripBody": {
+            "x": -13,
+            "y": -62
+          },
+          "gripWorld": {
+            "x": 1266.706602115845,
+            "y": 402.6050358105751
+          },
+          "claspBody": {
+            "x": 22.5,
+            "y": -59
+          },
+          "catchBody": {
+            "x": 0,
+            "y": -66
+          },
+          "openingWorld": {
+            "x": 1279.706602115845,
+            "y": 399.6050358105751
+          }
+        },
+        "soles": [
+          {
+            "x": 1272.706602115845,
+            "y": 465
+          },
+          {
+            "x": 1286.706602115845,
+            "y": 465
+          }
+        ],
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "left": {
+          "x": 1258.3787633936904,
+          "y": 441.9328745327298
+        },
+        "right": {
+          "x": 1304.3787633936904,
+          "y": 447.2771970884204
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 154.03529477044347,
+          "y": 432.3046875
+        },
+        {
+          "x": 167.05091977044347,
+          "y": 432.3046875
+        }
+      ],
+      "changedPixels": 737,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-390-last-stage-open.png",
+      "ablatedFile": "phone-390-last-stage-open-ablated.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 251915,
+      "sha256": "2da9e84da51e1555d1732c74b8aff493a1769e29533dfa9598475286b7407d1d",
+      "ablatedBytes": 251763,
+      "ablatedSha256": "0e473948ba9bdb5c081e13077b61110d6ecc4c4620fd7881a514085ff439fe73",
+      "core": false,
+      "chapterIndex": 5,
+      "physicsTime": 19.566666666666837,
+      "form": "soul",
+      "capPhase": "open",
+      "body": {
+        "x": 1037.757229340199,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 41.712857724525584,
+        "land": 0
+      },
+      "platform": {
+        "id": "last-stage",
+        "x": 931.1174733546794,
+        "y": 465,
+        "w": 190,
+        "h": 20,
+        "axis": "x",
+        "range": 185,
+        "speed": 0.7,
+        "phase": -1.5707963267948966,
+        "kind": "book",
+        "baseX": 1010,
+        "baseY": 465,
+        "prevX": 929.170590459088,
+        "prevY": 465,
+        "dx": 1.9468828955914432,
+        "dy": 0
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "last-stage",
+        "platformAxis": "x",
+        "platformKind": "book",
+        "platformVelocity": 116.8129737354866,
+        "platformVerticalVelocity": 0,
+        "balance": 0.6489609651971477,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.297921930394295,
+            "y": -20.702078069605705
+          },
+          "right": {
+            "x": 22.702078069605705,
+            "y": -19.297921930394295
+          }
+        }
+      },
+      "shadow": {
+        "x": 1037.757229340199,
+        "y": 467,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "last-stage",
+          "kind": "book",
+          "x": 931.1174733546794,
+          "y": 465,
+          "w": 190,
+          "h": 20,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 931.1174733546794,
+          "y": 465,
+          "w": 190,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": -1.16,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1037.757229340199,
+            465.67658226273807
+          ],
+          "headLocalMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            1037.757229340199,
+            416.67658226273807
+          ],
+          "capLocalMatrix": [
+            0.3993395294062732,
+            -0.9168031087717669,
+            0.9168031087717669,
+            0.3993395294062732,
+            -1.296089939029022,
+            -27.97825451069732
+          ],
+          "capMatrix": [
+            0.37629705201705826,
+            -0.9264990710428539,
+            0.9264990710428539,
+            0.37629705201705826,
+            1035.7621609031746,
+            388.73946937455656
+          ],
+          "gripHead": {
+            "x": -18.40594423534354,
+            "y": -21.251227978945902
+          },
+          "gripBody": {
+            "x": -18.931418036803194,
+            "y": -69.78448664084615
+          },
+          "gripWorld": {
+            "x": 1018.8258113033958,
+            "y": 395.8920956218919
+          },
+          "claspBody": {
+            "x": 22.242995157056185,
+            "y": -59.55931657083806
+          },
+          "catchBody": {
+            "x": -0.42495573055010966,
+            "y": -65.99468777668694
+          },
+          "openingWorld": {
+            "x": 1037.3572710055637,
+            "y": 400.6815820023268
+          }
+        },
+        "soles": [
+          {
+            "x": 1030.757229340199,
+            "y": 465
+          },
+          {
+            "x": 1044.757229340199,
+            "y": 465
+          }
+        ],
+        "grip": 1,
+        "clasp": 0.25,
+        "catching": 0,
+        "left": {
+          "x": 1018.8258113033959,
+          "y": 395.89209562189194
+        },
+        "right": {
+          "x": 1070.5891055426011,
+          "y": 436.93167203418176
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 223.56283998538458,
+          "y": 432.3046875
+        },
+        {
+          "x": 236.57846498538458,
+          "y": 432.3046875
+        }
+      ],
+      "changedPixels": 800,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-390-last-stage-catch.png",
+      "ablatedFile": "phone-390-last-stage-catch-ablated.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 250094,
+      "sha256": "ef134660aff3d676d4667051af8e61c245fd4499b92f03c872c04770db54ce86",
+      "ablatedBytes": 250073,
+      "ablatedSha256": "713e8e589b328f4b39b971d1e7ae31281dc87d2d2feee3f6355525b5a24f8b50",
+      "core": false,
+      "chapterIndex": 5,
+      "physicsTime": 19.733333333333494,
+      "form": "body",
+      "capPhase": "returning",
+      "body": {
+        "x": 1057.772157231825,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 41.712857724525584,
+        "land": 0
+      },
+      "platform": {
+        "id": "last-stage",
+        "x": 951.1324012463051,
+        "y": 465,
+        "w": 190,
+        "h": 20,
+        "axis": "x",
+        "range": 185,
+        "speed": 0.7,
+        "phase": -1.5707963267948966,
+        "kind": "book",
+        "baseX": 1010,
+        "baseY": 465,
+        "prevX": 949.0903052771736,
+        "prevY": 465,
+        "dx": 2.0420959691315375,
+        "dy": 0
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "last-stage",
+        "platformAxis": "x",
+        "platformKind": "book",
+        "platformVelocity": 122.52575814789225,
+        "platformVerticalVelocity": 0,
+        "balance": 0.6806986563771792,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.36139731275436,
+            "y": -20.63860268724564
+          },
+          "right": {
+            "x": 22.63860268724564,
+            "y": -19.36139731275436
+          }
+        }
+      },
+      "shadow": {
+        "x": 1057.772157231825,
+        "y": 467,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "last-stage",
+          "kind": "book",
+          "x": 951.1324012463051,
+          "y": 465,
+          "w": 190,
+          "h": 20,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 951.1324012463051,
+          "y": 465,
+          "w": 190,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": -1.16,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1057.772157231825,
+            465.90267302447154
+          ],
+          "headLocalMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            1057.772157231825,
+            416.90267302447154
+          ],
+          "capLocalMatrix": [
+            0.3993395294062732,
+            -0.9168031087717669,
+            0.9168031087717669,
+            0.3993395294062732,
+            -1.296089939029022,
+            -27.97825451069732
+          ],
+          "capMatrix": [
+            0.37629705201705826,
+            -0.9264990710428539,
+            0.9264990710428539,
+            0.37629705201705826,
+            1055.7770887948006,
+            388.96556013629004
+          ],
+          "gripHead": {
+            "x": -18.40594423534354,
+            "y": -21.251227978945902
+          },
+          "gripBody": {
+            "x": -18.931418036803194,
+            "y": -69.78448664084615
+          },
+          "gripWorld": {
+            "x": 1038.8407391950218,
+            "y": 396.11818638362536
+          },
+          "claspBody": {
+            "x": 22.242995157056185,
+            "y": -59.55931657083806
+          },
+          "catchBody": {
+            "x": -0.42495573055010966,
+            "y": -65.99468777668694
+          },
+          "openingWorld": {
+            "x": 1057.3721988971897,
+            "y": 400.9076727640603
+          }
+        },
+        "soles": [
+          {
+            "x": 1050.772157231825,
+            "y": 465
+          },
+          {
+            "x": 1064.772157231825,
+            "y": 465
+          }
+        ],
+        "grip": 1,
+        "clasp": 0.8,
+        "catching": 1,
+        "left": {
+          "x": 1038.8407391950218,
+          "y": 396.11818638362536
+        },
+        "right": {
+          "x": 1070.2367566840646,
+          "y": 409.906922803122
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 196.46933277884372,
+          "y": 432.3046875
+        },
+        {
+          "x": 209.48495777884372,
+          "y": 432.3046875
+        }
+      ],
+      "changedPixels": 594,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-390-post-root-land.png",
+      "ablatedFile": "phone-390-post-root-land-ablated.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 250712,
+      "sha256": "56eaaf48c6cf3d11c9165a6d2141c6eedc17db92c70e3173e8e3578c50850c17",
+      "ablatedBytes": 250705,
+      "ablatedSha256": "0baa3477aa3d6b80426245147801d687f67a1f683bc25e66f7b51d441792915a",
+      "core": true,
+      "chapterIndex": 5,
+      "physicsTime": 24.366666666666564,
+      "form": "body",
+      "capPhase": "closed",
+      "body": {
+        "x": 1671.3781607692592,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 66.74972307670292,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 63.913082331150996,
+        "land": 0.16666666666666666
+      },
+      "platform": null,
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.7958333333333333,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -19.979166666666668,
+            "y": -13.6125
+          },
+          "right": {
+            "x": 20.979166666666668,
+            "y": -13.6125
+          }
+        }
+      },
+      "shadow": {
+        "x": 1671.3781607692592,
+        "y": 392,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "root",
+          "x": 1600,
+          "y": 390,
+          "w": 130,
+          "h": 170,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 1600,
+          "y": 390,
+          "w": 130,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": 0,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            0.8333333333333334,
+            1671.3781607692592,
+            389.05951229309045
+          ],
+          "headLocalMatrix": [
+            0.999883006059714,
+            0.015296214989006253,
+            -0.015296214989006253,
+            0.999883006059714,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            0.999883006059714,
+            0.012746845824171878,
+            -0.015296214989006253,
+            0.833235838383095,
+            1671.3781607692592,
+            348.22617895975714
+          ],
+          "capLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "capMatrix": [
+            0.999883006059714,
+            0.012746845824171878,
+            -0.015296214989006253,
+            0.833235838383095,
+            1671.3781607692592,
+            348.22617895975714
+          ],
+          "gripHead": {
+            "x": -13,
+            "y": -13
+          },
+          "gripBody": {
+            "x": -12.799628283919201,
+            "y": -62.197329873633365
+          },
+          "gripWorld": {
+            "x": 1658.57853248534,
+            "y": 337.22840406506265
+          },
+          "claspBody": {
+            "x": 22.650329786233627,
+            "y": -58.654665223344495
+          },
+          "catchBody": {
+            "x": 0.2600356548131063,
+            "y": -65.99801110301513
+          },
+          "openingWorld": {
+            "x": 1671.6229002090834,
+            "y": 334.8944055456276
+          }
+        },
+        "soles": [
+          {
+            "x": 1661.1165141462393,
+            "y": 390
+          }
+        ],
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "left": {
+          "x": 1647.8688480018473,
+          "y": 377.71576229309045
+        },
+        "right": {
+          "x": 1695.8874735366712,
+          "y": 377.71576229309045
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 182.6367858506505,
+          "y": 362.578125
+        }
+      ],
+      "changedPixels": 781,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-320-book-a-up.png",
+      "ablatedFile": "phone-320-book-a-up-ablated.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 199851,
+      "sha256": "e40af447d46ee36e43eb3ab21cadf93df30e1e90ab94f85a142c96b62d2246f0",
+      "ablatedBytes": 199792,
+      "ablatedSha256": "83a70ad5db1f481021fd081a9bd2a3e85f0f9e04f5a1f122dda694522240d59e",
+      "core": true,
+      "chapterIndex": 3,
+      "physicsTime": 10.466666666666766,
+      "form": "body",
+      "capPhase": "closed",
+      "body": {
+        "x": 689.7353412793722,
+        "y": 461.2419768053876,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-a",
+        "invulnerable": 0,
+        "walk": 29.22860797544836,
+        "land": 0
+      },
+      "platform": {
+        "id": "book-a",
+        "x": 615,
+        "y": 461.2419768053876,
+        "w": 155,
+        "h": 18,
+        "axis": "y",
+        "range": 62,
+        "speed": 0.85,
+        "phase": 0,
+        "kind": "book",
+        "baseX": 615,
+        "baseY": 430,
+        "prevX": 615,
+        "prevY": 461.99748592979705,
+        "dx": 0,
+        "dy": -0.755509124409457
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "book-a",
+        "platformAxis": "y",
+        "platformKind": "book",
+        "platformVelocity": 0,
+        "platformVerticalVelocity": -45.33054746456742,
+        "balance": 0,
+        "verticalBalance": -0.5036727496063046,
+        "freeArms": {
+          "left": {
+            "x": -22,
+            "y": -23.511018248818914
+          },
+          "right": {
+            "x": 24,
+            "y": -23.511018248818914
+          }
+        }
+      },
+      "shadow": {
+        "x": 689.7353412793722,
+        "y": 463.2419768053876,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "book-a",
+          "kind": "book",
+          "x": 615,
+          "y": 461.2419768053876,
+          "w": 155,
+          "h": 18,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 615,
+          "y": 461.2419768053876,
+          "w": 155,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": 0,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            461.25248815910317
+          ],
+          "headLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            412.25248815910317
+          ],
+          "capLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "capMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            412.25248815910317
+          ],
+          "gripHead": {
+            "x": -13,
+            "y": -13
+          },
+          "gripBody": {
+            "x": -13,
+            "y": -62
+          },
+          "gripWorld": {
+            "x": 676.7353412793722,
+            "y": 399.25248815910317
+          },
+          "claspBody": {
+            "x": 22.5,
+            "y": -59
+          },
+          "catchBody": {
+            "x": 0,
+            "y": -66
+          },
+          "openingWorld": {
+            "x": 689.7353412793722,
+            "y": 396.25248815910317
+          }
+        },
+        "soles": [
+          {
+            "x": 682.7353412793722,
+            "y": 461.2419768053876
+          },
+          {
+            "x": 696.7353412793722,
+            "y": 461.2419768053876
+          }
+        ],
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "left": {
+          "x": 667.7353412793722,
+          "y": 437.74146991028425
+        },
+        "right": {
+          "x": 713.7353412793722,
+          "y": 437.74146991028425
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 132.88593750000018,
+          "y": 310.6176437548782
+        },
+        {
+          "x": 142.31406250000018,
+          "y": 310.6176437548782
+        }
+      ],
+      "changedPixels": 223,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-320-book-a-down.png",
+      "ablatedFile": "phone-320-book-a-down-ablated.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 198719,
+      "sha256": "964dc88da67611296bd7e512e8cbe04ea73ee1588493529f0722eaa7e23f5708",
+      "ablatedBytes": 198695,
+      "ablatedSha256": "f2e6d0705e1934f8aafed3f6cb449371f8d039c46023ee98339db67bd07fc791",
+      "core": true,
+      "chapterIndex": 3,
+      "physicsTime": 14.150000000000283,
+      "form": "body",
+      "capPhase": "closed",
+      "body": {
+        "x": 689.7353412793722,
+        "y": 398.1836472339965,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-a",
+        "invulnerable": 0,
+        "walk": 29.22860797544836,
+        "land": 0
+      },
+      "platform": {
+        "id": "book-a",
+        "x": 615,
+        "y": 398.1836472339965,
+        "w": 155,
+        "h": 18,
+        "axis": "y",
+        "range": 62,
+        "speed": 0.85,
+        "phase": 0,
+        "kind": "book",
+        "baseX": 615,
+        "baseY": 430,
+        "prevX": 615,
+        "prevY": 397.43300142333675,
+        "dx": 0,
+        "dy": 0.750645810659762
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "book-a",
+        "platformAxis": "y",
+        "platformKind": "book",
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 45.03874863958572,
+        "balance": 0,
+        "verticalBalance": 0.5004305404398414,
+        "freeArms": {
+          "left": {
+            "x": -22,
+            "y": -20.498708378680476
+          },
+          "right": {
+            "x": 24,
+            "y": -20.498708378680476
+          }
+        }
+      },
+      "shadow": {
+        "x": 689.7353412793722,
+        "y": 400.1836472339965,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "book-a",
+          "kind": "book",
+          "x": 615,
+          "y": 398.1836472339965,
+          "w": 155,
+          "h": 18,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 615,
+          "y": 398.1836472339965,
+          "w": 155,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": 0,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            397.8196555441234
+          ],
+          "headLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            348.8196555441234
+          ],
+          "capLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "capMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            348.8196555441234
+          ],
+          "gripHead": {
+            "x": -13,
+            "y": -13
+          },
+          "gripBody": {
+            "x": -13,
+            "y": -62
+          },
+          "gripWorld": {
+            "x": 676.7353412793722,
+            "y": 335.8196555441234
+          },
+          "claspBody": {
+            "x": 22.5,
+            "y": -59
+          },
+          "catchBody": {
+            "x": 0,
+            "y": -66
+          },
+          "openingWorld": {
+            "x": 689.7353412793722,
+            "y": 332.8196555441234
+          }
+        },
+        "soles": [
+          {
+            "x": 682.7353412793722,
+            "y": 398.1836472339965
+          },
+          {
+            "x": 696.7353412793722,
+            "y": 398.1836472339965
+          }
+        ],
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "left": {
+          "x": 667.7353412793722,
+          "y": 377.32094716544293
+        },
+        "right": {
+          "x": 713.7353412793722,
+          "y": 377.32094716544293
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 132.88593750000018,
+          "y": 268.15179993414455
+        },
+        {
+          "x": 142.31406250000018,
+          "y": 268.15179993414455
+        }
+      ],
+      "changedPixels": 205,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-320-book-a-open.png",
+      "ablatedFile": "phone-320-book-a-open-ablated.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 201668,
+      "sha256": "011d9d2b85f68bf4c0544dce2100ef986349d503c184e991a7b4366d21826df1",
+      "ablatedBytes": 201570,
+      "ablatedSha256": "52d659175b291b74c965c8bb1de726aedc6de0c748c798d254252f721da31164",
+      "core": false,
+      "chapterIndex": 3,
+      "physicsTime": 17.633333333333614,
+      "form": "soul",
+      "capPhase": "open",
+      "body": {
+        "x": 689.7353412793722,
+        "y": 470.86459739214257,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-a",
+        "invulnerable": 0,
+        "walk": 29.22860797544836,
+        "land": 0
+      },
+      "platform": {
+        "id": "book-a",
+        "x": 615,
+        "y": 470.86459739214257,
+        "w": 155,
+        "h": 18,
+        "axis": "y",
+        "range": 62,
+        "speed": 0.85,
+        "phase": 0,
+        "kind": "book",
+        "baseX": 615,
+        "baseY": 430,
+        "prevX": 615,
+        "prevY": 471.52102503108466,
+        "dx": 0,
+        "dy": -0.6564276389420911
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "book-a",
+        "platformAxis": "y",
+        "platformKind": "book",
+        "platformVelocity": 0,
+        "platformVerticalVelocity": -39.385658336525466,
+        "balance": 0,
+        "verticalBalance": -0.43761842596139405,
+        "freeArms": {
+          "left": {
+            "x": -22,
+            "y": -23.312855277884182
+          },
+          "right": {
+            "x": 24,
+            "y": -23.312855277884182
+          }
+        }
+      },
+      "shadow": {
+        "x": 689.7353412793722,
+        "y": 472.86459739214257,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "book-a",
+          "kind": "book",
+          "x": 615,
+          "y": 470.86459739214257,
+          "w": 155,
+          "h": 18,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 615,
+          "y": 470.86459739214257,
+          "w": 155,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": -1.16,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            470.5143237139837
+          ],
+          "headLocalMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            689.7353412793722,
+            421.5143237139837
+          ],
+          "capLocalMatrix": [
+            0.3993395294062732,
+            -0.9168031087717669,
+            0.9168031087717669,
+            0.3993395294062732,
+            -1.296089939029022,
+            -27.97825451069732
+          ],
+          "capMatrix": [
+            0.37629705201705826,
+            -0.9264990710428539,
+            0.9264990710428539,
+            0.37629705201705826,
+            687.7402728423478,
+            393.5772108258022
+          ],
+          "gripHead": {
+            "x": -18.40594423534354,
+            "y": -21.251227978945902
+          },
+          "gripBody": {
+            "x": -18.931418036803194,
+            "y": -69.78448664084615
+          },
+          "gripWorld": {
+            "x": 670.803923242569,
+            "y": 400.7298370731375
+          },
+          "claspBody": {
+            "x": 22.242995157056185,
+            "y": -59.55931657083806
+          },
+          "catchBody": {
+            "x": -0.42495573055010966,
+            "y": -65.99468777668694
+          },
+          "openingWorld": {
+            "x": 689.3353829447368,
+            "y": 405.51932345357244
+          }
+        },
+        "soles": [
+          {
+            "x": 682.7353412793722,
+            "y": 470.86459739214257
+          },
+          {
+            "x": 696.7353412793722,
+            "y": 470.86459739214257
+          }
+        ],
+        "grip": 1,
+        "clasp": 0.25,
+        "catching": 0,
+        "left": {
+          "x": 670.803923242569,
+          "y": 400.72983707313756
+        },
+        "right": {
+          "x": 723.2972985676209,
+          "y": 439.5110134774643
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 132.88593750000018,
+          "y": 317.097877306271
+        },
+        {
+          "x": 142.31406250000018,
+          "y": 317.097877306271
+        }
+      ],
+      "changedPixels": 193,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-320-book-a-catch.png",
+      "ablatedFile": "phone-320-book-a-catch-ablated.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 200615,
+      "sha256": "5c2e962738f93added73fff28830cf104f53191334dd87967de1f98b95ed49db",
+      "ablatedBytes": 200611,
+      "ablatedSha256": "c041f9b53dd2d2abb12284e46454796746d0ec277559c28a3fb75861675ae7b9",
+      "core": false,
+      "chapterIndex": 3,
+      "physicsTime": 17.80000000000027,
+      "form": "body",
+      "capPhase": "returning",
+      "body": {
+        "x": 689.7353412793722,
+        "y": 463.8717873622293,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-a",
+        "invulnerable": 0,
+        "walk": 29.22860797544836,
+        "land": 0
+      },
+      "platform": {
+        "id": "book-a",
+        "x": 615,
+        "y": 463.8717873622293,
+        "w": 155,
+        "h": 18,
+        "axis": "y",
+        "range": 62,
+        "speed": 0.85,
+        "phase": 0,
+        "kind": "book",
+        "baseX": 615,
+        "baseY": 430,
+        "prevX": 615,
+        "prevY": 464.6040357512515,
+        "dx": 0,
+        "dy": -0.7322483890221747
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "book-a",
+        "platformAxis": "y",
+        "platformKind": "book",
+        "platformVelocity": 0,
+        "platformVerticalVelocity": -43.93490334133048,
+        "balance": 0,
+        "verticalBalance": -0.4881655926814498,
+        "freeArms": {
+          "left": {
+            "x": -22,
+            "y": -23.46449677804435
+          },
+          "right": {
+            "x": 24,
+            "y": -23.46449677804435
+          }
+        }
+      },
+      "shadow": {
+        "x": 689.7353412793722,
+        "y": 465.8717873622293,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "book-a",
+          "kind": "book",
+          "x": 615,
+          "y": 463.8717873622293,
+          "w": 155,
+          "h": 18,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 615,
+          "y": 463.8717873622293,
+          "w": 155,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": -1.16,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            689.7353412793722,
+            463.2290071632207
+          ],
+          "headLocalMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            689.7353412793722,
+            414.2290071632207
+          ],
+          "capLocalMatrix": [
+            0.3993395294062732,
+            -0.9168031087717669,
+            0.9168031087717669,
+            0.3993395294062732,
+            -1.296089939029022,
+            -27.97825451069732
+          ],
+          "capMatrix": [
+            0.37629705201705826,
+            -0.9264990710428539,
+            0.9264990710428539,
+            0.37629705201705826,
+            687.7402728423478,
+            386.29189427503917
+          ],
+          "gripHead": {
+            "x": -18.40594423534354,
+            "y": -21.251227978945902
+          },
+          "gripBody": {
+            "x": -18.931418036803194,
+            "y": -69.78448664084615
+          },
+          "gripWorld": {
+            "x": 670.803923242569,
+            "y": 393.4445205223745
+          },
+          "claspBody": {
+            "x": 22.242995157056185,
+            "y": -59.55931657083806
+          },
+          "catchBody": {
+            "x": -0.42495573055010966,
+            "y": -65.99468777668694
+          },
+          "openingWorld": {
+            "x": 689.3353829447368,
+            "y": 398.2340069028094
+          }
+        },
+        "soles": [
+          {
+            "x": 682.7353412793722,
+            "y": 463.8717873622293
+          },
+          {
+            "x": 696.7353412793722,
+            "y": 463.8717873622293
+          }
+        ],
+        "grip": 1,
+        "clasp": 0.8,
+        "catching": 1,
+        "left": {
+          "x": 670.803923242569,
+          "y": 393.44452052237455
+        },
+        "right": {
+          "x": 702.1999407316116,
+          "y": 407.2332569418711
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 132.88593750000018,
+          "y": 312.3886568017513
+        },
+        {
+          "x": 142.31406250000018,
+          "y": 312.3886568017513
+        }
+      ],
+      "changedPixels": 59,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-320-book-b-up.png",
+      "ablatedFile": "phone-320-book-b-up-ablated.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 196690,
+      "sha256": "c6babf6114353befa068344f94f0ac900e3a0b2897f703c66d531c0c2a705490",
+      "ablatedBytes": 196653,
+      "ablatedSha256": "bee5914bfa94246094a0524d405371903d2e58a8b3d53cc3aca04bbf6eeef74e",
+      "core": true,
+      "chapterIndex": 3,
+      "physicsTime": 26.6833333333331,
+      "form": "body",
+      "capPhase": "closed",
+      "body": {
+        "x": 1437.7631011528524,
+        "y": 454.37629745911744,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-b",
+        "invulnerable": 0,
+        "walk": 66.62201597656062,
+        "land": 0
+      },
+      "platform": {
+        "id": "book-b",
+        "x": 1410,
+        "y": 454.37629745911744,
+        "w": 170,
+        "h": 18,
+        "axis": "y",
+        "range": 72,
+        "speed": 0.75,
+        "phase": 1.4,
+        "kind": "book",
+        "baseX": 1410,
+        "baseY": 415,
+        "prevX": 1410,
+        "prevY": 455.12668385328203,
+        "dx": 0,
+        "dy": -0.7503863941645932
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "book-b",
+        "platformAxis": "y",
+        "platformKind": "book",
+        "platformVelocity": 0,
+        "platformVerticalVelocity": -45.02318364987559,
+        "balance": 0,
+        "verticalBalance": -0.5002575961097288,
+        "freeArms": {
+          "left": {
+            "x": -22,
+            "y": -23.500772788329186
+          },
+          "right": {
+            "x": 24,
+            "y": -23.500772788329186
+          }
+        }
+      },
+      "shadow": {
+        "x": 1437.7631011528524,
+        "y": 456.37629745911744,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "book-b",
+          "kind": "book",
+          "x": 1410,
+          "y": 454.37629745911744,
+          "w": 170,
+          "h": 18,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 1410,
+          "y": 454.37629745911744,
+          "w": 170,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": 0,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1437.7631011528524,
+            455.242118923667
+          ],
+          "headLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1437.7631011528524,
+            406.242118923667
+          ],
+          "capLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "capMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1437.7631011528524,
+            406.242118923667
+          ],
+          "gripHead": {
+            "x": -13,
+            "y": -13
+          },
+          "gripBody": {
+            "x": -13,
+            "y": -62
+          },
+          "gripWorld": {
+            "x": 1424.7631011528524,
+            "y": 393.242118923667
+          },
+          "claspBody": {
+            "x": 22.5,
+            "y": -59
+          },
+          "catchBody": {
+            "x": 0,
+            "y": -66
+          },
+          "openingWorld": {
+            "x": 1437.7631011528524,
+            "y": 390.242118923667
+          }
+        },
+        "soles": [
+          {
+            "x": 1430.7631011528524,
+            "y": 454.37629745911744
+          },
+          {
+            "x": 1444.7631011528524,
+            "y": 454.37629745911744
+          }
+        ],
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "left": {
+          "x": 1415.7631011528524,
+          "y": 431.74134613533784
+        },
+        "right": {
+          "x": 1461.7631011528524,
+          "y": 431.74134613533784
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 132.88594062035494,
+          "y": 305.9940378201244
+        },
+        {
+          "x": 142.31406562035494,
+          "y": 305.9940378201244
+        }
+      ],
+      "changedPixels": 216,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-320-book-b-down.png",
+      "ablatedFile": "phone-320-book-b-down-ablated.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 196211,
+      "sha256": "68dc70bd2033011a9e1f9ea3c7e5f6ccd9dcab7cdc8408af13be6d8a7797ba90",
+      "ablatedBytes": 196207,
+      "ablatedSha256": "3d621a43cdcf8c020a07c55c4e8102466dec55048e4c105982b07c1f2d16f115",
+      "core": true,
+      "chapterIndex": 3,
+      "physicsTime": 30.88333333333286,
+      "form": "body",
+      "capPhase": "closed",
+      "body": {
+        "x": 1437.7631011528524,
+        "y": 376.13187109183116,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "book-b",
+        "invulnerable": 0,
+        "walk": 66.62201597656062,
+        "land": 0
+      },
+      "platform": {
+        "id": "book-b",
+        "x": 1410,
+        "y": 376.13187109183116,
+        "w": 170,
+        "h": 18,
+        "axis": "y",
+        "range": 72,
+        "speed": 0.75,
+        "phase": 1.4,
+        "kind": "book",
+        "baseX": 1410,
+        "baseY": 415,
+        "prevX": 1410,
+        "prevY": 375.3773336553839,
+        "dx": 0,
+        "dy": 0.754537436447265
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "book-b",
+        "platformAxis": "y",
+        "platformKind": "book",
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 45.2722461868359,
+        "balance": 0,
+        "verticalBalance": 0.50302495763151,
+        "freeArms": {
+          "left": {
+            "x": -22,
+            "y": -20.49092512710547
+          },
+          "right": {
+            "x": 24,
+            "y": -20.49092512710547
+          }
+        }
+      },
+      "shadow": {
+        "x": 1437.7631011528524,
+        "y": 378.13187109183116,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "book-b",
+          "kind": "book",
+          "x": 1410,
+          "y": 376.13187109183116,
+          "w": 170,
+          "h": 18,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 1410,
+          "y": 376.13187109183116,
+          "w": 170,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": 0,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1437.7631011528524,
+            377.0321405475623
+          ],
+          "headLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1437.7631011528524,
+            328.0321405475623
+          ],
+          "capLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "capMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1437.7631011528524,
+            328.0321405475623
+          ],
+          "gripHead": {
+            "x": -13,
+            "y": -13
+          },
+          "gripBody": {
+            "x": -13,
+            "y": -62
+          },
+          "gripWorld": {
+            "x": 1424.7631011528524,
+            "y": 315.0321405475623
+          },
+          "claspBody": {
+            "x": 22.5,
+            "y": -59
+          },
+          "catchBody": {
+            "x": 0,
+            "y": -66
+          },
+          "openingWorld": {
+            "x": 1437.7631011528524,
+            "y": 312.0321405475623
+          }
+        },
+        "soles": [
+          {
+            "x": 1430.7631011528524,
+            "y": 376.13187109183116
+          },
+          {
+            "x": 1444.7631011528524,
+            "y": 376.13187109183116
+          }
+        ],
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "left": {
+          "x": 1415.7631011528524,
+          "y": 356.5412154204568
+        },
+        "right": {
+          "x": 1461.7631011528524,
+          "y": 356.5412154204568
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 132.88593750000075,
+          "y": 253.30130693840505
+        },
+        {
+          "x": 142.31406250000074,
+          "y": 253.30130693840505
+        }
+      ],
+      "changedPixels": 194,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-320-last-stage-right.png",
+      "ablatedFile": "phone-320-last-stage-right-ablated.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 172116,
+      "sha256": "91692cff2376cfc1be8609de22f717985f8b882bc01ad31b008296167ebeb217",
+      "ablatedBytes": 172072,
+      "ablatedSha256": "d2ff1c87422c3925f93345bc9764617f5fed54e58a0db03ad10c84ba97e16186",
+      "core": true,
+      "chapterIndex": 5,
+      "physicsTime": 9.783333333333399,
+      "form": "body",
+      "capPhase": "closed",
+      "body": {
+        "x": 960.4055288946136,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 41.712857724525584,
+        "land": 0
+      },
+      "platform": {
+        "id": "last-stage",
+        "x": 853.7657729090947,
+        "y": 465,
+        "w": 190,
+        "h": 20,
+        "axis": "x",
+        "range": 185,
+        "speed": 0.7,
+        "phase": -1.5707963267948966,
+        "kind": "book",
+        "baseX": 1010,
+        "baseY": 465,
+        "prevX": 852.6205559890326,
+        "prevY": 465,
+        "dx": 1.1452169200621256,
+        "dy": 0
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "last-stage",
+        "platformAxis": "x",
+        "platformKind": "book",
+        "platformVelocity": 68.71301520372754,
+        "platformVerticalVelocity": 0,
+        "balance": 0.3817389733540419,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -22.763477946708083,
+            "y": -21.236522053291917
+          },
+          "right": {
+            "x": 23.236522053291917,
+            "y": -18.763477946708083
+          }
+        }
+      },
+      "shadow": {
+        "x": 960.4055288946136,
+        "y": 467,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "last-stage",
+          "kind": "book",
+          "x": 853.7657729090947,
+          "y": 465,
+          "w": 190,
+          "h": 20,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 853.7657729090947,
+          "y": 465,
+          "w": 190,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": 0,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            960.4055288946136,
+            466.04020363827937
+          ],
+          "headLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            1,
+            0,
+            0,
+            1,
+            960.4055288946136,
+            417.04020363827937
+          ],
+          "capLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "capMatrix": [
+            1,
+            0,
+            0,
+            1,
+            960.4055288946136,
+            417.04020363827937
+          ],
+          "gripHead": {
+            "x": -13,
+            "y": -13
+          },
+          "gripBody": {
+            "x": -13,
+            "y": -62
+          },
+          "gripWorld": {
+            "x": 947.4055288946136,
+            "y": 404.04020363827937
+          },
+          "claspBody": {
+            "x": 22.5,
+            "y": -59
+          },
+          "catchBody": {
+            "x": 0,
+            "y": -66
+          },
+          "openingWorld": {
+            "x": 960.4055288946136,
+            "y": 401.04020363827937
+          }
+        },
+        "soles": [
+          {
+            "x": 953.4055288946136,
+            "y": 465
+          },
+          {
+            "x": 967.4055288946136,
+            "y": 465
+          }
+        ],
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "left": {
+          "x": 937.6420509479054,
+          "y": 444.80368158498743
+        },
+        "right": {
+          "x": 983.6420509479054,
+          "y": 447.2767256915713
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 142.69310124378686,
+          "y": 313.1484375
+        },
+        {
+          "x": 152.12122624378685,
+          "y": 313.1484375
+        }
+      ],
+      "changedPixels": 403,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-320-last-stage-left.png",
+      "ablatedFile": "phone-320-last-stage-left-ablated.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 178393,
+      "sha256": "3f22ebe396ee1d3eb4f06643810ad21016ce415455220ceec58e1a281ad49dae",
+      "ablatedBytes": 178375,
+      "ablatedSha256": "a7d545656973d73b71207d0c371c94bbebcb0d69175e61e29a71e41067216ea0",
+      "core": true,
+      "chapterIndex": 5,
+      "physicsTime": 14.16666666666695,
+      "form": "body",
+      "capPhase": "closed",
+      "body": {
+        "x": 1279.706602115845,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 41.712857724525584,
+        "land": 0
+      },
+      "platform": {
+        "id": "last-stage",
+        "x": 1173.0668461303258,
+        "y": 465,
+        "w": 190,
+        "h": 20,
+        "axis": "x",
+        "range": 185,
+        "speed": 0.7,
+        "phase": -1.5707963267948966,
+        "kind": "book",
+        "baseX": 1010,
+        "baseY": 465,
+        "prevX": 1174.0750880470937,
+        "prevY": 465,
+        "dx": -1.008241916767929,
+        "dy": 0
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "last-stage",
+        "platformAxis": "x",
+        "platformKind": "book",
+        "platformVelocity": -60.494515006075744,
+        "platformVerticalVelocity": 0,
+        "balance": -0.336080638922643,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -21.327838722154713,
+            "y": -22.672161277845287
+          },
+          "right": {
+            "x": 24.672161277845287,
+            "y": -17.327838722154713
+          }
+        }
+      },
+      "shadow": {
+        "x": 1279.706602115845,
+        "y": 467,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "last-stage",
+          "kind": "book",
+          "x": 1173.0668461303258,
+          "y": 465,
+          "w": 190,
+          "h": 20,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 1173.0668461303258,
+          "y": 465,
+          "w": 190,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": 0,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1279.706602115845,
+            464.6050358105751
+          ],
+          "headLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1279.706602115845,
+            415.6050358105751
+          ],
+          "capLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "capMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1279.706602115845,
+            415.6050358105751
+          ],
+          "gripHead": {
+            "x": -13,
+            "y": -13
+          },
+          "gripBody": {
+            "x": -13,
+            "y": -62
+          },
+          "gripWorld": {
+            "x": 1266.706602115845,
+            "y": 402.6050358105751
+          },
+          "claspBody": {
+            "x": 22.5,
+            "y": -59
+          },
+          "catchBody": {
+            "x": 0,
+            "y": -66
+          },
+          "openingWorld": {
+            "x": 1279.706602115845,
+            "y": 399.6050358105751
+          }
+        },
+        "soles": [
+          {
+            "x": 1272.706602115845,
+            "y": 465
+          },
+          {
+            "x": 1286.706602115845,
+            "y": 465
+          }
+        ],
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "left": {
+          "x": 1258.3787633936904,
+          "y": 441.9328745327298
+        },
+        "right": {
+          "x": 1304.3787633936904,
+          "y": 447.2771970884204
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 127.70170091774976,
+          "y": 313.1484375
+        },
+        {
+          "x": 137.12982591774977,
+          "y": 313.1484375
+        }
+      ],
+      "changedPixels": 436,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-320-last-stage-open.png",
+      "ablatedFile": "phone-320-last-stage-open-ablated.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 173601,
+      "sha256": "848d0d6514d3f256c4386da99153e81e956bdb5ad5a737a56112801de2d28a83",
+      "ablatedBytes": 173541,
+      "ablatedSha256": "3a3ab2078a1a17f28abd8ca4bdc57f1b788a26655d341ec013f4f2118295aa0c",
+      "core": false,
+      "chapterIndex": 5,
+      "physicsTime": 19.566666666666837,
+      "form": "soul",
+      "capPhase": "open",
+      "body": {
+        "x": 1037.757229340199,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 41.712857724525584,
+        "land": 0
+      },
+      "platform": {
+        "id": "last-stage",
+        "x": 931.1174733546794,
+        "y": 465,
+        "w": 190,
+        "h": 20,
+        "axis": "x",
+        "range": 185,
+        "speed": 0.7,
+        "phase": -1.5707963267948966,
+        "kind": "book",
+        "baseX": 1010,
+        "baseY": 465,
+        "prevX": 929.170590459088,
+        "prevY": 465,
+        "dx": 1.9468828955914432,
+        "dy": 0
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "last-stage",
+        "platformAxis": "x",
+        "platformKind": "book",
+        "platformVelocity": 116.8129737354866,
+        "platformVerticalVelocity": 0,
+        "balance": 0.6489609651971477,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.297921930394295,
+            "y": -20.702078069605705
+          },
+          "right": {
+            "x": 22.702078069605705,
+            "y": -19.297921930394295
+          }
+        }
+      },
+      "shadow": {
+        "x": 1037.757229340199,
+        "y": 467,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "last-stage",
+          "kind": "book",
+          "x": 931.1174733546794,
+          "y": 465,
+          "w": 190,
+          "h": 20,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 931.1174733546794,
+          "y": 465,
+          "w": 190,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": -1.16,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1037.757229340199,
+            465.67658226273807
+          ],
+          "headLocalMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            1037.757229340199,
+            416.67658226273807
+          ],
+          "capLocalMatrix": [
+            0.3993395294062732,
+            -0.9168031087717669,
+            0.9168031087717669,
+            0.3993395294062732,
+            -1.296089939029022,
+            -27.97825451069732
+          ],
+          "capMatrix": [
+            0.37629705201705826,
+            -0.9264990710428539,
+            0.9264990710428539,
+            0.37629705201705826,
+            1035.7621609031746,
+            388.73946937455656
+          ],
+          "gripHead": {
+            "x": -18.40594423534354,
+            "y": -21.251227978945902
+          },
+          "gripBody": {
+            "x": -18.931418036803194,
+            "y": -69.78448664084615
+          },
+          "gripWorld": {
+            "x": 1018.8258113033958,
+            "y": 395.8920956218919
+          },
+          "claspBody": {
+            "x": 22.242995157056185,
+            "y": -59.55931657083806
+          },
+          "catchBody": {
+            "x": -0.42495573055010966,
+            "y": -65.99468777668694
+          },
+          "openingWorld": {
+            "x": 1037.3572710055637,
+            "y": 400.6815820023268
+          }
+        },
+        "soles": [
+          {
+            "x": 1030.757229340199,
+            "y": 465
+          },
+          {
+            "x": 1044.757229340199,
+            "y": 465
+          }
+        ],
+        "grip": 1,
+        "clasp": 0.25,
+        "catching": 0,
+        "left": {
+          "x": 1018.8258113033959,
+          "y": 395.89209562189194
+        },
+        "right": {
+          "x": 1070.5891055426011,
+          "y": 436.93167203418176
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 178.0653513171441,
+          "y": 313.1484375
+        },
+        {
+          "x": 187.4934763171441,
+          "y": 313.1484375
+        }
+      ],
+      "changedPixels": 462,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-320-last-stage-catch.png",
+      "ablatedFile": "phone-320-last-stage-catch-ablated.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 172060,
+      "sha256": "9a939f6871016d2f8dc2476e5dc544bc405500f3637e51f9e685759bf3326f15",
+      "ablatedBytes": 172027,
+      "ablatedSha256": "fd7e5f8acce3df27218d295f7284ef124c380d71c21bc8eaa6efdf680d764f9c",
+      "core": false,
+      "chapterIndex": 5,
+      "physicsTime": 19.733333333333494,
+      "form": "body",
+      "capPhase": "returning",
+      "body": {
+        "x": 1057.772157231825,
+        "y": 465,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": "last-stage",
+        "invulnerable": 0,
+        "walk": 41.712857724525584,
+        "land": 0
+      },
+      "platform": {
+        "id": "last-stage",
+        "x": 951.1324012463051,
+        "y": 465,
+        "w": 190,
+        "h": 20,
+        "axis": "x",
+        "range": 185,
+        "speed": 0.7,
+        "phase": -1.5707963267948966,
+        "kind": "book",
+        "baseX": 1010,
+        "baseY": 465,
+        "prevX": 949.0903052771736,
+        "prevY": 465,
+        "dx": 2.0420959691315375,
+        "dy": 0
+      },
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "last-stage",
+        "platformAxis": "x",
+        "platformKind": "book",
+        "platformVelocity": 122.52575814789225,
+        "platformVerticalVelocity": 0,
+        "balance": 0.6806986563771792,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.36139731275436,
+            "y": -20.63860268724564
+          },
+          "right": {
+            "x": 22.63860268724564,
+            "y": -19.36139731275436
+          }
+        }
+      },
+      "shadow": {
+        "x": 1057.772157231825,
+        "y": 467,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": "last-stage",
+          "kind": "book",
+          "x": 951.1324012463051,
+          "y": 465,
+          "w": 190,
+          "h": 20,
+          "source": "mover"
+        },
+        "clip": {
+          "x": 951.1324012463051,
+          "y": 465,
+          "w": 190,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": -1.16,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            1,
+            1057.772157231825,
+            465.90267302447154
+          ],
+          "headLocalMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            0.9996875162757026,
+            -0.024997395914712332,
+            0.024997395914712332,
+            0.9996875162757026,
+            1057.772157231825,
+            416.90267302447154
+          ],
+          "capLocalMatrix": [
+            0.3993395294062732,
+            -0.9168031087717669,
+            0.9168031087717669,
+            0.3993395294062732,
+            -1.296089939029022,
+            -27.97825451069732
+          ],
+          "capMatrix": [
+            0.37629705201705826,
+            -0.9264990710428539,
+            0.9264990710428539,
+            0.37629705201705826,
+            1055.7770887948006,
+            388.96556013629004
+          ],
+          "gripHead": {
+            "x": -18.40594423534354,
+            "y": -21.251227978945902
+          },
+          "gripBody": {
+            "x": -18.931418036803194,
+            "y": -69.78448664084615
+          },
+          "gripWorld": {
+            "x": 1038.8407391950218,
+            "y": 396.11818638362536
+          },
+          "claspBody": {
+            "x": 22.242995157056185,
+            "y": -59.55931657083806
+          },
+          "catchBody": {
+            "x": -0.42495573055010966,
+            "y": -65.99468777668694
+          },
+          "openingWorld": {
+            "x": 1057.3721988971897,
+            "y": 400.9076727640603
+          }
+        },
+        "soles": [
+          {
+            "x": 1050.772157231825,
+            "y": 465
+          },
+          {
+            "x": 1064.772157231825,
+            "y": 465
+          }
+        ],
+        "grip": 1,
+        "clasp": 0.8,
+        "catching": 1,
+        "left": {
+          "x": 1038.8407391950218,
+          "y": 396.11818638362536
+        },
+        "right": {
+          "x": 1070.2367566840646,
+          "y": 409.906922803122
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 158.439634332238,
+          "y": 313.1484375
+        },
+        {
+          "x": 167.867759332238,
+          "y": 313.1484375
+        }
+      ],
+      "changedPixels": 347,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    },
+    {
+      "file": "phone-320-post-root-land.png",
+      "ablatedFile": "phone-320-post-root-land-ablated.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 173077,
+      "sha256": "44112a1b8f3477a10181ac436703af825f18682ca94aea1f0385df8fa8b826d7",
+      "ablatedBytes": 173036,
+      "ablatedSha256": "75bbd33207fe3e87a0dce65e9768fa34946eac4966bdabbbd9f5d02a3a145b94",
+      "core": true,
+      "chapterIndex": 5,
+      "physicsTime": 24.366666666666564,
+      "form": "body",
+      "capPhase": "closed",
+      "body": {
+        "x": 1671.3781607692592,
+        "y": 390,
+        "w": 30,
+        "h": 58,
+        "vx": 66.74972307670292,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 63.913082331150996,
+        "land": 0.16666666666666666
+      },
+      "platform": null,
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.7958333333333333,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -19.979166666666668,
+            "y": -13.6125
+          },
+          "right": {
+            "x": 20.979166666666668,
+            "y": -13.6125
+          }
+        }
+      },
+      "shadow": {
+        "x": 1671.3781607692592,
+        "y": 392,
+        "radiusX": 24,
+        "radiusY": 4,
+        "opacity": 0.42,
+        "distance": 0,
+        "surface": {
+          "id": null,
+          "kind": "root",
+          "x": 1600,
+          "y": 390,
+          "w": 130,
+          "h": 170,
+          "source": "platform"
+        },
+        "clip": {
+          "x": 1600,
+          "y": 390,
+          "w": 130,
+          "h": 10
+        }
+      },
+      "pose": {
+        "rig": {
+          "theta": 0,
+          "bodyMatrix": [
+            1,
+            0,
+            0,
+            0.8333333333333334,
+            1671.3781607692592,
+            389.05951229309045
+          ],
+          "headLocalMatrix": [
+            0.999883006059714,
+            0.015296214989006253,
+            -0.015296214989006253,
+            0.999883006059714,
+            0,
+            -49
+          ],
+          "headMatrix": [
+            0.999883006059714,
+            0.012746845824171878,
+            -0.015296214989006253,
+            0.833235838383095,
+            1671.3781607692592,
+            348.22617895975714
+          ],
+          "capLocalMatrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "capMatrix": [
+            0.999883006059714,
+            0.012746845824171878,
+            -0.015296214989006253,
+            0.833235838383095,
+            1671.3781607692592,
+            348.22617895975714
+          ],
+          "gripHead": {
+            "x": -13,
+            "y": -13
+          },
+          "gripBody": {
+            "x": -12.799628283919201,
+            "y": -62.197329873633365
+          },
+          "gripWorld": {
+            "x": 1658.57853248534,
+            "y": 337.22840406506265
+          },
+          "claspBody": {
+            "x": 22.650329786233627,
+            "y": -58.654665223344495
+          },
+          "catchBody": {
+            "x": 0.2600356548131063,
+            "y": -65.99801110301513
+          },
+          "openingWorld": {
+            "x": 1671.6229002090834,
+            "y": 334.8944055456276
+          }
+        },
+        "soles": [
+          {
+            "x": 1661.1165141462393,
+            "y": 390
+          }
+        ],
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "left": {
+          "x": 1647.8688480018473,
+          "y": 377.71576229309045
+        },
+        "right": {
+          "x": 1695.8874735366712,
+          "y": 377.71576229309045
+        }
+      },
+      "screenFeet": [
+        {
+          "x": 148.4197558010594,
+          "y": 262.640625
+        }
+      ],
+      "changedPixels": 434,
+      "outsideCharacter": 0,
+      "ablationEqualsFrozenCandidatePixels": true
+    }
+  ],
+  "pauses": [
+    {
+      "name": "phone-390-book-a-up",
+      "chapterIndex": 3,
+      "updateAndRenderOpportunities": 6,
+      "bodyPlatform": "book-a",
+      "fullCanvasSha256": "be03f20debe06e76e23578e951809d826cd8e0a8546eb2e6e80be68c205c873f",
+      "fullCanvasAndViewAndRigFrozen": true,
+      "observedBrowserRAF": false
+    },
+    {
+      "name": "phone-390-book-a-down",
+      "chapterIndex": 3,
+      "updateAndRenderOpportunities": 6,
+      "bodyPlatform": "book-a",
+      "fullCanvasSha256": "34276dfc77a5b93078159d35c8d975aa069f183be70a3e1b589522683e3f8ef5",
+      "fullCanvasAndViewAndRigFrozen": true,
+      "observedBrowserRAF": false
+    },
+    {
+      "name": "phone-390-book-b-up",
+      "chapterIndex": 3,
+      "updateAndRenderOpportunities": 6,
+      "bodyPlatform": "book-b",
+      "fullCanvasSha256": "82f34cae1e5ba1b62d751027bb4bd7a347765ecec3c9adab0fff8bb53af19ee7",
+      "fullCanvasAndViewAndRigFrozen": true,
+      "observedBrowserRAF": false
+    },
+    {
+      "name": "phone-390-book-b-down",
+      "chapterIndex": 3,
+      "updateAndRenderOpportunities": 6,
+      "bodyPlatform": "book-b",
+      "fullCanvasSha256": "8fed1adad5689aa5fd33428d12d3ce96e54658569eeff5af319139e5e8ab71d0",
+      "fullCanvasAndViewAndRigFrozen": true,
+      "observedBrowserRAF": false
+    },
+    {
+      "name": "phone-390-last-stage-right",
+      "chapterIndex": 5,
+      "updateAndRenderOpportunities": 6,
+      "bodyPlatform": "last-stage",
+      "fullCanvasSha256": "e17aa715f5ea47042208435b0d7d2aa495d965a175b1b9b315d24fe974694faa",
+      "fullCanvasAndViewAndRigFrozen": true,
+      "observedBrowserRAF": false
+    },
+    {
+      "name": "phone-390-last-stage-left",
+      "chapterIndex": 5,
+      "updateAndRenderOpportunities": 6,
+      "bodyPlatform": "last-stage",
+      "fullCanvasSha256": "bbd8957ba8a88be9ef63b41dbada95c7d9df016bf59511098cb0b76c26b3402c",
+      "fullCanvasAndViewAndRigFrozen": true,
+      "observedBrowserRAF": false
+    },
+    {
+      "name": "phone-390-post-root-land",
+      "chapterIndex": 5,
+      "updateAndRenderOpportunities": 6,
+      "bodyPlatform": null,
+      "fullCanvasSha256": "6877ae92018cdf098767fd40118b1afc6dfdcea8c18ca58e713c0ef3932a2fc4",
+      "fullCanvasAndViewAndRigFrozen": true,
+      "observedBrowserRAF": false
+    },
+    {
+      "name": "phone-320-book-a-up",
+      "chapterIndex": 3,
+      "updateAndRenderOpportunities": 6,
+      "bodyPlatform": "book-a",
+      "fullCanvasSha256": "22d0602d8dbbc67658c433783aa5e0b05a4dfe9b6e0aefde1c4e71e4f34642c3",
+      "fullCanvasAndViewAndRigFrozen": true,
+      "observedBrowserRAF": false
+    },
+    {
+      "name": "phone-320-book-a-down",
+      "chapterIndex": 3,
+      "updateAndRenderOpportunities": 6,
+      "bodyPlatform": "book-a",
+      "fullCanvasSha256": "3cf873ea47c96bc69907ec63c62e4a15ce3b1f4c46a4f1f31968cfdb22e9a097",
+      "fullCanvasAndViewAndRigFrozen": true,
+      "observedBrowserRAF": false
+    },
+    {
+      "name": "phone-320-book-b-up",
+      "chapterIndex": 3,
+      "updateAndRenderOpportunities": 6,
+      "bodyPlatform": "book-b",
+      "fullCanvasSha256": "571e8413f4e70aab1bc5f8108b4ceb84c7c52a426064c0fe0e3213567b871844",
+      "fullCanvasAndViewAndRigFrozen": true,
+      "observedBrowserRAF": false
+    },
+    {
+      "name": "phone-320-book-b-down",
+      "chapterIndex": 3,
+      "updateAndRenderOpportunities": 6,
+      "bodyPlatform": "book-b",
+      "fullCanvasSha256": "bd1c89cc64abdfd4a429803efff73d0404eca4c7834a9bff3729a3793678f406",
+      "fullCanvasAndViewAndRigFrozen": true,
+      "observedBrowserRAF": false
+    },
+    {
+      "name": "phone-320-last-stage-right",
+      "chapterIndex": 5,
+      "updateAndRenderOpportunities": 6,
+      "bodyPlatform": "last-stage",
+      "fullCanvasSha256": "0bd22c5b0c73f585320c8ed9e9dca8f28e62dc05ea30ad9aefe031aada31df39",
+      "fullCanvasAndViewAndRigFrozen": true,
+      "observedBrowserRAF": false
+    },
+    {
+      "name": "phone-320-last-stage-left",
+      "chapterIndex": 5,
+      "updateAndRenderOpportunities": 6,
+      "bodyPlatform": "last-stage",
+      "fullCanvasSha256": "ae046d48ed7336886a3f036f05cdac0e06d3b28df301767b3f1c3c9210bbf5e2",
+      "fullCanvasAndViewAndRigFrozen": true,
+      "observedBrowserRAF": false
+    },
+    {
+      "name": "phone-320-post-root-land",
+      "chapterIndex": 5,
+      "updateAndRenderOpportunities": 6,
+      "bodyPlatform": null,
+      "fullCanvasSha256": "06ccbc35acc37afd2f13d51bf6ca7f7744e619b9df2f75f553a0d1c60f33f9ad",
+      "fullCanvasAndViewAndRigFrozen": true,
+      "observedBrowserRAF": false
+    }
+  ],
+  "ablation": "Only the current instance performance getter is temporarily disabled at the identical physical sample. Its pixels must match the independent frozen v29 renderer; the original getter is restored in finally.",
+  "visualInspection": "Numeric and pixel checks run here; native PNGs still require human/model image review. No image is enlarged, composited, retouched, or used as a replacement renderer."
+}

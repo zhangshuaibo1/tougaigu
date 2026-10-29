@@ -6,6 +6,9 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { runInNewContext } from 'node:vm';
 import { DreamGame } from '../dist/dream-engine.js';
+import { getTravelerMotion } from '../dist/dream-traveler-art.js';
+import { transformCapPoint } from '../dist/dream-cap-art.js';
+import { FESTIVALS } from '../dist/dream-festivals.js';
 
 const root=new URL('..',import.meta.url),noop=()=>{};
 globalThis.window={devicePixelRatio:1,addEventListener:noop,removeEventListener:noop};
@@ -24,12 +27,21 @@ cleanup=next(ast.literal_eval(n.args[0]) for n in ast.walk(jump) if isinstance(n
 print(json.dumps(dict(probe=constant('PROBE'),sampler=constant('TRAVELER_FRAME_SAMPLER'),wait=ast.literal_eval(call.args[0]),cleanup=cleanup)))
 `],{cwd:root,encoding:'utf8'});
 assert.equal(extracted.status,0,extracted.stderr);
-const sources=JSON.parse(extracted.stdout),probe=sources.probe;
-function makeGame(chapterIndex){
+const sources=JSON.parse(extracted.stdout);
+// The browser receives these legal static imports in the appended app module.
+// The VM uses the identical production helpers, without an alternate formula.
+const probeImports=[
+  "import {getTravelerMotion as __qaGetTravelerMotion} from './dream-traveler-art.js';",
+  "import {transformCapPoint as __qaTransformCapPoint} from './dream-cap-art.js';",
+];
+let probe=sources.probe;
+for(const statement of probeImports){assert(probe.includes(statement));probe=probe.replace(statement,'');}
+function makeGame(chapterIndex,options={}){
   const game=new DreamGame({getContext:()=>context,getBoundingClientRect:()=>({width:1280,height:640})});
-  game.start({chapterIndex,sound:false});
+  game.start({chapterIndex,sound:false,...options});
   const readWindow={};
-  runInNewContext(probe,{window:readWindow,game,currentHud:null,lastHudAt:0,controlSource:'keyboard',performance:{now:()=>100},save:{choices:{letter:null}}});
+  runInNewContext(probe,{window:readWindow,game,currentHud:null,lastHudAt:0,controlSource:'keyboard',performance:{now:()=>100},save:{choices:{letter:null}},
+    __qaGetTravelerMotion:getTravelerMotion,__qaTransformCapPoint:transformCapPoint});
   return {game,read:()=>JSON.parse(JSON.stringify(readWindow.__qaRead()))};
 }
 const tick=(game,n=1)=>{for(let i=0;i<n;i++)game.update(1/60);};
@@ -47,21 +59,60 @@ function walk(game,x){
   throw Error('ordinary walking did not arrive');
 }
 
-test('browser pose checks accept actual production-input observations and reject detached or stale drawing views',()=>{
-  const samples=[];
-  for(const chapter of [0,1,2]){
+function solveLamp(game,index){
+  const target=game.lanterns[index],clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+  assert.equal(game.toggleSoul(),true);
+  until(game,()=>{
+    const dx=target.x-game.soul.x,dy=target.y-game.soul.y;
+    if(Math.hypot(dx,dy)<15&&Math.hypot(game.soul.vx,game.soul.vy)<50)return true;
+    game.setInput({x:clamp(dx/75,-1,1),y:clamp(dy/75,-1,1)});return false;
+  });
+  game.setInput({x:0,y:0});tick(game,5);
+  assert.equal(game.pulse(),true);assert.equal(game.lanterns[index].lit,true);
+  assert.equal(game.recall(),true);tick(game,70);
+}
+
+function collectMoverCycle(game,read,id,samples){
+  const mover=game.movers.find(p=>p.id===id),body=game.body,walk=body.walk,deaths=game.deaths;
+  assert(mover&&body.platform===id&&body.grounded);
+  const delta=()=>mover.axis==='x'?mover.dx:mover.dy,observed={},cycleSamples=[read()];
+  let previous=null;
+  for(let i=0;i<Math.ceil((Math.PI*2/mover.speed+.15)*60);i++){
+    tick(game);assert.strictEqual(game.body,body);assert.equal(game.deaths,deaths);
+    assert.equal(body.platform,id);assert.equal(body.grounded,true);
+    assert.equal(body.vx,0);assert.equal(body.walk,walk,'transport is not walking');
+    const sample=read(),movement=delta();
+    if(i%5===4||i===Math.ceil((Math.PI*2/mover.speed+.15)*60)-1)cycleSamples.push(sample);
+    if(movement<-.01&&!observed.negative)observed.negative=sample;
+    if(movement>.01&&!observed.positive)observed.positive=sample;
+    if(previous&&previous.delta*movement<0&&!observed.turnBefore){observed.turnBefore=previous.sample;observed.turnAfter=sample;}
+    previous={sample,delta:movement};
+  }
+  assert.deepEqual(Object.keys(observed).sort(),['negative','positive','turnAfter','turnBefore']);
+  for(const [direction,snapshot] of Object.entries(observed))samples.push({phase:'ride',direction,snapshot});
+  game.setReducedMotion(true);tick(game,6);
+  samples.push({phase:'ride',reduced:true,snapshot:read()});
+  game.setReducedMotion(false);
+  return cycleSamples;
+}
+
+test('browser pose checks cover six main chapters and real stage/book support while excluding festivals and stale views',()=>{
+  const samples=[],libraryCycles=[];
+  for(const chapter of [0,1,2,3,4,5]){
     const {game,read}=makeGame(chapter);
     try{
+      const before=JSON.stringify({body:game.body,soul:game.soul,movers:game.movers,time:game.time,visualTime:game.visualTime,performance:game.travelerPerformance});
+      const idle=read();assert.deepEqual(read(),idle);
+      assert.equal(JSON.stringify({body:game.body,soul:game.soul,movers:game.movers,time:game.time,visualTime:game.visualTime,performance:game.travelerPerformance}),before,'the expanded probe must not advance or mutate anything');
+      samples.push({phase:'idle',snapshot:idle});
       assert(game.jump());tick(game,6);
       samples.push({phase:'rise',snapshot:read()});
       until(game,()=>game.body.vy>80);samples.push({phase:'fall',snapshot:read()});
       until(game,()=>game.body.grounded);samples.push({phase:'land',snapshot:read()});
-      if(chapter===2){
-        game.setReducedMotion(true);
-        assert(game.jump());tick(game,6);samples.push({phase:'rise',reduced:true,snapshot:read()});
-        until(game,()=>game.body.vy>80);samples.push({phase:'fall',reduced:true,snapshot:read()});
-        until(game,()=>game.body.grounded);samples.push({phase:'idle',reduced:true,snapshot:read()});
-      }
+      game.setReducedMotion(true);
+      assert(game.jump());tick(game,6);samples.push({phase:'rise',reduced:true,snapshot:read()});
+      until(game,()=>game.body.vy>80);samples.push({phase:'fall',reduced:true,snapshot:read()});
+      until(game,()=>game.body.grounded);samples.push({phase:'idle',reduced:true,snapshot:read()});
     }finally{game.destroy();}
   }
   // Reach the real stage from its original spawn with walking and jump input.
@@ -74,50 +125,146 @@ test('browser pose checks accept actual production-input observations and reject
     until(game,()=>game.movers[0].x<=725&&game.movers[0].dx>0);
     game.setInput({x:1});until(game,()=>game.body.platform==='stage',5);
     game.setInput({x:0});until(game,()=>Math.abs(game.body.vx)<1);
-    samples.push({phase:'ride',snapshot:read()});
+    tick(game,13);collectMoverCycle(game,read,'stage',samples);
   }finally{game.destroy();}
+  const library=makeGame(3);
+  try{
+    for(const [id,x,low] of [['book-a',691,478],['book-b',1439,473]]){
+      walk(library.game,x);until(library.game,()=>library.game.body.grounded&&Math.abs(library.game.body.vx)<1);
+      const mover=library.game.movers.find(p=>p.id===id);
+      until(library.game,()=>mover.y>=low&&mover.dy>0);
+      assert(library.game.jump());until(library.game,()=>library.game.body.grounded&&library.game.body.platform===id,3);
+      const contact=library.read();tick(library.game,13);
+      libraryCycles.push({book:id,snapshots:[contact,...collectMoverCycle(library.game,library.read,id,samples)]});
+      if(id==='book-a')solveLamp(library.game,0);
+    }
+    assert.equal(library.game.deaths,0);
+  }finally{library.game.destroy();}
+  const post=makeGame(5);
+  try{
+    walk(post.game,430);until(post.game,()=>post.game.body.grounded&&Math.abs(post.game.body.vx)<1);
+    assert.equal(post.game.plateState.get('letter'),true);solveLamp(post.game,0);
+    walk(post.game,760);until(post.game,()=>post.game.body.grounded&&Math.abs(post.game.body.vx)<1);
+    assert(post.game.jump());until(post.game,()=>post.game.body.grounded&&post.game.body.y===465,3);
+    walk(post.game,845);until(post.game,()=>post.game.body.grounded&&Math.abs(post.game.body.vx)<1);
+    const mover=post.game.movers[0];until(post.game,()=>mover.x<=850&&mover.dx>0);
+    post.game.setInput({x:1});until(post.game,()=>post.game.body.platform==='last-stage',3);
+    post.game.setInput({x:0});until(post.game,()=>post.game.body.vx===0);
+    tick(post.game,13);collectMoverCycle(post.game,post.read,'last-stage',samples);
+    assert.equal(post.game.deaths,0);
+  }finally{post.game.destroy();}
+  assert.equal(FESTIVALS.length,10);
+  for(const festival of FESTIVALS){
+    const {game,read}=makeGame(0,{festival});
+    try{
+      assert.equal(game.mode,'festival');assert.equal(game.festivalId,festival.id);
+      const snapshot=read();assert.equal(snapshot.travelerPerformance,null);assert.equal(snapshot.characterPose.performance,null);
+      samples.push({phase:null,snapshot});
+    }finally{game.destroy();}
+  }
   const folder=mkdtempSync(join(tmpdir(),'tougaigu-browser-pose-'));
   try{
-    const file=join(folder,'actual-observations.json');writeFileSync(file,JSON.stringify(samples));
+    const file=join(folder,'actual-observations.json');writeFileSync(file,JSON.stringify({samples,libraryCycles}));
     const python=String.raw`
 import ast,copy,json,math,sys
 from pathlib import Path
 tree=ast.parse(Path('scripts/browser-smoke.py').read_text())
 names={'traveler_pose_record','validate_traveler_pose'}
 exec(compile(ast.Module(body=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in names],type_ignores=[]),'actual-browser-pose-checks','exec'))
-samples=json.loads(Path(sys.argv[1]).read_text())
+payload=json.loads(Path(sys.argv[1]).read_text());samples=payload['samples']
 for sample in samples:validate_traveler_pose(sample['snapshot'],sample['phase'],sample.get('reduced'))
+library=ast.parse(Path('scripts/browser_library_v26.py').read_text())
+exec(compile(ast.Module(body=[n for n in library.body if isinstance(n,ast.FunctionDef) and n.name in {'rider_sample','validate_library_rider_trace'}],type_ignores=[]),'actual-library-pose-route','exec'))
+class Driver:validate_traveler_pose=staticmethod(validate_traveler_pose)
+for cycle in payload['libraryCycles']:
+    riders=[rider_sample(s,cycle['book'],Driver) for s in cycle['snapshots']]
+    result=validate_library_rider_trace(riders,cycle['book'],True)
+    assert result['actualLandingSamples']>=1 and result['actualRideSamples']>70 and min(result['verticalPoseDirections'].values())>0
+    assert all(r['travelerPose']==traveler_pose_record(s) for r,s in zip(riders,cycle['snapshots']))
+    bad=copy.deepcopy(cycle['snapshots'][-1]);bad['characterPose']['legs'][0]['worldFoot']['y']+=1
+    try:rider_sample(bad,cycle['book'],Driver)
+    except AssertionError as error:assert 'actual body matrix' in str(error)
+    else:raise AssertionError('library collection bypassed the actual per-frame pose gate')
 rise=next(s['snapshot'] for s in samples if s['phase']=='rise' and s['snapshot']['chapterIndex']==2 and not s.get('reduced'))
 land=next(s['snapshot'] for s in samples if s['phase']=='land' and s['snapshot']['chapterIndex']==2)
 ride=next(s['snapshot'] for s in samples if s['phase']=='ride')
 reduced=next(s['snapshot'] for s in samples if s.get('reduced') and s['phase']=='rise')
+carriers={key:next(s['snapshot'] for s in samples if s['phase']=='ride' and not s.get('reduced') and s['snapshot']['body']['platform']==key) for key in ['stage','book-a','book-b','last-stage']}
+rejected=0
 def set_view(s,key,value):
     s['travelerPerformance'][key]=value
     s['characterPose']['performance']=copy.deepcopy(s['travelerPerformance'])
 def reject(source,phase,mutate,needle):
+    global rejected
     sample=copy.deepcopy(source);mutate(sample)
     try:validate_traveler_pose(sample,phase)
-    except AssertionError as error:assert needle in str(error),(needle,str(error))
+    except AssertionError as error:
+        assert needle in str(error),(needle,str(error));rejected+=1
     else:raise AssertionError('broken pose evidence accepted: '+needle)
 reject(rise,'rise',lambda s:s['characterPose'].update(performance=None),'lost the production performance view')
 reject(rise,'rise',lambda s:s['characterPose']['arms']['left']['requested'].update(x=-16,y=-16),'actual free arm did not use')
 reject(rise,'rise',lambda s:s['body'].update(vy=200),'rise lacks real upward motion')
 reject(land,'land',lambda s:s.update(platforms=[],movers=[]),'has no real support')
 reject(land,'land',lambda s:set_view(s,'landingAge',.201),'short current contact response')
-reject(ride,'ride',lambda s:s['body'].update(platform=None),'lacks actual stage attachment')
+reject(ride,'ride',lambda s:s['body'].update(platform=None),'lacks actual mover attachment')
 reject(reduced,'rise',lambda s:set_view(s,'rise',.1),'retained decorative amplitude')
 reject(reduced,'rise',lambda s:set_view(s,'freeArms',dict(left=dict(x=-17,y=-16),right=dict(x=17,y=-16))),'retained a free-arm animation')
-outside=copy.deepcopy(samples[0]['snapshot']);outside['travelerPerformance']=rise['travelerPerformance']
-reject(outside,'rise',lambda s:None,'leaked outside its scope')
-print(str(len(samples))+' actual input/probe samples accepted; nine independent regressions rejected; offline only')
+for sample in samples:
+    if sample['snapshot']['mode']=='festival':
+        outside=copy.deepcopy(sample['snapshot']);outside['travelerPerformance']=copy.deepcopy(rise['travelerPerformance'])
+        outside['characterPose']['performance']=copy.deepcopy(outside['travelerPerformance'])
+        reject(outside,None,lambda s:None,'leaked outside its six-chapter scope')
+for key,values in [('chapterIndex',[-1,6,1.5,'0',None,True,False]),('mode',['festival','survivor','',None])]:
+    for value in values:
+        outside=copy.deepcopy(rise);outside[key]=value
+        reject(outside,None,lambda s:None,'leaked outside its six-chapter scope')
+        outside['travelerPerformance']=None;outside['characterPose']['performance']=None
+        validate_traveler_pose(outside)
+
+def attached(s):return next(m for m in s['movers'] if m['id']==s['body']['platform'])
+def remove_mover(s):
+    # An authored/static copy at exactly the same coordinates is not the
+    # current runtime attachment, even when the contact geometry still fits.
+    s['platforms'].append(copy.deepcopy(attached(s)));s['movers']=[]
+for key,source in carriers.items():
+    reject(source,'ride',lambda s:attached(s).update(kind='scenery'),'ID, kind or axis disagrees')
+    reject(source,'ride',lambda s:attached(s).update(axis='y' if attached(s)['axis']=='x' else 'x'),'ID, kind or axis disagrees')
+    reject(source,'ride',remove_mover,'lacks actual mover attachment')
+    reject(source,'ride',lambda s:s['body'].update(y=s['body']['y']-.1),'lacks actual mover attachment')
+    reject(source,'ride',lambda s:s['body'].update(x=attached(s)['x']+attached(s)['w']+100),'lacks actual mover attachment')
+    reject(source,'ride',lambda s:set_view(s,'platformId','old-'+key),'lost the actual mover attachment')
+    reject(source,'ride',lambda s:set_view(s,'platformKind','book' if attached(s)['kind']=='stage' else 'stage'),'lost the actual mover attachment')
+    reject(source,'ride',lambda s:set_view(s,'platformAxis','y' if attached(s)['axis']=='x' else 'x'),'lost the actual mover attachment')
+
+vertical=carriers['book-a'];horizontal=carriers['last-stage']
+reject(vertical,'ride',lambda s:attached(s).pop('axis'),'ID, kind or axis disagrees')
+reject(vertical,'ride',lambda s:set_view(s,'platformVerticalVelocity',s['travelerPerformance']['platformVerticalVelocity']+10),'real displacement and consumed step')
+reject(horizontal,'ride',lambda s:set_view(s,'platformVelocity',s['travelerPerformance']['platformVelocity']+10),'real displacement and consumed step')
+reject(vertical,'ride',lambda s:s.update(travelerStepSeconds=0),'actual consumed step')
+reject(vertical,'ride',lambda s:s.update(travelerStepSeconds=s['travelerStepSeconds']/2),'real displacement and consumed step')
+reject(vertical,'ride',lambda s:set_view(s,'balance',.2),'real movement axis')
+reject(horizontal,'ride',lambda s:set_view(s,'verticalBalance',.2),'real movement axis')
+reject(vertical,'ride',lambda s:set_view(s,'verticalBalance',-s['travelerPerformance']['verticalBalance']),'real movement axis')
+reject(vertical,'ride',lambda s:set_view(s,'ride',.2),'transport fabricated a walking or standing amount')
+reject(vertical,'ride',lambda s:s['characterPose'].update(walking=True),'acquired a walking cycle')
+reject(vertical,'ride',lambda s:s['characterPose']['legs'][0]['worldFoot'].update(y=s['body']['y']+2),'does not use the actual body matrix')
+def raise_sole(s):
+    leg=s['characterPose']['legs'][0];matrix=s['characterPose']['bodyMatrix']
+    leg['foot']['y']-=2;leg['worldFoot']['x']-=2*matrix[2];leg['worldFoot']['y']-=2*matrix[3]
+reject(vertical,'ride',raise_sole,'sole left the real body contact height')
+for sample in samples:
+    if sample['phase']=='ride' and sample.get('reduced'):
+        reject(sample['snapshot'],'ride',lambda s:set_view(s,'verticalBalance',.1),'retained decorative amplitude')
+assert rejected==77,rejected
+print(str(len(samples))+' actual input/probe samples accepted; '+str(rejected)+' independent regressions rejected; six chapters and ten festivals; offline only')
 `;
     const result=spawnSync('python3',['-c',python,file],{cwd:root,encoding:'utf8'});
     assert.equal(result.status,0,result.stderr||result.error?.message||result.stdout);
-    assert.match(result.stdout,/13 actual input\/probe samples accepted; nine independent regressions rejected/);
+    assert.match(result.stdout,/72 actual input\/probe samples accepted; 77 independent regressions rejected; six chapters and ten festivals; offline only/);
   }finally{rmSync(folder,{recursive:true,force:true});}
 });
 
-test('the jump driver focuses, observes before keydown and disposes on every exit; null performance remains valid',()=>{
+test('the jump driver focuses, observes before keydown and disposes on every exit with six-chapter performance',()=>{
   const app=readFileSync(new URL('../dist/dream-app.js',import.meta.url),'utf8');
   const start=app.indexOf("document.addEventListener('keydown', event => {");
   const end=app.indexOf("document.addEventListener('keyup'",start);
@@ -142,12 +289,12 @@ test('the jump driver focuses, observes before keydown and disposes on every exi
     }
     keydown(space(new Element('CANVAS')));
     const rising=read();
-    assert.equal(rising.travelerPerformance,null,'chapter one intentionally has no third-chapter acting view');
+    assert.equal(rising.travelerPerformance.phase,'rise','chapter one now uses the same real acting view');
     assert.equal(rising.body.grounded,false);assert.equal(rising.body.vy,-600);
     const observed={token:'current',status:'sampling',poses:{rise:rising}};
     const probeWindow={__qaTravelerFrames:{token:'current',read:()=>observed}};
     const predicate=runInNewContext('('+sources.wait+')',{window:probeWindow});
-    assert.equal(predicate({token:'current',key:'rise'}),observed,'a captured chapter-one null performance must remain observable');
+    assert.equal(predicate({token:'current',key:'rise'}),observed,'a captured chapter-one performance must remain observable');
     assert.equal(predicate({token:'current',key:'fall'}),false,'a missing phase must not pass');
     assert.equal(predicate({token:'old',key:'rise'}).status,'missing','another run token must not reuse the observed rise');
     delete probeWindow.__qaTravelerFrames;
@@ -317,7 +464,7 @@ test('pre-input frame observation preserves missed phases but rejects resets, re
     assert.equal(delayed.view().input.capture.sample.grounded,true);
     assert.equal(delayed.view().input.after.sample.vy,-600);
     assert.equal(delayed.view().input.after.defaultPrevented,true,'the production listener ran before afterKey');
-    assert.equal(delayed.view().poses.rise.travelerPerformance,null);
+    assert.equal(delayed.view().poses.rise.travelerPerformance.phase,'rise');
     delayed.advance(27);
     assert.equal(delayed.game.body.vy,7.5);
     assert.equal(delayed.view().poses.fall,undefined,'7.5 is not the required >80 fall');
@@ -350,6 +497,31 @@ test('pre-input frame observation preserves missed phases but rejects resets, re
     assert(view.poses.fall.body.vy>80&&view.poses.land.travelerPerformance.phase==='land');
     assert(view.poses.land.travelerPerformance.landingAge<.2);
   }finally{paused.destroy();}
+
+  // The same unchanged observer also retains the greenhouse contact while
+  // ordinary horizontal input continues to the original x=1390 stop. The
+  // late consumer sees idle, but may only claim land from the captured frame.
+  const shelf=harness(1);
+  try{
+    walk(shelf.game,1220);until(shelf.game,()=>shelf.game.body.grounded&&Math.abs(shelf.game.body.vx)<1);
+    assert.equal(shelf.game.body.y,560);assert.equal(shelf.game.deaths,0);
+    shelf.install('jump');shelf.dispatch();
+    for(let i=0;i<600;i++){
+      const body=shelf.game.body;
+      if(Math.abs(1390-body.x)<=12&&Math.abs(body.vx)<40){shelf.game.setInput({x:0});break;}
+      const error=1390-(body.x+body.vx*Math.abs(body.vx)/3300);
+      shelf.game.setInput({x:Math.abs(error)>12?Math.sign(error):0});shelf.frame(2);
+      assert(i<599,'normal shelf walking did not reach its stop');
+    }
+    shelf.advance(20);
+    const view=shelf.view();assert.equal(view.status,'complete');shelf.stopped();
+    assert.equal(view.poses.land.body.y,445);assert.equal(view.poses.land.travelerPerformance.phase,'land');
+    assert(view.poses.land.travelerPerformance.landingAge<.2);
+    assert.equal(shelf.read().travelerPerformance.phase,'idle','the deliberately late reader must not invent a current landing');
+    assert(view.poses.rise.body.vy<-80&&view.poses.fall.body.vy>80);
+    assert.equal(shelf.game.deaths,0);
+    const cleaned=shelf.cleanup('jump');assert.equal(cleaned.oldPosesCleared,true);assert.equal(cleaned.removed,true);
+  }finally{shelf.destroy();}
 
   for(const reset of ['same-chapter-restart','feather-body-replacement']){
     const h=harness();
@@ -398,4 +570,94 @@ test('pre-input frame observation preserves missed phases but rejects resets, re
     noFrames.install('jump');noFrames.clockOnly(10501);
     assert.equal(noFrames.view().status,'timeout');assert.equal(Object.keys(noFrames.view().poses).length,0);noFrames.stopped();
   }finally{noFrames.destroy();}
+});
+
+test('the greenhouse shelf driver keeps one Space and the original walk, then always disposes its observer',()=>{
+  const result=spawnSync('python3',['-c',String.raw`
+import ast,asyncio,copy,json,time
+from pathlib import Path
+tree=ast.parse(Path('scripts/browser-smoke.py').read_text())
+function=next(n for n in tree.body if isinstance(n,ast.AsyncFunctionDef) and n.name=='sample_greenhouse_shelf_jump')
+exec(compile(ast.Module(body=[function],type_ignores=[]),'actual-shelf-driver','exec'))
+TRAVELER_FRAME_SAMPLER='the unchanged original observer'
+before=dict(mode='story',chapterIndex=1,state='playing',form='body',reducedMotion=False,
+            runId=4,bodyIdentity=8,deaths=0,time=10,
+            body=dict(x=1220,y=560,vx=0,vy=0,grounded=True,platform=None),travelerPerformance=dict(phase='idle'))
+def captured(phase):
+    s=copy.deepcopy(before);s['time']={'rise':10.01,'fall':10.45,'land':10.7}[phase]
+    s['body'].update(x={'rise':1220,'fall':1300,'land':1340}[phase],y={'rise':559,'fall':435,'land':445}[phase],
+                     vy={'rise':-600,'fall':120,'land':0}[phase],grounded=phase=='land')
+    s['travelerPerformance']=dict(phase=phase,landingAge=0 if phase=='land' else None)
+    return s
+class Keyboard:
+    def __init__(self,page):self.page=page
+    async def down(self,key):
+        assert key=='Space' and self.page.installed and self.page.focused
+        self.page.calls.append('down');self.page.downs+=1
+        if self.page.failure=='down':raise RuntimeError('down')
+    async def up(self,key):assert key=='Space';self.page.calls.append('up');self.page.ups+=1
+    async def press(self,key):raise AssertionError('the driver must not repeat the jump')
+class Canvas:
+    def __init__(self,page):self.page=page
+    async def focus(self):self.page.calls.append('focus');self.page.focused=self.page.failure!='focus'
+    async def evaluate(self,expression):self.page.calls.append('verify-focus');return self.page.focused
+class Page:
+    def __init__(self,failure=None):
+        self.failure=failure;self.calls=[];self.installed=False;self.focused=False;self.driven=False;self.downs=0;self.ups=0;self.keyboard=Keyboard(self)
+    def locator(self,selector):assert selector=='#dream-canvas';return Canvas(self)
+    async def wait_for_function(self,expression,timeout):
+        self.calls.append('wait-shelf' if self.driven else 'wait-entry')
+        assert timeout==(5000 if self.driven else 3500)
+        if self.failure=='wait-shelf' and self.driven:raise RuntimeError('wait-shelf')
+    async def evaluate(self,expression,arg=None):
+        if expression==TRAVELER_FRAME_SAMPLER:
+            self.calls.append('install');self.installed=True;self.token=arg;return {}
+        if 'const stopped=sampler.stop' in expression:
+            assert self.installed and arg==self.token
+            self.calls.append('dispose');self.installed=False
+            return dict(pendingFrame=self.failure=='cleanup',pendingTimer=False,oldPosesCleared=True,removed=True)
+        if expression=='window.__qaRead()':
+            if not self.driven:return copy.deepcopy(before)
+            if self.failure=='settled':raise RuntimeError('settled')
+            s=captured('land');s['time']=11.5;s['body']['x']=1390;s['travelerPerformance']=dict(phase='idle')
+            if self.failure=='different-body':s['bodyIdentity']+=1
+            return s
+        if 'window.__qaTravelerFrames' in expression:
+            assert arg==self.token
+            return dict(token=self.token,status='complete',pendingFrame=False,pendingTimer=False,
+                        activeMs=700,elapsedMs=1500,initial=before,frames=[],droppedFrames=0,input={})
+        raise AssertionError('unexpected browser operation: '+expression)
+async def drive_to(page,x):
+    assert x==1390 and page.calls[-1]=='up' and page.downs==page.ups==1
+    page.calls.append('drive');page.driven=True
+    if page.failure=='drive':raise RuntimeError('drive')
+async def await_traveler_pose(page,token,phase,reduced_motion):
+    assert token==page.token and page.driven and reduced_motion is False
+    page.calls.append(phase)
+    if page.failure==phase:raise RuntimeError(phase)
+    s=captured(phase)
+    if phase=='land' and page.failure=='wrong-shelf':s['body']['y']=560
+    return s
+def traveler_pose_record(snapshot):return copy.deepcopy(snapshot)
+async def run():
+    page=Page();result=await sample_greenhouse_shelf_jump(page,'shelf-order')
+    assert page.calls==['wait-entry','focus','verify-focus','install','down','up','drive','wait-shelf','rise','fall','land','dispose'],page.calls
+    assert result['landed']['body']['y']==445 and result['landed']['travelerPerformance']['phase']=='land'
+    assert result['settledBody']['x']==1390 and result['observerCleanup']['oldPosesCleared']
+    for failure in ['down','drive','wait-shelf','settled','rise','fall','land','wrong-shelf','different-body','cleanup']:
+        page=Page(failure)
+        try:await sample_greenhouse_shelf_jump(page,'failure-'+failure)
+        except (RuntimeError,AssertionError):pass
+        else:raise AssertionError('shelf driver ignored '+failure)
+        assert page.downs==page.ups==1 and page.calls[-1]=='dispose' and not page.installed,(failure,page.calls)
+    focus=Page('focus')
+    try:await sample_greenhouse_shelf_jump(focus,'focus')
+    except AssertionError as error:assert 'Space target' in str(error)
+    else:raise AssertionError('failed focus was ignored')
+    assert focus.downs==focus.ups==0 and not focus.installed
+    print('one Space before the original walk; delayed land retained; ten exceptional exits dispose; failed focus sends no jump')
+asyncio.run(run())
+`],{cwd:root,encoding:'utf8'});
+  assert.equal(result.status,0,result.stderr||result.error?.message||result.stdout);
+  assert.match(result.stdout,/ten exceptional exits dispose; failed focus sends no jump/);
 });

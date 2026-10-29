@@ -3,13 +3,13 @@ import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
 
 const helpers=String.raw`
-import ast,asyncio,copy,json,math
+import ast,asyncio,base64,copy,json,math,tempfile
 from pathlib import Path
 from urllib.parse import urlparse
 def load(path,names):
     tree=ast.parse(Path(path).read_text())
     exec(compile(ast.Module(body=[n for n in tree.body if isinstance(n,(ast.FunctionDef,ast.AsyncFunctionDef,ast.ClassDef)) and n.name in names],type_ignores=[]),path,'exec'),globals())
-load('scripts/browser_library_v26.py',{'validate_library_rider_trace','validate_library_paint','validate_library_abort','LibraryAbortGate'})
+load('scripts/browser_library_v26.py',{'validate_library_rider_trace','validate_library_paint','validate_library_abort','LibraryAbortGate','pause_library'})
 load('scripts/browser-smoke.py',{'validate_request_failures','tap_control'})
 LIBRARY_FILE='library-painted-v26.webp'
 `;
@@ -25,11 +25,24 @@ period=2*math.pi/.85
 samples=[]
 for i in range(81):
     t=period*i/80;y=430+62*math.sin(.85*t)
-    samples.append(dict(runId=1,bodyIdentity=9,chapterIndex=3,mode='story',state='playing',form='body',deaths=0,time=t,visualTime=t,
-        body=dict(x=691,y=y,w=30,vx=0,grounded=True,platform='book-a'),input=dict(x=0,y=0),
-        mover=dict(id='book-a',x=615,y=y,w=155,h=20,dy=62*.85*math.cos(.85*t)/60,range=62,speed=.85)))
+    velocity=62*.85*math.cos(.85*t)
+    sample=dict(runId=1,bodyIdentity=9,chapterIndex=3,mode='story',state='playing',form='body',deaths=0,time=t,visualTime=t,
+        body=dict(x=691,y=y,w=30,vx=0,walk=12,grounded=True,platform='book-a'),input=dict(x=0,y=0),
+        mover=dict(id='book-a',kind='book',axis='y',x=615,y=y,w=155,h=20,dy=velocity/60,range=62,speed=.85))
+    sample['travelerPose']={key:copy.deepcopy(sample[key]) for key in ['runId','bodyIdentity','chapterIndex','mode','state','form','deaths','time','visualTime','body']}
+    sample['travelerPose'].update(reducedMotion=False,travelerPerformance=dict(phase='ride',platformId='book-a',platformKind='book',platformAxis='y',platformVerticalVelocity=velocity,verticalBalance=velocity/90,landingAge=None))
+    samples.append(sample)
 result=validate_library_rider_trace(samples,'book-a',True)
 assert result['fullCycle'] and result['maxSoleError']==0 and result['verticalTravel']>120
+assert result['actualRideSamples']==81 and min(result['verticalPoseDirections'].values())>0
+with_contact=copy.deepcopy(samples)
+for sample in with_contact[:2]:sample['travelerPose']['travelerPerformance'].update(phase='land',landingAge=sample['visualTime'])
+assert validate_library_rider_trace(with_contact,'book-a',True)['actualLandingSamples']==2
+reduced=copy.deepcopy(samples)
+for sample in reduced:
+    sample['travelerPose']['reducedMotion']=True
+    sample['travelerPose']['travelerPerformance']['verticalBalance']=0
+assert validate_library_rider_trace(reduced,'book-a',True)['actualRideSamples']==81
 def reject(change,needle):
     bad=copy.deepcopy(samples);change(bad)
     try:validate_library_rider_trace(bad,'book-a',True)
@@ -48,10 +61,20 @@ reject(lambda s:s[40]['body'].update(x=693),'separated from the real support')
 reject(lambda s:s[40]['input'].update(x=1),'held direction input')
 reject(lambda s:s[40]['body'].update(vx=3),'held direction input')
 reject(lambda s:s.pop(),'omitted part')
-reject(lambda s:[p['mover'].update(dy=1) for p in s],'both physical travel directions')
-print('full floating-book carry accepted; 14 missing or falsified rider observations rejected')
+reject(lambda s:[(p['mover'].update(dy=1),p['travelerPose']['travelerPerformance'].update(platformVerticalVelocity=60,verticalBalance=2/3)) for p in s],'both physical travel directions')
+reject(lambda s:s[40]['body'].update(walk=13),'actual walking cycle')
+reject(lambda s:s[40]['travelerPose'].update(time=s[40]['time']+.01),'different frame')
+reject(lambda s:s[40]['travelerPose']['body'].update(y=s[40]['body']['y']+1),'different frame')
+reject(lambda s:s[40]['travelerPose']['travelerPerformance'].update(platformAxis='x'),'actual vertical support')
+reject(lambda s:s[40]['travelerPose']['travelerPerformance'].update(platformKind='stage'),'actual vertical support')
+reject(lambda s:s[40]['travelerPose']['travelerPerformance'].update(phase='rise'),'neither contact nor established riding')
+reject(lambda s:s[40]['travelerPose']['travelerPerformance'].update(phase='land',landingAge=.01),'restarted the landing response')
+reject(lambda s:s[40]['travelerPose']['travelerPerformance'].update(platformVerticalVelocity=60),'real vertical travel direction')
+reject(lambda s:s[40]['travelerPose']['travelerPerformance'].update(verticalBalance=.5),'opposed the real vertical travel direction')
+reject(lambda s:s[40]['travelerPose'].update(reducedMotion=True),'setting changed')
+print('normal, initial contact and reduced book carry accepted; 24 missing or falsified rider observations rejected')
 `);
-  assert.match(output,/14 missing or falsified/);
+  assert.match(output,/24 missing or falsified/);
 });
 
 test('the exact failed primary image cannot absorb another request, another error or a hidden retry',()=>{
@@ -151,4 +174,54 @@ async def main():
 asyncio.run(main())
 `);
   assert.match(output,/actual CDP touch sequence/);
+});
+
+test('library pause compares the entire validated traveler pose within the original six passive frames',()=>{
+  const output=run(String.raw`
+before=dict(state='paused',chapterIndex=3,runId=1,bodyIdentity=5,time=12,visualTime=12,
+            body=dict(x=691,y=430,platform='book-a'),movers=[dict(id='book-a',y=430)],
+            libraryPaint=dict(frame=True),storyNPC=None,reducedMotion=False,travelerPerformance=dict(phase='ride'),
+            pose=dict(bodyMatrix=[1,0,0,1,691,430],travelerStepSeconds=1/60,
+                      travelerPerformance=dict(phase='ride',verticalBalance=.4),
+                      arms=dict(left=dict(world=dict(x=670,y=410))),legs=[dict(worldFoot=dict(x=684,y=430))]))
+class Driver:
+    def __init__(self):self.samples=[]
+    def validate_traveler_pose(self,s,phase,reduced):
+        assert phase=='ride' and reduced is False
+        self.samples.append(copy.deepcopy(s['pose']));return copy.deepcopy(s['pose'])
+class Locator:
+    async def wait_for(self):pass
+    async def evaluate(self,expression):return 'data:image/png;base64,c2FtZSBwaXhlbHM='
+class Page:
+    def __init__(self,change=None):self.change=change;self.reads=0;self.raf_checks=0;self.resumed=False;self.keyboard=self
+    async def press(self,key):assert key=='Escape'
+    def locator(self,selector):assert selector in ['#pause-dialog[open]','#dream-canvas'];return Locator()
+    async def evaluate(self,expression):
+        if expression=='window.__qaRead()':
+            self.reads+=1;s=copy.deepcopy(before)
+            if self.reads==2 and self.change:self.change(s['pose'])
+            return s
+        assert 'for(let i=0;i<6;i++)' in expression and 'requestAnimationFrame(resolve)' in expression
+        self.raf_checks+=1
+    async def wait_for_function(self,expression):assert self.resumed and "state==='playing'" in expression
+async def click_input(page,selector,driver,touch=False):assert selector=='#stage-resume';page.resumed=True
+async def main():
+    with tempfile.TemporaryDirectory() as output:
+        page=Page();driver=Driver();result=await pause_library(page,output,'unchanged',driver)
+        assert page.raf_checks==1 and page.reads==2 and len(driver.samples)==2
+        assert result['passiveFrames']==6 and result['fullTravelerPoseFrozen'] and result['travelerPose']==before['pose']
+        assert page.resumed
+        changes=[lambda p:p['bodyMatrix'].__setitem__(5,431),lambda p:p.update(travelerStepSeconds=.02),
+                 lambda p:p['travelerPerformance'].update(verticalBalance=.5),
+                 lambda p:p['arms']['left']['world'].update(x=671),lambda p:p['legs'][0]['worldFoot'].update(y=431)]
+        for change in changes:
+            page=Page(change);driver=Driver()
+            try:await pause_library(page,output,'changed',driver)
+            except AssertionError as error:assert 'actual full traveler pose' in str(error)
+            else:raise AssertionError('changing paused presentation escaped the six-frame comparison')
+            assert page.raf_checks==1 and page.reads==2 and not page.resumed
+    print('original six frames compare view, consumed step, rig, arm and foot without new browser reads')
+asyncio.run(main())
+`);
+  assert.match(output,/original six frames compare view, consumed step, rig, arm and foot/);
 });

@@ -81,7 +81,7 @@ test('an ordinary jump has distinct free-arm poses and a real .2s landing, witho
 });
 
 test('stage acting requires the real attachment and contact geometry; its view is pure and has no ornamental clock', () => {
-  const stage = Object.freeze({ id: 'stage', kind: 'stage', x: 900, y: 465, w: 185, h: 20, dx: 2 });
+  const stage = Object.freeze({ id: 'stage', kind: 'stage', axis: 'x', x: 900, y: 465, w: 185, h: 20, dx: 2, dy: 0 });
   const body = Object.freeze({ x: 1000, y: 465, w: 30, h: 58, vx: 0, vy: 0, face: 1, grounded: true, platform: 'stage' });
   const state = Object.freeze(createTravelerPerformance());
   const context = Object.freeze({ mode: 'story', chapterIndex: 2, body, movers: Object.freeze([stage]), time: 8, runId: 1, deaths: 0 });
@@ -171,8 +171,15 @@ test('real airborne E reversals retain the grip and catch, and soul landings/res
     game.jump(); while (!game.body.grounded) tick(game);
     assert.equal(game.getTravelerPerformanceView().phase, 'land');
     game.restart(); assert.equal(game.getTravelerPerformanceView().phase, 'idle');
-    for (const chapterIndex of [0, 1, 3]) {
+    for (const chapterIndex of [0, 1, 2, 3, 4, 5]) {
       game.start({ chapterIndex, sound: false }); game.jump(); tick(game, 8);
+      assert.equal(game.getTravelerPerformanceView().phase, 'rise');
+      assert.equal(checkRigAndSoles(game).performance.phase, 'rise');
+    }
+    for (const id of ['halloween', 'thanksgiving', 'christmas', 'newyear', 'spring', 'lantern', 'valentine', 'dragonboat', 'qixi', 'midautumn']) {
+      game.start({ festival: { id }, sound: false }); game.jump(); tick(game, 8);
+      assert.equal(game.mode, 'festival');
+      assert.equal(game.travelerPerformance, null);
       assert.equal(game.getTravelerPerformanceView(), null);
       assert.deepEqual(game.getCharacterPresentation(), BaseGame.prototype.getCharacterPresentation.call(game));
     }
