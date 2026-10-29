@@ -1,0 +1,2490 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "source": "served production HTML; app module has a read-only coordinate probe appended in-memory; all actions use DOM/input",
+  "cases": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "version": "19.0.0",
+      "ticketCollectedAndReturned": true,
+      "pauseFrozen": true,
+      "noHorizontalOverflow": true,
+      "chapterCompleted": true,
+      "input": "keyboard",
+      "rafIntervalMs": {
+        "samples": 60,
+        "p50": 16.699999999999818,
+        "p95": 16.800000000000182
+      },
+      "frameSamplePhase": "initial active idle; not a physical-device benchmark",
+      "greenhouse": {
+        "enteredViaChapterMap": true,
+        "input": "keyboard",
+        "seedCollectedAndPlanted": true,
+        "seedMemoryIndex": 1,
+        "pot": "ticket",
+        "observedPlantStages": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "seedReturnPauseFrozen": true,
+        "wrongAnswersRejected": 2,
+        "mushroomBounceObserved": true,
+        "rootCrossed": true,
+        "routeEvidence": {
+          "mushroomBounce": {
+            "body": {
+              "x": 745.5,
+              "y": 560,
+              "w": 30,
+              "h": 58,
+              "vx": 240,
+              "vy": -850,
+              "grounded": false,
+              "platform": null
+            },
+            "mushroom": {
+              "x": 745,
+              "y": 560,
+              "w": 115,
+              "boing": 0.75,
+              "cooldown": 0.6
+            }
+          },
+          "aboveRoot": {
+            "body": {
+              "x": 901.5,
+              "y": 299.99999999999943,
+              "w": 30,
+              "h": 58,
+              "vx": 240,
+              "vy": 27.5,
+              "grounded": false,
+              "platform": null
+            },
+            "root": {
+              "x": 895,
+              "y": 385,
+              "w": 145,
+              "h": 175
+            }
+          },
+          "landedBeyondRoot": {
+            "x": 1217,
+            "y": 560,
+            "w": 30,
+            "h": 58,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "platform": null
+          },
+          "shelfLanding": {
+            "x": 1381,
+            "y": 445,
+            "w": 30,
+            "h": 58,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "platform": null
+          },
+          "pastShadow": {
+            "x": 1601,
+            "y": 560,
+            "w": 30,
+            "h": 58,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "platform": null
+          }
+        },
+        "chapterCompleted": true,
+        "noRespawns": true,
+        "noHorizontalOverflow": true,
+        "stationRecordPreserved": true,
+        "reloadPreservedSeedAndLamps": true
+      },
+      "letterEcho": {
+        "choiceViaCompletedOutro": true,
+        "outroPagesRead": [
+          "01 / 03",
+          "02 / 03",
+          "03 / 03"
+        ],
+        "revisitedViaChapterMap": true,
+        "rewrittenViaDiary": true,
+        "send": {
+          "choice": "send",
+          "observedPlaying": true,
+          "pausedAtSeconds": 0.7166666666666672,
+          "pauseFrozen": true,
+          "settledSeconds": 2.8,
+          "reopenDidNotReplay": true
+        },
+        "keep": {
+          "choice": "keep",
+          "observedPlaying": true,
+          "pausedAtSeconds": 0.7166666666666672,
+          "pauseFrozen": true,
+          "settledSeconds": 2.8,
+          "reopenDidNotReplay": true
+        },
+        "storedChoice": "keep",
+        "rewardGrantsUnchanged": true,
+        "collectiblesUnchanged": true,
+        "chapterResultsUnchanged": true,
+        "noHorizontalOverflow": true,
+        "reloadRestoredKeep": true
+      },
+      "pageErrors": [],
+      "httpErrors": [],
+      "instrumentedAppURLs": [
+        "http://127.0.0.1:8080/dream-app.js?v=19.0.0",
+        "http://127.0.0.1:8080/dream-app.js?v=19.0.0"
+      ],
+      "resources": [
+        {
+          "name": "dream.css?v=19.0.0",
+          "duration": 14.199999999982538,
+          "transferSize": 65255
+        },
+        {
+          "name": "company-footer.css?v=19.0.0",
+          "duration": 17,
+          "transferSize": 2085
+        },
+        {
+          "name": "game-shell.css?v=19.0.0",
+          "duration": 17.20000000001164,
+          "transferSize": 8810
+        },
+        {
+          "name": "dream-play.css?v=19.0.0",
+          "duration": 23.79999999998836,
+          "transferSize": 11605
+        },
+        {
+          "name": "cap-portraits.css?v=19.0.0",
+          "duration": 20.29999999998836,
+          "transferSize": 2503
+        },
+        {
+          "name": "cap-play.css?v=19.0.0",
+          "duration": 23.099999999976717,
+          "transferSize": 9533
+        },
+        {
+          "name": "festival.css?v=19.0.0",
+          "duration": 27.699999999982538,
+          "transferSize": 20489
+        },
+        {
+          "name": "lost-play.css?v=19.0.0",
+          "duration": 29.800000000017462,
+          "transferSize": 7654
+        },
+        {
+          "name": "cap-activities.css?v=19.0.0",
+          "duration": 29.300000000017462,
+          "transferSize": 4211
+        },
+        {
+          "name": "portrait-hero.svg",
+          "duration": 29.89999999999418,
+          "transferSize": 11898
+        },
+        {
+          "name": "portrait-hero-open.svg",
+          "duration": 31.79999999998836,
+          "transferSize": 13008
+        },
+        {
+          "name": "portrait-moth.svg",
+          "duration": 31.70000000001164,
+          "transferSize": 3875
+        },
+        {
+          "name": "dream-app.js?v=19.0.0",
+          "duration": 53.59999999997672,
+          "transferSize": 63902
+        },
+        {
+          "name": "company-wordmark.webp",
+          "duration": 10.39999999999418,
+          "transferSize": 7452
+        },
+        {
+          "name": "dream-engine.js?v=19.0.0",
+          "duration": 15.60000000000582,
+          "transferSize": 10043
+        },
+        {
+          "name": "festival-hub.js?v=19.0.0",
+          "duration": 17,
+          "transferSize": 21807
+        },
+        {
+          "name": "game-shell.js?v=19.0.0",
+          "duration": 22.300000000017462,
+          "transferSize": 8026
+        },
+        {
+          "name": "dream-cap-story.js?v=19.0.0",
+          "duration": 22.89999999999418,
+          "transferSize": 14780
+        },
+        {
+          "name": "dream-festivals.js?v=19.0.0",
+          "duration": 23.800000000017462,
+          "transferSize": 53830
+        },
+        {
+          "name": "cap-book.js?v=19.0.0",
+          "duration": 24.5,
+          "transferSize": 17710
+        },
+        {
+          "name": "cap-activity-progress.js?v=19.0.0",
+          "duration": 30.60000000000582,
+          "transferSize": 11465
+        },
+        {
+          "name": "dream-cap-activities.js?v=19.0.0",
+          "duration": 25.199999999982538,
+          "transferSize": 14037
+        },
+        {
+          "name": "dream-lost-cases.js?v=19.0.0",
+          "duration": 31.89999999999418,
+          "transferSize": 27267
+        },
+        {
+          "name": "lost-evidence.js?v=19.0.0",
+          "duration": 32.30000000001746,
+          "transferSize": 7447
+        },
+        {
+          "name": "dream-ui.js?v=19.0.0",
+          "duration": 36.10000000000582,
+          "transferSize": 4722
+        },
+        {
+          "name": "dream-encounters.js?v=19.0.0",
+          "duration": 35.60000000000582,
+          "transferSize": 17094
+        },
+        {
+          "name": "dream-journey.js?v=19.0.0",
+          "duration": 36.20000000001164,
+          "transferSize": 10412
+        },
+        {
+          "name": "dream-direction-input.js?v=19.0.0",
+          "duration": 37.60000000000582,
+          "transferSize": 2220
+        },
+        {
+          "name": "lost-progress.js?v=19.0.0",
+          "duration": 42,
+          "transferSize": 10256
+        },
+        {
+          "name": "dream-story.js?v=19.0.0",
+          "duration": 47.10000000000582,
+          "transferSize": 31300
+        },
+        {
+          "name": "play-rewards.js?v=19.0.0",
+          "duration": 21.60000000000582,
+          "transferSize": 21103
+        },
+        {
+          "name": "dream-engine-base.js?v=19.0.0",
+          "duration": 22.70000000001164,
+          "transferSize": 95072
+        },
+        {
+          "name": "dream-cap-art.js?v=19.0.0",
+          "duration": 26.89999999999418,
+          "transferSize": 22979
+        },
+        {
+          "name": "dream-station-art.js?v=19.0.0",
+          "duration": 27.5,
+          "transferSize": 16750
+        },
+        {
+          "name": "dream-painted-scene.js?v=19.0.0",
+          "duration": 32.39999999999418,
+          "transferSize": 7497
+        },
+        {
+          "name": "dream-greenhouse-scene.js?v=19.0.0",
+          "duration": 29.800000000017462,
+          "transferSize": 4746
+        },
+        {
+          "name": "dream-greenhouse-finish.js?v=19.0.0",
+          "duration": 34.89999999999418,
+          "transferSize": 11299
+        },
+        {
+          "name": "dream-letter-echo.js?v=19.0.0",
+          "duration": 34.70000000001164,
+          "transferSize": 9199
+        },
+        {
+          "name": "dream-theatre-art.js?v=19.0.0",
+          "duration": 35,
+          "transferSize": 11672
+        },
+        {
+          "name": "dream-theatre-guidance.js?v=19.0.0",
+          "duration": 31.60000000000582,
+          "transferSize": 3886
+        },
+        {
+          "name": "dream-ground-shadow.js?v=19.0.0",
+          "duration": 35.70000000001164,
+          "transferSize": 3709
+        },
+        {
+          "name": "dream-lost-encores.js?v=19.0.0",
+          "duration": 11.799999999988358,
+          "transferSize": 3030
+        },
+        {
+          "name": "dream-lost-encore-art.js?v=19.0.0",
+          "duration": 14.10000000000582,
+          "transferSize": 15825
+        },
+        {
+          "name": "cap-progress.js?v=19.0.0",
+          "duration": 14.10000000000582,
+          "transferSize": 4874
+        },
+        {
+          "name": "dream-levels.js?v=19.0.0",
+          "duration": 13.39999999999418,
+          "transferSize": 9042
+        },
+        {
+          "name": "dream-festival-levels.js?v=19.0.0",
+          "duration": 18.800000000017462,
+          "transferSize": 6974
+        },
+        {
+          "name": "dream-festival-art.js?v=19.0.0",
+          "duration": 18.39999999999418,
+          "transferSize": 31664
+        },
+        {
+          "name": "dream-cap-activity-engine.js?v=19.0.0",
+          "duration": 25,
+          "transferSize": 15927
+        },
+        {
+          "name": "dream-scene-backdrop.js?v=19.0.0",
+          "duration": 25.89999999999418,
+          "transferSize": 19410
+        },
+        {
+          "name": "dream-cap-activity-art.js?v=19.0.0",
+          "duration": 26.199999999982538,
+          "transferSize": 33206
+        },
+        {
+          "name": "dream-lost-engine.js?v=19.0.0",
+          "duration": 22.70000000001164,
+          "transferSize": 13039
+        },
+        {
+          "name": "dream-lost-art.js?v=19.0.0",
+          "duration": 27.70000000001164,
+          "transferSize": 41860
+        },
+        {
+          "name": "dream-encounter-art.js?v=19.0.0",
+          "duration": 28.300000000017462,
+          "transferSize": 28809
+        },
+        {
+          "name": "dream-awakenings.js?v=19.0.0",
+          "duration": 31.39999999999418,
+          "transferSize": 4132
+        },
+        {
+          "name": "dream-awakening-art.js?v=19.0.0",
+          "duration": 35.39999999999418,
+          "transferSize": 26322
+        },
+        {
+          "name": "dream-moon-play.js?v=19.0.0",
+          "duration": 31.5,
+          "transferSize": 12956
+        },
+        {
+          "name": "dream-moon-art.js?v=19.0.0",
+          "duration": 32.5,
+          "transferSize": 15041
+        },
+        {
+          "name": "dream-first-ticket-art.js?v=19.0.0",
+          "duration": 35,
+          "transferSize": 4629
+        },
+        {
+          "name": "dream-greenhouse-art.js?v=19.0.0",
+          "duration": 33.5,
+          "transferSize": 4180
+        },
+        {
+          "name": "dream-traveler-art.js?v=19.0.0",
+          "duration": 35.89999999999418,
+          "transferSize": 8609
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 3.1999999999825377,
+          "transferSize": 4453
+        },
+        {
+          "name": "station-painted-v16.webp",
+          "duration": 5.100000000005821,
+          "transferSize": 266628
+        },
+        {
+          "name": "portrait-hero-open.svg",
+          "duration": 5.399999999994179,
+          "transferSize": 13008
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 5.2000000000116415,
+          "transferSize": 7066
+        },
+        {
+          "name": "portrait-soul-joy.svg",
+          "duration": 18.79999999998836,
+          "transferSize": 7193
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 3.3999999999941792,
+          "transferSize": 4453
+        },
+        {
+          "name": "portrait-soul-peek.svg",
+          "duration": 4.5,
+          "transferSize": 7102
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 3.6999999999825377,
+          "transferSize": 7066
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 4.099999999976717,
+          "transferSize": 4453
+        },
+        {
+          "name": "portrait-soul-peek.svg",
+          "duration": 5.5,
+          "transferSize": 7102
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 8.800000000017462,
+          "transferSize": 7066
+        },
+        {
+          "name": "portrait-moth.svg",
+          "duration": 15,
+          "transferSize": 3875
+        },
+        {
+          "name": "portrait-hero-open.svg",
+          "duration": 5.399999999994179,
+          "transferSize": 13008
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 3.6999999999825377,
+          "transferSize": 4453
+        },
+        {
+          "name": "portrait-soul-peek.svg",
+          "duration": 6.7000000000116415,
+          "transferSize": 7102
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 8.89999999999418,
+          "transferSize": 7066
+        },
+        {
+          "name": "portrait-moth.svg",
+          "duration": 7.2999999999883585,
+          "transferSize": 3875
+        },
+        {
+          "name": "portrait-soul-brave.svg",
+          "duration": 4.7999999999883585,
+          "transferSize": 7504
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 4.699999999982538,
+          "transferSize": 4453
+        },
+        {
+          "name": "portrait-hero-joy.svg",
+          "duration": 7.699999999982538,
+          "transferSize": 11904
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 5.899999999994179,
+          "transferSize": 4453
+        },
+        {
+          "name": "greenhouse-painted-v17.webp",
+          "duration": 9.200000000011642,
+          "transferSize": 508966
+        },
+        {
+          "name": "portrait-soul-peek.svg",
+          "duration": 5.400000000023283,
+          "transferSize": 7102
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 4.2000000000116415,
+          "transferSize": 7066
+        },
+        {
+          "name": "portrait-soul-joy.svg",
+          "duration": 21,
+          "transferSize": 7193
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 5.5,
+          "transferSize": 4453
+        },
+        {
+          "name": "portrait-soul-brave.svg",
+          "duration": 3.3999999999941792,
+          "transferSize": 7504
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 4,
+          "transferSize": 7066
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 9.60000000000582,
+          "transferSize": 7066
+        },
+        {
+          "name": "portrait-hero-joy.svg",
+          "duration": 5,
+          "transferSize": 11904
+        },
+        {
+          "name": "portrait-hero-joy.svg",
+          "duration": 9.60000000000582,
+          "transferSize": 11904
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 9.5,
+          "transferSize": 4453
+        },
+        {
+          "name": "portrait-hero-joy.svg",
+          "duration": 3.1999999999825377,
+          "transferSize": 11904
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 3.3999999999941792,
+          "transferSize": 7066
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 8.5,
+          "transferSize": 7066
+        },
+        {
+          "name": "portrait-soul-joy.svg",
+          "duration": 4.5,
+          "transferSize": 7193
+        },
+        {
+          "name": "portrait-soul-joy.svg",
+          "duration": 4.600000000005821,
+          "transferSize": 7193
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 5.699999999982538,
+          "transferSize": 4453
+        },
+        {
+          "name": "portrait-hero-tender.svg",
+          "duration": 4,
+          "transferSize": 11973
+        },
+        {
+          "name": "portrait-keeper.svg",
+          "duration": 5,
+          "transferSize": 3353
+        },
+        {
+          "name": "portrait-soul-joy.svg",
+          "duration": 5.100000000005821,
+          "transferSize": 7193
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 7.399999999994179,
+          "transferSize": 7066
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 5.2999999999883585,
+          "transferSize": 4453
+        },
+        {
+          "name": "greenhouse-painted-v17.webp",
+          "duration": 8.10000000000582,
+          "transferSize": 508966
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 5,
+          "transferSize": 7066
+        },
+        {
+          "name": "portrait-soul-joy.svg",
+          "duration": 4.800000000017462,
+          "transferSize": 7193
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 8,
+          "transferSize": 4453
+        },
+        {
+          "name": "portrait-soul-joy.svg",
+          "duration": 7.699999999982538,
+          "transferSize": 7193
+        },
+        {
+          "name": "portrait-soul-joy.svg",
+          "duration": 4,
+          "transferSize": 7193
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 5,
+          "transferSize": 7066
+        },
+        {
+          "name": "portrait-soul-joy.svg",
+          "duration": 6.800000000017462,
+          "transferSize": 7193
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 8.10000000000582,
+          "transferSize": 4453
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 20.70000000001164,
+          "transferSize": 4453
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 4,
+          "transferSize": 7066
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 11.10000000000582,
+          "transferSize": 4453
+        },
+        {
+          "name": "portrait-soul-joy.svg",
+          "duration": 5.100000000005821,
+          "transferSize": 7193
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 4.5,
+          "transferSize": 7066
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 4.5,
+          "transferSize": 4453
+        },
+        {
+          "name": "portrait-soul-joy.svg",
+          "duration": 6.300000000017462,
+          "transferSize": 7193
+        },
+        {
+          "name": "portrait-soul-joy.svg",
+          "duration": 6.800000000017462,
+          "transferSize": 7193
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 6.599999999976717,
+          "transferSize": 7066
+        },
+        {
+          "name": "portrait-soul-joy.svg",
+          "duration": 4,
+          "transferSize": 7193
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 5.199999999982538,
+          "transferSize": 4453
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 20.39999999999418,
+          "transferSize": 4453
+        }
+      ],
+      "imagesLoaded": true,
+      "reloadPreservedCapBook": true,
+      "theatre": {
+        "enteredViaUnlockedChapterMap": true,
+        "keyboard": {
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "input": "keyboard",
+          "scope": "first moving-stage crossing only; not chapter completion",
+          "leftBankReachedByJump": true,
+          "waitHintMatchedGap": true,
+          "boardHintMatchedContact": true,
+          "bodyPlatformObserved": "stage",
+          "noInputCarryDistance": 182.30160861706247,
+          "relativeRideOffsetDrift": 0,
+          "alightHintMatchedContact": true,
+          "rightBankReached": true,
+          "noRespawns": true,
+          "noHorizontalOverflow": true,
+          "chapterCompleted": false,
+          "evidence": {
+            "waiting": {
+              "form": "body",
+              "state": "playing",
+              "chapterIndex": 2,
+              "x": 701,
+              "y": 465,
+              "vx": 0,
+              "vy": 0,
+              "time": 2.9833333333333276,
+              "deaths": 0,
+              "body": {
+                "x": 701,
+                "y": 465,
+                "w": 30,
+                "h": 58,
+                "vx": 0,
+                "vy": 0,
+                "grounded": true,
+                "platform": null
+              },
+              "capPhase": "closed",
+              "nearHint": "在踏台上等一等，舞台会回来接你。",
+              "movers": [
+                {
+                  "id": "stage",
+                  "x": 993.2758430669335,
+                  "y": 465,
+                  "w": 185,
+                  "h": 20,
+                  "dx": 2.393997672782234,
+                  "dy": 0
+                }
+              ],
+              "platforms": [
+                {
+                  "x": 0,
+                  "y": 560,
+                  "w": 735,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 1200,
+                  "y": 560,
+                  "w": 1060,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 565,
+                  "y": 465,
+                  "w": 220,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1130,
+                  "y": 465,
+                  "w": 225,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1550,
+                  "y": 435,
+                  "w": 155,
+                  "h": 18,
+                  "kind": null
+                }
+              ],
+              "letterChoice": "keep",
+              "letterEcho": null,
+              "greenhousePlant": null,
+              "seedCollected": false,
+              "mushrooms": [],
+              "roots": []
+            },
+            "boarding": {
+              "form": "body",
+              "state": "playing",
+              "chapterIndex": 2,
+              "x": 701,
+              "y": 465,
+              "vx": 0,
+              "vy": 0,
+              "time": 10.533333333333436,
+              "deaths": 0,
+              "body": {
+                "x": 701,
+                "y": 465,
+                "w": 30,
+                "h": 58,
+                "vx": 0,
+                "vy": 0,
+                "grounded": true,
+                "platform": null
+              },
+              "capPhase": "closed",
+              "nearHint": "舞台靠近了 · 向右走上去，或轻轻一跳。",
+              "movers": [
+                {
+                  "id": "stage",
+                  "x": 695.1660081461083,
+                  "y": 465,
+                  "w": 185,
+                  "h": 20,
+                  "dx": 0.0779325241950346,
+                  "dy": 0
+                }
+              ],
+              "platforms": [
+                {
+                  "x": 0,
+                  "y": 560,
+                  "w": 735,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 1200,
+                  "y": 560,
+                  "w": 1060,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 565,
+                  "y": 465,
+                  "w": 220,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1130,
+                  "y": 465,
+                  "w": 225,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1550,
+                  "y": 435,
+                  "w": 155,
+                  "h": 18,
+                  "kind": null
+                }
+              ],
+              "letterChoice": "keep",
+              "letterEcho": null,
+              "greenhousePlant": null,
+              "seedCollected": false,
+              "mushrooms": [],
+              "roots": []
+            },
+            "rideStart": {
+              "form": "body",
+              "state": "playing",
+              "chapterIndex": 2,
+              "x": 840.3557694554734,
+              "y": 465,
+              "vx": 0,
+              "vy": 0,
+              "time": 11.233333333333471,
+              "deaths": 0,
+              "body": {
+                "x": 840.3557694554734,
+                "y": 465,
+                "w": 30,
+                "h": 58,
+                "vx": 0,
+                "vy": 0,
+                "grounded": true,
+                "platform": "stage"
+              },
+              "capPhase": "closed",
+              "nearHint": "站稳就好，舞台会载你去下一幕。",
+              "movers": [
+                {
+                  "id": "stage",
+                  "x": 720.1217951836921,
+                  "y": 465,
+                  "w": 185,
+                  "h": 20,
+                  "dx": 1.0696627302428396,
+                  "dy": 0
+                }
+              ],
+              "platforms": [
+                {
+                  "x": 0,
+                  "y": 560,
+                  "w": 735,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 1200,
+                  "y": 560,
+                  "w": 1060,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 565,
+                  "y": 465,
+                  "w": 220,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1130,
+                  "y": 465,
+                  "w": 225,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1550,
+                  "y": 435,
+                  "w": 155,
+                  "h": 18,
+                  "kind": null
+                }
+              ],
+              "letterChoice": "keep",
+              "letterEcho": null,
+              "greenhousePlant": null,
+              "seedCollected": false,
+              "mushrooms": [],
+              "roots": []
+            },
+            "riding": {
+              "form": "body",
+              "state": "playing",
+              "chapterIndex": 2,
+              "x": 1022.6573780725358,
+              "y": 465,
+              "vx": 0,
+              "vy": 0,
+              "time": 12.83333333333355,
+              "deaths": 0,
+              "body": {
+                "x": 1022.6573780725358,
+                "y": 465,
+                "w": 30,
+                "h": 58,
+                "vx": 0,
+                "vy": 0,
+                "grounded": true,
+                "platform": "stage"
+              },
+              "capPhase": "closed",
+              "nearHint": "站稳就好，舞台会载你去下一幕。",
+              "movers": [
+                {
+                  "id": "stage",
+                  "x": 902.4234038007546,
+                  "y": 465,
+                  "w": 185,
+                  "h": 20,
+                  "dx": 2.419093008844584,
+                  "dy": 0
+                }
+              ],
+              "platforms": [
+                {
+                  "x": 0,
+                  "y": 560,
+                  "w": 735,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 1200,
+                  "y": 560,
+                  "w": 1060,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 565,
+                  "y": 465,
+                  "w": 220,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1130,
+                  "y": 465,
+                  "w": 225,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1550,
+                  "y": 435,
+                  "w": 155,
+                  "h": 18,
+                  "kind": null
+                }
+              ],
+              "letterChoice": "keep",
+              "letterEcho": null,
+              "greenhousePlant": null,
+              "seedCollected": false,
+              "mushrooms": [],
+              "roots": []
+            },
+            "alighting": {
+              "form": "body",
+              "state": "playing",
+              "chapterIndex": 2,
+              "x": 1143.326915212857,
+              "y": 465,
+              "vx": 0,
+              "vy": 0,
+              "time": 13.666666666666925,
+              "deaths": 0,
+              "body": {
+                "x": 1143.326915212857,
+                "y": 465,
+                "w": 30,
+                "h": 58,
+                "vx": 0,
+                "vy": 0,
+                "grounded": true,
+                "platform": "stage"
+              },
+              "capPhase": "closed",
+              "nearHint": "右侧踏台到了 · 向右走下舞台。",
+              "movers": [
+                {
+                  "id": "stage",
+                  "x": 1023.0929409410755,
+                  "y": 465,
+                  "w": 185,
+                  "h": 20,
+                  "dx": 2.3089060633185454,
+                  "dy": 0
+                }
+              ],
+              "platforms": [
+                {
+                  "x": 0,
+                  "y": 560,
+                  "w": 735,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 1200,
+                  "y": 560,
+                  "w": 1060,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 565,
+                  "y": 465,
+                  "w": 220,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1130,
+                  "y": 465,
+                  "w": 225,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1550,
+                  "y": 435,
+                  "w": 155,
+                  "h": 18,
+                  "kind": null
+                }
+              ],
+              "letterChoice": "keep",
+              "letterEcho": null,
+              "greenhousePlant": null,
+              "seedCollected": false,
+              "mushrooms": [],
+              "roots": []
+            },
+            "landed": {
+              "form": "body",
+              "state": "playing",
+              "chapterIndex": 2,
+              "x": 1301.7651706630584,
+              "y": 465,
+              "vx": 0,
+              "vy": 0,
+              "time": 14.266666666666955,
+              "deaths": 0,
+              "body": {
+                "x": 1301.7651706630584,
+                "y": 465,
+                "w": 30,
+                "h": 58,
+                "vx": 0,
+                "vy": 0,
+                "grounded": true,
+                "platform": null
+              },
+              "capPhase": "closed",
+              "nearHint": "",
+              "movers": [
+                {
+                  "id": "stage",
+                  "x": 1098.9582277121492,
+                  "y": 465,
+                  "w": 185,
+                  "h": 20,
+                  "dx": 1.8722472653644218,
+                  "dy": 0
+                }
+              ],
+              "platforms": [
+                {
+                  "x": 0,
+                  "y": 560,
+                  "w": 735,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 1200,
+                  "y": 560,
+                  "w": 1060,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 565,
+                  "y": 465,
+                  "w": 220,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1130,
+                  "y": 465,
+                  "w": 225,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1550,
+                  "y": 435,
+                  "w": 155,
+                  "h": 18,
+                  "kind": null
+                }
+              ],
+              "letterChoice": "keep",
+              "letterEcho": null,
+              "greenhousePlant": null,
+              "seedCollected": false,
+              "mushrooms": [],
+              "roots": []
+            }
+          }
+        },
+        "touch390": {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "input": "CDP emulated touch controls",
+          "scope": "first moving-stage crossing only; not chapter completion",
+          "leftBankReachedByJump": true,
+          "waitHintMatchedGap": true,
+          "boardHintMatchedContact": true,
+          "bodyPlatformObserved": "stage",
+          "noInputCarryDistance": 181.99974646607166,
+          "relativeRideOffsetDrift": 0,
+          "alightHintMatchedContact": true,
+          "rightBankReached": true,
+          "noRespawns": true,
+          "noHorizontalOverflow": true,
+          "chapterCompleted": false,
+          "evidence": {
+            "waiting": {
+              "form": "body",
+              "state": "playing",
+              "chapterIndex": 2,
+              "x": 705,
+              "y": 465,
+              "vx": 0,
+              "vy": 0,
+              "time": 3.0833333333333273,
+              "deaths": 0,
+              "body": {
+                "x": 705,
+                "y": 465,
+                "w": 30,
+                "h": 58,
+                "vx": 0,
+                "vy": 0,
+                "grounded": true,
+                "platform": null
+              },
+              "capPhase": "closed",
+              "nearHint": "在踏台上等一等，舞台会回来接你。",
+              "movers": [
+                {
+                  "id": "stage",
+                  "x": 1007.5196104720048,
+                  "y": 465,
+                  "w": 185,
+                  "h": 20,
+                  "dx": 2.358460947805497,
+                  "dy": 0
+                }
+              ],
+              "platforms": [
+                {
+                  "x": 0,
+                  "y": 560,
+                  "w": 735,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 1200,
+                  "y": 560,
+                  "w": 1060,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 565,
+                  "y": 465,
+                  "w": 220,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1130,
+                  "y": 465,
+                  "w": 225,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1550,
+                  "y": 435,
+                  "w": 155,
+                  "h": 18,
+                  "kind": null
+                }
+              ],
+              "letterChoice": "keep",
+              "letterEcho": null,
+              "greenhousePlant": null,
+              "seedCollected": false,
+              "mushrooms": [],
+              "roots": []
+            },
+            "boarding": {
+              "form": "body",
+              "state": "playing",
+              "chapterIndex": 2,
+              "x": 705,
+              "y": 465,
+              "vx": 0,
+              "vy": 0,
+              "time": 10.483333333333434,
+              "deaths": 0,
+              "body": {
+                "x": 705,
+                "y": 465,
+                "w": 30,
+                "h": 58,
+                "vx": 0,
+                "vy": 0,
+                "grounded": true,
+                "platform": null
+              },
+              "capPhase": "closed",
+              "nearHint": "舞台靠近了 · 向右走上去，或轻轻一跳。",
+              "movers": [
+                {
+                  "id": "stage",
+                  "x": 695.005688882668,
+                  "y": 465,
+                  "w": 185,
+                  "h": 20,
+                  "dx": 0.004445976444912958,
+                  "dy": 0
+                }
+              ],
+              "platforms": [
+                {
+                  "x": 0,
+                  "y": 560,
+                  "w": 735,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 1200,
+                  "y": 560,
+                  "w": 1060,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 565,
+                  "y": 465,
+                  "w": 220,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1130,
+                  "y": 465,
+                  "w": 225,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1550,
+                  "y": 435,
+                  "w": 155,
+                  "h": 18,
+                  "kind": null
+                }
+              ],
+              "letterChoice": "keep",
+              "letterEcho": null,
+              "greenhousePlant": null,
+              "seedCollected": false,
+              "mushrooms": [],
+              "roots": []
+            },
+            "rideStart": {
+              "form": "body",
+              "state": "playing",
+              "chapterIndex": 2,
+              "x": 839.8115493556724,
+              "y": 465,
+              "vx": 0,
+              "vy": 0,
+              "time": 11.200000000000136,
+              "deaths": 0,
+              "body": {
+                "x": 839.8115493556724,
+                "y": 465,
+                "w": 30,
+                "h": 58,
+                "vx": 0,
+                "vy": 0,
+                "grounded": true,
+                "platform": "stage"
+              },
+              "capPhase": "closed",
+              "nearHint": "站稳就好，舞台会载你去下一幕。",
+              "movers": [
+                {
+                  "id": "stage",
+                  "x": 718.0045643258384,
+                  "y": 465,
+                  "w": 185,
+                  "h": 20,
+                  "dx": 1.0253687690390052,
+                  "dy": 0
+                }
+              ],
+              "platforms": [
+                {
+                  "x": 0,
+                  "y": 560,
+                  "w": 735,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 1200,
+                  "y": 560,
+                  "w": 1060,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 565,
+                  "y": 465,
+                  "w": 220,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1130,
+                  "y": 465,
+                  "w": 225,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1550,
+                  "y": 435,
+                  "w": 155,
+                  "h": 18,
+                  "kind": null
+                }
+              ],
+              "letterChoice": "keep",
+              "letterEcho": null,
+              "greenhousePlant": null,
+              "seedCollected": false,
+              "mushrooms": [],
+              "roots": []
+            },
+            "riding": {
+              "form": "body",
+              "state": "playing",
+              "chapterIndex": 2,
+              "x": 1021.811295821744,
+              "y": 465,
+              "vx": 0,
+              "vy": 0,
+              "time": 12.816666666666883,
+              "deaths": 0,
+              "body": {
+                "x": 1021.811295821744,
+                "y": 465,
+                "w": 30,
+                "h": 58,
+                "vx": 0,
+                "vy": 0,
+                "grounded": true,
+                "platform": "stage"
+              },
+              "capPhase": "closed",
+              "nearHint": "站稳就好，舞台会载你去下一幕。",
+              "movers": [
+                {
+                  "id": "stage",
+                  "x": 900.00431079191,
+                  "y": 465,
+                  "w": 185,
+                  "h": 20,
+                  "dx": 2.4150934732532505,
+                  "dy": 0
+                }
+              ],
+              "platforms": [
+                {
+                  "x": 0,
+                  "y": 560,
+                  "w": 735,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 1200,
+                  "y": 560,
+                  "w": 1060,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 565,
+                  "y": 465,
+                  "w": 220,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1130,
+                  "y": 465,
+                  "w": 225,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1550,
+                  "y": 435,
+                  "w": 155,
+                  "h": 18,
+                  "kind": null
+                }
+              ],
+              "letterChoice": "keep",
+              "letterEcho": null,
+              "greenhousePlant": null,
+              "seedCollected": false,
+              "mushrooms": [],
+              "roots": []
+            },
+            "alighting": {
+              "form": "body",
+              "state": "playing",
+              "chapterIndex": 2,
+              "x": 1142.5910199075915,
+              "y": 465,
+              "vx": 0,
+              "vy": 0,
+              "time": 13.650000000000258,
+              "deaths": 0,
+              "body": {
+                "x": 1142.5910199075915,
+                "y": 465,
+                "w": 30,
+                "h": 58,
+                "vx": 0,
+                "vy": 0,
+                "grounded": true,
+                "platform": "stage"
+              },
+              "capPhase": "closed",
+              "nearHint": "右侧踏台到了 · 向右走下舞台。",
+              "movers": [
+                {
+                  "id": "stage",
+                  "x": 1020.784034877757,
+                  "y": 465,
+                  "w": 185,
+                  "h": 20,
+                  "dx": 2.316984399485932,
+                  "dy": 0
+                }
+              ],
+              "platforms": [
+                {
+                  "x": 0,
+                  "y": 560,
+                  "w": 735,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 1200,
+                  "y": 560,
+                  "w": 1060,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 565,
+                  "y": 465,
+                  "w": 220,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1130,
+                  "y": 465,
+                  "w": 225,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1550,
+                  "y": 435,
+                  "w": 155,
+                  "h": 18,
+                  "kind": null
+                }
+              ],
+              "letterChoice": "keep",
+              "letterEcho": null,
+              "greenhousePlant": null,
+              "seedCollected": false,
+              "mushrooms": [],
+              "roots": []
+            },
+            "landed": {
+              "form": "body",
+              "state": "playing",
+              "chapterIndex": 2,
+              "x": 1309.3588354288092,
+              "y": 465,
+              "vx": 0,
+              "vy": 0,
+              "time": 14.30000000000029,
+              "deaths": 0,
+              "body": {
+                "x": 1309.3588354288092,
+                "y": 465,
+                "w": 30,
+                "h": 58,
+                "vx": 0,
+                "vy": 0,
+                "grounded": true,
+                "platform": null
+              },
+              "capPhase": "closed",
+              "nearHint": "",
+              "movers": [
+                {
+                  "id": "stage",
+                  "x": 1102.6548495383486,
+                  "y": 465,
+                  "w": 185,
+                  "h": 20,
+                  "dx": 1.840270251141419,
+                  "dy": 0
+                }
+              ],
+              "platforms": [
+                {
+                  "x": 0,
+                  "y": 560,
+                  "w": 735,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 1200,
+                  "y": 560,
+                  "w": 1060,
+                  "h": 100,
+                  "kind": "ground"
+                },
+                {
+                  "x": 565,
+                  "y": 465,
+                  "w": 220,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1130,
+                  "y": 465,
+                  "w": 225,
+                  "h": 18,
+                  "kind": null
+                },
+                {
+                  "x": 1550,
+                  "y": 435,
+                  "w": 155,
+                  "h": 18,
+                  "kind": null
+                }
+              ],
+              "letterChoice": "keep",
+              "letterEcho": null,
+              "greenhousePlant": null,
+              "seedCollected": false,
+              "mushrooms": [],
+              "roots": []
+            }
+          }
+        },
+        "touchScope": "390x844 resized desktop Chromium context, real touch events; chapters 1-2 were earned with keyboard; no physical-phone or full mobile-playthrough claim",
+        "chapterResultsUnchanged": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "19.0.0",
+      "ticketCollectedAndReturned": true,
+      "pauseFrozen": true,
+      "noHorizontalOverflow": true,
+      "chapterCompleted": false,
+      "input": "emulated Chromium touch",
+      "rafIntervalMs": {
+        "samples": 60,
+        "p50": 16.699999999999818,
+        "p95": 16.700000000000273
+      },
+      "frameSamplePhase": "initial active idle; not a physical-device benchmark",
+      "pageErrors": [],
+      "httpErrors": [],
+      "instrumentedAppURLs": [
+        "http://127.0.0.1:8080/dream-app.js?v=19.0.0"
+      ],
+      "resources": [
+        {
+          "name": "dream.css?v=19.0.0",
+          "duration": 12.800000000046566,
+          "transferSize": 65255
+        },
+        {
+          "name": "company-footer.css?v=19.0.0",
+          "duration": 12.100000000034925,
+          "transferSize": 2085
+        },
+        {
+          "name": "game-shell.css?v=19.0.0",
+          "duration": 12.900000000023283,
+          "transferSize": 8810
+        },
+        {
+          "name": "dream-play.css?v=19.0.0",
+          "duration": 13.099999999976717,
+          "transferSize": 11605
+        },
+        {
+          "name": "festival.css?v=19.0.0",
+          "duration": 13.200000000011642,
+          "transferSize": 20489
+        },
+        {
+          "name": "cap-play.css?v=19.0.0",
+          "duration": 13.299999999988358,
+          "transferSize": 9533
+        },
+        {
+          "name": "cap-portraits.css?v=19.0.0",
+          "duration": 20.29999999998836,
+          "transferSize": 2503
+        },
+        {
+          "name": "cap-activities.css?v=19.0.0",
+          "duration": 20.900000000023283,
+          "transferSize": 4211
+        },
+        {
+          "name": "lost-play.css?v=19.0.0",
+          "duration": 21.800000000046566,
+          "transferSize": 7654
+        },
+        {
+          "name": "portrait-hero.svg",
+          "duration": 15.899999999965075,
+          "transferSize": 11898
+        },
+        {
+          "name": "portrait-hero-open.svg",
+          "duration": 17.599999999976717,
+          "transferSize": 13008
+        },
+        {
+          "name": "portrait-moth.svg",
+          "duration": 21.400000000023283,
+          "transferSize": 3875
+        },
+        {
+          "name": "dream-app.js?v=19.0.0",
+          "duration": 24.29999999998836,
+          "transferSize": 63902
+        },
+        {
+          "name": "dream-engine.js?v=19.0.0",
+          "duration": 11.700000000011642,
+          "transferSize": 10043
+        },
+        {
+          "name": "game-shell.js?v=19.0.0",
+          "duration": 14.099999999976717,
+          "transferSize": 8026
+        },
+        {
+          "name": "festival-hub.js?v=19.0.0",
+          "duration": 11,
+          "transferSize": 21807
+        },
+        {
+          "name": "dream-festivals.js?v=19.0.0",
+          "duration": 15.299999999988358,
+          "transferSize": 53830
+        },
+        {
+          "name": "dream-cap-story.js?v=19.0.0",
+          "duration": 14.400000000023283,
+          "transferSize": 14780
+        },
+        {
+          "name": "cap-book.js?v=19.0.0",
+          "duration": 13.100000000034925,
+          "transferSize": 17710
+        },
+        {
+          "name": "dream-cap-activities.js?v=19.0.0",
+          "duration": 16.20000000001164,
+          "transferSize": 14037
+        },
+        {
+          "name": "cap-activity-progress.js?v=19.0.0",
+          "duration": 18,
+          "transferSize": 11465
+        },
+        {
+          "name": "dream-lost-cases.js?v=19.0.0",
+          "duration": 19.79999999998836,
+          "transferSize": 27267
+        },
+        {
+          "name": "lost-evidence.js?v=19.0.0",
+          "duration": 20,
+          "transferSize": 7447
+        },
+        {
+          "name": "dream-journey.js?v=19.0.0",
+          "duration": 22.400000000023283,
+          "transferSize": 10412
+        },
+        {
+          "name": "dream-encounters.js?v=19.0.0",
+          "duration": 20.5,
+          "transferSize": 17094
+        },
+        {
+          "name": "dream-ui.js?v=19.0.0",
+          "duration": 23.70000000001164,
+          "transferSize": 4722
+        },
+        {
+          "name": "dream-direction-input.js?v=19.0.0",
+          "duration": 23.79999999998836,
+          "transferSize": 2220
+        },
+        {
+          "name": "lost-progress.js?v=19.0.0",
+          "duration": 26.70000000001164,
+          "transferSize": 10256
+        },
+        {
+          "name": "dream-story.js?v=19.0.0",
+          "duration": 26.699999999953434,
+          "transferSize": 31300
+        },
+        {
+          "name": "company-wordmark.webp",
+          "duration": 4.2999999999883585,
+          "transferSize": 7452
+        },
+        {
+          "name": "play-rewards.js?v=19.0.0",
+          "duration": 18.5,
+          "transferSize": 21103
+        },
+        {
+          "name": "dream-engine-base.js?v=19.0.0",
+          "duration": 17.400000000023283,
+          "transferSize": 95072
+        },
+        {
+          "name": "dream-station-art.js?v=19.0.0",
+          "duration": 21.899999999965075,
+          "transferSize": 16750
+        },
+        {
+          "name": "dream-cap-art.js?v=19.0.0",
+          "duration": 21.5,
+          "transferSize": 22979
+        },
+        {
+          "name": "dream-painted-scene.js?v=19.0.0",
+          "duration": 15.700000000011642,
+          "transferSize": 7497
+        },
+        {
+          "name": "dream-greenhouse-scene.js?v=19.0.0",
+          "duration": 21.100000000034925,
+          "transferSize": 4746
+        },
+        {
+          "name": "dream-greenhouse-finish.js?v=19.0.0",
+          "duration": 22.100000000034925,
+          "transferSize": 11299
+        },
+        {
+          "name": "dream-letter-echo.js?v=19.0.0",
+          "duration": 34.20000000001164,
+          "transferSize": 9199
+        },
+        {
+          "name": "dream-theatre-art.js?v=19.0.0",
+          "duration": 34.5,
+          "transferSize": 11672
+        },
+        {
+          "name": "dream-ground-shadow.js?v=19.0.0",
+          "duration": 34.600000000034925,
+          "transferSize": 3709
+        },
+        {
+          "name": "dream-theatre-guidance.js?v=19.0.0",
+          "duration": 35,
+          "transferSize": 3886
+        },
+        {
+          "name": "dream-lost-encores.js?v=19.0.0",
+          "duration": 36.399999999965075,
+          "transferSize": 3030
+        },
+        {
+          "name": "dream-lost-encore-art.js?v=19.0.0",
+          "duration": 33.70000000001164,
+          "transferSize": 15825
+        },
+        {
+          "name": "cap-progress.js?v=19.0.0",
+          "duration": 40.59999999997672,
+          "transferSize": 4874
+        },
+        {
+          "name": "dream-levels.js?v=19.0.0",
+          "duration": 39,
+          "transferSize": 9042
+        },
+        {
+          "name": "dream-festival-levels.js?v=19.0.0",
+          "duration": 21,
+          "transferSize": 6974
+        },
+        {
+          "name": "dream-festival-art.js?v=19.0.0",
+          "duration": 22.5,
+          "transferSize": 31664
+        },
+        {
+          "name": "dream-cap-activity-engine.js?v=19.0.0",
+          "duration": 21.20000000001164,
+          "transferSize": 15927
+        },
+        {
+          "name": "dream-cap-activity-art.js?v=19.0.0",
+          "duration": 21.100000000034925,
+          "transferSize": 33206
+        },
+        {
+          "name": "dream-scene-backdrop.js?v=19.0.0",
+          "duration": 25.70000000001164,
+          "transferSize": 19410
+        },
+        {
+          "name": "dream-lost-engine.js?v=19.0.0",
+          "duration": 28.29999999998836,
+          "transferSize": 13039
+        },
+        {
+          "name": "dream-lost-art.js?v=19.0.0",
+          "duration": 30,
+          "transferSize": 41860
+        },
+        {
+          "name": "dream-encounter-art.js?v=19.0.0",
+          "duration": 31.5,
+          "transferSize": 28809
+        },
+        {
+          "name": "dream-awakenings.js?v=19.0.0",
+          "duration": 32,
+          "transferSize": 4132
+        },
+        {
+          "name": "dream-moon-play.js?v=19.0.0",
+          "duration": 32.90000000002328,
+          "transferSize": 12956
+        },
+        {
+          "name": "dream-awakening-art.js?v=19.0.0",
+          "duration": 33.90000000002328,
+          "transferSize": 26322
+        },
+        {
+          "name": "dream-moon-art.js?v=19.0.0",
+          "duration": 35.09999999997672,
+          "transferSize": 15041
+        },
+        {
+          "name": "dream-first-ticket-art.js?v=19.0.0",
+          "duration": 35.40000000002328,
+          "transferSize": 4629
+        },
+        {
+          "name": "dream-greenhouse-art.js?v=19.0.0",
+          "duration": 35.800000000046566,
+          "transferSize": 4180
+        },
+        {
+          "name": "dream-traveler-art.js?v=19.0.0",
+          "duration": 32.29999999998836,
+          "transferSize": 8609
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 3.900000000023283,
+          "transferSize": 4453
+        },
+        {
+          "name": "station-painted-v16.webp",
+          "duration": 4.300000000046566,
+          "transferSize": 266628
+        },
+        {
+          "name": "portrait-hero-open.svg",
+          "duration": 7.900000000023283,
+          "transferSize": 13008
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 3.5,
+          "transferSize": 7066
+        },
+        {
+          "name": "portrait-soul-joy.svg",
+          "duration": 7.2999999999883585,
+          "transferSize": 7193
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 4.399999999965075,
+          "transferSize": 4453
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 6.199999999953434,
+          "transferSize": 7066
+        },
+        {
+          "name": "portrait-soul-peek.svg",
+          "duration": 5.099999999976717,
+          "transferSize": 7102
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 3.199999999953434,
+          "transferSize": 4453
+        }
+      ],
+      "imagesLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "version": "19.0.0",
+      "ticketCollectedAndReturned": true,
+      "pauseFrozen": true,
+      "noHorizontalOverflow": true,
+      "chapterCompleted": false,
+      "input": "emulated Chromium touch",
+      "rafIntervalMs": {
+        "samples": 60,
+        "p50": 16.699999999999818,
+        "p95": 16.700000000000273
+      },
+      "frameSamplePhase": "initial active idle; not a physical-device benchmark",
+      "pageErrors": [],
+      "httpErrors": [],
+      "instrumentedAppURLs": [
+        "http://127.0.0.1:8080/dream-app.js?v=19.0.0"
+      ],
+      "resources": [
+        {
+          "name": "dream.css?v=19.0.0",
+          "duration": 9.400000000023283,
+          "transferSize": 65255
+        },
+        {
+          "name": "company-footer.css?v=19.0.0",
+          "duration": 16.5,
+          "transferSize": 2085
+        },
+        {
+          "name": "game-shell.css?v=19.0.0",
+          "duration": 14.099999999976717,
+          "transferSize": 8810
+        },
+        {
+          "name": "dream-play.css?v=19.0.0",
+          "duration": 16.70000000001164,
+          "transferSize": 11605
+        },
+        {
+          "name": "festival.css?v=19.0.0",
+          "duration": 17,
+          "transferSize": 20489
+        },
+        {
+          "name": "cap-play.css?v=19.0.0",
+          "duration": 13,
+          "transferSize": 9533
+        },
+        {
+          "name": "cap-portraits.css?v=19.0.0",
+          "duration": 12.200000000011642,
+          "transferSize": 2503
+        },
+        {
+          "name": "cap-activities.css?v=19.0.0",
+          "duration": 18,
+          "transferSize": 4211
+        },
+        {
+          "name": "lost-play.css?v=19.0.0",
+          "duration": 18.5,
+          "transferSize": 7654
+        },
+        {
+          "name": "portrait-hero-open.svg",
+          "duration": 23.5,
+          "transferSize": 13008
+        },
+        {
+          "name": "portrait-hero.svg",
+          "duration": 19.29999999998836,
+          "transferSize": 11898
+        },
+        {
+          "name": "portrait-moth.svg",
+          "duration": 23,
+          "transferSize": 3875
+        },
+        {
+          "name": "dream-app.js?v=19.0.0",
+          "duration": 19.5,
+          "transferSize": 63902
+        },
+        {
+          "name": "company-wordmark.webp",
+          "duration": 15.899999999965075,
+          "transferSize": 7452
+        },
+        {
+          "name": "dream-engine.js?v=19.0.0",
+          "duration": 7.7999999999883585,
+          "transferSize": 10043
+        },
+        {
+          "name": "game-shell.js?v=19.0.0",
+          "duration": 15.900000000023283,
+          "transferSize": 8026
+        },
+        {
+          "name": "festival-hub.js?v=19.0.0",
+          "duration": 20.600000000034925,
+          "transferSize": 21807
+        },
+        {
+          "name": "dream-festivals.js?v=19.0.0",
+          "duration": 19.79999999998836,
+          "transferSize": 53830
+        },
+        {
+          "name": "dream-cap-story.js?v=19.0.0",
+          "duration": 21.29999999998836,
+          "transferSize": 14780
+        },
+        {
+          "name": "cap-book.js?v=19.0.0",
+          "duration": 21,
+          "transferSize": 17710
+        },
+        {
+          "name": "dream-cap-activities.js?v=19.0.0",
+          "duration": 24.70000000001164,
+          "transferSize": 14037
+        },
+        {
+          "name": "cap-activity-progress.js?v=19.0.0",
+          "duration": 31,
+          "transferSize": 11465
+        },
+        {
+          "name": "dream-lost-cases.js?v=19.0.0",
+          "duration": 30.400000000023283,
+          "transferSize": 27267
+        },
+        {
+          "name": "lost-evidence.js?v=19.0.0",
+          "duration": 29.599999999976717,
+          "transferSize": 7447
+        },
+        {
+          "name": "dream-encounters.js?v=19.0.0",
+          "duration": 31.20000000001164,
+          "transferSize": 17094
+        },
+        {
+          "name": "dream-journey.js?v=19.0.0",
+          "duration": 32,
+          "transferSize": 10412
+        },
+        {
+          "name": "dream-ui.js?v=19.0.0",
+          "duration": 33.70000000001164,
+          "transferSize": 4722
+        },
+        {
+          "name": "dream-direction-input.js?v=19.0.0",
+          "duration": 37.90000000002328,
+          "transferSize": 2220
+        },
+        {
+          "name": "lost-progress.js?v=19.0.0",
+          "duration": 36.79999999998836,
+          "transferSize": 10256
+        },
+        {
+          "name": "dream-story.js?v=19.0.0",
+          "duration": 43.5,
+          "transferSize": 31300
+        },
+        {
+          "name": "dream-engine-base.js?v=19.0.0",
+          "duration": 28,
+          "transferSize": 95072
+        },
+        {
+          "name": "dream-cap-art.js?v=19.0.0",
+          "duration": 37.199999999953434,
+          "transferSize": 22979
+        },
+        {
+          "name": "dream-station-art.js?v=19.0.0",
+          "duration": 25.599999999976717,
+          "transferSize": 16750
+        },
+        {
+          "name": "dream-painted-scene.js?v=19.0.0",
+          "duration": 37.70000000001164,
+          "transferSize": 7497
+        },
+        {
+          "name": "dream-greenhouse-scene.js?v=19.0.0",
+          "duration": 38.5,
+          "transferSize": 4746
+        },
+        {
+          "name": "dream-greenhouse-finish.js?v=19.0.0",
+          "duration": 39.5,
+          "transferSize": 11299
+        },
+        {
+          "name": "dream-letter-echo.js?v=19.0.0",
+          "duration": 40.70000000001164,
+          "transferSize": 9199
+        },
+        {
+          "name": "dream-theatre-art.js?v=19.0.0",
+          "duration": 43.40000000002328,
+          "transferSize": 11672
+        },
+        {
+          "name": "dream-theatre-guidance.js?v=19.0.0",
+          "duration": 44,
+          "transferSize": 3886
+        },
+        {
+          "name": "dream-ground-shadow.js?v=19.0.0",
+          "duration": 47.29999999998836,
+          "transferSize": 3709
+        },
+        {
+          "name": "play-rewards.js?v=19.0.0",
+          "duration": 38.70000000001164,
+          "transferSize": 21103
+        },
+        {
+          "name": "dream-lost-encores.js?v=19.0.0",
+          "duration": 37.20000000001164,
+          "transferSize": 3030
+        },
+        {
+          "name": "dream-lost-encore-art.js?v=19.0.0",
+          "duration": 38,
+          "transferSize": 15825
+        },
+        {
+          "name": "cap-progress.js?v=19.0.0",
+          "duration": 38,
+          "transferSize": 4874
+        },
+        {
+          "name": "dream-levels.js?v=19.0.0",
+          "duration": 29.300000000046566,
+          "transferSize": 9042
+        },
+        {
+          "name": "dream-festival-art.js?v=19.0.0",
+          "duration": 27.5,
+          "transferSize": 31664
+        },
+        {
+          "name": "dream-traveler-art.js?v=19.0.0",
+          "duration": 30,
+          "transferSize": 8609
+        },
+        {
+          "name": "dream-festival-levels.js?v=19.0.0",
+          "duration": 26.79999999998836,
+          "transferSize": 6974
+        },
+        {
+          "name": "dream-cap-activity-engine.js?v=19.0.0",
+          "duration": 28.199999999953434,
+          "transferSize": 15927
+        },
+        {
+          "name": "dream-cap-activity-art.js?v=19.0.0",
+          "duration": 27.79999999998836,
+          "transferSize": 33206
+        },
+        {
+          "name": "dream-scene-backdrop.js?v=19.0.0",
+          "duration": 28.099999999976717,
+          "transferSize": 19410
+        },
+        {
+          "name": "dream-lost-engine.js?v=19.0.0",
+          "duration": 28.599999999976717,
+          "transferSize": 13039
+        },
+        {
+          "name": "dream-lost-art.js?v=19.0.0",
+          "duration": 30.900000000023283,
+          "transferSize": 41860
+        },
+        {
+          "name": "dream-encounter-art.js?v=19.0.0",
+          "duration": 33.09999999997672,
+          "transferSize": 28809
+        },
+        {
+          "name": "dream-awakenings.js?v=19.0.0",
+          "duration": 32.199999999953434,
+          "transferSize": 4132
+        },
+        {
+          "name": "dream-awakening-art.js?v=19.0.0",
+          "duration": 32.600000000034925,
+          "transferSize": 26322
+        },
+        {
+          "name": "dream-moon-play.js?v=19.0.0",
+          "duration": 33.100000000034925,
+          "transferSize": 12956
+        },
+        {
+          "name": "dream-moon-art.js?v=19.0.0",
+          "duration": 35.399999999965075,
+          "transferSize": 15041
+        },
+        {
+          "name": "dream-first-ticket-art.js?v=19.0.0",
+          "duration": 35.70000000001164,
+          "transferSize": 4629
+        },
+        {
+          "name": "dream-greenhouse-art.js?v=19.0.0",
+          "duration": 37.29999999998836,
+          "transferSize": 4180
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 4.100000000034925,
+          "transferSize": 4453
+        },
+        {
+          "name": "station-painted-v16.webp",
+          "duration": 4.5,
+          "transferSize": 266628
+        },
+        {
+          "name": "portrait-hero-open.svg",
+          "duration": 9.599999999976717,
+          "transferSize": 13008
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 5.199999999953434,
+          "transferSize": 7066
+        },
+        {
+          "name": "portrait-soul-joy.svg",
+          "duration": 7.599999999976717,
+          "transferSize": 7193
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 5.099999999976717,
+          "transferSize": 4453
+        },
+        {
+          "name": "portrait-soul.svg",
+          "duration": 5.400000000023283,
+          "transferSize": 7066
+        },
+        {
+          "name": "portrait-soul-peek.svg",
+          "duration": 4.2000000000116415,
+          "transferSize": 7102
+        },
+        {
+          "name": "festival-hero-halloween.svg",
+          "duration": 2.7999999999883585,
+          "transferSize": 4453
+        }
+      ],
+      "imagesLoaded": true
+    }
+  ]
+}

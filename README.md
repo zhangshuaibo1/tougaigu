@@ -3,7 +3,7 @@
 原创 2D 横向叙事机关冒险。阿拾负责站稳、跳跃与压住机关；掀开头盖骨，让小光灵拾光飞出，穿过薄幕、收集记忆并解开诗灯。
 
 - 游戏：[掀起你的头盖骨](https://zhangshuaibo1.github.io/tougaigu/)
-- 本轮候选版本：**19.0.0「借月剧场·稳稳登台」**；公开站点仍为18.0.0，候选浏览器验收和发布状态见[QA-v19](docs/QA-v19.md)。
+- 当前公开版本：**19.0.0「借月剧场·稳稳登台」**，候选、部署与公网验收完成，详见[QA-v19](docs/QA-v19.md)。
 - 原生 JavaScript / Canvas，无运行时第三方 JavaScript 依赖；原《再活一局》保留在 `survivor.html`。
 - 六章、十个节日、原有存档与奖励规则保留。企业页脚与原地址不变。
 
@@ -18,6 +18,10 @@
 左岸等台、舞台靠近、随台渡过、右岸下台使用原有提示位置显示简短反馈。提示由真实身体与平台位置决定，不覆盖朋友交谈、诗灯或借月追光。关卡几何、平台周期、移动承载、存档和奖励规则保持原样。
 
 完整验证记录：[QA-v19](docs/QA-v19.md)。这一轮后继续提升剧场背景与角色、前景之间的完成度。
+
+![v19公开地址实际网页：键盘搭乘移动舞台](docs/v19-live-desktop.png)
+
+上图来自原公开地址的1280×800 Chromium实际游玩，390px触摸截图及范围见[QA-v19](docs/QA-v19.md)。
 
 ### 倒流温室 · 玻璃与新芽
 
@@ -51,6 +55,17 @@ v17 将第一章的绘本景深推广到第二章：铜框玻璃、藤蔓、树�
 记忆为可选探索，主线需要点亮本章全部诗灯，再让身体走进出口。借景小戏、失物招领与第三章借月追光均保留。
 
 ## 发布与实际验证
+
+v19源码：[45cfb080](https://github.com/zhangshuaibo1/tougaigu/commit/45cfb080f868f071e9d4be8b8086458ca7e0924f)。Pages：[e21aca04](https://github.com/zhangshuaibo1/tougaigu/commit/e21aca04b379a4485eae5a3d8449d32bd4503471)。118个运行时blob与源码dist完全一致，只另加`.nojekyll`。
+
+- **504项 / 44个测试文件通过**；50个JS模块、135个本地引用、176个版本引用通过；66项离线生产Canvas检查通过。
+- [候选40816162223](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40816162223)、[Pages40816584342](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40816584342)、[main/公网40816586535](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40816586535)均成功。
+- 保留前两章与信件完整浏览器验收；新增正常解锁第三章后的键盘过台，再在同一存档正常重启并以390px模拟触摸过台。实际验证等台、登台、无输入承载、真实右岸接合与下台，零跌落、无相对平台滑移、无误解灯或误结算。
+- main验收的候选与公网各三个视口均19.0.0，零页面/HTTP错误。320/390独立触屏case仍覆盖第一章收票、暂停与布局；新增390px第三章范围不是整章或全程手机通关。没有实体手机、Safari或低端GPU性能结论。
+
+完整证据：[QA-v19](docs/QA-v19.md) · [公开浏览器完整报告](docs/verification-v19-public.json)。
+
+### v18历史验收
 
 v18 运行时代码：[ff385419](https://github.com/zhangshuaibo1/tougaigu/commit/ff385419e5f6a6927c1429c78aec191b2a0c6152)。Pages：[88bdf804](https://github.com/zhangshuaibo1/tougaigu/commit/88bdf804719c1a4d2a32f2c2d71a3b10aadf2677)。部署树与该源码的 `dist/` 一致，只另加 `.nojekyll`。
 
@@ -88,7 +103,7 @@ python scripts/browser-smoke.py --url http://127.0.0.1:8080/ --version 19.0.0 --
 
 存档仍在当前浏览器本地保存，可由顶部设置导出旅途备份；不是账号云同步。v17–v19不清空或迁移旧存档，不新增奖励结算。
 
-当前 **v19「借月剧场·稳稳登台」** 已完成实现与离线检查，浏览器候选验证和部署尚待完成。后续执行前读取 [迭代交接](docs/ITERATION.md)、[QA-v19](docs/QA-v19.md) 和最新远端状态，先续完未完成的发布，再启动下一轮。
+当前 **v19「借月剧场·稳稳登台」** 已完成实现、部署和公网验证。下一轮为 **v20「借月剧场·绒幕与月光」**，重点补齐剧场背景、诗灯材质与真实点灯后的环境变化。执行前读取 [迭代交接](docs/ITERATION.md)、[QA-v19](docs/QA-v19.md) 和最新远端状态，避免与其他会话竞争发布。
 
 [完整v2–v14历史](docs/README-v14.md) · [v16验收](docs/QA-v16.md) · [素材来源](docs/CREDITS.md)
 
