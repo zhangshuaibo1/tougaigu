@@ -6,6 +6,7 @@
 - 旧入口：[GitHub Pages 地址](https://zhangshuaibo1.github.io/tougaigu/)；域名配置与实际验收状态见 [域名记录](docs/DOMAIN-tougaigu.com.md)。
 - **v29.0.0「黎明邮局·晨光谢幕」已发布并完成公网验收**：648项测试、完整候选与正式HTTPS浏览器全部通过，见 [QA-v29](docs/QA-v29.md) 与 [发布证据](docs/verification-v29-release-summary.json)。
 - 下一轮 **v30「脚下有回声」**：六章真实起落与浮书站姿、首两章实地阴影的未升版预研已通过662项测试和真实候选浏览器；已准备30.0.0正式候选，待完整候选、发布与公网验收，见 [计划](docs/PLAN-v30.md)。
+- **v31「眼窝里的笑」独立预研**：本分支为31.0.0表情浏览器预研准备，74个本地测试文件与232个版本引用通过；真实浏览器待执行，前置正式30尚未发布闭环，当前公开版仍29。见 [QA-v31](docs/QA-v31.md)。
 - 原生 JavaScript / Canvas，无运行时第三方 JavaScript 依赖；原《再活一局》保留在 `survivor.html`。
 - 六章、十个节日、原有存档与奖励规则及企业页脚保留。
 

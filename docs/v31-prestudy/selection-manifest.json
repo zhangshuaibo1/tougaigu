@@ -1,0 +1,80 @@
+{
+  "scope": "Four native 320 same-input/same-frame current and frozen-v30 pairs; no crop, scaling, compositing or image editing",
+  "files": [
+    {
+      "file": "phone-320-events-ticket-joy.png",
+      "bytes": 187103,
+      "sha256": "583a6e08173e2e953055a85771e62f92ef10f6a7a628fe65580e786040491ae8",
+      "width": 320,
+      "height": 431,
+      "sameFramePair": "phone-320-events-ticket-joy",
+      "altered": false
+    },
+    {
+      "file": "phone-320-events-ticket-joy-v30.png",
+      "bytes": 187088,
+      "sha256": "d5a08a9fbe207506b7a7d7316281a6348446d8309c0d80aea3678d48a8dc604f",
+      "width": 320,
+      "height": 431,
+      "sameFramePair": "phone-320-events-ticket-joy",
+      "altered": false
+    },
+    {
+      "file": "phone-320-events-lamp-closed-joy.png",
+      "bytes": 187958,
+      "sha256": "9add9be4256f0bd36cfb57936ac3326d3829d3c20130be5fc24a716bd65ba368",
+      "width": 320,
+      "height": 431,
+      "sameFramePair": "phone-320-events-lamp-closed-joy",
+      "altered": false
+    },
+    {
+      "file": "phone-320-events-lamp-closed-joy-v30.png",
+      "bytes": 187974,
+      "sha256": "5ebc07d26f44229243f2aa35b1739c8a60ca87dae1cf2a96855f12b03fe01204",
+      "width": 320,
+      "height": 431,
+      "sameFramePair": "phone-320-events-lamp-closed-joy",
+      "altered": false
+    },
+    {
+      "file": "phone-320-fatigue-closed-tired.png",
+      "bytes": 185551,
+      "sha256": "c9662b113d049589d60f0e1389008f7ce4239a0d4c655a1d0316831eb3c24e68",
+      "width": 320,
+      "height": 431,
+      "sameFramePair": "phone-320-fatigue-closed-tired",
+      "altered": false
+    },
+    {
+      "file": "phone-320-fatigue-closed-tired-v30.png",
+      "bytes": 185436,
+      "sha256": "3ded875aaf209b78767603a1a1f28cc1143d7bb4a960977f4730baea23cbae23",
+      "width": 320,
+      "height": 431,
+      "sameFramePair": "phone-320-fatigue-closed-tired",
+      "altered": false
+    },
+    {
+      "file": "phone-320-chapter-6-neutral.png",
+      "bytes": 198916,
+      "sha256": "778ff230c897bb498d46222539038705d82432764b6d3a4075597482ab6793c8",
+      "width": 320,
+      "height": 431,
+      "sameFramePair": "phone-320-chapter-6-neutral",
+      "altered": false
+    },
+    {
+      "file": "phone-320-chapter-6-neutral-v30.png",
+      "bytes": 198848,
+      "sha256": "df6dce5de3484808942ef4ab0862dbe83844bb929d7d8afe86d5f92b80f1c442",
+      "width": 320,
+      "height": 431,
+      "sameFramePair": "phone-320-chapter-6-neutral",
+      "altered": false
+    }
+  ],
+  "reportSha256": "db2ade75a96b870c0ced7d8ab98912d3e327ad6e0e4384cd2c61983010c84b95",
+  "v30ReconstructionPatchSha256": "744419aebb175179c4dfb518968e07a173170ea3cb7d3368a3186527554aac42",
+  "reconstructionPatchVerified": true
+}

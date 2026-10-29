@@ -8,6 +8,7 @@ import { runInNewContext } from 'node:vm';
 import { DreamGame } from '../dist/dream-engine.js';
 import { getTravelerMotion } from '../dist/dream-traveler-art.js';
 import { transformCapPoint } from '../dist/dream-cap-art.js';
+import { getTravelerFaceView, hasSoulJoy } from '../dist/dream-traveler-face.js';
 import { FESTIVALS } from '../dist/dream-festivals.js';
 
 const root=new URL('..',import.meta.url),noop=()=>{};
@@ -33,6 +34,7 @@ const sources=JSON.parse(extracted.stdout);
 const probeImports=[
   "import {getTravelerMotion as __qaGetTravelerMotion} from './dream-traveler-art.js';",
   "import {transformCapPoint as __qaTransformCapPoint} from './dream-cap-art.js';",
+  "import {getTravelerFaceView as __qaGetTravelerFaceView,hasSoulJoy as __qaHasSoulJoy} from './dream-traveler-face.js';",
 ];
 let probe=sources.probe;
 for(const statement of probeImports){assert(probe.includes(statement));probe=probe.replace(statement,'');}
@@ -41,7 +43,8 @@ function makeGame(chapterIndex,options={}){
   game.start({chapterIndex,sound:false,...options});
   const readWindow={};
   runInNewContext(probe,{window:readWindow,game,currentHud:null,lastHudAt:0,controlSource:'keyboard',performance:{now:()=>100},save:{choices:{letter:null}},
-    __qaGetTravelerMotion:getTravelerMotion,__qaTransformCapPoint:transformCapPoint});
+    __qaGetTravelerMotion:getTravelerMotion,__qaTransformCapPoint:transformCapPoint,
+    __qaGetTravelerFaceView:getTravelerFaceView,__qaHasSoulJoy:hasSoulJoy});
   return {game,read:()=>JSON.parse(JSON.stringify(readWindow.__qaRead()))};
 }
 const tick=(game,n=1)=>{for(let i=0;i<n;i++)game.update(1/60);};

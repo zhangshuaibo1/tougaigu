@@ -1,0 +1,197 @@
+{
+  "scope": "Local v31 art pre-study based on an exact copy of the uncommitted v30 research, itself based on v29 candidate1ba8ce9. No v30 or v31 browser/public release is claimed.",
+  "gitHead": "1ba8ce9a4261d74f7278f14ded776cd23681bfcd",
+  "sourceWorkspace": "/workspace/scratch/2b18af2db412/tougaigu-v30",
+  "files": [
+    {
+      "path": "dist/dream-engine.js",
+      "bytes": 25788,
+      "sha256": "ec03967f529ce408a3fad751834d18ef90869afe0962b00ea7d8a25c37f825f6"
+    },
+    {
+      "path": "dist/dream-traveler-performance.js",
+      "bytes": 7342,
+      "sha256": "ff4f258632c6136fed2a4b95fa8aa828c25817d3db6318663b924ee93ecf2c5c"
+    },
+    {
+      "path": "docs/PLAN-v31.md",
+      "bytes": 18114,
+      "sha256": "2ec8c778dfad3d6da286367d5fe801494636522f26ae7ee2e2a1dd48836a8820"
+    },
+    {
+      "path": "docs/v30-prestudy/ENGINE-NOTES.md",
+      "bytes": 6735,
+      "sha256": "4c3523dc451f7da741431cad6293c204b9670c149cc9448a2eba5e0a28a5ae85"
+    },
+    {
+      "path": "docs/v30-prestudy/README.md",
+      "bytes": 1880,
+      "sha256": "e7e9b66c191aeb52f102a8d6ba6309281eeffccc43db8ad749ad6ce79ad3a63d"
+    },
+    {
+      "path": "docs/v30-prestudy/desktop-chapter-2-settle.png",
+      "bytes": 1024628,
+      "sha256": "263d28b01c49e8b56a8d47918a90f688bc0522a263538cc1684ccb7dc5da4bf6"
+    },
+    {
+      "path": "docs/v30-prestudy/desktop-chapter-4-fall.png",
+      "bytes": 809656,
+      "sha256": "fe8e1cc4c885ed4f69b27c7f61cc915f9ea4e0baba33c0c105bbe23f0ca11c50"
+    },
+    {
+      "path": "docs/v30-prestudy/local-review.json",
+      "bytes": 2193,
+      "sha256": "028a4c45c154d762bd64752fc51798a241c6415b7212cb04b43fc80481def9b9"
+    },
+    {
+      "path": "docs/v30-prestudy/motion-v30-report.json",
+      "bytes": 166285,
+      "sha256": "c6723c509300e9c50e1c804c3b925b4b4c52965877e2825544be4d3e6a4e424f"
+    },
+    {
+      "path": "docs/v30-prestudy/phone-320-chapter-1-fall-v29.png",
+      "bytes": 182985,
+      "sha256": "2cb71ef4f4625a1d308869691dba0394fdc54a1ae3c32abb773f6f3acc584756"
+    },
+    {
+      "path": "docs/v30-prestudy/phone-320-chapter-1-fall.png",
+      "bytes": 183106,
+      "sha256": "eb291a205892d3f2bfa0a43097ba27cd7b7cd8cd85e22f032b94fc041570373c"
+    },
+    {
+      "path": "docs/v30-prestudy/phone-390-chapter-2-settle-v29.png",
+      "bytes": 388372,
+      "sha256": "aa8a4364740c305c77242160d4eca7be6a2420e0aa9a4c0ef66d03ec7d4ca789"
+    },
+    {
+      "path": "docs/v30-prestudy/phone-390-chapter-2-settle.png",
+      "bytes": 388454,
+      "sha256": "0462a99d2246d00322181157081c01975a852825ed8fceb9b336e663c1b05e7a"
+    },
+    {
+      "path": "docs/v30-prestudy/phone-390-chapter-6-fall.png",
+      "bytes": 291289,
+      "sha256": "65523e18dceb04b759048c9ec84e8cac97a1b19d4278ffbb58e47e68c5294d58"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/README.md",
+      "bytes": 4417,
+      "sha256": "b0fa88912f6f36343cdf8ecb16925bb076f4bed1077c7f28e9d551877b982ead"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-320-book-b-down.png",
+      "bytes": 196211,
+      "sha256": "68dc70bd2033011a9e1f9ea3c7e5f6ccd9dcab7cdc8408af13be6d8a7797ba90"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-320-book-b-up.png",
+      "bytes": 196690,
+      "sha256": "c6babf6114353befa068344f94f0ac900e3a0b2897f703c66d531c0c2a705490"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-320-last-stage-left.png",
+      "bytes": 178393,
+      "sha256": "3f22ebe396ee1d3eb4f06643810ad21016ce415455220ceec58e1a281ad49dae"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-320-last-stage-right.png",
+      "bytes": 172116,
+      "sha256": "91692cff2376cfc1be8609de22f717985f8b882bc01ad31b008296167ebeb217"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-390-book-a-down.png",
+      "bytes": 291581,
+      "sha256": "792aeb9e24130ff716b2d6eb4e10d9fbbe638c0bc3f9e3e97186d941df48ac43"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-390-book-a-up-ablated.png",
+      "bytes": 293182,
+      "sha256": "a6024e455ca8369a06f1c38b2fdbf17f45bd6883328efbc55b5a504821fb6722"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-390-book-a-up.png",
+      "bytes": 293239,
+      "sha256": "762eb6323739c2225a9f38385bc641ca906ce1193d1b9f40218981ea4cea1c95"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-390-post-root-land.png",
+      "bytes": 250712,
+      "sha256": "56eaaf48c6cf3d11c9165a6d2141c6eedc17db92c70e3173e8e3578c50850c17"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/riders-v30-report.json",
+      "bytes": 118644,
+      "sha256": "8b04981e11ad38d3018a871cdf5337788e37aa0fb1ca48e3b59094b2fd1a9812"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/selection-manifest.json",
+      "bytes": 3566,
+      "sha256": "642719f4564a9d1cd4af7a8828bc8030cff476dcb87d2dcc9c4f2abca994c925"
+    },
+    {
+      "path": "docs/v30-prestudy/selection-manifest.json",
+      "bytes": 1435,
+      "sha256": "6d4b99e9707623aa959679b0c420b49e46bad4619306e142afecec14357c42b0"
+    },
+    {
+      "path": "scripts/browser-smoke.py",
+      "bytes": 135234,
+      "sha256": "ac6d533c5080500d758629f0cfb3816810fa7c81e444728b3a47a9dc6db93dc0"
+    },
+    {
+      "path": "scripts/browser_coast_v27.py",
+      "bytes": 24206,
+      "sha256": "7f05ac3f6e8914e01407a357b54efa3f339362773fe056256636a9a2afe71365"
+    },
+    {
+      "path": "scripts/browser_library_v26.py",
+      "bytes": 33372,
+      "sha256": "065a0ab28f7eef6d1e8e8125873f2866408f0a35b3813d050ba1e4bb9c7482ca"
+    },
+    {
+      "path": "scripts/browser_post_v28.py",
+      "bytes": 57999,
+      "sha256": "258142d8b3779ffaf2157970fb4badc220af5aeb45247fb96286d2a69f2f544f"
+    },
+    {
+      "path": "scripts/render-v30-motion.mjs",
+      "bytes": 9306,
+      "sha256": "eed70c14ef0f8abc54f69ede16429bb434e87c991d712c951825388c62879df4"
+    },
+    {
+      "path": "scripts/render-v30-riders.mjs",
+      "bytes": 19667,
+      "sha256": "15333c78d1f2217b9f48f2a45a02e97fa7de5161e0b8a60eebb1f3082f001cc7"
+    },
+    {
+      "path": "tests/browser-coast-route-v27.test.mjs",
+      "bytes": 8150,
+      "sha256": "7b9bae3a0c72b2bc126cd09c278b61496d260d4508449cd2b1105c4867fe8221"
+    },
+    {
+      "path": "tests/browser-library-route-v27.test.mjs",
+      "bytes": 14079,
+      "sha256": "1b4a50c7b5aa3603598a215bc8245308f22389b07998a5341a972561bcbd6b84"
+    },
+    {
+      "path": "tests/browser-post-route-v29.test.mjs",
+      "bytes": 22175,
+      "sha256": "617838a3ebcfaac821a5fb21bb24e79d737988175e21e9551e8deb389e6b37b7"
+    },
+    {
+      "path": "tests/browser-traveler-performance.test.mjs",
+      "bytes": 43028,
+      "sha256": "3b84b56de232d60e0bc0c7901f9f2269b73755f9ef4decacd64c257cc4f70232"
+    },
+    {
+      "path": "tests/traveler-performance-v30.test.mjs",
+      "bytes": 26300,
+      "sha256": "c3ac41e8621ba595a5105a8f6919246c393f28854384f0eb12944cf9bb5207fe"
+    },
+    {
+      "path": "tests/traveler-performance.test.mjs",
+      "bytes": 15556,
+      "sha256": "89f4373851fbe39ebd5469f4bd6ca4206f3aa36489baa9846d094b2aa9a7e932"
+    }
+  ]
+}
