@@ -4,7 +4,7 @@ A test-only read-only coordinate probe is appended in-memory to the app module.
 All movement and puzzles still use real keyboard/touch/DOM input: no teleportation,
 save injection, direct updates, or engine solving calls.
 """
-import argparse,asyncio,json,re,shutil,time
+import argparse,asyncio,json,math,re,shutil,time
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from playwright.async_api import async_playwright, expect
@@ -17,6 +17,8 @@ window.__qaRead=()=>{
   return {
     form:game.form,state:game.state,chapterIndex:game.chapterIndex,mode:game.mode,festivalId:game.festivalId,controlSource,
     energy:game.energy,maxEnergy:game.maxEnergy,
+    hudSample:currentHud?{form:currentHud.form,state:currentHud.state,time:currentHud.time,energy:currentHud.energy,maxEnergy:currentHud.maxEnergy}:null,
+    observedAt:performance.now(),fullHudWrittenAt:lastHudAt,
     seals:game.lanterns.filter(l=>l.lit).length,memories:game.memories.filter(m=>m.collected).length,
     firstTicket:game.firstTicket?{...game.firstTicket}:null,
     x:a.x,y:a.y,vx:a.vx,vy:a.vy,time:game.time,deaths:game.deaths,camera:game.camera,
@@ -47,7 +49,10 @@ window.__qaRead=()=>{
 
 # Observation only: this evaluates real layout, glyph rectangles, semantics and
 # hit targets without changing a DOM attribute or assigning any game state.
-HUD_PROBE="""()=>{
+HUD_PROBE="""async()=>{
+  // Observe after the already queued game frame, then read all values in one
+  // synchronous task. This is one passive frame boundary, not a retry loop.
+  await new Promise(resolve=>requestAnimationFrame(resolve));
   const selectors={hud:'.stage-hud',chapter:'.stage-hud-left',title:'#stage-chapter-title',
     story:'#stage-story',goals:'.stage-goals',sealGroup:'.stage-goals>span:nth-child(1)',
     memoryGroup:'.stage-goals>span:nth-child(2)',seals:'#stage-seals',memories:'#stage-memories',
@@ -73,8 +78,9 @@ HUD_PROBE="""()=>{
       return {...state,id:el.id||el.dataset.direction||el.dataset.shellAction,centerHits:hit===el||el.contains(hit)};});
   const game=window.__qaRead();
   return {viewport:{width:innerWidth,height:innerHeight},elements,buttons,
-    runtime:{form:game.form,mode:game.mode,festivalId:game.festivalId,energy:game.energy,maxEnergy:game.maxEnergy,seals:game.seals,memories:game.memories,controlSource:game.controlSource},
-    meter:{role:meter?.getAttribute('role'),name:meter?.getAttribute('aria-label'),min:meter?.getAttribute('aria-valuemin'),max:meter?.getAttribute('aria-valuemax'),value:meter?.getAttribute('aria-valuenow'),text:meter?.getAttribute('aria-valuetext')},
+    runtime:{form:game.form,state:game.state,time:game.time,mode:game.mode,festivalId:game.festivalId,energy:game.energy,maxEnergy:game.maxEnergy,seals:game.seals,memories:game.memories,controlSource:game.controlSource},
+    hudSample:game.hudSample,timing:{observedAt:game.observedAt,fullHudWrittenAt:game.fullHudWrittenAt},
+    meter:{role:meter?.getAttribute('role'),name:meter?.getAttribute('aria-label'),min:meter?.getAttribute('aria-valuemin'),max:meter?.getAttribute('aria-valuemax'),value:meter?.getAttribute('aria-valuenow'),text:meter?.getAttribute('aria-valuetext'),barPercent:parseFloat(document.querySelector('#stage-energy')?.style.width)},
     cap:{text:cap?.textContent.trim(),display:cap?getComputedStyle(cap).display:null,descriptionIds:document.querySelector('#stage-toggle')?.getAttribute('aria-describedby')},
     horizontalOverflow:document.documentElement.scrollWidth>innerWidth};
 }"""
@@ -146,6 +152,41 @@ def validate_hud_geometry(snapshot):
             assert not rectangles_overlap(button['rect'],bubble['rect']),button['id']+' is covered by the speech bubble'
     return {'hudToObjectivePx':gap,'objectiveToBubblePx':bubble_gap}
 
+def validate_hud_energy(snapshot):
+    """Check one atomic observation at the route's settled collection states."""
+    runtime=snapshot['runtime'];meter=snapshot['meter'];received=snapshot['hudSample']
+    visible=snapshot['elements']['energyLabel']['text']
+    facts={'viewport':snapshot['viewport'],'runtime':runtime,'hudSample':received,
+           'timing':snapshot.get('timing'),'meter':meter,'visibleLabel':visible}
+    detail=json.dumps(facts,ensure_ascii=False)
+    assert received and received['maxEnergy']>0 and runtime['maxEnergy']>0,'missing actual energy source; '+detail
+    try:value=int(meter['value'])
+    except (ValueError,TypeError) as error:raise AssertionError('invalid accessible energy number; '+detail) from error
+    actual=max(0,min(100,runtime['energy']/runtime['maxEnergy']*100))
+    presented=max(0,min(100,received['energy']/received['maxEnergy']*100))
+    assert meter['role']=='progressbar' and meter['name']=='拾光灵光','wrong energy semantics; '+detail
+    assert meter['min']=='0' and meter['max']=='100','wrong accessible energy range; '+detail
+    assert 0<=value<=100 and abs(value-actual)<=3,'accessible energy differs from live energy by more than 3; '+detail
+    assert value==math.ceil(presented),'ARIA energy does not match the actual onHud snapshot; '+detail
+    assert meter['barPercent'] is not None and abs(meter['barPercent']-presented)<=.001,'energy fill does not match the actual onHud snapshot; '+detail
+    assert received['form']==runtime['form'],'energy source has a stale form; '+detail
+    expected_visible=('灵光 ' if received['form']=='soul' else '恢复中 ')+str(value)+'%'
+    if received['form']=='body' and presented>=99:expected_visible='灵光充足'
+    assert visible==expected_visible,'visible energy label does not match the actual onHud snapshot; '+detail
+    expected_text=visible if '%' in visible else visible+' '+str(value)+'%'
+    assert meter['text']==expected_text,'accessible energy must retain the visible state and its actual percent; '+detail
+    return {'livePercent':actual,'onHudPercent':presented,'ariaPercent':value,'liveDelta':abs(value-actual),
+            'simulationAge':runtime['time']-received['time']}
+
+def validate_hud_aria_energy(aria):
+    """The later AX read is its own observation; recovery may finish meanwhile."""
+    soul='拾光 · 灵魂' in aria;body='阿拾 · 身体' in aria
+    assert soul!=body,'AX observation has no unambiguous current form: '+aria
+    if soul:
+        assert re.search(r'灵光\s+\d+%',aria),'AX soul has no readable energy percent: '+aria
+    else:
+        assert '灵光充足' in aria or re.search(r'恢复中\s+\d+%',aria),'AX body has no readable recovery/full state: '+aria
+
 async def assert_hud_readable(page,label,form=None,hint=None,objective=None,cap=None,need_bubble=False):
     if form:
         await page.wait_for_function("form=>window.__qaRead()?.form===form",arg=form)
@@ -157,23 +198,15 @@ async def assert_hud_readable(page,label,form=None,hint=None,objective=None,cap=
     except AssertionError as error:raise AssertionError(label+': '+str(error)+'; '+json.dumps(snapshot,ensure_ascii=False)) from error
     e=snapshot['elements'];runtime=snapshot['runtime'];meter=snapshot['meter']
     if need_bubble:assert e['bubble']['visible'],label+': expected the naturally triggered speech bubble'
-    assert meter['role']=='progressbar' and meter['name']=='拾光灵光'
-    assert meter['min']=='0' and meter['max']=='100'
-    value=int(meter['value']);actual=max(0,min(100,runtime['energy']/runtime['maxEnergy']*100))
-    assert 0<=value<=100 and abs(value-actual)<=3,'accessible energy is stale or unrelated to actual energy'
-    visible_energy=e['energyLabel']['text']
-    expected_energy=visible_energy if '%' in visible_energy else visible_energy+' '+str(value)+'%'
-    assert meter['text']==expected_energy,'accessible energy must retain the visible state and its actual percent'
+    try:energy_observation=validate_hud_energy(snapshot)
+    except AssertionError as error:raise AssertionError(label+': '+str(error)) from error
     assert ('灵魂' if runtime['form']=='soul' else '身体') in e['formName']['text']
-    if runtime['form']=='soul':assert re.fullmatch(r'灵光\s+\d+%',visible_energy)
-    elif actual<96:assert re.fullmatch(r'恢复中\s+\d+%',visible_energy)
-    else:assert visible_energy=='灵光充足' or re.fullmatch(r'恢复中\s+\d+%',visible_energy)
     await expect(page.locator('.stage-goals>span').nth(0)).to_have_accessible_name(re.compile(r'^谜灯\s*'+str(runtime['seals'])+r'\s*/\s*2$'),timeout=1500)
     memory_category='礼物' if runtime['mode']=='festival' else '记忆'
     await expect(page.locator('.stage-goals>span').nth(1)).to_have_accessible_name(re.compile('^'+memory_category+r'\s*'+str(runtime['memories'])+r'\s*/\s*3$'),timeout=1500)
     aria=await page.locator('.stage-hud').aria_snapshot(timeout=1500)
-    assert '谜灯' in aria and memory_category in aria and '拾光灵光' in aria and meter['text'].split()[0] in aria
-    assert ('灵魂' if runtime['form']=='soul' else '身体') in aria,'actual form category is missing from the accessibility tree'
+    assert '谜灯' in aria and memory_category in aria and '拾光灵光' in aria
+    validate_hud_aria_energy(aria)
     assert 'stage-cap-label' in (snapshot['cap']['descriptionIds'] or '').split()
     assert snapshot['cap']['display']!='none','cap status was removed from the accessible control description'
     if cap:
@@ -182,7 +215,7 @@ async def assert_hud_readable(page,label,form=None,hint=None,objective=None,cap=
     if runtime['controlSource']=='buttons':
         assert not re.search(r'\b[EQ]\b|空格|WASD|方向键',e['hint']['text']),'button input left keyboard-only hints'
     record={'label':label,'viewport':snapshot['viewport'],'form':runtime['form'],'mode':runtime['mode'],'memoryCategory':memory_category,'actualEnergy':runtime['energy'],
-            'accessibleEnergy':meter,'gaps':gaps,'bubbleVisible':e['bubble']['visible'],
+            'accessibleEnergy':meter,'energyObservation':energy_observation,'onHudSample':snapshot['hudSample'],'energyTiming':snapshot['timing'],'gaps':gaps,'bubbleVisible':e['bubble']['visible'],
             'objective':e['objective']['text'],'nearHint':e['hint']['text'],'capDescription':snapshot['cap']['text'],
             'ariaSnapshot':aria,'objectiveAndHintUnclipped':True,'inputCentersUncovered':True,
             'rects':{name:e[name]['rect'] for name in ['hud','goals','form','objectiveBox','bubble']}}

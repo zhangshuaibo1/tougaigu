@@ -589,6 +589,22 @@ function onHud(snapshot) {
   const previousForm = currentHud?.form;
   const previousGifts = currentHud?.gifts;
   currentHud = snapshot;
+  // Catch-up steps can emit several snapshots in one rendered frame. Keep the
+  // visible and accessible energy together before throttling the heavier HUD.
+  const soul = snapshot.form === 'soul';
+  const energy = Math.max(0, Math.min(100, snapshot.energy / Math.max(1, snapshot.maxEnergy) * 100));
+  const energyFill = $('#stage-energy'), energyLabel = $('#stage-energy-label'), energyMeter = $('#stage-energy-meter');
+  // A stable decimal survives CSSOM serialization without same-value rewrites.
+  const energyWidth = Number(energy.toFixed(4)) + '%';
+  const energyColor = energy < 25 ? 'var(--dream-orange)' : 'var(--dream-mint)';
+  const energyValue = String(Math.ceil(energy));
+  const energyText = soul ? '灵光 ' + energyValue + '%' : energy < 99 ? '恢复中 ' + energyValue + '%' : '灵光充足';
+  const energyDescription = energyText.includes('%') ? energyText : energyText + ' ' + energyValue + '%';
+  if (energyFill.style.width !== energyWidth) energyFill.style.width = energyWidth;
+  if (energyFill.style.background !== energyColor) energyFill.style.background = energyColor;
+  if (energyLabel.textContent !== energyText) energyLabel.textContent = energyText;
+  if (energyMeter.getAttribute('aria-valuenow') !== energyValue) energyMeter.setAttribute('aria-valuenow', energyValue);
+  if (energyMeter.getAttribute('aria-valuetext') !== energyDescription) energyMeter.setAttribute('aria-valuetext', energyDescription);
   hub?.tick({ sessionId: runSessionId, time: snapshot.time, playing: snapshot.state === 'playing' && !document.querySelector('dialog[open]') && !shellOverlayOpen, usable: !settled && !activePuzzle && !pendingTalk && ['playing', 'paused'].includes(snapshot.state) });
   const now = performance.now();
   if (now - lastHudAt < 80 && previousForm === snapshot.form && previousGifts === snapshot.gifts && snapshot.state === 'playing') return;
@@ -615,19 +631,9 @@ function onHud(snapshot) {
   renderLostEvidence(lost);
   $('#stage-near-hint').textContent = controlHint(snapshot.nearHint || currentFestival?.sceneHint || CHAPTERS[snapshot.chapterIndex].hint, snapshot);
   $('#stage-buffs').innerHTML = (snapshot.buffs?.compass ? '<span>罗盘 ' + snapshot.buffs.compass + 's</span>' : '') + (snapshot.buffs?.feather ? '<span>轻羽守护</span>' : '');
-  const soul = snapshot.form === 'soul';
   document.body.classList.toggle('soul-active', soul);
   $('#stage-form-name').textContent = soul ? '拾光 · 灵魂' : '阿拾 · 身体';
   if (previousForm !== snapshot.form || previousGifts !== snapshot.gifts) updateShell();
-  const energy = Math.max(0, Math.min(100, snapshot.energy / Math.max(1, snapshot.maxEnergy) * 100));
-  $('#stage-energy').style.width = energy + '%';
-  $('#stage-energy').style.background = energy < 25 ? 'var(--dream-orange)' : 'var(--dream-mint)';
-  const energyText = soul ? '灵光 ' + Math.ceil(energy) + '%' : energy < 99 ? '恢复中 ' + Math.ceil(energy) + '%' : '灵光充足';
-  $('#stage-energy-label').textContent = energyText;
-  const energyMeter = $('#stage-energy-meter'), energyValue = String(Math.ceil(energy));
-  const energyDescription = energyText.includes('%') ? energyText : energyText + ' ' + energyValue + '%';
-  if (energyMeter.getAttribute('aria-valuenow') !== energyValue) energyMeter.setAttribute('aria-valuenow', energyValue);
-  if (energyMeter.getAttribute('aria-valuetext') !== energyDescription) energyMeter.setAttribute('aria-valuetext', energyDescription);
   const capPhase = snapshot.cap?.phase || (soul ? 'open' : 'closed');
   $('#stage-cap-status').dataset.phase = capPhase;
   $('#stage-cap-label').textContent = ({ closed: 'E · 掀开脑洞', opening: '咔哒 · 脑洞打开', open: '脑洞打开 · 念头出发', returning: '拾光回家 · 轻轻扣盖' })[capPhase] || '';
