@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "runURL": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40858951757",
+  "sourceCommit": "03a46bc4fb2abd02399287307c089501f40e7c63",
+  "jobId": 123396960668,
+  "conclusion": "failure",
+  "logicTests": {
+    "passed": 564,
+    "failed": 0
+  },
+  "candidateBrowser": "success",
+  "publicBrowser": "failure",
+  "failureAtUTC": "2026-10-29T10:45:31.9988345Z",
+  "requestFailures": [
+    {
+      "url": "https://tougaigu.com/assets/portrait-hero-curious.svg",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tougaigu.com/assets/portrait-hero-curious.svg",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tougaigu.com/assets/portrait-keeper.svg",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tougaigu.com/assets/theatre-painted-v22.webp",
+      "failure": "net::ERR_FAILED"
+    },
+    {
+      "url": "https://tougaigu.com/assets/theatre-painted-v22.webp",
+      "failure": "net::ERR_FAILED"
+    },
+    {
+      "url": "https://tougaigu.com/assets/theatre-painted-v20.svg",
+      "failure": "net::ERR_FAILED"
+    }
+  ],
+  "unexpectedFailure": {
+    "url": "https://tougaigu.com/assets/portrait-keeper.svg",
+    "failure": "net::ERR_ABORTED"
+  },
+  "artifact": {
+    "id": 12890947474,
+    "bytes": 129524312,
+    "files": 170,
+    "sha256": "c2fa5b1960efccc78bd02f038730aae409216d3977f495d6ab4658deeb28b367",
+    "downloadedHashVerified": true,
+    "containsCandidateReport": true,
+    "containsCompletedPublicReport": false
+  },
+  "originalFailureLogExcerpt": "2026-10-29T10:45:31.9962796Z Traceback (most recent call last):\n2026-10-29T10:45:31.9963707Z   File \"/home/runner/work/tougaigu/tougaigu/scripts/browser-smoke.py\", line 1674, in <module>\n2026-10-29T10:45:31.9969072Z     parser=argparse.ArgumentParser();parser.add_argument('--url',required=True);parser.add_argument('--output',default='verification/browser');parser.add_argument('--version');parser.add_argument('--chromium');asyncio.run(main(parser.parse_args()))\n2026-10-29T10:45:31.9972196Z                                                                                                                                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n2026-10-29T10:45:31.9973033Z   File \"/usr/lib/python3.12/asyncio/runners.py\", line 194, in run\n2026-10-29T10:45:31.9980269Z     return runner.run(main)\n2026-10-29T10:45:31.9980731Z            ^^^^^^^^^^^^^^^^\n2026-10-29T10:45:31.9981288Z   File \"/usr/lib/python3.12/asyncio/runners.py\", line 118, in run\n2026-10-29T10:45:31.9981735Z     return self._loop.run_until_complete(task)\n2026-10-29T10:45:31.9982095Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n2026-10-29T10:45:31.9982587Z   File \"/usr/lib/python3.12/asyncio/base_events.py\", line 687, in run_until_complete\n2026-10-29T10:45:31.9983082Z     return future.result()\n2026-10-29T10:45:31.9983331Z            ^^^^^^^^^^^^^^^\n2026-10-29T10:45:31.9983765Z   File \"/home/runner/work/tougaigu/tougaigu/scripts/browser-smoke.py\", line 1658, in main\n2026-10-29T10:45:31.9984691Z     assert [item['url'] for item in theatre_failures]==intentional, 'an unplanned resource request failed: '+json.dumps(request_failures,ensure_ascii=False)\n2026-10-29T10:45:31.9985442Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n2026-10-29T10:45:31.9988345Z AssertionError: an unplanned resource request failed: [{\"url\": \"https://tougaigu.com/assets/portrait-hero-curious.svg\", \"failure\": \"net::ERR_ABORTED\"}, {\"url\": \"https://tougaigu.com/assets/portrait-hero-curious.svg\", \"failure\": \"net::ERR_ABORTED\"}, {\"url\": \"https://tougaigu.com/assets/portrait-keeper.svg\", \"failure\": \"net::ERR_ABORTED\"}, {\"url\": \"https://tougaigu.com/assets/theatre-painted-v22.webp\", \"failure\": \"net::ERR_FAILED\"}, {\"url\": \"https://tougaigu.com/assets/theatre-painted-v22.webp\", \"failure\": \"net::ERR_FAILED\"}, {\"url\": \"https://tougaigu.com/assets/theatre-painted-v20.svg\", \"failure\": \"net::ERR_FAILED\"}]\n2026-10-29T10:45:32.0793609Z ##[error]Process completed with exit code 1.",
+  "analysis": {
+    "confirmedGap": "Normal finish_story_from_ui advanced story pages before waiting for the current portrait to decode.",
+    "inference": "The only keeper portrait source in the exercised route is the greenhouse outro's second page. Advancing to the next page while this image was loading can cancel that exact request.",
+    "limitation": "The failed run did not retain request event timestamps or initiators; its exact cancellation instant was not traced."
+  },
+  "fixCommit": "923facef7056c97b8eb0be0a7ab803363dfe5d5e",
+  "unchanged": [
+    "production dist",
+    "traveler frame sampler",
+    "intentional rapid Next/Escape race tests",
+    "exact request failure allowlist"
+  ],
+  "rerunURL": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40860849477"
+}
