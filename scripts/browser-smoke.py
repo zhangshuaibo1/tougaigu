@@ -154,20 +154,24 @@ async def main(args):
         b=await p.chromium.launch(headless=True,executable_path=args.chromium or None,args=['--no-sandbox'])
         for w,h,touch,full in [(1280,800,False,True),(390,844,True,False),(320,680,True,False)]:
             context=await b.new_context(viewport={'width':w,'height':h},has_touch=touch,is_mobile=touch,device_scale_factor=1)
-            page=await context.new_page();errors=[];failed=[]
+            page=await context.new_page();errors=[];failed=[];instrumented_app_urls=[]
             page.on('pageerror',lambda e:errors.append(str(e)))
             page.on('response',lambda r:failed.append({'url':r.url,'status':r.status}) if r.status>=400 else None)
             async def instrument(route):
                 response=await route.fetch()
                 await route.fulfill(response=response,body=(await response.text())+PROBE)
-            await page.route('**/dream-app.js',instrument)
+                instrumented_app_urls.append(route.request.url)
+            await page.route(re.compile(r'/dream-app\.js(?:\?[^#]*)?$'),instrument)
             await page.goto(args.url,wait_until='networkidle',timeout=45000)
+            await page.wait_for_function("typeof window.__qaRead === 'function'",timeout=5000)
+            assert instrumented_app_urls,'app module was not instrumented'
             version=await page.locator('meta[name="application-version"]').get_attribute('content')
             assert not args.version or version==args.version,(version,args.version)
             result=await exercise(page,output,str(w),touch,full)
             assert not errors,errors
             assert not failed,failed
             result['pageErrors']=errors;result['httpErrors']=failed
+            result['instrumentedAppURLs']=instrumented_app_urls
             result['resources']=await page.evaluate("performance.getEntriesByType('resource').map(e=>({name:e.name.split('/').pop(),duration:e.duration,transferSize:e.transferSize}))")
             result['imagesLoaded']=await page.locator('img').evaluate_all('(els)=>els.filter(e=>e.getBoundingClientRect().width>0).every(e=>e.complete&&e.naturalWidth>0)')
             assert result['imagesLoaded'],'visible image failed to load'
