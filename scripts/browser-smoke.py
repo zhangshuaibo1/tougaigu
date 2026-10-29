@@ -959,16 +959,17 @@ async def exercise_greenhouse(page,output,label):
             'rootCrossed':True,'routeEvidence':route,'chapterCompleted':True,
             'noRespawns':True,'noHorizontalOverflow':True}
 
-async def finish_story_from_ui(page):
-    """Read every real story page instead of invoking its completion callback."""
+async def finish_story_from_ui(page,expected_pages):
+    """Read each decoded current speaker before normally advancing the story."""
     await page.locator('#story-dialog[open]').wait_for()
-    pages=[]
-    for _ in range(12):
-        if not await page.locator('#story-dialog[open]').is_visible():
-            return pages
-        pages.append(await page.locator('#story-page').inner_text())
+    portraits=[]
+    for expected in expected_pages:
+        # Normal reading must not supersede an image that is still loading.
+        # Deliberate rapid Next/Escape races remain in exercise_portrait_sequence.
+        portraits.append(await read_ready_story_portrait(page,expected))
         await page.locator('#story-next').click()
-    raise AssertionError('story dialogue did not finish through its next-page button')
+    assert not await page.locator('#story-dialog[open]').is_visible(), 'story dialogue has an unexpected extra page'
+    return {'pages':[portrait['page'] for portrait in portraits],'portraits':portraits}
 
 async def read_reward_grants(page):
     """Normal play time may increase; an echo must never grant or claim items."""
@@ -1043,7 +1044,11 @@ async def exercise_letter_echo(page,output,label):
     chapters=await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).chapters")
     assert chapters[1]['completed'] and chapters[1]['runs']==1
     await page.locator('#result-story').click()
-    outro_pages=await finish_story_from_ui(page)
+    outro=await finish_story_from_ui(page,[
+        {'page':'01 / 03','speaker':'阿拾','word':'孩子的信','file':'portrait-hero-tender.svg'},
+        {'page':'02 / 03','speaker':'归先生','word':'让她自己选花期','file':'portrait-keeper.svg'},
+        {'page':'03 / 03','speaker':'拾光','word':'种子在头里开花了','file':'portrait-soul-joy.svg'},
+    ])
     await page.locator('#choice-dialog[open]').wait_for()
     assert await page.locator('#choice-title').inner_text()=='这封信，交给谁？'
     send=page.locator('#choice-options [data-choice="send"]')
@@ -1052,7 +1057,9 @@ async def exercise_letter_echo(page,output,label):
     await page.locator('#story-dialog[open]').wait_for()
     assert (await page.evaluate('window.__qaRead()'))['letterChoice']=='send'
     assert await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).choices.letter")=='send'
-    await finish_story_from_ui(page)
+    send_reply=await finish_story_from_ui(page,[
+        {'page':'01 / 01','speaker':'拾光','word':'信乘着掀盖时的风飞走','file':'portrait-soul.svg'},
+    ])
     await page.locator('#map-dialog[open]').wait_for()
     chapter=page.locator('#chapter-grid [data-chapter="1"]')
     assert await chapter.is_enabled()
@@ -1086,7 +1093,9 @@ async def exercise_letter_echo(page,output,label):
     assert changed['state']=='paused' and changed['letterChoice']=='keep'
     assert changed['letterEcho']=={'choice':'keep','phase':'waiting','elapsed':0}, 'rewriting retained the previous send performance'
     assert await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).choices.letter")=='keep'
-    await finish_story_from_ui(page)
+    keep_reply=await finish_story_from_ui(page,[
+        {'page':'01 / 01','speaker':'拾光','word':'阿拾把信收好','file':'portrait-soul.svg'},
+    ])
     await page.locator('#journal-dialog[open]').wait_for()
     assert '先替她好好保管' in await row.inner_text()
     await page.locator('[data-close="journal-dialog"]').click()
@@ -1096,7 +1105,8 @@ async def exercise_letter_echo(page,output,label):
     assert await read_cap_collections(page)==collections, 'rewriting keep changed earned seed, ticket or lamps'
     assert await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).chapters")==chapters, 'rewriting a reply completed or rewarded a chapter again'
     assert await page.evaluate('document.documentElement.scrollWidth<=innerWidth'), 'letter echo horizontal overflow'
-    return {'choiceViaCompletedOutro':True,'outroPagesRead':outro_pages,'revisitedViaChapterMap':True,
+    return {'choiceViaCompletedOutro':True,'outroPagesRead':outro['pages'],'outroPortraits':outro['portraits'],
+            'replyPortraits':{'send':send_reply['portraits'],'keep':keep_reply['portraits']},'revisitedViaChapterMap':True,
             'rewrittenViaDiary':True,'send':sent,'keep':kept,'storedChoice':'keep',
             'rewardGrantsUnchanged':True,'collectiblesUnchanged':True,'chapterResultsUnchanged':True,
             'noHorizontalOverflow':True}
