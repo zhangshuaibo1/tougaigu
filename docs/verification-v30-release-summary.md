@@ -1,0 +1,8 @@
+# v30.0.0 正式发布核验（2026-10-29 UTC）
+
+- **状态**：已正式发布，完整 candidate 与正式 HTTPS public 浏览器步骤均由 GitHub Actions [40959435715](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40959435715) 验证为 `success`，结束时间 2026-10-29 22:03:56 UTC。该工作流 main 提交为 `c9b5971738c739c07edb55240d0be19f15644b64`，双亲保留 v29 最终文档 `ddbee0f3856490d003436a14e64042895bead4d2` 和已验收 v30 候选 `0fc49544289a90b1391e0553b4333e3212d1a5b0`。
+- **候选及部署**：v30 正式候选 [40933825997](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40933825997) success；gh-pages 提交 `ae9cfb2cc7bd0c45c30ed1fc9210f1ebdcc66244`，Pages [40959332182](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40959332182) success。直接读取两端完整 Git 树，以路径、SHA、mode 对比：main/dist **142 个 blob** 全部等于 gh-pages 根对应文件；后者只增加空 `.nojekyll`。两端 `CNAME` 为相同 blob `c48e618893bc4c9f483098de75ba03765e7fbf64`，实际文本为 `tougaigu.com\n`。
+- **测试证据**：正式 main workflow 日志为 662/662 tests pass，检查 229 个 30.0.0 资源引用且无需修改；候选浏览器和正式公网浏览器步骤均 success。日志实际出现 `30.0.0` 且无步骤失败。本次独立检查从工作流 jobs 核实两浏览器步骤状态；不将它等同手持实机或 Safari 检查。
+- **正式官方 artifact**：`game-verification-c9b5971738c739c07edb55240d0be19f15644b64`，id `12936289225`，300,686,898 bytes，GitHub SHA256 `f7dbd15f25fedb734335c6e9c440d58baf2ef9131347957feb29153835d4c047`。这项记录来自 GitHub artifact 元数据与日志；**本次归档没有下载重审完整 ZIP 中每份 JSON/PNG**，勿说已二次审阅全部原始实景、触点或每个网络失败条目。官方 artifact 保留期可能有限，后续可继续永久归档。
+- **范围与限制**：新增六章真实起落收势、首两章支撑阴影和纵向浮书稳臂；真实场景、物理、存档、奖励与企业页脚保持原合同。390/320 属 Chromium 模拟触摸；实体手机、Safari、低端 GPU 仍未实测；本轮未进行独立实体设备性能基准。较早未升版预研与正式验收分别记载，不回改历史。
+- **下一步**：以此 v30 正式源码为唯一基线，继承 `iteration-v31-face-prestudy-20261029` 的隔离表情研究 `0990533122f42a9bc22fc98282ab5f6ddc49f672`（预研 run [40934592656](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40934592656) success；不等于 v31 正式发布），核对源码与测试版本后建立**唯一** v31 正式候选，检查实际320原尺寸表情、完整候选与公网，保留所有旧门槛。
