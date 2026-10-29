@@ -1,0 +1,84 @@
+{
+  "sourceCommit": "a73c459ae10e839b89bb71577f51d9ab527e4f93",
+  "deploymentCommit": "34bc7cb41ce75046e9f9811dc513e4001d03bb0b",
+  "candidateRun": 40796116986,
+  "pagesRun": 40796500862,
+  "publicVerificationRun": 40796493364,
+  "site": "https://zhangshuaibo1.github.io/tougaigu/?qa=a73c459ae10e839b89bb71577f51d9ab527e4f93",
+  "method": "served production HTML; app module has a read-only coordinate probe appended in-memory; all actions use DOM/input",
+  "unitTests": {
+    "passed": 411,
+    "failed": 0
+  },
+  "referenceCheck": {
+    "jsModules": 42,
+    "localReferences": 121
+  },
+  "deploymentFileComparison": {
+    "compared": 108,
+    "different": 0,
+    "missing": 0,
+    "onlyExtra": ".nojekyll"
+  },
+  "cases": [
+    {
+      "viewport": {"width": 1280, "height": 800},
+      "version": "15.0.0",
+      "ticketCollectedAndReturned": true,
+      "pauseFrozen": true,
+      "noHorizontalOverflow": true,
+      "chapterCompleted": true,
+      "input": "keyboard",
+      "rafIntervalMs": {"samples": 60, "p50": 16.699999999999818, "p95": 16.800000000000182},
+      "frameSamplePhase": "initial active idle; not a physical-device benchmark",
+      "pageErrors": [],
+      "httpErrors": [],
+      "imagesLoaded": true,
+      "reloadPreservedCapBook": true,
+      "resourceCount": 71,
+      "observedTransferBytes": 408242
+    },
+    {
+      "viewport": {"width": 390, "height": 844},
+      "version": "15.0.0",
+      "ticketCollectedAndReturned": true,
+      "pauseFrozen": true,
+      "noHorizontalOverflow": true,
+      "chapterCompleted": false,
+      "input": "emulated Chromium touch",
+      "rafIntervalMs": {"samples": 60, "p50": 16.699999999999818, "p95": 16.799999999999955},
+      "frameSamplePhase": "initial active idle; not a physical-device benchmark",
+      "pageErrors": [],
+      "httpErrors": [],
+      "imagesLoaded": true,
+      "resourceCount": 60,
+      "observedTransferBytes": 380623
+    },
+    {
+      "viewport": {"width": 320, "height": 680},
+      "version": "15.0.0",
+      "ticketCollectedAndReturned": true,
+      "pauseFrozen": true,
+      "noHorizontalOverflow": true,
+      "chapterCompleted": false,
+      "input": "emulated Chromium touch",
+      "rafIntervalMs": {"samples": 60, "p50": 16.699999999999818, "p95": 16.700000000000273},
+      "frameSamplePhase": "initial active idle; not a physical-device benchmark",
+      "pageErrors": [],
+      "httpErrors": [],
+      "imagesLoaded": true,
+      "resourceCount": 60,
+      "observedTransferBytes": 380623
+    }
+  ],
+  "screenshots": [
+    {"artifactPath": "live/1280-lamp.png", "sha256": "772a42fdf36efea0a3b4a4f927d530cd601fe8cf7310196709a66030333b7bd6"},
+    {"artifactPath": "live/320-home.png", "sha256": "5326a8d3f4dcf5756acaa2b17e9e5ca7d09aa77041ca7d1e75a8fd138fef26f7"},
+    {"artifactPath": "live/1280-complete.png", "sha256": "3dfc2e58ef6869d3ccf39bceeb2ac4d77d6c49093b83cad3ff44465ef60c98cc"}
+  ],
+  "limitations": [
+    "Chromium emulation, not physical iPhone/Android or Safari",
+    "Frame intervals sampled during initial active idle, 60 frames only",
+    "Full chapter completed on desktop; narrow-screen tests cover ticket pickup/return, pause, and layout"
+  ]
+}
