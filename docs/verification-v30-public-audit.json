@@ -1,0 +1,94 @@
+{
+  "version": "30.0.0",
+  "source_commit": "c9b5971738c739c07edb55240d0be19f15644b64",
+  "pages_commit": "ae9cfb2cc7bd0c45c30ed1fc9210f1ebdcc66244",
+  "workflow": 40959435715,
+  "conclusion": "success",
+  "tests": {
+    "passed": 662,
+    "total": 662
+  },
+  "resource_version_refs": 229,
+  "dist_blob_match": 142,
+  "nojekyll_extra": true,
+  "cname": "tougaigu.com\n",
+  "artifact": {
+    "id": 12936289225,
+    "bytes": 300686898,
+    "sha256": "f7dbd15f25fedb734335c6e9c440d58baf2ef9131347957feb29153835d4c047",
+    "safe_zip_entries": 425,
+    "crc": "passed"
+  },
+  "reports": [
+    {
+      "name": "candidate/report.json",
+      "bytes": 14407851,
+      "sha256": "cb99af658782ab758e3bec8211aade924e2e7f456cf621583ba88e0c93f89ada"
+    },
+    {
+      "name": "live/report.json",
+      "bytes": 14424442,
+      "sha256": "c9d7f8130cbcb446c99a43d6a5d08fd635b6507effeb0c47d32843507352de2e"
+    }
+  ],
+  "public_viewports": [
+    {
+      "width": 1280,
+      "height": 800,
+      "version": "30.0.0",
+      "page_errors": 0,
+      "http_errors": 0,
+      "horizontal_overflow": false,
+      "images_loaded": true,
+      "requestfailed_actual": 9,
+      "requestfailed_expected": 9,
+      "exact_match": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "version": "30.0.0",
+      "page_errors": 0,
+      "http_errors": 0,
+      "horizontal_overflow": false,
+      "images_loaded": true,
+      "requestfailed_actual": 0,
+      "requestfailed_expected": 0,
+      "exact_match": true
+    },
+    {
+      "width": 320,
+      "height": 680,
+      "version": "30.0.0",
+      "page_errors": 0,
+      "http_errors": 0,
+      "horizontal_overflow": false,
+      "images_loaded": true,
+      "requestfailed_actual": 0,
+      "requestfailed_expected": 0,
+      "exact_match": true
+    }
+  ],
+  "selected_original_pngs": [
+    {
+      "path": "live/1280-home.png",
+      "bytes": 1065318,
+      "sha256": "c22c598ce3346b171257e54dcf955d9de1e50b52050417889a10e0a968548221"
+    },
+    {
+      "path": "live/390-home.png",
+      "bytes": 355796,
+      "sha256": "c61b0416112a84bb082a1c18faf5a777c6fc5a019f29a389d0c86e3eb9b47892"
+    },
+    {
+      "path": "live/1280-full-touch-320-post-two-lamps-sun-stamp.png",
+      "bytes": 242875,
+      "sha256": "917e35e793a8bbc19842c3c57ed496a0b609dcd2557c33c23f6a761a58833568"
+    }
+  ],
+  "limits": [
+    "Chromium/模拟触摸，不等于实体手机、Safari或低端GPU",
+    "直接审阅3张完整原PNG；不是所有截图的逐张视觉检查",
+    "原始ZIP在GitHub artifact中保留期有限；本JSON不替代原报告"
+  ]
+}
