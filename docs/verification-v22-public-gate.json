@@ -1,0 +1,44 @@
+{
+  "sourceBefore": "d43b8abb03b459464b5449fa5c5ea3844511430f",
+  "sourceAfter": "22a889196c3fb6110b0aca2d7f2db429cb20ed26",
+  "failedWorkflowRun": 40824643192,
+  "scope": "Independent read-only regression using exact git-show workflow gate commands, Bash pipefail, real curl and temporary localhost HTTP; not browser or public-site verification.",
+  "responseBytes": 4194403,
+  "responseSha256": "599094429d3c4147e72b7ab0fbd137bf59636ce631f3868eec64fe7bdb3ead6a",
+  "checks": [
+    {
+      "scenario": "original pipeline; version near beginning of full response",
+      "exitCodes": [
+        23,
+        23,
+        23
+      ],
+      "stderr": "curl: (23) Failure writing output to destination"
+    },
+    {
+      "scenario": "fixed full-response download then literal version match",
+      "exitCode": 0,
+      "completeByteEquality": true,
+      "tailMarkerPresent": true
+    },
+    {
+      "scenario": "old version 21.0.0",
+      "exitCode": 1
+    },
+    {
+      "scenario": "regex-near-match 22x0y0",
+      "exitCode": 1
+    },
+    {
+      "scenario": "HTTP 503 with existing correctly-versioned output file",
+      "exitCode": 22
+    },
+    {
+      "scenario": "truncated response after 65536 bytes, correct version already present",
+      "exitCode": 18
+    }
+  ],
+  "passedChecks": 6,
+  "httpRequests": 8,
+  "cleanup": "Temporary server and directory removed; no repository edits by independent reviewer."
+}

@@ -13,6 +13,10 @@
 
 拾光在故事前三章有更圆润的珍珠体积、柔和反光与真实速度驱动的尾部弯曲；低能量困倦、回归微笑、抱票和抱种子保留原互动语义，真实掀盖/回盖姿态与前缘遮挡不变。谢幕开始后切为拾光也会按时结束，暂停与减动规则保持。
 
+![v22 公开地址实际键盘游玩：精绘绒幕与移动舞台](docs/v22-live-desktop.png)
+
+上图为成功公网验收 40825313256 的 1280×800 Chromium 实际游戏画面。[双灯与拾光](docs/v22-live-two-lamps.png) · [320px 模拟触摸实景](docs/v22-live-320.png) · [完整公网原始报告](docs/verification-v22-public-full.json)。手机顶部提示仍需整理，下一轮按 [v23 计划](docs/PLAN-v23.md) 接续。
+
 [完整验收与边界](docs/QA-v22.md) · [原创美术与提示](docs/art/theatre-painted-v22-prompt.md) · [离线合成记录](docs/verification-v22-offline.json)
 
 ## 借月剧场·双灯谢幕（v21）
