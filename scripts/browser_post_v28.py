@@ -26,19 +26,34 @@ READ_SAVE="JSON.parse(localStorage.getItem('tougaigu.dream.v1'))"
 
 POST_EXIT_INPUT_OBSERVER="""()=>{
  if(window.__qaPostExitInput)throw new Error('previous post-exit observer was not removed');
- const events=[],types=['pointerdown','pointerup','pointercancel','click'];
+ const events=[],nativeEvents=[],types=['pointerdown','pointerup','pointercancel','click','gotpointercapture','lostpointercapture'];
  const observe=event=>{
   if(events.length>=24)return;
   const target=event.target?.closest?.('button'),s=window.__qaRead?.();
-  events.push({type:event.type,pointerType:event.pointerType||null,isTrusted:event.isTrusted,
+  const pointerId=Number.isFinite(event.pointerId)?event.pointerId:null;
+  const record={type:event.type,pointerType:event.pointerType||null,pointerId,
+    detail:event.detail,isPrimary:event.isPrimary??null,isTrusted:event.isTrusted,
+    defaultPrevented:event.defaultPrevented,cancelable:event.cancelable,eventPhase:event.eventPhase,
+    targetHasPointerCapture:pointerId!==null&&!!target?.hasPointerCapture?.(pointerId),
     targetId:target?.id||null,direction:target?.dataset.direction||null,
-    shellAction:target?.dataset.shellAction||null,at:performance.now(),
+    shellAction:target?.dataset.shellAction||null,at:performance.now(),eventTimeStamp:event.timeStamp,
     state:s?.state,form:s?.form,time:s?.time,runId:s?.runId,bodyIdentity:s?.bodyIdentity,
-    dialogs:[...document.querySelectorAll('dialog[open]')].map(dialog=>dialog.id)});
+    dialogs:[...document.querySelectorAll('dialog[open]')].map(dialog=>dialog.id)};
+  events.push(record);
+  nativeEvents.push(event);
+  // Window capture sees the native event before the production document guard.
+  // The passive microtask takes an intermediate dialog snapshot; read() also
+  // retrieves the original Event's eventual defaultPrevented. The caller
+  // independently reads the current UI after dispatch. Nothing is cancelled.
+  queueMicrotask(()=>{
+    record.defaultPreventedAfter=event.defaultPrevented;
+    record.dialogsAfter=[...document.querySelectorAll('dialog[open]')].map(dialog=>dialog.id);
+  });
  };
- for(const type of types)document.addEventListener(type,observe,true);
- window.__qaPostExitInput={read:()=>events.map(event=>({...event,dialogs:[...event.dialogs]})),
-   stop:()=>{for(const type of types)document.removeEventListener(type,observe,true);}};
+ for(const type of types)window.addEventListener(type,observe,true);
+ window.__qaPostExitInput={read:()=>events.map((event,index)=>({...event,
+     defaultPreventedAfter:nativeEvents[index].defaultPrevented,dialogs:[...event.dialogs]})),
+   stop:()=>{for(const type of types)window.removeEventListener(type,observe,true);}};
 }"""
 
 POST_EXIT_UI="""()=>{
@@ -86,19 +101,62 @@ async def complete_post_approach(page,output,label,driver,touch=False):
   assert done['chapterIndex']==5 and done['state']=='complete' and done['seals']==2 and done['memories']==3 and done['deaths']==0
   trace['verifiedExit']=validate_post_exit(trace['frozen'],trace['walkingSamples'],post_record(done))
   trace['inputEvents']=await stop_post_exit_observer(page)
+  trace['verifiedExit']['inputBoundary']=validate_post_exit_input(trace['inputEvents'],current,touch)
   return done,trace['verifiedExit'],trace['inputEvents']
  except Exception as error:
   # Failure-only capture runs after the input has already been released. Do not
   # use it to rescue the run, alter the frozen window or synthesize success.
   trace['error']=str(error)
   trace['failureSnapshot']=await page.evaluate(POST_EXIT_UI)
-  trace['inputEvents']=await stop_post_exit_observer(page)
+  remaining_events=await stop_post_exit_observer(page)
+  if remaining_events:trace['inputEvents']=remaining_events
+  else:trace.setdefault('inputEvents',[])
   Path(output,label+'-post-exit-failure.json').write_text(json.dumps(trace,ensure_ascii=False,indent=2))
   print(label,'post exit failure',json.dumps(trace,ensure_ascii=False),flush=True)
   await page.screenshot(path=str(Path(output)/(label+'-post-exit-failure.png')),full_page=True)
   raise
  finally:
   await stop_post_exit_observer(page)
+
+def validate_post_exit_input(events,current,touch=False):
+ """A held movement gesture cannot activate a newly opened result button."""
+ assert current['result']['visible'] and current['dialogs']==['result-dialog'],'old movement gesture advanced or hid the actual result'
+ assert len(events)<=24,'post input observer exceeded its bounded event budget'
+ if not touch:
+  return {'input':'keyboard','resultRetained':True,'oldGestureBlockedClicks':[]}
+ assert events and all(e['isTrusted'] and e['pointerType']=='touch' for e in events),'terminal touch evidence contains synthetic or non-touch events'
+ done=current['game']
+ assert all((e['runId'],e['bodyIdentity'])==(done['runId'],done['bodyIdentity']) for e in events),'terminal touch input changed run or body'
+ for button in ['stage-jump','stage-toggle']:
+  clicks=[e for e in events if e['type']=='click' and e['targetId']==button]
+  assert len(clicks)==1,'terminal route did not use exactly one native '+button+' activation'
+  assert clicks[0]['defaultPreventedAfter'] is False,'an intentional gameplay activation was blocked'
+ downs=[e for e in events if e['type']=='pointerdown' and e['direction']=='right']
+ ups=[e for e in events if e['type']=='pointerup' and e['direction']=='right']
+ assert len(downs)==len(ups)==1,'terminal approach was not one actual held right gesture'
+ down,up=downs[0],ups[0]
+ assert isinstance(down['pointerId'],int) and down['pointerId']>=0 and down['pointerId']==up['pointerId'],'held touch did not keep its native pointer identity'
+ assert down['state']=='playing' and down['form']=='body' and down['dialogs']==[],'terminal movement began outside actual body play'
+ assert up['state']=='complete' and up['form']=='body' and up['dialogs']==['result-dialog'],'native release did not follow the real original exit'
+ assert up['at']>=down['at'],'native input event time reversed'
+ result_clicks=[e for e in events if e['type']=='click' and e['targetId'] in ['result-story','result-map']]
+ for event in result_clicks:
+  assert event['pointerId']==down['pointerId'],'result click was not attributable to the held movement gesture'
+  assert event['defaultPreventedAfter'] is True,'the old movement gesture activated a new result button'
+  assert event['dialogsAfter']==['result-dialog'],'blocked old click still advanced the result'
+ return {'input':'Chromium CDP simulated touch','resultRetained':True,
+         'heldPointerId':down['pointerId'],'releaseAtComplete':True,'oldGestureBlockedClicks':result_clicks}
+
+def validate_fresh_result_touch(events,after):
+ """A new touch that starts on the actual result button must remain usable."""
+ selected=[e for e in events if e['targetId']=='result-story' and e['type'] in ['pointerdown','pointerup','click']]
+ assert [e['type'] for e in selected]==['pointerdown','pointerup','click'],'result continuation was not a fresh single native touch'
+ assert all(e['isTrusted'] and e['pointerType']=='touch' for e in selected),'result continuation did not use actual touch events'
+ assert len({e['pointerId'] for e in selected})==1 and isinstance(selected[0]['pointerId'],int),'new result tap did not retain its own pointer identity'
+ assert all(e['dialogs']==['result-dialog'] for e in selected),'new result tap did not start and finish inside the current result'
+ assert selected[-1]['defaultPreventedAfter'] is False,'the new intentional result tap was blocked'
+ assert after['dialogs']==['story-dialog'] and after['game']['state']=='complete','fresh result touch did not open the real outro'
+ return {'freshDownUpClick':True,'pointerId':selected[0]['pointerId'],'intentionalClickAllowed':True,'realOutroOpened':True,'events':events}
 
 def post_record(s):
  return {key:s[key] for key in ['runId','bodyIdentity','chapterIndex','mode','state','form','time','deaths','body','hazards','input']}
@@ -417,10 +475,24 @@ async def reenter_completed_post(page,driver,touch=False,paint='ready'):
 
 async def finish_post_ending(page,driver,touch=False):
  await page.locator('#result-dialog[open]').wait_for()
- await click_input(page,'#result-story',driver,touch)
+ fresh_input=None
+ if touch:
+  await page.evaluate(POST_EXIT_INPUT_OBSERVER)
+  try:
+   await click_input(page,'#result-story',driver,True)
+   # This is the user's next, distinct tap. It must still advance immediately
+   # after the prior movement gesture was consumed at the result boundary.
+   fresh=await page.evaluate(POST_EXIT_UI)
+   fresh_events=await stop_post_exit_observer(page)
+   try:fresh_input=validate_fresh_result_touch(fresh_events,fresh)
+   except AssertionError:
+    print('post fresh result touch failure',json.dumps({'events':fresh_events,'after':fresh},ensure_ascii=False),flush=True)
+    raise
+  finally:await stop_post_exit_observer(page)
+ else:await click_input(page,'#result-story',driver)
  outro=await finish_post_story(page,driver,POST_OUTRO,touch)
  await page.locator('#ending-dialog[open]').wait_for()
- return {'portraits':outro['portraits'],'title':await page.locator('#ending-title').text_content()}
+ return {'portraits':outro['portraits'],'title':await page.locator('#ending-title').text_content(),'freshResultTouch':fresh_input}
 
 async def post_delayed_resources(page,output,label,driver):
  """Hold the original bytes, play meanwhile, then release in/out of the chapter."""

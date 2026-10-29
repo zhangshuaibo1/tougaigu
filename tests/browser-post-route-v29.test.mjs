@@ -7,7 +7,7 @@ import ast,copy,json,math
 from pathlib import Path
 from urllib.parse import urlparse
 tree=ast.parse(Path('scripts/browser_post_v28.py').read_text())
-names={'validate_post_exit','validate_post_rider','validate_post_settlement','validate_post'}
+names={'validate_post_exit','validate_post_rider','validate_post_settlement','validate_post','validate_post_exit_input','validate_fresh_result_touch'}
 exec(compile(ast.Module(body=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in names],type_ignores=[]),'actual-post-browser-gates','exec'))
 POST_FILE='post-painted-v28.webp'
 `;
@@ -122,4 +122,65 @@ for sample,kind,change in [(ready,'ready',dict(frame=False)),(ready,'ready',dict
 print('a late or failed primary image cannot masquerade as a ready post office')
 `);
   assert.match(output,/cannot masquerade/);
+});
+
+test('real release at completion preserves the result and blocks any old-gesture retargeted click',()=>{
+  const output=run(String.raw`
+def event(kind,target=None,direction=None,pointer=31,state='playing',form='soul',at=1,dialogs=None,blocked=False):
+    return dict(type=kind,targetId=target,direction=direction,pointerId=pointer,pointerType='touch',isTrusted=True,
+                runId=2,bodyIdentity=11,state=state,form=form,at=at,dialogs=dialogs or [],
+                defaultPreventedAfter=blocked,dialogsAfter=dialogs or [])
+events=[]
+for index,target in enumerate(['stage-jump','stage-toggle']):
+    events.extend(event(kind,target,pointer=31+index,at=index*10+i) for i,kind in enumerate(['pointerdown','pointerup','click']))
+events.extend([
+ event('pointerdown',direction='right',pointer=41,form='body',at=30),
+ event('pointerup',direction='right',pointer=41,state='complete',form='body',at=50,dialogs=['result-dialog']),
+ event('click','result-story',pointer=41,state='complete',form='body',at=51,dialogs=['result-dialog'],blocked=True)])
+current=dict(result=dict(visible=True),dialogs=['result-dialog'],game=dict(runId=2,bodyIdentity=11))
+result=validate_post_exit_input(events,current,True)
+assert result['resultRetained'] and len(result['oldGestureBlockedClicks'])==1
+assert validate_post_exit_input(events[:-1],current,True)['oldGestureBlockedClicks']==[]
+# A browser that does not produce the trailing click is valid. When it does,
+# the exact old pointer must be consumed and the result must remain open.
+def reject(change):
+    e=copy.deepcopy(events);s=copy.deepcopy(current);change(e,s)
+    try:validate_post_exit_input(e,s,True)
+    except AssertionError:pass
+    else:raise AssertionError('old gesture boundary violation accepted')
+reject(lambda e,s:e[-1].update(defaultPreventedAfter=False))
+reject(lambda e,s:e[-1].update(dialogsAfter=['story-dialog']))
+reject(lambda e,s:s.update(dialogs=['story-dialog']))
+reject(lambda e,s:s['result'].update(visible=False))
+reject(lambda e,s:e[-1].update(pointerId=99))
+reject(lambda e,s:e[-2].update(pointerId=99))
+reject(lambda e,s:e[-2].update(state='playing'))
+reject(lambda e,s:e[-2].update(at=0))
+reject(lambda e,s:e[-3].update(form='soul'))
+reject(lambda e,s:e[2].update(isTrusted=False))
+reject(lambda e,s:e[2].update(defaultPreventedAfter=True))
+reject(lambda e,s:e.append(copy.deepcopy(e[2])))
+print('native old-gesture clicks are optional but cannot advance the result; twelve misleading traces rejected')
+`);
+  assert.match(output,/twelve misleading traces/);
+});
+
+test('a new intentional native result tap remains usable after the old gesture is consumed',()=>{
+  const output=run(String.raw`
+events=[dict(type=kind,targetId='result-story',pointerId=52,pointerType='touch',isTrusted=True,
+             dialogs=['result-dialog'],defaultPreventedAfter=False)
+        for kind in ['pointerdown','pointerup','click']]
+after=dict(dialogs=['story-dialog'],game=dict(state='complete'))
+result=validate_fresh_result_touch(events,after)
+assert result['freshDownUpClick'] and result['intentionalClickAllowed'] and result['realOutroOpened']
+for change in [lambda e,s:e.pop(0),lambda e,s:e[-1].update(pointerId=53),
+               lambda e,s:e[-1].update(defaultPreventedAfter=True),lambda e,s:e[-1].update(isTrusted=False),
+               lambda e,s:e[0].update(dialogs=[]),lambda e,s:s.update(dialogs=['result-dialog'])]:
+    e=copy.deepcopy(events);s=copy.deepcopy(after);change(e,s)
+    try:validate_fresh_result_touch(e,s)
+    except AssertionError:pass
+    else:raise AssertionError('missing/blocked/non-native result continuation accepted')
+print('fresh actual result tap reaches outro; six missing or incorrectly blocked activations rejected')
+`);
+  assert.match(output,/six missing or incorrectly blocked/);
 });
