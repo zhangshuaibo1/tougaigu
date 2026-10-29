@@ -54,6 +54,9 @@ export function formatControlHint(text, source = 'keyboard', actions = getStageA
   const button = label => '「' + label + '」';
   const both = actions.action === actions.interact ? button(actions.action) : button(actions.action) + ' / ' + button(actions.interact);
   return String(text || '')
+    // The button already names the action; do not print it twice on touch UI.
+    .replace(/(按\s*)?E\b\s*(掀开头盖骨|回到身体)/g, (_, press, verb) =>
+      verb === actions.toggle ? (press ? '点' : '') + button(actions.toggle) : (press || '') + 'E ' + verb)
     .replace(/WASD\s*\/\s*方向键|WASD|方向键/g, '方向按钮')
     .replace(/空格\s*\/\s*Q/g, both)
     .replace(/按\s*E\b/g, '点' + button(actions.toggle))
