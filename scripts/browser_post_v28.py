@@ -27,11 +27,12 @@ READ_SAVE="JSON.parse(localStorage.getItem('tougaigu.dream.v1'))"
 POST_MUSHROOM_OBSERVER="""()=>{
  if(window.__qaPostMushroom)throw new Error('previous post-mushroom observer was not removed');
  const frames=[],events=[],nativeEvents=[],marks=[],types=['keydown','keyup','pointerdown','pointerup','pointercancel','click'];
- let phase='approach-1420',raf=0,totalFrames=0,totalEvents=0,bounce=null,holdInput=null,continuityFailure=null;
+ let phase='approach-1420',raf=0,totalFrames=0,totalEvents=0,bounce=null,holdInput=null,releaseInput=null,
+   continuityFailure=null,safeStart=null,clearance=null,firstGroundContact=null,settled=null,repeatedBounce=null,wasBouncing=false;
  const read=()=>{
   const s=window.__qaRead();
   return {at:performance.now(),phase,runId:s.runId,bodyIdentity:s.bodyIdentity,chapterIndex:s.chapterIndex,
-    mode:s.mode,state:s.state,form:s.form,time:s.time,deaths:s.deaths,body:s.body,input:s.input,mushrooms:s.mushrooms};
+    mode:s.mode,state:s.state,form:s.form,time:s.time,deaths:s.deaths,body:s.body,input:s.input,mushrooms:s.mushrooms,roots:s.roots};
  };
  const initial=read();
  const sample=()=>{
@@ -40,30 +41,40 @@ POST_MUSHROOM_OBSERVER="""()=>{
       s.chapterIndex!==5||s.mode!=='story'||s.state!=='playing'||s.form!=='body'||s.deaths!==0))continuityFailure=s;
   // Capture actual rendered-frame state before the next protocol round trip.
   // Neither a boing alone nor an inferred velocity qualifies as a bounce.
-  if(!bounce&&s.body.vy<-800)bounce=s;
+  const bouncing=s.body.vy<-800;
+  if(bouncing&&!wasBouncing){if(!bounce)bounce=s;else if(!repeatedBounce)repeatedBounce=s;}
+  wasBouncing=bouncing;
+  if(holdInput&&bounce&&!clearance&&s.body.x>=1660&&s.body.x+s.body.w/2<=1730&&s.body.y<=390)clearance=s;
+  if(bounce&&!firstGroundContact&&s.time>bounce.time&&s.body.grounded)firstGroundContact=s;
+  if(holdInput&&clearance&&!settled&&s.body.grounded&&Math.abs(s.body.y-390)<1&&
+      s.body.x-s.body.w/2>=1600&&s.body.x+s.body.w/2<=1730&&Math.abs(s.body.vx)<.001&&s.input.x===0&&s.input.y===0)settled=s;
   raf=requestAnimationFrame(sample);
  };
  const observe=event=>{
   const target=event.target?.closest?.('button'),s=window.__qaRead();
-  const record={type:event.type,code:event.code||null,pointerId:Number.isFinite(event.pointerId)?event.pointerId:null,
+  const record={type:event.type,code:event.code||null,repeat:event.repeat===true,pointerId:Number.isFinite(event.pointerId)?event.pointerId:null,
     pointerType:event.pointerType||null,isTrusted:event.isTrusted,targetId:target?.id||event.target?.id||null,
     direction:target?.dataset.direction||null,phase,at:performance.now(),time:s.time,
-    runId:s.runId,bodyIdentity:s.bodyIdentity,form:s.form,state:s.state,input:s.input,
+    runId:s.runId,bodyIdentity:s.bodyIdentity,form:s.form,state:s.state,input:s.input,body:s.body,
     focusedId:document.activeElement?.id||null,dialogs:[...document.querySelectorAll('dialog[open]')].map(d=>d.id)};
   totalEvents++;events.push(record);nativeEvents.push(event);
   if(events.length>32){events.shift();nativeEvents.shift();}
-  if(!holdInput&&phase==='await-bounce'&&((event.type==='keydown'&&event.code==='ArrowRight')||
+  if(!holdInput&&phase==='continuous-right'&&((event.type==='keydown'&&event.code==='ArrowRight')||
       (event.type==='pointerdown'&&record.direction==='right')))holdInput=record;
+  if(holdInput&&!releaseInput&&((holdInput.type==='keydown'&&event.type==='keyup'&&event.code==='ArrowRight')||
+      (holdInput.type==='pointerdown'&&event.type==='pointerup'&&record.pointerId===holdInput.pointerId)))releaseInput=record;
  };
  for(const type of types)window.addEventListener(type,observe,true);
  raf=requestAnimationFrame(sample);
  window.__qaPostMushroom={
-  mark:value=>{phase=value;marks.push({phase,at:performance.now(),time:window.__qaRead().time});},
-  bounced:()=>bounce!==null,
-  read:()=>({initial,bounce,holdInput,continuityFailure,frames,totalFrames,droppedFrames:Math.max(0,totalFrames-frames.length),
+  mark:value=>{phase=value;const current=read();marks.push({phase,at:current.at,time:current.time});if(value==='continuous-right')safeStart=current;},
+  progress:()=>({now:performance.now(),holdAt:holdInput?.at??null,bounceAt:bounce?.at??null,
+    clearanceAt:clearance?.at??null,settledAt:settled?.at??null,continuityFailed:!!continuityFailure,repeatedBounce:!!repeatedBounce}),
+  read:()=>({initial,safeStart,bounce,holdInput,releaseInput,clearance,firstGroundContact,settled,repeatedBounce,continuityFailure,
+    frames,totalFrames,droppedFrames:Math.max(0,totalFrames-frames.length),
     events:events.map((event,index)=>({...event,defaultPreventedAfter:nativeEvents[index].defaultPrevented})),
     totalEvents,droppedEvents:Math.max(0,totalEvents-events.length),marks,after:read()}),
-  stop:()=>{cancelAnimationFrame(raf);for(const type of types)window.removeEventListener(type,observe,true);}
+  stop:()=>{cancelAnimationFrame(raf);raf=0;for(const type of types)window.removeEventListener(type,observe,true);return {pendingFrame:raf!==0};}
  };
 }"""
 
@@ -71,7 +82,8 @@ async def stop_post_mushroom_observer(page):
  return await page.evaluate("""()=>{
   const observer=window.__qaPostMushroom;
   if(!observer)return null;
-  const evidence=observer.read();observer.stop();delete window.__qaPostMushroom;return evidence;
+  const evidence=observer.read(),stopped=observer.stop();delete window.__qaPostMushroom;
+  return {...evidence,observerCleanup:{...stopped,removed:!window.__qaPostMushroom}};
  }""")
 
 def validate_post_mushroom(evidence):
@@ -95,31 +107,88 @@ def validate_post_mushroom(evidence):
  hold=evidence['holdInput'];before_hold=hold is None or bounce['at']<hold['at']
  if hold is not None:
   assert hold['isTrusted'] and (hold['runId'],hold['bodyIdentity'])==origin[:2],'final mushroom hold was not actual input for this body'
-  assert hold['phase']=='await-bounce' and ((hold['type']=='keydown' and hold['code']=='ArrowRight') or
+  assert hold['phase']=='continuous-right' and ((hold['type']=='keydown' and hold['code']=='ArrowRight') or
     (hold['type']=='pointerdown' and hold['direction']=='right' and hold['pointerType']=='touch')),'wrong input identified as the final right hold'
   assert initial['at']<=hold['at']<=after['at'],'final mushroom hold time is outside the observation'
  return {**evidence,'observedBeforeFinalHoldInput':before_hold,
          'actualTriggerStage':'preceding approach movement' if before_hold else 'final right hold',
          'sameRunAndBody':True,'originalVelocityGate':-800,'actualOriginalMushroom':pad}
 
+def validate_post_mushroom_crossing(evidence,touch=False):
+ """One real direction hold owns the impulse, release and natural root landing."""
+ result=validate_post_mushroom(evidence)
+ assert evidence['observerCleanup']=={'pendingFrame':False,'removed':True},'mushroom observer was not fully removed'
+ start=evidence['safeStart'];down=evidence['holdInput'];up=evidence['releaseInput']
+ bounce=evidence['bounce'];clear=evidence['clearance'];contact=evidence['firstGroundContact'];settled=evidence['settled'];after=evidence['after']
+ assert start and down and up and clear and contact and settled,'continuous mushroom crossing lacks an actual phase'
+ assert start['body']['grounded'] and abs(start['body']['y']-560)<1 and 1390<start['body']['x']<1450 and abs(start['body']['vx'])<.001 and start['input']=={'x':0,'y':0},'continuous hold did not start at the settled safe pre-mushroom floor'
+ assert evidence['repeatedBounce'] is None,'the route used a second mushroom impulse'
+ assert not result['observedBeforeFinalHoldInput'] and start['at']<=down['at']<=bounce['at'],'a historical mushroom impulse was reused by a later hold'
+ assert 0<=bounce['at']-down['at']<=2800,'actual mushroom impulse exceeded the original 2.8-second boundary'
+ assert down['at']<=bounce['at']<=clear['at']<=up['at']<=settled['at']<=after['at'],'mushroom input and physical phases are out of order'
+ assert settled['at']-down['at']<=6000 and after['at']-down['at']<=6000,'actual root crossing exceeded the original six-second boundary'
+ assert evidence['droppedEvents']==0,'continuous input history was truncated'
+ events=[e for e in evidence['events'] if e['at']>=down['at']]
+ presses=[e for e in events if e['type'] in ['keydown','pointerdown']]
+ releases=[e for e in events if e['type'] in ['keyup','pointerup','pointercancel']]
+ assert len(presses)==len(releases)==1 and all(presses[0].get(k)==v for k,v in down.items()) and all(releases[0].get(k)==v for k,v in up.items()),'crossing used an extra press, reversal, jump, recall or cancellation'
+ assert all(e['isTrusted'] and (e['runId'],e['bodyIdentity'])==(down['runId'],down['bodyIdentity']) for e in events),'crossing input was synthetic or changed body'
+ if touch:
+  assert down['type']=='pointerdown' and up['type']=='pointerup' and down['pointerType']==up['pointerType']=='touch','crossing did not use its expected actual touch source'
+  assert isinstance(down['pointerId'],int) and down['pointerId']>=0 and down['pointerId']==up['pointerId'] and down['direction']==up['direction']=='right','continuous touch lost its native pointer or direction'
+ else:
+  assert down['type']=='keydown' and up['type']=='keyup' and down['code']==up['code']=='ArrowRight' and not down['repeat'],'crossing was not one actual right key hold'
+ active=[s for s in evidence['frames'] if down['at']<s['at']<up['at']]
+ assert len(active)>=3 and all(s['input']=={'x':1,'y':0} for s in active),'continuous right input was released or changed before clearance'
+ origin=(start['runId'],start['bodyIdentity'],5,'story','playing','body',0)
+ for s in [start,bounce,clear,contact,settled,after]:
+  assert (s['runId'],s['bodyIdentity'],s['chapterIndex'],s['mode'],s['state'],s['form'],s['deaths'])==origin,'root crossing changed run, body, chapter, form or deaths'
+  assert any((p['x'],p['y'],p['w'],p['h'])==(1600,390,130,170) for p in s['roots']),'actual root support changed'
+ assert clear['body']['x']>=1660 and clear['body']['x']+clear['body']['w']/2<=1730 and clear['body']['y']<=390 and clear['input']=={'x':1,'y':0},'release was not earned above the actual root platform'
+ assert contact['time']>bounce['time'] and contact['body']['grounded'] and abs(contact['body']['y']-390)<1,'first post-bounce contact was not the actual root platform'
+ for s in [contact,settled,after]:
+  b=s['body']
+  assert b['grounded'] and abs(b['y']-390)<1 and b['x']-b['w']/2>=1600 and b['x']+b['w']/2<=1730,'body did not remain fully supported by the actual root platform'
+ for s in [settled,after]:
+  assert abs(s['body']['vx'])<.001 and s['input']=={'x':0,'y':0},'root landing did not stop through the original natural braking'
+ return {**result,'singleContinuousRightInput':True,'inputSource':'Chromium CDP simulated touch' if touch else 'native keyboard',
+         'bounceWallSeconds':(bounce['at']-down['at'])/1000,'rootWallSeconds':(settled['at']-down['at'])/1000,
+         'actualRootLanding':settled,'noRetryOrReverseCorrection':True}
+
 async def approach_post_mushroom(page,output,label,driver,touch=False):
- """Observe before both real approach moves; do not retry or manufacture a bounce."""
+ """One held direction clears the root; no 1440 stop or airborne input handoff."""
  await page.evaluate(POST_MUSHROOM_OBSERVER)
  evidence=None
  try:
   await driver.drive_to(page,1420,limit=6,touch=touch)
-  await page.evaluate("window.__qaPostMushroom.mark('approach-1440')")
-  await driver.drive_to(page,1440,limit=5,touch=touch)
-  await page.evaluate("window.__qaPostMushroom.mark('focus-before-hold')")
+  await page.wait_for_function("""()=>{const s=window.__qaRead();return s.form==='body'&&s.state==='playing'&&
+    s.body.grounded&&Math.abs(s.body.y-560)<1&&s.body.x<1450&&Math.abs(s.body.vx)<.001&&s.input.x===0&&s.input.y===0;}""",timeout=1800)
   if not touch:await page.locator('#dream-canvas').focus()
-  await page.evaluate("window.__qaPostMushroom.mark('await-bounce')")
-  async def mushroom_bounced():
-   return await page.evaluate('window.__qaPostMushroom.bounced()')
-  # hold() checks the condition before pressing. A bounce already observed
-  # during the real approach is kept as such, never renamed a later input.
-  await driver.hold(page,'right',until=mushroom_bounced,touch=touch,limit=2.8)
+  ready=await page.evaluate('window.__qaPostMushroom.progress()')
+  assert ready['bounceAt'] is None,'preparation already consumed a mushroom impulse'
+  await page.evaluate("window.__qaPostMushroom.mark('continuous-right')")
+  async def release_above_root():
+   progress=await page.evaluate('window.__qaPostMushroom.progress()')
+   assert not progress['continuityFailed'] and not progress['repeatedBounce'],'continuous root approach changed body or repeated its bounce'
+   if progress['holdAt'] is None:return False
+   elapsed=progress['now']-progress['holdAt']
+   assert (progress['bounceAt'] is not None and 0<=progress['bounceAt']-progress['holdAt']<=2800) or (progress['bounceAt'] is None and elapsed<2800),'actual mushroom impulse exceeded the original 2.8-second boundary'
+   assert elapsed<6000,'actual root crossing exceeded the original six-second boundary'
+   return progress['clearanceAt'] is not None
+  # This is the only right down/up pair after the safe stop. Keep it held
+  # through the real impulse, then release above x1660 while there is room
+  # for the original braking and gravity to land the body on the narrow root.
+  await driver.hold(page,'right',until=release_above_root,touch=touch,limit=6)
+  await page.evaluate("window.__qaPostMushroom.mark('natural-root-landing')")
+  progress=await page.evaluate('window.__qaPostMushroom.progress()')
+  remaining=6000-(progress['now']-progress['holdAt'])
+  assert remaining>0,'no time remains in the original root landing boundary'
+  await page.wait_for_function('()=>window.__qaPostMushroom.progress().settledAt!==null',timeout=remaining)
   evidence=await stop_post_mushroom_observer(page)
-  return validate_post_mushroom(evidence)
+  result=validate_post_mushroom_crossing(evidence,touch)
+  Path(output,label+'-post-mushroom-crossing.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
+  print(label,'post mushroom crossing complete',{'bounceWallSeconds':result['bounceWallSeconds'],'rootWallSeconds':result['rootWallSeconds'],'landingX':result['actualRootLanding']['body']['x'],'singleContinuousRightInput':True},flush=True)
+  return result
  except Exception as error:
   remaining=await stop_post_mushroom_observer(page)
   if remaining is not None:evidence=remaining
@@ -490,9 +559,7 @@ async def play_route(page,output,label,driver,touch=False,paint='ready',full_sto
  assert landed['body']['grounded'] and abs(landed['body']['y']-465)<1 and landed['body']['platform'] is None
  mushroom=await approach_post_mushroom(page,output,label,driver,touch)
  bounced=mushroom['bounce']
- await driver.drive_to(page,1680,limit=6,touch=touch)
- await page.wait_for_function("()=>{const s=window.__qaRead();return s?.body.grounded&&Math.abs(s.body.y-390)<1;}",timeout=1800)
- root=await page.evaluate('window.__qaRead()')
+ root=mushroom['actualRootLanding']
  assert root['body']['grounded'] and abs(root['body']['y']-390)<1 and root['deaths']==0
  if not compact:await page.screenshot(path=str(Path(output)/(label+'-post-root-landing.png')),full_page=True)
  await driver.drive_to(page,2110,limit=10,touch=touch)

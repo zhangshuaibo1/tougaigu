@@ -7,7 +7,7 @@ import ast,copy,json,math
 from pathlib import Path
 from urllib.parse import urlparse
 tree=ast.parse(Path('scripts/browser_post_v28.py').read_text())
-names={'validate_post_exit','validate_post_rider','validate_post_settlement','validate_post','validate_post_exit_input','validate_fresh_result_touch','validate_post_mushroom'}
+names={'validate_post_exit','validate_post_rider','validate_post_settlement','validate_post','validate_post_exit_input','validate_fresh_result_touch','validate_post_mushroom','validate_post_mushroom_crossing'}
 exec(compile(ast.Module(body=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in names],type_ignores=[]),'actual-post-browser-gates','exec'))
 POST_FILE='post-painted-v28.webp'
 `;
@@ -92,10 +92,10 @@ def frame(at,t,x,vy=0,phase='approach-1420',active=False):
         body=dict(x=x,y=560,w=30,vy=vy,grounded=vy==0),input=dict(x=1,y=0),
         mushrooms=[dict(x=1450,y=560,w=115,boing=.75 if active else 0,cooldown=.6 if active else 0)])
 initial=frame(1000,10,1280)
-bounce=frame(1900,10.9,1452,-850,'await-bounce',True)
-after=frame(1950,10.95,1460,-782.5,'await-bounce',True)
+bounce=frame(1900,10.9,1452,-850,'continuous-right',True)
+after=frame(1950,10.95,1460,-782.5,'continuous-right',True)
 hold=dict(type='keydown',code='ArrowRight',pointerType=None,direction=None,isTrusted=True,
-          runId=3,bodyIdentity=13,phase='await-bounce',at=1850)
+          runId=3,bodyIdentity=13,phase='continuous-right',at=1850)
 evidence=dict(initial=initial,bounce=bounce,after=after,frames=[frame(1800,10.8,1440),bounce,after],
               events=[hold],holdInput=hold,continuityFailure=None)
 result=validate_post_mushroom(evidence)
@@ -140,6 +140,72 @@ reject(lambda e:e['holdInput'].update(type='pointerdown',code=None,pointerType='
 print('actual impulse retained with exact before/after-input provenance; 21 misleading traces rejected')
 `);
   assert.match(output,/21 misleading traces rejected/);
+});
+
+test('one native right hold must earn safe clearance before release and settle on the root within both original deadlines',()=>{
+  const output=run(String.raw`
+def frame(at,t,x,y,vy=0,grounded=True,moving=True):
+    return dict(at=at,time=t,phase='continuous-right',runId=3,bodyIdentity=13,chapterIndex=5,mode='story',state='playing',form='body',deaths=0,
+        body=dict(x=x,y=y,w=30,vx=240 if moving else 0,vy=vy,grounded=grounded),input=dict(x=1 if moving else 0,y=0),
+        mushrooms=[dict(x=1450,y=560,w=115,boing=.75,cooldown=.6)],roots=[dict(x=1600,y=390,w=130,h=170)])
+initial=frame(1000,10,1280,465,moving=False);safe=frame(2000,11,1420,560,moving=False)
+bounce=frame(2240,11.24,1452,560,-850,False)
+middle=frame(2600,11.6,1540,300,-200,False);clear=frame(3000,12,1664,340,350,False)
+contact=frame(3250,12.25,1680,390,moving=False);after=frame(3350,12.35,1680,390,moving=False)
+def event(kind,at):
+    return dict(type=kind,code='ArrowRight',pointerType=None,pointerId=None,direction=None,isTrusted=True,repeat=False,
+                runId=3,bodyIdentity=13,phase='continuous-right',at=at)
+down=event('keydown',2010);up=event('keyup',3030)
+evidence=dict(initial=initial,safeStart=safe,bounce=bounce,clearance=clear,firstGroundContact=contact,settled=contact,after=after,
+    frames=[safe,bounce,middle,clear,contact,after],events=[{**down,'defaultPreventedAfter':True},{**up,'defaultPreventedAfter':False}],
+    holdInput=down,releaseInput=up,continuityFailure=None,repeatedBounce=None,droppedEvents=0,
+    observerCleanup=dict(pendingFrame=False,removed=True))
+result=validate_post_mushroom_crossing(evidence)
+assert result['singleContinuousRightInput'] and result['bounceWallSeconds']==.23 and result['rootWallSeconds']==1.24
+touch=copy.deepcopy(evidence)
+for event in [touch['holdInput'],touch['releaseInput'],*touch['events']]:
+    event.update(type='pointerdown' if event['type']=='keydown' else 'pointerup',code=None,pointerId=41,pointerType='touch',direction='right')
+assert validate_post_mushroom_crossing(touch,True)['inputSource']=='Chromium CDP simulated touch'
+wide_landing=copy.deepcopy(evidence)
+for sample in [wide_landing['firstGroundContact'],wide_landing['settled'],wide_landing['after']]:sample['body']['x']=1700
+assert validate_post_mushroom_crossing(wide_landing)['actualRootLanding']['body']['x']==1700
+def reject(change,source=evidence,touch=False):
+    bad=copy.deepcopy(source);change(bad)
+    try:validate_post_mushroom_crossing(bad,touch)
+    except AssertionError:pass
+    else:raise AssertionError('unproven continuous mushroom/root crossing accepted')
+reject(lambda e:e['bounce'].update(at=1990))
+reject(lambda e:e['safeStart']['body'].update(x=1451))
+reject(lambda e:e['safeStart']['body'].update(vx=1))
+reject(lambda e:e['safeStart']['input'].update(x=1))
+reject(lambda e:e.update(repeatedBounce=copy.deepcopy(e['bounce'])))
+reject(lambda e:e['events'].append({**e['events'][0],'at':2500}))
+reject(lambda e:e['events'].append({**e['events'][0],'code':'ArrowLeft','at':2500}))
+reject(lambda e:e['events'].append({**e['events'][0],'code':'Space','at':2500}))
+reject(lambda e:e['events'].append({**e['events'][1],'type':'pointercancel','at':2500}))
+reject(lambda e:e['holdInput'].update(repeat=True))
+reject(lambda e:e.update(droppedEvents=1))
+reject(lambda e:e['after'].update(at=8011))
+reject(lambda e:e['clearance']['body'].update(x=1659))
+reject(lambda e:e['clearance']['body'].update(y=400))
+reject(lambda e:e['clearance']['body'].update(x=1720))
+reject(lambda e:e['releaseInput'].update(at=2900))
+reject(lambda e:e['frames'][2]['input'].update(x=0))
+reject(lambda e:e['firstGroundContact']['body'].update(y=560))
+reject(lambda e:e['firstGroundContact']['roots'][0].update(x=1590))
+reject(lambda e:e['settled']['input'].update(x=1))
+reject(lambda e:e['after']['body'].update(x=1720))
+reject(lambda e:e['events'][0].update(isTrusted=False))
+reject(lambda e:e['releaseInput'].update(pointerId=42),touch,True)
+reject(lambda e:e['observerCleanup'].update(pendingFrame=True))
+reject(lambda e:e['observerCleanup'].update(removed=False))
+def late_impulse(e):
+    for sample in [e['bounce'],e['clearance'],e['firstGroundContact'],e['after']]:sample['at']+=3000
+    e['releaseInput']['at']+=3000;e['events'][1]['at']+=3000
+reject(late_impulse)
+print('single keyboard/touch hold and non-exact safe landing accepted; 26 invalid crossing traces rejected')
+`);
+  assert.match(output,/26 invalid crossing traces rejected/);
 });
 
 test('each legitimate full replay adds exactly one chapter run without changing other chapter results or choices',()=>{

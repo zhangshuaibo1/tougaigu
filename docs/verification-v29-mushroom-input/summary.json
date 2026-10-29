@@ -1,0 +1,88 @@
+{
+  "scope": "offline real-engine normal inputs; synthetic control polling/delivery delays, not a reconstruction of candidate4 browser timing",
+  "old": {
+    "cases": 80,
+    "passed": 71,
+    "failed": 9,
+    "earlyBounce": 12,
+    "failureKinds": {
+      "groundLeftWall": 8,
+      "rootSteeringOscillation": 1
+    }
+  },
+  "continuous": {
+    "cases": 80,
+    "passed": 80,
+    "failed": 0,
+    "earlyBounce": 0,
+    "bounceDelayRange": [
+      0.1833333333333229,
+      0.2499999999999858
+    ],
+    "landingDelayRange": [
+      1.183333333333266,
+      1.249999999999929
+    ],
+    "holdStartXRange": [
+      1408.4199162256862,
+      1424.4199162256862
+    ],
+    "releaseDecisionXRange": [
+      1692.9199162256862,
+      1712.9199162256862
+    ],
+    "releaseActualXRange": [
+      1692.9199162256862,
+      1716.9199162256862
+    ],
+    "releaseActualYRange": [
+      390,
+      390
+    ],
+    "finalXRange": [
+      1708.4199162256862,
+      1732.4199162256862
+    ],
+    "allSameBodyZeroDeaths": true,
+    "fullBodyOnRootAfterBraking": 12,
+    "minimumRightMargin": -17.419916225686165
+  },
+  "continuous-release": {
+    "cases": 80,
+    "passed": 80,
+    "failed": 0,
+    "earlyBounce": 0,
+    "bounceDelayRange": [
+      0.1833333333333229,
+      0.2499999999999858
+    ],
+    "landingDelayRange": [
+      1.183333333333266,
+      1.249999999999929
+    ],
+    "holdStartXRange": [
+      1408.4199162256862,
+      1424.4199162256862
+    ],
+    "releaseDecisionXRange": [
+      1660.9199162256862,
+      1676.9199162256862
+    ],
+    "releaseActualXRange": [
+      1660.9199162256862,
+      1684.9199162256862
+    ],
+    "releaseActualYRange": [
+      340.0833333333325,
+      379.9583333333324
+    ],
+    "finalXRange": [
+      1676.4199162256862,
+      1700.4199162256862
+    ],
+    "allSameBodyZeroDeaths": true,
+    "fullBodyOnRootAfterBraking": 80,
+    "minimumRightMargin": 14.580083774313835
+  },
+  "delayUnits": "fixed 1/60-second engine steps; synthetic control timing, not measured browser latency"
+}
