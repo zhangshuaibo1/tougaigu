@@ -6,6 +6,7 @@ import { drawStationBackdrop, drawStationArchitecture } from '../dist/dream-stat
 import { FESTIVAL_LEVELS } from '../dist/dream-festival-levels.js';
 import { getFestival } from '../dist/dream-festivals.js';
 import { PAINTED_STATION_URL } from '../dist/dream-painted-scene.js';
+import { PAINTED_GREENHOUSE_URL } from '../dist/dream-greenhouse-scene.js';
 
 const noop = () => {};
 let requestedFrames = 0;
@@ -15,7 +16,7 @@ globalThis.requestAnimationFrame = () => ++requestedFrames;
 globalThis.cancelAnimationFrame = noop;
 const station = Object.freeze({ mode: 'story', chapterIndex: 0 });
 const image = Object.freeze({ complete: true, naturalWidth: 2172, naturalHeight: 724 });
-const otherScenes = [1, 2, 3, 4, 5].map(chapterIndex => ({ chapterIndex })).concat(
+const otherScenes = [2, 3, 4, 5].map(chapterIndex => ({ chapterIndex })).concat(
   FESTIVAL_LEVELS.map(level => ({ festival: getFestival(level.festivalId) })),
 );
 const deferred = () => {
@@ -118,7 +119,7 @@ function collectTicket(game) {
   assert.equal(game.firstTicket.phase, 'held');
 }
 
-test('the constructor is lazy and only the actual first story chapter requests one painting', async () => {
+test('the first story chapter requests its painting once, independently of the greenhouse', async () => {
   const sources = [], pending = deferred(), h = makeGame(src => { sources.push(src); return pending.promise; });
   await Promise.resolve(); assert.deepEqual(sources, []);
   assert.equal(h.game.paintedScenes.getSnapshot().status, 'idle');
@@ -133,14 +134,16 @@ test('the constructor is lazy and only the actual first story chapter requests o
   const requested = h.game.paintedScenes.request(station);
   h.game.start({ chapterIndex: 1, sound: false });
   pending.resolve(image); assert.equal(await requested, true);
+  assert.equal(await h.game.greenhouseScenes.request({ mode: 'story', chapterIndex: 1 }), true);
   render(h); assert.equal(h.game.paintedFrame, false); assert.equal(h.game.getPaintedStationImage(), null);
+  assert.equal(h.game.greenhousePaintedFrame, true); assert.equal(h.game.getPaintedGreenhouseImage(), image);
   h.game.start({ chapterIndex: 0, sound: false }); render(h);
   assert.equal(h.game.getPaintedStationImage(), image); assert.equal(h.game.paintedFrame, true);
   assert.equal(h.c.calls.filter(call => call[0] === 'drawImage').length, 1);
-  assert.deepEqual(sources, [PAINTED_STATION_URL]); h.game.destroy();
+  assert.deepEqual(sources, [PAINTED_STATION_URL, PAINTED_GREENHOUSE_URL]); h.game.destroy();
 });
 
-test('a ready first-chapter image cannot alter the other five chapters or ten festival draw sequences', async () => {
+test('a ready first-chapter image cannot alter the four remaining chapters or ten festival draw sequences', async () => {
   const h = makeGame(() => image), base = makeGame(undefined, BaseGame);
   h.game.start({ sound: false }); await h.game.paintedScenes.request(station); render(h);
   for (const options of otherScenes) {

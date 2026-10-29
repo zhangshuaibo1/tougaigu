@@ -42,8 +42,8 @@ test('rendering is pure, finite, balanced, deterministic and does not touch rewa
  const {g,c}=game();g.toggleSoul();tick(g,45);const before=physical(g);g.render();c.balanced();assert.equal(physical(g),before);
  c.calls.length=0;g.render();const a=JSON.stringify(c.calls);c.calls.length=0;g.render();assert.equal(JSON.stringify(c.calls),a);g.destroy();
 });
-test('other chapters and every festival keep exactly their prior draw sequence',()=>{
- for(const options of [...[1,2,3,4,5].map(chapterIndex=>({chapterIndex})),...['halloween','thanksgiving','christmas','newyear','spring','lantern','valentine','dragonboat','qixi','midautumn'].map(id=>({festival:{id}}))]){
+test('the four remaining chapters and every festival keep exactly their prior draw sequence',()=>{
+ for(const options of [...[2,3,4,5].map(chapterIndex=>({chapterIndex})),...['halloween','thanksgiving','christmas','newyear','spring','lantern','valentine','dragonboat','qixi','midautumn'].map(id=>({festival:{id}}))]){
   const {g,c}=game(options),{g:b,c:bc}=game(options,BaseGame);g.render();b.render();assert.deepEqual(c.calls,bc.calls);g.destroy();b.destroy();
  }
 });

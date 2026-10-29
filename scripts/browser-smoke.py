@@ -10,9 +10,21 @@ from playwright.async_api import async_playwright
 
 
 PROBE="""
-window.__qaRead=()=>{const a=game?.form==='soul'?game.soul:game?.body;return game&&{form:game.form,state:game.state,x:a.x,y:a.y,vx:a.vx,vy:a.vy};};
+window.__qaRead=()=>{
+  if(!game)return null;
+  const a=game.form==='soul'?game.soul:game.body,b=game.body,p=game.greenhousePlant;
+  return {
+    form:game.form,state:game.state,chapterIndex:game.chapterIndex,
+    x:a.x,y:a.y,vx:a.vx,vy:a.vy,time:game.time,deaths:game.deaths,
+    body:{x:b.x,y:b.y,vx:b.vx,vy:b.vy,grounded:b.grounded},capPhase:game.cap?.phase,
+    greenhousePlant:p?{...p,knownSeals:[...p.knownSeals]}:null,
+    seedCollected:game.chapterIndex===1&&game.memories?.[1]?.collected===true,
+    mushrooms:(game.pads||[]).map(p=>({x:p.x,y:p.y,w:p.w,boing:p.boing,cooldown:p.cooldown})),
+    roots:(game.level?.platforms||[]).filter(p=>p.kind==='root').map(p=>({x:p.x,y:p.y,w:p.w,h:p.h}))
+  };
+};
 """
-async def drive_to(page,x,y=None,touch=False,until=None,limit=10):
+async def drive_to(page,x,y=None,touch=False,until=None,limit=10,observe=None):
     session=await page.context.new_cdp_session(page) if touch else None
     held=None
     keys={'up':'ArrowUp','down':'ArrowDown','left':'ArrowLeft','right':'ArrowRight'}
@@ -33,6 +45,7 @@ async def drive_to(page,x,y=None,touch=False,until=None,limit=10):
         while time.monotonic()<end:
             if until and await until():return
             a=await page.evaluate('window.__qaRead()')
+            if observe:observe(a)
             if a['state']=='complete':return
             dx=x-a['x'];dy=0 if y is None else y-a['y']
             if abs(dx)<12 and abs(dy)<12 and abs(a['vx'])<40 and (y is None or abs(a['vy'])<40):return
@@ -83,9 +96,14 @@ async def puzzle(page,answer,wrong=None,touch=False):
     await page.locator('#puzzle-dialog[open]').wait_for()
     if wrong:
         before=await page.locator('#stage-seals').inner_text()
+        plant_before=(await page.evaluate('window.__qaRead()'))['greenhousePlant']
         await page.locator('#puzzle-options button').filter(has_text=wrong).click()
         assert await page.locator('#stage-seals').inner_text()==before
         assert not await page.locator('#puzzle-continue').is_visible()
+        if plant_before:
+            plant_after=(await page.evaluate('window.__qaRead()'))['greenhousePlant']
+            assert plant_after['stage']==plant_before['stage'], 'wrong answer advanced greenhouse growth'
+            assert plant_after['knownSeals']==plant_before['knownSeals'], 'wrong answer counted as a greenhouse lamp'
     await page.locator('#puzzle-options button').filter(has_text=answer).click()
     await page.locator('#puzzle-continue').click()
     await page.locator('#puzzle-dialog[open]').wait_for(state='hidden')
@@ -147,6 +165,137 @@ async def exercise(page,output,label,touch=False,full=False):
         await page.screenshot(path=str(output/(label+'-complete.png')),full_page=True)
     return {'viewport':page.viewport_size,'version':version,'ticketCollectedAndReturned':True,'pauseFrozen':True,'noHorizontalOverflow':True,'chapterCompleted':full,'input':'emulated Chromium touch' if touch else 'keyboard','rafIntervalMs':timings,'frameSamplePhase':'initial active idle; not a physical-device benchmark'}
 
+async def exercise_greenhouse(page,output,label):
+    """Continue the desktop journey through the normal unlocked chapter map."""
+    output=Path(output)
+    print(label,'enter greenhouse through chapter map',flush=True)
+    await page.locator('#result-dialog[open]').wait_for()
+    assert (await page.evaluate('window.__qaRead()'))['chapterIndex']==0
+    await page.locator('#result-map').click()
+    await page.locator('#map-dialog[open]').wait_for()
+    chapter=page.locator('#chapter-grid [data-chapter="1"]')
+    assert await chapter.is_enabled(), 'completing the station did not unlock greenhouse'
+    await chapter.click()
+    await wait_text(page,'#stage-chapter-title','倒流温室')
+    await page.wait_for_function("()=>{const a=window.__qaRead();return a?.chapterIndex===1&&a.state==='playing';}")
+    initial=await page.evaluate('window.__qaRead()')
+    assert initial['greenhousePlant']['phase']=='missing' and initial['greenhousePlant']['stage']==0
+    assert initial['greenhousePlant']['pot']=='ticket', 'the actual station ticket did not carry into the greenhouse'
+    assert not initial['seedCollected']
+    assert await page.evaluate('document.documentElement.scrollWidth<=innerWidth'), 'greenhouse horizontal overflow'
+    await page.screenshot(path=str(output/(label+'-greenhouse-start.png')),full_page=True)
+    stages=[0]
+
+    print(label,'fly to the greenhouse seed',flush=True)
+    await drive_to(page,600)
+    await toggle(page,False)
+    async def seed_held():
+        a=await page.evaluate('window.__qaRead()')
+        return a['greenhousePlant']['phase']=='held' and a['seedCollected']
+    await drive_to(page,970,275,until=seed_held)
+    assert await seed_held(), 'actual flight did not collect memories[1]'
+    held=await page.evaluate('window.__qaRead()')
+    assert held['form']=='soul' and held['greenhousePlant']['stage']==0
+    await wait_text(page,'#stage-cap-label','种子抱好了')
+    seed_count=await page.locator('#stage-memories').inner_text()
+    assert re.match(r'1\s*/',seed_count)
+    await page.screenshot(path=str(output/(label+'-greenhouse-seed-held.png')),full_page=True)
+
+    # Pause the real return animation before the seed reaches its pot. This
+    # checks more than an idle timer without assigning any engine state.
+    await toggle(page,False)
+    await page.wait_for_function("()=>window.__qaRead()?.greenhousePlant?.phase==='returning'",timeout=3000)
+    await page.keyboard.press('Escape')
+    await page.locator('#pause-dialog[open]').wait_for()
+    paused=await page.evaluate('window.__qaRead()')
+    assert paused['greenhousePlant']['phase']=='returning', 'seed arrived before the pause check'
+    paused_timer=await page.locator('#stage-time').inner_text()
+    await page.wait_for_timeout(350)
+    frozen=await page.evaluate('window.__qaRead()')
+    assert frozen['state']=='paused' and frozen['time']==paused['time']
+    assert frozen['greenhousePlant']==paused['greenhousePlant'], 'paused seed return or growth advanced'
+    assert frozen['capPhase']==paused['capPhase']
+    assert await page.locator('#stage-time').inner_text()==paused_timer
+    await page.locator('#stage-resume').click()
+    await page.wait_for_function("()=>{const a=window.__qaRead();return a?.form==='body'&&a.capPhase==='closed'&&a.greenhousePlant.phase==='planted'&&a.greenhousePlant.stage===1;}")
+    stages.append(1)
+    await toggle(page,False)
+    await page.wait_for_function("()=>window.__qaRead()?.greenhousePlant?.growthAge>=1.2")
+    assert await page.locator('#stage-memories').inner_text()==seed_count, 'reopening counted the seed twice'
+    await page.screenshot(path=str(output/(label+'-greenhouse-seed-planted.png')),full_page=True)
+
+    print(label,'solve first greenhouse lamp',flush=True)
+    async def reachable():return await page.locator('#stage-interact-label').inner_text()=='解谜'
+    await drive_to(page,630,250,until=reachable)
+    await puzzle(page,'一把剪刀',wrong='一盏灯笼')
+    assert re.match(r'1\s*/',await page.locator('#stage-seals').inner_text())
+    leaves=await page.evaluate('window.__qaRead()')
+    assert leaves['greenhousePlant']['stage']==2 and leaves['greenhousePlant']['knownSeals']==[0]
+    stages.append(2)
+    await page.wait_for_function("()=>window.__qaRead()?.greenhousePlant?.growthAge>=1.2")
+    await page.screenshot(path=str(output/(label+'-greenhouse-leaves.png')),full_page=True)
+    await toggle(page,False)
+    await page.wait_for_function("()=>{const a=window.__qaRead();return a?.form==='body'&&a.capPhase==='closed';}")
+
+    print(label,'ride the real mushroom over the root platform',flush=True)
+    route={}
+    def observe_root(a):
+        body=a['body']
+        for mushroom in a['mushrooms']:
+            if mushroom['boing']>0 and mushroom['cooldown']>0 and body['vy']<-600:
+                route.setdefault('mushroomBounce',{'body':body,'mushroom':mushroom})
+        for root in a['roots']:
+            if root['x']<body['x']<root['x']+root['w'] and body['y']<=root['y']+2:
+                route.setdefault('aboveRoot',{'body':body,'root':root})
+    # No jump key is used on this leg: the pad must supply the upward velocity.
+    await drive_to(page,1220,observe=observe_root)
+    await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.grounded&&Math.abs(b.y-560)<2;}")
+    beyond_root=await page.evaluate('window.__qaRead()')
+    assert 'mushroomBounce' in route, 'no actual mushroom bounce observed'
+    assert 'aboveRoot' in route, 'body never crossed above the solid root platform'
+    assert beyond_root['body']['x']>route['aboveRoot']['root']['x']+route['aboveRoot']['root']['w']
+    route['landedBeyondRoot']=beyond_root['body']
+    await page.screenshot(path=str(output/(label+'-greenhouse-root-crossed.png')),full_page=True)
+
+    # Two player jumps use the existing shelf to cross above the drifting
+    # shadow. Stopping on the shelf makes the route independent of its phase.
+    await page.keyboard.press('Space')
+    await drive_to(page,1390)
+    await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.grounded&&Math.abs(b.y-445)<2;}",timeout=5000)
+    route['shelfLanding']=(await page.evaluate('window.__qaRead()'))['body']
+    await page.keyboard.press('Space')
+    await drive_to(page,1610)
+    await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.grounded&&b.x>1585&&Math.abs(b.y-560)<2;}",timeout=5000)
+    route['pastShadow']=(await page.evaluate('window.__qaRead()'))['body']
+
+    print(label,'solve second greenhouse lamp and reach exit',flush=True)
+    await toggle(page,False)
+    await drive_to(page,1700,250,until=reachable)
+    await puzzle(page,'节节高',wrong='一场空')
+    assert re.match(r'2\s*/',await page.locator('#stage-seals').inner_text())
+    flower=await page.evaluate('window.__qaRead()')
+    assert flower['greenhousePlant']['phase']=='planted'
+    assert flower['greenhousePlant']['stage']==3 and flower['greenhousePlant']['knownSeals']==[0,1]
+    stages.append(3)
+    await page.wait_for_function("()=>window.__qaRead()?.greenhousePlant?.growthAge>=1.2")
+    await page.screenshot(path=str(output/(label+'-greenhouse-flower.png')),full_page=True)
+    await toggle(page,False)
+    await page.wait_for_function("()=>{const a=window.__qaRead();return a?.form==='body'&&a.capPhase==='closed';}")
+    async def complete():return await page.locator('#result-dialog[open]').is_visible()
+    await drive_to(page,2040,until=complete)
+    await page.locator('#result-dialog[open]').wait_for()
+    final=await page.evaluate('window.__qaRead()')
+    assert final['chapterIndex']==1 and final['state']=='complete' and final['form']=='body'
+    assert final['deaths']==initial['deaths'], 'greenhouse route unexpectedly respawned'
+    assert '倒流温室' in await page.locator('#result-kicker').inner_text()
+    assert await page.evaluate('document.documentElement.scrollWidth<=innerWidth'), 'greenhouse result horizontal overflow'
+    await page.screenshot(path=str(output/(label+'-greenhouse-complete.png')),full_page=True)
+    return {'enteredViaChapterMap':True,'input':'keyboard','seedCollectedAndPlanted':True,
+            'seedMemoryIndex':1,'pot':'ticket','observedPlantStages':stages,
+            'seedReturnPauseFrozen':True,'wrongAnswersRejected':2,'mushroomBounceObserved':True,
+            'rootCrossed':True,'routeEvidence':route,'chapterCompleted':True,
+            'noRespawns':True,'noHorizontalOverflow':True}
+
 async def main(args):
     output=Path(args.output);output.mkdir(parents=True,exist_ok=True)
     report={'url':args.url,'source':'served production HTML; app module has a read-only coordinate probe appended in-memory; all actions use DOM/input','cases':[]}
@@ -168,6 +317,11 @@ async def main(args):
             version=await page.locator('meta[name="application-version"]').get_attribute('content')
             assert not args.version or version==args.version,(version,args.version)
             result=await exercise(page,output,str(w),touch,full)
+            if full:
+                station_saved=await page.evaluate("localStorage.getItem('tougaigu.capbook.v1')")
+                assert station_saved and 'memories' in station_saved
+                station_record=json.loads(station_saved)['scenes']['story-0']
+                result['greenhouse']=await exercise_greenhouse(page,output,str(w))
             assert not errors,errors
             assert not failed,failed
             result['pageErrors']=errors;result['httpErrors']=failed
@@ -179,9 +333,17 @@ async def main(args):
                 # Read actual saved data, then reload without replacing/injecting it.
                 saved=await page.evaluate("localStorage.getItem('tougaigu.capbook.v1')")
                 assert saved and 'memories' in saved
+                scenes=json.loads(saved)['scenes']
+                assert scenes['story-0']==station_record, 'greenhouse play changed the station cap-book record'
+                assert 1 in scenes['story-1']['memories'] and scenes['story-1']['seals']==[0,1]
                 await page.reload(wait_until='networkidle')
+                await page.wait_for_function("typeof window.__qaRead === 'function'",timeout=5000)
                 assert await page.evaluate("localStorage.getItem('tougaigu.capbook.v1')")==saved
                 result['reloadPreservedCapBook']=True
+                result['greenhouse']['stationRecordPreserved']=True
+                result['greenhouse']['reloadPreservedSeedAndLamps']=True
+            assert not errors,errors
+            assert not failed,failed
             report['cases'].append(result)
             await context.close()
         await b.close()

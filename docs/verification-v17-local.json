@@ -1,0 +1,402 @@
+{
+  "status": "candidate; browser and publication pending",
+  "node_tests": {
+    "files": 39,
+    "tests": 462,
+    "pass": 462,
+    "fail": 0,
+    "nonzero": [],
+    "details": [
+      {
+        "file": "tests/cap-activities.test.mjs",
+        "exit": 0,
+        "tests": 8,
+        "pass": 8,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/cap-activity-engine.test.mjs",
+        "exit": 0,
+        "tests": 24,
+        "pass": 24,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/cap-activity-growth.test.mjs",
+        "exit": 0,
+        "tests": 4,
+        "pass": 4,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/cap-activity-progress.test.mjs",
+        "exit": 0,
+        "tests": 19,
+        "pass": 19,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/cap-character-motion.test.mjs",
+        "exit": 0,
+        "tests": 7,
+        "pass": 7,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/cap-engine.test.mjs",
+        "exit": 0,
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/cap-progress.test.mjs",
+        "exit": 0,
+        "tests": 7,
+        "pass": 7,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/cap-story.test.mjs",
+        "exit": 0,
+        "tests": 8,
+        "pass": 8,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/dream-awakening-engine.test.mjs",
+        "exit": 0,
+        "tests": 17,
+        "pass": 17,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/dream-awakenings.test.mjs",
+        "exit": 0,
+        "tests": 6,
+        "pass": 6,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/dream-direction-input.test.mjs",
+        "exit": 0,
+        "tests": 7,
+        "pass": 7,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/dream-encounter-engine.test.mjs",
+        "exit": 0,
+        "tests": 9,
+        "pass": 9,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/dream-encounters.test.mjs",
+        "exit": 0,
+        "tests": 8,
+        "pass": 8,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/dream-engine.test.mjs",
+        "exit": 0,
+        "tests": 22,
+        "pass": 22,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/dream-journey.test.mjs",
+        "exit": 0,
+        "tests": 18,
+        "pass": 18,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/dream-moon-play.test.mjs",
+        "exit": 0,
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/dream-story.test.mjs",
+        "exit": 0,
+        "tests": 12,
+        "pass": 12,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/dream-ui.test.mjs",
+        "exit": 0,
+        "tests": 8,
+        "pass": 8,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/engine.test.mjs",
+        "exit": 0,
+        "tests": 9,
+        "pass": 9,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/festival-engine.test.mjs",
+        "exit": 0,
+        "tests": 17,
+        "pass": 17,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/festivals.test.mjs",
+        "exit": 0,
+        "tests": 23,
+        "pass": 23,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/first-ticket-engine.test.mjs",
+        "exit": 0,
+        "tests": 15,
+        "pass": 15,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/greenhouse-engine.test.mjs",
+        "exit": 0,
+        "tests": 9,
+        "pass": 9,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/greenhouse-materials.test.mjs",
+        "exit": 0,
+        "tests": 8,
+        "pass": 8,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/greenhouse-scene.test.mjs",
+        "exit": 0,
+        "tests": 6,
+        "pass": 6,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/journey-engine.test.mjs",
+        "exit": 0,
+        "tests": 15,
+        "pass": 15,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/lost-cases.test.mjs",
+        "exit": 0,
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/lost-encores.test.mjs",
+        "exit": 0,
+        "tests": 6,
+        "pass": 6,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/lost-engine.test.mjs",
+        "exit": 0,
+        "tests": 21,
+        "pass": 21,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/lost-evidence.test.mjs",
+        "exit": 0,
+        "tests": 9,
+        "pass": 9,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/lost-progress.test.mjs",
+        "exit": 0,
+        "tests": 14,
+        "pass": 14,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/moon-play-engine.test.mjs",
+        "exit": 0,
+        "tests": 7,
+        "pass": 7,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/painted-scene.test.mjs",
+        "exit": 0,
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/painted-station-integration.test.mjs",
+        "exit": 0,
+        "tests": 8,
+        "pass": 8,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/play-rewards.test.mjs",
+        "exit": 0,
+        "tests": 27,
+        "pass": 27,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/progression.test.mjs",
+        "exit": 0,
+        "tests": 11,
+        "pass": 11,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/scene-backdrop-integration.test.mjs",
+        "exit": 0,
+        "tests": 5,
+        "pass": 5,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/station-finish.test.mjs",
+        "exit": 0,
+        "tests": 9,
+        "pass": 9,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      {
+        "file": "tests/traveler-motion.test.mjs",
+        "exit": 0,
+        "tests": 7,
+        "pass": 7,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    ]
+  },
+  "resource_check": {
+    "js_modules": 46,
+    "local_references": 128,
+    "versioned_references": 164,
+    "version": "17.0.0"
+  },
+  "offline_canvas": {
+    "checks": 156,
+    "frames": [
+      "desktop-arrival.png",
+      "desktop-seed-held.png",
+      "desktop-seed-returning.png",
+      "desktop-seed-planted.png",
+      "desktop-first-light.png",
+      "desktop-mushroom-flight.png",
+      "desktop-two-lights.png",
+      "desktop-flower-home.png",
+      "phone-320-arrival.png",
+      "phone-320-seed-held.png",
+      "phone-320-seed-returning.png",
+      "phone-320-seed-planted.png",
+      "phone-320-first-light.png",
+      "phone-320-mushroom-flight.png",
+      "phone-320-two-lights.png",
+      "phone-320-flower-home.png",
+      "phone-390-arrival.png",
+      "phone-390-seed-held.png",
+      "phone-390-seed-returning.png",
+      "phone-390-seed-planted.png",
+      "phone-390-first-light.png",
+      "phone-390-mushroom-flight.png",
+      "phone-390-two-lights.png",
+      "phone-390-flower-home.png"
+    ],
+    "productionRenderer": true,
+    "realInputTravelAndSeed": true,
+    "puzzleAnswers": "normal engine answer boundary, not browser UI",
+    "browserQA": false
+  }
+}

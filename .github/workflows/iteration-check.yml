@@ -1,7 +1,7 @@
 name: Game iteration verification
 on:
   push:
-    branches: [main, 'agent/v15-station-finish-20261028']
+    branches: [main, 'agent/**', 'iteration-*']
   workflow_dispatch:
 permissions:
   contents: read
@@ -40,24 +40,20 @@ jobs:
           trap 'kill "$server"' EXIT
           python scripts/browser-smoke.py --url http://127.0.0.1:8080/ --version "$(node -p 'JSON.parse(require("fs").readFileSync("package.json")).version')" --output verification/candidate | tee verification/browser-candidate.txt
       - name: Test public deployment
+        if: github.ref == 'refs/heads/main'
         env:
-          BRANCH: ${{ github.ref_name }}
           CHECK_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
           version=$(node -p 'JSON.parse(require("fs").readFileSync("package.json")).version')
           url="https://zhangshuaibo1.github.io/tougaigu/?qa=$CHECK_SHA"
-          if [ "$BRANCH" = main ]; then
-            found=false
-            for i in $(seq 1 60); do
-              if curl -fsS "$url" | grep -q "name=\"application-version\" content=\"$version\""; then found=true; break; fi
-              sleep 2
-            done
-            [ "$found" = true ]
-            python scripts/browser-smoke.py --url "$url" --version "$version" --output verification/live | tee verification/browser-live.txt
-          else
-            python scripts/browser-smoke.py --url "$url" --output verification/live | tee verification/browser-live.txt
-          fi
+          found=false
+          for i in $(seq 1 60); do
+            if curl -fsS "$url" | grep -q "name=\"application-version\" content=\"$version\""; then found=true; break; fi
+            sleep 2
+          done
+          [ "$found" = true ]
+          python scripts/browser-smoke.py --url "$url" --version "$version" --output verification/live | tee verification/browser-live.txt
       - name: Preserve source snapshot
         if: always()
         run: |

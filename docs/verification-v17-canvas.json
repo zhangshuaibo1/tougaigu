@@ -1,0 +1,33 @@
+{
+  "checks": 156,
+  "frames": [
+    "desktop-arrival.png",
+    "desktop-seed-held.png",
+    "desktop-seed-returning.png",
+    "desktop-seed-planted.png",
+    "desktop-first-light.png",
+    "desktop-mushroom-flight.png",
+    "desktop-two-lights.png",
+    "desktop-flower-home.png",
+    "phone-320-arrival.png",
+    "phone-320-seed-held.png",
+    "phone-320-seed-returning.png",
+    "phone-320-seed-planted.png",
+    "phone-320-first-light.png",
+    "phone-320-mushroom-flight.png",
+    "phone-320-two-lights.png",
+    "phone-320-flower-home.png",
+    "phone-390-arrival.png",
+    "phone-390-seed-held.png",
+    "phone-390-seed-returning.png",
+    "phone-390-seed-planted.png",
+    "phone-390-first-light.png",
+    "phone-390-mushroom-flight.png",
+    "phone-390-two-lights.png",
+    "phone-390-flower-home.png"
+  ],
+  "productionRenderer": true,
+  "realInputTravelAndSeed": true,
+  "puzzleAnswers": "normal engine answer boundary, not browser UI",
+  "browserQA": false
+}

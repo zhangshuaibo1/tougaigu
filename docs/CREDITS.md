@@ -27,3 +27,7 @@
 ## v16 站台精绘
 
 原创全景由此前一轮的内置 ImageGen 生成，恢复原始素材后按原尺寸转换为 WebP 接入。原 PNG、完整生成提示、校验值与整合说明见 [美术来源记录](ART-DIRECTION-v16.md)。角色、平台、机关与谜灯仍由游戏 Canvas 单独绘制；背景不参与碰撞或存档。
+
+## v17 温室精绘
+
+`dist/assets/greenhouse-painted-v17.webp` 与 `docs/art/greenhouse-painted-original.png` 为内置图像生成工具为本原创游戏生成的背景；提示、原尺寸、转换及校验值见 `ART-DIRECTION-v17.md`。没有使用参考游戏的原画或角色。
