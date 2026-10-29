@@ -515,8 +515,17 @@ async def sample_body_jump(page,label,pause=False,output=None,reduced_motion=Non
     # the actual focusable canvas before issuing an ordinary player's jump.
     await page.locator('#dream-canvas').focus()
     await expect(page.locator('#dream-canvas')).to_be_focused()
-    await page.keyboard.press('Space')
-    rise=await await_traveler_pose(page,'rise',reduced_motion)
+    # Read the jump on its real Space keydown, before polling can miss a
+    # transient airborne phase. No character or save state is injected.
+    await page.keyboard.down('Space')
+    try:
+        rise=await page.evaluate('window.__qaRead()')
+        if rise['body']['grounded'] or rise['body']['vy']>=-80:
+            active=await page.evaluate("()=>({focused:document.activeElement?.id,openDialogs:[...document.querySelectorAll('dialog[open]')].map(d=>d.id)})")
+            raise AssertionError('real Space keydown did not initiate an upward jump: '+json.dumps({'focus':active,'snapshot':traveler_pose_record(rise)},ensure_ascii=False))
+        validate_traveler_pose(rise,'rise',reduced_motion)
+    finally:
+        await page.keyboard.up('Space')
     paused_evidence=None
     if pause:
         await page.keyboard.press('Escape')
