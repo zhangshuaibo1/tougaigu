@@ -51,7 +51,7 @@ export function advanceTheatreEncore(s,context={},dt=0){
 }
 // Paint a short, unobtrusive moon-and-ribbon bow in world space, outside the
 // player's feet and collision envelope. Reduced motion uses a still medallion.
-export function drawTheatreEncore(c,s,{camera=0,reducedMotion=false}={}){
+export function drawTheatreEncore(c,s,{reducedMotion=false}={}){
   const v=getTheatreEncoreView(s);
   if(!v||v.phase!=='active'||!c||typeof c.save!=='function')return false;
   const progress=reducedMotion?1:Math.min(1,v.age/.42);
@@ -59,7 +59,7 @@ export function drawTheatreEncore(c,s,{camera=0,reducedMotion=false}={}){
   if(fade<=0)return false;
   c.save();
   try{
-    c.translate(1240-camera,377);c.globalAlpha*=progress*fade;
+    c.translate(1240,377);c.globalAlpha*=progress*fade;
     const lift=reducedMotion?0:14*(1-progress);
     c.translate(0,lift);
     const gold=c.createLinearGradient(-50,-30,52,22);
