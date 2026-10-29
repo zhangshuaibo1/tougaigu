@@ -1,0 +1,613 @@
+{
+  "scope": "Pre-v27 offline engine baseline using explicit chapterIndex=4 start fixture. This is not normal browser unlock, DOM/HUD, touch, storage, or network validation.",
+  "renderer": "@napi-rs/canvas, original canvas dimensions; no screenshots resized or composited",
+  "sizes": {
+    "desktop": {
+      "sourceCommit": "88e7cd11c84af46c95268de95d2564a031432f2e",
+      "sourceVersion": "26.0.0",
+      "sourceHashes": {
+        "dream-engine.js": "aac7c72a15851bb1d4feffd8c419d8830e8b494e19f78ea737a9d6c6dd79b0ad",
+        "dream-engine-base.js": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699",
+        "dream-levels.js": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0",
+        "dream-story.js": "a91aaf6b497cf956a85c9119e97871ed8b4cc119dd06c6ebe765aa3ed02fb9de",
+        "dream-encounters.js": "6d3d3b962c9d9d27deb2ccfbcb52255b18bb3caeb8d77dce4a4a0e9e745c1f20"
+      },
+      "viewport": {
+        "label": "desktop",
+        "width": 1100,
+        "height": 640
+      },
+      "status": "passed",
+      "updates": 1285,
+      "simulatedSeconds": 21.416666666666732,
+      "comparisonChecks": 2551,
+      "traceRows": 1299,
+      "inputCalls": 2537,
+      "inputMethodCounts": {
+        "start": 1,
+        "update": 1285,
+        "setInput": 1238,
+        "interact": 1,
+        "resolveTalk": 1,
+        "toggleSoul": 2,
+        "pulse": 5,
+        "resolvePuzzle": 2,
+        "recall": 2
+      },
+      "callbacksCompared": 220,
+      "callbackCounts": {
+        "onHud": 198,
+        "onEvent": 9,
+        "onTalk": 1,
+        "onCapEvent": 9,
+        "onPuzzle": 2,
+        "onComplete": 1
+      },
+      "minimumEnergy": 88.17499999999903,
+      "finalEnergy": 100,
+      "deaths": 0,
+      "respawns": 0,
+      "litLamps": 2,
+      "collectedMemories": 3,
+      "completions": [
+        {
+          "name": "onComplete",
+          "event": {
+            "chapterIndex": 4,
+            "time": 21.4,
+            "memories": 3,
+            "deaths": 0,
+            "mode": "story",
+            "festivalId": null,
+            "gifts": 3,
+            "stars": 3
+          },
+          "update": 1284
+        }
+      ],
+      "captures": 14,
+      "physicsStateEquality": true,
+      "callbacksEquality": true,
+      "crossingBudgets": [
+        {
+          "indices": [
+            0,
+            1
+          ],
+          "elapsedSeconds": 3.8833333333335265,
+          "clearances": [
+            {
+              "index": 0,
+              "update": 730,
+              "time": 12.16666666666685,
+              "bodyX": 1044.2269983318633,
+              "fullSweepRight": 1041.039166752461,
+              "elapsedSinceLastPulse": 1.983333333333432,
+              "remainingFreeze": 1.3500000000000112
+            },
+            {
+              "index": 1,
+              "update": 806,
+              "time": 13.43333333333358,
+              "bodyX": 1348.2269983318633,
+              "fullSweepRight": 1346.798938511471,
+              "elapsedSinceLastPulse": 3.2500000000001616,
+              "remainingFreeze": 1.2500000000000115
+            }
+          ]
+        },
+        {
+          "indices": [
+            2
+          ],
+          "elapsedSeconds": 2.8166666666665066,
+          "clearances": [
+            {
+              "index": 2,
+              "update": 1191,
+              "time": 19.850000000000154,
+              "bodyX": 1927.3005372047724,
+              "fullSweepRight": 1927.0330409685043,
+              "elapsedSinceLastPulse": 2.266666666666538,
+              "remainingFreeze": 2.2333333333333414
+            }
+          ]
+        }
+      ]
+    },
+    "phone-390": {
+      "sourceCommit": "88e7cd11c84af46c95268de95d2564a031432f2e",
+      "sourceVersion": "26.0.0",
+      "sourceHashes": {
+        "dream-engine.js": "aac7c72a15851bb1d4feffd8c419d8830e8b494e19f78ea737a9d6c6dd79b0ad",
+        "dream-engine-base.js": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699",
+        "dream-levels.js": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0",
+        "dream-story.js": "a91aaf6b497cf956a85c9119e97871ed8b4cc119dd06c6ebe765aa3ed02fb9de",
+        "dream-encounters.js": "6d3d3b962c9d9d27deb2ccfbcb52255b18bb3caeb8d77dce4a4a0e9e745c1f20"
+      },
+      "viewport": {
+        "label": "phone-390",
+        "width": 390,
+        "height": 595
+      },
+      "status": "passed",
+      "updates": 1285,
+      "simulatedSeconds": 21.416666666666732,
+      "comparisonChecks": 2551,
+      "traceRows": 1299,
+      "inputCalls": 2537,
+      "inputMethodCounts": {
+        "start": 1,
+        "update": 1285,
+        "setInput": 1238,
+        "interact": 1,
+        "resolveTalk": 1,
+        "toggleSoul": 2,
+        "pulse": 5,
+        "resolvePuzzle": 2,
+        "recall": 2
+      },
+      "callbacksCompared": 220,
+      "callbackCounts": {
+        "onHud": 198,
+        "onEvent": 9,
+        "onTalk": 1,
+        "onCapEvent": 9,
+        "onPuzzle": 2,
+        "onComplete": 1
+      },
+      "minimumEnergy": 88.17499999999903,
+      "finalEnergy": 100,
+      "deaths": 0,
+      "respawns": 0,
+      "litLamps": 2,
+      "collectedMemories": 3,
+      "completions": [
+        {
+          "name": "onComplete",
+          "event": {
+            "chapterIndex": 4,
+            "time": 21.4,
+            "memories": 3,
+            "deaths": 0,
+            "mode": "story",
+            "festivalId": null,
+            "gifts": 3,
+            "stars": 3
+          },
+          "update": 1284
+        }
+      ],
+      "captures": 14,
+      "physicsStateEquality": true,
+      "callbacksEquality": true,
+      "crossingBudgets": [
+        {
+          "indices": [
+            0,
+            1
+          ],
+          "elapsedSeconds": 3.8833333333335265,
+          "clearances": [
+            {
+              "index": 0,
+              "update": 730,
+              "time": 12.16666666666685,
+              "bodyX": 1044.2269983318633,
+              "fullSweepRight": 1041.039166752461,
+              "elapsedSinceLastPulse": 1.983333333333432,
+              "remainingFreeze": 1.3500000000000112
+            },
+            {
+              "index": 1,
+              "update": 806,
+              "time": 13.43333333333358,
+              "bodyX": 1348.2269983318633,
+              "fullSweepRight": 1346.798938511471,
+              "elapsedSinceLastPulse": 3.2500000000001616,
+              "remainingFreeze": 1.2500000000000115
+            }
+          ]
+        },
+        {
+          "indices": [
+            2
+          ],
+          "elapsedSeconds": 2.8166666666665066,
+          "clearances": [
+            {
+              "index": 2,
+              "update": 1191,
+              "time": 19.850000000000154,
+              "bodyX": 1927.3005372047724,
+              "fullSweepRight": 1927.0330409685043,
+              "elapsedSinceLastPulse": 2.266666666666538,
+              "remainingFreeze": 2.2333333333333414
+            }
+          ]
+        }
+      ]
+    },
+    "phone-320": {
+      "sourceCommit": "88e7cd11c84af46c95268de95d2564a031432f2e",
+      "sourceVersion": "26.0.0",
+      "sourceHashes": {
+        "dream-engine.js": "aac7c72a15851bb1d4feffd8c419d8830e8b494e19f78ea737a9d6c6dd79b0ad",
+        "dream-engine-base.js": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699",
+        "dream-levels.js": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0",
+        "dream-story.js": "a91aaf6b497cf956a85c9119e97871ed8b4cc119dd06c6ebe765aa3ed02fb9de",
+        "dream-encounters.js": "6d3d3b962c9d9d27deb2ccfbcb52255b18bb3caeb8d77dce4a4a0e9e745c1f20"
+      },
+      "viewport": {
+        "label": "phone-320",
+        "width": 320,
+        "height": 431
+      },
+      "status": "passed",
+      "updates": 1285,
+      "simulatedSeconds": 21.416666666666732,
+      "comparisonChecks": 2551,
+      "traceRows": 1299,
+      "inputCalls": 2537,
+      "inputMethodCounts": {
+        "start": 1,
+        "update": 1285,
+        "setInput": 1238,
+        "interact": 1,
+        "resolveTalk": 1,
+        "toggleSoul": 2,
+        "pulse": 5,
+        "resolvePuzzle": 2,
+        "recall": 2
+      },
+      "callbacksCompared": 220,
+      "callbackCounts": {
+        "onHud": 198,
+        "onEvent": 9,
+        "onTalk": 1,
+        "onCapEvent": 9,
+        "onPuzzle": 2,
+        "onComplete": 1
+      },
+      "minimumEnergy": 88.17499999999903,
+      "finalEnergy": 100,
+      "deaths": 0,
+      "respawns": 0,
+      "litLamps": 2,
+      "collectedMemories": 3,
+      "completions": [
+        {
+          "name": "onComplete",
+          "event": {
+            "chapterIndex": 4,
+            "time": 21.4,
+            "memories": 3,
+            "deaths": 0,
+            "mode": "story",
+            "festivalId": null,
+            "gifts": 3,
+            "stars": 3
+          },
+          "update": 1284
+        }
+      ],
+      "captures": 14,
+      "physicsStateEquality": true,
+      "callbacksEquality": true,
+      "crossingBudgets": [
+        {
+          "indices": [
+            0,
+            1
+          ],
+          "elapsedSeconds": 3.8833333333335265,
+          "clearances": [
+            {
+              "index": 0,
+              "update": 730,
+              "time": 12.16666666666685,
+              "bodyX": 1044.2269983318633,
+              "fullSweepRight": 1041.039166752461,
+              "elapsedSinceLastPulse": 1.983333333333432,
+              "remainingFreeze": 1.3500000000000112
+            },
+            {
+              "index": 1,
+              "update": 806,
+              "time": 13.43333333333358,
+              "bodyX": 1348.2269983318633,
+              "fullSweepRight": 1346.798938511471,
+              "elapsedSinceLastPulse": 3.2500000000001616,
+              "remainingFreeze": 1.2500000000000115
+            }
+          ]
+        },
+        {
+          "indices": [
+            2
+          ],
+          "elapsedSeconds": 2.8166666666665066,
+          "clearances": [
+            {
+              "index": 2,
+              "update": 1191,
+              "time": 19.850000000000154,
+              "bodyX": 1927.3005372047724,
+              "fullSweepRight": 1927.0330409685043,
+              "elapsedSinceLastPulse": 2.266666666666538,
+              "remainingFreeze": 2.2333333333333414
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "crossViewportInputEquality": true,
+  "fileManifest": [
+    {
+      "path": "README.md",
+      "bytes": 5510,
+      "sha256": "8cab7f2f6bf5f6366bab5eb124e3c69dfcf9148000f9b78ef376e3cbe1ad9a62"
+    },
+    {
+      "path": "desktop/all-three-passed.png",
+      "bytes": 219369,
+      "sha256": "6ce2be610e7f764f53b9d211d16bb9f86f12d4c2c714de051072127c48fc2fcc"
+    },
+    {
+      "path": "desktop/complete.png",
+      "bytes": 219088,
+      "sha256": "09e06743c8d5c1481e20596ab7368c306d633cd2cfd4fa6d1e2c9c96c03ca094"
+    },
+    {
+      "path": "desktop/entry.png",
+      "bytes": 177913,
+      "sha256": "a120873a920a33e8a6b94ccd28028b9a0849101e9f8551b133f5ee5e7f93af4f"
+    },
+    {
+      "path": "desktop/first-two-left-safe.png",
+      "bytes": 197944,
+      "sha256": "1b1ffad97d84ca3672e8ea341da069edcb4329e904e48bf7cc8c9ef40cd46b97"
+    },
+    {
+      "path": "desktop/first-two-passed.png",
+      "bytes": 191454,
+      "sha256": "311d2f8f817d9c7b0f03d526afc3ce47e25d00656769961a58562eb809812b6d"
+    },
+    {
+      "path": "desktop/input-tape.json",
+      "bytes": 337072,
+      "sha256": "97e52905b305adf976b898b4c0f1f212d475dcedafa147f7299b524e23e43865"
+    },
+    {
+      "path": "desktop/keeper-talk.png",
+      "bytes": 179239,
+      "sha256": "9520541864b090a122eca18f0c0bb7ad49818e5568152564414972b56f66b2ec"
+    },
+    {
+      "path": "desktop/lamp-1-lit.png",
+      "bytes": 218259,
+      "sha256": "74db614bb6003e5dbdcb0738127fe16f60351c86908b5b03788e0d69e9d04c09"
+    },
+    {
+      "path": "desktop/lamp-2-lit.png",
+      "bytes": 231574,
+      "sha256": "04c92ee84f7e1b5a98ed20b8f10ef4a6c90e9e0bac3522393d553b8fd15f8326"
+    },
+    {
+      "path": "desktop/pendulum-1-frozen.png",
+      "bytes": 217036,
+      "sha256": "8b8e70750fc3ef03afd85c29e0a76bd969e8fa51b377071fe1f1ca4a14f6ba72"
+    },
+    {
+      "path": "desktop/pendulum-2-frozen.png",
+      "bytes": 207027,
+      "sha256": "48392fd3953c9a2908ae51cb39ac84f61b0948685eae3565aa067d0f39710d02"
+    },
+    {
+      "path": "desktop/pendulum-3-frozen.png",
+      "bytes": 244285,
+      "sha256": "876c651ff24c84cf04dd45f7a0f9ee29e3ab39de04768a6bc7fd2e3f207e3eff"
+    },
+    {
+      "path": "desktop/physics-trace.jsonl.gz",
+      "bytes": 225941,
+      "sha256": "5151f8c4dc83561ba349057f95122a3f4262f67cabc8ecf8c282a446415647b0"
+    },
+    {
+      "path": "desktop/route-report.json",
+      "bytes": 761406,
+      "sha256": "1623a9c0b0662d47b0df6e54762233c7b24607dd26f8d5870f73fb174bdfdce3"
+    },
+    {
+      "path": "desktop/third-memory-before-freeze.png",
+      "bytes": 238656,
+      "sha256": "e8e081b518974b67974a843eb2b77ae532022f1fca7e00f48f9683f798835470"
+    },
+    {
+      "path": "desktop/two-lamps-exit-approach.png",
+      "bytes": 218674,
+      "sha256": "3714d670aa5a94c8341281f5d888a8b544852f84f22d429b315ea849b4e291bf"
+    },
+    {
+      "path": "desktop/wind-and-second-memory.png",
+      "bytes": 224073,
+      "sha256": "c15bb94866da57c2d9170b3ade06c0f10b2afb2a19b60f8fc6c65ee909849950"
+    },
+    {
+      "path": "explore-coast.mjs",
+      "bytes": 15007,
+      "sha256": "3d6edb638dda05729da73d987a9e6473d628681976b26488833dd8869aa87387"
+    },
+    {
+      "path": "phone-320/all-three-passed.png",
+      "bytes": 87312,
+      "sha256": "34472253630754144aecc48fa889d9194b45a97e9715f3f0f968980cbf48cea7"
+    },
+    {
+      "path": "phone-320/complete.png",
+      "bytes": 81574,
+      "sha256": "c66a6762b3cd6c6319b45bb03e3edd5899fe94158ad2d1e0b56ec590dc718cd4"
+    },
+    {
+      "path": "phone-320/entry.png",
+      "bytes": 70356,
+      "sha256": "7d39b17c58f9695553361adf5340612d16ca05121fbe4e3337cf6d792cab8b50"
+    },
+    {
+      "path": "phone-320/first-two-left-safe.png",
+      "bytes": 76371,
+      "sha256": "569c64d147b1088782320d8ad89169c9e82a5004a12d21f4a1160f559af76052"
+    },
+    {
+      "path": "phone-320/first-two-passed.png",
+      "bytes": 72755,
+      "sha256": "d034a37939df8dfd32bb8896abc7ab1216509bb7d0ac3c987b3bfb73fd2e5db1"
+    },
+    {
+      "path": "phone-320/input-tape.json",
+      "bytes": 337072,
+      "sha256": "97e52905b305adf976b898b4c0f1f212d475dcedafa147f7299b524e23e43865"
+    },
+    {
+      "path": "phone-320/keeper-talk.png",
+      "bytes": 70328,
+      "sha256": "d8d383111d2cf6631fdded536c6c32ffcfa74e68dd8d1f938735dbc75ec11cd9"
+    },
+    {
+      "path": "phone-320/lamp-1-lit.png",
+      "bytes": 84175,
+      "sha256": "f6f0ce39414d7b4b412a23e3432d05f10804652a7a391eadefd13e0a156a7548"
+    },
+    {
+      "path": "phone-320/lamp-2-lit.png",
+      "bytes": 86537,
+      "sha256": "7c151c153a7e4a5d572e2f9309749d3a1a95f24c1471ac0a66dab7d8f082c759"
+    },
+    {
+      "path": "phone-320/pendulum-1-frozen.png",
+      "bytes": 87639,
+      "sha256": "25bc7fbf0191a182d65bbdaf7e860ff1c16b8874d48b22dd313c4c28deac4569"
+    },
+    {
+      "path": "phone-320/pendulum-2-frozen.png",
+      "bytes": 73841,
+      "sha256": "1ba8469efc32b24841d49cd8290bd3fa6406bb62dae5e667a7bb8593f27ce432"
+    },
+    {
+      "path": "phone-320/pendulum-3-frozen.png",
+      "bytes": 86017,
+      "sha256": "412b9e1f6149c1fc9e5e8aa83a99c73c6072447d0076bce6e7eee1a6aec41702"
+    },
+    {
+      "path": "phone-320/physics-trace.jsonl.gz",
+      "bytes": 227497,
+      "sha256": "138d486bc83989bd602c41b7ed7198bdd78342a3fe3e57d48b1c13d4aa1e8190"
+    },
+    {
+      "path": "phone-320/route-report.json",
+      "bytes": 762319,
+      "sha256": "b1e7212d9fe7bad842c688aedaf6106d87bd23acb2cb9ef0dd88fb67273ea18c"
+    },
+    {
+      "path": "phone-320/third-memory-before-freeze.png",
+      "bytes": 93170,
+      "sha256": "8a6224ad72be29469c0f9fee727535980ffed7189622739c2a94357ec9b28756"
+    },
+    {
+      "path": "phone-320/two-lamps-exit-approach.png",
+      "bytes": 81797,
+      "sha256": "480b09f81b45f739ddff4b5b935678e74c4ec21ff1103016d36f2dbcc614dbf4"
+    },
+    {
+      "path": "phone-320/wind-and-second-memory.png",
+      "bytes": 81754,
+      "sha256": "401449d849896e6c5d585d7bcc60e45682d6feae4f5bbab5defaeec080354a54"
+    },
+    {
+      "path": "phone-390/all-three-passed.png",
+      "bytes": 115810,
+      "sha256": "31ab3a052fa18cb96fb799f51bd6b7cf1100cb859a4d84b7a45b9f7343cc80c2"
+    },
+    {
+      "path": "phone-390/complete.png",
+      "bytes": 112108,
+      "sha256": "5e7c64c5a1f4a1c8d1d8a9ced50dfa699604d869ff649ac2a0c2d1c0786610d9"
+    },
+    {
+      "path": "phone-390/entry.png",
+      "bytes": 95279,
+      "sha256": "899b2a26c5d09b29e03354a686a4d808ecc95e9f63c72ea874d8f591340b54da"
+    },
+    {
+      "path": "phone-390/first-two-left-safe.png",
+      "bytes": 105400,
+      "sha256": "b81e3645eefcf197b6de20d1d2676b7ed2b6a58bd5b8115cd18b49c6ddd53d7e"
+    },
+    {
+      "path": "phone-390/first-two-passed.png",
+      "bytes": 98926,
+      "sha256": "2a5087500b712b643a8a5a6178aa922a87a4221957fe94892fe79a4ec7592114"
+    },
+    {
+      "path": "phone-390/input-tape.json",
+      "bytes": 337072,
+      "sha256": "97e52905b305adf976b898b4c0f1f212d475dcedafa147f7299b524e23e43865"
+    },
+    {
+      "path": "phone-390/keeper-talk.png",
+      "bytes": 95342,
+      "sha256": "c49f550841fcc4f78a9b18aee422e69470c8ee58eacc68ae25371386a8562e08"
+    },
+    {
+      "path": "phone-390/lamp-1-lit.png",
+      "bytes": 117483,
+      "sha256": "46945cc68dbb3dcb7a8f89211b7ae2c559db6830aace7fddf399f86238753148"
+    },
+    {
+      "path": "phone-390/lamp-2-lit.png",
+      "bytes": 120450,
+      "sha256": "3b469d6b5602414ffe0d5274f2276d0a203e04f2604290ca6f06c3016524f2ab"
+    },
+    {
+      "path": "phone-390/pendulum-1-frozen.png",
+      "bytes": 118375,
+      "sha256": "1642765afa952eee295ad0a71ecea548507cafbc13b23c4286fd3e94413f19c4"
+    },
+    {
+      "path": "phone-390/pendulum-2-frozen.png",
+      "bytes": 100486,
+      "sha256": "033153851e8c47cad7dc777b9101f06c5fabfc6b77fc702d54cbc0161eeeef66"
+    },
+    {
+      "path": "phone-390/pendulum-3-frozen.png",
+      "bytes": 121553,
+      "sha256": "714df4b1e5528edbeaf0f3f5435821a22852864c753d796c3b1781a023b32f8e"
+    },
+    {
+      "path": "phone-390/physics-trace.jsonl.gz",
+      "bytes": 227550,
+      "sha256": "65fdd779b4353d02a0720ccb6d6387d926f98ebaee1b7453b93a5fa9da76cd95"
+    },
+    {
+      "path": "phone-390/route-report.json",
+      "bytes": 762283,
+      "sha256": "5bd25d5513f8a50e86c80000541e5b018f6e6a3c5abdb34b78c9cc8278262109"
+    },
+    {
+      "path": "phone-390/third-memory-before-freeze.png",
+      "bytes": 127093,
+      "sha256": "a57e278d60c00280335cde6234e83e92d70f6a6f46d4271c1951b30d29c90ae7"
+    },
+    {
+      "path": "phone-390/two-lamps-exit-approach.png",
+      "bytes": 112156,
+      "sha256": "cfb6ac398c6cada579b76fbc95eaeeacf7aaa52f6c8fa1d402e97395467b006f"
+    },
+    {
+      "path": "phone-390/wind-and-second-memory.png",
+      "bytes": 111992,
+      "sha256": "60af1d7751622ceb5293c873d36890ce1cb02421748d83009c9ccebe5ed4d13c"
+    }
+  ]
+}

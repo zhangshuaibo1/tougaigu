@@ -1,0 +1,22 @@
+✔ coast asset is lazy, limited to story chapter five, and shares one actual request (2.925876ms)
+✔ late coast pixels never leak into another chapter or resurrect a destroyed loader (0.564176ms)
+✔ coast failed decode and malformed pixels fail once and leave a stable procedural fallback (0.638487ms)
+✔ coast parallax covers actual desktop and narrow Canvas edges without stretching the 3:1 painting (1.044588ms)
+✔ invalid coast views and images do not draw, and a failed texture preserves the caller Canvas state (0.947865ms)
+✔ each distant light response remains visible at its actual coast milestone in all three view sizes (0.259514ms)
+✔ only each real lamp amount illuminates its corresponding roof pool, including nested drawing failure (0.93132ms)
+✔ coast stone uses the physical platform top and clip and rejects invalid geometry (2.01811ms)
+✔ pendulum appearance follows the actual pivot, bob, radius and remaining freeze without mutating danger (1.735633ms)
+✔ the coast watch and both wrists follow every actual opening and returning amount continuously (28.343102ms)
+✔ coast integration preserves same-input physics and events with a loaded or failed painting (152.7757ms)
+✔ late coast load after leaving or destroying cannot decorate another chapter or restart a game (7.575736ms)
+✔ cached paintings from all first four chapters cannot stand in for a pending or ready coast painting (11.718165ms)
+✔ lamp fade uses actual independent lamps, freezes on pause, resets on restart and settles under reduced motion (4.632175ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 234.571524

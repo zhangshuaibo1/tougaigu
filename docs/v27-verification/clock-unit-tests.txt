@@ -1,0 +1,21 @@
+✔ clock choice normalization accepts only existing release and hold ids without coercion (2.115637ms)
+✔ clock echo waits for a truly open cap with finite age and openness and a valid active update (0.311232ms)
+✔ clock echo is bounded to 2.8 seconds, clamps one update and never replays within the same run (0.39116ms)
+✔ pause freezes the clock state; recalling after playback settles it and reduced motion does not replay (0.264402ms)
+✔ clock snapshots are detached and drawing cannot mutate a reply or schedule another animation loop (7.252113ms)
+✔ validated saved clock reply enters only the coast; completion does not invent a choice or collectibles (11.388039ms)
+✔ real cap opening starts after its existing projection and performs only one echo on the original RAF loop (26.309016ms)
+✔ paused clock playback freezes the full rendered commands, physics and callbacks (51.221351ms)
+✔ real early recall leaves the reply waiting, mid-echo recall settles it, and reduced motion remains settled (13.090217ms)
+✔ diary selection rebuilds presentation while paused without changing physics or granting anything (1.745938ms)
+✔ the existing save key restores both replies and restart rebuilds only this run presentation (5.907688ms)
+✔ both reply performances preserve inherited physical state and genuine gameplay callbacks (88.929827ms)
+✔ other chapters and festivals never inherit coast choice performance and destruction cannot revive it (5.833414ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 233.745351

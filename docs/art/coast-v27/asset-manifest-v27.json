@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "status": "asset-ready-for-runtime-composition",
+  "preparedAt": "2026-10-29T11:25:42.875Z",
+  "sourceTool": "built-in image_gen",
+  "mode": "generate",
+  "sourceOutput": "/workspace/scratch/2b18af2db412/generated_images/exec-90b2a54f-777a-49e3-838f-64c6bffac04f.png",
+  "sourceSha256": "717595d73399f179d9998d7c4076c8804a40c3de7666bf23f75e36f5a04a4d21",
+  "referenceImagesAttached": false,
+  "contextualScreenshotsViewed": [
+    "docs/v26-live-entry.png",
+    "docs/v26-live-two-lamps.png"
+  ],
+  "generationCount": 1,
+  "imageEditCount": 0,
+  "originalToolOutputPreserved": true,
+  "originalArchiveIsByteIdentical": true,
+  "productionEncoding": {
+    "format": "WebP",
+    "tool": "ImageMagick convert",
+    "quality": 88,
+    "method": 6,
+    "resize": false,
+    "crop": false,
+    "colorEditing": false,
+    "command": "convert coast-painted-original-v27.png -quality 88 -define webp:method=6 coast-painted-v27.webp"
+  },
+  "files": [
+    {
+      "path": "docs/art/coast-v27/coast-painted-original-v27.png",
+      "width": 2172,
+      "height": 724,
+      "channels": "RGB opaque",
+      "bytes": 2002282,
+      "sha256": "717595d73399f179d9998d7c4076c8804a40c3de7666bf23f75e36f5a04a4d21"
+    },
+    {
+      "path": "docs/art/coast-v27/coast-painted-v27.webp",
+      "width": 2172,
+      "height": 724,
+      "channels": "RGB opaque",
+      "bytes": 71750,
+      "sha256": "55e8b21548307d311cf98eaff3823fe3684cf55053a4c9f9035fdee8ba201510"
+    },
+    {
+      "path": "dist/assets/coast-painted-v27.webp",
+      "width": 2172,
+      "height": 724,
+      "channels": "RGB opaque",
+      "bytes": 71750,
+      "sha256": "55e8b21548307d311cf98eaff3823fe3684cf55053a4c9f9035fdee8ba201510"
+    }
+  ],
+  "documents": {
+    "prompt": "docs/art/coast-v27/prompt.txt",
+    "promptSha256": "0513d8d6c5c0650db22e4acee0d681dc3d8ca91578a82823abbacb20709fa9f0",
+    "artNotes": "docs/art/coast-v27/art-notes-v27.md",
+    "inspectionScript": "docs/art/coast-v27/inspect-crops.mjs",
+    "cropReport": "docs/art/coast-v27/crop-report-v27.json"
+  },
+  "inspectionScope": {
+    "fullOriginalViewed": true,
+    "comparisonSheetsViewed": 3,
+    "windowsViewed": 9,
+    "previewViewportPixels": [
+      [
+        1100,
+        640
+      ],
+      [
+        390,
+        595
+      ],
+      [
+        320,
+        431
+      ]
+    ],
+    "previewDisplayLayout": {
+      "width": 2400,
+      "height": 800,
+      "y": -52
+    },
+    "allPreviewWindowsOpaque": true,
+    "sourceArtworkAlteredForInspection": false,
+    "gameCompositionPerformed": false,
+    "realBrowserOrDeviceTestPerformed": false,
+    "productionLayoutVerified": false
+  },
+  "integrationPerformedByAssetTask": false,
+  "publicationPerformedByAssetTask": false,
+  "notes": [
+    "Distant stone arcades are visible as scenic architecture. They are not foreground platforms; verify their separation from gameplay objects in the actual game composition.",
+    "The dawn sky and warm architectural windows are baked ambient artwork, not evidence of any lit puzzle lamp.",
+    "No existing branch choice, reward, collision, game state, source code or deployment configuration was modified by this asset task."
+  ]
+}

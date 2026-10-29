@@ -1,0 +1,222 @@
+{
+  "sourceVersion": "27.0.0",
+  "scope": "Final offline evidence files; original-size PNGs and full machine reports, with explicit fixture/font/browser limitations.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 10580,
+      "sha256": "0cbee3c7d68c8e9e0f7b4398f7e4f048d1c5a62c53e81492e28ef63b7ea8c32e"
+    },
+    {
+      "path": "clock-unit-tests.txt",
+      "bytes": 1591,
+      "sha256": "eb0e01f7c4b3b4e33757af1a76ce97e62b10babf707ad22f8e5d53bd9a5b6a3c"
+    },
+    {
+      "path": "coast-unit-tests.txt",
+      "bytes": 1677,
+      "sha256": "764627ba921308807b513731bef2627b8bf3888aba35e5f7870f7c44d95157a9"
+    },
+    {
+      "path": "desktop-clock-hold-playing-middle.png",
+      "bytes": 713003,
+      "sha256": "d9e1eca47d033164d7fcd61502f9a935811024296f5b0ef8edc1839bda00bf98"
+    },
+    {
+      "path": "desktop-clock-hold-settled-soul-away.png",
+      "bytes": 701798,
+      "sha256": "b2764ad4e3473081a0604770555709dd0cf03eab6964e2c29d0eba8d943edf80"
+    },
+    {
+      "path": "desktop-clock-release-playing-middle.png",
+      "bytes": 715731,
+      "sha256": "59e9bc600a32dd2d68edbcbe67a1b0d5c8623a34dc98d7c1141e4eaa38b60d15"
+    },
+    {
+      "path": "desktop-clock-release-settled-soul-away.png",
+      "bytes": 702167,
+      "sha256": "77b0ccbf35140741b3899f1ad78df52c23c76cb660e2981a48ac48f6887fd119"
+    },
+    {
+      "path": "desktop-fallback-hold-physics.jsonl.gz",
+      "bytes": 226185,
+      "sha256": "d661352472d2e52da3113a608f3d4c14d06f50f0a07d9225ef22d147dfb74ec9"
+    },
+    {
+      "path": "desktop-fallback-hold-report.json",
+      "bytes": 656077,
+      "sha256": "c64102a20488a30f072e1ea0fe4c110b7c859fe1bf14510e37644dd3b0707531"
+    },
+    {
+      "path": "desktop-fallback-hold-two-lamps-exit-approach.png",
+      "bytes": 234995,
+      "sha256": "fd067150c65baf23545c16b4a78145f45012b58f8b0e6aa76b19c2dd4dace5dc"
+    },
+    {
+      "path": "desktop-painted-release-first-lamp-visible-glow.png",
+      "bytes": 715075,
+      "sha256": "92a43b95bb74a4814c53de17026a62435f9baf67bcab441e3be722dca838614e"
+    },
+    {
+      "path": "desktop-painted-release-pendulum-3-frozen.png",
+      "bytes": 648669,
+      "sha256": "c765181a320be9d6894d017a1ff2dd723a8a21e1437274d85d9f141f41d605c0"
+    },
+    {
+      "path": "desktop-painted-release-physics.jsonl.gz",
+      "bytes": 226182,
+      "sha256": "39dec34257b6204008a46d3e249bc56ddf557f9fa790369bc28657183a1b31ab"
+    },
+    {
+      "path": "desktop-painted-release-report.json",
+      "bytes": 657424,
+      "sha256": "74e08aeceb527a336fad6a4857762eef14642d341f1cd4b9dbe4d2ce635bd3bb"
+    },
+    {
+      "path": "desktop-painted-release-safe-entry.png",
+      "bytes": 697194,
+      "sha256": "803920c8eb5d0bf9e947928059c40e2829fc0685a4e48d333b3715d684773b62"
+    },
+    {
+      "path": "desktop-painted-release-two-lamps-exit-approach.png",
+      "bytes": 626866,
+      "sha256": "46795bcea08c35c69887b9822e1381e92c1052df33730a2dd91142cdd66788d5"
+    },
+    {
+      "path": "desktop-painted-release-wind-and-second-memory.png",
+      "bytes": 668711,
+      "sha256": "a9bc1fdbaf9581af1ee71871d339ff20fd57a07021d992073c072a19eb50c619"
+    },
+    {
+      "path": "digital-coast-report.json",
+      "bytes": 171497,
+      "sha256": "1d4049c4e608c1126557653bf38c6408b4adc9454c3b838017eb4305bd9b533b"
+    },
+    {
+      "path": "library-full/desktop/input-tape.json",
+      "bytes": 291558,
+      "sha256": "f28a6df1ee77eacd1d2c1935e69a7c3c1624d2711188ae18e8ed023d74930657"
+    },
+    {
+      "path": "library-full/desktop/physics-trace.jsonl.gz",
+      "bytes": 540017,
+      "sha256": "0f3a158c10deeae106099ff15256b062b54bf2e7fd7271a5b573532717f197cd"
+    },
+    {
+      "path": "library-full/desktop/route-report.json",
+      "bytes": 2087191,
+      "sha256": "41de991b5c073895010884312c37f79da3a5a3984eda45c39dd3d71fb70a1315"
+    },
+    {
+      "path": "library-npc-pixels.json",
+      "bytes": 19051,
+      "sha256": "1067dbe8ade1d554f3f8c2abc6b56ff55c05d2cc3c5798bc0c876a080082d475"
+    },
+    {
+      "path": "phone-320-clock-hold-playing-middle.png",
+      "bytes": 190094,
+      "sha256": "680e4433c024ffa697cff2199d61ec9220564f242f16563f5921b4506a91b410"
+    },
+    {
+      "path": "phone-320-clock-release-playing-middle.png",
+      "bytes": 191263,
+      "sha256": "bf42ff234be9532f64b3d350fe797511a804408747c1f20eaf65dbf2cfa56bf4"
+    },
+    {
+      "path": "phone-320-fallback-hold-physics.jsonl.gz",
+      "bytes": 227925,
+      "sha256": "211cfb6046ef1be6c68c9aaa40c7b92be574e840091d53736b8bac6d3620383e"
+    },
+    {
+      "path": "phone-320-fallback-hold-report.json",
+      "bytes": 656341,
+      "sha256": "43d715bdf1df172c4473f7809111bc7e8eb2b49a723b95365d6561a331b0200c"
+    },
+    {
+      "path": "phone-320-painted-release-physics.jsonl.gz",
+      "bytes": 227921,
+      "sha256": "02a96ad10973f4691e6d14279478c40b41a43bfd23f30d8569b8cad7efb9356a"
+    },
+    {
+      "path": "phone-320-painted-release-report.json",
+      "bytes": 657202,
+      "sha256": "00bb5751906163117122bcb11faca11e42f346b0a1f9909308332abf983053e9"
+    },
+    {
+      "path": "phone-320-painted-release-safe-entry.png",
+      "bytes": 187051,
+      "sha256": "d0ec77bdfa9eec2265766e71a0a4d3e20925ea227577f9249936523e01586105"
+    },
+    {
+      "path": "phone-320-painted-release-two-lamps-exit-approach.png",
+      "bytes": 159480,
+      "sha256": "9efffdf77d1aa61ddd367b972210eae8d000cf84aebb332e52ab52d479ded5ad"
+    },
+    {
+      "path": "phone-390-clock-hold-playing-middle.png",
+      "bytes": 281348,
+      "sha256": "40267031a5741dbeb8788e05066f652ee10e313c9bc51e10b92fc827f2e51686"
+    },
+    {
+      "path": "phone-390-clock-release-playing-middle.png",
+      "bytes": 283377,
+      "sha256": "a992e88617263720f3b6e3eb0893416089cfe710f0d34871d13df01221165e1b"
+    },
+    {
+      "path": "phone-390-fallback-hold-physics.jsonl.gz",
+      "bytes": 227997,
+      "sha256": "d018adb6a248c7c549251c167bb28a1c4c585543c289428fa6481f015639a499"
+    },
+    {
+      "path": "phone-390-fallback-hold-report.json",
+      "bytes": 656311,
+      "sha256": "70c060e48739fe7d49829c66b77d89eea25432dddcbbbf2dfd4d61ad1cf51fd0"
+    },
+    {
+      "path": "phone-390-painted-release-physics.jsonl.gz",
+      "bytes": 228000,
+      "sha256": "d1a86f3c3122b447b74b7ba6d891a14ea9d7c0548400bc1e492899ec42bb04d7"
+    },
+    {
+      "path": "phone-390-painted-release-report.json",
+      "bytes": 657172,
+      "sha256": "32668a57c5deb29bea8f6b6189414941df093caddc1ae3eb9543c595a28e161c"
+    },
+    {
+      "path": "phone-390-painted-release-safe-entry.png",
+      "bytes": 275393,
+      "sha256": "9ec7661076611a161dd82b64c1511ab2f20c799507f3b0cde08a31782e15578c"
+    },
+    {
+      "path": "phone-390-painted-release-two-lamps-exit-approach.png",
+      "bytes": 228623,
+      "sha256": "67498b84a0a63286dcfc55abb0a42d66ec1dafb2cebc56c53cb8bb73fd7ec3f6"
+    },
+    {
+      "path": "verification-summary.json",
+      "bytes": 209163,
+      "sha256": "073938e32a07d92d436c58490fd20b453bfac164fdb23cbd8025f55f19841739"
+    },
+    {
+      "path": "verify-coast.mjs",
+      "bytes": 24527,
+      "sha256": "196d18818c42cf2ca41963d8680718ba63d8fdf78af03c8314a12d203a265067"
+    },
+    {
+      "path": "verify-digital-coast.mjs",
+      "bytes": 4612,
+      "sha256": "9a99ecc8b13efd8788edcb31546fb477d924e66ec86fb77c6c5488d783336a89"
+    },
+    {
+      "path": "verify-library-npc-pixels.mjs",
+      "bytes": 3550,
+      "sha256": "db120bfe879116318eaf72ba9fc21362da44d3abef72e9368d8df2a32bd80b95"
+    },
+    {
+      "path": "verify-library.mjs",
+      "bytes": 14226,
+      "sha256": "73806bb977141eb158c01487dc4009815b805756b3d89c372ceb8a2f5c50ee99"
+    }
+  ],
+  "totalBytes": 16904815
+}

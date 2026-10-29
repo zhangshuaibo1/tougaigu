@@ -1,0 +1,156 @@
+{
+  "purpose": "Background-only left/middle/right crop inspection, not gameplay, HUD, browser or device validation.",
+  "source": "docs/art/coast-v27/coast-painted-v27.webp",
+  "sourcePixels": {
+    "width": 2172,
+    "height": 724
+  },
+  "previewLayout": {
+    "width": 2400,
+    "height": 800,
+    "y": -52
+  },
+  "productionLayoutImplemented": false,
+  "gameCompositionPerformed": false,
+  "note": "Preview dimensions reuse prior offline review sizes. Positions sample the image, not the actual game camera or parallax.",
+  "sheets": [
+    {
+      "file": "docs/art/coast-v27/inspection/desktop-left-middle-right.png",
+      "width": 3300,
+      "height": 640,
+      "windows": [
+        {
+          "position": "left",
+          "scale": 1,
+          "viewWidth": 1100,
+          "horizontalOffset": 0,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 47.06,
+            "width": 995.5,
+            "height": 579.2
+          }
+        },
+        {
+          "position": "middle",
+          "scale": 1,
+          "viewWidth": 1100,
+          "horizontalOffset": 650,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 588.25,
+            "y": 47.06,
+            "width": 995.5,
+            "height": 579.2
+          }
+        },
+        {
+          "position": "right",
+          "scale": 1,
+          "viewWidth": 1100,
+          "horizontalOffset": 1300,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 1176.5,
+            "y": 47.06,
+            "width": 995.5,
+            "height": 579.2
+          }
+        }
+      ]
+    },
+    {
+      "file": "docs/art/coast-v27/inspection/phone-390-left-middle-right.png",
+      "width": 1170,
+      "height": 595,
+      "windows": [
+        {
+          "position": "left",
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "horizontalOffset": 0,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 47.06,
+            "width": 379.64369747899156,
+            "height": 579.2
+          }
+        },
+        {
+          "position": "middle",
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "horizontalOffset": 990.2521008403362,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 896.1781512605043,
+            "y": 47.06,
+            "width": 379.64369747899156,
+            "height": 579.2
+          }
+        },
+        {
+          "position": "right",
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "horizontalOffset": 1980.5042016806724,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 1792.3563025210085,
+            "y": 47.06,
+            "width": 379.64369747899156,
+            "height": 579.2
+          }
+        }
+      ]
+    },
+    {
+      "file": "docs/art/coast-v27/inspection/phone-320-left-middle-right.png",
+      "width": 960,
+      "height": 431,
+      "windows": [
+        {
+          "position": "left",
+          "scale": 0.6734375,
+          "viewWidth": 475.17401392111367,
+          "horizontalOffset": 0,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 47.06,
+            "width": 430.0324825986078,
+            "height": 579.2
+          }
+        },
+        {
+          "position": "middle",
+          "scale": 0.6734375,
+          "viewWidth": 475.17401392111367,
+          "horizontalOffset": 962.4129930394431,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 870.983758700696,
+            "y": 47.06,
+            "width": 430.0324825986078,
+            "height": 579.2
+          }
+        },
+        {
+          "position": "right",
+          "scale": 0.6734375,
+          "viewWidth": 475.17401392111367,
+          "horizontalOffset": 1924.8259860788862,
+          "transparentPixels": 0,
+          "sourceRect": {
+            "x": 1741.967517401392,
+            "y": 47.06,
+            "width": 430.0324825986078,
+            "height": 579.2
+          }
+        }
+      ]
+    }
+  ]
+}
