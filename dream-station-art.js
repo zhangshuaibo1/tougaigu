@@ -3,6 +3,7 @@
 import { DREAM_PHYSICS } from './dream-engine-base.js';
 import { drawCapInterior } from './dream-cap-art.js';
 import { getOutfitPalette, drawOutfitBack } from './dream-festival-art.js';
+import { getTravelerMotion, drawTravelerBack, drawTravelerLegs, drawTravelerCoat } from './dream-traveler-art.js';
 const TAU=Math.PI*2;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 function path(c,points,color,width=1){c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.strokeStyle=color;c.lineWidth=width;c.stroke();}
@@ -182,36 +183,19 @@ export function drawStationSignal(c,game,p){
 
 /** Same rig/occlusion contract as the base renderer, with richer small-scale materials. */
 export function drawStationCharacter(game,c,b,t,shown,p){
-  const {rig,step,walking}=p,outfit=game.getOutfitId(),dress=getOutfitPalette(outfit);
+  const {rig,walking}=p,outfit=game.getOutfitId(),dress=getOutfitPalette(outfit);
+  const motion=getTravelerMotion(b,{time:t,hop:p.hop,reducedMotion:game.options.reducedMotion});
   const opacity=b.invulnerable>0&&!game.options.reducedMotion&&Math.floor(t*13)%2===0?.48:1;
   c.save();oval(c,b.x,b.y+2,b.grounded?24:18,4,'#0a223b68');c.restore();
   c.save();c.transform(...rig.bodyMatrix);c.globalAlpha*=opacity;
   drawOutfitBack(c,outfit,t,walking);
   if(game.featherCharges){for(let i=0;i<3;i++){const a=t*.55+i*TAU/3;oval(c,Math.cos(a)*30,-39+Math.sin(a)*22,2,2,'#d6e8ecaa');}}
-  c.save();c.translate(-17,-28);c.rotate(-.2+step*.05);
-  box(c,-11,-4,19,23,5,gradient(c,-11,-4,8,19,[[0,'#eed29e'],[.35,'#bc8a5c'],[1,'#78583f']]),'#e1be85');
-  box(c,-11,-4,19,9,4,'#ce9f69','#e0bd8b');path(c,[[-8,8],[-8,16],[4,16],[4,8]],'#efce9877',.7);
-  box(c,-2,2,5,8,1,'#805c3d','#f5d38d');oval(c,.5,5,1,1,'#f6e1ae');c.restore();
-  const tuck=b.grounded?0:clamp(-b.vy/600,0,1)*4;
-  for(const leg of [{x:-7,phase:step},{x:7,phase:-step}]){
-    const kneeX=leg.x+leg.phase*4,footX=leg.x+leg.phase*8,footY=-2-Math.max(0,leg.phase)*3-tuck;
-    path(c,[[leg.x,-21],[kneeX,-11-tuck],[footX,footY]],'#9d9274',6);
-    path(c,[[leg.x-1,-21],[kneeX-1,-11-tuck],[footX-1,footY]],'#e8d9b9',3);
-    oval(c,kneeX,-11-tuck,3,3,'#f3e6ca');
-    oval(c,footX+2,footY+1,8,4,'#304b48');oval(c,footX+2,footY,7,3.1,'#a4bb9a');path(c,[[footX-2,footY-1],[footX+5,footY-1]],'#d6e0b780',1);
-  }
+  drawTravelerBack(c,motion,dress);drawTravelerLegs(c,motion);
   for(const arm of [p.arms.left,p.arms.right]){
     path(c,[[arm.shoulder.x,arm.shoulder.y],[arm.elbow.x,arm.elbow.y],[arm.wrist.x,arm.wrist.y]],'#a59c7d',5);
     path(c,[[arm.shoulder.x-1,arm.shoulder.y],[arm.elbow.x-1,arm.elbow.y],[arm.wrist.x-1,arm.wrist.y]],'#eadbb9',2.5);oval(c,arm.elbow.x,arm.elbow.y,2.8,2.8,'#f3e6c5');
   }
-  c.beginPath();c.moveTo(-13,-39);c.quadraticCurveTo(1,-47,14,-38);c.lineTo(17,-17);c.quadraticCurveTo(0,-12,-16,-18);c.closePath();
-  c.fillStyle=gradient(c,-16,-38,17,-17,[[0,dress.trim],[.3,dress.coat],[.7,dress.coat],[1,'#26393f']]);c.fill();c.strokeStyle='#1e324d99';c.lineWidth=1;c.stroke();
-  path(c,[[-12,-36],[-7,-30],[-1,-38],[6,-30],[12,-35]],dress.trim,1);path(c,[[0,-33],[0,-18]],dress.trim+'80',1);
-  for(let y=-30;y<-18;y+=6){oval(c,2,y,1.5,1.5,'#e9cb8a');oval(c,2,y-.5,.6,.6,'#fff2c9');}
-  box(c,-11,-27,7,6,2,dress.coat,dress.trim+'88');path(c,[[11,-38],[-13,-20]],'#ac835faa',2.5);path(c,[[10,-38],[-14,-20]],'#ead0a077',.7);
-  c.beginPath();c.moveTo(-9,-38);c.bezierCurveTo(-27,-41,-34,-52+Math.sin(t*4)*3,-49,-44+Math.sin(t*3)*4);c.lineTo(-44,-34+Math.sin(t*3+.4)*4);c.bezierCurveTo(-31,-36,-18,-32,-9,-34);c.closePath();
-  c.fillStyle=gradient(c,0,-49,0,-32,[[0,'#ead8ad'],[.35,dress.scarf],[1,dress.scarf]]);c.fill();
-  path(c,[[-40,-41],[-39,-35]],'#f5d2a577',1);box(c,-16,-41,32,8,4,dress.scarf);path(c,[[-11,-39],[11,-39]],'#fff0cf77',1.2);
+  drawTravelerCoat(c,motion,dress);
   c.save();c.transform(...rig.headLocalMatrix);drawCapInterior(c,game.capScene,t,game.capOpen);c.restore();c.restore();
   if(shown?.layer==='inside')game.drawSoul(c,shown,t);
   c.save();c.transform(...rig.bodyMatrix);c.globalAlpha*=shown?.layer==='inside'?1:opacity;
