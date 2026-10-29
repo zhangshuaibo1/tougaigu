@@ -4,19 +4,23 @@ A test-only read-only coordinate probe is appended in-memory to the app module.
 All movement and puzzles still use real keyboard/touch/DOM input: no teleportation,
 save injection, direct updates, or engine solving calls.
 """
-import argparse,asyncio,json,math,re,shutil,time
+import argparse,asyncio,base64,json,math,re,shutil,time
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from playwright.async_api import async_playwright, expect
 
 
 PROBE="""
+const __qaBodyIdentities=new WeakMap();let __qaBodySequence=0;
 window.__qaRead=()=>{
   if(!game)return null;
   const a=game.form==='soul'?game.soul:game.body,b=game.body,p=game.greenhousePlant;
+  if(!__qaBodyIdentities.has(b))__qaBodyIdentities.set(b,++__qaBodySequence);
   const character=game.getCharacterPresentation();
   return {
     form:game.form,state:game.state,chapterIndex:game.chapterIndex,mode:game.mode,festivalId:game.festivalId,controlSource,
+    runId:game.runId,bodyIdentity:__qaBodyIdentities.get(b),
+    inputAvailable:typeof gameplayAvailable==='function'?gameplayAvailable():null,
     energy:game.energy,maxEnergy:game.maxEnergy,
     hudSample:currentHud?{form:currentHud.form,state:currentHud.state,time:currentHud.time,energy:currentHud.energy,maxEnergy:currentHud.maxEnergy}:null,
     observedAt:performance.now(),fullHudWrittenAt:lastHudAt,
@@ -448,7 +452,7 @@ async def exercise_portrait_sequence(page,output,label):
             'scope':'real first-chapter dialogue and original delayed image responses; fast Next and normal Escape/reopen; no network bytes, DOM, coordinates or saves replaced'}
 
 def traveler_pose_record(snapshot):
-    return {key:snapshot[key] for key in ['chapterIndex','mode','state','form','time','visualTime','deaths','reducedMotion','body','travelerPerformance','characterPose']}
+    return {key:snapshot[key] for key in ['runId','bodyIdentity','chapterIndex','mode','state','form','time','visualTime','deaths','reducedMotion','body','travelerPerformance','characterPose']}
 
 def validate_traveler_pose(snapshot,phase=None,reduced_motion=None):
     """Compare the actual drawing view with independently observed physics."""
@@ -490,92 +494,178 @@ def validate_traveler_pose(snapshot,phase=None,reduced_motion=None):
         assert body['platform']=='stage' and view['platformId']=='stage','riding pose lacks actual stage attachment; '+detail
     return traveler_pose_record(snapshot)
 
-async def await_traveler_pose(page,phase,reduced_motion=None):
+TRAVELER_FRAME_SAMPLER="""token=>{
+  if(window.__qaTravelerFrames)throw new Error('a previous traveler observer was not disposed');
+  const initial=window.__qaRead(),startedAt=performance.now();
+  if(!initial||initial.state!=='playing'||initial.form!=='body'||!initial.body.grounded||Math.abs(initial.body.vx)>=1)
+    throw new Error('traveler observer needs the actual stationary body');
+  let status='sampling',reason=null,raf=null,watchdog=null,previous=initial,lastAt=startedAt,activeMs=0,droppedFrames=0,inputEvent=null;
+  let poses={},frames=[],input={capture:null,after:null};
+  const compact=(a,at,source='raf')=>({source,atMs:at-startedAt,time:a.time,visualTime:a.visualTime,state:a.state,form:a.form,
+    runId:a.runId,bodyIdentity:a.bodyIdentity,deaths:a.deaths,x:a.body.x,y:a.body.y,vx:a.body.vx,vy:a.body.vy,
+    grounded:a.body.grounded,platform:a.body.platform,phase:a.travelerPerformance?.phase??null});
+  const initialFrame=compact(initial,startedAt,'initial');
+  const sameRun=a=>a&&a.runId===initial.runId&&a.bodyIdentity===initial.bodyIdentity&&a.chapterIndex===initial.chapterIndex&&a.mode===initial.mode&&a.deaths===initial.deaths;
+  function append(a,source){frames.push(compact(a,performance.now(),source));if(frames.length>512){frames.shift();droppedFrames++;}}
+  const keyInfo=(event,a)=>({key:event.key,code:event.code,repeat:event.repeat,defaultPrevented:event.defaultPrevented,
+    ctrlKey:event.ctrlKey,metaKey:event.metaKey,altKey:event.altKey,
+    target:{id:event.target?.id,tag:event.target?.tagName},focus:{id:document.activeElement?.id,tag:document.activeElement?.tagName},
+    openDialogs:[...document.querySelectorAll('dialog[open]')].map(dialog=>dialog.id),inputAvailable:a?.inputAvailable,
+    sample:a?compact(a,performance.now(),'keyboard'):null});
+  function finish(next,why=null){
+    status=next;reason=why;
+    if(raf!==null){cancelAnimationFrame(raf);raf=null;}
+    if(watchdog!==null){clearTimeout(watchdog);watchdog=null;}
+    document.removeEventListener('keydown',captureKey,true);
+    document.removeEventListener('keydown',afterKey);
+    if(!['sampling','complete'].includes(next))poses={};
+  }
+  function read(requestedToken=token){
+    const owns=requestedToken===token,valid=owns&&['sampling','complete'].includes(status);
+    return {token,status:owns?status:'mismatch',reason:owns?reason:'observer token mismatch',activeMs,elapsedMs:performance.now()-startedAt,
+      initial:initialFrame,frames:owns?[...frames]:[],droppedFrames,input:owns?{...input}:{},poses:valid?{...poses}:{},pendingFrame:raf!==null,pendingTimer:watchdog!==null};
+  }
+  function captureKey(event){
+    if(event.code!=='Space'||event.repeat||status!=='sampling')return;
+    if(inputEvent){finish('invalid','a second Space entered a single-jump observation');return;}
+    inputEvent=event;
+    const a=window.__qaRead();input.capture=keyInfo(event,a);
+    if(!sameRun(a)||a.state!=='playing'||a.form!=='body'||!a.body.grounded||Math.abs(a.body.vx)>=1){finish('invalid','Space did not begin with the original grounded body');return;}
+    append(a,'keydown-capture');
+  }
+  function afterKey(event){
+    if(event!==inputEvent||status!=='sampling')return;
+    const a=window.__qaRead();input.after=keyInfo(event,a);
+    if(!sameRun(a)||a.state!=='playing'||a.form!=='body'||a.body.grounded||a.body.vy>=-80||!event.defaultPrevented){finish('invalid','Space did not start the current body jump');return;}
+    // Registered after production listeners: this is the actual synchronous
+    // keydown result, before a later protocol return can miss its short rise.
+    append(a,'keydown-after');poses.rise=a;
+  }
+  function sample(){
+    raf=null;
+    if(status!=='sampling')return;
+    const now=performance.now(),a=window.__qaRead();
+    if(!a){finish('invalid','game disappeared');return;}
+    append(a,'raf');
+    if(!sameRun(a)){
+      finish('invalid','run, body, chapter or deaths changed');return;
+    }
+    if(a.time<previous.time||a.visualTime<previous.visualTime){finish('invalid','game time moved backwards');return;}
+    if(a.form!=='body'||!['playing','paused'].includes(a.state)){finish('invalid','body play was interrupted');return;}
+    if(a.state==='playing'&&previous.state==='playing')activeMs+=Math.max(0,now-lastAt);
+    previous=a;lastAt=now;
+    if(a.state==='playing'){
+      const b=a.body;
+      if(!inputEvent&&!b.grounded){finish('invalid','body became airborne before this Space');return;}
+      if(poses.rise&&!poses.fall&&b.grounded&&a.time>poses.rise.time){finish('invalid','contact preceded an observed downward phase');return;}
+      if(poses.fall&&!b.grounded&&b.vy<-80){finish('invalid','another rise preceded the recorded landing');return;}
+      if(poses.rise&&!poses.fall&&!b.grounded&&b.vy>80&&a.time>poses.rise.time)poses.fall=a;
+      else if(poses.fall&&!poses.land&&b.grounded&&Math.abs(b.vy)<.01&&a.time>poses.fall.time)poses.land=a;
+      if(poses.land){finish('complete');return;}
+    }
+    if(activeMs>=3500){finish('timeout','3500ms of active observation elapsed');return;}
+    raf=requestAnimationFrame(sample);
+  }
+  const api={token,read,stop(requestedToken=token){
+    if(requestedToken!==token)return read(requestedToken);
+    finish('disposed','observer disposed');poses={};frames=[];input={capture:null,after:null};inputEvent=null;return read();
+  }};
+  window.__qaTravelerFrames=api;
+  // These clocks belong only to this CI observer. They never call update,
+  // render, an input method, or a production scheduling method.
+  watchdog=setTimeout(()=>finish('timeout','absolute observation lifetime elapsed'),10500);
+  document.addEventListener('keydown',captureKey,{capture:true,passive:true});
+  document.addEventListener('keydown',afterKey,{passive:true});
+  raf=requestAnimationFrame(sample);
+  return read();
+}"""
+
+async def await_traveler_pose(page,token,phase,reduced_motion=None):
+    key='land' if phase=='idle' else phase
     try:
-        handle=await page.wait_for_function("""({phase,reducedMotion})=>{
-          const a=window.__qaRead(),b=a?.body,v=a?.travelerPerformance;
-          if(!a||a.state!=='playing'||a.form!=='body')return false;
-          if(reducedMotion!==null&&a.reducedMotion!==reducedMotion)return false;
-          const physical=phase==='rise'?!b.grounded&&b.vy<-80:phase==='fall'?!b.grounded&&b.vy>80:b.grounded&&Math.abs(b.vy)<.01;
-          return physical&&(!v||v.phase===phase)?a:false;
-        }""",arg={'phase':phase,'reducedMotion':reduced_motion},timeout=3500)
-        try:snapshot=await handle.json_value()
+        handle=await page.wait_for_function("""({token,key})=>{
+          const sampler=window.__qaTravelerFrames;
+          if(!sampler||sampler.token!==token)return {status:'missing',reason:'observer token mismatch'};
+          const view=sampler.read(token);
+          return view.poses[key]||view.status!=='sampling'?view:false;
+        }""",arg={'token':token,'key':key},timeout=3500)
+        try:observation=await handle.json_value()
         finally:await handle.dispose()
     except Exception as error:
-        raise AssertionError('actual body never presented '+phase+'; '+json.dumps(await page.evaluate('window.__qaRead()'),ensure_ascii=False)) from error
+        actual=await page.evaluate("()=>({game:window.__qaRead(),observer:window.__qaTravelerFrames?.read(),focus:{id:document.activeElement?.id,tag:document.activeElement?.tagName},openDialogs:[...document.querySelectorAll('dialog[open]')].map(dialog=>dialog.id)})")
+        raise AssertionError('actual body never presented '+phase+'; '+json.dumps(actual,ensure_ascii=False)) from error
+    assert observation.get('token')==token and observation['status'] in ['sampling','complete'] and key in observation['poses'],'missing actual '+phase+' frame; '+json.dumps(observation,ensure_ascii=False)
+    snapshot=observation['poses'][key]
     validate_traveler_pose(snapshot,phase,reduced_motion)
     return snapshot
 
 async def sample_body_jump(page,label,pause=False,output=None,reduced_motion=None):
     """One real vertical Space jump from a naturally reached safe floor."""
     before=await page.evaluate('window.__qaRead()')
-    assert before['form']=='body' and before['body']['grounded'] and abs(before['body']['vx'])<1
-    # Starting a chapter from a button can leave the hidden launcher focused.
-    # Keyboard controls intentionally ignore button targets, so put focus on
-    # the actual focusable canvas before issuing an ordinary player's jump.
-    await page.locator('#dream-canvas').focus()
-    await expect(page.locator('#dream-canvas')).to_be_focused()
-    # Start a passive per-frame record *before* the ordinary Space keydown.
-    # A short fall/contact phase can finish between two host-side Playwright
-    # commands. Collecting the real game state on each page RAF avoids a test
-    # timing race, without assigning position, physics, saves or completion.
-    await page.evaluate("""()=>{
-      const watch={active:true,rise:null,fall:null,land:null};
-      window.__qaJumpWatch=watch;
-      const sample=()=>{
-        if(!watch.active)return;
-        const a=window.__qaRead(),b=a?.body;
-        if(a?.state==='playing'&&a.form==='body'&&b){
-          if(!b.grounded&&b.vy<-80&&!watch.rise)watch.rise=a;
-          if(watch.rise&&!b.grounded&&b.vy>0&&!watch.fall)watch.fall=a;
-          if(watch.fall&&b.grounded){watch.land=a;watch.active=false;return;}
-        }
-        requestAnimationFrame(sample);
-      };
-      requestAnimationFrame(sample);
-    }""")
-    # Read the rise on the actual keydown as well; the listener above will
-    # independently capture fall/landing even while Python checks the rise.
-    await page.keyboard.down('Space')
+    assert before['state']=='playing' and before['form']=='body' and before['body']['grounded'] and abs(before['body']['vx'])<1
+    focus_before=await page.evaluate("()=>({id:document.activeElement?.id,tag:document.activeElement?.tagName})")
+    # Story/settings controls may retain focus after their normal close. The
+    # production key handler correctly reserves Space for a focused button.
+    # Hand keyboard control to the real, focusable canvas before pressing it.
+    canvas=page.locator('#dream-canvas')
+    await canvas.focus()
+    assert await canvas.evaluate('(canvas)=>document.activeElement===canvas'),'Space target is not the actual game canvas'
+    token=label+':'+str(time.monotonic_ns())
+    await page.evaluate(TRAVELER_FRAME_SAMPLER,token)
     try:
-        rise=await page.evaluate('window.__qaRead()')
-        if rise['body']['grounded'] or rise['body']['vy']>=-80:
-            active=await page.evaluate("()=>({focused:document.activeElement?.id,openDialogs:[...document.querySelectorAll('dialog[open]')].map(d=>d.id)})")
-            raise AssertionError('real Space keydown did not initiate an upward jump: '+json.dumps({'focus':active,'snapshot':traveler_pose_record(rise)},ensure_ascii=False))
-        validate_traveler_pose(rise,'rise',reduced_motion)
+        # Install before either key event. Protocol return, keyup and Python
+        # work may span a short phase; the browser retains its actual frames.
+        try:
+            await page.keyboard.down('Space')
+            after_input=await page.evaluate('window.__qaRead()')
+            print(label,'Space input sample',json.dumps({'body':after_input['body'],'time':after_input['time'],'runId':after_input['runId'],'bodyIdentity':after_input['bodyIdentity']},ensure_ascii=False),flush=True)
+        finally:await page.keyboard.up('Space')
+        rise=await await_traveler_pose(page,token,'rise',reduced_motion)
+        paused_evidence=None
+        if pause:
+            await page.keyboard.press('Escape')
+            await page.locator('#pause-dialog[open]').wait_for()
+            paused=await page.evaluate('window.__qaRead()')
+            assert paused['state']=='paused' and not paused['body']['grounded'],'pause did not catch the real airborne pose: '+json.dumps(traveler_pose_record(paused),ensure_ascii=False)
+            validate_traveler_pose(paused,paused['travelerPerformance']['phase'],reduced_motion)
+            pixels=await page.locator('#dream-canvas').evaluate('(canvas)=>canvas.toDataURL()')
+            frozen=await page.evaluate("async()=>{for(let i=0;i<6;i++)await new Promise(resolve=>requestAnimationFrame(resolve));return window.__qaRead();}")
+            assert traveler_pose_record(frozen)==traveler_pose_record(paused),'paused body/performance/rig advanced'
+            assert await page.locator('#dream-canvas').evaluate('(canvas)=>canvas.toDataURL()')==pixels,'paused character pixels changed'
+            paused_evidence={'observed':traveler_pose_record(paused),'passiveFrames':6,'fullPoseFrozen':True,'canvasPixelsFrozen':True}
+            if output:
+                prefix,encoded=pixels.split(',',1)
+                assert prefix=='data:image/png;base64','paused canvas did not export PNG pixels'
+                (Path(output)/(label+'-traveler-airborne-canvas.png')).write_bytes(base64.b64decode(encoded))
+                await page.screenshot(path=str(Path(output)/(label+'-traveler-airborne-paused.png')),full_page=True)
+            await page.locator('#stage-resume').click()
+        fall=await await_traveler_pose(page,token,'fall',reduced_motion)
+        end_phase='idle' if reduced_motion else 'land'
+        landed=await await_traveler_pose(page,token,end_phase,reduced_motion)
+        for axis in ['x','y']:
+            assert abs(landed['body'][axis]-before['body'][axis])<.1,'vertical jump did not return to its real floor'
+        assert landed['deaths']==before['deaths'],'pose route respawned'
+        assert rise['time']<fall['time']<landed['time'],'jump phase evidence is not ordered within one real jump'
+        sampled=await page.evaluate('token=>window.__qaTravelerFrames.read(token)',token)
+        assert sampled['token']==token and sampled['status']=='complete' and not sampled['pendingFrame'] and not sampled['pendingTimer']
+    except Exception:
+        trace=await page.evaluate("token=>{const view=window.__qaTravelerFrames?.read(token);return view&&{token:view.token,status:view.status,reason:view.reason,activeMs:view.activeMs,frames:view.frames,droppedFrames:view.droppedFrames,input:view.input};}",token)
+        print(label,'jump observation failure',json.dumps(trace,ensure_ascii=False),flush=True)
+        raise
     finally:
-        await page.keyboard.up('Space')
-    paused_evidence=None
-    if pause:
-        await page.keyboard.press('Escape')
-        await page.locator('#pause-dialog[open]').wait_for()
-        paused=await page.evaluate('window.__qaRead()')
-        assert paused['state']=='paused' and not paused['body']['grounded'],'pause did not catch the real airborne pose: '+json.dumps(traveler_pose_record(paused),ensure_ascii=False)
-        validate_traveler_pose(paused,paused['travelerPerformance']['phase'],reduced_motion)
-        pixels=await page.locator('#dream-canvas').evaluate('(canvas)=>canvas.toDataURL()')
-        frozen=await page.evaluate("async()=>{for(let i=0;i<6;i++)await new Promise(resolve=>requestAnimationFrame(resolve));return window.__qaRead();}")
-        assert traveler_pose_record(frozen)==traveler_pose_record(paused),'paused body/performance/rig advanced'
-        assert await page.locator('#dream-canvas').evaluate('(canvas)=>canvas.toDataURL()')==pixels,'paused character pixels changed'
-        paused_evidence={'observed':traveler_pose_record(paused),'passiveFrames':6,'fullPoseFrozen':True,'canvasPixelsFrozen':True}
-        if output:await page.screenshot(path=str(Path(output)/(label+'-traveler-airborne-paused.png')),full_page=True)
-        await page.locator('#stage-resume').click()
-    try:
-        await page.wait_for_function("()=>window.__qaJumpWatch?.land!==null",timeout=3500)
-        observed=await page.evaluate("()=>({fall:window.__qaJumpWatch.fall,land:window.__qaJumpWatch.land})")
-    except Exception as error:
-        sample=await page.evaluate("()=>({watch:window.__qaJumpWatch,now:window.__qaRead()})")
-        raise AssertionError('real jump never produced both falling and landing frames; '+json.dumps(sample,ensure_ascii=False)) from error
-    finally:
-        await page.evaluate("()=>{if(window.__qaJumpWatch)window.__qaJumpWatch.active=false;delete window.__qaJumpWatch}")
-    fall=observed['fall'];landed=observed['land']
-    validate_traveler_pose(fall,'fall',reduced_motion)
-    end_phase='idle' if reduced_motion else 'land'
-    validate_traveler_pose(landed,end_phase,reduced_motion)
-    for axis in ['x','y']:
-        assert abs(landed['body'][axis]-before['body'][axis])<.1,'vertical jump did not return to its real floor'
-    assert landed['deaths']==before['deaths'],'pose route respawned'
+        cleanup=await page.evaluate("""token=>{
+          const sampler=window.__qaTravelerFrames;
+          if(!sampler||sampler.token!==token)throw new Error('traveler observer ownership was lost');
+          const stopped=sampler.stop(token);delete window.__qaTravelerFrames;
+          return {pendingFrame:stopped.pendingFrame,pendingTimer:stopped.pendingTimer,
+            oldPosesCleared:Object.keys(sampler.read(token).poses).length===0,removed:!window.__qaTravelerFrames};
+        }""",token)
+        assert cleanup=={'pendingFrame':False,'pendingTimer':False,'oldPosesCleared':True,'removed':True},'traveler observer was not fully cleaned up'
     return {'label':label,'input':'actual Space key','rise':traveler_pose_record(rise),'fall':traveler_pose_record(fall),
-            'landed':traveler_pose_record(landed),'pause':paused_evidence,'noRespawns':True,'samePhysicalFloor':True}
+            'landed':traveler_pose_record(landed),'pause':paused_evidence,'noRespawns':True,'samePhysicalFloor':True,
+            'keyboardFocusBefore':focus_before,'keyboardTargetVerified':'dream-canvas','immediatelyAfterKeydown':traveler_pose_record(after_input),
+            'frameObservation':{key:sampled[key] for key in ['token','status','activeMs','elapsedMs','initial','frames','droppedFrames','input']},
+            'observerCleanup':cleanup}
 
 async def set_reduced_motion_from_ui(page,enabled):
     await page.locator('[data-shell-action="settings"]').click()

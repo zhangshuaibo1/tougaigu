@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "title": "v25 browser jump observer — independent review",
+  "reviewedAtUtc": "2026-10-29 09:10:08 UTC",
+  "reviewer": "/root/v17_audit",
+  "workspace": "/workspace/scratch/2b18af2db412/tougaigu-v25",
+  "workspaceHead": "dd12ac6ba1211d6802632c8c763a6736c6914db7",
+  "verdict": {
+    "unresolvedReviewBlockers": [],
+    "readyForCandidateCI": true,
+    "finalBrowserVerification": "Not performed by this reviewer. The revised observer still requires the real candidate browser workflow.",
+    "runtimeChangedByThisReview": false
+  },
+  "scope": {
+    "independentlyRead": [
+      "scripts/browser-smoke.py: PROBE, TRAVELER_FRAME_SAMPLER, await_traveler_pose, sample_body_jump and their existing callers",
+      "tests/browser-traveler-performance.test.mjs: three named tests, production keyboard-handler extraction, actual observer source extraction, lifecycle fixtures and Python-driver cleanup cases",
+      "tests/browser-portrait-sequence.test.mjs: previously reviewed portrait gate regression; unchanged by this observer repair",
+      "dist/dream-app.js: actual production keydown listener and focus filtering",
+      "dist/dream-engine-base.js: real jump, fixed-step frame order, restart and respawn behavior",
+      "dist/dream-traveler-performance.js: phase and landing-envelope semantics"
+    ],
+    "actionsPerformed": [
+      "Read the exact aec4ae9 remote commit diff using a GitHub GET operation.",
+      "Executed one narrow offline counterexample against the exact remote observer block and the actual production DreamGame.",
+      "Independently reviewed the final frozen observer implementation and all three named observer/pose helper tests.",
+      "Computed the recorded local SHA-256 hashes.",
+      "Ran git diff --exit-code dd12ac6 -- dist; exit 0, no output, establishing that the production distribution was unchanged from the runtime baseline."
+    ],
+    "browserLaunched": false,
+    "localPlaywrightExecuted": false,
+    "coordinatesOrSavesInjected": false,
+    "runtimeOrRootScriptsEditedByReviewer": false,
+    "commitsPushesOrDeploymentsPerformed": false,
+    "reviewerWrittenFile": "docs/verification-v25-observer-review.json"
+  },
+  "reviewedFileHashes": [
+    {
+      "path": "scripts/browser-smoke.py",
+      "bytes": 120002,
+      "sha256": "95922ddd32fd9da5559858d71b9e40451653b0e9986976a7f406d2e2e64ebbde"
+    },
+    {
+      "path": "tests/browser-traveler-performance.test.mjs",
+      "bytes": 25150,
+      "sha256": "bf872eeef28fab8e7952b6955b71ee0e80bea2aac8ec305215be8a62d4d60dfe"
+    },
+    {
+      "path": "tests/browser-portrait-sequence.test.mjs",
+      "bytes": 6274,
+      "sha256": "e9305ddc76889a6b0c96f96047ed0c62dbf3fce89b24841a5d623f4e3a813942"
+    },
+    {
+      "path": "dist/dream-app.js",
+      "bytes": 63772,
+      "sha256": "078cd17e6aaa6a194aa941c8d2b3823e3da73d669f80f4e027a0bcc2448f67a6"
+    },
+    {
+      "path": "dist/dream-engine-base.js",
+      "bytes": 94772,
+      "sha256": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699"
+    },
+    {
+      "path": "dist/dream-engine.js",
+      "bytes": 14199,
+      "sha256": "a5d6eae8a8348620922f9cc38541b81f9b7746355e09f1278569f76eae2212f3"
+    },
+    {
+      "path": "dist/dream-traveler-performance.js",
+      "bytes": 6069,
+      "sha256": "4a4ebf035a94863e1be4ccceeaf23d1cbdec221808d46b596b7f3b911939ae14"
+    }
+  ],
+  "earlierObserverCounterexample": {
+    "commit": "aec4ae9ddcd355a18b88abfbec642c6dadc07e72",
+    "sourceUrl": "https://api.github.com/repos/zhangshuaibo1/tougaigu/commits/aec4ae9ddcd355a18b88abfbec642c6dadc07e72",
+    "method": "Extracted the added observer JavaScript block verbatim from that commit's scripts/browser-smoke.py diff, executed it with node:vm, and supplied read-only observations from the actual local production DreamGame. The game used its ordinary start and jump methods and 1/60-second update calls. No browser was involved.",
+    "physicalSequence": [
+      "Start chapter index 0 at its original spawn.",
+      "Invoke the normal engine jump action, advance ordinary 1/60-second updates, and let the exact old observer sample each update until it records fall.",
+      "Call the normal engine start method for the same chapter, replacing the body and resetting the run.",
+      "Let the old observer sample the newly grounded body."
+    ],
+    "observed": {
+      "firstCapturedFallVy": 7.5,
+      "originalRequiredFallThresholdExclusive": 80,
+      "runIds": {
+        "rise": 1,
+        "fall": 1,
+        "land": 2
+      },
+      "bodyReplaced": true,
+      "landingAccepted": true,
+      "sameFloorAsBeforeJump": true,
+      "deathsUnchanged": true,
+      "performanceOutsideThirdChapter": null,
+      "watchActiveAfterAcceptance": false
+    },
+    "conclusions": [
+      "The old vy > 0 capture accepted a positive apex-adjacent sample of 7.5, which did not meet the original vy > 80 requirement.",
+      "The old observer combined rise/fall from run 1 with grounded contact from run 2; the final same-position and unchanged-death checks alone did not reject this counterexample.",
+      "Static review also found the old cleanup finally only surrounded the final wait. Earlier rise, pause, screenshot or resume errors could leave its RAF sampler active."
+    ],
+    "limitations": [
+      "This is an offline gate counterexample, not a normal browser playthrough or a reproduction of the exact failed CI state.",
+      "The restart was an ordinary engine lifecycle call in the offline fixture, not a DOM restart interaction.",
+      "The earlier failed CI logs lacked a complete pre-input and per-phase trace. This review does not prove one specific cause for those earlier timeouts.",
+      "No temporary reproduction script was retained; the exact source commit and executed method are recorded here."
+    ]
+  },
+  "finalObserverContractsReviewed": [
+    {
+      "contract": "Observation is registered before the real Space input.",
+      "evidence": "The canvas receives normal focus; an independent token installs passive capture and post-production keydown listeners plus a RAF observer. The capture listener reads the original grounded body. The later bubbling listener reads the actual production jump result, requiring defaultPrevented, the same body/run, grounded=false and vy < -80."
+    },
+    {
+      "contract": "Only one ordered jump can supply rise, fall and land.",
+      "evidence": "Fall requires vy > 80 and time later than the recorded rise. Contact requires grounded state, abs(vy) < .01 and time later than fall. Initial grounded samples do not populate land. A second non-repeat Space, an unobserved downward phase followed by contact, another rise before contact, run/body/death/chapter changes and time reversal invalidate the observation."
+    },
+    {
+      "contract": "Paused frames and missing phase evidence do not fabricate progress.",
+      "evidence": "The sampler only advances phases while playing. Paused duplicate snapshots do not become fall/contact and do not consume the playing-time budget. The driver separately requires the actual paused body to remain airborne, and retains the full-pose and canvas-pixel freeze checks."
+    },
+    {
+      "contract": "Observation is bounded and failures clean up.",
+      "evidence": "Python phase waits remain 3500 ms. The observer checks a 3500 ms playing-time budget and has a 10500 ms absolute watchdog; diagnostic history is limited to 512 entries. Complete/invalid/timeout states cancel RAF and the timer and remove observer key listeners. The driver's outer finally covers key input, all phase waits, pause, screenshot and resume; its inner finally releases Space."
+    },
+    {
+      "contract": "Stopped, invalid or mismatched observers cannot return reusable phase evidence.",
+      "evidence": "read(token) hides poses for mismatched tokens and invalid/disposed states. stop clears poses, frame history and input records. The driver checks cleanup results and removes the window slot. await_traveler_pose rejects missing, invalid, disposed and wrong-token observations."
+    },
+    {
+      "contract": "The test changes do not alter the game.",
+      "evidence": "New state is confined to the CI probe's WeakMap/body identifiers and observer bookkeeping. The observer does not call update, render, a game input method, or a production scheduling method. Player actions remain actual focus, keyboard and existing DOM controls. Production dist files were independently verified unchanged."
+    }
+  ],
+  "finalFocusedRegressionResults": {
+    "executedBy": "/root/story_review",
+    "provenance": "Completion message from the test owner after files were frozen. Output was returned directly by the execution tool; there is no retained stdout file. This reviewer inspected the actual tests and did not rerun them.",
+    "commands": [
+      {
+        "command": "node tests/browser-traveler-performance.test.mjs",
+        "tests": 3,
+        "suites": 0,
+        "pass": 3,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "durationMs": 267.529523,
+        "namedTests": [
+          "browser pose checks accept actual production-input observations and reject detached or stale drawing views",
+          "the jump driver focuses, observes before keydown and disposes on every exit; null performance remains valid",
+          "pre-input frame observation preserves missed phases but rejects resets, replaced bodies and missing phases"
+        ]
+      },
+      {
+        "command": "node tests/browser-portrait-sequence.test.mjs",
+        "tests": 2,
+        "suites": 0,
+        "pass": 2,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "durationMs": 244.139867
+      },
+      {
+        "command": "Python ast.parse of scripts/browser-smoke.py",
+        "outcome": "Owner reported success."
+      },
+      {
+        "command": "git diff --check -- scripts/browser-smoke.py tests/browser-traveler-performance.test.mjs tests/browser-portrait-sequence.test.mjs",
+        "exitCode": 0,
+        "output": "",
+        "reportedBy": "/root/story_review"
+      }
+    ],
+    "independentlyVerifiedTestCoverage": [
+      "The production document keydown listener is extracted and registered before the actual sampler source. The test dispatches capture listeners before bubbling listeners, observes grounded capture and vy=-600 after production, and verifies defaultPrevented.",
+      "The actual engine's first positive apex velocity of 7.5 does not satisfy the restored >80 fall threshold. A consumer that reads only after the real jump has completed can still retrieve the correctly ordered captured phases.",
+      "Initial grounded frames do not become land; a missing or wrong-token observer does not become a completed phase.",
+      "Real engine pause, 520 controlled paused sampling frames, bounded history and 12-step catch-up batches preserve valid phase order without generating paused phases.",
+      "A normal same-chapter engine restart after fall and a feather respawn with unchanged death count both change body identity and invalidate the observer.",
+      "An actual second non-repeat Space invalidates the single-jump observation.",
+      "The missing-fall case advances the actual jump to ground without running the observer, then samples contact; it is rejected as invalid, with poses cleared and observer resources released.",
+      "No-input and no-RAF fixtures exercise active-budget and absolute-watchdog expiry.",
+      "The actual Python driver is executed against test surfaces; eight exceptional exits—down, post-input read, rise, fall, land, pixel capture, screenshot and resume—release Space and dispose the observer.",
+      "Cleanup removes observer listeners while preserving the original production key listener, clears timers and RAF callbacks, clears old poses, and removes the global observer slot."
+    ],
+    "scopeLimits": [
+      "These are offline helper, controller and lifecycle regressions. The event dispatcher and RAF/timer scheduler are test harnesses, not Chromium.",
+      "The cleanup test uses Python test surfaces to exercise the actual driver control flow; it does not verify browser focus or visual pixels by itself.",
+      "The feather fixture invokes the production item and respawn methods to test observer identity isolation. It is not a new full input-only pit route.",
+      "The portrait helper results are not new browser slow-network evidence."
+    ]
+  },
+  "remainingVerification": [
+    "Run the final frozen observer through the real candidate browser workflow, including the normally unlocked keyboard and touch paths.",
+    "Retain actual input/RAF diagnostics if the real browser still fails a phase or airborne-pause check; do not infer a unique past CI failure cause from offline timing alone.",
+    "Parent owns final reference gates, candidate/public CI, deployment and release evidence. This independent review performs no remote mutation."
+  ]
+}
