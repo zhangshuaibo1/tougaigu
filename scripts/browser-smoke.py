@@ -45,6 +45,16 @@ window.__qaRead=()=>{
       lightAmounts:[...(game.theatreLight?.amounts||[])],
       encore:game.getTheatreEncoreView()
     }:null,
+
+    libraryPaint:game.isLibraryFinish()?{
+      status:game.libraryScenes?.getSnapshot()?.status,frame:game.libraryPaintedFrame,
+      width:game.getPaintedLibraryImage()?.naturalWidth||0,height:game.getPaintedLibraryImage()?.naturalHeight||0,
+      lampLit:game.lanterns.slice(0,2).map(l=>l.lit===true),
+      lightAmounts:[...(game.libraryLight?.amounts||[])],
+      gateOpen:game.barrierOpen(game.level.barriers[0]),
+      npcNear:game.getStoryNPCView()?.near===true,
+      hazards:(game.hazards||[]).map(h=>({x:h.px,y:h.py,frozen:h.frozen}))
+    }:null,
     nearHint:game.getNearHint(),
     movers:(game.movers||[]).map(p=>({id:p.id,x:p.x,y:p.y,w:p.w,h:p.h,dx:p.dx,dy:p.dy,range:p.range,speed:p.speed})),
     platforms:(game.level?.platforms||[]).map(p=>({x:p.x,y:p.y,w:p.w,h:p.h,kind:p.kind||null})),
@@ -1658,6 +1668,10 @@ async def main(args):
                 assert [item['url'] for item in theatre_failures]==intentional, 'an unplanned resource request failed: '+json.dumps(request_failures,ensure_ascii=False)
                 assert len(theatre_failures)==3 and all(item['failure']=='net::ERR_FAILED' for item in theatre_failures),'theatre faults differ from the three exact deliberate aborts'
                 result['theatreArt']['expectedRequestFailures']=theatre_failures
+                if args.version and int(args.version.split('.')[0])>=26:
+                    import __main__
+                    from browser_library_v26 import exercise_library
+                    result['library']=await exercise_library(page,output,str(w),__main__)
             else:
                 assert art_requests==[], 'an independent chapter-one phone run requested the theatre art'
                 assert not request_failures,request_failures
