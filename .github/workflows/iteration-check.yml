@@ -46,7 +46,7 @@ jobs:
         run: |
           set -euo pipefail
           version=$(node -p 'JSON.parse(require("fs").readFileSync("package.json")).version')
-          url="https://zhangshuaibo1.github.io/tougaigu/?qa=$CHECK_SHA"
+          url="https://tougaigu.com/?qa=$CHECK_SHA"
           found=false
           for i in $(seq 1 60); do
             # Capture the whole response before grepping. `curl | grep -q` races SIGPIPE under pipefail.

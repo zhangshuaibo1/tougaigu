@@ -976,6 +976,18 @@ async def finish_story_from_ui(page):
     for _ in range(12):
         if not await page.locator('#story-dialog[open]').is_visible():
             return pages
+        # Decode the displayed portrait before advancing a normal sequential
+        # outro. A cold HTTPS host can cancel a still-loading keeper portrait
+        # otherwise; intentional rapid-Next/Escape races remain independently
+        # exercised by exercise_portrait_sequence with exact request accounting.
+        portrait=page.locator('#story-portrait')
+        if await portrait.get_attribute('src'):
+            await page.wait_for_function("""()=>{
+              const i=document.querySelector('#story-portrait'),w=i?.closest('.story-portrait-wrap');
+              return i?.complete&&i.naturalWidth>0&&i.naturalHeight>0&&
+                !i.classList.contains('story-portrait-pending')&&w?.dataset.portrait==='ready';
+            }""",timeout=6500)
+            await portrait.evaluate('(img)=>img.decode()')
         pages.append(await page.locator('#story-page').inner_text())
         await page.locator('#story-next').click()
     raise AssertionError('story dialogue did not finish through its next-page button')
