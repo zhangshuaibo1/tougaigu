@@ -14,6 +14,7 @@ PROBE="""
 window.__qaRead=()=>{
   if(!game)return null;
   const a=game.form==='soul'?game.soul:game.body,b=game.body,p=game.greenhousePlant;
+  const character=game.getCharacterPresentation();
   return {
     form:game.form,state:game.state,chapterIndex:game.chapterIndex,mode:game.mode,festivalId:game.festivalId,controlSource,
     energy:game.energy,maxEnergy:game.maxEnergy,
@@ -21,8 +22,14 @@ window.__qaRead=()=>{
     observedAt:performance.now(),fullHudWrittenAt:lastHudAt,
     seals:game.lanterns.filter(l=>l.lit).length,memories:game.memories.filter(m=>m.collected).length,
     firstTicket:game.firstTicket?{...game.firstTicket}:null,
-    x:a.x,y:a.y,vx:a.vx,vy:a.vy,time:game.time,deaths:game.deaths,camera:game.camera,
-    body:{x:b.x,y:b.y,w:b.w,h:b.h,vx:b.vx,vy:b.vy,grounded:b.grounded,platform:b.platform},capPhase:game.cap?.phase,
+    x:a.x,y:a.y,vx:a.vx,vy:a.vy,time:game.time,visualTime:game.visualTime,deaths:game.deaths,camera:game.camera,
+    reducedMotion:game.options.reducedMotion,
+    body:{x:b.x,y:b.y,w:b.w,h:b.h,vx:b.vx,vy:b.vy,grounded:b.grounded,platform:b.platform,face:b.face,land:b.land},capPhase:game.cap?.phase,
+    travelerPerformance:game.getTravelerPerformanceView(),
+    characterPose:{walking:character.walking,step:character.step,hop:character.hop,scaleY:character.scaleY,tilt:character.tilt,
+      bodyMatrix:[...character.rig.bodyMatrix],openingWorld:{...character.rig.openingWorld},
+      grip:character.grip,clasp:character.clasp,catching:character.catching,
+      arms:character.arms,performance:character.performance??null},
     theatrePaint:game.isTheatreFinish()?{
       phase:game.theatreScenes?.getStatus(),frame:game.theatrePaintedFrame,
       decodedWidth:game.getPaintedTheatreImage()?.naturalWidth??0,
@@ -276,6 +283,291 @@ async def drive_to(page,x,y=None,touch=False,until=None,limit=10,observe=None):
 async def wait_text(page,selector,text,timeout=5000):
     await page.wait_for_function("([s,t])=>document.querySelector(s)?.textContent.includes(t)",arg=[selector,text],timeout=timeout)
 
+STORY_PORTRAIT_PROBE="""()=>{
+  const dialog=document.querySelector('#story-dialog'),image=document.querySelector('#story-portrait');
+  const frame=image.closest('.story-portrait-wrap'),style=getComputedStyle(image),neutral=getComputedStyle(frame,'::after');
+  const box=frame.getBoundingClientRect();
+  return {open:dialog.open,page:document.querySelector('#story-page').textContent.trim(),
+    speaker:document.querySelector('#story-dialog-title').textContent.trim(),text:document.querySelector('#story-dialog-text').textContent,
+    source:image.getAttribute('src'),currentSrc:image.currentSrc,alt:image.alt,complete:image.complete,
+    naturalWidth:image.naturalWidth,naturalHeight:image.naturalHeight,pending:image.classList.contains('story-portrait-pending'),
+    phase:frame.dataset.portrait,visibility:style.visibility,display:style.display,
+    placeholder:{content:neutral.content,display:neutral.display,visibility:neutral.visibility,opacity:Number(neutral.opacity),width:box.width,height:box.height}};
+}"""
+
+def validate_story_portrait(snapshot,expected,pending=False):
+    """A src attribute alone is never evidence that the current pixels are ready."""
+    detail=json.dumps({'expected':expected,'pending':pending,'actual':snapshot},ensure_ascii=False)
+    assert snapshot['open'] and snapshot['page']==expected['page'],'wrong active story page; '+detail
+    assert snapshot['speaker']==expected['speaker'] and snapshot['alt']==expected['speaker'],'speaker and portrait alternative disagree; '+detail
+    assert expected['word'] in snapshot['text'],'unexpected current story text; '+detail
+    assert urlparse(snapshot['source'] or '').path.endswith('/'+expected['file']),'wrong requested portrait; '+detail
+    if pending:
+        assert snapshot['pending'] and snapshot['phase']=='loading','new speaker did not enter the loading state; '+detail
+        assert snapshot['visibility']=='hidden','previous portrait is visible beside the new speaker; '+detail
+        neutral=snapshot['placeholder']
+        assert '✧' in neutral['content'] and neutral['display']!='none' and neutral['visibility']=='visible' and neutral['opacity']>0 and neutral['width']>0 and neutral['height']>0,'loading portrait has no visible neutral placeholder; '+detail
+    else:
+        assert snapshot['complete'] and snapshot['naturalWidth']>0 and snapshot['naturalHeight']>0,'current portrait has no decoded dimensions; '+detail
+        assert urlparse(snapshot['currentSrc'] or '').path.endswith('/'+expected['file']),'ready pixels still belong to another speaker; '+detail
+        assert not snapshot['pending'] and snapshot['phase']=='ready' and snapshot['visibility']=='visible' and snapshot['display']!='none','decoded portrait was not exposed; '+detail
+    return snapshot
+
+async def read_ready_story_portrait(page,expected):
+    await page.wait_for_function("""file=>{const p=document.querySelector('#story-portrait');return p?.complete&&p.naturalWidth>0&&p.naturalHeight>0&&p.currentSrc.split('?')[0].endsWith('/'+file)&&p.getAttribute('src').split('?')[0].endsWith('/'+file)&&!p.classList.contains('story-portrait-pending')&&p.closest('.story-portrait-wrap')?.dataset.portrait==='ready';}""",arg=expected['file'],timeout=6500)
+    # The real browser decoder must resolve, and the ready image gets a paint
+    # opportunity before a screenshot. No wait is used to conceal a mismatch.
+    snapshot=await page.evaluate("async()=>{await document.querySelector('#story-portrait').decode();await new Promise(resolve=>requestAnimationFrame(resolve));return ("+STORY_PORTRAIT_PROBE+")();}")
+    return validate_story_portrait(snapshot,expected)
+
+def validate_portrait_request(record):
+    """Only this exact obsolete image request may be cancelled by Chromium."""
+    detail=json.dumps(record,ensure_ascii=False)
+    assert record['requestCount']==1,'portrait delay did not intercept exactly one cold request; '+detail
+    cancellation=record['failure']=='net::ERR_ABORTED' and record['obsolete'] and record['obsoleteAtFailure']
+    assert not record['failure'] or cancellation,'unexpected delayed-portrait network failure; '+detail
+    assert not record['handlerError'] or cancellation,'portrait route failed without the exact expected cancellation; '+detail
+    assert record['fulfilled'] or cancellation,'portrait response was neither fulfilled nor superseded; '+detail
+    return {'url':record['url'],'failure':record['failure']} if cancellation else None
+
+class PortraitRequestGate:
+    """Delay one original response; never alter the URL, bytes, DOM or save."""
+    def __init__(self,url,label):
+        self.url=url;self.label=label;self.request=None;self.request_count=0
+        self.obsolete=False;self.obsolete_at_failure=False;self.failure=None;self.handler_error=None;self.fulfilled=False
+        self.arrived=asyncio.Event();self.release=asyncio.Event();self.handled=asyncio.Event();self.network_done=asyncio.Event()
+
+    async def route(self,route):
+        self.request_count+=1
+        if self.request is not None:
+            await route.continue_()
+            return
+        self.request=route.request;self.arrived.set()
+        try:
+            response=await route.fetch()
+            await self.release.wait()
+            await route.fulfill(response=response)
+            self.fulfilled=True
+        except Exception as error:
+            # A replaced <img> may cancel its intercepted request. Keep the
+            # exact error and request identity; finish() rejects every other
+            # failure rather than silently ignoring route errors.
+            self.handler_error=str(error)
+        finally:self.handled.set()
+
+    def failed(self,request):
+        if request is self.request:
+            self.failure=request.failure
+            self.obsolete_at_failure=self.obsolete
+            self.network_done.set()
+
+    def finished(self,request):
+        if request is self.request:self.network_done.set()
+
+    def record(self):
+        return {'label':self.label,'url':self.url,'requestCount':self.request_count,'obsolete':self.obsolete,
+                'obsoleteAtFailure':self.obsolete_at_failure,
+                'fulfilled':self.fulfilled,'failure':self.failure,'handlerError':self.handler_error}
+
+    async def finish(self):
+        self.release.set()
+        await asyncio.wait_for(self.handled.wait(),8)
+        try:await asyncio.wait_for(self.network_done.wait(),6)
+        except asyncio.TimeoutError as error:
+            raise AssertionError('delayed portrait has no terminal network event: '+json.dumps(self.record(),ensure_ascii=False)) from error
+        record=self.record()
+        return record,validate_portrait_request(record)
+
+async def exercise_portrait_sequence(page,output,label):
+    """Exercise real dialogue races once, before the normal chapter-one route."""
+    print(label,'observe delayed portraits, rapid next and Escape/reopen',flush=True)
+    first={'page':'01 / 03','speaker':'绒绒','word':'阿拾','file':'portrait-moth.svg'}
+    second={'page':'02 / 03','speaker':'阿拾','word':'鸣笛','file':'portrait-hero-curious.svg'}
+    third={'page':'03 / 03','speaker':'拾光','word':'掀盖看看','file':'portrait-soul-peek.svg'}
+    read_save="JSON.parse(localStorage.getItem('tougaigu.dream.v1'))"
+    before=await page.evaluate(read_save);rewards=await read_reward_grants(page)
+    target=urljoin(page.url,'assets/'+second['file']);cases=[];expected_failures=[]
+    for index,mode in enumerate(['slow-current','rapid-next','escape-reopen']):
+        gate=PortraitRequestGate(target,mode)
+        page.on('requestfailed',gate.failed);page.on('requestfinished',gate.finished)
+        await page.route(target,gate.route)
+        try:
+            # A new real document removes the previous decoded-image instance.
+            # Routing disables HTTP caching; the earned save is left intact.
+            if index:
+                await page.reload(wait_until='networkidle')
+                await page.wait_for_function("()=>window.__qaRead?.()?.chapterIndex===0&&window.__qaRead()?.state==='playing'")
+            await page.locator('#stage-story').click()
+            previous=await read_ready_story_portrait(page,first)
+            await page.locator('#story-next').click()
+            try:await asyncio.wait_for(gate.arrived.wait(),5)
+            except asyncio.TimeoutError as error:
+                raise AssertionError('target portrait was not requested: '+json.dumps({'request':gate.record(),'actual':await page.evaluate(STORY_PORTRAIT_PROBE)},ensure_ascii=False)) from error
+            pending=validate_story_portrait(await page.evaluate(STORY_PORTRAIT_PROBE),second,pending=True)
+            await page.screenshot(path=str(Path(output)/(label+'-portrait-'+mode+'-pending.png')),full_page=True)
+            expected=second
+            if mode=='rapid-next':
+                gate.obsolete=True
+                # Next is the existing live control, even while decode waits.
+                await page.locator('#story-next').click()
+                await read_ready_story_portrait(page,third)
+                expected=third
+            elif mode=='escape-reopen':
+                gate.obsolete=True
+                # There is no invented close button: Escape follows the
+                # production dialog cancel -> finishStory -> resume path.
+                await page.keyboard.press('Escape')
+                await page.locator('#story-dialog[open]').wait_for(state='hidden')
+                await page.wait_for_function("()=>window.__qaRead()?.state==='playing'")
+                await page.locator('#stage-story').click()
+                await read_ready_story_portrait(page,first)
+                expected=first
+            request,cancellation=await gate.finish()
+            if cancellation:expected_failures.append(cancellation)
+            current=await read_ready_story_portrait(page,expected)
+            assert (await page.evaluate('window.__qaRead()'))['state']=='paused'
+            await page.screenshot(path=str(Path(output)/(label+'-portrait-'+mode+'-settled.png')),full_page=True)
+            cases.append({'case':mode,'before':previous,'whileDelayed':pending,'afterResponse':current,'request':request,
+                          'oldImageHiddenWithNewText':True,'neutralPlaceholderVisible':True,'currentImageDecoded':True,
+                          'lateResponseOutcome':'browser cancelled obsolete request' if cancellation else 'original response delivered; current page retained'})
+            await page.keyboard.press('Escape')
+            await page.locator('#story-dialog[open]').wait_for(state='hidden')
+            await page.wait_for_function("()=>window.__qaRead()?.state==='playing'")
+        finally:
+            gate.release.set()
+            if gate.request is not None and not gate.handled.is_set():
+                await asyncio.wait_for(gate.handled.wait(),8)
+            await page.unroute(target,gate.route)
+            page.remove_listener('requestfailed',gate.failed);page.remove_listener('requestfinished',gate.finished)
+    after=await page.evaluate(read_save)
+    for key in ['chapters','choices','discoveredEndings','lastChapter']:
+        assert after[key]==before[key],'reading or cancelling a story changed '+key
+    assert await read_reward_grants(page)==rewards,'portrait sequencing granted or claimed a reward'
+    return {'cases':cases,'expectedRequestFailures':expected_failures,'normalEscapeCancelAndReopen':True,
+            'chaptersChoicesAndRewardsUnchanged':True,
+            'scope':'real first-chapter dialogue and original delayed image responses; fast Next and normal Escape/reopen; no network bytes, DOM, coordinates or saves replaced'}
+
+def traveler_pose_record(snapshot):
+    return {key:snapshot[key] for key in ['chapterIndex','mode','state','form','time','visualTime','deaths','reducedMotion','body','travelerPerformance','characterPose']}
+
+def validate_traveler_pose(snapshot,phase=None,reduced_motion=None):
+    """Compare the actual drawing view with independently observed physics."""
+    body=snapshot['body'];view=snapshot['travelerPerformance'];pose=snapshot['characterPose']
+    detail=json.dumps(traveler_pose_record(snapshot),ensure_ascii=False)
+    assert all(math.isfinite(n) for n in pose['bodyMatrix']) and len(pose['bodyMatrix'])==6,'invalid character rig; '+detail
+    for side in ['left','right']:
+        for point in ['shoulder','elbow','wrist','requested','world']:
+            assert all(math.isfinite(pose['arms'][side][point][axis]) for axis in ['x','y']),'non-finite actual arm; '+detail
+    if snapshot['mode']!='story' or snapshot['chapterIndex']!=2:
+        assert view is None and pose['performance'] is None,'third-chapter acting leaked outside its scope; '+detail
+    else:
+        assert view and pose['performance']==view,'actual drawing presentation lost the production performance view; '+detail
+        assert view['reducedMotion']==snapshot['reducedMotion'],'view and real reduced-motion setting disagree; '+detail
+        assert view['phase'] in ['idle','rise','fall','land','ride'],'unknown actual performance phase; '+detail
+        for key in ['rise','fall','landing','ride']:
+            assert 0<=view[key]<=1,'performance amount outside its range; '+detail
+        assert -1<=view['balance']<=1 and math.isfinite(view['platformVelocity']),'invalid physical platform balance; '+detail
+        if phase:assert view['phase']==phase,'performance phase disagrees with the observed transition; '+detail
+        if reduced_motion is not None:assert view['reducedMotion'] is reduced_motion,'wrong actual reduced-motion setting; '+detail
+        if view['reducedMotion']:
+            assert all(view[key]==0 for key in ['rise','fall','landing','ride','balance']),'reduced motion retained decorative amplitude; '+detail
+            assert view['landingAge'] is None and view['freeArms']=={'left':{'x':-16,'y':-16},'right':{'x':17,'y':-16}},'reduced motion retained a free-arm animation; '+detail
+        elif phase in ['rise','fall','ride'] and max(pose['grip'],pose['clasp'],pose['catching'])<.001 and abs(body['vx'])<1:
+            # This catches a renderer accidentally returning the old base arms
+            # while an unused view merely reports the new acting state.
+            for side in ['left','right']:
+                for axis in ['x','y']:
+                    assert abs(pose['arms'][side]['requested'][axis]-view['freeArms'][side][axis])<.001,'actual free arm did not use its performance target; '+detail
+    if phase=='rise':assert not body['grounded'] and body['vy']<0,'rise lacks real upward motion; '+detail
+    if phase=='fall':assert not body['grounded'] and body['vy']>0,'fall lacks real downward motion; '+detail
+    if phase in ['land','idle','ride']:
+        assert body['grounded'] and abs(body['vy'])<.01,'ground pose is physically airborne; '+detail
+        surfaces=snapshot['platforms']+snapshot['movers']
+        assert any(abs(body['y']-surface['y'])<.05 and body['x']+body['w']/2>surface['x']+1 and body['x']-body['w']/2<surface['x']+surface['w']-1 for surface in surfaces),'ground pose has no real support; '+detail
+    if view and phase=='land':
+        assert 0<=view['landingAge']<view['landingDuration']==.2 and view['landing']>0,'landing is not the short current contact response; '+detail
+    if phase=='ride':
+        assert body['platform']=='stage' and view['platformId']=='stage','riding pose lacks actual stage attachment; '+detail
+    return traveler_pose_record(snapshot)
+
+async def await_traveler_pose(page,phase,reduced_motion=None):
+    try:
+        handle=await page.wait_for_function("""({phase,reducedMotion})=>{
+          const a=window.__qaRead(),b=a?.body,v=a?.travelerPerformance;
+          if(!a||a.state!=='playing'||a.form!=='body')return false;
+          if(reducedMotion!==null&&a.reducedMotion!==reducedMotion)return false;
+          const physical=phase==='rise'?!b.grounded&&b.vy<-80:phase==='fall'?!b.grounded&&b.vy>80:b.grounded&&Math.abs(b.vy)<.01;
+          return physical&&(!v||v.phase===phase)?a:false;
+        }""",arg={'phase':phase,'reducedMotion':reduced_motion},timeout=3500)
+        try:snapshot=await handle.json_value()
+        finally:await handle.dispose()
+    except Exception as error:
+        raise AssertionError('actual body never presented '+phase+'; '+json.dumps(await page.evaluate('window.__qaRead()'),ensure_ascii=False)) from error
+    validate_traveler_pose(snapshot,phase,reduced_motion)
+    return snapshot
+
+async def sample_body_jump(page,label,pause=False,output=None,reduced_motion=None):
+    """One real vertical Space jump from a naturally reached safe floor."""
+    before=await page.evaluate('window.__qaRead()')
+    assert before['form']=='body' and before['body']['grounded'] and abs(before['body']['vx'])<1
+    await page.keyboard.press('Space')
+    rise=await await_traveler_pose(page,'rise',reduced_motion)
+    paused_evidence=None
+    if pause:
+        await page.keyboard.press('Escape')
+        await page.locator('#pause-dialog[open]').wait_for()
+        paused=await page.evaluate('window.__qaRead()')
+        assert paused['state']=='paused' and not paused['body']['grounded'],'pause did not catch the real airborne pose: '+json.dumps(traveler_pose_record(paused),ensure_ascii=False)
+        validate_traveler_pose(paused,paused['travelerPerformance']['phase'],reduced_motion)
+        pixels=await page.locator('#dream-canvas').evaluate('(canvas)=>canvas.toDataURL()')
+        frozen=await page.evaluate("async()=>{for(let i=0;i<6;i++)await new Promise(resolve=>requestAnimationFrame(resolve));return window.__qaRead();}")
+        assert traveler_pose_record(frozen)==traveler_pose_record(paused),'paused body/performance/rig advanced'
+        assert await page.locator('#dream-canvas').evaluate('(canvas)=>canvas.toDataURL()')==pixels,'paused character pixels changed'
+        paused_evidence={'observed':traveler_pose_record(paused),'passiveFrames':6,'fullPoseFrozen':True,'canvasPixelsFrozen':True}
+        if output:await page.screenshot(path=str(Path(output)/(label+'-traveler-airborne-paused.png')),full_page=True)
+        await page.locator('#stage-resume').click()
+    fall=await await_traveler_pose(page,'fall',reduced_motion)
+    end_phase='idle' if reduced_motion else 'land'
+    landed=await await_traveler_pose(page,end_phase,reduced_motion)
+    for axis in ['x','y']:
+        assert abs(landed['body'][axis]-before['body'][axis])<.1,'vertical jump did not return to its real floor'
+    assert landed['deaths']==before['deaths'],'pose route respawned'
+    return {'label':label,'input':'actual Space key','rise':traveler_pose_record(rise),'fall':traveler_pose_record(fall),
+            'landed':traveler_pose_record(landed),'pause':paused_evidence,'noRespawns':True,'samePhysicalFloor':True}
+
+async def set_reduced_motion_from_ui(page,enabled):
+    await page.locator('[data-shell-action="settings"]').click()
+    await page.locator('#preferences-dialog[open]').wait_for()
+    await page.locator('#dream-pref-motion').set_checked(enabled)
+    await expect(page.locator('#dream-pref-motion')).to_be_checked(checked=enabled)
+    assert await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).settings.reducedMotion")==enabled
+    assert (await page.evaluate('window.__qaRead()'))['reducedMotion']==enabled
+    await page.locator('[data-close="preferences-dialog"]').click()
+    await page.wait_for_function("()=>window.__qaRead()?.state==='playing'")
+
+async def exercise_traveler_performance(page,output,label):
+    await page.wait_for_function("()=>{const a=window.__qaRead();return a?.form==='body'&&a.capPhase==='closed'&&a.body.grounded&&Math.abs(a.body.vx)<1;}")
+    initial=await page.evaluate('window.__qaRead()');original=initial['reducedMotion']
+    assert initial['chapterIndex']==2 and initial['body']['x']<200
+    rewards=await read_reward_grants(page)
+    before=await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1'))")
+    try:
+        if original:await set_reduced_motion_from_ui(page,False)
+        normal=await sample_body_jump(page,label,pause=True,output=output,reduced_motion=False)
+        await page.wait_for_function("()=>window.__qaRead()?.travelerPerformance?.phase==='idle'")
+        await set_reduced_motion_from_ui(page,True)
+        reduced=await sample_body_jump(page,label+'-reduced-motion',reduced_motion=True)
+    finally:
+        if (await page.evaluate('window.__qaRead()'))['reducedMotion']!=original:
+            await set_reduced_motion_from_ui(page,original)
+    after=await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1'))")
+    for key in ['chapters','choices','discoveredEndings','lastChapter']:
+        assert after[key]==before[key],'body acting verification changed '+key
+    assert after['settings']['reducedMotion']==before['settings']['reducedMotion']
+    assert await read_reward_grants(page)==rewards
+    return {'normalJump':normal,'reducedMotionJump':reduced,'settingChangedAndRestoredThroughUI':True,
+            'rewardGrantsAndChapterResultsUnchanged':True,'scope':'actual third-chapter body pose and drawing presentation, physical rise/fall/contact; six paused RAF opportunities; one reduced-motion jump'}
+
 async def hold(page,direction,seconds=None,until=None,touch=False,limit=5):
     # A condition may become true during preceding read-only HUD work. Do not
     # introduce another key/touch pulse when the actor has already arrived.
@@ -334,6 +626,7 @@ async def exercise(page,output,label,touch=False,full=False):
     version=await page.locator('meta[name="application-version"]').get_attribute('content')
     print(label,'sample animation frames',flush=True)
     timings=await page.evaluate('''async()=>{const a=[];let prev=performance.now();for(let i=0;i<61;i++)await new Promise(r=>requestAnimationFrame(t=>{if(i)a.push(t-prev);prev=t;r()}));a.sort((x,y)=>x-y);return {samples:a.length,p50:a[30],p95:a[57]}}''')
+    station_pose=await sample_body_jump(page,label+'-station') if full else None
     print(label,'collect ticket',flush=True)
     await toggle(page,touch)
     async def ticket():return bool(re.match(r'1\s*/',await page.locator('#stage-memories').inner_text()))
@@ -390,7 +683,7 @@ async def exercise(page,output,label,touch=False,full=False):
         print(label,'walk to exit',await page.evaluate('window.__qaRead()'),flush=True)
         await drive_to(page,1890,touch=touch,until=complete,limit=10)
         await page.screenshot(path=str(output/(label+'-complete.png')),full_page=True)
-    return {'viewport':page.viewport_size,'version':version,'ticketCollectedAndReturned':True,'pauseFrozen':True,'noHorizontalOverflow':True,'chapterCompleted':full,'input':'emulated Chromium touch' if touch else 'keyboard','rafIntervalMs':timings,'frameSamplePhase':'initial active idle; not a physical-device benchmark'}
+    return {'viewport':page.viewport_size,'version':version,'ticketCollectedAndReturned':True,'pauseFrozen':True,'noHorizontalOverflow':True,'chapterCompleted':full,'input':'emulated Chromium touch' if touch else 'keyboard','rafIntervalMs':timings,'frameSamplePhase':'initial active idle; not a physical-device benchmark','stationBodyJump':station_pose}
 
 async def exercise_greenhouse(page,output,label):
     """Continue the desktop journey through the normal unlocked chapter map."""
@@ -488,10 +781,19 @@ async def exercise_greenhouse(page,output,label):
 
     # Two player jumps use the existing shelf to cross above the drifting
     # shadow. Stopping on the shelf makes the route independent of its phase.
+    jump_poses={}
+    def observe_shelf_jump(a):
+        b=a['body']
+        phase='rise' if not b['grounded'] and b['vy']<-80 else 'fall' if not b['grounded'] and b['vy']>80 else None
+        if phase and phase not in jump_poses:jump_poses[phase]=validate_traveler_pose(a,phase)
     await page.keyboard.press('Space')
-    await drive_to(page,1390)
+    await drive_to(page,1390,observe=observe_shelf_jump)
     await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.grounded&&Math.abs(b.y-445)<2;}",timeout=5000)
-    route['shelfLanding']=(await page.evaluate('window.__qaRead()'))['body']
+    shelf=await page.evaluate('window.__qaRead()')
+    route['shelfLanding']=shelf['body']
+    jump_poses['landed']=validate_traveler_pose(shelf,'land')
+    assert 'rise' in jump_poses and 'fall' in jump_poses,'greenhouse jump did not expose both physical directions'
+    route['shelfJumpPoses']=jump_poses
     await page.keyboard.press('Space')
     await drive_to(page,1610)
     await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.grounded&&b.x>1585&&Math.abs(b.y-560)<2;}",timeout=5000)
@@ -767,10 +1069,18 @@ async def cross_theatre_stage(page,output,label,touch=False,expected_lamps=None,
     print(label,'jump onto the actual left-bank shelf',flush=True)
     await drive_to(page,490,touch=touch)
     await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.grounded&&Math.abs(b.vx)<1;}")
+    jump_poses={}
+    def observe_jump(a):
+        b=a['body']
+        phase='rise' if not b['grounded'] and b['vy']<-80 else 'fall' if not b['grounded'] and b['vy']>80 else None
+        if phase and phase not in jump_poses:jump_poses[phase]=validate_traveler_pose(a,phase)
     if touch:await tap_control(page,'#stage-jump')
     else:await page.keyboard.press('Space')
-    await drive_to(page,710,touch=touch)
+    await drive_to(page,710,touch=touch,observe=observe_jump)
     await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.grounded&&b.platform===null&&Math.abs(b.y-465)<2&&Math.abs(b.vx)<1;}")
+    shelf=await page.evaluate('window.__qaRead()')
+    jump_poses['landed']=validate_traveler_pose(shelf,shelf['travelerPerformance']['phase'])
+    assert 'rise' in jump_poses and 'fall' in jump_poses,label+': actual shelf jump missed a direction; '+json.dumps(jump_poses,ensure_ascii=False)
     # Observe a genuinely absent platform, not a canned waiting line at spawn.
     await page.wait_for_function("()=>window.__qaRead()?.movers.find(p=>p.id==='stage')?.x>925",timeout=15000)
     waiting=await theatre_hint(page,'在踏台上等一等')
@@ -794,6 +1104,7 @@ async def cross_theatre_stage(page,output,label,touch=False,expected_lamps=None,
     await page.wait_for_function("()=>{const b=window.__qaRead()?.body;return b?.platform==='stage'&&b.grounded&&Math.abs(b.vx)<1;}",timeout=3000)
     ride_start=await page.evaluate('window.__qaRead()')
     assert_theatre_rider(ride_start)
+    rider_start_pose=validate_traveler_pose(ride_start,'ride')
     start_mover=theatre_mover(ride_start)
     relative_start=ride_start['body']['x']-start_mover['x']
 
@@ -802,6 +1113,7 @@ async def cross_theatre_stage(page,output,label,touch=False,expected_lamps=None,
     await page.wait_for_function("()=>window.__qaRead()?.movers.find(p=>p.id==='stage')?.x>=900",timeout=10000)
     riding=await theatre_hint(page,'站稳就好')
     assert_theatre_rider(riding)
+    rider_pose=validate_traveler_pose(riding,'ride')
     rm=theatre_mover(riding);rb=riding['body']
     assert rm['x']-start_mover['x']>100 and rb['x']-ride_start['body']['x']>100
     assert abs(rb['vx'])<1 and abs((rb['x']-rm['x'])-relative_start)<1, 'standing rider slid relative to the moving stage'
@@ -846,6 +1158,7 @@ async def cross_theatre_stage(page,output,label,touch=False,expected_lamps=None,
             'bodyPlatformObserved':'stage','noInputCarryDistance':rb['x']-ride_start['body']['x'],
             'relativeRideOffsetDrift':(rb['x']-rm['x'])-relative_start,'alightHintMatchedContact':True,
             'rightBankReached':True,'earnedShortCurtainCall':True,'noRespawns':True,'noHorizontalOverflow':True,'chapterCompleted':False,
+            'travelerPoses':{'shelfJump':jump_poses,'rideStart':rider_start_pose,'noInputRide':rider_pose},
             'evidence':{'waiting':waiting,'boarding':boarding,'boardInput':board_input,'rideStart':ride_start,'riding':riding,'alighting':alighting,'alightInput':alight_input,'keyRelease':key_release,'landed':landed}}
 
 
@@ -957,9 +1270,7 @@ async def finish_theatre_from_real_exit(page,output,label):
         # The image must have decoded for the CURRENT speaker, not merely
         # match the src attribute while pixels still belong to the old line.
         expected=['portrait-moth.svg','portrait-hero-tender.svg','portrait-soul-peek.svg'][index-1]
-        await page.wait_for_function("""()=>{const p=document.querySelector('#story-portrait');return p?.complete&&p.naturalWidth>0&&!p.classList.contains('story-portrait-pending')&&p.closest('.story-portrait-wrap')?.dataset.portrait==='ready';}""",timeout=6500)
-        portrait=await page.locator('#story-portrait').evaluate("""p=>({source:p.getAttribute('src'),currentSrc:p.currentSrc,complete:p.complete,naturalWidth:p.naturalWidth,pending:p.classList.contains('story-portrait-pending')})""")
-        assert expected in portrait['source'] and expected in portrait['currentSrc'] and portrait['naturalWidth']>0, f'wrong decoded portrait on page {index}: {portrait}'
+        portrait=await read_ready_story_portrait(page,{'page':counter,'speaker':['绒绒','阿拾','拾光'][index-1],'word':word,'file':expected})
         pages.append({'page':counter,'text':text,'portrait':portrait})
         await page.screenshot(path=str(Path(output)/(label+f'-theatre-outro-{index}-decoded.png')),full_page=True)
         if index==3:
@@ -1010,6 +1321,7 @@ async def exercise_theatre(page,output,label):
     await page.screenshot(path=str(Path(output)/(label+'-theatre-rongrong-invite.png')),full_page=True)
     await toggle(page,False)
     await page.wait_for_function("()=>window.__qaRead()?.form==='body'")
+    performance=await exercise_traveler_performance(page,output,label)
     first=await verify_first_theatre_lamp(page,output,label+'-keyboard')
     desktop=await cross_theatre_stage(page,output,label+'-keyboard',expected_lamps=[True,False])
     second=await verify_theatre_lamp(page,output,label+'-keyboard')
@@ -1029,6 +1341,9 @@ async def exercise_theatre(page,output,label):
             await tap_control(page,'#stage-restart')
             await page.locator('#pause-dialog[open]').wait_for(state='hidden')
             await page.wait_for_function("()=>{const p=window.__qaRead()?.theatrePaint;return p?.lampLit?.every(l=>!l)&&p.lightAmounts.every(l=>l===0);}")
+            # A restart clears the painted-frame flag even when the decoded
+            # asset is cached. Observe a real ready frame before NPC evidence.
+            body_ready=await assert_theatre_paint(page)
             await page.screenshot(path=str(Path(output)/(label+f'-theatre-rongrong-{width}-body.png')),full_page=True)
             await tap_control(page,'#stage-toggle')
             await page.wait_for_function("()=>window.__qaRead()?.form==='soul'&&window.__qaRead()?.capPhase==='open'")
@@ -1036,6 +1351,7 @@ async def exercise_theatre(page,output,label):
             await tap_control(page,'#stage-toggle')
             await page.wait_for_function("()=>window.__qaRead()?.form==='body'")
             touch_results[str(width)]=await cross_theatre_stage(page,output,label+f'-touch-{width}',touch=True)
+            touch_results[str(width)]['npcBodyScreenshotReady']=body_ready
             assert await page.evaluate('document.documentElement.scrollWidth<=innerWidth'), 'phone HUD overflow'
     finally:
         await emulation.send('Emulation.setTouchEmulationEnabled',{'enabled':False})
@@ -1043,7 +1359,7 @@ async def exercise_theatre(page,output,label):
         await page.set_viewport_size(viewport)
     assert await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1')).chapters")==settled_chapters, 'a revisit crossing falsely settled chapter rewards again'
     return {'enteredViaUnlockedChapterMap':True,'keyboard':desktop,'firstLamp':first,'secondLamp':second,
-            'completion':completion,
+            'completion':completion,'travelerPerformance':performance,
             'touch390':touch_results['390'],'touch320':touch_results['320'],
             'touchScope':'resized Chromium and CDP touch controls, naturally earned chapter unlock; not a physical phone or full mobile chapter clear',
             'normalRevisitResetBothLightPools':True,'normalRestartKeptBothLightPoolsClear':True,'revisitChapterResultsUnchanged':True}
@@ -1158,8 +1474,10 @@ async def main(args):
             assert instrumented_app_urls,'app module was not instrumented'
             version=await page.locator('meta[name="application-version"]').get_attribute('content')
             assert not args.version or version==args.version,(version,args.version)
+            portrait_sequence=await exercise_portrait_sequence(page,output,str(w)) if full else None
             result=await exercise(page,output,str(w),touch,full)
             if full:
+                result['portraitSequence']=portrait_sequence
                 station_saved=await page.evaluate("localStorage.getItem('tougaigu.capbook.v1')")
                 assert station_saved and 'memories' in station_saved
                 station_record=json.loads(station_saved)['scenes']['story-0']
@@ -1202,8 +1520,12 @@ async def main(args):
                 result['theatreArt']={'notRequestedBeforeThirdChapter':True,'normalRequests':list(art_requests)}
                 result['theatreArt']['fallbacks']=await exercise_theatre_fallbacks(page,output,str(w))
                 intentional=result['theatreArt']['fallbacks']['deliberatelyAbortedRequests']
-                assert [item['url'] for item in request_failures]==intentional, 'an unplanned resource request failed'
-                result['theatreArt']['expectedRequestFailures']=request_failures
+                portrait_failures=result['portraitSequence']['expectedRequestFailures']
+                assert request_failures[:len(portrait_failures)]==portrait_failures,'an unplanned request failed during portrait sequencing: '+json.dumps(request_failures,ensure_ascii=False)
+                theatre_failures=request_failures[len(portrait_failures):]
+                assert [item['url'] for item in theatre_failures]==intentional, 'an unplanned resource request failed: '+json.dumps(request_failures,ensure_ascii=False)
+                assert len(theatre_failures)==3 and all(item['failure']=='net::ERR_FAILED' for item in theatre_failures),'theatre faults differ from the three exact deliberate aborts'
+                result['theatreArt']['expectedRequestFailures']=theatre_failures
             else:
                 assert art_requests==[], 'an independent chapter-one phone run requested the theatre art'
                 assert not request_failures,request_failures

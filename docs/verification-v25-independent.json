@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "iteration": 25,
+  "recordedAtUtc": "2026-10-29T08:36:03.145990+00:00",
+  "reviewer": "/root/v17_audit",
+  "status": "Independent offline mechanism checks passed after feather-recovery correction; final candidate and public browser CI still required.",
+  "scope": {
+    "browserExecuted": false,
+    "physicalDeviceExecuted": false,
+    "runtimeFilesEditedByReviewer": false,
+    "gameCoordinatesAssignedInRealInputProbes": false,
+    "saveDataInjected": false,
+    "evidenceType": "Production engine and pure observation checks executed in Node, with Canvas/environment substitutes; not screenshots, browser input, or live-public evidence.",
+    "inputBoundary": "Normal DreamGame start/setInput/jump/toggleSoul/recall/pause/resume/setReducedMotion/restart/useItem methods. Offline item API use does not prove inventory UI redemption.",
+    "limitations": [
+      "This report is not final candidate/public CI approval.",
+      "Call counts include repeated frames and paused update calls; they are not independent test-case counts.",
+      "Five negative geometry contexts are pure-function fixtures and never enter a game runtime.",
+      "Full rendered Canvas pixel equivalence was not established by these probes."
+    ]
+  },
+  "source": {
+    "v24RuntimeBaseline": "d9c6bdb279f3bb42f04e23d5bf55d34a90fb9097",
+    "worktreeHeadAtArchive": "5c0fbe7ab57672099d08d66bce8a5a742eabd9ad",
+    "sha256AtArchive": {
+      "dist/dream-engine.js": "a5d6eae8a8348620922f9cc38541b81f9b7746355e09f1278569f76eae2212f3",
+      "dist/dream-traveler-performance.js": "4a4ebf035a94863e1be4ccceeaf23d1cbdec221808d46b596b7f3b911939ae14",
+      "dist/dream-traveler-art.js": "e7c1315bdf28b22705887d8fc478472e1d4952df0c1f9e598abf5f2f6ca0e8ac",
+      "dist/dream-station-art.js": "73a257203b10d12dd52f7b66f60fe3d65e08200aa64b1b4e5c3f223f654d31ee",
+      "dist/dream-engine-base.js": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699",
+      "dist/dream-cap-art.js": "eadc0f28c848aae84ce47a58d245e34f68f5695abcfed4065a60032088785f4f"
+    },
+    "baselineFilesByteIdentical": {
+      "dist/dream-engine-base.js": true,
+      "dist/dream-cap-art.js": true
+    },
+    "hashTiming": "Hashes were collected after the reported probes. Execution-time hashes were not retained for every earlier probe; these identify the currently reviewed files and do not claim an immutable snapshot of the pre-fix defect.",
+    "workingChanges": "v25 presentation work is uncommitted at this observation boundary; later edits require final integration verification."
+  },
+  "pairedRealInputRoute": {
+    "execution": "Inline node --input-type=module heredoc; production DreamGame and unmodified BaseGame advance side by side with identical API calls and 1/60 second update steps.",
+    "route": [
+      "Original chapterIndex 2 spawn; walk toward x490 and stop.",
+      "Ordinary jump and direction input reach left shelf near x710/y465.",
+      "Wait for absent stage, then the actual outward left dock; walk aboard until body.platform is stage.",
+      "Release direction input and verify platform carrying preserves relative body offset.",
+      "Perform 12 normal E-equivalent toggleSoul reversals while riding, with varying 2/5/9/20/33/7-frame intervals.",
+      "Recall if needed; pause and issue 120 update calls; verify the full performance view and character presentation freeze.",
+      "Resume, wait for the real outward stage x970..1000 window, walk off and brake on the actual right shelf."
+    ],
+    "pairedUpdateCalls": 1581,
+    "physicsComparisons": 1581,
+    "physicsFieldsCompared": [
+      "body",
+      "soul",
+      "energy",
+      "form",
+      "state",
+      "time",
+      "visualTime",
+      "cap",
+      "movers",
+      "lanterns",
+      "memories",
+      "deaths",
+      "checkpoint",
+      "input"
+    ],
+    "physicalMismatches": 0,
+    "presentationReadMutationChecks": 1581,
+    "rigMatrixChecksAgainstBase": 1581,
+    "plantedSoleWorldYChecks": 2885,
+    "fullLeftGripWorldContactChecks": 176,
+    "fullyBusyRightArmEqualityChecks": 105,
+    "armSegmentContract": "Both solved arm segments retain length 20 in every observed presentation.",
+    "observedPhaseFrameCounts": {
+      "idle": 614,
+      "rise": 26,
+      "fall": 13,
+      "land": 13,
+      "ride": 915
+    },
+    "landing": {
+      "x": 1246.3447836728062,
+      "y": 465,
+      "deaths": 0
+    },
+    "result": "passed"
+  },
+  "featherRecoveryDefect": {
+    "discovered": true,
+    "cause": "A feather respawn consumes its charge without increasing deaths. Checking only deaths/run/form allowed checkpoint recovery to masquerade as a grounded landing.",
+    "preFixRoute": "Original third-chapter spawn, optional normal useItem(feather_charm), then only right direction input until falling into the first gap; no coordinate assignment.",
+    "preFixFeatherObservation": {
+      "before": {
+        "x": 857.5,
+        "y": 712.25,
+        "vy": 630,
+        "grounded": false,
+        "deaths": 0,
+        "featherCharges": 1
+      },
+      "after": {
+        "x": 510,
+        "y": 560,
+        "vy": 0,
+        "grounded": true,
+        "deaths": 0,
+        "featherCharges": 0
+      },
+      "incorrectPerformance": {
+        "phase": "land",
+        "landing": 1,
+        "landingAge": 0
+      }
+    },
+    "preFixUnprotectedControl": {
+      "afterX": 510,
+      "afterY": 560,
+      "deaths": 1,
+      "phase": "idle"
+    },
+    "correction": "The pre-update sample retains body identity, and the landing record retains its body/run/death identity. Base respawn replaces the body even when a feather prevents a death increment.",
+    "postFixNormalInputRechecks": [
+      {
+        "feather": false,
+        "afterX": 510,
+        "afterY": 560,
+        "deaths": 1,
+        "phase": "idle",
+        "landing": 0
+      },
+      {
+        "feather": true,
+        "afterX": 510,
+        "afterY": 560,
+        "deaths": 0,
+        "phase": "idle",
+        "landing": 0
+      }
+    ],
+    "result": "both post-fix routes passed"
+  },
+  "landingLifecycle": {
+    "route": "Normal vertical jumps from the original third-chapter spawn.",
+    "firstActualLandingObserved": true,
+    "pausedLandingViewFrozenOverUpdateCalls": 120,
+    "immediateRejump": {
+      "phase": "rise",
+      "landing": 0,
+      "landingAge": null
+    },
+    "secondActualLandingObserved": true,
+    "reducedMotionEnabledThenDisabledDoesNotReplayOldLanding": true,
+    "restartReturnsIdleWithZeroLanding": true,
+    "destroyReturnsNullView": true,
+    "result": "passed"
+  },
+  "outOfScopeIsolation": {
+    "storyChapterIndices": [
+      0,
+      1,
+      3,
+      4,
+      5
+    ],
+    "festivalId": "lantern",
+    "actionsPerContext": [
+      "jump",
+      "toggleSoul",
+      "recall"
+    ],
+    "updateCallsAfterEachAction": 8,
+    "assertions": "Performance view remains null and complete getCharacterPresentation output equals the inherited BaseGame presentation after each action.",
+    "result": "passed"
+  },
+  "movingStageEligibility": {
+    "realInputPositiveCase": "The paired route observes actual stage attachment, real overlap, feet at the moving top and idle carrying without walking velocity.",
+    "pureNegativeObservationContexts": [
+      "Wrong platform id",
+      "Feet one unit above the stage",
+      "No horizontal body/stage overlap",
+      "Body not grounded",
+      "Matching mover id but non-stage kind"
+    ],
+    "negativeContextCount": 5,
+    "assertions": "Every negative context has ride=0 and platformId=null.",
+    "runtimeInjection": false,
+    "result": "passed"
+  },
+  "existingFocusedRegressionCommand": {
+    "command": "node --test tests/theatre-engine.test.mjs tests/cap-character-motion.test.mjs tests/traveler-motion.test.mjs",
+    "testFilesPassed": 3,
+    "testFilesFailed": 0,
+    "exitCode": 0,
+    "countScope": "The local runner reports files. No new aggregate test-case count is inferred from that output."
+  },
+  "reproduction": {
+    "standaloneScriptPaths": [],
+    "note": "These independent v25 probes ran as inline Node heredocs; no /tmp script was created. The earlier v23 /tmp probes are unrelated and must not be cited as v25 reproduction scripts.",
+    "retainedRouteDescription": "The exact input order, frame counts, compared fields and observed outcomes are documented above. The implementation owner is adding focused repository regression tests independently."
+  },
+  "remainingGates": [
+    "Review the final implementation/test diff after all owners finish.",
+    "Run final repository logic/reference checks on the candidate source.",
+    "Run real Chromium keyboard and emulated-touch candidate routes and inspect normal-size visuals.",
+    "After publication, independently verify the public version and routes."
+  ]
+}

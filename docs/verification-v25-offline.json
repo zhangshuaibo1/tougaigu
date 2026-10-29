@@ -1,0 +1,535 @@
+{
+  "checks": 111,
+  "frames": [
+    "desktop-rise.png",
+    "desktop-fall.png",
+    "desktop-land.png",
+    "desktop-settle.png",
+    "desktop-ride.png",
+    "desktop-ride-open.png",
+    "desktop-ride-return.png",
+    "desktop-ashore.png",
+    "desktop-comparison.png",
+    "phone-390-rise.png",
+    "phone-390-fall.png",
+    "phone-390-land.png",
+    "phone-390-settle.png",
+    "phone-390-ride.png",
+    "phone-390-ride-open.png",
+    "phone-390-ride-return.png",
+    "phone-390-ashore.png",
+    "phone-390-comparison.png",
+    "phone-320-rise.png",
+    "phone-320-fall.png",
+    "phone-320-land.png",
+    "phone-320-settle.png",
+    "phone-320-ride.png",
+    "phone-320-ride-open.png",
+    "phone-320-ride-return.png",
+    "phone-320-ashore.png",
+    "phone-320-comparison.png"
+  ],
+  "routes": [
+    {
+      "viewport": {
+        "width": 1100,
+        "height": 640
+      },
+      "normalInput": true,
+      "phases": [
+        "rise",
+        "fall",
+        "land",
+        "settle",
+        "ride"
+      ],
+      "deaths": 0,
+      "bodyX": 1235.8611159786337,
+      "bodyY": 465,
+      "onMovingPlatform": null,
+      "physicsSeconds": 24.283333333333236,
+      "completeChapter": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "normalInput": true,
+      "phases": [
+        "rise",
+        "fall",
+        "land",
+        "settle",
+        "ride"
+      ],
+      "deaths": 0,
+      "bodyX": 1235.8611159786337,
+      "bodyY": 465,
+      "onMovingPlatform": null,
+      "physicsSeconds": 24.283333333333236,
+      "completeChapter": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 431
+      },
+      "normalInput": true,
+      "phases": [
+        "rise",
+        "fall",
+        "land",
+        "settle",
+        "ride"
+      ],
+      "deaths": 0,
+      "bodyX": 1235.8611159786337,
+      "bodyY": 465,
+      "onMovingPlatform": null,
+      "physicsSeconds": 24.283333333333236,
+      "completeChapter": false
+    }
+  ],
+  "differences": [
+    {
+      "label": "desktop",
+      "name": "rise",
+      "changedPixels": 499,
+      "outsideCharacter": 0,
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformVelocity": 0,
+        "balance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      }
+    },
+    {
+      "label": "desktop",
+      "name": "fall",
+      "changedPixels": 302,
+      "outsideCharacter": 0,
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformVelocity": 0,
+        "balance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      }
+    },
+    {
+      "label": "desktop",
+      "name": "land",
+      "changedPixels": 882,
+      "outsideCharacter": 0,
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.4625,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformVelocity": 0,
+        "balance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.3125,
+            "y": -14.6125
+          },
+          "right": {
+            "x": 19.3125,
+            "y": -14.6125
+          }
+        }
+      }
+    },
+    {
+      "label": "desktop",
+      "name": "settle",
+      "changedPixels": 882,
+      "outsideCharacter": 0,
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.23125000000000123,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformVelocity": 0,
+        "balance": 0,
+        "freeArms": {
+          "left": {
+            "x": -17.156250000000007,
+            "y": -15.306249999999997
+          },
+          "right": {
+            "x": 18.156250000000007,
+            "y": -15.306249999999997
+          }
+        }
+      }
+    },
+    {
+      "label": "desktop",
+      "name": "ride",
+      "changedPixels": 851,
+      "outsideCharacter": 0,
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "stage",
+        "platformVelocity": 144.90560839519503,
+        "balance": 0.8050311577510835,
+        "freeArms": {
+          "left": {
+            "x": -23.610062315502166,
+            "y": -20.389937684497834
+          },
+          "right": {
+            "x": 22.389937684497834,
+            "y": -19.610062315502166
+          }
+        }
+      }
+    },
+    {
+      "label": "phone-390",
+      "name": "rise",
+      "changedPixels": 439,
+      "outsideCharacter": 0,
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformVelocity": 0,
+        "balance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      }
+    },
+    {
+      "label": "phone-390",
+      "name": "fall",
+      "changedPixels": 284,
+      "outsideCharacter": 0,
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformVelocity": 0,
+        "balance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      }
+    },
+    {
+      "label": "phone-390",
+      "name": "land",
+      "changedPixels": 771,
+      "outsideCharacter": 0,
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.4625,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformVelocity": 0,
+        "balance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.3125,
+            "y": -14.6125
+          },
+          "right": {
+            "x": 19.3125,
+            "y": -14.6125
+          }
+        }
+      }
+    },
+    {
+      "label": "phone-390",
+      "name": "settle",
+      "changedPixels": 792,
+      "outsideCharacter": 0,
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.23125000000000123,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformVelocity": 0,
+        "balance": 0,
+        "freeArms": {
+          "left": {
+            "x": -17.156250000000007,
+            "y": -15.306249999999997
+          },
+          "right": {
+            "x": 18.156250000000007,
+            "y": -15.306249999999997
+          }
+        }
+      }
+    },
+    {
+      "label": "phone-390",
+      "name": "ride",
+      "changedPixels": 741,
+      "outsideCharacter": 0,
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "stage",
+        "platformVelocity": 144.90560839519503,
+        "balance": 0.8050311577510835,
+        "freeArms": {
+          "left": {
+            "x": -23.610062315502166,
+            "y": -20.389937684497834
+          },
+          "right": {
+            "x": 22.389937684497834,
+            "y": -19.610062315502166
+          }
+        }
+      }
+    },
+    {
+      "label": "phone-320",
+      "name": "rise",
+      "changedPixels": 260,
+      "outsideCharacter": 0,
+      "performance": {
+        "phase": "rise",
+        "reducedMotion": false,
+        "rise": 0.775,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformVelocity": 0,
+        "balance": 0,
+        "freeArms": {
+          "left": {
+            "x": -20.225,
+            "y": -28.75
+          },
+          "right": {
+            "x": 21.225,
+            "y": -28.75
+          }
+        }
+      }
+    },
+    {
+      "label": "phone-320",
+      "name": "fall",
+      "changedPixels": 166,
+      "outsideCharacter": 0,
+      "performance": {
+        "phase": "fall",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0.25384615384615383,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformVelocity": 0,
+        "balance": 0,
+        "freeArms": {
+          "left": {
+            "x": -23.284615384615385,
+            "y": -22.015384615384615
+          },
+          "right": {
+            "x": 24.284615384615385,
+            "y": -22.015384615384615
+          }
+        }
+      }
+    },
+    {
+      "label": "phone-320",
+      "name": "land",
+      "changedPixels": 439,
+      "outsideCharacter": 0,
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.4625,
+        "ride": 0,
+        "landingAge": 0,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformVelocity": 0,
+        "balance": 0,
+        "freeArms": {
+          "left": {
+            "x": -18.3125,
+            "y": -14.6125
+          },
+          "right": {
+            "x": 19.3125,
+            "y": -14.6125
+          }
+        }
+      }
+    },
+    {
+      "label": "phone-320",
+      "name": "settle",
+      "changedPixels": 456,
+      "outsideCharacter": 0,
+      "performance": {
+        "phase": "land",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0.23125000000000123,
+        "ride": 0,
+        "landingAge": 0.09999999999999964,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformVelocity": 0,
+        "balance": 0,
+        "freeArms": {
+          "left": {
+            "x": -17.156250000000007,
+            "y": -15.306249999999997
+          },
+          "right": {
+            "x": 18.156250000000007,
+            "y": -15.306249999999997
+          }
+        }
+      }
+    },
+    {
+      "label": "phone-320",
+      "name": "ride",
+      "changedPixels": 426,
+      "outsideCharacter": 0,
+      "performance": {
+        "phase": "ride",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 1,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": "stage",
+        "platformVelocity": 144.90560839519503,
+        "balance": 0.8050311577510835,
+        "freeArms": {
+          "left": {
+            "x": -23.610062315502166,
+            "y": -20.389937684497834
+          },
+          "right": {
+            "x": 22.389937684497834,
+            "y": -19.610062315502166
+          }
+        }
+      }
+    }
+  ],
+  "productionCanvas": true,
+  "browserQA": false,
+  "comparison": "same physical sample with only the new performance view disabled; crops are not enlarged",
+  "timePerturbation": "visualTime is deliberately changed only after the normal-input route to check reduced motion"
+}

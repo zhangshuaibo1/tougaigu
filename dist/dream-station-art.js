@@ -185,7 +185,7 @@ export function drawStationSignal(c,game,p){
 /** Same rig/occlusion contract as the base renderer, with richer small-scale materials. */
 export function drawStationCharacter(game,c,b,t,shown,p,paint={}){
   const {rig,walking}=p,outfit=game.getOutfitId(),dress=getOutfitPalette(outfit);
-  const motion=getTravelerMotion(b,{time:t,hop:p.hop,reducedMotion:game.options.reducedMotion});
+  const motion=getTravelerMotion(b,{time:t,hop:p.hop,reducedMotion:game.options.reducedMotion,performance:p.performance});
   const opacity=b.invulnerable>0&&!game.options.reducedMotion&&Math.floor(t*13)%2===0?.48:1;
   if(paint.shadow===undefined){c.save();oval(c,b.x,b.y+2,b.grounded?24:18,4,'#0a223b68');c.restore();}
   else drawGroundShadow(c,paint.shadow);
