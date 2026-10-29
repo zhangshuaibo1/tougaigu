@@ -371,29 +371,37 @@ function keeper(c,pose) {
 function book(c,x,y,turn=0) {
   c.save();c.translate(x,y);
   path(c,p=>{p.moveTo(-17,-5);p.lineTo(-2,-2);p.lineTo(15,-7);p.lineTo(17,6);p.lineTo(0,12);p.lineTo(-17,7);p.closePath();},'#786b89','#494b67',1);
-  path(c,p=>{p.moveTo(-16,-8);p.lineTo(-1,-5);p.lineTo(14,-10);p.lineTo(16,3);p.lineTo(0,9);p.lineTo(-16,4);p.closePath();},'#ecdcbc','#baa69b',.8);
-  line(c,[[-1,-5],[0,9]],'#a88e92',.8);
+  path(c,p=>{p.moveTo(-16,-8);p.lineTo(-1,-5);p.lineTo(14,-10);p.lineTo(16,3);p.lineTo(0,9);p.lineTo(-16,4);p.closePath();},material(c,-15,-10,17,9,[[0,'#fff4d7'],[.54,'#edddc2'],[1,'#c5acc0']]),'#baa69b',.8);
+  line(c,[[-1,-5],[0,9]],'#a88e92',.8);line(c,[[-15,5],[0,10],[16,4]],'#f6e4c5',1);
   for(const yy of [-2,1,4]) {line(c,[[-12,yy],[-5,yy+1]],'#bda69b',.6);line(c,[[4,yy-1],[12,yy-4]],'#bda69b',.6);}
   if(turn>0)path(c,p=>{p.moveTo(0,8);p.lineTo(-1,-5);p.quadraticCurveTo(4-turn*9,-17-turn*2,12-turn*6,-13);p.lineTo(13-turn*7,0);p.closePath();},'#f5e8cf','#c3b09f',.7);
   c.restore();
 }
 function whale(c,pose) {
   const bob=pose.reduced?0:Math.sin(pose.time*1.5)*1.1;
+  const library=pose.library===true;
   // Ripples stay at the feet. The hovering body and its book share one pose.
   for(const [i,w]of[29,20].entries())path(c,p=>{p.moveTo(-w,1+i*3);p.quadraticCurveTo(0,7+i*2,w,1+i*3);},null,i?'#91b8c03d':'#9cc5cb59',.9);
   c.save();c.translate(0,bob);
-  path(c,p=>{p.moveTo(-30,-48);p.bezierCurveTo(-14,-65,11,-64,24,-48);p.quadraticCurveTo(30,-39,33,-42);p.quadraticCurveTo(41,-44,43,-57);p.quadraticCurveTo(47,-38,36,-32);p.quadraticCurveTo(42,-31,45,-37);p.quadraticCurveTo(43,-23,32,-26);p.quadraticCurveTo(26,-27,21,-31);p.bezierCurveTo(6,-14,-19,-19,-31,-32);p.quadraticCurveTo(-38,-40,-30,-48);},'#879db5','#4c647c',1.05);
-  path(c,p=>{p.moveTo(-32,-35);p.bezierCurveTo(-15,-24,5,-23,22,-33);p.bezierCurveTo(7,-17,-18,-20,-29,-30);p.closePath();},'#c1cfce');
-  path(c,p=>{p.moveTo(-7,-26);p.quadraticCurveTo(-10,-12,2,-10);p.quadraticCurveTo(-1,-20,4,-25);},'#748eaa','#556f89',.85);
-  path(c,p=>{p.moveTo(-30,-45);p.quadraticCurveTo(-40,-44,-44,-37);p.quadraticCurveTo(-35,-37,-29,-40);},'#9fb3c3','#637c95',.8);
+  path(c,p=>{p.moveTo(-30,-48);p.bezierCurveTo(-14,-65,11,-64,24,-48);p.quadraticCurveTo(30,-39,33,-42);p.quadraticCurveTo(41,-44,43,-57);p.quadraticCurveTo(47,-38,36,-32);p.quadraticCurveTo(42,-31,45,-37);p.quadraticCurveTo(43,-23,32,-26);p.quadraticCurveTo(26,-27,21,-31);p.bezierCurveTo(6,-14,-19,-19,-31,-32);p.quadraticCurveTo(-38,-40,-30,-48);},library?material(c,-31,-63,43,-20,[[0,'#d0e6e2'],[.32,'#8ab6c8'],[.67,'#4b809e'],[1,'#284b70']]):'#879db5','#4c647c',1.05);
+  path(c,p=>{p.moveTo(-32,-35);p.bezierCurveTo(-15,-24,5,-23,22,-33);p.bezierCurveTo(7,-17,-18,-20,-29,-30);p.closePath();},library?material(c,-5,-40,12,-15,[[0,'#eef1e1'],[.58,'#b4d0d1'],[1,'#699baa']]):'#c1cfce');
+  path(c,p=>{p.moveTo(-7,-26);p.quadraticCurveTo(-10,-12,2,-10);p.quadraticCurveTo(-1,-20,4,-25);},library?material(c,-7,-28,4,-9,[[0,'#b4d7dd'],[1,'#527a9b']]):'#748eaa','#556f89',.85);
+  path(c,p=>{p.moveTo(-30,-45);p.quadraticCurveTo(-40,-44,-44,-37);p.quadraticCurveTo(-35,-37,-29,-40);},library?'#afd8e1':'#9fb3c3','#637c95',.8);
+  if(library){
+    path(c,p=>{p.moveTo(-26,-53);p.bezierCurveTo(-12,-67,8,-65,22,-49);},null,'#e3faf0b0',1.5);
+    path(c,p=>{p.moveTo(-27,-37);p.quadraticCurveTo(-2,-17,19,-34);},null,'#eaf3de9a',1.35);
+    line(c,[[31,-39],[37,-35],[41,-40]],'#bbe4e9',1.15);
+  }
   if(pose.blink)line(c,[[-25,-43],[-19,-43]],'#34465e',1.7);
   else{ellipse(c,-22+pose.gazeX*.9,-43+pose.gazeY,3,3.7,'#34465e');ellipse(c,-21+pose.gazeX*.9,-44.2+pose.gazeY,.95,1.1,'#f6e9cd');}
-  path(c,p=>{p.moveTo(-23,-33);p.quadraticCurveTo(-17,-29,-12,-34);},null,'#526d88',1);
+  path(c,p=>{p.moveTo(-23,-33);p.quadraticCurveTo(-17,-29,-12,-34);},null,pose.library&&pose.seals===2?'#f2e9cf':'#526d88',pose.library&&pose.seals===2?1.5:1);
   ellipse(c,-27,-35,3,1.3,'#b8adb788');
   line(c,[[-4,-43],[1,-40],[6,-46],[12,-44]],'#c6d3d0',.8);line(c,[[2,-31],[8,-30]],'#d1d9d2',.7);
   const lift=pose.open?10:pose.talking?3:0;
-  book(c,1,-65-lift,pose.open?(pose.reduced?.55:.5+Math.sin(pose.time*2)*.15):0);
-  for(let i=0;i<(pose.open?3:1);i++) {
+  const pageOpen=pose.open?(pose.reduced?.55:.5+Math.sin(pose.time*2)*.15):0;
+  book(c,1,-65-lift,pageOpen);
+  if(library&&pose.open)path(c,p=>{p.moveTo(-18,-82-lift);p.quadraticCurveTo(-4,-93-lift,13,-87-lift);},null,'#f9e8c5a6',1);
+  for(let i=0;i<(pose.open?2:1);i++) {
     const rise=pose.reduced?i*4:((pose.time*4+i*4)%10);
     ellipse(c,-22+i*3,-71-rise,1.7,2.1,null,0,'#b1d5d1aa');
   }
@@ -434,6 +442,7 @@ export function drawStoryNPC(c,view,time=0,reducedMotion=false) {
   const pose={time:t,reduced:!!reducedMotion,prop:view.prop,open,talking:!!view.talking,salute,warm,propX:salute*21,
     greenhouse:view.chapterIndex===1&&view.prop==='greenhouse-can',
     painted:(view.lighting==='painted-station'&&view.chapterIndex===0)||theatre,
+    library:view.chapterIndex===3&&view.motif==='whale'&&view.prop==='library-book',seals:clamp(finite(view.seals),0,2),
     theatre,theatreLamps,invite,
     smile:(welcome&&!reducedMotion&&progress>.24&&progress<.81)||(theatre&&theatreLamps===2),
     gazeX:clamp((finite(look.x,x)-x)/140,-1,1),gazeY:clamp((finite(look.y,y-65)-(y-65))/100-(invite*.45),-1.2,1.2),

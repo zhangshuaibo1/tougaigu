@@ -121,9 +121,9 @@ test('painted greenhouse pause and reduced motion share existing simulation time
   h.game.setReducedMotion(true);const still=render(h);h.game.visualTime+=100;assert.deepEqual(render(h),still);h.game.destroy();
 });
 
-test('the final three story chapters and all festivals retain the exact prior renderer after both paintings were cached',async()=>{
+test('the final two story chapters and all festivals retain the exact prior renderer after both paintings were cached',async()=>{
   const a=fixture(()=>image),b=fixture(undefined,BaseGame);a.game.start({sound:false});await a.game.paintedScenes.request(station);a.game.start({chapterIndex:1,sound:false});await a.game.greenhouseScenes.request(greenhouse);
-  const scenes=[3,4,5].map(chapterIndex=>({chapterIndex})).concat(FESTIVAL_LEVELS.map(level=>({festival:getFestival(level.festivalId)})));
+  const scenes=[4,5].map(chapterIndex=>({chapterIndex})).concat(FESTIVAL_LEVELS.map(level=>({festival:getFestival(level.festivalId)})));
   for(const options of scenes){a.game.start({sound:false,...options});b.game.start({sound:false,...options});assert.deepEqual(render(a),render(b));assert.equal(a.game.getPaintedGreenhouseImage(),null);assert.equal(a.game.greenhousePaintedFrame,false);}
   a.game.destroy();b.game.destroy();
 });

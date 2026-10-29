@@ -12,6 +12,8 @@ import { getTheatreGuidance } from './dream-theatre-guidance.js';
 import { getGroundShadowView } from './dream-ground-shadow.js';
 import { createTheatrePaintedAssets, drawPaintedTheatre, drawPaintedTheatreLights } from './dream-theatre-painted.js';
 import { drawTheatreLantern } from './dream-theatre-lantern.js';
+import { createLibrarySceneAssets, drawPaintedLibrary, drawPaintedLibraryLights } from './dream-library-scene.js';
+import { drawLibraryPlatform } from './dream-library-finish.js';
 import { drawRefinedSoul } from './dream-soul-art.js';
 import { createTheatreEncore, advanceTheatreEncore, drawTheatreEncore, getTheatreEncoreView } from './dream-theatre-encore.js';
 import { createTravelerPerformance, advanceTravelerPerformance, settleTravelerPerformance, getTravelerPerformanceView, applyTravelerPerformance } from './dream-traveler-performance.js';
@@ -23,14 +25,16 @@ export class DreamGame extends BaseDreamGame {
     this.paintedScenes=createPaintedSceneAssets({loadImage:resources.loadImage});
     this.greenhouseScenes=createGreenhouseSceneAssets({loadImage:resources.loadImage});
     this.theatreScenes=createTheatrePaintedAssets({loadImage:resources.loadTheatreImage});
-    this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.theatreLight=null;this.theatreEncore=null;this.letterEcho=null;this.travelerPerformance=null;
+    this.libraryScenes=createLibrarySceneAssets({loadImage:resources.loadLibraryImage});
+    this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.theatreLight=null;this.libraryLight=null;this.libraryPaintedFrame=false;this.theatreEncore=null;this.letterEcho=null;this.travelerPerformance=null;
   }
   isStationFinish(){return this.mode==='story'&&this.chapterIndex===0;}
   isGreenhouseFinish(){return this.mode==='story'&&this.chapterIndex===1;}
   isTheatreFinish(){return this.mode==='story'&&this.chapterIndex===2;}
+  isLibraryFinish(){return this.mode==='story'&&this.chapterIndex===3;}
   start(options={}){
     if(this.destroyed)return;
-    this.stationSignal=null;this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.theatreLight=null;this.theatreEncore=null;this.letterEcho=null;
+    this.stationSignal=null;this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.libraryPaintedFrame=false;this.theatreLight=null;this.libraryLight=null;this.theatreEncore=null;this.letterEcho=null;
     this.travelerPerformance=createTravelerPerformance();
     super.start(options);
     if(this.destroyed)return;
@@ -39,7 +43,9 @@ export class DreamGame extends BaseDreamGame {
     this.paintedScenes.request({mode:this.mode,chapterIndex:this.chapterIndex});
     this.greenhouseScenes.request({mode:this.mode,chapterIndex:this.chapterIndex});
     this.theatreScenes.request({mode:this.mode,chapterIndex:this.chapterIndex});
+    this.libraryScenes.request({mode:this.mode,chapterIndex:this.chapterIndex});
     this.theatreLight=this.isTheatreFinish()?{amounts:this.lanterns.slice(0,2).map(l=>l.lit?1:0)}:null;
+    this.libraryLight=this.isLibraryFinish()?{amounts:this.lanterns.slice(0,2).map(l=>l.lit?1:0)}:null;
     this.theatreEncore=this.isTheatreFinish()?createTheatreEncore():null;
     this.letterEcho=this.isGreenhouseFinish()?createLetterEcho(this.options.letterChoice,this.options.reducedMotion):null;
     this.syncLetterMiniature();
@@ -88,6 +94,13 @@ export class DreamGame extends BaseDreamGame {
     advanceLetterEcho(this.letterEcho,dt,{playing:this.state==='playing',reducedMotion:this.options.reducedMotion,capPhase:this.cap.phase,capAge:this.cap.age,capOpen:this.capOpen});
     this.syncLetterMiniature();
     if(this.theatreEncore)advanceTheatreEncore(this.theatreEncore,{state:this.state,mode:this.mode,chapterIndex:this.chapterIndex,form:this.form,body:this.body,movers:this.movers,level:this.level,deaths:this.deaths},dt);
+    if(this.libraryLight){
+      const speed=Math.max(0,Math.min(.04,Number(dt)||0))*3.6;
+      for(let i=0;i<2;i++){
+        const target=this.lanterns[i]?.lit?1:0,current=this.libraryLight.amounts[i]||0;
+        this.libraryLight.amounts[i]=this.options.reducedMotion?target:current<target?Math.min(target,current+speed):Math.max(target,current-speed);
+      }
+    }
     if(this.theatreLight){
       const step=Math.max(0,Math.min(.04,Number(dt)||0))*3.6;
       for(let i=0;i<2;i++){
@@ -97,12 +110,13 @@ export class DreamGame extends BaseDreamGame {
       }
     }
   }
-  setReducedMotion(value){super.setReducedMotion(value);if(value&&this.stationSignal)this.stationSignal.amount=this.stationSignalOpen()?1:0;if(value){settleTravelerPerformance(this.travelerPerformance);settleLetterEcho(this.letterEcho);this.syncLetterMiniature();if(this.theatreLight)this.theatreLight.amounts=this.lanterns.slice(0,2).map(l=>l.lit?1:0);}}
+  setReducedMotion(value){super.setReducedMotion(value);if(value&&this.stationSignal)this.stationSignal.amount=this.stationSignalOpen()?1:0;if(value){settleTravelerPerformance(this.travelerPerformance);settleLetterEcho(this.letterEcho);this.syncLetterMiniature();if(this.theatreLight)this.theatreLight.amounts=this.lanterns.slice(0,2).map(l=>l.lit?1:0);if(this.libraryLight)this.libraryLight.amounts=this.lanterns.slice(0,2).map(l=>l.lit?1:0);}}
   getPaintedStationImage(){return this.paintedScenes.getImage({mode:this.mode,chapterIndex:this.chapterIndex});}
   getPaintedGreenhouseImage(){return this.greenhouseScenes.getImage({mode:this.mode,chapterIndex:this.chapterIndex});}
   getPaintedTheatreImage(){return this.theatreScenes.getImage({mode:this.mode,chapterIndex:this.chapterIndex});}
+  getPaintedLibraryImage(){return this.libraryScenes.getImage({mode:this.mode,chapterIndex:this.chapterIndex});}
   getTheatreEncoreView(){return getTheatreEncoreView(this.theatreEncore);}
-  destroy(){super.destroy();this.paintedScenes.destroy();this.greenhouseScenes.destroy();this.theatreScenes.destroy();this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.theatreLight=null;this.theatreEncore=null;this.letterEcho=null;this.travelerPerformance=null;this.syncLetterMiniature();}
+  destroy(){super.destroy();this.paintedScenes.destroy();this.greenhouseScenes.destroy();this.theatreScenes.destroy();this.libraryScenes.destroy();this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.theatreLight=null;this.libraryLight=null;this.libraryPaintedFrame=false;this.theatreEncore=null;this.letterEcho=null;this.travelerPerformance=null;this.syncLetterMiniature();}
   getTravelerPerformanceContext(){
     return {mode:this.mode,chapterIndex:this.chapterIndex,state:this.state,form:this.form,body:this.body,
       level:this.level,movers:this.movers,closedBarriers:this.level?.barriers.filter(b=>!this.barrierOpen(b))||[],
@@ -119,7 +133,24 @@ export class DreamGame extends BaseDreamGame {
     return view&&this.paintedFrame&&this.isStationFinish()?{...view,lighting:'painted-station'}:view;
   }
   drawBackground(c,w,h,t){
-    this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;
+    this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.libraryPaintedFrame=false;
+    if(this.isLibraryFinish()){
+      const view=this.getSceneBackdropView(),image=this.getPaintedLibraryImage();
+      if(image){
+        let saved=false;
+        try{
+          c.save();saved=true;
+          const sky=c.createLinearGradient(0,view.viewport.top,0,view.viewport.bottom);
+          sky.addColorStop(0,'#0c1b30');sky.addColorStop(.56,'#142c42');sky.addColorStop(1,'#183c45');
+          c.fillStyle=sky;c.fillRect(0,view.viewport.top,w,view.viewport.bottom-view.viewport.top);
+        }catch{}finally{if(saved)try{c.restore();}catch{}}
+        if(drawPaintedLibrary(c,view,image)){
+          this.libraryPaintedFrame=true;
+          drawPaintedLibraryLights(c,view,this.libraryLight?.amounts||[0,0]);return;
+        }
+      }
+      super.drawBackground(c,w,h,t);return;
+    }
     if(this.isTheatreFinish()){
       const view=this.getSceneBackdropView(),image=this.getPaintedTheatreImage();
       if(image){
@@ -163,12 +194,13 @@ export class DreamGame extends BaseDreamGame {
   }
   drawArchitecture(c,t){
     if(this.isStationFinish()){if(!this.paintedFrame)drawStationArchitecture(c,this);}
-    else if((!this.isGreenhouseFinish()||!this.greenhousePaintedFrame)&&(!this.isTheatreFinish()||!this.theatrePaintedFrame))super.drawArchitecture(c,t);
+    else if((!this.isGreenhouseFinish()||!this.greenhousePaintedFrame)&&(!this.isTheatreFinish()||!this.theatrePaintedFrame)&&(!this.isLibraryFinish()||!this.libraryPaintedFrame))super.drawArchitecture(c,t);
     if(this.isTheatreFinish()){drawTheatreRigging(c,{movers:this.movers,camera:this.camera,viewWidth:this.viewWidth});drawTheatreEncore(c,this.theatreEncore,{reducedMotion:this.options.reducedMotion});}
     if(this.letterEcho)drawLetterSceneWindow(c,this.letterEcho.choice,t);
   }
   drawPlatform(c,p,t){
     if(this.isStationFinish())drawStationPlatform(c,p,this.camera,this.viewWidth);
+    else if(this.isLibraryFinish()&&drawLibraryPlatform(c,p,{camera:this.camera,viewWidth:this.viewWidth}))return;
     else if(this.isTheatreFinish()&&drawTheatrePlatform(c,p,{camera:this.camera,viewWidth:this.viewWidth,platforms:this.level.platforms,movers:this.movers}))return;
     else if(!this.isGreenhouseFinish()||!drawGreenhousePlatform(c,p,this.camera,this.viewWidth))super.drawPlatform(c,p,t);
   }
@@ -177,7 +209,7 @@ export class DreamGame extends BaseDreamGame {
   }
   drawPlate(c,p,t){if(this.isStationFinish())drawStationSignal(c,this,p);else super.drawPlate(c,p,t);}
   drawLantern(c,l,index,t){
-    if(this.isTheatreFinish()){if(drawTheatreLantern(c,this,l,index,t))return;super.drawLantern(c,l,index,t);return;}
+    if(this.isTheatreFinish()||this.isLibraryFinish()){if(drawTheatreLantern(c,this,l,index,t))return;super.drawLantern(c,l,index,t);return;}
     if(!this.isStationFinish()&&!this.isGreenhouseFinish()){super.drawLantern(c,l,index,t);return;}
     if(this.paintedFrame||this.greenhousePaintedFrame){
       const y=l.y+(this.options.reducedMotion?0:Math.sin(t*1.2+index)*4);
@@ -191,15 +223,15 @@ export class DreamGame extends BaseDreamGame {
   }
   drawStationRim(c){drawCapFrontRim(c,this.capScene,this.capOpen);}
   drawSoul(c,s,t){
-    if(this.mode==='story'&&this.chapterIndex<=2&&drawRefinedSoul(c,this,s,t))return;
+    if(this.mode==='story'&&this.chapterIndex<=3&&drawRefinedSoul(c,this,s,t))return;
     super.drawSoul(c,s,t);
   }
   drawCharacter(c,b,t,shown=null,character=null){
     const presentation=character||this.getCharacterPresentation(t);
     if(this.letterEcho)drawLetterEcho(c,this.letterEcho,{opening:presentation.rig.openingWorld,face:b.face,camera:this.camera,width:this.viewWidth});
-    if(this.isTheatreFinish()){
+    if(this.isTheatreFinish()||this.isLibraryFinish()){
       const shadow=getGroundShadowView({body:b,level:this.level,movers:this.movers,closedBarriers:this.level.barriers.filter(barrier=>!this.barrierOpen(barrier))});
-      drawStationCharacter(this,c,b,t,shown,presentation,{shadow,reflection:'#baa1ed61'});
+      drawStationCharacter(this,c,b,t,shown,presentation,{shadow,reflection:this.isLibraryFinish()?'#9adbd258':'#baa1ed61'});
     }
     else if(this.isStationFinish()||this.isGreenhouseFinish())drawStationCharacter(this,c,b,t,shown,presentation);
     else super.drawCharacter(c,b,t,shown,character);
