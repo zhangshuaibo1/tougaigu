@@ -1,0 +1,59 @@
+{
+  "status": "local-prestudy-checked-real-browser-pending",
+  "recordedAtUTC": "2026-10-29T18:26:37Z",
+  "baseCommit": "a43e46bf46faa24df196a0b07b973f1de18ed5e7",
+  "productVersion": "29.0.0",
+  "frozenSourcesSha256": {
+    "scripts/browser_face_v31.py": "f2b50c961ffabd21952075a02ad998a73c5f931f378a18dea4d043e9d9087249",
+    "scripts/browser-smoke.py": "6b2a2f00bb41c1c537eb4d0ea078e8983cfe16bc4517c60517a07370cd80b05d"
+  },
+  "fullLocalTests": {
+    "command": "npm test",
+    "testFiles": 74,
+    "pass": 74,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "durationMs": 5719.070973,
+    "rawOutputSha256": "1986ca10dc77b7566df36fb4cf8c278555265d52d478c357c6d82645b0e3592c",
+    "rawOutput": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> tougaigu@29.0.0 test\n> node --test tests/*.test.mjs\n\n✔ tests/browser-coast-route-v27.test.mjs (586.952993ms)\n✔ tests/browser-driver-boundary.test.mjs (281.696542ms)\n✔ tests/browser-ending-v29.test.mjs (1023.598736ms)\n✔ tests/browser-face-v31.test.mjs (2163.172927ms)\n✔ tests/browser-hud-energy.test.mjs (208.044488ms)\n✔ tests/browser-hud-geometry.test.mjs (267.134746ms)\n✔ tests/browser-library-route-v27.test.mjs (1058.233531ms)\n✔ tests/browser-portrait-sequence.test.mjs (626.091376ms)\n✔ tests/browser-post-route-v29.test.mjs (908.041619ms)\n✔ tests/browser-theatre-alight.test.mjs (775.275969ms)\n✔ tests/browser-traveler-performance.test.mjs (1676.291485ms)\n✔ tests/cap-activities.test.mjs (81.269461ms)\n✔ tests/cap-activity-engine.test.mjs (1660.505019ms)\n✔ tests/cap-activity-growth.test.mjs (115.736008ms)\n✔ tests/cap-activity-progress.test.mjs (163.577183ms)\n✔ tests/cap-character-motion.test.mjs (422.048347ms)\n✔ tests/cap-engine.test.mjs (1414.069264ms)\n✔ tests/cap-progress.test.mjs (87.721376ms)\n✔ tests/cap-story.test.mjs (128.32539ms)\n✔ tests/clock-echo-v27.test.mjs (661.96799ms)\n✔ tests/coast-presentation-v27.test.mjs (564.060612ms)\n✔ tests/dream-app-energy.test.mjs (315.239019ms)\n✔ tests/dream-awakening-engine.test.mjs (1795.273746ms)\n✔ tests/dream-awakenings.test.mjs (86.936902ms)\n✔ tests/dream-direction-input.test.mjs (181.916906ms)\n✔ tests/dream-encounter-engine.test.mjs (673.41723ms)\n✔ tests/dream-encounters.test.mjs (109.434645ms)\n✔ tests/dream-ending-art.test.mjs (136.177861ms)\n✔ tests/dream-engine.test.mjs (830.408313ms)\n✔ tests/dream-journey.test.mjs (136.106821ms)\n✔ tests/dream-modal-input.test.mjs (132.071983ms)\n✔ tests/dream-moon-play.test.mjs (146.034593ms)\n✔ tests/dream-story-portrait-v24.test.mjs (75.550752ms)\n✔ tests/dream-story.test.mjs (96.66586ms)\n✔ tests/dream-ui.test.mjs (123.902375ms)\n✔ tests/ending-scene-v29.test.mjs (94.501782ms)\n✔ tests/engine.test.mjs (149.417644ms)\n✔ tests/festival-engine.test.mjs (813.386826ms)\n✔ tests/festivals.test.mjs (175.611156ms)\n✔ tests/first-ticket-engine.test.mjs (442.576197ms)\n✔ tests/greenhouse-engine.test.mjs (937.043612ms)\n✔ tests/greenhouse-materials.test.mjs (162.222197ms)\n✔ tests/greenhouse-scene.test.mjs (98.764451ms)\n✔ tests/ground-shadow.test.mjs (138.360552ms)\n✔ tests/journey-engine.test.mjs (433.692194ms)\n✔ tests/letter-echo.test.mjs (676.723588ms)\n✔ tests/library-finish-v26.test.mjs (195.594985ms)\n✔ tests/lost-cases.test.mjs (124.854529ms)\n✔ tests/lost-encores.test.mjs (128.398167ms)\n✔ tests/lost-engine.test.mjs (1554.434568ms)\n✔ tests/lost-evidence.test.mjs (107.995954ms)\n✔ tests/lost-progress.test.mjs (228.225507ms)\n✔ tests/moon-play-engine.test.mjs (719.853315ms)\n✔ tests/painted-scene.test.mjs (101.607701ms)\n✔ tests/painted-station-integration.test.mjs (599.213694ms)\n✔ tests/play-rewards.test.mjs (153.3356ms)\n✔ tests/post-delivery-v28.test.mjs (218.712136ms)\n✔ tests/post-mushroom-input-v29.test.mjs (275.48582ms)\n✔ tests/progression.test.mjs (90.892886ms)\n✔ tests/scene-backdrop-integration.test.mjs (812.026847ms)\n✔ tests/soul-art-v22.test.mjs (372.133623ms)\n✔ tests/station-finish.test.mjs (479.110242ms)\n✔ tests/theatre-art.test.mjs (198.551718ms)\n✔ tests/theatre-assets-v22.test.mjs (171.54484ms)\n✔ tests/theatre-encore-v21.test.mjs (142.685316ms)\n✔ tests/theatre-encore-v22.test.mjs (145.684954ms)\n✔ tests/theatre-engine.test.mjs (530.616378ms)\n✔ tests/theatre-guidance.test.mjs (103.606437ms)\n✔ tests/theatre-npc-art-v24.test.mjs (175.919013ms)\n✔ tests/theatre-painted-v20.test.mjs (170.765638ms)\n✔ tests/traveler-face-v31.test.mjs (237.329386ms)\n✔ tests/traveler-motion.test.mjs (172.470884ms)\n✔ tests/traveler-performance-v30.test.mjs (1229.893175ms)\n✔ tests/traveler-performance.test.mjs (303.729584ms)\nℹ tests 74\nℹ suites 0\nℹ pass 74\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 5719.070973\n"
+  },
+  "staticCheck": {
+    "command": "node scripts/check.mjs",
+    "modules": 68,
+    "localReferences": 171,
+    "passed": true,
+    "versionAssetGateRun": false
+  },
+  "independentReadOnlyReview": {
+    "blockingFindings": [],
+    "runtimeChanged": false,
+    "retainedOriginalTopLevelSmokeDefinitions": 47,
+    "changedSmokeDefinitions": [
+      "PROBE",
+      "puzzle",
+      "exercise",
+      "exercise_festival_hud"
+    ],
+    "ticketObserverBeforeOriginalToggle": true,
+    "lampObserverBeforeActualContinue": true,
+    "fatigueWaitBudgetSeconds": 21,
+    "fatigueWaitStagesShareOneDeadline": true,
+    "fatigueEvidenceScope": "form=soul; capPhase=open; energy<20; not closed-lid fatigue",
+    "originalIndependentRoutesUnchanged": [
+      "library",
+      "coast",
+      "post",
+      "ending"
+    ],
+    "cleanupBoundary": "Normal/route/assertion failures stop and remove observers before saving. If browser communication fails, cleanupError records failure; offline fixtures cannot prove remote cleanup."
+  },
+  "notYetVerified": [
+    "real v31 browser input and screenshots",
+    "27-second observer lifecycle around actual fatigue, viewport capture and original return",
+    "formal version/cache upgrade",
+    "public HTTPS",
+    "physical phones, Safari, low-end GPU"
+  ]
+}
