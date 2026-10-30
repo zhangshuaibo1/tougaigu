@@ -1,0 +1,574 @@
+{
+  "schemaVersion": 1,
+  "frozenAt": "2026-10-30T01:09:59.630160+00:00",
+  "runId": 40982421518,
+  "commit": "ce412d1298d0060dec08893f9b44cead9693edcf",
+  "tree": "1d0dd1a3a860b5571050db0e5f138f0a58f30261",
+  "artifactId": 12946062423,
+  "officialZipSha256": "cedac4e9295e6e48388391c7567c0465354981479802dda3b355f40f239cfb47",
+  "status": "passed",
+  "payloadFiles": 33,
+  "totalPayloadBytes": 7863186,
+  "files": [
+    {
+      "path": "official-metadata.json",
+      "bytes": 74356,
+      "sha256": "fe194097aac38baec9a4e09669aa1868dc298e3a35c41affaeffdad3c93710ea",
+      "role": "Official run, commit, jobs, artifact and monitoring timeline",
+      "origin": "/tmp/tougaigu-v32-second-40982421518/official-metadata.json"
+    },
+    {
+      "path": "independent-candidate-review.json",
+      "bytes": 3584,
+      "sha256": "1b45ce465ecafa39e566257cf4ab05cbd876c4e785c2698a68f8b8f7cc1b8372",
+      "role": "Complete independent corrected-candidate review",
+      "origin": "/tmp/tougaigu-v32-second-40982421518/independent-candidate-review.json"
+    },
+    {
+      "path": "dialogue-evidence-summary.json",
+      "bytes": 30480,
+      "sha256": "8dad521474700e4d3ecc9a9360f9ae316d741ff2ad4afe75f8ac2f26a8964446",
+      "role": "Natural return, both greenhouse observations, and six actual official matrix configurations",
+      "origin": "/tmp/tougaigu-v32-second-40982421518/dialogue-evidence-summary.json"
+    },
+    {
+      "path": "face-evidence-summary.json",
+      "bytes": 32919,
+      "sha256": "74a37db0acc654c3a2d066e84a9261c0bff299134e7abaf1de39db8887931166",
+      "role": "Original face validator data independently recomputed",
+      "origin": "/tmp/tougaigu-v32-second-40982421518/face-evidence-summary.json"
+    },
+    {
+      "path": "inherited-gates-summary.json",
+      "bytes": 45534,
+      "sha256": "8009fadb83021dc0767ce3fa2f16c525b4ac7ef37f069f1de6b9a1424a394849",
+      "role": "Original strict physical/input/post/ending/network gates independently recomputed",
+      "origin": "/tmp/tougaigu-v32-second-40982421518/inherited-gates-summary.json"
+    },
+    {
+      "path": "manual-image-review.json",
+      "bytes": 3258,
+      "sha256": "faccab5b3bbeb06182ae90b264e4ba42ef35f4a6a92a0fa7c329204a74e68db7",
+      "role": "Original-size PNG visual review and precise limits",
+      "origin": "/tmp/tougaigu-v32-second-40982421518/manual-image-review.json"
+    },
+    {
+      "path": "auditor-adaptation.json",
+      "bytes": 4521,
+      "sha256": "143515c99f7bfb0e5c68667d609258ded42b6d6fcd5c888bd0b0663ba7637ae9",
+      "role": "Only scope/path/version/identity changes to the trusted earlier candidate audits",
+      "origin": "/tmp/tougaigu-v32-second-40982421518/auditor-adaptation.json"
+    },
+    {
+      "path": "independent-source-review.json",
+      "bytes": 11181,
+      "sha256": "dedb86fd7813e855b290d91b58bff5ddd1c106c84d0811bec268fb905b43c6c7",
+      "role": "Separate read-only exact Git/source/timing review",
+      "origin": "/tmp/v32-second-source-layout-independent-review.json"
+    },
+    {
+      "path": "candidate-report.json.gz",
+      "bytes": 656372,
+      "sha256": "fa9c527b27c0a38ac807dba15ca3fe1e0a4ac9a2d084fee6f7464963e54a4ee1",
+      "role": "Unabridged original full browser report including six-config matrix",
+      "origin": "/tmp/tougaigu-v32-second-40982421518/candidate/report.json",
+      "uncompressedBytes": 15905000,
+      "uncompressedSha256": "e460446a702689a468f1675828f2643f5f7a110890d282970536498287842560"
+    },
+    {
+      "path": "dialogue-matrix-report.json.gz",
+      "bytes": 48826,
+      "sha256": "13a7caad70ac6539adbc306b19ca99c736608e9301a4743ad81be131560f7c89",
+      "role": "Unabridged original standalone matrix report, exact to main report",
+      "origin": "/tmp/tougaigu-v32-second-40982421518/candidate/dialogue-matrix/report.json",
+      "uncompressedBytes": 792504,
+      "uncompressedSha256": "cc1eb13955071e40badbb2d1e7715ce0664b9edaa6e315dfdf00872de11156fb"
+    },
+    {
+      "path": "browser-candidate.txt.gz",
+      "bytes": 658977,
+      "sha256": "bfe606d63ce749d539e444908430a7ac02f509ae719500e3ecc67c2090993fe6",
+      "role": "Original complete browser stdout log",
+      "origin": "/tmp/tougaigu-v32-second-40982421518/browser-candidate.txt",
+      "uncompressedBytes": 15914214,
+      "uncompressedSha256": "389cf83abda8f0e327a42a2a3242556c1a159ca6cfc2808f364e22f712fda531"
+    },
+    {
+      "path": "tests.txt.gz",
+      "bytes": 34475,
+      "sha256": "dc24497c4eb4482c73ae94406c72442dc4eaf9e1a44da6a8b1a2be294a998e9f",
+      "role": "Original 683/683 test log; old 675 subtest names all retained",
+      "origin": "/tmp/tougaigu-v32-second-40982421518/tests.txt",
+      "uncompressedBytes": 170625,
+      "uncompressedSha256": "b823a047048177c5d409cb527d90a513c6f04c19a738813c026262ad43486a81"
+    },
+    {
+      "path": "references.txt.gz",
+      "bytes": 169,
+      "sha256": "86a3addac4fa8f6e536f09137e40092c61d1f5489384e7a7d99636abc7ce6c20",
+      "role": "Original references/release-version check output",
+      "origin": "/tmp/tougaigu-v32-second-40982421518/references.txt",
+      "uncompressedBytes": 214,
+      "uncompressedSha256": "265cad67cad87e34305b98bd49fa78e7a29786b603c6891443452bba94bb2e8e"
+    },
+    {
+      "path": "source-integrity.json.gz",
+      "bytes": 73113,
+      "sha256": "687fb1112a541a4633b4496b686accf7770bc2bd5ee4cf23295e992df5dc870b",
+      "role": "All 913 source contents/modes, 143 runtime identities, old 74 test files, and old 675 test names",
+      "origin": "/tmp/tougaigu-v32-second-40982421518/source-integrity.json",
+      "uncompressedBytes": 264125,
+      "uncompressedSha256": "e448f9a8b221026f2ef5582e1021037043c32cb370d100cc0bacf921b9a3d5d4"
+    },
+    {
+      "path": "artifact-audit.json.gz",
+      "bytes": 302997,
+      "sha256": "8dbcd27b26b1d79820f574afc28cec6ad201f2ae11ae53d797ebe1e8eb3b9d87",
+      "role": "Complete original ZIP path/hash and trusted source audit",
+      "origin": "/tmp/tougaigu-v32-second-40982421518/artifact-audit.json",
+      "uncompressedBytes": 7200042,
+      "uncompressedSha256": "2fd1b8a6f3335c14171139523fc0202a792eb85e48e9b64cff86b1e6ca1f16ad"
+    },
+    {
+      "path": "original-png-inventory.json.gz",
+      "bytes": 11106,
+      "sha256": "40b6e0a482b2df9e990b6c601ccccf5ca81b2613d8ec402f10be54502aa9d94e",
+      "role": "All 205 original official PNG dimensions and digests",
+      "origin": "/tmp/tougaigu-v32-second-40982421518/original-png-inventory.json",
+      "uncompressedBytes": 50445,
+      "uncompressedSha256": "42f4df6dac3106b3298bd1dca0cabfa13f31038d5bade3ff092f24d987d6e8be"
+    },
+    {
+      "path": "commit.txt",
+      "bytes": 41,
+      "sha256": "a4d1944650427cc556f6ae4cf1b6096812957d25a9a6a374f4722ec267880222",
+      "role": "Original source/environment marker",
+      "origin": "official ZIP commit.txt"
+    },
+    {
+      "path": "node.txt",
+      "bytes": 9,
+      "sha256": "2266957ed9a639bd7264d714bfa798a961510bf2e50695c668ab8fc0c3f4e906",
+      "role": "Original source/environment marker",
+      "origin": "official ZIP node.txt"
+    },
+    {
+      "path": "raw/1280-greenhouse-return-dialogue-event.json",
+      "bytes": 1913,
+      "sha256": "aaf201f157206045ac791d8d913a4033abfd36fbba2ff6675710618594e7dbeb",
+      "role": "Original unmodified natural-event or greenhouse layout sidecar",
+      "origin": "official ZIP candidate/1280-greenhouse-return-dialogue-event.json"
+    },
+    {
+      "path": "raw/1280-greenhouse-leaves-returned-dialogue-layout.json",
+      "bytes": 49113,
+      "sha256": "6305545ea0916cd4e90a10c6936262bec76b024e0d2e962dd5a0273ece7d1c87",
+      "role": "Original unmodified natural-event or greenhouse layout sidecar",
+      "origin": "official ZIP candidate/1280-greenhouse-leaves-returned-dialogue-layout.json"
+    },
+    {
+      "path": "raw/1280-greenhouse-root-crossed-dialogue-layout.json",
+      "bytes": 49102,
+      "sha256": "8e25953a67967398cc6b1d8fbbd645522893fc23a695d8eb49b6efa41e01c0d4",
+      "role": "Original unmodified natural-event or greenhouse layout sidecar",
+      "origin": "official ZIP candidate/1280-greenhouse-root-crossed-dialogue-layout.json"
+    },
+    {
+      "path": "candidate-immediate-json.tar.gz",
+      "bytes": 751147,
+      "sha256": "73075890e925f046e13b0d1484c7c14677fe88e8992bbeef2eedc3cc39197410",
+      "role": "All original immediate JSON sidecars, including nested matrix records",
+      "origin": "official ZIP candidate/**/*.json except separately preserved reports",
+      "uncompressedBytes": 15882240,
+      "uncompressedSha256": "759dbcac410866133f27fea5f03aae93799f1c8b689eb081c1d511ee57b43c95",
+      "members": [
+        {
+          "path": "candidate/1280-ending-dawn-320-case.json",
+          "bytes": 23619,
+          "sha256": "8383c8dac05973e76a7746a573181fcf82b43339dfe0ae43b409c6a832b2b0cc"
+        },
+        {
+          "path": "candidate/1280-ending-dawn-320-reading.json",
+          "bytes": 21960,
+          "sha256": "e52b45c802a689a2a820b1fca8e144f4ebc8193a926abc346aaf74c40a3b63cc"
+        },
+        {
+          "path": "candidate/1280-ending-dawn-390-case.json",
+          "bytes": 6564,
+          "sha256": "ecb806a0644c8f5bb6f5cebf26a97d1cfa9b21bcd1f201afecd1c4adc325a16b"
+        },
+        {
+          "path": "candidate/1280-ending-dawn-390-reading.json",
+          "bytes": 4905,
+          "sha256": "2896682e1922923d958ec891d89f6030c45a02ef5610ba9f77d54f16de28608c"
+        },
+        {
+          "path": "candidate/1280-ending-keep-hold.json",
+          "bytes": 9806,
+          "sha256": "0a652dd933a207ab5e646015cf1adbf89d95bd7bda8c901a4f2a07679c09b0b1"
+        },
+        {
+          "path": "candidate/1280-ending-keep-release.json",
+          "bytes": 9761,
+          "sha256": "5de2b8690e2aead9676c2d46bc1dfc8b86256f595d031a4005f85dfb5ab23420"
+        },
+        {
+          "path": "candidate/1280-ending-lanterns-320-case.json",
+          "bytes": 23747,
+          "sha256": "34ddc3d78b1fdacbab7d3df7a8157f92a5d6cef12145195a5b2b04707663a86a"
+        },
+        {
+          "path": "candidate/1280-ending-lanterns-320-reading.json",
+          "bytes": 22082,
+          "sha256": "2acae10029e59ce6e3192209a6ab8dfe5c28ca8dce010ae0b40d2b0e2f5402ee"
+        },
+        {
+          "path": "candidate/1280-ending-lanterns-390-case.json",
+          "bytes": 6609,
+          "sha256": "d82bed31a76b34bfd7c384e1aa2e9ee0c51fc595286c0d21a2da31fa4bc85df4"
+        },
+        {
+          "path": "candidate/1280-ending-lanterns-390-reading.json",
+          "bytes": 4943,
+          "sha256": "586f10e01f510bd09cbd25d3798bcc2638072553ce627dd89b7df3d2cd8b5590"
+        },
+        {
+          "path": "candidate/1280-ending-send-hold.json",
+          "bytes": 9749,
+          "sha256": "f5e7bb6edc724fe5ad90211b4e2d400d7074110bfb202aba65433d5b9b9d85d8"
+        },
+        {
+          "path": "candidate/1280-ending-send-release.json",
+          "bytes": 9718,
+          "sha256": "e524c40b3cb6873fa3b1497cc10eac74109af731e7b52df6849bbd7ac5377889"
+        },
+        {
+          "path": "candidate/1280-ending-tender-320-case.json",
+          "bytes": 23646,
+          "sha256": "0bc44531c3178cb45406795da5efc18d17ce1db818131327f5f10e42688a7a94"
+        },
+        {
+          "path": "candidate/1280-ending-tender-320-reading.json",
+          "bytes": 21983,
+          "sha256": "9e26eee2d813e7abc628f4b5dd130cd02f17a4fae8437cceecc5dae1ca831ad0"
+        },
+        {
+          "path": "candidate/1280-ending-tender-390-case.json",
+          "bytes": 6574,
+          "sha256": "a17cda1b4904847bb474225750583a9b8f2eb23455360c8eb290ca997c3d8e62"
+        },
+        {
+          "path": "candidate/1280-ending-tender-390-reading.json",
+          "bytes": 4910,
+          "sha256": "898bc45886e04fc3a8acf485ef7e50f6fdd103ca9e974df6e3185c9bd4849a44"
+        },
+        {
+          "path": "candidate/1280-face-fatigue-body-tired-open.json",
+          "bytes": 564396,
+          "sha256": "99b344d39b221039451a6ef5ebd518bf9c36b547af096a7381f7eaf053f54941"
+        },
+        {
+          "path": "candidate/1280-face-fatigue-phone-low-energy.json",
+          "bytes": 576788,
+          "sha256": "aee933904ca09dbcd78911312b44d93f41a1caa5a530ed416abc159f72743264"
+        },
+        {
+          "path": "candidate/1280-face-fatigue-returned.json",
+          "bytes": 575115,
+          "sha256": "cb5e03e282aee5f1469f48e0af47640de53a4bc8007b1dc46d7a74a7ea7f87ac"
+        },
+        {
+          "path": "candidate/1280-face-fatigue-soul-low-energy.json",
+          "bytes": 558151,
+          "sha256": "df747c821f7f9b0b911af790fb9afe0f9889421cdb3ddd759493fa4f22d08f24"
+        },
+        {
+          "path": "candidate/1280-face-ticket-collected.json",
+          "bytes": 577786,
+          "sha256": "83f678574c08e44443e4f42dd6617e9317345cc3a8fe905e5bd9ee240f571539"
+        },
+        {
+          "path": "candidate/1280-first-lamp-face-lamp-returned.json",
+          "bytes": 370779,
+          "sha256": "e815821bc9b09d1cb7dbfb7adcead5c9c65ee717fcb1bbf18ee94ff3c585e0db"
+        },
+        {
+          "path": "candidate/1280-full-fallback-post-mushroom-crossing.json",
+          "bytes": 131041,
+          "sha256": "adadb986a66456b9e7d58b603b8b975c8230d3d1d5a37044521ad6e954e40e21"
+        },
+        {
+          "path": "candidate/1280-full-fallback-post-route.json",
+          "bytes": 1242501,
+          "sha256": "951564dbe103557a7f5bf46bcdd46d66d8b800e0d292d781c672884bb251d875"
+        },
+        {
+          "path": "candidate/1280-full-touch-320-post-mushroom-crossing.json",
+          "bytes": 136164,
+          "sha256": "9f5f147b235bd928dea3f1664e95a4a027b7d9dbc5f72b7d5c5f831c6de08f87"
+        },
+        {
+          "path": "candidate/1280-full-touch-320-post-route.json",
+          "bytes": 1504561,
+          "sha256": "dffd111484e48778f3bb3bf1569459130c5081a205021027065e1344b55a2e12"
+        },
+        {
+          "path": "candidate/1280-full-touch-390-post-mushroom-crossing.json",
+          "bytes": 136962,
+          "sha256": "f80e1bcb48f4fbc2f461d2e955fa99fe64f3443979cf00c642dc239181b36fe2"
+        },
+        {
+          "path": "candidate/1280-full-touch-390-post-route.json",
+          "bytes": 1495660,
+          "sha256": "d5ed40bb515a588468b105470068c4d2f8c571c7121123de8ce2199577e7f36d"
+        },
+        {
+          "path": "candidate/1280-greenhouse-leaves-returned-dialogue-layout.json",
+          "bytes": 49113,
+          "sha256": "6305545ea0916cd4e90a10c6936262bec76b024e0d2e962dd5a0273ece7d1c87"
+        },
+        {
+          "path": "candidate/1280-greenhouse-return-dialogue-event.json",
+          "bytes": 1913,
+          "sha256": "aaf201f157206045ac791d8d913a4033abfd36fbba2ff6675710618594e7dbeb"
+        },
+        {
+          "path": "candidate/1280-greenhouse-root-crossed-dialogue-layout.json",
+          "bytes": 49102,
+          "sha256": "8e25953a67967398cc6b1d8fbbd645522893fc23a695d8eb49b6efa41e01c0d4"
+        },
+        {
+          "path": "candidate/1280-post-full-touch-320.json",
+          "bytes": 1627282,
+          "sha256": "9bcd3282eac757f1d106098fb2b4e1ca32179a5e98a5a9f4c365aee1c0fedbcd"
+        },
+        {
+          "path": "candidate/1280-post-full-touch-390.json",
+          "bytes": 1617714,
+          "sha256": "9ee4b6dd1c15dcffe12b1eec309c320161a6b2daaeb9d579d9dd2dc5e19d4095"
+        },
+        {
+          "path": "candidate/1280-post-mushroom-crossing.json",
+          "bytes": 131740,
+          "sha256": "e5176b347617466228ff896d4fd145ddc7ac0dabdfaa9e83730fa05e87215d9b"
+        },
+        {
+          "path": "candidate/1280-post-route.json",
+          "bytes": 1446628,
+          "sha256": "09e5c1ba57c3cf346d945450fd6545e50ee9da96ec00758e61bffa13cb1db008"
+        },
+        {
+          "path": "candidate/1280-station-body-dialogue-layout.json",
+          "bytes": 44849,
+          "sha256": "b48cf1d50515206cff1ca539dee2e37943f01a0b9a74c1c27ac1b9fc41cbfdca"
+        },
+        {
+          "path": "candidate/1280-ticket-held-dialogue-layout.json",
+          "bytes": 49889,
+          "sha256": "8c51d71fc250aaabde3f4c160109b1959c585ad244b5ee9a90c78bdb1a6469af"
+        },
+        {
+          "path": "candidate/320-face-festival-exclusion.json",
+          "bytes": 190,
+          "sha256": "fb713f619b5b90a4dc752c167bb5d777e37553705efc7625f8c19ac1b662d617"
+        },
+        {
+          "path": "candidate/320-face-ticket-collected.json",
+          "bytes": 477935,
+          "sha256": "7f0ddbcc7d040d9bc3d554c9923aee5982ecc15a0849e9dc9f0861d5487b9bd1"
+        },
+        {
+          "path": "candidate/320-face-ticket-returned.json",
+          "bytes": 616110,
+          "sha256": "d029471108a9f5aa207686fb5100857bed76a6c1cb771efac7fb402a9b1e1c18"
+        },
+        {
+          "path": "candidate/320-station-body-dialogue-layout.json",
+          "bytes": 689,
+          "sha256": "474b887d34b06b744ed013d7d4a6cf8e71aec9947112a06516be655770181872"
+        },
+        {
+          "path": "candidate/320-ticket-held-dialogue-layout.json",
+          "bytes": 689,
+          "sha256": "8d6dbaceab04aea89ebb7477bab98e4e999a2d77bef25d27f8fe8f6d72373303"
+        },
+        {
+          "path": "candidate/390-face-festival-exclusion.json",
+          "bytes": 190,
+          "sha256": "fb713f619b5b90a4dc752c167bb5d777e37553705efc7625f8c19ac1b662d617"
+        },
+        {
+          "path": "candidate/390-face-ticket-collected.json",
+          "bytes": 511575,
+          "sha256": "fe49bf4ef06784ef324e71e0bb950b42a632aaab80d6c6126df7771eac331a21"
+        },
+        {
+          "path": "candidate/390-face-ticket-returned.json",
+          "bytes": 616306,
+          "sha256": "3f10bcab3386692f8f58438a621b59dae6d6a0e00b4d97716247b0520073f560"
+        },
+        {
+          "path": "candidate/390-station-body-dialogue-layout.json",
+          "bytes": 689,
+          "sha256": "652637c585d6559813058a5122461100261e7beb8d5c88f9a00ccd9161c19dac"
+        },
+        {
+          "path": "candidate/390-ticket-held-dialogue-layout.json",
+          "bytes": 689,
+          "sha256": "196899517f5a506e4247c89081871609496f35fef210955ee00be2a30994fb0c"
+        },
+        {
+          "path": "candidate/dialogue-matrix/1024x640-opening-dialogue-layout.json",
+          "bytes": 51772,
+          "sha256": "b2066cb22f29c8d82b02f609868dcc7faf2b87e1acee1ef6f6c8cce47f965f42"
+        },
+        {
+          "path": "candidate/dialogue-matrix/1024x640-ticket-dialogue-layout.json",
+          "bytes": 49405,
+          "sha256": "014ae8ea184795da7592789453e70a6089b40a64f2ff5f54a3e68c3081f2fb1e"
+        },
+        {
+          "path": "candidate/dialogue-matrix/1280x800-game-reduce-opening-dialogue-layout.json",
+          "bytes": 51439,
+          "sha256": "d98557a5ab2847eecbea52bd7f449ef31331008f6eed5adf806cf377b9f0c7c6"
+        },
+        {
+          "path": "candidate/dialogue-matrix/1280x800-game-reduce-ticket-dialogue-layout.json",
+          "bytes": 49051,
+          "sha256": "b3889b44cb819e99425a956db5115b28df80e893c9cf058089ef6f73ac50e248"
+        },
+        {
+          "path": "candidate/dialogue-matrix/1280x800-os-reduce-opening-dialogue-layout.json",
+          "bytes": 51416,
+          "sha256": "1fa2064ccbbc6f886deb2bc2a1389842aaa4c7e43dc8b6bbaae02eb30e448330"
+        },
+        {
+          "path": "candidate/dialogue-matrix/1280x800-os-reduce-ticket-dialogue-layout.json",
+          "bytes": 49046,
+          "sha256": "8ac0c64e1abf89fb9dad6bdf7b1945233514a1a687c259139f1cd8d8ef9338bf"
+        },
+        {
+          "path": "candidate/dialogue-matrix/899x800-opening-dialogue-layout.json",
+          "bytes": 694,
+          "sha256": "1d4d45adc40d445ea649a6de51fd915d243bf56cb8631bae175db0508c8e3af5"
+        },
+        {
+          "path": "candidate/dialogue-matrix/899x800-ticket-dialogue-layout.json",
+          "bytes": 692,
+          "sha256": "65d1d8efac8ffc77c9d4a65eb464653faf009aa0925a0988647e889076fb1425"
+        },
+        {
+          "path": "candidate/dialogue-matrix/900x520-opening-dialogue-layout.json",
+          "bytes": 50929,
+          "sha256": "1d0443d8188405510eb7593b7c9a5d6048b44cda0bd02d9380f0d6a05795a88e"
+        },
+        {
+          "path": "candidate/dialogue-matrix/900x520-ticket-dialogue-layout.json",
+          "bytes": 48587,
+          "sha256": "679dd7f518e187f184b7095aaf92a9a0047fe94e7cc427b410ebf2207c2b5ed8"
+        },
+        {
+          "path": "candidate/dialogue-matrix/900x800-opening-dialogue-layout.json",
+          "bytes": 51732,
+          "sha256": "0de46748b7f50fe756e50782d25243fca9e5793163aa068462bc3d3db385528a"
+        },
+        {
+          "path": "candidate/dialogue-matrix/900x800-ticket-dialogue-layout.json",
+          "bytes": 49351,
+          "sha256": "3ffdf5a4a1004dc0ec14839175d0bac367c70d4a2ed76c5b33c26c7bcdc72b54"
+        }
+      ]
+    },
+    {
+      "path": "png/1280-greenhouse-leaves-returned.png",
+      "bytes": 1309638,
+      "sha256": "fdb8f4fdbf5ad30dda4a75cadbb302a0f2dcace8dc76ff2bb7bd9db1019c122f",
+      "role": "Original-size official PNG selected for manual review",
+      "origin": "official ZIP candidate/1280-greenhouse-leaves-returned.png",
+      "width": 1280,
+      "height": 800,
+      "unalteredOriginalPNG": true
+    },
+    {
+      "path": "png/1280-greenhouse-root-crossed.png",
+      "bytes": 1306535,
+      "sha256": "86a78147d56b7c32dfc89bce36178693aca571520290cdd6095783caf46eaea1",
+      "role": "Original-size official PNG selected for manual review",
+      "origin": "official ZIP candidate/1280-greenhouse-root-crossed.png",
+      "width": 1280,
+      "height": 800,
+      "unalteredOriginalPNG": true
+    },
+    {
+      "path": "png/dialogue-matrix/900x520-ticket.png",
+      "bytes": 524300,
+      "sha256": "00073b30b4dffdbb17d1d0ca692d92d0a2d7304b0d9028419f4a273837b57f7d",
+      "role": "Original-size official PNG selected for manual review",
+      "origin": "official ZIP candidate/dialogue-matrix/900x520-ticket.png",
+      "width": 900,
+      "height": 520,
+      "unalteredOriginalPNG": true
+    },
+    {
+      "path": "png/dialogue-matrix/1024x640-ticket.png",
+      "bytes": 731519,
+      "sha256": "48f7b114d349cf22a9ac1389bb9f57dbf0a854cb42a98cc22f217d0cfc52f826",
+      "role": "Original-size official PNG selected for manual review",
+      "origin": "official ZIP candidate/dialogue-matrix/1024x640-ticket.png",
+      "width": 1024,
+      "height": 640,
+      "unalteredOriginalPNG": true
+    },
+    {
+      "path": "png/dialogue-matrix/1280x800-game-reduce-opening.png",
+      "bytes": 1084759,
+      "sha256": "718d32389b1279550ed5aa64a945b8ff3f6b06ff1189988cfceec47177816305",
+      "role": "Original-size official PNG selected for manual review",
+      "origin": "official ZIP candidate/dialogue-matrix/1280x800-game-reduce-opening.png",
+      "width": 1280,
+      "height": 800,
+      "unalteredOriginalPNG": true
+    },
+    {
+      "path": "auditors/audit-tougaigu-v29.py",
+      "bytes": 4516,
+      "sha256": "ab612734835df954c3ae1f95bdc9d2e151e2422eca2989bfe2d98d4bf5591b72",
+      "role": "Independent read-only auditor; pure functions loaded from exact primary Git",
+      "origin": "/tmp/audit-tougaigu-v29.py"
+    },
+    {
+      "path": "auditors/audit-v32-second-faces.py",
+      "bytes": 11578,
+      "sha256": "df9c326f65a6d1b61659074a6b781cf6b5fb221336db1506ac88a123249f4970",
+      "role": "Independent read-only auditor; pure functions loaded from exact primary Git",
+      "origin": "/tmp/audit-v32-second-faces.py"
+    },
+    {
+      "path": "auditors/audit-v32-second-gates.py",
+      "bytes": 22748,
+      "sha256": "ce00f8d6de5209303c50d545aa4be41b18cbe13f02695038214787dcace36bdf",
+      "role": "Independent read-only auditor; pure functions loaded from exact primary Git",
+      "origin": "/tmp/audit-v32-second-gates.py"
+    },
+    {
+      "path": "auditors/audit-v32-second-dialogue.py",
+      "bytes": 11669,
+      "sha256": "951a85faa69dee115c18dfdfdfa09c5f78aa2995f6bb36d1f1a1bc926e71d654",
+      "role": "Independent read-only auditor; pure functions loaded from exact primary Git",
+      "origin": "/tmp/audit-v32-second-dialogue.py"
+    },
+    {
+      "path": "auditors/review-v32-second-artifact.py",
+      "bytes": 9386,
+      "sha256": "7ec7e159f433524b0369c117afe5a9ba1e02bc0a73a129340abdbacf93fb16c9",
+      "role": "Independent read-only auditor; pure functions loaded from exact primary Git",
+      "origin": "/tmp/review-v32-second-artifact.py"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3345,
+      "sha256": "f3fcc055f0fee056267af2e8f2b5587091b77593b2aea58f72d2b80686d28d5e",
+      "role": "Evidence guide, exact new timing semantics and coverage limits"
+    }
+  ]
+}

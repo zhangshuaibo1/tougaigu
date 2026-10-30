@@ -9,6 +9,7 @@ from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from playwright.async_api import async_playwright, expect
 from browser_face_v31 import FaceSequence, wait_for_natural_fatigue, validate_face_snapshot
+from browser_dialogue_v32 import DIALOGUE_APP_PROBE, capture_dialogue, validate_natural_dialogue_return
 
 
 PROBE="""
@@ -104,7 +105,7 @@ window.__qaRead=()=>{
 
 # Observation only: this evaluates real layout, glyph rectangles, semantics and
 # hit targets without changing a DOM attribute or assigning any game state.
-HUD_PROBE="""async()=>{
+HUD_PROBE="""async(observeDialogue=false)=>{
   // Observe after the already queued game frame, then read all values in one
   // synchronous task. This is one passive frame boundary, not a retry loop.
   await new Promise(resolve=>requestAnimationFrame(resolve));
@@ -137,7 +138,8 @@ HUD_PROBE="""async()=>{
     hudSample:game.hudSample,timing:{observedAt:game.observedAt,fullHudWrittenAt:game.fullHudWrittenAt},
     meter:{role:meter?.getAttribute('role'),name:meter?.getAttribute('aria-label'),min:meter?.getAttribute('aria-valuemin'),max:meter?.getAttribute('aria-valuemax'),value:meter?.getAttribute('aria-valuenow'),text:meter?.getAttribute('aria-valuetext'),barPercent:parseFloat(document.querySelector('#stage-energy')?.style.width)},
     cap:{text:cap?.textContent.trim(),display:cap?getComputedStyle(cap).display:null,descriptionIds:document.querySelector('#stage-toggle')?.getAttribute('aria-describedby')},
-    horizontalOverflow:document.documentElement.scrollWidth>innerWidth};
+    horizontalOverflow:document.documentElement.scrollWidth>innerWidth,
+    desktopDialogue:observeDialogue?window.__qaDialogueRead():null};
 }"""
 HUD_OBSERVATIONS=[]
 
@@ -242,13 +244,13 @@ def validate_hud_aria_energy(aria):
     else:
         assert '灵光充足' in aria or re.search(r'恢复中\s+\d+%',aria),'AX body has no readable recovery/full state: '+aria
 
-async def assert_hud_readable(page,label,form=None,hint=None,objective=None,cap=None,need_bubble=False):
+async def assert_hud_readable(page,label,form=None,hint=None,objective=None,cap=None,need_bubble=False,observe_dialogue=False):
     if form:
         await page.wait_for_function("form=>window.__qaRead()?.form===form",arg=form)
         await wait_text(page,'#stage-form-name','灵魂' if form=='soul' else '身体')
     if hint:await wait_text(page,'#stage-near-hint',hint)
     if objective:await wait_text(page,'#stage-objective',objective)
-    snapshot=await page.evaluate(HUD_PROBE)
+    snapshot=await page.evaluate(HUD_PROBE,arg=observe_dialogue)
     try:gaps=validate_hud_geometry(snapshot)
     except AssertionError as error:raise AssertionError(label+': '+str(error)+'; '+json.dumps(snapshot,ensure_ascii=False)) from error
     e=snapshot['elements'];runtime=snapshot['runtime'];meter=snapshot['meter']
@@ -273,7 +275,8 @@ async def assert_hud_readable(page,label,form=None,hint=None,objective=None,cap=
             'accessibleEnergy':meter,'energyObservation':energy_observation,'onHudSample':snapshot['hudSample'],'energyTiming':snapshot['timing'],'gaps':gaps,'bubbleVisible':e['bubble']['visible'],
             'objective':e['objective']['text'],'nearHint':e['hint']['text'],'capDescription':snapshot['cap']['text'],
             'ariaSnapshot':aria,'objectiveAndHintUnclipped':True,'inputCentersUncovered':True,
-            'rects':{name:e[name]['rect'] for name in ['hud','goals','form','objectiveBox','bubble']}}
+            'rects':{name:e[name]['rect'] for name in ['hud','goals','form','objectiveBox','bubble']},
+            'desktopDialogue':snapshot['desktopDialogue']}
     HUD_OBSERVATIONS.append(record)
     return record
 
@@ -890,7 +893,8 @@ async def exercise(page,output,label,touch=False,full=False):
     output=Path(output);output.mkdir(parents=True,exist_ok=True)
     await page.locator('#stage-chapter-title').filter(has_text='苔灯站台').wait_for()
     await page.wait_for_timeout(500)
-    await assert_hud_readable(page,label+'-station-body',form='body')
+    station_hud=await assert_hud_readable(page,label+'-station-body',form='body',observe_dialogue=True)
+    station_dialogue=capture_dialogue(output,label+'-station-body',station_hud['desktopDialogue'],screenshot=label+'-start.png')
     assert await page.evaluate('document.documentElement.scrollWidth<=innerWidth'), 'horizontal overflow'
     assert '上海九喵科技有限公司' in await page.locator('.corporate-footer').inner_text()
     await page.screenshot(path=str(output/(label+'-start.png')),full_page=True)
@@ -906,7 +910,9 @@ async def exercise(page,output,label,touch=False,full=False):
         await drive_to(page,270,420,touch=touch,until=ticket)
         await page.wait_for_timeout(120)
         assert await ticket(), 'actual flight did not collect ticket'
-        await assert_hud_readable(page,label+'-ticket-held',form='soul',objective='去程票抱好了',cap='去程票抱好了',need_bubble=True)
+        ticket_hud=await assert_hud_readable(page,label+'-ticket-held',form='soul',objective='去程票抱好了',cap='去程票抱好了',need_bubble=True,observe_dialogue=True)
+        ticket_dialogue=capture_dialogue(output,label+'-ticket-held',ticket_hud['desktopDialogue'],require_bubble=True,
+            surface_reference=station_hud['desktopDialogue'],screenshot=label+'-ticket.png')
         await page.screenshot(path=str(output/(label+'-ticket.png')),full_page=True)
         await faces.checkpoint('collected',required=['event','freeJoy'],finish=full)
         if full:
@@ -964,7 +970,8 @@ async def exercise(page,output,label,touch=False,full=False):
         await drive_to(page,1890,touch=touch,until=complete,limit=10)
         await page.screenshot(path=str(output/(label+'-complete.png')),full_page=True)
     return {'viewport':page.viewport_size,'version':version,'ticketCollectedAndReturned':True,'pauseFrozen':True,'noHorizontalOverflow':True,'chapterCompleted':full,'input':'emulated Chromium touch' if touch else 'keyboard','rafIntervalMs':timings,'frameSamplePhase':'initial active idle; not a physical-device benchmark','stationBodyJump':station_pose,
-            'faceObservations':faces.records+(lamp_faces.records if full else [])}
+            'faceObservations':faces.records+(lamp_faces.records if full else []),
+            'desktopDialogueObservations':[station_dialogue,ticket_dialogue]}
 
 async def exercise_greenhouse(page,output,label):
     """Continue the desktop journey through the normal unlocked chapter map."""
@@ -1037,8 +1044,24 @@ async def exercise_greenhouse(page,output,label):
     stages.append(2)
     await page.wait_for_function("()=>window.__qaRead()?.greenhousePlant?.growthAge>=1.2")
     await page.screenshot(path=str(output/(label+'-greenhouse-leaves.png')),full_page=True)
-    await toggle(page,False)
-    await page.wait_for_function("()=>{const a=window.__qaRead();return a?.form==='body'&&a.capPhase==='closed';}")
+    # The authored return feedback deliberately does not interrupt speech less
+    # than 1600ms old. Read that existing clock before the same original E.
+    await page.wait_for_function("()=>window.__qaDialogueClockRead().ageMs>=1600",timeout=2000)
+    await page.evaluate('window.__qaDialogueReturnStart()')
+    try:
+        await toggle(page,False)
+        await page.wait_for_function("()=>{const a=window.__qaRead();return a?.form==='body'&&a.capPhase==='closed';}")
+    finally:
+        return_event=await page.evaluate("()=>{const result=window.__qaDialogueReturnWatch.finish();delete window.__qaDialogueReturnWatch;return {...result,observerRemoved:!window.__qaDialogueReturnWatch};}")
+        (output/(label+'-greenhouse-return-dialogue-event.json')).write_text(json.dumps(return_event,ensure_ascii=False,indent=2)+'\n')
+    return_event['validation']=validate_natural_dialogue_return(return_event)
+    (output/(label+'-greenhouse-return-dialogue-event.json')).write_text(json.dumps(return_event,ensure_ascii=False,indent=2)+'\n')
+    # Check actual visible dialogue here, before crossing the root consumes its
+    # normal 3800ms lifetime. Rig and DOM geometry are one synchronous read.
+    returned_dialogue=capture_dialogue(output,label+'-greenhouse-leaves-returned',await page.evaluate('window.__qaDialogueRead()'),require_bubble=True,
+        surface_reference=next(record['desktopDialogue'] for record in HUD_OBSERVATIONS if record['label']==label+'-station-body'),
+        screenshot=label+'-greenhouse-leaves-returned.png')
+    await page.screenshot(path=str(output/(label+'-greenhouse-leaves-returned.png')),full_page=True)
 
     print(label,'ride the real mushroom over the root platform',flush=True)
     route={}
@@ -1058,6 +1081,11 @@ async def exercise_greenhouse(page,output,label):
     assert 'aboveRoot' in route, 'body never crossed above the solid root platform'
     assert beyond_root['body']['x']>route['aboveRoot']['root']['x']+route['aboveRoot']['root']['w']
     route['landedBeyondRoot']=beyond_root['body']
+    # Preserve the original grounded route and actual layout read. Speech may
+    # have naturally expired; if visible it must still avoid the real actor.
+    root_dialogue=capture_dialogue(output,label+'-greenhouse-root-crossed',await page.evaluate('window.__qaDialogueRead()'),
+        surface_reference=next(record['desktopDialogue'] for record in HUD_OBSERVATIONS if record['label']==label+'-station-body'),
+        screenshot=label+'-greenhouse-root-crossed.png')
     await page.screenshot(path=str(output/(label+'-greenhouse-root-crossed.png')),full_page=True)
 
     # Two player jumps use the existing shelf to cross above the drifting
@@ -1097,7 +1125,8 @@ async def exercise_greenhouse(page,output,label):
             'seedMemoryIndex':1,'pot':'ticket','observedPlantStages':stages,
             'seedReturnPauseFrozen':True,'wrongAnswersRejected':2,'mushroomBounceObserved':True,
             'rootCrossed':True,'routeEvidence':route,'chapterCompleted':True,
-            'noRespawns':True,'noHorizontalOverflow':True}
+            'noRespawns':True,'noHorizontalOverflow':True,'desktopDialogueObservation':root_dialogue,
+            'desktopDialogueReturnObservation':returned_dialogue,'dialogueReturnEvent':return_event}
 
 async def finish_story_from_ui(page,expected_pages):
     """Read each decoded current speaker before normally advancing the story."""
@@ -1757,7 +1786,7 @@ async def main(args):
             page.on('requestfailed',lambda r:request_failures.append({'url':r.url,'failure':r.failure}))
             async def instrument(route):
                 response=await route.fetch()
-                await route.fulfill(response=response,body=(await response.text())+PROBE)
+                await route.fulfill(response=response,body=(await response.text())+PROBE+DIALOGUE_APP_PROBE)
                 instrumented_app_urls.append(route.request.url)
             await page.route(re.compile(r'/dream-app\.js(?:\?[^#]*)?$'),instrument)
             await page.goto(args.url,wait_until='networkidle',timeout=45000)
@@ -1859,6 +1888,15 @@ async def main(args):
                                      'samples':list(HUD_OBSERVATIONS),'minimumPhoneHeightTested':680}
             report['cases'].append(result)
             await context.close()
+        if int((args.version or version).split('.')[0])>=32:
+            import __main__
+            from browser_dialogue_matrix_v32 import exercise_dialogue_matrix
+            try:
+                report['independentDialogueMatrix']=await exercise_dialogue_matrix(b,args,output,__main__)
+            except Exception:
+                report['independentDialogueMatrix']={'status':'failed','details':'dialogue-matrix/report.json'}
+                (output/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
+                raise
         await b.close()
     (output/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
     print(json.dumps(report,ensure_ascii=False,indent=2))

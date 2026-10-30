@@ -1,0 +1,138 @@
+{
+  "schema": "v31-published-verified-1",
+  "status": "published-and-full-https-verified",
+  "review": {
+    "reviewedAt": "2026-10-30T00:44:12.788033+00:00",
+    "status": "passed",
+    "runId": 40978620156,
+    "runUrl": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40978620156",
+    "commit": "75010ca44245e05cf44187768722081d244f39f4",
+    "tree": "f418c649635f0dc3f55679dd9d7b973bb34ef40a",
+    "pagesHead": "6e716a8c40e5ad0b917f3b3e85fe86f7b09a9241",
+    "pagesTree": "89c590e390f02c089b67cfa6f3539c35fa836201",
+    "artifactId": 12944314862,
+    "artifactZipBytes": 322071593,
+    "artifactZipSha256": "9dc7dbb677cbd7be2ec30dca105fd94178d4117aa4045340380d64244e8e31e7",
+    "sourceBlobsExact": 797,
+    "runtimeBlobsExact": 143,
+    "tests": {
+      "tests": 675,
+      "pass": 675,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "todo": 0
+    },
+    "artifactPaths": 471,
+    "originalPNGCount": 384,
+    "sourceArchiveModesAlsoChecked": true,
+    "publicIndex": {
+      "bytes": 25981,
+      "sha256": "7be90121bdd4504897ba87d5083b899195a5cb267d7564687de58c824f96a4d8",
+      "exactMainDistIndex": true
+    },
+    "reports": [
+      {
+        "scope": "candidate",
+        "url": "http://127.0.0.1:8080/",
+        "bytes": 14878602,
+        "sha256": "982f7d46733e0b155244c3e8283992c5d0d707e9ad12cb21676307cd26ce6f3b",
+        "viewports": [
+          {
+            "width": 1280,
+            "height": 800
+          },
+          {
+            "width": 390,
+            "height": 844
+          },
+          {
+            "width": 320,
+            "height": 680
+          }
+        ],
+        "expectedFailureCounts": [
+          9,
+          0,
+          0
+        ],
+        "unexpectedNetworkFailures": 0,
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "faceCheckpointCount": 10,
+        "faceSnapshotOccurrences": 973,
+        "poseSnapshotOccurrences": 1124,
+        "completePostRoutes": 4,
+        "phoneEndingReadings": 6,
+        "desktopEndingCombinations": 4,
+        "jumpRecords": 6,
+        "fatigue": {
+          "sharedDeadlineMs": 21000,
+          "actualBodyTiredFirstCaptureMs": 16684.79999999999,
+          "actualEnergyAtFirstBodyTired": 19.948333333331142,
+          "observerLifecycleMs": 27000,
+          "scope": "form=soul, capPhase=open; not closed-lid fatigue proof",
+          "recoveryNeutralEnergy": 24.69166666666454
+        },
+        "faceAudit": "candidate-face-evidence-summary.json",
+        "inheritedGateAudit": "candidate-inherited-gates-summary.json"
+      },
+      {
+        "scope": "live",
+        "url": "https://tougaigu.com/?qa=75010ca44245e05cf44187768722081d244f39f4",
+        "bytes": 14925606,
+        "sha256": "beb28f2f054df8361b1ca00115ce86493cf03da3c29ef5cc9c590462245a82cc",
+        "viewports": [
+          {
+            "width": 1280,
+            "height": 800
+          },
+          {
+            "width": 390,
+            "height": 844
+          },
+          {
+            "width": 320,
+            "height": 680
+          }
+        ],
+        "expectedFailureCounts": [
+          9,
+          0,
+          0
+        ],
+        "unexpectedNetworkFailures": 0,
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "faceCheckpointCount": 10,
+        "faceSnapshotOccurrences": 958,
+        "poseSnapshotOccurrences": 1128,
+        "completePostRoutes": 4,
+        "phoneEndingReadings": 6,
+        "desktopEndingCombinations": 4,
+        "jumpRecords": 6,
+        "fatigue": {
+          "sharedDeadlineMs": 21000,
+          "actualBodyTiredFirstCaptureMs": 16929.800000000047,
+          "actualEnergyAtFirstBodyTired": 19.948333333331142,
+          "observerLifecycleMs": 27000,
+          "scope": "form=soul, capPhase=open; not closed-lid fatigue proof",
+          "recoveryNeutralEnergy": 26.41166666666455
+        },
+        "faceAudit": "live-face-evidence-summary.json",
+        "inheritedGateAudit": "live-inherited-gates-summary.json"
+      }
+    ],
+    "originalStrictGatesPreserved": true,
+    "artifactProgramCodeExecuted": false,
+    "scope": "Official main GitHub workflow, full local candidate AND public HTTPS browser routes. Independent data validation from exact trusted Git source.",
+    "localChromiumFailure": "Earlier local environment Chromium trust failure remains preserved separately at /tmp/v31-live-browser-20261030; it is not counted as a passing test or a product regression.",
+    "limits": [
+      "No physical handset, Safari or low-end GPU/performance benchmark.",
+      "Face checkpoint coverage remains the exact events recorded, not all six chapter faces.",
+      "Snapshot counts include repeated report occurrences and are not unique animation frames.",
+      "Raw PNGs retain original dimensions; manual review is recorded separately after inspecting selected files."
+    ]
+  },
+  "archiveNotes": "initial-checkpoint preserves the previous pre-merge snapshot exactly; it is historical, not a current blocker"
+}

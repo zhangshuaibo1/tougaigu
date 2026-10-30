@@ -1,0 +1,68 @@
+{
+  "schema": "v32-local-execution-sources-1",
+  "independentMatrix": {
+    "candidateTree": "5445a39ba818484952598bfeab24d70702424a6b",
+    "base": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+    "version": "32.0.0",
+    "sourceFileCount": 810,
+    "manifestSha256": "ff3f7417e965c406dd8954da272384c7ba2e9e3126203137a7cfc390ac63762e",
+    "playwrightVersion": "1.55.0",
+    "status": "passed",
+    "scope": "Only the independent six-context real-UI matrix; original full story suite not rerun locally",
+    "chromiumVersion": "140.0.7339.16",
+    "elapsedSeconds": 20.642
+  },
+  "fullBrowser": {
+    "candidateTree": "5445a39ba818484952598bfeab24d70702424a6b",
+    "base": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+    "version": "32.0.0",
+    "sourceFileCount": 810,
+    "manifestSha256": "ff3f7417e965c406dd8954da272384c7ba2e9e3126203137a7cfc390ac63762e",
+    "playwrightVersion": "1.55.0",
+    "status": "passed",
+    "scope": "Full frozen v32 browser-smoke.py; inherited route inputs/waits/strict gates retained; includes new read-only observations and independent matrix; local candidate, not GitHub CI or HTTPS",
+    "command": [
+      "/tmp/tougaigu-v32-browser-venv/bin/python",
+      "/workspace/scratch/2b18af2db412/tougaigu-v32-release/scripts/browser-smoke.py",
+      "--url",
+      "http://127.0.0.1:9328/",
+      "--version",
+      "32.0.0",
+      "--output",
+      "/tmp/v32-full-verification-5445a39/browser"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 752.294,
+    "scopeOriginalAtExecution": "Full unchanged browser-smoke.py against local candidate, including independent matrix; not GitHub CI or public HTTPS",
+    "scopeClarification": "Wording clarified after completion only; tree, executable code, commands, exit status and timing unchanged."
+  },
+  "initialFailedHarness": {
+    "candidateTree": "6be11a3af80320a62ca78d400d04cf4c00323e7a",
+    "base": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+    "version": "32.0.0",
+    "sourceFileCount": 810,
+    "manifestSha256": "3358b318705ba32200d57da6c35e9007bb14cab50ade160d4d49f93392a8e06d",
+    "playwrightVersion": "1.55.0",
+    "status": "failed",
+    "scope": "Only the independent six-context real-UI matrix; original full story suite not rerun locally",
+    "chromiumVersion": "140.0.7339.16",
+    "failure": "Canvas changed top",
+    "elapsedSeconds": 2.423
+  },
+  "environment": {
+    "pythonEnvironment": "/tmp/tougaigu-v32-browser-venv",
+    "playwrightVersion": "1.55.0",
+    "browserCache": "/tmp/tougaigu-v32-browsers",
+    "chromiumVersion": "140.0.7339.16",
+    "fontConfiguration": "/tmp/tougaigu-v32-fonts.conf",
+    "fontPackageUrl": "https://deb.debian.org/debian/pool/main/f/fonts-wqy-zenhei/fonts-wqy-zenhei_0.9.45-8_all.deb",
+    "fontPackageSha256": "cfed2c29164ff2f133e40ed2046610b172b8618d174840936ac4ec9b6fd668e7",
+    "globalConfigurationChanged": false
+  },
+  "rootReadScope": "Completed report and network budgets; independent recomputation of six layout cases, 12 snapshots and greenhouse root only; not all legacy validators or a second browser",
+  "codeDuringActualRuns": "Frozen tree 5445a39ba818484952598bfeab24d70702424a6b",
+  "afterRunEdits": "Evidence documents only; runtime/scripts/tests/package retain executed bytes",
+  "localOnly": true,
+  "candidateCI": false,
+  "publicHTTPS": false
+}

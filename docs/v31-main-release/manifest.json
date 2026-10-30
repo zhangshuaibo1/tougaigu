@@ -1,0 +1,663 @@
+{
+  "schemaVersion": 1,
+  "frozenAt": "2026-10-30T00:45:24.532094+00:00",
+  "sourceRun": 40978620156,
+  "sourceCommit": "75010ca44245e05cf44187768722081d244f39f4",
+  "artifactId": 12944314862,
+  "officialZipSha256": "9dc7dbb677cbd7be2ec30dca105fd94178d4117aa4045340380d64244e8e31e7",
+  "status": "passed",
+  "totalPayloadBytes": 7723691,
+  "payloadFiles": 32,
+  "files": [
+    {
+      "path": "official-metadata.json",
+      "bytes": 107303,
+      "sha256": "a392490a770c021359aaa8574ce70ac6c251b0c9449c081e47ce08a46d68db03",
+      "role": "Official GitHub run, job, artifact, commit, Pages tree and read-only monitoring timeline",
+      "origin": "/tmp/tougaigu-v31-main-40978620156/official-metadata.json"
+    },
+    {
+      "path": "independent-main-review.json",
+      "bytes": 4460,
+      "sha256": "02d14920d599944c83eeaa7085efc085eea407115436d4f4f7e3780428bb1b00",
+      "role": "Independent complete main-run audit summary",
+      "origin": "/tmp/tougaigu-v31-main-40978620156/independent-main-review.json"
+    },
+    {
+      "path": "manual-image-review.json",
+      "bytes": 4181,
+      "sha256": "eac63ea3a9621839f77a5163ac80c8c2d08d8a6895936a41f43973f04bc1ec25",
+      "role": "Original-dimension PNG visual inspection and limits",
+      "origin": "/tmp/tougaigu-v31-main-40978620156/manual-image-review.json"
+    },
+    {
+      "path": "auditor-adaptation.json",
+      "bytes": 6863,
+      "sha256": "1c2829b5e78badb20cc212416daec363e66deb75c088ef20ea5579cb36b8f48f",
+      "role": "Exact scope/path/metadata-only changes from earlier trusted audit scripts",
+      "origin": "/tmp/tougaigu-v31-main-40978620156/auditor-adaptation.json"
+    },
+    {
+      "path": "candidate-face-evidence-summary.json",
+      "bytes": 32924,
+      "sha256": "2dd8ba39bff10bfb55cb870a2ed4a2703d229b6430d94b0af74670422397cd83",
+      "role": "Pure face validators recomputed against candidate evidence",
+      "origin": "/tmp/tougaigu-v31-main-40978620156/candidate-face-evidence-summary.json"
+    },
+    {
+      "path": "live-face-evidence-summary.json",
+      "bytes": 32949,
+      "sha256": "5f0bc72957dd6eb43fb2bcc64121615e4e8614b2c124120dea83f7765ec2b1ee",
+      "role": "Pure face validators recomputed against public HTTPS evidence",
+      "origin": "/tmp/tougaigu-v31-main-40978620156/live-face-evidence-summary.json"
+    },
+    {
+      "path": "candidate-inherited-gates-summary.json",
+      "bytes": 45463,
+      "sha256": "41071d4e2a4ff4c004ec3d81de118109f88630be0c40859bd77cdc6d856477d2",
+      "role": "Strict inherited movement/input/ending/network gates recomputed for candidate",
+      "origin": "/tmp/tougaigu-v31-main-40978620156/candidate-inherited-gates-summary.json"
+    },
+    {
+      "path": "live-inherited-gates-summary.json",
+      "bytes": 45335,
+      "sha256": "994eb9eef2c5386cd7bb43b101ca745793652f045e44f6c8bc0a4292d4ef34a4",
+      "role": "Strict inherited movement/input/ending/network gates recomputed for public HTTPS",
+      "origin": "/tmp/tougaigu-v31-main-40978620156/live-inherited-gates-summary.json"
+    },
+    {
+      "path": "candidate-report.json.gz",
+      "bytes": 589593,
+      "sha256": "b4da364714044615991221dcdc45a37b477b796c91b073a2dc5dbd9d34c3087e",
+      "role": "Unabridged original candidate browser report, losslessly compressed",
+      "origin": "official ZIP candidate/report.json",
+      "uncompressedBytes": 14878602,
+      "uncompressedSha256": "982f7d46733e0b155244c3e8283992c5d0d707e9ad12cb21676307cd26ce6f3b"
+    },
+    {
+      "path": "public-report.json.gz",
+      "bytes": 591512,
+      "sha256": "f5a4d32a6cc271b7df2bee143f5fd12e95c47b881aec631cf15e408fb44712f9",
+      "role": "Unabridged original HTTPS browser report, losslessly compressed",
+      "origin": "official ZIP live/report.json",
+      "uncompressedBytes": 14925606,
+      "uncompressedSha256": "beb28f2f054df8361b1ca00115ce86493cf03da3c29ef5cc9c590462245a82cc"
+    },
+    {
+      "path": "browser-candidate.txt.gz",
+      "bytes": 592216,
+      "sha256": "44677b010df192a2d1e418984248851d2410f9f73cca4c121ac05d64d47ffc26",
+      "role": "Original complete candidate stdout log",
+      "origin": "official ZIP browser-candidate.txt",
+      "uncompressedBytes": 14887847,
+      "uncompressedSha256": "a51c4d4a48df7ff80168f521b748a8be497c030fadbb202a90f6f048af31eba8"
+    },
+    {
+      "path": "browser-public.txt.gz",
+      "bytes": 594067,
+      "sha256": "0f9756386b76cc6e09245ff2bedaf2f1caee6338396aa14a357a03245dfbe12c",
+      "role": "Original complete HTTPS stdout log",
+      "origin": "official ZIP browser-live.txt",
+      "uncompressedBytes": 14934808,
+      "uncompressedSha256": "1edee7c7f98fe4e489e35f4dda5bf271152ec32ee0099211be21d107cec02c5c"
+    },
+    {
+      "path": "tests.txt.gz",
+      "bytes": 33988,
+      "sha256": "f1f7f46cf2446e2f1315edd413b57736ddc3c402a44038a753d88b008143a279",
+      "role": "Original npm test output, 675/675",
+      "origin": "official ZIP tests.txt",
+      "uncompressedBytes": 168539,
+      "uncompressedSha256": "ad9e74613fcdf247047c07e70e72738cb7c32ec35c65bfc76123066656bd4e0f"
+    },
+    {
+      "path": "references.txt.gz",
+      "bytes": 169,
+      "sha256": "17a0565cecfe1ad269f40adfb13843181170224d35ce4418af70e1da97809e1d",
+      "role": "Original local references and release-map verification output",
+      "origin": "official ZIP references.txt",
+      "uncompressedBytes": 214,
+      "uncompressedSha256": "3092d05cf88ed87e3e735b5abbe9ac219834f45478cd56b3f27b15b46d595cfb"
+    },
+    {
+      "path": "source-integrity.json.gz",
+      "bytes": 63825,
+      "sha256": "f94ceeaf279088e68fb553cf06edeb5daed3f8c6112695223edf3bf159034c53",
+      "role": "All 797 source paths, SHA256, Git blobs and executable modes; all 143 runtime paths match Pages",
+      "origin": "/tmp/tougaigu-v31-main-40978620156/source-integrity.json",
+      "uncompressedBytes": 228662,
+      "uncompressedSha256": "eccf3c7b9c49cc06c7335f86205363240ef1a328d1cb3ac1e02b549c3d74bdb9"
+    },
+    {
+      "path": "artifact-audit.json.gz",
+      "bytes": 566391,
+      "sha256": "0ad1d989ffca3bbbfb460ba1c70711595c3b0efe59004db5dc7088394f8d79ca",
+      "role": "Full trusted archive audit including every original ZIP path and digest",
+      "origin": "/tmp/tougaigu-v31-main-40978620156/artifact-audit.json",
+      "uncompressedBytes": 14451692,
+      "uncompressedSha256": "03a9d4b682529a647f13298922491cc0b6e95f78708916cefc002030bedd23a1"
+    },
+    {
+      "path": "original-png-inventory.json.gz",
+      "bytes": 20410,
+      "sha256": "e93bb24e9aab69812b156890ce61454bda60a4962f547a3aea742dd0940e7494",
+      "role": "Original dimensions and digests of every official PNG",
+      "origin": "/tmp/tougaigu-v31-main-40978620156/original-png-inventory.json",
+      "uncompressedBytes": 93366,
+      "uncompressedSha256": "3f1bed02c2479f251063c8b9d27d985995a28d4443cc15937223f3b1c81a7f79"
+    },
+    {
+      "path": "commit.txt",
+      "bytes": 41,
+      "sha256": "f5f213efd67a0630285cec6777c17203202c6bbda20bdf10ced744f7679643f5",
+      "role": "Original source/environment identifier",
+      "origin": "official ZIP commit.txt"
+    },
+    {
+      "path": "node.txt",
+      "bytes": 9,
+      "sha256": "2266957ed9a639bd7264d714bfa798a961510bf2e50695c668ab8fc0c3f4e906",
+      "role": "Original source/environment identifier",
+      "origin": "official ZIP node.txt"
+    },
+    {
+      "path": "candidate-immediate-json.tar.gz",
+      "bytes": 703232,
+      "sha256": "e98d00eb1dd7da83b9fa19cbe9de3c718eeb07858a17a5fc0693c972b0429bcd",
+      "role": "All immediately persisted raw JSON sidecars from this browser route",
+      "origin": "official ZIP candidate/*.json excluding report.json",
+      "uncompressedBytes": 15360000,
+      "uncompressedSha256": "dfeaf7199eeb4baf4729a6b596d17f626af6fc3e6666b358f92cd8d930215c31",
+      "members": [
+        {
+          "path": "candidate/1280-ending-dawn-320-case.json",
+          "bytes": 23649,
+          "sha256": "7f3af4b55c05a37adcbd71c64d497b92e61ca26fa6806a90cb0f1d9289b962a8"
+        },
+        {
+          "path": "candidate/1280-ending-dawn-320-reading.json",
+          "bytes": 21960,
+          "sha256": "d69c3f96426c02ad577d6f8e56e750c7b8d846b348bc95ec4c6d549772190a05"
+        },
+        {
+          "path": "candidate/1280-ending-dawn-390-case.json",
+          "bytes": 6564,
+          "sha256": "ecb806a0644c8f5bb6f5cebf26a97d1cfa9b21bcd1f201afecd1c4adc325a16b"
+        },
+        {
+          "path": "candidate/1280-ending-dawn-390-reading.json",
+          "bytes": 4905,
+          "sha256": "2896682e1922923d958ec891d89f6030c45a02ef5610ba9f77d54f16de28608c"
+        },
+        {
+          "path": "candidate/1280-ending-keep-hold.json",
+          "bytes": 9806,
+          "sha256": "0a652dd933a207ab5e646015cf1adbf89d95bd7bda8c901a4f2a07679c09b0b1"
+        },
+        {
+          "path": "candidate/1280-ending-keep-release.json",
+          "bytes": 9761,
+          "sha256": "5de2b8690e2aead9676c2d46bc1dfc8b86256f595d031a4005f85dfb5ab23420"
+        },
+        {
+          "path": "candidate/1280-ending-lanterns-320-case.json",
+          "bytes": 23769,
+          "sha256": "6ded66420b5e804e2b86dab46957bc604e942c4cec3ff855a45272258da93b1e"
+        },
+        {
+          "path": "candidate/1280-ending-lanterns-320-reading.json",
+          "bytes": 22089,
+          "sha256": "95e16481a3f8ce84a4ba357b0a57e89757280f8288e4bdca4294801bb329382b"
+        },
+        {
+          "path": "candidate/1280-ending-lanterns-390-case.json",
+          "bytes": 6609,
+          "sha256": "d82bed31a76b34bfd7c384e1aa2e9ee0c51fc595286c0d21a2da31fa4bc85df4"
+        },
+        {
+          "path": "candidate/1280-ending-lanterns-390-reading.json",
+          "bytes": 4943,
+          "sha256": "586f10e01f510bd09cbd25d3798bcc2638072553ce627dd89b7df3d2cd8b5590"
+        },
+        {
+          "path": "candidate/1280-ending-send-hold.json",
+          "bytes": 9749,
+          "sha256": "f5e7bb6edc724fe5ad90211b4e2d400d7074110bfb202aba65433d5b9b9d85d8"
+        },
+        {
+          "path": "candidate/1280-ending-send-release.json",
+          "bytes": 9718,
+          "sha256": "e524c40b3cb6873fa3b1497cc10eac74109af731e7b52df6849bbd7ac5377889"
+        },
+        {
+          "path": "candidate/1280-ending-tender-320-case.json",
+          "bytes": 23662,
+          "sha256": "91bc02c22d492872263be2741aecccf0740b10ae916c3ae5aa3a92e014e1ba15"
+        },
+        {
+          "path": "candidate/1280-ending-tender-320-reading.json",
+          "bytes": 21984,
+          "sha256": "a73904678183630553d3fa31fe32cfd23b12b814dba92f349f249662a54fdc71"
+        },
+        {
+          "path": "candidate/1280-ending-tender-390-case.json",
+          "bytes": 6574,
+          "sha256": "a17cda1b4904847bb474225750583a9b8f2eb23455360c8eb290ca997c3d8e62"
+        },
+        {
+          "path": "candidate/1280-ending-tender-390-reading.json",
+          "bytes": 4910,
+          "sha256": "898bc45886e04fc3a8acf485ef7e50f6fdd103ca9e974df6e3185c9bd4849a44"
+        },
+        {
+          "path": "candidate/1280-face-fatigue-body-tired-open.json",
+          "bytes": 564511,
+          "sha256": "4dd3aec23c63ee488d3b2f52e42aa74fb8374f3ad836b7f4f25e2508e5ef8dea"
+        },
+        {
+          "path": "candidate/1280-face-fatigue-phone-low-energy.json",
+          "bytes": 576865,
+          "sha256": "aa64983cd70b2ba7e9edb4e088ff704908f3dbd67bcf3aae0fb4c7e6f4f0f022"
+        },
+        {
+          "path": "candidate/1280-face-fatigue-returned.json",
+          "bytes": 577355,
+          "sha256": "6fddb5dd99b12109db65a31b8f508eeb4af15bb9cb6ee3fea7ff51dccdc1036d"
+        },
+        {
+          "path": "candidate/1280-face-fatigue-soul-low-energy.json",
+          "bytes": 558408,
+          "sha256": "92fbae60c25a94466a7e13fd2ba23bfc2948b19ace1b3d097703e7e0cb544d8f"
+        },
+        {
+          "path": "candidate/1280-face-ticket-collected.json",
+          "bytes": 577558,
+          "sha256": "69b1a38447cab857e315481d540ced9efb42ebb617505a39b2716b60ca4ccb11"
+        },
+        {
+          "path": "candidate/1280-first-lamp-face-lamp-returned.json",
+          "bytes": 358949,
+          "sha256": "d4d15be67c55c4db67988a97837b3b7caa143687115539de40674de132fc099a"
+        },
+        {
+          "path": "candidate/1280-full-fallback-post-mushroom-crossing.json",
+          "bytes": 135592,
+          "sha256": "8689fc123681015bf44a5377ce91249b7fab4b9944a91942c595e67876329738"
+        },
+        {
+          "path": "candidate/1280-full-fallback-post-route.json",
+          "bytes": 1297746,
+          "sha256": "dc6e28a97a979d885baee8e7fb9bf5eb5903ffb5e5158b6c323fa4a5d3530eaf"
+        },
+        {
+          "path": "candidate/1280-full-touch-320-post-mushroom-crossing.json",
+          "bytes": 136393,
+          "sha256": "78093457837a29c1f1d177c5d56ce87111fc4b73fa8c1e16da8128db86f43151"
+        },
+        {
+          "path": "candidate/1280-full-touch-320-post-route.json",
+          "bytes": 1514326,
+          "sha256": "21df3813adcb13f9cf791f08ed1dba8c39eceafa3e8bb886d7e43f79a0efd21b"
+        },
+        {
+          "path": "candidate/1280-full-touch-390-post-mushroom-crossing.json",
+          "bytes": 138822,
+          "sha256": "e91e26e6ecafea90236f9ff74d9046a161b6bc4e28caa7388549d969c7053a80"
+        },
+        {
+          "path": "candidate/1280-full-touch-390-post-route.json",
+          "bytes": 1507591,
+          "sha256": "2416de6b03e45e0f0ec753fd1601cfcf07240904778c6e287dbae71da19c3510"
+        },
+        {
+          "path": "candidate/1280-post-full-touch-320.json",
+          "bytes": 1637778,
+          "sha256": "c72b860594d39f083e5ce273d1e1882cf1431e7d5b158f9a6b739db2dcded0a5"
+        },
+        {
+          "path": "candidate/1280-post-full-touch-390.json",
+          "bytes": 1630565,
+          "sha256": "5c79ccb463df1a79e1226b926b308dc706b8d19a62ffe5d0746cafe5c83f29c9"
+        },
+        {
+          "path": "candidate/1280-post-mushroom-crossing.json",
+          "bytes": 134461,
+          "sha256": "61962348e8d47767b0f1582d589b115bca88cfe9042cd627c9ca2f1a27acfecc"
+        },
+        {
+          "path": "candidate/1280-post-route.json",
+          "bytes": 1502988,
+          "sha256": "1694a927255b93077ddf17c99b84b68cdecf7fbfdc275c2dca8def7bc5c62f8c"
+        },
+        {
+          "path": "candidate/320-face-festival-exclusion.json",
+          "bytes": 190,
+          "sha256": "fb713f619b5b90a4dc752c167bb5d777e37553705efc7625f8c19ac1b662d617"
+        },
+        {
+          "path": "candidate/320-face-ticket-collected.json",
+          "bytes": 489174,
+          "sha256": "df4b1cdaff41c69f60a3715005ea1e526315fe374589b86e52957ab0e9a28d32"
+        },
+        {
+          "path": "candidate/320-face-ticket-returned.json",
+          "bytes": 616022,
+          "sha256": "43803438b90ae3f7b4f5967171ce6b8031b97ad97ad0c557b3d6d5820e73499d"
+        },
+        {
+          "path": "candidate/390-face-festival-exclusion.json",
+          "bytes": 190,
+          "sha256": "fb713f619b5b90a4dc752c167bb5d777e37553705efc7625f8c19ac1b662d617"
+        },
+        {
+          "path": "candidate/390-face-ticket-collected.json",
+          "bytes": 539759,
+          "sha256": "07ecf11c3e983691b5a138622ae06d14b3ef851411c1ecef4ef1b4f09d4eea83"
+        },
+        {
+          "path": "candidate/390-face-ticket-returned.json",
+          "bytes": 616140,
+          "sha256": "8285471a0f0b1bb3fa06eaf419f1e05ec483cd92552e9d336ce086177f50d926"
+        }
+      ]
+    },
+    {
+      "path": "live-immediate-json.tar.gz",
+      "bytes": 703909,
+      "sha256": "fa66e9c53e7cb4f1d9c6f503341fb10a40809868c679972f3e832a2b5971aeb2",
+      "role": "All immediately persisted raw JSON sidecars from this browser route",
+      "origin": "official ZIP live/*.json excluding report.json",
+      "uncompressedBytes": 15288320,
+      "uncompressedSha256": "f257dda397e7d2d01ae61fd4ecb60bfc3d60218550c4a1d301ebd40cea45e17d",
+      "members": [
+        {
+          "path": "live/1280-ending-dawn-320-case.json",
+          "bytes": 23632,
+          "sha256": "3c23d6382fd58bad7e0f0374d723370ddae3a24f5535f829f905b26e2d2eb337"
+        },
+        {
+          "path": "live/1280-ending-dawn-320-reading.json",
+          "bytes": 21960,
+          "sha256": "190084ad3286db1c386e46a7610d303ad29698bc04e57384e7541b57be6b9552"
+        },
+        {
+          "path": "live/1280-ending-dawn-390-case.json",
+          "bytes": 6562,
+          "sha256": "c000163f8818e6639f652741ced356e0696a745d78b1e5d6da0e25bbbab6123b"
+        },
+        {
+          "path": "live/1280-ending-dawn-390-reading.json",
+          "bytes": 4905,
+          "sha256": "2896682e1922923d958ec891d89f6030c45a02ef5610ba9f77d54f16de28608c"
+        },
+        {
+          "path": "live/1280-ending-keep-hold.json",
+          "bytes": 9804,
+          "sha256": "a3a6987edf01744ec2ad660343e6af6ef4a3eb8fbbc5ac8d6697c6a3f046efb1"
+        },
+        {
+          "path": "live/1280-ending-keep-release.json",
+          "bytes": 9759,
+          "sha256": "09e6c2b186aa17a50f13cce8139a0a336ccb14b1cf9c1a2eef18fa8312ea319c"
+        },
+        {
+          "path": "live/1280-ending-lanterns-320-case.json",
+          "bytes": 23777,
+          "sha256": "313e874051f04c310141279fff9661cd025eee754789c74026cec4d8a7c9501b"
+        },
+        {
+          "path": "live/1280-ending-lanterns-320-reading.json",
+          "bytes": 22084,
+          "sha256": "59aaa95293d3ba7f87a6e02fac4dc973a960d4e27849d2daeb6bd3ffc015f1cf"
+        },
+        {
+          "path": "live/1280-ending-lanterns-390-case.json",
+          "bytes": 6607,
+          "sha256": "13f6b89c040d746329a24589e5cdd35d358623bdbfda84d1a9e13186e60467c4"
+        },
+        {
+          "path": "live/1280-ending-lanterns-390-reading.json",
+          "bytes": 4943,
+          "sha256": "586f10e01f510bd09cbd25d3798bcc2638072553ce627dd89b7df3d2cd8b5590"
+        },
+        {
+          "path": "live/1280-ending-send-hold.json",
+          "bytes": 9747,
+          "sha256": "11f18d17e67539bbdb020c056fd1069bd0570527574cad2a115b011d8a106829"
+        },
+        {
+          "path": "live/1280-ending-send-release.json",
+          "bytes": 9716,
+          "sha256": "0fe2c7199c587b52b4cbe3b56de8f4aa75248c801411cc9b672698bae620afdb"
+        },
+        {
+          "path": "live/1280-ending-tender-320-case.json",
+          "bytes": 23674,
+          "sha256": "ed1e511e24a8f8b7b64f38d16ed04ecf9ad345826e3cc8c76d74f7403a521073"
+        },
+        {
+          "path": "live/1280-ending-tender-320-reading.json",
+          "bytes": 21983,
+          "sha256": "2167a30b0c645e33c358680d70b5c5f3b6f27b331209e54563643f042ea4e688"
+        },
+        {
+          "path": "live/1280-ending-tender-390-case.json",
+          "bytes": 6572,
+          "sha256": "50771feab5226251947cffeba603c3459758a8890c90926eece02b359aec974e"
+        },
+        {
+          "path": "live/1280-ending-tender-390-reading.json",
+          "bytes": 4910,
+          "sha256": "898bc45886e04fc3a8acf485ef7e50f6fdd103ca9e974df6e3185c9bd4849a44"
+        },
+        {
+          "path": "live/1280-face-fatigue-body-tired-open.json",
+          "bytes": 564863,
+          "sha256": "18c40ab8c092227c0cd81cd2814e0ac98e375f457b86ee633ef4f9f23157d380"
+        },
+        {
+          "path": "live/1280-face-fatigue-phone-low-energy.json",
+          "bytes": 577157,
+          "sha256": "9cad7755e35f091d1343c47583df4954b588ed1715999ea664bef880dea84db2"
+        },
+        {
+          "path": "live/1280-face-fatigue-returned.json",
+          "bytes": 577828,
+          "sha256": "54ea794a518832dd4c27a2c752f29e38140c24b6b8a01891a47e0da2b8940def"
+        },
+        {
+          "path": "live/1280-face-fatigue-soul-low-energy.json",
+          "bytes": 558746,
+          "sha256": "7271a3eaba7f60c096ffae841c4c1c065cd2c47c8543e0fa2c461dde718c1b7e"
+        },
+        {
+          "path": "live/1280-face-ticket-collected.json",
+          "bytes": 521230,
+          "sha256": "757e60fc8e11fcc5c2d3c9b4e2e52b3f7bab5b2e0edb4c346a9ce7f4b22b1668"
+        },
+        {
+          "path": "live/1280-first-lamp-face-lamp-returned.json",
+          "bytes": 371417,
+          "sha256": "9a42ef26237fd96d722adf9461bba55991033593ec7de9496197d25e78022e97"
+        },
+        {
+          "path": "live/1280-full-fallback-post-mushroom-crossing.json",
+          "bytes": 134615,
+          "sha256": "20641ee16e2ae76a7dd3d7c84ce9cf71e44fefcdd97a56423ce45a6070f6ddcd"
+        },
+        {
+          "path": "live/1280-full-fallback-post-route.json",
+          "bytes": 1288799,
+          "sha256": "ea4208d4a47284855ac9d14ae56fc9c39d57e87f237d802c08a7504a46aa70a1"
+        },
+        {
+          "path": "live/1280-full-touch-320-post-mushroom-crossing.json",
+          "bytes": 137020,
+          "sha256": "a87cc7dcb877a7a37b7a3be4ca22e7358558c25347481c86aee78c53c4bffd36"
+        },
+        {
+          "path": "live/1280-full-touch-320-post-route.json",
+          "bytes": 1523192,
+          "sha256": "c48a22e33ecfeb9e188b0f34251877720e3b4019a30757b79f9aadcbafa287c1"
+        },
+        {
+          "path": "live/1280-full-touch-390-post-mushroom-crossing.json",
+          "bytes": 137214,
+          "sha256": "98f8d2ce1a495ad56756f06896322f4e6143f2f4f0465021b45f71cd3b3b8111"
+        },
+        {
+          "path": "live/1280-full-touch-390-post-route.json",
+          "bytes": 1504161,
+          "sha256": "542aa5e90decbcb8624486e1e627c5c2fd22e19c06897df97b54cbe75bb70270"
+        },
+        {
+          "path": "live/1280-post-full-touch-320.json",
+          "bytes": 1647263,
+          "sha256": "12cc875150557e829c6168d21b29b107e7522f332a50940d90b1cdfc6e8d2e3e"
+        },
+        {
+          "path": "live/1280-post-full-touch-390.json",
+          "bytes": 1626754,
+          "sha256": "b22d3a74ae8df3b81a2787510e67d7d6d011e1adb24616f0fc7381da2ff89ed8"
+        },
+        {
+          "path": "live/1280-post-mushroom-crossing.json",
+          "bytes": 130872,
+          "sha256": "d06fa8614639762130780d06a921186a0c00ca0cd4bc5561ff07625b6afe4828"
+        },
+        {
+          "path": "live/1280-post-route.json",
+          "bytes": 1512462,
+          "sha256": "1b4310c87b56786e5cd2ddd6d3ad2ff7e3238c3c1c086328c564e902ebffaf6c"
+        },
+        {
+          "path": "live/320-face-festival-exclusion.json",
+          "bytes": 190,
+          "sha256": "fb713f619b5b90a4dc752c167bb5d777e37553705efc7625f8c19ac1b662d617"
+        },
+        {
+          "path": "live/320-face-ticket-collected.json",
+          "bytes": 489093,
+          "sha256": "15d9161786eb5915a550862a8963e46b674c0111b69afe5da87adfcc1e8fbf2e"
+        },
+        {
+          "path": "live/320-face-ticket-returned.json",
+          "bytes": 616781,
+          "sha256": "cb7efa70b242404ab02ecfbfa6d68a994908c69289339dd114be440024891de5"
+        },
+        {
+          "path": "live/390-face-festival-exclusion.json",
+          "bytes": 190,
+          "sha256": "fb713f619b5b90a4dc752c167bb5d777e37553705efc7625f8c19ac1b662d617"
+        },
+        {
+          "path": "live/390-face-ticket-collected.json",
+          "bytes": 505407,
+          "sha256": "55a312c2798d5965a3d82596ec808c9b0b0931bd66a5d1a4cacbefc301bf800e"
+        },
+        {
+          "path": "live/390-face-ticket-returned.json",
+          "bytes": 616541,
+          "sha256": "967f9994e4971664a6b5ae72f3b874eef013f5886cceb9e10106f358b80e55af"
+        }
+      ]
+    },
+    {
+      "path": "png/live/320-face-ticket-freeJoy.png",
+      "bytes": 273812,
+      "sha256": "a522ca692674e0faf02577f9673544051a9d7e4495c64fb779d2a335c05e0a2b",
+      "role": "Actual 320px free-soul ticket joy Canvas",
+      "origin": "official ZIP live/320-face-ticket-freeJoy.png",
+      "width": 320,
+      "height": 431,
+      "unmodifiedOriginalPNG": true
+    },
+    {
+      "path": "png/live/320-face-ticket-closedJoy.png",
+      "bytes": 271617,
+      "sha256": "fa117265c84dc9722ab8156c1e0edaf0110d4295c7357b7892df030df772699b",
+      "role": "Actual 320px returned-body ticket joy Canvas",
+      "origin": "official ZIP live/320-face-ticket-closedJoy.png",
+      "width": 320,
+      "height": 431,
+      "unmodifiedOriginalPNG": true
+    },
+    {
+      "path": "png/live/1280-face-fatigue-bodyTiredOpen-320.png",
+      "bytes": 274244,
+      "sha256": "afffc72f031d9ebdf940ffd6f0dcefcfe0ca7a1e70339f89d4cb877b6275d6b4",
+      "role": "Actual 320px open-cap fatigue Canvas",
+      "origin": "official ZIP live/1280-face-fatigue-bodyTiredOpen-320.png",
+      "width": 320,
+      "height": 431,
+      "unmodifiedOriginalPNG": true
+    },
+    {
+      "path": "png/live/1280-first-lamp-face-lamp-closedJoy.png",
+      "bytes": 1490126,
+      "sha256": "d0e04e53cf6d9bb9b1169232cadb856e72475d787f49866273e86c73b9adee7d",
+      "role": "Actual desktop first-lamp closed-cap joy Canvas",
+      "origin": "official ZIP live/1280-first-lamp-face-lamp-closedJoy.png",
+      "width": 1280,
+      "height": 677,
+      "unmodifiedOriginalPNG": true
+    },
+    {
+      "path": "png/candidate/320-face-ticket-closedJoy.png",
+      "bytes": 271616,
+      "sha256": "e10bec279662c438a205c1f8007586378aa28494cb0880d16a0a0f9c656e053b",
+      "role": "Candidate 320px ticket-return Canvas from the separate local run",
+      "origin": "official ZIP candidate/320-face-ticket-closedJoy.png",
+      "width": 320,
+      "height": 431,
+      "unmodifiedOriginalPNG": true
+    },
+    {
+      "path": "png/live/1280-full-touch-320-post-book-riding.png",
+      "bytes": 218054,
+      "sha256": "e4b24a608005f9e2f9a9ac7b70a00c0db25132f443936f9d9c09570bdb0ba228",
+      "role": "Actual public 320px full post route on moving book, original full-page PNG",
+      "origin": "official ZIP live/1280-full-touch-320-post-book-riding.png",
+      "width": 320,
+      "height": 680,
+      "unmodifiedOriginalPNG": true
+    },
+    {
+      "path": "png/live/1280-ending-dawn-320-read.png",
+      "bytes": 138774,
+      "sha256": "ab7c39363f55e0eab9564ead5895caf45adf93c0b784f63ca06b62ebd61c087b",
+      "role": "Actual public 320px ending reading, final note and home control, original full-page PNG",
+      "origin": "official ZIP live/1280-ending-dawn-320-read.png",
+      "width": 320,
+      "height": 680,
+      "unmodifiedOriginalPNG": true
+    },
+    {
+      "path": "auditors/audit-v31-main-faces.py",
+      "bytes": 11777,
+      "sha256": "1fc5dfed363284641cc646f06e7f18918f4c5be59fc294bd34b321adb11df5af",
+      "role": "Read-only independent auditor; runtime validators load from exact primary Git source",
+      "origin": "/tmp/audit-v31-main-faces.py"
+    },
+    {
+      "path": "auditors/audit-v31-main-gates.py",
+      "bytes": 22914,
+      "sha256": "20d2ccbf930a556a3d59c5c26e9ac597424fd71432f649f0654a81bcc9bfb88b",
+      "role": "Read-only independent auditor; runtime validators load from exact primary Git source",
+      "origin": "/tmp/audit-v31-main-gates.py"
+    },
+    {
+      "path": "auditors/review-v31-main-artifact.py",
+      "bytes": 9490,
+      "sha256": "db0fd8074c825b3c8b2c2c18ce95e376da3d89c55a2c3eae244feee436269574",
+      "role": "Read-only independent auditor; runtime validators load from exact primary Git source",
+      "origin": "/tmp/review-v31-main-artifact.py"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2427,
+      "sha256": "fa15080090852d93efe9e141996133a5321a743102903503e5dde6fbba12f6e5",
+      "role": "Evidence guide and scope limitations"
+    }
+  ]
+}

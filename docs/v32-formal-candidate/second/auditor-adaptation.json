@@ -1,0 +1,125 @@
+{
+  "runId": 40982421518,
+  "commit": "ce412d1298d0060dec08893f9b44cead9693edcf",
+  "scope": "Original trusted candidate audits adapted only for path, source identity/count, release version and labels; all physical/input/time/network/face gates unchanged.",
+  "adaptations": [
+    {
+      "kind": "faces",
+      "original": "/tmp/audit-v31-second-faces.py",
+      "originalSha256": "629a34324ac41e47dde1c3c35091bd751071a01ee1c8a61a85ad20f644e620a5",
+      "adapted": "/tmp/audit-v32-second-faces.py",
+      "adaptedSha256": "df9c326f65a6d1b61659074a6b781cf6b5fb221336db1506ac88a123249f4970",
+      "changes": [
+        {
+          "old": "ROOT=pathlib.Path('/workspace/scratch/2b18af2db412/tougaigu-v31')",
+          "new": "ROOT=pathlib.Path('/workspace/scratch/2b18af2db412/tougaigu-v32-formal')",
+          "count": 1
+        },
+        {
+          "old": "OUT=pathlib.Path('/tmp/tougaigu-v31-formal-second')",
+          "new": "OUT=pathlib.Path('/tmp/tougaigu-v32-second-40982421518')\nOFFICIAL=json.loads((OUT/'official-metadata.json').read_text())",
+          "count": 1
+        },
+        {
+          "old": "EXPECTED='7ba7c5e00a6a32032e5becf5131a527322d03ac3'",
+          "new": "EXPECTED='ce412d1298d0060dec08893f9b44cead9693edcf'",
+          "count": 1
+        },
+        {
+          "old": "len(audit['sourceFiles'])==796",
+          "new": "len(audit['sourceFiles'])==913",
+          "count": 1
+        },
+        {
+          "old": "'runId':40965474140",
+          "new": "'runId':40982421518",
+          "count": 1
+        },
+        {
+          "old": "31.0.0",
+          "new": "32.0.0",
+          "count": 2
+        },
+        {
+          "old": "'artifactId':12937168667",
+          "new": "'artifactId':OFFICIAL['artifacts']['artifacts'][0]['id']",
+          "count": 1
+        },
+        {
+          "old": "'sourceFilesExact':796",
+          "new": "'sourceFilesExact':913",
+          "count": 1
+        },
+        {
+          "old": "Formal31 second candidate; public release is not part of this run",
+          "new": "Formal32 corrected second candidate; public release is not part of this run",
+          "count": 1
+        },
+        {
+          "old": "exact primary Git scripts/browser_face_v31.py at verified7ba commit; pure functions only",
+          "new": "exact primary Git scripts/browser_face_v31.py at corrected ce412 commit; original face validators identical to 7ba; pure functions only",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "kind": "gates",
+      "original": "/tmp/audit-v31-second-gates.py",
+      "originalSha256": "ae0472b3e313f2bf4638b862e7209f64a9e1b845436088763587b5c0948682d0",
+      "adapted": "/tmp/audit-v32-second-gates.py",
+      "adaptedSha256": "ce00f8d6de5209303c50d545aa4be41b18cbe13f02695038214787dcace36bdf",
+      "changes": [
+        {
+          "old": "ROOT=pathlib.Path('/workspace/scratch/2b18af2db412/tougaigu-v31')",
+          "new": "ROOT=pathlib.Path('/workspace/scratch/2b18af2db412/tougaigu-v32-formal')",
+          "count": 1
+        },
+        {
+          "old": "OUT=pathlib.Path('/tmp/tougaigu-v31-formal-second')",
+          "new": "OUT=pathlib.Path('/tmp/tougaigu-v32-second-40982421518')\nOFFICIAL=json.loads((OUT/'official-metadata.json').read_text())",
+          "count": 1
+        },
+        {
+          "old": "EXPECTED='7ba7c5e00a6a32032e5becf5131a527322d03ac3'",
+          "new": "EXPECTED='ce412d1298d0060dec08893f9b44cead9693edcf'",
+          "count": 1
+        },
+        {
+          "old": "len(audit['sourceFiles'])==796",
+          "new": "len(audit['sourceFiles'])==913",
+          "count": 1
+        },
+        {
+          "old": "'runId':40965474140",
+          "new": "'runId':40982421518",
+          "count": 1
+        },
+        {
+          "old": "31.0.0",
+          "new": "32.0.0",
+          "count": 7
+        },
+        {
+          "old": "Formal31 second candidate real Chromium browser at localhost; no public/live release in this run",
+          "new": "Formal32 corrected second candidate real Chromium browser at localhost; no public/live release in this run",
+          "count": 1
+        },
+        {
+          "old": "second formal31 candidate",
+          "new": "second formal32 candidate",
+          "count": 1
+        },
+        {
+          "old": "allVersioned31",
+          "new": "allVersioned32",
+          "count": 1
+        },
+        {
+          "old": "allObservedJsCssVersioned31",
+          "new": "allObservedJsCssVersioned32",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

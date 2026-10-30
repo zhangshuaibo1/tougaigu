@@ -1,0 +1,501 @@
+{
+  "schema": "v32-local-matrix-observed-review-1",
+  "recordedAt": "2026-10-29T23:06:59.118100+00:00",
+  "executedSource": {
+    "candidateTree": "5445a39ba818484952598bfeab24d70702424a6b",
+    "base": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+    "version": "32.0.0",
+    "sourceFileCount": 810,
+    "manifestSha256": "ff3f7417e965c406dd8954da272384c7ba2e9e3126203137a7cfc390ac63762e",
+    "playwrightVersion": "1.55.0",
+    "status": "passed",
+    "scope": "Only the independent six-context real-UI matrix; original full story suite not rerun locally",
+    "chromiumVersion": "140.0.7339.16",
+    "elapsedSeconds": 20.642
+  },
+  "cases": [
+    {
+      "case": {
+        "label": "900x800",
+        "width": 900,
+        "height": 800,
+        "media": "no-preference",
+        "game_reduce": false
+      },
+      "status": "passed",
+      "cssAblation": "matched",
+      "restoration": "matched",
+      "observations": [
+        {
+          "label": "900x800-opening",
+          "status": "passed",
+          "eligible": true,
+          "paragraphs": [
+            "阿拾我头里有个站台？车票找谁报销？",
+            "拾光脑洞专线，凭一个好奇心上车。"
+          ],
+          "announcementVisible": true,
+          "announcementText": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+          "bubbleRect": {
+            "left": 24,
+            "top": 188.375,
+            "right": 384,
+            "bottom": 261.375,
+            "width": 360,
+            "height": 73
+          },
+          "actorAvoidanceChecked": true,
+          "sameFrameAsScreenshot": false
+        },
+        {
+          "label": "900x800-ticket",
+          "status": "passed",
+          "eligible": true,
+          "paragraphs": [
+            "拾光去程票抱好了！按 E，陪我把它送回头顶的小火车。"
+          ],
+          "announcementVisible": false,
+          "announcementText": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+          "bubbleRect": {
+            "left": 24,
+            "top": 188.375,
+            "right": 384,
+            "bottom": 261.375,
+            "width": 360,
+            "height": 73
+          },
+          "actorAvoidanceChecked": true,
+          "sameFrameAsScreenshot": false
+        }
+      ]
+    },
+    {
+      "case": {
+        "label": "899x800",
+        "width": 899,
+        "height": 800,
+        "media": "no-preference",
+        "game_reduce": false
+      },
+      "status": "passed",
+      "cssAblation": "matched",
+      "restoration": "matched",
+      "observations": [
+        {
+          "label": "899x800-opening",
+          "status": "outside-desktop-scope",
+          "eligible": false,
+          "paragraphs": [],
+          "announcementVisible": null,
+          "announcementText": null,
+          "bubbleRect": null,
+          "actorAvoidanceChecked": false,
+          "sameFrameAsScreenshot": false
+        },
+        {
+          "label": "899x800-ticket",
+          "status": "outside-desktop-scope",
+          "eligible": false,
+          "paragraphs": [],
+          "announcementVisible": null,
+          "announcementText": null,
+          "bubbleRect": null,
+          "actorAvoidanceChecked": false,
+          "sameFrameAsScreenshot": false
+        }
+      ]
+    },
+    {
+      "case": {
+        "label": "1024x640",
+        "width": 1024,
+        "height": 640,
+        "media": "no-preference",
+        "game_reduce": false
+      },
+      "status": "passed",
+      "cssAblation": "matched",
+      "restoration": "matched",
+      "observations": [
+        {
+          "label": "1024x640-opening",
+          "status": "passed",
+          "eligible": true,
+          "paragraphs": [
+            "阿拾我头里有个站台？车票找谁报销？",
+            "拾光脑洞专线，凭一个好奇心上车。"
+          ],
+          "announcementVisible": true,
+          "announcementText": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+          "bubbleRect": {
+            "left": 24,
+            "top": 188.375,
+            "right": 384,
+            "bottom": 261.375,
+            "width": 360,
+            "height": 73
+          },
+          "actorAvoidanceChecked": true,
+          "sameFrameAsScreenshot": false
+        },
+        {
+          "label": "1024x640-ticket",
+          "status": "passed",
+          "eligible": true,
+          "paragraphs": [
+            "拾光去程票抱好了！按 E，陪我把它送回头顶的小火车。"
+          ],
+          "announcementVisible": false,
+          "announcementText": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+          "bubbleRect": {
+            "left": 24,
+            "top": 188.375,
+            "right": 384,
+            "bottom": 261.375,
+            "width": 360,
+            "height": 73
+          },
+          "actorAvoidanceChecked": true,
+          "sameFrameAsScreenshot": false
+        }
+      ]
+    },
+    {
+      "case": {
+        "label": "900x520",
+        "width": 900,
+        "height": 520,
+        "media": "no-preference",
+        "game_reduce": false
+      },
+      "status": "passed",
+      "cssAblation": "matched",
+      "restoration": "matched",
+      "observations": [
+        {
+          "label": "900x520-opening",
+          "status": "passed",
+          "eligible": true,
+          "paragraphs": [
+            "阿拾我头里有个站台？车票找谁报销？",
+            "拾光脑洞专线，凭一个好奇心上车。"
+          ],
+          "announcementVisible": true,
+          "announcementText": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+          "bubbleRect": {
+            "left": 24,
+            "top": 177.375,
+            "right": 384,
+            "bottom": 250.375,
+            "width": 360,
+            "height": 73
+          },
+          "actorAvoidanceChecked": true,
+          "sameFrameAsScreenshot": false
+        },
+        {
+          "label": "900x520-ticket",
+          "status": "passed",
+          "eligible": true,
+          "paragraphs": [
+            "拾光去程票抱好了！按 E，陪我把它送回头顶的小火车。"
+          ],
+          "announcementVisible": false,
+          "announcementText": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+          "bubbleRect": {
+            "left": 24,
+            "top": 177.375,
+            "right": 384,
+            "bottom": 250.375,
+            "width": 360,
+            "height": 73
+          },
+          "actorAvoidanceChecked": true,
+          "sameFrameAsScreenshot": false
+        }
+      ]
+    },
+    {
+      "case": {
+        "label": "1280x800-os-reduce",
+        "width": 1280,
+        "height": 800,
+        "media": "reduce",
+        "game_reduce": false
+      },
+      "status": "passed",
+      "cssAblation": "matched",
+      "restoration": "matched",
+      "observations": [
+        {
+          "label": "1280x800-os-reduce-opening",
+          "status": "passed",
+          "eligible": true,
+          "paragraphs": [
+            "阿拾我头里有个站台？车票找谁报销？",
+            "拾光脑洞专线，凭一个好奇心上车。"
+          ],
+          "announcementVisible": false,
+          "announcementText": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+          "bubbleRect": {
+            "left": 24,
+            "top": 188.375,
+            "right": 384,
+            "bottom": 261.375,
+            "width": 360,
+            "height": 73
+          },
+          "actorAvoidanceChecked": true,
+          "sameFrameAsScreenshot": false
+        },
+        {
+          "label": "1280x800-os-reduce-ticket",
+          "status": "passed",
+          "eligible": true,
+          "paragraphs": [
+            "拾光去程票抱好了！按 E，陪我把它送回头顶的小火车。"
+          ],
+          "announcementVisible": false,
+          "announcementText": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+          "bubbleRect": {
+            "left": 24,
+            "top": 188.375,
+            "right": 384,
+            "bottom": 261.375,
+            "width": 360,
+            "height": 73
+          },
+          "actorAvoidanceChecked": true,
+          "sameFrameAsScreenshot": false
+        }
+      ]
+    },
+    {
+      "case": {
+        "label": "1280x800-game-reduce",
+        "width": 1280,
+        "height": 800,
+        "media": "no-preference",
+        "game_reduce": true
+      },
+      "status": "passed",
+      "cssAblation": "matched",
+      "restoration": "matched",
+      "observations": [
+        {
+          "label": "1280x800-game-reduce-opening",
+          "status": "passed",
+          "eligible": true,
+          "paragraphs": [
+            "阿拾我头里有个站台？车票找谁报销？",
+            "拾光脑洞专线，凭一个好奇心上车。"
+          ],
+          "announcementVisible": false,
+          "announcementText": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+          "bubbleRect": {
+            "left": 24,
+            "top": 188.375,
+            "right": 384,
+            "bottom": 261.375,
+            "width": 360,
+            "height": 73
+          },
+          "actorAvoidanceChecked": true,
+          "sameFrameAsScreenshot": false
+        },
+        {
+          "label": "1280x800-game-reduce-ticket",
+          "status": "passed",
+          "eligible": true,
+          "paragraphs": [
+            "拾光去程票抱好了！按 E，陪我把它送回头顶的小火车。"
+          ],
+          "announcementVisible": false,
+          "announcementText": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+          "bubbleRect": {
+            "left": 24,
+            "top": 188.375,
+            "right": 384,
+            "bottom": 261.375,
+            "width": 360,
+            "height": 73
+          },
+          "actorAvoidanceChecked": true,
+          "sameFrameAsScreenshot": false
+        }
+      ]
+    }
+  ],
+  "observedCoexistence": {
+    "scope": "Actual first-station opening JSON sampled natural tutorial-announcement fade-out together with two authored speech paragraphs",
+    "cases": [
+      "900x800",
+      "1024x640",
+      "900x520"
+    ],
+    "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+    "seasonalBadgeIsSeparate": "南瓜夜邮 is the stage-cap-activity inside the objective area, not stage-announcement",
+    "screenshotLimit": "Geometry and the following screenshots are not the same frame; the tutorial announcement may already have faded before the PNG"
+  },
+  "rootVisualReview": [
+    {
+      "image": "900x800-opening.png",
+      "findings": "Chinese legible; speech upper-left and task upper-right; actor and controls clear"
+    },
+    {
+      "image": "900x520-opening.png",
+      "findings": "Chinese complete; actor/feet and input area visible on short desktop"
+    },
+    {
+      "image": "899x800-ticket.png",
+      "findings": "Original centered lower dialogue remains; not redesigned below 900px"
+    }
+  ],
+  "pending": [
+    "full original browser route currently running against the same frozen tree",
+    "longest theatre dialogue plus announcement",
+    "large font preferences",
+    "high platforms",
+    "physical devices",
+    "GitHub candidate CI",
+    "public HTTPS"
+  ],
+  "rawReportScopeCorrection": "The prepared static notCovered sentence about all natural coexistence is overbroad; above actual JSON narrows the remaining gap to longer theatre/persistent combinations.",
+  "files": [
+    {
+      "path": "dialogue-matrix/1024x640-opening-dialogue-layout.json",
+      "bytes": 51237,
+      "sha256": "8131979907a24fc2fff4bc31465336401ade798bd63d9d55ac015d7704e666c9"
+    },
+    {
+      "path": "dialogue-matrix/1024x640-opening.png",
+      "bytes": 733944,
+      "sha256": "75e8fbeb72085a1afbe792b3e0bcd151e4578585142840bda248f8a462189787"
+    },
+    {
+      "path": "dialogue-matrix/1024x640-ticket-dialogue-layout.json",
+      "bytes": 48877,
+      "sha256": "666b729315bd47c5e2a550c194194efcfc0abab9ea94b7e3a36eeb3cf861277e"
+    },
+    {
+      "path": "dialogue-matrix/1024x640-ticket.png",
+      "bytes": 731323,
+      "sha256": "48547e6b305f05dd00499c39e3966ace3e62976de48625b920bfcbe6ef2d11cf"
+    },
+    {
+      "path": "dialogue-matrix/1280x800-game-reduce-opening-dialogue-layout.json",
+      "bytes": 50901,
+      "sha256": "8a9509daea4842a096db59ba842dcd1d45325bd3f7c6b90294653b5257772e3f"
+    },
+    {
+      "path": "dialogue-matrix/1280x800-game-reduce-opening.png",
+      "bytes": 1085371,
+      "sha256": "95dfa45d85dad679f976f8046eeb06bf5a9ddfe579a4d883a479d3b4ea07ef7d"
+    },
+    {
+      "path": "dialogue-matrix/1280x800-game-reduce-ticket-dialogue-layout.json",
+      "bytes": 48549,
+      "sha256": "0bc852ff41a6cae9d1a3e75f85017b9cdb523f77f859c825d741e96f2b9e4a88"
+    },
+    {
+      "path": "dialogue-matrix/1280x800-game-reduce-ticket.png",
+      "bytes": 1082790,
+      "sha256": "a35245e205d4e32ccadead942e6a7188ca9a2bf385a17d6ac550c15fc7cda651"
+    },
+    {
+      "path": "dialogue-matrix/1280x800-os-reduce-opening-dialogue-layout.json",
+      "bytes": 50872,
+      "sha256": "186cb7178d4d839b11940d3434d58de2d1ae61d831c24e954c9b73891c863713"
+    },
+    {
+      "path": "dialogue-matrix/1280x800-os-reduce-opening.png",
+      "bytes": 1085982,
+      "sha256": "c86544f4ff56e521e1e0be15575b4a734fc1bdd15d58d5f770d8965fa899cadc"
+    },
+    {
+      "path": "dialogue-matrix/1280x800-os-reduce-ticket-dialogue-layout.json",
+      "bytes": 48530,
+      "sha256": "1693c62d9e9b1031a3c2c9789793f517a0807ce4fe286537a1b956956a52b4f0"
+    },
+    {
+      "path": "dialogue-matrix/1280x800-os-reduce-ticket.png",
+      "bytes": 1083017,
+      "sha256": "373c62c929dccc2f3a7616d71321fa271470529d76d9cb0ac104088cf06c8b22"
+    },
+    {
+      "path": "dialogue-matrix/899x800-opening-dialogue-layout.json",
+      "bytes": 694,
+      "sha256": "1d4d45adc40d445ea649a6de51fd915d243bf56cb8631bae175db0508c8e3af5"
+    },
+    {
+      "path": "dialogue-matrix/899x800-opening.png",
+      "bytes": 787726,
+      "sha256": "4f96a2cf816bf1c305d21314a022710db5dc20d9bc86d3ef9674cc0e27c02331"
+    },
+    {
+      "path": "dialogue-matrix/899x800-ticket-dialogue-layout.json",
+      "bytes": 692,
+      "sha256": "65d1d8efac8ffc77c9d4a65eb464653faf009aa0925a0988647e889076fb1425"
+    },
+    {
+      "path": "dialogue-matrix/899x800-ticket.png",
+      "bytes": 779890,
+      "sha256": "e12415796e4f83fdec9d111d0b811dcc247464668ea88ba6d9513a2c8040b392"
+    },
+    {
+      "path": "dialogue-matrix/900x520-opening-dialogue-layout.json",
+      "bytes": 50414,
+      "sha256": "825d7fd6f3a3e954eae302ee91b0be64a4ff434d8ecbe1c2d8149d63228e743c"
+    },
+    {
+      "path": "dialogue-matrix/900x520-opening.png",
+      "bytes": 527132,
+      "sha256": "24b90267690e173e62459e5a221400559fdd700e6533887e4f98bb50cf974c6c"
+    },
+    {
+      "path": "dialogue-matrix/900x520-ticket-dialogue-layout.json",
+      "bytes": 48075,
+      "sha256": "07bb02d421ef1098bd33aabb22e75667c2bc2f7cf1dd8a1861eaba9c8c48c59e"
+    },
+    {
+      "path": "dialogue-matrix/900x520-ticket.png",
+      "bytes": 524639,
+      "sha256": "b2ae29dc7447e40b4e32b241a191c08d48a0c4840a259384bb4651073994d259"
+    },
+    {
+      "path": "dialogue-matrix/900x800-opening-dialogue-layout.json",
+      "bytes": 51183,
+      "sha256": "a59e962b57854e032e75dcc6bf7fb842e0f86d8a47ad42e6820183c0af151c73"
+    },
+    {
+      "path": "dialogue-matrix/900x800-opening.png",
+      "bytes": 801410,
+      "sha256": "4dd8b51d98b714ced25b6ad0bea578cf791e5aa4ee633744815d926ace85d4bd"
+    },
+    {
+      "path": "dialogue-matrix/900x800-ticket-dialogue-layout.json",
+      "bytes": 48828,
+      "sha256": "006d50006e1d4d5948d75449915dd0e425f95dc688414c20d408ba42a5f183c1"
+    },
+    {
+      "path": "dialogue-matrix/900x800-ticket.png",
+      "bytes": 799711,
+      "sha256": "3e3d8281d50cb55ef7a3ada31375865011e63a6caf1c37158454742a0920fc28"
+    },
+    {
+      "path": "dialogue-matrix/report.json",
+      "bytes": 785642,
+      "sha256": "a2fd32817f9a5b49ee5bbb3ee27abfc42b8a019740faf91a890d0dbb9eae1c26"
+    },
+    {
+      "path": "server.txt",
+      "bytes": 44892,
+      "sha256": "28041fadc30e6103651b565ef81204409bdef94ee84fe8134fa96fd8459d37df"
+    },
+    {
+      "path": "source.json",
+      "bytes": 485,
+      "sha256": "1b8a976c71c46761d351c69ac6b281b5ec78f152e667643312bddb550ff64cb6"
+    }
+  ]
+}

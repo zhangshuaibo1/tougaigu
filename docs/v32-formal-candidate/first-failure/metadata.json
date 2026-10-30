@@ -1,0 +1,34 @@
+{
+  "repository": "zhangshuaibo1/tougaigu",
+  "commit": "a892471e6a4f87f534bb16434b4b9097bba10223",
+  "workflowRun": 40979746320,
+  "job": 123816540299,
+  "candidateConclusion": "failure",
+  "publicConclusion": "skipped",
+  "artifact": {
+    "id": 12943869069,
+    "bytes": 124466855,
+    "sha256": "982e186344dc90db81ffe49b1263a6f31cd1f5d4278c3042029cd7829b5d112d"
+  },
+  "files": [
+    {
+      "sourceArtifactPath": "candidate/1280-greenhouse-root-crossed-dialogue-layout.json",
+      "savedAs": "1280-greenhouse-root-crossed-dialogue-layout.json",
+      "bytes": 44347,
+      "sha256": "eae8c81c8f65eca4fe90ae98b8d8f04a40bfbec4fa0a4c2334d518169c2bf8cc"
+    },
+    {
+      "sourceArtifactPath": "commit.txt",
+      "savedAs": "commit.txt",
+      "bytes": 41,
+      "sha256": "3306fd9de22df3f98a5b6ba554dc280286a77a591a2788543ea6a304505e2a20"
+    }
+  ],
+  "failure": "required naturally triggered dialogue was absent",
+  "originalEvidenceLimits": "The original snapshot preserved the generated dialogue text, body/viewport/DOM geometry and visible=false, but did not record lastCapBubbleAt, opacity or the bubble show class. It cannot alone establish the exact cause or timing of hiding.",
+  "officialJobLog": {
+    "file": "official-job.log",
+    "bytes": 339418,
+    "sha256": "59aa82a8a5112413a8e3956e2bce8edeb3afb13b7b1fbdae1d78731e2deacf66"
+  }
+}

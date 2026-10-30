@@ -1,0 +1,266 @@
+{
+  "schema": "v32-second-source-layout-independent-review-1",
+  "reviewedAtUtc": "2026-10-30T00:58:20.719584+00:00",
+  "scope": "Read-only source review and reading of committed historical/local evidence. No browser, test suite rerun, remote access, Actions access or artifact download. New official second-candidate artifact belongs to parent auditor.",
+  "candidate": "ce412d1298d0060dec08893f9b44cead9693edcf",
+  "candidateTree": "1d0dd1a3a860b5571050db0e5f138f0a58f30261",
+  "parent": "a892471e6a4f87f534bb16434b4b9097bba10223",
+  "sourceFileCount": 913,
+  "runtimeFileCount": 143,
+  "runtimeTree": "e49ccbc307c0a4a0051b154e99b9ce260080f3ba",
+  "runtimeTreeIdenticalToFirstCandidate": true,
+  "onlyNonDocumentationChangesFromFirst": [
+    {
+      "path": "scripts/browser-smoke.py",
+      "gitBlob": "85862580232272708c31ab4af7ae57b28f73b02b",
+      "sha256": "141c5073c2a7d4613a73a79674616c051fc7c89ab2d53cbe9eeef3b71061e7e5",
+      "matchesFrozenUpload": true
+    },
+    {
+      "path": "scripts/browser_dialogue_v32.py",
+      "gitBlob": "d87aad742f241155d866dadcec722a915443abc3",
+      "sha256": "72236f51e23aa4062af8c2e6c27ccff75842e3e888f22fd83b65978f3bbf2a9e",
+      "matchesFrozenUpload": true
+    },
+    {
+      "path": "tests/browser-dialogue-v32.test.mjs",
+      "gitBlob": "3ce8eeb2e04348a5495f7f7d523294d8a8c18464",
+      "sha256": "170dc9c37b0a6d0ebd43281e7a114cdc48b3e382f13ac31f4ed26d3ee2a54318",
+      "matchesFrozenUpload": true
+    }
+  ],
+  "originalV31Protection": {
+    "testFileCount": 74,
+    "allOriginalTestFilesByteIdentical": true,
+    "old675CasesRerunByThisReviewer": false,
+    "productionJavaScriptFileCount": 68,
+    "allProductionJavaScriptByteIdenticalToV31": true,
+    "strictTopLevelAstEqual": {
+      "PROBE": true,
+      "validate_hud_geometry": true,
+      "validate_hud_energy": true,
+      "validate_hud_aria_energy": true,
+      "drive_to": true,
+      "validate_traveler_pose": true,
+      "TRAVELER_FRAME_SAMPLER": true,
+      "await_traveler_pose": true,
+      "sample_body_jump": true,
+      "set_reduced_motion_from_ui": true,
+      "exercise_traveler_performance": true,
+      "hold": true,
+      "toggle": true,
+      "validate_request_failures": true
+    }
+  },
+  "naturalReturnSourceAssessment": {
+    "passiveWaitAddedBeforeOriginalE": true,
+    "waitTimeoutMs": 2000,
+    "productExistingReturnCooldownMs": 1600,
+    "oneOriginalKeyboardPressRetained": true,
+    "observerPhase": "window keydown capture, preceding unchanged production document keydown handler",
+    "observerBehavior": "Reads performance.now, existing lastCapBubbleAt, DOM visibility/text and game state; records up to 2 KeyE snapshots but counts every KeyE; does not preventDefault or dispatch any event.",
+    "cleanup": "finish called in finally, removes the capture listener, then global watch is deleted; JSON is saved even if the original input/closure wait fails.",
+    "nativeProductionChain": "document KeyE -> game.toggleSoul -> recall -> capEvent(return) -> original onCapEvent 1600ms guard -> showCapLines updates lastCapBubbleAt and starts original 3800/5800ms timeout",
+    "gameClockStateOrSpeechMutationInProbe": false,
+    "directShowHideOrEventInjection": false,
+    "productDialogueDurationChanged": false,
+    "newStrictVisibilityLocation": "After actual native return has completed cap closure, before root crossing.",
+    "oldRootVisibilityRequirement": "The v32-added unconditional require_bubble=True was removed at root-crossed. Layout remains captured; actor avoidance is checked only if the bubble is actually visible.",
+    "originalV31MovementAndPhysicsAssertionsChanged": false,
+    "timingAndSamplingAreNotUnchanged": "This is an explicit timing/sampling correction, not preservation of every v32 assertion at the same location.",
+    "geometryRead": "DOM geometry, actual rig and renderer are read synchronously in one JS evaluation. The event-completion read, geometry read and following PNG are distinct observations."
+  },
+  "targetedLocalEvidence": {
+    "scope": "One targeted local 1280x800 Chromium run: native first-station navigation then the complete existing greenhouse routine. No six-chapter/phone/ending/full-network result is claimed.",
+    "baseline": "a892471e6a4f87f534bb16434b4b9097bba10223",
+    "runtimeExactToFirstAndSecond": true,
+    "validationSourceAllMatchesSecondCandidate": [
+      {
+        "path": "scripts/browser-smoke.py",
+        "exact": true
+      },
+      {
+        "path": "scripts/browser_dialogue_v32.py",
+        "exact": true
+      },
+      {
+        "path": "tests/browser-dialogue-v32.test.mjs",
+        "exact": true
+      }
+    ],
+    "manifestFiles": [
+      {
+        "path": "targeted-report.json",
+        "bytes": 206655,
+        "sha256": "41caae49e2d913ab62d80cfbd063781afcdc2977e9c861359ee1a55e6804e1ff",
+        "matchesManifest": true
+      },
+      {
+        "path": "targeted-browser.log",
+        "bytes": 306,
+        "sha256": "c135f2190b180d79ba9a94a5501f5fbb4efe1797ed4a1498cff221f57f984700",
+        "matchesManifest": true
+      },
+      {
+        "path": "1280-greenhouse-return-dialogue-event.json",
+        "bytes": 1938,
+        "sha256": "5a15176105072cef6e1a2e82a330fd94501b35377f8c574a2b2551ca495eb464",
+        "matchesManifest": true
+      },
+      {
+        "path": "1280-greenhouse-leaves-returned-dialogue-layout.json",
+        "bytes": 49663,
+        "sha256": "6f273e93b52b38ae052614a0a233c86d76e371167c3a773a39006bd0f814fb29",
+        "matchesManifest": true
+      },
+      {
+        "path": "1280-greenhouse-root-crossed-dialogue-layout.json",
+        "bytes": 49625,
+        "sha256": "3e56ce5ccaf5713379a8ed46f5e6c572e413b1506f7dd5725dba1cd4b376f19e",
+        "matchesManifest": true
+      },
+      {
+        "path": "1280-greenhouse-leaves-returned.png",
+        "bytes": 1310149,
+        "sha256": "62a2849f33bce674012936fc84d74d9e94acbad8e37b32117267d02d198e5698",
+        "matchesManifest": true
+      },
+      {
+        "path": "1280-greenhouse-root-crossed.png",
+        "bytes": 1306944,
+        "sha256": "a3da6930e497f6fdc7a32ad399e1a367fc7916c7a6a7481a0595db41193a21e9",
+        "matchesManifest": true
+      },
+      {
+        "path": "tests.txt",
+        "bytes": 4220,
+        "sha256": "82258b7301e6cb07a2b75368b4d60252b472f5de94dac778ee870fdb40c10c68",
+        "matchesManifest": true
+      },
+      {
+        "path": "references.txt",
+        "bytes": 313,
+        "sha256": "d7d3c597407be564a5e97b2ee3c61f5ace0faffcffc01770669db0a4ec956aab",
+        "matchesManifest": true
+      }
+    ],
+    "event": {
+      "trustedKeyECount": 1,
+      "isTrusted": true,
+      "repeat": false,
+      "inputAgeMs": 1713.7000000029802,
+      "returnEventAgeMs": 746.5999999940395,
+      "observerRemoved": true,
+      "bodyCoordinates": {
+        "x": 601,
+        "y": 560,
+        "grounded": true
+      },
+      "bodyIdentityFieldPresent": false
+    },
+    "layouts": [
+      {
+        "path": "docs/v32-formal-candidate/timing-correction/1280-greenhouse-leaves-returned-dialogue-layout.json",
+        "sha256": "6f273e93b52b38ae052614a0a233c86d76e371167c3a773a39006bd0f814fb29",
+        "recordedValidationStatus": "passed",
+        "dialogueAgeMs": 766.1999999880791,
+        "body": {
+          "x": 601,
+          "y": 560,
+          "w": 30,
+          "h": 58
+        },
+        "bubbleObserved": true,
+        "actorAvoidanceChecked": true,
+        "geometryIsSameFrameAsScreenshot": false,
+        "surfaceComparison": "matched"
+      },
+      {
+        "path": "docs/v32-formal-candidate/timing-correction/1280-greenhouse-root-crossed-dialogue-layout.json",
+        "sha256": "3e56ce5ccaf5713379a8ed46f5e6c572e413b1506f7dd5725dba1cd4b376f19e",
+        "recordedValidationStatus": "passed",
+        "dialogueAgeMs": 4014.2999999970198,
+        "body": {
+          "x": 1221,
+          "y": 560,
+          "w": 30,
+          "h": 58
+        },
+        "bubbleObserved": false,
+        "actorAvoidanceChecked": false,
+        "geometryIsSameFrameAsScreenshot": false,
+        "surfaceComparison": "matched"
+      }
+    ],
+    "newOfficialSecondCandidateEvidence": false
+  },
+  "historicalSixConfigurationArchive": {
+    "executedTree": "5445a39ba818484952598bfeab24d70702424a6b",
+    "base": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+    "sourceFiles": 810,
+    "scope": "Historical local first-station matrix plus separate full local route; not execution of ce412 or its official CI.",
+    "cases": [
+      {
+        "label": "900x800",
+        "recordedStatus": "passed"
+      },
+      {
+        "label": "899x800",
+        "recordedStatus": "passed"
+      },
+      {
+        "label": "1024x640",
+        "recordedStatus": "passed"
+      },
+      {
+        "label": "900x520",
+        "recordedStatus": "passed"
+      },
+      {
+        "label": "1280x800-os-reduce",
+        "recordedStatus": "passed"
+      },
+      {
+        "label": "1280x800-game-reduce",
+        "recordedStatus": "passed"
+      }
+    ],
+    "matrixScriptFixtureAndMatrixTestStillSameBytes": {
+      "scripts/browser_dialogue_matrix_v32.py": true,
+      "tests/browser-dialogue-matrix-v32.test.mjs": true,
+      "tests/fixtures/v32-layout-v31-css.json": true
+    },
+    "browserSmokeAndDialogueProbeStillOldBytes": {
+      "scripts/browser-smoke.py": false,
+      "scripts/browser_dialogue_v32.py": false
+    },
+    "oldSnapshotsContainDialogueClock": false,
+    "actualOpeningAnnouncementCoexistenceCases": [
+      "900x800",
+      "1024x640",
+      "900x520"
+    ],
+    "coexistenceScope": "Original tutorial announcement fade-out with opening speech; later PNG can differ. No forced text/event or clock mutation."
+  },
+  "narrativePrecisionFindings": [
+    {
+      "severity": "non-blocking wording precision",
+      "path": "docs/QA-v32.md",
+      "text": "同一身体／章节／run 身份",
+      "finding": "The new return event records same run, chapter, plant stage, deaths and body x/y/grounded, but no object bodyIdentity. Describe measured body coordinates as stable; do not claim this event JSON independently verifies body object identity."
+    }
+  ],
+  "limits": [
+    "Source review and historical/local evidence are not the new official ce412 artifact audit.",
+    "The original 675-test source set is preserved; this reviewer did not rerun it.",
+    "Strict dialogue visibility moved to grounded return at x601; root at x1221 had bubbleObserved=false and actorAvoidanceChecked=false.",
+    "The bodyIdentity field is absent from the new return clock record.",
+    "Old 5445 source snapshots do not contain the new clock probe and cannot prove its execution.",
+    "Old six-case CSS ablation is same-current-DOM exact-v31-CSS comparison and restoration, not a complete old-release execution.",
+    "899px is outside desktop actor-avoidance scope.",
+    "No longest theatre speech/large-font/high-platform/full-outfit or physical-device performance proof.",
+    "Screenshot follows geometry and is not the same frame."
+  ],
+  "blockingSourceDefects": [],
+  "conclusion": "No blocking source defect found. Preserve the explicit changed timing/sampling semantics, local/historical source attribution and body-identity wording limit."
+}

@@ -1,0 +1,57 @@
+{
+  "checkedAtUtc": "2026-10-30T01:12:16.083394+00:00",
+  "source": "ce412d1298d0060dec08893f9b44cead9693edcf",
+  "pages": "91ccef79541f2dd061059462c10d60cbecbed144",
+  "version": "32.0.0",
+  "defaultTlsAndHostnameVerification": true,
+  "resources": [
+    {
+      "path": "index.html",
+      "url": "https://tougaigu.com/index.html?qa=91ccef79541f2dd061059462c10d60cbecbed144",
+      "status": 200,
+      "bytes": 26027,
+      "sha256": "a96a5dc902053f5519d1946a8172fc8c21046237da2bd892573ecd283d96a833",
+      "sourceSha256": "a96a5dc902053f5519d1946a8172fc8c21046237da2bd892573ecd283d96a833",
+      "byteExact": true,
+      "version": "32.0.0"
+    },
+    {
+      "path": "dream.html",
+      "url": "https://tougaigu.com/dream.html?qa=91ccef79541f2dd061059462c10d60cbecbed144",
+      "status": 200,
+      "bytes": 26027,
+      "sha256": "a96a5dc902053f5519d1946a8172fc8c21046237da2bd892573ecd283d96a833",
+      "sourceSha256": "a96a5dc902053f5519d1946a8172fc8c21046237da2bd892573ecd283d96a833",
+      "byteExact": true,
+      "version": "32.0.0"
+    },
+    {
+      "path": "survivor.html",
+      "url": "https://tougaigu.com/survivor.html?qa=91ccef79541f2dd061059462c10d60cbecbed144",
+      "status": 200,
+      "bytes": 17452,
+      "sha256": "fdba4bb13956f96e82d21a4061e6a1c08ced23ee38f3c66e13aa8c6f2cbc4a6e",
+      "sourceSha256": "fdba4bb13956f96e82d21a4061e6a1c08ced23ee38f3c66e13aa8c6f2cbc4a6e",
+      "byteExact": true
+    },
+    {
+      "path": "cap-play.css",
+      "url": "https://tougaigu.com/cap-play.css?qa=91ccef79541f2dd061059462c10d60cbecbed144",
+      "status": 200,
+      "bytes": 10558,
+      "sha256": "a633fd679d3e79fd98160fe36dbff8fe6c6f8d615b2bf8eee1089fbb0045cf08",
+      "sourceSha256": "a633fd679d3e79fd98160fe36dbff8fe6c6f8d615b2bf8eee1089fbb0045cf08",
+      "byteExact": true
+    },
+    {
+      "path": "dream-play.css",
+      "url": "https://tougaigu.com/dream-play.css?qa=91ccef79541f2dd061059462c10d60cbecbed144",
+      "status": 200,
+      "bytes": 15070,
+      "sha256": "4a952c2631e2ede816f43b1932e42a7b0b7c06d64aa34107e7745810a5522022",
+      "sourceSha256": "4a952c2631e2ede816f43b1932e42a7b0b7c06d64aa34107e7745810a5522022",
+      "byteExact": true
+    }
+  ],
+  "scope": "Five real HTTPS responses matched exact candidate bytes; not the full public browser route"
+}

@@ -1,0 +1,1998 @@
+{
+  "label": "1280-greenhouse-root-crossed",
+  "snapshot": {
+    "schema": "desktop-dialogue-v32-1",
+    "eligible": true,
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "mode": "story",
+    "excluded": [],
+    "version": "32.0.0",
+    "observedAt": 32490,
+    "simulationTime": 14.616666666666973,
+    "visualTime": 14.616666666666973,
+    "dialogueClock": {
+      "observedAt": 32490,
+      "lastShownAt": 28475.70000000298,
+      "ageMs": 4014.2999999970198,
+      "showClass": false,
+      "opacity": 0.00387173,
+      "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+      "chapterIndex": 1,
+      "runId": 1,
+      "state": "playing",
+      "form": "body",
+      "capPhase": "closed",
+      "plantStage": 2,
+      "deaths": 0,
+      "body": {
+        "x": 1221,
+        "y": 560,
+        "grounded": true
+      }
+    },
+    "chapterIndex": 1,
+    "runId": 1,
+    "state": "playing",
+    "form": "body",
+    "openDialogs": [],
+    "reducedMotion": false,
+    "mediaReduced": false,
+    "horizontalOverflow": false,
+    "elements": {
+      "communications": {
+        "rect": {
+          "left": 24,
+          "top": 96,
+          "right": 1256,
+          "bottom": 328.84375,
+          "width": 1232,
+          "height": 232.84375
+        },
+        "text": "02 / 06倒流温室\n        来信\n      \n      \n        1 / 2谜灯\n        1 / 3记忆\n        00:14\n      \n      \n        阿拾 · 身体\n        \n        灵光充足\n        温室长出新叶 · 还等一盏诗灯\n        \n      \n    \n    \n      点亮诗灯 1 / 2 · 记忆可选\n      让阿拾留在稳固的高台，拾光去找高处的灯。弹跳蘑菇会把身体送得更远。\n      ✧借一片春天0 / 3\n      \n      南瓜夜邮进行中 · 有礼物返回主线\n    \n    阿拾叶子探出头了，盖子得给它留点地方。\n  \n  借一朵蘑菇的力气，跳得比烦恼更高。",
+        "visible": true,
+        "clientWidth": 1232,
+        "clientHeight": 233,
+        "scrollWidth": 1232,
+        "scrollHeight": 233,
+        "glyphRects": [
+          {
+            "left": 24,
+            "top": 117.921875,
+            "right": 69.671875,
+            "bottom": 127.921875,
+            "width": 45.671875,
+            "height": 10
+          },
+          {
+            "left": 24,
+            "top": 134.765625,
+            "right": 104,
+            "bottom": 156.765625,
+            "width": 80,
+            "height": 22
+          },
+          {
+            "left": 147,
+            "top": 130.9375,
+            "right": 167,
+            "bottom": 141.9375,
+            "width": 20,
+            "height": 11
+          },
+          {
+            "left": 527.796875,
+            "top": 129.46875,
+            "right": 571.9375,
+            "bottom": 144.46875,
+            "width": 44.140625,
+            "height": 15
+          },
+          {
+            "left": 577.9375,
+            "top": 131.765625,
+            "right": 595.9375,
+            "bottom": 141.765625,
+            "width": 18,
+            "height": 10
+          },
+          {
+            "left": 637.9375,
+            "top": 129.46875,
+            "right": 682.078125,
+            "bottom": 144.46875,
+            "width": 44.140625,
+            "height": 15
+          },
+          {
+            "left": 688.078125,
+            "top": 131.765625,
+            "right": 706.078125,
+            "bottom": 141.765625,
+            "width": 18,
+            "height": 10
+          },
+          {
+            "left": 742.078125,
+            "top": 130.109375,
+            "right": 775.203125,
+            "bottom": 143.109375,
+            "width": 33.125,
+            "height": 13
+          },
+          {
+            "left": 1190.953125,
+            "top": 101,
+            "right": 1256,
+            "bottom": 115,
+            "width": 65.046875,
+            "height": 14
+          },
+          {
+            "left": 1219.1875,
+            "top": 141.09375,
+            "right": 1256,
+            "bottom": 151.09375,
+            "width": 36.8125,
+            "height": 10
+          },
+          {
+            "left": 1152.359375,
+            "top": 162.1875,
+            "right": 1256,
+            "bottom": 171.1875,
+            "width": 103.640625,
+            "height": 9
+          },
+          {
+            "left": 756.484375,
+            "top": 190.375,
+            "right": 907.515625,
+            "bottom": 204.375,
+            "width": 151.03125,
+            "height": 14
+          },
+          {
+            "left": 650.5,
+            "top": 212.171875,
+            "right": 1013.5,
+            "bottom": 225.171875,
+            "width": 363,
+            "height": 13
+          },
+          {
+            "left": 778.671875,
+            "top": 246.3125,
+            "right": 834.671875,
+            "bottom": 262.3125,
+            "width": 56,
+            "height": 16
+          },
+          {
+            "left": 841.671875,
+            "top": 250.265625,
+            "right": 897.3125,
+            "bottom": 259.265625,
+            "width": 55.640625,
+            "height": 9
+          },
+          {
+            "left": 101,
+            "top": 219.375,
+            "right": 121,
+            "bottom": 230.375,
+            "width": 20,
+            "height": 11
+          },
+          {
+            "left": 129,
+            "top": 217.375,
+            "right": 333,
+            "bottom": 231.375,
+            "width": 204,
+            "height": 14
+          },
+          {
+            "left": 713,
+            "top": 298.40625,
+            "right": 951,
+            "bottom": 313.40625,
+            "width": 238,
+            "height": 15
+          }
+        ],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "grid",
+        "transform": "none",
+        "pointerEvents": "none",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 14,
+        "transitionDuration": "0s"
+      },
+      "hud": {
+        "rect": {
+          "left": 24,
+          "top": 96,
+          "right": 1256,
+          "bottom": 178.375,
+          "width": 1232,
+          "height": 82.375
+        },
+        "text": "02 / 06倒流温室\n        来信\n      \n      \n        1 / 2谜灯\n        1 / 3记忆\n        00:14\n      \n      \n        阿拾 · 身体\n        \n        灵光充足\n        温室长出新叶 · 还等一盏诗灯",
+        "visible": true,
+        "clientWidth": 1232,
+        "clientHeight": 82,
+        "scrollWidth": 1232,
+        "scrollHeight": 82,
+        "glyphRects": [
+          {
+            "left": 24,
+            "top": 117.921875,
+            "right": 69.671875,
+            "bottom": 127.921875,
+            "width": 45.671875,
+            "height": 10
+          },
+          {
+            "left": 24,
+            "top": 134.765625,
+            "right": 104,
+            "bottom": 156.765625,
+            "width": 80,
+            "height": 22
+          },
+          {
+            "left": 147,
+            "top": 130.9375,
+            "right": 167,
+            "bottom": 141.9375,
+            "width": 20,
+            "height": 11
+          },
+          {
+            "left": 527.796875,
+            "top": 129.46875,
+            "right": 571.9375,
+            "bottom": 144.46875,
+            "width": 44.140625,
+            "height": 15
+          },
+          {
+            "left": 577.9375,
+            "top": 131.765625,
+            "right": 595.9375,
+            "bottom": 141.765625,
+            "width": 18,
+            "height": 10
+          },
+          {
+            "left": 637.9375,
+            "top": 129.46875,
+            "right": 682.078125,
+            "bottom": 144.46875,
+            "width": 44.140625,
+            "height": 15
+          },
+          {
+            "left": 688.078125,
+            "top": 131.765625,
+            "right": 706.078125,
+            "bottom": 141.765625,
+            "width": 18,
+            "height": 10
+          },
+          {
+            "left": 742.078125,
+            "top": 130.109375,
+            "right": 775.203125,
+            "bottom": 143.109375,
+            "width": 33.125,
+            "height": 13
+          },
+          {
+            "left": 1190.953125,
+            "top": 101,
+            "right": 1256,
+            "bottom": 115,
+            "width": 65.046875,
+            "height": 14
+          },
+          {
+            "left": 1219.1875,
+            "top": 141.09375,
+            "right": 1256,
+            "bottom": 151.09375,
+            "width": 36.8125,
+            "height": 10
+          },
+          {
+            "left": 1152.359375,
+            "top": 162.1875,
+            "right": 1256,
+            "bottom": 171.1875,
+            "width": 103.640625,
+            "height": 9
+          }
+        ],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "grid",
+        "transform": "none",
+        "pointerEvents": "none",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 14,
+        "transitionDuration": "0s"
+      },
+      "objectiveBox": {
+        "rect": {
+          "left": 542,
+          "top": 188.375,
+          "right": 1122,
+          "bottom": 273.40625,
+          "width": 580,
+          "height": 85.03125
+        },
+        "text": "点亮诗灯 1 / 2 · 记忆可选\n      让阿拾留在稳固的高台，拾光去找高处的灯。弹跳蘑菇会把身体送得更远。\n      ✧借一片春天0 / 3\n      \n      南瓜夜邮进行中 · 有礼物返回主线",
+        "visible": true,
+        "clientWidth": 580,
+        "clientHeight": 85,
+        "scrollWidth": 580,
+        "scrollHeight": 85,
+        "glyphRects": [
+          {
+            "left": 756.484375,
+            "top": 190.375,
+            "right": 907.515625,
+            "bottom": 204.375,
+            "width": 151.03125,
+            "height": 14
+          },
+          {
+            "left": 650.5,
+            "top": 212.171875,
+            "right": 1013.5,
+            "bottom": 225.171875,
+            "width": 363,
+            "height": 13
+          },
+          {
+            "left": 778.671875,
+            "top": 246.3125,
+            "right": 834.671875,
+            "bottom": 262.3125,
+            "width": 56,
+            "height": 16
+          },
+          {
+            "left": 841.671875,
+            "top": 250.265625,
+            "right": 897.3125,
+            "bottom": 259.265625,
+            "width": 55.640625,
+            "height": 9
+          }
+        ],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "block",
+        "transform": "none",
+        "pointerEvents": "none",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 14,
+        "transitionDuration": "0s"
+      },
+      "objective": {
+        "rect": {
+          "left": 542,
+          "top": 188.375,
+          "right": 1122,
+          "bottom": 208.171875,
+          "width": 580,
+          "height": 19.796875
+        },
+        "text": "点亮诗灯 1 / 2 · 记忆可选",
+        "visible": true,
+        "clientWidth": 580,
+        "clientHeight": 20,
+        "scrollWidth": 580,
+        "scrollHeight": 20,
+        "glyphRects": [
+          {
+            "left": 756.484375,
+            "top": 190.375,
+            "right": 907.515625,
+            "bottom": 204.375,
+            "width": 151.03125,
+            "height": 14
+          }
+        ],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "block",
+        "transform": "none",
+        "pointerEvents": "none",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 12,
+        "transitionDuration": "0s"
+      },
+      "hint": {
+        "rect": {
+          "left": 542,
+          "top": 210.171875,
+          "right": 1122,
+          "bottom": 228.3125,
+          "width": 580,
+          "height": 18.140625
+        },
+        "text": "让阿拾留在稳固的高台，拾光去找高处的灯。弹跳蘑菇会把身体送得更远。",
+        "visible": true,
+        "clientWidth": 580,
+        "clientHeight": 18,
+        "scrollWidth": 580,
+        "scrollHeight": 18,
+        "glyphRects": [
+          {
+            "left": 650.5,
+            "top": 212.171875,
+            "right": 1013.5,
+            "bottom": 225.171875,
+            "width": 363,
+            "height": 13
+          }
+        ],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "block",
+        "transform": "none",
+        "pointerEvents": "none",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 11,
+        "transitionDuration": "0s"
+      },
+      "announcement": {
+        "rect": {
+          "left": 694,
+          "top": 283.40625,
+          "right": 970,
+          "bottom": 328.84375,
+          "width": 276,
+          "height": 45.4375
+        },
+        "text": "借一朵蘑菇的力气，跳得比烦恼更高。",
+        "visible": true,
+        "clientWidth": 274,
+        "clientHeight": 43,
+        "scrollWidth": 274,
+        "scrollHeight": 43,
+        "glyphRects": [
+          {
+            "left": 713,
+            "top": 298.40625,
+            "right": 951,
+            "bottom": 313.40625,
+            "width": 238,
+            "height": 15
+          }
+        ],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "block",
+        "transform": "none",
+        "pointerEvents": "none",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 13,
+        "transitionDuration": "0.25s, 0.25s"
+      },
+      "bubble": {
+        "rect": {
+          "left": 24,
+          "top": 188.375,
+          "right": 384,
+          "bottom": 261.375,
+          "width": 360,
+          "height": 73
+        },
+        "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+        "visible": false,
+        "clientWidth": 358,
+        "clientHeight": 71,
+        "scrollWidth": 358,
+        "scrollHeight": 71,
+        "glyphRects": [
+          {
+            "left": 101,
+            "top": 219.375,
+            "right": 121,
+            "bottom": 230.375,
+            "width": 20,
+            "height": 11
+          },
+          {
+            "left": 129,
+            "top": 217.375,
+            "right": 333,
+            "bottom": 231.375,
+            "width": 204,
+            "height": 14
+          }
+        ],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "flex",
+        "transform": "none",
+        "pointerEvents": "none",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 14,
+        "transitionDuration": "0.2s, 0.25s"
+      },
+      "bubbleLines": {
+        "rect": {
+          "left": 101,
+          "top": 214.375,
+          "right": 333,
+          "bottom": 235.375,
+          "width": 232,
+          "height": 21
+        },
+        "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+        "visible": false,
+        "clientWidth": 232,
+        "clientHeight": 21,
+        "scrollWidth": 232,
+        "scrollHeight": 21,
+        "glyphRects": [
+          {
+            "left": 101,
+            "top": 219.375,
+            "right": 121,
+            "bottom": 230.375,
+            "width": 20,
+            "height": 11
+          },
+          {
+            "left": 129,
+            "top": 217.375,
+            "right": 333,
+            "bottom": 231.375,
+            "width": 204,
+            "height": 14
+          }
+        ],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "flex",
+        "transform": "none",
+        "pointerEvents": "none",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 14,
+        "transitionDuration": "0s"
+      },
+      "portrait": {
+        "rect": {
+          "left": 39,
+          "top": 200.375,
+          "right": 88,
+          "bottom": 249.375,
+          "width": 49,
+          "height": 49
+        },
+        "text": "",
+        "visible": false,
+        "clientWidth": 49,
+        "clientHeight": 49,
+        "scrollWidth": 49,
+        "scrollHeight": 49,
+        "glyphRects": [],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "cap-bubble-portrait",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 39,
+              "top": 200.375,
+              "right": 88,
+              "bottom": 249.375,
+              "width": 49,
+              "height": 49
+            }
+          },
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "block",
+        "transform": "none",
+        "pointerEvents": "none",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 14,
+        "transitionDuration": "0s"
+      }
+    },
+    "controls": [
+      {
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0
+        },
+        "text": "↑←→↓",
+        "visible": false,
+        "clientWidth": 0,
+        "clientHeight": 0,
+        "scrollWidth": 0,
+        "scrollHeight": 0,
+        "glyphRects": [],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "none",
+        "transform": "none",
+        "pointerEvents": "auto",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 14,
+        "transitionDuration": "0s",
+        "id": "stage-touch-move",
+        "isButton": false,
+        "centerHits": false
+      },
+      {
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0
+        },
+        "text": "↑",
+        "visible": false,
+        "clientWidth": 0,
+        "clientHeight": 0,
+        "scrollWidth": 0,
+        "scrollHeight": 0,
+        "glyphRects": [],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "grid",
+        "transform": "none",
+        "pointerEvents": "auto",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 22,
+        "transitionDuration": "0.18s, 0.18s, 0.18s, 0.18s",
+        "id": "direction-up",
+        "isButton": true,
+        "centerHits": false
+      },
+      {
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0
+        },
+        "text": "←",
+        "visible": false,
+        "clientWidth": 0,
+        "clientHeight": 0,
+        "scrollWidth": 0,
+        "scrollHeight": 0,
+        "glyphRects": [],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "grid",
+        "transform": "none",
+        "pointerEvents": "auto",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 22,
+        "transitionDuration": "0.18s, 0.18s, 0.18s, 0.18s",
+        "id": "direction-left",
+        "isButton": true,
+        "centerHits": false
+      },
+      {
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0
+        },
+        "text": "→",
+        "visible": false,
+        "clientWidth": 0,
+        "clientHeight": 0,
+        "scrollWidth": 0,
+        "scrollHeight": 0,
+        "glyphRects": [],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "grid",
+        "transform": "none",
+        "pointerEvents": "auto",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 22,
+        "transitionDuration": "0.18s, 0.18s, 0.18s, 0.18s",
+        "id": "direction-right",
+        "isButton": true,
+        "centerHits": false
+      },
+      {
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0
+        },
+        "text": "↓",
+        "visible": false,
+        "clientWidth": 0,
+        "clientHeight": 0,
+        "scrollWidth": 0,
+        "scrollHeight": 0,
+        "glyphRects": [],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "grid",
+        "transform": "none",
+        "pointerEvents": "auto",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 22,
+        "transitionDuration": "0.18s, 0.18s, 0.18s, 0.18s",
+        "id": "direction-down",
+        "isButton": true,
+        "centerHits": false
+      },
+      {
+        "rect": {
+          "left": 1003,
+          "top": 670,
+          "right": 1070,
+          "bottom": 736,
+          "width": 67,
+          "height": 66
+        },
+        "text": "互动Q",
+        "visible": true,
+        "clientWidth": 65,
+        "clientHeight": 64,
+        "scrollWidth": 65,
+        "scrollHeight": 64,
+        "glyphRects": [
+          {
+            "left": 1026.5,
+            "top": 699.984375,
+            "right": 1046.5,
+            "bottom": 710.984375,
+            "width": 20,
+            "height": 11
+          },
+          {
+            "left": 1033.890625,
+            "top": 718.484375,
+            "right": 1039.109375,
+            "bottom": 726.484375,
+            "width": 5.21875,
+            "height": 8
+          }
+        ],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "flex",
+        "transform": "none",
+        "pointerEvents": "auto",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 10,
+        "transitionDuration": "0.18s, 0.18s, 0.18s, 0.18s",
+        "id": "stage-interact",
+        "isButton": true,
+        "centerHits": true
+      },
+      {
+        "rect": {
+          "left": 1080,
+          "top": 657,
+          "right": 1163,
+          "bottom": 736,
+          "width": 83,
+          "height": 79
+        },
+        "text": "掀开头盖骨E",
+        "visible": true,
+        "clientWidth": 81,
+        "clientHeight": 77,
+        "scrollWidth": 81,
+        "scrollHeight": 77,
+        "glyphRects": [
+          {
+            "left": 1096.5,
+            "top": 695.96875,
+            "right": 1146.5,
+            "bottom": 706.96875,
+            "width": 50,
+            "height": 11
+          },
+          {
+            "left": 1118.890625,
+            "top": 714.46875,
+            "right": 1124.109375,
+            "bottom": 722.46875,
+            "width": 5.21875,
+            "height": 8
+          }
+        ],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "flex",
+        "transform": "none",
+        "pointerEvents": "auto",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 14,
+        "transitionDuration": "0.18s, 0.18s, 0.18s, 0.18s",
+        "id": "stage-toggle",
+        "isButton": true,
+        "centerHits": true
+      },
+      {
+        "rect": {
+          "left": 1173,
+          "top": 657,
+          "right": 1256,
+          "bottom": 736,
+          "width": 83,
+          "height": 79
+        },
+        "text": "↑跳跃SPACE",
+        "visible": true,
+        "clientWidth": 81,
+        "clientHeight": 77,
+        "scrollWidth": 81,
+        "scrollHeight": 77,
+        "glyphRects": [
+          {
+            "left": 1204.015625,
+            "top": 665.46875,
+            "right": 1224.96875,
+            "bottom": 694.46875,
+            "width": 20.953125,
+            "height": 29
+          },
+          {
+            "left": 1204.5,
+            "top": 696.46875,
+            "right": 1224.5,
+            "bottom": 707.46875,
+            "width": 20,
+            "height": 11
+          },
+          {
+            "left": 1201.453125,
+            "top": 714.96875,
+            "right": 1227.53125,
+            "bottom": 722.96875,
+            "width": 26.078125,
+            "height": 8
+          }
+        ],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "flex",
+        "transform": "none",
+        "pointerEvents": "auto",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 14,
+        "transitionDuration": "0.18s, 0.18s, 0.18s, 0.18s",
+        "id": "stage-jump",
+        "isButton": true,
+        "centerHits": true
+      }
+    ],
+    "speechParagraphs": [
+      {
+        "rect": {
+          "left": 101,
+          "top": 214.375,
+          "right": 333,
+          "bottom": 235.375,
+          "width": 232,
+          "height": 21
+        },
+        "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+        "visible": false,
+        "clientWidth": 232,
+        "clientHeight": 21,
+        "scrollWidth": 232,
+        "scrollHeight": 21,
+        "glyphRects": [
+          {
+            "left": 101,
+            "top": 219.375,
+            "right": 121,
+            "bottom": 230.375,
+            "width": 20,
+            "height": 11
+          },
+          {
+            "left": 129,
+            "top": 217.375,
+            "right": 333,
+            "bottom": 231.375,
+            "width": 204,
+            "height": 14
+          }
+        ],
+        "glyphsTruncated": false,
+        "clipAncestors": [
+          {
+            "id": "dream-stage",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 80,
+              "right": 1280,
+              "bottom": 758,
+              "width": 1280,
+              "height": 678
+            }
+          },
+          {
+            "id": "BODY",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          },
+          {
+            "id": "HTML",
+            "x": true,
+            "y": true,
+            "rect": {
+              "left": 0,
+              "top": 0,
+              "right": 1280,
+              "bottom": 800,
+              "width": 1280,
+              "height": 800
+            }
+          }
+        ],
+        "display": "block",
+        "transform": "none",
+        "pointerEvents": "none",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "fontSize": 12,
+        "transitionDuration": "0s"
+      }
+    ],
+    "semantics": {
+      "count": 1,
+      "role": "status",
+      "live": "polite",
+      "atomic": "true",
+      "portraitAlt": ""
+    },
+    "portraitLoaded": true,
+    "canvas": {
+      "rect": {
+        "left": 0,
+        "top": 81,
+        "right": 1280,
+        "bottom": 758,
+        "width": 1280,
+        "height": 677
+      },
+      "width": 1280,
+      "height": 677,
+      "transforms": [
+        {
+          "id": "dream-canvas",
+          "transform": "none",
+          "translate": "none",
+          "rotate": "none",
+          "scale": "none"
+        },
+        {
+          "id": "dream-stage",
+          "transform": "none",
+          "translate": "none",
+          "rotate": "none",
+          "scale": "none"
+        },
+        {
+          "id": "BODY",
+          "transform": "none",
+          "translate": "none",
+          "rotate": "none",
+          "scale": "none"
+        },
+        {
+          "id": "HTML",
+          "transform": "none",
+          "translate": "none",
+          "rotate": "none",
+          "scale": "none"
+        }
+      ],
+      "cssWidth": 1280,
+      "cssHeight": 677
+    },
+    "renderer": {
+      "dpr": 1,
+      "scale": 1.0578125,
+      "viewportOffsetY": 0,
+      "camera": 680.1075464400783,
+      "shakeX": 0
+    },
+    "actor": {
+      "bodyMatrix": [
+        1,
+        0,
+        0,
+        1,
+        1221,
+        558.9840858284745
+      ],
+      "headMatrix": [
+        1,
+        0,
+        0,
+        1,
+        1221,
+        509.98408582847446
+      ],
+      "capMatrix": [
+        1,
+        0,
+        0,
+        1,
+        1221,
+        509.98408582847446
+      ],
+      "feet": [
+        {
+          "x": -7,
+          "y": 1.0159141715255078,
+          "angle": -0.0
+        },
+        {
+          "x": 7,
+          "y": 1.0159141715255078,
+          "angle": 0
+        }
+      ],
+      "grounded": true,
+      "body": {
+        "x": 1221,
+        "y": 560,
+        "w": 30,
+        "h": 58
+      }
+    },
+    "projectionScope": "Actual current rig and renderer transform; conservative face/cap/coat/foot regions, not pixel segmentation or the complete outfit silhouette",
+    "diagnosticTiming": {
+      "at": 32490.20000000298,
+      "lastShownAt": 28475.70000000298,
+      "ageMs": 4014.5,
+      "shown": false,
+      "opacity": "0.00387173",
+      "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+      "chapterIndex": 1,
+      "state": "playing",
+      "form": "body",
+      "time": 14.616666666666973,
+      "body": {
+        "x": 1221,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": 2
+    }
+  },
+  "followingExistingScreenshot": "1280-greenhouse-root-crossed.png",
+  "screenshotRelation": "The existing screenshot follows this observation; not the same frame, and may be absent on failure.",
+  "surfaceComparison": {
+    "status": "matched",
+    "toleranceCssPx": 0.5,
+    "checked": [
+      "Canvas",
+      "stage-touch-move",
+      "direction-up",
+      "direction-left",
+      "direction-right",
+      "direction-down",
+      "stage-interact",
+      "stage-toggle",
+      "stage-jump"
+    ],
+    "beforeVersion": "32.0.0",
+    "afterVersion": "32.0.0",
+    "scope": "Only these paired viewport/Canvas/control measurements; not all game states or a performance result",
+    "relationship": "same-run original station checkpoint; not a previous release"
+  },
+  "validation": {
+    "status": "passed",
+    "visiblePanels": [
+      "hud",
+      "objectiveBox",
+      "announcement"
+    ],
+    "bubbleObserved": false,
+    "actorAvoidanceChecked": false,
+    "actorRegions": {
+      "face": {
+        "points": [
+          {
+            "x": 543.6018610313547,
+            "y": 604.6003532904332
+          },
+          {
+            "x": 600.7237360313547,
+            "y": 604.6003532904332
+          },
+          {
+            "x": 600.7237360313547,
+            "y": 650.0862907904332
+          },
+          {
+            "x": 543.6018610313547,
+            "y": 650.0862907904332
+          }
+        ],
+        "rect": {
+          "left": 543.6018610313547,
+          "top": 604.6003532904332,
+          "right": 600.7237360313547,
+          "bottom": 650.0862907904332,
+          "width": 57.121875000000045,
+          "height": 45.48593749999998
+        }
+      },
+      "cap": {
+        "points": [
+          {
+            "x": 543.6018610313547,
+            "y": 577.0972282904331
+          },
+          {
+            "x": 600.7237360313547,
+            "y": 577.0972282904331
+          },
+          {
+            "x": 600.7237360313547,
+            "y": 610.9472282904331
+          },
+          {
+            "x": 543.6018610313547,
+            "y": 610.9472282904331
+          }
+        ],
+        "rect": {
+          "left": 543.6018610313547,
+          "top": 577.0972282904331,
+          "right": 600.7237360313547,
+          "bottom": 610.9472282904331,
+          "width": 57.121875000000045,
+          "height": 33.85000000000002
+        }
+      },
+      "coat": {
+        "points": [
+          {
+            "x": 553.1221735313547,
+            "y": 621.5253532904331
+          },
+          {
+            "x": 591.2034235313547,
+            "y": 621.5253532904331
+          },
+          {
+            "x": 591.2034235313547,
+            "y": 661.7222282904331
+          },
+          {
+            "x": 553.1221735313547,
+            "y": 661.7222282904331
+          }
+        ],
+        "rect": {
+          "left": 553.1221735313547,
+          "top": 621.5253532904331,
+          "right": 591.2034235313547,
+          "bottom": 661.7222282904331,
+          "width": 38.081249999999955,
+          "height": 40.19687499999998
+        }
+      },
+      "foot0": {
+        "points": [
+          {
+            "x": 556.2956110313547,
+            "y": 663.8546875000001
+          },
+          {
+            "x": 576.3940485313547,
+            "y": 663.8546875000001
+          },
+          {
+            "x": 576.3940485313547,
+            "y": 674.4328125000001
+          },
+          {
+            "x": 556.2956110313547,
+            "y": 674.4328125000001
+          }
+        ],
+        "rect": {
+          "left": 556.2956110313547,
+          "top": 663.8546875000001,
+          "right": 576.3940485313547,
+          "bottom": 674.4328125000001,
+          "width": 20.098437499999932,
+          "height": 10.578125
+        }
+      },
+      "foot1": {
+        "points": [
+          {
+            "x": 571.1049860313547,
+            "y": 663.8546875000001
+          },
+          {
+            "x": 591.2034235313547,
+            "y": 663.8546875000001
+          },
+          {
+            "x": 591.2034235313547,
+            "y": 674.4328125000001
+          },
+          {
+            "x": 571.1049860313547,
+            "y": 674.4328125000001
+          }
+        ],
+        "rect": {
+          "left": 571.1049860313547,
+          "top": 663.8546875000001,
+          "right": 591.2034235313547,
+          "bottom": 674.4328125000001,
+          "width": 20.098437500000045,
+          "height": 10.578125
+        }
+      }
+    },
+    "scope": "Actual current rig and renderer transform; conservative face/cap/coat/foot regions, not pixel segmentation or the complete outfit silhouette",
+    "geometryIsSameFrameAsScreenshot": false
+  },
+  "status": "passed"
+}

@@ -1,0 +1,338 @@
+{
+  "schema": "tougaigu-browser-deploy-readonly-review-1",
+  "reviewedAtUtc": "2026-10-29T23:52:08.716041+00:00",
+  "scope": "Pages build/deploy status plus four actual custom-domain HTTPS byte checks; not full browser gameplay or main release verification",
+  "candidateCommit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+  "pagesCommit": "6e716a8c40e5ad0b917f3b3e85fe86f7b09a9241",
+  "pagesTree": "89c590e390f02c089b67cfa6f3539c35fa836201",
+  "expectedPagesTree": "89c590e390f02c089b67cfa6f3539c35fa836201",
+  "pagesTreeExact": true,
+  "official": {
+    "readAtUtc": "2026-10-29T23:50:42.263Z",
+    "commit": {
+      "sha": "6e716a8c40e5ad0b917f3b3e85fe86f7b09a9241",
+      "tree": "89c590e390f02c089b67cfa6f3539c35fa836201",
+      "parents": [
+        "ae9cfb2cc7bd0c45c30ed1fc9210f1ebdcc66244",
+        "a35ea473d8d338f46677cbb1bce50062ba2f4627"
+      ],
+      "date": "2026-10-29T23:48:44Z",
+      "message": "Publish v31.0.0 expressive traveler and soul (#1)\n\nPublish v31.0.0: expressive traveler and soul"
+    },
+    "run": {
+      "id": 40975633681,
+      "name": "pages build and deployment",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "6e716a8c40e5ad0b917f3b3e85fe86f7b09a9241",
+      "head_branch": "gh-pages",
+      "created_at": "2026-10-29T23:48:46Z",
+      "updated_at": "2026-10-29T23:49:09Z",
+      "html_url": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40975633681"
+    },
+    "pr": {
+      "number": 1,
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-10-29T23:48:44Z",
+      "merge_commit_sha": "6e716a8c40e5ad0b917f3b3e85fe86f7b09a9241",
+      "html_url": "https://github.com/zhangshuaibo1/tougaigu/pull/1",
+      "base": "gh-pages",
+      "head": "publish-v31-browser-20261029",
+      "head_sha": "a35ea473d8d338f46677cbb1bce50062ba2f4627"
+    },
+    "jobs": [
+      {
+        "id": 123802850533,
+        "name": "build",
+        "status": "completed",
+        "conclusion": "success",
+        "started_at": "2026-10-29T23:48:50Z",
+        "completed_at": "2026-10-29T23:48:56Z",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Checkout",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Upload artifact",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Checkout",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "id": 123802899924,
+        "name": "report-build-status",
+        "status": "completed",
+        "conclusion": "success",
+        "started_at": "2026-10-29T23:48:59Z",
+        "completed_at": "2026-10-29T23:49:04Z",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Report Build Status",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "id": 123802899939,
+        "name": "deploy",
+        "status": "completed",
+        "conclusion": "success",
+        "started_at": "2026-10-29T23:49:00Z",
+        "completed_at": "2026-10-29T23:49:08Z",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Deploy to GitHub Pages",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ]
+  },
+  "httpsResources": [
+    {
+      "path": "index.html",
+      "requestedUrl": "https://tougaigu.com/index.html",
+      "startedAtUtc": "2026-10-29T23:52:08.393528+00:00",
+      "expectedSourceCommit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+      "expectedSourcePath": "dist/index.html",
+      "expectedBytes": 25981,
+      "expectedSha256": "7be90121bdd4504897ba87d5083b899195a5cb267d7564687de58c824f96a4d8",
+      "expectedGitBlobSha": "e125d428d4767b44a3b197893cb0cc7cbc5b7896",
+      "status": 200,
+      "finalUrl": "https://tougaigu.com/index.html",
+      "responseHeaders": {
+        "Date": "Thu, 29 Oct 2026 23:52:08 GMT",
+        "Content-Type": "text/html; charset=utf-8",
+        "Content-Length": "25981",
+        "ETag": "\"6ae3db71-657d\"",
+        "Last-Modified": "Thu, 29 Oct 2026 23:49:05 GMT",
+        "Age": "0",
+        "Cache-Control": "max-age=600",
+        "Server": "envoy"
+      },
+      "actualBytes": 25981,
+      "actualSha256": "7be90121bdd4504897ba87d5083b899195a5cb267d7564687de58c824f96a4d8",
+      "actualGitBlobSha": "e125d428d4767b44a3b197893cb0cc7cbc5b7896",
+      "exactCandidateBytes": true,
+      "httpsFinalUrl": true,
+      "applicationVersionMeta": [
+        "31.0.0"
+      ],
+      "resourceQueryVersions": [
+        "31.0.0"
+      ],
+      "passed": true,
+      "finishedAtUtc": "2026-10-29T23:52:08.675510+00:00"
+    },
+    {
+      "path": "dream.html",
+      "requestedUrl": "https://tougaigu.com/dream.html",
+      "startedAtUtc": "2026-10-29T23:52:08.393710+00:00",
+      "expectedSourceCommit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+      "expectedSourcePath": "dist/dream.html",
+      "expectedBytes": 25981,
+      "expectedSha256": "7be90121bdd4504897ba87d5083b899195a5cb267d7564687de58c824f96a4d8",
+      "expectedGitBlobSha": "e125d428d4767b44a3b197893cb0cc7cbc5b7896",
+      "status": 200,
+      "finalUrl": "https://tougaigu.com/dream.html",
+      "responseHeaders": {
+        "Date": "Thu, 29 Oct 2026 23:52:08 GMT",
+        "Content-Type": "text/html; charset=utf-8",
+        "Content-Length": "25981",
+        "ETag": "\"6ae3db71-657d\"",
+        "Last-Modified": "Thu, 29 Oct 2026 23:49:05 GMT",
+        "Age": "0",
+        "Cache-Control": "max-age=600",
+        "Server": "envoy"
+      },
+      "actualBytes": 25981,
+      "actualSha256": "7be90121bdd4504897ba87d5083b899195a5cb267d7564687de58c824f96a4d8",
+      "actualGitBlobSha": "e125d428d4767b44a3b197893cb0cc7cbc5b7896",
+      "exactCandidateBytes": true,
+      "httpsFinalUrl": true,
+      "applicationVersionMeta": [
+        "31.0.0"
+      ],
+      "resourceQueryVersions": [
+        "31.0.0"
+      ],
+      "passed": true,
+      "finishedAtUtc": "2026-10-29T23:52:08.664523+00:00"
+    },
+    {
+      "path": "survivor.html",
+      "requestedUrl": "https://tougaigu.com/survivor.html",
+      "startedAtUtc": "2026-10-29T23:52:08.394432+00:00",
+      "expectedSourceCommit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+      "expectedSourcePath": "dist/survivor.html",
+      "expectedBytes": 17452,
+      "expectedSha256": "5d679915a8409b60bedd96dbe602aa59511dee3b9c2a099beab7fbdbe8386e77",
+      "expectedGitBlobSha": "82b8b9d20e4c90976ef2b9007c3e19a3455186fc",
+      "status": 200,
+      "finalUrl": "https://tougaigu.com/survivor.html",
+      "responseHeaders": {
+        "Date": "Thu, 29 Oct 2026 23:52:08 GMT",
+        "Content-Type": "text/html; charset=utf-8",
+        "Content-Length": "17452",
+        "ETag": "\"6ae3db71-442c\"",
+        "Last-Modified": "Thu, 29 Oct 2026 23:49:05 GMT",
+        "Age": "0",
+        "Cache-Control": "max-age=600",
+        "Server": "envoy"
+      },
+      "actualBytes": 17452,
+      "actualSha256": "5d679915a8409b60bedd96dbe602aa59511dee3b9c2a099beab7fbdbe8386e77",
+      "actualGitBlobSha": "82b8b9d20e4c90976ef2b9007c3e19a3455186fc",
+      "exactCandidateBytes": true,
+      "httpsFinalUrl": true,
+      "applicationVersionMeta": [],
+      "resourceQueryVersions": [
+        "31.0.0"
+      ],
+      "passed": true,
+      "finishedAtUtc": "2026-10-29T23:52:08.669445+00:00"
+    },
+    {
+      "path": "dream-traveler-face.js",
+      "requestedUrl": "https://tougaigu.com/dream-traveler-face.js",
+      "startedAtUtc": "2026-10-29T23:52:08.395271+00:00",
+      "expectedSourceCommit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+      "expectedSourcePath": "dist/dream-traveler-face.js",
+      "expectedBytes": 6783,
+      "expectedSha256": "ea914374c1d7793ebf710617d2749a71e01805ce7d1c33f20294ecd65acfd71b",
+      "expectedGitBlobSha": "913068ed2c8d27ff8dbc144c02bb466f2ac19e92",
+      "status": 200,
+      "finalUrl": "https://tougaigu.com/dream-traveler-face.js",
+      "responseHeaders": {
+        "Date": "Thu, 29 Oct 2026 23:52:08 GMT",
+        "Content-Type": "application/javascript; charset=utf-8",
+        "Content-Length": "6783",
+        "ETag": "\"6ae3db71-1a7f\"",
+        "Last-Modified": "Thu, 29 Oct 2026 23:49:05 GMT",
+        "Age": "0",
+        "Cache-Control": "max-age=600",
+        "Server": "envoy"
+      },
+      "actualBytes": 6783,
+      "actualSha256": "ea914374c1d7793ebf710617d2749a71e01805ce7d1c33f20294ecd65acfd71b",
+      "actualGitBlobSha": "913068ed2c8d27ff8dbc144c02bb466f2ac19e92",
+      "exactCandidateBytes": true,
+      "httpsFinalUrl": true,
+      "passed": true,
+      "finishedAtUtc": "2026-10-29T23:52:08.715211+00:00"
+    }
+  ],
+  "allFourHttpsResourcesExact": true,
+  "pagesWorkflowSuccess": true,
+  "allThreeJobsSuccess": true,
+  "noBrowserOpenedByReviewer": true,
+  "noRepositoryOrRefMutationByReviewer": true,
+  "standardNetworkApprovalUsed": true,
+  "limitations": [
+    "This confirms the exact reviewed Pages tree and four actual resource responses from the public HTTPS domain.",
+    "It does not replace the main workflow full candidate and live browser routes, strict injected-network accounting, or final release evidence.",
+    "index and dream provide application-version meta; survivor has versioned resources and exact bytes but no equivalent application-version meta.",
+    "All HTTP operations are GET. TLS certificate validation remains enabled. No permission configuration, browser, credentials, worktree or remote ref was changed."
+  ],
+  "previousReadAttempt": {
+    "reviewedAtUtc": "2026-10-29T23:51:10.391169+00:00",
+    "environmentNetworkBlocked": true,
+    "httpsResources": [
+      {
+        "path": "index.html",
+        "requestedUrl": "https://tougaigu.com/index.html",
+        "startedAtUtc": "2026-10-29T23:51:10.381710+00:00",
+        "expectedSourceCommit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+        "expectedSourcePath": "dist/index.html",
+        "expectedBytes": 25981,
+        "expectedSha256": "7be90121bdd4504897ba87d5083b899195a5cb267d7564687de58c824f96a4d8",
+        "expectedGitBlobSha": "e125d428d4767b44a3b197893cb0cc7cbc5b7896",
+        "passed": false,
+        "error": "URLError: <urlopen error [Errno 1] Operation not permitted>",
+        "finishedAtUtc": "2026-10-29T23:51:10.390571+00:00"
+      },
+      {
+        "path": "dream.html",
+        "requestedUrl": "https://tougaigu.com/dream.html",
+        "startedAtUtc": "2026-10-29T23:51:10.382004+00:00",
+        "expectedSourceCommit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+        "expectedSourcePath": "dist/dream.html",
+        "expectedBytes": 25981,
+        "expectedSha256": "7be90121bdd4504897ba87d5083b899195a5cb267d7564687de58c824f96a4d8",
+        "expectedGitBlobSha": "e125d428d4767b44a3b197893cb0cc7cbc5b7896",
+        "passed": false,
+        "error": "URLError: <urlopen error [Errno 1] Operation not permitted>",
+        "finishedAtUtc": "2026-10-29T23:51:10.390444+00:00"
+      },
+      {
+        "path": "survivor.html",
+        "requestedUrl": "https://tougaigu.com/survivor.html",
+        "startedAtUtc": "2026-10-29T23:51:10.383405+00:00",
+        "expectedSourceCommit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+        "expectedSourcePath": "dist/survivor.html",
+        "expectedBytes": 17452,
+        "expectedSha256": "5d679915a8409b60bedd96dbe602aa59511dee3b9c2a099beab7fbdbe8386e77",
+        "expectedGitBlobSha": "82b8b9d20e4c90976ef2b9007c3e19a3455186fc",
+        "passed": false,
+        "error": "URLError: <urlopen error [Errno 1] Operation not permitted>",
+        "finishedAtUtc": "2026-10-29T23:51:10.390227+00:00"
+      },
+      {
+        "path": "dream-traveler-face.js",
+        "requestedUrl": "https://tougaigu.com/dream-traveler-face.js",
+        "startedAtUtc": "2026-10-29T23:51:10.383596+00:00",
+        "expectedSourceCommit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+        "expectedSourcePath": "dist/dream-traveler-face.js",
+        "expectedBytes": 6783,
+        "expectedSha256": "ea914374c1d7793ebf710617d2749a71e01805ce7d1c33f20294ecd65acfd71b",
+        "expectedGitBlobSha": "913068ed2c8d27ff8dbc144c02bb466f2ac19e92",
+        "passed": false,
+        "error": "URLError: <urlopen error [Errno 1] Operation not permitted>",
+        "finishedAtUtc": "2026-10-29T23:51:10.390517+00:00"
+      }
+    ],
+    "notAnObservedRemoteHttpFailure": true
+  },
+  "status": "passed"
+}

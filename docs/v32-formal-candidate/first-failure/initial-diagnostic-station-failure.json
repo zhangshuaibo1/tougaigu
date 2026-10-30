@@ -1,0 +1,455 @@
+{
+  "mode": "original",
+  "input": "original station and greenhouse DOM/keyboard route",
+  "productionChanges": false,
+  "scope": "first station and greenhouse only; not complete browser suite",
+  "events": [
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 4405.69999999553,
+      "lastShownAt": null,
+      "ageMs": null,
+      "shown": false,
+      "opacity": "0",
+      "text": "",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "body",
+      "time": 4.099999999999991,
+      "body": {
+        "x": 105,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 4408.0999999940395,
+      "lastShownAt": 4407.0999999940395,
+      "ageMs": 1,
+      "shown": true,
+      "opacity": "0",
+      "text": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 4.099999999999991,
+      "body": {
+        "x": 105,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "opening",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 5110.29999999702,
+      "lastShownAt": 5107.5,
+      "ageMs": 2.7999999970197678,
+      "shown": true,
+      "opacity": "1",
+      "text": "拾光去程票抱好了！按 E，陪我把它送回头顶的小火车。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 4.816666666666655,
+      "body": {
+        "x": 105,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 8920.5,
+      "lastShownAt": 5107.5,
+      "ageMs": 3813,
+      "shown": false,
+      "opacity": "1",
+      "text": "拾光去程票抱好了！按 E，陪我把它送回头顶的小火车。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 8.616666666666674,
+      "body": {
+        "x": 105,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": null
+    },
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 25595.19999999553,
+      "lastShownAt": 5107.5,
+      "ageMs": 20487.69999999553,
+      "shown": false,
+      "opacity": "0",
+      "text": "拾光去程票抱好了！按 E，陪我把它送回头顶的小火车。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 25.28333333333318,
+      "body": {
+        "x": 105,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 25599,
+      "lastShownAt": 25598.59999999404,
+      "ageMs": 0.4000000059604645,
+      "shown": true,
+      "opacity": "0",
+      "text": "阿拾念头上车，身体发车。各位坐稳。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "body",
+      "time": 25.28333333333318,
+      "body": {
+        "x": 105,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "returning",
+      "plantStage": null
+    },
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 28006.09999999404,
+      "lastShownAt": 25598.59999999404,
+      "ageMs": 2407.5,
+      "shown": true,
+      "opacity": "1",
+      "text": "阿拾念头上车，身体发车。各位坐稳。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "body",
+      "time": 27.699999999999708,
+      "body": {
+        "x": 105,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 28008,
+      "lastShownAt": 28007.19999999553,
+      "ageMs": 0.8000000044703484,
+      "shown": true,
+      "opacity": "1",
+      "text": "拾光小火车说，下一站先不急着命名。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 27.699999999999708,
+      "body": {
+        "x": 105,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "opening",
+      "plantStage": null
+    },
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 29351.29999999702,
+      "lastShownAt": 28007.19999999553,
+      "ageMs": 1344.1000000014901,
+      "shown": true,
+      "opacity": "1",
+      "text": "拾光小火车说，下一站先不急着命名。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 29.033333333332966,
+      "body": {
+        "x": 105,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 30198.5,
+      "lastShownAt": 28007.19999999553,
+      "ageMs": 2191.3000000044703,
+      "shown": false,
+      "opacity": "1",
+      "text": "拾光小火车说，下一站先不急着命名。",
+      "chapterIndex": 0,
+      "state": "paused",
+      "form": "body",
+      "time": 29.86666666666625,
+      "body": {
+        "x": 105,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": null
+    },
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 33803.69999999553,
+      "lastShownAt": 28007.19999999553,
+      "ageMs": 5796.5,
+      "shown": false,
+      "opacity": "0",
+      "text": "拾光小火车说，下一站先不急着命名。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "body",
+      "time": 32.93333333333275,
+      "body": {
+        "x": 429,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 33806.09999999404,
+      "lastShownAt": 33804.89999999851,
+      "ageMs": 1.1999999955296516,
+      "shown": true,
+      "opacity": "0",
+      "text": "拾光小火车说，下一站先不急着命名。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 32.93333333333275,
+      "body": {
+        "x": 429,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "opening",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 35558.59999999404,
+      "lastShownAt": 33804.89999999851,
+      "ageMs": 1753.6999999955297,
+      "shown": false,
+      "opacity": "1",
+      "text": "拾光小火车说，下一站先不急着命名。",
+      "chapterIndex": 0,
+      "state": "paused",
+      "form": "soul",
+      "time": 34.64999999999932,
+      "body": {
+        "x": 429,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 36182.89999999851,
+      "lastShownAt": 36182.29999999702,
+      "ageMs": 0.6000000014901161,
+      "shown": true,
+      "opacity": "0",
+      "text": "阿拾第一盏亮了，藏起来的话找到信封。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 34.64999999999932,
+      "body": {
+        "x": 429,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": null
+    },
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 36345.09999999404,
+      "lastShownAt": 36182.29999999702,
+      "ageMs": 162.79999999701977,
+      "shown": true,
+      "opacity": "0.705131",
+      "text": "阿拾第一盏亮了，藏起来的话找到信封。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 34.78333333333264,
+      "body": {
+        "x": 429,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": null
+    },
+    {
+      "kind": "finish",
+      "detail": null,
+      "at": 38272,
+      "lastShownAt": 36182.29999999702,
+      "ageMs": 2089.7000000029802,
+      "shown": true,
+      "opacity": "1",
+      "text": "阿拾第一盏亮了，藏起来的话找到信封。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "body",
+      "time": 36.716666666665866,
+      "body": {
+        "x": 429,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": null
+    }
+  ],
+  "status": "failed",
+  "failure": "missing actual face stage closedJoy",
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/v32-dialogue-timing-diagnosis.py\", line 58, in main\n    report['station']=await api.exercise(page,output,'1280',False,True)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2b18af2db412/tougaigu-v32-formal/scripts/browser-smoke.py\", line 958, in exercise\n    await lamp_faces.checkpoint('returned',required=['event','returning','closedJoy'],finish=True)\n  File \"/workspace/scratch/2b18af2db412/tougaigu-v32-formal/scripts/browser_face_v31.py\", line 304, in checkpoint\n    validation=validate_face_record(record,required)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2b18af2db412/tougaigu-v32-formal/scripts/browser_face_v31.py\", line 226, in validate_face_record\n    for name in required:assert name in latches, 'missing actual face stage '+name\n                                ^^^^^^^^^^^^^^^\nAssertionError: missing actual face stage closedJoy\n",
+  "pageErrors": [],
+  "requestFailures": []
+}

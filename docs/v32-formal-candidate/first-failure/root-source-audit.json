@@ -1,0 +1,11 @@
+{
+  "sourceCommit": "a892471e6a4f87f534bb16434b4b9097bba10223",
+  "commitFile": "a892471e6a4f87f534bb16434b4b9097bba10223\n",
+  "zipSha256": "982e186344dc90db81ffe49b1263a6f31cd1f5d4278c3042029cd7829b5d112d",
+  "expectedFiles": 828,
+  "archiveFiles": 828,
+  "runtimeFiles": 143,
+  "sourceTarSha256": "44514414403fb7d6db779c325defec8c61f5217484d11c8cfb4c38d0e2d8038b",
+  "mismatches": [],
+  "passed": true
+}

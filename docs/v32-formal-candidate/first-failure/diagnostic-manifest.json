@@ -1,0 +1,41 @@
+{
+  "scope": "Local timing diagnostics, not the complete official suite. The early-return run explicitly omits one pre-return diagnostic screenshot; no omitted screenshot is claimed.",
+  "baseline": "a892471e6a4f87f534bb16434b4b9097bba10223",
+  "files": [
+    {
+      "file": "timing-diagnosis.py",
+      "bytes": 8150,
+      "sha256": "833982354d4d82ea1750adbfb977621a47732cc24c598ee0ffe23c009c1e32fb"
+    },
+    {
+      "file": "initial-diagnostic-station-failure.log",
+      "bytes": 459,
+      "sha256": "6bc7d561929224526a229f93c6022b47061a9df6d5c2a3fa9f584d055d0afca4"
+    },
+    {
+      "file": "initial-diagnostic-station-failure.json",
+      "bytes": 11967,
+      "sha256": "f38110884958721f8b3f75309be175e8fda5fedd150cb7c9f37e8552555c9dca"
+    },
+    {
+      "file": "local-original-greenhouse.log",
+      "bytes": 306,
+      "sha256": "c135f2190b180d79ba9a94a5501f5fbb4efe1797ed4a1498cff221f57f984700"
+    },
+    {
+      "file": "local-original-greenhouse.json",
+      "bytes": 145991,
+      "sha256": "6568aa169ae724c100334d12e45a6eb69ce391fb3a47aa83d21b0d50b5433683"
+    },
+    {
+      "file": "controlled-early-return.log",
+      "bytes": 439,
+      "sha256": "de4123aac2b9a26ecb0e462e365efad77ed5b6a8daec8eca2817035c538edd3d"
+    },
+    {
+      "file": "controlled-early-return.json",
+      "bytes": 39748,
+      "sha256": "adfca2af0f5a738c03efff1279e4d9b3c50c5727e89ea30b77215ab5dd13de6c"
+    }
+  ]
+}

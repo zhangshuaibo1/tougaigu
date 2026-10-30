@@ -5,8 +5,8 @@
 - 游戏：[掀起你的头盖骨](https://tougaigu.com/)
 - 旧入口：[GitHub Pages 地址](https://zhangshuaibo1.github.io/tougaigu/)；域名配置与实际验收状态见 [域名记录](docs/DOMAIN-tougaigu.com.md)。
 - **v30.0.0「脚下有回声」已发布并通过正式HTTPS验收**：六章真实起落/落地收势、纵书稳臂与前两章实地阴影，662项测试及公网浏览器成功，见 [QA-v30](docs/QA-v30.md) 和 [发布核验](docs/verification-v30-release-summary.md)。
-- **v31「眼窝里的笑」已完成Pages部署与四项HTTPS资源精确核对**：[正式候选675测试及完整浏览器](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40965474140)通过；[Pages部署40975633681](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40975633681)于23:49:09 UTC成功，23:52:08 UTC核对index/dream/survivor/新face模块均与31候选原字节一致。[main同步PR #2](https://github.com/zhangshuaibo1/tougaigu/pull/2)之后的完整候选＋公网浏览器仍待执行，不能把资源核对当作完整公网验收；准确范围见 [QA-v31](docs/QA-v31.md)。
-- **v32桌面对话布局独立本地候选已完成**：六个视口／减动配置真实UI验证及完整六章/手机/结局浏览器通过，最终代码76测试文件通过；尚未进行正式GitHub候选CI或公开部署，待v31完整公网闭环后另行推进。
+- **v31「眼窝里的笑」已上线并完成正式 HTTPS 验收**：[完整 main 候选＋公网 40978620156](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40978620156) 成功，797 个源码文件与 143 个运行文件独立审计精确一致。主角的笑意、疲态与灵魂表情已在实际路线中验证，完整发布历史见 [发布记录](docs/v31-browser-release/README.md) 与 [原始报告](docs/v31-main-release/README.md)。
+- **v32「给对白留一点空地」已部署，完整公网回归待本提交结果**：桌面对白与目标／公告分栏；小于900px保留现有布局。[正式候选683项测试与完整浏览器](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40982421518)、独立源包／原图审计及[Pages部署](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984296820)均通过，五项实际HTTPS资源精确匹配。玩法、存档、原对白时长保持，见 [QA](docs/QA-v32.md) 与 [发布记录](docs/v32-release/README.md)。
 - 原生 JavaScript / Canvas，无运行时第三方 JavaScript 依赖；原《再活一局》保留在 `survivor.html`。
 - 六章、十个节日、原有存档与奖励规则及企业页脚保留。
 

@@ -1,0 +1,66 @@
+{
+  "status": "reviewed",
+  "reviewedAt": "2026-10-30T01:09:57.135894+00:00",
+  "runId": 40982421518,
+  "commit": "ce412d1298d0060dec08893f9b44cead9693edcf",
+  "method": "view_image detail=original, original official PNG bytes/dimensions, no crop/resize/edit/re-render",
+  "images": [
+    {
+      "path": "candidate/1280-greenhouse-leaves-returned.png",
+      "bytes": 1309638,
+      "sha256": "fdb8f4fdbf5ad30dda4a75cadbb302a0f2dcace8dc76ff2bb7bd9db1019c122f",
+      "width": 1280,
+      "height": 800,
+      "unalteredOriginalArtifact": true,
+      "viewedAtOriginalDimensions": true,
+      "observation": "归位后的自然叶子对白在左上方完整可读，阿拾脸、衣身与脚下地面清楚；该原图没有可见的临时公告。"
+    },
+    {
+      "path": "candidate/1280-greenhouse-root-crossed.png",
+      "bytes": 1306535,
+      "sha256": "86a78147d56b7c32dfc89bce36178693aca571520290cdd6095783caf46eaea1",
+      "width": 1280,
+      "height": 800,
+      "unalteredOriginalArtifact": true,
+      "viewedAtOriginalDimensions": true,
+      "observation": "越根后身体与地面清楚，蘑菇跳跃公告位于上方；叶子对白已自然消失。此图不证明对白避让或温室公告与对白同时可见。"
+    },
+    {
+      "path": "candidate/dialogue-matrix/900x520-ticket.png",
+      "bytes": 524300,
+      "sha256": "00073b30b4dffdbb17d1d0ca692d92d0a2d7304b0d9028419f4a273837b57f7d",
+      "width": 900,
+      "height": 520,
+      "unalteredOriginalArtifact": true,
+      "viewedAtOriginalDimensions": true,
+      "observation": "900x520矮屏中去程票双行对白可读，灵魂、本体与下方触屏控制区域可见，卡片未盖住角色。"
+    },
+    {
+      "path": "candidate/dialogue-matrix/1024x640-ticket.png",
+      "bytes": 731519,
+      "sha256": "48f7b114d349cf22a9ac1389bb9f57dbf0a854cb42a98cc22f217d0cfc52f826",
+      "width": 1024,
+      "height": 640,
+      "unalteredOriginalArtifact": true,
+      "viewedAtOriginalDimensions": true,
+      "observation": "1024x640中去程票对白清楚，原舞台和角色完整可辨，右下操作按钮与对白分离。"
+    },
+    {
+      "path": "candidate/dialogue-matrix/1280x800-game-reduce-opening.png",
+      "bytes": 1084759,
+      "sha256": "718d32389b1279550ed5aa64a945b8ff3f6b06ff1189988cfceec47177816305",
+      "width": 1280,
+      "height": 800,
+      "unalteredOriginalArtifact": true,
+      "viewedAtOriginalDimensions": true,
+      "observation": "游戏内减少动态的实际开场双句对白清楚，角色与灵魂未被对白遮挡；该图没有可见的新手公告。"
+    }
+  ],
+  "newBlockingVisualIssue": false,
+  "limits": [
+    "Images are subsequent to synchronous geometry snapshots, not the same frame.",
+    "This official greenhouse pair does not demonstrate simultaneous speech and announcement: return has speech only; root-crossed has announcement only.",
+    "Three ordinary first-station opening snapshots do capture simultaneous natural speech and tutorial announcement; these five selected PNGs do not add a same-frame image claim.",
+    "The 899px exclusion and OS reduced-motion checks are verified from the original JSON and complete matrix; their PNGs were not manually viewed in this selection."
+  ]
+}

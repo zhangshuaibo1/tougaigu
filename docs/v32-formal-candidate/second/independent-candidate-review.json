@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "reviewedAt": "2026-10-30T01:08:10.294560+00:00",
+  "runId": 40982421518,
+  "runUrl": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40982421518",
+  "commit": "ce412d1298d0060dec08893f9b44cead9693edcf",
+  "tree": "1d0dd1a3a860b5571050db0e5f138f0a58f30261",
+  "artifactId": 12946062423,
+  "artifactZipBytes": 238768355,
+  "artifactZipSha256": "cedac4e9295e6e48388391c7567c0465354981479802dda3b355f40f239cfb47",
+  "sourceBlobs": 913,
+  "runtimeBlobs": 143,
+  "tests": {
+    "tests": 683,
+    "pass": 683,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0
+  },
+  "old675SubtestsAllPresent": true,
+  "old74TestFilesExact": true,
+  "runtimeExactToFirstCandidate": true,
+  "artifactPaths": 273,
+  "originalPNGCount": 205,
+  "reportBytes": 15905000,
+  "reportSha256": "e460446a702689a468f1675828f2643f5f7a110890d282970536498287842560",
+  "fullRouteViewports": [
+    {
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 680
+    }
+  ],
+  "expectedFailureCounts": [
+    9,
+    0,
+    0
+  ],
+  "unexpectedNetworkFailures": 0,
+  "pageErrors": 0,
+  "httpErrors": 0,
+  "faceCheckpointCount": 10,
+  "faceSnapshotOccurrences": 967,
+  "poseSnapshotOccurrences": 1109,
+  "completePostRoutes": 4,
+  "phoneEndingReadings": 6,
+  "desktopEndingCombinations": 4,
+  "jumpRecords": 6,
+  "originalStrictGatesPreserved": true,
+  "naturalReturnEvent": {
+    "status": "passed",
+    "trustedInput": true,
+    "existingCooldownMs": 1600,
+    "actualInputAgeMs": 1769,
+    "actualReturnDialogueAgeMs": 717.3000000000175,
+    "scope": "Existing real return E, natural authored dialogue refresh and completed cap closure; no replay or clock mutation"
+  },
+  "greenhouseLayoutRecords": 2,
+  "matrixConfigurations": 6,
+  "matrixDialogueSnapshots": 12,
+  "matrixExcluded899Snapshots": 2,
+  "matrixZeroPageHTTPNetworkErrors": true,
+  "maxPairedCanvasControlRectDeltaCssPx": 0,
+  "artifactProgramCodeExecuted": false,
+  "publicStep": "skipped",
+  "scope": "Official corrected second v32 candidate, exact ce412 Git source, full original browser routes followed by six independent layout configurations. Not v32 public HTTPS.",
+  "limits": [
+    "The required visible greenhouse speech check moved to natural cap-closure before root traversal; root-crossed still checks actual geometry and any speech that remains visible. Original v31 route/physics assertions remain unchanged.",
+    "The new event record proves same run/chapter/deaths and stable body coordinates; it contains no bodyIdentity and is not independent object-identity evidence.",
+    "Geometry and screenshots are consecutive, not synchronous frames. Every pair uses the same current DOM with old CSS and a neutral display:contents wrapper; it is not a complete old-release execution.",
+    "899px checks exclusion-side Canvas/control geometry and input centers, not desktop actor avoidance. Actor regions are conservative face/cap/coat/feet, not complete outfit pixel silhouettes.",
+    "The raw notCovered coexistence phrase is overbroad if the recorded list above is nonempty; use exact observed first-station and greenhouse scopes, not a claim about all announcements.",
+    "No public HTTPS v32 verification, physical handset, Safari, maximum-font/longest-dialogue/high-platform exhaustiveness or performance benchmark in this candidate.",
+    "Manual original-PNG review is recorded separately.",
+    "Face evidence remains event-specific and open-cap fatigue; not complete six-chapter face coverage."
+  ]
+}

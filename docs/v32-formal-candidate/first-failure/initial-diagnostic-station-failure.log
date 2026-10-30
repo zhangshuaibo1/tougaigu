@@ -1,0 +1,5 @@
+1280 sample animation frames
+1280-station Space input sample {"body": {"x": 105, "y": 550.375, "w": 30, "h": 58, "vx": 0, "vy": -577.5, "grounded": false, "platform": null, "face": 1, "land": -0.10333333333333333, "walk": 0}, "time": 3.1499999999999937, "runId": 1, "bodyIdentity": 1}
+1280 collect ticket
+1280 first lamp route
+{"mode": "original", "status": "failed", "failure": "missing actual face stage closedJoy", "pageErrors": [], "requestFailures": []}

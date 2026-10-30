@@ -1,0 +1,23 @@
+{
+  "startedAtUtc": "2026-10-30 00:16:09 UTC",
+  "refChecked": "26a3fe6b9b73f597f8107f6f7e80e551f7aee9eb",
+  "expectedPrHead": "12f60683c4325a83585d2e07f4c0bf825ba03050",
+  "pr": 2,
+  "result": {
+    "acknowledged": true,
+    "value": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Action completed."
+        }
+      ],
+      "structuredContent": {
+        "sha": "75010ca44245e05cf44187768722081d244f39f4",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      },
+      "isError": false
+    }
+  }
+}

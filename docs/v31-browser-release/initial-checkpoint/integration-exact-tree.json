@@ -1,0 +1,19 @@
+{
+  "schema": "v31-browser-integration-exact-tree-1",
+  "readAtUtc": "2026-10-30T00:05:03.236681+00:00",
+  "sourceHead": "12f60683c4325a83585d2e07f4c0bf825ba03050",
+  "sourceTree": "f418c649635f0dc3f55679dd9d7b973bb34ef40a",
+  "expectedTree": "f418c649635f0dc3f55679dd9d7b973bb34ef40a",
+  "treeExact": true,
+  "sourceFiles": 797,
+  "runtimeFiles": 143,
+  "candidate": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+  "preservedMain": "26a3fe6b9b73f597f8107f6f7e80e551f7aee9eb",
+  "verification": "Root independently compared all remote blob paths, modes, types and SHAs with candidate plus two main v30 evidence files and four reviewed state-document drafts; zero differences. Public git fetched the exact reviewed source to this independent worktree.",
+  "pr2": "https://github.com/zhangshuaibo1/tougaigu/pull/2",
+  "mainMerged": false,
+  "mainFullWorkflow": "not_started",
+  "actualPublicBrowser": "blocked_at_first_navigation",
+  "localBrowserEvidence": "local-https-environment/execution.json",
+  "tlsReadOnlyDiagnosis": "local-https-environment/tls-diagnosis.json"
+}

@@ -1,0 +1,5467 @@
+{
+  "commit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+  "zipBytes": 208201793,
+  "zipSha256": "8b5ce12098f05f60f06f628fa8482a03c1cd7134664692c9a5d606fdf16979b4",
+  "artifactCodeExecuted": false,
+  "sourceFiles": [
+    {
+      "path": ".github/workflows/iteration-check.yml",
+      "bytes": 3032,
+      "gitBlob": "7608b7d2c34776dc1de0e7f30bbbd7f4d11f4ab0"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 125,
+      "gitBlob": "c29526de84d4815a911fe64bb26f59f1598d54e4"
+    },
+    {
+      "path": ".openai/hosting.json",
+      "bytes": 106,
+      "gitBlob": "18dd629e4ac6c4c8797f94906d27a8160de7b472"
+    },
+    {
+      "path": "README.md",
+      "bytes": 22778,
+      "gitBlob": "2db9f8d37b092368159df3088c5db7e7892cf6dd"
+    },
+    {
+      "path": "dist/CNAME",
+      "bytes": 13,
+      "gitBlob": "c48e618893bc4c9f483098de75ba03765e7fbf64"
+    },
+    {
+      "path": "dist/app.js",
+      "bytes": 26222,
+      "gitBlob": "5c1932e7a232ead2d10712976bcd4e076ce58326"
+    },
+    {
+      "path": "dist/assets/coast-painted-v27.webp",
+      "bytes": 71750,
+      "gitBlob": "702c08721716d9b26307dff2967f526144521061"
+    },
+    {
+      "path": "dist/assets/company-wordmark.webp",
+      "bytes": 7152,
+      "gitBlob": "ffb20a555d0b05a2d7d947fcdfff844334dc39bc"
+    },
+    {
+      "path": "dist/assets/dream-cover-still.svg",
+      "bytes": 22934,
+      "gitBlob": "9bc419e083bd471bf9cdbb5e4fd1d2cf33aec0ee"
+    },
+    {
+      "path": "dist/assets/dream-cover.svg",
+      "bytes": 24298,
+      "gitBlob": "91e4380bd80df62b80e7fa92f950e59e551c781b"
+    },
+    {
+      "path": "dist/assets/festival-hero-christmas.svg",
+      "bytes": 3729,
+      "gitBlob": "ce037da2877326cae7f09c08fcfb9b45915b327a"
+    },
+    {
+      "path": "dist/assets/festival-hero-dragonboat.svg",
+      "bytes": 3752,
+      "gitBlob": "1cacb8d6785baa392be36274d2f3be85c37ce3b2"
+    },
+    {
+      "path": "dist/assets/festival-hero-halloween.svg",
+      "bytes": 4153,
+      "gitBlob": "d1ffca74f1b211b063fbba4578ed5f6b297710b7"
+    },
+    {
+      "path": "dist/assets/festival-hero-lantern.svg",
+      "bytes": 4011,
+      "gitBlob": "678782ec48fb9bb493fb2b1bd36af9869c87d955"
+    },
+    {
+      "path": "dist/assets/festival-hero-midautumn.svg",
+      "bytes": 3861,
+      "gitBlob": "e4ac9f6aaab0e4a193589000b5b7cc6bccc9c6db"
+    },
+    {
+      "path": "dist/assets/festival-hero-newyear.svg",
+      "bytes": 4048,
+      "gitBlob": "fddc1d6be8d92b561339a3479fcd770d7ee748fc"
+    },
+    {
+      "path": "dist/assets/festival-hero-qixi.svg",
+      "bytes": 3834,
+      "gitBlob": "6fe8613d2d8ca8341636f6f6e51d4d2e28ec3f04"
+    },
+    {
+      "path": "dist/assets/festival-hero-spring.svg",
+      "bytes": 4165,
+      "gitBlob": "01cf2f3fefee8a411b6f66d6ae574df2e5a37f25"
+    },
+    {
+      "path": "dist/assets/festival-hero-starlight.svg",
+      "bytes": 3973,
+      "gitBlob": "f081b1f90eddb2a49dff61e0d4bec666e0768c17"
+    },
+    {
+      "path": "dist/assets/festival-hero-thanksgiving.svg",
+      "bytes": 3752,
+      "gitBlob": "361f114ec67a5b5c60edffece532bf653b4c3f3e"
+    },
+    {
+      "path": "dist/assets/festival-hero-valentine.svg",
+      "bytes": 3893,
+      "gitBlob": "3804f190fd07d9c95ff343004efcf2f28facdefe"
+    },
+    {
+      "path": "dist/assets/festival-item-christmas.svg",
+      "bytes": 2851,
+      "gitBlob": "1774ed2ad9ce2893a70dba175030c0caae30b340"
+    },
+    {
+      "path": "dist/assets/festival-item-dragonboat.svg",
+      "bytes": 2914,
+      "gitBlob": "20f84fb4719999078abe33b550011c01ce15649a"
+    },
+    {
+      "path": "dist/assets/festival-item-halloween.svg",
+      "bytes": 3042,
+      "gitBlob": "9414665b324f920a471ba4f6905c36504c724581"
+    },
+    {
+      "path": "dist/assets/festival-item-lantern.svg",
+      "bytes": 3023,
+      "gitBlob": "bf12b0f9335dba667afe07cfbb5860cf0ae3860e"
+    },
+    {
+      "path": "dist/assets/festival-item-midautumn.svg",
+      "bytes": 2823,
+      "gitBlob": "762eb8f1c9c338a747d2953d5204d1502464e84c"
+    },
+    {
+      "path": "dist/assets/festival-item-newyear.svg",
+      "bytes": 3768,
+      "gitBlob": "bba948e7fac560ffcc6f50aa7b6e7531b3185e62"
+    },
+    {
+      "path": "dist/assets/festival-item-qixi.svg",
+      "bytes": 3258,
+      "gitBlob": "dbfa2570aa17f77ff7ff684eab77a302fad6e14c"
+    },
+    {
+      "path": "dist/assets/festival-item-spring.svg",
+      "bytes": 3134,
+      "gitBlob": "b78f8ad10dfd81685a7e97c655e11e5836cb4b15"
+    },
+    {
+      "path": "dist/assets/festival-item-thanksgiving.svg",
+      "bytes": 2849,
+      "gitBlob": "440a550431ec04f30349c2e7675ddf25a0076ddb"
+    },
+    {
+      "path": "dist/assets/festival-item-valentine.svg",
+      "bytes": 3023,
+      "gitBlob": "82bd1055aed36085719d9028cac6e0390768ba35"
+    },
+    {
+      "path": "dist/assets/festival-npc-christmas.svg",
+      "bytes": 3221,
+      "gitBlob": "f51dc5b059a62440def6dfdbf44b5b471456b998"
+    },
+    {
+      "path": "dist/assets/festival-npc-dragonboat.svg",
+      "bytes": 3169,
+      "gitBlob": "d10811d1f520c0b89d48b660511e7ab7c6bdf2ca"
+    },
+    {
+      "path": "dist/assets/festival-npc-halloween.svg",
+      "bytes": 2816,
+      "gitBlob": "1e02fe8dc031aba28304e4258aee6b9db2eb2cbc"
+    },
+    {
+      "path": "dist/assets/festival-npc-lantern.svg",
+      "bytes": 3068,
+      "gitBlob": "b1a19e3cebd1fdf3bb34a4454dd7d36e19ceb96c"
+    },
+    {
+      "path": "dist/assets/festival-npc-midautumn.svg",
+      "bytes": 2766,
+      "gitBlob": "2b31a265884b78a152df3a0da20d06f427c8cd8e"
+    },
+    {
+      "path": "dist/assets/festival-npc-newyear.svg",
+      "bytes": 2968,
+      "gitBlob": "2cf9c027a17dbae0a19240b879a3dad6041c9274"
+    },
+    {
+      "path": "dist/assets/festival-npc-qixi.svg",
+      "bytes": 2553,
+      "gitBlob": "45f5cb9470825978662d12bb6ecf5e05581e17b3"
+    },
+    {
+      "path": "dist/assets/festival-npc-spring.svg",
+      "bytes": 2986,
+      "gitBlob": "bf1230ade32d5c72aed3624bc5abe1283f6aada7"
+    },
+    {
+      "path": "dist/assets/festival-npc-thanksgiving.svg",
+      "bytes": 2760,
+      "gitBlob": "4bf34b2696c91bdfaa8d6aef4c71b67daa0af9cc"
+    },
+    {
+      "path": "dist/assets/festival-npc-valentine.svg",
+      "bytes": 2800,
+      "gitBlob": "cd2f336f7bfdc467b7204b497b1a8df2025a3b99"
+    },
+    {
+      "path": "dist/assets/greenhouse-painted-v17.webp",
+      "bytes": 508666,
+      "gitBlob": "1fd491e1b1b05a1557a210f2cf6223c92cfc76a6"
+    },
+    {
+      "path": "dist/assets/library-painted-v26.webp",
+      "bytes": 178156,
+      "gitBlob": "c7a7d9473f2a55ceef9fcab1df3876545452145b"
+    },
+    {
+      "path": "dist/assets/portrait-hero-curious.svg",
+      "bytes": 11821,
+      "gitBlob": "74b3a01aa444b8de658f80c5235bf43481f5574d"
+    },
+    {
+      "path": "dist/assets/portrait-hero-joy.svg",
+      "bytes": 11604,
+      "gitBlob": "4bcf4c378f353950063f903d8d519dad6ac1540a"
+    },
+    {
+      "path": "dist/assets/portrait-hero-open.svg",
+      "bytes": 12708,
+      "gitBlob": "1416fb0a83167387e4cbc6dd7f5c3cea0a3aabb8"
+    },
+    {
+      "path": "dist/assets/portrait-hero-tender.svg",
+      "bytes": 11673,
+      "gitBlob": "ffd93d05f2f84691a78d77f42de2d9a43c36227c"
+    },
+    {
+      "path": "dist/assets/portrait-hero.svg",
+      "bytes": 11598,
+      "gitBlob": "0b158c2bef9f82a6f91a845e0c15696f1a04a06a"
+    },
+    {
+      "path": "dist/assets/portrait-keeper.svg",
+      "bytes": 3053,
+      "gitBlob": "574f497998d808a0606c4d768c2ee94881fb8f0d"
+    },
+    {
+      "path": "dist/assets/portrait-moth.svg",
+      "bytes": 3575,
+      "gitBlob": "ad814207176e0337b547f9c4398210d3e1bd42dd"
+    },
+    {
+      "path": "dist/assets/portrait-soul-brave.svg",
+      "bytes": 7204,
+      "gitBlob": "ec980168667c17cb32c4f1396b7cf94e026ab637"
+    },
+    {
+      "path": "dist/assets/portrait-soul-joy.svg",
+      "bytes": 6893,
+      "gitBlob": "31c89762339cfe657eb2d78243c2739faafb53ea"
+    },
+    {
+      "path": "dist/assets/portrait-soul-peek.svg",
+      "bytes": 6802,
+      "gitBlob": "bb5b5d08940056aeac6c336c7fb673f7a11f7b51"
+    },
+    {
+      "path": "dist/assets/portrait-soul-sleep.svg",
+      "bytes": 6742,
+      "gitBlob": "1831852bfdae41dc925d81a22819cb9a3ecdc5d4"
+    },
+    {
+      "path": "dist/assets/portrait-soul.svg",
+      "bytes": 6766,
+      "gitBlob": "c3a1b6fccc3d7a816354e5cb064c48ee9323f82e"
+    },
+    {
+      "path": "dist/assets/portrait-whale.svg",
+      "bytes": 3200,
+      "gitBlob": "8f67f512150684db2cec31e8c66bf2917d2ffc91"
+    },
+    {
+      "path": "dist/assets/post-painted-v28.webp",
+      "bytes": 101798,
+      "gitBlob": "809dc7a584504d1eb49277fc9f292c3853aab96c"
+    },
+    {
+      "path": "dist/assets/reward-feather_charm.svg",
+      "bytes": 2370,
+      "gitBlob": "7f289262e1c1ad17ded7443db87d28bb242ed378"
+    },
+    {
+      "path": "dist/assets/reward-glow_candy.svg",
+      "bytes": 2470,
+      "gitBlob": "55940e726dadc933f1a00f5740235c7acf514fdc"
+    },
+    {
+      "path": "dist/assets/reward-star_compass.svg",
+      "bytes": 2260,
+      "gitBlob": "3a406d84d01705bdf139918b36481ddef4e4b32e"
+    },
+    {
+      "path": "dist/assets/station-painted-v16.webp",
+      "bytes": 266328,
+      "gitBlob": "7fb5a6ecf41233bf7afa9b7c7213fe7ef308dd21"
+    },
+    {
+      "path": "dist/assets/theatre-painted-v20.svg",
+      "bytes": 58148,
+      "gitBlob": "92b284a7d3d89a45462528abaa15faf3f34f0dd5"
+    },
+    {
+      "path": "dist/assets/theatre-painted-v22.webp",
+      "bytes": 178844,
+      "gitBlob": "9dfccc0cdd46daadc417f6899801d77f147a2573"
+    },
+    {
+      "path": "dist/cap-activities.css",
+      "bytes": 3911,
+      "gitBlob": "e77d0771ee038406aa9b06d689de7cb9ba82807f"
+    },
+    {
+      "path": "dist/cap-activity-progress.js",
+      "bytes": 11165,
+      "gitBlob": "abfab59830e0cd0602dda3cc41d5b0dd385fa572"
+    },
+    {
+      "path": "dist/cap-book.js",
+      "bytes": 17410,
+      "gitBlob": "1c11b0b0114f641b7516a6abcd3b877ab218e349"
+    },
+    {
+      "path": "dist/cap-play.css",
+      "bytes": 9603,
+      "gitBlob": "d2352fbfccf384058a81c343dad341d042ecdb39"
+    },
+    {
+      "path": "dist/cap-portraits.css",
+      "bytes": 2741,
+      "gitBlob": "e37839f8ebe175682a174c26e0c657c923637f2a"
+    },
+    {
+      "path": "dist/cap-progress.js",
+      "bytes": 4574,
+      "gitBlob": "cfabbb9db7b5a4adb1d39d92edd22b1419417b47"
+    },
+    {
+      "path": "dist/company-footer.css",
+      "bytes": 1785,
+      "gitBlob": "4ded84af1c16b08a760223d2106352c401ca29c2"
+    },
+    {
+      "path": "dist/content.js",
+      "bytes": 19739,
+      "gitBlob": "da147a37662601dd33428425b14d0d6c822910bd"
+    },
+    {
+      "path": "dist/dream-app.js",
+      "bytes": 65492,
+      "gitBlob": "7edc954415a94a8f8e17774dbfba48b1ebb966e3"
+    },
+    {
+      "path": "dist/dream-awakening-art.js",
+      "bytes": 26022,
+      "gitBlob": "eaa4131ed7e8d77e05b99d028961f832a6387d8a"
+    },
+    {
+      "path": "dist/dream-awakenings.js",
+      "bytes": 3832,
+      "gitBlob": "af08b8dd8479e273c3b55a4ce9109df576f6ae20"
+    },
+    {
+      "path": "dist/dream-cap-activities.js",
+      "bytes": 13737,
+      "gitBlob": "b3d2a940184a5a3322140fa02bc2e3b2297e437a"
+    },
+    {
+      "path": "dist/dream-cap-activity-art.js",
+      "bytes": 32906,
+      "gitBlob": "28a9fe83f8e2e9f3a37e2b641b12f6065ce61dc1"
+    },
+    {
+      "path": "dist/dream-cap-activity-engine.js",
+      "bytes": 15627,
+      "gitBlob": "b097b18e8824aaf099807e227375b60efff953ff"
+    },
+    {
+      "path": "dist/dream-cap-art.js",
+      "bytes": 23249,
+      "gitBlob": "4aa3369dc43b85cec968bbdd230547798903b7f5"
+    },
+    {
+      "path": "dist/dream-cap-story.js",
+      "bytes": 14480,
+      "gitBlob": "5817552b93f359f68cc2629fbcc572e4a8200835"
+    },
+    {
+      "path": "dist/dream-clock-echo.js",
+      "bytes": 8888,
+      "gitBlob": "eae39f75a307eef9fa46c5f7a65f4531cc442e5c"
+    },
+    {
+      "path": "dist/dream-coast-finish.js",
+      "bytes": 6742,
+      "gitBlob": "b44a6e1ed071415653d8c0540b3268de21a7a07d"
+    },
+    {
+      "path": "dist/dream-coast-scene.js",
+      "bytes": 4219,
+      "gitBlob": "bf92c423dbc8d8c29481f7f3a73fefcd2273373e"
+    },
+    {
+      "path": "dist/dream-direction-input.js",
+      "bytes": 1920,
+      "gitBlob": "a76bfa02d860fe03885bdc1d60557d86cf5b2d7c"
+    },
+    {
+      "path": "dist/dream-encounter-art.js",
+      "bytes": 34104,
+      "gitBlob": "ad04e77119a580063b540aa0e36c40a7d7171856"
+    },
+    {
+      "path": "dist/dream-encounters.js",
+      "bytes": 16794,
+      "gitBlob": "dacad19d36be8008a91291552516d0d9b3e62d92"
+    },
+    {
+      "path": "dist/dream-ending-art.js",
+      "bytes": 21986,
+      "gitBlob": "782b45da5f5f9e29a977571a7ad59c655b47d531"
+    },
+    {
+      "path": "dist/dream-ending-scene.js",
+      "bytes": 1771,
+      "gitBlob": "e4675255a02d949676779e990bda89e565749d52"
+    },
+    {
+      "path": "dist/dream-ending.css",
+      "bytes": 4186,
+      "gitBlob": "4a3ed6c88d38d60062f2a5f4f49516bfef89b2c8"
+    },
+    {
+      "path": "dist/dream-engine-base.js",
+      "bytes": 94772,
+      "gitBlob": "1f6974f2038de030518ac23a83ddd0c0df4f7e55"
+    },
+    {
+      "path": "dist/dream-engine.js",
+      "bytes": 25985,
+      "gitBlob": "f9f99ca6f1024a672bfcae2fb58e9df74b57b678"
+    },
+    {
+      "path": "dist/dream-festival-art.js",
+      "bytes": 31364,
+      "gitBlob": "eb3690aba440efdebf01a0f402f8741cfcc42da9"
+    },
+    {
+      "path": "dist/dream-festival-levels.js",
+      "bytes": 6674,
+      "gitBlob": "86c779a50b4866a0dd2f7ba690115ee45155b3c6"
+    },
+    {
+      "path": "dist/dream-festivals.js",
+      "bytes": 53530,
+      "gitBlob": "12386c43c139264162724641722adc038c4e95dc"
+    },
+    {
+      "path": "dist/dream-first-ticket-art.js",
+      "bytes": 4329,
+      "gitBlob": "4852b8e68d32b1b204fea1d780d9f9140091971b"
+    },
+    {
+      "path": "dist/dream-greenhouse-art.js",
+      "bytes": 3880,
+      "gitBlob": "3b18f5a30c7e489c8c6d93b7ded3bb789dd41053"
+    },
+    {
+      "path": "dist/dream-greenhouse-finish.js",
+      "bytes": 10999,
+      "gitBlob": "29124bb10db22e66bb79a4073b7838f7e59e2ced"
+    },
+    {
+      "path": "dist/dream-greenhouse-scene.js",
+      "bytes": 4446,
+      "gitBlob": "888b66d76fbcc7e6a1bf812187922b74b53ac0c0"
+    },
+    {
+      "path": "dist/dream-ground-shadow.js",
+      "bytes": 3409,
+      "gitBlob": "e15c26caeb3df1d8cdaabae3b0c8cf12c087a5b2"
+    },
+    {
+      "path": "dist/dream-journey.js",
+      "bytes": 10112,
+      "gitBlob": "e9fbf5734997bf907e9b3d01b884d7c5795339cb"
+    },
+    {
+      "path": "dist/dream-letter-echo.js",
+      "bytes": 8899,
+      "gitBlob": "84083288291baaeadfbf410237bca06fbebb7929"
+    },
+    {
+      "path": "dist/dream-levels.js",
+      "bytes": 8742,
+      "gitBlob": "1deb653a8745cecc78a8beef1a9cd9cb3afc3f73"
+    },
+    {
+      "path": "dist/dream-library-finish.js",
+      "bytes": 2485,
+      "gitBlob": "c035b01051e0a5ad644200e5ded0e66a4a0025e6"
+    },
+    {
+      "path": "dist/dream-library-scene.js",
+      "bytes": 3661,
+      "gitBlob": "bb41e3942519dcab27995d402bee1c66793ea78c"
+    },
+    {
+      "path": "dist/dream-lost-art.js",
+      "bytes": 41560,
+      "gitBlob": "ebfac7c71f6b75ed3b7c7f3a30bbae655f939df2"
+    },
+    {
+      "path": "dist/dream-lost-cases.js",
+      "bytes": 26967,
+      "gitBlob": "459164db3799ded99c220bb9914a97bca6d180e8"
+    },
+    {
+      "path": "dist/dream-lost-encore-art.js",
+      "bytes": 15525,
+      "gitBlob": "fa70a17a21e97a2e599ac77a14dc506536a68a1f"
+    },
+    {
+      "path": "dist/dream-lost-encores.js",
+      "bytes": 2730,
+      "gitBlob": "85d55a417353ae7e4b38dbc28616f43d4cee98c4"
+    },
+    {
+      "path": "dist/dream-lost-engine.js",
+      "bytes": 12739,
+      "gitBlob": "df73fd4ca5b2a81d580ab828ea193929e9c93f68"
+    },
+    {
+      "path": "dist/dream-modal-input.js",
+      "bytes": 5458,
+      "gitBlob": "4110bd3d6d324f24cba36dcd791c5a117c843182"
+    },
+    {
+      "path": "dist/dream-moon-art.js",
+      "bytes": 14741,
+      "gitBlob": "e27b272009c9740a763cee38a638c931810fe49c"
+    },
+    {
+      "path": "dist/dream-moon-play.js",
+      "bytes": 12656,
+      "gitBlob": "71df85d3f033adc790443cb831618108cf7a6687"
+    },
+    {
+      "path": "dist/dream-painted-scene.js",
+      "bytes": 7197,
+      "gitBlob": "487e15e8ef37b581074187abbbea91eec466dfa7"
+    },
+    {
+      "path": "dist/dream-play.css",
+      "bytes": 13110,
+      "gitBlob": "43f2aa343f9691e94f3310af3e670069b2527536"
+    },
+    {
+      "path": "dist/dream-post-delivery.js",
+      "bytes": 1988,
+      "gitBlob": "523bc4c1337b2de6cd0cef5e748ad719b0cac965"
+    },
+    {
+      "path": "dist/dream-post-finish.js",
+      "bytes": 4432,
+      "gitBlob": "9c9eea062b26c7613931bee13105d1e7aeb5a637"
+    },
+    {
+      "path": "dist/dream-post-scene.js",
+      "bytes": 3462,
+      "gitBlob": "a5b6d808b0741d2f82cf997169247fd1f6f92b2c"
+    },
+    {
+      "path": "dist/dream-scene-backdrop.js",
+      "bytes": 19110,
+      "gitBlob": "65aac9997dbffc2b30d86532dc22061fce758a1b"
+    },
+    {
+      "path": "dist/dream-soul-art.js",
+      "bytes": 10699,
+      "gitBlob": "0e71fc4e30ce41324a6cfbeb27a7532108af5db8"
+    },
+    {
+      "path": "dist/dream-station-art.js",
+      "bytes": 16476,
+      "gitBlob": "12ee5d7ea3ef84c1d69d229304ec56083f042d2a"
+    },
+    {
+      "path": "dist/dream-story-portrait.js",
+      "bytes": 1526,
+      "gitBlob": "de89500827c071568489e9b28262a32fe68180e1"
+    },
+    {
+      "path": "dist/dream-story.js",
+      "bytes": 31000,
+      "gitBlob": "38871a35ce1c9131d86c1bf11f74bc29381e1acd"
+    },
+    {
+      "path": "dist/dream-theatre-art.js",
+      "bytes": 11372,
+      "gitBlob": "5e99f2faff5aefb737225d639de4290844fd049a"
+    },
+    {
+      "path": "dist/dream-theatre-encore.js",
+      "bytes": 4646,
+      "gitBlob": "854a172c64ee269043b3b782c11dbf297b01910a"
+    },
+    {
+      "path": "dist/dream-theatre-guidance.js",
+      "bytes": 3586,
+      "gitBlob": "c5826a5e38dcd1f3045745b581721fe658fc716f"
+    },
+    {
+      "path": "dist/dream-theatre-lantern.js",
+      "bytes": 5506,
+      "gitBlob": "ee5906c632147c1d5ff134976b6793ec1da6886c"
+    },
+    {
+      "path": "dist/dream-theatre-painted.js",
+      "bytes": 6850,
+      "gitBlob": "26f23bd92935b7df2192eefb35d0167fa254252a"
+    },
+    {
+      "path": "dist/dream-traveler-art.js",
+      "bytes": 8767,
+      "gitBlob": "68053593be2394528f7c640a53e5c44a42f24eb9"
+    },
+    {
+      "path": "dist/dream-traveler-face.js",
+      "bytes": 6783,
+      "gitBlob": "913068ed2c8d27ff8dbc144c02bb466f2ac19e92"
+    },
+    {
+      "path": "dist/dream-traveler-performance.js",
+      "bytes": 7342,
+      "gitBlob": "e77f195c1999e6a56386d47137698c4da47904a1"
+    },
+    {
+      "path": "dist/dream-ui.js",
+      "bytes": 4422,
+      "gitBlob": "b1fac20217fcb146c8083c407629bb9bd1dff298"
+    },
+    {
+      "path": "dist/dream.css",
+      "bytes": 64955,
+      "gitBlob": "24eb69c93469edee17485ebf38eb9d646da4daae"
+    },
+    {
+      "path": "dist/dream.html",
+      "bytes": 25981,
+      "gitBlob": "e125d428d4767b44a3b197893cb0cc7cbc5b7896"
+    },
+    {
+      "path": "dist/engine.js",
+      "bytes": 40797,
+      "gitBlob": "5d249953c9259aa54296ee4b30218097924716e2"
+    },
+    {
+      "path": "dist/favicon.svg",
+      "bytes": 382,
+      "gitBlob": "7ec686059b853335c185afe3e423c1ca2b6956b3"
+    },
+    {
+      "path": "dist/festival-hub.js",
+      "bytes": 21507,
+      "gitBlob": "a8bdc78e61bf3c07ca378f276d785d4aae2f9a29"
+    },
+    {
+      "path": "dist/festival.css",
+      "bytes": 21046,
+      "gitBlob": "38e5813e45f9ac4c4145ce2e26d33a5d5ce3bd42"
+    },
+    {
+      "path": "dist/game-shell.css",
+      "bytes": 8510,
+      "gitBlob": "17e0a743b991c02843ed1567b570c74755fd8e48"
+    },
+    {
+      "path": "dist/game-shell.js",
+      "bytes": 7726,
+      "gitBlob": "4d61f760a5cdd4d6f159785dae52764d6dbc930b"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 25981,
+      "gitBlob": "e125d428d4767b44a3b197893cb0cc7cbc5b7896"
+    },
+    {
+      "path": "dist/lost-evidence.js",
+      "bytes": 7147,
+      "gitBlob": "f05fad3c00bdbc4bac2af7d6572ca8be0d603532"
+    },
+    {
+      "path": "dist/lost-play.css",
+      "bytes": 7354,
+      "gitBlob": "ff0d3f2335b4dccf2a994e7daf4341333c30fb57"
+    },
+    {
+      "path": "dist/lost-progress.js",
+      "bytes": 9956,
+      "gitBlob": "7358a9653ea5180294c990041ac0ba13aabf02e6"
+    },
+    {
+      "path": "dist/play-rewards.js",
+      "bytes": 20803,
+      "gitBlob": "78f7e7ed579a2366d11f3c442ff0e969aa6f3d95"
+    },
+    {
+      "path": "dist/portal.css",
+      "bytes": 2729,
+      "gitBlob": "f1a1ae692580596cd2fe8acd0a4f4bf8560f0eb5"
+    },
+    {
+      "path": "dist/style.css",
+      "bytes": 36943,
+      "gitBlob": "2344cf590c1eb94d633038a62c601e1cbde89cdf"
+    },
+    {
+      "path": "dist/survivor-play.css",
+      "bytes": 8562,
+      "gitBlob": "4d9089fa3379e1a6b1371999da3f3cd4722a0991"
+    },
+    {
+      "path": "dist/survivor.html",
+      "bytes": 17452,
+      "gitBlob": "82b8b9d20e4c90976ef2b9007c3e19a3455186fc"
+    },
+    {
+      "path": "docs/ART-DIRECTION-v16.md",
+      "bytes": 5754,
+      "gitBlob": "43409c7ea90289c32290613e391ed698f827262c"
+    },
+    {
+      "path": "docs/ART-DIRECTION-v17.md",
+      "bytes": 4326,
+      "gitBlob": "5c0159390b5d89ada8c1ca0703e5accec53df660"
+    },
+    {
+      "path": "docs/CREDITS.md",
+      "bytes": 2329,
+      "gitBlob": "5484e1e76e101f189a291b8986c8e3548d18b6e8"
+    },
+    {
+      "path": "docs/DOMAIN-tougaigu.com.md",
+      "bytes": 16188,
+      "gitBlob": "3117e1b8aeea13260d84519c9b3d031af93a2da9"
+    },
+    {
+      "path": "docs/FESTIVAL-CALENDAR-SOURCES.md",
+      "bytes": 10083,
+      "gitBlob": "3c08bab18bd87d78fe2d87630112e91347a01225"
+    },
+    {
+      "path": "docs/IN-PROGRESS-v22.md",
+      "bytes": 2013,
+      "gitBlob": "5a20bbf88b16a596d6650f9d2d43f7f6025cacd8"
+    },
+    {
+      "path": "docs/IN-PROGRESS-v23.md",
+      "bytes": 1232,
+      "gitBlob": "6deee2c7604fe7debba1959b7fd89d79d63e0a4b"
+    },
+    {
+      "path": "docs/IN-PROGRESS-v25.md",
+      "bytes": 4082,
+      "gitBlob": "8a0d7609712720034f5645d52808469481fa1c3b"
+    },
+    {
+      "path": "docs/IN-PROGRESS-v26.md",
+      "bytes": 4016,
+      "gitBlob": "16b3329db21de2410b4a4d19be7427a99b1cc0d8"
+    },
+    {
+      "path": "docs/IN-PROGRESS-v27.md",
+      "bytes": 2445,
+      "gitBlob": "73b56104950a9d32b49bc47a508d47dd44eecb78"
+    },
+    {
+      "path": "docs/IN-PROGRESS-v28.md",
+      "bytes": 4502,
+      "gitBlob": "24656d66cf5e1d6f22f6173702c9a2563511b75d"
+    },
+    {
+      "path": "docs/IN-PROGRESS-v29.md",
+      "bytes": 9437,
+      "gitBlob": "6386559b596f2ad7aff910dae4d584bc949e2d48"
+    },
+    {
+      "path": "docs/IN-PROGRESS-v30.md",
+      "bytes": 8255,
+      "gitBlob": "96a59e597218d2e5a4a5be506b327f8ebea79cca"
+    },
+    {
+      "path": "docs/IN-PROGRESS-v31.md",
+      "bytes": 5265,
+      "gitBlob": "82364145e02d9e8086662f3aa371c1ba9ef77aaf"
+    },
+    {
+      "path": "docs/ITERATION.md",
+      "bytes": 33203,
+      "gitBlob": "45cc91c0976bef9d3207d82e5ff5aa8a05ab13f7"
+    },
+    {
+      "path": "docs/PLAN-v23.md",
+      "bytes": 2906,
+      "gitBlob": "8ca88146e9f281379dc353ec653f20816e2aae23"
+    },
+    {
+      "path": "docs/PLAN-v24.md",
+      "bytes": 4797,
+      "gitBlob": "e2d0bfbab33e11227f88d4bafca5a83d7ad55d0d"
+    },
+    {
+      "path": "docs/PLAN-v25.md",
+      "bytes": 2971,
+      "gitBlob": "71f28d2d9016ef736fa8f31d837a60789fcc1674"
+    },
+    {
+      "path": "docs/PLAN-v26.md",
+      "bytes": 20741,
+      "gitBlob": "111174f380d4b250e584e0b93f69660a3e3494ff"
+    },
+    {
+      "path": "docs/PLAN-v27.md",
+      "bytes": 3440,
+      "gitBlob": "1d0f036d51435120d8777a5aca0a9540ad70713b"
+    },
+    {
+      "path": "docs/PLAN-v28.md",
+      "bytes": 14376,
+      "gitBlob": "ba568c4bd6136d05d1fc78a8f01d79e0a4c0e694"
+    },
+    {
+      "path": "docs/PLAN-v29.md",
+      "bytes": 1952,
+      "gitBlob": "09b4569937154ae700b8af8a85024f44c3e3e962"
+    },
+    {
+      "path": "docs/PLAN-v30.md",
+      "bytes": 15911,
+      "gitBlob": "6769b079fca3739218aecffa7dccdcadeb1a6cc0"
+    },
+    {
+      "path": "docs/PLAN-v31.md",
+      "bytes": 18347,
+      "gitBlob": "db853bf36b7c641c27e83001818dc45f994d551e"
+    },
+    {
+      "path": "docs/QA-v10.md",
+      "bytes": 3502,
+      "gitBlob": "3c069ad323475c6798d63aeaf9623b6daea3eece"
+    },
+    {
+      "path": "docs/QA-v11.md",
+      "bytes": 3586,
+      "gitBlob": "6c5fb9ff7f0c50d153d77836ea100e6044ea72ec"
+    },
+    {
+      "path": "docs/QA-v12.md",
+      "bytes": 4985,
+      "gitBlob": "5f1d5042daf00e9453471948de38b378d5bdd139"
+    },
+    {
+      "path": "docs/QA-v13.md",
+      "bytes": 5676,
+      "gitBlob": "ce28bdcb8a6580e541091a35f26487d6e0ce7901"
+    },
+    {
+      "path": "docs/QA-v14-public.md",
+      "bytes": 1050,
+      "gitBlob": "ad19e19671f3b79e23fbc31731d36a8da0e667d2"
+    },
+    {
+      "path": "docs/QA-v14.md",
+      "bytes": 4228,
+      "gitBlob": "61b3dd837c93bfe952eeaa5a634b704827c1dbb5"
+    },
+    {
+      "path": "docs/QA-v15.md",
+      "bytes": 5630,
+      "gitBlob": "5b824b42d0f2f2f0cf02b0da70742b4a28959bd0"
+    },
+    {
+      "path": "docs/QA-v16.md",
+      "bytes": 8149,
+      "gitBlob": "9badecfc04534900d777958ed4d34523e0c27f9d"
+    },
+    {
+      "path": "docs/QA-v17.md",
+      "bytes": 4873,
+      "gitBlob": "ebcedfe61357e50553bceedf3fa6e0e33e955cb1"
+    },
+    {
+      "path": "docs/QA-v18.md",
+      "bytes": 5702,
+      "gitBlob": "bfbd90b76b078b9a58d5d264a7fbff3f5acabed6"
+    },
+    {
+      "path": "docs/QA-v19.md",
+      "bytes": 6046,
+      "gitBlob": "6eea70df17f84f399a5648e718fb64921c86bed6"
+    },
+    {
+      "path": "docs/QA-v2.1.md",
+      "bytes": 4561,
+      "gitBlob": "a5e0c8cac46f1f9e2e554b53a8a642a2a940752c"
+    },
+    {
+      "path": "docs/QA-v2.md",
+      "bytes": 5118,
+      "gitBlob": "29c68c7b07f1d218bad128928c6c4e20018e44c7"
+    },
+    {
+      "path": "docs/QA-v20.md",
+      "bytes": 5241,
+      "gitBlob": "3b1a8c1e93b49b356f22e2d6a8cd312fc694109d"
+    },
+    {
+      "path": "docs/QA-v21.md",
+      "bytes": 5597,
+      "gitBlob": "b9184010d6b12cfa518f38760e2fbac9857e8cb3"
+    },
+    {
+      "path": "docs/QA-v22.md",
+      "bytes": 11540,
+      "gitBlob": "88f3ee7fd7e6eda76607f01206f2ed0a79fd5579"
+    },
+    {
+      "path": "docs/QA-v23.md",
+      "bytes": 14301,
+      "gitBlob": "782b8384e99ca3a5bad56942cb3aa7aac4e0a3f5"
+    },
+    {
+      "path": "docs/QA-v24.md",
+      "bytes": 12951,
+      "gitBlob": "38e54c9dc1aa05c46b447e5c5dc8fc45ef64c7ff"
+    },
+    {
+      "path": "docs/QA-v25.md",
+      "bytes": 14956,
+      "gitBlob": "5330eff095bce12480e4437801fcf8123f86f657"
+    },
+    {
+      "path": "docs/QA-v26.md",
+      "bytes": 8110,
+      "gitBlob": "4c689bf42bde24f228afaf47571ed7fc2a0e297a"
+    },
+    {
+      "path": "docs/QA-v27.md",
+      "bytes": 11876,
+      "gitBlob": "3fde3025cd99fa3b191dab104c3ca3da3e440144"
+    },
+    {
+      "path": "docs/QA-v28.md",
+      "bytes": 5232,
+      "gitBlob": "af11537dbd0530d95d827ee6c8e6c818500a15db"
+    },
+    {
+      "path": "docs/QA-v29.md",
+      "bytes": 19944,
+      "gitBlob": "a1c4603eb92a4e42012b32808691a5d2028216e4"
+    },
+    {
+      "path": "docs/QA-v3.md",
+      "bytes": 5505,
+      "gitBlob": "ca4e057fe5b35a63243f56acde18aa12ba9f2adc"
+    },
+    {
+      "path": "docs/QA-v30.md",
+      "bytes": 18353,
+      "gitBlob": "ce8d066616e24eac05ec969f1978e81c4b9bc6e5"
+    },
+    {
+      "path": "docs/QA-v31.md",
+      "bytes": 8861,
+      "gitBlob": "a7f1c1e0ebb9fefd851fc4ed2d34e786c268b677"
+    },
+    {
+      "path": "docs/QA-v4.md",
+      "bytes": 4131,
+      "gitBlob": "877215fb28222a734e2658590e4a2f15d589bcf7"
+    },
+    {
+      "path": "docs/QA-v5.md",
+      "bytes": 4150,
+      "gitBlob": "254653a24db87d6b3d24fbee9da3d651c6ddadb5"
+    },
+    {
+      "path": "docs/QA-v6.md",
+      "bytes": 3480,
+      "gitBlob": "34e6aa44477709cfbb717ba68c3a74361178da40"
+    },
+    {
+      "path": "docs/QA-v7.md",
+      "bytes": 3065,
+      "gitBlob": "40a455839e6859d9ad29098b78759eb893af671d"
+    },
+    {
+      "path": "docs/QA-v8.md",
+      "bytes": 5529,
+      "gitBlob": "d2efb07d2c8a4cd75b180f6586b76a5891d1ad8f"
+    },
+    {
+      "path": "docs/QA-v9.md",
+      "bytes": 3976,
+      "gitBlob": "6940d7a78769154d09162106577fc5e3fd5db3da"
+    },
+    {
+      "path": "docs/QA.md",
+      "bytes": 3599,
+      "gitBlob": "fcf3da48b71646613cc5f8923ff38cb4d0e9a49c"
+    },
+    {
+      "path": "docs/README-v14.md",
+      "bytes": 34718,
+      "gitBlob": "12c31a7c0d1f5af300877ec6f029486ad464c12e"
+    },
+    {
+      "path": "docs/art/coast-v27/art-notes-v27.md",
+      "bytes": 5708,
+      "gitBlob": "a4341fe4b72b6838fada49bcd43767010b179185"
+    },
+    {
+      "path": "docs/art/coast-v27/asset-manifest-v27.json",
+      "bytes": 3184,
+      "gitBlob": "a5c2543b2acc0a67571075dec549a8c0ce452621"
+    },
+    {
+      "path": "docs/art/coast-v27/coast-painted-original-v27.png",
+      "bytes": 2002282,
+      "gitBlob": "646681aa68b0e844a5fcc4d6cf3b66705186fd7e"
+    },
+    {
+      "path": "docs/art/coast-v27/coast-painted-v27.webp",
+      "bytes": 71750,
+      "gitBlob": "702c08721716d9b26307dff2967f526144521061"
+    },
+    {
+      "path": "docs/art/coast-v27/crop-report-v27.json",
+      "bytes": 4142,
+      "gitBlob": "0361b69b3a73100f9e627d0cc413ca07e414336b"
+    },
+    {
+      "path": "docs/art/coast-v27/inspect-crops.mjs",
+      "bytes": 3100,
+      "gitBlob": "46b523a7bf6098f52630c6967360c5473547c9a5"
+    },
+    {
+      "path": "docs/art/coast-v27/inspection/desktop-left-middle-right.png",
+      "bytes": 1490048,
+      "gitBlob": "091fca4e02e5daf000cd9ddb01acd7c02e80ae99"
+    },
+    {
+      "path": "docs/art/coast-v27/inspection/phone-320-left-middle-right.png",
+      "bytes": 453758,
+      "gitBlob": "1c3cd7963379f22d9dc561f2589fb4c83b9fd09c"
+    },
+    {
+      "path": "docs/art/coast-v27/inspection/phone-390-left-middle-right.png",
+      "bytes": 631706,
+      "gitBlob": "77fcea551838691ec44f4dbf694c701812826299"
+    },
+    {
+      "path": "docs/art/coast-v27/prompt.txt",
+      "bytes": 4231,
+      "gitBlob": "03a6240a56453ec8f17e76633fac5e8ba2c28eed"
+    },
+    {
+      "path": "docs/art/greenhouse-painted-original.png",
+      "bytes": 2694455,
+      "gitBlob": "b1bf5a73d7078f79a64c7512e6d694ab1b87c9a3"
+    },
+    {
+      "path": "docs/art/library-v26/art-notes-v26.md",
+      "bytes": 7273,
+      "gitBlob": "7a0338787ab38ac477e2b00f593194e0fa0f7348"
+    },
+    {
+      "path": "docs/art/library-v26/asset-manifest-v26.json",
+      "bytes": 1719,
+      "gitBlob": "755b75fa433d9e9f6a094b9da8b898c04906fbc5"
+    },
+    {
+      "path": "docs/art/library-v26/crop-report-v26.json",
+      "bytes": 4738,
+      "gitBlob": "f0c43e57859be4899810cd1f23666a34614c7504"
+    },
+    {
+      "path": "docs/art/library-v26/inspect-crops.mjs",
+      "bytes": 5448,
+      "gitBlob": "bfcab225b86d28e7a21e471aee4fc103b609dd69"
+    },
+    {
+      "path": "docs/art/library-v26/library-painted-original-v26.png",
+      "bytes": 2162301,
+      "gitBlob": "348dde344fa662dc5b29e940548d7f55790efe3c"
+    },
+    {
+      "path": "docs/art/library-v26/library-painted-v26.webp",
+      "bytes": 178156,
+      "gitBlob": "c7a7d9473f2a55ceef9fcab1df3876545452145b"
+    },
+    {
+      "path": "docs/art/library-v26/prompt.txt",
+      "bytes": 3754,
+      "gitBlob": "27fa4428e6025eff0125485453975e44eaba6692"
+    },
+    {
+      "path": "docs/art/post-v28/art-notes-v28.md",
+      "bytes": 3704,
+      "gitBlob": "97f98220e1851c855eb0684bfdb92c7961d94ef4"
+    },
+    {
+      "path": "docs/art/post-v28/asset-manifest-v28.json",
+      "bytes": 3682,
+      "gitBlob": "71ef33baca619253bd790e35eb6fcc5ea33beac2"
+    },
+    {
+      "path": "docs/art/post-v28/crop-report-v28.json",
+      "bytes": 4683,
+      "gitBlob": "b86738c0a9c51fb8d432593867f58fb3a86e8fef"
+    },
+    {
+      "path": "docs/art/post-v28/inspect-crops.mjs",
+      "bytes": 3500,
+      "gitBlob": "38870a4d6b3aaa2cafbeda0fb1e0a52f3fade1f0"
+    },
+    {
+      "path": "docs/art/post-v28/inspection/desktop-left-middle-right.png",
+      "bytes": 1817936,
+      "gitBlob": "0ec2c81dee927f77583735756188b6d899a4e5ce"
+    },
+    {
+      "path": "docs/art/post-v28/inspection/phone-320-left-middle-right.png",
+      "bytes": 569512,
+      "gitBlob": "ae7d8d93c5dac7347659b3c392b2195dcbf31f7c"
+    },
+    {
+      "path": "docs/art/post-v28/inspection/phone-390-left-middle-right.png",
+      "bytes": 824503,
+      "gitBlob": "67f9913ec5d28679b6031df610d10c7709faeb65"
+    },
+    {
+      "path": "docs/art/post-v28/post-painted-original-v28.png",
+      "bytes": 2307344,
+      "gitBlob": "ec6b4fb752116bae299177d351d94f687eed6168"
+    },
+    {
+      "path": "docs/art/post-v28/post-painted-v28.webp",
+      "bytes": 101798,
+      "gitBlob": "809dc7a584504d1eb49277fc9f292c3853aab96c"
+    },
+    {
+      "path": "docs/art/post-v28/prompt.txt",
+      "bytes": 4180,
+      "gitBlob": "e56576ebb5aa4440c464c0f138e8da47366f541c"
+    },
+    {
+      "path": "docs/art/station-painted-original.png",
+      "bytes": 1972511,
+      "gitBlob": "0ea03dc644147b1bd6bfe728e9be50ec4b9685bf"
+    },
+    {
+      "path": "docs/art/theatre-painted-original-v22.png",
+      "bytes": 2032141,
+      "gitBlob": "508bf5d2e91c38ce393f6020061d79bb8c1b95a1"
+    },
+    {
+      "path": "docs/art/theatre-painted-v22-prompt.md",
+      "bytes": 4346,
+      "gitBlob": "814ff69a59c9d7695d1edcb22d401d30ef1a7916"
+    },
+    {
+      "path": "docs/awakening-details.png",
+      "bytes": 244977,
+      "gitBlob": "2545b43573ed69dd237434b5ecb2fea5a750bc48"
+    },
+    {
+      "path": "docs/awakening-stages.png",
+      "bytes": 334644,
+      "gitBlob": "7fa8ef23f71087565705c3cd53e8d299fdc01a7f"
+    },
+    {
+      "path": "docs/awakening-station-unfold.jpg",
+      "bytes": 91509,
+      "gitBlob": "27bdd1b7d0ef244d44f5c931200bb4345999e1b5"
+    },
+    {
+      "path": "docs/awakening-station.jpg",
+      "bytes": 89247,
+      "gitBlob": "afd1f6a1908c9b004e9042b3f2701b4dd8a83c6c"
+    },
+    {
+      "path": "docs/cap-activity-book.jpg",
+      "bytes": 58361,
+      "gitBlob": "7ca709bc106be515617e5c4df991df8ff085713d"
+    },
+    {
+      "path": "docs/cap-activity-live.jpg",
+      "bytes": 93166,
+      "gitBlob": "c4fd6cbbdcad3b68a4fe4b15dac76b0d29008bf8"
+    },
+    {
+      "path": "docs/cap-activity-mobile.jpg",
+      "bytes": 42479,
+      "gitBlob": "c415e58440d7ff2d566bad74d1f0c04b8dc42e3d"
+    },
+    {
+      "path": "docs/cap-activity-play.jpg",
+      "bytes": 93731,
+      "gitBlob": "12380965cd703693a8e22ef1c5d3edbf65dbd13e"
+    },
+    {
+      "path": "docs/cap-book-live.jpg",
+      "bytes": 62054,
+      "gitBlob": "535049b7e11ecdee70f53699429187b89c42db88"
+    },
+    {
+      "path": "docs/cap-character-poses.png",
+      "bytes": 404218,
+      "gitBlob": "d449ef5cb70822a8ae9ab208f86d182ab59f2ed5"
+    },
+    {
+      "path": "docs/cap-halloween-live.jpg",
+      "bytes": 86967,
+      "gitBlob": "d87510d7dc8785263db7da85b7fbdcb65fcd2d74"
+    },
+    {
+      "path": "docs/cap-live.jpg",
+      "bytes": 86716,
+      "gitBlob": "d29790677cf122594c96064add52b59c1d5db16d"
+    },
+    {
+      "path": "docs/cap-mobile.jpg",
+      "bytes": 36496,
+      "gitBlob": "c0652937019ef521d74793833489f91a9b079689"
+    },
+    {
+      "path": "docs/cap-motion-live.jpg",
+      "bytes": 90236,
+      "gitBlob": "183bc7f1633c7b0426dec7dce699a84f1e939fa0"
+    },
+    {
+      "path": "docs/cap-motion-mobile-320.jpg",
+      "bytes": 39183,
+      "gitBlob": "8e5156f09b4f257505ece8956922df00e3c8ba06"
+    },
+    {
+      "path": "docs/cap-motion-mobile-390.jpg",
+      "bytes": 42683,
+      "gitBlob": "c5495790fda688b4599b20080bbbc62a344c6cea"
+    },
+    {
+      "path": "docs/company-footer-live.jpg",
+      "bytes": 88271,
+      "gitBlob": "6796ed30ab0ea676fd264d76a21a95443dc71972"
+    },
+    {
+      "path": "docs/domain-tougaigu-dns.png",
+      "bytes": 105525,
+      "gitBlob": "9c6d9e54013e7c5c7f143c96ab66cd1718b2df17"
+    },
+    {
+      "path": "docs/domain-tougaigu-https-game.png",
+      "bytes": 110429,
+      "gitBlob": "380ed65d9f5acc8a9b9780b53527d7f356f6d1b6"
+    },
+    {
+      "path": "docs/domain-tougaigu-https-settings.png",
+      "bytes": 150187,
+      "gitBlob": "b74bd60cb90694a2f8f5b6a8337077442a1e8e81"
+    },
+    {
+      "path": "docs/dream-homepage.jpg",
+      "bytes": 92416,
+      "gitBlob": "d690ccab41f6865e5c44ad50d6767a4cf1e4fd15"
+    },
+    {
+      "path": "docs/dream-mobile.jpg",
+      "bytes": 26781,
+      "gitBlob": "061d4fe39a9897d075c4597b970b2c0688043499"
+    },
+    {
+      "path": "docs/dream-puzzle.jpg",
+      "bytes": 52655,
+      "gitBlob": "fd13701a3f5fdf7534c6dded17a06540e719ffbe"
+    },
+    {
+      "path": "docs/ending-v29/dawn-native.png",
+      "bytes": 87874,
+      "gitBlob": "50b090c01f06077613008aa911a4729e378c4d1e"
+    },
+    {
+      "path": "docs/ending-v29/dawn-phone-art.png",
+      "bytes": 27845,
+      "gitBlob": "ed6db6db380939071af7c984977c024252267a95"
+    },
+    {
+      "path": "docs/ending-v29/lanterns-native.png",
+      "bytes": 86373,
+      "gitBlob": "0a20da52c4ea343e3125df734119caad85dc7e66"
+    },
+    {
+      "path": "docs/ending-v29/lanterns-phone-art.png",
+      "bytes": 26856,
+      "gitBlob": "fc0d45f7a2465b058bf881db3db0c337ef6df332"
+    },
+    {
+      "path": "docs/ending-v29/manifest.json",
+      "bytes": 3696,
+      "gitBlob": "79becc9782f507cda5a53d3d26d94eae8d020013"
+    },
+    {
+      "path": "docs/ending-v29/render-proof.mjs",
+      "bytes": 3236,
+      "gitBlob": "70fc5c91bd765c4d17f4d3f2263b936417857052"
+    },
+    {
+      "path": "docs/ending-v29/tender-native.png",
+      "bytes": 64030,
+      "gitBlob": "076554af7468d1aab7c9591937b7c897e122672b"
+    },
+    {
+      "path": "docs/ending-v29/tender-phone-art.png",
+      "bytes": 22107,
+      "gitBlob": "7fe2bd581d3f78b2e478f7a96edee6d27a804a13"
+    },
+    {
+      "path": "docs/game-first-live.jpg",
+      "bytes": 71217,
+      "gitBlob": "a54c0c794eb46f258ae7b40cfbdbc1cca7906c04"
+    },
+    {
+      "path": "docs/game-first-mobile.jpg",
+      "bytes": 43990,
+      "gitBlob": "561e8cd12ece4d1ff2142358d420f3843320d0ab"
+    },
+    {
+      "path": "docs/holiday-live.jpg",
+      "bytes": 79144,
+      "gitBlob": "1980a3979ec90bd5f6263b9c5a31a9888a470c9d"
+    },
+    {
+      "path": "docs/holiday-mobile.jpg",
+      "bytes": 36335,
+      "gitBlob": "a3288b7f5440e7e331230d2a75faf274c7ab8831"
+    },
+    {
+      "path": "docs/holiday-rewards.jpg",
+      "bytes": 74593,
+      "gitBlob": "b947aece028f5efb5a1c20d74bc1b3716a41f832"
+    },
+    {
+      "path": "docs/holiday-scene.jpg",
+      "bytes": 79248,
+      "gitBlob": "0f41668fe526578aa26f661368a99e3809ebf1cf"
+    },
+    {
+      "path": "docs/homepage.jpg",
+      "bytes": 118662,
+      "gitBlob": "d80da4c4bfaf47601740a9f49a35ee1256e8abee"
+    },
+    {
+      "path": "docs/live-homepage.jpg",
+      "bytes": 118827,
+      "gitBlob": "4a235f518ffe8c11be16370a88d948ae51dcb9d9"
+    },
+    {
+      "path": "docs/lost-encore-book-partial.jpg",
+      "bytes": 59296,
+      "gitBlob": "425de6f08d7f31214b87f6a1e32370d03e8d756f"
+    },
+    {
+      "path": "docs/lost-encore-book.jpg",
+      "bytes": 62334,
+      "gitBlob": "e0c714f6a95763bf07e8022d16dc5f4388c24bf8"
+    },
+    {
+      "path": "docs/lost-encore-greenhouse.jpg",
+      "bytes": 110384,
+      "gitBlob": "6251c19188dce58b623383e489183be7c2765975"
+    },
+    {
+      "path": "docs/lost-encore-mobile-320.jpg",
+      "bytes": 50404,
+      "gitBlob": "4adca7ca296474a39e0e3037df12f4e602daa55a"
+    },
+    {
+      "path": "docs/lost-encore-mobile-390.jpg",
+      "bytes": 61386,
+      "gitBlob": "185c3b9352d15b39f75126ee405b753ac7ff69da"
+    },
+    {
+      "path": "docs/lost-encore-scenes.png",
+      "bytes": 160815,
+      "gitBlob": "717d41ebf51c8f31403299aeefdb9893e054bdfa"
+    },
+    {
+      "path": "docs/lost-evidence-faces.png",
+      "bytes": 155883,
+      "gitBlob": "65c5971c5a02acc683dda72b76ba4ab5411abcc4"
+    },
+    {
+      "path": "docs/lost-greenhouse-mobile-320.jpg",
+      "bytes": 49899,
+      "gitBlob": "60082ad5e1399f827cac821c98b8f58179c0c025"
+    },
+    {
+      "path": "docs/lost-greenhouse-mobile-390.jpg",
+      "bytes": 61080,
+      "gitBlob": "8e19c8c6d2109b17efa195c1efcaf1e11da67c5f"
+    },
+    {
+      "path": "docs/lost-greenhouse-receipt.jpg",
+      "bytes": 63959,
+      "gitBlob": "1e605a583212546db3a01ac2f444f0dcabb5dbe8"
+    },
+    {
+      "path": "docs/lost-greenhouse.jpg",
+      "bytes": 110494,
+      "gitBlob": "df07803d246054957262f3cf4474969d45fdb638"
+    },
+    {
+      "path": "docs/lost-live.jpg",
+      "bytes": 66818,
+      "gitBlob": "64bf8a410c9b983fa4c8c3b9e1a8443615acb1a8"
+    },
+    {
+      "path": "docs/lost-mobile-320.jpg",
+      "bytes": 47277,
+      "gitBlob": "00d5db7c24a230b96faa3a00cabe84f897ca87c7"
+    },
+    {
+      "path": "docs/lost-mobile-390.jpg",
+      "bytes": 57728,
+      "gitBlob": "065000292f6bf0422710bc58afa3f5b16e76204e"
+    },
+    {
+      "path": "docs/lost-new-evidence-faces.png",
+      "bytes": 153258,
+      "gitBlob": "18283380ffb6f223f60d8d8f86abd6be1209b02b"
+    },
+    {
+      "path": "docs/lost-receipt-book.jpg",
+      "bytes": 67484,
+      "gitBlob": "49472a0de38a2642b4641dfa9f5e310badb449c6"
+    },
+    {
+      "path": "docs/lost-ticket-front.jpg",
+      "bytes": 99782,
+      "gitBlob": "bdc15d54613db598928f9f17282dbf97ed4be31c"
+    },
+    {
+      "path": "docs/lost-v10-live.jpg",
+      "bytes": 68925,
+      "gitBlob": "073811d51807a57624f609335a526b852a36d188"
+    },
+    {
+      "path": "docs/lost-v9-live.jpg",
+      "bytes": 67670,
+      "gitBlob": "6edba30e52ad058780ea00deb953b5e9c1cf83f9"
+    },
+    {
+      "path": "docs/mobile.jpg",
+      "bytes": 15913,
+      "gitBlob": "47b9411aa3d76bd1378de9192a8a22b8a11d4cd5"
+    },
+    {
+      "path": "docs/pages-live.jpg",
+      "bytes": 102763,
+      "gitBlob": "9abe77a87f3969210d6e3853df3e8fd14bcdaaa7"
+    },
+    {
+      "path": "docs/scene-chapters.png",
+      "bytes": 547123,
+      "gitBlob": "6ef04b9b83898be246bc54c7b90dfa7ff4631038"
+    },
+    {
+      "path": "docs/scene-greenhouse-preview.jpg",
+      "bytes": 96409,
+      "gitBlob": "e6bb1d84d9ca399197793917bb41e8834413f039"
+    },
+    {
+      "path": "docs/scene-live.jpg",
+      "bytes": 86670,
+      "gitBlob": "c55cd58a0fc99b14eefd1b6574b820d13737aac7"
+    },
+    {
+      "path": "docs/scene-valentine-preview.jpg",
+      "bytes": 100793,
+      "gitBlob": "7d5685d5f54cb02337bcb1256f237c5223e56434"
+    },
+    {
+      "path": "docs/story-friends-details.png",
+      "bytes": 133400,
+      "gitBlob": "70451e6244324e19afd9b3c6e0af5e5040e10a46"
+    },
+    {
+      "path": "docs/story-friends-dialog.jpg",
+      "bytes": 35368,
+      "gitBlob": "95548f64fc3eb3bc5871aee7f7ff7c4886e36f18"
+    },
+    {
+      "path": "docs/story-friends-greenhouse.jpg",
+      "bytes": 96669,
+      "gitBlob": "31d7aec7bc19eeffaa2998db33465c0ee61537d2"
+    },
+    {
+      "path": "docs/story-friends-live.jpg",
+      "bytes": 93919,
+      "gitBlob": "9485b97290fe0ad4f323d4abda732a4268f18397"
+    },
+    {
+      "path": "docs/story-friends-mobile-320.jpg",
+      "bytes": 41958,
+      "gitBlob": "a57606890fe476e39042685da40b9dac969470bb"
+    },
+    {
+      "path": "docs/story-friends-mobile-390.jpg",
+      "bytes": 49336,
+      "gitBlob": "e04987cf5aa256b7709a994f62c72e4c19694b8f"
+    },
+    {
+      "path": "docs/story-friends-mobile-dialog.jpg",
+      "bytes": 26521,
+      "gitBlob": "7569ee3531ac49d1a8b0f7e240e2ee84c0426e42"
+    },
+    {
+      "path": "docs/upgrade.jpg",
+      "bytes": 40079,
+      "gitBlob": "c1252d91e35bedadff402d007b6c18ab3527edde"
+    },
+    {
+      "path": "docs/v13-live-ticket.png",
+      "bytes": 35845,
+      "gitBlob": "5bd6175e02b93449ae5e6628c7258753d45ca77b"
+    },
+    {
+      "path": "docs/v13-moon-scene.png",
+      "bytes": 249402,
+      "gitBlob": "8f392cfe035a6a9f31bd0d67a2214c0f25a84f5c"
+    },
+    {
+      "path": "docs/v13-ticket-held.png",
+      "bytes": 117888,
+      "gitBlob": "3d612f094326f5188524e260970e42660ffc10c5"
+    },
+    {
+      "path": "docs/v14-greenhouse-flower.png",
+      "bytes": 297508,
+      "gitBlob": "f93c9c60840ad8213eaed5397a9d931d16cc4c43"
+    },
+    {
+      "path": "docs/v14-station-welcome.png",
+      "bytes": 99372,
+      "gitBlob": "1b097573cb8aad628839579f785aeac83255b607"
+    },
+    {
+      "path": "docs/v16-desktop-arrival.jpg",
+      "bytes": 142761,
+      "gitBlob": "c17244c81661423afee5dd3d2b23af2cbd277627"
+    },
+    {
+      "path": "docs/v16-live-desktop.png",
+      "bytes": 171991,
+      "gitBlob": "6c7dd4b2a7918705d8125262e10d7403854ba10c"
+    },
+    {
+      "path": "docs/v16-live-phone-390.png",
+      "bytes": 52661,
+      "gitBlob": "9e10352be390143a5239e1977db9157fb6bd5e7d"
+    },
+    {
+      "path": "docs/v16-live-phone-dialogue.png",
+      "bytes": 17282,
+      "gitBlob": "8a45dd78dcc0a7823639711fc89bdb59d03b930b"
+    },
+    {
+      "path": "docs/v16-phone-390-ticket-returning.jpg",
+      "bytes": 58315,
+      "gitBlob": "f02dfde9bf42d7600be9e53778bdca3d514a9016"
+    },
+    {
+      "path": "docs/v16-traveler-pose-sheet.jpg",
+      "bytes": 116612,
+      "gitBlob": "ccbc5663d0bb73ef896fb3da9521faa7787f18df"
+    },
+    {
+      "path": "docs/v17-desktop-arrival.jpg",
+      "bytes": 278275,
+      "gitBlob": "39a215666e74c854f65d19c0d0e7986d2f470055"
+    },
+    {
+      "path": "docs/v17-desktop-mushroom-flight.jpg",
+      "bytes": 278261,
+      "gitBlob": "2a893967ceab9c7d5383347cc5c2ffa06415c07f"
+    },
+    {
+      "path": "docs/v17-live-desktop.jpg",
+      "bytes": 253194,
+      "gitBlob": "50a53e71d00b1bc59a47873f1b37b618f306740f"
+    },
+    {
+      "path": "docs/v17-live-phone-390.jpg",
+      "bytes": 63900,
+      "gitBlob": "6837d8c1b3db03b60d3030bcb2ecc55211a2e786"
+    },
+    {
+      "path": "docs/v17-phone-390-flower-home.jpg",
+      "bytes": 101308,
+      "gitBlob": "68eeb2dc528b5ea9b1e10bae83bf24ea833291eb"
+    },
+    {
+      "path": "docs/v18-live-desktop.jpg",
+      "bytes": 238490,
+      "gitBlob": "95ee0bc001e043b24babdda8aaaf301f3fb2d8b8"
+    },
+    {
+      "path": "docs/v18-live-phone-390.jpg",
+      "bytes": 63853,
+      "gitBlob": "f8f325ff340e7abace75e934b8ebc23908bd6bc5"
+    },
+    {
+      "path": "docs/v19-live-desktop.png",
+      "bytes": 657999,
+      "gitBlob": "c48acfd7e7cb28a499fd34b07ed5892c175aed3c"
+    },
+    {
+      "path": "docs/v19-live-phone-390.png",
+      "bytes": 228510,
+      "gitBlob": "197fc21eb718fd4f98b4148b7c55648d868f66f0"
+    },
+    {
+      "path": "docs/v22-live-320.png",
+      "bytes": 218895,
+      "gitBlob": "5da9528e37e3a5db5a8bca15f1ef115d04dcb0e8"
+    },
+    {
+      "path": "docs/v22-live-desktop.png",
+      "bytes": 1070530,
+      "gitBlob": "a60358e63123f70abc09e5e68d782724079f9d36"
+    },
+    {
+      "path": "docs/v22-live-two-lamps.png",
+      "bytes": 1105533,
+      "gitBlob": "0920dbd9242ab18eb08b02e950b193548ad0f094"
+    },
+    {
+      "path": "docs/v23-candidate-outro-reference.png",
+      "bytes": 285509,
+      "gitBlob": "3512572b57d0dd60b4de78d5305378e298e746df"
+    },
+    {
+      "path": "docs/v23-live-desktop.png",
+      "bytes": 1070428,
+      "gitBlob": "d861e5c28e5f271e065fdc22ea0c16cd8ece90cd"
+    },
+    {
+      "path": "docs/v23-live-festival-320.png",
+      "bytes": 183087,
+      "gitBlob": "53ca06eb5a1af0138d60e9a406b574f2e1559696"
+    },
+    {
+      "path": "docs/v23-live-outro-observation.png",
+      "bytes": 291460,
+      "gitBlob": "deb75b8bc5ac0640e4b0bd70ef93b150dfb6b34e"
+    },
+    {
+      "path": "docs/v23-live-theatre-320.png",
+      "bytes": 220565,
+      "gitBlob": "bad982714012a16df09d103fd1a50a8b1c243fe7"
+    },
+    {
+      "path": "docs/v23-live-ticket-320.png",
+      "bytes": 234170,
+      "gitBlob": "7e77219df93e49effd94f4b2ac91fe7e3fdd894a"
+    },
+    {
+      "path": "docs/v24-live-outro-1.png",
+      "bytes": 263209,
+      "gitBlob": "f238461b1837a4d7080761d4cedeb7154ad61ebb"
+    },
+    {
+      "path": "docs/v24-live-outro-2.png",
+      "bytes": 288732,
+      "gitBlob": "9a3e7f8702ef6256f9199d85d558d00850c70532"
+    },
+    {
+      "path": "docs/v24-live-outro-3.png",
+      "bytes": 286234,
+      "gitBlob": "1840ee6e20a3e6f79f3eb9bedeabc77729fa1bb6"
+    },
+    {
+      "path": "docs/v24-live-rongrong-320.png",
+      "bytes": 239688,
+      "gitBlob": "f923089c0b9762fb27aeeda0e56c371b16136762"
+    },
+    {
+      "path": "docs/v24-live-rongrong-390.png",
+      "bytes": 346635,
+      "gitBlob": "4a6bc6d255a83a6889c8e1a1ef5c2bb1e0ee8043"
+    },
+    {
+      "path": "docs/v24-live-rongrong-desktop.png",
+      "bytes": 1075082,
+      "gitBlob": "ccd26ad083f15ddf316ac5726b69c87d93421b6e"
+    },
+    {
+      "path": "docs/v25-live-320.png",
+      "bytes": 220740,
+      "gitBlob": "46797057edc874b875c7f442abaec0ca62cb8fe8"
+    },
+    {
+      "path": "docs/v25-live-390.png",
+      "bytes": 312302,
+      "gitBlob": "fe5fa44af4a64c0a03d4aee3ed0e98a8b069fb20"
+    },
+    {
+      "path": "docs/v25-live-airborne.png",
+      "bytes": 1514722,
+      "gitBlob": "e3558ff97c3e16630c0f4c88f5656b834e336934"
+    },
+    {
+      "path": "docs/v25-live-desktop.png",
+      "bytes": 1069691,
+      "gitBlob": "30d846b596af6a85790fc30a03f921fd0523e36f"
+    },
+    {
+      "path": "docs/v25-live-manual-first-chapter.png",
+      "bytes": 116703,
+      "gitBlob": "dc6867916d233919c5455b5ee80452da78ed097e"
+    },
+    {
+      "path": "docs/v25-live-outro.png",
+      "bytes": 286402,
+      "gitBlob": "828d23dc33de24390c33c96bdccfa843adae5904"
+    },
+    {
+      "path": "docs/v25-live-portrait-pending.png",
+      "bytes": 254951,
+      "gitBlob": "b895fa5bdc121210207dee552f7be08a94b34d7b"
+    },
+    {
+      "path": "docs/v25-live-portrait-ready.png",
+      "bytes": 281004,
+      "gitBlob": "f6a2964bde1841bbd53db8bdaaf1636019849d43"
+    },
+    {
+      "path": "docs/v25-offline-320-comparison.png",
+      "bytes": 394104,
+      "gitBlob": "9c35ff0a88512f7cb4f20f7b27c87b839465e551"
+    },
+    {
+      "path": "docs/v25-offline-desktop-comparison.png",
+      "bytes": 330502,
+      "gitBlob": "b4e13098c2c1eaf1e2b416a69b14c63e008cd58e"
+    },
+    {
+      "path": "docs/v26-baseline/archive-manifest.json",
+      "bytes": 2405,
+      "gitBlob": "3e7cea22a3c5b297828da95c765b416dc8457610"
+    },
+    {
+      "path": "docs/v26-baseline/desktop/route-report.json",
+      "bytes": 167210,
+      "gitBlob": "195d1e58b1ab47356a312b68e05b277f378d2b12"
+    },
+    {
+      "path": "docs/v26-baseline/explore-library.mjs",
+      "bytes": 10847,
+      "gitBlob": "950c381f9a4ca01f7bfa888e9756903b8bccbfb4"
+    },
+    {
+      "path": "docs/v26-baseline/images/desktop-book-a-upper.png",
+      "bytes": 241453,
+      "gitBlob": "f41b7ef61fc427095e5f39db25a7baf40f542b4a"
+    },
+    {
+      "path": "docs/v26-baseline/images/desktop-lanye-open.png",
+      "bytes": 238671,
+      "gitBlob": "9402874156d86ae6c3f6cc38001feedf6e1afa73"
+    },
+    {
+      "path": "docs/v26-baseline/images/phone-320-book-b-lower.png",
+      "bytes": 84663,
+      "gitBlob": "77567b8bc84552521a698dc3594109042bf8e7b9"
+    },
+    {
+      "path": "docs/v26-baseline/images/phone-320-lanye-open.png",
+      "bytes": 83571,
+      "gitBlob": "cf151ec4e1183df42d65383f161d167bf74a9e4e"
+    },
+    {
+      "path": "docs/v26-baseline/phone-320/route-report.json",
+      "bytes": 167220,
+      "gitBlob": "5095ab792ba29624d543fd239421aad969a1be9c"
+    },
+    {
+      "path": "docs/v26-baseline/phone-390/route-report.json",
+      "bytes": 167224,
+      "gitBlob": "08ec85a8e4ffb429274338661ee64b61c257a790"
+    },
+    {
+      "path": "docs/v26-baseline/replay-verification.json",
+      "bytes": 2083,
+      "gitBlob": "3fd0de162ac606c60ce37dc4d1ece1c28bfda333"
+    },
+    {
+      "path": "docs/v26-baseline/route-notes.md",
+      "bytes": 11743,
+      "gitBlob": "631db87135b7799b6afc664869dbb9023766b47b"
+    },
+    {
+      "path": "docs/v26-baseline/route-summary.json",
+      "bytes": 4746,
+      "gitBlob": "ec14a55b4c70cb4545ba013a394efa81b5dcb03f"
+    },
+    {
+      "path": "docs/v26-live-entry-320.png",
+      "bytes": 228323,
+      "gitBlob": "be8fb039b8e7888dccab5b1a95e1b718241a54c9"
+    },
+    {
+      "path": "docs/v26-live-entry.png",
+      "bytes": 1081817,
+      "gitBlob": "2c34106e4594b43156af14d07e37bd2433896547"
+    },
+    {
+      "path": "docs/v26-live-npc-talk.png",
+      "bytes": 283373,
+      "gitBlob": "26a1eb988e7cba3c0e27eccff47faf2690425c72"
+    },
+    {
+      "path": "docs/v26-live-two-lamps.png",
+      "bytes": 1099426,
+      "gitBlob": "7da72ccdd5fc590bddf360529dfebd18f0a897d2"
+    },
+    {
+      "path": "docs/v27-baseline/README.md",
+      "bytes": 5510,
+      "gitBlob": "5913c3f22653984a47648111b21e002c228de9b1"
+    },
+    {
+      "path": "docs/v27-baseline/baseline-summary.json",
+      "bytes": 19087,
+      "gitBlob": "0afb36f4604b44fc41641903d4eb5a80fffcb61f"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/all-three-passed.png",
+      "bytes": 219369,
+      "gitBlob": "0c063c0791b9fe905ffc21f0dbd77f638a382304"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/complete.png",
+      "bytes": 219088,
+      "gitBlob": "ad8f19c9d07c9f7311177616734dfce82c580fe5"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/entry.png",
+      "bytes": 177913,
+      "gitBlob": "8b58ab87892531e8f79046f1e30b4a548e17d9a4"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/first-two-left-safe.png",
+      "bytes": 197944,
+      "gitBlob": "857026fbeb787d41e8fc7eaa4ba4de5d83e89867"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/first-two-passed.png",
+      "bytes": 191454,
+      "gitBlob": "a95f35ec3ee0716e3a591045c7e023129032a384"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/input-tape.json",
+      "bytes": 337072,
+      "gitBlob": "f25f52d8c34a533cba7306b0a8e52fd26557ff77"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/keeper-talk.png",
+      "bytes": 179239,
+      "gitBlob": "feb3876b95446656e3addedc3c6209ef27bd981e"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/lamp-1-lit.png",
+      "bytes": 218259,
+      "gitBlob": "36256cf7475cd1f4f502b49391b74e4410d627d3"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/lamp-2-lit.png",
+      "bytes": 231574,
+      "gitBlob": "cf4c7220dca8b7ce6ea2f2cde1aafe9d8b7332f8"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/pendulum-1-frozen.png",
+      "bytes": 217036,
+      "gitBlob": "88e5e9e94dad3e3eb3adebe71ca795229b3ccaf5"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/pendulum-2-frozen.png",
+      "bytes": 207027,
+      "gitBlob": "a66ec52d6ae3f5ff223e31575801dcf89386fd4b"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/pendulum-3-frozen.png",
+      "bytes": 244285,
+      "gitBlob": "b03f8d117a14b2e9809a49c96d5bc3f5593d8597"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/physics-trace.jsonl.gz",
+      "bytes": 225941,
+      "gitBlob": "dfb67853a193a809b8224e3efd7da120e7911495"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/route-report.json",
+      "bytes": 761406,
+      "gitBlob": "ad9078092078dc29e441a70e0d862159297a78db"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/third-memory-before-freeze.png",
+      "bytes": 238656,
+      "gitBlob": "750bad5d24fad2b6aa2bafc5f79c4b08bfe777a5"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/two-lamps-exit-approach.png",
+      "bytes": 218674,
+      "gitBlob": "156ef1306f647ea4d80066bc1be358d1accf28ed"
+    },
+    {
+      "path": "docs/v27-baseline/desktop/wind-and-second-memory.png",
+      "bytes": 224073,
+      "gitBlob": "34577536b9b72c84692d489c9f5e317ae9ce52e2"
+    },
+    {
+      "path": "docs/v27-baseline/explore-coast.mjs",
+      "bytes": 15007,
+      "gitBlob": "5b57840c0ca036ffd856e61da3e34154a9301475"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/all-three-passed.png",
+      "bytes": 87312,
+      "gitBlob": "3f8f1807fa80f508261959e447a8ab5eb97984f8"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/complete.png",
+      "bytes": 81574,
+      "gitBlob": "2841f357c5ca7b2fdc3f5e49cb54fbce7a7a2382"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/entry.png",
+      "bytes": 70356,
+      "gitBlob": "551cc7d98db52aa157930fdaf06aaff99bd35676"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/first-two-left-safe.png",
+      "bytes": 76371,
+      "gitBlob": "8cd507d1fb3e454e012a1bd2bd70ce69728f8d6d"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/first-two-passed.png",
+      "bytes": 72755,
+      "gitBlob": "c90d41184eb591d43d7f75aa970093154b8fe064"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/input-tape.json",
+      "bytes": 337072,
+      "gitBlob": "f25f52d8c34a533cba7306b0a8e52fd26557ff77"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/keeper-talk.png",
+      "bytes": 70328,
+      "gitBlob": "7535f80a24e5ff28dc49e0df750583503d172e3c"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/lamp-1-lit.png",
+      "bytes": 84175,
+      "gitBlob": "e67420b7bdb8dcd8a941a8659e63f5b8cb8632ed"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/lamp-2-lit.png",
+      "bytes": 86537,
+      "gitBlob": "c854cc9aaf58b599796d4c788ede5d21aaac4f75"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/pendulum-1-frozen.png",
+      "bytes": 87639,
+      "gitBlob": "ee794cb4c7015f80769c7c62b289e6ea63c65717"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/pendulum-2-frozen.png",
+      "bytes": 73841,
+      "gitBlob": "af1dde663b1046e27234791727d2107e7b1d4bec"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/pendulum-3-frozen.png",
+      "bytes": 86017,
+      "gitBlob": "5ffb67900ae2bf13fe29df805d7f66890a1145da"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/physics-trace.jsonl.gz",
+      "bytes": 227497,
+      "gitBlob": "cb44c635751873d10091de7c4f60feec81edac57"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/route-report.json",
+      "bytes": 762319,
+      "gitBlob": "350d45b595dab3fc46fb5458dada5c5a6c54cd39"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/third-memory-before-freeze.png",
+      "bytes": 93170,
+      "gitBlob": "37326d47c6f15f0e2eaaa9b2f5d3c6b4950419a6"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/two-lamps-exit-approach.png",
+      "bytes": 81797,
+      "gitBlob": "ba1e0d1ccbeede3561a58583f116a3faa647f037"
+    },
+    {
+      "path": "docs/v27-baseline/phone-320/wind-and-second-memory.png",
+      "bytes": 81754,
+      "gitBlob": "cd9fe148582640674d6ab1375a97bdb25902c336"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/all-three-passed.png",
+      "bytes": 115810,
+      "gitBlob": "69dd072dc47c71d550ab46eee94db7eed6e5767b"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/complete.png",
+      "bytes": 112108,
+      "gitBlob": "e09900ab1fe932162fddd3116dc3b46287b5919e"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/entry.png",
+      "bytes": 95279,
+      "gitBlob": "9ea96563742a6b64adf7c3a0f842626d66b39dbb"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/first-two-left-safe.png",
+      "bytes": 105400,
+      "gitBlob": "0b60fcedfac69195980bc9f7d410d94f245ad8d3"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/first-two-passed.png",
+      "bytes": 98926,
+      "gitBlob": "8a7a878ca3ada90bca2ff09756ebce434ae20310"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/input-tape.json",
+      "bytes": 337072,
+      "gitBlob": "f25f52d8c34a533cba7306b0a8e52fd26557ff77"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/keeper-talk.png",
+      "bytes": 95342,
+      "gitBlob": "2cb0d826c7bfbf83f467a8674a919ae16bb81ecb"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/lamp-1-lit.png",
+      "bytes": 117483,
+      "gitBlob": "406a8692b1f16326783f199f989e8bdb3bb95405"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/lamp-2-lit.png",
+      "bytes": 120450,
+      "gitBlob": "e4fe1da24b79193d57a7d1d77762f5205ade0f2d"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/pendulum-1-frozen.png",
+      "bytes": 118375,
+      "gitBlob": "cd16de1681bd33201700729c4fa626059cb5e47d"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/pendulum-2-frozen.png",
+      "bytes": 100486,
+      "gitBlob": "b21d66409c88a5b70e46e1b9710169e2b832aa72"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/pendulum-3-frozen.png",
+      "bytes": 121553,
+      "gitBlob": "53576adc6fb31275f39bff2411d76ab21494fa70"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/physics-trace.jsonl.gz",
+      "bytes": 227550,
+      "gitBlob": "b2a57705f449fe83844c81953e57b13258e3f8dc"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/route-report.json",
+      "bytes": 762283,
+      "gitBlob": "09e57e85d1f2adb2c89a07a4519c402267405576"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/third-memory-before-freeze.png",
+      "bytes": 127093,
+      "gitBlob": "13ea2bc93f6e0c66dd2e89e03ec5cf31310fd4ca"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/two-lamps-exit-approach.png",
+      "bytes": 112156,
+      "gitBlob": "b7aa8cbef6475554cd4524257b66a8db0148ee4b"
+    },
+    {
+      "path": "docs/v27-baseline/phone-390/wind-and-second-memory.png",
+      "bytes": 111992,
+      "gitBlob": "67b3d8996182c598a8ca00b4e60f35d3a6353f2a"
+    },
+    {
+      "path": "docs/v27-candidate-artifact-audit.json",
+      "bytes": 108724,
+      "gitBlob": "79c419dce446b14d25c8d12c025cfd4e84a6598a"
+    },
+    {
+      "path": "docs/v27-live-clock-hold-playing-canvas.png",
+      "bytes": 1444619,
+      "gitBlob": "bf37250e996b05fd5e61f063f6c6448bed397b24"
+    },
+    {
+      "path": "docs/v27-live-clock-release-playing-canvas.png",
+      "bytes": 1441846,
+      "gitBlob": "8e4e4786672c954f3dba8df7d352933f754f5fef"
+    },
+    {
+      "path": "docs/v27-live-coast-entrance-keeper.png",
+      "bytes": 997528,
+      "gitBlob": "c0b9bce34a3641fb71c1e7a9adbbf53abb9a9631"
+    },
+    {
+      "path": "docs/v27-live-coast-entry-320.png",
+      "bytes": 225673,
+      "gitBlob": "0d9b435c25fbe0c92e3c5f6fddc7b43abfcecb38"
+    },
+    {
+      "path": "docs/v27-live-coast-two-lamps.png",
+      "bytes": 974987,
+      "gitBlob": "a32ff3fb43e4155098ea3e2f53055f97a03a0f6d"
+    },
+    {
+      "path": "docs/v27-live-library-book-b-320.png",
+      "bytes": 236350,
+      "gitBlob": "112b990d379b3cadbadd026d097c3a12e8508a63"
+    },
+    {
+      "path": "docs/v27-verification/README.md",
+      "bytes": 10580,
+      "gitBlob": "5c85d6a9f6b73ac53d60b807a63985b5aebaaae6"
+    },
+    {
+      "path": "docs/v27-verification/clock-unit-tests.txt",
+      "bytes": 1591,
+      "gitBlob": "e44217e1e63e2dc456c0978f2a004a15b2e31342"
+    },
+    {
+      "path": "docs/v27-verification/coast-unit-tests.txt",
+      "bytes": 1677,
+      "gitBlob": "ffe35eb7a627f2c2becdf89d6d7574e260341120"
+    },
+    {
+      "path": "docs/v27-verification/desktop-clock-hold-playing-middle.png",
+      "bytes": 713003,
+      "gitBlob": "72c05c4096ef1c014520309bfb3e84c45fe431a7"
+    },
+    {
+      "path": "docs/v27-verification/desktop-clock-hold-settled-soul-away.png",
+      "bytes": 701798,
+      "gitBlob": "8818c02974f555a0c23d75a1d9e0e8f5a2d101c2"
+    },
+    {
+      "path": "docs/v27-verification/desktop-clock-release-playing-middle.png",
+      "bytes": 715731,
+      "gitBlob": "c0ee3af43c54d894718e2d94374d9fbfca3d5001"
+    },
+    {
+      "path": "docs/v27-verification/desktop-clock-release-settled-soul-away.png",
+      "bytes": 702167,
+      "gitBlob": "ac04049eb1579b627f6270417d443c8a9d38b16b"
+    },
+    {
+      "path": "docs/v27-verification/desktop-fallback-hold-physics.jsonl.gz",
+      "bytes": 226185,
+      "gitBlob": "3ddf65acfdb8fa147117c2ab80cc410a4ba227fa"
+    },
+    {
+      "path": "docs/v27-verification/desktop-fallback-hold-report.json",
+      "bytes": 656077,
+      "gitBlob": "801fc9173b2622fa2786ed216d0e54cdf4fa8ea6"
+    },
+    {
+      "path": "docs/v27-verification/desktop-fallback-hold-two-lamps-exit-approach.png",
+      "bytes": 234995,
+      "gitBlob": "7a34b51e280639179918cce63f0e041690207eab"
+    },
+    {
+      "path": "docs/v27-verification/desktop-painted-release-first-lamp-visible-glow.png",
+      "bytes": 715075,
+      "gitBlob": "32031b994b8b4724b214bb60e88f1e9411e11f86"
+    },
+    {
+      "path": "docs/v27-verification/desktop-painted-release-pendulum-3-frozen.png",
+      "bytes": 648669,
+      "gitBlob": "033b9d2c6b1c4fd3aa4f2d0ce97abbd69dd811e0"
+    },
+    {
+      "path": "docs/v27-verification/desktop-painted-release-physics.jsonl.gz",
+      "bytes": 226182,
+      "gitBlob": "4d0e8ba58f132a704054b7efde4c76fe004b011b"
+    },
+    {
+      "path": "docs/v27-verification/desktop-painted-release-report.json",
+      "bytes": 657424,
+      "gitBlob": "df95d2c596dbfcac040e0e392e5806c449fa9696"
+    },
+    {
+      "path": "docs/v27-verification/desktop-painted-release-safe-entry.png",
+      "bytes": 697194,
+      "gitBlob": "037030617385f6c50deb48475dccf34b327f950a"
+    },
+    {
+      "path": "docs/v27-verification/desktop-painted-release-two-lamps-exit-approach.png",
+      "bytes": 626866,
+      "gitBlob": "254aa38cda4af2b4d65a414a9a7227b230028077"
+    },
+    {
+      "path": "docs/v27-verification/desktop-painted-release-wind-and-second-memory.png",
+      "bytes": 668711,
+      "gitBlob": "2278fceeba8dc2ac26ef1cd6062b0ed7f52dc4fe"
+    },
+    {
+      "path": "docs/v27-verification/digital-coast-report.json",
+      "bytes": 171497,
+      "gitBlob": "c7135e9cf67cd94200943b69763a8ea164e7836f"
+    },
+    {
+      "path": "docs/v27-verification/library-full/desktop/input-tape.json",
+      "bytes": 291558,
+      "gitBlob": "a06c69dce18f7cef03e65fd9e2a98b770c7b2dbc"
+    },
+    {
+      "path": "docs/v27-verification/library-full/desktop/physics-trace.jsonl.gz",
+      "bytes": 540017,
+      "gitBlob": "60636773ed34281b6d0c19fc979b8d7b02cf9a2f"
+    },
+    {
+      "path": "docs/v27-verification/library-full/desktop/route-report.json",
+      "bytes": 2087191,
+      "gitBlob": "f200123cab1dd758b9580b52c0e773f6ce0ac7e7"
+    },
+    {
+      "path": "docs/v27-verification/library-npc-pixels.json",
+      "bytes": 19051,
+      "gitBlob": "67990e23384cb5e64262df3dcd8c76d25fb8d3ca"
+    },
+    {
+      "path": "docs/v27-verification/manifest.json",
+      "bytes": 7664,
+      "gitBlob": "6dea9590f6e20e787d685147de617c3aa339aba3"
+    },
+    {
+      "path": "docs/v27-verification/phone-320-clock-hold-playing-middle.png",
+      "bytes": 190094,
+      "gitBlob": "48b9f3d137f9852073367aa1530c0b9f171a3d70"
+    },
+    {
+      "path": "docs/v27-verification/phone-320-clock-release-playing-middle.png",
+      "bytes": 191263,
+      "gitBlob": "27ebc56639cf76fa0af3774cf7860546e723ebdd"
+    },
+    {
+      "path": "docs/v27-verification/phone-320-fallback-hold-physics.jsonl.gz",
+      "bytes": 227925,
+      "gitBlob": "544bc2bcdef6b61f92f52e945f3ea9053d167bd6"
+    },
+    {
+      "path": "docs/v27-verification/phone-320-fallback-hold-report.json",
+      "bytes": 656341,
+      "gitBlob": "91b68fa7d2c669d353893dad93cb7a2ee58cccae"
+    },
+    {
+      "path": "docs/v27-verification/phone-320-painted-release-physics.jsonl.gz",
+      "bytes": 227921,
+      "gitBlob": "d8544615895f64e4a40f5a9e0da880ff9e30fe95"
+    },
+    {
+      "path": "docs/v27-verification/phone-320-painted-release-report.json",
+      "bytes": 657202,
+      "gitBlob": "7332efe67a4d31cdd78adef31fd74ef2396f0d54"
+    },
+    {
+      "path": "docs/v27-verification/phone-320-painted-release-safe-entry.png",
+      "bytes": 187051,
+      "gitBlob": "fd399f883367935712dd49af0355b60289ba3c1a"
+    },
+    {
+      "path": "docs/v27-verification/phone-320-painted-release-two-lamps-exit-approach.png",
+      "bytes": 159480,
+      "gitBlob": "ee967fa2c2d8a252450f3577f750942307d41e39"
+    },
+    {
+      "path": "docs/v27-verification/phone-390-clock-hold-playing-middle.png",
+      "bytes": 281348,
+      "gitBlob": "18f427998ce3f5508465b782e7e63135de4a3ec3"
+    },
+    {
+      "path": "docs/v27-verification/phone-390-clock-release-playing-middle.png",
+      "bytes": 283377,
+      "gitBlob": "f7b1fb8cff27d2cbdf0633dd699ccae42abae269"
+    },
+    {
+      "path": "docs/v27-verification/phone-390-fallback-hold-physics.jsonl.gz",
+      "bytes": 227997,
+      "gitBlob": "48b7645151e55aeb49f4591ef666bd56681d06c9"
+    },
+    {
+      "path": "docs/v27-verification/phone-390-fallback-hold-report.json",
+      "bytes": 656311,
+      "gitBlob": "73dc2d72c11ead082af9ab0962963697771fdeeb"
+    },
+    {
+      "path": "docs/v27-verification/phone-390-painted-release-physics.jsonl.gz",
+      "bytes": 228000,
+      "gitBlob": "d77f8789ac6c7b2dd52db627354037d5aef632d1"
+    },
+    {
+      "path": "docs/v27-verification/phone-390-painted-release-report.json",
+      "bytes": 657172,
+      "gitBlob": "0dd7e286c09a988c3ebac4468dd9fb4c6cce966c"
+    },
+    {
+      "path": "docs/v27-verification/phone-390-painted-release-safe-entry.png",
+      "bytes": 275393,
+      "gitBlob": "d24e41ae75aa46e4b897c46283d94b4c2e9049bd"
+    },
+    {
+      "path": "docs/v27-verification/phone-390-painted-release-two-lamps-exit-approach.png",
+      "bytes": 228623,
+      "gitBlob": "8768bc18d93eaae756da9bb6cbc64f7978b1b651"
+    },
+    {
+      "path": "docs/v27-verification/verification-summary.json",
+      "bytes": 209163,
+      "gitBlob": "f7062df27a3c3f44ad093fec8bfc0a7405b612ff"
+    },
+    {
+      "path": "docs/v27-verification/verify-coast.mjs",
+      "bytes": 24527,
+      "gitBlob": "f64d01f3f8e1fa7bc44f8cedd5bde9b296c91de7"
+    },
+    {
+      "path": "docs/v27-verification/verify-digital-coast.mjs",
+      "bytes": 4612,
+      "gitBlob": "31475f12c7f84c1bf13e287750548365ec0c3ea9"
+    },
+    {
+      "path": "docs/v27-verification/verify-library-npc-pixels.mjs",
+      "bytes": 3550,
+      "gitBlob": "11f6679af763e026a01ebffbd7a9992b524f12da"
+    },
+    {
+      "path": "docs/v27-verification/verify-library.mjs",
+      "bytes": 14226,
+      "gitBlob": "a90330446bde3792fe8ebdcc188a0ca63ecf1d8f"
+    },
+    {
+      "path": "docs/v28-baseline/README.md",
+      "bytes": 5613,
+      "gitBlob": "8d8f3d537d8a0e70a9541e62793aa003be7277ba"
+    },
+    {
+      "path": "docs/v28-baseline/baseline-summary.json",
+      "bytes": 8704,
+      "gitBlob": "2c5ea4eaa1553e321b38852810cf878c4485411c"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/body-on-letter-plate.png",
+      "bytes": 211367,
+      "gitBlob": "fba76dac8e56da359646e8de1439255c6e899ed3"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/complete.png",
+      "bytes": 259704,
+      "gitBlob": "0c88c684475edd7ec2e28dfd35d2b3237b1a9369"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/entry.png",
+      "bytes": 218135,
+      "gitBlob": "ab4485fd63d94d5a7f80b9b9a15cabe639baf5ba"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/floating-book-boarded.png",
+      "bytes": 229847,
+      "gitBlob": "9a5784670063ad6a0dbcce8fbbc4b4333abad4b2"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/floating-book-second-memory.png",
+      "bytes": 239000,
+      "gitBlob": "a4047d26cab37e11fd2d5003a7c0007ab19fa339"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/input-tape.json",
+      "bytes": 459225,
+      "gitBlob": "36fda611a922a84854ebed513560ba10cc7df16a"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/keeper-talk.png",
+      "bytes": 216526,
+      "gitBlob": "fff543f14fcd3d5b59a1acd80c3116bd0e2e4e8d"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/lamp-1-lit.png",
+      "bytes": 234816,
+      "gitBlob": "0beec0ac6786e13c04d76bd4f0273c38587a9766"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/lamp-2-lit.png",
+      "bytes": 279724,
+      "gitBlob": "1e59f294c3fd1791823f9d11f8982cd3fe732106"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/last-pendulum-frozen.png",
+      "bytes": 279544,
+      "gitBlob": "5b39b4891daac9ee292a80f4e3b20b4f94ab31f8"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/left-fixed-platform.png",
+      "bytes": 228437,
+      "gitBlob": "fc5475ca724668d0672f6f85bbfff04ec6a1dae9"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/mushroom-launched-body.png",
+      "bytes": 198234,
+      "gitBlob": "a25ec7e724c01305b4405c3b125f7bcaaad31803"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/physics-trace.jsonl.gz",
+      "bytes": 309660,
+      "gitBlob": "203f04d2f1fd89aae421ab1ed797d300bc15b124"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/right-fixed-platform.png",
+      "bytes": 199217,
+      "gitBlob": "fea4948420fd474009ce6bb07fae4fc868a1b4e5"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/root-platform-landing.png",
+      "bytes": 213241,
+      "gitBlob": "645cdf4d835bd252f850d25e9fa9e718332dd16d"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/route-report.json",
+      "bytes": 1839519,
+      "gitBlob": "b2ca69939db6e61e7dab0b1dbef18b73910dd015"
+    },
+    {
+      "path": "docs/v28-baseline/desktop/wind-and-third-memory.png",
+      "bytes": 279101,
+      "gitBlob": "623073048869221d49ff2d680f633f6143019832"
+    },
+    {
+      "path": "docs/v28-baseline/explore-post.mjs",
+      "bytes": 18435,
+      "gitBlob": "944cdc6642839c4e091a3d6ba79bb717a0628b81"
+    },
+    {
+      "path": "docs/v28-baseline/manifest.json",
+      "bytes": 9275,
+      "gitBlob": "b51ebba95043e3942518b73d6974e7cf2edec945"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/body-on-letter-plate.png",
+      "bytes": 81999,
+      "gitBlob": "fda2edaaecf30264366151c30aba66fb480fa476"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/complete.png",
+      "bytes": 95384,
+      "gitBlob": "ad7c3e5ff50d89a53caacf63d5b849e911690602"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/entry.png",
+      "bytes": 77851,
+      "gitBlob": "611003e1db0baf751584ac87e4f01e317989f04b"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/floating-book-boarded.png",
+      "bytes": 80417,
+      "gitBlob": "7349242c59eb60e3a03e88d1b15f1ee1b7f6f2dc"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/floating-book-second-memory.png",
+      "bytes": 82895,
+      "gitBlob": "c8e5ba5f08c959c79316ca7d5bd1cd36183a765a"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/input-tape.json",
+      "bytes": 459225,
+      "gitBlob": "36fda611a922a84854ebed513560ba10cc7df16a"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/keeper-talk.png",
+      "bytes": 78129,
+      "gitBlob": "cd66762093dc6ff900c96e976f7ffb0f3cd048ea"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/lamp-1-lit.png",
+      "bytes": 85945,
+      "gitBlob": "c00c1122e3ea8a5604b509b244bfce2873f94bf1"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/lamp-2-lit.png",
+      "bytes": 97688,
+      "gitBlob": "b55be9ed65f96e80b1588af7ec904f95b4d5a53a"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/last-pendulum-frozen.png",
+      "bytes": 99901,
+      "gitBlob": "214da943d486e96da3bd7ac6ef823416a7fc449d"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/left-fixed-platform.png",
+      "bytes": 86205,
+      "gitBlob": "cc4e20782d935ca1258152d550565a7806b84457"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/mushroom-launched-body.png",
+      "bytes": 79851,
+      "gitBlob": "499d33b5ce2ed474f86f70859d05dcadd58184b1"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/physics-trace.jsonl.gz",
+      "bytes": 312909,
+      "gitBlob": "6e4a3ac93c7e4673a2c9236c4ef4201036635ab4"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/right-fixed-platform.png",
+      "bytes": 76721,
+      "gitBlob": "4aa8309e9c6f661c1c9df7a38296662ff5af5827"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/root-platform-landing.png",
+      "bytes": 78552,
+      "gitBlob": "fb1823f822dd1b6e9a87f409f89d40505c4839a9"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/route-report.json",
+      "bytes": 1840436,
+      "gitBlob": "0db93b08cbfd77e30849c33f6b56c3fc45779942"
+    },
+    {
+      "path": "docs/v28-baseline/phone-320/wind-and-third-memory.png",
+      "bytes": 101302,
+      "gitBlob": "ce817225bc69291ab9a03459726c734bc0d96b85"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/body-on-letter-plate.png",
+      "bytes": 107422,
+      "gitBlob": "bb0f394b8c124e5256135e0079a58defc296b30a"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/complete.png",
+      "bytes": 132122,
+      "gitBlob": "34320a80939aa9b13be0a1a0e6269f18b2fdf72f"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/entry.png",
+      "bytes": 103242,
+      "gitBlob": "7d49f0b60b563ab4f2ffe2614e42eb695321ff06"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/floating-book-boarded.png",
+      "bytes": 108964,
+      "gitBlob": "b2c4891142a76146308c2edee13f99ae5c895b91"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/floating-book-second-memory.png",
+      "bytes": 114263,
+      "gitBlob": "104d566946c7338a926ba6e58fedd9c0abb8d3ef"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/input-tape.json",
+      "bytes": 459225,
+      "gitBlob": "36fda611a922a84854ebed513560ba10cc7df16a"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/keeper-talk.png",
+      "bytes": 103769,
+      "gitBlob": "da791ab2695cf3f378aa0b22b7b70757bcdd2f05"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/lamp-1-lit.png",
+      "bytes": 117551,
+      "gitBlob": "8515db070006693726d81074c1fc331fe1ce1bea"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/lamp-2-lit.png",
+      "bytes": 134016,
+      "gitBlob": "20948c06cc43a2fa50d51a4f7d45fd8debde5f6f"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/last-pendulum-frozen.png",
+      "bytes": 137141,
+      "gitBlob": "bfe91a0d6c012cf734c924ef00ea091a2d821ed1"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/left-fixed-platform.png",
+      "bytes": 115266,
+      "gitBlob": "1120965fd6c96438c10809ee9dd7d63210e153dc"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/mushroom-launched-body.png",
+      "bytes": 106989,
+      "gitBlob": "5b2ed2f5c4602cce850cab89bd9a6479497d411e"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/physics-trace.jsonl.gz",
+      "bytes": 313118,
+      "gitBlob": "4100f340f1c7170f16efeb744ac2e8751b58f603"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/right-fixed-platform.png",
+      "bytes": 100331,
+      "gitBlob": "106d7e087a550f1c02053005435fb290316401af"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/root-platform-landing.png",
+      "bytes": 104960,
+      "gitBlob": "da1ec8c67e27a663f0b1cd896cef4a70413efb04"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/route-report.json",
+      "bytes": 1840399,
+      "gitBlob": "cf7499b07577bbfe381008906cca21da42231ee9"
+    },
+    {
+      "path": "docs/v28-baseline/phone-390/wind-and-third-memory.png",
+      "bytes": 137911,
+      "gitBlob": "d48ff83aa34551c5e9c4f3e221469af7e4168144"
+    },
+    {
+      "path": "docs/v29-before-fix-touch-exit.json",
+      "bytes": 54670,
+      "gitBlob": "bd56af42c132bc1976dd4e0117d8ea6e7196e7af"
+    },
+    {
+      "path": "docs/v29-before-fix-touch-exit.png",
+      "bytes": 96642,
+      "gitBlob": "6a7cd55e31d3953a1d3c739fef4933f9b11fbe54"
+    },
+    {
+      "path": "docs/v29-candidate-lanterns-320.png",
+      "bytes": 142579,
+      "gitBlob": "6b32f88bf7a88de611f731f2c315932191ecf4f8"
+    },
+    {
+      "path": "docs/v29-candidate-lanterns-desktop.png",
+      "bytes": 390251,
+      "gitBlob": "d7efefb3b8384e3bba29b31691650eeb95d217c2"
+    },
+    {
+      "path": "docs/v29-fifth-candidate/1280-ending-dawn-320-top.png",
+      "bytes": 138157,
+      "gitBlob": "47ecb46b889b7a82ffd54ce812589d6d256ec151"
+    },
+    {
+      "path": "docs/v29-fifth-candidate/1280-ending-keep-hold.png",
+      "bytes": 389280,
+      "gitBlob": "bbf66c9385668e437e68285f4e98b1d39bb74611"
+    },
+    {
+      "path": "docs/v29-fifth-candidate/1280-ending-keep-release.png",
+      "bytes": 360410,
+      "gitBlob": "462cce29d62eccb7ac1718b6d9b025c808b089ed"
+    },
+    {
+      "path": "docs/v29-fifth-candidate/1280-ending-send-release.png",
+      "bytes": 385509,
+      "gitBlob": "efbe4f6cda0e5d2ea3f766003eb4a25a2ee627a6"
+    },
+    {
+      "path": "docs/v29-fifth-candidate/1280-ending-tender-390-read.png",
+      "bytes": 174890,
+      "gitBlob": "40218b065ee4d5be2fa7860c9020c536ab754d1e"
+    },
+    {
+      "path": "docs/v29-fifth-candidate/1280-post-full-touch-320.json",
+      "bytes": 375682,
+      "gitBlob": "31e68ac100b869c95c07477fa2b378dfc29fdfd7"
+    },
+    {
+      "path": "docs/v29-fifth-candidate/1280-post-full-touch-390.json",
+      "bytes": 372588,
+      "gitBlob": "037fe88fbd0ff337c21b4b60b325d0fdfba5cf95"
+    },
+    {
+      "path": "docs/v29-fifth-candidate/README.md",
+      "bytes": 1323,
+      "gitBlob": "60994874a8fb72453b2e33a9c047bb909aadd974"
+    },
+    {
+      "path": "docs/v29-fifth-candidate/manifest.json",
+      "bytes": 4491,
+      "gitBlob": "54114bcba385a73f8c1f964024803c21f4f010aa"
+    },
+    {
+      "path": "docs/v29-fifth-candidate/original-partial-json.zip",
+      "bytes": 125486,
+      "gitBlob": "14817f33b0ff4b7b455468d5e17b94be7c85df29"
+    },
+    {
+      "path": "docs/v29-fifth-candidate/post-evidence-summary.json",
+      "bytes": 76003,
+      "gitBlob": "4defda29dc87c6cf7dd1e71ab82b0b68c3a2d08e"
+    },
+    {
+      "path": "docs/v29-fourth-desktop-post-route.json",
+      "bytes": 222568,
+      "gitBlob": "cfcfd21c9f92deebc0c61fe65e2b077d66dda018"
+    },
+    {
+      "path": "docs/v29-fourth-root-failure.json",
+      "bytes": 9357,
+      "gitBlob": "9051798afa889021114f636fed12ad19cf7c458d"
+    },
+    {
+      "path": "docs/v29-release/1280-ending-dawn-320-read.png",
+      "bytes": 138770,
+      "gitBlob": "fc623c07390d3cc68f0917116590cc5082289caa"
+    },
+    {
+      "path": "docs/v29-release/1280-ending-keep-hold.png",
+      "bytes": 390192,
+      "gitBlob": "2cd44b4017ca89670bc4e089de22f06afeebb7ad"
+    },
+    {
+      "path": "docs/v29-release/1280-ending-lanterns-320-read.png",
+      "bytes": 135693,
+      "gitBlob": "80965fdb51ca904c882ec59e281b845d47318ed3"
+    },
+    {
+      "path": "docs/v29-release/1280-ending-tender-320-read.png",
+      "bytes": 132605,
+      "gitBlob": "7481f998d29793e470e0615c886d276aca3ef4ab"
+    },
+    {
+      "path": "docs/v29-release/README.md",
+      "bytes": 4051,
+      "gitBlob": "f9d722e9c244f98077a4f76bd3d784b415bfa92a"
+    },
+    {
+      "path": "docs/v29-release/audit-compact.json",
+      "bytes": 148959,
+      "gitBlob": "70741b1a41c3e7b12d755a58b47e08c04856c326"
+    },
+    {
+      "path": "docs/v29-release/candidate-main-report.json.gz",
+      "bytes": 193440,
+      "gitBlob": "5a7b84c6991bae3568f87288aef0bb7fd6009cc6"
+    },
+    {
+      "path": "docs/v29-release/manifest.json",
+      "bytes": 4254,
+      "gitBlob": "ffdb1be5b77175722e169df9d2ead5355afb0969"
+    },
+    {
+      "path": "docs/v29-release/official-metadata.json",
+      "bytes": 3238,
+      "gitBlob": "2b4d14003ece1568365fdaf2ab330af2054bc5c6"
+    },
+    {
+      "path": "docs/v29-release/public-report.json.gz",
+      "bytes": 193265,
+      "gitBlob": "3ebe0f96b8986f9c33b4aca0241344a2d107ef1b"
+    },
+    {
+      "path": "docs/v29-release/secondary-audit.json",
+      "bytes": 15637,
+      "gitBlob": "7218e4dd9356756a4e3bcb33376bcd543b2fba69"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/1280-ending-dawn-320-read.png",
+      "bytes": 138778,
+      "gitBlob": "7ba29d36919ff31478253dd41a134581e2410fdb"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/1280-ending-dawn-320-reading.json",
+      "bytes": 21960,
+      "gitBlob": "cd02ce05c446b5d5d2f6b60dcaed48b226b7b379"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/1280-ending-dawn-320-top.png",
+      "bytes": 138160,
+      "gitBlob": "217b8691889627320ab6f6b7b1afb1a310f38d6c"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/1280-ending-dawn-390-reading.json",
+      "bytes": 4905,
+      "gitBlob": "b050948832290bb09ae74324bbb41a2918fd23cd"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/1280-ending-keep-hold.png",
+      "bytes": 390091,
+      "gitBlob": "62eff9397fc3f8e4a727606ab3250b41f30593d9"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/1280-ending-keep-release.png",
+      "bytes": 360503,
+      "gitBlob": "87a334c00ffa188092b50651ddab20b7cf0f3aca"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/1280-ending-lanterns-320-read.png",
+      "bytes": 135678,
+      "gitBlob": "3adcbdb69269c2fdfeb29c09a67ed9d9d9f25433"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/1280-ending-lanterns-320-reading.json",
+      "bytes": 22084,
+      "gitBlob": "021ddac58c1180145dbd98bf9ffdb92ef4742869"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/1280-ending-lanterns-320-top.png",
+      "bytes": 142881,
+      "gitBlob": "9bf039b692b5eacad1557d7e95104b7df0f599b9"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/1280-ending-lanterns-390-reading.json",
+      "bytes": 4943,
+      "gitBlob": "7063d74cc49525a152a5174cf0b2f55c114c0da4"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/1280-ending-send-release.png",
+      "bytes": 385570,
+      "gitBlob": "7763e19610479356bee2f77d661849c39d88b436"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/1280-ending-tender-320-read.png",
+      "bytes": 132608,
+      "gitBlob": "d3f63569f66c91f0b1292a4a3fd22a3753e36177"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/1280-ending-tender-320-reading.json",
+      "bytes": 21982,
+      "gitBlob": "40488303a53fa38d0af822b1f70157b0c96fff5a"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/1280-ending-tender-320-top.png",
+      "bytes": 134564,
+      "gitBlob": "7b60e6ed7dd02b75b2c418bd56c23bbf38d57af1"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/1280-ending-tender-390-reading.json",
+      "bytes": 4910,
+      "gitBlob": "ea9837f4fc5eed6d3934a6439abdae05ec168c62"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/README.md",
+      "bytes": 5435,
+      "gitBlob": "71ed2e6d5c974bf4d79e8af9f0be9deddd0bfac9"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/immediate-json-lossless.zip",
+      "bytes": 162769,
+      "gitBlob": "01912f9e4daa6fe62e6757c5549932e6cc2a908b"
+    },
+    {
+      "path": "docs/v29-sixth-candidate/manifest.json",
+      "bytes": 62702,
+      "gitBlob": "9d63c9366241cd2defe26f71e804badf2d208582"
+    },
+    {
+      "path": "docs/v30-prestudy/ENGINE-NOTES.md",
+      "bytes": 6735,
+      "gitBlob": "f228b5ab6a37427bf75cab8f742e9a35a8661837"
+    },
+    {
+      "path": "docs/v30-prestudy/README.md",
+      "bytes": 1880,
+      "gitBlob": "4c9b97737e56b01b11760e8e1beacf2b9fe891e4"
+    },
+    {
+      "path": "docs/v30-prestudy/browser/1280-full-touch-320-post-book-riding.png",
+      "bytes": 218154,
+      "gitBlob": "7326406ce5dec56556b1a57c9e4562922a07a8d0"
+    },
+    {
+      "path": "docs/v30-prestudy/browser/1280-greenhouse-root-crossed.png",
+      "bytes": 1279658,
+      "gitBlob": "d9723cfb9edc0b26bd71398668bb70e89fc4beb2"
+    },
+    {
+      "path": "docs/v30-prestudy/browser/1280-post-entry-traveler-airborne-canvas.png",
+      "bytes": 1500898,
+      "gitBlob": "66db87ac1327e4edd044404ab8596e64d929ad78"
+    },
+    {
+      "path": "docs/v30-prestudy/browser/1280-touch-320-library-book-b-riding.png",
+      "bytes": 236217,
+      "gitBlob": "68fd94f592761c05ebdf9f579c84e5a0205e2b7e"
+    },
+    {
+      "path": "docs/v30-prestudy/browser/README.md",
+      "bytes": 3870,
+      "gitBlob": "1dd7d02a664633d92b4d48fd7b43ce939c41f8a5"
+    },
+    {
+      "path": "docs/v30-prestudy/browser/audit-compact.json",
+      "bytes": 119194,
+      "gitBlob": "c8fa20c7b858e1447f78de6d70475cb97e92d517"
+    },
+    {
+      "path": "docs/v30-prestudy/browser/candidate-report.json.gz",
+      "bytes": 580767,
+      "gitBlob": "f49ad9e4e39eca7b0d74960cb5e3b3b8a1c70b35"
+    },
+    {
+      "path": "docs/v30-prestudy/browser/evidence-summary.json",
+      "bytes": 25936,
+      "gitBlob": "e3e68034128ce91b121b3e6571f0459b1a1f6adb"
+    },
+    {
+      "path": "docs/v30-prestudy/browser/manifest.json",
+      "bytes": 1774,
+      "gitBlob": "553e7114b0e077207843e50ea3545387fb059a9d"
+    },
+    {
+      "path": "docs/v30-prestudy/browser/official-metadata.json",
+      "bytes": 2489,
+      "gitBlob": "069dcaee3490aadd7429e3ed6cab14461e9f48ba"
+    },
+    {
+      "path": "docs/v30-prestudy/desktop-chapter-2-settle.png",
+      "bytes": 1024628,
+      "gitBlob": "bd36595582085fd8743baf11bfce3a2651d08a65"
+    },
+    {
+      "path": "docs/v30-prestudy/desktop-chapter-4-fall.png",
+      "bytes": 809656,
+      "gitBlob": "f3a922e3da7f19261f781784b19f50736d5a0d53"
+    },
+    {
+      "path": "docs/v30-prestudy/local-review.json",
+      "bytes": 2193,
+      "gitBlob": "6ce0a0b5e1b206e8322bbb6c4de62b8fc6944b98"
+    },
+    {
+      "path": "docs/v30-prestudy/motion-v30-report.json",
+      "bytes": 166285,
+      "gitBlob": "9b1cf88b0ef985bf1e3c261e115b1191cc944cf5"
+    },
+    {
+      "path": "docs/v30-prestudy/phone-320-chapter-1-fall-v29.png",
+      "bytes": 182985,
+      "gitBlob": "e97fb4bf6385e1dc57d6f27b71b67abfb9931c18"
+    },
+    {
+      "path": "docs/v30-prestudy/phone-320-chapter-1-fall.png",
+      "bytes": 183106,
+      "gitBlob": "4afe54bb72f8a916eb9ee271a0434c5d37d8a031"
+    },
+    {
+      "path": "docs/v30-prestudy/phone-390-chapter-2-settle-v29.png",
+      "bytes": 388372,
+      "gitBlob": "7af50cad620b230509f798b89208b6368e035714"
+    },
+    {
+      "path": "docs/v30-prestudy/phone-390-chapter-2-settle.png",
+      "bytes": 388454,
+      "gitBlob": "4b8bbf0434d0e020f07b018548544b6fd11678d5"
+    },
+    {
+      "path": "docs/v30-prestudy/phone-390-chapter-6-fall.png",
+      "bytes": 291289,
+      "gitBlob": "26064db0211899da0f895ad5c8d23aaa61834364"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/README.md",
+      "bytes": 4417,
+      "gitBlob": "3cc7349961b3f85c4377a45bae4e37c7bf37787d"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-320-book-b-down.png",
+      "bytes": 196211,
+      "gitBlob": "f700ef89f68ec94aeaf4d60f3c542c0345975305"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-320-book-b-up.png",
+      "bytes": 196690,
+      "gitBlob": "09920a577b6714f05f6349f39d490e3afa91d9ef"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-320-last-stage-left.png",
+      "bytes": 178393,
+      "gitBlob": "e4da5bc0d78bf52b52e241d60e825d9cc55ed74b"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-320-last-stage-right.png",
+      "bytes": 172116,
+      "gitBlob": "5698c3bacfb54429070d3ca4886c30ea7a5849bb"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-390-book-a-down.png",
+      "bytes": 291581,
+      "gitBlob": "9f55ff8dbe050c6c955627063b8d81f54e009c50"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-390-book-a-up-ablated.png",
+      "bytes": 293182,
+      "gitBlob": "11a97c3e682ad262d31ce4533dbb2bedd3e66eeb"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-390-book-a-up.png",
+      "bytes": 293239,
+      "gitBlob": "9e37660768694ced8d6edf32cac91f9fee8a4332"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/phone-390-post-root-land.png",
+      "bytes": 250712,
+      "gitBlob": "2db7133d53a668875bb86665323e01afbc26d960"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/riders-v30-report.json",
+      "bytes": 118644,
+      "gitBlob": "b73d366b41426a5aee286b7a3ac382d21f931bd7"
+    },
+    {
+      "path": "docs/v30-prestudy/riders/selection-manifest.json",
+      "bytes": 3566,
+      "gitBlob": "7739cd344ed21e65c598504a88d4a9bbd4429661"
+    },
+    {
+      "path": "docs/v30-prestudy/selection-manifest.json",
+      "bytes": 1435,
+      "gitBlob": "0c53e9ed625fc4201c6a002b62f23eadc0abfa87"
+    },
+    {
+      "path": "docs/v31-prestudy/BROWSER-NOTES.md",
+      "bytes": 9658,
+      "gitBlob": "23c76d40dcf9b0fb83e956ae0925cba25f1c03f5"
+    },
+    {
+      "path": "docs/v31-prestudy/README.md",
+      "bytes": 9869,
+      "gitBlob": "fc2d3363bcc977dc7f9b9694711ec2c8f9f82a4f"
+    },
+    {
+      "path": "docs/v31-prestudy/base-snapshot.json",
+      "bytes": 7025,
+      "gitBlob": "47acad51fa72a9a74f863fe050f815eb48ce80e3"
+    },
+    {
+      "path": "docs/v31-prestudy/browser-local-review.json",
+      "bytes": 6202,
+      "gitBlob": "cd0a5f6d816c20da4f7b659f6d1157c6ae4edb8e"
+    },
+    {
+      "path": "docs/v31-prestudy/face-v31-report.json",
+      "bytes": 646138,
+      "gitBlob": "67821caf6b69835e45a9d44489b0361674ac9d4b"
+    },
+    {
+      "path": "docs/v31-prestudy/phone-320-chapter-6-neutral-v30.png",
+      "bytes": 198848,
+      "gitBlob": "bb9443165598045b4d56a7baa0aaf51d2993c0fc"
+    },
+    {
+      "path": "docs/v31-prestudy/phone-320-chapter-6-neutral.png",
+      "bytes": 198916,
+      "gitBlob": "9cca903988043a59fed2086637b7f42869307a94"
+    },
+    {
+      "path": "docs/v31-prestudy/phone-320-events-lamp-closed-joy-v30.png",
+      "bytes": 187974,
+      "gitBlob": "763a5c78284336b4b2a7365a9c63d9c43f5fc5f0"
+    },
+    {
+      "path": "docs/v31-prestudy/phone-320-events-lamp-closed-joy.png",
+      "bytes": 187958,
+      "gitBlob": "6f8abcfac129c50668ab7a2a17b10d8841b0b028"
+    },
+    {
+      "path": "docs/v31-prestudy/phone-320-events-ticket-joy-v30.png",
+      "bytes": 187088,
+      "gitBlob": "a1bc489444ebea2ba09144290921f5dd2f946058"
+    },
+    {
+      "path": "docs/v31-prestudy/phone-320-events-ticket-joy.png",
+      "bytes": 187103,
+      "gitBlob": "d0359ba068b2543c7d335f13abf03c04e4ffb9b6"
+    },
+    {
+      "path": "docs/v31-prestudy/phone-320-fatigue-closed-tired-v30.png",
+      "bytes": 185436,
+      "gitBlob": "b40e65819a58007e554c20448c3fd3a1256c8e21"
+    },
+    {
+      "path": "docs/v31-prestudy/phone-320-fatigue-closed-tired.png",
+      "bytes": 185551,
+      "gitBlob": "f9bd19210d626848000f2a0e788f13e6a28c1435"
+    },
+    {
+      "path": "docs/v31-prestudy/selection-manifest.json",
+      "bytes": 2720,
+      "gitBlob": "cc4c89972cea3ed366e1e78ddd83bd397c2a6388"
+    },
+    {
+      "path": "docs/v31-prestudy/v30-runtime.patch",
+      "bytes": 9419,
+      "gitBlob": "8af625a585d35e3b74602bc45fdce05a6c7569f4"
+    },
+    {
+      "path": "docs/v31-prestudy/v30-source-manifest.json",
+      "bytes": 23446,
+      "gitBlob": "a48e7198fc5a333b888c5dbfa39b252d42fac604"
+    },
+    {
+      "path": "docs/verification-domain-candidate-full.json",
+      "bytes": 926739,
+      "gitBlob": "87e1e9e497e460b80424935bc62354914d17c89a"
+    },
+    {
+      "path": "docs/verification-domain-first-ci-failure.json",
+      "bytes": 4971,
+      "gitBlob": "c5f14da90cf92f181c3eae46786b3adaacaa1d9d"
+    },
+    {
+      "path": "docs/verification-domain-public-full.json",
+      "bytes": 925715,
+      "gitBlob": "2255bf16760c34499b2d6c1519daef3c46aa0308"
+    },
+    {
+      "path": "docs/verification-domain-release.json",
+      "bytes": 10368,
+      "gitBlob": "b2befbd6abaa97c4e6765588a2afd5defa11509d"
+    },
+    {
+      "path": "docs/verification-domain-tougaigu-network.json",
+      "bytes": 36846,
+      "gitBlob": "5bad87229ac94ac99c7386240ccd843a68c9a1df"
+    },
+    {
+      "path": "docs/verification-v15.json",
+      "bytes": 3174,
+      "gitBlob": "c0a6dd298caceacb29ee9c7e0ddfaafef046a4ba"
+    },
+    {
+      "path": "docs/verification-v16-local.json",
+      "bytes": 4174,
+      "gitBlob": "461a7a7ba57367e3620273443e12721d80cf44bd"
+    },
+    {
+      "path": "docs/verification-v16-public.json",
+      "bytes": 70903,
+      "gitBlob": "75f1ae6873814ba52dfaaafc588c02c568989fa4"
+    },
+    {
+      "path": "docs/verification-v17-browser-report.json",
+      "bytes": 81026,
+      "gitBlob": "6abb4921d6aa8ff65929856d21c744b2a8b0f270"
+    },
+    {
+      "path": "docs/verification-v17-candidate.json",
+      "bytes": 35175,
+      "gitBlob": "7669bbef1e176d19d9d9f18ba50922be458ae117"
+    },
+    {
+      "path": "docs/verification-v17-canvas.json",
+      "bytes": 971,
+      "gitBlob": "1b41b3ccb9a5a61084ee10f5f1d0a2b80c7e002a"
+    },
+    {
+      "path": "docs/verification-v17-local.json",
+      "bytes": 8794,
+      "gitBlob": "835e30c45e37e543fbbd4cd3c2aec837d1a0953e"
+    },
+    {
+      "path": "docs/verification-v17-public.json",
+      "bytes": 1260,
+      "gitBlob": "d1a75ef1d1646d28ce964892b5265dad23c85bf8"
+    },
+    {
+      "path": "docs/verification-v18-browser-report.json",
+      "bytes": 91142,
+      "gitBlob": "eec2cf42f1e7efc6231bc3f48e087d5354a7aba7"
+    },
+    {
+      "path": "docs/verification-v18-candidate.json",
+      "bytes": 40290,
+      "gitBlob": "e4f8ce32967171a9d1ccbc91f0efbeb94396bcb0"
+    },
+    {
+      "path": "docs/verification-v18-local.json",
+      "bytes": 1390,
+      "gitBlob": "0e6b0b9e03ca5f3d487414703e0254195e25a01e"
+    },
+    {
+      "path": "docs/verification-v18-public.json",
+      "bytes": 1607,
+      "gitBlob": "ce106b21285f898229d15cae8bbd637a81f84f2d"
+    },
+    {
+      "path": "docs/verification-v19-candidate.json",
+      "bytes": 69143,
+      "gitBlob": "62a93f6ddb7a78d17d69a83dc2c4d39561cd61ce"
+    },
+    {
+      "path": "docs/verification-v19-local.json",
+      "bytes": 1389,
+      "gitBlob": "12d13f232510f586ac3c7dfa5c3b88f851e64e84"
+    },
+    {
+      "path": "docs/verification-v19-public.json",
+      "bytes": 159574,
+      "gitBlob": "843c5f713367456aa4045570162a364150f9da71"
+    },
+    {
+      "path": "docs/verification-v20-public.json",
+      "bytes": 2727,
+      "gitBlob": "d8d4be2f5d2a453986491cb35f923521d115b312"
+    },
+    {
+      "path": "docs/verification-v21-public.json",
+      "bytes": 2773,
+      "gitBlob": "1d1941a75162caf795de6a6ffe358123ff42e59b"
+    },
+    {
+      "path": "docs/verification-v22-candidate-final.json",
+      "bytes": 154152,
+      "gitBlob": "7511d2ef5f74c990420558e61275cf51b54c3612"
+    },
+    {
+      "path": "docs/verification-v22-candidate.json",
+      "bytes": 154150,
+      "gitBlob": "052ac77764711084c7d477f2e8e7511fe6fb9b76"
+    },
+    {
+      "path": "docs/verification-v22-offline.json",
+      "bytes": 4091,
+      "gitBlob": "1be242f762e54494c00e32b87a46b156fd8b7683"
+    },
+    {
+      "path": "docs/verification-v22-public-full.json",
+      "bytes": 155646,
+      "gitBlob": "1504db559eab5162759d0431e9d862c088cc3db1"
+    },
+    {
+      "path": "docs/verification-v22-public-gate.json",
+      "bytes": 1417,
+      "gitBlob": "dbde2127fd6ecf02770e6a0e81793d0e79a4678d"
+    },
+    {
+      "path": "docs/verification-v22-public.json",
+      "bytes": 2372,
+      "gitBlob": "fc3a5f5295b6b228b3693e87dc28a342ce296bea"
+    },
+    {
+      "path": "docs/verification-v23-public-full.json",
+      "bytes": 412564,
+      "gitBlob": "f728ebc6ff048ac2a9ef527e865d4d74ebb09c37"
+    },
+    {
+      "path": "docs/verification-v24-public-full.json",
+      "bytes": 415753,
+      "gitBlob": "d371895dfb68f8ef760fe1debb2c00ff51ce6e6f"
+    },
+    {
+      "path": "docs/verification-v25-independent.json",
+      "bytes": 8765,
+      "gitBlob": "53bd29528b97d0a1c5bccf3abb0db8659d1f29ba"
+    },
+    {
+      "path": "docs/verification-v25-observer-review.json",
+      "bytes": 12999,
+      "gitBlob": "b05626dad3bf3341814086db1de3c75f56162ca8"
+    },
+    {
+      "path": "docs/verification-v25-offline.json",
+      "bytes": 12433,
+      "gitBlob": "00494b7ec59a94bf8a4e287efe9aa337ce968802"
+    },
+    {
+      "path": "docs/verification-v25-public-full.json",
+      "bytes": 921202,
+      "gitBlob": "40859f2f86803f0725264aa7e0ce30708f51ece4"
+    },
+    {
+      "path": "docs/verification-v25-release.json",
+      "bytes": 4451,
+      "gitBlob": "78a0e2ba5e5923d48d182ce03a41f95b6f4f0a6b"
+    },
+    {
+      "path": "docs/verification-v26-candidate-full.json",
+      "bytes": 939923,
+      "gitBlob": "ecc008ec74199e4a68afc35de1d304ca4141dd35"
+    },
+    {
+      "path": "docs/verification-v26-public-full.json",
+      "bytes": 941621,
+      "gitBlob": "2492b2051d629f09e29872a1707d8e317fc78d07"
+    },
+    {
+      "path": "docs/verification-v26-release.json",
+      "bytes": 9428,
+      "gitBlob": "311226b542624792a6f629e9b873ba09ced9a504"
+    },
+    {
+      "path": "docs/verification-v27-candidate-full.json",
+      "bytes": 1965514,
+      "gitBlob": "1118d149b33938cf10b73c11c08bf03d6fcc755a"
+    },
+    {
+      "path": "docs/verification-v27-initial-candidate-full.json",
+      "bytes": 1958596,
+      "gitBlob": "02de8773aa21c4da91805bb609c41a71d4b98c01"
+    },
+    {
+      "path": "docs/verification-v27-public-full.json",
+      "bytes": 1956753,
+      "gitBlob": "31f2851f2a9845eb9d43120eb971fe66ca280045"
+    },
+    {
+      "path": "docs/verification-v27-publication.json",
+      "bytes": 22629,
+      "gitBlob": "91801fdb90516dfde065d425301dce7bb8b4e1bc"
+    },
+    {
+      "path": "docs/verification-v27-release.json",
+      "bytes": 151260,
+      "gitBlob": "374e69ea6b8ed1632d96f986d499d79a1f55ff33"
+    },
+    {
+      "path": "docs/verification-v29-candidate-audit.json",
+      "bytes": 155389,
+      "gitBlob": "f88ee4b356fcd849ac3a29854ce1ce56af3b4524"
+    },
+    {
+      "path": "docs/verification-v29-candidate-full.json",
+      "bytes": 4042345,
+      "gitBlob": "5ce77133667382a3b41ed16962525c024aae77b7"
+    },
+    {
+      "path": "docs/verification-v29-candidate-summary.json",
+      "bytes": 7149,
+      "gitBlob": "e349c188c3e3f290f2a6aadb249a024870ec94e4"
+    },
+    {
+      "path": "docs/verification-v29-fifth-candidate-audit.json",
+      "bytes": 135990,
+      "gitBlob": "ed8d4dde9084a56da1f44ba8727f71153ff8f924"
+    },
+    {
+      "path": "docs/verification-v29-first-candidate-audit.json",
+      "bytes": 125013,
+      "gitBlob": "4ed021732bfa4c3aa32d88fa96b47ec3bc486ccb"
+    },
+    {
+      "path": "docs/verification-v29-fourth-candidate-audit.json",
+      "bytes": 125805,
+      "gitBlob": "30a91be6f9184decdc3ca93857cfc4292496f0e3"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/README.md",
+      "bytes": 5383,
+      "gitBlob": "65a93daaed21ecfc4aa825ac185f5f30c834b6dc"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/all-synthetic-delay-traces.json.gz",
+      "bytes": 1166733,
+      "gitBlob": "dddaaddbeb875e21914d9ca276ca9e87c6d6ed6c"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/continuous-release-success.json",
+      "bytes": 105941,
+      "gitBlob": "f34b0ddf09070798a8f465da74cd24940d1067ae"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/manifest.json",
+      "bytes": 13986,
+      "gitBlob": "f964cb6a8238c89b6e24afc246c7d9dd5057b702"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/normal-input-analysis.mjs",
+      "bytes": 7676,
+      "gitBlob": "efbdd12abf816177d699033f83421f8a4a14f268"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/old-approach-wall-failure.json",
+      "bytes": 317004,
+      "gitBlob": "236b3960869e5c481153da567196f7acd8913596"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/original-analysis.mjs.txt",
+      "bytes": 7550,
+      "gitBlob": "08156e432a4514feb2a223f67885bf7e25efd7f2"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/source-runtime/dream-engine-base.js",
+      "bytes": 94772,
+      "gitBlob": "1f6974f2038de030518ac23a83ddd0c0df4f7e55"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/source-runtime/dream-engine.js",
+      "bytes": 25553,
+      "gitBlob": "8e1f1bc8ef69952947ead77a976f2ee7e0d25e96"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/source-runtime/dream-levels.js",
+      "bytes": 8742,
+      "gitBlob": "1deb653a8745cecc78a8beef1a9cd9cb3afc3f73"
+    },
+    {
+      "path": "docs/verification-v29-mushroom-input/summary.json",
+      "bytes": 2023,
+      "gitBlob": "cc4148b2040947d44c277a78ac844b1476069980"
+    },
+    {
+      "path": "docs/verification-v29-release-summary.json",
+      "bytes": 18113,
+      "gitBlob": "4edb23bac91929e963720ff1f90208b661e0b15e"
+    },
+    {
+      "path": "docs/verification-v29-second-candidate-audit.json",
+      "bytes": 125750,
+      "gitBlob": "919537ede3a87e2248f195aabb83a8622c037aa3"
+    },
+    {
+      "path": "docs/verification-v29-third-candidate-audit.json",
+      "bytes": 126476,
+      "gitBlob": "042432da961ef29c184f3fd5b1a0d45782247c50"
+    },
+    {
+      "path": "docs/verification-v30-preparation.json",
+      "bytes": 41764,
+      "gitBlob": "85745c59751b82e03680d7464ef2b22ec96010b2"
+    },
+    {
+      "path": "docs/verification-v30-release-summary.md",
+      "bytes": 2758,
+      "gitBlob": "6ca9dbab99620e2c4a793899a366a258be5b6856"
+    },
+    {
+      "path": "docs/verification-v31-formal-preparation.json",
+      "bytes": 614,
+      "gitBlob": "9c4f9b4d41653b2a213e2e24a88534ef9195e5c1"
+    },
+    {
+      "path": "docs/verification-v31-prestudy-preparation.json",
+      "bytes": 47869,
+      "gitBlob": "019dc33899105f4cf1d4b47280c721530fe7ef60"
+    },
+    {
+      "path": "package.json",
+      "bytes": 452,
+      "gitBlob": "90c869e023188dce68737be55cb843e8154d6556"
+    },
+    {
+      "path": "scripts/browser-smoke.py",
+      "bytes": 137469,
+      "gitBlob": "f1065bc391a0103f581a9c1238e3fb59553ae755"
+    },
+    {
+      "path": "scripts/browser_coast_v27.py",
+      "bytes": 24206,
+      "gitBlob": "d361443294bb18aed010d2bb950e559b3a90e623"
+    },
+    {
+      "path": "scripts/browser_ending_v29.py",
+      "bytes": 32075,
+      "gitBlob": "f20cb9ea6b13dc920306a6e370b5f00726307d96"
+    },
+    {
+      "path": "scripts/browser_face_v31.py",
+      "bytes": 24625,
+      "gitBlob": "d30a9e86ea4be3e8041432ad00a0a30aeb8b6215"
+    },
+    {
+      "path": "scripts/browser_library_v26.py",
+      "bytes": 33372,
+      "gitBlob": "b22ef3639e07801223603446928e3638e73ffbd4"
+    },
+    {
+      "path": "scripts/browser_post_v28.py",
+      "bytes": 58773,
+      "gitBlob": "675d749434b937473d1b3bdcfdbce6432306b5be"
+    },
+    {
+      "path": "scripts/build-cap-portraits.mjs",
+      "bytes": 23291,
+      "gitBlob": "6386b00bf3e7253d3b23a0d5124ce79fb13f3038"
+    },
+    {
+      "path": "scripts/build-festival-portraits.mjs",
+      "bytes": 28550,
+      "gitBlob": "afb96ee3623c215026bf764f37871fcf4e0ce9e0"
+    },
+    {
+      "path": "scripts/check.mjs",
+      "bytes": 1575,
+      "gitBlob": "78a7fd7ec5a61634c5ec631afa809cc7e637e923"
+    },
+    {
+      "path": "scripts/render-cap-activities.mjs",
+      "bytes": 7073,
+      "gitBlob": "c5105292e25128ae338825869563764a21720345"
+    },
+    {
+      "path": "scripts/render-lost-cases.mjs",
+      "bytes": 14005,
+      "gitBlob": "ee7d1c888ac3d612f43afabdeba2af6a4de0dfb5"
+    },
+    {
+      "path": "scripts/render-lost-encores.mjs",
+      "bytes": 11081,
+      "gitBlob": "63232a02e89ad057a9d7186f4b7658d6290f2898"
+    },
+    {
+      "path": "scripts/render-moon-play.mjs",
+      "bytes": 5541,
+      "gitBlob": "8ae44b9d719ab3af6fc62bf5343a10e1bfe37a5a"
+    },
+    {
+      "path": "scripts/render-scene-backdrops.mjs",
+      "bytes": 4695,
+      "gitBlob": "29725cf0397c91703ac80a58e8c7c81cafbd9526"
+    },
+    {
+      "path": "scripts/render-story-awakenings.mjs",
+      "bytes": 14764,
+      "gitBlob": "d02bb55e6f69119e0fbd29ee2196b250d6674f4a"
+    },
+    {
+      "path": "scripts/render-story-encounters.mjs",
+      "bytes": 8721,
+      "gitBlob": "4ffc1fdb580cf891834c9534a68cbd1997c8b53e"
+    },
+    {
+      "path": "scripts/render-v13-scenes.mjs",
+      "bytes": 8007,
+      "gitBlob": "168bddde6e4afd272cfda2cf97f53e8f018cc535"
+    },
+    {
+      "path": "scripts/render-v14-art.mjs",
+      "bytes": 8703,
+      "gitBlob": "a4c93198888a0cb66bad5190e63dfa300889d696"
+    },
+    {
+      "path": "scripts/render-v14-scenes.mjs",
+      "bytes": 15278,
+      "gitBlob": "6078043cfc7d2d13f3b8986153076611659b334c"
+    },
+    {
+      "path": "scripts/render-v16-traveler.mjs",
+      "bytes": 6858,
+      "gitBlob": "a9307f4a751aa632b3010e23adaff62a7868faed"
+    },
+    {
+      "path": "scripts/render-v17-greenhouse.mjs",
+      "bytes": 7126,
+      "gitBlob": "5f4eb377d8f3e061212257cabb6408aba5371bbe"
+    },
+    {
+      "path": "scripts/render-v18-keeper.mjs",
+      "bytes": 5833,
+      "gitBlob": "5398ca94054fb8fe3d365dfb2043ea5ca2c2763d"
+    },
+    {
+      "path": "scripts/render-v18-letter-echo.mjs",
+      "bytes": 4789,
+      "gitBlob": "0687015789352ce56cd0375b31790baf251e0761"
+    },
+    {
+      "path": "scripts/render-v19-theatre.mjs",
+      "bytes": 6733,
+      "gitBlob": "3dea5c9852a26bf15e63d81d3c07f9a26edc3990"
+    },
+    {
+      "path": "scripts/render-v22-theatre.mjs",
+      "bytes": 9145,
+      "gitBlob": "1a4b32134621ebbe22e909f558cae69cf5da6c24"
+    },
+    {
+      "path": "scripts/render-v25-traveler.mjs",
+      "bytes": 10774,
+      "gitBlob": "c2d355c5f8ebb50cd313c6e832f6958f12ba9f13"
+    },
+    {
+      "path": "scripts/render-v30-motion.mjs",
+      "bytes": 9306,
+      "gitBlob": "049ed294bb9429771b44bca51d435ce37b9ddb0a"
+    },
+    {
+      "path": "scripts/render-v30-riders.mjs",
+      "bytes": 19667,
+      "gitBlob": "5c7fe8ac95dfe5b6bc486b4313745190faec2e5c"
+    },
+    {
+      "path": "scripts/render-v31-face.mjs",
+      "bytes": 17217,
+      "gitBlob": "a35f5272acff6a2ef1f01d1272f7895877cbc8eb"
+    },
+    {
+      "path": "scripts/version-assets.mjs",
+      "bytes": 2524,
+      "gitBlob": "d8ed75c41ca361336bb28af29109ecf8d2300546"
+    },
+    {
+      "path": "tests/browser-coast-route-v27.test.mjs",
+      "bytes": 8150,
+      "gitBlob": "76f9c1999e0b0559263bc0fdcf051fd7c710fd71"
+    },
+    {
+      "path": "tests/browser-driver-boundary.test.mjs",
+      "bytes": 2081,
+      "gitBlob": "4b6b9c0be71f8a2b5659927ba4fc733090cfbff9"
+    },
+    {
+      "path": "tests/browser-ending-v29.test.mjs",
+      "bytes": 22546,
+      "gitBlob": "7b883c4d5071cef6d5251863336a694add7870f6"
+    },
+    {
+      "path": "tests/browser-face-v31.test.mjs",
+      "bytes": 17853,
+      "gitBlob": "f449b964e88f3e581a6e3a1e9707d2474eb43273"
+    },
+    {
+      "path": "tests/browser-hud-energy.test.mjs",
+      "bytes": 4672,
+      "gitBlob": "6a07753d12aaadabd42e313dcfa13847fe553efe"
+    },
+    {
+      "path": "tests/browser-hud-geometry.test.mjs",
+      "bytes": 5788,
+      "gitBlob": "8ed52a25fa7b3ac76b44d0f0bdbcf16b109796af"
+    },
+    {
+      "path": "tests/browser-library-route-v27.test.mjs",
+      "bytes": 14079,
+      "gitBlob": "253cf27d3f8b6abf11502f9ecd486cc3b12576ca"
+    },
+    {
+      "path": "tests/browser-portrait-sequence.test.mjs",
+      "bytes": 9066,
+      "gitBlob": "c2a62f18f3750dfc698db0baf27a530c41e497e2"
+    },
+    {
+      "path": "tests/browser-post-route-v29.test.mjs",
+      "bytes": 22175,
+      "gitBlob": "d9d441717ee7634d3ca94c0c67217bf647404a4f"
+    },
+    {
+      "path": "tests/browser-theatre-alight.test.mjs",
+      "bytes": 7957,
+      "gitBlob": "08272448ee699311f071f6aea3d811772a834cfd"
+    },
+    {
+      "path": "tests/browser-traveler-performance.test.mjs",
+      "bytes": 43308,
+      "gitBlob": "b4aa120cf0181532f16b63140dfb19d489ab7e78"
+    },
+    {
+      "path": "tests/cap-activities.test.mjs",
+      "bytes": 7878,
+      "gitBlob": "c2c92f992c9b726950cae3f02cb02080a1f880e5"
+    },
+    {
+      "path": "tests/cap-activity-engine.test.mjs",
+      "bytes": 27905,
+      "gitBlob": "d23e0b80fa9967aa7768105d5c998d9389c7605e"
+    },
+    {
+      "path": "tests/cap-activity-growth.test.mjs",
+      "bytes": 4046,
+      "gitBlob": "a8000c8516ad43fa8f85083a3f065f62d7d04fa4"
+    },
+    {
+      "path": "tests/cap-activity-progress.test.mjs",
+      "bytes": 16186,
+      "gitBlob": "c4def5c6a9fe92b3776a4dc43f23dbd0de1c0bf0"
+    },
+    {
+      "path": "tests/cap-character-motion.test.mjs",
+      "bytes": 11939,
+      "gitBlob": "70baeef7060c2a954bedaebc8782c46353f8281e"
+    },
+    {
+      "path": "tests/cap-engine.test.mjs",
+      "bytes": 14161,
+      "gitBlob": "26d061d19765228c4d87b5231fcbc34bbb20be82"
+    },
+    {
+      "path": "tests/cap-progress.test.mjs",
+      "bytes": 4190,
+      "gitBlob": "a61bedc20006e4f2f0e404df9c2f0f70c37af688"
+    },
+    {
+      "path": "tests/cap-story.test.mjs",
+      "bytes": 9438,
+      "gitBlob": "6f6c173eecc3aea8634048e3eb7d5f15f10872ea"
+    },
+    {
+      "path": "tests/clock-echo-v27.test.mjs",
+      "bytes": 13963,
+      "gitBlob": "458f2d9a7fd38b1fb41faf53c684991a45f002fa"
+    },
+    {
+      "path": "tests/coast-presentation-v27.test.mjs",
+      "bytes": 18632,
+      "gitBlob": "f9d01a01d875abd79da81010f921435867547e81"
+    },
+    {
+      "path": "tests/dream-app-energy.test.mjs",
+      "bytes": 10837,
+      "gitBlob": "aa66c19fe8c5e46f820cb3a4cfa9ec34371e33af"
+    },
+    {
+      "path": "tests/dream-awakening-engine.test.mjs",
+      "bytes": 19589,
+      "gitBlob": "84a876f59dff18c98ccd6ad8e7a7158599d537b8"
+    },
+    {
+      "path": "tests/dream-awakenings.test.mjs",
+      "bytes": 5987,
+      "gitBlob": "f7b0e5afebccbbe2f234898f603348cd2ab60f8c"
+    },
+    {
+      "path": "tests/dream-direction-input.test.mjs",
+      "bytes": 6172,
+      "gitBlob": "ea883edddb3d26e1f1920d8f4f8b6cb3984805d9"
+    },
+    {
+      "path": "tests/dream-encounter-engine.test.mjs",
+      "bytes": 13812,
+      "gitBlob": "5a80ce5786ff5dce2ac54da378e36f7162a72f1d"
+    },
+    {
+      "path": "tests/dream-encounters.test.mjs",
+      "bytes": 7258,
+      "gitBlob": "cdedca4a50fe97485807ee300773c88674ea2971"
+    },
+    {
+      "path": "tests/dream-ending-art.test.mjs",
+      "bytes": 6550,
+      "gitBlob": "cc7c996170f0573d3c72e5ea9bfc67f4b9e0fe5e"
+    },
+    {
+      "path": "tests/dream-engine.test.mjs",
+      "bytes": 11048,
+      "gitBlob": "b39fde46feac9ed6ab926d8e3f13418f0fab31da"
+    },
+    {
+      "path": "tests/dream-journey.test.mjs",
+      "bytes": 19341,
+      "gitBlob": "b19a0ad7188f4f08fca507317e211f24e4eb4142"
+    },
+    {
+      "path": "tests/dream-modal-input.test.mjs",
+      "bytes": 7967,
+      "gitBlob": "4e8c7d3caf18c415b2287890b2b7f36ce5c39c76"
+    },
+    {
+      "path": "tests/dream-moon-play.test.mjs",
+      "bytes": 12734,
+      "gitBlob": "75ea5dfbfcd3796294b550683972aab09a70b97b"
+    },
+    {
+      "path": "tests/dream-story-portrait-v24.test.mjs",
+      "bytes": 2952,
+      "gitBlob": "f09d21717a6f3b920d1d5af0302ee272ac5b0923"
+    },
+    {
+      "path": "tests/dream-story.test.mjs",
+      "bytes": 11165,
+      "gitBlob": "ddbd7bfe92846f3fcdbff27497709f2bd459b176"
+    },
+    {
+      "path": "tests/dream-ui.test.mjs",
+      "bytes": 6013,
+      "gitBlob": "7bd56f999887a6cf85b52a4ba1744fde5db52cbc"
+    },
+    {
+      "path": "tests/ending-scene-v29.test.mjs",
+      "bytes": 2944,
+      "gitBlob": "96fca4f7628c26392cf1d0926c63201a30fc4f87"
+    },
+    {
+      "path": "tests/engine.test.mjs",
+      "bytes": 5471,
+      "gitBlob": "3fb131ecf6b0cc515a34fa9190b23dcc5d5366a0"
+    },
+    {
+      "path": "tests/festival-engine.test.mjs",
+      "bytes": 9732,
+      "gitBlob": "379551bf96e9bcc56fe7de3bbb3bc23af4fbcb58"
+    },
+    {
+      "path": "tests/festivals.test.mjs",
+      "bytes": 18570,
+      "gitBlob": "e9a00e7d18bfc76ef17f404f9b6dae474b702422"
+    },
+    {
+      "path": "tests/first-ticket-engine.test.mjs",
+      "bytes": 13252,
+      "gitBlob": "4785d9c3dae645a334fdfb2b56c91c1b7af52206"
+    },
+    {
+      "path": "tests/greenhouse-engine.test.mjs",
+      "bytes": 12954,
+      "gitBlob": "1a72dace0472cf41773d42e3777aeb0d84ab20fc"
+    },
+    {
+      "path": "tests/greenhouse-materials.test.mjs",
+      "bytes": 7875,
+      "gitBlob": "8fe6489325760408a1c152680acc752a7164e560"
+    },
+    {
+      "path": "tests/greenhouse-scene.test.mjs",
+      "bytes": 9223,
+      "gitBlob": "9a76798b493b17f4110f680a014c1fdb74d79481"
+    },
+    {
+      "path": "tests/ground-shadow.test.mjs",
+      "bytes": 7858,
+      "gitBlob": "4e06e1aa2c97906017b86bab00fc358bb1386e78"
+    },
+    {
+      "path": "tests/journey-engine.test.mjs",
+      "bytes": 14855,
+      "gitBlob": "6c62f5693d6c8e8ff98606a2086ebf2ababa468d"
+    },
+    {
+      "path": "tests/letter-echo.test.mjs",
+      "bytes": 13939,
+      "gitBlob": "b13da06641cff826189a4e62f61b474bf23fe595"
+    },
+    {
+      "path": "tests/library-finish-v26.test.mjs",
+      "bytes": 5440,
+      "gitBlob": "d38424c89e637e4020906633e1fc5d7d57bb6384"
+    },
+    {
+      "path": "tests/lost-cases.test.mjs",
+      "bytes": 23577,
+      "gitBlob": "6f738edfe36cf2f65698c44d6795cb457ca52bcc"
+    },
+    {
+      "path": "tests/lost-encores.test.mjs",
+      "bytes": 4358,
+      "gitBlob": "40e45ed23f6adc415b42975498866ee317bab980"
+    },
+    {
+      "path": "tests/lost-engine.test.mjs",
+      "bytes": 36641,
+      "gitBlob": "1761dfce06d0b69ae28fdb5139e7fb49c0a05246"
+    },
+    {
+      "path": "tests/lost-evidence.test.mjs",
+      "bytes": 14038,
+      "gitBlob": "8a221460e1c424bd2e86c0bea87c48c88ec5526a"
+    },
+    {
+      "path": "tests/lost-progress.test.mjs",
+      "bytes": 20108,
+      "gitBlob": "a00ee32a7b104a96d341d1113b1a6eee5b1b48c1"
+    },
+    {
+      "path": "tests/moon-play-engine.test.mjs",
+      "bytes": 15662,
+      "gitBlob": "ea37592cfc2dca3600a50d49d6ca9290f30ae381"
+    },
+    {
+      "path": "tests/painted-scene.test.mjs",
+      "bytes": 11736,
+      "gitBlob": "75ef726fe738b7880c3291d4ddbed8703b9d4365"
+    },
+    {
+      "path": "tests/painted-station-integration.test.mjs",
+      "bytes": 15679,
+      "gitBlob": "a49ace47de8c0b0317a1a7506c9943bb0de73b22"
+    },
+    {
+      "path": "tests/play-rewards.test.mjs",
+      "bytes": 18876,
+      "gitBlob": "4d17d6e33dab82b309075e123dae2d90d54791a1"
+    },
+    {
+      "path": "tests/post-delivery-v28.test.mjs",
+      "bytes": 7362,
+      "gitBlob": "87a85a992bebad7ae0017567e3d852ae3c6ccea7"
+    },
+    {
+      "path": "tests/post-mushroom-input-v29.test.mjs",
+      "bytes": 2197,
+      "gitBlob": "10f320398561f3d5c3b4d3374e508263c68aa596"
+    },
+    {
+      "path": "tests/progression.test.mjs",
+      "bytes": 7155,
+      "gitBlob": "ccfb6176df0e722b17ff8aafaadab68338d6c4a0"
+    },
+    {
+      "path": "tests/scene-backdrop-integration.test.mjs",
+      "bytes": 11928,
+      "gitBlob": "9398ae4bed35b75c7c5d602d66bd79ba5e0f90ba"
+    },
+    {
+      "path": "tests/soul-art-v22.test.mjs",
+      "bytes": 23832,
+      "gitBlob": "5851f6bf1ce354ddd5e0cd63bfe1771a1a645a25"
+    },
+    {
+      "path": "tests/station-finish.test.mjs",
+      "bytes": 5671,
+      "gitBlob": "b9b2aac9526dbf55255e1b66a48391c98afc3ca7"
+    },
+    {
+      "path": "tests/theatre-art.test.mjs",
+      "bytes": 8685,
+      "gitBlob": "afb0ea6f73b380cf26a8e9336c318ae0da989076"
+    },
+    {
+      "path": "tests/theatre-assets-v22.test.mjs",
+      "bytes": 14283,
+      "gitBlob": "482452f4938e4917b848c91d204e4c2e6b508068"
+    },
+    {
+      "path": "tests/theatre-encore-v21.test.mjs",
+      "bytes": 3799,
+      "gitBlob": "48639afb10e6f18a226d1f21499747dacaa8a7cb"
+    },
+    {
+      "path": "tests/theatre-encore-v22.test.mjs",
+      "bytes": 9346,
+      "gitBlob": "0ca2661aa9bf27fa5474b9e31a15281db3e3a009"
+    },
+    {
+      "path": "tests/theatre-engine.test.mjs",
+      "bytes": 5615,
+      "gitBlob": "099bf4fb7d245bf532f03e1c75989508774bc425"
+    },
+    {
+      "path": "tests/theatre-guidance.test.mjs",
+      "bytes": 6488,
+      "gitBlob": "10fada8d5ec5153216fb2869195916a1aaac6ff2"
+    },
+    {
+      "path": "tests/theatre-npc-art-v24.test.mjs",
+      "bytes": 3011,
+      "gitBlob": "c7bc0fb590b744d844d869293877282d1ea5c11d"
+    },
+    {
+      "path": "tests/theatre-painted-v20.test.mjs",
+      "bytes": 6561,
+      "gitBlob": "3b54f7f3d5f29bd128ba97bac37e00054889f69b"
+    },
+    {
+      "path": "tests/traveler-face-v31.test.mjs",
+      "bytes": 14155,
+      "gitBlob": "472c87e95ff1f54642ab1c37e772972b46ff3bee"
+    },
+    {
+      "path": "tests/traveler-motion.test.mjs",
+      "bytes": 5087,
+      "gitBlob": "70d416a398f556a39cb15ee1b97809bdd71f75ef"
+    },
+    {
+      "path": "tests/traveler-performance-v30.test.mjs",
+      "bytes": 26300,
+      "gitBlob": "c3e6926fadc51acb8156a020c0b5d70d4169f9dc"
+    },
+    {
+      "path": "tests/traveler-performance.test.mjs",
+      "bytes": 15556,
+      "gitBlob": "b59564b8c4aa8d57c147fdb2ed0637ba00c1ca62"
+    }
+  ],
+  "zipFiles": [
+    {
+      "path": "candidate/1280-clock-hold-playing-paused-canvas.png",
+      "bytes": 1444510,
+      "sha256": "5e2c137bbf4937f406320a28027a0d05b6f2b3bd1ddb94cf618074f3a44d2945"
+    },
+    {
+      "path": "candidate/1280-clock-hold-reduced-320.png",
+      "bytes": 223930,
+      "sha256": "eda2ccb177a0c99ed07c3b8e40823fe8daf9836b87353b89a7e9879e98f02243"
+    },
+    {
+      "path": "browser-candidate.txt",
+      "bytes": 14593253,
+      "sha256": "8443b978bc8ba8cd7bf707cbb973182ee789d42876ec7bdd1e421053fa073c7b"
+    },
+    {
+      "path": "candidate/1280-clock-hold-settled.png",
+      "bytes": 1015526,
+      "sha256": "75a88d8635c92dbb8cd8c1b76f2a5a1799d403a4190fe73f0021e330390c2d29"
+    },
+    {
+      "path": "candidate/1280-clock-release-playing-paused-canvas.png",
+      "bytes": 1442038,
+      "sha256": "c4567123216077dcb04a850a65663f41c0b1ea17dab5e05dc40c8c03b94d1a3c"
+    },
+    {
+      "path": "candidate/1280-clock-release-settled.png",
+      "bytes": 1019396,
+      "sha256": "c6c8902977a5b355fc5e3676171bbce80f5439b423d8c0957e153a8931e1bbe5"
+    },
+    {
+      "path": "candidate/1280-coast-all-pendulums-cleared.png",
+      "bytes": 980705,
+      "sha256": "4a62e5957e07e0d257645ecd7dab846c0bb065dde106c99ad1ba2042d5fef4e8"
+    },
+    {
+      "path": "candidate/1280-coast-complete.png",
+      "bytes": 257560,
+      "sha256": "c321c313e7ece07e058035b5ced0e7055f0b8a82f58b98b6385f218b922cbfab"
+    },
+    {
+      "path": "candidate/1280-coast-entry-320.png",
+      "bytes": 225752,
+      "sha256": "62db4a2856f964936269ec72871740da4af14d0c3f0db0d01daf44f5eb2da033"
+    },
+    {
+      "path": "candidate/1280-coast-entry-390.png",
+      "bytes": 328791,
+      "sha256": "bafc71df1f73cc2cf82a5ffcb083e437470edd5dcea8fda94685eae6c0dcf49e"
+    },
+    {
+      "path": "candidate/1280-coast-first-lamp.png",
+      "bytes": 1028899,
+      "sha256": "12e15b319686adbaa24c8117108a89e14541e39fe6a69563a0cf609045f7c62e"
+    },
+    {
+      "path": "candidate/1280-coast-first-two-pendulums-cleared.png",
+      "bytes": 967145,
+      "sha256": "f14c9cffaa1b8986d7ee0aed8b538abeb1a4a8fb2504c52e9eeadf8944584089"
+    },
+    {
+      "path": "candidate/1280-coast-npc-before-crossing.png",
+      "bytes": 1004634,
+      "sha256": "fe796f87580476a2fbeaa4d1cf5b0af13ab0f71768e22efcb76638732fdeb30e"
+    },
+    {
+      "path": "candidate/1280-coast-primary-failed-safe-movement.png",
+      "bytes": 673132,
+      "sha256": "2d52636ab8241dc56225025233c1636b7cc082c4099a6e92d8601947de0ae391"
+    },
+    {
+      "path": "candidate/1280-coast-two-lamps.png",
+      "bytes": 971166,
+      "sha256": "6190240b75a3e7dca00bda76dd0ce5ed3e32a91161972ac034db913d4286c9df"
+    },
+    {
+      "path": "candidate/1280-coast-wind-memory.png",
+      "bytes": 980465,
+      "sha256": "50a74aed7ccb11b62f1386b69b0bcd098c90d84dba3e9ce00164420959f1b463"
+    },
+    {
+      "path": "candidate/1280-complete.png",
+      "bytes": 262943,
+      "sha256": "abef7f192525c4880f89d727e7fd5fe10b69ad6b193df901a94adfd8dd08ce86"
+    },
+    {
+      "path": "candidate/1280-ending-dawn-320-case.json",
+      "bytes": 23619,
+      "sha256": "6994b4cdbe7eed130a10e5674ee0a81b8aef694dbfe3936651784994c0728957"
+    },
+    {
+      "path": "candidate/1280-ending-dawn-320-read.png",
+      "bytes": 138772,
+      "sha256": "49c37d715a9768630f260f821a65811384cd490c654bd59fa6b20231e87cc788"
+    },
+    {
+      "path": "candidate/1280-ending-dawn-320-reading.json",
+      "bytes": 21960,
+      "sha256": "69ef489a84ac1b14e42534b7445bc81f888ee2a02c12f615bc9c4612dbd69727"
+    },
+    {
+      "path": "candidate/1280-ending-dawn-320-top.png",
+      "bytes": 138163,
+      "sha256": "a8d7735d9c64b63fc53a6da5b95175b9754f0fde6751b28435c626d8dc4a62c1"
+    },
+    {
+      "path": "candidate/1280-ending-dawn-390-case.json",
+      "bytes": 6564,
+      "sha256": "ecb806a0644c8f5bb6f5cebf26a97d1cfa9b21bcd1f201afecd1c4adc325a16b"
+    },
+    {
+      "path": "candidate/1280-ending-dawn-390-read.png",
+      "bytes": 181758,
+      "sha256": "4f874a849ce7956cf883c6e9aa2ac6db8a176158276ed80cfd8d03d3a33ad84d"
+    },
+    {
+      "path": "candidate/1280-ending-dawn-390-reading.json",
+      "bytes": 4905,
+      "sha256": "2896682e1922923d958ec891d89f6030c45a02ef5610ba9f77d54f16de28608c"
+    },
+    {
+      "path": "candidate/1280-ending-dawn-390-top.png",
+      "bytes": 181758,
+      "sha256": "4f874a849ce7956cf883c6e9aa2ac6db8a176158276ed80cfd8d03d3a33ad84d"
+    },
+    {
+      "path": "candidate/1280-ending-keep-hold.json",
+      "bytes": 9806,
+      "sha256": "0a652dd933a207ab5e646015cf1adbf89d95bd7bda8c901a4f2a07679c09b0b1"
+    },
+    {
+      "path": "candidate/1280-ending-keep-hold.png",
+      "bytes": 389128,
+      "sha256": "0bab3c9a2cec38fbe5c2f9f4c74cc4b5d6c00ceb42720cee94ac0d3dc9215237"
+    },
+    {
+      "path": "candidate/1280-ending-keep-release.json",
+      "bytes": 9761,
+      "sha256": "5de2b8690e2aead9676c2d46bc1dfc8b86256f595d031a4005f85dfb5ab23420"
+    },
+    {
+      "path": "candidate/1280-ending-keep-release.png",
+      "bytes": 360556,
+      "sha256": "6f8f9ee719b51e51cff7443d1b8ae384d227d90428012e4b2da1c48cd016de5d"
+    },
+    {
+      "path": "candidate/1280-ending-lanterns-320-case.json",
+      "bytes": 23748,
+      "sha256": "ca9a1eee26798c3cba96caa3f65ad6ba1116055b887e70dd09fb3801bbb79ae1"
+    },
+    {
+      "path": "candidate/1280-ending-lanterns-320-read.png",
+      "bytes": 135685,
+      "sha256": "97b9aa9570cc61aaeec36d29647c2b4b7dbf2ffd61700b9c3520e67f66184187"
+    },
+    {
+      "path": "candidate/1280-ending-lanterns-320-reading.json",
+      "bytes": 22083,
+      "sha256": "87163e54826174ad0f5ea740e765c19cb0f72dac210d0cae16da709f3a06cb18"
+    },
+    {
+      "path": "candidate/1280-ending-lanterns-320-top.png",
+      "bytes": 142886,
+      "sha256": "dd4a8fd5d694934deb7bcc79d6e1c2fb2de706c6ef45829d891c3ebf4fe48815"
+    },
+    {
+      "path": "candidate/1280-ending-lanterns-390-case.json",
+      "bytes": 6609,
+      "sha256": "d82bed31a76b34bfd7c384e1aa2e9ee0c51fc595286c0d21a2da31fa4bc85df4"
+    },
+    {
+      "path": "candidate/1280-ending-lanterns-390-read.png",
+      "bytes": 183612,
+      "sha256": "00394fc6701c27b5a8a54a335ee35cdb94e1e4e63995fa54716620dff919660d"
+    },
+    {
+      "path": "candidate/1280-ending-lanterns-390-reading.json",
+      "bytes": 4943,
+      "sha256": "586f10e01f510bd09cbd25d3798bcc2638072553ce627dd89b7df3d2cd8b5590"
+    },
+    {
+      "path": "candidate/1280-ending-lanterns-390-top.png",
+      "bytes": 183612,
+      "sha256": "00394fc6701c27b5a8a54a335ee35cdb94e1e4e63995fa54716620dff919660d"
+    },
+    {
+      "path": "candidate/1280-ending-send-hold.json",
+      "bytes": 9749,
+      "sha256": "f5e7bb6edc724fe5ad90211b4e2d400d7074110bfb202aba65433d5b9b9d85d8"
+    },
+    {
+      "path": "candidate/1280-ending-send-hold.png",
+      "bytes": 361930,
+      "sha256": "87dde132c546f7ba9f9d62cc927bc54aa8f91bd3b271c712dfddc2f9cf11e169"
+    },
+    {
+      "path": "candidate/1280-ending-send-release.json",
+      "bytes": 9718,
+      "sha256": "e524c40b3cb6873fa3b1497cc10eac74109af731e7b52df6849bbd7ac5377889"
+    },
+    {
+      "path": "candidate/1280-ending-send-release.png",
+      "bytes": 385568,
+      "sha256": "9472f193cc26de66bea346e428aa1c7fd792c956adea89966928cc325441d21f"
+    },
+    {
+      "path": "candidate/1280-ending-tender-320-case.json",
+      "bytes": 23647,
+      "sha256": "d7c2968e89c406564410eb431f47a0d8e815d4602adb15654bc5678c74e8fd48"
+    },
+    {
+      "path": "candidate/1280-ending-tender-320-read.png",
+      "bytes": 132615,
+      "sha256": "983d8f19cabb5d4f8fc54c0fb83a33c233c83311a89634895e71053f8a7b0976"
+    },
+    {
+      "path": "candidate/1280-ending-tender-320-reading.json",
+      "bytes": 21984,
+      "sha256": "9794121c67a59bc14223163da3f21ae48a386fd494e2339be97204531282eadb"
+    },
+    {
+      "path": "candidate/1280-ending-tender-320-top.png",
+      "bytes": 134572,
+      "sha256": "848624aa32b6f3526bdd07efdb9aaa4e3771f17a1ad68a307f0c37c0a10967fc"
+    },
+    {
+      "path": "candidate/1280-ending-tender-390-case.json",
+      "bytes": 6574,
+      "sha256": "a17cda1b4904847bb474225750583a9b8f2eb23455360c8eb290ca997c3d8e62"
+    },
+    {
+      "path": "candidate/1280-ending-tender-390-read.png",
+      "bytes": 174921,
+      "sha256": "2e74ccd6d995e957067c594e73879f4b119e6c2b647ae01383219a20faa8eba1"
+    },
+    {
+      "path": "candidate/1280-ending-tender-390-reading.json",
+      "bytes": 4910,
+      "sha256": "898bc45886e04fc3a8acf485ef7e50f6fdd103ca9e974df6e3185c9bd4849a44"
+    },
+    {
+      "path": "candidate/1280-ending-tender-390-top.png",
+      "bytes": 174921,
+      "sha256": "2e74ccd6d995e957067c594e73879f4b119e6c2b647ae01383219a20faa8eba1"
+    },
+    {
+      "path": "candidate/1280-face-fatigue-body-tired-open.json",
+      "bytes": 564851,
+      "sha256": "ae2fc7dae550d344ee29ec15cce73ac32d07c195b1e805b32c17097b1a7b0fd0"
+    },
+    {
+      "path": "candidate/1280-face-fatigue-bodyTiredOpen-320.png",
+      "bytes": 274547,
+      "sha256": "30ae75383ee84a3739f7950f0f3c74db8c4956adf3cb1ff0f7493c9c3192e6d6"
+    },
+    {
+      "path": "candidate/1280-face-fatigue-bodyTiredOpen-390.png",
+      "bytes": 431443,
+      "sha256": "1d56b62d0e23d6b5e1d40bc278f7da20dfb2cee21fbe8adde1fd4c742fc1d739"
+    },
+    {
+      "path": "candidate/1280-face-fatigue-bodyTiredOpen.png",
+      "bytes": 1485852,
+      "sha256": "d9a8a46d277ccc6fed8c18d82aab79715ed46a2a8fc3cdabf19ca7e01fa505ef"
+    },
+    {
+      "path": "candidate/1280-face-fatigue-phone-low-energy.json",
+      "bytes": 577029,
+      "sha256": "343a374eacee71223ac28f0081d2522702c24ef5cce4cf4e534f083d03126f3a"
+    },
+    {
+      "path": "candidate/1280-face-fatigue-recovered.png",
+      "bytes": 1482229,
+      "sha256": "e69bc575dc27254369627cd034bb0a035fe6ae0446ce21d7c45c914b41a1456b"
+    },
+    {
+      "path": "candidate/1280-face-fatigue-returned.json",
+      "bytes": 575893,
+      "sha256": "096cce113f71148d9588711517c5d4115cacfd09ac99dd91e6b5fc9cd3335893"
+    },
+    {
+      "path": "candidate/1280-face-fatigue-soul-low-energy.json",
+      "bytes": 558646,
+      "sha256": "b67bb5329580ec5a182c5af5849bf1c8f11648bc9c54a036f97959b8376dfdce"
+    },
+    {
+      "path": "candidate/1280-face-fatigue-soulTired.png",
+      "bytes": 1485714,
+      "sha256": "e8356898a70c2bb3c3fe2e6cf7a375f1e871e2a1f125596cf2d37444ebc69379"
+    },
+    {
+      "path": "candidate/1280-face-ticket-collected.json",
+      "bytes": 577776,
+      "sha256": "bdcec9fcfde57e1523f65e17db4720b7d0c41dd4ce4e96665dfa0712e114d2a2"
+    },
+    {
+      "path": "candidate/1280-face-ticket-freeJoy.png",
+      "bytes": 1488447,
+      "sha256": "1e4ff87e046734b106c4fefa2bbb6983f579b62c3fce4c0c57ac1ab858e9b783"
+    },
+    {
+      "path": "candidate/1280-fallback-library-book-a-riding.png",
+      "bytes": 726527,
+      "sha256": "1bf69efdce915d4e175a3e136b44a73b792e1792b25c0ad88c7c1f51933de42c"
+    },
+    {
+      "path": "candidate/1280-fallback-library-book-b-riding.png",
+      "bytes": 720454,
+      "sha256": "75ecbdbc71db89f15fa60796068b3e890486977df61ab5ac19bc1a035f1bc4ba"
+    },
+    {
+      "path": "candidate/1280-fallback-library-complete.png",
+      "bytes": 222598,
+      "sha256": "f4653bfdcf11571f7f8c54bb1edebba57ad002ecd1feb43e511eb18ff8471069"
+    },
+    {
+      "path": "candidate/1280-fallback-library-first-lamp.png",
+      "bytes": 742321,
+      "sha256": "3df26a69968698669f0348653f9a9eaf583b1982c15eb8d6ebbd945673cb1204"
+    },
+    {
+      "path": "candidate/1280-fallback-library-npc-0-lamps.png",
+      "bytes": 237951,
+      "sha256": "4d2d84f6e88353285cd214dc61481ebf8b20153f955fb9604ff5600f8a8fc345"
+    },
+    {
+      "path": "candidate/1280-fallback-library-npc-cap.png",
+      "bytes": 718636,
+      "sha256": "7d423ef1f56f4a348c78b132decce2deb1e2d30a18ec0a63c4067a755e52cb10"
+    },
+    {
+      "path": "candidate/1280-fallback-library-two-lamps.png",
+      "bytes": 736347,
+      "sha256": "8ecf4ea0172cbd6536be2120ac2c90fb1a453735cc8260813c3ce413b5d0bcde"
+    },
+    {
+      "path": "candidate/1280-fallback-procedural-lamp.png",
+      "bytes": 774222,
+      "sha256": "e3131f6fa11820b837213c1786a7ae044be34b22f567f79561f0c18dc7f39e65"
+    },
+    {
+      "path": "candidate/1280-fallback-procedural-theatre-left-bank.png",
+      "bytes": 679981,
+      "sha256": "510c747ba1c879d3bbb58f9e9bb9fb77b67d273c79f0389c9b427e7a12bfc3c8"
+    },
+    {
+      "path": "candidate/1280-fallback-procedural-theatre-midstage.png",
+      "bytes": 660698,
+      "sha256": "115be9652b52c97fb7070ea806ff2dcf70af0462ea965420c180eb08b4002efe"
+    },
+    {
+      "path": "candidate/1280-fallback-procedural-theatre-right-bank.png",
+      "bytes": 686033,
+      "sha256": "929458437edd16c367daeb180be24ef52ccdcc9589809c5c2137d121ed1ed0b0"
+    },
+    {
+      "path": "candidate/1280-fallback-svg-lamp.png",
+      "bytes": 826284,
+      "sha256": "6a0cd4b1597638b8fb12a4d65696ed2886e0761c5761a0c9aac2366e6aaecc0f"
+    },
+    {
+      "path": "candidate/1280-fallback-svg-theatre-left-bank.png",
+      "bytes": 748510,
+      "sha256": "c547abde24ff6dc4e4908126e6e5930d58fe65bf536e21e847125a2ea78d1b77"
+    },
+    {
+      "path": "candidate/1280-fallback-svg-theatre-midstage.png",
+      "bytes": 708034,
+      "sha256": "051c3d51950fa45779e2056781eafd341b40a3a4fea0e54b4ff88dea49a3818a"
+    },
+    {
+      "path": "candidate/1280-fallback-svg-theatre-right-bank.png",
+      "bytes": 718310,
+      "sha256": "b30a21fbdc4493f11684ba276074574601ee983edce864ec3ebc9280d2a5fa73"
+    },
+    {
+      "path": "candidate/1280-first-lamp-face-lamp-closedJoy.png",
+      "bytes": 1491219,
+      "sha256": "0bc2e2d1701cad9e810d04fe85e25cd8d3715dcb09468e0268d4b02b0f32ad02"
+    },
+    {
+      "path": "candidate/1280-first-lamp-face-lamp-returned.json",
+      "bytes": 371524,
+      "sha256": "3fbb9c5115b586f6970f1f4abb7012b96f73f0d70f91fd83df2b619b0ffb0bc7"
+    },
+    {
+      "path": "candidate/1280-full-fallback-post-body-exit.png",
+      "bytes": 214689,
+      "sha256": "6ef84a6e2045880c3b599b181daa380e913ca1fd8d2e0e79e9dfe169d3a8df49"
+    },
+    {
+      "path": "candidate/1280-full-fallback-post-book-riding.png",
+      "bytes": 732809,
+      "sha256": "01327d7254a162c75597ac7721f674d7b0da86d6c057b9106a2b1eab2dd4e0c2"
+    },
+    {
+      "path": "candidate/1280-full-fallback-post-mushroom-crossing.json",
+      "bytes": 132711,
+      "sha256": "65e25ebe9cee255a167903fa6177ffd8a7f7bfec222d7f26b0389da245640b1a"
+    },
+    {
+      "path": "candidate/1280-full-fallback-post-route.json",
+      "bytes": 1259839,
+      "sha256": "37328bf36f6f7141645d378384b81b20c166e86c14400062e28faf772fdb4dae"
+    },
+    {
+      "path": "candidate/1280-full-fallback-post-two-lamps-sun-stamp.png",
+      "bytes": 762344,
+      "sha256": "8052aadff68e53df4ebaaf2dec395a7ef3fd4d6ce66c62a608ef4a67a0cfad47"
+    },
+    {
+      "path": "candidate/1280-full-touch-320-post-body-exit.png",
+      "bytes": 91558,
+      "sha256": "fec8c8de73b1af91cc5b38ac756452cc280221eda8242f028f92b8eba842d656"
+    },
+    {
+      "path": "candidate/1280-full-touch-320-post-book-riding.png",
+      "bytes": 218102,
+      "sha256": "3e2945415cd314f237637fa08b5b736628e5c0a7236519d0339df5a1c267cc37"
+    },
+    {
+      "path": "candidate/1280-full-touch-320-post-mushroom-crossing.json",
+      "bytes": 137115,
+      "sha256": "0657b1e5aa654971e0f32022558310da595e9eb192a489d96293cdb9565d7d0d"
+    },
+    {
+      "path": "candidate/1280-full-touch-320-post-route.json",
+      "bytes": 1481067,
+      "sha256": "a3648f6074c3b90ed8603924bf9715aabf2a39a2c9de3a698b01f95813b6c68b"
+    },
+    {
+      "path": "candidate/1280-full-touch-320-post-two-lamps-sun-stamp.png",
+      "bytes": 240802,
+      "sha256": "7383b831b12145e5b575cc9553409babc2ad7360b005f667be189c5c740d0da4"
+    },
+    {
+      "path": "candidate/1280-full-touch-390-post-body-exit.png",
+      "bytes": 108696,
+      "sha256": "bc4311afe0a0492ea63ded77694119a589b854ac4bac46074ed00df14a65c754"
+    },
+    {
+      "path": "candidate/1280-full-touch-390-post-book-riding.png",
+      "bytes": 312082,
+      "sha256": "fc942654ddb0774ae736c919e84b4e0a835b74c1e8e2931a0a862611aef507ca"
+    },
+    {
+      "path": "candidate/1280-full-touch-390-post-mushroom-crossing.json",
+      "bytes": 133461,
+      "sha256": "05be8a9fc4a62182bf5a20606fc8a48163cba440a7679fbac15c574595f2323a"
+    },
+    {
+      "path": "candidate/1280-full-touch-390-post-route.json",
+      "bytes": 1473733,
+      "sha256": "be9283278c0bee023ed10973b8269facb5961d23c7c6149845b434dd5d2cce85"
+    },
+    {
+      "path": "candidate/1280-full-touch-390-post-two-lamps-sun-stamp.png",
+      "bytes": 356780,
+      "sha256": "6438ebf582e72cdabe13b6c95ecd8083e779e5b15f43695234ca294b9183d922"
+    },
+    {
+      "path": "candidate/1280-greenhouse-complete.png",
+      "bytes": 282461,
+      "sha256": "8b0287f901a7cb6c616a0fc652006bb663e6741ed665d25a7611fad21245a927"
+    },
+    {
+      "path": "candidate/1280-greenhouse-flower.png",
+      "bytes": 1287231,
+      "sha256": "f3a02b932e05cf5c12834faf25e953034c2a792c20bdf33c8882b03c2bb1a9d2"
+    },
+    {
+      "path": "candidate/1280-greenhouse-leaves.png",
+      "bytes": 1295316,
+      "sha256": "4d35b789b3497f612d73258a4cab22a4ef5414f37866d60221940b895e6b8333"
+    },
+    {
+      "path": "candidate/1280-greenhouse-root-crossed.png",
+      "bytes": 1279074,
+      "sha256": "41d332cdc3fe6fb39b5f8d6ebbb29353f756584ec42ffd59ef847a66a37cda34"
+    },
+    {
+      "path": "candidate/1280-greenhouse-seed-held-hud-320.png",
+      "bytes": 250318,
+      "sha256": "1a497e7ebc0fc2145a7a69b15e5a7fe910a6ceed4796c8801bd63d99acb76bed"
+    },
+    {
+      "path": "candidate/1280-greenhouse-seed-held-hud-390.png",
+      "bytes": 395924,
+      "sha256": "3689376cba471c96177fdf493f6fcb71584fa3ee3211b9bae21e3252538a7808"
+    },
+    {
+      "path": "candidate/1280-greenhouse-seed-held.png",
+      "bytes": 1278377,
+      "sha256": "1a9c1824317e2088d4a1ba2bf9c120362ad6111b1f784e402362611ed2212d31"
+    },
+    {
+      "path": "candidate/1280-greenhouse-seed-planted.png",
+      "bytes": 1295323,
+      "sha256": "ec6f2e3c0823d7dd8c8b09eaa34e5c7ec85a58bc2c9c56d307073a112a46b921"
+    },
+    {
+      "path": "candidate/1280-greenhouse-start.png",
+      "bytes": 1292417,
+      "sha256": "b867060473d8177752f7aba0f6afa82233d0673a1a43bb99a803973f86be8763"
+    },
+    {
+      "path": "candidate/1280-home.png",
+      "bytes": 1066088,
+      "sha256": "a0f90d98f1862c01877452ba2cb115a5c46b392dff46ff57bc451ece48d53f69"
+    },
+    {
+      "path": "candidate/1280-keyboard-both-lamps-hud-320.png",
+      "bytes": 223888,
+      "sha256": "77300ffde6bb9a1d8c63234ee6b51d297afbfbd014c8c4031d59ae799b473b8a"
+    },
+    {
+      "path": "candidate/1280-keyboard-both-lamps-hud-390.png",
+      "bytes": 328634,
+      "sha256": "82552ff5af33e120611fb5f7223fed273047ce7cf17e76a807aeaa8b25c6c3c2"
+    },
+    {
+      "path": "candidate/1280-keyboard-exit-instruction-hud-320.png",
+      "bytes": 231945,
+      "sha256": "e1a1d452c007395dfbfb5f8885017ba6df51752c94dda99f9b514a467c32f185"
+    },
+    {
+      "path": "candidate/1280-keyboard-exit-instruction-hud-390.png",
+      "bytes": 334402,
+      "sha256": "ffc1d0e233686d08eb95ddfcdf1c80b4943ef03816da6c73aa17101de3986c3f"
+    },
+    {
+      "path": "candidate/1280-keyboard-first-lamp-reachable-hud-320.png",
+      "bytes": 236830,
+      "sha256": "eff425782b32422b45f37526c3fa01aecf158f6a9aa6582c1240cd7ad74d91c3"
+    },
+    {
+      "path": "candidate/1280-keyboard-first-lamp-reachable-hud-390.png",
+      "bytes": 352274,
+      "sha256": "ef426ee7b825ef350331d66c8893c982ac72541076908b0c89da11ebc959803d"
+    },
+    {
+      "path": "candidate/1280-keyboard-moon-row-hud-320.png",
+      "bytes": 233226,
+      "sha256": "ba35701b46e44968e0775fdff7590e2abd63c6b8a110be05d35e25a32290adb2"
+    },
+    {
+      "path": "candidate/1280-keyboard-moon-row-hud-390.png",
+      "bytes": 338982,
+      "sha256": "f7624f88b281e7a4acf6b01cace5a60942028a6a00e8f1adfd2df308048dfc29"
+    },
+    {
+      "path": "candidate/1280-keyboard-theatre-completed.png",
+      "bytes": 258128,
+      "sha256": "3bda8ece79032e605662d866adf1d419807ead9d9ff82416332198f345f899d0"
+    },
+    {
+      "path": "candidate/1280-keyboard-theatre-first-lamp-lit.png",
+      "bytes": 1111007,
+      "sha256": "8de2f7707740aa6d44c0ebe27dbc24a62f7a406dff4086ac091a02a8159798ce"
+    },
+    {
+      "path": "candidate/1280-keyboard-theatre-left-bank.png",
+      "bytes": 1090336,
+      "sha256": "f3b236702234c2652d60ec085f9091d4fec4f9a597f9cbb52779caf832260baf"
+    },
+    {
+      "path": "candidate/1280-keyboard-theatre-midstage.png",
+      "bytes": 1069763,
+      "sha256": "3a112dd19252611e94571fbd159db97b38f50bdc18f4b8c784a7280f83b796ff"
+    },
+    {
+      "path": "candidate/1280-keyboard-theatre-outro-1-decoded.png",
+      "bytes": 263430,
+      "sha256": "9ca48b5bdbbdd0677deaa1dab52d24eb65a6ae839db020bdad000a128f741275"
+    },
+    {
+      "path": "candidate/1280-keyboard-theatre-outro-2-decoded.png",
+      "bytes": 289325,
+      "sha256": "61c0f7f4b1dcea4db121efa632b5df5aba649bc931d9833e1cd21239be20ae74"
+    },
+    {
+      "path": "candidate/1280-keyboard-theatre-outro-3-decoded.png",
+      "bytes": 287075,
+      "sha256": "f75f52c0ecc186d65b4dd35c633e29f56e68e2133b979fb4aee15077ca376379"
+    },
+    {
+      "path": "candidate/1280-keyboard-theatre-outro.png",
+      "bytes": 288158,
+      "sha256": "5832c519ee2221510ac8ff6cac6c03ead8239e6152e5d0bb8b4091a94fe5751c"
+    },
+    {
+      "path": "candidate/1280-keyboard-theatre-right-bank.png",
+      "bytes": 1056373,
+      "sha256": "0668df32faa9fa5347c895c395883b7bc0ee8436d03bf0932e9ac4e9d071a964"
+    },
+    {
+      "path": "candidate/1280-keyboard-theatre-two-lamps-lit.png",
+      "bytes": 1097395,
+      "sha256": "34dde90717c919ecb596555597acca87edb7dbf8b289b2e082d8b4efbd906187"
+    },
+    {
+      "path": "candidate/1280-lamp.png",
+      "bytes": 1064376,
+      "sha256": "9358a3f88dda8643d0010b358c56b77bbe9e383ecba45e29db4fa2f53cd86f03"
+    },
+    {
+      "path": "candidate/1280-letter-keep-playing.png",
+      "bytes": 1291396,
+      "sha256": "937ee13a65de0c901dd82b69aef34e1344ee17ed5fc35905624ba91004a9b1f0"
+    },
+    {
+      "path": "candidate/1280-letter-keep-reload.png",
+      "bytes": 1298502,
+      "sha256": "7a8ef0c823b786379e74c394c3e88a503fa67e8150a3f3763564743684dbe9db"
+    },
+    {
+      "path": "candidate/1280-letter-keep-settled.png",
+      "bytes": 1316140,
+      "sha256": "13a1a31957012f5449bf3c606777251cf498e1f0b58632a10fe3f56c96983876"
+    },
+    {
+      "path": "candidate/1280-letter-send-playing.png",
+      "bytes": 1291555,
+      "sha256": "5c5fd41986772fa180e2f048abf83fa70d3f625572e51792fb807001a9a0aeb3"
+    },
+    {
+      "path": "candidate/1280-letter-send-settled.png",
+      "bytes": 1315907,
+      "sha256": "cf16941733915e4e9ca695dbc13a8cc475d1172ab5163e77803af17a3a9e7453"
+    },
+    {
+      "path": "candidate/1280-library-book-a-riding.png",
+      "bytes": 1097737,
+      "sha256": "4e881151f7979c65c35a79ba39bbb47993ecec625a75ab0cf0ef7a0a2b431d60"
+    },
+    {
+      "path": "candidate/1280-library-book-b-riding.png",
+      "bytes": 1082238,
+      "sha256": "3b1e54aeef4aaf84b0ef4b2d33986c967f1aaa06ae8d14f57344915b5b3fc3ee"
+    },
+    {
+      "path": "candidate/1280-library-complete.png",
+      "bytes": 290532,
+      "sha256": "069710943e006078569a270dd621835e21a7ff75cdc80cf731cca5b17c77ffd7"
+    },
+    {
+      "path": "candidate/1280-library-delay-ready.png",
+      "bytes": 1084004,
+      "sha256": "1d44ccb4f58ef07431bb5cd29fb2d51da2bf565573472dfa466b472f26bf575e"
+    },
+    {
+      "path": "candidate/1280-library-delayed-current.png",
+      "bytes": 710781,
+      "sha256": "157b23eb3fb1808c0c3e957a3f82553dd745069f40dd879582c0870fd10967a8"
+    },
+    {
+      "path": "candidate/1280-library-entry-320.png",
+      "bytes": 228546,
+      "sha256": "1fe4cab3617806b1fe8c87ffde0d7b1a9401b1e63a6282691bc0680f189be622"
+    },
+    {
+      "path": "candidate/1280-library-entry-390.png",
+      "bytes": 332748,
+      "sha256": "866bff4794a21936d90a2ac3db89191895ebfbd6117a44274eca33fa29adbc8a"
+    },
+    {
+      "path": "candidate/1280-library-entry.png",
+      "bytes": 1081853,
+      "sha256": "95ca558f60cb3d3539f7dde8d6bc07a2e0defaaa1158e7e6487707d1cce7d3dc"
+    },
+    {
+      "path": "candidate/1280-library-first-lamp.png",
+      "bytes": 1101859,
+      "sha256": "807b7ccb5ef6ea2617a28d4eb7bea656e4a24a4b752242695d7ad6079168099c"
+    },
+    {
+      "path": "candidate/1280-library-late-after-leaving.png",
+      "bytes": 710835,
+      "sha256": "7f2dd862b6e5cd051e4d42590a94b0e3f9608e6fa839bce5b786e48ce4b28b27"
+    },
+    {
+      "path": "candidate/1280-library-npc-0-lamps.png",
+      "bytes": 305578,
+      "sha256": "65d5377002936f85e5770aeae1da77396fbb4a047d45467a13436e2da4bc78e7"
+    },
+    {
+      "path": "candidate/1280-library-npc-2-lamps.png",
+      "bytes": 303313,
+      "sha256": "500709905d94c64247dd70a598d121d509fe41e257f96c6b3fdbd14c3a72da79"
+    },
+    {
+      "path": "candidate/1280-library-npc-cap.png",
+      "bytes": 1096761,
+      "sha256": "27f99ddc3c69e68c711a5000f99d30eaed96b4b36f452879db3e8263c53d71f7"
+    },
+    {
+      "path": "candidate/1280-library-paused-canvas.png",
+      "bytes": 1544050,
+      "sha256": "80850f60662a1575763aae465423955d612a49ee57b2c5d3a6b822dc0faf066d"
+    },
+    {
+      "path": "candidate/1280-library-two-lamps.png",
+      "bytes": 1102036,
+      "sha256": "bc626e4eb925cb994d4f9d11231453492c44a12823e01151dde19f2255c9685a"
+    },
+    {
+      "path": "candidate/1280-low-energy-hud-320.png",
+      "bytes": 247839,
+      "sha256": "c8b0073ae10cfef3f4bc8628fd04b644a700d3e09913e093d6246a8050a2cd4b"
+    },
+    {
+      "path": "candidate/1280-low-energy-hud-390.png",
+      "bytes": 360115,
+      "sha256": "5189a597d78d8d1a5c4aced29c206de22bdae3705d8f035046c45aa46b6800f3"
+    },
+    {
+      "path": "candidate/1280-plate-hud-320.png",
+      "bytes": 247405,
+      "sha256": "fd813f2521becd8c7b50d34a1bb857cecafd47f2ca3170cd0afee104762a585f"
+    },
+    {
+      "path": "candidate/1280-plate-hud-390.png",
+      "bytes": 364434,
+      "sha256": "74d0e17445958004624f8b1d966658604a708d3b103b158b73c69e866a501970"
+    },
+    {
+      "path": "candidate/1280-plate.png",
+      "bytes": 1071887,
+      "sha256": "24cac22bd6f497bfcd0c221f772224c929536f27219807cd74106f0e3acddd2c"
+    },
+    {
+      "path": "candidate/1280-portrait-escape-reopen-pending.png",
+      "bytes": 255953,
+      "sha256": "cae103673d2706d805b113e3efc077e54d28b7191ba26304da5f4c0f0bea4986"
+    },
+    {
+      "path": "candidate/1280-portrait-escape-reopen-settled.png",
+      "bytes": 276341,
+      "sha256": "cba29c893d615ef42d7a360046a39681ffaab1e716afdf9513651cfde2701d33"
+    },
+    {
+      "path": "candidate/1280-portrait-rapid-next-pending.png",
+      "bytes": 255114,
+      "sha256": "d1ae5f50f06668b56c660fc8693beee01208117dae6f3c6bd2ee0a137461c157"
+    },
+    {
+      "path": "candidate/1280-portrait-rapid-next-settled.png",
+      "bytes": 277775,
+      "sha256": "15f07205fdaa12a1009d2a8450ecbaa4e20e669a53b4ad045b04b04ff1aa8a53"
+    },
+    {
+      "path": "candidate/1280-portrait-slow-current-pending.png",
+      "bytes": 255729,
+      "sha256": "1831fcfdfc011fcc09edc99f846f2bbad20f9775d539fa6066798169526eba79"
+    },
+    {
+      "path": "candidate/1280-portrait-slow-current-settled.png",
+      "bytes": 280965,
+      "sha256": "748a54840e1187a52ec5afd0efd4af3ee166a6c2b7ef38892d2ea253c99f5df6"
+    },
+    {
+      "path": "candidate/1280-post-body-exit.png",
+      "bytes": 268885,
+      "sha256": "2accc3c30d19540c9feefc178f8ba86db6c6dec2a110e30f614cb8cb3a1b76ae"
+    },
+    {
+      "path": "candidate/1280-post-book-riding.png",
+      "bytes": 1056886,
+      "sha256": "3e22d6130004ef40d61f0b78bf07c33c8d7634e7db54f9c13a0de9e11678a4fa"
+    },
+    {
+      "path": "candidate/1280-post-delay-ready.png",
+      "bytes": 1067591,
+      "sha256": "f393913cccc9e8f6847db052cfb60cb87d6658ab8113b215b815f62d351b4982"
+    },
+    {
+      "path": "candidate/1280-post-delayed-current.png",
+      "bytes": 750330,
+      "sha256": "7fb27dc187e170394f8ad35fa596fc5e4c85a51200adf212761eed28946e706f"
+    },
+    {
+      "path": "candidate/1280-post-ending.png",
+      "bytes": 390383,
+      "sha256": "262f79437bb3acda09bf6d64bef37d16f689e351ecce276c8c51e23effe2e21c"
+    },
+    {
+      "path": "candidate/1280-post-entry-320.png",
+      "bytes": 234583,
+      "sha256": "1e0b8986bee5a0ee5c00b842a44719308ff9dfb58c59498cc9aa5c4cc10b8135"
+    },
+    {
+      "path": "candidate/1280-post-entry-390.png",
+      "bytes": 342712,
+      "sha256": "7b4c43db80aad0f15715bfca4c831abc53504d3991317c7b29164db5803d9e93"
+    },
+    {
+      "path": "candidate/1280-post-entry-traveler-airborne-canvas.png",
+      "bytes": 1500980,
+      "sha256": "249fcf4811f22c72931148d27913aef60abc92b268bc81f9a4129ca3dfddefe7"
+    },
+    {
+      "path": "candidate/1280-post-entry-traveler-airborne-paused.png",
+      "bytes": 265901,
+      "sha256": "475ced8ac4f91e70ff2e3587d1ac264a9ee11fa692bd832f4785522c16e72c6e"
+    },
+    {
+      "path": "candidate/1280-post-fallback-movement.png",
+      "bytes": 755522,
+      "sha256": "f1d0ef4a4aee8f51244aed7dce8785540d0da38a68c5d0062299a9da53fe6c7a"
+    },
+    {
+      "path": "candidate/1280-post-first-lamp.png",
+      "bytes": 1076716,
+      "sha256": "97b5cccbeb6ae430f1e18a6d53f5b28ada1c61fa62ffc29614ca0da40b4e363b"
+    },
+    {
+      "path": "candidate/1280-post-full-touch-320-ending.png",
+      "bytes": 142547,
+      "sha256": "2e399fe444cdd678bdb2fd322cdcec09b4416d47f5e3432d10a6e923f8bd30cf"
+    },
+    {
+      "path": "candidate/1280-post-full-touch-320.json",
+      "bytes": 1602034,
+      "sha256": "8e04eea5831070e2648502a081971b8106b6e9dd5594e4f46fc69f87a4bfe379"
+    },
+    {
+      "path": "candidate/1280-post-full-touch-390-ending.png",
+      "bytes": 182754,
+      "sha256": "fb472073cc5d0e1c02ced8b75fd2126fb932516b37afd0c43757c3ffa33b4ab3"
+    },
+    {
+      "path": "candidate/1280-post-full-touch-390.json",
+      "bytes": 1594067,
+      "sha256": "41a05a742c38046b2621874f22b3d35d08f597a30d5eec88cd7277b95810d0e9"
+    },
+    {
+      "path": "candidate/1280-post-intro-entry.png",
+      "bytes": 1067467,
+      "sha256": "17c6598bcc5f6446a6800507a961ac5e594ff7315447c6d8d31baed7c30dedef"
+    },
+    {
+      "path": "candidate/1280-post-keeper.png",
+      "bytes": 1063560,
+      "sha256": "3025130a4b6b7e762cdbb7057f44c22221425d7b327506dbe6f5c12ecba3ea4e"
+    },
+    {
+      "path": "candidate/1280-post-late-after-leaving.png",
+      "bytes": 750346,
+      "sha256": "01ab4cd07d3283be2311399cb3d85999a787a2cb161847ba281fba0bf2282751"
+    },
+    {
+      "path": "candidate/1280-post-mushroom-crossing.json",
+      "bytes": 131708,
+      "sha256": "8fb9cd157f53045c94bae895ec8f4a6b9b4d97a932e923a355a6603d1e2fa846"
+    },
+    {
+      "path": "candidate/1280-post-root-landing.png",
+      "bytes": 1046246,
+      "sha256": "d8dee51bb672e87354494e3de11c6e518e754070ccddf5f2ffaedc35d3f38d65"
+    },
+    {
+      "path": "candidate/1280-post-route.json",
+      "bytes": 1414296,
+      "sha256": "e4c438adce1b60f9d317e319658b2cc14c2d3cf4d4b888ff21815e89782c1296"
+    },
+    {
+      "path": "candidate/1280-post-two-lamps-sun-stamp.png",
+      "bytes": 1068390,
+      "sha256": "ceff207d5d411cc7a1eb7b359045f5d8503bf852827deee0b0f7d4916d0428d6"
+    },
+    {
+      "path": "candidate/1280-recovering-energy-hud-320.png",
+      "bytes": 239535,
+      "sha256": "752cb5d05a1740a28de45a9e0de62e05f080ebd577306c58f3b3729e3eb81f6b"
+    },
+    {
+      "path": "candidate/1280-recovering-energy-hud-390.png",
+      "bytes": 356109,
+      "sha256": "c4b21c789d469701da7597956aa8953aefa482ce736eca0746b45c84b07bea2b"
+    },
+    {
+      "path": "candidate/1280-second-light.png",
+      "bytes": 1065086,
+      "sha256": "8fd92f726e709a4a52efad4a319ecc3e760b5545007fe2409311c6d0866c1e5a"
+    },
+    {
+      "path": "candidate/1280-start.png",
+      "bytes": 1077656,
+      "sha256": "e8199cab64727d978109372712dcdbe1541cd6314b036919ab9a102f762108ac"
+    },
+    {
+      "path": "candidate/1280-theatre-rongrong-320-body.png",
+      "bytes": 245092,
+      "sha256": "c01f35f1f5b4c67fccfccb6a2c0fb31282d0bad0ae3a3edb60aa2df6044f7e7a"
+    },
+    {
+      "path": "candidate/1280-theatre-rongrong-320-invite.png",
+      "bytes": 239700,
+      "sha256": "2630e414d29fdd128b04efacec257716af305a5649da28e9e5b515f33ab745a8"
+    },
+    {
+      "path": "candidate/1280-theatre-rongrong-390-body.png",
+      "bytes": 353105,
+      "sha256": "001add7dcd0c1da89f36700125e01ca4f0681cb949105c1d6a409f72ea492485"
+    },
+    {
+      "path": "candidate/1280-theatre-rongrong-390-invite.png",
+      "bytes": 346741,
+      "sha256": "51c9ec2306fdf409c9fff7cb2bd697b36285044bdb9146c807c13da900910ffa"
+    },
+    {
+      "path": "candidate/1280-theatre-rongrong-body.png",
+      "bytes": 1066965,
+      "sha256": "882ffe018eeda2ec7f5c81b4b2225df193325e4801aac749fbe3d6b9ca17e92f"
+    },
+    {
+      "path": "candidate/1280-theatre-rongrong-invite.png",
+      "bytes": 1075190,
+      "sha256": "ac4186838d28b8ac65c8efb331c7cb20f0232698538d21479a231142b6ba5d00"
+    },
+    {
+      "path": "candidate/1280-ticket-held-hud-320.png",
+      "bytes": 233613,
+      "sha256": "729eb6a424859c33f0e9c57b1dcac7dea309165b4a504098357c18e19afc2adf"
+    },
+    {
+      "path": "candidate/1280-ticket-held-hud-390.png",
+      "bytes": 359229,
+      "sha256": "aa0b8245961fc29687ae962af1eac66168a81ba61f799e953564f163fd54bdc2"
+    },
+    {
+      "path": "candidate/1280-ticket.png",
+      "bytes": 1060359,
+      "sha256": "6211e48b30163215fa2a6f2c4ea05910e9a7e170d2563c56d0e91a27955f63fc"
+    },
+    {
+      "path": "candidate/1280-touch-320-clock-release-playing-paused-canvas.png",
+      "bytes": 266879,
+      "sha256": "310accdeada65059d46050f5ed8983a0765c4c03656881723ea9f70a1961b747"
+    },
+    {
+      "path": "candidate/1280-touch-320-clock-release-settled.png",
+      "bytes": 231176,
+      "sha256": "5d8a6d274149c3443453a0d45b54b981c33d94d744014131fb793985bc870ac8"
+    },
+    {
+      "path": "candidate/1280-touch-320-library-book-a-riding.png",
+      "bytes": 238507,
+      "sha256": "be6f3b9a6d004ba4843d30cd8c11aa71ee224cc639ec4905ddf4462a54bbecfd"
+    },
+    {
+      "path": "candidate/1280-touch-320-library-book-b-riding.png",
+      "bytes": 236374,
+      "sha256": "45a6625be15c7b2ef7d5e868b0d471db4453a499a3bbe05f9333677d8f1f40d2"
+    },
+    {
+      "path": "candidate/1280-touch-320-library-first-lamp.png",
+      "bytes": 237357,
+      "sha256": "f3dd9697bf72c71df4904b772bd2d3b60865179bf90c2cd4c63b7402cc087e46"
+    },
+    {
+      "path": "candidate/1280-touch-320-library-npc-0-lamps.png",
+      "bytes": 87644,
+      "sha256": "b04ecfd25019cd204eb74c4779efb254d69db37c11180ac63b8b2a226aeaad99"
+    },
+    {
+      "path": "candidate/1280-touch-320-library-npc-cap.png",
+      "bytes": 224334,
+      "sha256": "9b7a322fc9a87d744029f9e094b9f00c278a42ce7bf2cf1e7202645fb12c5a01"
+    },
+    {
+      "path": "candidate/1280-touch-320-library-two-lamps.png",
+      "bytes": 227161,
+      "sha256": "0f560b023183229abed1fe8238351bc3482b5a020de4c9088e760e011139a09b"
+    },
+    {
+      "path": "candidate/1280-touch-320-theatre-left-bank.png",
+      "bytes": 228831,
+      "sha256": "6f1b8d579c6dcd291523399c8629b7c863562ed72e76b8973153e8c41928323c"
+    },
+    {
+      "path": "candidate/1280-touch-320-theatre-midstage.png",
+      "bytes": 220777,
+      "sha256": "f6e57d30cb8fa7c9d16b3e61fb6b9b3ef1c12b86fe978fcd4cd4f6bff1d0b994"
+    },
+    {
+      "path": "candidate/1280-touch-320-theatre-right-bank.png",
+      "bytes": 228299,
+      "sha256": "9cb225fc85130120775e6ff103ec1659602f017881ae5fe6b7024d9ac7ed788d"
+    },
+    {
+      "path": "candidate/1280-touch-390-clock-hold-playing-paused-canvas.png",
+      "bytes": 420526,
+      "sha256": "66090a9599fbb9893d8f355dd8e4629b9078f4376749a3907064d0a7f1f32b25"
+    },
+    {
+      "path": "candidate/1280-touch-390-clock-hold-settled.png",
+      "bytes": 336474,
+      "sha256": "2e529d00087ff1ef9f24271d0a28b582be1b3a40d45e9b25725fa79cd15dc554"
+    },
+    {
+      "path": "candidate/1280-touch-390-library-book-a-riding.png",
+      "bytes": 345205,
+      "sha256": "79648fded6aadf5c5740187ff3a299cc93892f7c11e107be414fd2e868b90cbb"
+    },
+    {
+      "path": "candidate/1280-touch-390-library-book-b-riding.png",
+      "bytes": 342260,
+      "sha256": "6aa9c06b2ab5f6b01ca82a8ed35e77dd15ea278db66fc895661139c6cc140a63"
+    },
+    {
+      "path": "candidate/1280-touch-390-library-first-lamp.png",
+      "bytes": 352726,
+      "sha256": "591fc3648ee471a57b40339edbf4a507ef6da055305496d0f27d55020da04670"
+    },
+    {
+      "path": "candidate/1280-touch-390-library-npc-0-lamps.png",
+      "bytes": 116887,
+      "sha256": "3e51177f29ff38aa85e9859092afb1192b21207af488e21d49359d7b875a3195"
+    },
+    {
+      "path": "candidate/1280-touch-390-library-npc-cap.png",
+      "bytes": 332969,
+      "sha256": "8575c58c1af70f1b3e18f1af98fb63b52f0661b34010f5ecbf5c3d0dbd1ae07a"
+    },
+    {
+      "path": "candidate/1280-touch-390-library-two-lamps.png",
+      "bytes": 328438,
+      "sha256": "dec2872631a282b84c97b7526129baaf0206de5c04304855e34b3af920ee05a4"
+    },
+    {
+      "path": "candidate/1280-touch-390-theatre-left-bank.png",
+      "bytes": 327690,
+      "sha256": "4ca238f169c4552383438799cc3329588d9afc8cdda45d1be3940de0de366c93"
+    },
+    {
+      "path": "candidate/1280-touch-390-theatre-midstage.png",
+      "bytes": 312659,
+      "sha256": "e00e19531edfcce7bf17a4028740c982fb9f516a18496857f354c7b2e533d614"
+    },
+    {
+      "path": "candidate/1280-traveler-airborne-canvas.png",
+      "bytes": 1514283,
+      "sha256": "025a6721b881a92995dd4d76524571499f410c6db52ac15d0a692e19b4a989cf"
+    },
+    {
+      "path": "candidate/1280-touch-390-theatre-right-bank.png",
+      "bytes": 327966,
+      "sha256": "23319aed1394d12fe5b420c11368893e2db95096e7ec82c12281fe054ba8bec0"
+    },
+    {
+      "path": "candidate/1280-traveler-airborne-paused.png",
+      "bytes": 248046,
+      "sha256": "d3d08b1ad9f8968ca5c52b41016903a95114a2f6ab4094b18383be9a010822d4"
+    },
+    {
+      "path": "candidate/320-face-festival-exclusion.json",
+      "bytes": 190,
+      "sha256": "fb713f619b5b90a4dc752c167bb5d777e37553705efc7625f8c19ac1b662d617"
+    },
+    {
+      "path": "candidate/320-face-ticket-closedJoy.png",
+      "bytes": 271769,
+      "sha256": "f6393f843b2e116c824870ab5c464be95cca824297e98d39575229e795ca885b"
+    },
+    {
+      "path": "candidate/320-face-ticket-collected.json",
+      "bytes": 500337,
+      "sha256": "0a38c36354be62f32979497364e33bf82e57fe87c4ed99605a89e8779818ced4"
+    },
+    {
+      "path": "candidate/320-face-ticket-freeJoy.png",
+      "bytes": 273564,
+      "sha256": "8a4817a1e39efe7ff764d87716aa4dc1c30f6df90a66887aed18d339bddcba7b"
+    },
+    {
+      "path": "candidate/320-face-ticket-returned.json",
+      "bytes": 616008,
+      "sha256": "0baeab04795f1e15b5f28e455ae9eb89857568c5712e0b1a9d1427177f8372d6"
+    },
+    {
+      "path": "candidate/320-festival-hud.png",
+      "bytes": 182234,
+      "sha256": "6064d02a8554a4fd161b2fcaa02ce163403b47b513ed6127c6e5ea4982b2ff04"
+    },
+    {
+      "path": "candidate/320-festival-return.png",
+      "bytes": 236546,
+      "sha256": "8831c84aaa7b9df7cbd761cb00f633e91ce1ca8a5127d509e04569a3c4fab2b6"
+    },
+    {
+      "path": "candidate/320-home.png",
+      "bytes": 239884,
+      "sha256": "b7d04a4a2b653b5416e4cbf9cb7916f608210d8efad89a2db5422dea25b11fb7"
+    },
+    {
+      "path": "candidate/320-start.png",
+      "bytes": 240314,
+      "sha256": "4e2af2ff77487636688aed22872959739301cd81a7520c2be553351055026eac"
+    },
+    {
+      "path": "candidate/320-ticket.png",
+      "bytes": 235483,
+      "sha256": "78cfac43d065cdcb1fead163c06c2a32c00e73fc1385aecdcf665ebe97e79da8"
+    },
+    {
+      "path": "candidate/390-face-festival-exclusion.json",
+      "bytes": 190,
+      "sha256": "fb713f619b5b90a4dc752c167bb5d777e37553705efc7625f8c19ac1b662d617"
+    },
+    {
+      "path": "candidate/390-face-ticket-closedJoy.png",
+      "bytes": 429684,
+      "sha256": "65d9de7f03dfb55a150a1fe254d73157a875011d6258ec29110a056cec422b08"
+    },
+    {
+      "path": "candidate/390-face-ticket-collected.json",
+      "bytes": 522835,
+      "sha256": "d5f59872185baef22e1467e6f7042349da97793ed25765e49da39b57cde22eb1"
+    },
+    {
+      "path": "candidate/390-face-ticket-freeJoy.png",
+      "bytes": 434240,
+      "sha256": "97045541c3eae1b8c1225a59e9e2be22c2b995ea9b2f75e896bfce9b7fca09d4"
+    },
+    {
+      "path": "candidate/390-face-ticket-returned.json",
+      "bytes": 616287,
+      "sha256": "12ee18e6f08a740114e8993ff5a5f682dd025363b8922ce27fddf97816d9bea4"
+    },
+    {
+      "path": "candidate/390-festival-hud.png",
+      "bytes": 254670,
+      "sha256": "08bb3e7430d40bc08c14e8d375d38a999efb5fa9c1061a33c16c076f0004a6f0"
+    },
+    {
+      "path": "candidate/390-festival-return.png",
+      "bytes": 350045,
+      "sha256": "043871dd9f2f35f1d993a8aed7e43a0e217260ea1bf6514cb516ffd723fca78b"
+    },
+    {
+      "path": "candidate/390-home.png",
+      "bytes": 355884,
+      "sha256": "8946da7551b46184550d61dbe916a224987e2d7d510a89f24d13bf64c02e16ff"
+    },
+    {
+      "path": "candidate/390-start.png",
+      "bytes": 351911,
+      "sha256": "d66e192b35cc3b5575421c5e001a7c6dff00029ed17c2801172698f202a3d985"
+    },
+    {
+      "path": "candidate/report.json",
+      "bytes": 14584018,
+      "sha256": "cf493719a6e37974e839ef50aea9396cca5fd0508e37b581eb6029ae6762efff"
+    },
+    {
+      "path": "commit.txt",
+      "bytes": 41,
+      "sha256": "9e6c0f360851bd60ec0a7dbd930845141858e7591711c420d00d952d38afa979"
+    },
+    {
+      "path": "candidate/390-ticket.png",
+      "bytes": 352566,
+      "sha256": "056d20934673afed4ce1ce5d06a16990ae3f0c611b92e80c3f71bc55862385e7"
+    },
+    {
+      "path": "node.txt",
+      "bytes": 9,
+      "sha256": "2266957ed9a639bd7264d714bfa798a961510bf2e50695c668ab8fc0c3f4e906"
+    },
+    {
+      "path": "references.txt",
+      "bytes": 214,
+      "sha256": "3092d05cf88ed87e3e735b5abbe9ac219834f45478cd56b3f27b15b46d595cfb"
+    },
+    {
+      "path": "server.txt",
+      "bytes": 169831,
+      "sha256": "f7c69331d335d0d9583a37a0d7a73b50436b5db251d821ba3be3c697202cd0be"
+    },
+    {
+      "path": "source.tar.gz",
+      "bytes": 93878910,
+      "sha256": "364245336a15519f2cbc7693ac81b9231003ebfbe9c41520df333b7821d6f7f0"
+    },
+    {
+      "path": "tests.txt",
+      "bytes": 168583,
+      "sha256": "0b02f6362dc7a96a0f86c63dc2213d50c8aa32d74e38a63375fb9f93ccf57c13"
+    }
+  ],
+  "reports": [
+    {
+      "path": "candidate/report.json",
+      "bytes": 14584018,
+      "sha256": "cf493719a6e37974e839ef50aea9396cca5fd0508e37b581eb6029ae6762efff",
+      "url": "http://127.0.0.1:8080/",
+      "cases": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "version": "31.0.0",
+          "pageErrors": [],
+          "httpErrors": [],
+          "networkFailureCount": 9,
+          "finalExactNetworkMatch": true,
+          "finalImagesLoaded": true
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "version": "31.0.0",
+          "pageErrors": [],
+          "httpErrors": [],
+          "networkFailureCount": 0,
+          "finalExactNetworkMatch": true,
+          "finalImagesLoaded": true
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "version": "31.0.0",
+          "pageErrors": [],
+          "httpErrors": [],
+          "networkFailureCount": 0,
+          "finalExactNetworkMatch": true,
+          "finalImagesLoaded": true
+        }
+      ]
+    }
+  ],
+  "failureEvidence": [],
+  "partialEvidence": [
+    {
+      "path": "candidate/1280-ending-dawn-320-case.json",
+      "bytes": 23619,
+      "sha256": "6994b4cdbe7eed130a10e5674ee0a81b8aef694dbfe3936651784994c0728957"
+    },
+    {
+      "path": "candidate/1280-ending-dawn-320-reading.json",
+      "bytes": 21960,
+      "sha256": "69ef489a84ac1b14e42534b7445bc81f888ee2a02c12f615bc9c4612dbd69727"
+    },
+    {
+      "path": "candidate/1280-ending-dawn-390-case.json",
+      "bytes": 6564,
+      "sha256": "ecb806a0644c8f5bb6f5cebf26a97d1cfa9b21bcd1f201afecd1c4adc325a16b"
+    },
+    {
+      "path": "candidate/1280-ending-dawn-390-reading.json",
+      "bytes": 4905,
+      "sha256": "2896682e1922923d958ec891d89f6030c45a02ef5610ba9f77d54f16de28608c"
+    },
+    {
+      "path": "candidate/1280-ending-keep-hold.json",
+      "bytes": 9806,
+      "sha256": "0a652dd933a207ab5e646015cf1adbf89d95bd7bda8c901a4f2a07679c09b0b1"
+    },
+    {
+      "path": "candidate/1280-ending-keep-release.json",
+      "bytes": 9761,
+      "sha256": "5de2b8690e2aead9676c2d46bc1dfc8b86256f595d031a4005f85dfb5ab23420"
+    },
+    {
+      "path": "candidate/1280-ending-lanterns-320-case.json",
+      "bytes": 23748,
+      "sha256": "ca9a1eee26798c3cba96caa3f65ad6ba1116055b887e70dd09fb3801bbb79ae1"
+    },
+    {
+      "path": "candidate/1280-ending-lanterns-320-reading.json",
+      "bytes": 22083,
+      "sha256": "87163e54826174ad0f5ea740e765c19cb0f72dac210d0cae16da709f3a06cb18"
+    },
+    {
+      "path": "candidate/1280-ending-lanterns-390-case.json",
+      "bytes": 6609,
+      "sha256": "d82bed31a76b34bfd7c384e1aa2e9ee0c51fc595286c0d21a2da31fa4bc85df4"
+    },
+    {
+      "path": "candidate/1280-ending-lanterns-390-reading.json",
+      "bytes": 4943,
+      "sha256": "586f10e01f510bd09cbd25d3798bcc2638072553ce627dd89b7df3d2cd8b5590"
+    },
+    {
+      "path": "candidate/1280-ending-send-hold.json",
+      "bytes": 9749,
+      "sha256": "f5e7bb6edc724fe5ad90211b4e2d400d7074110bfb202aba65433d5b9b9d85d8"
+    },
+    {
+      "path": "candidate/1280-ending-send-release.json",
+      "bytes": 9718,
+      "sha256": "e524c40b3cb6873fa3b1497cc10eac74109af731e7b52df6849bbd7ac5377889"
+    },
+    {
+      "path": "candidate/1280-ending-tender-320-case.json",
+      "bytes": 23647,
+      "sha256": "d7c2968e89c406564410eb431f47a0d8e815d4602adb15654bc5678c74e8fd48"
+    },
+    {
+      "path": "candidate/1280-ending-tender-320-reading.json",
+      "bytes": 21984,
+      "sha256": "9794121c67a59bc14223163da3f21ae48a386fd494e2339be97204531282eadb"
+    },
+    {
+      "path": "candidate/1280-ending-tender-390-case.json",
+      "bytes": 6574,
+      "sha256": "a17cda1b4904847bb474225750583a9b8f2eb23455360c8eb290ca997c3d8e62"
+    },
+    {
+      "path": "candidate/1280-ending-tender-390-reading.json",
+      "bytes": 4910,
+      "sha256": "898bc45886e04fc3a8acf485ef7e50f6fdd103ca9e974df6e3185c9bd4849a44"
+    },
+    {
+      "path": "candidate/1280-face-fatigue-body-tired-open.json",
+      "bytes": 564851,
+      "sha256": "ae2fc7dae550d344ee29ec15cce73ac32d07c195b1e805b32c17097b1a7b0fd0"
+    },
+    {
+      "path": "candidate/1280-face-fatigue-phone-low-energy.json",
+      "bytes": 577029,
+      "sha256": "343a374eacee71223ac28f0081d2522702c24ef5cce4cf4e534f083d03126f3a"
+    },
+    {
+      "path": "candidate/1280-face-fatigue-returned.json",
+      "bytes": 575893,
+      "sha256": "096cce113f71148d9588711517c5d4115cacfd09ac99dd91e6b5fc9cd3335893"
+    },
+    {
+      "path": "candidate/1280-face-fatigue-soul-low-energy.json",
+      "bytes": 558646,
+      "sha256": "b67bb5329580ec5a182c5af5849bf1c8f11648bc9c54a036f97959b8376dfdce"
+    },
+    {
+      "path": "candidate/1280-face-ticket-collected.json",
+      "bytes": 577776,
+      "sha256": "bdcec9fcfde57e1523f65e17db4720b7d0c41dd4ce4e96665dfa0712e114d2a2"
+    },
+    {
+      "path": "candidate/1280-first-lamp-face-lamp-returned.json",
+      "bytes": 371524,
+      "sha256": "3fbb9c5115b586f6970f1f4abb7012b96f73f0d70f91fd83df2b619b0ffb0bc7"
+    },
+    {
+      "path": "candidate/1280-full-fallback-post-mushroom-crossing.json",
+      "bytes": 132711,
+      "sha256": "65e25ebe9cee255a167903fa6177ffd8a7f7bfec222d7f26b0389da245640b1a"
+    },
+    {
+      "path": "candidate/1280-full-fallback-post-route.json",
+      "bytes": 1259839,
+      "sha256": "37328bf36f6f7141645d378384b81b20c166e86c14400062e28faf772fdb4dae"
+    },
+    {
+      "path": "candidate/1280-full-touch-320-post-mushroom-crossing.json",
+      "bytes": 137115,
+      "sha256": "0657b1e5aa654971e0f32022558310da595e9eb192a489d96293cdb9565d7d0d"
+    },
+    {
+      "path": "candidate/1280-full-touch-320-post-route.json",
+      "bytes": 1481067,
+      "sha256": "a3648f6074c3b90ed8603924bf9715aabf2a39a2c9de3a698b01f95813b6c68b"
+    },
+    {
+      "path": "candidate/1280-full-touch-390-post-mushroom-crossing.json",
+      "bytes": 133461,
+      "sha256": "05be8a9fc4a62182bf5a20606fc8a48163cba440a7679fbac15c574595f2323a"
+    },
+    {
+      "path": "candidate/1280-full-touch-390-post-route.json",
+      "bytes": 1473733,
+      "sha256": "be9283278c0bee023ed10973b8269facb5961d23c7c6149845b434dd5d2cce85"
+    },
+    {
+      "path": "candidate/1280-post-full-touch-320.json",
+      "bytes": 1602034,
+      "sha256": "8e04eea5831070e2648502a081971b8106b6e9dd5594e4f46fc69f87a4bfe379"
+    },
+    {
+      "path": "candidate/1280-post-full-touch-390.json",
+      "bytes": 1594067,
+      "sha256": "41a05a742c38046b2621874f22b3d35d08f597a30d5eec88cd7277b95810d0e9"
+    },
+    {
+      "path": "candidate/1280-post-mushroom-crossing.json",
+      "bytes": 131708,
+      "sha256": "8fb9cd157f53045c94bae895ec8f4a6b9b4d97a932e923a355a6603d1e2fa846"
+    },
+    {
+      "path": "candidate/1280-post-route.json",
+      "bytes": 1414296,
+      "sha256": "e4c438adce1b60f9d317e319658b2cc14c2d3cf4d4b888ff21815e89782c1296"
+    },
+    {
+      "path": "candidate/320-face-festival-exclusion.json",
+      "bytes": 190,
+      "sha256": "fb713f619b5b90a4dc752c167bb5d777e37553705efc7625f8c19ac1b662d617"
+    },
+    {
+      "path": "candidate/320-face-ticket-collected.json",
+      "bytes": 500337,
+      "sha256": "0a38c36354be62f32979497364e33bf82e57fe87c4ed99605a89e8779818ced4"
+    },
+    {
+      "path": "candidate/320-face-ticket-returned.json",
+      "bytes": 616008,
+      "sha256": "0baeab04795f1e15b5f28e455ae9eb89857568c5712e0b1a9d1427177f8372d6"
+    },
+    {
+      "path": "candidate/390-face-festival-exclusion.json",
+      "bytes": 190,
+      "sha256": "fb713f619b5b90a4dc752c167bb5d777e37553705efc7625f8c19ac1b662d617"
+    },
+    {
+      "path": "candidate/390-face-ticket-collected.json",
+      "bytes": 522835,
+      "sha256": "d5f59872185baef22e1467e6f7042349da97793ed25765e49da39b57cde22eb1"
+    },
+    {
+      "path": "candidate/390-face-ticket-returned.json",
+      "bytes": 616287,
+      "sha256": "12ee18e6f08a740114e8993ff5a5f682dd025363b8922ce27fddf97816d9bea4"
+    }
+  ],
+  "tests": {
+    "tests": 675,
+    "pass": 675,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0
+  },
+  "references": "\n> tougaigu@31.0.0 check\n> node scripts/check.mjs && node scripts/version-assets.mjs --check\n\nChecked 68 JavaScript modules and 171 local references.\nVerified 232 asset references for 31.0.0; 0 files need changes.\n",
+  "archiveCompaction": {
+    "onlyRemovedRepeatedFields": [
+      {
+        "report": "candidate/report.json",
+        "caseIndex": 0,
+        "field": "postExtended"
+      },
+      {
+        "report": "candidate/report.json",
+        "caseIndex": 0,
+        "field": "endings"
+      },
+      {
+        "report": "candidate/report.json",
+        "caseIndex": 1,
+        "field": "postExtended"
+      },
+      {
+        "report": "candidate/report.json",
+        "caseIndex": 1,
+        "field": "endings"
+      },
+      {
+        "report": "candidate/report.json",
+        "caseIndex": 2,
+        "field": "postExtended"
+      },
+      {
+        "report": "candidate/report.json",
+        "caseIndex": 2,
+        "field": "endings"
+      }
+    ],
+    "sourceInventoryPreservedExact": true,
+    "artifactInventoryPreservedExact": true,
+    "partialEvidenceInventoryPreservedExact": true,
+    "originalReportArchive": "candidate-report.json.gz",
+    "originalFullAuditSha256": "4d85d0148241e96ac25219bb52df96f493a13de73005c68461537813e5b518f4"
+  }
+}

@@ -1,4 +1,14 @@
-# QA-v31 · 眼窝里的笑：Pages与资源已验，待完整公网浏览器
+# QA-v31 · 眼窝里的笑：正式 HTTPS 验收完成
+
+**正式闭环完成（2026-10-30 UTC）。** v31 已上线到 https://tougaigu.com/；[PR #2](https://github.com/zhangshuaibo1/tougaigu/pull/2) 合并后的 main `75010ca44245e05cf44187768722081d244f39f4` 通过 [40978620156](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40978620156) 的完整候选及正式 HTTPS，两份原报告已分别独立重新核验。
+
+官方 675/675 测试通过，797 源码文件和模式精确匹配该提交，143 运行文件与 Pages `6e716a8c40e5ad0b917f3b3e85fe86f7b09a9241` 精确一致。三个视口的实际版本均为31.0.0，页面／HTTP错误为0，原故意请求失败精确9/0/0，原完整路线与严格动作门槛保持。详细原始报告、图审及证据范围见 [main 完整归档](v31-main-release/README.md)；发布与原生通道恢复的准确历史见 [发布完成记录](v31-browser-release/README.md)。
+
+v31 已关闭，无需重复部署。下一轮以 [v32 在途登记](IN-PROGRESS-v32.md) 为准。320px 抬盖装饰左缘裁切仍是明确的视觉边界；没有实体手机、Safari或FPS验收结论。
+
+## 历史：Pages 发布后、main 完整验收前的原接续记录
+
+以下原文保留各阶段的失败、准备及范围，含“待main／待公网”等当时状态；当前结论以上方正式完成记录为准。
 
 **当前状态（2026-10-29 23:52 UTC）：v31 候选已验，Pages 部署成功，四项 HTTPS 资源逐字节核对通过；main 合并后的完整候选与公网浏览器仍待执行。** 正式第二候选为 `7ba7c5e00a6a32032e5becf5131a527322d03ac3`，[候选 run 40965474140](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40965474140) 通过 675/675 测试和完整候选浏览器，796 个源码 blob、143 个运行时文件已独立审计。
 

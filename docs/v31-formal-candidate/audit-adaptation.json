@@ -1,0 +1,16 @@
+[
+  {
+    "from": "/tmp/audit-tougaigu-v31-faces.py",
+    "to": "/tmp/audit-v31-second-faces.py",
+    "originalSha256": "612d4119827c2f3409b7b033a336adf83d16761782d14c7c270f78a2aa5e0755",
+    "adaptedSha256": "629a34324ac41e47dde1c3c35091bd751071a01ee1c8a61a85ad20f644e620a5",
+    "changes": "Exact run/commit/output/source count/scope metadata; load trusted validators from verified primary Git commit instead of mutable worktree. All validation assertions unchanged except exact source count794->796."
+  },
+  {
+    "from": "/tmp/audit-tougaigu-v31-inherited-gates.py",
+    "to": "/tmp/audit-v31-second-gates.py",
+    "originalSha256": "7147bf1ef04b48b142b17ba055b92be7d10b8c1e4fce49be0e560fd9974cfe49",
+    "adaptedSha256": "ae0472b3e313f2bf4638b862e7209f64a9e1b845436088763587b5c0948682d0",
+    "changes": "Exact run/commit/output/source count/scope metadata; load trusted validators from verified primary Git commit instead of mutable worktree. All validation assertions unchanged except exact source count794->796."
+  }
+]
