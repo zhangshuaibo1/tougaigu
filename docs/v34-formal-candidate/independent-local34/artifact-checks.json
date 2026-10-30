@@ -1,0 +1,133 @@
+{
+  "status": "passed",
+  "manifestPath": "/workspace/scratch/2b18af2db412/tougaigu-v34-formal/docs/v34-formal-candidate/local-34/manifest.json",
+  "manifestSHA256": "fa2c2924c638828cf08d90037fb83dc0f25d78b0ecaa5633536615e31aa62741",
+  "payloadFiles": 16,
+  "payloadBytes": 3765294,
+  "allPayloadManifestAndOriginChecks": [
+    {
+      "path": "framing-report.json.gz",
+      "bytes": 689968,
+      "sha256": "5e1082f47294400676fec4d85d4542776f05fcc377efecfc81d29d65f84484c4",
+      "manifestExact": true,
+      "originExact": true,
+      "decompressedBytes": 28077314,
+      "decompressedSha256": "e7c68786167bcf1a8acb9cb45ef83b6a5119276fa2a51412ddef61b236d2ee04"
+    },
+    {
+      "path": "execution.json",
+      "bytes": 56361,
+      "sha256": "a2632158ff6c84dc223b9042500953973f01e893249fdfb636c3a0a1deb71539",
+      "manifestExact": true,
+      "originExact": true
+    },
+    {
+      "path": "review.json",
+      "bytes": 2577,
+      "sha256": "89e84f0a1af46b67ac251637344d2de51136bb4e890776fabcd6914e220cee56",
+      "manifestExact": true,
+      "originExact": true
+    },
+    {
+      "path": "tests.txt",
+      "bytes": 76031,
+      "sha256": "37c1642c75cfceb1225d9ed7563e7acce52ee5150f36c03025a9097f48814618",
+      "manifestExact": true,
+      "originExact": true
+    },
+    {
+      "path": "references.txt",
+      "bytes": 313,
+      "sha256": "9e632f0485ceb3bde6186c3be99043ca879933094d13e8425e5bf0aa63344462",
+      "manifestExact": true,
+      "originExact": true
+    },
+    {
+      "path": "browser.txt",
+      "bytes": 785,
+      "sha256": "8d37627df469185be9b9352d309253b1fd76fda197a3c175a9487df74af231c0",
+      "manifestExact": true,
+      "originExact": true
+    },
+    {
+      "path": "server.txt",
+      "bytes": 15183,
+      "sha256": "70c22e88a53d55e90ca988ef0b7478ffc029118d370ec8f7d221372106558b92",
+      "manifestExact": true,
+      "originExact": true
+    },
+    {
+      "path": "launcher-executed.py",
+      "bytes": 4061,
+      "sha256": "f8f32becde5e4f506bf5669441ecc3acf5745bf28449c1f20a0bcdfa24a56f3b",
+      "manifestExact": true,
+      "originExact": true
+    },
+    {
+      "path": "review-local34.py",
+      "bytes": 4100,
+      "sha256": "a13f5d9a60a5d01fed0d848df95ca5bf59e519f963dea1f149ff648d0705bd8d",
+      "manifestExact": true,
+      "originExact": true
+    },
+    {
+      "path": "original-png-inventory.json",
+      "bytes": 9669,
+      "sha256": "642fc263c8beb57e9d8ae0ddc2b063047c92e3cb44ac7f4e373bc7e911b51a78",
+      "manifestExact": true,
+      "originDirectoryInventoryVerifiedBelow": true
+    },
+    {
+      "path": "png/1280/near-open-page.png",
+      "bytes": 1084772,
+      "sha256": "87788626a47e5ccc45329ea70c843975d0f211800de9949cd0daf050eec24826",
+      "manifestExact": true,
+      "originExact": true
+    },
+    {
+      "path": "png/390/back-near-page.png",
+      "bytes": 358682,
+      "sha256": "fb9d1a008302678462ab40cba36b04a5aa5b2c3b78b9e622681c412106b65cad",
+      "manifestExact": true,
+      "originExact": true
+    },
+    {
+      "path": "png/320/near-open-page.png",
+      "bytes": 234029,
+      "sha256": "5eab3837eaf93595570fa885439e7353a85112901ffb51776e90515b313d4144",
+      "manifestExact": true,
+      "originExact": true
+    },
+    {
+      "path": "png/320/paused-resize-first.png",
+      "bytes": 431418,
+      "sha256": "572f3c5b048121425b33564dfcf6cf02240f75def7223d65321ec1f3d2ba5821",
+      "manifestExact": true,
+      "originExact": true
+    },
+    {
+      "path": "png/390/left-facing-open-canvas.png",
+      "bytes": 430108,
+      "sha256": "04dbe781ddabac8cc060d537355e994c8c07c069fc0f5089a100983a7e1797d6",
+      "manifestExact": true,
+      "originExact": true
+    },
+    {
+      "path": "png/390/activity-priority-page.png",
+      "bytes": 367237,
+      "sha256": "9f9ae358ac1390f5f762240f839bc872bbb5b950b41c6e851f2efd28003e6eb6",
+      "manifestExact": true,
+      "originExact": true
+    }
+  ],
+  "gzipCount": 1,
+  "gzipRoundTripExact": true,
+  "selectedPNGs": 6,
+  "originalPNGInventory": {
+    "count": 51,
+    "eachOriginalBytesHashDimensionsExact": true,
+    "all51ReferencedBySameReport": true,
+    "inventorySHA256": "642fc263c8beb57e9d8ae0ddc2b063047c92e3cb44ac7f4e373bc7e911b51a78"
+  },
+  "inputBytesStableAtEnd": true
+}

@@ -1,0 +1,65 @@
+{
+  "status": "verified",
+  "createdAt": "2026-10-30T02:31:41.550761+00:00",
+  "directory": "/tmp/v33-main-closure-docs",
+  "sourceCheckout": "/workspace/scratch/2b18af2db412/tougaigu-v33-main-release",
+  "sourceCheckoutUnchanged": true,
+  "sourceCommit": "be05769a99a807f9396c03084760f8283ce4195e",
+  "runId": 40988381550,
+  "onlyFourRequestedDocuments": true,
+  "files": [
+    {
+      "path": "docs/QA-v33.md",
+      "bytes": 15114,
+      "sha256": "8b12cfe482cbfb285ef8cfc93a0e21fb31d17e2c98eed37aa4a00fdcaf510259",
+      "sourceCommit": "be05769a99a807f9396c03084760f8283ce4195e",
+      "baselineBytes": 8386,
+      "baselineSha256": "5d67877a8f58a29ed6e48666fb2af97581acf09172e622d2ce3d83a21dcf30f3",
+      "historicalBodyBytes": 8347,
+      "historicalBodySha256": "a8f32e33f1fbb575fa7487c706b45a432569b87448204a7866aed28bf15524a6",
+      "allPreviousBodyBytesRetainedUnchanged": true
+    },
+    {
+      "path": "docs/IN-PROGRESS-v33.md",
+      "bytes": 4772,
+      "sha256": "4a090789d7cdfb759077044a383f6f9af15e15a1c770241c5bcea205f67a07da",
+      "sourceCommit": "be05769a99a807f9396c03084760f8283ce4195e",
+      "baselineBytes": 1960,
+      "baselineSha256": "0b868363e06c3e65fa1ac1af0ebd892d4b02d83351e6ed0369c6c42c19e71135",
+      "historicalBodyBytes": 1921,
+      "historicalBodySha256": "38c282a3adc4083ad4ccb96fa7498975ad5ccd2f6b2256c46252da73fe087ef0",
+      "allPreviousBodyBytesRetainedUnchanged": true
+    },
+    {
+      "path": "docs/PLAN-v33.md",
+      "bytes": 4826,
+      "sha256": "cce300858e73aa2f456ed35cd57672013cd05092de23fc9d24e74399b81c0a49",
+      "sourceCommit": "be05769a99a807f9396c03084760f8283ce4195e",
+      "baselineBytes": 2070,
+      "baselineSha256": "62d30fdf0765a7909347c503537838890d81f88ae39dde921d5bdb7671eaf3a4",
+      "historicalBodyBytes": 2038,
+      "historicalBodySha256": "cfbea62840f130b4a44278f1ee2fc01c953e9e045fabed9f7ab003bc2d005a95",
+      "allPreviousBodyBytesRetainedUnchanged": true
+    },
+    {
+      "path": "docs/v33-release/README.md",
+      "bytes": 6716,
+      "sha256": "ed88f8746863f2e45cf14ddb8540ddc77e04db3fe4bef3db1f0a22d9dab36499",
+      "sourceCommit": "be05769a99a807f9396c03084760f8283ce4195e",
+      "baselineBytes": 2619,
+      "baselineSha256": "4ca5b02acab53c4441aa3d4d88a082331cedd7bc07859696e2a9338fe4736587",
+      "historicalBodyBytes": 2580,
+      "historicalBodySha256": "c27d336ece555472f1339fc35170a5efc96fdf2ec7f489355f914d9a18e9a4cd",
+      "allPreviousBodyBytesRetainedUnchanged": true
+    }
+  ],
+  "frozenEvidenceManifestSha256": "5920973f36dc307d3b345f5d038c45d67f8d70963ad6394be6ec4b96c8ab022b",
+  "noGitStageCommitRemoteWriteOrDeployment": true,
+  "verifiedAt": "2026-10-30T02:32:00.653991+00:00",
+  "allRelativeLinksResolveWithEvidencePackage": true,
+  "relativeLinkCount": 50,
+  "newEvidencePackageLinks": 20,
+  "whitespaceChecksPassed": true,
+  "all60FrozenEvidenceFilesUnchanged": true,
+  "totalBytes": 31428
+}

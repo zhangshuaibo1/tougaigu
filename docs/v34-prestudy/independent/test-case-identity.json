@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "finalFullTAP": {
+    "file": "full-final-tests.tap.gz",
+    "rawSha256": "a4bdd5dadb5c993279ce9ca75df7c11fcaacc8516037b4a5f9df628de4f57d6b",
+    "tests": 702,
+    "pass": 702,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0,
+    "durationMs": 19284.071176,
+    "executedBy": "v34 developer; original bytes and case set independently verified"
+  },
+  "priorCandidateTAP": {
+    "source": "/tmp/v33-candidate-1d630-evidence/tests.txt.gz",
+    "rawSha256": "96f053db4611182c2e4e5b21890c59d1b9904123a2ac71c6f3f72fe1b075678e",
+    "cases": 691,
+    "allNamesAndMultiplicitiesRetained": true
+  },
+  "newCases": [
+    "narrow ordinary play keeps the real cap, outfit and supporting hands inside the same whole-scene camera",
+    "fixed-step follow composition has one budget, exact legacy fallthrough and no invented render time",
+    "the frame reuses its exact character and soul; repeated, nested and failed rendering cannot spend an old follow budget",
+    "resize resolves the first frame with one projection while paused time and all physical state remain frozen",
+    "near/far transition keeps normal soul travel and has a geometric hysteresis band",
+    "opening, return, immediate reversal and both facings preserve every gameplay field",
+    "near return around275 reenters naturally after far flight instead of stranding a visible traveler at the edge",
+    "body-center reentry is symmetric, includes the old18 boundary, and rejects a genuinely offscreen body",
+    "desktop, all festival modes and activity framing retain original camera behavior without a borrowed budget",
+    "reduced motion uses the existing immediate target and pause cannot add a camera animation",
+    "invalid or impossible world-edge context fails closed without moving the traveler or widening the world"
+  ],
+  "oldFilesExact": 77,
+  "independentNewCases": {
+    "file": "cap-framing-targeted-test-cases-fixed.tap",
+    "tests": 11,
+    "pass": 11,
+    "fail": 0,
+    "durationMs": 5919.363602
+  },
+  "fileContainerNpmRun": {
+    "file": "final-npm-test.txt.gz",
+    "containers": 78,
+    "pass": 78,
+    "fail": 0,
+    "durationMs": 9269.547886,
+    "note": "File-container count is distinct from 702 individual cases."
+  }
+}

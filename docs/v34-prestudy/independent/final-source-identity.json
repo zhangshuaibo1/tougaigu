@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "rasterModuleSha256": "03be453b6ffd0c772f2ff8961599b548380f395252aef121d5c083ad3b8d08c3",
+  "guardOnlyModuleSha256": "175b3e45cf2f89fca35b2a1c7aae1a26dd342197055c7a80f1c52076e0cfbe39",
+  "finalModuleSha256": "8cf94b0687b84479a9a9fdc720792d968c9655516950d82e4a561fce14dff485",
+  "identicalSections": {
+    "hats": {
+      "sha256": "81a39aa0f9f82eec0a56d7f7b9a7c335127b25e39f9850968b24656358bff602",
+      "bytes": 691,
+      "exactUnchanged": true
+    },
+    "bounds": {
+      "sha256": "c05a9fd606fed94cacd40a433db4bd34a183793b40a75e249c5d8800c1aefd58",
+      "bytes": 1327,
+      "exactUnchanged": true
+    },
+    "follow": {
+      "sha256": "88463c2f6873e49e59df28c3be5c89f9cbd4c8207cb879bb02de79124924503d",
+      "bytes": 951,
+      "exactUnchanged": true
+    }
+  },
+  "unchangedPainterAndEngineFiles": [
+    "dist/dream-engine-base.js",
+    "dist/dream-engine.js",
+    "dist/dream-cap-art.js",
+    "dist/dream-festival-art.js",
+    "dist/dream-station-art.js",
+    "dist/dream-traveler-art.js",
+    "dist/dream-traveler-face.js",
+    "dist/dream-traveler-performance.js",
+    "dist/dream-soul-art.js",
+    "dist/dream-first-ticket-art.js",
+    "dist/dream-greenhouse-art.js"
+  ],
+  "currentSourceHashes": {
+    "dist/dream-cap-framing.js": "8cf94b0687b84479a9a9fdc720792d968c9655516950d82e4a561fce14dff485",
+    "dist/dream-engine-base.js": "179caecf7467c70319b988b1146b988b04f8d1d980603ff1181a59ba575d1aef",
+    "dist/dream-engine.js": "7b602b83f551c41fdbe97443e1fed08d6af773e9767f0ed830a434168951e889",
+    "dist/dream-cap-art.js": "dad5b4a0e2c0ffb13c008c473068465d25f701509114b31ab100629e459063ed",
+    "dist/dream-festival-art.js": "9ede1ae7d2c0499bc2a22aa61fb1f44a3c97b4efe327023406f15d2c695881e5",
+    "dist/dream-station-art.js": "73a257203b10d12dd52f7b66f60fe3d65e08200aa64b1b4e5c3f223f654d31ee",
+    "dist/dream-traveler-art.js": "e7c1315bdf28b22705887d8fc478472e1d4952df0c1f9e598abf5f2f6ca0e8ac",
+    "dist/dream-traveler-face.js": "ea914374c1d7793ebf710617d2749a71e01805ce7d1c33f20294ecd65acfd71b",
+    "dist/dream-traveler-performance.js": "ff4f258632c6136fed2a4b95fa8aa828c25817d3db6318663b924ee93ecf2c5c",
+    "dist/dream-soul-art.js": "4af4abd87fd3157f3e9a06bd8f2ed750819c645a01a4de24d159a028e96a46b8",
+    "dist/dream-first-ticket-art.js": "44c9b420d544f7db1ed9c79cb2a0291563db8e83442f6ce4df5e1aaf4f56dd04",
+    "dist/dream-greenhouse-art.js": "38a4f9044a7f403a5d121ef6189aa83108d72f0b4a2c8b0e0aeabc03dbe3db83"
+  },
+  "permittedDifferences": [
+    "comment clarification: no pixels scanned and no pose recomputed",
+    "typeof getOutfitId method guard",
+    "body center re-entry [18, width-18] to [0, width] plus explanation; no bounds/follow math changes"
+  ],
+  "patch": "--- raster-tested-03be\n+++ final-8cf94\n@@ -1,7 +1,8 @@\n // One whole-scene camera for a nearby traveler and the cap they are holding.\n // The engine supplies the exact character / soul already used for this frame.\n // These conservative authored envelopes contain the painted strokes; soft light,\n-// particles and the tether do not force a wider view. No pixels or poses are read.\n+// particles and the tether do not force a wider view. No pixels are scanned and\n+// no pose is recomputed here.\n const clamp=(value,low,high)=>Math.max(low,Math.min(high,value));\n const finite=Number.isFinite;\n const matrix=m=>Array.isArray(m)&&m.length===6&&m.every(finite);\n@@ -31,7 +32,7 @@\n     &&game.chapterIndex>=0&&game.chapterIndex<6&&game.cssWidth>0&&game.cssWidth<=480\n     &&finite(game.scale)&&game.scale>0&&finite(game.viewWidth)&&game.viewWidth>0\n     &&finite(game.camera)&&finite(game.level?.width)&&game.level.width>0\n-    &&point(game.body)&&!game.activityFramed&&!!game.options;\n+    &&point(game.body)&&!game.activityFramed&&!!game.options&&typeof game.getOutfitId==='function';\n }\n \n export function getCapFramingBounds(character,shown,outfit){\n@@ -66,7 +67,10 @@\n   const marginCss=8,margin=marginCss/game.scale;\n   const low=Math.max(0,bounds.right+margin-game.viewWidth);\n   const high=Math.min(Math.max(0,game.level.width-game.viewWidth),bounds.left-margin);\n-  const bodyVisible=(camera,width)=>game.body.x-camera>=18&&game.body.x-camera<=width-18;\n+  // A center already inside the picture leaves at least half the traveler\n+  // readable. Requiring a fully inset body here stranded near returns: the old\n+  // follow target could settle with the face visible but short of that inset.\n+  const bodyVisible=(camera,width)=>game.body.x-camera>=0&&game.body.x-camera<=width;\n   const readable=bodyVisible(game.camera,game.viewWidth)||(resized&&previousViewport\n     &&bodyVisible(previousViewport.camera,previousViewport.viewWidth));\n   // World-edge clamping may leave only one valid camera even though the actors\n"
+}

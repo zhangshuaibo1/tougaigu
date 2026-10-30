@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy/docs/v34-prestudy/verify-helper-adapter.py", line 81, in <module>
+    asyncio.run(main(parser.parse_args()))
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy/docs/v34-prestudy/verify-helper-adapter.py", line 71, in main
+    summary=await helper.exercise_cap_framing(browser,settings,out/'real-browser',api)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy/scripts/browser_cap_framing_v34.py", line 146, in exercise_cap_framing
+    await steer(page,258,422,touch,api);await page.wait_for_timeout(1000);record['backNear']=await picture(page,folder,'back-near',expected_version);near_clear(record['backNear']['snapshot']);record['travel']=await watch_stop(page,folder,'travel',expected_version)
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy/scripts/browser_cap_framing_v34.py", line 70, in near_clear
+    assert s['projected'][part]['left']>=7.5,(part,s['projected'],s['camera'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('hat', {'body': {'left': 30.76069144537944, 'right': 109.78412894537944}, 'cap': {'left': 31.422851505404957, 'right': 76.47813214628529}, 'hat': {'left': 6.672841809476801, 'right': 68.4701827305124}, 'hands': {'left': 50.98090689468046, 'right': 110.36467908054826}, 'soul': {'left': 189.42929612229324, 'right': 260.08554612229324}}, 21.91286970581035)

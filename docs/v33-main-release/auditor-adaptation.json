@@ -1,0 +1,476 @@
+{
+  "runId": 40988381550,
+  "commit": "be05769a99a807f9396c03084760f8283ce4195e",
+  "artifactProgramCodeExecuted": false,
+  "reason": "Apply accepted v33 candidate data auditors independently to main candidate and true public HTTPS; preserve all original face, input, movement, time, geometry, network and companion validators.",
+  "scopeOnlyChanges": [
+    "path/scope/metadata",
+    "source count 996 to main 1138",
+    "require both complete reports",
+    "exact expected public origin and query SHA for live",
+    "accurate coverage limits and local file-hash provenance"
+  ],
+  "adaptations": [
+    {
+      "kind": "faces",
+      "original": "/tmp/audit-v33-candidate-faces.py",
+      "originalSha256": "e2dfe9b955b1dd7130d8b515910699e35787c6d9fed3faacf8132d34e05dbe12",
+      "adapted": "/tmp/audit-v33-main-faces.py",
+      "adaptedSha256": "4e4b0989da5be98b7156b59573a42d6e61eb61a2a149b30d552804789b91d8fb",
+      "changes": [
+        {
+          "old": "/workspace/scratch/2b18af2db412/tougaigu-v33-formal",
+          "new": "/workspace/scratch/2b18af2db412/tougaigu-v33-main-release",
+          "occurrences": 1
+        },
+        {
+          "old": "/tmp/tougaigu-v33-candidate-40984114609",
+          "new": "/tmp/tougaigu-v33-main-40988381550",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT=pathlib.Path('/tmp/tougaigu-v33-main-40988381550')",
+          "new": "OUT=pathlib.Path('/tmp/tougaigu-v33-main-40988381550')\nimport sys\nSCOPE=sys.argv[1]\nassert SCOPE in ['candidate','live']\nSCOPE_DESCRIPTION='GitHub main '+SCOPE+' complete browser route ('+('local candidate server' if SCOPE=='candidate' else 'real https://tougaigu.com/')+')'\n",
+          "occurrences": 1
+        },
+        {
+          "old": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+          "new": "be05769a99a807f9396c03084760f8283ce4195e",
+          "occurrences": 1
+        },
+        {
+          "old": "len(audit['sourceFiles'])==996",
+          "new": "len(audit['sourceFiles'])==1138",
+          "occurrences": 1
+        },
+        {
+          "old": "'runId':40984114609",
+          "new": "'runId':40988381550",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'candidate/report.json'",
+          "new": "OUT/SCOPE/'report.json'",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'candidate'",
+          "new": "OUT/SCOPE",
+          "occurrences": 4
+        },
+        {
+          "old": "'candidate/'",
+          "new": "SCOPE+'/'",
+          "occurrences": 2
+        },
+        {
+          "old": "assert not (OUT/'live/report.json').exists()",
+          "new": "assert (OUT/'candidate/report.json').is_file() and (OUT/'live/report.json').is_file()",
+          "occurrences": 1
+        },
+        {
+          "old": "'scope':'Formal33 companion candidate; public release is not part of this run'",
+          "new": "'scope':SCOPE_DESCRIPTION",
+          "occurrences": 1
+        },
+        {
+          "old": "'sourceFilesExact':996",
+          "new": "'sourceFilesExact':1138",
+          "occurrences": 1
+        },
+        {
+          "old": "at v33 1d63072 commit; original face validators identical to 7ba",
+          "new": "at v33 main be05769 commit, exact to accepted 1d63072; original face validators identical to 7ba",
+          "occurrences": 1
+        },
+        {
+          "old": "No physical phone, Safari, low-end GPU, frame-rate benchmark or public/live verification in this run.",
+          "new": "No physical phone, Safari, low-end GPU or frame-rate benchmark; report scope identifies local candidate versus actual public HTTPS.",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'face-evidence-summary.json'",
+          "new": "OUT/(SCOPE+'-face-evidence-summary.json')",
+          "occurrences": 2
+        }
+      ]
+    },
+    {
+      "kind": "gates",
+      "original": "/tmp/audit-v33-candidate-gates.py",
+      "originalSha256": "f7055368d797fa9f4677c4e009ec075a94857c90fbefff3369969c200862fb03",
+      "adapted": "/tmp/audit-v33-main-gates.py",
+      "adaptedSha256": "e24ce52aa38c9a1aa1bdefa14af4af91fc2d2e5cc9786ed645f83926290864a1",
+      "changes": [
+        {
+          "old": "/workspace/scratch/2b18af2db412/tougaigu-v33-formal",
+          "new": "/workspace/scratch/2b18af2db412/tougaigu-v33-main-release",
+          "occurrences": 1
+        },
+        {
+          "old": "/tmp/tougaigu-v33-candidate-40984114609",
+          "new": "/tmp/tougaigu-v33-main-40988381550",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT=pathlib.Path('/tmp/tougaigu-v33-main-40988381550')",
+          "new": "OUT=pathlib.Path('/tmp/tougaigu-v33-main-40988381550')\nimport sys\nSCOPE=sys.argv[1]\nassert SCOPE in ['candidate','live']\nSCOPE_DESCRIPTION='GitHub main '+SCOPE+' complete browser route ('+('local candidate server' if SCOPE=='candidate' else 'real https://tougaigu.com/')+')'\n",
+          "occurrences": 1
+        },
+        {
+          "old": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+          "new": "be05769a99a807f9396c03084760f8283ce4195e",
+          "occurrences": 1
+        },
+        {
+          "old": "len(audit['sourceFiles'])==996",
+          "new": "len(audit['sourceFiles'])==1138",
+          "occurrences": 1
+        },
+        {
+          "old": "'runId':40984114609",
+          "new": "'runId':40988381550",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'candidate/report.json'",
+          "new": "OUT/SCOPE/'report.json'",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'candidate'",
+          "new": "OUT/SCOPE",
+          "occurrences": 4
+        },
+        {
+          "old": "'candidate/'",
+          "new": "SCOPE+'/'",
+          "occurrences": 1
+        },
+        {
+          "old": "assert not (OUT/'live/report.json').exists()",
+          "new": "assert (OUT/'candidate/report.json').is_file() and (OUT/'live/report.json').is_file()",
+          "occurrences": 1
+        },
+        {
+          "old": "'scope':'Formal33 companion candidate real Chromium browser at localhost; no public/live release in this run'",
+          "new": "'scope':SCOPE_DESCRIPTION",
+          "occurrences": 1
+        },
+        {
+          "old": "This is the formal33 companion candidate CI at localhost with 33.0.0 resource versions. Main/Pages publication, HTTPS run and physical-phone/Safari/low-end-GPU evidence remain outside this result.",
+          "new": "This is the official main v33 run with 33.0.0 resource versions; scope identifies local candidate or actual public HTTPS. Physical-phone, Safari and low-end-GPU evidence remain outside this result.",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'inherited-gates-summary.json'",
+          "new": "OUT/(SCOPE+'-inherited-gates-summary.json')",
+          "occurrences": 2
+        }
+      ]
+    },
+    {
+      "kind": "dialogue",
+      "original": "/tmp/audit-v33-candidate-dialogue.py",
+      "originalSha256": "4e3ef661bcd3420124d47e42ff5d937814ad1fd350e5e32703b87574c0fce4e9",
+      "adapted": "/tmp/audit-v33-main-dialogue.py",
+      "adaptedSha256": "9fdea8251e76b5f8f257134f85b9ac7ffb09a86ef81ee26f1e9e815d9296ed59",
+      "changes": [
+        {
+          "old": "/workspace/scratch/2b18af2db412/tougaigu-v33-formal",
+          "new": "/workspace/scratch/2b18af2db412/tougaigu-v33-main-release",
+          "occurrences": 1
+        },
+        {
+          "old": "/tmp/tougaigu-v33-candidate-40984114609",
+          "new": "/tmp/tougaigu-v33-main-40988381550",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT=Path('/tmp/tougaigu-v33-main-40988381550')",
+          "new": "OUT=Path('/tmp/tougaigu-v33-main-40988381550')\nimport sys\nSCOPE=sys.argv[1]\nassert SCOPE in ['candidate','live']\nSCOPE_DESCRIPTION='GitHub main '+SCOPE+' complete browser route ('+('local candidate server' if SCOPE=='candidate' else 'real https://tougaigu.com/')+')'\n",
+          "occurrences": 1
+        },
+        {
+          "old": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+          "new": "be05769a99a807f9396c03084760f8283ce4195e",
+          "occurrences": 1
+        },
+        {
+          "old": "len(audit['sourceFiles'])==996",
+          "new": "len(audit['sourceFiles'])==1138",
+          "occurrences": 1
+        },
+        {
+          "old": "'runId':40984114609",
+          "new": "'runId':40988381550",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'candidate'",
+          "new": "OUT/SCOPE",
+          "occurrences": 1
+        },
+        {
+          "old": "'candidate/'",
+          "new": "SCOPE+'/'",
+          "occurrences": 2
+        },
+        {
+          "old": "assert report['url']=='http://127.0.0.1:8080/'",
+          "new": "EXPECTED_URL='http://127.0.0.1:8080/' if SCOPE=='candidate' else 'https://tougaigu.com/?qa='+COMMIT\nassert report['url']==EXPECTED_URL\nAPP_URL='http://127.0.0.1:8080/dream-app.js?v=33.0.0' if SCOPE=='candidate' else 'https://tougaigu.com/dream-app.js?v=33.0.0'",
+          "occurrences": 1
+        },
+        {
+          "old": "['http://127.0.0.1:8080/dream-app.js?v=33.0.0']",
+          "new": "[APP_URL]",
+          "occurrences": 1
+        },
+        {
+          "old": "'scope':'New official v33 companion candidate full browser route and its own independent six-configuration matrix; not the earlier local 5445 report or live HTTPS.'",
+          "new": "'scope':SCOPE_DESCRIPTION+' and its own independent six-configuration matrix; not the earlier local 5445 report.'",
+          "occurrences": 1
+        },
+        {
+          "old": "'eventFile':'candidate/1280-greenhouse-return-dialogue-event.json'",
+          "new": "'eventFile':SCOPE+'/1280-greenhouse-return-dialogue-event.json'",
+          "occurrences": 1
+        },
+        {
+          "old": "No public HTTPS v33 verification, physical handset, Safari, maximum-font/longest-dialogue/high-platform exhaustiveness or performance benchmark in this candidate.",
+          "new": "No physical handset, Safari, maximum-font/longest-dialogue/high-platform exhaustiveness or performance benchmark; report scope identifies candidate versus actual public HTTPS.",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'dialogue-evidence-summary.json'",
+          "new": "OUT/(SCOPE+'-dialogue-evidence-summary.json')",
+          "occurrences": 2
+        }
+      ]
+    },
+    {
+      "kind": "companion",
+      "original": "/tmp/audit-v33-candidate-companion.py",
+      "originalSha256": "8c4aa28c2d71585eb6863618034cbe36cb680ba11a7b11ec2e2b2e8f8073cd0d",
+      "adapted": "/tmp/audit-v33-main-companion.py",
+      "adaptedSha256": "3ae280379eadc3f101509a51309f791d8270cde8899468c93e6f17d4f1e13cf7",
+      "changes": [
+        {
+          "old": "/workspace/scratch/2b18af2db412/tougaigu-v33-formal",
+          "new": "/workspace/scratch/2b18af2db412/tougaigu-v33-main-release",
+          "occurrences": 1
+        },
+        {
+          "old": "/tmp/tougaigu-v33-candidate-40984114609",
+          "new": "/tmp/tougaigu-v33-main-40988381550",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT=Path('/tmp/tougaigu-v33-main-40988381550')",
+          "new": "OUT=Path('/tmp/tougaigu-v33-main-40988381550')\nimport sys\nSCOPE=sys.argv[1]\nassert SCOPE in ['candidate','live']\nSCOPE_DESCRIPTION='GitHub main '+SCOPE+' complete browser route ('+('local candidate server' if SCOPE=='candidate' else 'real https://tougaigu.com/')+')'\n",
+          "occurrences": 1
+        },
+        {
+          "old": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+          "new": "be05769a99a807f9396c03084760f8283ce4195e",
+          "occurrences": 1
+        },
+        {
+          "old": "len(audit['sourceFiles'])==996",
+          "new": "len(audit['sourceFiles'])==1138",
+          "occurrences": 1
+        },
+        {
+          "old": "'runId':40984114609",
+          "new": "'runId':40988381550",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'candidate/report.json'",
+          "new": "OUT/SCOPE/'report.json'",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'candidate/companion/report.json'",
+          "new": "OUT/SCOPE/'companion/report.json'",
+          "occurrences": 1
+        },
+        {
+          "old": "zipmap['candidate/companion/report.json']",
+          "new": "zipmap[SCOPE+'/companion/report.json']",
+          "occurrences": 1
+        },
+        {
+          "old": "assert report['baselineURL'] is None and report['currentURL']==main['url']=='http://127.0.0.1:8080/'",
+          "new": "EXPECTED_URL='http://127.0.0.1:8080/' if SCOPE=='candidate' else 'https://tougaigu.com/?qa='+COMMIT\nassert report['baselineURL'] is None and report['currentURL']==main['url']==EXPECTED_URL",
+          "occurrences": 1
+        },
+        {
+          "old": "relative=f\"candidate/companion/{width}/{item['file']}\"",
+          "new": "relative=f\"{SCOPE}/companion/{width}/{item['file']}\"",
+          "occurrences": 1
+        },
+        {
+          "old": "n.startswith('candidate/companion/')",
+          "new": "n.startswith(SCOPE+'/companion/')",
+          "occurrences": 2
+        },
+        {
+          "old": "'version':'33.0.0',\n 'reportBytes'",
+          "new": "'version':'33.0.0','scope':SCOPE_DESCRIPTION,\n 'reportBytes'",
+          "occurrences": 1
+        },
+        {
+          "old": "No physical handset, Safari, device performance or exhaustive outfit/activity coverage; no public HTTPS in this candidate.",
+          "new": "No physical handset, Safari, device performance or exhaustive outfit/activity coverage; report scope identifies candidate versus actual public HTTPS.",
+          "occurrences": 1
+        },
+        {
+          "old": "'sourceFilesExactToPrimaryGit':report['sourceFiles']",
+          "new": "'sourceFilesExactToPrimaryGit':report['sourceFiles'],'sourceFilesScope':report['sourceFilesScope']",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'companion-evidence-summary.json'",
+          "new": "OUT/(SCOPE+'-companion-evidence-summary.json')",
+          "occurrences": 1
+        }
+      ]
+    }
+  ],
+  "reviewAdaptation": {
+    "original": "/tmp/review-v32-main-artifact.py",
+    "originalSha256": "e585f03981fa1869bfa90202a313b68f4532f010955c02e0755577a57fb171a9",
+    "adapted": "/tmp/review-v33-main-artifact.py",
+    "adaptedSha256": "306ac2ec0e84a4c87496c85706210d21755f09fea0efdd49271a5160e955f701",
+    "changes": [
+      {
+        "old": "/tmp/tougaigu-v32-main-40984854669",
+        "new": "/tmp/tougaigu-v33-main-40988381550",
+        "occurrences": 2
+      },
+      {
+        "old": "/workspace/scratch/2b18af2db412/tougaigu-v32-main-release",
+        "new": "/workspace/scratch/2b18af2db412/tougaigu-v33-main-release",
+        "occurrences": 1
+      },
+      {
+        "old": "COMMIT = '93655a7013adb3ecd41f7e1fac6935f7b5464539'",
+        "new": "COMMIT = 'be05769a99a807f9396c03084760f8283ce4195e'",
+        "occurrences": 1
+      },
+      {
+        "old": "CANDIDATE = 'ce412d1298d0060dec08893f9b44cead9693edcf'",
+        "new": "CANDIDATE = '1d63072bb9a27690ed14b15d3103c6e8a87fa297'",
+        "occurrences": 1
+      },
+      {
+        "old": "91ccef79541f2dd061059462c10d60cbecbed144",
+        "new": "d997c58b2a846b2673b8baec500db9697a846d7a",
+        "occurrences": 1
+      },
+      {
+        "old": "3d5e268bbb8bef91b289097cf34f5012bbc08cd3",
+        "new": "5516892f4242d34b052630b5274641d3f8f27a91",
+        "occurrences": 1
+      },
+      {
+        "old": "321e762d63088910a73b60a9b3cc7fb5344e8f9d",
+        "new": "ef9072b947447304f4561855a8db58fb7fc42211",
+        "occurrences": 1
+      },
+      {
+        "old": "40984854669",
+        "new": "40988381550",
+        "occurrences": 1
+      },
+      {
+        "old": "['75010ca44245e05cf44187768722081d244f39f4','ce412d1298d0060dec08893f9b44cead9693edcf']",
+        "new": "['93655a7013adb3ecd41f7e1fac6935f7b5464539','1d63072bb9a27690ed14b15d3103c6e8a87fa297']",
+        "occurrences": 1
+      },
+      {
+        "old": "== 950",
+        "new": "== 1138",
+        "occurrences": 2
+      },
+      {
+        "old": "'sourceBlobsExact':950",
+        "new": "'sourceBlobsExact':1138",
+        "occurrences": 1
+      },
+      {
+        "old": "== 143",
+        "new": "== 144",
+        "occurrences": 1
+      },
+      {
+        "old": "'runtimeBlobsExact':143",
+        "new": "'runtimeBlobsExact':144",
+        "occurrences": 1
+      },
+      {
+        "old": "all143RuntimePathsAndModesMatchPages",
+        "new": "all144RuntimePathsAndModesMatchPages",
+        "occurrences": 1
+      },
+      {
+        "old": "protectedScopesIdenticalToCandidateCE412",
+        "new": "protectedScopesIdenticalToCandidate1d63072",
+        "occurrences": 1
+      },
+      {
+        "old": "{'tests':683,'pass':683,'fail':0,'skipped':0,'cancelled':0,'todo':0}",
+        "new": "{'tests':691,'pass':691,'fail':0,'skipped':0,'cancelled':0,'todo':0}",
+        "occurrences": 1
+      },
+      {
+        "old": "accepted_tap=(pathlib.Path('/tmp/tougaigu-v32-second-40982421518')/'tests.txt').read_text()",
+        "new": "accepted_tap=(pathlib.Path('/tmp/tougaigu-v33-candidate-40984114609')/'tests.txt').read_text()",
+        "occurrences": 1
+      },
+      {
+        "old": "sum(new_names.values())==683",
+        "new": "sum(new_names.values())==691",
+        "occurrences": 1
+      },
+      {
+        "old": "assert len(old_test_entries)==74",
+        "new": "assert len(old_test_entries)==74\n\nv32_tap=(pathlib.Path('/tmp/tougaigu-v32-second-40982421518')/'tests.txt').read_text()\nv32_names=Counter(re.findall(pattern,v32_tap,re.M))\nassert sum(v32_names.values())==683 and not (v32_names-new_names)\nv32_test_entries=[]\nfor row in git('ls-tree','-rz','ce412d1298d0060dec08893f9b44cead9693edcf','--','tests').split(b'\\0'):\n    if not row:continue\n    meta,path=row.split(b'\\t',1);mode,kind,h=meta.decode().split();path=path.decode()\n    assert kind=='blob' and path in tree and tree[path]['sha']==h and tree[path]['mode']==mode\n    v32_test_entries.append(path)\nassert len(v32_test_entries)==77 and sum(p.endswith('.test.mjs') for p in v32_test_entries)==76\nassert sum(p.startswith(('dist/','scripts/','tests/','.github/')) or p=='package.json' for p in tree)==257\nassert sum(p.startswith('tests/') and p.endswith('.test.mjs') for p in tree)==77\nassert git('show',COMMIT+':dist/CNAME')==b'tougaigu.com\\n'\n",
+        "occurrences": 1
+      },
+      {
+        "old": "c['version']=='32.0.0'",
+        "new": "c['version']=='33.0.0'",
+        "occurrences": 1
+      },
+      {
+        "old": "assert dialogue['naturalReturn']['bodyObjectIdentityRecorded'] is False",
+        "new": "assert dialogue['naturalReturn']['bodyObjectIdentityRecorded'] is False\n\n    companion=json.loads((OUT/(scope+'-companion-evidence-summary.json')).read_text())\n    assert companion['status']=='passed' and companion['version']=='33.0.0'\n    assert len(companion['cases'])==3 and companion['originalPNGCount']==21\n    assert [x['viewport']['width'] for x in companion['cases']]==[1280,390,320]\n    assert all(x['status']=='passed' and x['zeroDeathsAndPageHTTPNetworkErrors'] and x['onlyFirstTicketCollected'] and x['noChapterSettled'] for x in companion['cases'])\n",
+        "occurrences": 1
+      },
+      {
+        "old": "'inheritedGateAudit':scope+'-inherited-gates-summary.json'",
+        "new": "'inheritedGateAudit':scope+'-inherited-gates-summary.json','companionAudit':scope+'-companion-evidence-summary.json','companionReportSha256':companion['reportSha256'],'companionElapsedSeconds':companion['elapsedSeconds'],'companionCases':companion['cases'],'companionSnapshotOccurrences':companion['snapshotOccurrencesRevalidated'],'companionOriginalPNGCount':21",
+        "occurrences": 1
+      },
+      {
+        "old": "'all683SubtestNamesExactToAcceptedCandidate':True",
+        "new": "'old683SubtestNamesPreserved':True,'all691SubtestNamesExactToAcceptedCandidate':True,'all76V32TestFilesAndFixtureExact':True,'protectedFilesExactToAcceptedCandidate':257",
+        "occurrences": 1
+      },
+      {
+        "old": "'Public/candidate are separate routes; use their actual dialogue/announcement visibility, never borrow the accepted candidate timing or coexistence values.'",
+        "new": "'Public/candidate are separate routes; use their actual dialogue/announcement visibility, never borrow the accepted candidate timing or coexistence values.','Companion JSON records positions and run IDs, not object identity; shared presentedSoul reference identity belongs to the eight exact original unit tests.','Companion pause raw paired Canvas strings were not retained: successful source assertions and identical recorded states are preserved.','Companion sourceFiles are local execution hashes. Public source identity additionally rests on exact Pages/runtime and fetched public HTML, not merely the page version.'",
+        "occurrences": 1
+      }
+    ],
+    "notes": [
+      "Require exact main/accepted33 protected source and current Pages/runtime identity.",
+      "Preserve original675 and683 TAP names plus exact691 names from accepted33.",
+      "All old74/v32 76 test files and fixture exact; current77 test files.",
+      "Face PNGs retain all11 required names and validate an actual optional first-lamp freeJoy latch instead of borrowing prior-run count.",
+      "Add both exact three-case companion reports and original21 PNG validations."
+    ]
+  }
+}

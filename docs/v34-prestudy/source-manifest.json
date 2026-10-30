@@ -1,0 +1,1582 @@
+{
+  "baseCommit": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+  "productVersion": "33.0.0",
+  "protectedFiles": 260,
+  "runtimeFiles": 145,
+  "oldTestFilesByteExact": 77,
+  "oldTestFixturesByteExact": 1,
+  "currentTestFiles": 78,
+  "changes": [
+    "dist/dream-cap-framing.js",
+    "scripts/browser_cap_framing_v34.py",
+    "tests/cap-framing-v34.test.mjs",
+    "dist/dream-engine-base.js",
+    "dist/dream.html",
+    "dist/index.html",
+    "dist/survivor.html",
+    "scripts/browser-smoke.py"
+  ],
+  "finalBrowserRecorded77SourceHashesExact": true,
+  "files": {
+    "dist/dream-cap-framing.js": {
+      "bytes": 5870,
+      "sha256": "8cf94b0687b84479a9a9fdc720792d968c9655516950d82e4a561fce14dff485",
+      "gitBlob": "95012933767b3e4e1c9d185b857dcc6f17873302",
+      "mode": "100644"
+    },
+    "scripts/browser_cap_framing_v34.py": {
+      "bytes": 19982,
+      "sha256": "6652734104c23a9dc2ae59f946e3b0068a6a016542d4379875de1f9a9233d75c",
+      "gitBlob": "5b4de2712cc4436434c6216f1d287d9e449866c9",
+      "mode": "100644"
+    },
+    "tests/cap-framing-v34.test.mjs": {
+      "bytes": 12879,
+      "sha256": "9ae7ead5c99d74580051207286f56368399e2263f0c528a2dc626d29456710aa",
+      "gitBlob": "ae835f0d5ff9fe46580bc3810983aea76932a9d5",
+      "mode": "100644"
+    },
+    ".github/workflows/iteration-check.yml": {
+      "bytes": 3032,
+      "sha256": "41c7662b6d085fb387ebd017fa97c13920970c6f99df9f2ff23343d5ae18cd2d",
+      "gitBlob": "7608b7d2c34776dc1de0e7f30bbbd7f4d11f4ab0",
+      "mode": "100644"
+    },
+    "dist/CNAME": {
+      "bytes": 13,
+      "sha256": "447a79106804d0bd1c330e2c219b75b7503796a3fcc4d2bbb0af3267d56fd6f8",
+      "gitBlob": "c48e618893bc4c9f483098de75ba03765e7fbf64",
+      "mode": "100644"
+    },
+    "dist/app.js": {
+      "bytes": 26222,
+      "sha256": "b92bfcf99fc9f5121caeaa1697f5f640193eedc0f294b2e1a53db023bdcfa300",
+      "gitBlob": "5c1932e7a232ead2d10712976bcd4e076ce58326",
+      "mode": "100644"
+    },
+    "dist/assets/coast-painted-v27.webp": {
+      "bytes": 71750,
+      "sha256": "55e8b21548307d311cf98eaff3823fe3684cf55053a4c9f9035fdee8ba201510",
+      "gitBlob": "702c08721716d9b26307dff2967f526144521061",
+      "mode": "100644"
+    },
+    "dist/assets/company-wordmark.webp": {
+      "bytes": 7152,
+      "sha256": "932bb8787b245c8d3e20bef2fcf5e0e7b8e4af0dd18c6b3771e42c5526a57a10",
+      "gitBlob": "ffb20a555d0b05a2d7d947fcdfff844334dc39bc",
+      "mode": "100644"
+    },
+    "dist/assets/dream-cover-still.svg": {
+      "bytes": 22934,
+      "sha256": "438e2d43ac707c6f71fbd20e664f869c8fe51ec5d86d94efbed774cd9cdf890f",
+      "gitBlob": "9bc419e083bd471bf9cdbb5e4fd1d2cf33aec0ee",
+      "mode": "100644"
+    },
+    "dist/assets/dream-cover.svg": {
+      "bytes": 24298,
+      "sha256": "c615db969ffa694e4151c3b3de0eb5b300dee672a3ae6d4d69cc45fb725bad0d",
+      "gitBlob": "91e4380bd80df62b80e7fa92f950e59e551c781b",
+      "mode": "100644"
+    },
+    "dist/assets/festival-hero-christmas.svg": {
+      "bytes": 3729,
+      "sha256": "53e1dfae2214c9b295e65541864e6eb8fabcaaeeecfe416cf26860ef43263c39",
+      "gitBlob": "ce037da2877326cae7f09c08fcfb9b45915b327a",
+      "mode": "100644"
+    },
+    "dist/assets/festival-hero-dragonboat.svg": {
+      "bytes": 3752,
+      "sha256": "0acfdd984f0d37558ba5e297a2bca3331fb74970281f25c014f976062b77c142",
+      "gitBlob": "1cacb8d6785baa392be36274d2f3be85c37ce3b2",
+      "mode": "100644"
+    },
+    "dist/assets/festival-hero-halloween.svg": {
+      "bytes": 4153,
+      "sha256": "00864c16e8adac8bf45c5b6f36e615769e7e7682e21e88a4d3c239f4cd9d2e53",
+      "gitBlob": "d1ffca74f1b211b063fbba4578ed5f6b297710b7",
+      "mode": "100644"
+    },
+    "dist/assets/festival-hero-lantern.svg": {
+      "bytes": 4011,
+      "sha256": "514627a5429c84c94d78657ca9cc94333afbfaa6e4642886e842333e4554fc9d",
+      "gitBlob": "678782ec48fb9bb493fb2b1bd36af9869c87d955",
+      "mode": "100644"
+    },
+    "dist/assets/festival-hero-midautumn.svg": {
+      "bytes": 3861,
+      "sha256": "75e56ac57c02e1c64a32286bf17f3721e175f4bb0064cc774d21169b036d903c",
+      "gitBlob": "e4ac9f6aaab0e4a193589000b5b7cc6bccc9c6db",
+      "mode": "100644"
+    },
+    "dist/assets/festival-hero-newyear.svg": {
+      "bytes": 4048,
+      "sha256": "c0af96c59ee50fa6aca5f385b241ea4589df33129fe5025a098aaaf0084c625d",
+      "gitBlob": "fddc1d6be8d92b561339a3479fcd770d7ee748fc",
+      "mode": "100644"
+    },
+    "dist/assets/festival-hero-qixi.svg": {
+      "bytes": 3834,
+      "sha256": "6923d62120dfec7ec769f7a2d2571cffa1bc13001ed50128d730516c89ff20c4",
+      "gitBlob": "6fe8613d2d8ca8341636f6f6e51d4d2e28ec3f04",
+      "mode": "100644"
+    },
+    "dist/assets/festival-hero-spring.svg": {
+      "bytes": 4165,
+      "sha256": "eeda58a5f492535a69895325b9a5b5cd99bb0096213172c902e49df9d204aac7",
+      "gitBlob": "01cf2f3fefee8a411b6f66d6ae574df2e5a37f25",
+      "mode": "100644"
+    },
+    "dist/assets/festival-hero-starlight.svg": {
+      "bytes": 3973,
+      "sha256": "90f2f9d5a15055f0a0d46ce81c23a1abbc61db7ba456fee81baf116ab23c7c59",
+      "gitBlob": "f081b1f90eddb2a49dff61e0d4bec666e0768c17",
+      "mode": "100644"
+    },
+    "dist/assets/festival-hero-thanksgiving.svg": {
+      "bytes": 3752,
+      "sha256": "4365b5d99320a304f952745db27cd4349bc532088a08bfcdc7173221847eb2fe",
+      "gitBlob": "361f114ec67a5b5c60edffece532bf653b4c3f3e",
+      "mode": "100644"
+    },
+    "dist/assets/festival-hero-valentine.svg": {
+      "bytes": 3893,
+      "sha256": "14fe9d731f1c385e05308b86c612adb813e9eff6c9c1ac698813b3e44a2992f6",
+      "gitBlob": "3804f190fd07d9c95ff343004efcf2f28facdefe",
+      "mode": "100644"
+    },
+    "dist/assets/festival-item-christmas.svg": {
+      "bytes": 2851,
+      "sha256": "5eedb876b2288cb1468fb0efdfd4910869e23b8001426106a15706968786fa13",
+      "gitBlob": "1774ed2ad9ce2893a70dba175030c0caae30b340",
+      "mode": "100644"
+    },
+    "dist/assets/festival-item-dragonboat.svg": {
+      "bytes": 2914,
+      "sha256": "5f32443e562015bb9e66084cd39e78d8520c0da91bfaa61382b9bdd5e76e4e05",
+      "gitBlob": "20f84fb4719999078abe33b550011c01ce15649a",
+      "mode": "100644"
+    },
+    "dist/assets/festival-item-halloween.svg": {
+      "bytes": 3042,
+      "sha256": "664c40d99102a833537261cc4b1eee13b51e2881e8042e46505612127700f849",
+      "gitBlob": "9414665b324f920a471ba4f6905c36504c724581",
+      "mode": "100644"
+    },
+    "dist/assets/festival-item-lantern.svg": {
+      "bytes": 3023,
+      "sha256": "955afe8182003dea214fe1b4f05d35447de8cc4668ce197bb6973d58f363a074",
+      "gitBlob": "bf12b0f9335dba667afe07cfbb5860cf0ae3860e",
+      "mode": "100644"
+    },
+    "dist/assets/festival-item-midautumn.svg": {
+      "bytes": 2823,
+      "sha256": "a44acae234fe519ecfef23d458d4bb17622a2ce7e1b41cc0cb08ac7560875157",
+      "gitBlob": "762eb8f1c9c338a747d2953d5204d1502464e84c",
+      "mode": "100644"
+    },
+    "dist/assets/festival-item-newyear.svg": {
+      "bytes": 3768,
+      "sha256": "afd0ac7092b888ea4465387199d7b9e5235b1181261eb382297d21f63ad8aaae",
+      "gitBlob": "bba948e7fac560ffcc6f50aa7b6e7531b3185e62",
+      "mode": "100644"
+    },
+    "dist/assets/festival-item-qixi.svg": {
+      "bytes": 3258,
+      "sha256": "5ebbb5f006233d358b50229db62502bfad15740780581b4417ce957a0022409f",
+      "gitBlob": "dbfa2570aa17f77ff7ff684eab77a302fad6e14c",
+      "mode": "100644"
+    },
+    "dist/assets/festival-item-spring.svg": {
+      "bytes": 3134,
+      "sha256": "d4fab369b15c45193888dd50e9acd586a6946a3c0b8e853680ff11a2d49439a3",
+      "gitBlob": "b78f8ad10dfd81685a7e97c655e11e5836cb4b15",
+      "mode": "100644"
+    },
+    "dist/assets/festival-item-thanksgiving.svg": {
+      "bytes": 2849,
+      "sha256": "a1db3c8bd1f2a38c55b33a87694e4893ff8e03644ffcc307e0492e3372216032",
+      "gitBlob": "440a550431ec04f30349c2e7675ddf25a0076ddb",
+      "mode": "100644"
+    },
+    "dist/assets/festival-item-valentine.svg": {
+      "bytes": 3023,
+      "sha256": "2c696df902dc0425f832e0d99aaf412227eb4b30307c397bad8c055539463cb8",
+      "gitBlob": "82bd1055aed36085719d9028cac6e0390768ba35",
+      "mode": "100644"
+    },
+    "dist/assets/festival-npc-christmas.svg": {
+      "bytes": 3221,
+      "sha256": "438ff90b8cfd12da819dce37e6e8c978f006ac49d6f13c48c27c9350d7d95852",
+      "gitBlob": "f51dc5b059a62440def6dfdbf44b5b471456b998",
+      "mode": "100644"
+    },
+    "dist/assets/festival-npc-dragonboat.svg": {
+      "bytes": 3169,
+      "sha256": "eaea71b7f1c55dfc9c83a55a6266f07e5fb6acbba3f59bd652cb211242944522",
+      "gitBlob": "d10811d1f520c0b89d48b660511e7ab7c6bdf2ca",
+      "mode": "100644"
+    },
+    "dist/assets/festival-npc-halloween.svg": {
+      "bytes": 2816,
+      "sha256": "340d50b07d39898b98d272ab0014b7dc103a6c281e33f4600554222880ee35ff",
+      "gitBlob": "1e02fe8dc031aba28304e4258aee6b9db2eb2cbc",
+      "mode": "100644"
+    },
+    "dist/assets/festival-npc-lantern.svg": {
+      "bytes": 3068,
+      "sha256": "8387b3dcc77b6ae99fca78f457b5c8683fc54b42bfce88eee107a15167a1e6df",
+      "gitBlob": "b1a19e3cebd1fdf3bb34a4454dd7d36e19ceb96c",
+      "mode": "100644"
+    },
+    "dist/assets/festival-npc-midautumn.svg": {
+      "bytes": 2766,
+      "sha256": "d721b60c3d5984be991fd4fc07f501f2bf1dcc7e841dcd897efbc0372414141d",
+      "gitBlob": "2b31a265884b78a152df3a0da20d06f427c8cd8e",
+      "mode": "100644"
+    },
+    "dist/assets/festival-npc-newyear.svg": {
+      "bytes": 2968,
+      "sha256": "858b80944e155050a49494681df5337ef1f6fbc3710bc00c743107670bde6d37",
+      "gitBlob": "2cf9c027a17dbae0a19240b879a3dad6041c9274",
+      "mode": "100644"
+    },
+    "dist/assets/festival-npc-qixi.svg": {
+      "bytes": 2553,
+      "sha256": "de7b0411980c5a90bd27f66770c43f40051f2bfe263e056c7af6d60fe98a501c",
+      "gitBlob": "45f5cb9470825978662d12bb6ecf5e05581e17b3",
+      "mode": "100644"
+    },
+    "dist/assets/festival-npc-spring.svg": {
+      "bytes": 2986,
+      "sha256": "1f5309ca12148e6a9f5355b48169f06f9123efeda7c714d3f225afcf33c375dc",
+      "gitBlob": "bf1230ade32d5c72aed3624bc5abe1283f6aada7",
+      "mode": "100644"
+    },
+    "dist/assets/festival-npc-thanksgiving.svg": {
+      "bytes": 2760,
+      "sha256": "a9c1a5b1217bef334b3729da20a15a9823eb20df4644f1b3476024d49d7b5bb5",
+      "gitBlob": "4bf34b2696c91bdfaa8d6aef4c71b67daa0af9cc",
+      "mode": "100644"
+    },
+    "dist/assets/festival-npc-valentine.svg": {
+      "bytes": 2800,
+      "sha256": "b3e4ea9323868a05933fd4d033a09e31886715c42147fa4fde4bec69c20e192a",
+      "gitBlob": "cd2f336f7bfdc467b7204b497b1a8df2025a3b99",
+      "mode": "100644"
+    },
+    "dist/assets/greenhouse-painted-v17.webp": {
+      "bytes": 508666,
+      "sha256": "f017cedf22b93e3fc53de1feb95e00cac21661dab00d90a31c2b9aa9efb4c4fd",
+      "gitBlob": "1fd491e1b1b05a1557a210f2cf6223c92cfc76a6",
+      "mode": "100644"
+    },
+    "dist/assets/library-painted-v26.webp": {
+      "bytes": 178156,
+      "sha256": "6e32b91fc56890f6362590eb2bfe0ccd0858389aeeb5de5aac72b5cb02dcab03",
+      "gitBlob": "c7a7d9473f2a55ceef9fcab1df3876545452145b",
+      "mode": "100644"
+    },
+    "dist/assets/portrait-hero-curious.svg": {
+      "bytes": 11821,
+      "sha256": "b4b3454a990a1a237cad6e269096861c08ce2644f1debab1e8e71820e5ad3828",
+      "gitBlob": "74b3a01aa444b8de658f80c5235bf43481f5574d",
+      "mode": "100644"
+    },
+    "dist/assets/portrait-hero-joy.svg": {
+      "bytes": 11604,
+      "sha256": "195f32e5b566f78e6761cca67cc85523e9a280ebe2855bb7c2d77957d7dbc8f7",
+      "gitBlob": "4bcf4c378f353950063f903d8d519dad6ac1540a",
+      "mode": "100644"
+    },
+    "dist/assets/portrait-hero-open.svg": {
+      "bytes": 12708,
+      "sha256": "57fd3074a83dfe7ff65d90b519fa6be136284ce9636ee989a2cdaa04c6f0d9a8",
+      "gitBlob": "1416fb0a83167387e4cbc6dd7f5c3cea0a3aabb8",
+      "mode": "100644"
+    },
+    "dist/assets/portrait-hero-tender.svg": {
+      "bytes": 11673,
+      "sha256": "b0b5af577982007fc221dae38f87c14973d6b722690b0a8e636573e6b9b88a50",
+      "gitBlob": "ffd93d05f2f84691a78d77f42de2d9a43c36227c",
+      "mode": "100644"
+    },
+    "dist/assets/portrait-hero.svg": {
+      "bytes": 11598,
+      "sha256": "2d407ef312fa8012eafbff1ad246ace7b262b527f9a2ce94e33da85a190846c5",
+      "gitBlob": "0b158c2bef9f82a6f91a845e0c15696f1a04a06a",
+      "mode": "100644"
+    },
+    "dist/assets/portrait-keeper.svg": {
+      "bytes": 3053,
+      "sha256": "2852a93a02a8811bec16df4ec95edd65ae415ad6c2a7a013e6ca6d52f7a20dc0",
+      "gitBlob": "574f497998d808a0606c4d768c2ee94881fb8f0d",
+      "mode": "100644"
+    },
+    "dist/assets/portrait-moth.svg": {
+      "bytes": 3575,
+      "sha256": "50c8ebd220c55e8a857894753faa2c12b9ffc0a8c890e1a01a781516a94263ab",
+      "gitBlob": "ad814207176e0337b547f9c4398210d3e1bd42dd",
+      "mode": "100644"
+    },
+    "dist/assets/portrait-soul-brave.svg": {
+      "bytes": 7204,
+      "sha256": "127e3a064b7dcff96e6b7c52a843d9a993521e3ab754eedaf8506c735b1f4f22",
+      "gitBlob": "ec980168667c17cb32c4f1396b7cf94e026ab637",
+      "mode": "100644"
+    },
+    "dist/assets/portrait-soul-joy.svg": {
+      "bytes": 6893,
+      "sha256": "f3616b565ce5766bab09a026669c09a70fe78cc2d6eee1c4f8524f2f5ee56f6f",
+      "gitBlob": "31c89762339cfe657eb2d78243c2739faafb53ea",
+      "mode": "100644"
+    },
+    "dist/assets/portrait-soul-peek.svg": {
+      "bytes": 6802,
+      "sha256": "2943744828f1312a7e84736f448c88c6468b7b9d9d9643f93579d80e5bc6ebdd",
+      "gitBlob": "bb5b5d08940056aeac6c336c7fb673f7a11f7b51",
+      "mode": "100644"
+    },
+    "dist/assets/portrait-soul-sleep.svg": {
+      "bytes": 6742,
+      "sha256": "087ca85d1acf004b493d84d9627cee82757e4481bf2bd36d514298f31400f1ee",
+      "gitBlob": "1831852bfdae41dc925d81a22819cb9a3ecdc5d4",
+      "mode": "100644"
+    },
+    "dist/assets/portrait-soul.svg": {
+      "bytes": 6766,
+      "sha256": "88047b69cd52536ca164b507c811871cdcf5ca311b0478221b679274b6b53c9a",
+      "gitBlob": "c3a1b6fccc3d7a816354e5cb064c48ee9323f82e",
+      "mode": "100644"
+    },
+    "dist/assets/portrait-whale.svg": {
+      "bytes": 3200,
+      "sha256": "f5b99f6522cd7af5315ea0a258833181f457b0ccf8998787971148b68a50efbc",
+      "gitBlob": "8f67f512150684db2cec31e8c66bf2917d2ffc91",
+      "mode": "100644"
+    },
+    "dist/assets/post-painted-v28.webp": {
+      "bytes": 101798,
+      "sha256": "90cb512f70f4404b34b56f2951a0559c078eaa766e7d7460f98cbf646b05a201",
+      "gitBlob": "809dc7a584504d1eb49277fc9f292c3853aab96c",
+      "mode": "100644"
+    },
+    "dist/assets/reward-feather_charm.svg": {
+      "bytes": 2370,
+      "sha256": "bde651f012ab108e437274ccb295d1cd6ba111df151d8dd1ac5df151fc04a2f7",
+      "gitBlob": "7f289262e1c1ad17ded7443db87d28bb242ed378",
+      "mode": "100644"
+    },
+    "dist/assets/reward-glow_candy.svg": {
+      "bytes": 2470,
+      "sha256": "4f90857f6288d137c442ec49c5dba0929214e3f5672b71579f40c2c1b2c943f8",
+      "gitBlob": "55940e726dadc933f1a00f5740235c7acf514fdc",
+      "mode": "100644"
+    },
+    "dist/assets/reward-star_compass.svg": {
+      "bytes": 2260,
+      "sha256": "16586e58b57f7fd578e01a17325ac268014f1b6e0b2458f06d671e83cb2a7caa",
+      "gitBlob": "3a406d84d01705bdf139918b36481ddef4e4b32e",
+      "mode": "100644"
+    },
+    "dist/assets/station-painted-v16.webp": {
+      "bytes": 266328,
+      "sha256": "51406de059d3d092b0bf7c8f80f285f82dcc7fb17bcfbd77b5fcd000bb888fba",
+      "gitBlob": "7fb5a6ecf41233bf7afa9b7c7213fe7ef308dd21",
+      "mode": "100644"
+    },
+    "dist/assets/theatre-painted-v20.svg": {
+      "bytes": 58148,
+      "sha256": "059b3c68d84666f292e4c8fab3b379e894eaff484a6907eb9dbba1faabe32cea",
+      "gitBlob": "92b284a7d3d89a45462528abaa15faf3f34f0dd5",
+      "mode": "100644"
+    },
+    "dist/assets/theatre-painted-v22.webp": {
+      "bytes": 178844,
+      "sha256": "8c59e1cf3a361501e57eaf8d9bc5e5df6a71823ac4773895f19e48e392632b7d",
+      "gitBlob": "9dfccc0cdd46daadc417f6899801d77f147a2573",
+      "mode": "100644"
+    },
+    "dist/cap-activities.css": {
+      "bytes": 3911,
+      "sha256": "a1ab4e7e50c922c159c61678f429e633973c5df40f06c39ef3b8bff36afb53a1",
+      "gitBlob": "e77d0771ee038406aa9b06d689de7cb9ba82807f",
+      "mode": "100644"
+    },
+    "dist/cap-activity-progress.js": {
+      "bytes": 11165,
+      "sha256": "30190693766ddaedd1f5c1c46f73374e28041851d6c71f65ea6cb9111178d967",
+      "gitBlob": "abfab59830e0cd0602dda3cc41d5b0dd385fa572",
+      "mode": "100644"
+    },
+    "dist/cap-book.js": {
+      "bytes": 17410,
+      "sha256": "210950f7a4cdf2a99bb6ea3943bf739ce79f5d517081621fe90994a1faa38f87",
+      "gitBlob": "1c11b0b0114f641b7516a6abcd3b877ab218e349",
+      "mode": "100644"
+    },
+    "dist/cap-play.css": {
+      "bytes": 10558,
+      "sha256": "a633fd679d3e79fd98160fe36dbff8fe6c6f8d615b2bf8eee1089fbb0045cf08",
+      "gitBlob": "cbad1177460c567ba260acd88e041d3c71c2453e",
+      "mode": "100644"
+    },
+    "dist/cap-portraits.css": {
+      "bytes": 2741,
+      "sha256": "4686bb6bfb5fecb24b7413973b93c40974e9744c76afa9cfa6b84212e9e10ddb",
+      "gitBlob": "e37839f8ebe175682a174c26e0c657c923637f2a",
+      "mode": "100644"
+    },
+    "dist/cap-progress.js": {
+      "bytes": 4574,
+      "sha256": "5ab3326cea09d614e65e1c11c941fbbe97e90cfd7889d23a65495151cbd0f681",
+      "gitBlob": "cfabbb9db7b5a4adb1d39d92edd22b1419417b47",
+      "mode": "100644"
+    },
+    "dist/company-footer.css": {
+      "bytes": 1785,
+      "sha256": "a5f94a2c7e3f2a53def5b5c7c06882cfe2fff8320e0e4c7200d03dcc4c5f72ad",
+      "gitBlob": "4ded84af1c16b08a760223d2106352c401ca29c2",
+      "mode": "100644"
+    },
+    "dist/content.js": {
+      "bytes": 19739,
+      "sha256": "cc7726e290e6bb2ea9100a28d977f1b1f3f3f2146282d222dfa5d1fe094512ff",
+      "gitBlob": "da147a37662601dd33428425b14d0d6c822910bd",
+      "mode": "100644"
+    },
+    "dist/dream-app.js": {
+      "bytes": 65492,
+      "sha256": "51db406e50ca21c487a3259bb76f9aaf7e85eaaf773f0fe2b7160701579d7505",
+      "gitBlob": "7edc954415a94a8f8e17774dbfba48b1ebb966e3",
+      "mode": "100644"
+    },
+    "dist/dream-awakening-art.js": {
+      "bytes": 26022,
+      "sha256": "a9255f851e92b8649798c23de42167c6137a8745829dbf5e71ca1ba22df6cdd6",
+      "gitBlob": "eaa4131ed7e8d77e05b99d028961f832a6387d8a",
+      "mode": "100644"
+    },
+    "dist/dream-awakenings.js": {
+      "bytes": 3832,
+      "sha256": "a96bf35c9379612d0cda50073b8c12e56b263b5ae8dbf90362b0dcfc9ed30e1b",
+      "gitBlob": "af08b8dd8479e273c3b55a4ce9109df576f6ae20",
+      "mode": "100644"
+    },
+    "dist/dream-cap-activities.js": {
+      "bytes": 13737,
+      "sha256": "041c66d52a0a17f80e75bc4da31054f2d01d5c440567d380533be10076a69749",
+      "gitBlob": "b3d2a940184a5a3322140fa02bc2e3b2297e437a",
+      "mode": "100644"
+    },
+    "dist/dream-cap-activity-art.js": {
+      "bytes": 32906,
+      "sha256": "fe5127ec3b28ee9ce891fa864ae3e277c2be23b88053c3f345fc99a6bc5a163d",
+      "gitBlob": "28a9fe83f8e2e9f3a37e2b641b12f6065ce61dc1",
+      "mode": "100644"
+    },
+    "dist/dream-cap-activity-engine.js": {
+      "bytes": 15627,
+      "sha256": "e29d1cd2a3e1853aee323fdfb36890e2965924c5d3c070bb01155a1a7bdaf31a",
+      "gitBlob": "b097b18e8824aaf099807e227375b60efff953ff",
+      "mode": "100644"
+    },
+    "dist/dream-cap-art.js": {
+      "bytes": 23249,
+      "sha256": "dad5b4a0e2c0ffb13c008c473068465d25f701509114b31ab100629e459063ed",
+      "gitBlob": "4aa3369dc43b85cec968bbdd230547798903b7f5",
+      "mode": "100644"
+    },
+    "dist/dream-cap-story.js": {
+      "bytes": 14480,
+      "sha256": "cb17da0fc2a46ec8476910953a4bf3094aaef351f58183eb83745334f4345c19",
+      "gitBlob": "5817552b93f359f68cc2629fbcc572e4a8200835",
+      "mode": "100644"
+    },
+    "dist/dream-clock-echo.js": {
+      "bytes": 8888,
+      "sha256": "51a27018ea27ff0817b38cec88d52b28f4836e9691a8fdbe624dc3c7ed008171",
+      "gitBlob": "eae39f75a307eef9fa46c5f7a65f4531cc442e5c",
+      "mode": "100644"
+    },
+    "dist/dream-coast-finish.js": {
+      "bytes": 6742,
+      "sha256": "39b1818d3158c415546c2ae1b6b44ec379d765a7e089caa0cd578b3ba0bd8902",
+      "gitBlob": "b44a6e1ed071415653d8c0540b3268de21a7a07d",
+      "mode": "100644"
+    },
+    "dist/dream-coast-scene.js": {
+      "bytes": 4219,
+      "sha256": "5927d816f86835dbbf9e5d0237a251ed14953f11a80869609b43d30727257fc7",
+      "gitBlob": "bf92c423dbc8d8c29481f7f3a73fefcd2273373e",
+      "mode": "100644"
+    },
+    "dist/dream-companion-art.js": {
+      "bytes": 8254,
+      "sha256": "f0d9916c23667807c7e5577b238dcb509e3cab6e54070b6e239d11af20f787f3",
+      "gitBlob": "f501ed4af0b7944ec9ceabb7008eaaeb66745625",
+      "mode": "100644"
+    },
+    "dist/dream-direction-input.js": {
+      "bytes": 1920,
+      "sha256": "ebbe509a6ce3114fe1f0689ef4252b19bf9ddfd2e8b3e367626ef21c891401de",
+      "gitBlob": "a76bfa02d860fe03885bdc1d60557d86cf5b2d7c",
+      "mode": "100644"
+    },
+    "dist/dream-encounter-art.js": {
+      "bytes": 34104,
+      "sha256": "f98a01bbf775e1c7f52d5f01184bd2429096daa625bcf4a44f249d234ba56efc",
+      "gitBlob": "ad04e77119a580063b540aa0e36c40a7d7171856",
+      "mode": "100644"
+    },
+    "dist/dream-encounters.js": {
+      "bytes": 16794,
+      "sha256": "6d3d3b962c9d9d27deb2ccfbcb52255b18bb3caeb8d77dce4a4a0e9e745c1f20",
+      "gitBlob": "dacad19d36be8008a91291552516d0d9b3e62d92",
+      "mode": "100644"
+    },
+    "dist/dream-ending-art.js": {
+      "bytes": 21986,
+      "sha256": "80f61137dfb5ad0f6b906855d1e5678dac2c30aeff218cf41541c17052a8d95c",
+      "gitBlob": "782b45da5f5f9e29a977571a7ad59c655b47d531",
+      "mode": "100644"
+    },
+    "dist/dream-ending-scene.js": {
+      "bytes": 1771,
+      "sha256": "92213dae9ec72e37d9e6a61d92e240d2cb5792899217638d5d8a414b89160818",
+      "gitBlob": "e4675255a02d949676779e990bda89e565749d52",
+      "mode": "100644"
+    },
+    "dist/dream-ending.css": {
+      "bytes": 4186,
+      "sha256": "b3c8c90f8ae35f900d895f47199369e9d7cf6fd55f3fdcca469289d00e4cd109",
+      "gitBlob": "4a3ed6c88d38d60062f2a5f4f49516bfef89b2c8",
+      "mode": "100644"
+    },
+    "dist/dream-engine-base.js": {
+      "bytes": 96177,
+      "sha256": "179caecf7467c70319b988b1146b988b04f8d1d980603ff1181a59ba575d1aef",
+      "gitBlob": "90e6c8d1b1dae33695b099e5e0b1b2ae502ce001",
+      "mode": "100644"
+    },
+    "dist/dream-engine.js": {
+      "bytes": 27043,
+      "sha256": "7b602b83f551c41fdbe97443e1fed08d6af773e9767f0ed830a434168951e889",
+      "gitBlob": "49baa14351da49a2deed0b842dfcdd113bfa3227",
+      "mode": "100644"
+    },
+    "dist/dream-festival-art.js": {
+      "bytes": 31364,
+      "sha256": "9ede1ae7d2c0499bc2a22aa61fb1f44a3c97b4efe327023406f15d2c695881e5",
+      "gitBlob": "eb3690aba440efdebf01a0f402f8741cfcc42da9",
+      "mode": "100644"
+    },
+    "dist/dream-festival-levels.js": {
+      "bytes": 6674,
+      "sha256": "ab633cf46ea8b2c1f925692c9ae21bf104522d647a1b05be782ebf2418c346c5",
+      "gitBlob": "86c779a50b4866a0dd2f7ba690115ee45155b3c6",
+      "mode": "100644"
+    },
+    "dist/dream-festivals.js": {
+      "bytes": 53530,
+      "sha256": "3ea4f05fc6a260ec6a0e0cdc1bda849bdca199ef664ad1dd353002508c15f86c",
+      "gitBlob": "12386c43c139264162724641722adc038c4e95dc",
+      "mode": "100644"
+    },
+    "dist/dream-first-ticket-art.js": {
+      "bytes": 4329,
+      "sha256": "44c9b420d544f7db1ed9c79cb2a0291563db8e83442f6ce4df5e1aaf4f56dd04",
+      "gitBlob": "4852b8e68d32b1b204fea1d780d9f9140091971b",
+      "mode": "100644"
+    },
+    "dist/dream-greenhouse-art.js": {
+      "bytes": 3880,
+      "sha256": "38a4f9044a7f403a5d121ef6189aa83108d72f0b4a2c8b0e0aeabc03dbe3db83",
+      "gitBlob": "3b18f5a30c7e489c8c6d93b7ded3bb789dd41053",
+      "mode": "100644"
+    },
+    "dist/dream-greenhouse-finish.js": {
+      "bytes": 10999,
+      "sha256": "af7d94a6222491b2712b7af10db2f79ef45db9f899a92e939d5fb6eba664ab56",
+      "gitBlob": "29124bb10db22e66bb79a4073b7838f7e59e2ced",
+      "mode": "100644"
+    },
+    "dist/dream-greenhouse-scene.js": {
+      "bytes": 4446,
+      "sha256": "b4a4c84440ed43bd52ba8405c719cb3d426d134e6c8285bcb584533879a6c8e6",
+      "gitBlob": "888b66d76fbcc7e6a1bf812187922b74b53ac0c0",
+      "mode": "100644"
+    },
+    "dist/dream-ground-shadow.js": {
+      "bytes": 3409,
+      "sha256": "ede6c52978710e0e8286a1b5fdf51eeb09e1e17a1d9df3171cca8176c90d94bc",
+      "gitBlob": "e15c26caeb3df1d8cdaabae3b0c8cf12c087a5b2",
+      "mode": "100644"
+    },
+    "dist/dream-journey.js": {
+      "bytes": 10112,
+      "sha256": "62947008e6c4edd0f1817b92a5338d7d0ebdf0a2a065d3049b280ea36d22434c",
+      "gitBlob": "e9fbf5734997bf907e9b3d01b884d7c5795339cb",
+      "mode": "100644"
+    },
+    "dist/dream-letter-echo.js": {
+      "bytes": 8899,
+      "sha256": "10c446ba05235b9123f09667cf2fd2e9e96be57b9fc87da6e8b1c8c5696e1f2f",
+      "gitBlob": "84083288291baaeadfbf410237bca06fbebb7929",
+      "mode": "100644"
+    },
+    "dist/dream-levels.js": {
+      "bytes": 8742,
+      "sha256": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0",
+      "gitBlob": "1deb653a8745cecc78a8beef1a9cd9cb3afc3f73",
+      "mode": "100644"
+    },
+    "dist/dream-library-finish.js": {
+      "bytes": 2485,
+      "sha256": "0295efbb70a84b616301e0b3d9e68bdfd87706c33c5e1736403b624d5d8316f8",
+      "gitBlob": "c035b01051e0a5ad644200e5ded0e66a4a0025e6",
+      "mode": "100644"
+    },
+    "dist/dream-library-scene.js": {
+      "bytes": 3661,
+      "sha256": "9564ec3fa13e9f4de038d8db6ec44cd3421cbc1bf26d89256a22921307ca23ea",
+      "gitBlob": "bb41e3942519dcab27995d402bee1c66793ea78c",
+      "mode": "100644"
+    },
+    "dist/dream-lost-art.js": {
+      "bytes": 41560,
+      "sha256": "f572fc0d082178d8bb28ac3fc45561aacfc0b090da6f1f6c5f0cdb0815f0c235",
+      "gitBlob": "ebfac7c71f6b75ed3b7c7f3a30bbae655f939df2",
+      "mode": "100644"
+    },
+    "dist/dream-lost-cases.js": {
+      "bytes": 26967,
+      "sha256": "8c82de1b2021734f9355fae64475386f235b6b8451dd495fd3afc839adfea79f",
+      "gitBlob": "459164db3799ded99c220bb9914a97bca6d180e8",
+      "mode": "100644"
+    },
+    "dist/dream-lost-encore-art.js": {
+      "bytes": 15525,
+      "sha256": "2eeecf0c00e9f965a66034089b18d8fa7795641855c5269d8c6e5aaac235dda2",
+      "gitBlob": "fa70a17a21e97a2e599ac77a14dc506536a68a1f",
+      "mode": "100644"
+    },
+    "dist/dream-lost-encores.js": {
+      "bytes": 2730,
+      "sha256": "0bbba9148430c6efae7bbee811bcd9170296bfff07cdb98a8aa4509d73be5576",
+      "gitBlob": "85d55a417353ae7e4b38dbc28616f43d4cee98c4",
+      "mode": "100644"
+    },
+    "dist/dream-lost-engine.js": {
+      "bytes": 12739,
+      "sha256": "42239bd2c4df5e4aa465d70a1d8d598faa4ef882b1477484fbe18a1d2eb636d5",
+      "gitBlob": "df73fd4ca5b2a81d580ab828ea193929e9c93f68",
+      "mode": "100644"
+    },
+    "dist/dream-modal-input.js": {
+      "bytes": 5458,
+      "sha256": "9453aa3d43e06b2b27274c7390a735a37ed04c85c600a12f41d6c553dd9f7e74",
+      "gitBlob": "4110bd3d6d324f24cba36dcd791c5a117c843182",
+      "mode": "100644"
+    },
+    "dist/dream-moon-art.js": {
+      "bytes": 14741,
+      "sha256": "1f6941a32a0ec6d448b29920816d026778b09c71a951f54cd9107cd05ce05b32",
+      "gitBlob": "e27b272009c9740a763cee38a638c931810fe49c",
+      "mode": "100644"
+    },
+    "dist/dream-moon-play.js": {
+      "bytes": 12656,
+      "sha256": "4f43c1b14750211498edda61d70a1c3fef54c9aa56c66c7b48006604650e5095",
+      "gitBlob": "71df85d3f033adc790443cb831618108cf7a6687",
+      "mode": "100644"
+    },
+    "dist/dream-painted-scene.js": {
+      "bytes": 7197,
+      "sha256": "ba9551548f431ecf4b7d13f63e62e9f329d9643a0afac292729fa3b598722ce7",
+      "gitBlob": "487e15e8ef37b581074187abbbea91eec466dfa7",
+      "mode": "100644"
+    },
+    "dist/dream-play.css": {
+      "bytes": 15070,
+      "sha256": "4a952c2631e2ede816f43b1932e42a7b0b7c06d64aa34107e7745810a5522022",
+      "gitBlob": "960d9527d98434ed3873a2e9960d7f8b202bb588",
+      "mode": "100644"
+    },
+    "dist/dream-post-delivery.js": {
+      "bytes": 1988,
+      "sha256": "d8a1cfe4067d332f0dbee0602ff48d0463ed1c434c2185c50b3722b11f17de1a",
+      "gitBlob": "523bc4c1337b2de6cd0cef5e748ad719b0cac965",
+      "mode": "100644"
+    },
+    "dist/dream-post-finish.js": {
+      "bytes": 4432,
+      "sha256": "b75eb3a683d841d1e6e68ac6fad40ae257a9c1c4df979feb76c0b847eae62f7e",
+      "gitBlob": "9c9eea062b26c7613931bee13105d1e7aeb5a637",
+      "mode": "100644"
+    },
+    "dist/dream-post-scene.js": {
+      "bytes": 3462,
+      "sha256": "d6af0e2711f354765e31b186e9d1f20d1240d974d51d71347e2b2559f5674275",
+      "gitBlob": "a5b6d808b0741d2f82cf997169247fd1f6f92b2c",
+      "mode": "100644"
+    },
+    "dist/dream-scene-backdrop.js": {
+      "bytes": 19110,
+      "sha256": "39f31d372405896f580ee297c9168a1d8a12dcd5af134c2c09ea908f28cbedd8",
+      "gitBlob": "65aac9997dbffc2b30d86532dc22061fce758a1b",
+      "mode": "100644"
+    },
+    "dist/dream-soul-art.js": {
+      "bytes": 10699,
+      "sha256": "4af4abd87fd3157f3e9a06bd8f2ed750819c645a01a4de24d159a028e96a46b8",
+      "gitBlob": "0e71fc4e30ce41324a6cfbeb27a7532108af5db8",
+      "mode": "100644"
+    },
+    "dist/dream-station-art.js": {
+      "bytes": 16476,
+      "sha256": "73a257203b10d12dd52f7b66f60fe3d65e08200aa64b1b4e5c3f223f654d31ee",
+      "gitBlob": "12ee5d7ea3ef84c1d69d229304ec56083f042d2a",
+      "mode": "100644"
+    },
+    "dist/dream-story-portrait.js": {
+      "bytes": 1526,
+      "sha256": "fe82cc56695db356b71b572cbc9563cddc7c455e7bae1e56db46dba9905a62ef",
+      "gitBlob": "de89500827c071568489e9b28262a32fe68180e1",
+      "mode": "100644"
+    },
+    "dist/dream-story.js": {
+      "bytes": 31000,
+      "sha256": "a91aaf6b497cf956a85c9119e97871ed8b4cc119dd06c6ebe765aa3ed02fb9de",
+      "gitBlob": "38871a35ce1c9131d86c1bf11f74bc29381e1acd",
+      "mode": "100644"
+    },
+    "dist/dream-theatre-art.js": {
+      "bytes": 11372,
+      "sha256": "a92c905952383c801559103f3b80d34537acdde4eb4d2292d3fc88e7c51bf213",
+      "gitBlob": "5e99f2faff5aefb737225d639de4290844fd049a",
+      "mode": "100644"
+    },
+    "dist/dream-theatre-encore.js": {
+      "bytes": 4646,
+      "sha256": "62ca4f474e0261e31980bedfae4d02f97b879ceaa83e8670596253d6d190456d",
+      "gitBlob": "854a172c64ee269043b3b782c11dbf297b01910a",
+      "mode": "100644"
+    },
+    "dist/dream-theatre-guidance.js": {
+      "bytes": 3586,
+      "sha256": "ee0db2c0c396d45dc6386e81921f90369092a3361927295a4bf160a2ba5c9a28",
+      "gitBlob": "c5826a5e38dcd1f3045745b581721fe658fc716f",
+      "mode": "100644"
+    },
+    "dist/dream-theatre-lantern.js": {
+      "bytes": 5506,
+      "sha256": "84be352475290b6fb2f0f9b85d0f77d9bf262be89fc3d5443ea1cd9af0da1904",
+      "gitBlob": "ee5906c632147c1d5ff134976b6793ec1da6886c",
+      "mode": "100644"
+    },
+    "dist/dream-theatre-painted.js": {
+      "bytes": 6850,
+      "sha256": "240e8e0990fbd65fa24f920daaa24a6c0225b4714f04496d5e5d33c7b001fd6e",
+      "gitBlob": "26f23bd92935b7df2192eefb35d0167fa254252a",
+      "mode": "100644"
+    },
+    "dist/dream-traveler-art.js": {
+      "bytes": 8767,
+      "sha256": "e7c1315bdf28b22705887d8fc478472e1d4952df0c1f9e598abf5f2f6ca0e8ac",
+      "gitBlob": "68053593be2394528f7c640a53e5c44a42f24eb9",
+      "mode": "100644"
+    },
+    "dist/dream-traveler-face.js": {
+      "bytes": 6783,
+      "sha256": "ea914374c1d7793ebf710617d2749a71e01805ce7d1c33f20294ecd65acfd71b",
+      "gitBlob": "913068ed2c8d27ff8dbc144c02bb466f2ac19e92",
+      "mode": "100644"
+    },
+    "dist/dream-traveler-performance.js": {
+      "bytes": 7342,
+      "sha256": "ff4f258632c6136fed2a4b95fa8aa828c25817d3db6318663b924ee93ecf2c5c",
+      "gitBlob": "e77f195c1999e6a56386d47137698c4da47904a1",
+      "mode": "100644"
+    },
+    "dist/dream-ui.js": {
+      "bytes": 4422,
+      "sha256": "3da92277b69c46b80b06125e08cef13166122b17867ec59a2bb532b6b0c73c48",
+      "gitBlob": "b1fac20217fcb146c8083c407629bb9bd1dff298",
+      "mode": "100644"
+    },
+    "dist/dream.css": {
+      "bytes": 64955,
+      "sha256": "a6a19381a2b375ffcd1ee71b996bde69f1dfbd2a12c4625dbb565fd500065ca1",
+      "gitBlob": "24eb69c93469edee17485ebf38eb9d646da4daae",
+      "mode": "100644"
+    },
+    "dist/dream.html": {
+      "bytes": 26149,
+      "sha256": "d8912e903d2b3898aa77fa9935f7032aa46a67d0599913a05f0d8e33ef699750",
+      "gitBlob": "c6e7ddfa0054040c9e93293794ab333f5cf88cf4",
+      "mode": "100644"
+    },
+    "dist/engine.js": {
+      "bytes": 40797,
+      "sha256": "3af6579235e5cce9ef65e476d65e30aeab837f1ac6d842b8721ab44f795b514a",
+      "gitBlob": "5d249953c9259aa54296ee4b30218097924716e2",
+      "mode": "100644"
+    },
+    "dist/favicon.svg": {
+      "bytes": 382,
+      "sha256": "87d7f408dd19dd027b53625a0b97daa5e22459fcaad1af334da5faab4b54ff46",
+      "gitBlob": "7ec686059b853335c185afe3e423c1ca2b6956b3",
+      "mode": "100644"
+    },
+    "dist/festival-hub.js": {
+      "bytes": 21507,
+      "sha256": "5f5d5c69ea925f137a1b3b8da88d3be92535cf4b594f515f23e4d61ea65f8e25",
+      "gitBlob": "a8bdc78e61bf3c07ca378f276d785d4aae2f9a29",
+      "mode": "100644"
+    },
+    "dist/festival.css": {
+      "bytes": 21046,
+      "sha256": "707931f9ffa5167b0192fc125c77665f5ef60d8ea907722fa5334a9dc36bada7",
+      "gitBlob": "38e5813e45f9ac4c4145ce2e26d33a5d5ce3bd42",
+      "mode": "100644"
+    },
+    "dist/game-shell.css": {
+      "bytes": 8510,
+      "sha256": "d3a32538ad73198046c4dee50e18fdcef746b5c17528f5e47b7225a5d4eee80c",
+      "gitBlob": "17e0a743b991c02843ed1567b570c74755fd8e48",
+      "mode": "100644"
+    },
+    "dist/game-shell.js": {
+      "bytes": 7726,
+      "sha256": "109f0b136dca39253395e47a0eca84c6a392d17a17e998bb37ea420d846d91c9",
+      "gitBlob": "4d61f760a5cdd4d6f159785dae52764d6dbc930b",
+      "mode": "100644"
+    },
+    "dist/index.html": {
+      "bytes": 26149,
+      "sha256": "d8912e903d2b3898aa77fa9935f7032aa46a67d0599913a05f0d8e33ef699750",
+      "gitBlob": "c6e7ddfa0054040c9e93293794ab333f5cf88cf4",
+      "mode": "100644"
+    },
+    "dist/lost-evidence.js": {
+      "bytes": 7147,
+      "sha256": "a681f0d4b2234d00cef0837eab1f223988dfab5198b518d06b1d6fdaaa7548c5",
+      "gitBlob": "f05fad3c00bdbc4bac2af7d6572ca8be0d603532",
+      "mode": "100644"
+    },
+    "dist/lost-play.css": {
+      "bytes": 7354,
+      "sha256": "13acb839c240ce9f75ac5802842dcf2ff334e484aeae6163c25d3b1aa87bbfa9",
+      "gitBlob": "ff0d3f2335b4dccf2a994e7daf4341333c30fb57",
+      "mode": "100644"
+    },
+    "dist/lost-progress.js": {
+      "bytes": 9956,
+      "sha256": "f81f1a0dfad558be5efa220eebd13688a0f9e183ac9fc1d569c62b4f9c5c5efb",
+      "gitBlob": "7358a9653ea5180294c990041ac0ba13aabf02e6",
+      "mode": "100644"
+    },
+    "dist/play-rewards.js": {
+      "bytes": 20803,
+      "sha256": "d2133a6ea631fcd32dabb3e65242dd3da1ce8809d09cdb056c881bcc6d89c0fb",
+      "gitBlob": "78f7e7ed579a2366d11f3c442ff0e969aa6f3d95",
+      "mode": "100644"
+    },
+    "dist/portal.css": {
+      "bytes": 2729,
+      "sha256": "5c06d5415242abb37b02cc8e43c516b4631e5cbb42af4a8593bcead103ae965f",
+      "gitBlob": "f1a1ae692580596cd2fe8acd0a4f4bf8560f0eb5",
+      "mode": "100644"
+    },
+    "dist/style.css": {
+      "bytes": 36943,
+      "sha256": "6e6d7748ac71de73ceffa3d4ea1e8e8b260207e426a0354158d3b21fc5fb28b3",
+      "gitBlob": "2344cf590c1eb94d633038a62c601e1cbde89cdf",
+      "mode": "100644"
+    },
+    "dist/survivor-play.css": {
+      "bytes": 8562,
+      "sha256": "c2ef15377a4075d4d6816802ba57dc2abf2944fb26df2de3d9845249b4bb4507",
+      "gitBlob": "4d9089fa3379e1a6b1371999da3f3cd4722a0991",
+      "mode": "100644"
+    },
+    "dist/survivor.html": {
+      "bytes": 17574,
+      "sha256": "be8f73388fc9a910ea4f46d6ab41a58fd7c9ed2a8bd09167c23aefa3b05b19d9",
+      "gitBlob": "93cd649b28560410c9bd18892e8bed7081ce6d67",
+      "mode": "100644"
+    },
+    "package.json": {
+      "bytes": 452,
+      "sha256": "6d1ac1c65a040d2e91e0e05ff83e45e569fb0db77a6ab0cd909b2ea91356ae94",
+      "gitBlob": "5b54b0e9162fa20979692816c8482a767e118129",
+      "mode": "100644"
+    },
+    "scripts/browser-smoke.py": {
+      "bytes": 142114,
+      "sha256": "32fdf7928cd1552981ed250eae7a126e76a551353b4e67f090616b129082f7c4",
+      "gitBlob": "cd0144aaf6fa3cf609f7a41c93bdd19ee697d84f",
+      "mode": "100644"
+    },
+    "scripts/browser_coast_v27.py": {
+      "bytes": 24206,
+      "sha256": "7f05ac3f6e8914e01407a357b54efa3f339362773fe056256636a9a2afe71365",
+      "gitBlob": "d361443294bb18aed010d2bb950e559b3a90e623",
+      "mode": "100644"
+    },
+    "scripts/browser_companion_v33.py": {
+      "bytes": 18959,
+      "sha256": "42b65bd9fdd0e4ad48002ddfd2b13f92ae4e461eb8a45414d519103db0ce4912",
+      "gitBlob": "ba659a1a8c9aa6e6200d2289147897857d22045b",
+      "mode": "100644"
+    },
+    "scripts/browser_dialogue_matrix_v32.py": {
+      "bytes": 14441,
+      "sha256": "cb7804a5a726d562b83a2022b39126cee424c44a83bdc4dc898aa4051fa4924f",
+      "gitBlob": "8accd3fe898a6a88acf1bab6d966c6f74e4904a2",
+      "mode": "100644"
+    },
+    "scripts/browser_dialogue_v32.py": {
+      "bytes": 20966,
+      "sha256": "72236f51e23aa4062af8c2e6c27ccff75842e3e888f22fd83b65978f3bbf2a9e",
+      "gitBlob": "d87aad742f241155d866dadcec722a915443abc3",
+      "mode": "100644"
+    },
+    "scripts/browser_ending_v29.py": {
+      "bytes": 32075,
+      "sha256": "8d50d6ab59d0b497099f752657cad564119c6e8137a4529c7400e016ea1b34d0",
+      "gitBlob": "f20cb9ea6b13dc920306a6e370b5f00726307d96",
+      "mode": "100644"
+    },
+    "scripts/browser_face_v31.py": {
+      "bytes": 24625,
+      "sha256": "f2b50c961ffabd21952075a02ad998a73c5f931f378a18dea4d043e9d9087249",
+      "gitBlob": "d30a9e86ea4be3e8041432ad00a0a30aeb8b6215",
+      "mode": "100644"
+    },
+    "scripts/browser_library_v26.py": {
+      "bytes": 33372,
+      "sha256": "065a0ab28f7eef6d1e8e8125873f2866408f0a35b3813d050ba1e4bb9c7482ca",
+      "gitBlob": "b22ef3639e07801223603446928e3638e73ffbd4",
+      "mode": "100644"
+    },
+    "scripts/browser_post_v28.py": {
+      "bytes": 58773,
+      "sha256": "7c72f83a40cba692ea0b7fc93f61f9d887c670fe4d6515a47679ad2608721c89",
+      "gitBlob": "675d749434b937473d1b3bdcfdbce6432306b5be",
+      "mode": "100644"
+    },
+    "scripts/build-cap-portraits.mjs": {
+      "bytes": 23291,
+      "sha256": "85995b94bb366112b3d615b2d6469a44adbb9faca2eddde858b64e2fb1a662d3",
+      "gitBlob": "6386b00bf3e7253d3b23a0d5124ce79fb13f3038",
+      "mode": "100644"
+    },
+    "scripts/build-festival-portraits.mjs": {
+      "bytes": 28550,
+      "sha256": "653106f22903b4d16a801440a5bf8d3b6c7c43ed0cb1e00c4ab7201555c1f027",
+      "gitBlob": "afb96ee3623c215026bf764f37871fcf4e0ce9e0",
+      "mode": "100644"
+    },
+    "scripts/check.mjs": {
+      "bytes": 1575,
+      "sha256": "7e6ceee8c65a071e062a451d00e1465da43eceac9e398ab692f8be5e60e6ac95",
+      "gitBlob": "78a7fd7ec5a61634c5ec631afa809cc7e637e923",
+      "mode": "100644"
+    },
+    "scripts/render-cap-activities.mjs": {
+      "bytes": 7073,
+      "sha256": "1f681da64278491592e294ce74a38855cea21d9d25951e30c275e73e3dbf39f4",
+      "gitBlob": "c5105292e25128ae338825869563764a21720345",
+      "mode": "100644"
+    },
+    "scripts/render-lost-cases.mjs": {
+      "bytes": 14005,
+      "sha256": "d4674c453341396fece9f606fe9ec6db2af78441635ccee382acc394ce1146c1",
+      "gitBlob": "ee7d1c888ac3d612f43afabdeba2af6a4de0dfb5",
+      "mode": "100644"
+    },
+    "scripts/render-lost-encores.mjs": {
+      "bytes": 11081,
+      "sha256": "141532ee053ad51fa49de9a95138856aed002b8609fcad161026f809067228e0",
+      "gitBlob": "63232a02e89ad057a9d7186f4b7658d6290f2898",
+      "mode": "100644"
+    },
+    "scripts/render-moon-play.mjs": {
+      "bytes": 5541,
+      "sha256": "23d2d3574c370d5b30307bdca8507ac6e35e94ec96cd163647a7df962bd6b6cd",
+      "gitBlob": "8ae44b9d719ab3af6fc62bf5343a10e1bfe37a5a",
+      "mode": "100644"
+    },
+    "scripts/render-scene-backdrops.mjs": {
+      "bytes": 4695,
+      "sha256": "9ae21b2dfffd2bd5e63280e06a1461d54b41370da8f648e8ef46e89ed0077b00",
+      "gitBlob": "29725cf0397c91703ac80a58e8c7c81cafbd9526",
+      "mode": "100644"
+    },
+    "scripts/render-story-awakenings.mjs": {
+      "bytes": 14764,
+      "sha256": "ac6b7a5d49c29f14dbb8bb6be37c4a552bfd2c62d1def7fbff3e08c31997a5f6",
+      "gitBlob": "d02bb55e6f69119e0fbd29ee2196b250d6674f4a",
+      "mode": "100644"
+    },
+    "scripts/render-story-encounters.mjs": {
+      "bytes": 8721,
+      "sha256": "c88d3a0d6f2f0d23a35779456b1ba240d35d03b8eb1e3d67ed3645a345743e00",
+      "gitBlob": "4ffc1fdb580cf891834c9534a68cbd1997c8b53e",
+      "mode": "100644"
+    },
+    "scripts/render-v13-scenes.mjs": {
+      "bytes": 8007,
+      "sha256": "7d1ead3b14882c5264354e578c5a0c420fac413611127cb8fb104db80d9416db",
+      "gitBlob": "168bddde6e4afd272cfda2cf97f53e8f018cc535",
+      "mode": "100644"
+    },
+    "scripts/render-v14-art.mjs": {
+      "bytes": 8703,
+      "sha256": "d5ce6f41d85a3307cf31874fa887b869b26542a3607b472415da13f0250cddae",
+      "gitBlob": "a4c93198888a0cb66bad5190e63dfa300889d696",
+      "mode": "100644"
+    },
+    "scripts/render-v14-scenes.mjs": {
+      "bytes": 15278,
+      "sha256": "eafc95159df8b534b89cfd832e1db6a8046c0aff632b354e679da38bd82a1405",
+      "gitBlob": "6078043cfc7d2d13f3b8986153076611659b334c",
+      "mode": "100644"
+    },
+    "scripts/render-v16-traveler.mjs": {
+      "bytes": 6858,
+      "sha256": "97d729b3bfb755b81a326195abd9b5ea5979493c09e3f89f9d875b54e6fb0ba9",
+      "gitBlob": "a9307f4a751aa632b3010e23adaff62a7868faed",
+      "mode": "100644"
+    },
+    "scripts/render-v17-greenhouse.mjs": {
+      "bytes": 7126,
+      "sha256": "ed33eda0b4896e016ad76d754d0468f2ee6c5f378d544872f07f365deb5751b2",
+      "gitBlob": "5f4eb377d8f3e061212257cabb6408aba5371bbe",
+      "mode": "100644"
+    },
+    "scripts/render-v18-keeper.mjs": {
+      "bytes": 5833,
+      "sha256": "0494fcb4039c0d715eba055564f77b463ec270c4df2064e4cfbc1d8af70c4dd6",
+      "gitBlob": "5398ca94054fb8fe3d365dfb2043ea5ca2c2763d",
+      "mode": "100644"
+    },
+    "scripts/render-v18-letter-echo.mjs": {
+      "bytes": 4789,
+      "sha256": "88798bbf88a1a061aab1f26fb967c01a0d012844f5cd7ec2b90e5f2f952009eb",
+      "gitBlob": "0687015789352ce56cd0375b31790baf251e0761",
+      "mode": "100644"
+    },
+    "scripts/render-v19-theatre.mjs": {
+      "bytes": 6733,
+      "sha256": "435ff9ae9b5de3805a828de2d93a6139a0afe3fd1ba37f29fd0ed666d3245f10",
+      "gitBlob": "3dea5c9852a26bf15e63d81d3c07f9a26edc3990",
+      "mode": "100644"
+    },
+    "scripts/render-v22-theatre.mjs": {
+      "bytes": 9145,
+      "sha256": "f2a3f55836ad71887225d5abf44817770c22545ccf678add7e6e3b1191dd0188",
+      "gitBlob": "1a4b32134621ebbe22e909f558cae69cf5da6c24",
+      "mode": "100644"
+    },
+    "scripts/render-v25-traveler.mjs": {
+      "bytes": 10774,
+      "sha256": "b6158cb19726ee8a28ced20c988b1eb8e1024dc5f829b171482aa5af952307e3",
+      "gitBlob": "c2d355c5f8ebb50cd313c6e832f6958f12ba9f13",
+      "mode": "100644"
+    },
+    "scripts/render-v30-motion.mjs": {
+      "bytes": 9306,
+      "sha256": "eed70c14ef0f8abc54f69ede16429bb434e87c991d712c951825388c62879df4",
+      "gitBlob": "049ed294bb9429771b44bca51d435ce37b9ddb0a",
+      "mode": "100644"
+    },
+    "scripts/render-v30-riders.mjs": {
+      "bytes": 19667,
+      "sha256": "15333c78d1f2217b9f48f2a45a02e97fa7de5161e0b8a60eebb1f3082f001cc7",
+      "gitBlob": "5c7fe8ac95dfe5b6bc486b4313745190faec2e5c",
+      "mode": "100644"
+    },
+    "scripts/render-v31-face.mjs": {
+      "bytes": 17217,
+      "sha256": "db5805a0be65f65ab773ec4c51617e2a5a6e8342ca43e8bb43adac629ecfbc3e",
+      "gitBlob": "a35f5272acff6a2ef1f01d1272f7895877cbc8eb",
+      "mode": "100644"
+    },
+    "scripts/version-assets.mjs": {
+      "bytes": 2524,
+      "sha256": "e0ea89d7150e5a3d5781cbc37cbfd7830ce986724e2e6012b34a36f9f29dd45c",
+      "gitBlob": "d8ed75c41ca361336bb28af29109ecf8d2300546",
+      "mode": "100644"
+    },
+    "tests/browser-coast-route-v27.test.mjs": {
+      "bytes": 8150,
+      "sha256": "7b9bae3a0c72b2bc126cd09c278b61496d260d4508449cd2b1105c4867fe8221",
+      "gitBlob": "76f9c1999e0b0559263bc0fdcf051fd7c710fd71",
+      "mode": "100644"
+    },
+    "tests/browser-dialogue-matrix-v32.test.mjs": {
+      "bytes": 4154,
+      "sha256": "75e2cc178af9faca2d85483b1e9012ce335915c898537f15fb863b233d0323c2",
+      "gitBlob": "db0c9c05b74e3975c97946210a4ff8f94af61f53",
+      "mode": "100644"
+    },
+    "tests/browser-dialogue-v32.test.mjs": {
+      "bytes": 9275,
+      "sha256": "170dc9c37b0a6d0ebd43281e7a114cdc48b3e382f13ac31f4ed26d3ee2a54318",
+      "gitBlob": "3ce8eeb2e04348a5495f7f7d523294d8a8c18464",
+      "mode": "100644"
+    },
+    "tests/browser-driver-boundary.test.mjs": {
+      "bytes": 2081,
+      "sha256": "ced40df6a455d06c10c437822abc40650612864a3c370dcca4112ba5bca72f53",
+      "gitBlob": "4b6b9c0be71f8a2b5659927ba4fc733090cfbff9",
+      "mode": "100644"
+    },
+    "tests/browser-ending-v29.test.mjs": {
+      "bytes": 22546,
+      "sha256": "1bc31e9904386d5ed6b4854d13e01f09a215f9b5687fd74a38dceb42b9874143",
+      "gitBlob": "7b883c4d5071cef6d5251863336a694add7870f6",
+      "mode": "100644"
+    },
+    "tests/browser-face-v31.test.mjs": {
+      "bytes": 17853,
+      "sha256": "09ff7766d351df69614ab3f6664437ddfe7e005a201ad7f7a788576b55377c1c",
+      "gitBlob": "f449b964e88f3e581a6e3a1e9707d2474eb43273",
+      "mode": "100644"
+    },
+    "tests/browser-hud-energy.test.mjs": {
+      "bytes": 4672,
+      "sha256": "ec9b0a57c1ed6234292b1afd652d205493d0a200799a39c83c8744cdc14ecd7c",
+      "gitBlob": "6a07753d12aaadabd42e313dcfa13847fe553efe",
+      "mode": "100644"
+    },
+    "tests/browser-hud-geometry.test.mjs": {
+      "bytes": 5788,
+      "sha256": "1762f2122167041302cb18a4097218ab085f8240b95601b6dcf27f6602586f2a",
+      "gitBlob": "8ed52a25fa7b3ac76b44d0f0bdbcf16b109796af",
+      "mode": "100644"
+    },
+    "tests/browser-library-route-v27.test.mjs": {
+      "bytes": 14079,
+      "sha256": "1b4a50c7b5aa3603598a215bc8245308f22389b07998a5341a972561bcbd6b84",
+      "gitBlob": "253cf27d3f8b6abf11502f9ecd486cc3b12576ca",
+      "mode": "100644"
+    },
+    "tests/browser-portrait-sequence.test.mjs": {
+      "bytes": 9066,
+      "sha256": "0a7ad69e3d2b35011160af39fc00d43179f1af4f61758d5edffa97a8d1873c6b",
+      "gitBlob": "c2a62f18f3750dfc698db0baf27a530c41e497e2",
+      "mode": "100644"
+    },
+    "tests/browser-post-route-v29.test.mjs": {
+      "bytes": 22175,
+      "sha256": "617838a3ebcfaac821a5fb21bb24e79d737988175e21e9551e8deb389e6b37b7",
+      "gitBlob": "d9d441717ee7634d3ca94c0c67217bf647404a4f",
+      "mode": "100644"
+    },
+    "tests/browser-theatre-alight.test.mjs": {
+      "bytes": 7957,
+      "sha256": "7822d90555ad936da9bec5cce6543013257cb55c3c8fc4f5c90208f146cd765a",
+      "gitBlob": "08272448ee699311f071f6aea3d811772a834cfd",
+      "mode": "100644"
+    },
+    "tests/browser-traveler-performance.test.mjs": {
+      "bytes": 43308,
+      "sha256": "e3d1a7514daa3ebabc8f7fcfbc89390e159472a4804ce11529e370ab8ad54c20",
+      "gitBlob": "b4aa120cf0181532f16b63140dfb19d489ab7e78",
+      "mode": "100644"
+    },
+    "tests/cap-activities.test.mjs": {
+      "bytes": 7878,
+      "sha256": "ce4f930a46822919d1a68e11bd09b415302cfd7affe7856f40341f57234c1585",
+      "gitBlob": "c2c92f992c9b726950cae3f02cb02080a1f880e5",
+      "mode": "100644"
+    },
+    "tests/cap-activity-engine.test.mjs": {
+      "bytes": 27905,
+      "sha256": "e7018a300f68343a54787ecdf953200608ec335a5e4dfc98ed1852ced6083413",
+      "gitBlob": "d23e0b80fa9967aa7768105d5c998d9389c7605e",
+      "mode": "100644"
+    },
+    "tests/cap-activity-growth.test.mjs": {
+      "bytes": 4046,
+      "sha256": "b9614d0dc2a585b964ea7dec1d118bfbf015ae17a240e9e45f478e126f2ea156",
+      "gitBlob": "a8000c8516ad43fa8f85083a3f065f62d7d04fa4",
+      "mode": "100644"
+    },
+    "tests/cap-activity-progress.test.mjs": {
+      "bytes": 16186,
+      "sha256": "3bda059d332644101cdc34c82a721e959212436417ab437a4ea805c2837a6ad5",
+      "gitBlob": "c4def5c6a9fe92b3776a4dc43f23dbd0de1c0bf0",
+      "mode": "100644"
+    },
+    "tests/cap-character-motion.test.mjs": {
+      "bytes": 11939,
+      "sha256": "ea0f8a1f72381c21df6ae4a4d7612965de76f3cba2bc1bad046a29143aa89dba",
+      "gitBlob": "70baeef7060c2a954bedaebc8782c46353f8281e",
+      "mode": "100644"
+    },
+    "tests/cap-engine.test.mjs": {
+      "bytes": 14161,
+      "sha256": "0123a8e9d8f403ffe2086dbdc8b2173a06c4510b655aee71b0c67be97446b67c",
+      "gitBlob": "26d061d19765228c4d87b5231fcbc34bbb20be82",
+      "mode": "100644"
+    },
+    "tests/cap-progress.test.mjs": {
+      "bytes": 4190,
+      "sha256": "ef240d7325173970a1b8a4bbef088c8c431119d726be73e47b3b919ad5feaa02",
+      "gitBlob": "a61bedc20006e4f2f0e404df9c2f0f70c37af688",
+      "mode": "100644"
+    },
+    "tests/cap-story.test.mjs": {
+      "bytes": 9438,
+      "sha256": "9ba0467939739cb2c047916a5d1d6ed56bcff0af685978c3151bb62e2d989362",
+      "gitBlob": "6f6c173eecc3aea8634048e3eb7d5f15f10872ea",
+      "mode": "100644"
+    },
+    "tests/clock-echo-v27.test.mjs": {
+      "bytes": 13963,
+      "sha256": "fe229e4114e58719b3f7d30c519f551fa6c4c3e9205562c8ce3a6202fe231a0b",
+      "gitBlob": "458f2d9a7fd38b1fb41faf53c684991a45f002fa",
+      "mode": "100644"
+    },
+    "tests/coast-presentation-v27.test.mjs": {
+      "bytes": 18632,
+      "sha256": "51b1f51ecb99eadd3f71e5232845f51ad3ffa93342fa2f23c92083fe1297f7a8",
+      "gitBlob": "f9d01a01d875abd79da81010f921435867547e81",
+      "mode": "100644"
+    },
+    "tests/companion-art-v33.test.mjs": {
+      "bytes": 11540,
+      "sha256": "d45d137cd85a1a62fc5e8d0a6c752889029f4b9fa29d2d79ea8bd5cc5627a3ba",
+      "gitBlob": "a1a29218f86610d51932acaf83ff9fb9b7acb613",
+      "mode": "100644"
+    },
+    "tests/dream-app-energy.test.mjs": {
+      "bytes": 10837,
+      "sha256": "7c68206bc5b87bc4e43b9765fb00cfccb5f9b31ee557a85efb8eb04c828ff54e",
+      "gitBlob": "aa66c19fe8c5e46f820cb3a4cfa9ec34371e33af",
+      "mode": "100644"
+    },
+    "tests/dream-awakening-engine.test.mjs": {
+      "bytes": 19589,
+      "sha256": "84fb28ea1fa51e5ba29c11ad88b52944351a06a37ead22450fd3691d3a6f0d1d",
+      "gitBlob": "84a876f59dff18c98ccd6ad8e7a7158599d537b8",
+      "mode": "100644"
+    },
+    "tests/dream-awakenings.test.mjs": {
+      "bytes": 5987,
+      "sha256": "c9b43af9165fc3d4ea1161d28e00269bc358cff1f9fd951cbf5ec5c69320436e",
+      "gitBlob": "f7b0e5afebccbbe2f234898f603348cd2ab60f8c",
+      "mode": "100644"
+    },
+    "tests/dream-direction-input.test.mjs": {
+      "bytes": 6172,
+      "sha256": "fc391b2eec076c368084cccbccf026ffe14d2b9735ac3635550606dfc3681182",
+      "gitBlob": "ea883edddb3d26e1f1920d8f4f8b6cb3984805d9",
+      "mode": "100644"
+    },
+    "tests/dream-encounter-engine.test.mjs": {
+      "bytes": 13812,
+      "sha256": "eebcb486c372a631feb4f6f1be43abdc82c93489a8c79765a462687098dc0d28",
+      "gitBlob": "5a80ce5786ff5dce2ac54da378e36f7162a72f1d",
+      "mode": "100644"
+    },
+    "tests/dream-encounters.test.mjs": {
+      "bytes": 7258,
+      "sha256": "cf43d854230aaf532a6d4e1f5f6eb4ce9ca6ab0ce4e8219143f8fc938e77398d",
+      "gitBlob": "cdedca4a50fe97485807ee300773c88674ea2971",
+      "mode": "100644"
+    },
+    "tests/dream-ending-art.test.mjs": {
+      "bytes": 6550,
+      "sha256": "5360b605277e01fc6bfb62dac066a9ec17a33e76a8cf391c0ce98b88d9c77848",
+      "gitBlob": "cc7c996170f0573d3c72e5ea9bfc67f4b9e0fe5e",
+      "mode": "100644"
+    },
+    "tests/dream-engine.test.mjs": {
+      "bytes": 11048,
+      "sha256": "dd3c76b42214073fb8efdc0e92412e2b905c6606c1c83c97ecc283cceacb39ed",
+      "gitBlob": "b39fde46feac9ed6ab926d8e3f13418f0fab31da",
+      "mode": "100644"
+    },
+    "tests/dream-journey.test.mjs": {
+      "bytes": 19341,
+      "sha256": "37bcbd0331467d126802f0818d9eaa1dec086490a493b83b7e0c64c742769025",
+      "gitBlob": "b19a0ad7188f4f08fca507317e211f24e4eb4142",
+      "mode": "100644"
+    },
+    "tests/dream-modal-input.test.mjs": {
+      "bytes": 7967,
+      "sha256": "5ab671eaea62f48a37ad0cca823a9eb00a7e7f4a0c8d3abe7208986791a8cfed",
+      "gitBlob": "4e8c7d3caf18c415b2287890b2b7f36ce5c39c76",
+      "mode": "100644"
+    },
+    "tests/dream-moon-play.test.mjs": {
+      "bytes": 12734,
+      "sha256": "2080f743a6e5bc340b6687f7290ecd375cd88fba9a85ff8f2167be6881d826ce",
+      "gitBlob": "75ea5dfbfcd3796294b550683972aab09a70b97b",
+      "mode": "100644"
+    },
+    "tests/dream-story-portrait-v24.test.mjs": {
+      "bytes": 2952,
+      "sha256": "d74ef9098b7bc294d5211cec1cb7acbc1333c057b6ef343228200f087ba8cdfc",
+      "gitBlob": "f09d21717a6f3b920d1d5af0302ee272ac5b0923",
+      "mode": "100644"
+    },
+    "tests/dream-story.test.mjs": {
+      "bytes": 11165,
+      "sha256": "5fb0ae26be1776009ee234819337fcb53eac935d6b7bbecba58790f46500cf9a",
+      "gitBlob": "ddbd7bfe92846f3fcdbff27497709f2bd459b176",
+      "mode": "100644"
+    },
+    "tests/dream-ui.test.mjs": {
+      "bytes": 6013,
+      "sha256": "cedb5f3ef1bd57723744637d7a844ea8126b876a98d0acaeae112023887e749d",
+      "gitBlob": "7bd56f999887a6cf85b52a4ba1744fde5db52cbc",
+      "mode": "100644"
+    },
+    "tests/ending-scene-v29.test.mjs": {
+      "bytes": 2944,
+      "sha256": "a367c43cf228b6a19251ce53ccce4064847aedeae193f5c7f498b726e7b1a753",
+      "gitBlob": "96fca4f7628c26392cf1d0926c63201a30fc4f87",
+      "mode": "100644"
+    },
+    "tests/engine.test.mjs": {
+      "bytes": 5471,
+      "sha256": "c2b453f508d30f83e51f6042fd92e8272583cd370cbdcab8891082d331653234",
+      "gitBlob": "3fb131ecf6b0cc515a34fa9190b23dcc5d5366a0",
+      "mode": "100644"
+    },
+    "tests/festival-engine.test.mjs": {
+      "bytes": 9732,
+      "sha256": "707d31001e329d51a91ebcf2550306791617ababeac8cf498fe6073c6edeae25",
+      "gitBlob": "379551bf96e9bcc56fe7de3bbb3bc23af4fbcb58",
+      "mode": "100644"
+    },
+    "tests/festivals.test.mjs": {
+      "bytes": 18570,
+      "sha256": "1279a13d30f415c2465c9de266c3175157f8f81f68e20faba152af0f67feabc9",
+      "gitBlob": "e9a00e7d18bfc76ef17f404f9b6dae474b702422",
+      "mode": "100644"
+    },
+    "tests/first-ticket-engine.test.mjs": {
+      "bytes": 13252,
+      "sha256": "bde95635a08d69520c37aec16923784034f14bed389ea033489ce09b0837ab0c",
+      "gitBlob": "4785d9c3dae645a334fdfb2b56c91c1b7af52206",
+      "mode": "100644"
+    },
+    "tests/fixtures/v32-layout-v31-css.json": {
+      "bytes": 23350,
+      "sha256": "e7914aa2abe8f379fc10203c3e4a72c59d36d4b695ed276d016a82047e8a7647",
+      "gitBlob": "6c2c2cfdcb58809c27357e5801fa748be80463f6",
+      "mode": "100644"
+    },
+    "tests/greenhouse-engine.test.mjs": {
+      "bytes": 12954,
+      "sha256": "58103e59140e58dd67d6904ba5504d6b5b7810c19033d9b7a137abe81220e3af",
+      "gitBlob": "1a72dace0472cf41773d42e3777aeb0d84ab20fc",
+      "mode": "100644"
+    },
+    "tests/greenhouse-materials.test.mjs": {
+      "bytes": 7875,
+      "sha256": "19d79ac4a57855054be75717de5de521cf49b9bd021b704dbb2ea35cf916b45c",
+      "gitBlob": "8fe6489325760408a1c152680acc752a7164e560",
+      "mode": "100644"
+    },
+    "tests/greenhouse-scene.test.mjs": {
+      "bytes": 9223,
+      "sha256": "bb5dfefc81a884ff16ef00098739e959589d1ed39d5284d2efda6302fcfe0c3b",
+      "gitBlob": "9a76798b493b17f4110f680a014c1fdb74d79481",
+      "mode": "100644"
+    },
+    "tests/ground-shadow.test.mjs": {
+      "bytes": 7858,
+      "sha256": "1ef74d0088b6a4a6fcf7b463874509d2d5a248cd899a24ba20734fcdfeac6994",
+      "gitBlob": "4e06e1aa2c97906017b86bab00fc358bb1386e78",
+      "mode": "100644"
+    },
+    "tests/journey-engine.test.mjs": {
+      "bytes": 14855,
+      "sha256": "152184ed49055a390f8e4d6bbee810416488bf9efc1de90bca1e6da40698aaa3",
+      "gitBlob": "6c62f5693d6c8e8ff98606a2086ebf2ababa468d",
+      "mode": "100644"
+    },
+    "tests/letter-echo.test.mjs": {
+      "bytes": 13939,
+      "sha256": "adb7db29a7ed256c84d9d3f8771c7a0851f7fcac6f4d441ebbaf45fbee154908",
+      "gitBlob": "b13da06641cff826189a4e62f61b474bf23fe595",
+      "mode": "100644"
+    },
+    "tests/library-finish-v26.test.mjs": {
+      "bytes": 5440,
+      "sha256": "0aa2e7cf53621173217b1fbae6b12331365a43ba182b1064f491f8a8f9945d55",
+      "gitBlob": "d38424c89e637e4020906633e1fc5d7d57bb6384",
+      "mode": "100644"
+    },
+    "tests/lost-cases.test.mjs": {
+      "bytes": 23577,
+      "sha256": "a989c0268ed60b7a8d772d2d481ed322a32457abdd1e48bb57740e90f094a6e7",
+      "gitBlob": "6f738edfe36cf2f65698c44d6795cb457ca52bcc",
+      "mode": "100644"
+    },
+    "tests/lost-encores.test.mjs": {
+      "bytes": 4358,
+      "sha256": "5c164cb6cb100c05ea1898e5ae9077b9956070886985e4b514f15ef26ed8dfe8",
+      "gitBlob": "40e45ed23f6adc415b42975498866ee317bab980",
+      "mode": "100644"
+    },
+    "tests/lost-engine.test.mjs": {
+      "bytes": 36641,
+      "sha256": "3ae9d227458eb53f4e9197d94b56c9b456076e5828ce46994cf8e29b58e7778b",
+      "gitBlob": "1761dfce06d0b69ae28fdb5139e7fb49c0a05246",
+      "mode": "100644"
+    },
+    "tests/lost-evidence.test.mjs": {
+      "bytes": 14038,
+      "sha256": "3bb1433f6c99aa681b4ed149544429785b4c6273de3efa67abf440714e0438a2",
+      "gitBlob": "8a221460e1c424bd2e86c0bea87c48c88ec5526a",
+      "mode": "100644"
+    },
+    "tests/lost-progress.test.mjs": {
+      "bytes": 20108,
+      "sha256": "46a0310ef01ef6bb32e3d034b46b5cae25757bfbc87b9470db23798de0847d3f",
+      "gitBlob": "a00ee32a7b104a96d341d1113b1a6eee5b1b48c1",
+      "mode": "100644"
+    },
+    "tests/moon-play-engine.test.mjs": {
+      "bytes": 15662,
+      "sha256": "e2935467047b01275a27f5c7867852fdc1a267126981a24543d7cade3fe6ab01",
+      "gitBlob": "ea37592cfc2dca3600a50d49d6ca9290f30ae381",
+      "mode": "100644"
+    },
+    "tests/painted-scene.test.mjs": {
+      "bytes": 11736,
+      "sha256": "a1ca059babe17572ea9cd177bd35e1baecbb4c80ccebefd37c3593d2926dd644",
+      "gitBlob": "75ef726fe738b7880c3291d4ddbed8703b9d4365",
+      "mode": "100644"
+    },
+    "tests/painted-station-integration.test.mjs": {
+      "bytes": 15679,
+      "sha256": "6ea20fca18dd3829dba55f125d757c67f9d6bc7e404e2917cc9577b2cce84ce0",
+      "gitBlob": "a49ace47de8c0b0317a1a7506c9943bb0de73b22",
+      "mode": "100644"
+    },
+    "tests/play-rewards.test.mjs": {
+      "bytes": 18876,
+      "sha256": "ebe7652ce3cf89b0c91be273c20eb5a0c0f9952a085d2d9450fda50413d6e374",
+      "gitBlob": "4d17d6e33dab82b309075e123dae2d90d54791a1",
+      "mode": "100644"
+    },
+    "tests/post-delivery-v28.test.mjs": {
+      "bytes": 7362,
+      "sha256": "1f4d5a33c34329d601c146433272c93cfbc7692f754c1a398ab00b5cd77f59e3",
+      "gitBlob": "87a85a992bebad7ae0017567e3d852ae3c6ccea7",
+      "mode": "100644"
+    },
+    "tests/post-mushroom-input-v29.test.mjs": {
+      "bytes": 2197,
+      "sha256": "bd17513bf44fc3f9e2753d1644ed681d38dcd9ad56ff02c2bc3e61ebf8eef0a6",
+      "gitBlob": "10f320398561f3d5c3b4d3374e508263c68aa596",
+      "mode": "100644"
+    },
+    "tests/progression.test.mjs": {
+      "bytes": 7155,
+      "sha256": "58781164a6e5112b351964a961437f19f7a39680724be6f781078c7dbb27c566",
+      "gitBlob": "ccfb6176df0e722b17ff8aafaadab68338d6c4a0",
+      "mode": "100644"
+    },
+    "tests/scene-backdrop-integration.test.mjs": {
+      "bytes": 11928,
+      "sha256": "5be312677e85d06db9c0784eb0fd9c831988a195f9f210b30fab587d11c1dd08",
+      "gitBlob": "9398ae4bed35b75c7c5d602d66bd79ba5e0f90ba",
+      "mode": "100644"
+    },
+    "tests/soul-art-v22.test.mjs": {
+      "bytes": 23832,
+      "sha256": "908ca72257cf644b6039924fa77ee08e0c806974df8628e9cf89916366265d6e",
+      "gitBlob": "5851f6bf1ce354ddd5e0cd63bfe1771a1a645a25",
+      "mode": "100644"
+    },
+    "tests/station-finish.test.mjs": {
+      "bytes": 5671,
+      "sha256": "d47cd886f4bf6e9cf4d42f09df1cf504bd4aba6967ea5e33cbf08576f5169a2a",
+      "gitBlob": "b9b2aac9526dbf55255e1b66a48391c98afc3ca7",
+      "mode": "100644"
+    },
+    "tests/theatre-art.test.mjs": {
+      "bytes": 8685,
+      "sha256": "f41c681827fdac410c706b7d0673a9754549fb2327935a3a47a9258e40701b31",
+      "gitBlob": "afb0ea6f73b380cf26a8e9336c318ae0da989076",
+      "mode": "100644"
+    },
+    "tests/theatre-assets-v22.test.mjs": {
+      "bytes": 14283,
+      "sha256": "ac24c7f302ae49baaa1247cf8de5bbdc3bb1faac8005776b5834e2a87b8d8ff6",
+      "gitBlob": "482452f4938e4917b848c91d204e4c2e6b508068",
+      "mode": "100644"
+    },
+    "tests/theatre-encore-v21.test.mjs": {
+      "bytes": 3799,
+      "sha256": "83b91a7bc59163c88ff3a01cfbea7a9aac38c3f55b235e12aa5805b33c56601e",
+      "gitBlob": "48639afb10e6f18a226d1f21499747dacaa8a7cb",
+      "mode": "100644"
+    },
+    "tests/theatre-encore-v22.test.mjs": {
+      "bytes": 9346,
+      "sha256": "0452b1ce82a6f3ea8df553b43ea6eef2ce71ea44bbadfc0296402dec041c754a",
+      "gitBlob": "0ca2661aa9bf27fa5474b9e31a15281db3e3a009",
+      "mode": "100644"
+    },
+    "tests/theatre-engine.test.mjs": {
+      "bytes": 5615,
+      "sha256": "14ea4b91fef356eb45cbd1010264d6e72511b74f54f91d95d04c1bec54011465",
+      "gitBlob": "099bf4fb7d245bf532f03e1c75989508774bc425",
+      "mode": "100644"
+    },
+    "tests/theatre-guidance.test.mjs": {
+      "bytes": 6488,
+      "sha256": "2d1747b62ccfd1b91a9a40509286f19e57472b895202ba43e7b5544c964d9907",
+      "gitBlob": "10fada8d5ec5153216fb2869195916a1aaac6ff2",
+      "mode": "100644"
+    },
+    "tests/theatre-npc-art-v24.test.mjs": {
+      "bytes": 3011,
+      "sha256": "dfbadc45089e6e0069aa9b8c91ed0cd6a912638e828428e3de9c5c428c982ff2",
+      "gitBlob": "c7bc0fb590b744d844d869293877282d1ea5c11d",
+      "mode": "100644"
+    },
+    "tests/theatre-painted-v20.test.mjs": {
+      "bytes": 6561,
+      "sha256": "36253470e374427d66ed68ffb579a37d09dad1b2cd6608f31c50db3a477581c7",
+      "gitBlob": "3b54f7f3d5f29bd128ba97bac37e00054889f69b",
+      "mode": "100644"
+    },
+    "tests/traveler-face-v31.test.mjs": {
+      "bytes": 14155,
+      "sha256": "3f1453295e167d51bdccc6ab1da85157da6bcf916c4344c3fe8234e7c5990d42",
+      "gitBlob": "472c87e95ff1f54642ab1c37e772972b46ff3bee",
+      "mode": "100644"
+    },
+    "tests/traveler-motion.test.mjs": {
+      "bytes": 5087,
+      "sha256": "5b7fb2b242d8d776d319457fde01c05a20272d5cb3621587c7878340f69981bd",
+      "gitBlob": "70d416a398f556a39cb15ee1b97809bdd71f75ef",
+      "mode": "100644"
+    },
+    "tests/traveler-performance-v30.test.mjs": {
+      "bytes": 26300,
+      "sha256": "c3ac41e8621ba595a5105a8f6919246c393f28854384f0eb12944cf9bb5207fe",
+      "gitBlob": "c3e6926fadc51acb8156a020c0b5d70d4169f9dc",
+      "mode": "100644"
+    },
+    "tests/traveler-performance.test.mjs": {
+      "bytes": 15556,
+      "sha256": "89f4373851fbe39ebd5469f4bd6ca4206f3aa36489baa9846d094b2aa9a7e932",
+      "gitBlob": "b59564b8c4aa8d57c147fdb2ed0637ba00c1ca62",
+      "mode": "100644"
+    }
+  }
+}

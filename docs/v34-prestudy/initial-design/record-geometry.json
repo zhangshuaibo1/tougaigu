@@ -1,0 +1,148 @@
+{
+  "scope": "Analytic recorded-pose geometry; conditional camera estimates, not the original frame camera",
+  "rig": {
+    "theta": -1.16,
+    "bodyMatrix": [
+      1,
+      0,
+      0,
+      1,
+      105,
+      559.4942855618284
+    ],
+    "headLocalMatrix": [
+      0.9996875162757026,
+      -0.024997395914712332,
+      0.024997395914712332,
+      0.9996875162757026,
+      0,
+      -49
+    ],
+    "headMatrix": [
+      0.9996875162757026,
+      -0.024997395914712332,
+      0.024997395914712332,
+      0.9996875162757026,
+      105,
+      510.4942855618284
+    ],
+    "capLocalMatrix": [
+      0.3993395294062732,
+      -0.9168031087717669,
+      0.9168031087717669,
+      0.3993395294062732,
+      -1.296089939029022,
+      -27.97825451069732
+    ],
+    "capMatrix": [
+      0.37629705201705826,
+      -0.9264990710428539,
+      0.9264990710428539,
+      0.37629705201705826,
+      103.00493156297566,
+      482.5571726736469
+    ],
+    "gripHead": {
+      "x": -18.40594423534354,
+      "y": -21.251227978945902
+    },
+    "gripBody": {
+      "x": -18.931418036803194,
+      "y": -69.78448664084615
+    },
+    "gripWorld": {
+      "x": 86.0685819631968,
+      "y": 489.7097989209822
+    },
+    "claspBody": {
+      "x": 22.242995157056185,
+      "y": -59.55931657083806
+    },
+    "catchBody": {
+      "x": -0.42495573055010966,
+      "y": -65.99468777668694
+    },
+    "openingWorld": {
+      "x": 104.6000416653646,
+      "y": 494.49928530141716
+    }
+  },
+  "recordedLeftHand": {
+    "x": 86.0685819631968,
+    "y": 489.7097989209823
+  },
+  "gripError": 5.684341886080802e-14,
+  "bareShellCurveNoStroke": {
+    "left": 70.35055007647068,
+    "right": 99.23897878379384,
+    "top": 455.8782396343032,
+    "bottom": 498.04829056036795
+  },
+  "halloweenMajorSilhouette": {
+    "left": 39.42430559503621,
+    "right": 85.92018185517641,
+    "top": 447.55558231803803,
+    "bottom": 497.58653215435214
+  },
+  "outfitStatus": "Purple pointed-hat appearance matches Halloween painter; original latch did not record outfit ID",
+  "conditionalViewportRows": [
+    {
+      "canvas": [
+        320,
+        431
+      ],
+      "scale": 0.6734375,
+      "viewWidth": 475.17401392111367,
+      "cameraIsObserved": false,
+      "hypothesis": "non-activity framing with original follow target fully settled",
+      "cameraTarget": 53.67517401392129,
+      "bareShellCurveLeftCss": 11.229823567123105,
+      "hatMajorSilhouetteLeftCss": -9.597069200842924
+    },
+    {
+      "canvas": [
+        390,
+        595
+      ],
+      "scale": 0.9296875,
+      "viewWidth": 419.4957983193277,
+      "cameraIsObserved": false,
+      "hypothesis": "non-activity framing with original follow target fully settled",
+      "cameraTarget": 77.61680672268926,
+      "bareShellCurveLeftCss": -6.755347975781335,
+      "hatMajorSilhouetteLeftCss": -35.507090892114945
+    }
+  ],
+  "sourceEquality": [
+    {
+      "path": "dist/dream-engine-base.js",
+      "identical": true,
+      "sha256": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699"
+    },
+    {
+      "path": "dist/dream-cap-art.js",
+      "identical": true,
+      "sha256": "dad5b4a0e2c0ffb13c008c473068465d25f701509114b31ab100629e459063ed"
+    },
+    {
+      "path": "dist/dream-festival-art.js",
+      "identical": true,
+      "sha256": "9ede1ae7d2c0499bc2a22aa61fb1f44a3c97b4efe327023406f15d2c695881e5"
+    },
+    {
+      "path": "dist/dream-station-art.js",
+      "identical": true,
+      "sha256": "73a257203b10d12dd52f7b66f60fe3d65e08200aa64b1b4e5c3f223f654d31ee"
+    },
+    {
+      "path": "dist/dream-traveler-performance.js",
+      "identical": true,
+      "sha256": "ff4f258632c6136fed2a4b95fa8aa828c25817d3db6318663b924ee93ecf2c5c"
+    }
+  ],
+  "limits": [
+    "Bare-shell cubic bounds exclude stroke width and separate hinge/clasp.",
+    "Hat shape estimate covers its two purple fill silhouettes; raster audit in offline-report includes the actual full painter.",
+    "No camera value is recovered from the original PNG."
+  ]
+}

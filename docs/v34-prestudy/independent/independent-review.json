@@ -1,0 +1,376 @@
+{
+  "status": "passed-prestudy-review",
+  "scope": "Read-only independent implementation review and bounded evidence audit; no ref change, deployment, public HTTPS or full browser regression performed by this reviewer.",
+  "sourceRoot": "/workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy",
+  "baselineCommit": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+  "prestudyVersion": "33.0.0",
+  "releaseVersion34NotPublished": true,
+  "frozenSources": {
+    "dist/app.js": "b92bfcf99fc9f5121caeaa1697f5f640193eedc0f294b2e1a53db023bdcfa300",
+    "dist/cap-activity-progress.js": "30190693766ddaedd1f5c1c46f73374e28041851d6c71f65ea6cb9111178d967",
+    "dist/cap-book.js": "210950f7a4cdf2a99bb6ea3943bf739ce79f5d517081621fe90994a1faa38f87",
+    "dist/cap-progress.js": "5ab3326cea09d614e65e1c11c941fbbe97e90cfd7889d23a65495151cbd0f681",
+    "dist/content.js": "cc7726e290e6bb2ea9100a28d977f1b1f3f3f2146282d222dfa5d1fe094512ff",
+    "dist/dream-app.js": "51db406e50ca21c487a3259bb76f9aaf7e85eaaf773f0fe2b7160701579d7505",
+    "dist/dream-awakening-art.js": "a9255f851e92b8649798c23de42167c6137a8745829dbf5e71ca1ba22df6cdd6",
+    "dist/dream-awakenings.js": "a96bf35c9379612d0cda50073b8c12e56b263b5ae8dbf90362b0dcfc9ed30e1b",
+    "dist/dream-cap-activities.js": "041c66d52a0a17f80e75bc4da31054f2d01d5c440567d380533be10076a69749",
+    "dist/dream-cap-activity-art.js": "fe5127ec3b28ee9ce891fa864ae3e277c2be23b88053c3f345fc99a6bc5a163d",
+    "dist/dream-cap-activity-engine.js": "e29d1cd2a3e1853aee323fdfb36890e2965924c5d3c070bb01155a1a7bdaf31a",
+    "dist/dream-cap-art.js": "dad5b4a0e2c0ffb13c008c473068465d25f701509114b31ab100629e459063ed",
+    "dist/dream-cap-framing.js": "8cf94b0687b84479a9a9fdc720792d968c9655516950d82e4a561fce14dff485",
+    "dist/dream-cap-story.js": "cb17da0fc2a46ec8476910953a4bf3094aaef351f58183eb83745334f4345c19",
+    "dist/dream-clock-echo.js": "51a27018ea27ff0817b38cec88d52b28f4836e9691a8fdbe624dc3c7ed008171",
+    "dist/dream-coast-finish.js": "39b1818d3158c415546c2ae1b6b44ec379d765a7e089caa0cd578b3ba0bd8902",
+    "dist/dream-coast-scene.js": "5927d816f86835dbbf9e5d0237a251ed14953f11a80869609b43d30727257fc7",
+    "dist/dream-companion-art.js": "f0d9916c23667807c7e5577b238dcb509e3cab6e54070b6e239d11af20f787f3",
+    "dist/dream-direction-input.js": "ebbe509a6ce3114fe1f0689ef4252b19bf9ddfd2e8b3e367626ef21c891401de",
+    "dist/dream-encounter-art.js": "f98a01bbf775e1c7f52d5f01184bd2429096daa625bcf4a44f249d234ba56efc",
+    "dist/dream-encounters.js": "6d3d3b962c9d9d27deb2ccfbcb52255b18bb3caeb8d77dce4a4a0e9e745c1f20",
+    "dist/dream-ending-art.js": "80f61137dfb5ad0f6b906855d1e5678dac2c30aeff218cf41541c17052a8d95c",
+    "dist/dream-ending-scene.js": "92213dae9ec72e37d9e6a61d92e240d2cb5792899217638d5d8a414b89160818",
+    "dist/dream-engine-base.js": "179caecf7467c70319b988b1146b988b04f8d1d980603ff1181a59ba575d1aef",
+    "dist/dream-engine.js": "7b602b83f551c41fdbe97443e1fed08d6af773e9767f0ed830a434168951e889",
+    "dist/dream-festival-art.js": "9ede1ae7d2c0499bc2a22aa61fb1f44a3c97b4efe327023406f15d2c695881e5",
+    "dist/dream-festival-levels.js": "ab633cf46ea8b2c1f925692c9ae21bf104522d647a1b05be782ebf2418c346c5",
+    "dist/dream-festivals.js": "3ea4f05fc6a260ec6a0e0cdc1bda849bdca199ef664ad1dd353002508c15f86c",
+    "dist/dream-first-ticket-art.js": "44c9b420d544f7db1ed9c79cb2a0291563db8e83442f6ce4df5e1aaf4f56dd04",
+    "dist/dream-greenhouse-art.js": "38a4f9044a7f403a5d121ef6189aa83108d72f0b4a2c8b0e0aeabc03dbe3db83",
+    "dist/dream-greenhouse-finish.js": "af7d94a6222491b2712b7af10db2f79ef45db9f899a92e939d5fb6eba664ab56",
+    "dist/dream-greenhouse-scene.js": "b4a4c84440ed43bd52ba8405c719cb3d426d134e6c8285bcb584533879a6c8e6",
+    "dist/dream-ground-shadow.js": "ede6c52978710e0e8286a1b5fdf51eeb09e1e17a1d9df3171cca8176c90d94bc",
+    "dist/dream-journey.js": "62947008e6c4edd0f1817b92a5338d7d0ebdf0a2a065d3049b280ea36d22434c",
+    "dist/dream-letter-echo.js": "10c446ba05235b9123f09667cf2fd2e9e96be57b9fc87da6e8b1c8c5696e1f2f",
+    "dist/dream-levels.js": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0",
+    "dist/dream-library-finish.js": "0295efbb70a84b616301e0b3d9e68bdfd87706c33c5e1736403b624d5d8316f8",
+    "dist/dream-library-scene.js": "9564ec3fa13e9f4de038d8db6ec44cd3421cbc1bf26d89256a22921307ca23ea",
+    "dist/dream-lost-art.js": "f572fc0d082178d8bb28ac3fc45561aacfc0b090da6f1f6c5f0cdb0815f0c235",
+    "dist/dream-lost-cases.js": "8c82de1b2021734f9355fae64475386f235b6b8451dd495fd3afc839adfea79f",
+    "dist/dream-lost-encore-art.js": "2eeecf0c00e9f965a66034089b18d8fa7795641855c5269d8c6e5aaac235dda2",
+    "dist/dream-lost-encores.js": "0bbba9148430c6efae7bbee811bcd9170296bfff07cdb98a8aa4509d73be5576",
+    "dist/dream-lost-engine.js": "42239bd2c4df5e4aa465d70a1d8d598faa4ef882b1477484fbe18a1d2eb636d5",
+    "dist/dream-modal-input.js": "9453aa3d43e06b2b27274c7390a735a37ed04c85c600a12f41d6c553dd9f7e74",
+    "dist/dream-moon-art.js": "1f6941a32a0ec6d448b29920816d026778b09c71a951f54cd9107cd05ce05b32",
+    "dist/dream-moon-play.js": "4f43c1b14750211498edda61d70a1c3fef54c9aa56c66c7b48006604650e5095",
+    "dist/dream-painted-scene.js": "ba9551548f431ecf4b7d13f63e62e9f329d9643a0afac292729fa3b598722ce7",
+    "dist/dream-post-delivery.js": "d8a1cfe4067d332f0dbee0602ff48d0463ed1c434c2185c50b3722b11f17de1a",
+    "dist/dream-post-finish.js": "b75eb3a683d841d1e6e68ac6fad40ae257a9c1c4df979feb76c0b847eae62f7e",
+    "dist/dream-post-scene.js": "d6af0e2711f354765e31b186e9d1f20d1240d974d51d71347e2b2559f5674275",
+    "dist/dream-scene-backdrop.js": "39f31d372405896f580ee297c9168a1d8a12dcd5af134c2c09ea908f28cbedd8",
+    "dist/dream-soul-art.js": "4af4abd87fd3157f3e9a06bd8f2ed750819c645a01a4de24d159a028e96a46b8",
+    "dist/dream-station-art.js": "73a257203b10d12dd52f7b66f60fe3d65e08200aa64b1b4e5c3f223f654d31ee",
+    "dist/dream-story-portrait.js": "fe82cc56695db356b71b572cbc9563cddc7c455e7bae1e56db46dba9905a62ef",
+    "dist/dream-story.js": "a91aaf6b497cf956a85c9119e97871ed8b4cc119dd06c6ebe765aa3ed02fb9de",
+    "dist/dream-theatre-art.js": "a92c905952383c801559103f3b80d34537acdde4eb4d2292d3fc88e7c51bf213",
+    "dist/dream-theatre-encore.js": "62ca4f474e0261e31980bedfae4d02f97b879ceaa83e8670596253d6d190456d",
+    "dist/dream-theatre-guidance.js": "ee0db2c0c396d45dc6386e81921f90369092a3361927295a4bf160a2ba5c9a28",
+    "dist/dream-theatre-lantern.js": "84be352475290b6fb2f0f9b85d0f77d9bf262be89fc3d5443ea1cd9af0da1904",
+    "dist/dream-theatre-painted.js": "240e8e0990fbd65fa24f920daaa24a6c0225b4714f04496d5e5d33c7b001fd6e",
+    "dist/dream-traveler-art.js": "e7c1315bdf28b22705887d8fc478472e1d4952df0c1f9e598abf5f2f6ca0e8ac",
+    "dist/dream-traveler-face.js": "ea914374c1d7793ebf710617d2749a71e01805ce7d1c33f20294ecd65acfd71b",
+    "dist/dream-traveler-performance.js": "ff4f258632c6136fed2a4b95fa8aa828c25817d3db6318663b924ee93ecf2c5c",
+    "dist/dream-ui.js": "3da92277b69c46b80b06125e08cef13166122b17867ec59a2bb532b6b0c73c48",
+    "dist/engine.js": "3af6579235e5cce9ef65e476d65e30aeab837f1ac6d842b8721ab44f795b514a",
+    "dist/festival-hub.js": "5f5d5c69ea925f137a1b3b8da88d3be92535cf4b594f515f23e4d61ea65f8e25",
+    "dist/game-shell.js": "109f0b136dca39253395e47a0eca84c6a392d17a17e998bb37ea420d846d91c9",
+    "dist/lost-evidence.js": "a681f0d4b2234d00cef0837eab1f223988dfab5198b518d06b1d6fdaaa7548c5",
+    "dist/lost-progress.js": "f81f1a0dfad558be5efa220eebd13688a0f9e183ac9fc1d569c62b4f9c5c5efb",
+    "dist/play-rewards.js": "d2133a6ea631fcd32dabb3e65242dd3da1ce8809d09cdb056c881bcc6d89c0fb",
+    "dist/index.html": "d8912e903d2b3898aa77fa9935f7032aa46a67d0599913a05f0d8e33ef699750",
+    "dist/dream.html": "d8912e903d2b3898aa77fa9935f7032aa46a67d0599913a05f0d8e33ef699750",
+    "dist/survivor.html": "be8f73388fc9a910ea4f46d6ab41a58fd7c9ed2a8bd09167c23aefa3b05b19d9",
+    "package.json": "6d1ac1c65a040d2e91e0e05ff83e45e569fb0db77a6ab0cd909b2ea91356ae94",
+    "scripts/browser_cap_framing_v34.py": "6652734104c23a9dc2ae59f946e3b0068a6a016542d4379875de1f9a9233d75c",
+    "scripts/browser-smoke.py": "32fdf7928cd1552981ed250eae7a126e76a551353b4e67f090616b129082f7c4",
+    "tests/cap-framing-v34.test.mjs": "9ae7ead5c99d74580051207286f56368399e2263f0c528a2dc626d29456710aa"
+  },
+  "all77BrowserRecordedSourcesExactAtReview": true,
+  "paintEnvelope": {
+    "report": "paint-envelope-report.json",
+    "totalScans": 1124,
+    "groups": {
+      "hat": 440,
+      "no-hat": 40,
+      "cap-and-fixed-hinge": 40,
+      "hands": 40,
+      "skull-union": 40,
+      "clothing-and-feet": 200,
+      "soul": 324
+    },
+    "hatAndNoHatTotal": 480,
+    "soulIncludedInTotal": 324,
+    "violations": 0,
+    "minObservedWorldClearance": 0.6666666666666572,
+    "rasterScale": 3,
+    "roundingAllowanceWorld": 0.3333333333333333,
+    "sourceIdentity": "final-source-identity.json",
+    "scope": "Original Canvas paint on synthetic fixtures; native canvas offline. Bounds/follow code exact across source revisions; no rescan needed for visibility policy change."
+  },
+  "actualCorrectionPhysics": {
+    "report": "near-camera-budget-fixed-report.json",
+    "totalComparisons": 1376,
+    "failedComparisons": 0,
+    "cases": [
+      {
+        "viewport": {
+          "width": 320,
+          "height": 431
+        },
+        "comparisons": 688,
+        "cameraDeltaGreaterThan10": 483,
+        "maximumCameraDeltaWorld": 48.662933832029644,
+        "stableCameraDeltaWorld": 35.39375753250974,
+        "physicsHash": "8c6834fdc2081fc18906fbe90c037765bae5cd8a3360ae0201085555c1ac8f12",
+        "originalPhysicsHash": "8c6834fdc2081fc18906fbe90c037765bae5cd8a3360ae0201085555c1ac8f12"
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 595
+        },
+        "comparisons": 688,
+        "cameraDeltaGreaterThan10": 498,
+        "maximumCameraDeltaWorld": 72.60456652799591,
+        "stableCameraDeltaWorld": 56.06108087994993,
+        "physicsHash": "8c6834fdc2081fc18906fbe90c037765bae5cd8a3360ae0201085555c1ac8f12",
+        "originalPhysicsHash": "8c6834fdc2081fc18906fbe90c037765bae5cd8a3360ae0201085555c1ac8f12"
+      }
+    ],
+    "updateBatchesPerViewport": [
+      1,
+      2,
+      6,
+      12
+    ],
+    "samePrimaryPoseObjects": true,
+    "allObservedConsumersUseFinalCamera": true,
+    "oneBudgetConsumption": true,
+    "pausedResizeFirstFrame": true,
+    "scope": "Normal engine method inputs, selected physical fields plus getSnapshot and events; mock2D consumer instrumentation. Not DOM or full chapter proof."
+  },
+  "resolvedFinding": {
+    "id": "near-reentry-visible-body",
+    "oldModule": "175b3e45cf2f89fca35b2a1c7aae1a26dd342197055c7a80f1c52076e0cfbe39",
+    "beforeReport": "near-reentry-boundary-report.json",
+    "old390ReturnTarget": 278,
+    "oldActualSoulX": 278.01566368966866,
+    "oldCamera": 97.63247041235768,
+    "oldBodyCenterFromLeftWorld": 7.3675295876423235,
+    "oldLeftEnvelopeCss": -63.72272447239141,
+    "oldSlackCss": 107.24915052760852,
+    "oldFeasibleCamera": [
+      0,
+      20.48533820676019
+    ],
+    "fix": "Accept a body center already inside [0, viewWidth] rather than requiring 18 world units of inset. Offscreen center exclusion, geometry feasibility, 24/8 CSS hysteresis and original follow budget remain.",
+    "finalModule": "8cf94b0687b84479a9a9fdc720792d968c9655516950d82e4a561fce14dff485",
+    "afterReport": "near-reentry-fixed-report.json",
+    "afterCases": 8,
+    "allAfterActive": true,
+    "stableMinimumLeftEnvelopeCss": 7.999999999999981,
+    "priorFailureEvidencePreserved": true
+  },
+  "sourceReview": {
+    "baseDiff": "15 additions and 1 replaced line, plus only new importmap entries in 3 HTML files; physics update expressions unchanged.",
+    "drawingGeometry": "Clothing control hull fits body [-50,-60,35,8]. Other outfit backs share Halloween cape geometry or add only internal stars. Hand padding includes 4px arm stroke, 2.8px elbow and rotated thumb. Hat hull/ellipse/stroke bounds and head/cap unions reviewed. Decorative glow/shadows/tether/particles excluded by authored framing policy.",
+    "frameOrder": "Follow token removed before computing the existing primary character/soul; final camera assigned before backdrop, world translation, culling, foreground and compass. Companion receives the same shown reference through original v33 render scope.",
+    "multiUpdate": "Product of original clamped follow decays reconstructs the weighted original target; one render consumes it once. Exact fallthrough returns the unmodified camera.",
+    "repeatNestedException": "11 new-case run covers repeated render, drawBackground reentry and pose exception; no stale budget is replayed. This does not claim arbitrary user-injected mutation during rendering.",
+    "pauseResize": "Pause without resize adds no camera animation; resize can clamp first visible frame using prior visible body context without advancing physical state or clocks.",
+    "activity": "Existing activity projection has priority and clears pending ordinary framing; input and body/world dimensions remain original.",
+    "hysteresisEdges": "24 CSS enter / 8 CSS retain threshold is picture slack, separate from feasible camera interval and world clamping; both body-center sides and impossible world edge tested."
+  },
+  "tests": {
+    "status": "passed",
+    "finalFullTAP": {
+      "file": "full-final-tests.tap.gz",
+      "rawSha256": "a4bdd5dadb5c993279ce9ca75df7c11fcaacc8516037b4a5f9df628de4f57d6b",
+      "tests": 702,
+      "pass": 702,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "todo": 0,
+      "durationMs": 19284.071176,
+      "executedBy": "v34 developer; original bytes and case set independently verified"
+    },
+    "priorCandidateTAP": {
+      "source": "/tmp/v33-candidate-1d630-evidence/tests.txt.gz",
+      "rawSha256": "96f053db4611182c2e4e5b21890c59d1b9904123a2ac71c6f3f72fe1b075678e",
+      "cases": 691,
+      "allNamesAndMultiplicitiesRetained": true
+    },
+    "newCases": [
+      "narrow ordinary play keeps the real cap, outfit and supporting hands inside the same whole-scene camera",
+      "fixed-step follow composition has one budget, exact legacy fallthrough and no invented render time",
+      "the frame reuses its exact character and soul; repeated, nested and failed rendering cannot spend an old follow budget",
+      "resize resolves the first frame with one projection while paused time and all physical state remain frozen",
+      "near/far transition keeps normal soul travel and has a geometric hysteresis band",
+      "opening, return, immediate reversal and both facings preserve every gameplay field",
+      "near return around275 reenters naturally after far flight instead of stranding a visible traveler at the edge",
+      "body-center reentry is symmetric, includes the old18 boundary, and rejects a genuinely offscreen body",
+      "desktop, all festival modes and activity framing retain original camera behavior without a borrowed budget",
+      "reduced motion uses the existing immediate target and pause cannot add a camera animation",
+      "invalid or impossible world-edge context fails closed without moving the traveler or widening the world"
+    ],
+    "oldFilesExact": 77,
+    "independentNewCases": {
+      "file": "cap-framing-targeted-test-cases-fixed.tap",
+      "tests": 11,
+      "pass": 11,
+      "fail": 0,
+      "durationMs": 5919.363602
+    },
+    "fileContainerNpmRun": {
+      "file": "final-npm-test.txt.gz",
+      "containers": 78,
+      "pass": 78,
+      "fail": 0,
+      "durationMs": 9269.547886,
+      "note": "File-container count is distinct from 702 individual cases."
+    }
+  },
+  "developerRealBrowserEvidence": {
+    "rawReport": "browser-final-report.json.gz",
+    "rawSha256": "bfc6892dabc6413f11729ce7cf266d0cd2feb5650e0110fad44477a716a95a27",
+    "elapsedSeconds": 63.822335271004704,
+    "outerElapsedSeconds": 65.18977182700473,
+    "startedAt": "2026-10-30T01:45:14.619367+00:00",
+    "completedAt": "2026-10-30T01:46:19.809137+00:00",
+    "sourceHashesMatched": 77,
+    "cases": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "input": "keyboard",
+        "status": "passed",
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "requestFailures": 0
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "input": "CDP simulated touch",
+        "status": "passed",
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "requestFailures": 0,
+        "settlingSeconds": 0.8976614279963542,
+        "settlingTimeoutMs": 3000,
+        "unchangedThresholdCss": 7.5,
+        "backNearHatLeftCss": 7.559639048205738,
+        "pausedSameCanvasBytes": true,
+        "firstResizeFramePhysicalFrozen": true,
+        "reversalObserved": true,
+        "chaptersUntouched": true,
+        "deaths": 0,
+        "memories": [
+          true,
+          false,
+          false
+        ],
+        "lamps": [
+          false,
+          false
+        ]
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 680
+        },
+        "input": "CDP simulated touch",
+        "status": "passed",
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "requestFailures": 0,
+        "settlingSeconds": 0.6766862109943759,
+        "settlingTimeoutMs": 3000,
+        "unchangedThresholdCss": 7.5,
+        "backNearHatLeftCss": 7.554520393393716,
+        "pausedSameCanvasBytes": true,
+        "firstResizeFramePhysicalFrozen": true,
+        "reversalObserved": true,
+        "chaptersUntouched": true,
+        "deaths": 0,
+        "memories": [
+          true,
+          false,
+          false
+        ],
+        "lamps": [
+          false,
+          false
+        ]
+      }
+    ],
+    "callerBrowserRemainedConnected": true,
+    "ownedContextsClosed": true,
+    "readByIndependentReviewer": true,
+    "selectedImages": [
+      {
+        "file": "observed-png/390-back-near-canvas.png",
+        "originalPath": "/tmp/v34-framing-adapted-final/real-browser/cap-framing/390/back-near-canvas.png",
+        "bytes": 432644,
+        "sha256": "1ff5bab37543e9fe9a31d83832845811db0c16d081b5c006324136c65de18783",
+        "width": 390,
+        "height": 595,
+        "viewedByIndependentReviewer": true,
+        "scope": "Original local prestudy Canvas; not public or physical-device evidence"
+      },
+      {
+        "file": "observed-png/320-route-paused-resize-to390-canvas.png",
+        "originalPath": "/tmp/v34-framing-adapted-final/real-browser/cap-framing/320/paused-resize-first.png",
+        "bytes": 430919,
+        "sha256": "1585ffa12f92cc78bccdbadca4b5469fe5b6a176a216736350b48e6d5b0e45c7",
+        "width": 390,
+        "height": 595,
+        "viewedByIndependentReviewer": true,
+        "scope": "Original local prestudy Canvas; not public or physical-device evidence"
+      }
+    ],
+    "notCovered": [
+      "physical phone",
+      "Safari",
+      "device FPS",
+      "all outfits in browser",
+      "every optional activity",
+      "full story from this helper",
+      "public HTTPS"
+    ]
+  },
+  "failureHistory": [
+    {
+      "kind": "Initial observation timing failure",
+      "evidence": "browser-first-failure-report.json.gz",
+      "detail": "Fixed 1000ms screenshot captured active, still-converging hat bound at 6.672841809476801 CSS px. Final helper waits naturally for unchanged 7.5 CSS criterion, capped at 3000ms; game clocks/speed unchanged."
+    },
+    {
+      "kind": "Actual product re-entry defect",
+      "evidence": "browser-reentry-failure-report.json.gz",
+      "detail": "Bounded 3000ms settling still failed at soul about275, body center10.383 world; available framing interval and >110 CSS slack. Source policy fixed; normal-input independent278 failure preserved and eight post-fix routes pass."
+    },
+    {
+      "kind": "Red/green regression proof",
+      "evidence": "new-reentry-tests-red.txt.gz",
+      "detail": "Two newly added re-entry cases failed under old18 policy, then pass under final policy; final11 independent and full702 pass."
+    },
+    {
+      "kind": "Read-only harness process permission",
+      "detail": "First positive-delta comparison attempt stopped before game assertions because child git rev-parse received local EPERM. Approved read-only execution succeeded. No product assertion relaxed."
+    }
+  ],
+  "limits": [
+    "Finite paint fixtures complement source hull reasoning; they do not exhaust all arbitrary injected poses.",
+    "One primary character/soul read asserted on these open-cap station frames; older NPC/post paths may request additional presentations, and the new module adds none.",
+    "Camera formula is verified against each captured final frame geometry; arbitrary render frequencies with moving geometry are not claimed to produce identical camera paths.",
+    "Browser driver uses local prestudy version33, Chromium and CDP simulated touch; it does not prove physical phones, Safari, FPS or public release.",
+    "Selected Canvas screenshots are original bytes; full browser image set remains with developer browser evidence.",
+    "No source/ref/write occurred in development or frozen v33 trees from this reviewer."
+  ]
+}

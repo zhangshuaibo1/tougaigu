@@ -1,0 +1,413 @@
+{
+  "scope": "All original51 PNG identities; four selected originals preserved here. Final exact-source run below retains all final PNGs.",
+  "images": [
+    {
+      "file": "1280/desktop-return-canvas.png",
+      "sha256": "ca53b8029701b38a474a265d0fc40fead5acc7cb240456cfa5a2dc69c4ca998f",
+      "bytes": 1481822,
+      "width": 1280,
+      "height": 677,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "1280/desktop-return-page.png",
+      "sha256": "ff049bfb4feea5e3736b036c9ca0149c789096e5707a1406fbcee64a9aae1160",
+      "bytes": 1074592,
+      "width": 1280,
+      "height": 800,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "1280/near-open-canvas.png",
+      "sha256": "a948644a74d28667a5414c506e23d1adcb7e2167e296167238b3e32956cd58ce",
+      "bytes": 1487269,
+      "width": 1280,
+      "height": 677,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "1280/near-open-page.png",
+      "sha256": "b0c68cc1b21029f31a807eae6d46e0af038c32d2e9af4961ad9c9f390d95e5a8",
+      "bytes": 1084871,
+      "width": 1280,
+      "height": 800,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "1280/opening-open.png",
+      "sha256": "7c392843c3badd9b33c59bb8c8a9f984dd862dafde931416e4e6d36c8119f3ac",
+      "bytes": 1488983,
+      "width": 1280,
+      "height": 677,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "1280/opening-opening-early.png",
+      "sha256": "ede50159e2e1e634749bbf577b2f086721a147540b561599d20d5bd4d3dcf592",
+      "bytes": 1486598,
+      "width": 1280,
+      "height": 677,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "1280/opening-opening-middle.png",
+      "sha256": "fc8ed85c0ae78dbc7c7b59507b5a6d6fed5bdd287a8cbc8070d9b0295b3eda92",
+      "bytes": 1487150,
+      "width": 1280,
+      "height": 677,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/activity-priority-canvas.png",
+      "sha256": "7c934ab3c8e3c950c4e69e444f7d6035e6c52035e5582088ee4815e94ef7d8e9",
+      "bytes": 277689,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/activity-priority-page.png",
+      "sha256": "a2588857ea41ff9ff8ad66ed7c7382310b2803f747f5f7b1f1dc3e8b05d81c16",
+      "bytes": 244054,
+      "width": 320,
+      "height": 680,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/back-near-canvas.png",
+      "sha256": "f1e71e73cb4b8d0daf8214ddfd2b04a3721e54a34cf3dd64397e9c672670aa64",
+      "bytes": 273315,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/back-near-page.png",
+      "sha256": "f76a67c4215e426c90195dfd58c66ff64b1d14bf228e6de210543c6993c7b6c1",
+      "bytes": 247175,
+      "width": 320,
+      "height": 680,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/left-facing-open-canvas.png",
+      "sha256": "cf53ba5a9677b5ebd0f528fb9fd1a83b39f2f37eb01ca3758a0ddb5fc2aaa6a1",
+      "bytes": 272389,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/left-facing-open-page.png",
+      "sha256": "1e6551399343529e79626238c21483bb3b56fbe7b647577676fe000cd9cfcde8",
+      "bytes": 239168,
+      "width": 320,
+      "height": 680,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/near-open-canvas.png",
+      "sha256": "bfa7d0dea92af32d4074bbcb16487aaa37acef8e2284c9f74566439c3feb0d63",
+      "bytes": 273082,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/near-open-page.png",
+      "sha256": "29ae699e96cca3481cb92ac7077437aa29ac3e0eb0a40043d2da959b5e48f1ef",
+      "bytes": 233692,
+      "width": 320,
+      "height": 680,
+      "preservedInThisArchive": true
+    },
+    {
+      "file": "320/opening-closed.png",
+      "sha256": "f5b3fab439e4bc9dbb78a664aeee827b64fbb362e5c742d5a699121acbaefa79",
+      "bytes": 272561,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/opening-open.png",
+      "sha256": "a0115d03d89707b416a1df7241d7f28749d4e41969d303c86eed2abcd56e0de6",
+      "bytes": 273910,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/opening-opening-early.png",
+      "sha256": "4de8685014a9b4de05da4e93f4c95d48eed415fbcb946766f0616a844831f0c5",
+      "bytes": 272665,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/opening-opening-middle.png",
+      "sha256": "01d36253ca13960df138ce424d48fce7da8d5dabc0a16976999283bac028f515",
+      "bytes": 273114,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/paused-resize-back.png",
+      "sha256": "b6b0a0cc5416877243294c7bebeb359e13b79c0ea71a690d6de8e46db9b9a1f9",
+      "bytes": 272802,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/paused-resize-first.png",
+      "sha256": "69a8915ee600317b805be0b2877ce33b9cd15e38517042f91b94f5ce9960be58",
+      "bytes": 431484,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": true
+    },
+    {
+      "file": "320/reduced-open-canvas.png",
+      "sha256": "51eda957b4774eefc35370e6954191154705576d4bc9fadd530604cbece58346",
+      "bytes": 271649,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/reduced-open-page.png",
+      "sha256": "8b8efc1162e7cd2dae353f4c1ddd4b2ed86ce4f62911446150add0468398503b",
+      "bytes": 238655,
+      "width": 320,
+      "height": 680,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/return-closed.png",
+      "sha256": "9e2a4f6306fe64cab7276a98108cd47f119f6a799e6120497213919f42314132",
+      "bytes": 271882,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/return-open.png",
+      "sha256": "ad294ebeb953b096f8c0ddb2138c428de91156434fc00d32b65d25cdd4e30e84",
+      "bytes": 273367,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/return-returning.png",
+      "sha256": "b45b6c7b63c67bf7ae76a2d263c72db90ccdc0cff7110ddbc348410eec6ba14f",
+      "bytes": 273254,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/reversal-open.png",
+      "sha256": "586dc8b3b9be708c2064e20c073519579526dcbb44c03053f06792026e636568",
+      "bytes": 273066,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/reversal-returning.png",
+      "sha256": "7226fc0099baf88609da5499691eb5730cb62b32eb58c9c942eb5af006a0858b",
+      "bytes": 272809,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "320/travel-open.png",
+      "sha256": "ab8f2664016b68c335a8f64b45ee31e5edb9ffe1a6619021ebc16c2772a179c0",
+      "bytes": 272862,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/activity-priority-canvas.png",
+      "sha256": "980829146b5c7c851e665f2679fbc8e1fa36329fdce4b3bd238371ea85c4ce08",
+      "bytes": 441283,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/activity-priority-page.png",
+      "sha256": "0a33df1ea1d2e43f5cef562efbace6fea8ad207ae6c8a66357b257e83343b537",
+      "bytes": 366895,
+      "width": 390,
+      "height": 844,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/back-near-canvas.png",
+      "sha256": "43cfa9bd3d9158eec9a49cae85347bcee516fb0dcf18156c225ebec8b20404bf",
+      "bytes": 433043,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/back-near-page.png",
+      "sha256": "4fd4e131217ed4fccf7d2afa986a412d826150ada593a488224627d1d3e23825",
+      "bytes": 358927,
+      "width": 390,
+      "height": 844,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/left-facing-open-canvas.png",
+      "sha256": "c709a7950edb2874b8863eb352d41a12b061753cfdd6b361823821b18ce605b0",
+      "bytes": 431087,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/left-facing-open-page.png",
+      "sha256": "45b764a30aeec65b719ad8372eecd0f496e09ea0cdbba1b66798fd0270d215e8",
+      "bytes": 355192,
+      "width": 390,
+      "height": 844,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/near-open-canvas.png",
+      "sha256": "f61604738da48da308acb3e680a9923fb67810759d3aa2fc70fb5c6d42e6d643",
+      "bytes": 432988,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/near-open-page.png",
+      "sha256": "fbbcb5663c5009f2d2a7de86ae6d50d97775d536aadcb32463167d82cf76adea",
+      "bytes": 352376,
+      "width": 390,
+      "height": 844,
+      "preservedInThisArchive": true
+    },
+    {
+      "file": "390/opening-closed.png",
+      "sha256": "5f431caf19ad011e3300258a24b31fbbba1bcbcfd4b7772e083f3e35f33b46b6",
+      "bytes": 430921,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/opening-open.png",
+      "sha256": "086eed9a955c6b82653dc9e6f955fd231e493090282ba05e80785f2f02eccf53",
+      "bytes": 433469,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/opening-opening-early.png",
+      "sha256": "9d99012d3d0c0b284685191bc81efb3202fe5f27f899faf7512608fdeea4cd91",
+      "bytes": 431105,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/opening-opening-middle.png",
+      "sha256": "c578d1b407d00186e3e6b4ca8a013a759f25e6a1f574bb640b09a4c321836827",
+      "bytes": 431775,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/paused-resize-back.png",
+      "sha256": "35a9ba3359ed45d23c5702520aa0569451bb5d8bc591ed8814dda5d798096782",
+      "bytes": 431570,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/paused-resize-first.png",
+      "sha256": "48fc94df23a7b976cb317deaed73d8d6b15569363c44c3def99fe240a3f10a42",
+      "bytes": 272833,
+      "width": 320,
+      "height": 431,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/reduced-open-canvas.png",
+      "sha256": "a747e93cf53503f865f00556e597764ad110e53a696a572317408c2fc6b8e565",
+      "bytes": 429304,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/reduced-open-page.png",
+      "sha256": "f554f42f33dbc400bbdb6d54e997eaef83a37db970950aae586b48a1d24119a3",
+      "bytes": 354025,
+      "width": 390,
+      "height": 844,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/return-closed.png",
+      "sha256": "af452e8009292bc11586ed3cf6cdaaddc1421b71bd6f3d8c833d7fc962fc71da",
+      "bytes": 430185,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/return-open.png",
+      "sha256": "e7c2b65091faeaaffec62b32ede50ef76f41acad148c6d1f2d1b667673c0aa78",
+      "bytes": 432741,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/return-returning.png",
+      "sha256": "1fd3e8146de4237246ae493875ba69cef1f2f38d393d84bed9509d73fa098033",
+      "bytes": 433597,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": true
+    },
+    {
+      "file": "390/reversal-open.png",
+      "sha256": "1d5b417ba0db4276e926e19928ba6de2977ce6f32b875fcb5b6df08379c16cd6",
+      "bytes": 431671,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/reversal-returning.png",
+      "sha256": "fde465479f0823393398080a8eb1829694b6e3f515b2dac166224fa5eea48503",
+      "bytes": 431113,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": false
+    },
+    {
+      "file": "390/travel-open.png",
+      "sha256": "fc713f15d90e39110a0af04832d84b01d40fc86085fd8749ca1625741a041469",
+      "bytes": 432871,
+      "width": 390,
+      "height": 595,
+      "preservedInThisArchive": false
+    }
+  ]
+}

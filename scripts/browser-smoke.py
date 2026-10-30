@@ -1908,6 +1908,15 @@ async def main(args):
                 report['independentCompanion']={'status':'failed','details':'companion/report.json'}
                 (output/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
                 raise
+        if int((args.version or version).split('.')[0])>=34:
+            import __main__
+            from browser_cap_framing_v34 import exercise_cap_framing
+            try:
+                report['independentCapFraming']=await exercise_cap_framing(b,args,output,__main__)
+            except Exception:
+                report['independentCapFraming']={'status':'failed','details':'cap-framing/report.json'}
+                (output/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
+                raise
         await b.close()
     (output/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
     print(json.dumps(report,ensure_ascii=False,indent=2))

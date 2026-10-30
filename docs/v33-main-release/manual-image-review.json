@@ -1,0 +1,183 @@
+{
+  "status": "reviewed",
+  "reviewedAt": "2026-10-30T02:27:08.863536+00:00",
+  "runId": 40988381550,
+  "commit": "be05769a99a807f9396c03084760f8283ce4195e",
+  "method": "Each listed original PNG opened individually with view_image at original detail; no generated replacement or pixel transformation.",
+  "imageCount": 10,
+  "images": [
+    {
+      "path": "live/companion/1280/watching-up.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1083285,
+      "sha256": "3cbc60ec1aa28dc84a2b3092c452097d7e47c2c5913f876e271f0d701dadc2f9",
+      "unchangedOriginalArtifact": true,
+      "scope": "actual public HTTPS",
+      "manuallyOpenedAtOriginalSize": true,
+      "reencodedCroppedOrComposited": false,
+      "visualNote": "已逐张打开原尺寸公网整页：暖光站台、小猫、开盖身体与上方拾光均可见；小猫位于身体左侧，目光朝上。对白与画面、操作区同时清晰可辨。静态图只证明此帧外观，追随轨迹由原报告连续状态与纯验证器证明。",
+      "frameScope": "full browser page; read and subsequent screenshot are not guaranteed the same frame"
+    },
+    {
+      "path": "live/companion/320/after-neutral.png",
+      "width": 320,
+      "height": 680,
+      "bytes": 240386,
+      "sha256": "40d95610258efc8dc8ffa317e5bb7758c54d05685d3a98dbd352a2688227cf21",
+      "unchangedOriginalArtifact": true,
+      "scope": "actual public HTTPS",
+      "manuallyOpenedAtOriginalSize": true,
+      "reencodedCroppedOrComposited": false,
+      "visualNote": "已逐张打开原尺寸公网320整页：小猫处于开局中立状态；身体、闭盖帽子、小猫与站台NPC可见，触控区及底部文字均在整页范围内。此图不代表所有服装和所有运行位置。",
+      "frameScope": "full browser page; read and subsequent screenshot are not guaranteed the same frame"
+    },
+    {
+      "path": "live/companion/390/returned.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 351459,
+      "sha256": "3efe51ae2201b174ca9b2846a28628b873bbb8927f39d3b9c9a6f71811c66130",
+      "unchangedOriginalArtifact": true,
+      "scope": "actual public HTTPS",
+      "manuallyOpenedAtOriginalSize": true,
+      "reencodedCroppedOrComposited": false,
+      "visualNote": "已逐张打开原尺寸公网390整页：身体已闭盖，小猫在左侧，第一张票已收取，恢复身体的操作提示清晰。小猫此后整页截图中的眼睛已张开；它不是到达眨眼的同帧图。",
+      "frameScope": "full browser page; read and subsequent screenshot are not guaranteed the same frame"
+    },
+    {
+      "path": "live/companion/390/return-returning-canvas.png",
+      "width": 390,
+      "height": 595,
+      "bytes": 432706,
+      "sha256": "3ca70f1e9ac97d508abd615f0b333ce69075b8c811234817942346633957757b",
+      "unchangedOriginalArtifact": true,
+      "scope": "actual public HTTPS",
+      "manuallyOpenedAtOriginalSize": true,
+      "reencodedCroppedOrComposited": false,
+      "visualNote": "已逐张打开原尺寸公网390 Canvas锁存图：拾光在身体上方，帽盖仍打开，小猫与角色完整可见。它是原观察器被动RAF保存的归位早段Canvas，不包含DOM界面。",
+      "frameScope": "unaltered current Canvas pixels latched by passive RAF, no render call",
+      "originalLatch": {
+        "kind": "returning",
+        "observedAt": 4884.299999999814,
+        "capPhase": "returning",
+        "capProgress": 0.02314814814814815,
+        "returnBlink": 0,
+        "runId": 1,
+        "body": {
+          "x": 105,
+          "y": 560
+        }
+      }
+    },
+    {
+      "path": "live/companion/320/return-arrival-blink-canvas.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 272349,
+      "sha256": "458b62b786d885299486c9e60b9b059ca3b35de4bf2e0df6db120323c9441a17",
+      "unchangedOriginalArtifact": true,
+      "scope": "actual public HTTPS",
+      "manuallyOpenedAtOriginalSize": true,
+      "reencodedCroppedOrComposited": false,
+      "visualNote": "已逐张打开原尺寸公网320 Canvas锁存图：小猫双眼明显收窄至闭合附近，身体头盖正在落回；原同次arrival-blink锁存记录progress与returnBlink分别为0.8101851851851855和0.976296007119934。只把这张Canvas用于实际到达眨眼外观。",
+      "frameScope": "unaltered current Canvas pixels latched by passive RAF, no render call",
+      "originalLatch": {
+        "kind": "arrival-blink",
+        "observedAt": 5940.699999999721,
+        "capPhase": "returning",
+        "capProgress": 0.8101851851851855,
+        "returnBlink": 0.976296007119934,
+        "runId": 1,
+        "body": {
+          "x": 105,
+          "y": 560
+        }
+      }
+    },
+    {
+      "path": "live/companion/320/reduced-open.png",
+      "width": 320,
+      "height": 680,
+      "bytes": 239473,
+      "sha256": "61f35b13f01733656b95d8b72d80e2f7cae06e3a1a21fc9fbe657b67ab1e774d",
+      "unchangedOriginalArtifact": true,
+      "scope": "actual public HTTPS",
+      "manuallyOpenedAtOriginalSize": true,
+      "reencodedCroppedOrComposited": false,
+      "visualNote": "已逐张打开原尺寸公网320减动整页：开盖拾光贴近身体，小猫可见，归位与回声脉冲触控按钮清楚。游戏减动状态与输入来自原报告，不能单凭一张静态图证明不动；本图未被裁切或补绘。",
+      "frameScope": "full browser page; read and subsequent screenshot are not guaranteed the same frame"
+    },
+    {
+      "path": "live/1280-greenhouse-leaves-returned.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1309259,
+      "sha256": "5b8dbf29067c22d9f407aabd15acc48af14db256dd6fddb738fb84b2dec636d7",
+      "unchangedOriginalArtifact": true,
+      "scope": "actual public HTTPS",
+      "manuallyOpenedAtOriginalSize": true,
+      "reencodedCroppedOrComposited": false,
+      "visualNote": "已逐张打开原尺寸公网温室归位整页：左上自然对白“叶子探出头了，盖子得给它留点地方。”可见，身体、小猫、蘑菇与树根可辨。原DOM读取同样为bubble=true、announcement=false，但DOM读取先于PNG，不宣称同帧。",
+      "frameScope": "Original full browser page captured after the geometry/state read; not the same frame."
+    },
+    {
+      "path": "live/1280-full-touch-320-post-book-riding.png",
+      "width": 320,
+      "height": 680,
+      "bytes": 218733,
+      "sha256": "649c8bb27d465291fe91945000b0df033cea551259c7b6ae66301be41fdfd75e",
+      "unchangedOriginalArtifact": true,
+      "scope": "actual public HTTPS",
+      "manuallyOpenedAtOriginalSize": true,
+      "reencodedCroppedOrComposited": false,
+      "visualNote": "已逐张打开原尺寸公网320邮局整页：身体和小猫在书本平台上，远景与窄屏触控按钮可见。此静态图佐证当时外观；平台完整周期与连续支撑点误差由独立旧玩法数据复核证明。",
+      "frameScope": "Original full browser page captured after the geometry/state read; not the same frame."
+    },
+    {
+      "path": "candidate/companion/320/return-arrival-blink-canvas.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 272487,
+      "sha256": "1217b59f187a87768c935dfd31a9e0ce831f8f305073882ac424906c24a33114",
+      "unchangedOriginalArtifact": true,
+      "scope": "official local candidate",
+      "manuallyOpenedAtOriginalSize": true,
+      "reencodedCroppedOrComposited": false,
+      "visualNote": "已逐张打开原尺寸候选320 Canvas锁存图：候选独立运行也捕获到小猫眨眼，身体头盖接近闭合。它的字节与时间属于候选，不借用公网数值；与公网同类截图分别保留。",
+      "frameScope": "unaltered current Canvas pixels latched by passive RAF, no render call",
+      "originalLatch": {
+        "kind": "arrival-blink",
+        "observedAt": 5662,
+        "capPhase": "returning",
+        "capProgress": 0.7870370370370372,
+        "returnBlink": 0.9063077870366507,
+        "runId": 1,
+        "body": {
+          "x": 105,
+          "y": 560
+        }
+      }
+    },
+    {
+      "path": "live/1280-greenhouse-root-crossed.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1308056,
+      "sha256": "a7bbebea2a0b7af4a17646b6b67905770af523f0e640231b0d7110b40f33e13a",
+      "unchangedOriginalArtifact": true,
+      "scope": "actual public HTTPS",
+      "manuallyOpenedAtOriginalSize": true,
+      "reencodedCroppedOrComposited": false,
+      "visualNote": "已逐张打开原尺寸公网越根整页：左上对白已消失，中央“借一朵蘑菇的力气，跳得比烦恼更高。”公告可见。原DOM读取本次同样bubble=false、announcement=true；不得沿用v32 main公网曾短暂共存的结果。",
+      "frameScope": "Original full browser page captured after the geometry/state read; not the same frame."
+    }
+  ],
+  "limits": [
+    "Only these 10 selected PNGs were manually opened. All 452 original PNGs were structurally and cryptographically verified separately.",
+    "A still picture is not a frame-rate or animation-continuity measurement. Motion claims rely on independently revalidated original observations.",
+    "Full-page PNGs follow their DOM/state reads. Only original passive RAF Canvas exports carry the corresponding latch scope.",
+    "Existing narrow-screen outfit-edge clipping is preserved as a known issue in the exact source docs/QA-v33.md; this selected image review does not close that issue.",
+    "No physical phone, Safari, low-end GPU, exhaustive outfit/festival inspection, or raw paused-Canvas-pair recomputation was performed."
+  ]
+}

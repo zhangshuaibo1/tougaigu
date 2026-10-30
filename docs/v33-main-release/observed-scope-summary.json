@@ -1,0 +1,110 @@
+[
+  {
+    "scope": "candidate",
+    "naturalReturn": {
+      "status": "passed",
+      "trustedInput": true,
+      "existingCooldownMs": 1600,
+      "actualInputAgeMs": 1765.5999999999767,
+      "actualReturnDialogueAgeMs": 727.8000000000466,
+      "scope": "Existing real return E, natural authored dialogue refresh and completed cap closure; no replay or clock mutation"
+    },
+    "greenhouse": [
+      {
+        "label": "1280-greenhouse-leaves-returned",
+        "bubbleVisible": true,
+        "announcementVisible": false,
+        "dialogueAgeMs": 751.1000000000931,
+        "announcementText": "一盏诗灯亮了。它记住了你的答案，也为身体打开了路。"
+      },
+      {
+        "label": "1280-greenhouse-root-crossed",
+        "bubbleVisible": false,
+        "announcementVisible": true,
+        "dialogueAgeMs": 4112.300000000047,
+        "announcementText": "借一朵蘑菇的力气，跳得比烦恼更高。"
+      }
+    ],
+    "firstStationCoexistence": [
+      {
+        "label": "900x800-opening",
+        "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+        "dialogue": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+        "synchronousSnapshot": true,
+        "subsequentPNGNotSameFrame": true
+      },
+      {
+        "label": "1024x640-opening",
+        "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+        "dialogue": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+        "synchronousSnapshot": true,
+        "subsequentPNGNotSameFrame": true
+      },
+      {
+        "label": "900x520-opening",
+        "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+        "dialogue": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+        "synchronousSnapshot": true,
+        "subsequentPNGNotSameFrame": true
+      }
+    ],
+    "faceImageCount": 11,
+    "companionSeconds": 32.49541324799998,
+    "companionSnapshotOccurrences": 474,
+    "companionPNGs": 21
+  },
+  {
+    "scope": "live",
+    "naturalReturn": {
+      "status": "passed",
+      "trustedInput": true,
+      "existingCooldownMs": 1600,
+      "actualInputAgeMs": 1717.6999999999534,
+      "actualReturnDialogueAgeMs": 745.5999999998603,
+      "scope": "Existing real return E, natural authored dialogue refresh and completed cap closure; no replay or clock mutation"
+    },
+    "greenhouse": [
+      {
+        "label": "1280-greenhouse-leaves-returned",
+        "bubbleVisible": true,
+        "announcementVisible": false,
+        "dialogueAgeMs": 764,
+        "announcementText": "一盏诗灯亮了。它记住了你的答案，也为身体打开了路。"
+      },
+      {
+        "label": "1280-greenhouse-root-crossed",
+        "bubbleVisible": false,
+        "announcementVisible": true,
+        "dialogueAgeMs": 4086,
+        "announcementText": "借一朵蘑菇的力气，跳得比烦恼更高。"
+      }
+    ],
+    "firstStationCoexistence": [
+      {
+        "label": "900x800-opening",
+        "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+        "dialogue": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+        "synchronousSnapshot": true,
+        "subsequentPNGNotSameFrame": true
+      },
+      {
+        "label": "1024x640-opening",
+        "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+        "dialogue": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+        "synchronousSnapshot": true,
+        "subsequentPNGNotSameFrame": true
+      },
+      {
+        "label": "900x520-opening",
+        "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+        "dialogue": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+        "synchronousSnapshot": true,
+        "subsequentPNGNotSameFrame": true
+      }
+    ],
+    "faceImageCount": 11,
+    "companionSeconds": 33.05871126000011,
+    "companionSnapshotOccurrences": 474,
+    "companionPNGs": 21
+  }
+]

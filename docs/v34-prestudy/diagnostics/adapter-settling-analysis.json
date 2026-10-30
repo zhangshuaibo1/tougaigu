@@ -1,0 +1,1434 @@
+{
+  "sourceReportSha256": "27ac7b890d7d3d5a04e02cbf0899cc49e2900eae1825e52a1ebc9a1452a3768e",
+  "sourceDriverSha256": "63162ef24326f5a8f1eb13a305d0e2cd253601c8ba46e8aded2457d5d7699189",
+  "failedRead": {
+    "version": "33.0.0",
+    "observedAt": 9551.29999999702,
+    "time": 9.300000000000042,
+    "visualTime": 9.300000000000042,
+    "state": "playing",
+    "form": "soul",
+    "chapterIndex": 0,
+    "mode": "story",
+    "runId": 1,
+    "deaths": 0,
+    "energy": 74.55833333333125,
+    "body": {
+      "x": 105,
+      "y": 560,
+      "w": 30,
+      "h": 58,
+      "vx": 0,
+      "vy": 0,
+      "face": 1,
+      "grounded": true,
+      "coyote": 0.12,
+      "platform": null,
+      "invulnerable": 0,
+      "walk": 0,
+      "land": 0
+    },
+    "soul": {
+      "x": 263.66875124911735,
+      "y": 427.8809523809524,
+      "vx": -0.016519332628213403,
+      "vy": -4.092276925748755e-18
+    },
+    "companion": {
+      "x": 40,
+      "y": 560
+    },
+    "shown": {
+      "x": 263.66875124911735,
+      "y": 427.8809523809524,
+      "vx": -0.016519332628213403,
+      "vy": -4.092276925748755e-18,
+      "scale": 1,
+      "alpha": 1,
+      "pose": "free",
+      "layer": "world"
+    },
+    "rig": {
+      "theta": -1.16,
+      "bodyMatrix": [
+        1,
+        0,
+        0,
+        1,
+        105,
+        560.9441803341842
+      ],
+      "headLocalMatrix": [
+        0.9996875162757026,
+        -0.024997395914712332,
+        0.024997395914712332,
+        0.9996875162757026,
+        0,
+        -49
+      ],
+      "headMatrix": [
+        0.9996875162757026,
+        -0.024997395914712332,
+        0.024997395914712332,
+        0.9996875162757026,
+        105,
+        511.94418033418424
+      ],
+      "capLocalMatrix": [
+        0.3993395294062732,
+        -0.9168031087717669,
+        0.9168031087717669,
+        0.3993395294062732,
+        -1.296089939029022,
+        -27.97825451069732
+      ],
+      "capMatrix": [
+        0.37629705201705826,
+        -0.9264990710428539,
+        0.9264990710428539,
+        0.37629705201705826,
+        103.00493156297566,
+        484.00706744600274
+      ],
+      "gripHead": {
+        "x": -18.40594423534354,
+        "y": -21.251227978945902
+      },
+      "gripBody": {
+        "x": -18.931418036803194,
+        "y": -69.78448664084615
+      },
+      "gripWorld": {
+        "x": 86.0685819631968,
+        "y": 491.15969369333806
+      },
+      "claspBody": {
+        "x": 22.242995157056185,
+        "y": -59.55931657083806
+      },
+      "catchBody": {
+        "x": -0.42495573055010966,
+        "y": -65.99468777668694
+      },
+      "openingWorld": {
+        "x": 104.6000416653646,
+        "y": 495.949180073773
+      }
+    },
+    "gripError": 5.684341886080802e-14,
+    "cap": {
+      "phase": "open",
+      "age": 7.449999999999979,
+      "progress": 1,
+      "opens": 1,
+      "openness": 1,
+      "fromOpen": 0,
+      "entry": 1,
+      "projection": 0,
+      "returnFrom": null,
+      "handGrip": 1,
+      "handClasp": 0.25,
+      "handCatch": 0
+    },
+    "outfit": "halloween",
+    "camera": 21.91286970581035,
+    "scale": 0.9296875,
+    "viewWidth": 419.4957983193277,
+    "reducedMotion": false,
+    "activityFramed": false,
+    "activity": {
+      "id": "story-0",
+      "phase": "idle",
+      "completedSteps": 0,
+      "totalSteps": 3,
+      "targetLabel": "送到新站牌",
+      "nearbySwitchId": null,
+      "variant": 0,
+      "nearRing": false,
+      "hint": ""
+    },
+    "activityView": {
+      "id": "story-0",
+      "sceneId": "story-0",
+      "title": "脑洞发车",
+      "motif": "station",
+      "color": "#b8d8b3",
+      "accent": "#f3ce91",
+      "ringLabel": "汽笛圈",
+      "phase": "idle",
+      "active": false,
+      "completed": false,
+      "anchor": {
+        "x": 330,
+        "y": 560,
+        "r": 24,
+        "inRange": false
+      },
+      "origin": {
+        "x": 330,
+        "y": 560
+      },
+      "variant": 0,
+      "targetIndex": 0,
+      "targetLabel": "送到新站牌",
+      "completedSteps": [],
+      "delivered": [
+        false,
+        false,
+        false
+      ],
+      "growth": null,
+      "nodes": [
+        {
+          "id": "source",
+          "x": 330,
+          "y": 494,
+          "kind": "source"
+        },
+        {
+          "id": "a",
+          "x": 245,
+          "y": 355,
+          "kind": "switch"
+        },
+        {
+          "id": "b",
+          "x": 365,
+          "y": 355,
+          "kind": "switch"
+        },
+        {
+          "id": "destination-0",
+          "x": 175,
+          "y": 285,
+          "kind": "destination",
+          "index": 0
+        },
+        {
+          "id": "destination-1",
+          "x": 355,
+          "y": 265,
+          "kind": "destination",
+          "index": 1
+        },
+        {
+          "id": "destination-2",
+          "x": 460,
+          "y": 340,
+          "kind": "destination",
+          "index": 2
+        }
+      ],
+      "routes": [
+        {
+          "id": "source-a",
+          "from": "source",
+          "to": "a",
+          "points": [
+            {
+              "x": 330,
+              "y": 494
+            },
+            {
+              "x": 315,
+              "y": 470
+            },
+            {
+              "x": 235,
+              "y": 445
+            },
+            {
+              "x": 245,
+              "y": 355
+            }
+          ],
+          "kind": "trunk",
+          "switchId": null,
+          "selection": null,
+          "length": 172.42247065451312,
+          "selected": true,
+          "active": false
+        },
+        {
+          "id": "a-0",
+          "from": "a",
+          "to": "destination-0",
+          "points": [
+            {
+              "x": 245,
+              "y": 355
+            },
+            {
+              "x": 212,
+              "y": 354
+            },
+            {
+              "x": 177,
+              "y": 329
+            },
+            {
+              "x": 175,
+              "y": 285
+            }
+          ],
+          "kind": "choice",
+          "switchId": "a",
+          "selection": 0,
+          "length": 109.06745257330307,
+          "selected": false,
+          "active": false
+        },
+        {
+          "id": "a-b",
+          "from": "a",
+          "to": "b",
+          "points": [
+            {
+              "x": 245,
+              "y": 355
+            },
+            {
+              "x": 273,
+              "y": 317
+            },
+            {
+              "x": 335,
+              "y": 317
+            },
+            {
+              "x": 365,
+              "y": 355
+            }
+          ],
+          "kind": "choice",
+          "switchId": "a",
+          "selection": 1,
+          "length": 137.61656972959906,
+          "selected": true,
+          "active": false
+        },
+        {
+          "id": "b-1",
+          "from": "b",
+          "to": "destination-1",
+          "points": [
+            {
+              "x": 365,
+              "y": 355
+            },
+            {
+              "x": 392,
+              "y": 320
+            },
+            {
+              "x": 373,
+              "y": 284
+            },
+            {
+              "x": 355,
+              "y": 265
+            }
+          ],
+          "kind": "choice",
+          "switchId": "b",
+          "selection": 0,
+          "length": 99.43995428308565,
+          "selected": false,
+          "active": false
+        },
+        {
+          "id": "b-2",
+          "from": "b",
+          "to": "destination-2",
+          "points": [
+            {
+              "x": 365,
+              "y": 355
+            },
+            {
+              "x": 395,
+              "y": 340
+            },
+            {
+              "x": 432,
+              "y": 317
+            },
+            {
+              "x": 460,
+              "y": 340
+            }
+          ],
+          "kind": "choice",
+          "switchId": "b",
+          "selection": 1,
+          "length": 102.32479864160311,
+          "selected": true,
+          "active": false
+        },
+        {
+          "id": "return-0",
+          "from": "destination-0",
+          "to": "source",
+          "points": [
+            {
+              "x": 175,
+              "y": 285
+            },
+            {
+              "x": 145,
+              "y": 410
+            },
+            {
+              "x": 260,
+              "y": 485
+            },
+            {
+              "x": 330,
+              "y": 494
+            }
+          ],
+          "kind": "return",
+          "switchId": null,
+          "selection": null,
+          "length": 292.7374282009984,
+          "selected": false,
+          "active": false
+        },
+        {
+          "id": "return-1",
+          "from": "destination-1",
+          "to": "source",
+          "points": [
+            {
+              "x": 355,
+              "y": 265
+            },
+            {
+              "x": 430,
+              "y": 290
+            },
+            {
+              "x": 454,
+              "y": 475
+            },
+            {
+              "x": 330,
+              "y": 494
+            }
+          ],
+          "kind": "return",
+          "switchId": null,
+          "selection": null,
+          "length": 296.17013367288683,
+          "selected": false,
+          "active": false
+        },
+        {
+          "id": "return-2",
+          "from": "destination-2",
+          "to": "source",
+          "points": [
+            {
+              "x": 460,
+              "y": 340
+            },
+            {
+              "x": 487,
+              "y": 419
+            },
+            {
+              "x": 425,
+              "y": 484
+            },
+            {
+              "x": 330,
+              "y": 494
+            }
+          ],
+          "kind": "return",
+          "switchId": null,
+          "selection": null,
+          "length": 234.70117882432314,
+          "selected": false,
+          "active": false
+        }
+      ],
+      "switches": [
+        {
+          "id": "a",
+          "x": 245,
+          "y": 355,
+          "kind": "switch",
+          "selected": 1,
+          "routeIndex": 1,
+          "nearby": false,
+          "reachable": false,
+          "outputs": [
+            {
+              "routeId": "a-0",
+              "to": "destination-0",
+              "targetIndex": 0
+            },
+            {
+              "routeId": "a-b",
+              "to": "b"
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "x": 365,
+          "y": 355,
+          "kind": "switch",
+          "selected": 1,
+          "routeIndex": 1,
+          "nearby": false,
+          "reachable": false,
+          "outputs": [
+            {
+              "routeId": "b-1",
+              "to": "destination-1",
+              "targetIndex": 1
+            },
+            {
+              "routeId": "b-2",
+              "to": "destination-2",
+              "targetIndex": 2
+            }
+          ]
+        }
+      ],
+      "bells": [
+        {
+          "id": "a",
+          "x": 245,
+          "y": 355,
+          "kind": "switch",
+          "selected": 1,
+          "routeIndex": 1,
+          "nearby": false,
+          "reachable": false,
+          "outputs": [
+            {
+              "routeId": "a-0",
+              "to": "destination-0",
+              "targetIndex": 0
+            },
+            {
+              "routeId": "a-b",
+              "to": "b"
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "x": 365,
+          "y": 355,
+          "kind": "switch",
+          "selected": 1,
+          "routeIndex": 1,
+          "nearby": false,
+          "reachable": false,
+          "outputs": [
+            {
+              "routeId": "b-1",
+              "to": "destination-1",
+              "targetIndex": 1
+            },
+            {
+              "routeId": "b-2",
+              "to": "destination-2",
+              "targetIndex": 2
+            }
+          ]
+        }
+      ],
+      "destinations": [
+        {
+          "id": "story-0-sign",
+          "x": 175,
+          "y": 285,
+          "kind": "destination",
+          "index": 0,
+          "nodeId": "destination-0",
+          "label": "新站牌",
+          "complete": false
+        },
+        {
+          "id": "story-0-bench",
+          "x": 355,
+          "y": 265,
+          "kind": "destination",
+          "index": 1,
+          "nodeId": "destination-1",
+          "label": "候车椅",
+          "complete": false
+        },
+        {
+          "id": "story-0-track",
+          "x": 460,
+          "y": 340,
+          "kind": "destination",
+          "index": 2,
+          "nodeId": "destination-2",
+          "label": "回家轨",
+          "complete": false
+        }
+      ],
+      "targets": [
+        {
+          "id": "story-0-sign",
+          "x": 175,
+          "y": 285,
+          "kind": "destination",
+          "index": 0,
+          "nodeId": "destination-0",
+          "label": "新站牌",
+          "complete": false
+        },
+        {
+          "id": "story-0-bench",
+          "x": 355,
+          "y": 265,
+          "kind": "destination",
+          "index": 1,
+          "nodeId": "destination-1",
+          "label": "候车椅",
+          "complete": false
+        },
+        {
+          "id": "story-0-track",
+          "x": 460,
+          "y": 340,
+          "kind": "destination",
+          "index": 2,
+          "nodeId": "destination-2",
+          "label": "回家轨",
+          "complete": false
+        }
+      ],
+      "traveler": {
+        "x": 330,
+        "y": 494,
+        "angle": -1.5707963267948966,
+        "routeId": null,
+        "progress": 0,
+        "state": "parked",
+        "carrying": true,
+        "kind": "小火车",
+        "visible": false,
+        "targetIndex": 0
+      },
+      "hint": ""
+    },
+    "framing": {
+      "active": true,
+      "reason": "nearby",
+      "low": 0,
+      "high": 20.48533820676019,
+      "marginCss": 8,
+      "slackCss": 120.58729568718357,
+      "bounds": {
+        "body": {
+          "left": 55,
+          "right": 140
+        },
+        "cap": {
+          "left": 55.712239392296354,
+          "right": 104.17506226652058
+        },
+        "hat": {
+          "left": 29.09038022356691,
+          "right": 95.56146961762201
+        },
+        "hands": {
+          "left": 76.74947544126496,
+          "right": 140.6244572882488
+        },
+        "soul": {
+          "left": 225.66875124911735,
+          "right": 301.66875124911735
+        },
+        "left": 29.09038022356691,
+        "right": 301.66875124911735
+      }
+    },
+    "renderViewport": {
+      "width": 390,
+      "height": 595,
+      "scale": 0.9296875,
+      "viewWidth": 419.4957983193277,
+      "camera": 21.91286970581035
+    },
+    "followBudget": null,
+    "renderScopeReleased": true,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "canvas": {
+      "width": 390,
+      "height": 595,
+      "left": 0,
+      "top": 77,
+      "right": 390,
+      "bottom": 672
+    },
+    "projected": {
+      "body": {
+        "left": 30.76069144537944,
+        "right": 109.78412894537944
+      },
+      "cap": {
+        "left": 31.422851505404957,
+        "right": 76.47813214628529
+      },
+      "hat": {
+        "left": 6.672841809476801,
+        "right": 68.4701827305124
+      },
+      "hands": {
+        "left": 50.98090689468046,
+        "right": 110.36467908054826
+      },
+      "soul": {
+        "left": 189.42929612229324,
+        "right": 260.08554612229324
+      }
+    },
+    "memories": [
+      true,
+      false,
+      false
+    ],
+    "lamps": [
+      false,
+      false
+    ],
+    "firstTicket": {
+      "phase": "held",
+      "collected": true,
+      "newlyCollected": true,
+      "settledAge": 0
+    },
+    "backdropCamera": 21.91286970581035
+  },
+  "subsequentFailureEvidenceRead": {
+    "version": "33.0.0",
+    "observedAt": 9773,
+    "time": 9.516666666666719,
+    "visualTime": 9.516666666666719,
+    "state": "playing",
+    "form": "soul",
+    "chapterIndex": 0,
+    "mode": "story",
+    "runId": 1,
+    "deaths": 0,
+    "energy": 73.6266666666645,
+    "body": {
+      "x": 105,
+      "y": 560,
+      "w": 30,
+      "h": 58,
+      "vx": 0,
+      "vy": 0,
+      "face": 1,
+      "grounded": true,
+      "coyote": 0.12,
+      "platform": null,
+      "invulnerable": 0,
+      "walk": 0,
+      "land": 0
+    },
+    "soul": {
+      "x": 263.6670822318237,
+      "y": 427.8809523809524,
+      "vx": -0.003293157848353888,
+      "vy": -8.158025616997666e-19
+    },
+    "companion": {
+      "x": 40,
+      "y": 560
+    },
+    "shown": {
+      "x": 263.6670822318237,
+      "y": 427.8809523809524,
+      "vx": -0.003293157848353888,
+      "vy": -8.158025616997666e-19,
+      "scale": 1,
+      "alpha": 1,
+      "pose": "free",
+      "layer": "world"
+    },
+    "rig": {
+      "theta": -1.16,
+      "bodyMatrix": [
+        1,
+        0,
+        0,
+        1,
+        105,
+        561.0878512491764
+      ],
+      "headLocalMatrix": [
+        0.9996875162757026,
+        -0.024997395914712332,
+        0.024997395914712332,
+        0.9996875162757026,
+        0,
+        -49
+      ],
+      "headMatrix": [
+        0.9996875162757026,
+        -0.024997395914712332,
+        0.024997395914712332,
+        0.9996875162757026,
+        105,
+        512.0878512491764
+      ],
+      "capLocalMatrix": [
+        0.3993395294062732,
+        -0.9168031087717669,
+        0.9168031087717669,
+        0.3993395294062732,
+        -1.296089939029022,
+        -27.97825451069732
+      ],
+      "capMatrix": [
+        0.37629705201705826,
+        -0.9264990710428539,
+        0.9264990710428539,
+        0.37629705201705826,
+        103.00493156297566,
+        484.1507383609949
+      ],
+      "gripHead": {
+        "x": -18.40594423534354,
+        "y": -21.251227978945902
+      },
+      "gripBody": {
+        "x": -18.931418036803194,
+        "y": -69.78448664084615
+      },
+      "gripWorld": {
+        "x": 86.0685819631968,
+        "y": 491.30336460833024
+      },
+      "claspBody": {
+        "x": 22.242995157056185,
+        "y": -59.55931657083806
+      },
+      "catchBody": {
+        "x": -0.42495573055010966,
+        "y": -65.99468777668694
+      },
+      "openingWorld": {
+        "x": 104.6000416653646,
+        "y": 496.0928509887652
+      }
+    },
+    "gripError": 5.684341886080802e-14,
+    "cap": {
+      "phase": "open",
+      "age": 7.666666666666645,
+      "progress": 1,
+      "opens": 1,
+      "openness": 1,
+      "fromOpen": 0,
+      "entry": 1,
+      "projection": 0,
+      "returnFrom": null,
+      "handGrip": 1,
+      "handClasp": 0.25,
+      "handCatch": 0
+    },
+    "outfit": "halloween",
+    "camera": 20.89438592509539,
+    "scale": 0.9296875,
+    "viewWidth": 419.4957983193277,
+    "reducedMotion": false,
+    "activityFramed": false,
+    "activity": {
+      "id": "story-0",
+      "phase": "idle",
+      "completedSteps": 0,
+      "totalSteps": 3,
+      "targetLabel": "送到新站牌",
+      "nearbySwitchId": null,
+      "variant": 0,
+      "nearRing": false,
+      "hint": ""
+    },
+    "activityView": {
+      "id": "story-0",
+      "sceneId": "story-0",
+      "title": "脑洞发车",
+      "motif": "station",
+      "color": "#b8d8b3",
+      "accent": "#f3ce91",
+      "ringLabel": "汽笛圈",
+      "phase": "idle",
+      "active": false,
+      "completed": false,
+      "anchor": {
+        "x": 330,
+        "y": 560,
+        "r": 24,
+        "inRange": false
+      },
+      "origin": {
+        "x": 330,
+        "y": 560
+      },
+      "variant": 0,
+      "targetIndex": 0,
+      "targetLabel": "送到新站牌",
+      "completedSteps": [],
+      "delivered": [
+        false,
+        false,
+        false
+      ],
+      "growth": null,
+      "nodes": [
+        {
+          "id": "source",
+          "x": 330,
+          "y": 494,
+          "kind": "source"
+        },
+        {
+          "id": "a",
+          "x": 245,
+          "y": 355,
+          "kind": "switch"
+        },
+        {
+          "id": "b",
+          "x": 365,
+          "y": 355,
+          "kind": "switch"
+        },
+        {
+          "id": "destination-0",
+          "x": 175,
+          "y": 285,
+          "kind": "destination",
+          "index": 0
+        },
+        {
+          "id": "destination-1",
+          "x": 355,
+          "y": 265,
+          "kind": "destination",
+          "index": 1
+        },
+        {
+          "id": "destination-2",
+          "x": 460,
+          "y": 340,
+          "kind": "destination",
+          "index": 2
+        }
+      ],
+      "routes": [
+        {
+          "id": "source-a",
+          "from": "source",
+          "to": "a",
+          "points": [
+            {
+              "x": 330,
+              "y": 494
+            },
+            {
+              "x": 315,
+              "y": 470
+            },
+            {
+              "x": 235,
+              "y": 445
+            },
+            {
+              "x": 245,
+              "y": 355
+            }
+          ],
+          "kind": "trunk",
+          "switchId": null,
+          "selection": null,
+          "length": 172.42247065451312,
+          "selected": true,
+          "active": false
+        },
+        {
+          "id": "a-0",
+          "from": "a",
+          "to": "destination-0",
+          "points": [
+            {
+              "x": 245,
+              "y": 355
+            },
+            {
+              "x": 212,
+              "y": 354
+            },
+            {
+              "x": 177,
+              "y": 329
+            },
+            {
+              "x": 175,
+              "y": 285
+            }
+          ],
+          "kind": "choice",
+          "switchId": "a",
+          "selection": 0,
+          "length": 109.06745257330307,
+          "selected": false,
+          "active": false
+        },
+        {
+          "id": "a-b",
+          "from": "a",
+          "to": "b",
+          "points": [
+            {
+              "x": 245,
+              "y": 355
+            },
+            {
+              "x": 273,
+              "y": 317
+            },
+            {
+              "x": 335,
+              "y": 317
+            },
+            {
+              "x": 365,
+              "y": 355
+            }
+          ],
+          "kind": "choice",
+          "switchId": "a",
+          "selection": 1,
+          "length": 137.61656972959906,
+          "selected": true,
+          "active": false
+        },
+        {
+          "id": "b-1",
+          "from": "b",
+          "to": "destination-1",
+          "points": [
+            {
+              "x": 365,
+              "y": 355
+            },
+            {
+              "x": 392,
+              "y": 320
+            },
+            {
+              "x": 373,
+              "y": 284
+            },
+            {
+              "x": 355,
+              "y": 265
+            }
+          ],
+          "kind": "choice",
+          "switchId": "b",
+          "selection": 0,
+          "length": 99.43995428308565,
+          "selected": false,
+          "active": false
+        },
+        {
+          "id": "b-2",
+          "from": "b",
+          "to": "destination-2",
+          "points": [
+            {
+              "x": 365,
+              "y": 355
+            },
+            {
+              "x": 395,
+              "y": 340
+            },
+            {
+              "x": 432,
+              "y": 317
+            },
+            {
+              "x": 460,
+              "y": 340
+            }
+          ],
+          "kind": "choice",
+          "switchId": "b",
+          "selection": 1,
+          "length": 102.32479864160311,
+          "selected": true,
+          "active": false
+        },
+        {
+          "id": "return-0",
+          "from": "destination-0",
+          "to": "source",
+          "points": [
+            {
+              "x": 175,
+              "y": 285
+            },
+            {
+              "x": 145,
+              "y": 410
+            },
+            {
+              "x": 260,
+              "y": 485
+            },
+            {
+              "x": 330,
+              "y": 494
+            }
+          ],
+          "kind": "return",
+          "switchId": null,
+          "selection": null,
+          "length": 292.7374282009984,
+          "selected": false,
+          "active": false
+        },
+        {
+          "id": "return-1",
+          "from": "destination-1",
+          "to": "source",
+          "points": [
+            {
+              "x": 355,
+              "y": 265
+            },
+            {
+              "x": 430,
+              "y": 290
+            },
+            {
+              "x": 454,
+              "y": 475
+            },
+            {
+              "x": 330,
+              "y": 494
+            }
+          ],
+          "kind": "return",
+          "switchId": null,
+          "selection": null,
+          "length": 296.17013367288683,
+          "selected": false,
+          "active": false
+        },
+        {
+          "id": "return-2",
+          "from": "destination-2",
+          "to": "source",
+          "points": [
+            {
+              "x": 460,
+              "y": 340
+            },
+            {
+              "x": 487,
+              "y": 419
+            },
+            {
+              "x": 425,
+              "y": 484
+            },
+            {
+              "x": 330,
+              "y": 494
+            }
+          ],
+          "kind": "return",
+          "switchId": null,
+          "selection": null,
+          "length": 234.70117882432314,
+          "selected": false,
+          "active": false
+        }
+      ],
+      "switches": [
+        {
+          "id": "a",
+          "x": 245,
+          "y": 355,
+          "kind": "switch",
+          "selected": 1,
+          "routeIndex": 1,
+          "nearby": false,
+          "reachable": false,
+          "outputs": [
+            {
+              "routeId": "a-0",
+              "to": "destination-0",
+              "targetIndex": 0
+            },
+            {
+              "routeId": "a-b",
+              "to": "b"
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "x": 365,
+          "y": 355,
+          "kind": "switch",
+          "selected": 1,
+          "routeIndex": 1,
+          "nearby": false,
+          "reachable": false,
+          "outputs": [
+            {
+              "routeId": "b-1",
+              "to": "destination-1",
+              "targetIndex": 1
+            },
+            {
+              "routeId": "b-2",
+              "to": "destination-2",
+              "targetIndex": 2
+            }
+          ]
+        }
+      ],
+      "bells": [
+        {
+          "id": "a",
+          "x": 245,
+          "y": 355,
+          "kind": "switch",
+          "selected": 1,
+          "routeIndex": 1,
+          "nearby": false,
+          "reachable": false,
+          "outputs": [
+            {
+              "routeId": "a-0",
+              "to": "destination-0",
+              "targetIndex": 0
+            },
+            {
+              "routeId": "a-b",
+              "to": "b"
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "x": 365,
+          "y": 355,
+          "kind": "switch",
+          "selected": 1,
+          "routeIndex": 1,
+          "nearby": false,
+          "reachable": false,
+          "outputs": [
+            {
+              "routeId": "b-1",
+              "to": "destination-1",
+              "targetIndex": 1
+            },
+            {
+              "routeId": "b-2",
+              "to": "destination-2",
+              "targetIndex": 2
+            }
+          ]
+        }
+      ],
+      "destinations": [
+        {
+          "id": "story-0-sign",
+          "x": 175,
+          "y": 285,
+          "kind": "destination",
+          "index": 0,
+          "nodeId": "destination-0",
+          "label": "新站牌",
+          "complete": false
+        },
+        {
+          "id": "story-0-bench",
+          "x": 355,
+          "y": 265,
+          "kind": "destination",
+          "index": 1,
+          "nodeId": "destination-1",
+          "label": "候车椅",
+          "complete": false
+        },
+        {
+          "id": "story-0-track",
+          "x": 460,
+          "y": 340,
+          "kind": "destination",
+          "index": 2,
+          "nodeId": "destination-2",
+          "label": "回家轨",
+          "complete": false
+        }
+      ],
+      "targets": [
+        {
+          "id": "story-0-sign",
+          "x": 175,
+          "y": 285,
+          "kind": "destination",
+          "index": 0,
+          "nodeId": "destination-0",
+          "label": "新站牌",
+          "complete": false
+        },
+        {
+          "id": "story-0-bench",
+          "x": 355,
+          "y": 265,
+          "kind": "destination",
+          "index": 1,
+          "nodeId": "destination-1",
+          "label": "候车椅",
+          "complete": false
+        },
+        {
+          "id": "story-0-track",
+          "x": 460,
+          "y": 340,
+          "kind": "destination",
+          "index": 2,
+          "nodeId": "destination-2",
+          "label": "回家轨",
+          "complete": false
+        }
+      ],
+      "traveler": {
+        "x": 330,
+        "y": 494,
+        "angle": -1.5707963267948966,
+        "routeId": null,
+        "progress": 0,
+        "state": "parked",
+        "carrying": true,
+        "kind": "小火车",
+        "visible": false,
+        "targetIndex": 0
+      },
+      "hint": ""
+    },
+    "framing": {
+      "active": true,
+      "reason": "nearby",
+      "low": 0,
+      "high": 20.48533820676019,
+      "marginCss": 8,
+      "slackCss": 120.58884735169875,
+      "bounds": {
+        "body": {
+          "left": 55,
+          "right": 140
+        },
+        "cap": {
+          "left": 55.712239392296354,
+          "right": 104.17506226652058
+        },
+        "hat": {
+          "left": 29.09038022356691,
+          "right": 95.56146961762201
+        },
+        "hands": {
+          "left": 76.74947544126496,
+          "right": 140.6244572882488
+        },
+        "soul": {
+          "left": 225.6670822318237,
+          "right": 301.6670822318237
+        },
+        "left": 29.09038022356691,
+        "right": 301.6670822318237
+      }
+    },
+    "renderViewport": {
+      "width": 390,
+      "height": 595,
+      "scale": 0.9296875,
+      "viewWidth": 419.4957983193277,
+      "camera": 20.89438592509539
+    },
+    "followBudget": null,
+    "renderScopeReleased": true,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "canvas": {
+      "width": 390,
+      "height": 595,
+      "left": 0,
+      "top": 77,
+      "right": 390,
+      "bottom": 672
+    },
+    "projected": {
+      "body": {
+        "left": 31.707563085262876,
+        "right": 110.73100058526288
+      },
+      "cap": {
+        "left": 32.3697231452884,
+        "right": 77.42500378616873
+      },
+      "hat": {
+        "left": 7.619713449360243,
+        "right": 69.41705437039585
+      },
+      "hands": {
+        "left": 51.9277785345639,
+        "right": 111.31155072043168
+      },
+      "soul": {
+        "left": 190.3746160976615,
+        "right": 261.0308660976615
+      }
+    },
+    "memories": [
+      true,
+      false,
+      false
+    ],
+    "lamps": [
+      false,
+      false
+    ],
+    "firstTicket": {
+      "phase": "held",
+      "collected": true,
+      "newlyCollected": true,
+      "settledAge": 0
+    },
+    "backdropCamera": 20.89438592509539
+  },
+  "steps": 13,
+  "predictedCameraAfter": 20.894385925095392,
+  "actualCameraAfter": 20.89438592509539,
+  "absoluteError": 3.552713678800501e-15,
+  "finding": "Both actual reads have open cap and active near framing. The 13 original fixed steps follow the existing 5.5 damping exactly; the later read naturally exceeds the unchanged 7.5 CSS-pixel assertion. No state or clock was changed to produce either read.",
+  "nextChange": "Only replace the new helper fixed1000ms observation after returning from far with a bounded wait for the same>=7.5 geometry; record beginning/end camera, interval, clocks and elapsed wall time."
+}

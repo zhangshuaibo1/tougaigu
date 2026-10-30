@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: tests/cap-framing-v34.test.mjs
+not ok 1 - tests/cap-framing-v34.test.mjs
+  ---
+  duration_ms: 3693.045848
+  type: 'test'
+  location: '/workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy/tests/cap-framing-v34.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3703.125595

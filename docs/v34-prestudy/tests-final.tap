@@ -1,0 +1,4237 @@
+TAP version 13
+# Subtest: clock browser evidence requires the saved branch, real cap threshold and bounded duration
+ok 1 - clock browser evidence requires the saved branch, real cap threshold and bounded duration
+  ---
+  duration_ms: 73.776775
+  type: 'test'
+  ...
+# Subtest: pendulum body evidence clears the complete authored swing while each actual freeze remains
+ok 2 - pendulum body evidence clears the complete authored swing while each actual freeze remains
+  ---
+  duration_ms: 72.165872
+  type: 'test'
+  ...
+# Subtest: coast painted readiness cannot be inferred from another chapter or a failed native image
+ok 3 - coast painted readiness cannot be inferred from another chapter or a failed native image
+  ---
+  duration_ms: 71.034318
+  type: 'test'
+  ...
+# Subtest: the coast performs its one existing jump observation only at the fresh safe body entry
+ok 4 - the coast performs its one existing jump observation only at the fresh safe body entry
+  ---
+  duration_ms: 78.144256
+  type: 'test'
+  ...
+# Subtest: boundary pairing requires actual matching Canvas buffers and control rectangles even below 900px
+ok 5 - boundary pairing requires actual matching Canvas buffers and control rectangles even below 900px
+  ---
+  duration_ms: 35.180078
+  type: 'test'
+  ...
+# Subtest: breakpoint checks reject a desktop grid leaking to 899px and obstructed inputs
+ok 6 - breakpoint checks reject a desktop grid leaking to 899px and obstructed inputs
+  ---
+  duration_ms: 39.105868
+  type: 'test'
+  ...
+# Subtest: CSS ablation baseline is the exact latest accepted v31 pair and detects corrupted evidence
+ok 7 - CSS ablation baseline is the exact latest accepted v31 pair and detects corrupted evidence
+  ---
+  duration_ms: 47.602687
+  type: 'test'
+  ...
+# Subtest: dialogue projection applies real rig, camera, shake, DPR and buffer rounding exactly
+ok 8 - dialogue projection applies real rig, camera, shake, DPR and buffer rounding exactly
+  ---
+  duration_ms: 34.749739
+  type: 'test'
+  ...
+# Subtest: dialogue checker rejects the observed old central overlap and genuine UI/text clipping
+ok 9 - dialogue checker rejects the observed old central overlap and genuine UI/text clipping
+  ---
+  duration_ms: 33.900859
+  type: 'test'
+  ...
+# Subtest: Canvas and control comparison requires paired actual geometry and rejects movement or buffer changes
+ok 10 - Canvas and control comparison requires paired actual geometry and rejects movement or buffer changes
+  ---
+  duration_ms: 38.020706
+  type: 'test'
+  ...
+# Subtest: outside scopes remain explicit and failed observations preserve original evidence without replay
+ok 11 - outside scopes remain explicit and failed observations preserve original evidence without replay
+  ---
+  duration_ms: 35.523152
+  type: 'test'
+  ...
+# Subtest: natural return evidence rejects early, synthetic or unrefreshed speech and requires observer cleanup
+ok 12 - natural return evidence rejects early, synthetic or unrefreshed speech and requires observer cleanup
+  ---
+  duration_ms: 33.455131
+  type: 'test'
+  ...
+# Subtest: browser input driver accepts stopped observations exactly on its input dead-zone boundary
+ok 13 - browser input driver accepts stopped observations exactly on its input dead-zone boundary
+  ---
+  duration_ms: 88.61395
+  type: 'test'
+  ...
+# Subtest: ending browser proof rejects fake unlocks, duplicate discoveries and any repeated reward or settlement
+ok 14 - ending browser proof rejects fake unlocks, duplicate discoveries and any repeated reward or settlement
+  ---
+  duration_ms: 63.059584
+  type: 'test'
+  ...
+# Subtest: ending browser view requires the correct illustration, complete original prose and readable 320px layout
+ok 15 - ending browser view requires the correct illustration, complete original prose and readable 320px layout
+  ---
+  duration_ms: 58.9969
+  type: 'test'
+  ...
+# Subtest: phone reading proof requires every complete paragraph, an actual scroll and an uncovered dismissal button
+ok 16 - phone reading proof requires every complete paragraph, an actual scroll and an uncovered dismissal button
+  ---
+  duration_ms: 61.778294
+  type: 'test'
+  ...
+# Subtest: ending touch input is enabled after the route and restored even when a phone assertion fails
+ok 17 - ending touch input is enabled after the route and restored even when a phone assertion fails
+  ---
+  duration_ms: 61.957391
+  type: 'test'
+  ...
+# Subtest: phone reader scrolls past an already visible button to the final note and keeps the overflow gate
+ok 18 - phone reader scrolls past an already visible button to the final note and keeps the overflow gate
+  ---
+  duration_ms: 204.222938
+  type: 'test'
+  ...
+# Subtest: phone swipe attempts retain dispatch failures and distinguish release acknowledgement from cleanup
+ok 19 - phone swipe attempts retain dispatch failures and distinguish release acknowledgement from cleanup
+  ---
+  duration_ms: 86.174137
+  type: 'test'
+  ...
+# Subtest: each desktop reread checkpoints its reload invariants before a later phone error
+ok 20 - each desktop reread checkpoints its reload invariants before a later phone error
+  ---
+  duration_ms: 68.815552
+  type: 'test'
+  ...
+# Subtest: actual production snapshots keep presented-soul gaze and the two real fatigue thresholds distinct
+ok 21 - actual production snapshots keep presented-soul gaze and the two real fatigue thresholds distinct
+  ---
+  duration_ms: 259.895971
+  type: 'test'
+  ...
+# Subtest: real event sequences reject late installation, refreshed joy, wrong bodies and added native inputs
+ok 22 - real event sequences reject late installation, refreshed joy, wrong bodies and added native inputs
+  ---
+  duration_ms: 281.296429
+  type: 'test'
+  ...
+# Subtest: natural fatigue proves open-lid <20 within the existing total deadline and real recovery
+ok 23 - natural fatigue proves open-lid <20 within the existing total deadline and real recovery
+  ---
+  duration_ms: 229.620772
+  type: 'test'
+  ...
+# Subtest: the <20 wait cannot restart the original 21-second depletion budget
+ok 24 - the <20 wait cannot restart the original 21-second depletion budget
+  ---
+  duration_ms: 63.233041
+  type: 'test'
+  ...
+# Subtest: the observer bounds long passive waits and really removes RAF, timer and native listeners
+ok 25 - the observer bounds long passive waits and really removes RAF, timer and native listeners
+  ---
+  duration_ms: 102.148346
+  type: 'test'
+  ...
+# Subtest: driver failures write evidence before a failure screenshot and clean the passive observer
+ok 26 - driver failures write evidence before a failure screenshot and clean the passive observer
+  ---
+  duration_ms: 178.481493
+  type: 'test'
+  ...
+# Subtest: browser energy observations keep the live threshold and reject mixed HUD values
+ok 27 - browser energy observations keep the live threshold and reject mixed HUD values
+  ---
+  duration_ms: 70.500239
+  type: 'test'
+  ...
+# Subtest: browser HUD checks reject obscured, truncated and inaccessible observations without launching a browser
+ok 28 - browser HUD checks reject obscured, truncated and inaccessible observations without launching a browser
+  ---
+  duration_ms: 109.463927
+  type: 'test'
+  ...
+# Subtest: floating-book evidence requires the same real rider for a complete physical round trip
+ok 29 - floating-book evidence requires the same real rider for a complete physical round trip
+  ---
+  duration_ms: 194.920627
+  type: 'test'
+  ...
+# Subtest: the exact failed primary image cannot absorb another request, another error or a hidden retry
+ok 30 - the exact failed primary image cannot absorb another request, another error or a hidden retry
+  ---
+  duration_ms: 101.805107
+  type: 'test'
+  ...
+# Subtest: ready and failed library images require actual source, dimensions and current painted state
+ok 31 - ready and failed library images require actual source, dimensions and current painted state
+  ---
+  duration_ms: 106.7383
+  type: 'test'
+  ...
+# Subtest: the final network gate includes late library/coast faults without weakening the earlier exact budgets
+ok 32 - the final network gate includes late library/coast faults without weakening the earlier exact budgets
+  ---
+  duration_ms: 107.019186
+  type: 'test'
+  ...
+# Subtest: touch controls use actual target coordinates for both selectors and answer locators
+ok 33 - touch controls use actual target coordinates for both selectors and answer locators
+  ---
+  duration_ms: 100.821704
+  type: 'test'
+  ...
+# Subtest: library pause compares the entire validated traveler pose within the original six passive frames
+ok 34 - library pause compares the entire validated traveler pose within the original six passive frames
+  ---
+  duration_ms: 94.28989
+  type: 'test'
+  ...
+# Subtest: portrait evidence rejects old visible pixels, missing neutral state and an undecoded current speaker
+ok 35 - portrait evidence rejects old visible pixels, missing neutral state and an undecoded current speaker
+  ---
+  duration_ms: 103.523698
+  type: 'test'
+  ...
+# Subtest: delayed portrait responses are unchanged and only an already obsolete exact request may be cancelled
+ok 36 - delayed portrait responses are unchanged and only an already obsolete exact request may be cancelled
+  ---
+  duration_ms: 155.541587
+  type: 'test'
+  ...
+# Subtest: normal story reading cannot advance past a pending or rejected current portrait
+ok 37 - normal story reading cannot advance past a pending or rejected current portrait
+  ---
+  duration_ms: 123.482669
+  type: 'test'
+  ...
+# Subtest: post-office book evidence requires the same actual rider for a complete horizontal period
+ok 38 - post-office book evidence requires the same actual rider for a complete horizontal period
+  ---
+  duration_ms: 162.258925
+  type: 'test'
+  ...
+# Subtest: final post-office exit is the authored early exit while frozen, never a fictitious full-swing crossing
+ok 39 - final post-office exit is the authored early exit while frozen, never a fictitious full-swing crossing
+  ---
+  duration_ms: 76.569106
+  type: 'test'
+  ...
+# Subtest: an actual short mushroom impulse is retained without inventing a later hold or weakening velocity
+ok 40 - an actual short mushroom impulse is retained without inventing a later hold or weakening velocity
+  ---
+  duration_ms: 56.309115
+  type: 'test'
+  ...
+# Subtest: one native right hold must earn safe clearance before release and settle on the root within both original deadlines
+ok 41 - one native right hold must earn safe clearance before release and settle on the root within both original deadlines
+  ---
+  duration_ms: 58.655475
+  type: 'test'
+  ...
+# Subtest: each legitimate full replay adds exactly one chapter run without changing other chapter results or choices
+ok 42 - each legitimate full replay adds exactly one chapter run without changing other chapter results or choices
+  ---
+  duration_ms: 48.385296
+  type: 'test'
+  ...
+# Subtest: post-office ready, failed and delayed states require actual native pixels of the intended scene
+ok 43 - post-office ready, failed and delayed states require actual native pixels of the intended scene
+  ---
+  duration_ms: 62.985182
+  type: 'test'
+  ...
+# Subtest: real release at completion preserves the result and blocks any old-gesture retargeted click
+ok 44 - real release at completion preserves the result and blocks any old-gesture retargeted click
+  ---
+  duration_ms: 55.954929
+  type: 'test'
+  ...
+# Subtest: a new intentional native result tap remains usable after the old gesture is consumed
+ok 45 - a new intentional native result tap remains usable after the old gesture is consumed
+  ---
+  duration_ms: 51.100227
+  type: 'test'
+  ...
+# Subtest: theatre driver waits for fresh safe geometry and does not press after arrival
+ok 46 - theatre driver waits for fresh safe geometry and does not press after arrival
+  ---
+  duration_ms: 109.642513
+  type: 'test'
+  ...
+# Subtest: late HUD observations cannot turn a real moving-stage exit into a lower-ground landing
+ok 47 - late HUD observations cannot turn a real moving-stage exit into a lower-ground landing
+  ---
+  duration_ms: 274.911755
+  type: 'test'
+  ...
+# Subtest: browser pose checks cover six main chapters and real stage/book support while excluding festivals and stale views
+ok 48 - browser pose checks cover six main chapters and real stage/book support while excluding festivals and stale views
+  ---
+  duration_ms: 500.685133
+  type: 'test'
+  ...
+# Subtest: the jump driver focuses, observes before keydown and disposes on every exit with six-chapter performance
+ok 49 - the jump driver focuses, observes before keydown and disposes on every exit with six-chapter performance
+  ---
+  duration_ms: 122.593329
+  type: 'test'
+  ...
+# Subtest: pre-input frame observation preserves missed phases but rejects resets, replaced bodies and missing phases
+ok 50 - pre-input frame observation preserves missed phases but rejects resets, replaced bodies and missing phases
+  ---
+  duration_ms: 121.993044
+  type: 'test'
+  ...
+# Subtest: the greenhouse shelf driver keeps one Space and the original walk, then always disposes its observer
+ok 51 - the greenhouse shelf driver keeps one Space and the original walk, then always disposes its observer
+  ---
+  duration_ms: 113.721214
+  type: 'test'
+  ...
+# Subtest: all six chapters and ten festivals have uniquely addressed borrowing activities
+ok 52 - all six chapters and ten festivals have uniquely addressed borrowing activities
+  ---
+  duration_ms: 0.61325
+  type: 'test'
+  ...
+# Subtest: each borrowed traveler and palette belong to the matching brain miniature
+ok 53 - each borrowed traveler and palette belong to the matching brain miniature
+  ---
+  duration_ms: 0.362178
+  type: 'test'
+  ...
+# Subtest: each seasonal host invites the optional activity with their established name
+ok 54 - each seasonal host invites the optional activity with their established name
+  ---
+  duration_ms: 0.197092
+  type: 'test'
+  ...
+# Subtest: delivery instructions point at three distinct valid destinations
+ok 55 - delivery instructions point at three distinct valid destinations
+  ---
+  duration_ms: 0.434334
+  type: 'test'
+  ...
+# Subtest: the same three scenes can grow in any replay order without changing their identity
+ok 56 - the same three scenes can grow in any replay order without changing their identity
+  ---
+  duration_ms: 1.626393
+  type: 'test'
+  ...
+# Subtest: stage labels fit compact controls and every feedback line fits one brief bubble
+ok 57 - stage labels fit compact controls and every feedback line fits one brief bubble
+  ---
+  duration_ms: 0.495004
+  type: 'test'
+  ...
+# Subtest: activities remain independent of the original collection and riddle completion
+ok 58 - activities remain independent of the original collection and riddle completion
+  ---
+  duration_ms: 0.576385
+  type: 'test'
+  ...
+# Subtest: selection prefers known festivals and safely falls back for invalid keys
+ok 59 - selection prefers known festivals and safely falls back for invalid keys
+  ---
+  duration_ms: 0.172807
+  type: 'test'
+  ...
+# Subtest: all sixteen scenes have a reachable safe ring and complete through real E, flying and pulse inputs
+ok 60 - all sixteen scenes have a reachable safe ring and complete through real E, flying and pulse inputs
+  ---
+  duration_ms: 226.336608
+  type: 'test'
+  ...
+# Subtest: a wrong route returns its traveler without erasing progress or adding a gameplay penalty
+ok 61 - a wrong route returns its traveler without erasing progress or adding a gameplay penalty
+  ---
+  duration_ms: 15.906119
+  type: 'test'
+  ...
+# Subtest: Q explicitly cycles three fixed orders and complete never automatically starts a new variant
+ok 62 - Q explicitly cycles three fixed orders and complete never automatically starts a new variant
+  ---
+  duration_ms: 26.91281
+  type: 'test'
+  ...
+# Subtest: manual pause and E return freeze traveler position and activity time, then continue the same attempt
+ok 63 - manual pause and E return freeze traveler position and activity time, then continue the same attempt
+  ---
+  duration_ms: 7.024389
+  type: 'test'
+  ...
+# Subtest: energy exhaustion suspends the route and recharging restores control without a second start event
+ok 64 - energy exhaustion suspends the route and recharging restores control without a second start event
+  ---
+  duration_ms: 19.634825
+  type: 'test'
+  ...
+# Subtest: falling preserves delivered pieces, restarting makes a full attempt, and destruction removes the old route
+ok 65 - falling preserves delivered pieces, restarting makes a full attempt, and destruction removes the old route
+  ---
+  duration_ms: 9.098816
+  type: 'test'
+  ...
+# Subtest: leaving the ring folds the route without clearing success, and the original exit remains independent
+ok 66 - leaving the ring folds the route without clearing success, and the original exit remains independent
+  ---
+  duration_ms: 6.064916
+  type: 'test'
+  ...
+# Subtest: partial base progress resumes exact remaining targets, marks partial scores, and Q starts a full new route
+ok 67 - partial base progress resumes exact remaining targets, marks partial scores, and Q starts a full new route
+  ---
+  duration_ms: 9.901638
+  type: 'test'
+  ...
+# Subtest: finished saves do not replay or award anything until circle Q is pressed
+ok 68 - finished saves do not replay or award anything until circle Q is pressed
+  ---
+  duration_ms: 1.819809
+  type: 'test'
+  ...
+# Subtest: validating activity records bounds input and cannot combine unknown targets or variants
+ok 69 - validating activity records bounds input and cannot combine unknown targets or variants
+  ---
+  duration_ms: 0.203092
+  type: 'test'
+  ...
+# Subtest: only a nearby highlighted bell can turn, and pulse cooldown prevents double toggles
+ok 70 - only a nearby highlighted bell can turn, and pulse cooldown prevents double toggles
+  ---
+  duration_ms: 1.596808
+  type: 'test'
+  ...
+# Subtest: existing lanterns, hazard resonance, and NPC Q always take precedence over optional activity actions
+ok 71 - existing lanterns, hazard resonance, and NPC Q always take precedence over optional activity actions
+  ---
+  duration_ms: 1.838027
+  type: 'test'
+  ...
+# Subtest: the discovery radius never replaces a real copper-plate hint outside the borrowing ring
+ok 72 - the discovery radius never replaces a real copper-plate hint outside the borrowing ring
+  ---
+  duration_ms: 0.559811
+  type: 'test'
+  ...
+# Subtest: activity success is committed before callbacks and successful events are idempotent
+ok 73 - activity success is committed before callbacks and successful events are idempotent
+  ---
+  duration_ms: 87.453761
+  type: 'test'
+  ...
+# Subtest: reduced motion retains the same routes and input-solvable outcomes for all sixteen motifs
+ok 74 - reduced motion retains the same routes and input-solvable outcomes for all sixteen motifs
+  ---
+  duration_ms: 106.303782
+  type: 'test'
+  ...
+# Subtest: the shared visual view is finite, detached from mutable route state, and stays before the first veil
+ok 75 - the shared visual view is finite, detached from mutable route state, and stays before the first veil
+  ---
+  duration_ms: 4.530029
+  type: 'test'
+  ...
+# Subtest: after a reload Q chooses an unfinished route, and same-instance completions update that choice
+ok 76 - after a reload Q chooses an unfinished route, and same-instance completions update that choice
+  ---
+  duration_ms: 13.759451
+  type: 'test'
+  ...
+# Subtest: pending replay routes survive reload independently of the fully completed base record
+ok 77 - pending replay routes survive reload independently of the fully completed base record
+  ---
+  duration_ms: 4.82718
+  type: 'test'
+  ...
+# Subtest: a pending route with no delivered targets remains a full scoring attempt
+ok 78 - a pending route with no delivered targets remains a full scoring attempt
+  ---
+  duration_ms: 4.014585
+  type: 'test'
+  ...
+# Subtest: a saved final step repairs its missing completion only after installation and only once
+ok 79 - a saved final step repairs its missing completion only after installation and only once
+  ---
+  duration_ms: 0.323349
+  type: 'test'
+  ...
+# Subtest: activity-record replacement preserves every main-game state and binds only the new revision
+ok 80 - activity-record replacement preserves every main-game state and binds only the new revision
+  ---
+  duration_ms: 1.887039
+  type: 'test'
+  ...
+# Subtest: replacing an activity inside its last-step callback prevents the old completion from being emitted
+ok 81 - replacing an activity inside its last-step callback prevents the old completion from being emitted
+  ---
+  duration_ms: 10.969151
+  type: 'test'
+  ...
+# Subtest: nested replacement during a repair callback retains the newest instance and revision
+ok 82 - nested replacement during a repair callback retains the newest instance and revision
+  ---
+  duration_ms: 1.155243
+  type: 'test'
+  ...
+# Subtest: paused imports defer completion repair until resume without restarting the main scene
+ok 83 - paused imports defer completion repair until resume without restarting the main scene
+  ---
+  duration_ms: 0.899324
+  type: 'test'
+  ...
+# Subtest: each actual delivery unfolds only its new prop, including the final prop after completion
+ok 84 - each actual delivery unfolds only its new prop, including the final prop after completion
+  ---
+  duration_ms: 2.390146
+  type: 'test'
+  ...
+# Subtest: pause freezes the unfolding, while a deliberate return to the body lets a delivered prop settle
+ok 85 - pause freezes the unfolding, while a deliberate return to the body lets a delivered prop settle
+  ---
+  duration_ms: 0.385341
+  type: 'test'
+  ...
+# Subtest: reduced motion immediately shows the whole prop and never restarts an unfinished flourish
+ok 86 - reduced motion immediately shows the whole prop and never restarts an unfinished flourish
+  ---
+  duration_ms: 1.44939
+  type: 'test'
+  ...
+# Subtest: saved scenery, recovery, replay and destruction do not retain an obsolete unfolding
+ok 87 - saved scenery, recovery, replay and destruction do not retain an obsolete unfolding
+  ---
+  duration_ms: 0.709823
+  type: 'test'
+  ...
+# Subtest: partial delivery persists by actual destination and replay steps cannot complete the base route
+ok 88 - partial delivery persists by actual destination and replay steps cannot complete the base route
+  ---
+  duration_ms: 0.932993
+  type: 'test'
+  ...
+# Subtest: completing a route is idempotent and keeps the best full-run effort
+ok 89 - completing a route is idempotent and keeps the best full-run effort
+  ---
+  duration_ms: 0.453132
+  type: 'test'
+  ...
+# Subtest: a resumed completion unlocks the route without inventing a full-run speed record
+ok 90 - a resumed completion unlocks the route without inventing a full-run speed record
+  ---
+  duration_ms: 0.247167
+  type: 'test'
+  ...
+# Subtest: all three completed route variants remain separate from main and holiday discoveries
+ok 91 - all three completed route variants remain separate from main and holiday discoveries
+  ---
+  duration_ms: 0.262549
+  type: 'test'
+  ...
+# Subtest: unknown scenes, mismatched context and incomplete finish events do not mutate a save
+ok 92 - unknown scenes, mismatched context and incomplete finish events do not mutate a save
+  ---
+  duration_ms: 0.13457
+  type: 'test'
+  ...
+# Subtest: validation rejects wrong versions and nonfinite records while bounding known route identifiers
+ok 93 - validation rejects wrong versions and nonfinite records while bounding known route identifiers
+  ---
+  duration_ms: 0.153597
+  type: 'test'
+  ...
+# Subtest: merging browser records retains unique deliveries and real best runs without aliasing
+ok 94 - merging browser records retains unique deliveries and real best runs without aliasing
+  ---
+  duration_ms: 6.304191
+  type: 'test'
+  ...
+# Subtest: storage round trip is isolated and corruption or quota errors do not break play
+ok 95 - storage round trip is isolated and corruption or quota errors do not break play
+  ---
+  duration_ms: 0.455596
+  type: 'test'
+  ...
+# Subtest: the actual start, three steps, complete sequence confirms a first completion exactly once
+ok 96 - the actual start, three steps, complete sequence confirms a first completion exactly once
+  ---
+  duration_ms: 0.32417
+  type: 'test'
+  ...
+# Subtest: unfinished replay variants keep their own route and targets across a backup round trip
+ok 97 - unfinished replay variants keep their own route and targets across a backup round trip
+  ---
+  duration_ms: 0.199085
+  type: 'test'
+  ...
+# Subtest: completion supersedes an older pending snapshot without resurrecting that attempt
+ok 98 - completion supersedes an older pending snapshot without resurrecting that attempt
+  ---
+  duration_ms: 0.279274
+  type: 'test'
+  ...
+# Subtest: concurrent writes to different scenes converge by merging local, event and stored snapshots
+ok 99 - concurrent writes to different scenes converge by merging local, event and stored snapshots
+  ---
+  duration_ms: 0.332463
+  type: 'test'
+  ...
+# Subtest: a replacement revision wins over stale runs and stale storage after import failure
+ok 100 - a replacement revision wins over stale runs and stale storage after import failure
+  ---
+  duration_ms: 0.387595
+  type: 'test'
+  ...
+# Subtest: a second import remains newer even with the same clock and keeps an intentional empty replacement
+ok 101 - a second import remains newer even with the same clock and keeps an intentional empty replacement
+  ---
+  duration_ms: 0.220346
+  type: 'test'
+  ...
+# Subtest: a late start or step from the same resumed attempt cannot undo merged deliveries
+ok 102 - a late start or step from the same resumed attempt cannot undo merged deliveries
+  ---
+  duration_ms: 0.833777
+  type: 'test'
+  ...
+# Subtest: late events from a completed attempt cannot resurrect it or revise its score
+ok 103 - late events from a completed attempt cannot resurrect it or revise its score
+  ---
+  duration_ms: 0.469587
+  type: 'test'
+  ...
+# Subtest: closing one attempt still permits a fresh replay of the same variant
+ok 104 - closing one attempt still permits a fresh replay of the same variant
+  ---
+  duration_ms: 0.371742
+  type: 'test'
+  ...
+# Subtest: closed attempts beat newer stale snapshots without discarding a different live replay
+ok 105 - closed attempts beat newer stale snapshots without discarding a different live replay
+  ---
+  duration_ms: 0.488615
+  type: 'test'
+  ...
+# Subtest: closed history is bounded, validated and backward compatible within the existing storage limit
+ok 106 - closed history is bounded, validated and backward compatible within the existing storage limit
+  ---
+  duration_ms: 1.927279
+  type: 'test'
+  ...
+# Subtest: rendered support fingers meet the actual hinged cap for both facings, head tilts and landing compression
+ok 107 - rendered support fingers meet the actual hinged cap for both facings, head tilts and landing compression
+  ---
+  duration_ms: 31.641464
+  type: 'test'
+  ...
+# Subtest: rapid E reversals preserve both hand poses at the input boundary and retain contact while the cap moves
+ok 108 - rapid E reversals preserve both hand poses at the input boundary and retain contact while the cap moves
+  ---
+  duration_ms: 6.503928
+  type: 'test'
+  ...
+# Subtest: peek and return are masked by the front skull and rim, while free flight uses the normal front layer
+ok 109 - peek and return are masked by the front skull and rim, while free flight uses the normal front layer
+  ---
+  duration_ms: 16.377032
+  type: 'test'
+  ...
+# Subtest: pause freezes hand transitions and reduced motion immediately settles a valid grip without breaking controls
+ok 110 - pause freezes hand transitions and reduced motion immediately settles a valid grip without breaking controls
+  ---
+  duration_ms: 1.003088
+  type: 'test'
+  ...
+# Subtest: 320px and 390px activity framing includes all destination labels and paints the entire canvas
+ok 111 - 320px and 390px activity framing includes all destination labels and paints the entire canvas
+  ---
+  duration_ms: 9.253396
+  type: 'test'
+  ...
+# Subtest: activity framing survives pause and completion but restores ordinary framing on recall or leaving the ring
+ok 112 - activity framing survives pause and completion but restores ordinary framing on recall or leaving the ring
+  ---
+  duration_ms: 18.439071
+  type: 'test'
+  ...
+# Subtest: activity fitting never enlarges desktop graphics or changes direction-input physics
+ok 113 - activity fitting never enlarges desktop graphics or changes direction-input physics
+  ---
+  duration_ms: 9.032838
+  type: 'test'
+  ...
+# Subtest: six chapters and ten celebrations resolve the matching brain theatre without new required options
+ok 114 - six chapters and ten celebrations resolve the matching brain theatre without new required options
+  ---
+  duration_ms: 2.227154
+  type: 'test'
+  ...
+# Subtest: E grants immediate control while the clasp, hinged lid, and peek play in order
+ok 115 - E grants immediate control while the clasp, hinged lid, and peek play in order
+  ---
+  duration_ms: 6.758515
+  type: 'test'
+  ...
+# Subtest: recall immediately returns body control while the soul follows a curve and then the lid closes
+ok 116 - recall immediately returns body control while the soul follows a curve and then the lid closes
+  ---
+  duration_ms: 1.62477
+  type: 'test'
+  ...
+# Subtest: rapid alternating E presses cancel the old presentation without a ghost, lock, or duplicated event
+ok 117 - rapid alternating E presses cancel the old presentation without a ghost, lock, or duplicated event
+  ---
+  duration_ms: 7.868962
+  type: 'test'
+  ...
+# Subtest: a recall before the peek never creates a suddenly enlarged ghost
+ok 118 - a recall before the peek never creates a suddenly enlarged ghost
+  ---
+  duration_ms: 1.960378
+  type: 'test'
+  ...
+# Subtest: manual pause freezes opening, projection, and curved return presentation
+ok 119 - manual pause freezes opening, projection, and curved return presentation
+  ---
+  duration_ms: 15.184976
+  type: 'test'
+  ...
+# Subtest: puzzle ownership freezes presentation and emits one seal event after successful resolution
+ok 120 - puzzle ownership freezes presentation and emits one seal event after successful resolution
+  ---
+  duration_ms: 1.044719
+  type: 'test'
+  ...
+# Subtest: exhausted energy recalls through the same animation and does not delay recovery
+ok 121 - exhausted energy recalls through the same animation and does not delay recovery
+  ---
+  duration_ms: 1.189224
+  type: 'test'
+  ...
+# Subtest: fall recovery, restarting, completing, and destruction clear presentation without touching solved goals
+ok 122 - fall recovery, restarting, completing, and destruction clear presentation without touching solved goals
+  ---
+  duration_ms: 2.493969
+  type: 'test'
+  ...
+# Subtest: reduced motion skips presentation travel, keeps controls and plate puzzles, and can be enabled mid-return
+ok 123 - reduced motion skips presentation travel, keeps controls and plate puzzles, and can be enabled mid-return
+  ---
+  duration_ms: 4.934139
+  type: 'test'
+  ...
+# Subtest: memory and seal notifications carry exact original array indices and only fire on a successful first action
+ok 124 - memory and seal notifications carry exact original array indices and only fire on a successful first action
+  ---
+  duration_ms: 10.383783
+  type: 'test'
+  ...
+# Subtest: all sixteen native miniatures and cap phases render finite geometry in normal and reduced motion
+ok 125 - all sixteen native miniatures and cap phases render finite geometry in normal and reduced motion
+  ---
+  duration_ms: 514.980884
+  type: 'test'
+  ...
+# Subtest: brain vision is exclusive to soul form and never modifies plate, goal, or movement data
+ok 126 - brain vision is exclusive to soul form and never modifies plate, goal, or movement data
+  ---
+  duration_ms: 0.799996
+  type: 'test'
+  ...
+# Subtest: narrow ordinary play keeps the real cap, outfit and supporting hands inside the same whole-scene camera
+ok 127 - narrow ordinary play keeps the real cap, outfit and supporting hands inside the same whole-scene camera
+  ---
+  duration_ms: 618.185508
+  type: 'test'
+  ...
+# Subtest: fixed-step follow composition has one budget, exact legacy fallthrough and no invented render time
+ok 128 - fixed-step follow composition has one budget, exact legacy fallthrough and no invented render time
+  ---
+  duration_ms: 0.316379
+  type: 'test'
+  ...
+# Subtest: the frame reuses its exact character and soul; repeated, nested and failed rendering cannot spend an old follow budget
+ok 129 - the frame reuses its exact character and soul; repeated, nested and failed rendering cannot spend an old follow budget
+  ---
+  duration_ms: 274.185158
+  type: 'test'
+  ...
+# Subtest: resize resolves the first frame with one projection while paused time and all physical state remain frozen
+ok 130 - resize resolves the first frame with one projection while paused time and all physical state remain frozen
+  ---
+  duration_ms: 383.347594
+  type: 'test'
+  ...
+# Subtest: near/far transition keeps normal soul travel and has a geometric hysteresis band
+ok 131 - near/far transition keeps normal soul travel and has a geometric hysteresis band
+  ---
+  duration_ms: 541.768869
+  type: 'test'
+  ...
+# Subtest: opening, return, immediate reversal and both facings preserve every gameplay field
+ok 132 - opening, return, immediate reversal and both facings preserve every gameplay field
+  ---
+  duration_ms: 283.542235
+  type: 'test'
+  ...
+# Subtest: near return around275 reenters naturally after far flight instead of stranding a visible traveler at the edge
+ok 133 - near return around275 reenters naturally after far flight instead of stranding a visible traveler at the edge
+  ---
+  duration_ms: 1979.343734
+  type: 'test'
+  ...
+# Subtest: body-center reentry is symmetric, includes the old18 boundary, and rejects a genuinely offscreen body
+ok 134 - body-center reentry is symmetric, includes the old18 boundary, and rejects a genuinely offscreen body
+  ---
+  duration_ms: 268.77156
+  type: 'test'
+  ...
+# Subtest: desktop, all festival modes and activity framing retain original camera behavior without a borrowed budget
+ok 135 - desktop, all festival modes and activity framing retain original camera behavior without a borrowed budget
+  ---
+  duration_ms: 749.108281
+  type: 'test'
+  ...
+# Subtest: reduced motion uses the existing immediate target and pause cannot add a camera animation
+ok 136 - reduced motion uses the existing immediate target and pause cannot add a camera animation
+  ---
+  duration_ms: 305.462585
+  type: 'test'
+  ...
+# Subtest: invalid or impossible world-edge context fails closed without moving the traveler or widening the world
+ok 137 - invalid or impossible world-edge context fails closed without moving the traveler or widening the world
+  ---
+  duration_ms: 243.109936
+  type: 'test'
+  ...
+# Subtest: capbook distinguishes actual lid opening from returning and collects each thought once
+ok 138 - capbook distinguishes actual lid opening from returning and collects each thought once
+  ---
+  duration_ms: 0.926475
+  type: 'test'
+  ...
+# Subtest: festival records do not change main chapter discoveries
+ok 139 - festival records do not change main chapter discoveries
+  ---
+  duration_ms: 0.24261
+  type: 'test'
+  ...
+# Subtest: invalid scenes, event types and indexes do not mutate progress
+ok 140 - invalid scenes, event types and indexes do not mutate progress
+  ---
+  duration_ms: 0.29712
+  type: 'test'
+  ...
+# Subtest: records are sanitized and unknown prototype keys cannot create discoveries
+ok 141 - records are sanitized and unknown prototype keys cannot create discoveries
+  ---
+  duration_ms: 0.178675
+  type: 'test'
+  ...
+# Subtest: cross-tab merge retains distinct discoveries without double counting opens
+ok 142 - cross-tab merge retains distinct discoveries without double counting opens
+  ---
+  duration_ms: 0.199336
+  type: 'test'
+  ...
+# Subtest: save round trip is independent of story, festival and reward stores
+ok 143 - save round trip is independent of story, festival and reward stores
+  ---
+  duration_ms: 0.249169
+  type: 'test'
+  ...
+# Subtest: full scene collection requires all actual thoughts and both lamps
+ok 144 - full scene collection requires all actual thoughts and both lamps
+  ---
+  duration_ms: 0.130904
+  type: 'test'
+  ...
+# Subtest: every existing chapter and festival opens its own miniature scene
+ok 145 - every existing chapter and festival opens its own miniature scene
+  ---
+  duration_ms: 0.178695
+  type: 'test'
+  ...
+# Subtest: each possible cap event has a brief line and a supported expression
+ok 146 - each possible cap event has a brief line and a supported expression
+  ---
+  duration_ms: 0.582194
+  type: 'test'
+  ...
+# Subtest: seasonal brain scenes speak to the official host and react to the actual three gifts
+ok 147 - seasonal brain scenes speak to the official host and react to the actual three gifts
+  ---
+  duration_ms: 0.240857
+  type: 'test'
+  ...
+# Subtest: unknown selection keys cannot expose object properties or select a nonexistent chapter
+ok 148 - unknown selection keys cannot expose object properties or select a nonexistent chapter
+  ---
+  duration_ms: 0.201299
+  type: 'test'
+  ...
+# Subtest: chapter dialogue stays compact and expresses the skull-window story across all six acts
+ok 149 - chapter dialogue stays compact and expresses the skull-window story across all six acts
+  ---
+  duration_ms: 0.326915
+  type: 'test'
+  ...
+# Subtest: pre-upgrade saves retain every record, choice and riddle after visiting all miniature scenes
+ok 150 - pre-upgrade saves retain every record, choice and riddle after visiting all miniature scenes
+  ---
+  duration_ms: 0.773137
+  type: 'test'
+  ...
+# Subtest: all previous decision combinations still select the same collected ending IDs
+ok 151 - all previous decision combinations still select the same collected ending IDs
+  ---
+  duration_ms: 0.248128
+  type: 'test'
+  ...
+# Subtest: the 32 already-shipped puzzle IDs and answer positions remain compatible
+ok 152 - the 32 already-shipped puzzle IDs and answer positions remain compatible
+  ---
+  duration_ms: 0.218084
+  type: 'test'
+  ...
+# Subtest: clock choice normalization accepts only existing release and hold ids without coercion
+ok 153 - clock choice normalization accepts only existing release and hold ids without coercion
+  ---
+  duration_ms: 0.310731
+  type: 'test'
+  ...
+# Subtest: clock echo waits for a truly open cap with finite age and openness and a valid active update
+ok 154 - clock echo waits for a truly open cap with finite age and openness and a valid active update
+  ---
+  duration_ms: 0.203262
+  type: 'test'
+  ...
+# Subtest: clock echo is bounded to 2.8 seconds, clamps one update and never replays within the same run
+ok 155 - clock echo is bounded to 2.8 seconds, clamps one update and never replays within the same run
+  ---
+  duration_ms: 0.205695
+  type: 'test'
+  ...
+# Subtest: pause freezes the clock state; recalling after playback settles it and reduced motion does not replay
+ok 156 - pause freezes the clock state; recalling after playback settles it and reduced motion does not replay
+  ---
+  duration_ms: 0.156292
+  type: 'test'
+  ...
+# Subtest: clock snapshots are detached and drawing cannot mutate a reply or schedule another animation loop
+ok 157 - clock snapshots are detached and drawing cannot mutate a reply or schedule another animation loop
+  ---
+  duration_ms: 3.567543
+  type: 'test'
+  ...
+# Subtest: validated saved clock reply enters only the coast; completion does not invent a choice or collectibles
+ok 158 - validated saved clock reply enters only the coast; completion does not invent a choice or collectibles
+  ---
+  duration_ms: 1.753011
+  type: 'test'
+  ...
+# Subtest: real cap opening starts after its existing projection and performs only one echo on the original RAF loop
+ok 159 - real cap opening starts after its existing projection and performs only one echo on the original RAF loop
+  ---
+  duration_ms: 9.47037
+  type: 'test'
+  ...
+# Subtest: paused clock playback freezes the full rendered commands, physics and callbacks
+ok 160 - paused clock playback freezes the full rendered commands, physics and callbacks
+  ---
+  duration_ms: 25.782819
+  type: 'test'
+  ...
+# Subtest: real early recall leaves the reply waiting, mid-echo recall settles it, and reduced motion remains settled
+ok 161 - real early recall leaves the reply waiting, mid-echo recall settles it, and reduced motion remains settled
+  ---
+  duration_ms: 7.827552
+  type: 'test'
+  ...
+# Subtest: diary selection rebuilds presentation while paused without changing physics or granting anything
+ok 162 - diary selection rebuilds presentation while paused without changing physics or granting anything
+  ---
+  duration_ms: 1.894721
+  type: 'test'
+  ...
+# Subtest: the existing save key restores both replies and restart rebuilds only this run presentation
+ok 163 - the existing save key restores both replies and restart rebuilds only this run presentation
+  ---
+  duration_ms: 4.141524
+  type: 'test'
+  ...
+# Subtest: both reply performances preserve inherited physical state and genuine gameplay callbacks
+ok 164 - both reply performances preserve inherited physical state and genuine gameplay callbacks
+  ---
+  duration_ms: 122.12949
+  type: 'test'
+  ...
+# Subtest: other chapters and festivals never inherit coast choice performance and destruction cannot revive it
+ok 165 - other chapters and festivals never inherit coast choice performance and destruction cannot revive it
+  ---
+  duration_ms: 1.663668
+  type: 'test'
+  ...
+# Subtest: coast asset is lazy, limited to story chapter five, and shares one actual request
+ok 166 - coast asset is lazy, limited to story chapter five, and shares one actual request
+  ---
+  duration_ms: 0.508765
+  type: 'test'
+  ...
+# Subtest: late coast pixels never leak into another chapter or resurrect a destroyed loader
+ok 167 - late coast pixels never leak into another chapter or resurrect a destroyed loader
+  ---
+  duration_ms: 0.327235
+  type: 'test'
+  ...
+# Subtest: coast failed decode and malformed pixels fail once and leave a stable procedural fallback
+ok 168 - coast failed decode and malformed pixels fail once and leave a stable procedural fallback
+  ---
+  duration_ms: 0.332934
+  type: 'test'
+  ...
+# Subtest: coast parallax covers actual desktop and narrow Canvas edges without stretching the 3:1 painting
+ok 169 - coast parallax covers actual desktop and narrow Canvas edges without stretching the 3:1 painting
+  ---
+  duration_ms: 0.45169
+  type: 'test'
+  ...
+# Subtest: invalid coast views and images do not draw, and a failed texture preserves the caller Canvas state
+ok 170 - invalid coast views and images do not draw, and a failed texture preserves the caller Canvas state
+  ---
+  duration_ms: 0.631176
+  type: 'test'
+  ...
+# Subtest: each distant light response remains visible at its actual coast milestone in all three view sizes
+ok 171 - each distant light response remains visible at its actual coast milestone in all three view sizes
+  ---
+  duration_ms: 0.335848
+  type: 'test'
+  ...
+# Subtest: only each real lamp amount illuminates its corresponding roof pool, including nested drawing failure
+ok 172 - only each real lamp amount illuminates its corresponding roof pool, including nested drawing failure
+  ---
+  duration_ms: 0.639349
+  type: 'test'
+  ...
+# Subtest: coast stone uses the physical platform top and clip and rejects invalid geometry
+ok 173 - coast stone uses the physical platform top and clip and rejects invalid geometry
+  ---
+  duration_ms: 0.908378
+  type: 'test'
+  ...
+# Subtest: pendulum appearance follows the actual pivot, bob, radius and remaining freeze without mutating danger
+ok 174 - pendulum appearance follows the actual pivot, bob, radius and remaining freeze without mutating danger
+  ---
+  duration_ms: 0.606049
+  type: 'test'
+  ...
+# Subtest: the coast watch and both wrists follow every actual opening and returning amount continuously
+ok 175 - the coast watch and both wrists follow every actual opening and returning amount continuously
+  ---
+  duration_ms: 13.512527
+  type: 'test'
+  ...
+# Subtest: coast integration preserves same-input physics and events with a loaded or failed painting
+ok 176 - coast integration preserves same-input physics and events with a loaded or failed painting
+  ---
+  duration_ms: 85.795883
+  type: 'test'
+  ...
+# Subtest: late coast load after leaving or destroying cannot decorate another chapter or restart a game
+ok 177 - late coast load after leaving or destroying cannot decorate another chapter or restart a game
+  ---
+  duration_ms: 3.378262
+  type: 'test'
+  ...
+# Subtest: cached paintings from all first four chapters cannot stand in for a pending or ready coast painting
+ok 178 - cached paintings from all first four chapters cannot stand in for a pending or ready coast painting
+  ---
+  duration_ms: 9.566472
+  type: 'test'
+  ...
+# Subtest: lamp fade uses actual independent lamps, freezes on pause, resets on restart and settles under reduced motion
+ok 179 - lamp fade uses actual independent lamps, freezes on pause, resets on restart and settles under reduced motion
+  ---
+  duration_ms: 2.563262
+  type: 'test'
+  ...
+# Subtest: real recall keeps watching the presented return while form is already body, then settles by the original cap progress
+ok 180 - real recall keeps watching the presented return while form is already body, then settles by the original cap progress
+  ---
+  duration_ms: 3.049354
+  type: 'test'
+  ...
+# Subtest: successful E reversal cancels the real return; rejected low-energy E keeps its current settling
+ok 181 - successful E reversal cancels the real return; rejected low-energy E keeps its current settling
+  ---
+  duration_ms: 30.490233
+  type: 'test'
+  ...
+# Subtest: immediate invisible double E cannot manufacture a return blink
+ok 182 - immediate invisible double E cannot manufacture a return blink
+  ---
+  duration_ms: 1.923554
+  type: 'test'
+  ...
+# Subtest: paused return is frozen; reduced motion settles it and restoring motion does not replay
+ok 183 - paused return is frozen; reduced motion settles it and restoring motion does not replay
+  ---
+  duration_ms: 2.624153
+  type: 'test'
+  ...
+# Subtest: the six story chapters change only presentation under ordinary input, including original cat following coordinates
+ok 184 - the six story chapters change only presentation under ordinary input, including original cat following coordinates
+  ---
+  duration_ms: 79.934864
+  type: 'test'
+  ...
+# Subtest: all festivals retain the exact old companion painter; absent or damaged contexts do not enter refinement
+ok 185 - all festivals retain the exact old companion painter; absent or damaged contexts do not enter refinement
+  ---
+  duration_ms: 2.595691
+  type: 'test'
+  ...
+# Subtest: the painter preserves Canvas state, refuses before paint, and never turns a mid-paint error into a duplicate fallback
+ok 186 - the painter preserves Canvas state, refuses before paint, and never turns a mid-paint error into a duplicate fallback
+  ---
+  duration_ms: 0.788981
+  type: 'test'
+  ...
+# Subtest: one shared render result survives null, failure and reentry without escaping its frame
+ok 187 - one shared render result survives null, failure and reentry without escaping its frame
+  ---
+  duration_ms: 13.482912
+  type: 'test'
+  ...
+# Subtest: production onHud synchronizes each real catch-up snapshot at the same wall time while other HUD stays gated
+ok 188 - production onHud synchronizes each real catch-up snapshot at the same wall time while other HUD stays gated
+  ---
+  duration_ms: 36.156579
+  type: 'test'
+  ...
+# 12 same-clock energy changes across 16 recovery frames; largest live HUD difference 1.7433 percentage points
+# Subtest: real low-energy and recovery callbacks update color, visible text and ARIA together through the gate
+ok 189 - real low-energy and recovery callbacks update color, visible text and ARIA together through the gate
+  ---
+  duration_ms: 21.865177
+  type: 'test'
+  ...
+# Subtest: unchanged real snapshots do not rewrite the energy group, and same-energy form changes keep complete labels
+ok 190 - unchanged real snapshots do not rewrite the energy group, and same-energy form changes keep complete labels
+  ---
+  duration_ms: 1.98837
+  type: 'test'
+  ...
+# Subtest: chapter 1: the two real puzzle answers reveal their own scenery and the original route still finishes
+ok 191 - chapter 1: the two real puzzle answers reveal their own scenery and the original route still finishes
+  ---
+  duration_ms: 13.273
+  type: 'test'
+  ...
+# Subtest: chapter 2: the two real puzzle answers reveal their own scenery and the original route still finishes
+ok 192 - chapter 2: the two real puzzle answers reveal their own scenery and the original route still finishes
+  ---
+  duration_ms: 20.097515
+  type: 'test'
+  ...
+# Subtest: chapter 3: the two real puzzle answers reveal their own scenery and the original route still finishes
+ok 193 - chapter 3: the two real puzzle answers reveal their own scenery and the original route still finishes
+  ---
+  duration_ms: 21.886028
+  type: 'test'
+  ...
+# Subtest: chapter 4: the two real puzzle answers reveal their own scenery and the original route still finishes
+ok 194 - chapter 4: the two real puzzle answers reveal their own scenery and the original route still finishes
+  ---
+  duration_ms: 5.823189
+  type: 'test'
+  ...
+# Subtest: chapter 5: the two real puzzle answers reveal their own scenery and the original route still finishes
+ok 195 - chapter 5: the two real puzzle answers reveal their own scenery and the original route still finishes
+  ---
+  duration_ms: 7.039364
+  type: 'test'
+  ...
+# Subtest: chapter 6: the two real puzzle answers reveal their own scenery and the original route still finishes
+ok 196 - chapter 6: the two real puzzle answers reveal their own scenery and the original route still finishes
+  ---
+  duration_ms: 11.761638
+  type: 'test'
+  ...
+# Subtest: wrong, cancelled and non-boolean answers never reveal scenery; duplicate answers and pulses never restart it
+ok 197 - wrong, cancelled and non-boolean answers never reveal scenery; duplicate answers and pulses never restart it
+  ---
+  duration_ms: 9.937623
+  type: 'test'
+  ...
+# Subtest: the second greenhouse lamp can be solved first through real travel and keeps its own identity when the first follows
+ok 198 - the second greenhouse lamp can be solved first through real travel and keeps its own identity when the first follows
+  ---
+  duration_ms: 5.020728
+  type: 'test'
+  ...
+# Subtest: pause freezes unfolding, E and actual fall recovery retain it, and restart or chapter change clears it
+ok 199 - pause freezes unfolding, E and actual fall recovery retain it, and restart or chapter change clears it
+  ---
+  duration_ms: 12.979966
+  type: 'test'
+  ...
+# Subtest: restarting while the puzzle is open cancels its reveal and cannot complete the old lamp in the new run
+ok 200 - restarting while the puzzle is open cancels its reveal and cannot complete the old lamp in the new run
+  ---
+  duration_ms: 2.933261
+  type: 'test'
+  ...
+# Subtest: reduced motion settles immediately at startup or while paused and turning it off never rewinds a scene
+ok 201 - reduced motion settles immediately at startup or while paused and turning it off never rewinds a scene
+  ---
+  duration_ms: 17.908056
+  type: 'test'
+  ...
+# Subtest: unfolding uses bounded simulation time at low frame rates and discards suspended wall time
+ok 202 - unfolding uses bounded simulation time at low frame rates and discards suspended wall time
+  ---
+  duration_ms: 164.126193
+  type: 'test'
+  ...
+# Subtest: all ten festivals preserve their existing puzzle flow and never acquire main-story scenes
+ok 203 - all ten festivals preserve their existing puzzle flow and never acquire main-story scenes
+  ---
+  duration_ms: 28.754898
+  type: 'test'
+  ...
+# Subtest: the pure view contains only actually revealed lamps and isolates coordinates from rendering code
+ok 204 - the pure view contains only actually revealed lamps and isolates coordinates from rendering code
+  ---
+  duration_ms: 0.836391
+  type: 'test'
+  ...
+# Subtest: real mobile lamp approaches keep the locked scene visible and include current interactive protection circles
+ok 205 - real mobile lamp approaches keep the locked scene visible and include current interactive protection circles
+  ---
+  duration_ms: 223.387993
+  type: 'test'
+  ...
+# Subtest: the new renderer runs after architecture and before physical objects, memories, lamps and characters
+ok 206 - the new renderer runs after architecture and before physical objects, memories, lamps and characters
+  ---
+  duration_ms: 2.499959
+  type: 'test'
+  ...
+# Subtest: scenery cannot change collision maps, physics, camera following, progression or rewards
+ok 207 - scenery cannot change collision maps, physics, camera following, progression or rewards
+  ---
+  duration_ms: 152.115896
+  type: 'test'
+  ...
+# Subtest: all twelve main-story lamps have one distinct awakening tied to their actual riddle
+ok 208 - all twelve main-story lamps have one distinct awakening tied to their actual riddle
+  ---
+  duration_ms: 0.361155
+  type: 'test'
+  ...
+# Subtest: both indices require exact integers in range, without coercion or chapter fallback
+ok 209 - both indices require exact integers in range, without coercion or chapter fallback
+  ---
+  duration_ms: 0.244393
+  type: 'test'
+  ...
+# Subtest: individual lamps can be read in either order without fabricating a lit count or persistent progress
+ok 210 - individual lamps can be read in either order without fabricating a lit count or persistent progress
+  ---
+  duration_ms: 0.154219
+  type: 'test'
+  ...
+# Subtest: presentation metadata stays short, bounded and free of an identity reveal or forced ending
+ok 211 - presentation metadata stays short, bounded and free of an identity reveal or forced ending
+  ---
+  duration_ms: 0.326254
+  type: 'test'
+  ...
+# Subtest: the catalog and every returned record are deeply frozen
+ok 212 - the catalog and every returned record are deeply frozen
+  ---
+  duration_ms: 0.25596
+  type: 'test'
+  ...
+# Subtest: catalog reads leave the established chapters, riddles, choices and endings untouched
+ok 213 - catalog reads leave the established chapters, riddles, choices and endings untouched
+  ---
+  duration_ms: 0.193137
+  type: 'test'
+  ...
+# Subtest: a native keyboard or screen-reader click moves the actual body for one short activation
+ok 214 - a native keyboard or screen-reader click moves the actual body for one short activation
+  ---
+  duration_ms: 0.888037
+  type: 'test'
+  ...
+# Subtest: pointer hold remains continuous and its following click never adds a second move or jump
+ok 215 - pointer hold remains continuous and its following click never adds a second move or jump
+  ---
+  duration_ms: 0.474704
+  type: 'test'
+  ...
+# Subtest: semantic up activation jumps once and release does not buffer another jump
+ok 216 - semantic up activation jumps once and release does not buffer another jump
+  ---
+  duration_ms: 0.712107
+  type: 'test'
+  ...
+# Subtest: multi-pointer release and an opposite semantic step preserve the other held direction
+ok 217 - multi-pointer release and an opposite semantic step preserve the other held direction
+  ---
+  duration_ms: 0.252945
+  type: 'test'
+  ...
+# Subtest: repeated semantic activation extends the step and an old timer cannot cancel its replacement
+ok 218 - repeated semantic activation extends the step and an old timer cannot cancel its replacement
+  ---
+  duration_ms: 0.257593
+  type: 'test'
+  ...
+# Subtest: pause and blur clear both input sources; resuming cannot replay a queued activation
+ok 219 - pause and blur clear both input sources; resuming cannot replay a queued activation
+  ---
+  duration_ms: 0.614471
+  type: 'test'
+  ...
+# Subtest: chapter replacement cancels old steps and a late pointer release cannot affect fresh controls
+ok 220 - chapter replacement cancels old steps and a late pointer release cannot affect fresh controls
+  ---
+  duration_ms: 0.43792
+  type: 'test'
+  ...
+# Subtest: six story friends live in separate runtime copies without changing authored collisions or shared descriptions
+ok 221 - six story friends live in separate runtime copies without changing authored collisions or shared descriptions
+  ---
+  duration_ms: 1.763977
+  type: 'test'
+  ...
+# Subtest: approaching never auto-pauses, and actual Q owns one conversation pause until it is resolved
+ok 222 - approaching never auto-pauses, and actual Q owns one conversation pause until it is resolved
+  ---
+  duration_ms: 4.108925
+  type: 'test'
+  ...
+# Subtest: returning after a real first-lamp journey reports the current light count without granting anything for a conversation
+ok 223 - returning after a real first-lamp journey reports the current light count without granting anything for a conversation
+  ---
+  duration_ms: 9.653572
+  type: 'test'
+  ...
+# Subtest: soul pulses, borrowing-ring replay and the lost cabinet cannot be intercepted by the new story friend
+ok 224 - soul pulses, borrowing-ring replay and the lost cabinet cannot be intercepted by the new story friend
+  ---
+  duration_ms: 17.458409
+  type: 'test'
+  ...
+# Subtest: body proximity is strict on both axes and friends do not change a walking trajectory
+ok 225 - body proximity is strict on both axes and friends do not change a walking trajectory
+  ---
+  duration_ms: 12.182284
+  type: 'test'
+  ...
+# Subtest: without a dialogue callback the current short line is announced without pausing or mutating progression
+ok 226 - without a dialogue callback the current short line is announced without pausing or mutating progression
+  ---
+  duration_ms: 1.367869
+  type: 'test'
+  ...
+# Subtest: all ten festival conversations keep their original payload, name, placement and companion start
+ok 227 - all ten festival conversations keep their original payload, name, placement and companion start
+  ---
+  duration_ms: 1.326228
+  type: 'test'
+  ...
+# Subtest: main-character rendering receives isolated poses, freezes with pause and has clear mobile labels and separated cat placement
+ok 228 - main-character rendering receives isolated poses, freezes with pause and has clear mobile labels and separated cat placement
+  ---
+  duration_ms: 69.717606
+  type: 'test'
+  ...
+# Subtest: restarting or switching chapters inside a conversation callback cannot leave the old talk pending
+ok 229 - restarting or switching chapters inside a conversation callback cannot leave the old talk pending
+  ---
+  duration_ms: 0.703854
+  type: 'test'
+  ...
+# Subtest: six main chapters meet the established cast with distinct contextual props and stable anchors
+ok 230 - six main chapters meet the established cast with distinct contextual props and stable anchors
+  ---
+  duration_ms: 0.294276
+  type: 'test'
+  ...
+# Subtest: lamp counts select different first conversations and revisits still respond to changed progress
+ok 231 - lamp counts select different first conversations and revisits still respond to changed progress
+  ---
+  duration_ms: 0.303571
+  type: 'test'
+  ...
+# Subtest: unknown chapters cannot silently borrow another character or coerce an identifier
+ok 232 - unknown chapters cannot silently borrow another character or coerce an identifier
+  ---
+  duration_ms: 0.23542
+  type: 'test'
+  ...
+# Subtest: missing or malformed state stays at the opening stage instead of inventing lit lamps or repeat visits
+ok 233 - missing or malformed state stays at the opening stage instead of inventing lit lamps or repeat visits
+  ---
+  duration_ms: 0.479121
+  type: 'test'
+  ...
+# Subtest: all 54 lines stay short, use known voices and preserve the main-story identity reveal
+ok 234 - all 54 lines stay short, use known voices and preserve the main-story identity reveal
+  ---
+  duration_ms: 0.484819
+  type: 'test'
+  ...
+# Subtest: chapter-specific opening hints teach cooperation and traversal before directing completed journeys onward
+ok 235 - chapter-specific opening hints teach cooperation and traversal before directing completed journeys onward
+  ---
+  duration_ms: 0.325543
+  type: 'test'
+  ...
+# Subtest: catalog, branches and individual dialogue lines are deeply frozen
+ok 236 - catalog, branches and individual dialogue lines are deeply frozen
+  ---
+  duration_ms: 0.772166
+  type: 'test'
+  ...
+# Subtest: reading dialogue does not mutate caller progress, chapter stories, choices or endings
+ok 237 - reading dialogue does not mutate caller progress, chapter stories, choices or endings
+  ---
+  duration_ms: 0.395126
+  type: 'test'
+  ...
+# Subtest: all real story choices resolve to distinct, stable, self-contained ending scenes
+ok 238 - all real story choices resolve to distinct, stable, self-contained ending scenes
+  ---
+  duration_ms: 1.203255
+  type: 'test'
+  ...
+# Subtest: each epilogue expresses its own story action, including a sunless lantern night
+ok 239 - each epilogue expresses its own story action, including a sunless lantern night
+  ---
+  duration_ms: 0.626559
+  type: 'test'
+  ...
+# Subtest: invalid and hostile values produce no false ending or injected markup
+ok 240 - invalid and hostile values produce no false ending or injected markup
+  ---
+  duration_ms: 0.110634
+  type: 'test'
+  ...
+# Subtest: the static illustrations have accessible names and only internal SVG references
+ok 241 - the static illustrations have accessible names and only internal SVG references
+  ---
+  duration_ms: 0.918182
+  type: 'test'
+  ...
+# Subtest: ending styles are isolated, readable on phones, scrollable and respect both reduced-motion sources
+ok 242 - ending styles are isolated, readable on phones, scrollable and respect both reduced-motion sources
+  ---
+  duration_ms: 32.76059
+  type: 'test'
+  ...
+# Subtest: OS and both app reduced-motion selectors override the actual open-dialog animation specificity
+ok 243 - OS and both app reduced-motion selectors override the actual open-dialog animation specificity
+  ---
+  duration_ms: 0.978422
+  type: 'test'
+  ...
+# Subtest: six authored stages are independent and contain real progressive mechanisms
+ok 244 - six authored stages are independent and contain real progressive mechanisms
+  ---
+  duration_ms: 0.243461
+  type: 'test'
+  ...
+# Subtest: ground collision, coyote jump and frame cap prevent tunnelling
+ok 245 - ground collision, coyote jump and frame cap prevent tunnelling
+  ---
+  duration_ms: 1.654284
+  type: 'test'
+  ...
+# Subtest: a body pressure plate opens a soul veil; the solved light latches it
+ok 246 - a body pressure plate opens a soul veil; the solved light latches it
+  ---
+  duration_ms: 1.168764
+  type: 'test'
+  ...
+# Subtest: soul cannot pass a closed plate veil and always recovers from exhausted energy
+ok 247 - soul cannot pass a closed plate veil and always recovers from exhausted energy
+  ---
+  duration_ms: 3.639659
+  type: 'test'
+  ...
+# Subtest: lantern puzzles pause once; wrong answers cannot unlock the door
+ok 248 - lantern puzzles pause once; wrong answers cannot unlock the door
+  ---
+  duration_ms: 1.247881
+  type: 'test'
+  ...
+# Subtest: mushroom launch clears a ledge that an ordinary jump cannot reach
+ok 249 - mushroom launch clears a ledge that an ordinary jump cannot reach
+  ---
+  duration_ms: 1.165469
+  type: 'test'
+  ...
+# Subtest: moving platforms carry a grounded body and wind changes soul trajectory
+ok 250 - moving platforms carry a grounded body and wind changes soul trajectory
+  ---
+  duration_ms: 1.816985
+  type: 'test'
+  ...
+# Subtest: spirit resonance freezes pendulums but time resumes afterward
+ok 251 - spirit resonance freezes pendulums but time resumes afterward
+  ---
+  duration_ms: 2.488973
+  type: 'test'
+  ...
+# Subtest: checkpoint recovery preserves solved lights and found memories
+ok 252 - checkpoint recovery preserves solved lights and found memories
+  ---
+  duration_ms: 0.53888
+  type: 'test'
+  ...
+# Subtest: both answers and the body are required at the exit; completion is idempotent
+ok 253 - both answers and the body are required at the exit; completion is idempotent
+  ---
+  duration_ms: 0.627531
+  type: 'test'
+  ...
+# Subtest: pause, bounded effects, decorative seed and render cover every theme
+ok 254 - pause, bounded effects, decorative seed and render cover every theme
+  ---
+  duration_ms: 25.497496
+  type: 'test'
+  ...
+# Subtest: replay stars reward memories plus a clean timely run
+ok 255 - replay stars reward memories plus a clean timely run
+  ---
+  duration_ms: 0.203442
+  type: 'test'
+  ...
+# Subtest: low-render-rate frames advance real time using collision-safe fixed steps
+ok 256 - low-render-rate frames advance real time using collision-safe fixed steps
+  ---
+  duration_ms: 94.381867
+  type: 'test'
+  ...
+# Subtest: a long frame is bounded and its substeps cannot tunnel through a closed veil
+ok 257 - a long frame is bounded and its substeps cannot tunnel through a closed veil
+  ---
+  duration_ms: 3.468346
+  type: 'test'
+  ...
+# Subtest: resume discards suspended time and any partial accumulated step
+ok 258 - resume discards suspended time and any partial accumulated step
+  ---
+  duration_ms: 7.341621
+  type: 'test'
+  ...
+# Subtest: fixed-step catch-up stops immediately on a puzzle or chapter completion
+ok 259 - fixed-step catch-up stops immediately on a puzzle or chapter completion
+  ---
+  duration_ms: 5.920443
+  type: 'test'
+  ...
+# Subtest: chapter 1 has a complete route using actual movement, flight and interactions
+ok 260 - chapter 1 has a complete route using actual movement, flight and interactions
+  ---
+  duration_ms: 3.87613
+  type: 'test'
+  ...
+# Subtest: chapter 2 has a complete route using actual movement, flight and interactions
+ok 261 - chapter 2 has a complete route using actual movement, flight and interactions
+  ---
+  duration_ms: 4.310565
+  type: 'test'
+  ...
+# Subtest: chapter 3 has a complete route using actual movement, flight and interactions
+ok 262 - chapter 3 has a complete route using actual movement, flight and interactions
+  ---
+  duration_ms: 14.990238
+  type: 'test'
+  ...
+# Subtest: chapter 4 has a complete route using actual movement, flight and interactions
+ok 263 - chapter 4 has a complete route using actual movement, flight and interactions
+  ---
+  duration_ms: 4.398475
+  type: 'test'
+  ...
+# Subtest: chapter 5 has a complete route using actual movement, flight and interactions
+ok 264 - chapter 5 has a complete route using actual movement, flight and interactions
+  ---
+  duration_ms: 4.696228
+  type: 'test'
+  ...
+# Subtest: chapter 6 has a complete route using actual movement, flight and interactions
+ok 265 - chapter 6 has a complete route using actual movement, flight and interactions
+  ---
+  duration_ms: 8.819874
+  type: 'test'
+  ...
+# Subtest: ticket and seed evidence use their exact chapter-local indexes, never totals or other fragments
+ok 266 - ticket and seed evidence use their exact chapter-local indexes, never totals or other fragments
+  ---
+  duration_ms: 0.652357
+  type: 'test'
+  ...
+# Subtest: malformed evidence cannot call accessors, custom iterators or coercion hooks to fabricate discoveries
+ok 267 - malformed evidence cannot call accessors, custom iterators or coercion hooks to fabricate discoveries
+  ---
+  duration_ms: 0.422878
+  type: 'test'
+  ...
+# Subtest: growth needs a planted seed and counts either exact lamp once, independent of pickup order
+ok 268 - growth needs a planted seed and counts either exact lamp once, independent of pickup order
+  ---
+  duration_ms: 0.154449
+  type: 'test'
+  ...
+# Subtest: a letter reveals the actual second or third fragment instead of a prefix of its summary count
+ok 269 - a letter reveals the actual second or third fragment instead of a prefix of its summary count
+  ---
+  duration_ms: 0.699227
+  type: 'test'
+  ...
+# Subtest: legacy totals remain unknown identities and cannot imply a readable ticket, seed or full letter
+ok 270 - legacy totals remain unknown identities and cannot imply a readable ticket, seed or full letter
+  ---
+  duration_ms: 0.221729
+  type: 'test'
+  ...
+# Subtest: invalid chapter identifiers and accessor records cannot expose another chapter or unseen prose
+ok 271 - invalid chapter identifiers and accessor records cannot expose another chapter or unseen prose
+  ---
+  duration_ms: 0.404881
+  type: 'test'
+  ...
+# Subtest: carried and returning seeds cannot be described as planted even with an inconsistent growth value
+ok 272 - carried and returning seeds cannot be described as planted even with an inconsistent growth value
+  ---
+  duration_ms: 0.233787
+  type: 'test'
+  ...
+# Subtest: ticket phases distinguish a held or returning ticket from a stowed ticket and preserve legacy ownership
+ok 273 - ticket phases distinguish a held or returning ticket from a stowed ticket and preserve legacy ownership
+  ---
+  duration_ms: 0.233266
+  type: 'test'
+  ...
+# Subtest: station conversations during ticket return acknowledge the actual passenger without claiming arrival
+ok 274 - station conversations during ticket return acknowledge the actual passenger without claiming arrival
+  ---
+  duration_ms: 0.905223
+  type: 'test'
+  ...
+# Subtest: chapter letters cannot call an incoming ticket missing or already seated on the train
+ok 275 - chapter letters cannot call an incoming ticket missing or already seated on the train
+  ---
+  duration_ms: 0.396027
+  type: 'test'
+  ...
+# Subtest: station intro and outro acknowledge a stowed ticket only when exact facts support it
+ok 276 - station intro and outro acknowledge a stowed ticket only when exact facts support it
+  ---
+  duration_ms: 0.190062
+  type: 'test'
+  ...
+# Subtest: greenhouse stories distinguish empty pots, carried seeds, planted seeds, leaves and flowers
+ok 277 - greenhouse stories distinguish empty pots, carried seeds, planted seeds, leaves and flowers
+  ---
+  duration_ms: 0.301738
+  type: 'test'
+  ...
+# Subtest: resolved story lines remain compact, use known faces and do not move the later identity reveal
+ok 278 - resolved story lines remain compact, use known faces and do not move the later identity reveal
+  ---
+  duration_ms: 1.32797
+  type: 'test'
+  ...
+# Subtest: default NPC callers keep their shipped branches while precise ticket ownership changes the station response
+ok 279 - default NPC callers keep their shipped branches while precise ticket ownership changes the station response
+  ---
+  duration_ms: 0.502114
+  type: 'test'
+  ...
+# Subtest: NPC reaction keys change for new discoveries or lamp stages and preserve later NPC repeat behavior
+ok 280 - NPC reaction keys change for new discoveries or lamp stages and preserve later NPC repeat behavior
+  ---
+  duration_ms: 0.176091
+  type: 'test'
+  ...
+# Subtest: new NPC responses acknowledge actual plant phases without leaking identities or riddle answers
+ok 281 - new NPC responses acknowledge actual plant phases without leaking identities or riddle answers
+  ---
+  duration_ms: 1.007134
+  type: 'test'
+  ...
+# Subtest: short cap feedback belongs to the actual seed event and keeps held, returning and grown states distinct
+ok 282 - short cap feedback belongs to the actual seed event and keeps held, returning and grown states distinct
+  ---
+  duration_ms: 0.381817
+  type: 'test'
+  ...
+# Subtest: reading journey feedback cannot mutate imported facts, base stories, choices, endings or NPC catalogs
+ok 283 - reading journey feedback cannot mutate imported facts, base stories, choices, endings or NPC catalogs
+  ---
+  duration_ms: 0.464529
+  type: 'test'
+  ...
+# Subtest: the real game-to-result release keeps its origin and cannot click through the new modal
+ok 284 - the real game-to-result release keeps its origin and cannot click through the new modal
+  ---
+  duration_ms: 0.347596
+  type: 'test'
+  ...
+# Subtest: a fresh result tap opens a new story while its remaining old delivery cannot advance the story
+ok 285 - a fresh result tap opens a new story while its remaining old delivery cannot advance the story
+  ---
+  duration_ms: 0.107169
+  type: 'test'
+  ...
+# Subtest: reopening the identical dialog object changes its generation synchronously
+ok 286 - reopening the identical dialog object changes its generation synchronously
+  ---
+  duration_ms: 0.114139
+  type: 'test'
+  ...
+# Subtest: concurrent pointers retain separate origins and a new tap is not swallowed by an old long press
+ok 287 - concurrent pointers retain separate origins and a new tap is not swallowed by an old long press
+  ---
+  duration_ms: 0.109763
+  type: 'test'
+  ...
+# Subtest: cancel and blur retain bounded evidence but a fresh pointerdown immediately recovers
+ok 288 - cancel and blur retain bounded evidence but a fresh pointerdown immediately recovers
+  ---
+  duration_ms: 0.171835
+  type: 'test'
+  ...
+# Subtest: keyboard and assistive clicks never consume or block unrelated pointer gestures
+ok 289 - keyboard and assistive clicks never consume or block unrelated pointer gestures
+  ---
+  duration_ms: 0.103955
+  type: 'test'
+  ...
+# Subtest: ordinary non-modal clicks and fresh dialogs managed by other modules preserve existing behavior
+ok 290 - ordinary non-modal clicks and fresh dialogs managed by other modules preserve existing behavior
+  ---
+  duration_ms: 0.127739
+  type: 'test'
+  ...
+# Subtest: legacy clicks associate only one unequivocal pending release and never borrow a different ID
+ok 291 - legacy clicks associate only one unequivocal pending release and never borrow a different ID
+  ---
+  duration_ms: 0.137685
+  type: 'test'
+  ...
+# Subtest: malformed pointer IDs do not alias records, throw, or consume a real pending gesture
+ok 292 - malformed pointer IDs do not alias records, throw, or consume a real pending gesture
+  ---
+  duration_ms: 0.132567
+  type: 'test'
+  ...
+# Subtest: record capacity is bounded, prefers old ended records and never relies on timeouts
+ok 293 - record capacity is bounded, prefers old ended records and never relies on timeouts
+  ---
+  duration_ms: 2.145072
+  type: 'test'
+  ...
+# Subtest: the authored stage stays on the right bank, away from the main lamp and platform
+ok 294 - the authored stage stays on the right bank, away from the main lamp and platform
+  ---
+  duration_ms: 0.380475
+  type: 'test'
+  ...
+# Subtest: the ray obeys plane-mirror reflection, including oblique incidence and a rotated mirror
+ok 295 - the ray obeys plane-mirror reflection, including oblique incidence and a rotated mirror
+  ---
+  duration_ms: 0.377941
+  type: 'test'
+  ...
+# Subtest: each target in every arrangement is reachable with all three mirror angles
+ok 296 - each target in every arrangement is reachable with all three mirror angles
+  ---
+  duration_ms: 0.902348
+  type: 'test'
+  ...
+# Subtest: moving the real source changes the ray and holding its reflection lights only the hit target
+ok 297 - moving the real source changes the ray and holding its reflection lights only the hit target
+  ---
+  duration_ms: 1.415961
+  type: 'test'
+  ...
+# Subtest: brief passes, missed beams and source distances at either boundary cannot complete a hold
+ok 298 - brief passes, missed beams and source distances at either boundary cannot complete a hold
+  ---
+  duration_ms: 1.008025
+  type: 'test'
+  ...
+# Subtest: pausing freezes charge, unfolded scenery and the presentation clock
+ok 299 - pausing freezes charge, unfolded scenery and the presentation clock
+  ---
+  duration_ms: 3.321046
+  type: 'test'
+  ...
+# Subtest: body return, leaving the ring and being airborne suspend play without erasing lit props
+ok 300 - body return, leaving the ring and being airborne suspend play without erasing lit props
+  ---
+  duration_ms: 0.989848
+  type: 'test'
+  ...
+# Subtest: mirror turns require an active soul within 85 pixels and cycle through exactly three orientations
+ok 301 - mirror turns require an active soul within 85 pixels and cycle through exactly three orientations
+  ---
+  duration_ms: 0.235639
+  type: 'test'
+  ...
+# Subtest: all three arrangements solve through public methods and a later cycle preserves their lights and orientation
+ok 302 - all three arrangements solve through public methods and a later cycle preserves their lights and orientation
+  ---
+  duration_ms: 1.235423
+  type: 'test'
+  ...
+# Subtest: reduced motion preserves the real puzzle but shows lit props immediately
+ok 303 - reduced motion preserves the real puzzle but shows lit props immediately
+  ---
+  duration_ms: 0.233607
+  type: 'test'
+  ...
+# Subtest: malformed contexts, source points and time cannot fabricate progress or poison the model
+ok 304 - malformed contexts, source points and time cannot fabricate progress or poison the model
+  ---
+  duration_ms: 0.453342
+  type: 'test'
+  ...
+# Subtest: view and snapshot copies cannot edit internal progress, authored geometry or captured input
+ok 305 - view and snapshot copies cannot edit internal progress, authored geometry or captured input
+  ---
+  duration_ms: 0.238364
+  type: 'test'
+  ...
+# Subtest: hints follow the current interaction and destroyed instances remain inert
+ok 306 - hints follow the current interaction and destroyed instances remain inert
+  ---
+  duration_ms: 0.715652
+  type: 'test'
+  ...
+# Subtest: fast flipping cannot expose an older speaker while the new line is visible
+ok 307 - fast flipping cannot expose an older speaker while the new line is visible
+  ---
+  duration_ms: 7.248002
+  type: 'test'
+  ...
+# Subtest: closing a story invalidates its pending image, new story may load normally
+ok 308 - closing a story invalidates its pending image, new story may load normally
+  ---
+  duration_ms: 0.425291
+  type: 'test'
+  ...
+# Subtest: failed portrait remains neutral while the text stays readable
+ok 309 - failed portrait remains neutral while the text stays readable
+  ---
+  duration_ms: 0.339453
+  type: 'test'
+  ...
+# Subtest: dream save is independent from survivor progress and from other new saves
+ok 310 - dream save is independent from survivor progress and from other new saves
+  ---
+  duration_ms: 0.227087
+  type: 'test'
+  ...
+# Subtest: chapters unlock sequentially and future completion is rejected
+ok 311 - chapters unlock sequentially and future completion is rejected
+  ---
+  duration_ms: 0.793847
+  type: 'test'
+  ...
+# Subtest: replays preserve better records and previously authored story choices
+ok 312 - replays preserve better records and previously authored story choices
+  ---
+  duration_ms: 0.157755
+  type: 'test'
+  ...
+# Subtest: invalid results do not change progress and bounded results remain bounded
+ok 313 - invalid results do not change progress and bounded results remain bounded
+  ---
+  duration_ms: 0.153217
+  type: 'test'
+  ...
+# Subtest: story replies unlock with their chapters and skipped replies remain discoverable
+ok 314 - story replies unlock with their chapters and skipped replies remain discoverable
+  ---
+  duration_ms: 0.231684
+  type: 'test'
+  ...
+# Subtest: the two real story decisions produce three distinct endings without duplicate collection
+ok 315 - the two real story decisions produce three distinct endings without duplicate collection
+  ---
+  duration_ms: 0.375858
+  type: 'test'
+  ...
+# Subtest: each of six levels has two independently identified and answerable lantern puzzles
+ok 316 - each of six levels has two independently identified and answerable lantern puzzles
+  ---
+  duration_ms: 0.266565
+  type: 'test'
+  ...
+# Subtest: puzzle progress cannot unlock future chapters; an independent solve improves an assisted record
+ok 317 - puzzle progress cannot unlock future chapters; an independent solve improves an assisted record
+  ---
+  duration_ms: 0.20884
+  type: 'test'
+  ...
+# Subtest: earned stamps and six story keepsakes correspond to actual completed progress
+ok 318 - earned stamps and six story keepsakes correspond to actual completed progress
+  ---
+  duration_ms: 0.384971
+  type: 'test'
+  ...
+# Subtest: storage roundtrip preserves story, puzzle assistance, choices and endings
+ok 319 - storage roundtrip preserves story, puzzle assistance, choices and endings
+  ---
+  duration_ms: 0.482346
+  type: 'test'
+  ...
+# Subtest: untrusted imports are bounded, whitelisted and cannot skip the route or pollute prototypes
+ok 320 - untrusted imports are bounded, whitelisted and cannot skip the route or pollute prototypes
+  ---
+  duration_ms: 0.28262
+  type: 'test'
+  ...
+# Subtest: authored story has complete chapter dialogues, valid speakers and local portraits
+ok 321 - authored story has complete chapter dialogues, valid speakers and local portraits
+  ---
+  duration_ms: 0.394806
+  type: 'test'
+  ...
+# Subtest: first-visit goals identify the optional ticket but do not pull a player back after they skip it
+ok 322 - first-visit goals identify the optional ticket but do not pull a player back after they skip it
+  ---
+  duration_ms: 0.257993
+  type: 'test'
+  ...
+# Subtest: the ticket goal changes from holding to delivery to the next required action
+ok 323 - the ticket goal changes from holding to delivery to the next required action
+  ---
+  duration_ms: 0.18165
+  type: 'test'
+  ...
+# Subtest: story memory stays optional while festival gift requirements keep their original objective
+ok 324 - story memory stays optional while festival gift requirements keep their original objective
+  ---
+  duration_ms: 0.086058
+  type: 'test'
+  ...
+# Subtest: a reachable lamp takes button and goal priority over nearby moon controls
+ok 325 - a reachable lamp takes button and goal priority over nearby moon controls
+  ---
+  duration_ms: 0.19499
+  type: 'test'
+  ...
+# Subtest: body conversations keep priority and a moon scene only relabels available actions
+ok 326 - body conversations keep priority and a moon scene only relabels available actions
+  ---
+  duration_ms: 0.105597
+  type: 'test'
+  ...
+# Subtest: pointer hints name actual buttons while keyboard hints preserve shortcuts
+ok 327 - pointer hints name actual buttons while keyboard hints preserve shortcuts
+  ---
+  duration_ms: 0.20224
+  type: 'test'
+  ...
+# Subtest: the greenhouse book needs the exact seed index and exact ticket evidence
+ok 328 - the greenhouse book needs the exact seed index and exact ticket evidence
+  ---
+  duration_ms: 0.279564
+  type: 'test'
+  ...
+# Subtest: book ticket and greenhouse props stay confined to their own story scenes
+ok 329 - book ticket and greenhouse props stay confined to their own story scenes
+  ---
+  duration_ms: 0.10097
+  type: 'test'
+  ...
+# Subtest: four actual saved choices have three existing endings and four legible postcard combinations
+ok 330 - four actual saved choices have three existing endings and four legible postcard combinations
+  ---
+  duration_ms: 0.597005
+  type: 'test'
+  ...
+# Subtest: unfinished, unchosen or invalid saves do not invent a final scene
+ok 331 - unfinished, unchosen or invalid saves do not invent a final scene
+  ---
+  duration_ms: 0.110254
+  type: 'test'
+  ...
+# Subtest: seeded runs reproduce; different seeds produce different sequences
+ok 332 - seeded runs reproduce; different seeds produce different sequences
+  ---
+  duration_ms: 0.221308
+  type: 'test'
+  ...
+# Subtest: upgrade offers never repeat an option or offer a capped upgrade
+ok 333 - upgrade offers never repeat an option or offer a capped upgrade
+  ---
+  duration_ms: 0.138776
+  type: 'test'
+  ...
+# Subtest: daily mode excludes permanent advantages while preserving hero identity
+ok 334 - daily mode excludes permanent advantages while preserving hero identity
+  ---
+  duration_ms: 3.769212
+  type: 'test'
+  ...
+# Subtest: reduced motion changes only visuals, not the deterministic daily simulation
+ok 335 - reduced motion changes only visuals, not the deterministic daily simulation
+  ---
+  duration_ms: 26.002415
+  type: 'test'
+  ...
+# Subtest: pause freezes time; long resumed frames cannot teleport the player
+ok 336 - pause freezes time; long resumed frames cannot teleport the player
+  ---
+  duration_ms: 0.828739
+  type: 'test'
+  ...
+# Subtest: a level-up grants exactly one valid choice and vitality heals correctly
+ok 337 - a level-up grants exactly one valid choice and vitality heals correctly
+  ---
+  duration_ms: 0.474373
+  type: 'test'
+  ...
+# Subtest: damage invulnerability prevents a crowd applying damage in the same frame
+ok 338 - damage invulnerability prevents a crowd applying damage in the same frame
+  ---
+  duration_ms: 0.409468
+  type: 'test'
+  ...
+# Subtest: third boss completion reports victory once; endless mode stays playable
+ok 339 - third boss completion reports victory once; endless mode stays playable
+  ---
+  duration_ms: 1.066562
+  type: 'test'
+  ...
+# Subtest: drop compaction bounds entity counts and conserves accumulated XP
+ok 340 - drop compaction bounds entity counts and conserves accumulated XP
+  ---
+  duration_ms: 0.728881
+  type: 'test'
+  ...
+# Subtest: ten seasonal stages are independent, have three named gifts and two real lamps
+ok 341 - ten seasonal stages are independent, have three named gifts and two real lamps
+  ---
+  duration_ms: 1.628626
+  type: 'test'
+  ...
+# Subtest: festival exit requires gifts as well as lamps; main-story optional memories stay optional
+ok 342 - festival exit requires gifts as well as lamps; main-story optional memories stay optional
+  ---
+  duration_ms: 0.651786
+  type: 'test'
+  ...
+# Subtest: NPC talk owns its pause until resolved, including repeated conversations
+ok 343 - NPC talk owns its pause until resolved, including repeated conversations
+  ---
+  duration_ms: 0.501333
+  type: 'test'
+  ...
+# Subtest: festival puzzle handshake includes the festival identity and cannot be bypassed by items
+ok 344 - festival puzzle handshake includes the festival identity and cannot be bypassed by items
+  ---
+  duration_ms: 2.698243
+  type: 'test'
+  ...
+# Subtest: consumables have bounded, usable effects and paused time does not consume a compass
+ok 345 - consumables have bounded, usable effects and paused time does not consume a compass
+  ---
+  duration_ms: 3.135011
+  type: 'test'
+  ...
+# Subtest: automatic season and equipped outfit can change without resetting a main-story run
+ok 346 - automatic season and equipped outfit can change without resetting a main-story run
+  ---
+  duration_ms: 25.454452
+  type: 'test'
+  ...
+# Subtest: all seasonal art, hats, platform types, NPCs and compass render finite geometry
+ok 347 - all seasonal art, hats, platform types, NPCs and compass render finite geometry
+  ---
+  duration_ms: 345.154879
+  type: 'test'
+  ...
+# Subtest: halloween: collect all gifts, solve lamps and finish with real movement inputs
+ok 348 - halloween: collect all gifts, solve lamps and finish with real movement inputs
+  ---
+  duration_ms: 12.891735
+  type: 'test'
+  ...
+# Subtest: thanksgiving: collect all gifts, solve lamps and finish with real movement inputs
+ok 349 - thanksgiving: collect all gifts, solve lamps and finish with real movement inputs
+  ---
+  duration_ms: 22.679936
+  type: 'test'
+  ...
+# Subtest: christmas: collect all gifts, solve lamps and finish with real movement inputs
+ok 350 - christmas: collect all gifts, solve lamps and finish with real movement inputs
+  ---
+  duration_ms: 9.402619
+  type: 'test'
+  ...
+# Subtest: newyear: collect all gifts, solve lamps and finish with real movement inputs
+ok 351 - newyear: collect all gifts, solve lamps and finish with real movement inputs
+  ---
+  duration_ms: 15.953137
+  type: 'test'
+  ...
+# Subtest: spring: collect all gifts, solve lamps and finish with real movement inputs
+ok 352 - spring: collect all gifts, solve lamps and finish with real movement inputs
+  ---
+  duration_ms: 13.247432
+  type: 'test'
+  ...
+# Subtest: lantern: collect all gifts, solve lamps and finish with real movement inputs
+ok 353 - lantern: collect all gifts, solve lamps and finish with real movement inputs
+  ---
+  duration_ms: 9.628454
+  type: 'test'
+  ...
+# Subtest: valentine: collect all gifts, solve lamps and finish with real movement inputs
+ok 354 - valentine: collect all gifts, solve lamps and finish with real movement inputs
+  ---
+  duration_ms: 4.393397
+  type: 'test'
+  ...
+# Subtest: dragonboat: collect all gifts, solve lamps and finish with real movement inputs
+ok 355 - dragonboat: collect all gifts, solve lamps and finish with real movement inputs
+  ---
+  duration_ms: 5.348925
+  type: 'test'
+  ...
+# Subtest: qixi: collect all gifts, solve lamps and finish with real movement inputs
+ok 356 - qixi: collect all gifts, solve lamps and finish with real movement inputs
+  ---
+  duration_ms: 5.3596
+  type: 'test'
+  ...
+# Subtest: midautumn: collect all gifts, solve lamps and finish with real movement inputs
+ok 357 - midautumn: collect all gifts, solve lamps and finish with real movement inputs
+  ---
+  duration_ms: 5.447532
+  type: 'test'
+  ...
+# Subtest: ten authored adventures each provide two fair puzzles, three physical gifts and two epilogues
+ok 358 - ten authored adventures each provide two fair puzzles, three physical gifts and two epilogues
+  ---
+  duration_ms: 0.872895
+  type: 'test'
+  ...
+# Subtest: Shanghai midnight controls Halloween activation and the end of its window
+ok 359 - Shanghai midnight controls Halloween activation and the end of its window
+  ---
+  duration_ms: 7.991014
+  type: 'test'
+  ...
+# Subtest: Thanksgiving moves with the fourth Thursday, including a December window end
+ok 360 - Thanksgiving moves with the fourth Thursday, including a December window end
+  ---
+  duration_ms: 2.792523
+  type: 'test'
+  ...
+# Subtest: Christmas, Valentine and New Year use their explicit game windows
+ok 361 - Christmas, Valentine and New Year use their explicit game windows
+  ---
+  duration_ms: 2.154977
+  type: 'test'
+  ...
+# Subtest: overlapping holidays remain available with deterministic display priority
+ok 362 - overlapping holidays remain available with deterministic display priority
+  ---
+  duration_ms: 0.54649
+  type: 'test'
+  ...
+# Subtest: official 2026 and 2027 HKO lunar dates override differing host ICU calculations
+ok 363 - official 2026 and 2027 HKO lunar dates override differing host ICU calculations
+  ---
+  duration_ms: 1.328781
+  type: 'test'
+  ...
+# Subtest: lunar windows activate only on their configured ordinary-month days
+ok 364 - lunar windows activate only on their configured ordinary-month days
+  ---
+  duration_ms: 1.949683
+  type: 'test'
+  ...
+# Subtest: leap months do not duplicate festivals and unusual 2033 leap month is recognised
+ok 365 - leap months do not duplicate festivals and unusual 2033 leap month is recognised
+  ---
+  duration_ms: 0.876631
+  type: 'test'
+  ...
+# Subtest: Gregorian and lunar year boundaries keep one annual occurrence key
+ok 366 - Gregorian and lunar year boundaries keep one annual occurrence key
+  ---
+  duration_ms: 1.014124
+  type: 'test'
+  ...
+# Subtest: invalid dates and unknown IDs safely disable activation and record keys
+ok 367 - invalid dates and unknown IDs safely disable activation and record keys
+  ---
+  duration_ms: 0.705186
+  type: 'test'
+  ...
+# Subtest: unsupported Intl still uses embedded official dates and never invents a lunar date
+ok 368 - unsupported Intl still uses embedded official dates and never invents a lunar date
+  ---
+  duration_ms: 0.263411
+  type: 'test'
+  ...
+# Subtest: native Intl Chinese calendar is the safe fallback beyond bundled anchors
+ok 369 - native Intl Chinese calendar is the safe fallback beyond bundled anchors
+  ---
+  duration_ms: 0.359353
+  type: 'test'
+  ...
+# Subtest: a valid completed parcel earns one permanent keepsake and outfit
+ok 370 - a valid completed parcel earns one permanent keepsake and outfit
+  ---
+  duration_ms: 1.271236
+  type: 'test'
+  ...
+# Subtest: incomplete or malformed results cannot create a completion or any grant
+ok 371 - incomplete or malformed results cannot create a completion or any grant
+  ---
+  duration_ms: 0.203673
+  type: 'test'
+  ...
+# Subtest: engine memories alias works and replays preserve independently best results
+ok 372 - engine memories alias works and replays preserve independently best results
+  ---
+  duration_ms: 0.959033
+  type: 'test'
+  ...
+# Subtest: annual replay creates a fresh record while preserving permanent collection totals
+ok 373 - annual replay creates a fresh record while preserving permanent collection totals
+  ---
+  duration_ms: 0.752236
+  type: 'test'
+  ...
+# Subtest: a New Year playthrough across December and January updates the same story
+ok 374 - a New Year playthrough across December and January updates the same story
+  ---
+  duration_ms: 0.38456
+  type: 'test'
+  ...
+# Subtest: epilogue choices require the matching completed occurrence and valid authored option
+ok 375 - epilogue choices require the matching completed occurrence and valid authored option
+  ---
+  duration_ms: 0.793658
+  type: 'test'
+  ...
+# Subtest: solved puzzle credit is per annual story and independent solves survive assisted replays
+ok 376 - solved puzzle credit is per annual story and independent solves survive assisted replays
+  ---
+  duration_ms: 0.827608
+  type: 'test'
+  ...
+# Subtest: playtime outfit grants support starlight without awarding any story keepsake
+ok 377 - playtime outfit grants support starlight without awarding any story keepsake
+  ---
+  duration_ms: 0.18158
+  type: 'test'
+  ...
+# Subtest: save validation removes poison keys, invalid flags and locked selected outfits
+ok 378 - save validation removes poison keys, invalid flags and locked selected outfits
+  ---
+  duration_ms: 0.2497
+  type: 'test'
+  ...
+# Subtest: festival storage is separate and handles corruption, size limits and unavailable storage
+ok 379 - festival storage is separate and handles corruption, size limits and unavailable storage
+  ---
+  duration_ms: 0.662262
+  type: 'test'
+  ...
+# Subtest: all ten stories and twenty riddles produce exact permanent collection totals
+ok 380 - all ten stories and twenty riddles produce exact permanent collection totals
+  ---
+  duration_ms: 7.659342
+  type: 'test'
+  ...
+# Subtest: a new visit never puts an uncollected ticket in the head or in the hands
+ok 381 - a new visit never puts an uncollected ticket in the head or in the hands
+  ---
+  duration_ms: 7.429772
+  type: 'test'
+  ...
+# Subtest: actual soul flight collects one ticket and holds it until the return reaches the head
+ok 382 - actual soul flight collects one ticket and holds it until the return reaches the head
+  ---
+  duration_ms: 5.385279
+  type: 'test'
+  ...
+# Subtest: the ordinary body jump can collect the same ticket and stores it immediately
+ok 383 - the ordinary body jump can collect the same ticket and stores it immediately
+  ---
+  duration_ms: 1.513666
+  type: 'test'
+  ...
+# Subtest: pause freezes the held ticket, its returning flight and the arrival hint clock
+ok 384 - pause freezes the held ticket, its returning flight and the arrival hint clock
+  ---
+  duration_ms: 7.786671
+  type: 'test'
+  ...
+# Subtest: rapid E interruption keeps a single held ticket, then deposits it on the final return
+ok 385 - rapid E interruption keeps a single held ticket, then deposits it on the final return
+  ---
+  duration_ms: 23.070695
+  type: 'test'
+  ...
+# Subtest: energy exhaustion carries the ticket home and starts recovery without another memory event
+ok 386 - energy exhaustion carries the ticket home and starts recovery without another memory event
+  ---
+  duration_ms: 1.231607
+  type: 'test'
+  ...
+# Subtest: reduced motion stores the ticket on recall without a return flight
+ok 387 - reduced motion stores the ticket on recall without a return flight
+  ---
+  duration_ms: 0.798184
+  type: 'test'
+  ...
+# Subtest: enabling reduced motion during the return deposits the ticket and never replays the flight
+ok 388 - enabling reduced motion during the return deposits the ticket and never replays the flight
+  ---
+  duration_ms: 1.008066
+  type: 'test'
+  ...
+# Subtest: reduced motion during a paused return publishes the final stored state without waiting for resume
+ok 389 - reduced motion during a paused return publishes the final stored state without waiting for resume
+  ---
+  duration_ms: 0.710374
+  type: 'test'
+  ...
+# Subtest: fall recovery safely stows held or returning tickets while preserving real collection
+ok 390 - fall recovery safely stows held or returning tickets while preserving real collection
+  ---
+  duration_ms: 1.211548
+  type: 'test'
+  ...
+# Subtest: finishing during a return stores the ticket before completion and clears its flight
+ok 391 - finishing during a return stores the ticket before completion and clears its flight
+  ---
+  duration_ms: 1.57724
+  type: 'test'
+  ...
+# Subtest: restart retains the earned display but resets this run memory counter and never fakes a collection
+ok 392 - restart retains the earned display but resets this run memory counter and never fakes a collection
+  ---
+  duration_ms: 1.586704
+  type: 'test'
+  ...
+# Subtest: a saved collection restores only the display, with no held ticket, memory count or earned event
+ok 393 - a saved collection restores only the display, with no held ticket, memory count or earned event
+  ---
+  duration_ms: 10.982393
+  type: 'test'
+  ...
+# Subtest: other chapters and all ten festivals keep their own first-memory behavior
+ok 394 - other chapters and all ten festivals keep their own first-memory behavior
+  ---
+  duration_ms: 11.399746
+  type: 'test'
+  ...
+# Subtest: HUD snapshots cannot mutate the live ticket or issue duplicate collection events
+ok 395 - HUD snapshots cannot mutate the live ticket or issue duplicate collection events
+  ---
+  duration_ms: 11.666031
+  type: 'test'
+  ...
+# Subtest: greenhouse and station requests are separate, lazy, reusable and chapter-specific
+ok 396 - greenhouse and station requests are separate, lazy, reusable and chapter-specific
+  ---
+  duration_ms: 21.323168
+  type: 'test'
+  ...
+# Subtest: a late greenhouse image cannot paint the chapter or festival entered while it loaded
+ok 397 - a late greenhouse image cannot paint the chapter or festival entered while it loaded
+  ---
+  duration_ms: 21.480912
+  type: 'test'
+  ...
+# Subtest: pending, rejected and failed drawing retain the complete base greenhouse scenery
+ok 398 - pending, rejected and failed drawing retain the complete base greenhouse scenery
+  ---
+  duration_ms: 97.318183
+  type: 'test'
+  ...
+# Subtest: new materials and traveler animation retain the exact inherited walk, mushroom launch, seed and collision simulation
+ok 399 - new materials and traveler animation retain the exact inherited walk, mushroom launch, seed and collision simulation
+  ---
+  duration_ms: 305.770413
+  type: 'test'
+  ...
+# Subtest: an old head flower never lights new-run windows, and the second lamp can illuminate its pane first
+ok 400 - an old head flower never lights new-run windows, and the second lamp can illuminate its pane first
+  ---
+  duration_ms: 1.981619
+  type: 'test'
+  ...
+# Subtest: real seed collection and paused recall survive late image readiness without extra rewards or premature planting
+ok 401 - real seed collection and paused recall survive late image readiness without extra rewards or premature planting
+  ---
+  duration_ms: 37.755269
+  type: 'test'
+  ...
+# Subtest: painted greenhouse pause and reduced motion share existing simulation time and state
+ok 402 - painted greenhouse pause and reduced motion share existing simulation time and state
+  ---
+  duration_ms: 21.915543
+  type: 'test'
+  ...
+# Subtest: the final story chapter and all festivals retain the exact prior renderer after both paintings were cached
+ok 403 - the final story chapter and all festivals retain the exact prior renderer after both paintings were cached
+  ---
+  duration_ms: 110.473178
+  type: 'test'
+  ...
+# Subtest: destroy cancels early and late greenhouse callbacks without resurrecting either cache
+ok 404 - destroy cancels early and late greenhouse callbacks without resurrecting either cache
+  ---
+  duration_ms: 1.500777
+  type: 'test'
+  ...
+# Subtest: every platform paint is clipped to its exact authored rectangle, with no state or input mutation
+ok 405 - every platform paint is clipped to its exact authored rectangle, with no state or input mutation
+  ---
+  duration_ms: 7.735896
+  type: 'test'
+  ...
+# Subtest: unsupported contexts and invalid platform geometry decline without drawing
+ok 406 - unsupported contexts and invalid platform geometry decline without drawing
+  ---
+  duration_ms: 0.362417
+  type: 'test'
+  ...
+# Subtest: offscreen platforms are handled without work and texture effort stays bounded for huge surfaces
+ok 407 - offscreen platforms are handled without work and texture effort stays bounded for huge surfaces
+  ---
+  duration_ms: 1.581136
+  type: 'test'
+  ...
+# Subtest: camera movement preserves the same world-space stones in the overlapping view
+ok 408 - camera movement preserves the same world-space stones in the overlapping view
+  ---
+  duration_ms: 2.864039
+  type: 'test'
+  ...
+# Subtest: the mushroom uses the actual pad anchor and boing without altering state or consuming time
+ok 409 - the mushroom uses the actual pad anchor and boing without altering state or consuming time
+  ---
+  duration_ms: 2.638695
+  type: 'test'
+  ...
+# Subtest: reduced-motion mushroom stays fixed across decorative time and impact animation values
+ok 410 - reduced-motion mushroom stays fixed across decorative time and impact animation values
+  ---
+  duration_ms: 1.769516
+  type: 'test'
+  ...
+# Subtest: mushroom rejects unusable geometry and renders finite small or unusual valid values
+ok 411 - mushroom rejects unusable geometry and renders finite small or unusual valid values
+  ---
+  duration_ms: 0.776322
+  type: 'test'
+  ...
+# Subtest: a context failure reports fallback and restores all saved Canvas state
+ok 412 - a context failure reports fallback and restores all saved Canvas state
+  ---
+  duration_ms: 0.434745
+  type: 'test'
+  ...
+# Subtest: greenhouse asset identity and measured windows are independent immutable scene data
+ok 413 - greenhouse asset identity and measured windows are independent immutable scene data
+  ---
+  duration_ms: 0.260827
+  type: 'test'
+  ...
+# Subtest: panorama preserves scale and the floor relationship across desktop, phone, and camera endpoints
+ok 414 - panorama preserves scale and the floor relationship across desktop, phone, and camera endpoints
+  ---
+  duration_ms: 0.478831
+  type: 'test'
+  ...
+# Subtest: a usable image paints once without source or Canvas mutation; failure restores the complete fallback contract
+ok 415 - a usable image paints once without source or Canvas mutation; failure restores the complete fallback contract
+  ---
+  duration_ms: 0.517878
+  type: 'test'
+  ...
+# Subtest: the two real lamp booleans illuminate separate windows even when the second is solved first
+ok 416 - the two real lamp booleans illuminate separate windows even when the second is solved first
+  ---
+  duration_ms: 0.761159
+  type: 'test'
+  ...
+# Subtest: each chapter owns a lazy single-attempt cache; station and greenhouse never share images
+ok 417 - each chapter owns a lazy single-attempt cache; station and greenhouse never share images
+  ---
+  duration_ms: 0.209882
+  type: 'test'
+  ...
+# Subtest: greenhouse failure stays on fallback and destruction makes both late outcomes inert
+ok 418 - greenhouse failure stays on fallback and destruction makes both late outcomes inert
+  ---
+  duration_ms: 0.386733
+  type: 'test'
+  ...
+# Subtest: nearest catchable top surface owns the shadow, including authored one-way platforms
+ok 419 - nearest catchable top surface owns the shadow, including authored one-way platforms
+  ---
+  duration_ms: 0.314787
+  type: 'test'
+  ...
+# Subtest: the real theatre gap has no floor shadow unless a runtime stage actually passes underneath
+ok 420 - the real theatre gap has no floor shadow unless a runtime stage actually passes underneath
+  ---
+  duration_ms: 0.194319
+  type: 'test'
+  ...
+# Subtest: platform edge eligibility uses the same body width and strict one-pixel inset as landing
+ok 421 - platform edge eligibility uses the same body width and strict one-pixel inset as landing
+  ---
+  duration_ms: 0.122351
+  type: 'test'
+  ...
+# Subtest: a grounded attachment wins only an equal-height overlap, never a nearer top above it
+ok 422 - a grounded attachment wins only an equal-height overlap, never a nearer top above it
+  ---
+  duration_ms: 0.151114
+  type: 'test'
+  ...
+# Subtest: surfaces above the feet are ignored on ascent and descent; lower surfaces remain possible
+ok 423 - surfaces above the feet are ignored on ascent and descent; lower surfaces remain possible
+  ---
+  duration_ms: 0.106408
+  type: 'test'
+  ...
+# Subtest: height continuously fades and contracts a shadow without changing its true surface position
+ok 424 - height continuously fades and contracts a shadow without changing its true surface position
+  ---
+  duration_ms: 0.173688
+  type: 'test'
+  ...
+# Subtest: only the supplied closed-barrier evidence can contribute a landing top
+ok 425 - only the supplied closed-barrier evidence can contribute a landing top
+  ---
+  duration_ms: 0.147228
+  type: 'test'
+  ...
+# Subtest: view derivation is pause-stable, detached from its input, and rejects bad geometry
+ok 426 - view derivation is pause-stable, detached from its input, and rejects bad geometry
+  ---
+  duration_ms: 0.395707
+  type: 'test'
+  ...
+# Subtest: the painter clips the actual ellipse to its surface and restores all caller canvas state
+ok 427 - the painter clips the actual ellipse to its surface and restores all caller canvas state
+  ---
+  duration_ms: 0.295979
+  type: 'test'
+  ...
+# Subtest: empty and remembered greenhouse scenes use exact ticket, seed and lamp identities without granting this run progress
+ok 428 - empty and remembered greenhouse scenes use exact ticket, seed and lamp identities without granting this run progress
+  ---
+  duration_ms: 10.700924
+  type: 'test'
+  ...
+# Subtest: real walking and flight find the seed at the authored old boot and carry it home only on arrival
+ok 429 - real walking and flight find the seed at the authored old boot and carry it home only on arrival
+  ---
+  duration_ms: 10.156918
+  type: 'test'
+  ...
+# Subtest: a successful first-lamp answer before collection grows leaves only after the seed actually reaches the pot
+ok 430 - a successful first-lamp answer before collection grows leaves only after the seed actually reaches the pot
+  ---
+  duration_ms: 5.635029
+  type: 'test'
+  ...
+# Subtest: wrong or cancelled answers cannot grow a planted seed, and two accepted lamp answers open the flower
+ok 431 - wrong or cancelled answers cannot grow a planted seed, and two accepted lamp answers open the flower
+  ---
+  duration_ms: 5.39269
+  type: 'test'
+  ...
+# Subtest: both lamps may be lit before finding the optional seed, without revealing a flower early
+ok 432 - both lamps may be lit before finding the optional seed, without revealing a flower early
+  ---
+  duration_ms: 7.564783
+  type: 'test'
+  ...
+# Subtest: the ordinary mushroom jump can collect and immediately plant the seed with the body
+ok 433 - the ordinary mushroom jump can collect and immediately plant the seed with the body
+  ---
+  duration_ms: 2.120997
+  type: 'test'
+  ...
+# Subtest: pause freezes a carried seed, its return and its growth, while reduced motion settles the actual arrival and HUD
+ok 434 - pause freezes a carried seed, its return and its growth, while reduced motion settles the actual arrival and HUD
+  ---
+  duration_ms: 2.629091
+  type: 'test'
+  ...
+# Subtest: rapid open-return alternation keeps one seed and one collection event
+ok 435 - rapid open-return alternation keeps one seed and one collection event
+  ---
+  duration_ms: 7.015408
+  type: 'test'
+  ...
+# Subtest: energy recall, a fall and a restart preserve discovered seed presentation without duplicating the new run score
+ok 436 - energy recall, a fall and a restart preserve discovered seed presentation without duplicating the new run score
+  ---
+  duration_ms: 5.856017
+  type: 'test'
+  ...
+# Subtest: stored growth is a display only, snapshots are isolated and other chapters or festivals cannot inherit the seed
+ok 437 - stored growth is a display only, snapshots are isolated and other chapters or festivals cannot inherit the seed
+  ---
+  duration_ms: 2.566037
+  type: 'test'
+  ...
+# Subtest: the station friend follows the real ticket return and welcomes it exactly once
+ok 438 - the station friend follows the real ticket return and welcomes it exactly once
+  ---
+  duration_ms: 4.049998
+  type: 'test'
+  ...
+# Subtest: the two new NPC reactions get their first full dialogue after actual milestones and repeat only the same stage
+ok 439 - the two new NPC reactions get their first full dialogue after actual milestones and repeat only the same stage
+  ---
+  duration_ms: 1.407237
+  type: 'test'
+  ...
+# Subtest: poetry prompts, rendered affordances and the target all use the exact executable pulse boundary
+ok 440 - poetry prompts, rendered affordances and the target all use the exact executable pulse boundary
+  ---
+  duration_ms: 1.151898
+  type: 'test'
+  ...
+# Subtest: talking during the actual ticket return describes its journey without claiming it is still uncollected
+ok 441 - talking during the actual ticket return describes its journey without claiming it is still uncollected
+  ---
+  duration_ms: 1.092371
+  type: 'test'
+  ...
+# Subtest: a growth callback may start or destroy a run without letting the old return overwrite its successor
+ok 442 - a growth callback may start or destroy a run without letting the old return overwrite its successor
+  ---
+  duration_ms: 7.07727
+  type: 'test'
+  ...
+# Subtest: only the existing validated saved reply enables a window; completion alone does not invent one
+ok 443 - only the existing validated saved reply enables a window; completion alone does not invent one
+  ---
+  duration_ms: 2.11673
+  type: 'test'
+  ...
+# Subtest: ordinary first cap opening performs one bounded echo after the original miniature, without a second loop
+ok 444 - ordinary first cap opening performs one bounded echo after the original miniature, without a second loop
+  ---
+  duration_ms: 15.271815
+  type: 'test'
+  ...
+# Subtest: a pause freezes both the performance and its rendered frame with no hidden rewards or callbacks
+ok 445 - a pause freezes both the performance and its rendered frame with no hidden rewards or callbacks
+  ---
+  duration_ms: 67.535079
+  type: 'test'
+  ...
+# Subtest: recalling before the echo leaves it for the next opening; recalling during it safely settles it
+ok 446 - recalling before the echo leaves it for the next opening; recalling during it safely settles it
+  ---
+  duration_ms: 3.20184
+  type: 'test'
+  ...
+# Subtest: reduced motion keeps the chosen scene visible and never replays when motion is restored
+ok 447 - reduced motion keeps the chosen scene visible and never replays when motion is restored
+  ---
+  duration_ms: 84.186872
+  type: 'test'
+  ...
+# Subtest: diary re-selection replaces an in-flight reply while paused without changing the game facts
+ok 448 - diary re-selection replaces an in-flight reply while paused without changing the game facts
+  ---
+  duration_ms: 1.601376
+  type: 'test'
+  ...
+# Subtest: the original save key restores choices, and restarting replays presentation without changing discoveries
+ok 449 - the original save key restores choices, and restarting replays presentation without changing discoveries
+  ---
+  duration_ms: 2.59494
+  type: 'test'
+  ...
+# Subtest: reply feedback follows actual selection and preserves urgent seed and lamp directions
+ok 450 - reply feedback follows actual selection and preserves urgent seed and lamp directions
+  ---
+  duration_ms: 0.59951
+  type: 'test'
+  ...
+# Subtest: each echo preserves the inherited physics, chapter geometry and optional collection semantics
+ok 451 - each echo preserves the inherited physics, chapter geometry and optional collection semantics
+  ---
+  duration_ms: 36.060666
+  type: 'test'
+  ...
+# Subtest: other chapters and festivals do not inherit a greenhouse reply, even when it was selected in the diary
+ok 452 - other chapters and festivals do not inherit a greenhouse reply, even when it was selected in the diary
+  ---
+  duration_ms: 1.317063
+  type: 'test'
+  ...
+# Subtest: rendering is pure, balanced, finite and visibly different for both choices at ordinary miniature scale
+ok 453 - rendering is pure, balanced, finite and visibly different for both choices at ordinary miniature scale
+  ---
+  duration_ms: 53.37341
+  type: 'test'
+  ...
+# Subtest: choice normalization never coerces an object or reads inherited and accessor journey values
+ok 454 - choice normalization never coerces an object or reads inherited and accessor journey values
+  ---
+  duration_ms: 0.298703
+  type: 'test'
+  ...
+# Subtest: library assets are strictly story chapter 4, lazy and not reused for festivals
+ok 455 - library assets are strictly story chapter 4, lazy and not reused for festivals
+  ---
+  duration_ms: 0.402737
+  type: 'test'
+  ...
+# Subtest: paint layout remains inside screen at both camera endpoints and drawable failure balances state
+ok 456 - paint layout remains inside screen at both camera endpoints and drawable failure balances state
+  ---
+  duration_ms: 0.663694
+  type: 'test'
+  ...
+# Subtest: two real lamp signals have isolated drawing and no false glow for unlit lamps
+ok 457 - two real lamp signals have isolated drawing and no false glow for unlit lamps
+  ---
+  duration_ms: 0.644516
+  type: 'test'
+  ...
+# Subtest: floating book surface is exactly the physical rectangle; detail stays inside clip
+ok 458 - floating book surface is exactly the physical rectangle; detail stays inside clip
+  ---
+  duration_ms: 0.238484
+  type: 'test'
+  ...
+# Subtest: real chapter 4 inputs preserve base physics; lamp animation freezes, resets and reduced motion settles
+ok 459 - real chapter 4 inputs preserve base physics; lamp animation freezes, resets and reduced motion settles
+  ---
+  duration_ms: 6.435719
+  type: 'test'
+  ...
+# Subtest: six scene cabinets expose two complete, stable evidence sets apiece
+ok 460 - six scene cabinets expose two complete, stable evidence sets apiece
+  ---
+  duration_ms: 0.569886
+  type: 'test'
+  ...
+# Subtest: immutable catalog totals count actual cases, authored evidence sets, and their two sides
+ok 461 - immutable catalog totals count actual cases, authored evidence sets, and their two sides
+  ---
+  duration_ms: 0.21571
+  type: 'test'
+  ...
+# Subtest: a reader can uniquely solve each ticket from the displayed return stamp and arrow directions
+ok 462 - a reader can uniquely solve each ticket from the displayed return stamp and arrow directions
+  ---
+  duration_ms: 1.55074
+  type: 'test'
+  ...
+# Subtest: each Halloween candidate has an independently calculated truth table with exactly one possible owner
+ok 463 - each Halloween candidate has an independently calculated truth table with exactly one possible owner
+  ---
+  duration_ms: 0.82248
+  type: 'test'
+  ...
+# Subtest: each gratitude letter names an observable action, distinguishes writer and courier, and has one recipient
+ok 464 - each gratitude letter names an observable action, distinguishes writer and courier, and has one recipient
+  ---
+  duration_ms: 0.707689
+  type: 'test'
+  ...
+# Subtest: all 36 claims return one short outcome, and only one claimant per evidence set gets a receipt
+ok 465 - all 36 claims return one short outcome, and only one claimant per evidence set gets a receipt
+  ---
+  duration_ms: 2.400401
+  type: 'test'
+  ...
+# Subtest: two upright paper masks have one shared light badge, while either face alone leaves two owners
+ok 466 - two upright paper masks have one shared light badge, while either face alone leaves two owners
+  ---
+  duration_ms: 1.286008
+  type: 'test'
+  ...
+# Subtest: odd and even written beat numbers reconstruct one signature; either side alone still fits two singers
+ok 467 - odd and even written beat numbers reconstruct one signature; either side alone still fits two singers
+  ---
+  duration_ms: 1.375761
+  type: 'test'
+  ...
+# Subtest: two visible left-of relationships yield one seating order, and neither side alone determines the middle guest
+ok 468 - two visible left-of relationships yield one seating order, and neither side alone determines the middle guest
+  ---
+  duration_ms: 1.560495
+  type: 'test'
+  ...
+# Subtest: unknown, prototype-like, and mistyped inputs cannot select a case or produce a valid claim
+ok 469 - unknown, prototype-like, and mistyped inputs cannot select a case or produce a valid claim
+  ---
+  duration_ms: 0.382438
+  type: 'test'
+  ...
+# Subtest: callers cannot inject replacement diagrams or answer annotations into the closed catalog
+ok 470 - callers cannot inject replacement diagrams or answer annotations into the closed catalog
+  ---
+  duration_ms: 0.964971
+  type: 'test'
+  ...
+# Subtest: every displayed line is original plain-text-sized content of at most 50 characters
+ok 471 - every displayed line is original plain-text-sized content of at most 50 characters
+  ---
+  duration_ms: 1.514477
+  type: 'test'
+  ...
+# Subtest: content is deeply immutable and repeated evaluation has no state or reward side effects
+ok 472 - content is deeply immutable and repeated evaluation has no state or reward side effects
+  ---
+  duration_ms: 4.567526
+  type: 'test'
+  ...
+# Subtest: each actual case has exactly two follow-up scenes, using six distinct stage motifs
+ok 473 - each actual case has exactly two follow-up scenes, using six distinct stage motifs
+  ---
+  duration_ms: 0.355447
+  type: 'test'
+  ...
+# Subtest: every scene has one short, distinct Chinese caption and a usable art accent
+ok 474 - every scene has one short, distinct Chinese caption and a usable art accent
+  ---
+  duration_ms: 0.510398
+  type: 'test'
+  ...
+# Subtest: paired endings carry the promised visual change without repeating a recipient or puzzle answer
+ok 475 - paired endings carry the promised visual change without repeating a recipient or puzzle answer
+  ---
+  duration_ms: 0.209611
+  type: 'test'
+  ...
+# Subtest: unknown or malformed selections return null without coercing input or silently selecting a first scene
+ok 476 - unknown or malformed selections return null without coercing input or silently selecting a first scene
+  ---
+  duration_ms: 0.14797
+  type: 'test'
+  ...
+# Subtest: the exported catalog and all returned records are immutable, stable shared descriptions
+ok 477 - the exported catalog and all returned records are immutable, stable shared descriptions
+  ---
+  duration_ms: 0.506752
+  type: 'test'
+  ...
+# Subtest: looking up completed-scene decoration neither changes evidence content nor accumulates play state
+ok 478 - looking up completed-scene decoration neither changes evidence content nor accumulates play state
+  ---
+  duration_ms: 0.570697
+  type: 'test'
+  ...
+# Subtest: all authored cases and evidence variants finish through walking, Q, E, flying and pulse inputs
+ok 479 - all authored cases and evidence variants finish through walking, Q, E, flying and pulse inputs
+  ---
+  duration_ms: 114.37773
+  type: 'test'
+  ...
+# Subtest: real clue and handoff callbacks persist all cases across mid-evidence reloads without completing unseen variants
+ok 480 - real clue and handoff callbacks persist all cases across mid-evidence reloads without completing unseen variants
+  ---
+  duration_ms: 52.875952
+  type: 'test'
+  ...
+# Subtest: the library object avoids its original memory and every claimant circle while remaining reachable
+ok 481 - the library object avoids its original memory and every claimant circle while remaining reachable
+  ---
+  duration_ms: 1.834151
+  type: 'test'
+  ...
+# Subtest: a cabinet stays locked until a real base route completes, and unsupported scenes add no cabinet
+ok 482 - a cabinet stays locked until a real base route completes, and unsupported scenes add no cabinet
+  ---
+  duration_ms: 59.052906
+  type: 'test'
+  ...
+# Subtest: unseen evidence cannot be guessed, wrong owners get specific feedback and retries have no resource penalty
+ok 483 - unseen evidence cannot be guessed, wrong owners get specific feedback and retries have no resource penalty
+  ---
+  duration_ms: 27.067832
+  type: 'test'
+  ...
+# Subtest: all case observation circles preserve energy without replenishing it, and flight outside them still drains normally
+ok 484 - all case observation circles preserve energy without replenishing it, and flight outside them still drains normally
+  ---
+  duration_ms: 59.581759
+  type: 'test'
+  ...
+# Subtest: locked or unopened cabinets and bodies away from the box do not protect observation locations
+ok 485 - locked or unopened cabinets and bodies away from the box do not protect observation locations
+  ---
+  duration_ms: 5.455495
+  type: 'test'
+  ...
+# Subtest: low-energy reading stays controllable, recall restores only normal body energy, and empty flight still recalls
+ok 486 - low-energy reading stays controllable, recall restores only normal body energy, and empty flight still recalls
+  ---
+  duration_ms: 12.075989
+  type: 'test'
+  ...
+# Subtest: pause, recall, leaving the box and low energy retain evidence and freeze presentation without locking control
+ok 487 - pause, recall, leaving the box and low energy retain evidence and freeze presentation without locking control
+  ---
+  duration_ms: 10.175548
+  type: 'test'
+  ...
+# Subtest: saved partial evidence restores only seen facts and explicit Q selects unfinished groups before replaying solved ones
+ok 488 - saved partial evidence restores only seen facts and explicit Q selects unfinished groups before replaying solved ones
+  ---
+  duration_ms: 5.176432
+  type: 'test'
+  ...
+# Subtest: revision replacement is safe inside clue and solve callbacks and destroyed instances cannot emit stale progress
+ok 489 - revision replacement is safe inside clue and solve callbacks and destroyed instances cannot emit stale progress
+  ---
+  duration_ms: 5.340815
+  type: 'test'
+  ...
+# Subtest: restart retains obtained cabinet access and facts, but explicit imports clear the temporary unlock source
+ok 490 - restart retains obtained cabinet access and facts, but explicit imports clear the temporary unlock source
+  ---
+  duration_ms: 1.567837
+  type: 'test'
+  ...
+# Subtest: lamps, dangerous shadows, festival NPCs and the original borrowing Q retain interaction priority
+ok 491 - lamps, dangerous shadows, festival NPCs and the original borrowing Q retain interaction priority
+  ---
+  duration_ms: 2.214475
+  type: 'test'
+  ...
+# Subtest: narrow-screen lost projections retain all claimant labels during pause and restore framing after recall
+ok 492 - narrow-screen lost projections retain all claimant labels during pause and restore framing after recall
+  ---
+  duration_ms: 147.547204
+  type: 'test'
+  ...
+# Subtest: reduced motion settles handoffs immediately, and falls clear presentation while retaining solved records
+ok 493 - reduced motion settles handoffs immediately, and falls clear presentation while retaining solved records
+  ---
+  duration_ms: 7.143901
+  type: 'test'
+  ...
+# Subtest: lost records are bounded independent copies and constructing an instance cannot write progress
+ok 494 - lost records are bounded independent copies and constructing an instance cannot write progress
+  ---
+  duration_ms: 0.262459
+  type: 'test'
+  ...
+# Subtest: all twelve real handoffs unlock only their own encore and settle without another event or save write
+ok 495 - all twelve real handoffs unlock only their own encore and settle without another event or save write
+  ---
+  duration_ms: 120.347495
+  type: 'test'
+  ...
+# Subtest: encore time freezes on pause, recall and leaving the box, while ordinary movement stays available
+ok 496 - encore time freezes on pause, recall and leaving the box, while ordinary movement stays available
+  ---
+  duration_ms: 55.622444
+  type: 'test'
+  ...
+# Subtest: restored solved receipts have static encores without replay events, and partial or replaced records cannot reveal one
+ok 497 - restored solved receipts have static encores without replay events, and partial or replaced records cannot reveal one
+  ---
+  duration_ms: 18.106256
+  type: 'test'
+  ...
+# Subtest: reduced motion and fall recovery settle successful scenes immediately and never restart an old animation
+ok 498 - reduced motion and fall recovery settle successful scenes immediately and never restart an old animation
+  ---
+  duration_ms: 47.216141
+  type: 'test'
+  ...
+# Subtest: encore bounds fit both phone viewports and receive their own background clear zone
+ok 499 - encore bounds fit both phone viewports and receive their own background clear zone
+  ---
+  duration_ms: 51.052393
+  type: 'test'
+  ...
+# Subtest: both greenhouse variants render the four written corners upright, with only the observed face open
+ok 500 - both greenhouse variants render the four written corners upright, with only the observed face open
+  ---
+  duration_ms: 1.508238
+  type: 'test'
+  ...
+# Subtest: each greenhouse claimant badge matches its visible corner names instead of a hidden winning result
+ok 501 - each greenhouse claimant badge matches its visible corner names instead of a hidden winning result
+  ---
+  duration_ms: 0.518049
+  type: 'test'
+  ...
+# Subtest: both whale variants put visible notes at their written beat numbers and leave the other face blank
+ok 502 - both whale variants put visible notes at their written beat numbers and leave the other face blank
+  ---
+  duration_ms: 0.732026
+  type: 'test'
+  ...
+# Subtest: rendering the other side or a singer does not backfill unseen beats in a later face-only diagram
+ok 503 - rendering the other side or a singer does not backfill unseen beats in a later face-only diagram
+  ---
+  duration_ms: 0.453323
+  type: 'test'
+  ...
+# Subtest: both Thanksgiving variants show just the current left-of relation and keep every seat free of assigned badges
+ok 504 - both Thanksgiving variants show just the current left-of relation and keep every seat free of assigned badges
+  ---
+  duration_ms: 0.51214
+  type: 'test'
+  ...
+# Subtest: malformed dimensions, cells, beats, symbols and seating facts return null instead of fabricated evidence
+ok 505 - malformed dimensions, cells, beats, symbols and seating facts return null instead of fabricated evidence
+  ---
+  duration_ms: 0.352413
+  type: 'test'
+  ...
+# Subtest: sparse arrays cannot turn missing cells or missing signature notes into a valid drawing
+ok 506 - sparse arrays cannot turn missing cells or missing signature notes into a valid drawing
+  ---
+  duration_ms: 0.25587
+  type: 'test'
+  ...
+# Subtest: an explicitly malformed direction is rejected rather than silently treated as screen-left-to-right
+ok 507 - an explicitly malformed direction is rejected rather than silently treated as screen-left-to-right
+  ---
+  duration_ms: 0.172135
+  type: 'test'
+  ...
+# Subtest: models are independent copies and rendering cannot alter any authored evidence
+ok 508 - models are independent copies and rendering cannot alter any authored evidence
+  ---
+  duration_ms: 1.083889
+  type: 'test'
+  ...
+# Subtest: a single inspected side survives a refresh in the selected evidence set
+ok 509 - a single inspected side survives a refresh in the selected evidence set
+  ---
+  duration_ms: 0.62011
+  type: 'test'
+  ...
+# Subtest: a solve requires the actual two clue events and a correct claimant, never a supplied summary
+ok 510 - a solve requires the actual two clue events and a correct claimant, never a supplied summary
+  ---
+  duration_ms: 0.641461
+  type: 'test'
+  ...
+# Subtest: all authored solutions count once; wrong claims and replay solves never write or add rewards
+ok 511 - all authored solutions count once; wrong claims and replay solves never write or add rewards
+  ---
+  duration_ms: 6.81402
+  type: 'test'
+  ...
+# Subtest: v8 three-case saves retain their exact facts and leave all newly added cases naturally empty
+ok 512 - v8 three-case saves retain their exact facts and leave all newly added cases naturally empty
+  ---
+  duration_ms: 1.27418
+  type: 'test'
+  ...
+# Subtest: late evidence and solves keep their facts without taking over another tab’s active variant
+ok 513 - late evidence and solves keep their facts without taking over another tab’s active variant
+  ---
+  duration_ms: 0.360715
+  type: 'test'
+  ...
+# Subtest: same-revision sets merge across tabs and cases in any order without aliasing inputs
+ok 514 - same-revision sets merge across tabs and cases in any order without aliasing inputs
+  ---
+  duration_ms: 0.521875
+  type: 'test'
+  ...
+# Subtest: equal-time active preferences converge and malformed timestamps cannot win
+ok 515 - equal-time active preferences converge and malformed timestamps cannot win
+  ---
+  duration_ms: 0.237512
+  type: 'test'
+  ...
+# Subtest: a new import revision replaces old facts even after write failure and rejects stale live callbacks
+ok 516 - a new import revision replaces old facts even after write failure and rejects stale live callbacks
+  ---
+  duration_ms: 0.574583
+  type: 'test'
+  ...
+# Subtest: empty replacements and simultaneous imports win as whole revisions rather than mixing generations
+ok 517 - empty replacements and simultaneous imports win as whole revisions rather than mixing generations
+  ---
+  duration_ms: 0.263662
+  type: 'test'
+  ...
+# Subtest: unknown identifiers, mismatched contexts and invalid event values leave the save untouched
+ok 518 - unknown identifiers, mismatched contexts and invalid event values leave the save untouched
+  ---
+  duration_ms: 0.610306
+  type: 'test'
+  ...
+# Subtest: validation bounds known collections, discards prototype keys, and keeps seen and solved independent
+ok 519 - validation bounds known collections, discards prototype keys, and keeps seen and solved independent
+  ---
+  duration_ms: 0.9771
+  type: 'test'
+  ...
+# Subtest: timestamps and logical revisions remain bounded through clock rollback and extreme imports
+ok 520 - timestamps and logical revisions remain bounded through clock rollback and extreme imports
+  ---
+  duration_ms: 0.945774
+  type: 'test'
+  ...
+# Subtest: storage failures, malformed data and oversized input are isolated to the lost-case key
+ok 521 - storage failures, malformed data and oversized input are isolated to the lost-case key
+  ---
+  duration_ms: 0.716203
+  type: 'test'
+  ...
+# Subtest: validation and getters return detached records and never mutate their input
+ok 522 - validation and getters return detached records and never mutate their input
+  ---
+  duration_ms: 0.255078
+  type: 'test'
+  ...
+# Subtest: all three moon scenes complete through actual walking, soul flight, Q turns and E returns without advancing the main story
+ok 523 - all three moon scenes complete through actual walking, soul flight, Q turns and E returns without advancing the main story
+  ---
+  duration_ms: 22.433487
+  type: 'test'
+  ...
+# Subtest: 320x431 and 390x595 canvases show all three props in every scene and release the camera for the main lamp
+ok 524 - 320x431 and 390x595 canvases show all three props in every scene and release the camera for the main lamp
+  ---
+  duration_ms: 76.554644
+  type: 'test'
+  ...
+# Subtest: an ordinary flight to the nearby main lamp keeps the poem prompt and its answer authoritative
+ok 525 - an ordinary flight to the nearby main lamp keeps the poem prompt and its answer authoritative
+  ---
+  duration_ms: 2.825112
+  type: 'test'
+  ...
+# Subtest: pause and render freeze the last moon beam, charge and clock while normal resume restores control
+ok 526 - pause and render freeze the last moon beam, charge and clock while normal resume restores control
+  ---
+  duration_ms: 32.299567
+  type: 'test'
+  ...
+# Subtest: natural energy recall and a fall retain moon progress; leaving permits movement and restarting clears the old visit
+ok 527 - natural energy recall and a fall retain moon progress; leaving permits movement and restarting clears the old visit
+  ---
+  duration_ms: 16.937633
+  type: 'test'
+  ...
+# Subtest: theatre borrowing switches and the station lost cabinet retain their existing Q actions
+ok 528 - theatre borrowing switches and the station lost cabinet retain their existing Q actions
+  ---
+  duration_ms: 2.794116
+  type: 'test'
+  ...
+# Subtest: only main-story chapter three installs moon play, including after switching to a festival with the same physical base
+ok 529 - only main-story chapter three installs moon play, including after switching to a festival with the same physical base
+  ---
+  duration_ms: 41.84431
+  type: 'test'
+  ...
+# Subtest: painting URL is module-relative and its geometry contract is immutable
+ok 530 - painting URL is module-relative and its geometry contract is immutable
+  ---
+  duration_ms: 0.319994
+  type: 'test'
+  ...
+# Subtest: real desktop and phone Canvas sizes preserve aspect and cover both camera endpoints
+ok 531 - real desktop and phone Canvas sizes preserve aspect and cover both camera endpoints
+  ---
+  duration_ms: 0.381305
+  type: 'test'
+  ...
+# Subtest: camera moves the painting by exactly 0.28 and invalid overscroll is clamped
+ok 532 - camera moves the painting by exactly 0.28 and invalid overscroll is clamped
+  ---
+  duration_ms: 0.174329
+  type: 'test'
+  ...
+# Subtest: extra portrait framing does not stretch or move the painted station
+ok 533 - extra portrait framing does not stretch or move the painted station
+  ---
+  duration_ms: 0.088562
+  type: 'test'
+  ...
+# Subtest: malformed dimensions are rejected before any Canvas operation
+ok 534 - malformed dimensions are rejected before any Canvas operation
+  ---
+  duration_ms: 0.281318
+  type: 'test'
+  ...
+# Subtest: drawing uses one screen-space image without changing source objects or Canvas state
+ok 535 - drawing uses one screen-space image without changing source objects or Canvas state
+  ---
+  duration_ms: 0.263061
+  type: 'test'
+  ...
+# Subtest: unloaded and broken images fall back, including Canvas draw failures
+ok 536 - unloaded and broken images fall back, including Canvas draw failures
+  ---
+  duration_ms: 0.265775
+  type: 'test'
+  ...
+# Subtest: asset requests are lazy, guarded to story chapter zero, and share one attempt
+ok 537 - asset requests are lazy, guarded to story chapter zero, and share one attempt
+  ---
+  duration_ms: 0.256951
+  type: 'test'
+  ...
+# Subtest: loader rejection, synchronous throws and invalid pixels fail once and stay on fallback
+ok 538 - loader rejection, synchronous throws and invalid pixels fail once and stay on fallback
+  ---
+  duration_ms: 0.250962
+  type: 'test'
+  ...
+# Subtest: destroyed assets cannot load or be resurrected by a late success or rejection
+ok 539 - destroyed assets cannot load or be resurrected by a late success or rejection
+  ---
+  duration_ms: 0.178175
+  type: 'test'
+  ...
+# Subtest: destroy releases a ready image and never retries it
+ok 540 - destroy releases a ready image and never retries it
+  ---
+  duration_ms: 0.099057
+  type: 'test'
+  ...
+# Subtest: default loading is harmless when the browser Image constructor is unavailable
+ok 541 - default loading is harmless when the browser Image constructor is unavailable
+  ---
+  duration_ms: 0.235109
+  type: 'test'
+  ...
+# Subtest: native loading sets handlers before src and clears them after success or error
+ok 542 - native loading sets handlers before src and clears them after success or error
+  ---
+  duration_ms: 0.355628
+  type: 'test'
+  ...
+# Subtest: the first story chapter requests its painting once, independently of the greenhouse
+ok 543 - the first story chapter requests its painting once, independently of the greenhouse
+  ---
+  duration_ms: 9.977674
+  type: 'test'
+  ...
+# Subtest: a ready first-chapter image cannot alter the final chapter or ten festival draw sequences
+ok 544 - a ready first-chapter image cannot alter the final chapter or ten festival draw sequences
+  ---
+  duration_ms: 110.058648
+  type: 'test'
+  ...
+# Subtest: pending and rejected images retain v15 windows, the real plate, and the latched signal
+ok 545 - pending and rejected images retain v15 windows, the real plate, and the latched signal
+  ---
+  duration_ms: 36.474653
+  type: 'test'
+  ...
+# Subtest: draw failures recover complete v15 fallback and remove only painted NPC lighting without touching the simulation
+ok 546 - draw failures recover complete v15 fallback and remove only painted NPC lighting without touching the simulation
+  ---
+  duration_ms: 19.151657
+  type: 'test'
+  ...
+# Subtest: real flight collects a ticket while loading and late readiness cannot advance its paused homecoming or award it twice
+ok 547 - real flight collects a ticket while loading and late readiness cannot advance its paused homecoming or award it twice
+  ---
+  duration_ms: 16.259506
+  type: 'test'
+  ...
+# Subtest: restart reuses the image and preserves the saved-ticket display without manufacturing current-run memories
+ok 548 - restart reuses the image and preserves the saved-ticket display without manufacturing current-run memories
+  ---
+  duration_ms: 15.444257
+  type: 'test'
+  ...
+# Subtest: destruction before and after the loader begins makes late success and failure inert
+ok 549 - destruction before and after the loader begins makes late success and failure inert
+  ---
+  duration_ms: 1.438083
+  type: 'test'
+  ...
+# Subtest: a pause callback may switch chapters or destroy the run while an image is pending without a late completion overwriting it
+ok 550 - a pause callback may switch chapters or destroy the run while an image is pending without a late completion overwriting it
+  ---
+  duration_ms: 7.475342
+  type: 'test'
+  ...
+# Subtest: ordinary reward ledger stays separate and starts with independent inventories
+ok 551 - ordinary reward ledger stays separate and starts with independent inventories
+  ---
+  duration_ms: 0.631837
+  type: 'test'
+  ...
+# Subtest: first samples, repeated HUD emissions and new sessions never grant catch-up time
+ok 552 - first samples, repeated HUD emissions and new sessions never grant catch-up time
+  ---
+  duration_ms: 2.245972
+  type: 'test'
+  ...
+# Subtest: paused and background periods are excluded, including the first resumed sample
+ok 553 - paused and background periods are excluded, including the first resumed sample
+  ---
+  duration_ms: 0.909189
+  type: 'test'
+  ...
+# Subtest: invalid time, backwards time and long discontinuities do not become rewards
+ok 554 - invalid time, backwards time and long discontinuities do not become rewards
+  ---
+  duration_ms: 0.569945
+  type: 'test'
+  ...
+# Subtest: both games contribute to ordinary cumulative progress without changing reward keys
+ok 555 - both games contribute to ordinary cumulative progress without changing reward keys
+  ---
+  duration_ms: 0.682562
+  type: 'test'
+  ...
+# Subtest: archive visits cannot manufacture holiday playtime outside actual dates
+ok 556 - archive visits cannot manufacture holiday playtime outside actual dates
+  ---
+  duration_ms: 0.433634
+  type: 'test'
+  ...
+# Subtest: overlapping real festivals can each record the same valid session minute
+ok 557 - overlapping real festivals can each record the same valid session minute
+  ---
+  duration_ms: 0.601182
+  type: 'test'
+  ...
+# Subtest: new year keeps one occurrence over December and January
+ok 558 - new year keeps one occurrence over December and January
+  ---
+  duration_ms: 1.373098
+  type: 'test'
+  ...
+# Subtest: welcome gifts are once per occurrence and the next year has its own gift
+ok 559 - welcome gifts are once per occurrence and the next year has its own gift
+  ---
+  duration_ms: 0.846627
+  type: 'test'
+  ...
+# Subtest: ordinary thresholds are cumulative, idempotent and grant a usable outfit
+ok 560 - ordinary thresholds are cumulative, idempotent and grant a usable outfit
+  ---
+  duration_ms: 0.274367
+  type: 'test'
+  ...
+# Subtest: richer festival tiers require actual accrued event time and unlock its outfit
+ok 561 - richer festival tiers require actual accrued event time and unlock its outfit
+  ---
+  duration_ms: 1.113002
+  type: 'test'
+  ...
+# Subtest: already earned gifts remain discoverable and claimable after their event and year
+ok 562 - already earned gifts remain discoverable and claimable after their event and year
+  ---
+  duration_ms: 0.93009
+  type: 'test'
+  ...
+# Subtest: stardust buys actual consumables without negative balances or unknown item writes
+ok 563 - stardust buys actual consumables without negative balances or unknown item writes
+  ---
+  duration_ms: 0.222961
+  type: 'test'
+  ...
+# Subtest: grants and purchases respect inventory caps
+ok 564 - grants and purchases respect inventory caps
+  ---
+  duration_ms: 0.128851
+  type: 'test'
+  ...
+# Subtest: overview computes meaningful progress, available rewards and inventory prices
+ok 565 - overview computes meaningful progress, available rewards and inventory prices
+  ---
+  duration_ms: 0.717074
+  type: 'test'
+  ...
+# Subtest: save validation bounds collections, prevents prototype keys and keeps legitimate roundtrips
+ok 566 - save validation bounds collections, prevents prototype keys and keeps legitimate roundtrips
+  ---
+  duration_ms: 0.362328
+  type: 'test'
+  ...
+# Subtest: unavailable or corrupted storage does not block play
+ok 567 - unavailable or corrupted storage does not block play
+  ---
+  duration_ms: 5.214137
+  type: 'test'
+  ...
+# Subtest: tracker prevents two active windows counting the same real interval
+ok 568 - tracker prevents two active windows counting the same real interval
+  ---
+  duration_ms: 1.089436
+  type: 'test'
+  ...
+# Subtest: tracker transactions refresh inventory so stale tabs cannot spend already spent stars
+ok 569 - tracker transactions refresh inventory so stale tabs cannot spend already spent stars
+  ---
+  duration_ms: 0.366604
+  type: 'test'
+  ...
+# Subtest: item use checks the latest inventory and spends only after a successful effect
+ok 570 - item use checks the latest inventory and spends only after a successful effect
+  ---
+  duration_ms: 0.316399
+  type: 'test'
+  ...
+# Subtest: using a welcome compass persists its consumption when the effect emits a paused HUD sample
+ok 571 - using a welcome compass persists its consumption when the effect emits a paused HUD sample
+  ---
+  duration_ms: 0.701181
+  type: 'test'
+  ...
+# Subtest: reentrant active HUD samples retain their time while item transactions commit or decline
+ok 572 - reentrant active HUD samples retain their time while item transactions commit or decline
+  ---
+  duration_ms: 1.165429
+  type: 'test'
+  ...
+# Subtest: an item effect cannot reenter another spend or replace its pending inventory transaction
+ok 573 - an item effect cannot reenter another spend or replace its pending inventory transaction
+  ---
+  duration_ms: 0.560792
+  type: 'test'
+  ...
+# Subtest: confirmed replacement resets samples and cannot credit the previous run to imported progress
+ok 574 - confirmed replacement resets samples and cannot credit the previous run to imported progress
+  ---
+  duration_ms: 0.645808
+  type: 'test'
+  ...
+# Subtest: travel supplies continue after two hours, with one package per additional active half-hour
+ok 575 - travel supplies continue after two hours, with one package per additional active half-hour
+  ---
+  duration_ms: 0.659458
+  type: 'test'
+  ...
+# Subtest: travel supply claims survive reload and paused time cannot cross their threshold
+ok 576 - travel supply claims survive reload and paused time cannot cross their threshold
+  ---
+  duration_ms: 0.623695
+  type: 'test'
+  ...
+# Subtest: travel supply counters are finite and cannot claim beyond cumulative playtime
+ok 577 - travel supply counters are finite and cannot claim beyond cumulative playtime
+  ---
+  duration_ms: 0.425311
+  type: 'test'
+  ...
+# Subtest: scene loads only in actual sixth story chapter; all camera endpoints remain covered
+ok 578 - scene loads only in actual sixth story chapter; all camera endpoints remain covered
+  ---
+  duration_ms: 1.212079
+  type: 'test'
+  ...
+# Subtest: post supports, actual mushroom and exit draw within finite geometry
+ok 579 - post supports, actual mushroom and exit draw within finite geometry
+  ---
+  duration_ms: 0.4584
+  type: 'test'
+  ...
+# Subtest: delivery state requires both lamps, same run/body and the actual returning cap
+ok 580 - delivery state requires both lamps, same run/body and the actual returning cap
+  ---
+  duration_ms: 0.266496
+  type: 'test'
+  ...
+# Subtest: one lamp, normal recall, early reopening and settled reopening observe the true rig
+ok 581 - one lamp, normal recall, early reopening and settled reopening observe the true rig
+  ---
+  duration_ms: 4.587437
+  type: 'test'
+  ...
+# Subtest: pause and reduced motion respect in-game time, not a separate animation clock
+ok 582 - pause and reduced motion respect in-game time, not a separate animation clock
+  ---
+  duration_ms: 2.806495
+  type: 'test'
+  ...
+# Subtest: post decorative logic never changes physics or duplicates original game events
+ok 583 - post decorative logic never changes physics or duplicates original game events
+  ---
+  duration_ms: 5.235558
+  type: 'test'
+  ...
+# Subtest: original exit takes precedence over an unfinished stamp; only one completion
+ok 584 - original exit takes precedence over an unfinished stamp; only one completion
+  ---
+  duration_ms: 2.87109
+  type: 'test'
+  ...
+# Subtest: previous chapters and festival never request post art or show post stamp
+ok 585 - previous chapters and festival never request post art or show post stamp
+  ---
+  duration_ms: 1.206029
+  type: 'test'
+  ...
+# Subtest: a continuous hold avoids the old 1440 reversal consuming a real mushroom flight
+ok 586 - a continuous hold avoids the old 1440 reversal consuming a real mushroom flight
+  ---
+  duration_ms: 43.729246
+  type: 'test'
+  ...
+# Subtest: releasing above the root avoids target-steering oscillation after an actual landing
+ok 587 - releasing above the root avoids target-steering oscillation after an actual landing
+  ---
+  duration_ms: 22.254992
+  type: 'test'
+  ...
+# Subtest: fresh saves never share nested mutable state
+ok 588 - fresh saves never share nested mutable state
+  ---
+  duration_ms: 0.235159
+  type: 'test'
+  ...
+# Subtest: purchases preserve wallet invariants and enforce maximum levels
+ok 589 - purchases preserve wallet invariants and enforce maximum levels
+  ---
+  duration_ms: 0.568814
+  type: 'test'
+  ...
+# Subtest: heroes unlock once, with an achievement for the complete collection
+ok 590 - heroes unlock once, with an achievement for the complete collection
+  ---
+  duration_ms: 0.249069
+  type: 'test'
+  ...
+# Subtest: short or invalid attempts grant no currency or achievement
+ok 591 - short or invalid attempts grant no currency or achievement
+  ---
+  duration_ms: 0.352063
+  type: 'test'
+  ...
+# Subtest: achievements and explicit run IDs are awarded only once
+ok 592 - achievements and explicit run IDs are awarded only once
+  ---
+  duration_ms: 0.172186
+  type: 'test'
+  ...
+# Subtest: win achievements require a completed timed run and a boss
+ok 593 - win achievements require a completed timed run and a boss
+  ---
+  duration_ms: 0.137715
+  type: 'test'
+  ...
+# Subtest: daily seed uses UTC, is stable for a day, and changes each day
+ok 594 - daily seed uses UTC, is stable for a day, and changes each day
+  ---
+  duration_ms: 0.186337
+  type: 'test'
+  ...
+# Subtest: daily bests keep best score; history and daily collections are bounded
+ok 595 - daily bests keep best score; history and daily collections are bounded
+  ---
+  duration_ms: 1.353028
+  type: 'test'
+  ...
+# Subtest: storage errors are nonfatal and valid saves round-trip
+ok 596 - storage errors are nonfatal and valid saves round-trip
+  ---
+  duration_ms: 0.510328
+  type: 'test'
+  ...
+# Subtest: untrusted imports are whitelisted, clamped, fresh, and pollution-safe
+ok 597 - untrusted imports are whitelisted, clamped, fresh, and pollution-safe
+  ---
+  duration_ms: 0.319434
+  type: 'test'
+  ...
+# Subtest: content IDs are complete and unique
+ok 598 - content IDs are complete and unique
+  ---
+  duration_ms: 0.116944
+  type: 'test'
+  ...
+# Subtest: all sixteen stages draw their explicit scene backdrop between the sky and world objects without mutating gameplay
+ok 599 - all sixteen stages draw their explicit scene backdrop between the sky and world objects without mutating gameplay
+  ---
+  duration_ms: 123.33644
+  type: 'test'
+  ...
+# Subtest: Halloween preserves each main chapter palette while dedicated festivals and other seasonal themes keep their own colors
+ok 600 - Halloween preserves each main chapter palette while dedicated festivals and other seasonal themes keep their own colors
+  ---
+  duration_ms: 50.614122
+  type: 'test'
+  ...
+# Subtest: backdrop exclusion circles follow real world interactions, collected memories and the active borrowing stage
+ok 601 - backdrop exclusion circles follow real world interactions, collected memories and the active borrowing stage
+  ---
+  duration_ms: 1.057148
+  type: 'test'
+  ...
+# Subtest: reduced-motion scene rendering is identical at different presentation times in all sixteen stages
+ok 602 - reduced-motion scene rendering is identical at different presentation times in all sixteen stages
+  ---
+  duration_ms: 193.850501
+  type: 'test'
+  ...
+# Subtest: Halloween has no duplicate foreground weather and its sparse stationary pumpkins sit on unobstructed ground
+ok 603 - Halloween has no duplicate foreground weather and its sparse stationary pumpkins sit on unobstructed ground
+  ---
+  duration_ms: 6.340698
+  type: 'test'
+  ...
+# Subtest: all real soul layers and poses are deterministic pure drawings with balanced caller state
+ok 604 - all real soul layers and poses are deterministic pure drawings with balanced caller state
+  ---
+  duration_ms: 24.357012
+  type: 'test'
+  ...
+# Subtest: the cap presentation owns the exact position, scale and inside-layer anchor
+ok 605 - the cap presentation owns the exact position, scale and inside-layer anchor
+  ---
+  duration_ms: 4.486217
+  type: 'test'
+  ...
+# Subtest: tail curvature reads actual presented velocity while reduced motion freezes every decorative clock
+ok 606 - tail curvature reads actual presented velocity while reduced motion freezes every decorative clock
+  ---
+  duration_ms: 33.536361
+  type: 'test'
+  ...
+# Subtest: low energy, peek and relieved return are readable poses and the original energy arc stays anchored
+ok 607 - low energy, peek and relieved return are readable poses and the original energy arc stays anchored
+  ---
+  duration_ms: 2.530865
+  type: 'test'
+  ...
+# Subtest: the original ticket and seed art keep their exact carried transforms and only draw when actually held
+ok 608 - the original ticket and seed art keep their exact carried transforms and only draw when actually held
+  ---
+  duration_ms: 7.762769
+  type: 'test'
+  ...
+# Subtest: invalid presentations decline without drawing, invisible poses are handled, and optional data is finite
+ok 609 - invalid presentations decline without drawing, invisible poses are handled, and optional data is finite
+  ---
+  duration_ms: 0.915519
+  type: 'test'
+  ...
+# Subtest: normal engine opening, free flight and return presentations render without changing gameplay; pause freezes them
+ok 610 - normal engine opening, free flight and return presentations render without changing gameplay; pause freezes them
+  ---
+  duration_ms: 5.349718
+  type: 'test'
+  ...
+# Subtest: station finish retains one inherited simulation and exact collision dimensions
+ok 611 - station finish retains one inherited simulation and exact collision dimensions
+  ---
+  duration_ms: 5.781668
+  type: 'test'
+  ...
+# Subtest: walking onto the actual plate opens and animates the semaphore, leaving reverses it
+ok 612 - walking onto the actual plate opens and animates the semaphore, leaving reverses it
+  ---
+  duration_ms: 2.004585
+  type: 'test'
+  ...
+# Subtest: only the first concrete lamp latches the station signal
+ok 613 - only the first concrete lamp latches the station signal
+  ---
+  duration_ms: 1.113342
+  type: 'test'
+  ...
+# Subtest: pause freezes the partial signal; reduced motion settles without opening physics gates
+ok 614 - pause freezes the partial signal; reduced motion settles without opening physics gates
+  ---
+  duration_ms: 1.421329
+  type: 'test'
+  ...
+# Subtest: restart clears the signal and preserves the original ticket save contract
+ok 615 - restart clears the signal and preserves the original ticket save contract
+  ---
+  duration_ms: 0.72117
+  type: 'test'
+  ...
+# Subtest: rendering is pure, finite, balanced, deterministic and does not touch rewards
+ok 616 - rendering is pure, finite, balanced, deterministic and does not touch rewards
+  ---
+  duration_ms: 19.56447
+  type: 'test'
+  ...
+# Subtest: the final chapter and every festival keep exactly their prior draw sequence
+ok 617 - the final chapter and every festival keep exactly their prior draw sequence
+  ---
+  duration_ms: 72.277437
+  type: 'test'
+  ...
+# Subtest: station reduced-motion full frame ignores presentation time and keeps puzzle range
+ok 618 - station reduced-motion full frame ignores presentation time and keeps puzzle range
+  ---
+  duration_ms: 9.1319
+  type: 'test'
+  ...
+# Subtest: touch hints remove duplicate action names without deleting narrative instructions
+ok 619 - touch hints remove duplicate action names without deleting narrative instructions
+  ---
+  duration_ms: 0.19593
+  type: 'test'
+  ...
+# Subtest: docking is the true same-height positive overlap, including both authored banks
+ok 620 - docking is the true same-height positive overlap, including both authored banks
+  ---
+  duration_ms: 0.26908
+  type: 'test'
+  ...
+# Subtest: overlap queries reject corrupt geometry and return independent copied data
+ok 621 - overlap queries reject corrupt geometry and return independent copied data
+  ---
+  duration_ms: 0.306174
+  type: 'test'
+  ...
+# Subtest: every material is confined to its physical platform and retains an exact y top
+ok 622 - every material is confined to its physical platform and retains an exact y top
+  ---
+  duration_ms: 4.32705
+  type: 'test'
+  ...
+# Subtest: unsupported or corrupt drawing inputs cleanly decline; offscreen work is bounded
+ok 623 - unsupported or corrupt drawing inputs cleanly decline; offscreen work is bounded
+  ---
+  duration_ms: 0.937801
+  type: 'test'
+  ...
+# Subtest: camera movement does not slide the same fixed timber grain across world space
+ok 624 - camera movement does not slide the same fixed timber grain across world space
+  ---
+  duration_ms: 1.540386
+  type: 'test'
+  ...
+# Subtest: unchanged platform and rigging positions paint deterministically without mutating views
+ok 625 - unchanged platform and rigging positions paint deterministically without mutating views
+  ---
+  duration_ms: 2.307794
+  type: 'test'
+  ...
+# Subtest: rigging rejects invalid views, skips invalid/offscreen stages, and limits work
+ok 626 - rigging rejects invalid views, skips invalid/offscreen stages, and limits work
+  ---
+  duration_ms: 0.225014
+  type: 'test'
+  ...
+# Subtest: a Canvas failure requests fallback and still restores the caller state
+ok 627 - a Canvas failure requests fallback and still restores the caller state
+  ---
+  duration_ms: 0.25618
+  type: 'test'
+  ...
+# Subtest: only a real third story chapter requests the primary, sharing one pending load
+ok 628 - only a real third story chapter requests the primary, sharing one pending load
+  ---
+  duration_ms: 0.355567
+  type: 'test'
+  ...
+# Subtest: primary rejection, synchronous throw and invalid pixels each use the original SVG once
+ok 629 - primary rejection, synchronous throw and invalid pixels each use the original SVG once
+  ---
+  duration_ms: 0.613901
+  type: 'test'
+  ...
+# Subtest: both sources failing remain on procedural fallback with no request or timer retry
+ok 630 - both sources failing remain on procedural fallback with no request or timer retry
+  ---
+  duration_ms: 0.325283
+  type: 'test'
+  ...
+# Subtest: offline Canvas images are supported and identical configured sources are not retried
+ok 631 - offline Canvas images are supported and identical configured sources are not retried
+  ---
+  duration_ms: 0.166397
+  type: 'test'
+  ...
+# Subtest: destroy before the first microtask skips both requests and cannot restart
+ok 632 - destroy before the first microtask skips both requests and cannot restart
+  ---
+  duration_ms: 0.164063
+  type: 'test'
+  ...
+# Subtest: destroy during a pending primary makes late success and rejection inert
+ok 633 - destroy during a pending primary makes late success and rejection inert
+  ---
+  duration_ms: 0.152826
+  type: 'test'
+  ...
+# Subtest: destruction in the boundary after primary failure cancels the fallback request
+ok 634 - destruction in the boundary after primary failure cancels the fallback request
+  ---
+  duration_ms: 0.111946
+  type: 'test'
+  ...
+# Subtest: destruction while the SVG is pending rejects late fallback success and failure
+ok 635 - destruction while the SVG is pending rejects late fallback success and failure
+  ---
+  duration_ms: 0.227808
+  type: 'test'
+  ...
+# Subtest: destroy releases ready primary and fallback images, and a fresh cache may load again
+ok 636 - destroy releases ready primary and fallback images, and a fresh cache may load again
+  ---
+  duration_ms: 0.160889
+  type: 'test'
+  ...
+# Subtest: a late decode is cached across chapters but cannot paint outside the theatre
+ok 637 - a late decode is cached across chapters but cannot paint outside the theatre
+  ---
+  duration_ms: 0.190382
+  type: 'test'
+  ...
+# Subtest: browser handlers exist before src and are cleared after success, errors and setter throws
+ok 638 - browser handlers exist before src and are cleared after success, errors and setter throws
+  ---
+  duration_ms: 0.402568
+  type: 'test'
+  ...
+# Subtest: missing browser Image fails harmlessly and stays on procedural fallback
+ok 639 - missing browser Image fails harmlessly and stays on procedural fallback
+  ---
+  duration_ms: 0.149111
+  type: 'test'
+  ...
+# Subtest: resolving either source or failing both never changes a paused live run or its real lamps
+ok 640 - resolving either source or failing both never changes a paused live run or its real lamps
+  ---
+  duration_ms: 1.453837
+  type: 'test'
+  ...
+# Subtest: earned curtain call requires left-bank boarding, actual traversal and far-bank landing
+ok 641 - earned curtain call requires left-bank boarding, actual traversal and far-bank landing
+  ---
+  duration_ms: 0.514453
+  type: 'test'
+  ...
+# Subtest: remote landing, soul, gap jump, failed ride and death never grant a curtain call
+ok 642 - remote landing, soul, gap jump, failed ride and death never grant a curtain call
+  ---
+  duration_ms: 0.149662
+  type: 'test'
+  ...
+# Subtest: pause and reduced-motion view do not advance the earned animation
+ok 643 - pause and reduced-motion view do not advance the earned animation
+  ---
+  duration_ms: 0.567772
+  type: 'test'
+  ...
+# Subtest: encore does not alter original engine state or persist across chapter restart
+ok 644 - encore does not alter original engine state or persist across chapter restart
+  ---
+  duration_ms: 0.686018
+  type: 'test'
+  ...
+# Subtest: an earned curtain call finishes on its playing clock after switching to soul and cannot replay by toggling forms
+ok 645 - an earned curtain call finishes on its playing clock after switching to soul and cannot replay by toggling forms
+  ---
+  duration_ms: 0.688091
+  type: 'test'
+  ...
+# Subtest: soul form still cannot earn a curtain call by boarding or by landing on the far bank
+ok 646 - soul form still cannot earn a curtain call by boarding or by landing on the far bank
+  ---
+  duration_ms: 0.12151
+  type: 'test'
+  ...
+# Subtest: pause freezes the earned clock and drawing in either form, and resume continues the same effect
+ok 647 - pause freezes the earned clock and drawing in either form, and resume continues the same effect
+  ---
+  duration_ms: 2.523294
+  type: 'test'
+  ...
+# Subtest: death invalidates active and completed effects in either form; paused deaths are handled on resume
+ok 648 - death invalidates active and completed effects in either form; paused deaths are handled on resume
+  ---
+  duration_ms: 0.467143
+  type: 'test'
+  ...
+# Subtest: reduced motion keeps the medallion still while its playing deadline also expires in soul form
+ok 649 - reduced motion keeps the medallion still while its playing deadline also expires in soul form
+  ---
+  duration_ms: 1.048586
+  type: 'test'
+  ...
+# Subtest: production architecture places the curtain moon in world space with one camera transform at desktop and portrait scales
+ok 650 - production architecture places the curtain moon in world space with one camera transform at desktop and portrait scales
+  ---
+  duration_ms: 2.254346
+  type: 'test'
+  ...
+# Subtest: third-chapter presentation keeps exact simulation, platform carrying and recovery over several stage cycles
+ok 651 - third-chapter presentation keeps exact simulation, platform carrying and recovery over several stage cycles
+  ---
+  duration_ms: 139.959937
+  type: 'test'
+  ...
+# Subtest: theatre guidance yields to actual friend, soul lamp and borrowed-moon interactions
+ok 652 - theatre guidance yields to actual friend, soul lamp and borrowed-moon interactions
+  ---
+  duration_ms: 0.608584
+  type: 'test'
+  ...
+# Subtest: guidance follows the real platform and clears on restart or leaving the chapter
+ok 653 - guidance follows the real platform and clears on restart or leaving the chapter
+  ---
+  duration_ms: 0.847307
+  type: 'test'
+  ...
+# Subtest: production theatre rendering is pure and pause and reduced motion freeze decorative changes
+ok 654 - production theatre rendering is pure and pause and reduced motion freeze decorative changes
+  ---
+  duration_ms: 39.036422
+  type: 'test'
+  ...
+# Subtest: cached station and greenhouse paintings do not enter the refined theatre or trigger a third image request
+ok 655 - cached station and greenhouse paintings do not enter the refined theatre or trigger a third image request
+  ---
+  duration_ms: 11.865927
+  type: 'test'
+  ...
+# Subtest: the four short route hints follow current stage geometry and actual grounded attachment
+ok 656 - the four short route hints follow current stage geometry and actual grounded attachment
+  ---
+  duration_ms: 0.452782
+  type: 'test'
+  ...
+# Subtest: approach first asks for the real elevated landing, and guidance ends on the far bank
+ok 657 - approach first asks for the real elevated landing, and guidance ends on the far bank
+  ---
+  duration_ms: 0.172756
+  type: 'test'
+  ...
+# Subtest: boarding never tells a player to walk across an open gap or toward a departed deck
+ok 658 - boarding never tells a player to walk across an open gap or toward a departed deck
+  ---
+  duration_ms: 0.253847
+  type: 'test'
+  ...
+# Subtest: a stale platform ID or airborne body cannot be mistaken for riding or alighting
+ok 659 - a stale platform ID or airborne body cannot be mistaken for riding or alighting
+  ---
+  duration_ms: 0.226656
+  type: 'test'
+  ...
+# Subtest: alighting requires both actual bank overlap and a body close enough to use it
+ok 660 - alighting requires both actual bank overlap and a body close enough to use it
+  ---
+  duration_ms: 0.1613
+  type: 'test'
+  ...
+# Subtest: current interactions, soul control and other chapters or festivals retain priority
+ok 661 - current interactions, soul control and other chapters or festivals retain priority
+  ---
+  duration_ms: 0.296009
+  type: 'test'
+  ...
+# Subtest: landing geometry comes from the authored level while stage position comes from runtime movers
+ok 662 - landing geometry comes from the authored level while stage position comes from runtime movers
+  ---
+  duration_ms: 0.192546
+  type: 'test'
+  ...
+# Subtest: pure calls are pause-stable and reject incomplete or non-finite geometry
+ok 663 - pure calls are pause-stable and reject incomplete or non-finite geometry
+  ---
+  duration_ms: 0.568784
+  type: 'test'
+  ...
+# Subtest: theatre moth uses rich material gradients, attached fan rotation and true cap progress without mutating view
+ok 664 - theatre moth uses rich material gradients, attached fan rotation and true cap progress without mutating view
+  ---
+  duration_ms: 1.659472
+  type: 'test'
+  ...
+# Subtest: current lamp count drives smile; reduced motion and paused time keep a stable draw
+ok 665 - current lamp count drives smile; reduced motion and paused time keep a stable draw
+  ---
+  duration_ms: 2.174186
+  type: 'test'
+  ...
+# Subtest: existing gameplay starts at the same position with unchanged rewards and stage rules
+ok 666 - existing gameplay starts at the same position with unchanged rewards and stage rules
+  ---
+  duration_ms: 0.95058
+  type: 'test'
+  ...
+# Subtest: v20 original panorama layout covers all camera endpoints and portrait view; invalid inputs fail safely
+ok 667 - v20 original panorama layout covers all camera endpoints and portrait view; invalid inputs fail safely
+  ---
+  duration_ms: 0.335899
+  type: 'test'
+  ...
+# Subtest: chapter-three art is lazy and isolated, retries do not spin on a failed decode
+ok 668 - chapter-three art is lazy and isolated, retries do not spin on a failed decode
+  ---
+  duration_ms: 0.274157
+  type: 'test'
+  ...
+# Subtest: painting and lamp-lit backdrop keep caller state balanced, independently follow true lamp amounts
+ok 669 - painting and lamp-lit backdrop keep caller state balanced, independently follow true lamp amounts
+  ---
+  duration_ms: 0.78209
+  type: 'test'
+  ...
+# Subtest: poem lamp four conditions never borrow optional minigame state or change puzzle radius
+ok 670 - poem lamp four conditions never borrow optional minigame state or change puzzle radius
+  ---
+  duration_ms: 0.805616
+  type: 'test'
+  ...
+# Subtest: engine draws the actual third-chapter bitmap only in chapter three; lamp fades freeze on pause
+ok 671 - engine draws the actual third-chapter bitmap only in chapter three; lamp fades freeze on pause
+  ---
+  duration_ms: 6.598331
+  type: 'test'
+  ...
+# Subtest: only the six integer story chapters receive the face refinement
+ok 672 - only the six integer story chapters receive the face refinement
+  ---
+  duration_ms: 0.74131
+  type: 'test'
+  ...
+# Subtest: original energy thresholds remain distinct and fatigue/attention outrank an event smile
+ok 673 - original energy thresholds remain distinct and fatigue/attention outrank an event smile
+  ---
+  duration_ms: 0.265453
+  type: 'test'
+  ...
+# Subtest: blink timing, given shown-soul gaze and reduced-motion clock keep their original contracts
+ok 674 - blink timing, given shown-soul gaze and reduced-motion clock keep their original contracts
+  ---
+  duration_ms: 3.623727
+  type: 'test'
+  ...
+# Subtest: joy and fatigue change the eye/mouth silhouettes and retain finite pure balanced drawings
+ok 675 - joy and fatigue change the eye/mouth silhouettes and retain finite pure balanced drawings
+  ---
+  duration_ms: 1.180192
+  type: 'test'
+  ...
+# Subtest: main-story soul joy leaves the original pearl, held-object anchors and protected expressions intact
+ok 676 - main-story soul joy leaves the original pearl, held-object anchors and protected expressions intact
+  ---
+  duration_ms: 10.001721
+  type: 'test'
+  ...
+# Subtest: non-story engine integration delegates to the exact original skull painter
+ok 677 - non-story engine integration delegates to the exact original skull painter
+  ---
+  duration_ms: 1.575098
+  type: 'test'
+  ...
+# Subtest: real ticket pickup and actual cap closure use only the original remaining event time, beside BaseGame
+ok 678 - real ticket pickup and actual cap closure use only the original remaining event time, beside BaseGame
+  ---
+  duration_ms: 10.049332
+  type: 'test'
+  ...
+# Subtest: every grounded gait frame plants at least one sole on the unchanged collision top
+ok 679 - every grounded gait frame plants at least one sole on the unchanged collision top
+  ---
+  duration_ms: 11.916391
+  type: 'test'
+  ...
+# Subtest: full-speed contact is fixed in world space while the body travels across a stance
+ok 680 - full-speed contact is fixed in world space while the body travels across a stance
+  ---
+  duration_ms: 0.74797
+  type: 'test'
+  ...
+# Subtest: a lifted boot clears the ground, joins contact continuously, and never adds movement state
+ok 681 - a lifted boot clears the ground, joins contact continuously, and never adds movement state
+  ---
+  duration_ms: 0.68734
+  type: 'test'
+  ...
+# Subtest: airborne poses follow velocity and land without consulting another animation timer
+ok 682 - airborne poses follow velocity and land without consulting another animation timer
+  ---
+  duration_ms: 0.440103
+  type: 'test'
+  ...
+# Subtest: scarf and bag remain continuous when the walking cycle wraps
+ok 683 - scarf and bag remain continuous when the walking cycle wraps
+  ---
+  duration_ms: 0.17563
+  type: 'test'
+  ...
+# Subtest: reduced motion settles feet and cloth regardless of decorative time or gait phase
+ok 684 - reduced motion settles feet and cloth regardless of decorative time or gait phase
+  ---
+  duration_ms: 0.476968
+  type: 'test'
+  ...
+# Subtest: presentation tolerates nonfinite optional inputs and never mutates frozen body data
+ok 685 - presentation tolerates nonfinite optional inputs and never mutates frozen body data
+  ---
+  duration_ms: 0.39054
+  type: 'test'
+  ...
+# Subtest: scope includes six integer main chapters and excludes festivals and invalid scene contracts
+ok 686 - scope includes six integer main chapters and excludes festivals and invalid scene contracts
+  ---
+  duration_ms: 0.435957
+  type: 'test'
+  ...
+# Subtest: book motion is actual support displacement: vertical lift is distinct from horizontal balance
+ok 687 - book motion is actual support displacement: vertical lift is distinct from horizontal balance
+  ---
+  duration_ms: 0.32288
+  type: 'test'
+  ...
+# Subtest: a book-looking object, stale attachment, missing axis or unsafe geometry never grants a riding pose
+ok 688 - a book-looking object, stale attachment, missing axis or unsafe geometry never grants a riding pose
+  ---
+  duration_ms: 0.333444
+  type: 'test'
+  ...
+# Subtest: grounded book reversals do not restart a landing, and invalid updates cannot advance the presentation
+ok 689 - grounded book reversals do not restart a landing, and invalid updates cannot advance the presentation
+  ---
+  duration_ms: 0.363099
+  type: 'test'
+  ...
+# Subtest: station and greenhouse draw their shadow on actual floor and one-way support, including airborne samples
+ok 690 - station and greenhouse draw their shadow on actual floor and one-way support, including airborne samples
+  ---
+  duration_ms: 65.143972
+  type: 'test'
+  ...
+# chapter 1: 157 unchanged BaseGame updates; real floor/shelf shadow and clip
+# chapter 2: 171 unchanged BaseGame updates; real floor/shelf shadow and clip
+# Subtest: all six integrated lifecycles retain the bounded simulation step and ignore old-run landing state
+ok 691 - all six integrated lifecycles retain the bounded simulation step and ignore old-run landing state
+  ---
+  duration_ms: 46.754435
+  type: 'test'
+  ...
+# Subtest: HUD callbacks can switch the run or destroy during an update without advancing an old-body performance
+ok 692 - HUD callbacks can switch the run or destroy during an update without advancing an old-body performance
+  ---
+  duration_ms: 0.859676
+  type: 'test'
+  ...
+# Subtest: actual ordinary jumps in all six chapters keep physics, occupied hands, soles and the original rig unchanged
+ok 693 - actual ordinary jumps in all six chapters keep physics, occupied hands, soles and the original rig unchanged
+  ---
+  duration_ms: 195.396385
+  type: 'test'
+  ...
+# chapter 1: 241 integrated same-input BaseGame comparisons; original controls, no coordinate injection
+# chapter 2: 241 integrated same-input BaseGame comparisons; original controls, no coordinate injection
+# chapter 3: 241 integrated same-input BaseGame comparisons; original controls, no coordinate injection
+# chapter 4: 241 integrated same-input BaseGame comparisons; original controls, no coordinate injection
+# chapter 5: 241 integrated same-input BaseGame comparisons; original controls, no coordinate injection
+# chapter 6: 241 integrated same-input BaseGame comparisons; original controls, no coordinate injection
+# Subtest: both actual library books carry a zero-input rider through a whole vertical cycle with signed lift and no repeated landing
+ok 694 - both actual library books carry a zero-input rider through a whole vertical cycle with signed lift and no repeated landing
+  ---
+  duration_ms: 334.70197
+  type: 'test'
+  ...
+# book-a: 453 zero-input frames, actual dy both signs, contact exact, max relative drift 0
+# book-b: 512 zero-input frames, actual dy both signs, contact exact, max relative drift 0
+# 2130 integrated same-input BaseGame comparisons through both actual books and first actual lamp puzzle
+# Subtest: a real greenhouse mushroom launch stays airborne until the original root collision
+ok 695 - a real greenhouse mushroom launch stays airborne until the original root collision
+  ---
+  duration_ms: 62.528653
+  type: 'test'
+  ...
+# 274 unchanged BaseGame updates; real -850 mushroom, y385 root contact and clipped shadow
+# Subtest: actual final-chapter horizontal book and mushroom root landing use the same unchanged physics
+ok 696 - actual final-chapter horizontal book and mushroom root landing use the same unchanged physics
+  ---
+  duration_ms: 258.596377
+  type: 'test'
+  ...
+# 548 actual book-cycle frames; max relative drift 9.094947017729282e-13; real -850 mushroom and y390 root; 1484 unchanged BaseGame updates
+# Subtest: an ordinary jump has distinct free-arm poses and a real .2s landing, without changing the head rig or soles
+ok 697 - an ordinary jump has distinct free-arm poses and a real .2s landing, without changing the head rig or soles
+  ---
+  duration_ms: 1.57014
+  type: 'test'
+  ...
+# Subtest: stage acting requires the real attachment and contact geometry; its view is pure and has no ornamental clock
+ok 698 - stage acting requires the real attachment and contact geometry; its view is pure and has no ornamental clock
+  ---
+  duration_ms: 0.426143
+  type: 'test'
+  ...
+# Subtest: landing never comes from walking aboard, a missing support, soul form, a new run or recovery
+ok 699 - landing never comes from walking aboard, a missing support, soul form, a new run or recovery
+  ---
+  duration_ms: 0.466613
+  type: 'test'
+  ...
+# Subtest: normal walking into the first pit rejects both counted respawn and feather-protected recovery
+ok 700 - normal walking into the first pit rejects both counted respawn and feather-protected recovery
+  ---
+  duration_ms: 2.919272
+  type: 'test'
+  ...
+# Subtest: real airborne E reversals retain the grip and catch, and soul landings/restarts/reduced motion do not replay a settle
+ok 701 - real airborne E reversals retain the grip and catch, and soul landings/restarts/reduced motion do not replay a settle
+  ---
+  duration_ms: 8.887988
+  type: 'test'
+  ...
+# Subtest: normal controls complete the theatre with identical base physics, energy, events and settlement
+ok 702 - normal controls complete the theatre with identical base physics, energy, events and settlement
+  ---
+  duration_ms: 49.373792
+  type: 'test'
+  ...
+# 1223 normal-input updates compared through both real puzzles, the moving stage and the body exit; zero falls
+1..702
+# tests 702
+# suites 0
+# pass 702
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 19284.071176

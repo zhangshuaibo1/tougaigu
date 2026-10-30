@@ -1,0 +1,5761 @@
+{
+  "scope": "Normal deterministic public game methods on two independent offline instances; 12 bounded chapter/size routes, not complete chapters or browser inputs",
+  "originalCommit": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+  "status": "passed",
+  "cases": [
+    {
+      "chapter": 0,
+      "width": 320,
+      "height": 431,
+      "checks": 401,
+      "physicsSha256": "be223ae6107a6ec4e70105c07da78fe2e5b99fd2c4ef24e73cfcf5daefb18b42",
+      "originalPhysicsSha256": "be223ae6107a6ec4e70105c07da78fe2e5b99fd2c4ef24e73cfcf5daefb18b42",
+      "eventsEqual": true,
+      "tape": [
+        {
+          "frame": 0,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 1,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 25,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 40,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 50,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0.45,
+              "y": -0.6
+            }
+          ]
+        },
+        {
+          "frame": 85,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 95,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 105,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 120,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 134,
+          "method": "setReducedMotion",
+          "args": [
+            true
+          ]
+        },
+        {
+          "frame": 135,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 145,
+          "method": "setReducedMotion",
+          "args": [
+            false
+          ]
+        },
+        {
+          "frame": 155,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 180,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 224,
+          "method": "pause",
+          "args": []
+        }
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 15,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 30,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 45,
+          "originalCamera": 0.5075985041806884,
+          "camera": 0.5075985041806884,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 143.12064965197214,
+            "marginCss": 8,
+            "slackCss": 246.75781249999997,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 181.5,
+                "right": 231.5
+              },
+              "hat": {
+                "left": 176,
+                "right": 232
+              },
+              "hands": {
+                "left": 174.2436454366263,
+                "right": 239.95620058581562
+              },
+              "soul": null,
+              "left": 155,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 60,
+          "originalCamera": 5.331973228459036,
+          "camera": 5.331973228459036,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 122.38332961990172,
+            "marginCss": 8,
+            "slackCss": 232.36276920621552,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 158.8818302782604,
+                "right": 214.26083899105544
+              },
+              "hat": {
+                "left": 134.26267996792956,
+                "right": 206.8973248642631
+              },
+              "hands": {
+                "left": 176.60724452396065,
+                "right": 240.63815028816637
+              },
+              "soul": {
+                "left": 187.85615032843685,
+                "right": 230.03873995806646
+              },
+              "left": 134.26267996792956,
+              "right": 240.63815028816637
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 75,
+          "originalCamera": 28.699650453637005,
+          "camera": 28.699650453637005,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 195.12551803986676,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 214.76014461912433,
+                "right": 290.76014461912433
+              },
+              "left": 129.0903802235669,
+              "right": 290.76014461912433
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 90,
+          "originalCamera": 61.16415161768718,
+          "camera": 61.16415161768718,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 173.28111050399266,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 247.1973159020929,
+                "right": 323.1973159020929
+              },
+              "left": 129.0903802235669,
+              "right": 323.1973159020929
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 105,
+          "originalCamera": 24.139389772232896,
+          "camera": 24.139389772232896,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 229.30930293180836,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 229.76010233557543
+              },
+              "soul": {
+                "left": 190.9200416653646,
+                "right": 218.28004166536462
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 120,
+          "originalCamera": 6.222514485680583,
+          "camera": 6.222514485680583,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 228.65356969885033,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.9737106011441
+              },
+              "soul": {
+                "left": 190.87390183544812,
+                "right": 218.32631733819795
+              },
+              "left": 129.0903802235669,
+              "right": 240.9737106011441
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        },
+        {
+          "frame": 135,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.90110196368106,
+            "marginCss": 8,
+            "slackCss": 227.75371085366646,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 156.27210210589521,
+                "right": 205.57677805690543
+              },
+              "hat": {
+                "left": 129.7804523117089,
+                "right": 197.06681828827678
+              },
+              "hands": {
+                "left": 177.34455304771137,
+                "right": 240.68870849898477
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.7804523117089,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 150,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 227.28899043180834,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.0903802235669,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 165,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 229.30930293180836,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 237.7480182983072
+              },
+              "soul": {
+                "left": 168.1777632902218,
+                "right": 227.3193661923137
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        }
+      ]
+    },
+    {
+      "chapter": 0,
+      "width": 390,
+      "height": 595,
+      "checks": 401,
+      "physicsSha256": "be223ae6107a6ec4e70105c07da78fe2e5b99fd2c4ef24e73cfcf5daefb18b42",
+      "originalPhysicsSha256": "be223ae6107a6ec4e70105c07da78fe2e5b99fd2c4ef24e73cfcf5daefb18b42",
+      "eventsEqual": true,
+      "tape": [
+        {
+          "frame": 0,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 1,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 25,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 40,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 50,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0.45,
+              "y": -0.6
+            }
+          ]
+        },
+        {
+          "frame": 85,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 95,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 105,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 120,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 134,
+          "method": "setReducedMotion",
+          "args": [
+            true
+          ]
+        },
+        {
+          "frame": 135,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 145,
+          "method": "setReducedMotion",
+          "args": [
+            false
+          ]
+        },
+        {
+          "frame": 155,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 180,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 224,
+          "method": "pause",
+          "args": []
+        }
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 15,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 30,
+          "originalCamera": 9.276016655087497,
+          "camera": 9.276016655087497,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 45,
+          "originalCamera": 20.982029653099023,
+          "camera": 20.982029653099023,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 146.39495798319328,
+            "marginCss": 8,
+            "slackCss": 294.9765625,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 181.5,
+                "right": 231.5
+              },
+              "hat": {
+                "left": 176,
+                "right": 232
+              },
+              "hands": {
+                "left": 174.2436454366263,
+                "right": 239.95620058581562
+              },
+              "soul": null,
+              "left": 155,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 60,
+          "originalCamera": 28.453900402006287,
+          "camera": 28.453900402006287,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 125.65763795112284,
+            "marginCss": 8,
+            "slackCss": 275.10405493665485,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 158.8818302782604,
+                "right": 214.26083899105544
+              },
+              "hat": {
+                "left": 134.26267996792956,
+                "right": 206.8973248642631
+              },
+              "hands": {
+                "left": 176.60724452396065,
+                "right": 240.63815028816637
+              },
+              "soul": {
+                "left": 187.85615032843685,
+                "right": 230.03873995806646
+              },
+              "left": 134.26267996792956,
+              "right": 240.63815028816637
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 75,
+          "originalCamera": 52.447490804829826,
+          "camera": 52.447490804829826,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 223.6976409135052,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 214.76014461912433,
+                "right": 290.76014461912433
+              },
+              "left": 129.0903802235669,
+              "right": 290.76014461912433
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 90,
+          "originalCamera": 85.05996851060314,
+          "camera": 85.05996851060314,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 193.54120823637035,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 247.1973159020929,
+                "right": 323.1973159020929
+              },
+              "left": 129.0903802235669,
+              "right": 323.1973159020929
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 105,
+          "originalCamera": 48.07019084136115,
+          "camera": 48.07019084136115,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 270.88871286409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 229.76010233557543
+              },
+              "soul": {
+                "left": 190.9200416653646,
+                "right": 218.28004166536462
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 120,
+          "originalCamera": 30.161586410249846,
+          "camera": 30.161586410249846,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 269.9834662895962,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.9737106011441
+              },
+              "soul": {
+                "left": 190.87390183544812,
+                "right": 218.32631733819795
+              },
+              "left": 129.0903802235669,
+              "right": 240.9737106011441
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        },
+        {
+          "frame": 135,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 121.17541029490218,
+            "marginCss": 8,
+            "slackCss": 268.7412017585419,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 156.27210210589521,
+                "right": 205.57677805690543
+              },
+              "hat": {
+                "left": 129.7804523117089,
+                "right": 197.06681828827678
+              },
+              "hands": {
+                "left": 177.34455304771137,
+                "right": 240.68870849898477
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.7804523117089,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 150,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 268.09965036409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.0903802235669,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 165,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 270.88871286409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 237.7480182983072
+              },
+              "soul": {
+                "left": 168.1777632902218,
+                "right": 227.3193661923137
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        }
+      ]
+    },
+    {
+      "chapter": 1,
+      "width": 320,
+      "height": 431,
+      "checks": 401,
+      "physicsSha256": "9d35f12e0301b63320075b5e68cce140dd10b13f98fc09dd3ab082c8816ab859",
+      "originalPhysicsSha256": "9d35f12e0301b63320075b5e68cce140dd10b13f98fc09dd3ab082c8816ab859",
+      "eventsEqual": true,
+      "tape": [
+        {
+          "frame": 0,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 1,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 25,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 40,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 50,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0.45,
+              "y": -0.6
+            }
+          ]
+        },
+        {
+          "frame": 85,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 95,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 105,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 120,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 134,
+          "method": "setReducedMotion",
+          "args": [
+            true
+          ]
+        },
+        {
+          "frame": 135,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 145,
+          "method": "setReducedMotion",
+          "args": [
+            false
+          ]
+        },
+        {
+          "frame": 155,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 180,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 224,
+          "method": "pause",
+          "args": []
+        }
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 15,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 30,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 45,
+          "originalCamera": 0.5075985041806884,
+          "camera": 0.5075985041806884,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 143.12064965197214,
+            "marginCss": 8,
+            "slackCss": 246.75781249999997,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 181.5,
+                "right": 231.5
+              },
+              "hat": {
+                "left": 176,
+                "right": 232
+              },
+              "hands": {
+                "left": 174.2436454366263,
+                "right": 239.95620058581562
+              },
+              "soul": null,
+              "left": 155,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 60,
+          "originalCamera": 5.331973228459036,
+          "camera": 5.331973228459036,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 122.38332961990172,
+            "marginCss": 8,
+            "slackCss": 232.36276920621552,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 158.8818302782604,
+                "right": 214.26083899105544
+              },
+              "hat": {
+                "left": 134.26267996792956,
+                "right": 206.8973248642631
+              },
+              "hands": {
+                "left": 176.60724452396065,
+                "right": 240.63815028816637
+              },
+              "soul": {
+                "left": 187.85615032843685,
+                "right": 230.03873995806646
+              },
+              "left": 134.26267996792956,
+              "right": 240.63815028816637
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 75,
+          "originalCamera": 28.699650453637005,
+          "camera": 28.699650453637005,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 195.12551803986676,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 214.76014461912433,
+                "right": 290.76014461912433
+              },
+              "left": 129.0903802235669,
+              "right": 290.76014461912433
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 90,
+          "originalCamera": 61.16415161768718,
+          "camera": 61.16415161768718,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 173.28111050399266,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 247.1973159020929,
+                "right": 323.1973159020929
+              },
+              "left": 129.0903802235669,
+              "right": 323.1973159020929
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 105,
+          "originalCamera": 24.139389772232896,
+          "camera": 24.139389772232896,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 229.30930293180836,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 229.76010233557543
+              },
+              "soul": {
+                "left": 190.9200416653646,
+                "right": 218.28004166536462
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 120,
+          "originalCamera": 6.222514485680583,
+          "camera": 6.222514485680583,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 228.65356969885033,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.9737106011441
+              },
+              "soul": {
+                "left": 190.87390183544812,
+                "right": 218.32631733819795
+              },
+              "left": 129.0903802235669,
+              "right": 240.9737106011441
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        },
+        {
+          "frame": 135,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.90110196368106,
+            "marginCss": 8,
+            "slackCss": 227.75371085366646,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 156.27210210589521,
+                "right": 205.57677805690543
+              },
+              "hat": {
+                "left": 129.7804523117089,
+                "right": 197.06681828827678
+              },
+              "hands": {
+                "left": 177.34455304771137,
+                "right": 240.68870849898477
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.7804523117089,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 150,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 227.28899043180834,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.0903802235669,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 165,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 229.30930293180836,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 237.7480182983072
+              },
+              "soul": {
+                "left": 168.1777632902218,
+                "right": 227.3193661923137
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        }
+      ]
+    },
+    {
+      "chapter": 1,
+      "width": 390,
+      "height": 595,
+      "checks": 401,
+      "physicsSha256": "9d35f12e0301b63320075b5e68cce140dd10b13f98fc09dd3ab082c8816ab859",
+      "originalPhysicsSha256": "9d35f12e0301b63320075b5e68cce140dd10b13f98fc09dd3ab082c8816ab859",
+      "eventsEqual": true,
+      "tape": [
+        {
+          "frame": 0,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 1,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 25,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 40,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 50,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0.45,
+              "y": -0.6
+            }
+          ]
+        },
+        {
+          "frame": 85,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 95,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 105,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 120,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 134,
+          "method": "setReducedMotion",
+          "args": [
+            true
+          ]
+        },
+        {
+          "frame": 135,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 145,
+          "method": "setReducedMotion",
+          "args": [
+            false
+          ]
+        },
+        {
+          "frame": 155,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 180,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 224,
+          "method": "pause",
+          "args": []
+        }
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 15,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 30,
+          "originalCamera": 9.276016655087497,
+          "camera": 9.276016655087497,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 45,
+          "originalCamera": 20.982029653099023,
+          "camera": 20.982029653099023,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 146.39495798319328,
+            "marginCss": 8,
+            "slackCss": 294.9765625,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 181.5,
+                "right": 231.5
+              },
+              "hat": {
+                "left": 176,
+                "right": 232
+              },
+              "hands": {
+                "left": 174.2436454366263,
+                "right": 239.95620058581562
+              },
+              "soul": null,
+              "left": 155,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 60,
+          "originalCamera": 28.453900402006287,
+          "camera": 28.453900402006287,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 125.65763795112284,
+            "marginCss": 8,
+            "slackCss": 275.10405493665485,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 158.8818302782604,
+                "right": 214.26083899105544
+              },
+              "hat": {
+                "left": 134.26267996792956,
+                "right": 206.8973248642631
+              },
+              "hands": {
+                "left": 176.60724452396065,
+                "right": 240.63815028816637
+              },
+              "soul": {
+                "left": 187.85615032843685,
+                "right": 230.03873995806646
+              },
+              "left": 134.26267996792956,
+              "right": 240.63815028816637
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 75,
+          "originalCamera": 52.447490804829826,
+          "camera": 52.447490804829826,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 223.6976409135052,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 214.76014461912433,
+                "right": 290.76014461912433
+              },
+              "left": 129.0903802235669,
+              "right": 290.76014461912433
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 90,
+          "originalCamera": 85.05996851060314,
+          "camera": 85.05996851060314,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 193.54120823637035,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 247.1973159020929,
+                "right": 323.1973159020929
+              },
+              "left": 129.0903802235669,
+              "right": 323.1973159020929
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 105,
+          "originalCamera": 48.07019084136115,
+          "camera": 48.07019084136115,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 270.88871286409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 229.76010233557543
+              },
+              "soul": {
+                "left": 190.9200416653646,
+                "right": 218.28004166536462
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 120,
+          "originalCamera": 30.161586410249846,
+          "camera": 30.161586410249846,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 269.9834662895962,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.9737106011441
+              },
+              "soul": {
+                "left": 190.87390183544812,
+                "right": 218.32631733819795
+              },
+              "left": 129.0903802235669,
+              "right": 240.9737106011441
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        },
+        {
+          "frame": 135,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 121.17541029490218,
+            "marginCss": 8,
+            "slackCss": 268.7412017585419,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 156.27210210589521,
+                "right": 205.57677805690543
+              },
+              "hat": {
+                "left": 129.7804523117089,
+                "right": 197.06681828827678
+              },
+              "hands": {
+                "left": 177.34455304771137,
+                "right": 240.68870849898477
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.7804523117089,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 150,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 268.09965036409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.0903802235669,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 165,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 270.88871286409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 237.7480182983072
+              },
+              "soul": {
+                "left": 168.1777632902218,
+                "right": 227.3193661923137
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "width": 320,
+      "height": 431,
+      "checks": 401,
+      "physicsSha256": "ff0f335394d68fe8f383ec98df4f715f66a78cb6949588bea0fedb1570114613",
+      "originalPhysicsSha256": "ff0f335394d68fe8f383ec98df4f715f66a78cb6949588bea0fedb1570114613",
+      "eventsEqual": true,
+      "tape": [
+        {
+          "frame": 0,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 1,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 25,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 40,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 50,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0.45,
+              "y": -0.6
+            }
+          ]
+        },
+        {
+          "frame": 85,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 95,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 105,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 120,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 134,
+          "method": "setReducedMotion",
+          "args": [
+            true
+          ]
+        },
+        {
+          "frame": 135,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 145,
+          "method": "setReducedMotion",
+          "args": [
+            false
+          ]
+        },
+        {
+          "frame": 155,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 180,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 224,
+          "method": "pause",
+          "args": []
+        }
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 15,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 30,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 45,
+          "originalCamera": 0.5075985041806884,
+          "camera": 0.5075985041806884,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 143.12064965197214,
+            "marginCss": 8,
+            "slackCss": 246.75781249999997,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 181.5,
+                "right": 231.5
+              },
+              "hat": {
+                "left": 176,
+                "right": 232
+              },
+              "hands": {
+                "left": 174.2436454366263,
+                "right": 239.95620058581562
+              },
+              "soul": null,
+              "left": 155,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 60,
+          "originalCamera": 5.331973228459036,
+          "camera": 5.331973228459036,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 122.38332961990172,
+            "marginCss": 8,
+            "slackCss": 232.36276920621552,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 158.8818302782604,
+                "right": 214.26083899105544
+              },
+              "hat": {
+                "left": 134.26267996792956,
+                "right": 206.8973248642631
+              },
+              "hands": {
+                "left": 176.60724452396065,
+                "right": 240.63815028816637
+              },
+              "soul": {
+                "left": 187.85615032843685,
+                "right": 230.03873995806646
+              },
+              "left": 134.26267996792956,
+              "right": 240.63815028816637
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 75,
+          "originalCamera": 28.699650453637005,
+          "camera": 28.699650453637005,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 195.12551803986676,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 214.76014461912433,
+                "right": 290.76014461912433
+              },
+              "left": 129.0903802235669,
+              "right": 290.76014461912433
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 90,
+          "originalCamera": 61.16415161768718,
+          "camera": 61.16415161768718,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 173.28111050399266,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 247.1973159020929,
+                "right": 323.1973159020929
+              },
+              "left": 129.0903802235669,
+              "right": 323.1973159020929
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 105,
+          "originalCamera": 24.139389772232896,
+          "camera": 24.139389772232896,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 229.30930293180836,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 229.76010233557543
+              },
+              "soul": {
+                "left": 190.9200416653646,
+                "right": 218.28004166536462
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 120,
+          "originalCamera": 6.222514485680583,
+          "camera": 6.222514485680583,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 228.65356969885033,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.9737106011441
+              },
+              "soul": {
+                "left": 190.87390183544812,
+                "right": 218.32631733819795
+              },
+              "left": 129.0903802235669,
+              "right": 240.9737106011441
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        },
+        {
+          "frame": 135,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.90110196368106,
+            "marginCss": 8,
+            "slackCss": 227.75371085366646,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 156.27210210589521,
+                "right": 205.57677805690543
+              },
+              "hat": {
+                "left": 129.7804523117089,
+                "right": 197.06681828827678
+              },
+              "hands": {
+                "left": 177.34455304771137,
+                "right": 240.68870849898477
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.7804523117089,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 150,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 227.28899043180834,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.0903802235669,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 165,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 229.30930293180836,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 237.7480182983072
+              },
+              "soul": {
+                "left": 168.1777632902218,
+                "right": 227.3193661923137
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "width": 390,
+      "height": 595,
+      "checks": 401,
+      "physicsSha256": "ff0f335394d68fe8f383ec98df4f715f66a78cb6949588bea0fedb1570114613",
+      "originalPhysicsSha256": "ff0f335394d68fe8f383ec98df4f715f66a78cb6949588bea0fedb1570114613",
+      "eventsEqual": true,
+      "tape": [
+        {
+          "frame": 0,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 1,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 25,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 40,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 50,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0.45,
+              "y": -0.6
+            }
+          ]
+        },
+        {
+          "frame": 85,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 95,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 105,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 120,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 134,
+          "method": "setReducedMotion",
+          "args": [
+            true
+          ]
+        },
+        {
+          "frame": 135,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 145,
+          "method": "setReducedMotion",
+          "args": [
+            false
+          ]
+        },
+        {
+          "frame": 155,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 180,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 224,
+          "method": "pause",
+          "args": []
+        }
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 15,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 30,
+          "originalCamera": 9.276016655087497,
+          "camera": 9.276016655087497,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 45,
+          "originalCamera": 20.982029653099023,
+          "camera": 20.982029653099023,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 146.39495798319328,
+            "marginCss": 8,
+            "slackCss": 294.9765625,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 181.5,
+                "right": 231.5
+              },
+              "hat": {
+                "left": 176,
+                "right": 232
+              },
+              "hands": {
+                "left": 174.2436454366263,
+                "right": 239.95620058581562
+              },
+              "soul": null,
+              "left": 155,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 60,
+          "originalCamera": 28.453900402006287,
+          "camera": 28.453900402006287,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 125.65763795112284,
+            "marginCss": 8,
+            "slackCss": 275.10405493665485,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 158.8818302782604,
+                "right": 214.26083899105544
+              },
+              "hat": {
+                "left": 134.26267996792956,
+                "right": 206.8973248642631
+              },
+              "hands": {
+                "left": 176.60724452396065,
+                "right": 240.63815028816637
+              },
+              "soul": {
+                "left": 187.85615032843685,
+                "right": 230.03873995806646
+              },
+              "left": 134.26267996792956,
+              "right": 240.63815028816637
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 75,
+          "originalCamera": 52.447490804829826,
+          "camera": 52.447490804829826,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 223.6976409135052,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 214.76014461912433,
+                "right": 290.76014461912433
+              },
+              "left": 129.0903802235669,
+              "right": 290.76014461912433
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 90,
+          "originalCamera": 85.05996851060314,
+          "camera": 85.05996851060314,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 193.54120823637035,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 247.1973159020929,
+                "right": 323.1973159020929
+              },
+              "left": 129.0903802235669,
+              "right": 323.1973159020929
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 105,
+          "originalCamera": 48.07019084136115,
+          "camera": 48.07019084136115,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 270.88871286409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 229.76010233557543
+              },
+              "soul": {
+                "left": 190.9200416653646,
+                "right": 218.28004166536462
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 120,
+          "originalCamera": 30.161586410249846,
+          "camera": 30.161586410249846,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 269.9834662895962,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.9737106011441
+              },
+              "soul": {
+                "left": 190.87390183544812,
+                "right": 218.32631733819795
+              },
+              "left": 129.0903802235669,
+              "right": 240.9737106011441
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        },
+        {
+          "frame": 135,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 121.17541029490218,
+            "marginCss": 8,
+            "slackCss": 268.7412017585419,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 156.27210210589521,
+                "right": 205.57677805690543
+              },
+              "hat": {
+                "left": 129.7804523117089,
+                "right": 197.06681828827678
+              },
+              "hands": {
+                "left": 177.34455304771137,
+                "right": 240.68870849898477
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.7804523117089,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 150,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 268.09965036409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.0903802235669,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 165,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 270.88871286409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 237.7480182983072
+              },
+              "soul": {
+                "left": 168.1777632902218,
+                "right": 227.3193661923137
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "width": 320,
+      "height": 431,
+      "checks": 401,
+      "physicsSha256": "99b141c73c56b2b1d860ae5915503fc6ca3834da2cb135458bd3d89a96daf56e",
+      "originalPhysicsSha256": "99b141c73c56b2b1d860ae5915503fc6ca3834da2cb135458bd3d89a96daf56e",
+      "eventsEqual": true,
+      "tape": [
+        {
+          "frame": 0,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 1,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 25,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 40,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 50,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0.45,
+              "y": -0.6
+            }
+          ]
+        },
+        {
+          "frame": 85,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 95,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 105,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 120,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 134,
+          "method": "setReducedMotion",
+          "args": [
+            true
+          ]
+        },
+        {
+          "frame": 135,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 145,
+          "method": "setReducedMotion",
+          "args": [
+            false
+          ]
+        },
+        {
+          "frame": 155,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 180,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 224,
+          "method": "pause",
+          "args": []
+        }
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 15,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 30,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 45,
+          "originalCamera": 0.5075985041806884,
+          "camera": 0.5075985041806884,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 143.12064965197214,
+            "marginCss": 8,
+            "slackCss": 246.75781249999997,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 181.5,
+                "right": 231.5
+              },
+              "hat": {
+                "left": 176,
+                "right": 232
+              },
+              "hands": {
+                "left": 174.2436454366263,
+                "right": 239.95620058581562
+              },
+              "soul": null,
+              "left": 155,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 60,
+          "originalCamera": 5.331973228459036,
+          "camera": 5.331973228459036,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 122.38332961990172,
+            "marginCss": 8,
+            "slackCss": 232.36276920621552,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 158.8818302782604,
+                "right": 214.26083899105544
+              },
+              "hat": {
+                "left": 134.26267996792956,
+                "right": 206.8973248642631
+              },
+              "hands": {
+                "left": 176.60724452396065,
+                "right": 240.63815028816637
+              },
+              "soul": {
+                "left": 187.85615032843685,
+                "right": 230.03873995806646
+              },
+              "left": 134.26267996792956,
+              "right": 240.63815028816637
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 75,
+          "originalCamera": 28.699650453637005,
+          "camera": 28.699650453637005,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 195.12551803986676,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 214.76014461912433,
+                "right": 290.76014461912433
+              },
+              "left": 129.0903802235669,
+              "right": 290.76014461912433
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 90,
+          "originalCamera": 61.16415161768718,
+          "camera": 61.16415161768718,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 173.28111050399266,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 247.1973159020929,
+                "right": 323.1973159020929
+              },
+              "left": 129.0903802235669,
+              "right": 323.1973159020929
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 105,
+          "originalCamera": 24.139389772232896,
+          "camera": 24.139389772232896,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 229.30930293180836,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 229.76010233557543
+              },
+              "soul": {
+                "left": 190.9200416653646,
+                "right": 218.28004166536462
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 120,
+          "originalCamera": 6.222514485680583,
+          "camera": 6.222514485680583,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 228.65356969885033,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.9737106011441
+              },
+              "soul": {
+                "left": 190.87390183544812,
+                "right": 218.32631733819795
+              },
+              "left": 129.0903802235669,
+              "right": 240.9737106011441
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        },
+        {
+          "frame": 135,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.90110196368106,
+            "marginCss": 8,
+            "slackCss": 227.75371085366646,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 156.27210210589521,
+                "right": 205.57677805690543
+              },
+              "hat": {
+                "left": 129.7804523117089,
+                "right": 197.06681828827678
+              },
+              "hands": {
+                "left": 177.34455304771137,
+                "right": 240.68870849898477
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.7804523117089,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 150,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 227.28899043180834,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.0903802235669,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 165,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 229.30930293180836,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 237.7480182983072
+              },
+              "soul": {
+                "left": 168.1777632902218,
+                "right": 227.3193661923137
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "width": 390,
+      "height": 595,
+      "checks": 401,
+      "physicsSha256": "99b141c73c56b2b1d860ae5915503fc6ca3834da2cb135458bd3d89a96daf56e",
+      "originalPhysicsSha256": "99b141c73c56b2b1d860ae5915503fc6ca3834da2cb135458bd3d89a96daf56e",
+      "eventsEqual": true,
+      "tape": [
+        {
+          "frame": 0,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 1,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 25,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 40,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 50,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0.45,
+              "y": -0.6
+            }
+          ]
+        },
+        {
+          "frame": 85,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 95,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 105,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 120,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 134,
+          "method": "setReducedMotion",
+          "args": [
+            true
+          ]
+        },
+        {
+          "frame": 135,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 145,
+          "method": "setReducedMotion",
+          "args": [
+            false
+          ]
+        },
+        {
+          "frame": 155,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 180,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 224,
+          "method": "pause",
+          "args": []
+        }
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 15,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 30,
+          "originalCamera": 9.276016655087497,
+          "camera": 9.276016655087497,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 45,
+          "originalCamera": 20.982029653099023,
+          "camera": 20.982029653099023,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 146.39495798319328,
+            "marginCss": 8,
+            "slackCss": 294.9765625,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 181.5,
+                "right": 231.5
+              },
+              "hat": {
+                "left": 176,
+                "right": 232
+              },
+              "hands": {
+                "left": 174.2436454366263,
+                "right": 239.95620058581562
+              },
+              "soul": null,
+              "left": 155,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 60,
+          "originalCamera": 28.453900402006287,
+          "camera": 28.453900402006287,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 125.65763795112284,
+            "marginCss": 8,
+            "slackCss": 275.10405493665485,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 158.8818302782604,
+                "right": 214.26083899105544
+              },
+              "hat": {
+                "left": 134.26267996792956,
+                "right": 206.8973248642631
+              },
+              "hands": {
+                "left": 176.60724452396065,
+                "right": 240.63815028816637
+              },
+              "soul": {
+                "left": 187.85615032843685,
+                "right": 230.03873995806646
+              },
+              "left": 134.26267996792956,
+              "right": 240.63815028816637
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 75,
+          "originalCamera": 52.447490804829826,
+          "camera": 52.447490804829826,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 223.6976409135052,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 214.76014461912433,
+                "right": 290.76014461912433
+              },
+              "left": 129.0903802235669,
+              "right": 290.76014461912433
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 90,
+          "originalCamera": 85.05996851060314,
+          "camera": 85.05996851060314,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 193.54120823637035,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 247.1973159020929,
+                "right": 323.1973159020929
+              },
+              "left": 129.0903802235669,
+              "right": 323.1973159020929
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 105,
+          "originalCamera": 48.07019084136115,
+          "camera": 48.07019084136115,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 270.88871286409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 229.76010233557543
+              },
+              "soul": {
+                "left": 190.9200416653646,
+                "right": 218.28004166536462
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 120,
+          "originalCamera": 30.161586410249846,
+          "camera": 30.161586410249846,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 269.9834662895962,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.9737106011441
+              },
+              "soul": {
+                "left": 190.87390183544812,
+                "right": 218.32631733819795
+              },
+              "left": 129.0903802235669,
+              "right": 240.9737106011441
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        },
+        {
+          "frame": 135,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 121.17541029490218,
+            "marginCss": 8,
+            "slackCss": 268.7412017585419,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 156.27210210589521,
+                "right": 205.57677805690543
+              },
+              "hat": {
+                "left": 129.7804523117089,
+                "right": 197.06681828827678
+              },
+              "hands": {
+                "left": 177.34455304771137,
+                "right": 240.68870849898477
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.7804523117089,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 150,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 268.09965036409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.0903802235669,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 165,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 270.88871286409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 237.7480182983072
+              },
+              "soul": {
+                "left": 168.1777632902218,
+                "right": 227.3193661923137
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "width": 320,
+      "height": 431,
+      "checks": 401,
+      "physicsSha256": "bfdf68eb0594fff0ccb5f1a37ec28c98e3dd2ec13616f1d1f161afe9cb1f1f3e",
+      "originalPhysicsSha256": "bfdf68eb0594fff0ccb5f1a37ec28c98e3dd2ec13616f1d1f161afe9cb1f1f3e",
+      "eventsEqual": true,
+      "tape": [
+        {
+          "frame": 0,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 1,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 25,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 40,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 50,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0.45,
+              "y": -0.6
+            }
+          ]
+        },
+        {
+          "frame": 85,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 95,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 105,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 120,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 134,
+          "method": "setReducedMotion",
+          "args": [
+            true
+          ]
+        },
+        {
+          "frame": 135,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 145,
+          "method": "setReducedMotion",
+          "args": [
+            false
+          ]
+        },
+        {
+          "frame": 155,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 180,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 224,
+          "method": "pause",
+          "args": []
+        }
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 15,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 30,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 45,
+          "originalCamera": 0.5075985041806884,
+          "camera": 0.5075985041806884,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 143.12064965197214,
+            "marginCss": 8,
+            "slackCss": 246.75781249999997,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 181.5,
+                "right": 231.5
+              },
+              "hat": {
+                "left": 176,
+                "right": 232
+              },
+              "hands": {
+                "left": 174.2436454366263,
+                "right": 239.95620058581562
+              },
+              "soul": null,
+              "left": 155,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 60,
+          "originalCamera": 5.331973228459036,
+          "camera": 5.331973228459036,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 122.38332961990172,
+            "marginCss": 8,
+            "slackCss": 232.36276920621552,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 158.8818302782604,
+                "right": 214.26083899105544
+              },
+              "hat": {
+                "left": 134.26267996792956,
+                "right": 206.8973248642631
+              },
+              "hands": {
+                "left": 176.60724452396065,
+                "right": 240.63815028816637
+              },
+              "soul": {
+                "left": 187.85615032843685,
+                "right": 230.03873995806646
+              },
+              "left": 134.26267996792956,
+              "right": 240.63815028816637
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 75,
+          "originalCamera": 28.699650453637005,
+          "camera": 28.699650453637005,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 195.12551803986676,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 214.76014461912433,
+                "right": 290.76014461912433
+              },
+              "left": 129.0903802235669,
+              "right": 290.76014461912433
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 90,
+          "originalCamera": 61.16415161768718,
+          "camera": 61.16415161768718,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 173.28111050399266,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 247.1973159020929,
+                "right": 323.1973159020929
+              },
+              "left": 129.0903802235669,
+              "right": 323.1973159020929
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 105,
+          "originalCamera": 24.139389772232896,
+          "camera": 24.139389772232896,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 229.30930293180836,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 229.76010233557543
+              },
+              "soul": {
+                "left": 190.9200416653646,
+                "right": 218.28004166536462
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 120,
+          "originalCamera": 6.222514485680583,
+          "camera": 6.222514485680583,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 228.65356969885033,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.9737106011441
+              },
+              "soul": {
+                "left": 190.87390183544812,
+                "right": 218.32631733819795
+              },
+              "left": 129.0903802235669,
+              "right": 240.9737106011441
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        },
+        {
+          "frame": 135,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.90110196368106,
+            "marginCss": 8,
+            "slackCss": 227.75371085366646,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 156.27210210589521,
+                "right": 205.57677805690543
+              },
+              "hat": {
+                "left": 129.7804523117089,
+                "right": 197.06681828827678
+              },
+              "hands": {
+                "left": 177.34455304771137,
+                "right": 240.68870849898477
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.7804523117089,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 150,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 227.28899043180834,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.0903802235669,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 165,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 229.30930293180836,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 237.7480182983072
+              },
+              "soul": {
+                "left": 168.1777632902218,
+                "right": 227.3193661923137
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "width": 390,
+      "height": 595,
+      "checks": 401,
+      "physicsSha256": "bfdf68eb0594fff0ccb5f1a37ec28c98e3dd2ec13616f1d1f161afe9cb1f1f3e",
+      "originalPhysicsSha256": "bfdf68eb0594fff0ccb5f1a37ec28c98e3dd2ec13616f1d1f161afe9cb1f1f3e",
+      "eventsEqual": true,
+      "tape": [
+        {
+          "frame": 0,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 1,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 25,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 40,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 50,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0.45,
+              "y": -0.6
+            }
+          ]
+        },
+        {
+          "frame": 85,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 95,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 105,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 120,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 134,
+          "method": "setReducedMotion",
+          "args": [
+            true
+          ]
+        },
+        {
+          "frame": 135,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 145,
+          "method": "setReducedMotion",
+          "args": [
+            false
+          ]
+        },
+        {
+          "frame": 155,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 180,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 224,
+          "method": "pause",
+          "args": []
+        }
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 15,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 30,
+          "originalCamera": 9.276016655087497,
+          "camera": 9.276016655087497,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 45,
+          "originalCamera": 20.982029653099023,
+          "camera": 20.982029653099023,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 146.39495798319328,
+            "marginCss": 8,
+            "slackCss": 294.9765625,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 181.5,
+                "right": 231.5
+              },
+              "hat": {
+                "left": 176,
+                "right": 232
+              },
+              "hands": {
+                "left": 174.2436454366263,
+                "right": 239.95620058581562
+              },
+              "soul": null,
+              "left": 155,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 60,
+          "originalCamera": 28.453900402006287,
+          "camera": 28.453900402006287,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 125.65763795112284,
+            "marginCss": 8,
+            "slackCss": 275.10405493665485,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 158.8818302782604,
+                "right": 214.26083899105544
+              },
+              "hat": {
+                "left": 134.26267996792956,
+                "right": 206.8973248642631
+              },
+              "hands": {
+                "left": 176.60724452396065,
+                "right": 240.63815028816637
+              },
+              "soul": {
+                "left": 187.85615032843685,
+                "right": 230.03873995806646
+              },
+              "left": 134.26267996792956,
+              "right": 240.63815028816637
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 75,
+          "originalCamera": 52.447490804829826,
+          "camera": 52.447490804829826,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 223.6976409135052,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 214.76014461912433,
+                "right": 290.76014461912433
+              },
+              "left": 129.0903802235669,
+              "right": 290.76014461912433
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 90,
+          "originalCamera": 85.05996851060314,
+          "camera": 85.05996851060314,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 193.54120823637035,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 247.1973159020929,
+                "right": 323.1973159020929
+              },
+              "left": 129.0903802235669,
+              "right": 323.1973159020929
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 105,
+          "originalCamera": 48.07019084136115,
+          "camera": 48.07019084136115,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 270.88871286409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 229.76010233557543
+              },
+              "soul": {
+                "left": 190.9200416653646,
+                "right": 218.28004166536462
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 120,
+          "originalCamera": 30.161586410249846,
+          "camera": 30.161586410249846,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 269.9834662895962,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.9737106011441
+              },
+              "soul": {
+                "left": 190.87390183544812,
+                "right": 218.32631733819795
+              },
+              "left": 129.0903802235669,
+              "right": 240.9737106011441
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        },
+        {
+          "frame": 135,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 121.17541029490218,
+            "marginCss": 8,
+            "slackCss": 268.7412017585419,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 156.27210210589521,
+                "right": 205.57677805690543
+              },
+              "hat": {
+                "left": 129.7804523117089,
+                "right": 197.06681828827678
+              },
+              "hands": {
+                "left": 177.34455304771137,
+                "right": 240.68870849898477
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.7804523117089,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 150,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 268.09965036409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.0903802235669,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 165,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 270.88871286409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 237.7480182983072
+              },
+              "soul": {
+                "left": 168.1777632902218,
+                "right": 227.3193661923137
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "width": 320,
+      "height": 431,
+      "checks": 401,
+      "physicsSha256": "33768d2a2be91a63727e3e31350dc0a29d649baba2b6e90d59b4e809fb2569d6",
+      "originalPhysicsSha256": "33768d2a2be91a63727e3e31350dc0a29d649baba2b6e90d59b4e809fb2569d6",
+      "eventsEqual": true,
+      "tape": [
+        {
+          "frame": 0,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 1,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 25,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 40,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 50,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0.45,
+              "y": -0.6
+            }
+          ]
+        },
+        {
+          "frame": 85,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 95,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 105,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 120,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 134,
+          "method": "setReducedMotion",
+          "args": [
+            true
+          ]
+        },
+        {
+          "frame": 135,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 145,
+          "method": "setReducedMotion",
+          "args": [
+            false
+          ]
+        },
+        {
+          "frame": 155,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 180,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 224,
+          "method": "pause",
+          "args": []
+        }
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 15,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 30,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 45,
+          "originalCamera": 0.5075985041806884,
+          "camera": 0.5075985041806884,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 143.12064965197214,
+            "marginCss": 8,
+            "slackCss": 246.75781249999997,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 181.5,
+                "right": 231.5
+              },
+              "hat": {
+                "left": 176,
+                "right": 232
+              },
+              "hands": {
+                "left": 174.2436454366263,
+                "right": 239.95620058581562
+              },
+              "soul": null,
+              "left": 155,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 60,
+          "originalCamera": 5.331973228459036,
+          "camera": 5.331973228459036,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 122.38332961990172,
+            "marginCss": 8,
+            "slackCss": 232.36276920621552,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 158.8818302782604,
+                "right": 214.26083899105544
+              },
+              "hat": {
+                "left": 134.26267996792956,
+                "right": 206.8973248642631
+              },
+              "hands": {
+                "left": 176.60724452396065,
+                "right": 240.63815028816637
+              },
+              "soul": {
+                "left": 187.85615032843685,
+                "right": 230.03873995806646
+              },
+              "left": 134.26267996792956,
+              "right": 240.63815028816637
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 75,
+          "originalCamera": 28.699650453637005,
+          "camera": 28.699650453637005,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 195.12551803986676,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 214.76014461912433,
+                "right": 290.76014461912433
+              },
+              "left": 129.0903802235669,
+              "right": 290.76014461912433
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 90,
+          "originalCamera": 61.16415161768718,
+          "camera": 61.16415161768718,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 173.28111050399266,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 247.1973159020929,
+                "right": 323.1973159020929
+              },
+              "left": 129.0903802235669,
+              "right": 323.1973159020929
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 105,
+          "originalCamera": 24.139389772232896,
+          "camera": 24.139389772232896,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 229.30930293180836,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 229.76010233557543
+              },
+              "soul": {
+                "left": 190.9200416653646,
+                "right": 218.28004166536462
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 120,
+          "originalCamera": 6.222514485680583,
+          "camera": 6.222514485680583,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 228.65356969885033,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.9737106011441
+              },
+              "soul": {
+                "left": 190.87390183544812,
+                "right": 218.32631733819795
+              },
+              "left": 129.0903802235669,
+              "right": 240.9737106011441
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        },
+        {
+          "frame": 135,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.90110196368106,
+            "marginCss": 8,
+            "slackCss": 227.75371085366646,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 156.27210210589521,
+                "right": 205.57677805690543
+              },
+              "hat": {
+                "left": 129.7804523117089,
+                "right": 197.06681828827678
+              },
+              "hands": {
+                "left": 177.34455304771137,
+                "right": 240.68870849898477
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.7804523117089,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 150,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 227.28899043180834,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.0903802235669,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 165,
+          "originalCamera": 0.6751740139211222,
+          "camera": 0.6751740139211222,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 117.21102987553907,
+            "marginCss": 8,
+            "slackCss": 229.30930293180836,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 237.7480182983072
+              },
+              "soul": {
+                "left": 168.1777632902218,
+                "right": 227.3193661923137
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "width": 390,
+      "height": 595,
+      "checks": 401,
+      "physicsSha256": "33768d2a2be91a63727e3e31350dc0a29d649baba2b6e90d59b4e809fb2569d6",
+      "originalPhysicsSha256": "33768d2a2be91a63727e3e31350dc0a29d649baba2b6e90d59b4e809fb2569d6",
+      "eventsEqual": true,
+      "tape": [
+        {
+          "frame": 0,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 1,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 25,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 40,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 50,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0.45,
+              "y": -0.6
+            }
+          ]
+        },
+        {
+          "frame": 85,
+          "method": "setInput",
+          "args": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "frame": 95,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 105,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 120,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 134,
+          "method": "setReducedMotion",
+          "args": [
+            true
+          ]
+        },
+        {
+          "frame": 135,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 145,
+          "method": "setReducedMotion",
+          "args": [
+            false
+          ]
+        },
+        {
+          "frame": 155,
+          "method": "recall",
+          "args": []
+        },
+        {
+          "frame": 180,
+          "method": "toggleSoul",
+          "args": []
+        },
+        {
+          "frame": 224,
+          "method": "pause",
+          "args": []
+        }
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 15,
+          "originalCamera": 0,
+          "camera": 0,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 30,
+          "originalCamera": 9.276016655087497,
+          "camera": 9.276016655087497,
+          "framing": null,
+          "form": "body",
+          "capPhase": "closed"
+        },
+        {
+          "frame": 45,
+          "originalCamera": 20.982029653099023,
+          "camera": 20.982029653099023,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 146.39495798319328,
+            "marginCss": 8,
+            "slackCss": 294.9765625,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 181.5,
+                "right": 231.5
+              },
+              "hat": {
+                "left": 176,
+                "right": 232
+              },
+              "hands": {
+                "left": 174.2436454366263,
+                "right": 239.95620058581562
+              },
+              "soul": null,
+              "left": 155,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 60,
+          "originalCamera": 28.453900402006287,
+          "camera": 28.453900402006287,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 125.65763795112284,
+            "marginCss": 8,
+            "slackCss": 275.10405493665485,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 158.8818302782604,
+                "right": 214.26083899105544
+              },
+              "hat": {
+                "left": 134.26267996792956,
+                "right": 206.8973248642631
+              },
+              "hands": {
+                "left": 176.60724452396065,
+                "right": 240.63815028816637
+              },
+              "soul": {
+                "left": 187.85615032843685,
+                "right": 230.03873995806646
+              },
+              "left": 134.26267996792956,
+              "right": 240.63815028816637
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 75,
+          "originalCamera": 52.447490804829826,
+          "camera": 52.447490804829826,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 223.6976409135052,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 214.76014461912433,
+                "right": 290.76014461912433
+              },
+              "left": 129.0903802235669,
+              "right": 290.76014461912433
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 90,
+          "originalCamera": 85.05996851060314,
+          "camera": 85.05996851060314,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 193.54120823637035,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 247.1973159020929,
+                "right": 323.1973159020929
+              },
+              "left": 129.0903802235669,
+              "right": 323.1973159020929
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 105,
+          "originalCamera": 48.07019084136115,
+          "camera": 48.07019084136115,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 270.88871286409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 229.76010233557543
+              },
+              "soul": {
+                "left": 190.9200416653646,
+                "right": 218.28004166536462
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "soul",
+          "capPhase": "opening"
+        },
+        {
+          "frame": 120,
+          "originalCamera": 30.161586410249846,
+          "camera": 30.161586410249846,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 269.9834662895962,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.9737106011441
+              },
+              "soul": {
+                "left": 190.87390183544812,
+                "right": 218.32631733819795
+              },
+              "left": 129.0903802235669,
+              "right": 240.9737106011441
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        },
+        {
+          "frame": 135,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 121.17541029490218,
+            "marginCss": 8,
+            "slackCss": 268.7412017585419,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 156.27210210589521,
+                "right": 205.57677805690543
+              },
+              "hat": {
+                "left": 129.7804523117089,
+                "right": 197.06681828827678
+              },
+              "hands": {
+                "left": 177.34455304771137,
+                "right": 240.68870849898477
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.7804523117089,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 150,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 268.09965036409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 240.6244572882488
+              },
+              "soul": {
+                "left": 167,
+                "right": 243
+              },
+              "left": 129.0903802235669,
+              "right": 243
+            }
+          },
+          "form": "soul",
+          "capPhase": "open"
+        },
+        {
+          "frame": 165,
+          "originalCamera": 24.61680672268909,
+          "camera": 24.61680672268909,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 120.48533820676019,
+            "marginCss": 8,
+            "slackCss": 270.88871286409733,
+            "bounds": {
+              "body": {
+                "left": 155,
+                "right": 240
+              },
+              "cap": {
+                "left": 155.71223939229634,
+                "right": 204.1750622665206
+              },
+              "hat": {
+                "left": 129.0903802235669,
+                "right": 195.561469617622
+              },
+              "hands": {
+                "left": 176.74947544126496,
+                "right": 237.7480182983072
+              },
+              "soul": {
+                "left": 168.1777632902218,
+                "right": 227.3193661923137
+              },
+              "left": 129.0903802235669,
+              "right": 240
+            }
+          },
+          "form": "body",
+          "capPhase": "returning"
+        }
+      ]
+    }
+  ],
+  "comparisons": 4812,
+  "sourceHashes": {
+    "dist/dream-engine-base.js": "179caecf7467c70319b988b1146b988b04f8d1d980603ff1181a59ba575d1aef",
+    "dist/dream-cap-framing.js": "03be453b6ffd0c772f2ff8961599b548380f395252aef121d5c083ad3b8d08c3",
+    "dist/dream-engine.js": "7b602b83f551c41fdbe97443e1fed08d6af773e9767f0ed830a434168951e889"
+  }
+}

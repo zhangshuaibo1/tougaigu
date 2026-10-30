@@ -1,0 +1,105 @@
+✔ narrow ordinary play keeps the real cap, outfit and supporting hands inside the same whole-scene camera (633.740638ms)
+✔ fixed-step follow composition has one budget, exact legacy fallthrough and no invented render time (0.252284ms)
+✔ the frame reuses its exact character and soul; repeated, nested and failed rendering cannot spend an old follow budget (254.692484ms)
+✖ resize resolves the first frame with one projection while paused time and all physical state remain frozen (332.616291ms)
+✖ near/far transition keeps normal soul travel and has a geometric hysteresis band (505.033342ms)
+✖ opening, return, immediate reversal and both facings preserve every gameplay field (140.989874ms)
+✔ desktop, all festival modes and activity framing retain original camera behavior without a borrowed budget (755.024059ms)
+✔ reduced motion uses the existing immediate target and pause cannot add a camera animation (318.28279ms)
+✖ invalid or impossible world-edge context fails closed without moving the traveler or widening the world (276.715701ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 5
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3225.298534
+
+✖ failing tests:
+
+test at tests/cap-framing-v34.test.mjs:80:1
+✖ resize resolves the first frame with one projection while paused time and all physical state remain frozen (332.616291ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy/tests/cap-framing-v34.test.mjs:84:81)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/cap-framing-v34.test.mjs:90:1
+✖ near/far transition keeps normal soul travel and has a geometric hysteresis band (505.033342ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy/tests/cap-framing-v34.test.mjs:99:58)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/cap-framing-v34.test.mjs:107:1
+✖ opening, return, immediate reversal and both facings preserve every gameplay field (140.989874ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== -1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy/tests/cap-framing-v34.test.mjs:117:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: -1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/cap-framing-v34.test.mjs:139:1
+✖ invalid or impossible world-edge context fails closed without moving the traveler or widening the world (276.715701ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'body-away'
+  - 'cannot-share'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy/tests/cap-framing-v34.test.mjs:146:113)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'body-away',
+    expected: 'cannot-share',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

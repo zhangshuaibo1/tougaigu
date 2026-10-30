@@ -1,0 +1,33 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy/docs/v34-prestudy/verify-helper-adapter.py", line 81, in <module>
+    asyncio.run(main(parser.parse_args()))
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy/docs/v34-prestudy/verify-helper-adapter.py", line 71, in main
+    summary=await helper.exercise_cap_framing(browser,settings,out/'real-browser',api)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy/scripts/browser_cap_framing_v34.py", line 158, in exercise_cap_framing
+    await steer(page,258,422,touch,api);record['backNearSettling']=await wait_for_near_settling(page,expected_version);record['backNear']=await picture(page,folder,'back-near',expected_version);near_clear(record['backNear']['snapshot']);record['travel']=await watch_stop(page,folder,'travel',expected_version)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy/scripts/browser_cap_framing_v34.py", line 104, in wait_for_near_settling
+    await page.wait_for_function('''()=>{
+  File "/tmp/tougaigu-v32-browser-venv/lib/python3.12/site-packages/playwright/async_api/_generated.py", line 11479, in wait_for_function
+    await self._impl_obj.wait_for_function(
+  File "/tmp/tougaigu-v32-browser-venv/lib/python3.12/site-packages/playwright/_impl/_page.py", line 1113, in wait_for_function
+    return await self._main_frame.wait_for_function(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/tougaigu-v32-browser-venv/lib/python3.12/site-packages/playwright/_impl/_frame.py", line 860, in wait_for_function
+    await self._channel.send("waitForFunction", self._timeout, params)
+  File "/tmp/tougaigu-v32-browser-venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/tougaigu-v32-browser-venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.wait_for_function: Timeout 3000ms exceeded.

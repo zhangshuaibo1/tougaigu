@@ -7,7 +7,8 @@
 - **v30.0.0「脚下有回声」已发布并通过正式HTTPS验收**：六章真实起落/落地收势、纵书稳臂与前两章实地阴影，662项测试及公网浏览器成功，见 [QA-v30](docs/QA-v30.md) 和 [发布核验](docs/verification-v30-release-summary.md)。
 - **v31「眼窝里的笑」已上线并完成正式 HTTPS 验收**：[完整 main 候选＋公网 40978620156](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40978620156) 成功，797 个源码文件与 143 个运行文件独立审计精确一致。主角的笑意、疲态与灵魂表情已在实际路线中验证，完整发布历史见 [发布记录](docs/v31-browser-release/README.md) 与 [原始报告](docs/v31-main-release/README.md)。
 - **v32「给对白留一点空地」已完成正式HTTPS验收**：桌面对白与目标／公告分栏；小于900px保留现有布局。[main完整候选＋公网40984854669](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984854669)成功，950源码／143运行文件精确核验，683/683及两套原剧情／物理／布局与网络检查通过。见 [QA](docs/QA-v32.md) 与 [完整最终证据](docs/v32-main-release/README.md)。
-- **v33「小旅伴·抬头等你」已部署，等待main完整公网回归**：苔绿色小猫的口鼻、耳内、双爪与尾缘更清楚，会看向实际显示的拾光，在归位末段轻轻眨眼。[正式候选](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984114609)通过691/691测试、完整旧路线及三尺寸专项；[Pages部署40987732103](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40987732103)成功，七项实际HTTPS资源精确匹配。本main提交保留已验准确代码并触发完整候选＋官网回归，见 [QA](docs/QA-v33.md) 与 [发布记录](docs/v33-release/README.md)。
+- **v33「小旅伴·抬头等你」已完成正式HTTPS验收**：原苔绿色小猫的口鼻、耳内、双爪与尾缘更清楚，看向实际显示的拾光，在归位末段轻轻眨眼。[main完整候选＋公网40988381550](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40988381550)成功，1138源码／144运行／257受保护文件精确，691/691及全部原流程通过；两套小猫各三尺寸、21原PNG与474次快照记录核验。见 [QA](docs/QA-v33.md) 与 [最终原始证据](docs/v33-main-release/README.md)。
+- **v34「近身抬盖，留一点画面」正在准备正式候选**：手机近处开盖时，身体、帽沿、握盖的手与拾光按同一镜头留边，沿用原物理与平滑速度。当前34.0.0本地702/702、资源检查及三尺寸专项通过；完整正式候选与34上线待完成。当前官网33.0.0已经完成正式验收。见 [计划](docs/PLAN-v34.md)、[QA与实际手机图](docs/QA-v34.md) 和 [在途登记](docs/IN-PROGRESS-v34.md)。
 - 原生 JavaScript / Canvas，无运行时第三方 JavaScript 依赖；原《再活一局》保留在 `survivor.html`。
 - 六章、十个节日、原有存档与奖励规则及企业页脚保留。
 

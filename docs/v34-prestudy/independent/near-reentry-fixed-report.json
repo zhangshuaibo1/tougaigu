@@ -1,0 +1,4644 @@
+{
+  "status": "passed",
+  "scope": "Targeted ordinary-method near/far/re-entry boundary probe on mock2D; no browser. Post-fix targeted repetition preserves the original failing report separately.",
+  "sourceHashes": {
+    "dist/dream-engine-base.js": "179caecf7467c70319b988b1146b988b04f8d1d980603ff1181a59ba575d1aef",
+    "dist/dream-cap-framing.js": "8cf94b0687b84479a9a9fdc720792d968c9655516950d82e4a561fce14dff485",
+    "dist/dream-engine.js": "7b602b83f551c41fdbe97443e1fed08d6af773e9767f0ed830a434168951e889"
+  },
+  "sourceUnchanged": true,
+  "cases": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "target": 258,
+      "previousReadableSoulEquilibriumLimit": 267.3831932773109,
+      "currentReadableSoulEquilibriumLimit": 285.3831932773109,
+      "initial": {
+        "time": 5.23333333333332,
+        "soul": {
+          "x": 257.9852838144766,
+          "y": 422.0031423560811,
+          "vx": -6.670507166159889e-8,
+          "vy": -3.280741007479023e-9
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485338205652862,
+        "originalTarget": 77.60209053716568,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.51466179434713,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 83.08666666666528,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 125.87114431782615,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 219.9852838144766,
+              "right": 295.9852838144766
+            },
+            "left": 29.09038022356691,
+            "right": 295.9852838144766
+          }
+        },
+        "leftMarginCss": 8.000000001029466
+      },
+      "far": {
+        "time": 10.400000000000096,
+        "soul": {
+          "x": 479.9843625592946,
+          "y": 421.9999999974394,
+          "vx": -1.5693924518095038e-9,
+          "vy": -1.3883353323668776e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 299.6011693478146,
+        "originalTarget": 299.6011692819837,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": -194.60116934781462,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 60.869999999997106,
+        "framing": {
+          "active": false,
+          "reason": "body-away",
+          "low": 107.09360625677357,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": -80.51862420274684,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 441.9843625592946,
+              "right": 517.9843625592946
+            },
+            "left": 29.09038022356691,
+            "right": 517.9843625592946
+          }
+        },
+        "leftMarginCss": -251.49049926394903
+      },
+      "returned": {
+        "steps": 166,
+        "firstActive": {
+          "time": 11.316666666666809,
+          "soul": {
+            "x": 250.9008363657277,
+            "y": 422.0000000000669,
+            "vx": -72.71752022961681,
+            "vy": -6.532008978472375e-10
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 97.70627576980472,
+          "originalTarget": 70.5176430884168,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 7.293724230195281,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 56.92833333333051,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 132.4574665553349,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 212.90083636572768,
+                "right": 288.9008363657277
+              },
+              "left": 29.09038022356691,
+              "right": 288.9008363657277
+            }
+          },
+          "leftMarginCss": -63.791340390642965
+        }
+      },
+      "atArrival": {
+        "time": 13.56666666666692,
+        "soul": {
+          "x": 258.01505851218127,
+          "y": 421.99999999999983,
+          "vx": 0.004575316959197538,
+          "vy": 3.8019161471745724e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.48551638065589,
+        "originalTarget": 77.63186523487036,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.5144836193441,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 47.25333333333067,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 125.84346315355383,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 220.01505851218127,
+              "right": 296.01505851218127
+            },
+            "left": 29.09038022356691,
+            "right": 296.01505851218127
+          }
+        },
+        "leftMarginCss": 7.999834353956338
+      },
+      "settle": [
+        {
+          "afterSteps": 1,
+          "time": 13.583333333333588,
+          "soul": {
+            "x": 258.0151258710143,
+            "y": 421.99999999999983,
+            "vx": 0.004041529980624492,
+            "vy": 3.358359263337539e-14
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485500048048785,
+          "originalTarget": 77.63193259370337,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51449995195122,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 47.18166666666401,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 125.84340053088877,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 220.01512587101428,
+                "right": 296.0151258710143
+              },
+              "left": 29.09038022356691,
+              "right": 296.0151258710143
+            }
+          },
+          "leftMarginCss": 7.999849538177008
+        },
+        {
+          "afterSteps": 30,
+          "time": 14.066666666666945,
+          "soul": {
+            "x": 258.0156219039309,
+            "y": 421.99999999999983,
+            "vx": 0.00011070309479402169,
+            "vy": 9.19901041595612e-16
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485348165436864,
+          "originalTarget": 77.63242862661997,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51465183456314,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 45.10333333333071,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 125.84293937528662,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 220.01562190393088,
+                "right": 296.0156219039309
+              },
+              "left": 29.09038022356691,
+              "right": 296.0156219039309
+            }
+          },
+          "leftMarginCss": 7.999990741542777
+        },
+        {
+          "afterSteps": 60,
+          "time": 14.56666666666697,
+          "soul": {
+            "x": 258.01563553560084,
+            "y": 421.99999999999983,
+            "vx": 0.000002678541247801022,
+            "vy": 2.2257669384885463e-17
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.48533876338068,
+          "originalTarget": 77.63244225828993,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51466123661932,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 42.95333333333075,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 125.84292670209345,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 220.01563553560084,
+                "right": 296.01563553560084
+              },
+              "left": 29.09038022356691,
+              "right": 296.01563553560084
+            }
+          },
+          "leftMarginCss": 7.999999482516888
+        },
+        {
+          "afterSteps": 120,
+          "time": 15.56666666666702,
+          "soul": {
+            "x": 258.0156358734092,
+            "y": 421.99999999999983,
+            "vx": 1.5681062711401308e-9,
+            "vy": 1.3030372771767511e-20
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485338208499087,
+          "originalTarget": 77.63244259609831,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51466179150091,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 38.65333333333082,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 125.84292638803721,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 220.01563587340922,
+                "right": 296.0156358734092
+              },
+              "left": 29.09038022356691,
+              "right": 296.0156358734092
+            }
+          },
+          "leftMarginCss": 7.999999998383367
+        },
+        {
+          "afterSteps": 300,
+          "time": 18.566666666666894,
+          "soul": {
+            "x": 258.0156358736071,
+            "y": 421.99999999999983,
+            "vx": 3.1463494119651754e-19,
+            "vy": 2.6144979114412335e-30
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485338206760208,
+          "originalTarget": 77.63244259629619,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.5146617932398,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 25.753333333331042,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 125.84292638785325,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 220.0156358736071,
+                "right": 296.0156358736071
+              },
+              "left": 29.09038022356691,
+              "right": 296.0156358736071
+            }
+          },
+          "leftMarginCss": 7.999999999999981
+        }
+      ],
+      "final": {
+        "time": 18.566666666666894,
+        "soul": {
+          "x": 258.0156358736071,
+          "y": 421.99999999999983,
+          "vx": 3.1463494119651754e-19,
+          "vy": 2.6144979114412335e-30
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485338206760208,
+        "originalTarget": 77.63244259629619,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.5146617932398,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 25.753333333331042,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 125.84292638785325,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 220.0156358736071,
+              "right": 296.0156358736071
+            },
+            "left": 29.09038022356691,
+            "right": 296.0156358736071
+          }
+        },
+        "leftMarginCss": 7.999999999999981
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "target": 266,
+      "previousReadableSoulEquilibriumLimit": 267.3831932773109,
+      "currentReadableSoulEquilibriumLimit": 285.3831932773109,
+      "initial": {
+        "time": 5.23333333333332,
+        "soul": {
+          "x": 257.9852838144766,
+          "y": 422.0031423560811,
+          "vx": -6.670507166159889e-8,
+          "vy": -3.280741007479023e-9
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485338205652862,
+        "originalTarget": 77.60209053716568,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.51466179434713,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 83.08666666666528,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 125.87114431782615,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 219.9852838144766,
+              "right": 295.9852838144766
+            },
+            "left": 29.09038022356691,
+            "right": 295.9852838144766
+          }
+        },
+        "leftMarginCss": 8.000000001029466
+      },
+      "far": {
+        "time": 10.400000000000096,
+        "soul": {
+          "x": 479.9843625592946,
+          "y": 421.9999999974394,
+          "vx": -1.5693924518095038e-9,
+          "vy": -1.3883353323668776e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 299.6011693478146,
+        "originalTarget": 299.6011692819837,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": -194.60116934781462,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 60.869999999997106,
+        "framing": {
+          "active": false,
+          "reason": "body-away",
+          "low": 107.09360625677357,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": -80.51862420274684,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 441.9843625592946,
+              "right": 517.9843625592946
+            },
+            "left": 29.09038022356691,
+            "right": 517.9843625592946
+          }
+        },
+        "leftMarginCss": -251.49049926394903
+      },
+      "returned": {
+        "steps": 164,
+        "firstActive": {
+          "time": 11.333333333333476,
+          "soul": {
+            "x": 256.8574700291686,
+            "y": 422.0000000000566,
+            "vx": -43.33028386692889,
+            "vy": -6.178231509235282e-10
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 98.17064417047611,
+          "originalTarget": 76.4742767518577,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 6.829355829523891,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 56.85666666666384,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 126.91965869635466,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 218.8574700291686,
+                "right": 294.8574700291686
+              },
+              "left": 29.09038022356691,
+              "right": 294.8574700291686
+            }
+          },
+          "leftMarginCss": -64.22305788814215
+        }
+      },
+      "atArrival": {
+        "time": 13.533333333333585,
+        "soul": {
+          "x": 266.01513143681444,
+          "y": 421.99999999999983,
+          "vx": 0.004979727634453715,
+          "vy": 3.5931861637412187e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485577379748847,
+        "originalTarget": 85.63193815950353,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.51442262025115,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 47.396666666664004,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 118.40589535643393,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 228.01513143681444,
+              "right": 304.01513143681444
+            },
+            "left": 29.09038022356691,
+            "right": 304.01513143681444
+          }
+        },
+        "leftMarginCss": 7.999777643862106
+      },
+      "settle": [
+        {
+          "afterSteps": 1,
+          "time": 13.550000000000253,
+          "soul": {
+            "x": 266.0152047494713,
+            "y": 421.99999999999983,
+            "vx": 0.004398759410434115,
+            "vy": 3.173981111304743e-14
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.48555545555822,
+          "originalTarget": 85.6320114721604,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51444454444177,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 47.32499999999734,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 118.40582719857325,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 228.0152047494713,
+                "right": 304.0152047494713
+              },
+              "left": 29.09038022356691,
+              "right": 304.0152047494713
+            }
+          },
+          "leftMarginCss": 7.9997980265080795
+        },
+        {
+          "afterSteps": 30,
+          "time": 14.03333333333361,
+          "soul": {
+            "x": 266.0157446265649,
+            "y": 421.99999999999983,
+            "vx": 0.00012048810285310288,
+            "vy": 8.693973161740841e-16
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485351574860236,
+          "originalTarget": 85.63255134925402,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51464842513977,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 45.24666666666404,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 118.40532528158778,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 228.01574462656492,
+                "right": 304.0157446265649
+              },
+              "left": 29.09038022356691,
+              "right": 304.0157446265649
+            }
+          },
+          "leftMarginCss": 7.999987571844487
+        },
+        {
+          "afterSteps": 60,
+          "time": 14.533333333333635,
+          "soul": {
+            "x": 266.01575946313335,
+            "y": 421.99999999999983,
+            "vx": 0.0000029152965774065835,
+            "vy": 2.1035695311252938e-17
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.48533895394364,
+          "originalTarget": 85.63256618582244,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51466104605636,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 43.09666666666408,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 118.40531148821557,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 228.01575946313335,
+                "right": 304.01575946313335
+              },
+              "left": 29.09038022356691,
+              "right": 304.01575946313335
+            }
+          },
+          "leftMarginCss": 7.999999305352885
+        },
+        {
+          "afterSteps": 120,
+          "time": 15.533333333333685,
+          "soul": {
+            "x": 266.0157598308007,
+            "y": 421.99999999999983,
+            "vx": 1.7067106392397887e-9,
+            "vy": 1.2314988900189298e-20
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485338209094415,
+          "originalTarget": 85.63256655348977,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51466179090559,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 38.79666666666415,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 118.40531114639985,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 228.01575983080068,
+                "right": 304.0157598308007
+              },
+              "left": 29.09038022356691,
+              "right": 304.0157598308007
+            }
+          },
+          "leftMarginCss": 7.999999997829898
+        },
+        {
+          "afterSteps": 300,
+          "time": 18.533333333333562,
+          "soul": {
+            "x": 266.015759831016,
+            "y": 421.99999999999983,
+            "vx": 3.4244541425515043e-19,
+            "vy": 2.470958684215713e-30
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485338206760208,
+          "originalTarget": 85.63256655370509,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.5146617932398,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 25.896666666664373,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 118.40531114619967,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 228.015759831016,
+                "right": 304.015759831016
+              },
+              "left": 29.09038022356691,
+              "right": 304.015759831016
+            }
+          },
+          "leftMarginCss": 7.999999999999981
+        }
+      ],
+      "final": {
+        "time": 18.533333333333562,
+        "soul": {
+          "x": 266.015759831016,
+          "y": 421.99999999999983,
+          "vx": 3.4244541425515043e-19,
+          "vy": 2.470958684215713e-30
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485338206760208,
+        "originalTarget": 85.63256655370509,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.5146617932398,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 25.896666666664373,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 118.40531114619967,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 228.015759831016,
+              "right": 304.015759831016
+            },
+            "left": 29.09038022356691,
+            "right": 304.015759831016
+          }
+        },
+        "leftMarginCss": 7.999999999999981
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "target": 268,
+      "previousReadableSoulEquilibriumLimit": 267.3831932773109,
+      "currentReadableSoulEquilibriumLimit": 285.3831932773109,
+      "initial": {
+        "time": 5.23333333333332,
+        "soul": {
+          "x": 257.9852838144766,
+          "y": 422.0031423560811,
+          "vx": -6.670507166159889e-8,
+          "vy": -3.280741007479023e-9
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485338205652862,
+        "originalTarget": 77.60209053716568,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.51466179434713,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 83.08666666666528,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 125.87114431782615,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 219.9852838144766,
+              "right": 295.9852838144766
+            },
+            "left": 29.09038022356691,
+            "right": 295.9852838144766
+          }
+        },
+        "leftMarginCss": 8.000000001029466
+      },
+      "far": {
+        "time": 10.400000000000096,
+        "soul": {
+          "x": 479.9843625592946,
+          "y": 421.9999999974394,
+          "vx": -1.5693924518095038e-9,
+          "vy": -1.3883353323668776e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 299.6011693478146,
+        "originalTarget": 299.6011692819837,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": -194.60116934781462,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 60.869999999997106,
+        "framing": {
+          "active": false,
+          "reason": "body-away",
+          "low": 107.09360625677357,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": -80.51862420274684,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 441.9843625592946,
+              "right": 517.9843625592946
+            },
+            "left": 29.09038022356691,
+            "right": 517.9843625592946
+          }
+        },
+        "leftMarginCss": -251.49049926394903
+      },
+      "returned": {
+        "steps": 164,
+        "firstActive": {
+          "time": 11.333333333333476,
+          "soul": {
+            "x": 258.65752923434087,
+            "y": 422.0000000000566,
+            "vx": -39.49446302623842,
+            "vy": -6.178231509235282e-10
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 99.07897147644432,
+          "originalTarget": 78.27433595702996,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 5.921028523555677,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 56.85666666666384,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 125.24616615404608,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 220.65752923434087,
+                "right": 296.65752923434087
+              },
+              "left": 29.09038022356691,
+              "right": 296.65752923434087
+            }
+          },
+          "leftMarginCss": -65.06751843040946
+        }
+      },
+      "atArrival": {
+        "time": 13.533333333333585,
+        "soul": {
+          "x": 268.0150593706183,
+          "y": 421.99999999999983,
+          "vx": 0.0047324606932594784,
+          "vy": 3.5931861637412187e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485580176253972,
+        "originalTarget": 87.6318660933074,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.51441982374602,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 47.396666666664004,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 116.54658735547565,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 230.0150593706183,
+              "right": 306.0150593706183
+            },
+            "left": 29.09038022356691,
+            "right": 306.0150593706183
+          }
+        },
+        "leftMarginCss": 7.999775043986247
+      },
+      "settle": [
+        {
+          "afterSteps": 1,
+          "time": 13.550000000000253,
+          "soul": {
+            "x": 268.0151290429563,
+            "y": 421.99999999999983,
+            "vx": 0.004180340279045873,
+            "vy": 3.173981111304743e-14
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.48555799571704,
+          "originalTarget": 87.63193576564538,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51444200428296,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 47.32499999999734,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 116.54652258197393,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 230.0151290429563,
+                "right": 306.0151290429563
+              },
+              "left": 29.09038022356691,
+              "right": 306.0151290429563
+            }
+          },
+          "leftMarginCss": 7.999795664954175
+        },
+        {
+          "afterSteps": 30,
+          "time": 14.03333333333361,
+          "soul": {
+            "x": 268.0156421126083,
+            "y": 421.99999999999983,
+            "vx": 0.00011450530081456292,
+            "vy": 8.693973161740841e-16
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485351731165352,
+          "originalTarget": 87.6324488352974,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51464826883465,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 45.24666666666404,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 116.54604558753182,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 230.0156421126083,
+                "right": 306.0156421126083
+              },
+              "left": 29.09038022356691,
+              "right": 306.0156421126083
+            }
+          },
+          "leftMarginCss": 7.999987426529574
+        },
+        {
+          "afterSteps": 60,
+          "time": 14.533333333333635,
+          "soul": {
+            "x": 268.0156562124712,
+            "y": 421.99999999999983,
+            "vx": 0.000002770538365655826,
+            "vy": 2.1035695311252938e-17
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485338962680007,
+          "originalTarget": 87.63246293516028,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51466103732,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 43.09666666666408,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 116.54603247906554,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 230.01565621247119,
+                "right": 306.0156562124712
+              },
+              "left": 29.09038022356691,
+              "right": 306.0156562124712
+            }
+          },
+          "leftMarginCss": 7.999999297230793
+        },
+        {
+          "afterSteps": 120,
+          "time": 15.533333333333685,
+          "soul": {
+            "x": 268.01565656188217,
+            "y": 421.99999999999983,
+            "vx": 1.621964414095133e-9,
+            "vy": 1.2314988900189298e-20
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485338209121707,
+          "originalTarget": 87.63246328457126,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51466179087829,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 38.79666666666415,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 116.54603215422253,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 230.01565656188217,
+                "right": 306.01565656188217
+              },
+              "left": 29.09038022356691,
+              "right": 306.01565656188217
+            }
+          },
+          "leftMarginCss": 7.999999997804525
+        },
+        {
+          "afterSteps": 300,
+          "time": 18.533333333333562,
+          "soul": {
+            "x": 268.0156565620868,
+            "y": 421.99999999999983,
+            "vx": 3.254413858574908e-19,
+            "vy": 2.470958684215713e-30
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485338206760208,
+          "originalTarget": 87.6324632847759,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.5146617932398,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 25.896666666664373,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 116.54603215403228,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 230.0156565620868,
+                "right": 306.0156565620868
+              },
+              "left": 29.09038022356691,
+              "right": 306.0156565620868
+            }
+          },
+          "leftMarginCss": 7.999999999999981
+        }
+      ],
+      "final": {
+        "time": 18.533333333333562,
+        "soul": {
+          "x": 268.0156565620868,
+          "y": 421.99999999999983,
+          "vx": 3.254413858574908e-19,
+          "vy": 2.470958684215713e-30
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485338206760208,
+        "originalTarget": 87.6324632847759,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.5146617932398,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 25.896666666664373,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 116.54603215403228,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 230.0156565620868,
+              "right": 306.0156565620868
+            },
+            "left": 29.09038022356691,
+            "right": 306.0156565620868
+          }
+        },
+        "leftMarginCss": 7.999999999999981
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "target": 270,
+      "previousReadableSoulEquilibriumLimit": 267.3831932773109,
+      "currentReadableSoulEquilibriumLimit": 285.3831932773109,
+      "initial": {
+        "time": 5.23333333333332,
+        "soul": {
+          "x": 257.9852838144766,
+          "y": 422.0031423560811,
+          "vx": -6.670507166159889e-8,
+          "vy": -3.280741007479023e-9
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485338205652862,
+        "originalTarget": 77.60209053716568,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.51466179434713,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 83.08666666666528,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 125.87114431782615,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 219.9852838144766,
+              "right": 295.9852838144766
+            },
+            "left": 29.09038022356691,
+            "right": 295.9852838144766
+          }
+        },
+        "leftMarginCss": 8.000000001029466
+      },
+      "far": {
+        "time": 10.400000000000096,
+        "soul": {
+          "x": 479.9843625592946,
+          "y": 421.9999999974394,
+          "vx": -1.5693924518095038e-9,
+          "vy": -1.3883353323668776e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 299.6011693478146,
+        "originalTarget": 299.6011692819837,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": -194.60116934781462,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 60.869999999997106,
+        "framing": {
+          "active": false,
+          "reason": "body-away",
+          "low": 107.09360625677357,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": -80.51862420274684,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 441.9843625592946,
+              "right": 517.9843625592946
+            },
+            "left": 29.09038022356691,
+            "right": 517.9843625592946
+          }
+        },
+        "leftMarginCss": -251.49049926394903
+      },
+      "returned": {
+        "steps": 164,
+        "firstActive": {
+          "time": 11.350000000000144,
+          "soul": {
+            "x": 260.029669282183,
+            "y": 422.00000000004695,
+            "vx": -25.67514943980852,
+            "vy": -5.802940878135187e-10
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 97.66123568030933,
+          "originalTarget": 79.64647600487211,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 7.338764319690668,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 56.784999999997176,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 123.97050470331783,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 222.02966928218302,
+                "right": 298.029669282183
+              },
+              "left": 29.09038022356691,
+              "right": 298.029669282183
+            }
+          },
+          "leftMarginCss": -63.74946718244022
+        }
+      },
+      "atArrival": {
+        "time": 13.533333333333585,
+        "soul": {
+          "x": 270.01498730442194,
+          "y": 421.99999999999983,
+          "vx": 0.0044851937520156175,
+          "vy": 3.5931861637412187e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485599789862768,
+        "originalTarget": 89.63179402711103,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.51440021013724,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 47.396666666664004,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 114.68727935451759,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 232.01498730442194,
+              "right": 308.01498730442194
+            },
+            "left": 29.09038022356691,
+            "right": 308.01498730442194
+          }
+        },
+        "leftMarginCss": 7.9997568094593206
+      },
+      "settle": [
+        {
+          "afterSteps": 1,
+          "time": 13.550000000000253,
+          "soul": {
+            "x": 270.01505333644104,
+            "y": 421.99999999999983,
+            "vx": 0.0039619211476137955,
+            "vy": 3.173981111304743e-14
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.4855758114117,
+          "originalTarget": 89.63186005913013,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.5144241885883,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 47.32499999999734,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 114.68721796537483,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 232.01505333644104,
+                "right": 308.01505333644104
+              },
+              "left": 29.09038022356691,
+              "right": 308.01505333644104
+            }
+          },
+          "leftMarginCss": 7.999779101925547
+        },
+        {
+          "afterSteps": 30,
+          "time": 14.03333333333361,
+          "soul": {
+            "x": 270.01553959865157,
+            "y": 421.99999999999983,
+            "vx": 0.00010852249877482231,
+            "vy": 8.693973161740841e-16
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485352827429125,
+          "originalTarget": 89.63234632134066,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51464717257088,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 45.24666666666404,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 114.68676589347598,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 232.01553959865157,
+                "right": 308.01553959865157
+              },
+              "left": 29.09038022356691,
+              "right": 308.01553959865157
+            }
+          },
+          "leftMarginCss": 7.999986407346848
+        },
+        {
+          "afterSteps": 60,
+          "time": 14.533333333333635,
+          "soul": {
+            "x": 270.01555296180885,
+            "y": 421.99999999999983,
+            "vx": 0.0000026257801538760153,
+            "vy": 2.1035695311252938e-17
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485339023953497,
+          "originalTarget": 89.63235968449794,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.5146609760465,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 43.09666666666408,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 114.68675346991569,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 232.01555296180885,
+                "right": 308.01555296180885
+              },
+              "left": 29.09038022356691,
+              "right": 308.01555296180885
+            }
+          },
+          "leftMarginCss": 7.999999240265596
+        },
+        {
+          "afterSteps": 120,
+          "time": 15.533333333333685,
+          "soul": {
+            "x": 270.0155532929634,
+            "y": 421.99999999999983,
+            "vx": 1.5372181889334689e-9,
+            "vy": 1.2314988900189298e-20
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.48533820931313,
+          "originalTarget": 89.63236001565247,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51466179068687,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 38.79666666666415,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 114.68675316204546,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 232.01555329296338,
+                "right": 308.0155532929634
+              },
+              "left": 29.09038022356691,
+              "right": 308.0155532929634
+            }
+          },
+          "leftMarginCss": 7.999999997626561
+        },
+        {
+          "afterSteps": 300,
+          "time": 18.533333333333562,
+          "soul": {
+            "x": 270.0155532931572,
+            "y": 421.99999999999983,
+            "vx": 3.084373574564175e-19,
+            "vy": 2.470958684215713e-30
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485338206760208,
+          "originalTarget": 89.6323600158463,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.5146617932398,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 25.896666666664373,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 114.68675316186525,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 232.0155532931572,
+                "right": 308.0155532931572
+              },
+              "left": 29.09038022356691,
+              "right": 308.0155532931572
+            }
+          },
+          "leftMarginCss": 7.999999999999981
+        }
+      ],
+      "final": {
+        "time": 18.533333333333562,
+        "soul": {
+          "x": 270.0155532931572,
+          "y": 421.99999999999983,
+          "vx": 3.084373574564175e-19,
+          "vy": 2.470958684215713e-30
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485338206760208,
+        "originalTarget": 89.6323600158463,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.5146617932398,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 25.896666666664373,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 114.68675316186525,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 232.0155532931572,
+              "right": 308.0155532931572
+            },
+            "left": 29.09038022356691,
+            "right": 308.0155532931572
+          }
+        },
+        "leftMarginCss": 7.999999999999981
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "target": 275,
+      "previousReadableSoulEquilibriumLimit": 267.3831932773109,
+      "currentReadableSoulEquilibriumLimit": 285.3831932773109,
+      "initial": {
+        "time": 5.23333333333332,
+        "soul": {
+          "x": 257.9852838144766,
+          "y": 422.0031423560811,
+          "vx": -6.670507166159889e-8,
+          "vy": -3.280741007479023e-9
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485338205652862,
+        "originalTarget": 77.60209053716568,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.51466179434713,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 83.08666666666528,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 125.87114431782615,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 219.9852838144766,
+              "right": 295.9852838144766
+            },
+            "left": 29.09038022356691,
+            "right": 295.9852838144766
+          }
+        },
+        "leftMarginCss": 8.000000001029466
+      },
+      "far": {
+        "time": 10.400000000000096,
+        "soul": {
+          "x": 479.9843625592946,
+          "y": 421.9999999974394,
+          "vx": -1.5693924518095038e-9,
+          "vy": -1.3883353323668776e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 299.6011693478146,
+        "originalTarget": 299.6011692819837,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": -194.60116934781462,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 60.869999999997106,
+        "framing": {
+          "active": false,
+          "reason": "body-away",
+          "low": 107.09360625677357,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": -80.51862420274684,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 441.9843625592946,
+              "right": 517.9843625592946
+            },
+            "left": 29.09038022356691,
+            "right": 517.9843625592946
+          }
+        },
+        "leftMarginCss": -251.49049926394903
+      },
+      "returned": {
+        "steps": 163,
+        "firstActive": {
+          "time": 11.366666666666811,
+          "soul": {
+            "x": 264.6476864806347,
+            "y": 422.0000000000379,
+            "vx": -9.394744661965996,
+            "vy": -5.412462750737583e-10
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 98.26756655739518,
+          "originalTarget": 84.26449320332381,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 6.732433442604815,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 56.71333333333051,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 119.67719183913226,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 226.64768648063472,
+                "right": 302.6476864806347
+              },
+              "left": 29.09038022356691,
+              "right": 302.6476864806347
+            }
+          },
+          "leftMarginCss": -64.31316541973098
+        }
+      },
+      "atArrival": {
+        "time": 13.516666666666918,
+        "soul": {
+          "x": 275.01498296307153,
+          "y": 421.99999999999983,
+          "vx": 0.004562987043130071,
+          "vy": 3.467718148987492e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.48565774134811,
+        "originalTarget": 94.63178968576062,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.5143422586519,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 47.46833333333067,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 110.03884589061678,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 237.01498296307153,
+              "right": 313.01498296307153
+            },
+            "left": 29.09038022356691,
+            "right": 313.01498296307153
+          }
+        },
+        "leftMarginCss": 7.999702932687791
+      },
+      "settle": [
+        {
+          "afterSteps": 1,
+          "time": 13.533333333333585,
+          "soul": {
+            "x": 275.01505014038077,
+            "y": 421.99999999999983,
+            "vx": 0.004030638554764896,
+            "vy": 3.0631510316056185e-14
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.48562845067755,
+          "originalTarget": 94.63185686306986,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51437154932245,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 47.396666666664004,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 110.03878343671211,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 237.01505014038077,
+                "right": 313.01505014038077
+              },
+              "left": 29.09038022356691,
+              "right": 313.01505014038077
+            }
+          },
+          "leftMarginCss": 7.999730163858079
+        },
+        {
+          "afterSteps": 30,
+          "time": 14.016666666666943,
+          "soul": {
+            "x": 275.0155448365497,
+            "y": 421.99999999999983,
+            "vx": 0.00011040476357907156,
+            "vy": 8.390394247869584e-16
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485356066512512,
+          "originalTarget": 94.63235155923877,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51464393348749,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 45.318333333330706,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 110.03832352386758,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 237.01554483654968,
+                "right": 313.0155448365497
+              },
+              "left": 29.09038022356691,
+              "right": 313.0155448365497
+            }
+          },
+          "leftMarginCss": 7.999983396011511
+        },
+        {
+          "afterSteps": 60,
+          "time": 14.516666666666968,
+          "soul": {
+            "x": 275.0155584314839,
+            "y": 421.99999999999983,
+            "vx": 0.0000026713229088174802,
+            "vy": 2.030116422675184e-17
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485339204995643,
+          "originalTarget": 94.63236515417299,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51466079500436,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 43.16833333333074,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 110.03831088482717,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 237.0155584314839,
+                "right": 313.0155584314839
+              },
+              "left": 29.09038022356691,
+              "right": 313.0155584314839
+            }
+          },
+          "leftMarginCss": 7.999999071952975
+        },
+        {
+          "afterSteps": 120,
+          "time": 15.516666666667017,
+          "soul": {
+            "x": 275.01555876838216,
+            "y": 421.99999999999983,
+            "vx": 1.563880417744519e-9,
+            "vy": 1.1884970209643042e-20
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485338209878705,
+          "originalTarget": 94.63236549107125,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.5146617901213,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 38.86833333333082,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 110.03831057161706,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 237.01555876838216,
+                "right": 313.01555876838216
+              },
+              "left": 29.09038022356691,
+              "right": 313.01555876838216
+            }
+          },
+          "leftMarginCss": 7.999999997100753
+        },
+        {
+          "afterSteps": 300,
+          "time": 18.516666666666897,
+          "soul": {
+            "x": 275.01555876857935,
+            "y": 421.99999999999983,
+            "vx": 3.1378703875578145e-19,
+            "vy": 2.3846769647280107e-30
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485338206760208,
+          "originalTarget": 94.63236549126844,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.5146617932398,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 25.96833333333104,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 110.03831057143374,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 237.01555876857935,
+                "right": 313.01555876857935
+              },
+              "left": 29.09038022356691,
+              "right": 313.01555876857935
+            }
+          },
+          "leftMarginCss": 7.999999999999981
+        }
+      ],
+      "final": {
+        "time": 18.516666666666897,
+        "soul": {
+          "x": 275.01555876857935,
+          "y": 421.99999999999983,
+          "vx": 3.1378703875578145e-19,
+          "vy": 2.3846769647280107e-30
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485338206760208,
+        "originalTarget": 94.63236549126844,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.5146617932398,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 25.96833333333104,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 110.03831057143374,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 237.01555876857935,
+              "right": 313.01555876857935
+            },
+            "left": 29.09038022356691,
+            "right": 313.01555876857935
+          }
+        },
+        "leftMarginCss": 7.999999999999981
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "target": 278,
+      "previousReadableSoulEquilibriumLimit": 267.3831932773109,
+      "currentReadableSoulEquilibriumLimit": 285.3831932773109,
+      "initial": {
+        "time": 5.23333333333332,
+        "soul": {
+          "x": 257.9852838144766,
+          "y": 422.0031423560811,
+          "vx": -6.670507166159889e-8,
+          "vy": -3.280741007479023e-9
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485338205652862,
+        "originalTarget": 77.60209053716568,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.51466179434713,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 83.08666666666528,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 125.87114431782615,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 219.9852838144766,
+              "right": 295.9852838144766
+            },
+            "left": 29.09038022356691,
+            "right": 295.9852838144766
+          }
+        },
+        "leftMarginCss": 8.000000001029466
+      },
+      "far": {
+        "time": 10.400000000000096,
+        "soul": {
+          "x": 479.9843625592946,
+          "y": 421.9999999974394,
+          "vx": -1.5693924518095038e-9,
+          "vy": -1.3883353323668776e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 299.6011693478146,
+        "originalTarget": 299.6011692819837,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": -194.60116934781462,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 60.869999999997106,
+        "framing": {
+          "active": false,
+          "reason": "body-away",
+          "low": 107.09360625677357,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": -80.51862420274684,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 441.9843625592946,
+              "right": 517.9843625592946
+            },
+            "left": 29.09038022356691,
+            "right": 517.9843625592946
+          }
+        },
+        "leftMarginCss": -251.49049926394903
+      },
+      "returned": {
+        "steps": 162,
+        "firstActive": {
+          "time": 11.383333333333479,
+          "soul": {
+            "x": 267.6603404902798,
+            "y": 422.00000000002956,
+            "vx": 1.5195897619856389,
+            "vy": -5.012384798291989e-10
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 98.26456885490816,
+          "originalTarget": 87.27714721296888,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 6.735431145091837,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 56.641666666663845,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 116.87636506454037,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 229.6603404902798,
+                "right": 305.6603404902798
+              },
+              "left": 29.09038022356691,
+              "right": 305.6603404902798
+            }
+          },
+          "leftMarginCss": -64.31037849320008
+        }
+      },
+      "atArrival": {
+        "time": 13.50000000000025,
+        "soul": {
+          "x": 278.0150469418058,
+          "y": 421.99999999999983,
+          "vx": 0.004887435895153933,
+          "vy": 3.3256788870021414e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485725473886987,
+        "originalTarget": 97.63185366449488,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.51427452611301,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 47.539999999997335,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 107.24972391038729,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 240.0150469418058,
+              "right": 316.0150469418058
+            },
+            "left": 29.09038022356691,
+            "right": 316.0150469418058
+          }
+        },
+        "leftMarginCss": 7.999639962593054
+      },
+      "settle": [
+        {
+          "afterSteps": 1,
+          "time": 13.516666666666918,
+          "soul": {
+            "x": 278.01511889572316,
+            "y": 421.99999999999983,
+            "vx": 0.004317235040719307,
+            "vy": 2.9376830168518915e-14
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485689974400366,
+          "originalTarget": 97.63192561841225,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51431002559963,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 47.46833333333067,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 107.24965701572972,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 240.01511889572316,
+                "right": 316.01511889572316
+              },
+              "left": 29.09038022356691,
+              "right": 316.01511889572316
+            }
+          },
+          "leftMarginCss": 7.999672966022022
+        },
+        {
+          "afterSteps": 30,
+          "time": 14.000000000000275,
+          "soul": {
+            "x": 278.0156487670094,
+            "y": 421.99999999999983,
+            "vx": 0.00011825503763477518,
+            "vy": 8.046720005751176e-16
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.4853598522885,
+          "originalTarget": 97.63245548969849,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.5146401477115,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 45.38999999999737,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 107.2491644010183,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 240.0156487670094,
+                "right": 316.0156487670094
+              },
+              "left": 29.09038022356691,
+              "right": 316.0156487670094
+            }
+          },
+          "leftMarginCss": 7.9999798764228975
+        },
+        {
+          "afterSteps": 60,
+          "time": 14.5000000000003,
+          "soul": {
+            "x": 278.01566332860443,
+            "y": 421.99999999999983,
+            "vx": 0.000002861265953353573,
+            "vy": 1.9469619602788335e-17
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.48533941659408,
+          "originalTarget": 97.63247005129352,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51466058340591,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 43.23999999999741,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 107.24915086328542,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 240.01566332860443,
+                "right": 316.01566332860443
+              },
+              "left": 29.09038022356691,
+              "right": 316.01566332860443
+            }
+          },
+          "leftMarginCss": 7.999998875232554
+        },
+        {
+          "afterSteps": 120,
+          "time": 15.50000000000035,
+          "soul": {
+            "x": 278.01566368945765,
+            "y": 421.99999999999983,
+            "vx": 1.675079332280936e-9,
+            "vy": 1.1398156597703878e-20
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485338210539748,
+          "originalTarget": 97.63247041214674,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51466178946025,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 38.93999999999748,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 107.24915052780469,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 240.01566368945765,
+                "right": 316.01566368945765
+              },
+              "left": 29.09038022356691,
+              "right": 316.01566368945765
+            }
+          },
+          "leftMarginCss": 7.99999999648619
+        },
+        {
+          "afterSteps": 300,
+          "time": 18.50000000000023,
+          "soul": {
+            "x": 278.01566368966866,
+            "y": 421.99999999999983,
+            "vx": 3.3609870511423807e-19,
+            "vy": 2.286999546440038e-30
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485338206760208,
+          "originalTarget": 97.63247041235775,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.5146617932398,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 26.039999999997704,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 107.24915052760852,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 240.01566368966866,
+                "right": 316.01566368966866
+              },
+              "left": 29.09038022356691,
+              "right": 316.01566368966866
+            }
+          },
+          "leftMarginCss": 7.999999999999981
+        }
+      ],
+      "final": {
+        "time": 18.50000000000023,
+        "soul": {
+          "x": 278.01566368966866,
+          "y": 421.99999999999983,
+          "vx": 3.3609870511423807e-19,
+          "vy": 2.286999546440038e-30
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485338206760208,
+        "originalTarget": 97.63247041235775,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.5146617932398,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 26.039999999997704,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 107.24915052760852,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 240.01566368966866,
+              "right": 316.01566368966866
+            },
+            "left": 29.09038022356691,
+            "right": 316.01566368966866
+          }
+        },
+        "leftMarginCss": 7.999999999999981
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 595
+      },
+      "target": 282,
+      "previousReadableSoulEquilibriumLimit": 267.3831932773109,
+      "currentReadableSoulEquilibriumLimit": 285.3831932773109,
+      "initial": {
+        "time": 5.23333333333332,
+        "soul": {
+          "x": 257.9852838144766,
+          "y": 422.0031423560811,
+          "vx": -6.670507166159889e-8,
+          "vy": -3.280741007479023e-9
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485338205652862,
+        "originalTarget": 77.60209053716568,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.51466179434713,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 83.08666666666528,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 125.87114431782615,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 219.9852838144766,
+              "right": 295.9852838144766
+            },
+            "left": 29.09038022356691,
+            "right": 295.9852838144766
+          }
+        },
+        "leftMarginCss": 8.000000001029466
+      },
+      "far": {
+        "time": 10.400000000000096,
+        "soul": {
+          "x": 479.9843625592946,
+          "y": 421.9999999974394,
+          "vx": -1.5693924518095038e-9,
+          "vy": -1.3883353323668776e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 299.6011693478146,
+        "originalTarget": 299.6011692819837,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": -194.60116934781462,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 60.869999999997106,
+        "framing": {
+          "active": false,
+          "reason": "body-away",
+          "low": 107.09360625677357,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": -80.51862420274684,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 441.9843625592946,
+              "right": 517.9843625592946
+            },
+            "left": 29.09038022356691,
+            "right": 517.9843625592946
+          }
+        },
+        "leftMarginCss": -251.49049926394903
+      },
+      "returned": {
+        "steps": 161,
+        "firstActive": {
+          "time": 11.416666666666814,
+          "soul": {
+            "x": 272.214618904203,
+            "y": 422.0000000000149,
+            "vx": 16.295357462862604,
+            "vy": -4.2039437746323497e-10
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 97.97687474504042,
+          "originalTarget": 91.8314256268921,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 7.023125254959581,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 56.498333333330514,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 112.64230935159613,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 234.214618904203,
+                "right": 310.214618904203
+              },
+              "left": 29.09038022356691,
+              "right": 310.214618904203
+            }
+          },
+          "leftMarginCss": -64.0429128754324
+        }
+      },
+      "atArrival": {
+        "time": 13.483333333333583,
+        "soul": {
+          "x": 282.01507064656073,
+          "y": 421.99999999999983,
+          "vx": 0.005087559147851561,
+          "vy": 3.164879722490422e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485853038729292,
+        "originalTarget": 101.63187736924982,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.51414696127071,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 47.611666666664,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 103.53095187237292,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 244.01507064656073,
+              "right": 320.01507064656073
+            },
+            "left": 29.09038022356691,
+            "right": 320.01507064656073
+          }
+        },
+        "leftMarginCss": 7.999521367153723
+      },
+      "settle": [
+        {
+          "afterSteps": 1,
+          "time": 13.50000000000025,
+          "soul": {
+            "x": 282.0151455467371,
+            "y": 421.99999999999983,
+            "vx": 0.004494010580602212,
+            "vy": 2.7956437548665393e-14
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.48580584579879,
+          "originalTarget": 101.63195226942617,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.5141941542012,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 47.539999999997335,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 103.53088223861523,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 244.01514554673707,
+                "right": 320.0151455467371
+              },
+              "left": 29.09038022356691,
+              "right": 320.0151455467371
+            }
+          },
+          "leftMarginCss": 7.9995652418312995
+        },
+        {
+          "afterSteps": 30,
+          "time": 13.983333333333608,
+          "soul": {
+            "x": 282.0156971143825,
+            "y": 421.99999999999983,
+            "vx": 0.00012309716411725588,
+            "vy": 7.657654825994483e-16
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485366982272463,
+          "originalTarget": 101.63250383707157,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51463301772753,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 45.46166666666404,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 103.5303694530699,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 244.01569711438248,
+                "right": 320.0156971143825
+              },
+              "left": 29.09038022356691,
+              "right": 320.0156971143825
+            }
+          },
+          "leftMarginCss": 7.999973247765931
+        },
+        {
+          "afterSteps": 60,
+          "time": 14.483333333333633,
+          "soul": {
+            "x": 282.0157122722233,
+            "y": 421.99999999999983,
+            "vx": 0.0000029784246970592163,
+            "vy": 1.852824833037681e-17
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485339815110404,
+          "originalTarget": 101.6325189949124,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51466018488959,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 43.311666666664074,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 103.53035536101474,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 244.0157122722233,
+                "right": 320.0157122722233
+              },
+              "left": 29.09038022356691,
+              "right": 320.0157122722233
+            }
+          },
+          "leftMarginCss": 7.999998504736909
+        },
+        {
+          "afterSteps": 120,
+          "time": 15.483333333333682,
+          "soul": {
+            "x": 282.0157126478522,
+            "y": 421.99999999999983,
+            "vx": 1.7436679197721846e-9,
+            "vy": 1.0847046848338791e-20
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485338211784725,
+          "originalTarget": 101.63251937054127,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.51466178821528,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 39.01166666666415,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 103.53035501179728,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 244.01571264785218,
+                "right": 320.0157126478522
+              },
+              "left": 29.09038022356691,
+              "right": 320.0157126478522
+            }
+          },
+          "leftMarginCss": 7.99999999532875
+        },
+        {
+          "afterSteps": 300,
+          "time": 18.483333333333565,
+          "soul": {
+            "x": 282.01571264807217,
+            "y": 421.99999999999983,
+            "vx": 3.4986076103431985e-19,
+            "vy": 2.1764213370574288e-30
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 20.485338206760208,
+          "originalTarget": 101.63251937076126,
+          "scale": 0.9296875,
+          "viewWidth": 419.4957983193277,
+          "bodyCenterFromLeftWorld": 84.5146617932398,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 26.11166666666437,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 20.48533820676019,
+            "marginCss": 8,
+            "slackCss": 103.53035501159276,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 244.01571264807217,
+                "right": 320.01571264807217
+              },
+              "left": 29.09038022356691,
+              "right": 320.01571264807217
+            }
+          },
+          "leftMarginCss": 7.999999999999981
+        }
+      ],
+      "final": {
+        "time": 18.483333333333565,
+        "soul": {
+          "x": 282.01571264807217,
+          "y": 421.99999999999983,
+          "vx": 3.4986076103431985e-19,
+          "vy": 2.1764213370574288e-30
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 20.485338206760208,
+        "originalTarget": 101.63251937076126,
+        "scale": 0.9296875,
+        "viewWidth": 419.4957983193277,
+        "bodyCenterFromLeftWorld": 84.5146617932398,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 26.11166666666437,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 20.48533820676019,
+          "marginCss": 8,
+          "slackCss": 103.53035501159276,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 244.01571264807217,
+              "right": 320.01571264807217
+            },
+            "left": 29.09038022356691,
+            "right": 320.01571264807217
+          }
+        },
+        "leftMarginCss": 7.999999999999981
+      }
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 431
+      },
+      "target": 278,
+      "previousReadableSoulEquilibriumLimit": 291.32482598607885,
+      "currentReadableSoulEquilibriumLimit": 309.32482598607885,
+      "initial": {
+        "time": 5.23333333333332,
+        "soul": {
+          "x": 257.9852838144766,
+          "y": 422.0031423560811,
+          "vx": -6.670507166159889e-8,
+          "vy": -3.280741007479023e-9
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 17.211029874127522,
+        "originalTarget": 53.66045782839771,
+        "scale": 0.6734375,
+        "viewWidth": 475.17401392111367,
+        "bodyCenterFromLeftWorld": 87.78897012587248,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 83.08666666666528,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 17.21102987553907,
+          "marginCss": 8,
+          "slackCss": 124.26296336299676,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 219.9852838144766,
+              "right": 295.9852838144766
+            },
+            "left": 29.09038022356691,
+            "right": 295.9852838144766
+          }
+        },
+        "leftMarginCss": 8.000000000950589
+      },
+      "far": {
+        "time": 10.400000000000096,
+        "soul": {
+          "x": 479.9843625592946,
+          "y": 421.9999999974394,
+          "vx": -1.5693924518095038e-9,
+          "vy": -1.3883353323668776e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 275.65953663860057,
+        "originalTarget": 275.65953657321575,
+        "scale": 0.6734375,
+        "viewWidth": 475.17401392111367,
+        "bodyCenterFromLeftWorld": -170.65953663860057,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 60.869999999997106,
+        "framing": {
+          "active": false,
+          "reason": "body-away",
+          "low": 54.68969898620878,
+          "high": 17.21102987553907,
+          "marginCss": 8,
+          "slackCss": -25.239541229216627,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 441.9843625592946,
+              "right": 517.9843625592946
+            },
+            "left": 29.09038022356691,
+            "right": 517.9843625592946
+          }
+        },
+        "leftMarginCss": -166.04891627324923
+      },
+      "returned": {
+        "steps": 162,
+        "firstActive": {
+          "time": 11.233333333333471,
+          "soul": {
+            "x": 272.83978524899464,
+            "y": 422.00000000012614,
+            "vx": -92.8649464943952,
+            "vy": -7.713094095010926e-10
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 98.04475818005584,
+          "originalTarget": 68.51495926291577,
+          "scale": 0.6734375,
+          "viewWidth": 475.17401392111367,
+          "bodyCenterFromLeftWorld": 6.955241819944163,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 57.286666666663834,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 17.21102987553907,
+            "marginCss": 8,
+            "slackCss": 114.2593850531885,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 234.83978524899464,
+                "right": 310.83978524899464
+              },
+              "left": 29.09038022356691,
+              "right": 310.83978524899464
+            }
+          },
+          "leftMarginCss": -46.43646390507301
+        }
+      },
+      "atArrival": {
+        "time": 13.50000000000025,
+        "soul": {
+          "x": 278.0150469418058,
+          "y": 421.99999999999983,
+          "vx": 0.004887435895153933,
+          "vy": 3.3256788870021414e-14
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 17.211199288591587,
+        "originalTarget": 73.69022095572691,
+        "scale": 0.6734375,
+        "viewWidth": 475.17401392111367,
+        "bodyCenterFromLeftWorld": 87.78880071140841,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 47.539999999997335,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 17.21102987553907,
+          "marginCss": 8,
+          "slackCss": 110.77416975693599,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 240.0150469418058,
+              "right": 316.0150469418058
+            },
+            "left": 29.09038022356691,
+            "right": 316.0150469418058
+          }
+        },
+        "leftMarginCss": 7.9998859108974445
+      },
+      "settle": [
+        {
+          "afterSteps": 1,
+          "time": 13.516666666666918,
+          "soul": {
+            "x": 278.01511889572316,
+            "y": 421.99999999999983,
+            "vx": 0.004317235040719307,
+            "vy": 2.9376830168518915e-14
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 17.211183759061772,
+          "originalTarget": 73.69029290964428,
+          "scale": 0.6734375,
+          "viewWidth": 475.17401392111367,
+          "bodyCenterFromLeftWorld": 87.78881624093823,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 47.46833333333067,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 17.21102987553907,
+            "marginCss": 8,
+            "slackCss": 110.77412130046976,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 240.01511889572316,
+                "right": 316.01511889572316
+              },
+              "left": 29.09038022356691,
+              "right": 316.01511889572316
+            }
+          },
+          "leftMarginCss": 7.99989636906518
+        },
+        {
+          "afterSteps": 30,
+          "time": 14.000000000000275,
+          "soul": {
+            "x": 278.0156487670094,
+            "y": 421.99999999999983,
+            "vx": 0.00011825503763477518,
+            "vy": 8.046720005751176e-16
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 17.211039344545785,
+          "originalTarget": 73.69082278093052,
+          "scale": 0.6734375,
+          "viewWidth": 475.17401392111367,
+          "bodyCenterFromLeftWorld": 87.78896065545422,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 45.38999999999737,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 17.21102987553907,
+            "marginCss": 8,
+            "slackCss": 110.77376446527545,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 240.0156487670094,
+                "right": 316.0156487670094
+              },
+              "left": 29.09038022356691,
+              "right": 316.0156487670094
+            }
+          },
+          "leftMarginCss": 7.999993623215789
+        },
+        {
+          "afterSteps": 60,
+          "time": 14.5000000000003,
+          "soul": {
+            "x": 278.01566332860443,
+            "y": 421.99999999999983,
+            "vx": 0.000002861265953353573,
+            "vy": 1.9469619602788335e-17
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 17.211030404790428,
+          "originalTarget": 73.69083734252555,
+          "scale": 0.6734375,
+          "viewWidth": 475.17401392111367,
+          "bodyCenterFromLeftWorld": 87.78896959520958,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 43.23999999999741,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 17.21102987553907,
+            "marginCss": 8,
+            "slackCss": 110.77375465895129,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 240.01566332860443,
+                "right": 316.01566332860443
+              },
+              "left": 29.09038022356691,
+              "right": 316.01566332860443
+            }
+          },
+          "leftMarginCss": 7.999999643582288
+        },
+        {
+          "afterSteps": 120,
+          "time": 15.50000000000035,
+          "soul": {
+            "x": 278.01566368945765,
+            "y": 421.99999999999983,
+            "vx": 1.675079332280936e-9,
+            "vy": 1.1398156597703878e-20
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 17.211029877192466,
+          "originalTarget": 73.69083770337878,
+          "scale": 0.6734375,
+          "viewWidth": 475.17401392111367,
+          "bodyCenterFromLeftWorld": 87.78897012280754,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 38.93999999999748,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 17.21102987553907,
+            "marginCss": 8,
+            "slackCss": 110.7737544159392,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 240.01566368945765,
+                "right": 316.01566368945765
+              },
+              "left": 29.09038022356691,
+              "right": 316.01566368945765
+            }
+          },
+          "leftMarginCss": 7.9999999988865405
+        },
+        {
+          "afterSteps": 300,
+          "time": 18.50000000000023,
+          "soul": {
+            "x": 278.01566368966866,
+            "y": 421.99999999999983,
+            "vx": 3.3609870511423807e-19,
+            "vy": 2.286999546440038e-30
+          },
+          "body": {
+            "x": 105,
+            "y": 560
+          },
+          "camera": 17.211029875539086,
+          "originalTarget": 73.69083770358978,
+          "scale": 0.6734375,
+          "viewWidth": 475.17401392111367,
+          "bodyCenterFromLeftWorld": 87.78897012446092,
+          "activityFramed": false,
+          "state": "playing",
+          "form": "soul",
+          "deaths": 0,
+          "energy": 26.039999999997704,
+          "framing": {
+            "active": true,
+            "reason": "nearby",
+            "low": 0,
+            "high": 17.21102987553907,
+            "marginCss": 8,
+            "slackCss": 110.7737544157971,
+            "bounds": {
+              "body": {
+                "left": 55,
+                "right": 140
+              },
+              "cap": {
+                "left": 55.712239392296354,
+                "right": 104.17506226652058
+              },
+              "hat": {
+                "left": 29.09038022356691,
+                "right": 95.56146961762201
+              },
+              "hands": {
+                "left": 76.74947544126496,
+                "right": 140.6244572882488
+              },
+              "soul": {
+                "left": 240.01566368966866,
+                "right": 316.01566368966866
+              },
+              "left": 29.09038022356691,
+              "right": 316.01566368966866
+            }
+          },
+          "leftMarginCss": 7.999999999999988
+        }
+      ],
+      "final": {
+        "time": 18.50000000000023,
+        "soul": {
+          "x": 278.01566368966866,
+          "y": 421.99999999999983,
+          "vx": 3.3609870511423807e-19,
+          "vy": 2.286999546440038e-30
+        },
+        "body": {
+          "x": 105,
+          "y": 560
+        },
+        "camera": 17.211029875539086,
+        "originalTarget": 73.69083770358978,
+        "scale": 0.6734375,
+        "viewWidth": 475.17401392111367,
+        "bodyCenterFromLeftWorld": 87.78897012446092,
+        "activityFramed": false,
+        "state": "playing",
+        "form": "soul",
+        "deaths": 0,
+        "energy": 26.039999999997704,
+        "framing": {
+          "active": true,
+          "reason": "nearby",
+          "low": 0,
+          "high": 17.21102987553907,
+          "marginCss": 8,
+          "slackCss": 110.7737544157971,
+          "bounds": {
+            "body": {
+              "left": 55,
+              "right": 140
+            },
+            "cap": {
+              "left": 55.712239392296354,
+              "right": 104.17506226652058
+            },
+            "hat": {
+              "left": 29.09038022356691,
+              "right": 95.56146961762201
+            },
+            "hands": {
+              "left": 76.74947544126496,
+              "right": 140.6244572882488
+            },
+            "soul": {
+              "left": 240.01566368966866,
+              "right": 316.01566368966866
+            },
+            "left": 29.09038022356691,
+            "right": 316.01566368966866
+          }
+        },
+        "leftMarginCss": 7.999999999999988
+      }
+    }
+  ]
+}

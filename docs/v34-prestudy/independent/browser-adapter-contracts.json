@@ -1,0 +1,19 @@
+{
+  "explicitVersionBeforeResources": true,
+  "wrong-version": {
+    "failureReported": true,
+    "failurePropagated": true,
+    "callerBrowserNotClosed": true,
+    "ownedContextClosed": true,
+    "scope": "synthetic API ownership fixture"
+  },
+  "context-error": {
+    "failureReported": true,
+    "failurePropagated": true,
+    "callerBrowserNotClosed": true,
+    "ownedContextClosed": false,
+    "scope": "synthetic API ownership fixture"
+  },
+  "oldSmokeAstExactAfterOnlyNewHook": true,
+  "hookLines": 9
+}

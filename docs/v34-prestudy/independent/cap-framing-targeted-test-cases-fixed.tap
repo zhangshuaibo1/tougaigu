@@ -1,0 +1,19 @@
+✔ narrow ordinary play keeps the real cap, outfit and supporting hands inside the same whole-scene camera (701.526371ms)
+✔ fixed-step follow composition has one budget, exact legacy fallthrough and no invented render time (0.302489ms)
+✔ the frame reuses its exact character and soul; repeated, nested and failed rendering cannot spend an old follow budget (283.631934ms)
+✔ resize resolves the first frame with one projection while paused time and all physical state remain frozen (409.18392ms)
+✔ near/far transition keeps normal soul travel and has a geometric hysteresis band (532.931132ms)
+✔ opening, return, immediate reversal and both facings preserve every gameplay field (276.657255ms)
+✔ near return around275 reenters naturally after far flight instead of stranding a visible traveler at the edge (2021.56002ms)
+✔ body-center reentry is symmetric, includes the old18 boundary, and rejects a genuinely offscreen body (244.45361ms)
+✔ desktop, all festival modes and activity framing retain original camera behavior without a borrowed budget (795.243658ms)
+✔ reduced motion uses the existing immediate target and pause cannot add a camera animation (326.241836ms)
+✔ invalid or impossible world-edge context fails closed without moving the traveler or widening the world (317.765128ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5919.363602

@@ -1,0 +1,138 @@
+{
+  "status": "passed-read-only-source-and-evidence-audit",
+  "reviewedAt": "2026-10-30T02:14:35.570643+00:00",
+  "sourceRoot": "/workspace/scratch/2b18af2db412/tougaigu-v34-formal",
+  "baselineCommit": "be05769a99a807f9396c03084760f8283ce4195e",
+  "version": "34.0.0",
+  "sourceIdentity": {
+    "protectedCount": 260,
+    "currentPathsExactToExecution": true,
+    "eachCurrentSHA256EqualsBeforeAndAfter": true,
+    "canonicalCurrentHashMapSHA256": "53d229da2a8982c9b94699c44c67ac6c67108bd881a6e86c2b9e1168284e7580",
+    "canonicalBeforeHashMapSHA256": "53d229da2a8982c9b94699c44c67ac6c67108bd881a6e86c2b9e1168284e7580",
+    "canonicalAfterHashMapSHA256": "53d229da2a8982c9b94699c44c67ac6c67108bd881a6e86c2b9e1168284e7580",
+    "executionSHA256": "a2632158ff6c84dc223b9042500953973f01e893249fdfb636c3a0a1deb71539",
+    "sourceStableThroughThisAudit": true,
+    "packageAndMainEntryMetadataVersions": "34.0.0",
+    "survivorHasApplicationVersionMeta": false,
+    "versionedAssetReferencesByEntry": {
+      "index.html": 81,
+      "dream.html": 81,
+      "survivor.html": 76
+    },
+    "all238EntryAssetReferenceVersions": "34.0.0",
+    "indexAndDreamHTMLBytesEqual": true
+  },
+  "oldTests": {
+    "testFiles": 77,
+    "fixtures": [
+      "tests/fixtures/v32-layout-v31-css.json"
+    ],
+    "all78FilesComparedAsBytesToGitArchive": true,
+    "canonicalBaselineFileHashMapSHA256": "29887f05c6be056957cb8c2031934732d593e1800987b7434af3f1f4242e6eed"
+  },
+  "browserSmoke": {
+    "onlyNewHookLines": 9,
+    "hookOccurrences": 1,
+    "condition": "int((args.version or version).split('.')[0])>=34",
+    "removedHookBytesExactlyEqualBaseline": true,
+    "removedHookASTExactlyEqualBaseline": true,
+    "baselineSourceSHA256": "524875447006fd9d868ae1a23ee38a09003e76a016afc28597147ff3190e9158",
+    "currentSourceSHA256": "32fdf7928cd1552981ed250eae7a126e76a551353b4e67f090616b129082f7c4",
+    "hookSHA256": "16f4cc9f31810623d68663c3f5948a4ecb7be6f3c8f420a57b597e53c7cb68ac",
+    "baselineAndStrippedASTSHA256": "82969435ee77a744839378299e87e926baf5b59a81be324a5aff6284e33cbe5d"
+  },
+  "currentExecutionResults": {
+    "commandExitCodes": [
+      0,
+      0,
+      0
+    ],
+    "tests": {
+      "tests": 702,
+      "pass": 702,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "testCasesIndividuallyObserved": 702,
+    "testDurationMs": 7986.589729,
+    "old691CaseNamesAndMultiplicityRetained": true,
+    "newCaseNamesCount": 11,
+    "testLogSHA256": "37c1642c75cfceb1225d9ed7563e7acce52ee5150f36c03025a9097f48814618",
+    "referenceCheck": {
+      "jsModules": 70,
+      "localReferences": 173,
+      "versionedAssetReferences": 238,
+      "filesNeedChanges": 0
+    },
+    "browser": {
+      "expectedVersion": "34.0.0",
+      "everyGameplaySnapshotVersionEquals34": true,
+      "versionBearingGameplaySnapshots": 1346,
+      "saveSchemaVersion1Objects": 2,
+      "reportSHA256": "e7c68786167bcf1a8acb9cb45ef83b6a5119276fa2a51412ddef61b236d2ee04",
+      "reportBytes": 28077314,
+      "sourceHashesMatched": 77,
+      "helperSeconds": 61.851211599991075,
+      "processSeconds": 63.4531811800116,
+      "cases": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "input": "keyboard",
+          "status": "passed",
+          "initialVersion": "34.0.0",
+          "pageErrors": 0,
+          "httpErrors": 0,
+          "requestFailures": 0
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "input": "CDP simulated touch",
+          "status": "passed",
+          "initialVersion": "34.0.0",
+          "pageErrors": 0,
+          "httpErrors": 0,
+          "requestFailures": 0
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "input": "CDP simulated touch",
+          "status": "passed",
+          "initialVersion": "34.0.0",
+          "pageErrors": 0,
+          "httpErrors": 0,
+          "requestFailures": 0
+        }
+      ]
+    }
+  },
+  "launcherPostprocessing": {
+    "originalStatusPreserved": "failed",
+    "error": {
+      "type": "FileNotFoundError",
+      "message": "[Errno 2] No such file or directory: '/tmp/v34-formal-local34/browser/report.json'"
+    },
+    "actualDriverReportPath": "cap-framing/report.json",
+    "actualDriverVersionField": "expectedVersion",
+    "independentResolution": "Verified successful actual CLI outputs and original driver-returned report; no source, clock, threshold, report, execution status or evidence rewritten. The launcher itself did not complete successfully."
+  },
+  "observerCorrection": {
+    "initialAssumption": "All three HTML entries carry application-version meta",
+    "actualSource": "Only index.html and dream.html carry this meta; survivor.html has 76 versioned asset references and no such meta. The source and evidence were not changed.",
+    "resolution": "Check the two actual metadata tags, package version, and all 238 versioned references across the three entries.",
+    "snapshotVersionParsing": "Initial recursive version assertion also encountered exactly two save.version=1 schema objects. The corrected audit separately asserts their exact save path and key set; all 1346 gameplay snapshots retain the strict 34.0.0 assertion."
+  },
+  "artifactAudit": "artifact-checks.json",
+  "scope": "Current34 local source identity, baseline retention and evidence bytes. No tests rerun, no unfinished root prose reviewed, no ref change or deployment. Full official candidate and public verification are outside this audit."
+}

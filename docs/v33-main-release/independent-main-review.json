@@ -1,0 +1,461 @@
+{
+  "reviewedAt": "2026-10-30T02:22:38.270888+00:00",
+  "status": "passed",
+  "runId": 40988381550,
+  "runUrl": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40988381550",
+  "commit": "be05769a99a807f9396c03084760f8283ce4195e",
+  "tree": "5516892f4242d34b052630b5274641d3f8f27a91",
+  "pagesHead": "d997c58b2a846b2673b8baec500db9697a846d7a",
+  "pagesTree": "ef9072b947447304f4561855a8db58fb7fc42211",
+  "artifactId": 12948817989,
+  "artifactZipBytes": 448421971,
+  "artifactZipSha256": "dc03f41dd76a4d2c415d3de74433dd53181132a683377f357242a8ee16d723c8",
+  "sourceBlobsExact": 1138,
+  "runtimeBlobsExact": 144,
+  "tests": {
+    "tests": 691,
+    "pass": 691,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0
+  },
+  "artifactPaths": 585,
+  "originalPNGCount": 452,
+  "sourceArchiveModesAlsoChecked": true,
+  "publicIndex": {
+    "bytes": 26090,
+    "sha256": "c5b666ab2703fb1164b0a097f605ca19cbd3283f4184c320130e6f4dcd2035ca",
+    "exactMainDistIndex": true
+  },
+  "reports": [
+    {
+      "scope": "candidate",
+      "url": "http://127.0.0.1:8080/",
+      "bytes": 15857251,
+      "sha256": "8e744a8958d6c9971ac6c0b0638f56c8da13e0bce1e4b96d3536e13f1068f4ae",
+      "viewports": [
+        {
+          "width": 1280,
+          "height": 800
+        },
+        {
+          "width": 390,
+          "height": 844
+        },
+        {
+          "width": 320,
+          "height": 680
+        }
+      ],
+      "expectedFailureCounts": [
+        9,
+        0,
+        0
+      ],
+      "unexpectedNetworkFailures": 0,
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "faceCheckpointCount": 10,
+      "actualCapturedFacePNGs": 11,
+      "requiredPrior11FacePNGsAllPresent": true,
+      "additionalSourceValidatedFacePNGs": [],
+      "faceSnapshotOccurrences": 964,
+      "poseSnapshotOccurrences": 1105,
+      "completePostRoutes": 4,
+      "phoneEndingReadings": 6,
+      "desktopEndingCombinations": 4,
+      "jumpRecords": 6,
+      "fatigue": {
+        "sharedDeadlineMs": 21000,
+        "actualBodyTiredFirstCaptureMs": 16505.0,
+        "actualEnergyAtFirstBodyTired": 19.948333333331142,
+        "observerLifecycleMs": 27000,
+        "scope": "form=soul, capPhase=open; not closed-lid fatigue proof",
+        "recoveryNeutralEnergy": 25.69499999999788
+      },
+      "faceAudit": "candidate-face-evidence-summary.json",
+      "inheritedGateAudit": "candidate-inherited-gates-summary.json",
+      "companionAudit": "candidate-companion-evidence-summary.json",
+      "companionReportSha256": "ac9589bb3ed276c3f428c5eacd63d3c7e90aac87231511f4dd6b687d1c03640f",
+      "companionElapsedSeconds": 32.49541324799998,
+      "companionCases": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "version": "33.0.0",
+          "input": "keyboard",
+          "status": "passed",
+          "zeroDeathsAndPageHTTPNetworkErrors": true,
+          "bodyCoordinatesStayedAt": {
+            "x": 105,
+            "y": 560
+          },
+          "sameRunWithinThisFreshContext": 1,
+          "strictVisibleCaptureCount": 4,
+          "passiveObservations": [
+            {
+              "kind": "return",
+              "samples": 74,
+              "trustedEventCount": 5,
+              "elapsedMs": 1697.1999999999534,
+              "inactiveAtCollection": true
+            },
+            {
+              "kind": "reversal",
+              "samples": 36,
+              "trustedEventCount": 2,
+              "elapsedMs": 602.6000000000931,
+              "inactiveAtCollection": true
+            }
+          ],
+          "actualReturnFocusDistinctFromRawSoulSamples": 41,
+          "returnBlinkProgress": 0.7870370370370372,
+          "returnBlinkAmount": 0.9063077870366507,
+          "pauseStatesRechecked": true,
+          "pauseReportedCanvasBytesEqual": true,
+          "trustedReversalActions": 2,
+          "gameReducedMotionActualUI": true,
+          "noChapterSettled": true,
+          "onlyFirstTicketCollected": true
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "version": "33.0.0",
+          "input": "CDP simulated touch",
+          "status": "passed",
+          "zeroDeathsAndPageHTTPNetworkErrors": true,
+          "bodyCoordinatesStayedAt": {
+            "x": 105,
+            "y": 560
+          },
+          "sameRunWithinThisFreshContext": 1,
+          "strictVisibleCaptureCount": 4,
+          "passiveObservations": [
+            {
+              "kind": "return",
+              "samples": 98,
+              "trustedEventCount": 9,
+              "elapsedMs": 1630.1999999999534,
+              "inactiveAtCollection": true
+            },
+            {
+              "kind": "reversal",
+              "samples": 45,
+              "trustedEventCount": 6,
+              "elapsedMs": 747.2000000001863,
+              "inactiveAtCollection": true
+            }
+          ],
+          "actualReturnFocusDistinctFromRawSoulSamples": 57,
+          "returnBlinkProgress": 0.8101851851851855,
+          "returnBlinkAmount": 0.976296007119934,
+          "pauseStatesRechecked": true,
+          "pauseReportedCanvasBytesEqual": true,
+          "trustedReversalActions": 2,
+          "gameReducedMotionActualUI": true,
+          "noChapterSettled": true,
+          "onlyFirstTicketCollected": true
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "version": "33.0.0",
+          "input": "CDP simulated touch",
+          "status": "passed",
+          "zeroDeathsAndPageHTTPNetworkErrors": true,
+          "bodyCoordinatesStayedAt": {
+            "x": 105,
+            "y": 560
+          },
+          "sameRunWithinThisFreshContext": 1,
+          "strictVisibleCaptureCount": 4,
+          "passiveObservations": [
+            {
+              "kind": "return",
+              "samples": 96,
+              "trustedEventCount": 9,
+              "elapsedMs": 1603.6000000000931,
+              "inactiveAtCollection": true
+            },
+            {
+              "kind": "reversal",
+              "samples": 44,
+              "trustedEventCount": 6,
+              "elapsedMs": 730.5,
+              "inactiveAtCollection": true
+            }
+          ],
+          "actualReturnFocusDistinctFromRawSoulSamples": 57,
+          "returnBlinkProgress": 0.7870370370370372,
+          "returnBlinkAmount": 0.9063077870366507,
+          "pauseStatesRechecked": true,
+          "pauseReportedCanvasBytesEqual": true,
+          "trustedReversalActions": 2,
+          "gameReducedMotionActualUI": true,
+          "noChapterSettled": true,
+          "onlyFirstTicketCollected": true
+        }
+      ],
+      "companionSnapshotOccurrences": 474,
+      "companionOriginalPNGCount": 21,
+      "dialogueAudit": "candidate-dialogue-evidence-summary.json",
+      "matrixConfigurations": 6,
+      "matrixImmediateJSONs": 12,
+      "matrixRawPNGs": 12,
+      "matrixMaxCanvasControlDelta": 0,
+      "naturalReturnValidation": {
+        "status": "passed",
+        "trustedInput": true,
+        "existingCooldownMs": 1600,
+        "actualInputAgeMs": 1765.5999999999767,
+        "actualReturnDialogueAgeMs": 727.8000000000466,
+        "scope": "Existing real return E, natural authored dialogue refresh and completed cap closure; no replay or clock mutation"
+      },
+      "greenhouseVisibility": [
+        {
+          "label": "1280-greenhouse-leaves-returned",
+          "bubble": true,
+          "announcement": false
+        },
+        {
+          "label": "1280-greenhouse-root-crossed",
+          "bubble": false,
+          "announcement": true
+        }
+      ]
+    },
+    {
+      "scope": "live",
+      "url": "https://tougaigu.com/?qa=be05769a99a807f9396c03084760f8283ce4195e",
+      "bytes": 15870787,
+      "sha256": "e132dadcd7262fee2dc3f56c0c631045b7436e7c28c09cd52d65737a78211c1a",
+      "viewports": [
+        {
+          "width": 1280,
+          "height": 800
+        },
+        {
+          "width": 390,
+          "height": 844
+        },
+        {
+          "width": 320,
+          "height": 680
+        }
+      ],
+      "expectedFailureCounts": [
+        9,
+        0,
+        0
+      ],
+      "unexpectedNetworkFailures": 0,
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "faceCheckpointCount": 10,
+      "actualCapturedFacePNGs": 11,
+      "requiredPrior11FacePNGsAllPresent": true,
+      "additionalSourceValidatedFacePNGs": [],
+      "faceSnapshotOccurrences": 970,
+      "poseSnapshotOccurrences": 1104,
+      "completePostRoutes": 4,
+      "phoneEndingReadings": 6,
+      "desktopEndingCombinations": 4,
+      "jumpRecords": 6,
+      "fatigue": {
+        "sharedDeadlineMs": 21000,
+        "actualBodyTiredFirstCaptureMs": 16558.600000000093,
+        "actualEnergyAtFirstBodyTired": 19.948333333331142,
+        "observerLifecycleMs": 27000,
+        "scope": "form=soul, capPhase=open; not closed-lid fatigue proof",
+        "recoveryNeutralEnergy": 25.336666666664545
+      },
+      "faceAudit": "live-face-evidence-summary.json",
+      "inheritedGateAudit": "live-inherited-gates-summary.json",
+      "companionAudit": "live-companion-evidence-summary.json",
+      "companionReportSha256": "cb692ecbcbc02d5e80bac78f75f41d3f0ed0072ec650e716d037bb2a0e7a04f5",
+      "companionElapsedSeconds": 33.05871126000011,
+      "companionCases": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "version": "33.0.0",
+          "input": "keyboard",
+          "status": "passed",
+          "zeroDeathsAndPageHTTPNetworkErrors": true,
+          "bodyCoordinatesStayedAt": {
+            "x": 105,
+            "y": 560
+          },
+          "sameRunWithinThisFreshContext": 1,
+          "strictVisibleCaptureCount": 4,
+          "passiveObservations": [
+            {
+              "kind": "return",
+              "samples": 75,
+              "trustedEventCount": 5,
+              "elapsedMs": 1742.2000000001863,
+              "inactiveAtCollection": true
+            },
+            {
+              "kind": "reversal",
+              "samples": 37,
+              "trustedEventCount": 2,
+              "elapsedMs": 616.1999999997206,
+              "inactiveAtCollection": true
+            }
+          ],
+          "actualReturnFocusDistinctFromRawSoulSamples": 43,
+          "returnBlinkProgress": 0.7870370370370372,
+          "returnBlinkAmount": 0.9063077870366507,
+          "pauseStatesRechecked": true,
+          "pauseReportedCanvasBytesEqual": true,
+          "trustedReversalActions": 2,
+          "gameReducedMotionActualUI": true,
+          "noChapterSettled": true,
+          "onlyFirstTicketCollected": true
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "version": "33.0.0",
+          "input": "CDP simulated touch",
+          "status": "passed",
+          "zeroDeathsAndPageHTTPNetworkErrors": true,
+          "bodyCoordinatesStayedAt": {
+            "x": 105,
+            "y": 560
+          },
+          "sameRunWithinThisFreshContext": 1,
+          "strictVisibleCaptureCount": 4,
+          "passiveObservations": [
+            {
+              "kind": "return",
+              "samples": 97,
+              "trustedEventCount": 9,
+              "elapsedMs": 1625.8999999999069,
+              "inactiveAtCollection": true
+            },
+            {
+              "kind": "reversal",
+              "samples": 44,
+              "trustedEventCount": 6,
+              "elapsedMs": 732,
+              "inactiveAtCollection": true
+            }
+          ],
+          "actualReturnFocusDistinctFromRawSoulSamples": 57,
+          "returnBlinkProgress": 0.7870370370370372,
+          "returnBlinkAmount": 0.9063077870366507,
+          "pauseStatesRechecked": true,
+          "pauseReportedCanvasBytesEqual": true,
+          "trustedReversalActions": 2,
+          "gameReducedMotionActualUI": true,
+          "noChapterSettled": true,
+          "onlyFirstTicketCollected": true
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "version": "33.0.0",
+          "input": "CDP simulated touch",
+          "status": "passed",
+          "zeroDeathsAndPageHTTPNetworkErrors": true,
+          "bodyCoordinatesStayedAt": {
+            "x": 105,
+            "y": 560
+          },
+          "sameRunWithinThisFreshContext": 1,
+          "strictVisibleCaptureCount": 4,
+          "passiveObservations": [
+            {
+              "kind": "return",
+              "samples": 96,
+              "trustedEventCount": 9,
+              "elapsedMs": 1605.1000000000931,
+              "inactiveAtCollection": true
+            },
+            {
+              "kind": "reversal",
+              "samples": 44,
+              "trustedEventCount": 6,
+              "elapsedMs": 735.1999999997206,
+              "inactiveAtCollection": true
+            }
+          ],
+          "actualReturnFocusDistinctFromRawSoulSamples": 57,
+          "returnBlinkProgress": 0.8101851851851855,
+          "returnBlinkAmount": 0.976296007119934,
+          "pauseStatesRechecked": true,
+          "pauseReportedCanvasBytesEqual": true,
+          "trustedReversalActions": 2,
+          "gameReducedMotionActualUI": true,
+          "noChapterSettled": true,
+          "onlyFirstTicketCollected": true
+        }
+      ],
+      "companionSnapshotOccurrences": 474,
+      "companionOriginalPNGCount": 21,
+      "dialogueAudit": "live-dialogue-evidence-summary.json",
+      "matrixConfigurations": 6,
+      "matrixImmediateJSONs": 12,
+      "matrixRawPNGs": 12,
+      "matrixMaxCanvasControlDelta": 0,
+      "naturalReturnValidation": {
+        "status": "passed",
+        "trustedInput": true,
+        "existingCooldownMs": 1600,
+        "actualInputAgeMs": 1717.6999999999534,
+        "actualReturnDialogueAgeMs": 745.5999999998603,
+        "scope": "Existing real return E, natural authored dialogue refresh and completed cap closure; no replay or clock mutation"
+      },
+      "greenhouseVisibility": [
+        {
+          "label": "1280-greenhouse-leaves-returned",
+          "bubble": true,
+          "announcement": false
+        },
+        {
+          "label": "1280-greenhouse-root-crossed",
+          "bubble": false,
+          "announcement": true
+        }
+      ]
+    }
+  ],
+  "old675SubtestNamesPreserved": true,
+  "old683SubtestNamesPreserved": true,
+  "all691SubtestNamesExactToAcceptedCandidate": true,
+  "all76V32TestFilesAndFixtureExact": true,
+  "protectedFilesExactToAcceptedCandidate": 257,
+  "old74TestFilesExact": true,
+  "originalStrictGatesPreserved": true,
+  "artifactProgramCodeExecuted": false,
+  "scope": "Official main GitHub workflow, full local candidate AND public HTTPS browser routes. Independent data validation from exact trusted Git source.",
+  "localChromiumFailure": "Earlier local environment Chromium trust failure remains preserved separately at /tmp/v31-live-browser-20261030; it is not counted as a passing test or a product regression.",
+  "limits": [
+    "No physical handset, Safari or low-end GPU/performance benchmark.",
+    "Face checkpoint coverage remains the exact events recorded, not all six chapter faces.",
+    "Snapshot counts include repeated report occurrences and are not unique animation frames.",
+    "Raw PNGs retain original dimensions; manual review is recorded separately after inspecting selected files.",
+    "Geometry measurements and later PNGs are not synchronous frames. Old CSS ablation uses current DOM, not an old complete release.",
+    "Natural-return sidecar has no bodyIdentity: it proves same run/chapter/deaths and stable coordinates.",
+    "Public/candidate are separate routes; use their actual dialogue/announcement visibility, never borrow the accepted candidate timing or coexistence values.",
+    "Companion JSON records positions and run IDs, not object identity; shared presentedSoul reference identity belongs to the eight exact original unit tests.",
+    "Companion pause raw paired Canvas strings were not retained: successful source assertions and identical recorded states are preserved.",
+    "Companion sourceFiles are local execution hashes. Public source identity additionally rests on exact Pages/runtime and fetched public HTML, not merely the page version."
+  ]
+}

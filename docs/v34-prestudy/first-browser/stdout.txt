@@ -1,0 +1,1 @@
+{"status": "passed", "elapsedSeconds": 65.74957345701114, "cases": [{"viewport": {"width": 1280, "height": 800}, "status": "passed"}, {"viewport": {"width": 390, "height": 844}, "status": "passed"}, {"viewport": {"width": 320, "height": 680}, "status": "passed"}]}

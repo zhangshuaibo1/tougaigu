@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/tmp/v34-baseline-browser.py", line 4, in <module>
+    spec=importlib.util.spec_from_file_location('framing_study',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy/scripts/browser_cap_framing_v34.py", line 10, in <module>
+    api=importlib.util.module_from_spec(spec);spec.loader.exec_module(api)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/scratch/2b18af2db412/tougaigu-v34-framing-prestudy/scripts/browser-smoke.py", line 11, in <module>
+    from browser_face_v31 import FaceSequence, wait_for_natural_fatigue, validate_face_snapshot
+ModuleNotFoundError: No module named 'browser_face_v31'

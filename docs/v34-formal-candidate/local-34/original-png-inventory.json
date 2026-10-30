@@ -1,0 +1,359 @@
+[
+  {
+    "path": "1280/desktop-return-canvas.png",
+    "bytes": 1482924,
+    "sha256": "ef5e3aeaf4c2b1eec0847a6a87413b47aa6d8c6cf7d8bb31d91f7688fe9292b3",
+    "width": 1280,
+    "height": 677
+  },
+  {
+    "path": "1280/desktop-return-page.png",
+    "bytes": 1075599,
+    "sha256": "32995b19571764d91844b4e16966264405eab2484fba9750fdd7fa807a06e317",
+    "width": 1280,
+    "height": 800
+  },
+  {
+    "path": "1280/near-open-canvas.png",
+    "bytes": 1487424,
+    "sha256": "c0054d6e076fed5bb581d77a11024d53bb9582a5a9fe4d216f7081b8de11fddb",
+    "width": 1280,
+    "height": 677
+  },
+  {
+    "path": "1280/near-open-page.png",
+    "bytes": 1084772,
+    "sha256": "87788626a47e5ccc45329ea70c843975d0f211800de9949cd0daf050eec24826",
+    "width": 1280,
+    "height": 800
+  },
+  {
+    "path": "1280/opening-open.png",
+    "bytes": 1488805,
+    "sha256": "3c677372f47b4335cf6a6ee1e3d9e37bed1d5fdcae6274d7dd80f1d1052375d5",
+    "width": 1280,
+    "height": 677
+  },
+  {
+    "path": "1280/opening-opening-early.png",
+    "bytes": 1486716,
+    "sha256": "029e298118c3e195352ab66cc8f9eeb0a1cead58336e96d1474d070716ff378a",
+    "width": 1280,
+    "height": 677
+  },
+  {
+    "path": "1280/opening-opening-middle.png",
+    "bytes": 1487496,
+    "sha256": "a078c93be0253090ebc55d05b42c4cb4595676abfe1db6caba22927dc54c1b9b",
+    "width": 1280,
+    "height": 677
+  },
+  {
+    "path": "320/activity-priority-canvas.png",
+    "bytes": 277878,
+    "sha256": "677e3e6393ff03322fd0a371f0b11c21e4f8863d84c4426d79d22903b6cc4eb3",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "320/activity-priority-page.png",
+    "bytes": 244298,
+    "sha256": "ad01bb1c231d29cd0ad9e7a549e0f8c32366e94527cf0b6d79a3e854ae659aca",
+    "width": 320,
+    "height": 680
+  },
+  {
+    "path": "320/back-near-canvas.png",
+    "bytes": 273263,
+    "sha256": "4363c9cd31c12fc3d3d332b363d10413165e8e4465952fe802f43cd6a74ef0a8",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "320/back-near-page.png",
+    "bytes": 247530,
+    "sha256": "e58e6906c76ad3bd2e32fb2cd7f97f8cbebd49739c96fa67d413f7f72710da8f",
+    "width": 320,
+    "height": 680
+  },
+  {
+    "path": "320/left-facing-open-canvas.png",
+    "bytes": 272679,
+    "sha256": "8b3b18579aa091d9afeb7485792c5a1d00b78480f0e48486b437802ac792ab78",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "320/left-facing-open-page.png",
+    "bytes": 239324,
+    "sha256": "a6e94208156cb59ebb84a86e63bee88ab4f869e9a9dd718c99c01a1c974086f6",
+    "width": 320,
+    "height": 680
+  },
+  {
+    "path": "320/near-open-canvas.png",
+    "bytes": 273190,
+    "sha256": "510b72db82f1c949b26b2823eae1c0d25cd0bb3e2a1408256a9d00c804fd07fa",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "320/near-open-page.png",
+    "bytes": 234029,
+    "sha256": "5eab3837eaf93595570fa885439e7353a85112901ffb51776e90515b313d4144",
+    "width": 320,
+    "height": 680
+  },
+  {
+    "path": "320/opening-closed.png",
+    "bytes": 272598,
+    "sha256": "8a17f6f77f189390c204844137db4d7c82d9f4dceeb1bcefd1ad5b0a40ef9bb2",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "320/opening-open.png",
+    "bytes": 273843,
+    "sha256": "43980e9e0b98f93798ba0c97f0e86dfbe1247f6a8bb3c5fd84044e1d49c45280",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "320/opening-opening-early.png",
+    "bytes": 272704,
+    "sha256": "200d20530089caa4de2272dbf6643fc43d40b9d76b8e9e5dc9e38c59e796d1c2",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "320/opening-opening-middle.png",
+    "bytes": 273194,
+    "sha256": "f8ac1814c705a184167f61a21f74359b11235c9f2198f48939f0a66a7c4edc0f",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "320/paused-resize-back.png",
+    "bytes": 272774,
+    "sha256": "c014aa5835ad9067a750b56a7b0877cd53c692fcb029299d4cbcac00431f7282",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "320/paused-resize-first.png",
+    "bytes": 431418,
+    "sha256": "572f3c5b048121425b33564dfcf6cf02240f75def7223d65321ec1f3d2ba5821",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "320/reduced-open-canvas.png",
+    "bytes": 271810,
+    "sha256": "e7e437959734d303f5badbee2daf78fe54bdeedba54115ef0d8479a5eeba8ab3",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "320/reduced-open-page.png",
+    "bytes": 238606,
+    "sha256": "eb8cd11791a80a26f897c5f74efa67a3569e38822e9a451007e3fb972df559ee",
+    "width": 320,
+    "height": 680
+  },
+  {
+    "path": "320/return-closed.png",
+    "bytes": 271976,
+    "sha256": "27e81b00fb66471172937f9c520503f5a385b462a3501cad3c10c64d3985bdac",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "320/return-open.png",
+    "bytes": 273247,
+    "sha256": "d0267e50dd5d1b56db60e7a2e4e6c503ad8691064923e0bf089a8139647b1a71",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "320/return-returning.png",
+    "bytes": 273281,
+    "sha256": "976631c0ca208125fbd5032932b83d19c0e35acef035d2a9dd5d7112dbf08e77",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "320/reversal-open.png",
+    "bytes": 273060,
+    "sha256": "b5db6e0253a53f8e9f9958a284f69903426009acd34bea1729a462dfe4972365",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "320/reversal-returning.png",
+    "bytes": 272794,
+    "sha256": "232a865a1847ffbe96843cbbab7f4cf1354d6632ee52ad51e2ec70be1a46648b",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "320/travel-open.png",
+    "bytes": 273022,
+    "sha256": "a33c8867777842cf53f4ad6e21a4195beab8c895bc932c52390ff51273a4a22a",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "390/activity-priority-canvas.png",
+    "bytes": 441714,
+    "sha256": "f9b58ce5d3d87b56dedd03a0bb62bf07fcfe06a2801b119e1218d13a0a9b4307",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "390/activity-priority-page.png",
+    "bytes": 367237,
+    "sha256": "9f9ae358ac1390f5f762240f839bc872bbb5b950b41c6e851f2efd28003e6eb6",
+    "width": 390,
+    "height": 844
+  },
+  {
+    "path": "390/back-near-canvas.png",
+    "bytes": 432698,
+    "sha256": "84088824579ed1a4626c9ed10704ae59e00aa0fa8d6d469c21e2656e30c85044",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "390/back-near-page.png",
+    "bytes": 358682,
+    "sha256": "fb9d1a008302678462ab40cba36b04a5aa5b2c3b78b9e622681c412106b65cad",
+    "width": 390,
+    "height": 844
+  },
+  {
+    "path": "390/left-facing-open-canvas.png",
+    "bytes": 430108,
+    "sha256": "04dbe781ddabac8cc060d537355e994c8c07c069fc0f5089a100983a7e1797d6",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "390/left-facing-open-page.png",
+    "bytes": 354294,
+    "sha256": "6ff2a9b3362f794bed51fd5430461ac8d6efa88137037e3a37dc492263ba9b26",
+    "width": 390,
+    "height": 844
+  },
+  {
+    "path": "390/near-open-canvas.png",
+    "bytes": 432636,
+    "sha256": "bc41a3ef6e7df72bb3ecf419bbe49c3f0f4ca27a86e08a3a73d92bf3ebad637d",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "390/near-open-page.png",
+    "bytes": 352180,
+    "sha256": "97973ccc6760fcc9b9906c0aebc7e50dd713357da059b948ea1ba1291a3936f7",
+    "width": 390,
+    "height": 844
+  },
+  {
+    "path": "390/opening-closed.png",
+    "bytes": 430921,
+    "sha256": "5f431caf19ad011e3300258a24b31fbbba1bcbcfd4b7772e083f3e35f33b46b6",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "390/opening-open.png",
+    "bytes": 433476,
+    "sha256": "8bc933d4f0705971b8bc400c8080dc2c6f466b34cdeb1486814c4d3372e9a03c",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "390/opening-opening-early.png",
+    "bytes": 431064,
+    "sha256": "8bda0efde5e6f6cdd5c89cba137091a7dfef29274e5412d585fb3301444ee4e9",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "390/opening-opening-middle.png",
+    "bytes": 431861,
+    "sha256": "9bfb11e1cb784a3722ac67748ff0d39df08eacae57d47c0378c2a1ef7ef24a76",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "390/paused-resize-back.png",
+    "bytes": 431093,
+    "sha256": "4816079e7ff086fa1323d0c0c99aee6207de39a41f190158091fcd8ea077222d",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "390/paused-resize-first.png",
+    "bytes": 272584,
+    "sha256": "4038dec1d6f4bef510b8f252512b37363efb7409b810f106ab13e14fa17bec5c",
+    "width": 320,
+    "height": 431
+  },
+  {
+    "path": "390/reduced-open-canvas.png",
+    "bytes": 428598,
+    "sha256": "05102fea3524267acf530a28c0890618497d7bcb130b6a08f78c65b15e781cd6",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "390/reduced-open-page.png",
+    "bytes": 353512,
+    "sha256": "18092d2d3b1b78c1d83d79ef323513a8982ceb51bb06d8301797976e9e117a05",
+    "width": 390,
+    "height": 844
+  },
+  {
+    "path": "390/return-closed.png",
+    "bytes": 430217,
+    "sha256": "cdffbb63475fc77c9e5198f4ecb319c0fe3ae78ccf2f64de709916549e5c4a37",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "390/return-open.png",
+    "bytes": 432387,
+    "sha256": "ab0b164a6651e7fe1dac237ca26beac35682bbaafaed9cb624f523d72f1a1eb7",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "390/return-returning.png",
+    "bytes": 433062,
+    "sha256": "74e1ad24c8e4479df8f75c6dcf5ad47984433b76c505d2d2b08602da2827a2d4",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "390/reversal-open.png",
+    "bytes": 431668,
+    "sha256": "c6b669c1a20244c9d1b2e41a5a266bb2474ae29122a83b36bd26a30b794fa44e",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "390/reversal-returning.png",
+    "bytes": 431286,
+    "sha256": "95bc3b03cef27f5d7c8ce45f1bfb851ecced5d4604d2895c4aff6133b97b1f77",
+    "width": 390,
+    "height": 595
+  },
+  {
+    "path": "390/travel-open.png",
+    "bytes": 432530,
+    "sha256": "c71b81385958da8b4aa1c3120078e3dc1d29f3664670443669f4fd67bfddd11c",
+    "width": 390,
+    "height": 595
+  }
+]

@@ -1,0 +1,366 @@
+{
+  "status": "passed",
+  "runId": 40988381550,
+  "commit": "be05769a99a807f9396c03084760f8283ce4195e",
+  "mandatoryNameBaseline": {
+    "path": "/tmp/tougaigu-v32-second-40982421518/face-evidence-summary.json",
+    "sha256": "74a37db0acc654c3a2d066e84a9261c0bff299134e7abaf1de39db8887931166",
+    "names": [
+      "1280-face-fatigue-bodyTiredOpen-320.png",
+      "1280-face-fatigue-bodyTiredOpen-390.png",
+      "1280-face-fatigue-bodyTiredOpen.png",
+      "1280-face-fatigue-recovered.png",
+      "1280-face-fatigue-soulTired.png",
+      "1280-face-ticket-freeJoy.png",
+      "1280-first-lamp-face-lamp-closedJoy.png",
+      "320-face-ticket-closedJoy.png",
+      "320-face-ticket-freeJoy.png",
+      "390-face-ticket-closedJoy.png",
+      "390-face-ticket-freeJoy.png"
+    ]
+  },
+  "scopes": [
+    {
+      "scope": "candidate",
+      "actualCapturedFacePNGCount": 11,
+      "allOriginalRequired11NamesPreserved": true,
+      "optionalFirstLampFreeJoyImagePresent": false,
+      "optionalFirstLampFreeJoyLatchPresent": false,
+      "sourceFaceValidatorUnchanged": true,
+      "originalLampJSON": {
+        "path": "candidate/1280-first-lamp-face-lamp-returned.json",
+        "bytes": 371638,
+        "sha256": "3e366bfc49e80a715a8242f8d7889191a48ddbd33c2bf121753704f153103e7d"
+      },
+      "firstLampClosedJoySequence": 51,
+      "faceImages": [
+        {
+          "file": "1280-face-ticket-freeJoy.png",
+          "bytes": 1489621,
+          "sha256": "90423a71c70e715fbbd2cd8971bbb1091f06fbcc49a0a8e26bf758c3baf7a438",
+          "width": 1280,
+          "height": 677,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "sequence": 43,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "1280-face-fatigue-soulTired.png",
+          "bytes": 1486947,
+          "sha256": "7680b971e4bcf5f771cdb49b16f406e065d87145437b76dc27c8cd45e341a87b",
+          "width": 1280,
+          "height": 677,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "sequence": 933,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "1280-face-fatigue-bodyTiredOpen.png",
+          "bytes": 1486949,
+          "sha256": "b51b4783e75385f62ee6dd81ea04ef7213d94cc99c9475d803ab7fa3f95b5f61",
+          "width": 1280,
+          "height": 677,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "sequence": 969,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "1280-face-fatigue-bodyTiredOpen-390.png",
+          "bytes": 432039,
+          "sha256": "e6c1c58d3b7252e9b22e8b4357ba549dbef7e41b21f31a72f043ed76f1f602ee",
+          "width": 390,
+          "height": 595,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "sequence": 999,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "1280-face-fatigue-bodyTiredOpen-320.png",
+          "bytes": 273911,
+          "sha256": "453ef8e130c0e993257e6ce75aacfcb6d1b894bc17579c6f750247b02c448e7e",
+          "width": 320,
+          "height": 431,
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "sequence": 1019,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "1280-face-fatigue-recovered.png",
+          "bytes": 1483306,
+          "sha256": "41ebbdff71513b4dccd94b2569735612bc38ad5de53c0aad9d53ec8889162398",
+          "width": 1280,
+          "height": 677,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "sequence": 1101,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "1280-first-lamp-face-lamp-closedJoy.png",
+          "bytes": 1491936,
+          "sha256": "78c95698bbc14f25d2b7898896cae70d12b2d26d036fc6581829aa03c258c9dc",
+          "width": 1280,
+          "height": 677,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "sequence": 51,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "390-face-ticket-freeJoy.png",
+          "bytes": 434186,
+          "sha256": "5b14799e503f90d2f258ac845ed161d885024f0f288f5e5a215b0ded942f24f0",
+          "width": 390,
+          "height": 595,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "sequence": 57,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "390-face-ticket-closedJoy.png",
+          "bytes": 429923,
+          "sha256": "d33c21fc417caaadb1ecda65d4c6c301985bdb81dc30346083dfb9f7f6e8b6ee",
+          "width": 390,
+          "height": 595,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "sequence": 154,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "320-face-ticket-freeJoy.png",
+          "bytes": 273968,
+          "sha256": "ec4ddcf013cbc35c91f892890b2c0daec7a974f8e918e17fc3000391eb218098",
+          "width": 320,
+          "height": 431,
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "sequence": 55,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "320-face-ticket-closedJoy.png",
+          "bytes": 271824,
+          "sha256": "45270d1a01de145dfc1b0de16759b13ef1817df273d1fbb0f60f53861ac8ca1e",
+          "width": 320,
+          "height": 431,
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "sequence": 143,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        }
+      ]
+    },
+    {
+      "scope": "live",
+      "actualCapturedFacePNGCount": 11,
+      "allOriginalRequired11NamesPreserved": true,
+      "optionalFirstLampFreeJoyImagePresent": false,
+      "optionalFirstLampFreeJoyLatchPresent": false,
+      "sourceFaceValidatorUnchanged": true,
+      "originalLampJSON": {
+        "path": "live/1280-first-lamp-face-lamp-returned.json",
+        "bytes": 359919,
+        "sha256": "57bbeb405e7496d39276c4dfe55c98d9272985c71f2b685f69f3604fd1efd426"
+      },
+      "firstLampClosedJoySequence": 49,
+      "faceImages": [
+        {
+          "file": "1280-face-ticket-freeJoy.png",
+          "bytes": 1489927,
+          "sha256": "17ad0ecd1f1e08dc18a189b5883f85e199e3e10653868edbb5e72ead049c7abb",
+          "width": 1280,
+          "height": 677,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "sequence": 45,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "1280-face-fatigue-soulTired.png",
+          "bytes": 1487047,
+          "sha256": "741f7ef1db5d3bc0a9af0165caf0a0a4191c17d6c7ccc18e051685aca642f1c0",
+          "width": 1280,
+          "height": 677,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "sequence": 951,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "1280-face-fatigue-bodyTiredOpen.png",
+          "bytes": 1487457,
+          "sha256": "8bdad1954c400f63b58c5b355c49fd3b65f575ff31870bd993ce0686fef9c260",
+          "width": 1280,
+          "height": 677,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "sequence": 986,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "1280-face-fatigue-bodyTiredOpen-390.png",
+          "bytes": 432955,
+          "sha256": "28058dccc48065db99ed62d4c1ff76d0108acc2c3eec9b787f5d4ddf249725ee",
+          "width": 390,
+          "height": 595,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "sequence": 1014,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "1280-face-fatigue-bodyTiredOpen-320.png",
+          "bytes": 274474,
+          "sha256": "74b49df6571f7ce0e0133c41af4d650239335121becd9e4fbabeeb15b4e28d81",
+          "width": 320,
+          "height": 431,
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "sequence": 1035,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "1280-face-fatigue-recovered.png",
+          "bytes": 1483428,
+          "sha256": "978c42bd329bd861ea14cf0c1df7ddd3dc8a9008e27fd944b547777ec8daea33",
+          "width": 1280,
+          "height": 677,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "sequence": 1120,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "1280-first-lamp-face-lamp-closedJoy.png",
+          "bytes": 1491866,
+          "sha256": "06ae9e2929da2c16396d6cc49ca2a1ff30e160e82640a40a408a63ffa6f4cc44",
+          "width": 1280,
+          "height": 677,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "sequence": 49,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "390-face-ticket-freeJoy.png",
+          "bytes": 434324,
+          "sha256": "453f936b2d92c7689aad8004fe6526ba29eb853b2e71b0e75b0ba145b89fd7d5",
+          "width": 390,
+          "height": 595,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "sequence": 55,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "390-face-ticket-closedJoy.png",
+          "bytes": 430409,
+          "sha256": "c8c852f970abc937ddbe99cd9de2c82052377962166b10f4eb44253bc154acb0",
+          "width": 390,
+          "height": 595,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "sequence": 154,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "320-face-ticket-freeJoy.png",
+          "bytes": 273648,
+          "sha256": "ee855cd61e90c757b9ab0271b9218d39d0878bbfac8924a981450921253c83af",
+          "width": 320,
+          "height": 431,
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "sequence": 57,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        },
+        {
+          "file": "320-face-ticket-closedJoy.png",
+          "bytes": 272087,
+          "sha256": "4bd2becabae30b00f7bcc391100d22576c1e3040b3a26305f453a09f9511eb72",
+          "width": 320,
+          "height": 431,
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "sequence": 148,
+          "unmodifiedArtifactCanvas": true,
+          "manuallyViewed": false
+        }
+      ]
+    }
+  ],
+  "auditHistory": "The main-run audit passed with actual 11/11 counts. No fixed-12 audit failure occurred in this run. The accepted earlier v33 candidate had a valid optional twelfth first-lamp freeJoy capture; that distinct history is preserved in its own archive, not substituted here.",
+  "scope": "This note records actual inventory and existing passive observer latches. It changes no game, validator, threshold, screenshot, or report."
+}

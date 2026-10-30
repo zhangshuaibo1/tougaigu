@@ -1,0 +1,922 @@
+{
+  "status": "passed",
+  "reviewedAt": "2026-10-30T02:22:29.133911+00:00",
+  "runId": 40988381550,
+  "commit": "be05769a99a807f9396c03084760f8283ce4195e",
+  "scope": "GitHub main live complete browser route (real https://tougaigu.com/) and its own independent six-configuration matrix; not the earlier local 5445 report.",
+  "validatorSources": [
+    {
+      "path": "scripts/browser_dialogue_v32.py",
+      "gitBlob": "d87aad742f241155d866dadcec722a915443abc3",
+      "sha256": "72236f51e23aa4062af8c2e6c27ccff75842e3e888f22fd83b65978f3bbf2a9e",
+      "pureFunctions": [
+        "_finite",
+        "_rect",
+        "_contains",
+        "_overlap",
+        "project_actor_regions",
+        "_validate_text",
+        "validate_dialogue_snapshot",
+        "compare_surface_geometry",
+        "validate_natural_dialogue_return"
+      ]
+    },
+    {
+      "path": "scripts/browser_dialogue_matrix_v32.py",
+      "gitBlob": "8accd3fe898a6a88acf1bab6d966c6f74e4904a2",
+      "sha256": "cb7804a5a726d562b83a2022b39126cee424c44a83bdc4dc898aa4051fa4924f",
+      "pureFunctions": [
+        "validate_surface",
+        "compare_surfaces"
+      ]
+    }
+  ],
+  "naturalReturn": {
+    "eventFile": "live/1280-greenhouse-return-dialogue-event.json",
+    "validation": {
+      "status": "passed",
+      "trustedInput": true,
+      "existingCooldownMs": 1600,
+      "actualInputAgeMs": 1717.6999999999534,
+      "actualReturnDialogueAgeMs": 745.5999999998603,
+      "scope": "Existing real return E, natural authored dialogue refresh and completed cap closure; no replay or clock mutation"
+    },
+    "exactlyOneTrustedE": true,
+    "observerRemoved": true,
+    "initial": {
+      "observedAt": 61556.30000000005,
+      "lastShownAt": 59854.69999999995,
+      "ageMs": 1701.6000000000931,
+      "showClass": true,
+      "opacity": 1,
+      "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+      "chapterIndex": 1,
+      "runId": 1,
+      "state": "playing",
+      "form": "soul",
+      "capPhase": "open",
+      "plantStage": 2,
+      "deaths": 0,
+      "body": {
+        "x": 593,
+        "y": 560,
+        "grounded": true
+      }
+    },
+    "before": {
+      "observedAt": 61572.39999999991,
+      "lastShownAt": 59854.69999999995,
+      "ageMs": 1717.6999999999534,
+      "showClass": true,
+      "opacity": 1,
+      "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+      "chapterIndex": 1,
+      "runId": 1,
+      "state": "playing",
+      "form": "soul",
+      "capPhase": "open",
+      "plantStage": 2,
+      "deaths": 0,
+      "body": {
+        "x": 593,
+        "y": 560,
+        "grounded": true
+      }
+    },
+    "after": {
+      "observedAt": 62318.89999999991,
+      "lastShownAt": 61573.30000000005,
+      "ageMs": 745.5999999998603,
+      "showClass": true,
+      "opacity": 1,
+      "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+      "chapterIndex": 1,
+      "runId": 1,
+      "state": "playing",
+      "form": "body",
+      "capPhase": "closed",
+      "plantStage": 2,
+      "deaths": 0,
+      "body": {
+        "x": 593,
+        "y": 560,
+        "grounded": true
+      }
+    },
+    "sameRunChapterDeathsAndBodyCoordinates": true,
+    "bodyObjectIdentityRecorded": false,
+    "newReadOnlyWait": "up to 2000ms before the existing E, for the existing authored 1600ms cooldown; no clock/text/state mutation"
+  },
+  "greenhouseObservations": [
+    {
+      "label": "1280-greenhouse-leaves-returned",
+      "requiredVisibleDialogue": true,
+      "actualVisibleDialogue": true,
+      "actualAnnouncementVisible": false,
+      "dialogueText": "阿拾叶子探出头了，盖子得给它留点地方。",
+      "announcementText": "一盏诗灯亮了。它记住了你的答案，也为身体打开了路。",
+      "dialogueClock": {
+        "observedAt": 62337.30000000005,
+        "lastShownAt": 61573.30000000005,
+        "ageMs": 764,
+        "showClass": true,
+        "opacity": 1,
+        "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+        "chapterIndex": 1,
+        "runId": 1,
+        "state": "playing",
+        "form": "body",
+        "capPhase": "closed",
+        "plantStage": 2,
+        "deaths": 0,
+        "body": {
+          "x": 593,
+          "y": 560,
+          "grounded": true
+        }
+      },
+      "nativeReturnEventSameRefresh": true,
+      "validation": {
+        "status": "passed",
+        "visiblePanels": [
+          "hud",
+          "objectiveBox",
+          "bubble"
+        ],
+        "bubbleObserved": true,
+        "actorAvoidanceChecked": true,
+        "actorRegions": {
+          "face": {
+            "points": [
+              {
+                "x": 521.8390624999947,
+                "y": 604.7014727280974
+              },
+              {
+                "x": 578.9609374999948,
+                "y": 604.7014727280974
+              },
+              {
+                "x": 578.9609374999948,
+                "y": 650.1874102280974
+              },
+              {
+                "x": 521.8390624999947,
+                "y": 650.1874102280974
+              }
+            ],
+            "rect": {
+              "left": 521.8390624999947,
+              "top": 604.7014727280974,
+              "right": 578.9609374999948,
+              "bottom": 650.1874102280974,
+              "width": 57.121875000000045,
+              "height": 45.48593749999998
+            }
+          },
+          "cap": {
+            "points": [
+              {
+                "x": 521.8390624999947,
+                "y": 577.1983477280974
+              },
+              {
+                "x": 578.9609374999948,
+                "y": 577.1983477280974
+              },
+              {
+                "x": 578.9609374999948,
+                "y": 611.0483477280974
+              },
+              {
+                "x": 521.8390624999947,
+                "y": 611.0483477280974
+              }
+            ],
+            "rect": {
+              "left": 521.8390624999947,
+              "top": 577.1983477280974,
+              "right": 578.9609374999948,
+              "bottom": 611.0483477280974,
+              "width": 57.121875000000045,
+              "height": 33.85000000000002
+            }
+          },
+          "coat": {
+            "points": [
+              {
+                "x": 531.3593749999948,
+                "y": 621.6264727280974
+              },
+              {
+                "x": 569.4406249999947,
+                "y": 621.6264727280974
+              },
+              {
+                "x": 569.4406249999947,
+                "y": 661.8233477280975
+              },
+              {
+                "x": 531.3593749999948,
+                "y": 661.8233477280975
+              }
+            ],
+            "rect": {
+              "left": 531.3593749999948,
+              "top": 621.6264727280974,
+              "right": 569.4406249999947,
+              "bottom": 661.8233477280975,
+              "width": 38.081249999999955,
+              "height": 40.19687500000009
+            }
+          },
+          "foot0": {
+            "points": [
+              {
+                "x": 534.5328124999947,
+                "y": 663.8546875000001
+              },
+              {
+                "x": 554.6312499999948,
+                "y": 663.8546875000001
+              },
+              {
+                "x": 554.6312499999948,
+                "y": 674.4328125000001
+              },
+              {
+                "x": 534.5328124999947,
+                "y": 674.4328125000001
+              }
+            ],
+            "rect": {
+              "left": 534.5328124999947,
+              "top": 663.8546875000001,
+              "right": 554.6312499999948,
+              "bottom": 674.4328125000001,
+              "width": 20.098437500000045,
+              "height": 10.578125
+            }
+          },
+          "foot1": {
+            "points": [
+              {
+                "x": 549.3421874999948,
+                "y": 663.8546875000001
+              },
+              {
+                "x": 569.4406249999947,
+                "y": 663.8546875000001
+              },
+              {
+                "x": 569.4406249999947,
+                "y": 674.4328125000001
+              },
+              {
+                "x": 549.3421874999948,
+                "y": 674.4328125000001
+              }
+            ],
+            "rect": {
+              "left": 549.3421874999948,
+              "top": 663.8546875000001,
+              "right": 569.4406249999947,
+              "bottom": 674.4328125000001,
+              "width": 20.098437499999932,
+              "height": 10.578125
+            }
+          }
+        },
+        "scope": "Actual current rig and renderer transform; conservative face/cap/coat/foot regions, not pixel segmentation or the complete outfit silhouette",
+        "geometryIsSameFrameAsScreenshot": false
+      },
+      "pairedStationCanvasControls": {
+        "status": "matched",
+        "toleranceCssPx": 0.5,
+        "checked": [
+          "Canvas",
+          "stage-touch-move",
+          "direction-up",
+          "direction-left",
+          "direction-right",
+          "direction-down",
+          "stage-interact",
+          "stage-toggle",
+          "stage-jump"
+        ],
+        "beforeVersion": "33.0.0",
+        "afterVersion": "33.0.0",
+        "scope": "Only these paired viewport/Canvas/control measurements; not all game states or a performance result"
+      },
+      "immediateJSONExactToCompleteReport": true,
+      "png": {
+        "path": "1280-greenhouse-leaves-returned.png",
+        "bytes": 1309259,
+        "sha256": "5b8dbf29067c22d9f407aabd15acc48af14db256dd6fddb738fb84b2dec636d7",
+        "width": 1280,
+        "height": 800,
+        "originalArtifactPixels": true,
+        "notSameFrameAsGeometry": true
+      }
+    },
+    {
+      "label": "1280-greenhouse-root-crossed",
+      "requiredVisibleDialogue": false,
+      "actualVisibleDialogue": false,
+      "actualAnnouncementVisible": true,
+      "dialogueText": "阿拾叶子探出头了，盖子得给它留点地方。",
+      "announcementText": "借一朵蘑菇的力气，跳得比烦恼更高。",
+      "dialogueClock": {
+        "observedAt": 65659.30000000005,
+        "lastShownAt": 61573.30000000005,
+        "ageMs": 4086,
+        "showClass": false,
+        "opacity": 0,
+        "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+        "chapterIndex": 1,
+        "runId": 1,
+        "state": "playing",
+        "form": "body",
+        "capPhase": "closed",
+        "plantStage": 2,
+        "deaths": 0,
+        "body": {
+          "x": 1213,
+          "y": 560,
+          "grounded": true
+        }
+      },
+      "nativeReturnEventSameRefresh": false,
+      "validation": {
+        "status": "passed",
+        "visiblePanels": [
+          "hud",
+          "objectiveBox",
+          "announcement"
+        ],
+        "bubbleObserved": false,
+        "actorAvoidanceChecked": false,
+        "actorRegions": {
+          "face": {
+            "points": [
+              {
+                "x": 539.7948825938213,
+                "y": 604.5437858274868
+              },
+              {
+                "x": 596.9167575938212,
+                "y": 604.5437858274868
+              },
+              {
+                "x": 596.9167575938212,
+                "y": 650.0297233274869
+              },
+              {
+                "x": 539.7948825938213,
+                "y": 650.0297233274869
+              }
+            ],
+            "rect": {
+              "left": 539.7948825938213,
+              "top": 604.5437858274868,
+              "right": 596.9167575938212,
+              "bottom": 650.0297233274869,
+              "width": 57.12187499999993,
+              "height": 45.48593750000009
+            }
+          },
+          "cap": {
+            "points": [
+              {
+                "x": 539.7948825938213,
+                "y": 577.0406608274868
+              },
+              {
+                "x": 596.9167575938212,
+                "y": 577.0406608274868
+              },
+              {
+                "x": 596.9167575938212,
+                "y": 610.8906608274868
+              },
+              {
+                "x": 539.7948825938213,
+                "y": 610.8906608274868
+              }
+            ],
+            "rect": {
+              "left": 539.7948825938213,
+              "top": 577.0406608274868,
+              "right": 596.9167575938212,
+              "bottom": 610.8906608274868,
+              "width": 57.12187499999993,
+              "height": 33.85000000000002
+            }
+          },
+          "coat": {
+            "points": [
+              {
+                "x": 549.3151950938212,
+                "y": 621.4687858274868
+              },
+              {
+                "x": 587.3964450938213,
+                "y": 621.4687858274868
+              },
+              {
+                "x": 587.3964450938213,
+                "y": 661.6656608274868
+              },
+              {
+                "x": 549.3151950938212,
+                "y": 661.6656608274868
+              }
+            ],
+            "rect": {
+              "left": 549.3151950938212,
+              "top": 621.4687858274868,
+              "right": 587.3964450938213,
+              "bottom": 661.6656608274868,
+              "width": 38.08125000000007,
+              "height": 40.19687499999998
+            }
+          },
+          "foot0": {
+            "points": [
+              {
+                "x": 552.4886325938213,
+                "y": 663.8546875000001
+              },
+              {
+                "x": 572.5870700938212,
+                "y": 663.8546875000001
+              },
+              {
+                "x": 572.5870700938212,
+                "y": 674.4328125000001
+              },
+              {
+                "x": 552.4886325938213,
+                "y": 674.4328125000001
+              }
+            ],
+            "rect": {
+              "left": 552.4886325938213,
+              "top": 663.8546875000001,
+              "right": 572.5870700938212,
+              "bottom": 674.4328125000001,
+              "width": 20.098437499999932,
+              "height": 10.578125
+            }
+          },
+          "foot1": {
+            "points": [
+              {
+                "x": 567.2980075938212,
+                "y": 663.8546875000001
+              },
+              {
+                "x": 587.3964450938213,
+                "y": 663.8546875000001
+              },
+              {
+                "x": 587.3964450938213,
+                "y": 674.4328125000001
+              },
+              {
+                "x": 567.2980075938212,
+                "y": 674.4328125000001
+              }
+            ],
+            "rect": {
+              "left": 567.2980075938212,
+              "top": 663.8546875000001,
+              "right": 587.3964450938213,
+              "bottom": 674.4328125000001,
+              "width": 20.098437500000045,
+              "height": 10.578125
+            }
+          }
+        },
+        "scope": "Actual current rig and renderer transform; conservative face/cap/coat/foot regions, not pixel segmentation or the complete outfit silhouette",
+        "geometryIsSameFrameAsScreenshot": false
+      },
+      "pairedStationCanvasControls": {
+        "status": "matched",
+        "toleranceCssPx": 0.5,
+        "checked": [
+          "Canvas",
+          "stage-touch-move",
+          "direction-up",
+          "direction-left",
+          "direction-right",
+          "direction-down",
+          "stage-interact",
+          "stage-toggle",
+          "stage-jump"
+        ],
+        "beforeVersion": "33.0.0",
+        "afterVersion": "33.0.0",
+        "scope": "Only these paired viewport/Canvas/control measurements; not all game states or a performance result"
+      },
+      "immediateJSONExactToCompleteReport": true,
+      "png": {
+        "path": "1280-greenhouse-root-crossed.png",
+        "bytes": 1308056,
+        "sha256": "a7bbebea2a0b7af4a17646b6b67905770af523f0e640231b0d7110b40f33e13a",
+        "width": 1280,
+        "height": 800,
+        "originalArtifactPixels": true,
+        "notSameFrameAsGeometry": true
+      }
+    }
+  ],
+  "matrix": {
+    "cases": [
+      {
+        "configuration": {
+          "label": "900x800",
+          "width": 900,
+          "height": 800,
+          "media": "no-preference",
+          "game_reduce": false
+        },
+        "status": "passed",
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "requestFailures": 0,
+        "maxPairedCanvasControlRectDeltaCssPx": 0,
+        "pairedBuffersAndTransformsExact": true,
+        "oldCSSFinallyRestored": true,
+        "dialogues": [
+          {
+            "label": "900x800-opening",
+            "status": "passed",
+            "actorAvoidanceChecked": true,
+            "actualReducedMotion": false,
+            "actualMediaReduced": false,
+            "announcementVisible": true,
+            "bubbleVisible": true,
+            "immediateJSONExact": true,
+            "png": {
+              "path": "dialogue-matrix/900x800-opening.png",
+              "bytes": 801620,
+              "sha256": "44ab54da5169dc58bfb4b08658926e9d694ebacce69f2a759ba9830d10238d20",
+              "width": 900,
+              "height": 800,
+              "originalArtifactPixels": true,
+              "notSameFrameAsGeometry": true
+            }
+          },
+          {
+            "label": "900x800-ticket",
+            "status": "passed",
+            "actorAvoidanceChecked": true,
+            "actualReducedMotion": false,
+            "actualMediaReduced": false,
+            "announcementVisible": false,
+            "bubbleVisible": true,
+            "immediateJSONExact": true,
+            "png": {
+              "path": "dialogue-matrix/900x800-ticket.png",
+              "bytes": 800200,
+              "sha256": "cc9db41bac5b14f3b6480723dff9ba8304b9d9b266ee583add3ff444d5a67705",
+              "width": 900,
+              "height": 800,
+              "originalArtifactPixels": true,
+              "notSameFrameAsGeometry": true
+            }
+          }
+        ]
+      },
+      {
+        "configuration": {
+          "label": "899x800",
+          "width": 899,
+          "height": 800,
+          "media": "no-preference",
+          "game_reduce": false
+        },
+        "status": "passed",
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "requestFailures": 0,
+        "maxPairedCanvasControlRectDeltaCssPx": 0,
+        "pairedBuffersAndTransformsExact": true,
+        "oldCSSFinallyRestored": true,
+        "dialogues": [
+          {
+            "label": "899x800-opening",
+            "status": "outside-desktop-scope",
+            "actorAvoidanceChecked": false,
+            "actualReducedMotion": null,
+            "actualMediaReduced": null,
+            "announcementVisible": null,
+            "bubbleVisible": null,
+            "immediateJSONExact": true,
+            "png": {
+              "path": "dialogue-matrix/899x800-opening.png",
+              "bytes": 788570,
+              "sha256": "e38be2b3d65e91bc214bc4f7a60f04999800db81c1b3cdf5e1dd4f73c9148240",
+              "width": 899,
+              "height": 800,
+              "originalArtifactPixels": true,
+              "notSameFrameAsGeometry": true
+            }
+          },
+          {
+            "label": "899x800-ticket",
+            "status": "outside-desktop-scope",
+            "actorAvoidanceChecked": false,
+            "actualReducedMotion": null,
+            "actualMediaReduced": null,
+            "announcementVisible": null,
+            "bubbleVisible": null,
+            "immediateJSONExact": true,
+            "png": {
+              "path": "dialogue-matrix/899x800-ticket.png",
+              "bytes": 779818,
+              "sha256": "72e1a95f0035feb5786c79a2cb68c32160fd5d13d8c50dc6357ba4920abab35a",
+              "width": 899,
+              "height": 800,
+              "originalArtifactPixels": true,
+              "notSameFrameAsGeometry": true
+            }
+          }
+        ]
+      },
+      {
+        "configuration": {
+          "label": "1024x640",
+          "width": 1024,
+          "height": 640,
+          "media": "no-preference",
+          "game_reduce": false
+        },
+        "status": "passed",
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "requestFailures": 0,
+        "maxPairedCanvasControlRectDeltaCssPx": 0,
+        "pairedBuffersAndTransformsExact": true,
+        "oldCSSFinallyRestored": true,
+        "dialogues": [
+          {
+            "label": "1024x640-opening",
+            "status": "passed",
+            "actorAvoidanceChecked": true,
+            "actualReducedMotion": false,
+            "actualMediaReduced": false,
+            "announcementVisible": true,
+            "bubbleVisible": true,
+            "immediateJSONExact": true,
+            "png": {
+              "path": "dialogue-matrix/1024x640-opening.png",
+              "bytes": 733964,
+              "sha256": "773572aed916da676e5119969261252112872192299b59eb2c9e1e675bd806be",
+              "width": 1024,
+              "height": 640,
+              "originalArtifactPixels": true,
+              "notSameFrameAsGeometry": true
+            }
+          },
+          {
+            "label": "1024x640-ticket",
+            "status": "passed",
+            "actorAvoidanceChecked": true,
+            "actualReducedMotion": false,
+            "actualMediaReduced": false,
+            "announcementVisible": false,
+            "bubbleVisible": true,
+            "immediateJSONExact": true,
+            "png": {
+              "path": "dialogue-matrix/1024x640-ticket.png",
+              "bytes": 731840,
+              "sha256": "00296245b08212e2498da5895fdd7fc5c1223acf065ea2d9ed6791962c7abaf1",
+              "width": 1024,
+              "height": 640,
+              "originalArtifactPixels": true,
+              "notSameFrameAsGeometry": true
+            }
+          }
+        ]
+      },
+      {
+        "configuration": {
+          "label": "900x520",
+          "width": 900,
+          "height": 520,
+          "media": "no-preference",
+          "game_reduce": false
+        },
+        "status": "passed",
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "requestFailures": 0,
+        "maxPairedCanvasControlRectDeltaCssPx": 0,
+        "pairedBuffersAndTransformsExact": true,
+        "oldCSSFinallyRestored": true,
+        "dialogues": [
+          {
+            "label": "900x520-opening",
+            "status": "passed",
+            "actorAvoidanceChecked": true,
+            "actualReducedMotion": false,
+            "actualMediaReduced": false,
+            "announcementVisible": true,
+            "bubbleVisible": true,
+            "immediateJSONExact": true,
+            "png": {
+              "path": "dialogue-matrix/900x520-opening.png",
+              "bytes": 527172,
+              "sha256": "7f3fd7988e60415ce13e9e5aae1b111a24a883b72d75d8ddb3928cc19d3ae9ca",
+              "width": 900,
+              "height": 520,
+              "originalArtifactPixels": true,
+              "notSameFrameAsGeometry": true
+            }
+          },
+          {
+            "label": "900x520-ticket",
+            "status": "passed",
+            "actorAvoidanceChecked": true,
+            "actualReducedMotion": false,
+            "actualMediaReduced": false,
+            "announcementVisible": false,
+            "bubbleVisible": true,
+            "immediateJSONExact": true,
+            "png": {
+              "path": "dialogue-matrix/900x520-ticket.png",
+              "bytes": 524286,
+              "sha256": "7f8b77cebff91b3cfc4945f254b310e96f7a5969d20b016449227521f8ec139f",
+              "width": 900,
+              "height": 520,
+              "originalArtifactPixels": true,
+              "notSameFrameAsGeometry": true
+            }
+          }
+        ]
+      },
+      {
+        "configuration": {
+          "label": "1280x800-os-reduce",
+          "width": 1280,
+          "height": 800,
+          "media": "reduce",
+          "game_reduce": false
+        },
+        "status": "passed",
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "requestFailures": 0,
+        "maxPairedCanvasControlRectDeltaCssPx": 0,
+        "pairedBuffersAndTransformsExact": true,
+        "oldCSSFinallyRestored": true,
+        "dialogues": [
+          {
+            "label": "1280x800-os-reduce-opening",
+            "status": "passed",
+            "actorAvoidanceChecked": true,
+            "actualReducedMotion": true,
+            "actualMediaReduced": true,
+            "announcementVisible": false,
+            "bubbleVisible": true,
+            "immediateJSONExact": true,
+            "png": {
+              "path": "dialogue-matrix/1280x800-os-reduce-opening.png",
+              "bytes": 1085641,
+              "sha256": "f4e08715a856d532d84e42e9897ffe4579b22d004510087d09f703b6c2ca92e0",
+              "width": 1280,
+              "height": 800,
+              "originalArtifactPixels": true,
+              "notSameFrameAsGeometry": true
+            }
+          },
+          {
+            "label": "1280x800-os-reduce-ticket",
+            "status": "passed",
+            "actorAvoidanceChecked": true,
+            "actualReducedMotion": true,
+            "actualMediaReduced": true,
+            "announcementVisible": false,
+            "bubbleVisible": true,
+            "immediateJSONExact": true,
+            "png": {
+              "path": "dialogue-matrix/1280x800-os-reduce-ticket.png",
+              "bytes": 1083387,
+              "sha256": "0dd459260c692c0b1e3145aa9c778d6f4145ad2159a1f6d81cab467cf2a060a3",
+              "width": 1280,
+              "height": 800,
+              "originalArtifactPixels": true,
+              "notSameFrameAsGeometry": true
+            }
+          }
+        ]
+      },
+      {
+        "configuration": {
+          "label": "1280x800-game-reduce",
+          "width": 1280,
+          "height": 800,
+          "media": "no-preference",
+          "game_reduce": true
+        },
+        "status": "passed",
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "requestFailures": 0,
+        "maxPairedCanvasControlRectDeltaCssPx": 0,
+        "pairedBuffersAndTransformsExact": true,
+        "oldCSSFinallyRestored": true,
+        "dialogues": [
+          {
+            "label": "1280x800-game-reduce-opening",
+            "status": "passed",
+            "actorAvoidanceChecked": true,
+            "actualReducedMotion": true,
+            "actualMediaReduced": false,
+            "announcementVisible": false,
+            "bubbleVisible": true,
+            "immediateJSONExact": true,
+            "png": {
+              "path": "dialogue-matrix/1280x800-game-reduce-opening.png",
+              "bytes": 1085029,
+              "sha256": "d378cc70ab16d4eb89b2960c7c201475e300ba03a6e9e4a57bd9fd0a6bba03d0",
+              "width": 1280,
+              "height": 800,
+              "originalArtifactPixels": true,
+              "notSameFrameAsGeometry": true
+            }
+          },
+          {
+            "label": "1280x800-game-reduce-ticket",
+            "status": "passed",
+            "actorAvoidanceChecked": true,
+            "actualReducedMotion": true,
+            "actualMediaReduced": false,
+            "announcementVisible": false,
+            "bubbleVisible": true,
+            "immediateJSONExact": true,
+            "png": {
+              "path": "dialogue-matrix/1280x800-game-reduce-ticket.png",
+              "bytes": 1083035,
+              "sha256": "4ba16e407075f58767ec3efa1e99a373eb858b764a4849bc4370c6b123765f35",
+              "width": 1280,
+              "height": 800,
+              "originalArtifactPixels": true,
+              "notSameFrameAsGeometry": true
+            }
+          }
+        ]
+      }
+    ],
+    "caseCount": 6,
+    "immediateJSONCount": 12,
+    "originalPNGCount": 12,
+    "eligibleDesktopSnapshots": 10,
+    "exclusion899Snapshots": 2,
+    "completeMatrixExactToMainReport": true,
+    "exactOldCSSFixtureSource": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+    "maxPairedCanvasControlRectDeltaCssPx": 0,
+    "firstStationNaturalCoexistence": [
+      {
+        "label": "900x800-opening",
+        "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+        "dialogue": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+        "synchronousSnapshot": true,
+        "subsequentPNGNotSameFrame": true
+      },
+      {
+        "label": "1024x640-opening",
+        "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+        "dialogue": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+        "synchronousSnapshot": true,
+        "subsequentPNGNotSameFrame": true
+      },
+      {
+        "label": "900x520-opening",
+        "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+        "dialogue": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+        "synchronousSnapshot": true,
+        "subsequentPNGNotSameFrame": true
+      }
+    ],
+    "originalNotCovered": [
+      "longest natural theatre dialogue",
+      "large font preference",
+      "natural speech plus announcement coexistence",
+      "high platform poses",
+      "excluded-mode layout comparison",
+      "physical devices"
+    ]
+  },
+  "artifactProgramCodeExecuted": false,
+  "limits": [
+    "The required visible greenhouse speech check moved to natural cap-closure before root traversal; root-crossed still checks actual geometry and any speech that remains visible. Original v31 route/physics assertions remain unchanged.",
+    "The new event record proves same run/chapter/deaths and stable body coordinates; it contains no bodyIdentity and is not independent object-identity evidence.",
+    "Geometry and screenshots are consecutive, not synchronous frames. Every pair uses the same current DOM with old CSS and a neutral display:contents wrapper; it is not a complete old-release execution.",
+    "899px checks exclusion-side Canvas/control geometry and input centers, not desktop actor avoidance. Actor regions are conservative face/cap/coat/feet, not complete outfit pixel silhouettes.",
+    "The raw notCovered coexistence phrase is overbroad if the recorded list above is nonempty; use exact observed first-station and greenhouse scopes, not a claim about all announcements.",
+    "No physical handset, Safari, maximum-font/longest-dialogue/high-platform exhaustiveness or performance benchmark; report scope identifies candidate versus actual public HTTPS."
+  ]
+}

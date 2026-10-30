@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "reviewedAt": "2026-10-30T02:02:49.429593+00:00",
+  "expectedVersion": "34.0.0",
+  "actualCommandExitCodes": [
+    0,
+    0,
+    0
+  ],
+  "testSummary": {
+    "tests": 702,
+    "pass": 702,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "testSummaryUnit": "702 individual cases as actually reported by this execution; do not borrow the prestudy file-container count",
+  "reportPathReturnedByDriver": "cap-framing/report.json",
+  "reportBytes": 28077314,
+  "reportSha256": "e7c68786167bcf1a8acb9cb45ef83b6a5119276fa2a51412ddef61b236d2ee04",
+  "reportSourceHashesExact": 77,
+  "allProtectedFilesExactBeforeAfterAndNow": 260,
+  "helperSeconds": 61.851211599991075,
+  "browserProcessSeconds": 63.4531811800116,
+  "cases": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "status": "passed",
+      "input": "keyboard",
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "requestFailures": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "passed",
+      "input": "CDP simulated touch",
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "requestFailures": 0
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "status": "passed",
+      "input": "CDP simulated touch",
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "requestFailures": 0
+    }
+  ],
+  "launcherPostprocessingFailure": {
+    "preservedExecution": "execution.json",
+    "originalError": {
+      "type": "FileNotFoundError",
+      "message": "[Errno 2] No such file or directory: '/tmp/v34-formal-local34/browser/report.json'"
+    },
+    "cause": "The outer launcher assumed browser/report.json and a version field. The exact tested helper returns details=cap-framing/report.json and expectedVersion; its CLI and all three validation commands exited 0.",
+    "followOnReadOnlyProbe": "An initial read-only review expected TAP # summary lines and raised KeyError(pass). The actual log uses the observed Unicode info prefix and reports 702 cases. No test was rerun or relabelled as 78 containers.",
+    "resolution": "Use the successful driver-returned path; verify original report hash, expected and actual page versions, cases, and all source hashes. Parse the actual observed reporter format. Original execution/error, report, source and clocks remain unchanged."
+  },
+  "scope": "Current 34 local targeted framing browser, standard npm test, and reference commands. Full official candidate and public runs remain pending."
+}

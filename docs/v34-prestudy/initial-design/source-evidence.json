@@ -1,0 +1,301 @@
+{
+  "status": "read-only v34 design study; no runtime edits or release",
+  "originalImage": {
+    "path": "/workspace/scratch/2b18af2db412/tougaigu-v31-release/docs/v31-formal-candidate/1280-face-fatigue-bodyTiredOpen-320.png",
+    "sha256": "30ae75383ee84a3739f7950f0f3c74db8c4956adf3cb1ff0f7493c9c3192e6d6",
+    "bytes": 274547,
+    "width": 320,
+    "height": 431
+  },
+  "provenance": {
+    "runId": 40965474140,
+    "commit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+    "version": "31.0.0",
+    "artifactId": 12937168667
+  },
+  "checkpoint": {
+    "path": "/tmp/tougaigu-v31-formal-second/candidate/1280-face-fatigue-phone-low-energy.json",
+    "sha256": "343a374eacee71223ac28f0081d2522702c24ef5cce4cf4e534f083d03126f3a",
+    "imageMetadata": {
+      "sequence": 1025,
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "width": 320,
+      "height": 431,
+      "css": {
+        "left": 0,
+        "top": 77,
+        "width": 320,
+        "height": 431
+      },
+      "source": "unmodified current Canvas pixels; one RAF observation, no render call",
+      "file": "1280-face-fatigue-bodyTiredOpen-320.png"
+    }
+  },
+  "actualLatch": {
+    "sequence": 1025,
+    "source": "raf",
+    "observedAt": 26071.199999999983,
+    "viewport": {
+      "width": 320,
+      "height": 680
+    },
+    "form": "soul",
+    "state": "playing",
+    "chapterIndex": 0,
+    "mode": "story",
+    "festivalId": null,
+    "runId": 1,
+    "bodyIdentity": 1,
+    "input": {
+      "x": 0,
+      "y": 0
+    },
+    "energy": 14.644999999997866,
+    "maxEnergy": 100,
+    "emoteTime": 0,
+    "seals": 0,
+    "memories": 1,
+    "lampFlags": [
+      false,
+      false
+    ],
+    "memoryFlags": [
+      true,
+      false,
+      false
+    ],
+    "firstTicket": {
+      "phase": "held",
+      "collected": true,
+      "newlyCollected": true,
+      "settledAge": 0
+    },
+    "time": 24.69999999999988,
+    "visualTime": 24.69999999999988,
+    "deaths": 0,
+    "reducedMotion": false,
+    "body": {
+      "x": 105,
+      "y": 560,
+      "w": 30,
+      "h": 58,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "platform": null,
+      "face": 1,
+      "land": 0,
+      "walk": 0
+    },
+    "capPhase": "open",
+    "capAge": 20.60000000000011,
+    "capAmount": 1,
+    "facePresentation": {
+      "time": 24.69999999999988,
+      "body": {
+        "kind": "tired",
+        "sleepy": true,
+        "happy": false,
+        "opening": false,
+        "attentive": true,
+        "blink": 0.43,
+        "lookX": 1.5300000000000018,
+        "lookY": -2.7
+      },
+      "soulJoy": false,
+      "presentedSoul": {
+        "x": 258.00000000000017,
+        "y": 422.2142857142857,
+        "vx": 7.827770869193657e-63,
+        "vy": -1.0171309722911955e-62,
+        "scale": 1,
+        "alpha": 1,
+        "pose": "free",
+        "layer": "world"
+      },
+      "rawSoul": {
+        "x": 258.00000000000017,
+        "y": 422.2142857142857,
+        "vx": 7.827770869193657e-63,
+        "vy": -1.0171309722911955e-62
+      },
+      "capEntry": 1,
+      "returnFrom": null
+    },
+    "characterPose": {
+      "walking": false,
+      "step": 0,
+      "hop": 0.5057144381715858,
+      "scaleY": 1,
+      "tilt": -0.025,
+      "bodyMatrix": [
+        1,
+        0,
+        0,
+        1,
+        105,
+        559.4942855618284
+      ],
+      "openingWorld": {
+        "x": 104.6000416653646,
+        "y": 494.49928530141716
+      },
+      "grip": 1,
+      "clasp": 0.25,
+      "catching": 0,
+      "arms": {
+        "left": {
+          "shoulder": {
+            "x": -13,
+            "y": -35
+          },
+          "elbow": {
+            "x": -25.25052455873504,
+            "y": -50.809005282933825
+          },
+          "wrist": {
+            "x": -18.931418036803198,
+            "y": -69.78448664084615
+          },
+          "requested": {
+            "x": -18.931418036803198,
+            "y": -69.78448664084615
+          },
+          "length": 20,
+          "world": {
+            "x": 86.0685819631968,
+            "y": 489.7097989209823
+          }
+        },
+        "right": {
+          "shoulder": {
+            "x": 13,
+            "y": -35
+          },
+          "elbow": {
+            "x": 13.53708859908944,
+            "y": -15.007212904731663
+          },
+          "wrist": {
+            "x": 29.624457288248806,
+            "y": -26.889829142709516
+          },
+          "requested": {
+            "x": 29.624457288248806,
+            "y": -26.889829142709516
+          },
+          "length": 20,
+          "world": {
+            "x": 134.6244572882488,
+            "y": 532.6044564191188
+          }
+        }
+      },
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "legs": [
+        {
+          "hip": {
+            "x": -7,
+            "y": -21
+          },
+          "knee": {
+            "x": -5,
+            "y": -12.14597134776906
+          },
+          "ankle": {
+            "x": -7,
+            "y": -4.294285561828414
+          },
+          "foot": {
+            "x": -7,
+            "y": 0.5057144381715858,
+            "angle": 0
+          },
+          "planted": true,
+          "lift": 0,
+          "worldFoot": {
+            "x": 98,
+            "y": 560
+          }
+        },
+        {
+          "hip": {
+            "x": 7,
+            "y": -21
+          },
+          "knee": {
+            "x": 9,
+            "y": -12.14597134776906
+          },
+          "ankle": {
+            "x": 7,
+            "y": -4.294285561828414
+          },
+          "foot": {
+            "x": 7,
+            "y": 0.5057144381715858,
+            "angle": 0
+          },
+          "planted": true,
+          "lift": 0,
+          "worldFoot": {
+            "x": 112,
+            "y": 560
+          }
+        }
+      ]
+    }
+  },
+  "previous390Latch": {
+    "sequence": 1001,
+    "source": "raf",
+    "time": 24.23333333333324,
+    "observedAt": 25607.5,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  "missingInOriginal": [
+    "camera",
+    "scale",
+    "viewWidth",
+    "activityFramed",
+    "outfit"
+  ],
+  "limits": [
+    "Original PNG is a Canvas-only320x431 sample from a320x680 Chromium viewport, not a whole-page image.",
+    "It is form=soul/capPhase=open low-energy evidence, not a lifting or returning frame.",
+    "390-to320 resize sampling may carry camera easing, but camera was not recorded and must not be asserted as observed.",
+    "Not a physical device or every-frame stability proof."
+  ]
+}

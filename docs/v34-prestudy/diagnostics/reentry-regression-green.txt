@@ -1,0 +1,10 @@
+✔ near return around275 reenters naturally after far flight instead of stranding a visible traveler at the edge (1864.095764ms)
+✔ body-center reentry is symmetric, includes the old18 boundary, and rejects a genuinely offscreen body (227.606447ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2155.614071

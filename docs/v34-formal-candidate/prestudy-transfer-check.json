@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-30T01:59:22.455563+00:00",
+  "sourceCodeCommitLocal": "6de29153147dde8bb3a5f8e4ba77e2ff969d2f97",
+  "sourceArchiveCommitLocal": "5d4260714a5fb77ca075a1d71c135bec0a658632",
+  "frozenManifestSHA256": "0d47c31cc5bc53548e3b51cea568525e5faf5f34f6f748a9074b17349381d57f",
+  "files": 144,
+  "bytes": 35593255,
+  "allBytesExactToLocalGit": true,
+  "sourceVersion": "33.0.0 prestudy",
+  "formalVersionBeingValidated": "34.0.0",
+  "scope": "Transfer only; the prior studies are not relabelled as formal34 browser runs."
+}

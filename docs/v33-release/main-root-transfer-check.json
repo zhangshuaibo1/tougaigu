@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "reviewedAt": "2026-10-30T02:31:10.248175+00:00",
+  "source": "/tmp/v33-main-be057-evidence",
+  "destination": "docs/v33-main-release",
+  "runId": 40988381550,
+  "sourceCommit": "be05769a99a807f9396c03084760f8283ce4195e",
+  "manifestSHA256": "5920973f36dc307d3b345f5d038c45d67f8d70963ad6394be6ec4b96c8ab022b",
+  "filesExact": 60,
+  "bytesExact": 11645945,
+  "losslessGzipVerified": 15,
+  "tarMembersVerified": 118,
+  "scope": "Exact transfer of independently audited v33 main candidate+public original package; no code or raw report modification."
+}

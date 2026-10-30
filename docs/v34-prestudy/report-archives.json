@@ -1,0 +1,16 @@
+{
+  "firstBrowser": {
+    "originalBytes": 29434780,
+    "originalSha256": "a98c8f595bf34dfafa0cc4cc45f181c5c5c5dba726dec54c004531894d641f2b",
+    "storedFile": "first-browser/report.json.gz",
+    "gzipBytes": 706652,
+    "gzipSha256": "05c143fda48ddf403936cd9286131521b88825556e02364c9b8b1c45cdaddea9"
+  },
+  "finalBrowser": {
+    "originalBytes": 28432570,
+    "originalSha256": "bfc6892dabc6413f11729ce7cf266d0cd2feb5650e0110fad44477a716a95a27",
+    "storedFile": "final-browser/report.json.gz",
+    "gzipBytes": 684853,
+    "gzipSha256": "954c52ec96752588bd40dd3534cc77861a25c8bd7dd9bb68300715f70f6d2d98"
+  }
+}

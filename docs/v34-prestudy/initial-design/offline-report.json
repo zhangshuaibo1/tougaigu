@@ -1,0 +1,1852 @@
+{
+  "status": "v34-read-only-offline-design-study-not-installed-not-browser-not-release",
+  "sourceRoot": "/workspace/scratch/2b18af2db412/tougaigu-v33-companion-prestudy",
+  "sourceProductVersion": "32.0.0",
+  "sourceHashes": {
+    "dist/dream-engine.js": "7b602b83f551c41fdbe97443e1fed08d6af773e9767f0ed830a434168951e889",
+    "dist/dream-engine-base.js": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699",
+    "dist/dream-cap-art.js": "dad5b4a0e2c0ffb13c008c473068465d25f701509114b31ab100629e459063ed",
+    "dist/dream-festival-art.js": "9ede1ae7d2c0499bc2a22aa61fb1f44a3c97b4efe327023406f15d2c695881e5",
+    "dist/dream-station-art.js": "73a257203b10d12dd52f7b66f60fe3d65e08200aa64b1b4e5c3f223f654d31ee",
+    "dist/dream-traveler-performance.js": "ff4f258632c6136fed2a4b95fa8aa828c25817d3db6318663b924ee93ecf2c5c",
+    "dist/dream-companion-art.js": "f0d9916c23667807c7e5577b238dcb509e3cab6e54070b6e239d11af20f787f3"
+  },
+  "sourceFilesUnchanged": true,
+  "originalEvidence": {
+    "path": "/workspace/scratch/2b18af2db412/tougaigu-v31-release/docs/v31-formal-candidate/1280-face-fatigue-bodyTiredOpen-320.png",
+    "sha256": "30ae75383ee84a3739f7950f0f3c74db8c4956adf3cb1ff0f7493c9c3192e6d6",
+    "bytes": 274547,
+    "width": 320,
+    "height": 431
+  },
+  "originalCameraRecorded": false,
+  "illustratedMarginCss": 6,
+  "marginStatus": "illustration value only; release acceptance requires real browser/frame data",
+  "method": "Normal fixed-step start/toggle/input/resize/reduced actions generate the poses. Only the offline pair temporarily substitutes one whole-scene camera and restores it; no runtime files or gameplay facts change. Bounds rasterization is for this audit only, not a runtime algorithm.",
+  "frames": [
+    {
+      "name": "320-near-stable-open",
+      "scope": "offline real-input pose, same-state full-world camera comparison; not original candidate frame/browser/release",
+      "size": {
+        "width": 320,
+        "height": 431
+      },
+      "update": 1281,
+      "time": 21.35000000000007,
+      "energy": 18.944999999997826,
+      "mode": "story",
+      "chapterIndex": 0,
+      "form": "soul",
+      "capPhase": "open",
+      "capAmount": 1,
+      "outfit": "halloween",
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "soul": {
+        "x": 256.9309789899758,
+        "y": 422.30416358341273,
+        "vx": -1.1231317747853194e-58,
+        "vy": -1.3566196238267174e-58,
+        "scale": 1,
+        "alpha": 1,
+        "pose": "free",
+        "layer": "world"
+      },
+      "companion": {
+        "x": 40,
+        "y": 560
+      },
+      "camera": 52.60615300389697,
+      "scale": 0.6734375,
+      "viewWidth": 475.17401392111367,
+      "activityFramed": false,
+      "reducedMotion": false,
+      "proposal": {
+        "eligible": true,
+        "marginCss": 6,
+        "marginWorld": 8.909512761020881,
+        "left": 39,
+        "right": 291.9309789899758,
+        "lower": 0,
+        "upper": 30.09048723897912,
+        "camera": 30.09048723897912
+      },
+      "bounds": {
+        "bare-lid": {
+          "left": 69.5,
+          "right": 130,
+          "top": 452,
+          "bottom": 504
+        },
+        "hat": {
+          "left": 39,
+          "right": 86,
+          "top": 447.5,
+          "bottom": 497.5
+        },
+        "full-lid": {
+          "left": 39,
+          "right": 130,
+          "top": 447.5,
+          "bottom": 504
+        },
+        "hands": {
+          "left": 82,
+          "right": 138.5,
+          "top": 485.5,
+          "bottom": 536.5
+        }
+      },
+      "oldBounds": {
+        "bare-lid": {
+          "left": 11.376950086438134,
+          "right": 52.11991883643814,
+          "top": 304.39375,
+          "bottom": 339.4125
+        },
+        "hat": {
+          "left": -9.162893663561867,
+          "right": 22.488668836438134,
+          "top": 301.36328125,
+          "bottom": 335.03515625
+        },
+        "full-lid": {
+          "left": -9.162893663561867,
+          "right": 52.11991883643814,
+          "top": 301.36328125,
+          "bottom": 339.4125
+        },
+        "hands": {
+          "left": 19.794918836438136,
+          "right": 57.84413758643814,
+          "top": 326.95390625,
+          "bottom": 361.29921875
+        }
+      },
+      "newBounds": {
+        "bare-lid": {
+          "left": 26.53984375,
+          "right": 67.2828125,
+          "top": 304.39375,
+          "bottom": 339.4125
+        },
+        "hat": {
+          "left": 6,
+          "right": 37.6515625,
+          "top": 301.36328125,
+          "bottom": 335.03515625
+        },
+        "full-lid": {
+          "left": 6,
+          "right": 67.2828125,
+          "top": 301.36328125,
+          "bottom": 339.4125
+        },
+        "hands": {
+          "left": 34.957812499999996,
+          "right": 73.00703125,
+          "top": 326.95390625,
+          "bottom": 361.29921875
+        }
+      },
+      "rig": {
+        "theta": -1.16,
+        "bodyMatrix": [
+          1,
+          0,
+          0,
+          1,
+          105,
+          559.2657156759303
+        ],
+        "headLocalMatrix": [
+          0.9996875162757026,
+          -0.024997395914712332,
+          0.024997395914712332,
+          0.9996875162757026,
+          0,
+          -49
+        ],
+        "headMatrix": [
+          0.9996875162757026,
+          -0.024997395914712332,
+          0.024997395914712332,
+          0.9996875162757026,
+          105,
+          510.2657156759303
+        ],
+        "capLocalMatrix": [
+          0.3993395294062732,
+          -0.9168031087717669,
+          0.9168031087717669,
+          0.3993395294062732,
+          -1.296089939029022,
+          -27.97825451069732
+        ],
+        "capMatrix": [
+          0.37629705201705826,
+          -0.9264990710428539,
+          0.9264990710428539,
+          0.37629705201705826,
+          103.00493156297566,
+          482.3286027877488
+        ],
+        "gripHead": {
+          "x": -18.40594423534354,
+          "y": -21.251227978945902
+        },
+        "gripBody": {
+          "x": -18.931418036803194,
+          "y": -69.78448664084615
+        },
+        "gripWorld": {
+          "x": 86.0685819631968,
+          "y": 489.48122903508414
+        },
+        "claspBody": {
+          "x": 22.242995157056185,
+          "y": -59.55931657083806
+        },
+        "catchBody": {
+          "x": -0.42495573055010966,
+          "y": -65.99468777668694
+        },
+        "openingWorld": {
+          "x": 104.6000416653646,
+          "y": 494.2707154155191
+        }
+      },
+      "leftHand": {
+        "x": 86.0685819631968,
+        "y": 489.4812290350842
+      },
+      "gripError": 5.684341886080802e-14,
+      "physicalUnchanged": true,
+      "rigUnchanged": true,
+      "beforeSha256": "0d7f04c9a7467a32f77e54c3750135c86a33cb6b1cea12f5038afeab945fcff8",
+      "proposalSha256": "f4923e6e0db6162f78f61d2bf6f26d4bef64e48036292d0008b42abaffbe81c9"
+    },
+    {
+      "name": "390-after-90-steps-open",
+      "scope": "offline real-input pose, same-state full-world camera comparison; not original candidate frame/browser/release",
+      "size": {
+        "width": 390,
+        "height": 595
+      },
+      "update": 1371,
+      "time": 22.849999999999984,
+      "energy": 12.49499999999785,
+      "mode": "story",
+      "chapterIndex": 0,
+      "form": "soul",
+      "capPhase": "open",
+      "capAmount": 1,
+      "outfit": "halloween",
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "soul": {
+        "x": 256.9309789899758,
+        "y": 422.30416358341273,
+        "vx": -1.5909130477648723e-63,
+        "vy": -1.9216479391408324e-63,
+        "scale": 1,
+        "alpha": 1,
+        "pose": "free",
+        "layer": "world"
+      },
+      "companion": {
+        "x": 40,
+        "y": 560
+      },
+      "camera": 76.54360522992846,
+      "scale": 0.9296875,
+      "viewWidth": 419.4957983193277,
+      "activityFramed": false,
+      "reducedMotion": false,
+      "proposal": {
+        "eligible": true,
+        "marginCss": 6,
+        "marginWorld": 6.453781512605042,
+        "left": 39,
+        "right": 291.9309789899758,
+        "lower": 0,
+        "upper": 32.54621848739496,
+        "camera": 32.54621848739496
+      },
+      "bounds": {
+        "bare-lid": {
+          "left": 69.5,
+          "right": 130,
+          "top": 453,
+          "bottom": 505
+        },
+        "hat": {
+          "left": 39,
+          "right": 86,
+          "top": 448.5,
+          "bottom": 498.5
+        },
+        "full-lid": {
+          "left": 39,
+          "right": 130,
+          "top": 448.5,
+          "bottom": 505
+        },
+        "hands": {
+          "left": 82,
+          "right": 138.5,
+          "top": 486.5,
+          "bottom": 537.5
+        }
+      },
+      "oldBounds": {
+        "bare-lid": {
+          "left": -6.5483517371991145,
+          "right": 49.69774201280089,
+          "top": 421.1484375,
+          "bottom": 469.4921875
+        },
+        "hat": {
+          "left": -34.90382048719911,
+          "right": 8.791492012800886,
+          "top": 416.96484375,
+          "bottom": 463.44921875
+        },
+        "full-lid": {
+          "left": -34.90382048719911,
+          "right": 49.69774201280089,
+          "top": 416.96484375,
+          "bottom": 469.4921875
+        },
+        "hands": {
+          "left": 5.0727420128008855,
+          "right": 57.60008576280089,
+          "top": 452.29296875,
+          "bottom": 499.70703125
+        }
+      },
+      "newBounds": {
+        "bare-lid": {
+          "left": 34.35546875,
+          "right": 90.6015625,
+          "top": 421.1484375,
+          "bottom": 469.4921875
+        },
+        "hat": {
+          "left": 5.999999999999998,
+          "right": 49.6953125,
+          "top": 416.96484375,
+          "bottom": 463.44921875
+        },
+        "full-lid": {
+          "left": 5.999999999999998,
+          "right": 90.6015625,
+          "top": 416.96484375,
+          "bottom": 469.4921875
+        },
+        "hands": {
+          "left": 45.9765625,
+          "right": 98.50390625,
+          "top": 452.29296875,
+          "bottom": 499.70703125
+        }
+      },
+      "rig": {
+        "theta": -1.16,
+        "bodyMatrix": [
+          1,
+          0,
+          0,
+          1,
+          105,
+          560.3138047820408
+        ],
+        "headLocalMatrix": [
+          0.9996875162757026,
+          -0.024997395914712332,
+          0.024997395914712332,
+          0.9996875162757026,
+          0,
+          -49
+        ],
+        "headMatrix": [
+          0.9996875162757026,
+          -0.024997395914712332,
+          0.024997395914712332,
+          0.9996875162757026,
+          105,
+          511.31380478204085
+        ],
+        "capLocalMatrix": [
+          0.3993395294062732,
+          -0.9168031087717669,
+          0.9168031087717669,
+          0.3993395294062732,
+          -1.296089939029022,
+          -27.97825451069732
+        ],
+        "capMatrix": [
+          0.37629705201705826,
+          -0.9264990710428539,
+          0.9264990710428539,
+          0.37629705201705826,
+          103.00493156297566,
+          483.37669189385934
+        ],
+        "gripHead": {
+          "x": -18.40594423534354,
+          "y": -21.251227978945902
+        },
+        "gripBody": {
+          "x": -18.931418036803194,
+          "y": -69.78448664084615
+        },
+        "gripWorld": {
+          "x": 86.0685819631968,
+          "y": 490.52931814119466
+        },
+        "claspBody": {
+          "x": 22.242995157056185,
+          "y": -59.55931657083806
+        },
+        "catchBody": {
+          "x": -0.42495573055010966,
+          "y": -65.99468777668694
+        },
+        "openingWorld": {
+          "x": 104.6000416653646,
+          "y": 495.3188045216296
+        }
+      },
+      "leftHand": {
+        "x": 86.0685819631968,
+        "y": 490.5293181411947
+      },
+      "gripError": 5.684341886080802e-14,
+      "physicalUnchanged": true,
+      "rigUnchanged": true,
+      "beforeSha256": "4ace5d86478e184b9fd2327e793e39cf35bbcb21620f9ff86c7f6a6b5c3ecf0a",
+      "proposalSha256": "fd0a0a11e427b730287c8afff658a3a9919521c15bd0b84440e9d1400be0ad32"
+    },
+    {
+      "name": "320-first-step-after-resize",
+      "scope": "offline real-input pose, same-state full-world camera comparison; not original candidate frame/browser/release",
+      "size": {
+        "width": 320,
+        "height": 431
+      },
+      "update": 1372,
+      "time": 22.86666666666665,
+      "energy": 12.423333333331183,
+      "mode": "story",
+      "chapterIndex": 0,
+      "form": "soul",
+      "capPhase": "open",
+      "capAmount": 1,
+      "outfit": "halloween",
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "soul": {
+        "x": 256.9309789899758,
+        "y": 422.30416358341273,
+        "vx": -1.405306525525637e-63,
+        "vy": -1.697455679574402e-63,
+        "scale": 1,
+        "alpha": 1,
+        "pose": "free",
+        "layer": "world"
+      },
+      "companion": {
+        "x": 40,
+        "y": 560
+      },
+      "camera": 74.34933877587557,
+      "scale": 0.6734375,
+      "viewWidth": 475.17401392111367,
+      "activityFramed": false,
+      "reducedMotion": false,
+      "proposal": {
+        "eligible": true,
+        "marginCss": 6,
+        "marginWorld": 8.909512761020881,
+        "left": 39,
+        "right": 291.9309789899758,
+        "lower": 0,
+        "upper": 30.09048723897912,
+        "camera": 30.09048723897912
+      },
+      "bounds": {
+        "bare-lid": {
+          "left": 69.5,
+          "right": 130,
+          "top": 453.5,
+          "bottom": 505
+        },
+        "hat": {
+          "left": 39,
+          "right": 86,
+          "top": 448.5,
+          "bottom": 498.5
+        },
+        "full-lid": {
+          "left": 39,
+          "right": 130,
+          "top": 448.5,
+          "bottom": 505
+        },
+        "hands": {
+          "left": 82,
+          "right": 138.5,
+          "top": 486.5,
+          "bottom": 537.5
+        }
+      },
+      "oldBounds": {
+        "bare-lid": {
+          "left": -3.2657265818787016,
+          "right": 37.4772421681213,
+          "top": 305.40390625000003,
+          "bottom": 340.0859375
+        },
+        "hat": {
+          "left": -23.8055703318787,
+          "right": 7.845992168121299,
+          "top": 302.03671875000003,
+          "bottom": 335.70859375000003
+        },
+        "full-lid": {
+          "left": -23.8055703318787,
+          "right": 37.4772421681213,
+          "top": 302.03671875000003,
+          "bottom": 340.0859375
+        },
+        "hands": {
+          "left": 5.152242168121298,
+          "right": 43.2014609181213,
+          "top": 327.62734375,
+          "bottom": 361.97265625
+        }
+      },
+      "newBounds": {
+        "bare-lid": {
+          "left": 26.53984375,
+          "right": 67.2828125,
+          "top": 305.40390625000003,
+          "bottom": 340.0859375
+        },
+        "hat": {
+          "left": 6,
+          "right": 37.6515625,
+          "top": 302.03671875000003,
+          "bottom": 335.70859375000003
+        },
+        "full-lid": {
+          "left": 6,
+          "right": 67.2828125,
+          "top": 302.03671875000003,
+          "bottom": 340.0859375
+        },
+        "hands": {
+          "left": 34.957812499999996,
+          "right": 73.00703125,
+          "top": 327.62734375,
+          "bottom": 361.97265625
+        }
+      },
+      "rig": {
+        "theta": -1.16,
+        "bodyMatrix": [
+          1,
+          0,
+          0,
+          1,
+          105,
+          560.3452875243628
+        ],
+        "headLocalMatrix": [
+          0.9996875162757026,
+          -0.024997395914712332,
+          0.024997395914712332,
+          0.9996875162757026,
+          0,
+          -49
+        ],
+        "headMatrix": [
+          0.9996875162757026,
+          -0.024997395914712332,
+          0.024997395914712332,
+          0.9996875162757026,
+          105,
+          511.3452875243628
+        ],
+        "capLocalMatrix": [
+          0.3993395294062732,
+          -0.9168031087717669,
+          0.9168031087717669,
+          0.3993395294062732,
+          -1.296089939029022,
+          -27.97825451069732
+        ],
+        "capMatrix": [
+          0.37629705201705826,
+          -0.9264990710428539,
+          0.9264990710428539,
+          0.37629705201705826,
+          103.00493156297566,
+          483.4081746361813
+        ],
+        "gripHead": {
+          "x": -18.40594423534354,
+          "y": -21.251227978945902
+        },
+        "gripBody": {
+          "x": -18.931418036803194,
+          "y": -69.78448664084615
+        },
+        "gripWorld": {
+          "x": 86.0685819631968,
+          "y": 490.5608008835166
+        },
+        "claspBody": {
+          "x": 22.242995157056185,
+          "y": -59.55931657083806
+        },
+        "catchBody": {
+          "x": -0.42495573055010966,
+          "y": -65.99468777668694
+        },
+        "openingWorld": {
+          "x": 104.6000416653646,
+          "y": 495.35028726395154
+        }
+      },
+      "leftHand": {
+        "x": 86.0685819631968,
+        "y": 490.56080088351666
+      },
+      "gripError": 5.684341886080802e-14,
+      "physicalUnchanged": true,
+      "rigUnchanged": true,
+      "beforeSha256": "187c63c60903b6b95771d49583b821ececdca91bf3805df271af533bc306d509",
+      "proposalSha256": "c34e6fece8983787ceacc4f8b729c1c4d1f1741cbb74d3619b3f699a395aa5d3"
+    },
+    {
+      "name": "320-reduced-open",
+      "scope": "offline real-input pose, same-state full-world camera comparison; not original candidate frame/browser/release",
+      "size": {
+        "width": 320,
+        "height": 431
+      },
+      "update": 1373,
+      "time": 22.883333333333315,
+      "energy": 12.351666666664515,
+      "mode": "story",
+      "chapterIndex": 0,
+      "form": "soul",
+      "capPhase": "open",
+      "capAmount": 1,
+      "outfit": "halloween",
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "grounded": true,
+        "coyote": 0.12,
+        "platform": null,
+        "invulnerable": 0,
+        "walk": 0,
+        "land": 0
+      },
+      "soul": {
+        "x": 256.9309789899758,
+        "y": 422.30416358341273,
+        "vx": -1.2413540975476461e-63,
+        "vy": -1.4994191836240553e-63,
+        "scale": 1,
+        "alpha": 1,
+        "pose": "free",
+        "layer": "world"
+      },
+      "companion": {
+        "x": 40,
+        "y": 560
+      },
+      "camera": 52.606153003896935,
+      "scale": 0.6734375,
+      "viewWidth": 475.17401392111367,
+      "activityFramed": false,
+      "reducedMotion": true,
+      "proposal": {
+        "eligible": true,
+        "marginCss": 6,
+        "marginWorld": 8.909512761020881,
+        "left": 40.5,
+        "right": 291.9309789899758,
+        "lower": 0,
+        "upper": 31.59048723897912,
+        "camera": 31.59048723897912
+      },
+      "bounds": {
+        "bare-lid": {
+          "left": 70,
+          "right": 130,
+          "top": 452.5,
+          "bottom": 505
+        },
+        "hat": {
+          "left": 40.5,
+          "right": 87.5,
+          "top": 447.5,
+          "bottom": 497
+        },
+        "full-lid": {
+          "left": 40.5,
+          "right": 130,
+          "top": 447.5,
+          "bottom": 505
+        },
+        "hands": {
+          "left": 82.5,
+          "right": 138.5,
+          "top": 485.5,
+          "bottom": 537.5
+        }
+      },
+      "oldBounds": {
+        "bare-lid": {
+          "left": 11.713668836438158,
+          "right": 52.11991883643816,
+          "top": 304.73046875,
+          "bottom": 340.0859375
+        },
+        "hat": {
+          "left": -8.152737413561843,
+          "right": 23.49882508643816,
+          "top": 301.36328125,
+          "bottom": 334.6984375
+        },
+        "full-lid": {
+          "left": -8.152737413561843,
+          "right": 52.11991883643816,
+          "top": 301.36328125,
+          "bottom": 340.0859375
+        },
+        "hands": {
+          "left": 20.13163758643816,
+          "right": 57.84413758643816,
+          "top": 326.95390625,
+          "bottom": 361.97265625
+        }
+      },
+      "newBounds": {
+        "bare-lid": {
+          "left": 25.866406249999997,
+          "right": 66.27265625,
+          "top": 304.73046875,
+          "bottom": 340.0859375
+        },
+        "hat": {
+          "left": 6,
+          "right": 37.6515625,
+          "top": 301.36328125,
+          "bottom": 334.6984375
+        },
+        "full-lid": {
+          "left": 6,
+          "right": 66.27265625,
+          "top": 301.36328125,
+          "bottom": 340.0859375
+        },
+        "hands": {
+          "left": 34.284375,
+          "right": 71.996875,
+          "top": 326.95390625,
+          "bottom": 361.97265625
+        }
+      },
+      "rig": {
+        "theta": -1.16,
+        "bodyMatrix": [
+          1,
+          0,
+          0,
+          1,
+          105,
+          560
+        ],
+        "headLocalMatrix": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          -49
+        ],
+        "headMatrix": [
+          1,
+          0,
+          0,
+          1,
+          105,
+          511
+        ],
+        "capLocalMatrix": [
+          0.3993395294062732,
+          -0.9168031087717669,
+          0.9168031087717669,
+          0.3993395294062732,
+          -1.296089939029022,
+          -27.97825451069732
+        ],
+        "capMatrix": [
+          0.3993395294062732,
+          -0.9168031087717669,
+          0.9168031087717669,
+          0.3993395294062732,
+          103.70391006097098,
+          483.0217454893027
+        ],
+        "gripHead": {
+          "x": -18.40594423534354,
+          "y": -21.251227978945902
+        },
+        "gripBody": {
+          "x": -18.40594423534354,
+          "y": -70.2512279789459
+        },
+        "gripWorld": {
+          "x": 86.59405576465646,
+          "y": 489.7487720210541
+        },
+        "claspBody": {
+          "x": 22.5,
+          "y": -59
+        },
+        "catchBody": {
+          "x": 0,
+          "y": -66
+        },
+        "openingWorld": {
+          "x": 105,
+          "y": 495
+        }
+      },
+      "leftHand": {
+        "x": 86.59405576465646,
+        "y": 489.7487720210541
+      },
+      "gripError": 0,
+      "physicalUnchanged": true,
+      "rigUnchanged": true,
+      "beforeSha256": "61ee9c084a10feeb568061ecc91fb0740d97879e0a001f61e79a16a971b1b3df",
+      "proposalSha256": "90ae4a9c07cf399b13efcaf37e3be31157c599d92393786c7e0ed9cde75580f5"
+    }
+  ],
+  "events": [
+    {
+      "type": "open",
+      "chapterIndex": 0,
+      "festivalId": null,
+      "mode": "story"
+    },
+    {
+      "type": "memory",
+      "index": 0,
+      "chapterIndex": 0,
+      "festivalId": null,
+      "mode": "story"
+    }
+  ],
+  "tape": [
+    {
+      "update": 0,
+      "method": "start",
+      "args": [
+        {
+          "chapterIndex": 0,
+          "sound": false,
+          "outfit": "halloween"
+        }
+      ]
+    },
+    {
+      "update": 72,
+      "method": "toggleSoul",
+      "args": []
+    },
+    {
+      "update": 116,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.7848635365828474
+        }
+      ]
+    },
+    {
+      "update": 117,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.7785549689455977
+        }
+      ]
+    },
+    {
+      "update": 118,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.766734162035258
+        }
+      ]
+    },
+    {
+      "update": 119,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.7501037853290575
+        }
+      ]
+    },
+    {
+      "update": 120,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.7293105147120829
+        }
+      ]
+    },
+    {
+      "update": 121,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.7049499191709838
+        }
+      ]
+    },
+    {
+      "update": 122,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.6775711574497817
+        }
+      ]
+    },
+    {
+      "update": 123,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.6476813555588793
+        }
+      ]
+    },
+    {
+      "update": 124,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.6157495754826178
+        }
+      ]
+    },
+    {
+      "update": 125,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.5822103137560309
+        }
+      ]
+    },
+    {
+      "update": 126,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.5474664905696045
+        }
+      ]
+    },
+    {
+      "update": 127,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.5118919092023816
+        }
+      ]
+    },
+    {
+      "update": 128,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.475833184278552
+        }
+      ]
+    },
+    {
+      "update": 129,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.43961115695116615
+        }
+      ]
+    },
+    {
+      "update": 130,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.4035218359379122
+        }
+      ]
+    },
+    {
+      "update": 131,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.36783692460952405
+        }
+      ]
+    },
+    {
+      "update": 132,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.3328040143701768
+        }
+      ]
+    },
+    {
+      "update": 133,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.2986465410574589
+        }
+      ]
+    },
+    {
+      "update": 134,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.2655636115856702
+        }
+      ]
+    },
+    {
+      "update": 135,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.23372981058678918
+        }
+      ]
+    },
+    {
+      "update": 136,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.2032950904098759
+        }
+      ]
+    },
+    {
+      "update": 137,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.17438483290805187
+        }
+      ]
+    },
+    {
+      "update": 138,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.14710014970413043
+        }
+      ]
+    },
+    {
+      "update": 139,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.12151846182132081
+        }
+      ]
+    },
+    {
+      "update": 140,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 1,
+          "y": -0.09769437287454384
+        }
+      ]
+    },
+    {
+      "update": 141,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.9989067527495501,
+          "y": -0.07566082543752897
+        }
+      ]
+    },
+    {
+      "update": 142,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.9188217957946878,
+          "y": -0.055429675006404555
+        }
+      ]
+    },
+    {
+      "update": 143,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.8387348023051091,
+          "y": -0.036995053550727054
+        }
+      ]
+    },
+    {
+      "update": 144,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.7594605698957843,
+          "y": -0.020334863455259613
+        }
+      ]
+    },
+    {
+      "update": 145,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.6817105699156155,
+          "y": -0.005411537524675553
+        }
+      ]
+    },
+    {
+      "update": 146,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.6060977658459574,
+          "y": 0.007825774138403246
+        }
+      ]
+    },
+    {
+      "update": 147,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.5331418714702663,
+          "y": 0.01943913729356924
+        }
+      ]
+    },
+    {
+      "update": 148,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.4632749440277254,
+          "y": 0.029499893778245224
+        }
+      ]
+    },
+    {
+      "update": 149,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.39684721638174575,
+          "y": 0.03808685368504187
+        }
+      ]
+    },
+    {
+      "update": 150,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.3341330809996411,
+          "y": 0.045284622492581895
+        }
+      ]
+    },
+    {
+      "update": 151,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.2753371471694694,
+          "y": 0.0511820644198731
+        }
+      ]
+    },
+    {
+      "update": 152,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.22060030130211972,
+          "y": 0.05587090174060712
+        }
+      ]
+    },
+    {
+      "update": 153,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.17000570831972542,
+          "y": 0.059444448441689265
+        }
+      ]
+    },
+    {
+      "update": 154,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.12358469996390577,
+          "y": 0.061996475432383354
+        }
+      ]
+    },
+    {
+      "update": 155,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.08132250332688849,
+          "y": 0.06362020349839755
+        }
+      ]
+    },
+    {
+      "update": 156,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.04316376998163448,
+          "y": 0.06440741933993195
+        }
+      ]
+    },
+    {
+      "update": 157,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.009017872737957497,
+          "y": 0.06444770932461621
+        }
+      ]
+    },
+    {
+      "update": 158,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.021236056738044122,
+          "y": 0.06382780501539242
+        }
+      ]
+    },
+    {
+      "update": 159,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.04774437044596268,
+          "y": 0.0626310340895237
+        }
+      ]
+    },
+    {
+      "update": 160,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.07067444241931928,
+          "y": 0.0609368699377709
+        }
+      ]
+    },
+    {
+      "update": 161,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.09021051380365616,
+          "y": 0.05882057301204825
+        }
+      ]
+    },
+    {
+      "update": 162,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.10654985112113309,
+          "y": 0.05635291686540033
+        }
+      ]
+    },
+    {
+      "update": 163,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.11989922025726225,
+          "y": 0.05359999178996566
+        }
+      ]
+    },
+    {
+      "update": 164,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.13047167519839778,
+          "y": 0.05062307899700657
+        }
+      ]
+    },
+    {
+      "update": 165,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.13848365746062147,
+          "y": 0.04747858838881204
+        }
+      ]
+    },
+    {
+      "update": 166,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.1441523994642344,
+          "y": 0.044218053136336706
+        }
+      ]
+    },
+    {
+      "update": 167,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.14769362280364406,
+          "y": 0.040888174490391276
+        }
+      ]
+    },
+    {
+      "update": 168,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.14931952041895766,
+          "y": 0.03753091051003227
+        }
+      ]
+    },
+    {
+      "update": 169,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.1492370100706169,
+          "y": 0.034183602682023424
+        }
+      ]
+    },
+    {
+      "update": 170,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.14764624522886413,
+          "y": 0.030879134722909804
+        }
+      ]
+    },
+    {
+      "update": 171,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.14473936849196276,
+          "y": 0.027646118193895466
+        }
+      ]
+    },
+    {
+      "update": 172,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.14069949191705466,
+          "y": 0.024509099912491086
+        }
+      ]
+    },
+    {
+      "update": 173,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.13569988816151582,
+          "y": 0.02148878650839641
+        }
+      ]
+    },
+    {
+      "update": 174,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.12990337606709615,
+          "y": 0.018602281839523234
+        }
+      ]
+    },
+    {
+      "update": 175,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.12346188425104332,
+          "y": 0.015863333353052685
+        }
+      ]
+    },
+    {
+      "update": 176,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.1165161763754213,
+          "y": 0.01328258384222461
+        }
+      ]
+    },
+    {
+      "update": 177,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.10919572202642747,
+          "y": 0.010867825408752196
+        }
+      ]
+    },
+    {
+      "update": 178,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.1016186975291624,
+          "y": 0.008624252790497604
+        }
+      ]
+    },
+    {
+      "update": 179,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.0938921015304275,
+          "y": 0.006554713551887604
+        }
+      ]
+    },
+    {
+      "update": 180,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.08611197078435523,
+          "y": 0.004659952958408772
+        }
+      ]
+    },
+    {
+      "update": 181,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.0783636822558081,
+          "y": 0.002938851664762646
+        }
+      ]
+    },
+    {
+      "update": 182,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.07072232839846038,
+          "y": 0.0013886546375881782
+        }
+      ]
+    },
+    {
+      "update": 183,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.06325315325357923,
+          "y": 0.000005190007013530144
+        }
+      ]
+    },
+    {
+      "update": 184,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.05601203783823551,
+          "y": -0.0012169232039110074
+        }
+      ]
+    },
+    {
+      "update": 185,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.04904602413564327,
+          "y": -0.0022840792871280566
+        }
+      ]
+    },
+    {
+      "update": 186,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.042393867854580616,
+          "y": -0.0032035025935285306
+        }
+      ]
+    },
+    {
+      "update": 187,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.03608661097941177,
+          "y": -0.003983077214299486
+        }
+      ]
+    },
+    {
+      "update": 188,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.03014816597843544,
+          "y": -0.004631189822604343
+        }
+      ]
+    },
+    {
+      "update": 189,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.024595904368475904,
+          "y": -0.005156585738667183
+        }
+      ]
+    },
+    {
+      "update": 190,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.019441243141230084,
+          "y": -0.005568238139488375
+        }
+      ]
+    },
+    {
+      "update": 191,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.014690223336324729,
+          "y": -0.005875230209906371
+        }
+      ]
+    },
+    {
+      "update": 192,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.010344075792673161,
+          "y": -0.0060866499238202846
+        }
+      ]
+    },
+    {
+      "update": 193,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.006399769819769902,
+          "y": -0.0062114970522272345
+        }
+      ]
+    },
+    {
+      "update": 194,
+      "method": "setInput",
+      "args": [
+        {
+          "x": -0.0028505412010942496,
+          "y": -0.006258601917430112
+        }
+      ]
+    },
+    {
+      "update": 195,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.0003136034294138531,
+          "y": -0.00623655534937003
+        }
+      ]
+    },
+    {
+      "update": 196,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.003105408211311337,
+          "y": -0.006153649249586124
+        }
+      ]
+    },
+    {
+      "update": 197,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.0055399175141972665,
+          "y": -0.006017827129759413
+        }
+      ]
+    },
+    {
+      "update": 198,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.0076340545621572066,
+          "y": -0.0058366439642169934
+        }
+      ]
+    },
+    {
+      "update": 199,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.009406230108975075,
+          "y": -0.005617234678095428
+        }
+      ]
+    },
+    {
+      "update": 200,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.010875981638325637,
+          "y": -0.0053662905841843685
+        }
+      ]
+    },
+    {
+      "update": 201,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.012063643197374263,
+          "y": -0.0050900430807578586
+        }
+      ]
+    },
+    {
+      "update": 202,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.012990045647996759,
+          "y": -0.004794253929089091
+        }
+      ]
+    },
+    {
+      "update": 203,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.013676246835609617,
+          "y": -0.004484211441905035
+        }
+      ]
+    },
+    {
+      "update": 204,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0.01414329092967294,
+          "y": -0.004164731931936016
+        }
+      ]
+    },
+    {
+      "update": 205,
+      "method": "setInput",
+      "args": [
+        {
+          "x": 0,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "update": 1281,
+      "method": "resize",
+      "dimensions": {
+        "width": 390,
+        "height": 595
+      }
+    },
+    {
+      "update": 1371,
+      "method": "resize",
+      "dimensions": {
+        "width": 320,
+        "height": 431
+      }
+    },
+    {
+      "update": 1372,
+      "method": "setReducedMotion",
+      "args": [
+        true
+      ]
+    }
+  ],
+  "notCovered": [
+    "browser/DOM/HUD or input projection after integration",
+    "current official deployment",
+    "exact reproduction of the old screenshot camera",
+    "full opening/return/E reversal/left-facing/edge-world cases",
+    "optional activity framing interactions",
+    "wide-screen regression or device performance"
+  ]
+}

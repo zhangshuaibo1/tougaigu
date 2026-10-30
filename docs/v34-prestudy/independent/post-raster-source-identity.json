@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "oldSHA256": "03be453b6ffd0c772f2ff8961599b548380f395252aef121d5c083ad3b8d08c3",
+  "currentSHA256": "175b3e45cf2f89fca35b2a1c7aae1a26dd342197055c7a80f1c52076e0cfbe39",
+  "onlyChanges": [
+    "clarify no pixel scanning or pose recalculation",
+    "guard getOutfitId function before scene eligibility"
+  ],
+  "boundsMathAndFollowMathExact": true
+}

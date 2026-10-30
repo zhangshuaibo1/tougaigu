@@ -1,5 +1,56 @@
 # v33 验收：小旅伴·抬头等你
 
+**闭环状态：v33 已完成正式 main 的候选环境、真实公网 HTTPS 和独立原始产物验收。** 本次对应 main `be05769a99a807f9396c03084760f8283ce4195e`、[run 40988381550](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40988381550)，于2026-10-30完成全部检查。v33当次发布为 Pages `d997c58b2a846b2673b8baec500db9697a846d7a`；本记录描述这一轮的历史发布与验收，不声明后续迭代中官网的当前版本。
+
+## 正式 main 与真实公网的最终结果
+
+| 项目 | 本次核验结果 |
+|---|---|
+| main / tree | `be05769a99a807f9396c03084760f8283ce4195e` / `5516892f4242d34b052630b5274641d3f8f27a91` |
+| 合入关系 | 父提交为已验v32 main `93655a7013adb3ecd41f7e1fac6935f7b5464539` 和已验v33候选 `1d63072bb9a27690ed14b15d3103c6e8a87fa297` |
+| 完整源码 | 官方source.tar.gz的1138个源文件逐Git blob及执行权限精确匹配；257个受保护文件精确等于已验1d63072 |
+| 运行与公开页面 | 144个运行文件的路径、内容和权限精确匹配当次Pages，另加空`.nojekyll`；CNAME保留。官方实际下载的public-index.html与main/dist/index.html逐字节一致 |
+| 测试 | 691/691通过，失败、跳过、取消、todo均0；全部691名称精确等于已验候选，原675及683名称保留；当前77个测试文件，原v31的74个、v32的76个测试文件及夹具按核验要求精确保留 |
+| 官方artifact | 12948817989；448,421,971字节；585个唯一ZIP载荷，安全路径／类型检查及官方SHA-256一致 |
+| 全部图像 | 452张原PNG逐尺寸及哈希核验；人工逐张打开10张并原字节保留，不代表已人工看过全部452张 |
+
+官方ZIP SHA-256为 `dc03f41dd76a4d2c415d3de74433dd53181132a683377f357242a8ee16d723c8`。原始身份、完整审阅和文件清单见 [最终归档](v33-main-release/README.md)、[独立审阅](v33-main-release/independent-main-review.json) 与 [manifest](v33-main-release/manifest.json)。
+
+| 同一main的两次独立运行 | Candidate | 真实Public HTTPS |
+|---|---|---|
+| 地址 | `http://127.0.0.1:8080/` | `https://tougaigu.com/?qa=be05769a99a807f9396c03084760f8283ce4195e` |
+| 官方浏览器步骤，2026-10-30 UTC | 01:53:20—02:06:27，成功 | 02:06:27—02:19:36，成功 |
+| 面部原图 | 11张，原必需11名完整，无额外第一灯freeJoy | 11张，原必需11名完整，无额外第一灯freeJoy |
+| 面部快照出现次数 | 964 | 970 |
+| 小旅伴专项 | 32.495413248秒，3配置，474次记录，21张原PNG | 33.058711260秒，3配置，474次记录，21张原PNG |
+| 六配置对白矩阵 | 12即时JSON、12原PNG；成对Canvas／控件矩形最大差0px | 12即时JSON、12原PNG；成对Canvas／控件矩形最大差0px |
+| 温室自然归位 | bubble可见、announcement隐藏 | bubble可见、announcement隐藏 |
+| 温室越根 | bubble隐藏、announcement可见 | bubble隐藏、announcement可见 |
+
+两套各自保留原6次跳跃、4个完整书本周期、4条完整邮局路线、6次手机结局阅读、4种桌面结局／重载组合和迟到资源隔离。严格预期网络失败清单仍为9/0/0且逐项一致，额外网络、页面和HTTP错误均0；原种植支撑点世界坐标最大误差为0。没有为本轮小猫降低旧玩法阈值。
+
+本main与较早正式候选必须分开记账：1d63072的独立候选仍是996源码、472次小猫记录、21张小猫图、12张面部图；它合法多锁存了一张第一灯freeJoy。main两套实际都是1138源码、474次小猫记录和11张面部图，不能套用早先12张。本main没有发生固定12张导致的汇总失败；早先候选的11→12汇总器修正及原失败记录保留在下方历史与原归档，原face验证器和阈值始终未改。
+
+## 小旅伴、对白与画面的证据范围
+
+三种小猫上下文分别为1280×800键盘、390×844和320×680的CDP模拟触摸，均从首站新开局，只取第一张票，不结算章节或制造奖励；身体坐标保持(105,560)、0死亡。两套分别验证真实shown归位路径、末段眨眼、闭盖恢复、可信E／触控反转、暂停冻结和游戏内减少动态。看向目标与rawSoul不同的实际归位样本，候选分别为41／57／57，公网为43／57／57；这些是各自原始记录，不是视觉推测。
+
+公网温室归位PNG里自然对白可见，越根PNG里对白已消失而公告可见，与本次各自DOM记录一致；它们仍是在DOM读取之后拍摄，不能称为同帧，也不能沿用v32 main公网曾短暂对白与公告共存的结果。小猫归位Canvas是原被动RAF锁存像素；后来拍摄的整页returned图片不代表到达眨眼同一帧。
+
+![v33正式main真实公网：小旅伴抬头看向拾光](v33-main-release/png/live/companion/1280/watching-up.png)
+
+[320px公网到达眨眼Canvas](v33-main-release/png/live/companion/320/return-arrival-blink-canvas.png) · [390px公网归位整页](v33-main-release/png/live/companion/390/returned.png) · [公网温室自然对白](v33-main-release/png/live/1280-greenhouse-leaves-returned.png) · [320px公网邮局书本平台](v33-main-release/png/live/1280-full-touch-320-post-book-riding.png)
+
+小猫JSON记录坐标与run，不记录身体对象身份；共享presentedSoul引用身份由原8项单元测试和源码证明。暂停两份Canvas原字符串没有留入报告，保留的是成功官方脚本中的原比较断言和可独立重比的冻结状态，不能声称重算了那对原像素。专项sourceFiles为执行机本地哈希；公网来源另由准确Pages运行树、实际public HTML和版本化资源记录支持。快照次数包含重复出现，不是独立动画帧数。
+
+最终包60文件（含manifest）、11,645,945字节；15个gzip全部无损回验，两个即时JSON tar各59成员、共118成员逐原字节匹配。manifest SHA-256为 `5920973f36dc307d3b345f5d038c45d67f8d70963ad6394be6ec4b96c8ab022b`，独立审阅SHA-256为 `1dece2c33413890c0c775752f7083431a84c3f5947f90ac41ac7c9e85708ee3b`。
+
+本轮完成并解除此前完整公网等待条件。实体手机、Safari、低端GPU、FPS、全部服装或活动仍不在证明范围；320px既有抬盖配件边缘裁切没有被v33宣称修复。详见 [人工原图记录](v33-main-release/manual-image-review.json) 与 [实际计数说明](v33-main-release/face-png-count-note.json)。
+
+## main发布时的阶段记录（历史原文）
+
+> 以下正文完整保留自main `be05769a99a807f9396c03084760f8283ce4195e`。其中“待本main”“仍须等待”等语句描述当时的阶段；它们已由本页上方run 40988381550的最终验收关闭。较早候选、本地预研和失败记录继续保持各自原始数值与范围。
+
 **发布状态：33.0.0 已部署，正式候选与原始产物独立核验通过，七项实际HTTPS资源精确匹配；main完整候选＋公网回归仍待本提交实际结果。** 候选为 `1d63072bb9a27690ed14b15d3103c6e8a87fa297`，[40984114609](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984114609)于2026-10-30 01:23:21 UTC完成候选浏览器，public正确跳过。随后v32 main `93655a7` 的 [40984854669](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984854669) 完成真实HTTPS并通过独立审计，才发布本33；v32最终证据完整继承于 [归档](v32-main-release/README.md)。
 
 ## 改动与保护边界
