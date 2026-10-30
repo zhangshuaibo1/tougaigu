@@ -22,6 +22,7 @@ import {createPostDelivery,beginPostReturn,advancePostDelivery,clearPostDelivery
 import { normalizeClockChoice, createClockEcho, advanceClockEcho, settleClockEcho, getClockEchoSnapshot, drawClockEcho } from './dream-clock-echo.js';
 import { drawRefinedSoul } from './dream-soul-art.js';
 import { drawTravelerSkullFront } from './dream-traveler-face.js';
+import { isCompanionScene, getCompanionView, drawRefinedCompanion } from './dream-companion-art.js';
 import { createTheatreEncore, advanceTheatreEncore, drawTheatreEncore, getTheatreEncoreView } from './dream-theatre-encore.js';
 import { createTravelerPerformance, advanceTravelerPerformance, settleTravelerPerformance, getTravelerPerformanceView, applyTravelerPerformance, isTravelerPerformanceScene } from './dream-traveler-performance.js';
 export { DREAM_LEVELS, DREAM_PHYSICS, createDreamRng, getDreamStars } from './dream-engine-base.js';
@@ -37,6 +38,7 @@ export class DreamGame extends BaseDreamGame {
     this.postScenes=createPostSceneAssets({loadImage:resources.loadPostImage});
     this.coastPaintedFrame=false;this.coastLight=null;this.clockEcho=null;
     this.postPaintedFrame=false;this.postLight=null;this.postDelivery=null;
+    this.companionRenderScope=null;
     this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.theatreLight=null;this.libraryLight=null;this.libraryPaintedFrame=false;this.theatreEncore=null;this.letterEcho=null;this.travelerPerformance=null;
   }
   isStationFinish(){return this.mode==='story'&&this.chapterIndex===0;}
@@ -227,6 +229,20 @@ export class DreamGame extends BaseDreamGame {
   getCharacterPresentation(t=this.options.reducedMotion?0:this.visualTime){
     return applyTravelerPerformance(super.getCharacterPresentation(t),this.getTravelerPerformanceView());
   }
+  render(){
+    if(!isCompanionScene(this))return super.render();
+    const previous=this.companionRenderScope;
+    this.companionRenderScope={ready:false,shown:null};
+    try{return super.render();}
+    finally{this.companionRenderScope=previous;}
+  }
+  getSoulPresentation(character=null){
+    const shown=super.getSoulPresentation(character),scope=this.companionRenderScope;
+    // Base render has already solved the one character and soul presentation.
+    // Share that exact object with the cat; do not calculate another return.
+    if(scope&&!scope.ready){scope.ready=true;scope.shown=shown;}
+    return shown;
+  }
   getStoryNPCView(npc){
     const view=super.getStoryNPCView(npc);
     if(view&&this.isCoastFinish())return{...view,clockChoice:this.clockEcho?.choice||null,lighting:'painted-coast'};
@@ -364,6 +380,14 @@ export class DreamGame extends BaseDreamGame {
   drawSkullFront(c,b,t,shown){
     if(drawTravelerSkullFront(c,this,b,t,shown))return;
     super.drawSkullFront(c,b,t,shown);
+  }
+  drawCompanion(c,x,y,t){
+    if(!c||!this.body||!this.options||!this.level)return;
+    const scope=this.companionRenderScope;
+    if(isCompanionScene(this)&&scope?.ready){
+      if(drawRefinedCompanion(c,getCompanionView(this,x,y,t,scope.shown)))return;
+    }
+    super.drawCompanion(c,x,y,t);
   }
   drawSoul(c,s,t){
     if(this.mode==='story'&&this.chapterIndex<=5&&drawRefinedSoul(c,this,s,t))return;
