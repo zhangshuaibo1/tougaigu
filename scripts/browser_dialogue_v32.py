@@ -1,6 +1,6 @@
-"""One-shot, read-only layout evidence at existing safe story-route checkpoints.
+"""Read-only layout and passive input evidence at safe story checkpoints.
 
-No Playwright dependency, input, wait, frame loop, DOM mutation or game update.
+No Playwright dependency, input synthesis, wait, frame loop, DOM mutation or game update.
 The JS is appended to the already instrumented app module, where `game` and the
 production rig/motion helpers are in scope. Python validates captured evidence.
 """
@@ -11,6 +11,29 @@ from pathlib import Path
 
 
 DIALOGUE_APP_PROBE = """
+window.__qaDialogueClockRead=()=>{
+  const observedAt=performance.now(),lastShownAt=Number.isFinite(lastCapBubbleAt)?lastCapBubbleAt:null;
+  const bubble=document.querySelector('#cap-bubble');
+  return {observedAt,lastShownAt,ageMs:lastShownAt===null?null:observedAt-lastShownAt,
+    showClass:bubble?.classList.contains('show')===true,opacity:Number(getComputedStyle(bubble).opacity),
+    text:document.querySelector('#cap-bubble-lines')?.textContent.trim(),chapterIndex:game?.chapterIndex,
+    runId:game?.runId,state:game?.state,form:game?.form,capPhase:game?.cap?.phase,
+    plantStage:game?.greenhousePlant?.stage,deaths:game?.deaths,
+    body:game?{x:game.body.x,y:game.body.y,grounded:game.body.grounded}:null};
+};
+window.__qaDialogueReturnStart=()=>{
+  if(window.__qaDialogueReturnWatch)throw Error('dialogue input observer already installed');
+  const initial=window.__qaDialogueClockRead(),inputs=[];let count=0,active=true;
+  const observe=event=>{if(event.code==='KeyE'){
+    count++;if(inputs.length<2)inputs.push({code:event.code,isTrusted:event.isTrusted===true,
+      repeat:event.repeat===true,snapshot:window.__qaDialogueClockRead()});
+  }};
+  window.addEventListener('keydown',observe,true);
+  window.__qaDialogueReturnWatch={finish:()=>{
+    if(active){window.removeEventListener('keydown',observe,true);active=false;}
+    return {initial,inputs,count,active,after:window.__qaDialogueClockRead()};
+  }};
+};
 window.__qaDialogueRead=()=>{
   const viewport={width:innerWidth,height:innerHeight},classes=[...document.body.classList];
   const excluded=['festival-session','lost-inspecting','moon-playing'].filter(name=>classes.includes(name));
@@ -62,6 +85,7 @@ window.__qaDialogueRead=()=>{
   return {schema:'desktop-dialogue-v32-1',eligible:true,viewport,mode:game.mode,excluded,
     version:document.querySelector('meta[name="application-version"]')?.content??null,
     observedAt:performance.now(),simulationTime:game.time,visualTime:game.visualTime,
+    dialogueClock:window.__qaDialogueClockRead(),
     chapterIndex:game.chapterIndex,runId:game.runId,state:game.state,form:game.form,
     openDialogs:[...document.querySelectorAll('dialog[open]')].map(el=>el.id),
     reducedMotion:game.options.reducedMotion,mediaReduced:matchMedia('(prefers-reduced-motion: reduce)').matches,
@@ -85,6 +109,27 @@ window.__qaDialogueRead=()=>{
 def _finite(value):
     assert isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value), 'non-finite geometry'
     return value
+
+
+def validate_natural_dialogue_return(record):
+    """Require the existing trusted E to refresh authored speech after cooldown."""
+    initial=record['initial']; after=record['after']
+    assert record['active'] is False and record['observerRemoved'] is True, 'dialogue input observer was not removed'
+    assert record['count']==1 and len(record['inputs'])==1, 'expected exactly one actual return input'
+    event=record['inputs'][0]; before=event['snapshot']
+    assert event['code']=='KeyE' and event['isTrusted'] is True and event['repeat'] is False, 'return was not one trusted E'
+    assert before['ageMs']>=1600, 'return input preceded the existing dialogue cooldown'
+    assert before['observedAt']<=after['lastShownAt']<=after['observedAt'], 'authored dialogue did not refresh after return input'
+    assert after['lastShownAt']>before['lastShownAt'], 'return reused the old dialogue timer'
+    assert initial['form']==before['form']=='soul' and after['form']=='body' and after['capPhase']=='closed', 'not a completed native soul return'
+    for key in ['chapterIndex','runId','plantStage','deaths','body']:
+        assert initial[key]==before[key]==after[key], 'return observation changed '+key
+    assert after['chapterIndex']==1 and after['plantStage']==2 and after['state']=='playing', 'wrong natural greenhouse return'
+    assert after['showClass'] and after['opacity']>0, 'refreshed return dialogue was not visible'
+    assert after['text']==before['text'] and '叶子探出头了，盖子得给它留点地方。' in after['text'], 'not the authored leaf dialogue'
+    return {'status':'passed','trustedInput':True,'existingCooldownMs':1600,
+            'actualInputAgeMs':before['ageMs'],'actualReturnDialogueAgeMs':after['ageMs'],
+            'scope':'Existing real return E, natural authored dialogue refresh and completed cap closure; no replay or clock mutation'}
 
 
 def _rect(value):

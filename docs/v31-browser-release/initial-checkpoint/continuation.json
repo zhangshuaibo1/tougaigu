@@ -1,0 +1,704 @@
+{
+  "schema": "tougaigu-v31-browser-release-continuation-1",
+  "generatedAtUtc": "2026-10-30T00:07:59.933050+00:00",
+  "repository": "zhangshuaibo1/tougaigu",
+  "siteUrl": "https://tougaigu.com/",
+  "scope": "Read-only local snapshot plus continuation drafts written only in /tmp. No Browser or remote access in this task.",
+  "intendedRepositoryDestination": "docs/v31-browser-release",
+  "persistenceStatus": "Local drafts for root to copy and commit. This task does not assert that this record or the v32 code bundle has been published.",
+  "latestRemoteObservation": {
+    "observedAtUtc": "2026-10-30T00:02:16Z",
+    "provenance": "Root supplied the remote observation; child did not query remote.",
+    "main": "26a3fe6b9b73f597f8107f6f7e80e551f7aee9eb",
+    "pr2State": "open",
+    "pr2Mergeability": "clean",
+    "pr2Merged": false,
+    "laterRemoteState": "unknown; reread before every next mutation"
+  },
+  "refs": {
+    "lastObservedMain": {
+      "ref": "refs/heads/main",
+      "commit": "26a3fe6b9b73f597f8107f6f7e80e551f7aee9eb",
+      "tree": "1b08e5165bb0b9ae9058461ad33dd49eb0f4e908"
+    },
+    "acceptedV31Candidate": {
+      "commit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+      "tree": "73ae710cc9b08eaee0cc7d39d70f89bb10f8e204",
+      "sourceFiles": 796,
+      "runtimeFiles": 143,
+      "formalCandidateCiRun": 40965474140,
+      "formalCandidateCiUrl": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40965474140",
+      "formalCandidateCiStatus": "success"
+    },
+    "publishedPages": {
+      "ref": "refs/heads/gh-pages",
+      "commit": "6e716a8c40e5ad0b917f3b3e85fe86f7b09a9241",
+      "tree": "89c590e390f02c089b67cfa6f3539c35fa836201",
+      "exactExpectedPagesTree": true
+    },
+    "preparedMainIntegration": {
+      "ref": "refs/heads/release-v31-browser-20261030",
+      "commit": "12f60683c4325a83585d2e07f4c0bf825ba03050",
+      "tree": "f418c649635f0dc3f55679dd9d7b973bb34ef40a",
+      "sourceFiles": 797,
+      "runtimeFiles": 143,
+      "runtimeExactCandidate7ba": true,
+      "fourStateDraftsExact": true,
+      "bothMainV30FilesExact": true,
+      "fetchedWorktree": "/workspace/scratch/2b18af2db412/tougaigu-v31-browser-integration",
+      "worktreeHeadVerifiedLocally": true,
+      "statusAtFinalLocalRead": "?? docs/v31-browser-release/\n",
+      "note": "Committed source tree audited independently of any concurrent local documentation additions."
+    }
+  },
+  "pullRequests": {
+    "pages": {
+      "number": 1,
+      "url": "https://github.com/zhangshuaibo1/tougaigu/pull/1",
+      "base": "gh-pages",
+      "head": "publish-v31-browser-20261029",
+      "state": "closed",
+      "merged": true,
+      "mergedAtUtc": "2026-10-29T23:48:44Z",
+      "mergeCommit": "6e716a8c40e5ad0b917f3b3e85fe86f7b09a9241"
+    },
+    "main": {
+      "number": 2,
+      "url": "https://github.com/zhangshuaibo1/tougaigu/pull/2",
+      "base": "main",
+      "head": "release-v31-browser-20261030",
+      "headCommit": "12f60683c4325a83585d2e07f4c0bf825ba03050",
+      "stateAtLastObservation": "open",
+      "mergeabilityAtLastObservation": "clean",
+      "sourcePreparationComplete": true,
+      "finalMergePending": true,
+      "afterMergeStillRequired": [
+        "Read back actual merge commit and tree; verify code and retained evidence",
+        "Obtain actual main workflow conclusion and release evidence"
+      ]
+    }
+  },
+  "publishedVerification": {
+    "pagesWorkflow": {
+      "runId": 40975633681,
+      "url": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40975633681",
+      "headSha": "6e716a8c40e5ad0b917f3b3e85fe86f7b09a9241",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAtUtc": "2026-10-29T23:49:09Z"
+    },
+    "httpsFourResourceCheck": {
+      "status": "passed",
+      "observedAtUtc": "2026-10-29T23:52:08.716041+00:00",
+      "allFourResourcesExact": true,
+      "source": {
+        "path": "/tmp/v31-browser-deploy-review.json",
+        "bytes": 13182,
+        "sha256": "efd741f767e68636f9aba1a2bcb8c9d2b0873233f1bec9baf977be641fb832e9"
+      },
+      "resources": [
+        {
+          "path": "index.html",
+          "status": 200,
+          "bytes": 25981,
+          "sha256": "7be90121bdd4504897ba87d5083b899195a5cb267d7564687de58c824f96a4d8",
+          "gitBlobSha": "e125d428d4767b44a3b197893cb0cc7cbc5b7896",
+          "exactCandidateBytes": true
+        },
+        {
+          "path": "dream.html",
+          "status": 200,
+          "bytes": 25981,
+          "sha256": "7be90121bdd4504897ba87d5083b899195a5cb267d7564687de58c824f96a4d8",
+          "gitBlobSha": "e125d428d4767b44a3b197893cb0cc7cbc5b7896",
+          "exactCandidateBytes": true
+        },
+        {
+          "path": "survivor.html",
+          "status": 200,
+          "bytes": 17452,
+          "sha256": "5d679915a8409b60bedd96dbe602aa59511dee3b9c2a099beab7fbdbe8386e77",
+          "gitBlobSha": "82b8b9d20e4c90976ef2b9007c3e19a3455186fc",
+          "exactCandidateBytes": true
+        },
+        {
+          "path": "dream-traveler-face.js",
+          "status": 200,
+          "bytes": 6783,
+          "sha256": "ea914374c1d7793ebf710617d2749a71e01805ce7d1c33f20294ecd65acfd71b",
+          "gitBlobSha": "913068ed2c8d27ff8dbc144c02bb466f2ac19e92",
+          "exactCandidateBytes": true
+        }
+      ],
+      "scope": "Four actual custom-domain HTTPS GET responses and Pages deployment; not complete gameplay.",
+      "survivorVersionNote": "No application-version meta; exact bytes and version 31.0.0 asset queries were verified."
+    },
+    "completePublicHttpsBrowser": {
+      "status": "blocked_at_first_navigation",
+      "owner": "root",
+      "harnessSource": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+      "target": "https://tougaigu.com/",
+      "expectedVersion": "31.0.0",
+      "executionMode": "local real browser attempt against actual public HTTPS; not a GitHub main workflow",
+      "originalExecutionStatus": "failed",
+      "startedAtUtc": "2026-10-30T00:05:31.923082+00:00",
+      "finishedAtUtc": "2026-10-30T00:05:32.607852+00:00",
+      "elapsedSeconds": 0.685,
+      "exitCode": 1,
+      "failureStage": "Initial page.goto before any game routes",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://tougaigu.com/",
+      "gameEntered": false,
+      "gameplayRoutesExecuted": false,
+      "fullGameplayValidationCompleted": false,
+      "completeReportExists": false,
+      "screenshotsProduced": 0,
+      "all30OriginalScriptsExactBefore": true,
+      "all30OriginalScriptsExactAfter": true,
+      "productOrScriptChanges": false,
+      "strictGateModification": false,
+      "extraInputOrRetryAdded": false,
+      "command": [
+        "/tmp/tougaigu-v32-browser-venv/bin/python",
+        "/workspace/scratch/2b18af2db412/tougaigu-v31-release/scripts/browser-smoke.py",
+        "--url",
+        "https://tougaigu.com/",
+        "--version",
+        "31.0.0",
+        "--output",
+        "/tmp/v31-live-browser-20261030/browser"
+      ],
+      "environment": {
+        "python": "/tmp/tougaigu-v32-browser-venv/bin/python",
+        "playwrightVersion": "1.55.0",
+        "chromiumVersion": "140.0.7339.16",
+        "browserCache": "/tmp/tougaigu-v32-browsers",
+        "fontConfiguration": "/tmp/tougaigu-v32-fonts.conf",
+        "fontConfigurationSha256": "02e2c70f217d60ba972062493e038356ca70151d42c2a842b511d7a361dfff19",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "rawEvidence": {
+        "execution": {
+          "path": "/tmp/v31-live-browser-20261030/execution.json",
+          "bytes": 9489,
+          "sha256": "7baf4d50e9fd8cb4cb873b23622d2fe83efa11f714f2a62a21e4b5b82961b2de",
+          "preservedOriginalBytes": true
+        },
+        "stdoutAndStderr": {
+          "path": "/tmp/v31-live-browser-20261030/browser.txt",
+          "bytes": 2569,
+          "sha256": "e76586d9783ebd0be9a75176cda8e1d87ceeabae3144d6a7b37abfed352f4833",
+          "preservedOriginalBytes": true
+        },
+        "systemTlsDiagnosis": {
+          "path": "/tmp/v31-live-browser-20261030/tls-diagnosis.json",
+          "bytes": 4764,
+          "sha256": "876edfda26a7225e83254b8a51d5e7ac02e8b6ca55b9159560e3b2c13db08c01",
+          "preservedOriginalBytes": true
+        }
+      },
+      "preserve": [
+        "Exact accepted v31 scripts",
+        "Original route inputs and transient waits",
+        "Strict state and failure assertions",
+        "Exact intentional network-failure budget",
+        "Post-route target 2050; strict 2000 <= body.x < 2120"
+      ],
+      "scopeNote": "The full original script was invoked but failed before entering the game. This is neither completed gameplay validation nor evidence of a product-code bug. Local browser evidence remains separate from formal main CI."
+    },
+    "mainWorkflowAfterMerge": {
+      "status": "not_started",
+      "mainMergeObserved": false,
+      "runId": null,
+      "provenance": "Latest root-provided status; merge/ref observations remain timestamped separately."
+    },
+    "endToEndReleaseClosed": false,
+    "systemDefaultTlsDiagnosis": {
+      "status": "verified",
+      "startedAtUtc": "2026-10-30T00:07:17.108777+00:00",
+      "finishedAtUtc": "2026-10-30T00:07:17.395781+00:00",
+      "url": "https://tougaigu.com/",
+      "httpStatus": 200,
+      "verifyMode": "CERT_REQUIRED",
+      "checkHostname": true,
+      "defaultCertificateAndHostnameVerificationSucceeded": true,
+      "responseBytes": 25981,
+      "responseSha256": "7be90121bdd4504897ba87d5083b899195a5cb267d7564687de58c824f96a4d8",
+      "exactReviewed31IndexBytes": true,
+      "expectedSourceCommit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+      "observedPeerCertificateIssuer": {
+        "organizationName": "OpenAI, LLC",
+        "commonName": "openai.com"
+      },
+      "existingEnvironmentProxyUsed": true,
+      "customProxyOrCAAddedForCheck": false,
+      "inference": "System default TLS verification succeeds while fresh Chromium rejects certificate authority before gameplay; this supports a local execution-environment trust-path difference.",
+      "limitations": [
+        "The origin-server certificate was not independently diagnosed.",
+        "The observations do not prove both clients received the identical certificate chain.",
+        "No product-code defect or domain failure is established by this local Chromium error."
+      ],
+      "httpsValidationDisabled": false,
+      "trustedCertificatesAdded": false,
+      "httpDowngrade": false,
+      "proxyBypassed": false,
+      "browserRerun": false,
+      "evidence": {
+        "path": "/tmp/v31-live-browser-20261030/tls-diagnosis.json",
+        "bytes": 4764,
+        "sha256": "876edfda26a7225e83254b8a51d5e7ac02e8b6ca55b9159560e3b2c13db08c01",
+        "preservedOriginalBytes": true
+      }
+    }
+  },
+  "authorizationAndToolState": {
+    "releaseAuthorization": "previously granted; continues to apply",
+    "browserFallbackAuthorization": "previously granted; continues to apply",
+    "askForSameReleaseOrBrowserPermissionAgain": false,
+    "browser": {
+      "availability": "unavailable in current new environment context",
+      "observedBlocker": "originating browser context is missing",
+      "permissionDenied": false,
+      "authorizationRevoked": false,
+      "nextAction": "Recover a supported usable context if available and continue already-authorized operations. Do not reinterpret an environment/context failure as missing permission."
+    },
+    "nativePr2MergeRequest": {
+      "request": "merge PR #2",
+      "observationWindowSeconds": 20,
+      "successfulReceiptReceived": false,
+      "rejectionReceiptReceived": false,
+      "outcome": "unknown",
+      "lastRemoteCheckAtUtc": "2026-10-30T00:02:16Z",
+      "mainAtCheck": "26a3fe6b9b73f597f8107f6f7e80e551f7aee9eb",
+      "prStateAtCheck": "open",
+      "mayCompleteAfterObservation": true,
+      "interpretation": "No receipt is neither rejection nor success. Read refs and PR status before retrying."
+    }
+  },
+  "resumeProcedure": [
+    {
+      "order": 1,
+      "action": "Read current main, gh-pages and release-v31-browser-20261030 refs, PR #2 head/state/merge commit, and relevant workflow conclusions before any write.",
+      "reason": "Detect a late native merge or newer approved commit; this historical snapshot is not a live lock."
+    },
+    {
+      "order": 2,
+      "action": "If PR #2 already merged, record its actual merge commit and continue verification without repeating the merge. If refs advanced, inspect the diff and update the expected snapshot before acting."
+    },
+    {
+      "order": 3,
+      "action": "If PR #2 remains open and clean, verify its head against reviewed 12f6068 or review any intentional later documentation additions. Preserve all 143 runtime files, accepted v31 scripts, four approved state texts and both main v30 records."
+    },
+    {
+      "order": 4,
+      "action": "Complete the already-authorized final merge through a supported available write path. Browser permission is already granted; its present issue is missing originating context. Require an actual receipt and read back refs; do not blindly repeat an unknown native request."
+    },
+    {
+      "order": 5,
+      "action": "Keep the local full public HTTPS attempt recorded as blocked_at_first_navigation: exit 1 on certificate authority at initial goto, no game routes, full report or screenshots. Preserve the original evidence and 30 exact scripts. Resume formal main workflow verification when the already-authorized merge path recovers; record actual CI outcomes separately. Do not change certificate/permission settings or repeat the same blocked local attempt as part of this continuation update. System default TLS HTTP 200 supports an environment trust-path difference, not an origin-certificate or product diagnosis."
+    },
+    {
+      "order": 6,
+      "action": "Once v31 main/public closure is established, resume frozen v32. Recheck the 12 expected old code blobs against the actual base, retain every target byte, and obtain formal v32 candidate CI before publication."
+    }
+  ],
+  "preparedMainFiles": {
+    "stateTexts": [
+      {
+        "path": "README.md",
+        "bytes": 23542,
+        "sha256": "39003b456180b27759d2321f979d27900d84bed54717a62447448d8cd11f222a",
+        "gitBlobSha": "61b4faba42452abb2d8552c7976b4726f1395b95"
+      },
+      {
+        "path": "docs/IN-PROGRESS-v31.md",
+        "bytes": 9856,
+        "sha256": "e5ef567c51c49ff442bcaf2e797d49700cd3fa56805c6c5825360c11dd501638",
+        "gitBlobSha": "5213e098d6bafee1fd604086cc30de3d0cc625c1"
+      },
+      {
+        "path": "docs/ITERATION.md",
+        "bytes": 36574,
+        "sha256": "efb60af315d303e5230dbf482dd0d3de315abd3e28b7901e7d73367b6099d94f",
+        "gitBlobSha": "877be1af7865b3b36e0773947fc64f2da9666bd7"
+      },
+      {
+        "path": "docs/QA-v31.md",
+        "bytes": 13831,
+        "sha256": "dfd31d3c87bf3333a2cb6a760977fbed966037f27e5fa3e07fc76da661d7d8ba",
+        "gitBlobSha": "781f0ed569ca39ce1daed7c2d0be4dec8797b931"
+      }
+    ],
+    "preservedV30Evidence": [
+      {
+        "path": "docs/verification-v30-public-audit.json",
+        "bytes": 2583,
+        "sha256": "05c9b67f24aa6a594ea45a2a26363f255c231ab8b4b6f5cc61d1dd5386ed20bb",
+        "gitBlobSha": "b5603f5bd2a2c4fd2646b74a621c55ee1994ed32",
+        "exactMain26aBytes": true
+      },
+      {
+        "path": "docs/verification-v30-release-summary.md",
+        "bytes": 3184,
+        "sha256": "ac40b2118b21743f4d3e373ae318897ab9aa1163cbf90602fa7d6893324a162e",
+        "gitBlobSha": "70c3b6ebbd9d9c75c08b50417b163a40fa7bd70f",
+        "exactMain26aBytes": true
+      }
+    ]
+  },
+  "v32FrozenContinuation": {
+    "status": "Local candidate completed and frozen; formal CI and public publication pending",
+    "version": "32.0.0",
+    "baseCommit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+    "executedBrowserSourceTree": "5445a39ba818484952598bfeab24d70702424a6b",
+    "finalArchiveTree": "ad30abdd5852d171c5853b706e86695748ff5aff",
+    "runtimeScriptsTestsPackageExactExecutedBytes": true,
+    "worktree": "/workspace/scratch/2b18af2db412/tougaigu-v32-release",
+    "sourceFiles": 824,
+    "runtimeFiles": 143,
+    "fullUploadMetadata": {
+      "path": "/tmp/v32-release-upload.json",
+      "bytes": 16703,
+      "sha256": "6606dd5ce084ab2e3122bd964e693516e4e2097663e235d65815db4a1d75e118"
+    },
+    "fullDeltaFiles": 35,
+    "codeTextBundle": {
+      "directory": "/tmp/tougaigu-v32-browser-text-delta",
+      "manifest": {
+        "path": "/tmp/tougaigu-v32-browser-text-delta/delta-manifest.json",
+        "bytes": 9355,
+        "sha256": "6cb6b2880ca1d06a83b8da322ce10af8f9d1d00c7d39bd439ffd49a2c05496d4"
+      },
+      "patch": {
+        "path": "/tmp/tougaigu-v32-browser-text-delta/code-only-v32-vs-7ba.patch",
+        "bytes": 124599,
+        "sha256": "594876534a31e429d41c23794bb1e09199df15ca1f90d84159e403067a46db68"
+      },
+      "fileCount": 12,
+      "modifiedFiles": 7,
+      "newFiles": 5,
+      "totalFullBytes": 302127,
+      "totalPatchBytes": 124599,
+      "containsDocsOrBinaryEvidence": false,
+      "allTwelveExactFrozenSource": true,
+      "allExpectedOldBlobsMatchPreparedMain12f6068": true,
+      "files": [
+        {
+          "path": "dist/cap-play.css",
+          "status": "modified",
+          "bytes": 10558,
+          "chars": 10556,
+          "utf16Chars": 10556,
+          "oldBytes": 9603,
+          "expectedOldGitBlobSha": "d2352fbfccf384058a81c343dad341d042ecdb39",
+          "targetGitBlobSha": "cbad1177460c567ba260acd88e041d3c71c2453e",
+          "sha256": "a633fd679d3e79fd98160fe36dbff8fe6c6f8d615b2bf8eee1089fbb0045cf08",
+          "fullText": "/tmp/tougaigu-v32-browser-text-delta/files/dist/cap-play.css",
+          "patch": "/tmp/tougaigu-v32-browser-text-delta/patches/dist__cap-play.css.patch",
+          "patchBytes": 3418,
+          "hunks": 1,
+          "crlfCount": 0,
+          "endsWithNewline": true
+        },
+        {
+          "path": "dist/dream-play.css",
+          "status": "modified",
+          "bytes": 15070,
+          "chars": 15070,
+          "utf16Chars": 15070,
+          "oldBytes": 13110,
+          "expectedOldGitBlobSha": "43f2aa343f9691e94f3310af3e670069b2527536",
+          "targetGitBlobSha": "960d9527d98434ed3873a2e9960d7f8b202bb588",
+          "sha256": "4a952c2631e2ede816f43b1932e42a7b0b7c06d64aa34107e7745810a5522022",
+          "fullText": "/tmp/tougaigu-v32-browser-text-delta/files/dist/dream-play.css",
+          "patch": "/tmp/tougaigu-v32-browser-text-delta/patches/dist__dream-play.css.patch",
+          "patchBytes": 3102,
+          "hunks": 2,
+          "crlfCount": 0,
+          "endsWithNewline": true
+        },
+        {
+          "path": "dist/dream.html",
+          "status": "modified",
+          "bytes": 26027,
+          "chars": 22823,
+          "utf16Chars": 22823,
+          "oldBytes": 25981,
+          "expectedOldGitBlobSha": "e125d428d4767b44a3b197893cb0cc7cbc5b7896",
+          "targetGitBlobSha": "922a917e08f361f3031505d969133ddb52288128",
+          "sha256": "a96a5dc902053f5519d1946a8172fc8c21046237da2bd892573ecd283d96a833",
+          "fullText": "/tmp/tougaigu-v32-browser-text-delta/files/dist/dream.html",
+          "patch": "/tmp/tougaigu-v32-browser-text-delta/patches/dist__dream.html.patch",
+          "patchBytes": 14154,
+          "hunks": 4,
+          "crlfCount": 0,
+          "endsWithNewline": true
+        },
+        {
+          "path": "dist/index.html",
+          "status": "modified",
+          "bytes": 26027,
+          "chars": 22823,
+          "utf16Chars": 22823,
+          "oldBytes": 25981,
+          "expectedOldGitBlobSha": "e125d428d4767b44a3b197893cb0cc7cbc5b7896",
+          "targetGitBlobSha": "922a917e08f361f3031505d969133ddb52288128",
+          "sha256": "a96a5dc902053f5519d1946a8172fc8c21046237da2bd892573ecd283d96a833",
+          "fullText": "/tmp/tougaigu-v32-browser-text-delta/files/dist/index.html",
+          "patch": "/tmp/tougaigu-v32-browser-text-delta/patches/dist__index.html.patch",
+          "patchBytes": 14154,
+          "hunks": 4,
+          "crlfCount": 0,
+          "endsWithNewline": true
+        },
+        {
+          "path": "dist/survivor.html",
+          "status": "modified",
+          "bytes": 17452,
+          "chars": 15717,
+          "utf16Chars": 15717,
+          "oldBytes": 17452,
+          "expectedOldGitBlobSha": "82b8b9d20e4c90976ef2b9007c3e19a3455186fc",
+          "targetGitBlobSha": "8ec451fae0e0f6da4bdacd9a3d68a5db31548ea2",
+          "sha256": "fdba4bb13956f96e82d21a4061e6a1c08ced23ee38f3c66e13aa8c6f2cbc4a6e",
+          "fullText": "/tmp/tougaigu-v32-browser-text-delta/files/dist/survivor.html",
+          "patch": "/tmp/tougaigu-v32-browser-text-delta/patches/dist__survivor.html.patch",
+          "patchBytes": 10599,
+          "hunks": 2,
+          "crlfCount": 0,
+          "endsWithNewline": true
+        },
+        {
+          "path": "package.json",
+          "status": "modified",
+          "bytes": 452,
+          "chars": 398,
+          "utf16Chars": 398,
+          "oldBytes": 452,
+          "expectedOldGitBlobSha": "90c869e023188dce68737be55cb843e8154d6556",
+          "targetGitBlobSha": "e602ac9d19d9090fb872eed3514904b79020f9c5",
+          "sha256": "4ce2c919213d77f8596937f2878c852c19a89667303c8e00c14fecc718211a4f",
+          "fullText": "/tmp/tougaigu-v32-browser-text-delta/files/package.json",
+          "patch": "/tmp/tougaigu-v32-browser-text-delta/patches/package.json.patch",
+          "patchBytes": 343,
+          "hunks": 1,
+          "crlfCount": 0,
+          "endsWithNewline": true
+        },
+        {
+          "path": "scripts/browser-smoke.py",
+          "status": "modified",
+          "bytes": 139326,
+          "chars": 138550,
+          "utf16Chars": 138550,
+          "oldBytes": 137469,
+          "expectedOldGitBlobSha": "f1065bc391a0103f581a9c1238e3fb59553ae755",
+          "targetGitBlobSha": "4f852638e4e28f86b5cabaaeffb487fb9b522f3e",
+          "sha256": "eaf4893e6cd10dc4343785fbfea134856d734c5afd547bace2d78cc62ebe7f11",
+          "fullText": "/tmp/tougaigu-v32-browser-text-delta/files/scripts/browser-smoke.py",
+          "patch": "/tmp/tougaigu-v32-browser-text-delta/patches/scripts__browser-smoke.py.patch",
+          "patchBytes": 9923,
+          "hunks": 12,
+          "crlfCount": 0,
+          "endsWithNewline": true
+        },
+        {
+          "path": "scripts/browser_dialogue_matrix_v32.py",
+          "status": "new",
+          "bytes": 14441,
+          "chars": 14433,
+          "utf16Chars": 14433,
+          "oldBytes": null,
+          "expectedOldGitBlobSha": null,
+          "targetGitBlobSha": "8accd3fe898a6a88acf1bab6d966c6f74e4904a2",
+          "sha256": "cb7804a5a726d562b83a2022b39126cee424c44a83bdc4dc898aa4051fa4924f",
+          "fullText": "/tmp/tougaigu-v32-browser-text-delta/files/scripts/browser_dialogue_matrix_v32.py",
+          "patch": "/tmp/tougaigu-v32-browser-text-delta/patches/scripts__browser_dialogue_matrix_v32.py.patch",
+          "patchBytes": 14868,
+          "hunks": 1,
+          "crlfCount": 0,
+          "endsWithNewline": true
+        },
+        {
+          "path": "scripts/browser_dialogue_v32.py",
+          "status": "new",
+          "bytes": 17600,
+          "chars": 17600,
+          "utf16Chars": 17600,
+          "oldBytes": null,
+          "expectedOldGitBlobSha": null,
+          "targetGitBlobSha": "06d31491ffaf3c302ff39bb1f4bf5d3069949323",
+          "sha256": "2baa0af1c6a9a140b8394327634a371c12bdedbd09eff8fbba78adef7ae63c73",
+          "fullText": "/tmp/tougaigu-v32-browser-text-delta/files/scripts/browser_dialogue_v32.py",
+          "patch": "/tmp/tougaigu-v32-browser-text-delta/patches/scripts__browser_dialogue_v32.py.patch",
+          "patchBytes": 18039,
+          "hunks": 1,
+          "crlfCount": 0,
+          "endsWithNewline": true
+        },
+        {
+          "path": "tests/browser-dialogue-matrix-v32.test.mjs",
+          "status": "new",
+          "bytes": 4154,
+          "chars": 4154,
+          "utf16Chars": 4154,
+          "oldBytes": null,
+          "expectedOldGitBlobSha": null,
+          "targetGitBlobSha": "db0c9c05b74e3975c97946210a4ff8f94af61f53",
+          "sha256": "75e2cc178af9faca2d85483b1e9012ce335915c898537f15fb863b233d0323c2",
+          "fullText": "/tmp/tougaigu-v32-browser-text-delta/files/tests/browser-dialogue-matrix-v32.test.mjs",
+          "patch": "/tmp/tougaigu-v32-browser-text-delta/patches/tests__browser-dialogue-matrix-v32.test.mjs.patch",
+          "patchBytes": 4442,
+          "hunks": 1,
+          "crlfCount": 0,
+          "endsWithNewline": true
+        },
+        {
+          "path": "tests/browser-dialogue-v32.test.mjs",
+          "status": "new",
+          "bytes": 7670,
+          "chars": 7666,
+          "utf16Chars": 7666,
+          "oldBytes": null,
+          "expectedOldGitBlobSha": null,
+          "targetGitBlobSha": "151c81042242725ee50609536674ad400de6d2c5",
+          "sha256": "91129e5d58bcb960aca3db462ba0738dcb34671a41c3c6a07dd6e199d570c2c1",
+          "fullText": "/tmp/tougaigu-v32-browser-text-delta/files/tests/browser-dialogue-v32.test.mjs",
+          "patch": "/tmp/tougaigu-v32-browser-text-delta/patches/tests__browser-dialogue-v32.test.mjs.patch",
+          "patchBytes": 7978,
+          "hunks": 1,
+          "crlfCount": 0,
+          "endsWithNewline": true
+        },
+        {
+          "path": "tests/fixtures/v32-layout-v31-css.json",
+          "status": "new",
+          "bytes": 23350,
+          "chars": 23348,
+          "utf16Chars": 23348,
+          "oldBytes": null,
+          "expectedOldGitBlobSha": null,
+          "targetGitBlobSha": "6c2c2cfdcb58809c27357e5801fa748be80463f6",
+          "sha256": "e7914aa2abe8f379fc10203c3e4a72c59d36d4b695ed276d016a82047e8a7647",
+          "fullText": "/tmp/tougaigu-v32-browser-text-delta/files/tests/fixtures/v32-layout-v31-css.json",
+          "patch": "/tmp/tougaigu-v32-browser-text-delta/patches/tests__fixtures__v32-layout-v31-css.json.patch",
+          "patchBytes": 23579,
+          "hunks": 1,
+          "crlfCount": 0,
+          "endsWithNewline": true
+        }
+      ]
+    },
+    "localVerification": {
+      "finalTestFilesPassed": 76,
+      "javascriptModulesChecked": 68,
+      "localReferencesChecked": 171,
+      "versionedAssetReferencesChecked": 232,
+      "fullBrowserExitCode": 0,
+      "fullBrowserSeconds": 752.294,
+      "independentMatrixCasesPassed": 6,
+      "matrixRepeatedAtEndOfFullBrowser": true,
+      "mainViewports": [
+        "1280x800",
+        "390x844",
+        "320x680"
+      ],
+      "exactIntentionalRequestFailures": [
+        9,
+        0,
+        0
+      ]
+    },
+    "matrixTerminology": "六个视口／减动配置；不是六个不同章节场景",
+    "strictPostRoute": {
+      "script": "scripts/browser_post_v28.py",
+      "unchangedFrom": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+      "targetX": 2050,
+      "assertion": "2000 <= body.x < 2120"
+    },
+    "requiredMatrixFixture": "tests/fixtures/v32-layout-v31-css.json",
+    "acceptanceExplanation": "/workspace/scratch/2b18af2db412/tougaigu-v32-release/docs/v32-prestudy/LOCAL-RESULTS.md",
+    "durabilityNote": "The /tmp bundle and frozen worktrees are local artifacts, not an asserted remote archive. This record provides hashes/locations, not the full 12 source file contents. If the local environment is lost, recover byte-exact source from a separately persisted approved archive; do not reconstruct or claim publication from hashes alone."
+  },
+  "localReadOnlyAudit": {
+    "atUtc": "2026-10-30T00:07:59.933050+00:00",
+    "remoteRead": false,
+    "browserUsed": false,
+    "remoteWritten": false,
+    "worktreesModified": false,
+    "committedSourceFiles": 797,
+    "runtimeFilesExact7ba": 143,
+    "approvedTextsExact": 4,
+    "mainV30FilesExact": 2,
+    "v32BundleFilesExact": 12,
+    "frozenWorktrees": [
+      {
+        "worktree": "/workspace/scratch/2b18af2db412/tougaigu-v31-release",
+        "metadata": "/tmp/v31-release-upload.json",
+        "metadataSha256": "522291d7c14d1f568bd134cabfc58393bde106d1ce8d721e65d2a22eaa0e4d56",
+        "filesChecked": 21,
+        "allListedFrozenBytesExact": true,
+        "modifiedByThisTask": false
+      },
+      {
+        "worktree": "/workspace/scratch/2b18af2db412/tougaigu-v32-release",
+        "metadata": "/tmp/v32-release-upload.json",
+        "metadataSha256": "6606dd5ce084ab2e3122bd964e693516e4e2097663e235d65815db4a1d75e118",
+        "filesChecked": 35,
+        "allListedFrozenBytesExact": true,
+        "modifiedByThisTask": false
+      }
+    ]
+  },
+  "sourceArtifacts": {
+    "httpsReview": {
+      "path": "/tmp/v31-browser-deploy-review.json",
+      "bytes": 13182,
+      "sha256": "efd741f767e68636f9aba1a2bcb8c9d2b0873233f1bec9baf977be641fb832e9"
+    },
+    "draftManifest": {
+      "path": "/tmp/tougaigu-v31-browser-text-drafts/draft-manifest.json",
+      "bytes": 3088,
+      "sha256": "189ff85ea631449733ea7369abccc96dbcdee99e87d85ffc09e5559861a1c33e"
+    },
+    "v32DeltaManifest": {
+      "path": "/tmp/tougaigu-v32-browser-text-delta/delta-manifest.json",
+      "bytes": 9355,
+      "sha256": "6cb6b2880ca1d06a83b8da322ce10af8f9d1d00c7d39bd439ffd49a2c05496d4"
+    },
+    "v32UploadMetadata": {
+      "path": "/tmp/v32-release-upload.json",
+      "bytes": 16703,
+      "sha256": "6606dd5ce084ab2e3122bd964e693516e4e2097663e235d65815db4a1d75e118"
+    },
+    "liveBrowser_execution": {
+      "path": "/tmp/v31-live-browser-20261030/execution.json",
+      "bytes": 9489,
+      "sha256": "7baf4d50e9fd8cb4cb873b23622d2fe83efa11f714f2a62a21e4b5b82961b2de",
+      "preservedOriginalBytes": true
+    },
+    "liveBrowser_stdoutAndStderr": {
+      "path": "/tmp/v31-live-browser-20261030/browser.txt",
+      "bytes": 2569,
+      "sha256": "e76586d9783ebd0be9a75176cda8e1d87ceeabae3144d6a7b37abfed352f4833",
+      "preservedOriginalBytes": true
+    },
+    "liveBrowser_systemTlsDiagnosis": {
+      "path": "/tmp/v31-live-browser-20261030/tls-diagnosis.json",
+      "bytes": 4764,
+      "sha256": "876edfda26a7225e83254b8a51d5e7ac02e8b6ca55b9159560e3b2c13db08c01",
+      "preservedOriginalBytes": true
+    }
+  },
+  "updatedAtUtc": "2026-10-30T00:09:38.991038+00:00",
+  "updateHistory": [
+    {
+      "atUtc": "2026-10-30T00:09:38.991038+00:00",
+      "changed": "Full public local browser status changed from pending to blocked_at_first_navigation after raw execution/log and default-system-TLS evidence became available. Original evidence was read, hashed and retained unchanged.",
+      "previousDraftSha256": {
+        "continuation.json": "fe0eb597a83af9d922c84ba35f9c340ba7afc57a8b636f89a92f106c214e9803",
+        "README.md": "647dfe3c633950b842771ecfa0676ea1a1ef2affec416cb7ce437d4720a5f3bb",
+        "draft-manifest.json": "57d3e88e24b9d0114a9023ceb0d95fea94d9cf8fb8c6a6d83048e2050418d0ff"
+      }
+    }
+  ]
+}

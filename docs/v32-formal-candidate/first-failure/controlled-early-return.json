@@ -1,0 +1,1591 @@
+{
+  "mode": "early-original",
+  "input": "original station and greenhouse DOM/keyboard route",
+  "productionChanges": false,
+  "scope": "first station and greenhouse only; not complete browser suite",
+  "events": [
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 1509.2999999970198,
+      "lastShownAt": null,
+      "ageMs": null,
+      "shown": false,
+      "opacity": "0",
+      "text": "",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "body",
+      "time": 1.266666666666667,
+      "body": {
+        "x": 105,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 1531.2000000029802,
+      "lastShownAt": 1529.7000000029802,
+      "ageMs": 1.5,
+      "shown": true,
+      "opacity": "0",
+      "text": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 1.266666666666667,
+      "body": {
+        "x": 105,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "opening",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 2252.4000000059605,
+      "lastShownAt": 2249.4000000059605,
+      "ageMs": 3,
+      "shown": true,
+      "opacity": "1",
+      "text": "拾光去程票抱好了！按 E，陪我把它送回头顶的小火车。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 2.0166666666666644,
+      "body": {
+        "x": 105,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": null
+    },
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 2413.9000000059605,
+      "lastShownAt": 2249.4000000059605,
+      "ageMs": 164.5,
+      "shown": true,
+      "opacity": "1",
+      "text": "拾光去程票抱好了！按 E，陪我把它送回头顶的小火车。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 2.166666666666664,
+      "body": {
+        "x": 105,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": null
+    },
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 4598.100000008941,
+      "lastShownAt": 2249.4000000059605,
+      "ageMs": 2348.7000000029802,
+      "shown": true,
+      "opacity": "1",
+      "text": "拾光去程票抱好了！按 E，陪我把它送回头顶的小火车。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "body",
+      "time": 4.34999999999999,
+      "body": {
+        "x": 413,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 4599.70000000298,
+      "lastShownAt": 4598.9000000059605,
+      "ageMs": 0.7999999970197678,
+      "shown": true,
+      "opacity": "1",
+      "text": "拾光小火车说，下一站先不急着命名。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 4.34999999999999,
+      "body": {
+        "x": 413,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "opening",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 5790.9000000059605,
+      "lastShownAt": 4598.9000000059605,
+      "ageMs": 1192.0999999940395,
+      "shown": false,
+      "opacity": "1",
+      "text": "拾光小火车说，下一站先不急着命名。",
+      "chapterIndex": 0,
+      "state": "paused",
+      "form": "soul",
+      "time": 5.533333333333319,
+      "body": {
+        "x": 413,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 6311.29999999702,
+      "lastShownAt": 6310.9000000059605,
+      "ageMs": 0.3999999910593033,
+      "shown": true,
+      "opacity": "0",
+      "text": "阿拾第一盏亮了，藏起来的话找到信封。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 5.533333333333319,
+      "body": {
+        "x": 413,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": null
+    },
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 6321.100000008941,
+      "lastShownAt": 6310.9000000059605,
+      "ageMs": 10.200000002980232,
+      "shown": true,
+      "opacity": "0",
+      "text": "阿拾第一盏亮了，藏起来的话找到信封。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 5.533333333333319,
+      "body": {
+        "x": 413,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": null
+    },
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 10109.20000000298,
+      "lastShownAt": 6310.9000000059605,
+      "ageMs": 3798.2999999970198,
+      "shown": true,
+      "opacity": "1",
+      "text": "阿拾第一盏亮了，藏起来的话找到信封。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "body",
+      "time": 9.300000000000042,
+      "body": {
+        "x": 1101,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 10110.90000000596,
+      "lastShownAt": 10109.90000000596,
+      "ageMs": 1,
+      "shown": true,
+      "opacity": "1",
+      "text": "拾光小火车说，下一站先不急着命名。",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 9.300000000000042,
+      "body": {
+        "x": 1101,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "opening",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 11509.29999999702,
+      "lastShownAt": 10109.90000000596,
+      "ageMs": 1399.3999999910593,
+      "shown": false,
+      "opacity": "1",
+      "text": "拾光小火车说，下一站先不急着命名。",
+      "chapterIndex": 0,
+      "state": "paused",
+      "form": "soul",
+      "time": 10.683333333333444,
+      "body": {
+        "x": 1101,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 11985.5,
+      "lastShownAt": 11985.10000000894,
+      "ageMs": 0.3999999910593033,
+      "shown": true,
+      "opacity": "0",
+      "text": "拾光第二盏亮了。你走地面，我走脑洞！",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 10.683333333333444,
+      "body": {
+        "x": 1101,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": null
+    },
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 12028.20000000298,
+      "lastShownAt": 11985.10000000894,
+      "ageMs": 43.099999994039536,
+      "shown": true,
+      "opacity": "0",
+      "text": "拾光第二盏亮了。你走地面，我走脑洞！",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "soul",
+      "time": 10.683333333333444,
+      "body": {
+        "x": 1101,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 15794,
+      "lastShownAt": 11985.10000000894,
+      "ageMs": 3808.8999999910593,
+      "shown": false,
+      "opacity": "1",
+      "text": "拾光第二盏亮了。你走地面，我走脑洞！",
+      "chapterIndex": 0,
+      "state": "playing",
+      "form": "body",
+      "time": 14.466666666666965,
+      "body": {
+        "x": 1813.5,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 15917.70000000298,
+      "lastShownAt": 11985.10000000894,
+      "ageMs": 3932.5999999940395,
+      "shown": false,
+      "opacity": "0.197597",
+      "text": "拾光第二盏亮了。你走地面，我走脑洞！",
+      "chapterIndex": 0,
+      "state": "complete",
+      "form": "body",
+      "time": 14.583333333333638,
+      "body": {
+        "x": 1841.5,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 16331.70000000298,
+      "lastShownAt": 11985.10000000894,
+      "ageMs": 4346.5999999940395,
+      "shown": false,
+      "opacity": "0",
+      "text": "拾光第二盏亮了。你走地面，我走脑洞！",
+      "chapterIndex": 0,
+      "state": "complete",
+      "form": "body",
+      "time": 14.583333333333638,
+      "body": {
+        "x": 1841.5,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": null
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 16640.40000000596,
+      "lastShownAt": null,
+      "ageMs": null,
+      "shown": false,
+      "opacity": "0",
+      "text": "拾光第二盏亮了。你走地面，我走脑洞！",
+      "chapterIndex": 1,
+      "state": "playing",
+      "form": "body",
+      "time": 0,
+      "body": {
+        "x": 105,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": 0
+    },
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 19495.20000000298,
+      "lastShownAt": null,
+      "ageMs": null,
+      "shown": false,
+      "opacity": "0",
+      "text": "拾光第二盏亮了。你走地面，我走脑洞！",
+      "chapterIndex": 1,
+      "state": "playing",
+      "form": "body",
+      "time": 2.8166666666666615,
+      "body": {
+        "x": 597,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": 0
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 19498.79999999702,
+      "lastShownAt": 19498.20000000298,
+      "ageMs": 0.5999999940395355,
+      "shown": true,
+      "opacity": "0",
+      "text": "拾光旧车票折成小纸盆，等旧靴子里的种子上车。",
+      "chapterIndex": 1,
+      "state": "playing",
+      "form": "soul",
+      "time": 2.8166666666666615,
+      "body": {
+        "x": 597,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "opening",
+      "plantStage": 0
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 21370.70000000298,
+      "lastShownAt": 21368.29999999702,
+      "ageMs": 2.4000000059604645,
+      "shown": true,
+      "opacity": "1",
+      "text": "拾光种子接住了！按 E，陪我把它送进头顶的小盆。",
+      "chapterIndex": 1,
+      "state": "playing",
+      "form": "soul",
+      "time": 4.699999999999989,
+      "body": {
+        "x": 597,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": 0
+    },
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 22674,
+      "lastShownAt": 21368.29999999702,
+      "ageMs": 1305.7000000029802,
+      "shown": true,
+      "opacity": "1",
+      "text": "拾光种子接住了！按 E，陪我把它送进头顶的小盆。",
+      "chapterIndex": 1,
+      "state": "playing",
+      "form": "soul",
+      "time": 5.983333333333317,
+      "body": {
+        "x": 597,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": 0
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 22733.90000000596,
+      "lastShownAt": 21368.29999999702,
+      "ageMs": 1365.6000000089407,
+      "shown": false,
+      "opacity": "1",
+      "text": "拾光种子接住了！按 E，陪我把它送进头顶的小盆。",
+      "chapterIndex": 1,
+      "state": "paused",
+      "form": "body",
+      "time": 6.033333333333317,
+      "body": {
+        "x": 597,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "returning",
+      "plantStage": 0
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 23632.60000000894,
+      "lastShownAt": 21368.29999999702,
+      "ageMs": 2264.300000011921,
+      "shown": false,
+      "opacity": "0",
+      "text": "拾光种子接住了！按 E，陪我把它送进头顶的小盆。",
+      "chapterIndex": 1,
+      "state": "playing",
+      "form": "body",
+      "time": 6.466666666666649,
+      "body": {
+        "x": 597,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "returning",
+      "plantStage": 1
+    },
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 23899,
+      "lastShownAt": 21368.29999999702,
+      "ageMs": 2530.7000000029802,
+      "shown": false,
+      "opacity": "0",
+      "text": "拾光种子接住了！按 E，陪我把它送进头顶的小盆。",
+      "chapterIndex": 1,
+      "state": "playing",
+      "form": "body",
+      "time": 6.716666666666648,
+      "body": {
+        "x": 597,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": 1
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 23900.40000000596,
+      "lastShownAt": 23899.70000000298,
+      "ageMs": 0.7000000029802322,
+      "shown": true,
+      "opacity": "0",
+      "text": "拾光种子在小盆里坐好了，再去借一盏灯光。",
+      "chapterIndex": 1,
+      "state": "playing",
+      "form": "soul",
+      "time": 6.716666666666648,
+      "body": {
+        "x": 597,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "opening",
+      "plantStage": 1
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 26154.10000000894,
+      "lastShownAt": 23899.70000000298,
+      "ageMs": 2254.4000000059605,
+      "shown": false,
+      "opacity": "1",
+      "text": "拾光种子在小盆里坐好了，再去借一盏灯光。",
+      "chapterIndex": 1,
+      "state": "paused",
+      "form": "soul",
+      "time": 8.950000000000024,
+      "body": {
+        "x": 597,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": 1
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "childList",
+          "attribute": null,
+          "target": "cap-bubble-lines"
+        },
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 26745.60000000894,
+      "lastShownAt": 26745.29999999702,
+      "ageMs": 0.30000001192092896,
+      "shown": true,
+      "opacity": "0",
+      "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+      "chapterIndex": 1,
+      "state": "playing",
+      "form": "soul",
+      "time": 8.950000000000024,
+      "body": {
+        "x": 597,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": 2
+    },
+    {
+      "kind": "before trusted E",
+      "detail": {
+        "isTrusted": true
+      },
+      "at": 27983.10000000894,
+      "lastShownAt": 26745.29999999702,
+      "ageMs": 1237.800000011921,
+      "shown": true,
+      "opacity": "1",
+      "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+      "chapterIndex": 1,
+      "state": "playing",
+      "form": "soul",
+      "time": 10.166666666666751,
+      "body": {
+        "x": 597,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "open",
+      "plantStage": 2
+    },
+    {
+      "kind": "DOM mutation",
+      "detail": [
+        {
+          "type": "attributes",
+          "attribute": "class",
+          "target": "cap-bubble"
+        }
+      ],
+      "at": 30574.20000000298,
+      "lastShownAt": 26745.29999999702,
+      "ageMs": 3828.9000000059605,
+      "shown": false,
+      "opacity": "1",
+      "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+      "chapterIndex": 1,
+      "state": "playing",
+      "form": "body",
+      "time": 12.733333333333546,
+      "body": {
+        "x": 1017.5,
+        "y": 385,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": 2
+    },
+    {
+      "kind": "finish",
+      "detail": null,
+      "at": 31942.40000000596,
+      "lastShownAt": 26745.29999999702,
+      "ageMs": 5197.100000008941,
+      "shown": false,
+      "opacity": "0",
+      "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+      "chapterIndex": 1,
+      "state": "playing",
+      "form": "body",
+      "time": 14.116666666666948,
+      "body": {
+        "x": 1213,
+        "y": 560,
+        "grounded": true
+      },
+      "capPhase": "closed",
+      "plantStage": 2
+    }
+  ],
+  "status": "failed",
+  "station": {
+    "scope": "native station navigation to unlock greenhouse only, no station face/portrait/fatigue verification",
+    "initial": {
+      "form": "body",
+      "state": "playing",
+      "chapterIndex": 0,
+      "mode": "story",
+      "festivalId": null,
+      "controlSource": "buttons",
+      "runId": 1,
+      "bodyIdentity": 1,
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "inputAvailable": true,
+      "energy": 100,
+      "maxEnergy": 100,
+      "emoteTime": 0,
+      "memoryFlags": [
+        false,
+        false,
+        false
+      ],
+      "lampFlags": [
+        false,
+        false
+      ],
+      "facePresentation": {
+        "time": 1.1333333333333342,
+        "body": {
+          "kind": "neutral",
+          "sleepy": false,
+          "happy": false,
+          "opening": false,
+          "attentive": false,
+          "blink": 1,
+          "lookX": 0.35,
+          "lookY": -0.7
+        },
+        "soulJoy": false,
+        "presentedSoul": null,
+        "rawSoul": {
+          "x": 105,
+          "y": 502,
+          "vx": 0,
+          "vy": 0
+        },
+        "capEntry": 1,
+        "returnFrom": null
+      },
+      "hudSample": {
+        "form": "body",
+        "state": "playing",
+        "time": 1.0666666666666678,
+        "energy": 100,
+        "maxEnergy": 100
+      },
+      "observedAt": 1376,
+      "fullHudWrittenAt": 1282.1000000089407,
+      "seals": 0,
+      "memories": 0,
+      "firstTicket": {
+        "phase": "missing",
+        "collected": false,
+        "newlyCollected": false,
+        "settledAge": 99
+      },
+      "x": 105,
+      "y": 560,
+      "vx": 0,
+      "vy": 0,
+      "time": 1.1333333333333342,
+      "visualTime": 1.1333333333333342,
+      "deaths": 0,
+      "camera": 0,
+      "reducedMotion": false,
+      "storyNPC": {
+        "id": "story-npc-0",
+        "chapterIndex": 0,
+        "speaker": "moth",
+        "name": "绒绒",
+        "motif": "moth",
+        "prop": "station-lantern",
+        "x": 190,
+        "y": 560,
+        "accent": "#cfb7ef",
+        "near": true,
+        "talking": false,
+        "talked": false,
+        "seals": 0,
+        "form": "body",
+        "look": {
+          "x": 105,
+          "y": 525
+        },
+        "capOpen": 0,
+        "stationTicket": {
+          "phase": "missing",
+          "fresh": false,
+          "greeting": "none",
+          "progress": 1
+        },
+        "lighting": "painted-station"
+      },
+      "body": {
+        "x": 105,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0,
+        "walk": 0
+      },
+      "capPhase": "closed",
+      "capAge": 1.1333333333333342,
+      "capAmount": 0,
+      "travelerPerformance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "travelerStepSeconds": 0.016666666666666666,
+      "characterPose": {
+        "walking": false,
+        "step": 0,
+        "hop": 0.9811215160487168,
+        "scaleY": 1,
+        "tilt": 0,
+        "bodyMatrix": [
+          1,
+          0,
+          0,
+          1,
+          105,
+          559.0188784839513
+        ],
+        "openingWorld": {
+          "x": 105,
+          "y": 494.0188784839513
+        },
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "arms": {
+          "left": {
+            "shoulder": {
+              "x": -13,
+              "y": -35
+            },
+            "elbow": {
+              "x": 2.821093218104629,
+              "y": -22.765090544509796
+            },
+            "wrist": {
+              "x": -16,
+              "y": -16
+            },
+            "requested": {
+              "x": -16,
+              "y": -16
+            },
+            "length": 20,
+            "world": {
+              "x": 89,
+              "y": 543.0188784839513
+            }
+          },
+          "right": {
+            "shoulder": {
+              "x": 13,
+              "y": -35
+            },
+            "elbow": {
+              "x": -2.1106362441332074,
+              "y": -21.897760790708798
+            },
+            "wrist": {
+              "x": 17,
+              "y": -16
+            },
+            "requested": {
+              "x": 17,
+              "y": -16
+            },
+            "length": 20,
+            "world": {
+              "x": 122,
+              "y": 543.0188784839513
+            }
+          }
+        },
+        "performance": {
+          "phase": "idle",
+          "reducedMotion": false,
+          "rise": 0,
+          "fall": 0,
+          "landing": 0,
+          "ride": 0,
+          "landingAge": null,
+          "landingDuration": 0.2,
+          "platformId": null,
+          "platformAxis": null,
+          "platformKind": null,
+          "platformVelocity": 0,
+          "platformVerticalVelocity": 0,
+          "balance": 0,
+          "verticalBalance": 0,
+          "freeArms": {
+            "left": {
+              "x": -16,
+              "y": -16
+            },
+            "right": {
+              "x": 17,
+              "y": -16
+            }
+          }
+        },
+        "legs": [
+          {
+            "hip": {
+              "x": -7,
+              "y": -21
+            },
+            "knee": {
+              "x": -5,
+              "y": -11.89400559649418
+            },
+            "ankle": {
+              "x": -7,
+              "y": -3.8188784839512833
+            },
+            "foot": {
+              "x": -7,
+              "y": 0.9811215160487168,
+              "angle": 0
+            },
+            "planted": true,
+            "lift": 0,
+            "worldFoot": {
+              "x": 98,
+              "y": 560
+            }
+          },
+          {
+            "hip": {
+              "x": 7,
+              "y": -21
+            },
+            "knee": {
+              "x": 9,
+              "y": -11.89400559649418
+            },
+            "ankle": {
+              "x": 7,
+              "y": -3.8188784839512833
+            },
+            "foot": {
+              "x": 7,
+              "y": 0.9811215160487168,
+              "angle": 0
+            },
+            "planted": true,
+            "lift": 0,
+            "worldFoot": {
+              "x": 112,
+              "y": 560
+            }
+          }
+        ]
+      },
+      "theatrePaint": null,
+      "libraryPaint": null,
+      "postPaint": null,
+      "postDelivery": null,
+      "coastPaint": null,
+      "hazards": [],
+      "nearHint": "Q：与绒绒聊一聊",
+      "movers": [],
+      "platforms": [
+        {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "kind": "ground"
+        },
+        {
+          "x": 195,
+          "y": 465,
+          "w": 155,
+          "h": 18,
+          "kind": null
+        },
+        {
+          "x": 810,
+          "y": 445,
+          "w": 170,
+          "h": 18,
+          "kind": null
+        },
+        {
+          "x": 1090,
+          "y": 365,
+          "w": 150,
+          "h": 18,
+          "kind": null
+        },
+        {
+          "x": 1590,
+          "y": 465,
+          "w": 175,
+          "h": 18,
+          "kind": null
+        }
+      ],
+      "letterChoice": null,
+      "clockChoice": null,
+      "clockEcho": null,
+      "letterEcho": null,
+      "greenhousePlant": null,
+      "seedCollected": false,
+      "mushrooms": [],
+      "roots": []
+    },
+    "final": {
+      "form": "body",
+      "state": "complete",
+      "chapterIndex": 0,
+      "mode": "story",
+      "festivalId": null,
+      "controlSource": "keyboard",
+      "runId": 1,
+      "bodyIdentity": 1,
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "inputAvailable": false,
+      "energy": 100,
+      "maxEnergy": 100,
+      "emoteTime": 0,
+      "memoryFlags": [
+        true,
+        false,
+        false
+      ],
+      "lampFlags": [
+        true,
+        true
+      ],
+      "facePresentation": {
+        "time": 14.583333333333638,
+        "body": {
+          "kind": "neutral",
+          "sleepy": false,
+          "happy": false,
+          "opening": false,
+          "attentive": false,
+          "blink": 1,
+          "lookX": 1.65,
+          "lookY": -0.7
+        },
+        "soulJoy": false,
+        "presentedSoul": null,
+        "rawSoul": {
+          "x": 1383.9736144942078,
+          "y": 369.53879235723576,
+          "vx": 0,
+          "vy": 0
+        },
+        "capEntry": 1,
+        "returnFrom": null
+      },
+      "hudSample": {
+        "form": "body",
+        "state": "complete",
+        "time": 14.583333333333638,
+        "energy": 100,
+        "maxEnergy": 100
+      },
+      "observedAt": 15947.10000000894,
+      "fullHudWrittenAt": 15902.5,
+      "seals": 2,
+      "memories": 1,
+      "firstTicket": {
+        "phase": "stowed",
+        "collected": true,
+        "newlyCollected": true,
+        "settledAge": 0
+      },
+      "x": 1841.5,
+      "y": 560,
+      "vx": 240,
+      "vy": 0,
+      "time": 14.583333333333638,
+      "visualTime": 14.583333333333638,
+      "deaths": 0,
+      "camera": 809.9554865234966,
+      "reducedMotion": false,
+      "storyNPC": {
+        "id": "story-npc-0",
+        "chapterIndex": 0,
+        "speaker": "moth",
+        "name": "绒绒",
+        "motif": "moth",
+        "prop": "station-lantern",
+        "x": 190,
+        "y": 560,
+        "accent": "#cfb7ef",
+        "near": false,
+        "talking": false,
+        "talked": false,
+        "seals": 2,
+        "form": "body",
+        "look": {
+          "x": 1841.5,
+          "y": 525
+        },
+        "capOpen": 0,
+        "stationTicket": {
+          "phase": "stowed",
+          "fresh": true,
+          "greeting": "settled",
+          "progress": 1
+        },
+        "lighting": "painted-station"
+      },
+      "body": {
+        "x": 1841.5,
+        "y": 560,
+        "w": 30,
+        "h": 58,
+        "vx": 240,
+        "vy": 0,
+        "grounded": true,
+        "platform": null,
+        "face": 1,
+        "land": 0,
+        "walk": 86.8250000000007
+      },
+      "capPhase": "closed",
+      "capAge": 0,
+      "capAmount": 0,
+      "travelerPerformance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "travelerStepSeconds": 0.016666666666666666,
+      "characterPose": {
+        "walking": true,
+        "step": -0.9084640034677799,
+        "hop": 1.0031114441391698,
+        "scaleY": 1,
+        "tilt": 0.055,
+        "bodyMatrix": [
+          1,
+          0,
+          0,
+          1,
+          1841.5,
+          558.9968885558608
+        ],
+        "openingWorld": {
+          "x": 1842.379556400433,
+          "y": 494.0210824560592
+        },
+        "grip": 0,
+        "clasp": 0,
+        "catching": 0,
+        "arms": {
+          "left": {
+            "shoulder": {
+              "x": -13,
+              "y": -35
+            },
+            "elbow": {
+              "x": 4.904006120559,
+              "y": -26.086719748881123
+            },
+            "wrist": {
+              "x": -12.36614398612888,
+              "y": -16
+            },
+            "requested": {
+              "x": -12.36614398612888,
+              "y": -16
+            },
+            "length": 20,
+            "world": {
+              "x": 1829.133856013871,
+              "y": 542.9968885558608
+            }
+          },
+          "right": {
+            "shoulder": {
+              "x": 13,
+              "y": -35
+            },
+            "elbow": {
+              "x": -4.412424892078619,
+              "y": -25.160921822766074
+            },
+            "wrist": {
+              "x": 13.36614398612888,
+              "y": -16
+            },
+            "requested": {
+              "x": 13.36614398612888,
+              "y": -16
+            },
+            "length": 20,
+            "world": {
+              "x": 1854.866143986129,
+              "y": 542.9968885558608
+            }
+          }
+        },
+        "performance": {
+          "phase": "idle",
+          "reducedMotion": false,
+          "rise": 0,
+          "fall": 0,
+          "landing": 0,
+          "ride": 0,
+          "landingAge": null,
+          "landingDuration": 0.2,
+          "platformId": null,
+          "platformAxis": null,
+          "platformKind": null,
+          "platformVelocity": 0,
+          "platformVerticalVelocity": 0,
+          "balance": 0,
+          "verticalBalance": 0,
+          "freeArms": {
+            "left": {
+              "x": -16,
+              "y": -16
+            },
+            "right": {
+              "x": 17,
+              "y": -16
+            }
+          }
+        },
+        "legs": [
+          {
+            "hip": {
+              "x": -7,
+              "y": -21
+            },
+            "knee": {
+              "x": 1.6577333333375543,
+              "y": -13.496798547301552
+            },
+            "ankle": {
+              "x": 6.870277777786573,
+              "y": -6.843016126984059
+            },
+            "foot": {
+              "x": 6.870277777786573,
+              "y": -2.0430161269840594,
+              "angle": 0.08029567276279723
+            },
+            "planted": false,
+            "lift": 3.046127571123229,
+            "worldFoot": {
+              "x": 1848.3702777777867,
+              "y": 556.9538724288767
+            }
+          },
+          {
+            "hip": {
+              "x": 7,
+              "y": -21
+            },
+            "knee": {
+              "x": 3.4799999999931703,
+              "y": -11.88235093460624
+            },
+            "ankle": {
+              "x": -4.500000000014229,
+              "y": -3.7968885558608303
+            },
+            "foot": {
+              "x": -4.500000000014229,
+              "y": 1.0031114441391698,
+              "angle": 0
+            },
+            "planted": true,
+            "lift": 0,
+            "worldFoot": {
+              "x": 1836.9999999999857,
+              "y": 560
+            }
+          }
+        ]
+      },
+      "theatrePaint": null,
+      "libraryPaint": null,
+      "postPaint": null,
+      "postDelivery": null,
+      "coastPaint": null,
+      "hazards": [],
+      "nearHint": "带着身体走进门，送出这一封信",
+      "movers": [],
+      "platforms": [
+        {
+          "x": 0,
+          "y": 560,
+          "w": 2020,
+          "h": 100,
+          "kind": "ground"
+        },
+        {
+          "x": 195,
+          "y": 465,
+          "w": 155,
+          "h": 18,
+          "kind": null
+        },
+        {
+          "x": 810,
+          "y": 445,
+          "w": 170,
+          "h": 18,
+          "kind": null
+        },
+        {
+          "x": 1090,
+          "y": 365,
+          "w": 150,
+          "h": 18,
+          "kind": null
+        },
+        {
+          "x": 1590,
+          "y": 465,
+          "w": 175,
+          "h": 18,
+          "kind": null
+        }
+      ],
+      "letterChoice": null,
+      "clockChoice": null,
+      "clockEcho": null,
+      "letterEcho": null,
+      "greenhousePlant": null,
+      "seedCollected": false,
+      "mushrooms": [],
+      "roots": []
+    }
+  },
+  "omittedDiagnosticScreenshot": {
+    "path": "/tmp/v32-dialogue-timing-early-original/1280-greenhouse-leaves.png",
+    "reason": "Controlled reproducer: remove screenshot wall-time before the existing E; no game/DOM/timer/save mutation and no image is claimed."
+  },
+  "failure": "1280-greenhouse-root-crossed: required naturally triggered dialogue was absent; evidence /tmp/v32-dialogue-timing-early-original/1280-greenhouse-root-crossed-dialogue-layout.json",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/2b18af2db412/tougaigu-v32-formal/scripts/browser_dialogue_v32.py\", line 236, in capture_dialogue\n    record['validation'] = validate_dialogue_snapshot(snapshot, require_bubble)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2b18af2db412/tougaigu-v32-formal/scripts/browser_dialogue_v32.py\", line 177, in validate_dialogue_snapshot\n    assert not require_bubble or bubble_visible, 'required naturally triggered dialogue was absent'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: required naturally triggered dialogue was absent\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/tmp/v32-dialogue-timing-diagnosis.py\", line 101, in main\n    report['greenhouse']=await api.exercise_greenhouse(page,output,'1280')\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2b18af2db412/tougaigu-v32-formal/scripts/browser-smoke.py\", line 1070, in exercise_greenhouse\n    root_dialogue=capture_dialogue(output,label+'-greenhouse-root-crossed',await page.evaluate('window.__qaDialogueRead()'),require_bubble=True,\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2b18af2db412/tougaigu-v32-formal/scripts/browser_dialogue_v32.py\", line 244, in capture_dialogue\n    raise AssertionError(label+': '+str(error)+'; evidence '+str(path)) from error\nAssertionError: 1280-greenhouse-root-crossed: required naturally triggered dialogue was absent; evidence /tmp/v32-dialogue-timing-early-original/1280-greenhouse-root-crossed-dialogue-layout.json\n",
+  "pageErrors": [],
+  "requestFailures": []
+}

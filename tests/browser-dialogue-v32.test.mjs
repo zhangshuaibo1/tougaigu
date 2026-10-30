@@ -101,3 +101,24 @@ with tempfile.TemporaryDirectory() as folder:
  assert raw['surfaceComparison']['status']=='not-compared'
  r=module.capture_dialogue(folder,'station',sample());assert r['surfaceComparison']['status']=='not-compared'
 `));
+
+test('natural return evidence rejects early, synthetic or unrefreshed speech and requires observer cleanup',()=>run(String.raw`
+before=dict(observedAt=2600,lastShownAt=1000,ageMs=1600,form='soul',capPhase='open',chapterIndex=1,runId=4,
+ plantStage=2,deaths=0,body=dict(x=597,y=560,grounded=True),state='playing',text='阿拾叶子探出头了，盖子得给它留点地方。',showClass=True,opacity=1)
+after={**before,'observedAt':3300,'lastShownAt':2602,'ageMs':698,'form':'body','capPhase':'closed'}
+record=dict(initial=copy.deepcopy(before),inputs=[dict(code='KeyE',isTrusted=True,repeat=False,snapshot=copy.deepcopy(before))],
+ count=1,active=False,observerRemoved=True,after=after)
+assert module.validate_natural_dialogue_return(record)['actualReturnDialogueAgeMs']==698
+bad=copy.deepcopy(record);bad['inputs'][0]['snapshot']['ageMs']=1237.8
+reject(lambda:module.validate_natural_dialogue_return(bad),'existing dialogue cooldown')
+bad=copy.deepcopy(record);bad['after']['lastShownAt']=1000
+reject(lambda:module.validate_natural_dialogue_return(bad),'did not refresh')
+bad=copy.deepcopy(record);bad['inputs'][0]['isTrusted']=False
+reject(lambda:module.validate_natural_dialogue_return(bad),'trusted E')
+bad=copy.deepcopy(record);bad['after']['body']['x']+=1
+reject(lambda:module.validate_natural_dialogue_return(bad),'changed body')
+bad=copy.deepcopy(record);bad['after']['showClass']=False
+reject(lambda:module.validate_natural_dialogue_return(bad),'not visible')
+bad=copy.deepcopy(record);bad['observerRemoved']=False
+reject(lambda:module.validate_natural_dialogue_return(bad),'not removed')
+`));

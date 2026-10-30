@@ -1,0 +1,70 @@
+{
+  "schema": "v31-browser-release-evidence-1",
+  "createdAtUtc": "2026-10-30T00:11:53.479183+00:00",
+  "sourceHead": "12f60683c4325a83585d2e07f4c0bf825ba03050",
+  "publicPages": "6e716a8c40e5ad0b917f3b3e85fe86f7b09a9241",
+  "mainMerge": "pending_last_verified_2026-10-30T00:02:16Z",
+  "fullPublicBrowser": "blocked_at_first_navigation",
+  "files": [
+    {
+      "path": "docs/v31-browser-release/README.md",
+      "bytes": 7413,
+      "sha256": "e26d03e1195c2b8ee1471b1a2701d16a36053f653b82b573e674ecd881769c01",
+      "gitBlobSha": "5e324d9cb1ff769af6ce79e16aa0ce7a53e41922"
+    },
+    {
+      "path": "docs/v31-browser-release/continuation.json",
+      "bytes": 30803,
+      "sha256": "a5ea0a31d996040854db3e66566c7cbe832c7a704bcb93daa9e1e60dc68b6a9b",
+      "gitBlobSha": "b7bc8a5657c6054e0d4d8655ff98620e2d794d8e"
+    },
+    {
+      "path": "docs/v31-browser-release/deployment-and-four-https-resources.json",
+      "bytes": 13182,
+      "sha256": "efd741f767e68636f9aba1a2bcb8c9d2b0873233f1bec9baf977be641fb832e9",
+      "gitBlobSha": "2a9294eef08bb48afea21e41723001204e1f8da0"
+    },
+    {
+      "path": "docs/v31-browser-release/draft-manifest.json",
+      "bytes": 1319,
+      "sha256": "e2167ea34279ce2ce2ed2e88590b41099027a0b7314e3b2588bb54c98d05e309",
+      "gitBlobSha": "9c46fe2ddc31e28708f2f5a521941e39516a201b"
+    },
+    {
+      "path": "docs/v31-browser-release/github-pages-pr1-merged.jpg",
+      "bytes": 58035,
+      "sha256": "507686c2e685cfa05bd1200b593cbb44f4163f02f2ff752f3aea1e7cb1a16b0b",
+      "gitBlobSha": "9b447af8ccac38675ee69883ae1db32fb7c68318"
+    },
+    {
+      "path": "docs/v31-browser-release/integration-exact-tree.json",
+      "bytes": 1069,
+      "sha256": "ae187ee9884ead25a26f9b8e63e8377fee2a8b829996ae2edeed589d5d8b40dd",
+      "gitBlobSha": "9c1f257659cf9800bbb127a43594c533675ce332"
+    },
+    {
+      "path": "docs/v31-browser-release/local-https-environment/browser.txt",
+      "bytes": 2569,
+      "sha256": "e76586d9783ebd0be9a75176cda8e1d87ceeabae3144d6a7b37abfed352f4833",
+      "gitBlobSha": "1eacf8456a673f2a1711a247d9ee4cfc12f44d08"
+    },
+    {
+      "path": "docs/v31-browser-release/local-https-environment/execution.json",
+      "bytes": 9489,
+      "sha256": "7baf4d50e9fd8cb4cb873b23622d2fe83efa11f714f2a62a21e4b5b82961b2de",
+      "gitBlobSha": "a196fa24a175e87aab16178913130ef588e4b376"
+    },
+    {
+      "path": "docs/v31-browser-release/local-https-environment/tls-diagnosis.json",
+      "bytes": 4764,
+      "sha256": "876edfda26a7225e83254b8a51d5e7ac02e8b6ca55b9159560e3b2c13db08c01",
+      "gitBlobSha": "78bac2de2b043008a1ba71f7460c0d261ce167b0"
+    },
+    {
+      "path": "docs/v31-browser-release/pages-official-metadata.json",
+      "bytes": 3319,
+      "sha256": "10d7a4f6fabddf4eeed5abc41f619ec212fb78b8393c808db14619f2f697150b",
+      "gitBlobSha": "76933092bc76bc3ea27f01d123a2449753e59d19"
+    }
+  ]
+}

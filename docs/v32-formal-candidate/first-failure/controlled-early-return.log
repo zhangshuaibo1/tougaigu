@@ -1,0 +1,5 @@
+1280 enter greenhouse through chapter map
+1280 fly to the greenhouse seed
+1280 solve first greenhouse lamp
+1280 ride the real mushroom over the root platform
+{"mode": "early-original", "status": "failed", "failure": "1280-greenhouse-root-crossed: required naturally triggered dialogue was absent; evidence /tmp/v32-dialogue-timing-early-original/1280-greenhouse-root-crossed-dialogue-layout.json", "pageErrors": [], "requestFailures": []}

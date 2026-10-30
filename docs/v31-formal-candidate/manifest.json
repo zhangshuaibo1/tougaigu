@@ -1,0 +1,143 @@
+{
+  "runId": 40965474140,
+  "commit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+  "productVersion": "31.0.0",
+  "scope": "formal second candidate only; no Pages or public HTTPS success in this archive",
+  "artifact": {
+    "id": 12937168667,
+    "zipBytes": 208201793,
+    "zipSha256": "8b5ce12098f05f60f06f628fa8482a03c1cd7134664692c9a5d606fdf16979b4"
+  },
+  "files": [
+    {
+      "file": "1280-face-fatigue-bodyTiredOpen-320.png",
+      "bytes": 274547,
+      "sha256": "30ae75383ee84a3739f7950f0f3c74db8c4956adf3cb1ff0f7493c9c3192e6d6"
+    },
+    {
+      "file": "1280-first-lamp-face-lamp-closedJoy.png",
+      "bytes": 1491219,
+      "sha256": "0bc2e2d1701cad9e810d04fe85e25cd8d3715dcb09468e0268d4b02b0f32ad02"
+    },
+    {
+      "file": "320-face-ticket-closedJoy.png",
+      "bytes": 271769,
+      "sha256": "f6393f843b2e116c824870ab5c464be95cca824297e98d39575229e795ca885b"
+    },
+    {
+      "file": "320-face-ticket-freeJoy.png",
+      "bytes": 273564,
+      "sha256": "8a4817a1e39efe7ff764d87716aa4dc1c30f6df90a66887aed18d339bddcba7b"
+    },
+    {
+      "file": "README.md",
+      "bytes": 6887,
+      "sha256": "41cda8c488a03a31a9f64d369cdc1a6dd7b1bf15d9fc25cee85f6159464a7c1d"
+    },
+    {
+      "file": "audit-adaptation.json",
+      "bytes": 1027,
+      "sha256": "68e0d07d57865a760df9497c81287ed5428a10ac2c3c44b3b1a19146e0a83342"
+    },
+    {
+      "file": "audit-compact.json",
+      "bytes": 170791,
+      "sha256": "fc8294c4c5b63815f12c6249267ffd83fdcd5b1c92ab84c1ddf47d5164245c8d"
+    },
+    {
+      "file": "candidate-report.json.gz",
+      "bytes": 579405,
+      "sha256": "d7bc1b185f724ea06c038e9ec4ee8d7fdd74f5afd9956fcd419e8989c76b3818"
+    },
+    {
+      "file": "face-evidence-summary.json",
+      "bytes": 32907,
+      "sha256": "013e512066cfa8df7c742b3387dd4dc927ef308cd1cc9cf8580e204747f6f372"
+    },
+    {
+      "file": "independent-candidate-review.json",
+      "bytes": 8065,
+      "sha256": "0fd04a63f8721d73a18b7f81b2a3a2a49b9660cbc88c4a807260fe65efb8e140"
+    },
+    {
+      "file": "inherited-gates-summary.json",
+      "bytes": 45492,
+      "sha256": "56b4224ea377810b1c18aa2a5e92cf0ea4ed69913aafa623b0f6b893416e0936"
+    },
+    {
+      "file": "official-metadata.json",
+      "bytes": 3201,
+      "sha256": "306b953e9a68e6e224a30136a4831b61367fcd1aee43940f31296d128c919206"
+    }
+  ],
+  "compressedReports": [
+    {
+      "scope": "candidate",
+      "file": "candidate-report.json.gz",
+      "rawArtifactPath": "candidate/report.json",
+      "rawBytes": 14584018,
+      "rawSha256": "cf493719a6e37974e839ef50aea9396cca5fd0508e37b581eb6029ae6762efff",
+      "gzipBytes": 579405,
+      "gzipSha256": "d7bc1b185f724ea06c038e9ec4ee8d7fdd74f5afd9956fcd419e8989c76b3818",
+      "gzipMtime": 0,
+      "gzipFilename": "",
+      "decompressedBytesExact": true,
+      "secondCompressionIdentical": true
+    }
+  ],
+  "originalCandidateCanvasImages": [
+    {
+      "file": "320-face-ticket-closedJoy.png",
+      "sourceArtifactRelativePath": "candidate/320-face-ticket-closedJoy.png",
+      "bytes": 271769,
+      "sha256": "f6393f843b2e116c824870ab5c464be95cca824297e98d39575229e795ca885b",
+      "width": 320,
+      "height": 431,
+      "unalteredArtifactCanvasPNG": true,
+      "directlyViewedByIndependentAuditor": true
+    },
+    {
+      "file": "320-face-ticket-freeJoy.png",
+      "sourceArtifactRelativePath": "candidate/320-face-ticket-freeJoy.png",
+      "bytes": 273564,
+      "sha256": "8a4817a1e39efe7ff764d87716aa4dc1c30f6df90a66887aed18d339bddcba7b",
+      "width": 320,
+      "height": 431,
+      "unalteredArtifactCanvasPNG": true,
+      "directlyViewedByIndependentAuditor": true
+    },
+    {
+      "file": "1280-face-fatigue-bodyTiredOpen-320.png",
+      "sourceArtifactRelativePath": "candidate/1280-face-fatigue-bodyTiredOpen-320.png",
+      "bytes": 274547,
+      "sha256": "30ae75383ee84a3739f7950f0f3c74db8c4956adf3cb1ff0f7493c9c3192e6d6",
+      "width": 320,
+      "height": 431,
+      "unalteredArtifactCanvasPNG": true,
+      "directlyViewedByIndependentAuditor": true
+    },
+    {
+      "file": "1280-first-lamp-face-lamp-closedJoy.png",
+      "sourceArtifactRelativePath": "candidate/1280-first-lamp-face-lamp-closedJoy.png",
+      "bytes": 1491219,
+      "sha256": "0bc2e2d1701cad9e810d04fe85e25cd8d3715dcb09468e0268d4b02b0f32ad02",
+      "width": 1280,
+      "height": 677,
+      "unalteredArtifactCanvasPNG": true,
+      "directlyViewedByIndependentAuditor": true
+    }
+  ],
+  "preservedOriginalAuditOutputs": [
+    "face-evidence-summary.json",
+    "inherited-gates-summary.json",
+    "independent-candidate-review.json",
+    "official-metadata.json",
+    "audit-adaptation.json"
+  ],
+  "fullZipRepeatedInRepository": false,
+  "sourceInventoryCount": 796,
+  "safeArtifactPathCount": 238,
+  "runtimeModifiedByThisArchive": false,
+  "gitRefsModifiedByThisArchive": false,
+  "totalBytesExcludingManifest": 3158874
+}

@@ -1,0 +1,259 @@
+{
+  "schema": "tougaigu-local-public-browser-execution-1",
+  "status": "failed",
+  "startedAtUtc": "2026-10-30T00:05:31.923082+00:00",
+  "command": [
+    "/tmp/tougaigu-v32-browser-venv/bin/python",
+    "/workspace/scratch/2b18af2db412/tougaigu-v31-release/scripts/browser-smoke.py",
+    "--url",
+    "https://tougaigu.com/",
+    "--version",
+    "31.0.0",
+    "--output",
+    "/tmp/v31-live-browser-20261030/browser"
+  ],
+  "cwd": "/workspace/scratch/2b18af2db412/tougaigu-v31-release",
+  "url": "https://tougaigu.com/",
+  "expectedVersion": "31.0.0",
+  "validatorSourceCommit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+  "all30OriginalScriptsExactBefore": true,
+  "scriptSources": [
+    {
+      "path": "scripts/browser-smoke.py",
+      "bytes": 137469,
+      "sha256": "6b2a2f00bb41c1c537eb4d0ea078e8983cfe16bc4517c60517a07370cd80b05d",
+      "gitBlobSha": "f1065bc391a0103f581a9c1238e3fb59553ae755",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/browser_coast_v27.py",
+      "bytes": 24206,
+      "sha256": "7f05ac3f6e8914e01407a357b54efa3f339362773fe056256636a9a2afe71365",
+      "gitBlobSha": "d361443294bb18aed010d2bb950e559b3a90e623",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/browser_ending_v29.py",
+      "bytes": 32075,
+      "sha256": "8d50d6ab59d0b497099f752657cad564119c6e8137a4529c7400e016ea1b34d0",
+      "gitBlobSha": "f20cb9ea6b13dc920306a6e370b5f00726307d96",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/browser_face_v31.py",
+      "bytes": 24625,
+      "sha256": "f2b50c961ffabd21952075a02ad998a73c5f931f378a18dea4d043e9d9087249",
+      "gitBlobSha": "d30a9e86ea4be3e8041432ad00a0a30aeb8b6215",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/browser_library_v26.py",
+      "bytes": 33372,
+      "sha256": "065a0ab28f7eef6d1e8e8125873f2866408f0a35b3813d050ba1e4bb9c7482ca",
+      "gitBlobSha": "b22ef3639e07801223603446928e3638e73ffbd4",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/browser_post_v28.py",
+      "bytes": 58773,
+      "sha256": "7c72f83a40cba692ea0b7fc93f61f9d887c670fe4d6515a47679ad2608721c89",
+      "gitBlobSha": "675d749434b937473d1b3bdcfdbce6432306b5be",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/build-cap-portraits.mjs",
+      "bytes": 23291,
+      "sha256": "85995b94bb366112b3d615b2d6469a44adbb9faca2eddde858b64e2fb1a662d3",
+      "gitBlobSha": "6386b00bf3e7253d3b23a0d5124ce79fb13f3038",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/build-festival-portraits.mjs",
+      "bytes": 28550,
+      "sha256": "653106f22903b4d16a801440a5bf8d3b6c7c43ed0cb1e00c4ab7201555c1f027",
+      "gitBlobSha": "afb96ee3623c215026bf764f37871fcf4e0ce9e0",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/check.mjs",
+      "bytes": 1575,
+      "sha256": "7e6ceee8c65a071e062a451d00e1465da43eceac9e398ab692f8be5e60e6ac95",
+      "gitBlobSha": "78a7fd7ec5a61634c5ec631afa809cc7e637e923",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-cap-activities.mjs",
+      "bytes": 7073,
+      "sha256": "1f681da64278491592e294ce74a38855cea21d9d25951e30c275e73e3dbf39f4",
+      "gitBlobSha": "c5105292e25128ae338825869563764a21720345",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-lost-cases.mjs",
+      "bytes": 14005,
+      "sha256": "d4674c453341396fece9f606fe9ec6db2af78441635ccee382acc394ce1146c1",
+      "gitBlobSha": "ee7d1c888ac3d612f43afabdeba2af6a4de0dfb5",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-lost-encores.mjs",
+      "bytes": 11081,
+      "sha256": "141532ee053ad51fa49de9a95138856aed002b8609fcad161026f809067228e0",
+      "gitBlobSha": "63232a02e89ad057a9d7186f4b7658d6290f2898",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-moon-play.mjs",
+      "bytes": 5541,
+      "sha256": "23d2d3574c370d5b30307bdca8507ac6e35e94ec96cd163647a7df962bd6b6cd",
+      "gitBlobSha": "8ae44b9d719ab3af6fc62bf5343a10e1bfe37a5a",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-scene-backdrops.mjs",
+      "bytes": 4695,
+      "sha256": "9ae21b2dfffd2bd5e63280e06a1461d54b41370da8f648e8ef46e89ed0077b00",
+      "gitBlobSha": "29725cf0397c91703ac80a58e8c7c81cafbd9526",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-story-awakenings.mjs",
+      "bytes": 14764,
+      "sha256": "ac6b7a5d49c29f14dbb8bb6be37c4a552bfd2c62d1def7fbff3e08c31997a5f6",
+      "gitBlobSha": "d02bb55e6f69119e0fbd29ee2196b250d6674f4a",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-story-encounters.mjs",
+      "bytes": 8721,
+      "sha256": "c88d3a0d6f2f0d23a35779456b1ba240d35d03b8eb1e3d67ed3645a345743e00",
+      "gitBlobSha": "4ffc1fdb580cf891834c9534a68cbd1997c8b53e",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-v13-scenes.mjs",
+      "bytes": 8007,
+      "sha256": "7d1ead3b14882c5264354e578c5a0c420fac413611127cb8fb104db80d9416db",
+      "gitBlobSha": "168bddde6e4afd272cfda2cf97f53e8f018cc535",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-v14-art.mjs",
+      "bytes": 8703,
+      "sha256": "d5ce6f41d85a3307cf31874fa887b869b26542a3607b472415da13f0250cddae",
+      "gitBlobSha": "a4c93198888a0cb66bad5190e63dfa300889d696",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-v14-scenes.mjs",
+      "bytes": 15278,
+      "sha256": "eafc95159df8b534b89cfd832e1db6a8046c0aff632b354e679da38bd82a1405",
+      "gitBlobSha": "6078043cfc7d2d13f3b8986153076611659b334c",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-v16-traveler.mjs",
+      "bytes": 6858,
+      "sha256": "97d729b3bfb755b81a326195abd9b5ea5979493c09e3f89f9d875b54e6fb0ba9",
+      "gitBlobSha": "a9307f4a751aa632b3010e23adaff62a7868faed",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-v17-greenhouse.mjs",
+      "bytes": 7126,
+      "sha256": "ed33eda0b4896e016ad76d754d0468f2ee6c5f378d544872f07f365deb5751b2",
+      "gitBlobSha": "5f4eb377d8f3e061212257cabb6408aba5371bbe",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-v18-keeper.mjs",
+      "bytes": 5833,
+      "sha256": "0494fcb4039c0d715eba055564f77b463ec270c4df2064e4cfbc1d8af70c4dd6",
+      "gitBlobSha": "5398ca94054fb8fe3d365dfb2043ea5ca2c2763d",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-v18-letter-echo.mjs",
+      "bytes": 4789,
+      "sha256": "88798bbf88a1a061aab1f26fb967c01a0d012844f5cd7ec2b90e5f2f952009eb",
+      "gitBlobSha": "0687015789352ce56cd0375b31790baf251e0761",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-v19-theatre.mjs",
+      "bytes": 6733,
+      "sha256": "435ff9ae9b5de3805a828de2d93a6139a0afe3fd1ba37f29fd0ed666d3245f10",
+      "gitBlobSha": "3dea5c9852a26bf15e63d81d3c07f9a26edc3990",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-v22-theatre.mjs",
+      "bytes": 9145,
+      "sha256": "f2a3f55836ad71887225d5abf44817770c22545ccf678add7e6e3b1191dd0188",
+      "gitBlobSha": "1a4b32134621ebbe22e909f558cae69cf5da6c24",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-v25-traveler.mjs",
+      "bytes": 10774,
+      "sha256": "b6158cb19726ee8a28ced20c988b1eb8e1024dc5f829b171482aa5af952307e3",
+      "gitBlobSha": "c2d355c5f8ebb50cd313c6e832f6958f12ba9f13",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-v30-motion.mjs",
+      "bytes": 9306,
+      "sha256": "eed70c14ef0f8abc54f69ede16429bb434e87c991d712c951825388c62879df4",
+      "gitBlobSha": "049ed294bb9429771b44bca51d435ce37b9ddb0a",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-v30-riders.mjs",
+      "bytes": 19667,
+      "sha256": "15333c78d1f2217b9f48f2a45a02e97fa7de5161e0b8a60eebb1f3082f001cc7",
+      "gitBlobSha": "5c7fe8ac95dfe5b6bc486b4313745190faec2e5c",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/render-v31-face.mjs",
+      "bytes": 17217,
+      "sha256": "db5805a0be65f65ab773ec4c51617e2a5a6e8342ca43e8bb43adac629ecfbc3e",
+      "gitBlobSha": "a35f5272acff6a2ef1f01d1272f7895877cbc8eb",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/version-assets.mjs",
+      "bytes": 2524,
+      "sha256": "e0ea89d7150e5a3d5781cbc37cbfd7830ce986724e2e6012b34a36f9f29dd45c",
+      "gitBlobSha": "d8ed75c41ca361336bb28af29109ecf8d2300546",
+      "mode": "100644"
+    }
+  ],
+  "environment": {
+    "python": "/tmp/tougaigu-v32-browser-venv/bin/python",
+    "playwrightVersion": "1.55.0",
+    "chromiumVersion": "140.0.7339.16",
+    "browserCache": "/tmp/tougaigu-v32-browsers",
+    "fontConfiguration": "/tmp/tougaigu-v32-fonts.conf",
+    "fontConfigurationSha256": "02e2c70f217d60ba972062493e038356ca70151d42c2a842b511d7a361dfff19",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "stdoutAndStderr": "/tmp/v31-live-browser-20261030/browser.txt",
+  "browserOutputDirectory": "/tmp/v31-live-browser-20261030/browser",
+  "scope": "Complete original v31 browser-smoke.py executed locally against real production HTTPS. Fresh Playwright contexts, not the signed-in browser and not a GitHub main workflow.",
+  "strictGateModification": false,
+  "extraInputOrRetryAdded": false,
+  "productOrScriptChanges": false,
+  "remoteWrites": false,
+  "githubMainWorkflowResultClaimed": false,
+  "pid": 103815,
+  "exitCode": 1,
+  "finishedAtUtc": "2026-10-30T00:05:32.607852+00:00",
+  "elapsedSeconds": 0.685,
+  "all30OriginalScriptsExactAfter": true,
+  "completeReportExists": false,
+  "log": {
+    "bytes": 2569,
+    "sha256": "e76586d9783ebd0be9a75176cda8e1d87ceeabae3144d6a7b37abfed352f4833"
+  }
+}

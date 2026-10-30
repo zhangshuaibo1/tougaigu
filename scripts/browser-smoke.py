@@ -9,7 +9,7 @@ from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from playwright.async_api import async_playwright, expect
 from browser_face_v31 import FaceSequence, wait_for_natural_fatigue, validate_face_snapshot
-from browser_dialogue_v32 import DIALOGUE_APP_PROBE, capture_dialogue
+from browser_dialogue_v32 import DIALOGUE_APP_PROBE, capture_dialogue, validate_natural_dialogue_return
 
 
 PROBE="""
@@ -1044,8 +1044,24 @@ async def exercise_greenhouse(page,output,label):
     stages.append(2)
     await page.wait_for_function("()=>window.__qaRead()?.greenhousePlant?.growthAge>=1.2")
     await page.screenshot(path=str(output/(label+'-greenhouse-leaves.png')),full_page=True)
-    await toggle(page,False)
-    await page.wait_for_function("()=>{const a=window.__qaRead();return a?.form==='body'&&a.capPhase==='closed';}")
+    # The authored return feedback deliberately does not interrupt speech less
+    # than 1600ms old. Read that existing clock before the same original E.
+    await page.wait_for_function("()=>window.__qaDialogueClockRead().ageMs>=1600",timeout=2000)
+    await page.evaluate('window.__qaDialogueReturnStart()')
+    try:
+        await toggle(page,False)
+        await page.wait_for_function("()=>{const a=window.__qaRead();return a?.form==='body'&&a.capPhase==='closed';}")
+    finally:
+        return_event=await page.evaluate("()=>{const result=window.__qaDialogueReturnWatch.finish();delete window.__qaDialogueReturnWatch;return {...result,observerRemoved:!window.__qaDialogueReturnWatch};}")
+        (output/(label+'-greenhouse-return-dialogue-event.json')).write_text(json.dumps(return_event,ensure_ascii=False,indent=2)+'\n')
+    return_event['validation']=validate_natural_dialogue_return(return_event)
+    (output/(label+'-greenhouse-return-dialogue-event.json')).write_text(json.dumps(return_event,ensure_ascii=False,indent=2)+'\n')
+    # Check actual visible dialogue here, before crossing the root consumes its
+    # normal 3800ms lifetime. Rig and DOM geometry are one synchronous read.
+    returned_dialogue=capture_dialogue(output,label+'-greenhouse-leaves-returned',await page.evaluate('window.__qaDialogueRead()'),require_bubble=True,
+        surface_reference=next(record['desktopDialogue'] for record in HUD_OBSERVATIONS if record['label']==label+'-station-body'),
+        screenshot=label+'-greenhouse-leaves-returned.png')
+    await page.screenshot(path=str(output/(label+'-greenhouse-leaves-returned.png')),full_page=True)
 
     print(label,'ride the real mushroom over the root platform',flush=True)
     route={}
@@ -1065,9 +1081,9 @@ async def exercise_greenhouse(page,output,label):
     assert 'aboveRoot' in route, 'body never crossed above the solid root platform'
     assert beyond_root['body']['x']>route['aboveRoot']['root']['x']+route['aboveRoot']['root']['w']
     route['landedBeyondRoot']=beyond_root['body']
-    # The route is grounded beyond the root. One read only; no input, new wait,
-    # viewport change, dialogue replay or sampling in a pendulum freeze window.
-    root_dialogue=capture_dialogue(output,label+'-greenhouse-root-crossed',await page.evaluate('window.__qaDialogueRead()'),require_bubble=True,
+    # Preserve the original grounded route and actual layout read. Speech may
+    # have naturally expired; if visible it must still avoid the real actor.
+    root_dialogue=capture_dialogue(output,label+'-greenhouse-root-crossed',await page.evaluate('window.__qaDialogueRead()'),
         surface_reference=next(record['desktopDialogue'] for record in HUD_OBSERVATIONS if record['label']==label+'-station-body'),
         screenshot=label+'-greenhouse-root-crossed.png')
     await page.screenshot(path=str(output/(label+'-greenhouse-root-crossed.png')),full_page=True)
@@ -1109,7 +1125,8 @@ async def exercise_greenhouse(page,output,label):
             'seedMemoryIndex':1,'pot':'ticket','observedPlantStages':stages,
             'seedReturnPauseFrozen':True,'wrongAnswersRejected':2,'mushroomBounceObserved':True,
             'rootCrossed':True,'routeEvidence':route,'chapterCompleted':True,
-            'noRespawns':True,'noHorizontalOverflow':True,'desktopDialogueObservation':root_dialogue}
+            'noRespawns':True,'noHorizontalOverflow':True,'desktopDialogueObservation':root_dialogue,
+            'desktopDialogueReturnObservation':returned_dialogue,'dialogueReturnEvent':return_event}
 
 async def finish_story_from_ui(page,expected_pages):
     """Read each decoded current speaker before normally advancing the story."""

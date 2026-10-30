@@ -1,0 +1,32 @@
+{
+  "schema": "tougaigu-v31-browser-continuation-draft-manifest-1",
+  "createdAtUtc": "2026-10-30T00:07:59.933050+00:00",
+  "sourceSnapshotCommit": "12f60683c4325a83585d2e07f4c0bf825ba03050",
+  "sourceSnapshotTree": "f418c649635f0dc3f55679dd9d7b973bb34ef40a",
+  "destinationDirectory": "docs/v31-browser-release",
+  "copiedOrCommittedByThisTask": false,
+  "files": [
+    {
+      "path": "continuation.json",
+      "source": "/tmp/tougaigu-v31-browser-continuation/continuation.json",
+      "intendedRepositoryPath": "docs/v31-browser-release/continuation.json",
+      "bytes": 30803,
+      "sha256": "a5ea0a31d996040854db3e66566c7cbe832c7a704bcb93daa9e1e60dc68b6a9b",
+      "gitBlobSha": "b7bc8a5657c6054e0d4d8655ff98620e2d794d8e",
+      "encoding": "utf-8",
+      "endsWithNewline": true
+    },
+    {
+      "path": "README.md",
+      "source": "/tmp/tougaigu-v31-browser-continuation/README.md",
+      "intendedRepositoryPath": "docs/v31-browser-release/README.md",
+      "bytes": 7413,
+      "sha256": "e26d03e1195c2b8ee1471b1a2701d16a36053f653b82b573e674ecd881769c01",
+      "gitBlobSha": "5e324d9cb1ff769af6ce79e16aa0ce7a53e41922",
+      "encoding": "utf-8",
+      "endsWithNewline": true
+    }
+  ],
+  "updatedAtUtc": "2026-10-30T00:09:38.991038+00:00",
+  "revision": "public-browser-blocked-at-first-navigation"
+}

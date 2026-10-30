@@ -1,0 +1,85 @@
+{
+  "status": "reviewed",
+  "reviewedAt": "2026-10-30T00:45:20.175828+00:00",
+  "runId": 40978620156,
+  "commit": "75010ca44245e05cf44187768722081d244f39f4",
+  "method": "view_image detail=original; no edit/crop/resize/re-render; PNG SHA256 matched the official ZIP",
+  "images": [
+    {
+      "path": "live/320-face-ticket-freeJoy.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 273812,
+      "sha256": "a522ca692674e0faf02577f9673544051a9d7e4495c64fb779d2a335c05e0a2b",
+      "unchangedOriginalArtifact": true,
+      "viewedAtOriginalDimensions": true,
+      "observation": "原尺寸320px Canvas中，游离灵魂的愉悦表情、本体掀盖状态、车站与绒绒均可辨识。此图是单帧，输入和事件先后顺序由原始JSON验证。"
+    },
+    {
+      "path": "live/320-face-ticket-closedJoy.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 271617,
+      "sha256": "fa117265c84dc9722ab8156c1e0edaf0110d4295c7357b7892df030df772699b",
+      "unchangedOriginalArtifact": true,
+      "viewedAtOriginalDimensions": true,
+      "observation": "原尺寸320px Canvas中，归体后的合盖、弯眼笑脸及身体落脚均可辨识。未将这一单帧扩大为全程表情覆盖。"
+    },
+    {
+      "path": "live/1280-face-fatigue-bodyTiredOpen-320.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 274244,
+      "sha256": "afffc72f031d9ebdf940ffd6f0dcefcfe0ca7a1e70339f89d4cb877b6275d6b4",
+      "unchangedOriginalArtifact": true,
+      "viewedAtOriginalDimensions": true,
+      "observation": "本体疲劳闭眼和低能量灵魂可辨识；本体位于画面左缘，帽盖装饰及左侧轮廓部分被相机裁切，不能称为全帽盖轮廓无裁切。与既有机位限制一致，不构成新的候选阻断。"
+    },
+    {
+      "path": "live/1280-first-lamp-face-lamp-closedJoy.png",
+      "width": 1280,
+      "height": 677,
+      "bytes": 1490126,
+      "sha256": "d0e04e53cf6d9bb9b1169232cadb856e72475d787f49866273e86c73b9adee7d",
+      "unchangedOriginalArtifact": true,
+      "viewedAtOriginalDimensions": true,
+      "observation": "原尺寸桌面Canvas中，第一盏灯已点亮，本体合盖喜悦表情、双臂与脚下平台清楚。"
+    },
+    {
+      "path": "candidate/320-face-ticket-closedJoy.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 271616,
+      "sha256": "e10bec279662c438a205c1f8007586378aa28494cb0880d16a0a0f9c656e053b",
+      "unchangedOriginalArtifact": true,
+      "viewedAtOriginalDimensions": true,
+      "observation": "候选独立路线的320px合盖喜悦画面清楚；它和线上图属于两次独立运行，不能标作同步帧或控制消融对比。"
+    },
+    {
+      "path": "live/1280-full-touch-320-post-book-riding.png",
+      "width": 320,
+      "height": 680,
+      "bytes": 218054,
+      "sha256": "e4b24a608005f9e2f9a9ac7b70a00c0db25132f443936f9d9c09570bdb0ba228",
+      "unchangedOriginalArtifact": true,
+      "viewedAtOriginalDimensions": true,
+      "observation": "原尺寸320x680整页中，角色站在邮局书台上，身体与双脚、底部触屏按钮和章节状态可见。完整周期和动作真实性依据数值与原始输入记录。"
+    },
+    {
+      "path": "live/1280-ending-dawn-320-read.png",
+      "width": 320,
+      "height": 680,
+      "bytes": 138774,
+      "sha256": "ab7c39363f55e0eab9564ead5895caf45adf93c0b784f63ca06b62ebd61c087b",
+      "unchangedOriginalArtifact": true,
+      "viewedAtOriginalDimensions": true,
+      "observation": "原尺寸320x680阅读完成截图中，结局正文三段、金色结语、收集状态和返回按钮可读；真实滚动、输入清理及覆盖检查由原始报告另行验证。"
+    }
+  ],
+  "newBlockingVisualIssue": false,
+  "limits": [
+    "Manual review covers only these seven exact stills. Motion continuity, natural input and timing are supported separately by strict original JSON validators.",
+    "320px open-cap fatigue still has existing camera-edge clipping of part of the cap/accessory; do not claim the entire actor silhouette is visible.",
+    "Candidate and public images are from independent runs, not simultaneous paired frames."
+  ]
+}

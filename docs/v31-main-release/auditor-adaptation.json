@@ -1,0 +1,167 @@
+{
+  "runId": 40978620156,
+  "commit": "75010ca44245e05cf44187768722081d244f39f4",
+  "artifactProgramCodeExecuted": false,
+  "reason": "Apply existing trusted candidate auditor separately to both official main candidate and HTTPS reports; preserve all pose/input/timing/network/face validator gates.",
+  "scopeOnlyChanges": [
+    "scope/path/metadata",
+    "source count 796 to main 797",
+    "require both complete reports",
+    "accurate scope descriptions"
+  ],
+  "adaptations": [
+    {
+      "kind": "faces",
+      "original": "/tmp/audit-v31-second-faces.py",
+      "originalSha256": "629a34324ac41e47dde1c3c35091bd751071a01ee1c8a61a85ad20f644e620a5",
+      "adapted": "/tmp/audit-v31-main-faces.py",
+      "adaptedSha256": "1fc5dfed363284641cc646f06e7f18918f4c5be59fc294bd34b321adb11df5af",
+      "changes": [
+        {
+          "old": "ROOT=pathlib.Path('/workspace/scratch/2b18af2db412/tougaigu-v31')",
+          "new": "ROOT=pathlib.Path('/workspace/scratch/2b18af2db412/tougaigu-v31-release')",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT=pathlib.Path('/tmp/tougaigu-v31-formal-second')",
+          "new": "OUT=pathlib.Path('/tmp/tougaigu-v31-main-40978620156')\nimport sys\nSCOPE=sys.argv[1]\nassert SCOPE in ['candidate','live']\nSCOPE_DESCRIPTION='GitHub main '+SCOPE+' full browser route ('+('local candidate server' if SCOPE=='candidate' else 'real https://tougaigu.com/')+')'\nOFFICIAL=json.loads((OUT/'official-metadata.json').read_text())",
+          "occurrences": 1
+        },
+        {
+          "old": "EXPECTED='7ba7c5e00a6a32032e5becf5131a527322d03ac3'",
+          "new": "EXPECTED='75010ca44245e05cf44187768722081d244f39f4'",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'candidate/report.json'",
+          "new": "OUT/SCOPE/'report.json'",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'candidate'",
+          "new": "OUT/SCOPE",
+          "occurrences": 4
+        },
+        {
+          "old": "'candidate/'",
+          "new": "SCOPE+'/'",
+          "occurrences": 2
+        },
+        {
+          "old": "assert not (OUT/'live/report.json').exists()",
+          "new": "assert (OUT/'candidate/report.json').is_file() and (OUT/'live/report.json').is_file()",
+          "occurrences": 1
+        },
+        {
+          "old": "len(audit['sourceFiles'])==796",
+          "new": "len(audit['sourceFiles'])==797",
+          "occurrences": 1
+        },
+        {
+          "old": "'runId':40965474140",
+          "new": "'runId':40978620156",
+          "occurrences": 1
+        },
+        {
+          "old": "'scope':'Formal31 second candidate; public release is not part of this run'",
+          "new": "'scope':SCOPE_DESCRIPTION",
+          "occurrences": 1
+        },
+        {
+          "old": "'artifactId':12937168667",
+          "new": "'artifactId':OFFICIAL['artifacts']['artifacts'][0]['id']",
+          "occurrences": 1
+        },
+        {
+          "old": "'sourceFilesExact':796",
+          "new": "'sourceFilesExact':797",
+          "occurrences": 1
+        },
+        {
+          "old": "exact primary Git scripts/browser_face_v31.py at verified7ba commit; pure functions only",
+          "new": "exact primary Git scripts/browser_face_v31.py at main75010 commit, identical to verified7ba; pure functions only",
+          "occurrences": 1
+        },
+        {
+          "old": "No physical phone, Safari, low-end GPU, frame-rate benchmark or public/live verification in this run.",
+          "new": "No physical phone, Safari, low-end GPU or frame-rate benchmark in this run; report scope identifies local candidate versus actual public HTTPS.",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'face-evidence-summary.json'",
+          "new": "OUT/(SCOPE+'-face-evidence-summary.json')",
+          "occurrences": 2
+        }
+      ]
+    },
+    {
+      "kind": "gates",
+      "original": "/tmp/audit-v31-second-gates.py",
+      "originalSha256": "ae0472b3e313f2bf4638b862e7209f64a9e1b845436088763587b5c0948682d0",
+      "adapted": "/tmp/audit-v31-main-gates.py",
+      "adaptedSha256": "20d2ccbf930a556a3d59c5c26e9ac597424fd71432f649f0654a81bcc9bfb88b",
+      "changes": [
+        {
+          "old": "ROOT=pathlib.Path('/workspace/scratch/2b18af2db412/tougaigu-v31')",
+          "new": "ROOT=pathlib.Path('/workspace/scratch/2b18af2db412/tougaigu-v31-release')",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT=pathlib.Path('/tmp/tougaigu-v31-formal-second')",
+          "new": "OUT=pathlib.Path('/tmp/tougaigu-v31-main-40978620156')\nimport sys\nSCOPE=sys.argv[1]\nassert SCOPE in ['candidate','live']\nSCOPE_DESCRIPTION='GitHub main '+SCOPE+' full browser route ('+('local candidate server' if SCOPE=='candidate' else 'real https://tougaigu.com/')+')'\nOFFICIAL=json.loads((OUT/'official-metadata.json').read_text())",
+          "occurrences": 1
+        },
+        {
+          "old": "EXPECTED='7ba7c5e00a6a32032e5becf5131a527322d03ac3'",
+          "new": "EXPECTED='75010ca44245e05cf44187768722081d244f39f4'",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'candidate/report.json'",
+          "new": "OUT/SCOPE/'report.json'",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'candidate'",
+          "new": "OUT/SCOPE",
+          "occurrences": 4
+        },
+        {
+          "old": "'candidate/'",
+          "new": "SCOPE+'/'",
+          "occurrences": 1
+        },
+        {
+          "old": "assert not (OUT/'live/report.json').exists()",
+          "new": "assert (OUT/'candidate/report.json').is_file() and (OUT/'live/report.json').is_file()",
+          "occurrences": 1
+        },
+        {
+          "old": "len(audit['sourceFiles'])==796",
+          "new": "len(audit['sourceFiles'])==797",
+          "occurrences": 1
+        },
+        {
+          "old": "'runId':40965474140",
+          "new": "'runId':40978620156",
+          "occurrences": 1
+        },
+        {
+          "old": "'scope':'Formal31 second candidate real Chromium browser at localhost; no public/live release in this run'",
+          "new": "'scope':SCOPE_DESCRIPTION",
+          "occurrences": 1
+        },
+        {
+          "old": "This is the second formal31 candidate CI at localhost with 31.0.0 resource versions. Main/Pages publication, HTTPS run and physical-phone/Safari/low-end-GPU evidence remain outside this result.",
+          "new": "This is the official main v31 run with 31.0.0 resource versions; scope identifies the local candidate or actual public HTTPS route. Physical-phone, Safari and low-end-GPU evidence remain outside this result.",
+          "occurrences": 1
+        },
+        {
+          "old": "OUT/'inherited-gates-summary.json'",
+          "new": "OUT/(SCOPE+'-inherited-gates-summary.json')",
+          "occurrences": 2
+        }
+      ]
+    }
+  ]
+}

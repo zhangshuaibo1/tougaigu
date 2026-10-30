@@ -1,0 +1,138 @@
+{
+  "schema": "tougaigu-public-tls-environment-diagnosis-1",
+  "startedAtUtc": "2026-10-30T00:07:17.108777+00:00",
+  "scope": "One read-only GET through the existing execution environment and default proxy handling, using system-default certificate roots and hostname verification. No trust configuration changed.",
+  "originalBrowserAttempt": {
+    "command": [
+      "/tmp/tougaigu-v32-browser-venv/bin/python",
+      "/workspace/scratch/2b18af2db412/tougaigu-v31-release/scripts/browser-smoke.py",
+      "--url",
+      "https://tougaigu.com/",
+      "--version",
+      "31.0.0",
+      "--output",
+      "/tmp/v31-live-browser-20261030/browser"
+    ],
+    "startedAtUtc": "2026-10-30T00:05:31.923082+00:00",
+    "finishedAtUtc": "2026-10-30T00:05:32.607852+00:00",
+    "exitCode": 1,
+    "elapsedSeconds": 0.685,
+    "failureStage": "Initial page.goto before any game routes",
+    "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://tougaigu.com/",
+    "completeReportExists": false,
+    "executionPath": "/tmp/v31-live-browser-20261030/execution.json",
+    "executionSha256": "7baf4d50e9fd8cb4cb873b23622d2fe83efa11f714f2a62a21e4b5b82961b2de",
+    "logPath": "/tmp/v31-live-browser-20261030/browser.txt",
+    "logBytes": 2569,
+    "logSha256": "e76586d9783ebd0be9a75176cda8e1d87ceeabae3144d6a7b37abfed352f4833",
+    "original30ScriptsExactBeforeAndAfter": true
+  },
+  "systemTls": {
+    "url": "https://tougaigu.com/",
+    "sslLibrary": "OpenSSL 3.5.8 25 Aug 2026",
+    "verifyMode": "CERT_REQUIRED",
+    "checkHostname": true,
+    "verifyFlags": 32768,
+    "defaultVerifyPaths": {
+      "cafile": "/usr/local/share/ca-certificates/nebula-dns.crt",
+      "capath": "/etc/ssl/certs",
+      "openssl_cafile_env": "SSL_CERT_FILE",
+      "openssl_cafile": "/etc/ssl/cert.pem",
+      "openssl_capath_env": "SSL_CERT_DIR",
+      "openssl_capath": "/etc/ssl/certs"
+    },
+    "existingProxyEnvironmentPresent": {
+      "HTTPS_PROXY": true,
+      "HTTP_PROXY": true,
+      "ALL_PROXY": false,
+      "https_proxy": true,
+      "http_proxy": true,
+      "all_proxy": false
+    },
+    "customProxyOrCAAddedForCheck": false,
+    "status": "verified",
+    "httpStatus": 200,
+    "finalUrl": "https://tougaigu.com/",
+    "protocol": "TLSv1.3",
+    "cipher": [
+      "TLS_AES_256_GCM_SHA384",
+      "TLSv1.3",
+      256
+    ],
+    "peerCertificate": {
+      "subject": [
+        [
+          [
+            "commonName",
+            "tougaigu.com"
+          ]
+        ]
+      ],
+      "issuer": [
+        [
+          [
+            "countryName",
+            "US"
+          ]
+        ],
+        [
+          [
+            "stateOrProvinceName",
+            "California"
+          ]
+        ],
+        [
+          [
+            "localityName",
+            "San Francisco"
+          ]
+        ],
+        [
+          [
+            "organizationName",
+            "OpenAI, LLC"
+          ]
+        ],
+        [
+          [
+            "commonName",
+            "openai.com"
+          ]
+        ]
+      ],
+      "version": 3,
+      "serialNumber": "442FB8C47413DE238763E9414BFCCD70",
+      "notBefore": "Oct 29 10:14:34 2026 GMT",
+      "notAfter": "Oct 30 10:19:34 2026 GMT",
+      "subjectAltName": [
+        [
+          "DNS",
+          "tougaigu.com"
+        ]
+      ]
+    },
+    "responseBytes": 25981,
+    "responseSha256": "7be90121bdd4504897ba87d5083b899195a5cb267d7564687de58c824f96a4d8",
+    "responseHeaders": {
+      "Date": "Fri, 30 Oct 2026 00:07:17 GMT",
+      "Content-Type": "text/html; charset=utf-8",
+      "ETag": "\"6ae3db71-657d\"",
+      "Last-Modified": "Thu, 29 Oct 2026 23:49:05 GMT",
+      "Age": "0",
+      "Server": "envoy"
+    },
+    "exactReviewed31IndexBytes": true,
+    "expectedSourceCommit": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+    "defaultCertificateAndHostnameVerificationSucceeded": true
+  },
+  "browserRerun": false,
+  "httpsValidationDisabled": false,
+  "trustedCertificatesAdded": false,
+  "httpDowngrade": false,
+  "proxyBypassed": false,
+  "remoteWrites": false,
+  "productOrScriptChanges": false,
+  "conclusion": "System-default TLS validation succeeds for the exact HTTPS URL, while fresh Chromium rejects certificate authority before gameplay. This supports an execution-environment trust-path difference; it does not establish a product-code failure or prove that both clients received an identical certificate chain.",
+  "finishedAtUtc": "2026-10-30T00:07:17.395781+00:00",
+  "nextStep": "Keep this failed local browser attempt separate. Do not retry the same full script, add trust roots, disable HTTPS validation, downgrade to HTTP, or bypass the proxy. Resume with the official GitHub main workflow when the authorized merge channel recovers, unless root supplies a separately authorized supported environment."
+}

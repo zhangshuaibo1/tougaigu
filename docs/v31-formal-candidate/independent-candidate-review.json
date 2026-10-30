@@ -1,0 +1,152 @@
+{
+  "reviewedAtUtc": "2026-10-29T22:53:44.327489+00:00",
+  "reviewScope": "Read-only independent review of official second formal v31 candidate. No repository or ref mutations by this auditor.",
+  "candidate": "7ba7c5e00a6a32032e5becf5131a527322d03ac3",
+  "parent": "05adb5da528dd449b85c7874313ac45262908921",
+  "candidateTree": "73ae710cc9b08eaee0cc7d39d70f89bb10f8e204",
+  "olderPrestudy": "0990533122f42a9bc22fc98282ab5f6ddc49f672",
+  "officialRunUrl": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40965474140",
+  "runId": 40965474140,
+  "artifactId": 12937168667,
+  "zipPath": "/tmp/tougaigu-v31-formal-second-40965474140.zip",
+  "zipBytes": 208201793,
+  "zipSha256": "8b5ce12098f05f60f06f628fa8482a03c1cd7134664692c9a5d606fdf16979b4",
+  "sourceBlobCount": 796,
+  "artifactPathCount": 238,
+  "rawReportSha256": "cf493719a6e37974e839ef50aea9396cca5fd0508e37b581eb6029ae6762efff",
+  "sourceAndZipAuditPassed": true,
+  "faceRevalidationPassed": true,
+  "inheritedGatesRevalidationPassed": true,
+  "runtimePackageTestsWorkflowIdenticalTo099": true,
+  "firstFailure": {
+    "commit": "05adb5da528dd449b85c7874313ac45262908921",
+    "runId": 40963548412,
+    "stage": "320 px un-frozen body safe approach after successful original mushroom root landing",
+    "assertion": "safe.body.x < 2120 and safe.deaths == 0",
+    "exactSafePositionNotSavedInFailureLog": true
+  },
+  "secondFix": {
+    "driveToTargetBefore": 2110,
+    "driveToTargetAfter": 2050,
+    "originalUpperLimit": 2120,
+    "addedLowerLimit": 2000,
+    "addedRunBodyChapterModeStateFormIdentityChecks": true,
+    "originalZeroDeathsGateKept": true,
+    "physicsOrRuntimeChanged": false,
+    "testThresholdsRelaxed": false
+  },
+  "counts": {
+    "testsPassed": 675,
+    "testsTotal": 675,
+    "faceCheckpoints": 10,
+    "faceObservers": 5,
+    "faceSnapshotOccurrences": 973,
+    "faceCanvasImages": 11,
+    "inheritedPoseSnapshotOccurrences": 1100,
+    "postRoutes": 4,
+    "phoneEndingReadings": 6,
+    "standaloneEvidenceComparisons": 26
+  },
+  "network": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "actualFailureCount": 9,
+      "expectedFailureCount": 9,
+      "exactCounterMatchRecomputed": true,
+      "exactOrderMatchRecomputed": true,
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "finalImagesLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actualFailureCount": 0,
+      "expectedFailureCount": 0,
+      "exactCounterMatchRecomputed": true,
+      "exactOrderMatchRecomputed": true,
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "finalImagesLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "actualFailureCount": 0,
+      "expectedFailureCount": 0,
+      "exactCounterMatchRecomputed": true,
+      "exactOrderMatchRecomputed": true,
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "finalImagesLoaded": true
+    }
+  ],
+  "fatigue": {
+    "sharedDeadlineMs": 21000,
+    "actualBodyTiredFirstCaptureMs": 16354.200000000012,
+    "actualEnergyAtFirstBodyTired": 19.948333333331142,
+    "observerLifecycleMs": 27000,
+    "scope": "form=soul, capPhase=open; not closed-lid fatigue proof",
+    "recoveryNeutralEnergy": 24.1183333333312
+  },
+  "manualCanvasReview": [
+    {
+      "file": "/tmp/tougaigu-v31-formal-second/candidate/320-face-ticket-closedJoy.png",
+      "sha256": "f6393f843b2e116c824870ab5c464be95cca824297e98d39575229e795ca885b",
+      "directlyViewed": true,
+      "observation": "Closed-cap joy face is visible, with closed eyes and smiling mouth; body, soul companion and NPC remain distinct at 320 px."
+    },
+    {
+      "file": "/tmp/tougaigu-v31-formal-second/candidate/320-face-ticket-freeJoy.png",
+      "sha256": "8a4817a1e39efe7ff764d87716aa4dc1c30f6df90a66887aed18d339bddcba7b",
+      "directlyViewed": true,
+      "observation": "Free soul joy and open body face are visible together; painted station background, platforms and puzzle item remain legible."
+    },
+    {
+      "file": "/tmp/tougaigu-v31-formal-second/candidate/1280-face-fatigue-bodyTiredOpen-320.png",
+      "sha256": "30ae75383ee84a3739f7950f0f3c74db8c4956adf3cb1ff0f7493c9c3192e6d6",
+      "directlyViewed": true,
+      "observation": "Open-cap tired body and tired free soul are visible; left edge still crops a portion of the raised cap/accessory because of the existing camera framing. This is a framing limitation, not complete character coverage."
+    },
+    {
+      "file": "/tmp/tougaigu-v31-formal-second/candidate/1280-first-lamp-face-lamp-closedJoy.png",
+      "sha256": "0bc2e2d1701cad9e810d04fe85e25cd8d3715dcb09468e0268d4b02b0f32ad02",
+      "directlyViewed": true,
+      "observation": "Closed-cap first-lamp joy face is clearly visible on the original desktop Canvas; lit lamp and supporting platform remain visible."
+    }
+  ],
+  "evidencePaths": [
+    "/tmp/tougaigu-v31-formal-second/artifact-audit.json",
+    "/tmp/tougaigu-v31-formal-second/face-evidence-summary.json",
+    "/tmp/tougaigu-v31-formal-second/inherited-gates-summary.json",
+    "/tmp/tougaigu-v31-formal-second/candidate/report.json"
+  ],
+  "metadataPath": "/tmp/v31-formal-second-official-metadata.json",
+  "auditAdaptationManifest": "/tmp/v31-second-audit-adaptation.json",
+  "limits": [
+    "Checkpoint snapshots can repeat across report files; occurrence counts are not distinct animation frames.",
+    "Native input captures precede later handlers; actual returning/closed states are validated from later RAF snapshots.",
+    "PNG files are original current Canvas exports, not additional rendered fixtures.",
+    "Five final observer cleanups are verified; intermediate checkpoints intentionally keep their observer active.",
+    "Festival raw snapshot is not saved in the immediate exclusion JSON; production validator output matches the complete report for original Halloween visits.",
+    "The six-chapter motion pose records intentionally omit face fields. Additional complete-report face snapshots cover only the chapters listed in journeyFaceByChapter; first-chapter event faces are in standalone records. Do not claim six-chapter browser face coverage from motion counts.",
+    "Desktop low-energy/body fatigue remains open-cap evidence; closed fatigue is only older offline evidence.",
+    "No physical phone, Safari, low-end GPU, frame-rate benchmark or public/live verification in this run.",
+    "Greenhouse new single-jump capture lands on the actual y445 shelf; it is not evidence that the new observer captured the earlier y385 root landing.",
+    "Coast entry jump ran normally but has pause:null. Do not claim an airborne coast pause from this run; separate existing clock-echo pauses have different scope.",
+    "Library complete vertical periods are in 390 and 320 touch routes. Desktop book carries are short segments; 320 cycles use real reducedMotion=true, while 390 supplies normal directional acting.",
+    "Library full-pose/Canvas pause is desktop book-a only. Phone book cycle records do not contain that pause.",
+    "Post entry jump/pause is the normal desktop route only; phone and failed-image routes intentionally contain no extra entry jump.",
+    "390 ending pages fit fully without scrolling. 320 has one actual scroll gesture per ending; all note/paragraph/home checks are present.",
+    "This is the second formal31 candidate CI at localhost with 31.0.0 resource versions. Main/Pages publication, HTTPS run and physical-phone/Safari/low-end-GPU evidence remain outside this result."
+  ],
+  "releaseCondition": "Candidate audit is satisfied. Publisher must refresh exact main/gh-pages owner/ref state, publish only the reviewed runtime tree, then run and independently audit full public HTTPS verification. Current run public-deployment step was skipped.",
+  "ownershipObservation": "At audit snapshot GitHub in-progress workflows were empty; no verifiable other active publisher was found. This does not prove absence of an external manual owner; publisher must refresh before using leases."
+}
