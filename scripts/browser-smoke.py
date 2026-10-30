@@ -8,24 +8,31 @@ import argparse,asyncio,base64,json,math,re,shutil,time
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from playwright.async_api import async_playwright, expect
+from browser_face_v31 import FaceSequence, wait_for_natural_fatigue, validate_face_snapshot
 
 
 PROBE="""
 import {getTravelerMotion as __qaGetTravelerMotion} from './dream-traveler-art.js';
 import {transformCapPoint as __qaTransformCapPoint} from './dream-cap-art.js';
+import {getTravelerFaceView as __qaGetTravelerFaceView,hasSoulJoy as __qaHasSoulJoy} from './dream-traveler-face.js';
 const __qaBodyIdentities=new WeakMap();let __qaBodySequence=0;
 window.__qaRead=()=>{
   if(!game)return null;
   const a=game.form==='soul'?game.soul:game.body,b=game.body,p=game.greenhousePlant;
   if(!__qaBodyIdentities.has(b))__qaBodyIdentities.set(b,++__qaBodySequence);
-  const character=game.getCharacterPresentation();
+  const faceTime=game.options.reducedMotion?0:game.visualTime;
+  const character=game.getCharacterPresentation(faceTime),shown=game.getSoulPresentation(character);
   const motion=__qaGetTravelerMotion(b,{time:game.options.reducedMotion?0:game.visualTime,
     hop:character.hop,reducedMotion:game.options.reducedMotion,performance:character.performance});
   return {
     form:game.form,state:game.state,chapterIndex:game.chapterIndex,mode:game.mode,festivalId:game.festivalId,controlSource,
     runId:game.runId,bodyIdentity:__qaBodyIdentities.get(b),input:{...game.input},
     inputAvailable:typeof gameplayAvailable==='function'?gameplayAvailable():null,
-    energy:game.energy,maxEnergy:game.maxEnergy,
+    energy:game.energy,maxEnergy:game.maxEnergy,emoteTime:game.emoteTime,
+    memoryFlags:game.memories.map(memory=>memory.collected===true),lampFlags:game.lanterns.map(lamp=>lamp.lit===true),
+    facePresentation:{time:faceTime,body:__qaGetTravelerFaceView(game,b,faceTime,shown),
+      soulJoy:__qaHasSoulJoy(game,shown),presentedSoul:shown?{...shown}:null,
+      rawSoul:{...game.soul},capEntry:game.cap?.entry,returnFrom:game.cap?.returnFrom?{...game.cap.returnFrom}:null},
     hudSample:currentHud?{form:currentHud.form,state:currentHud.state,time:currentHud.time,energy:currentHud.energy,maxEnergy:currentHud.maxEnergy}:null,
     observedAt:performance.now(),fullHudWrittenAt:lastHudAt,
     seals:game.lanterns.filter(l=>l.lit).length,memories:game.memories.filter(m=>m.collected).length,
@@ -860,7 +867,7 @@ async def toggle(page,touch):
     if touch:await page.locator('#stage-toggle').tap()
     else:await page.keyboard.press('e')
 
-async def puzzle(page,answer,wrong=None,touch=False):
+async def puzzle(page,answer,wrong=None,touch=False,before_continue=None):
     if touch:await page.locator('#stage-interact').tap()
     else:await page.keyboard.press('q')
     await page.locator('#puzzle-dialog[open]').wait_for()
@@ -875,6 +882,7 @@ async def puzzle(page,answer,wrong=None,touch=False):
             assert plant_after['stage']==plant_before['stage'], 'wrong answer advanced greenhouse growth'
             assert plant_after['knownSeals']==plant_before['knownSeals'], 'wrong answer counted as a greenhouse lamp'
     await page.locator('#puzzle-options button').filter(has_text=answer).click()
+    if before_continue:await before_continue()
     await page.locator('#puzzle-continue').click()
     await page.locator('#puzzle-dialog[open]').wait_for(state='hidden')
 
@@ -891,23 +899,29 @@ async def exercise(page,output,label,touch=False,full=False):
     timings=await page.evaluate('''async()=>{const a=[];let prev=performance.now();for(let i=0;i<61;i++)await new Promise(r=>requestAnimationFrame(t=>{if(i)a.push(t-prev);prev=t;r()}));a.sort((x,y)=>x-y);return {samples:a.length,p50:a[30],p95:a[57]}}''')
     station_pose=await sample_body_jump(page,label+'-station') if full else None
     print(label,'collect ticket',flush=True)
-    await toggle(page,touch)
-    async def ticket():return bool(re.match(r'1\s*/',await page.locator('#stage-memories').inner_text()))
-    await drive_to(page,270,420,touch=touch,until=ticket)
-    await page.wait_for_timeout(120)
-    assert await ticket(), 'actual flight did not collect ticket'
-    await assert_hud_readable(page,label+'-ticket-held',form='soul',objective='去程票抱好了',cap='去程票抱好了',need_bubble=True)
-    await page.screenshot(path=str(output/(label+'-ticket.png')),full_page=True)
-    if full:
-        await sample_phone_hud(page,output,label+'-ticket-held',form='soul',objective='去程票抱好了',cap='去程票抱好了',need_bubble=True)
-        # One natural depletion, reused at both phone widths. No assignment to
-        # energy and no extra low-energy wait in the independent phone cases.
-        await page.wait_for_function("()=>{const a=window.__qaRead();return a?.form==='soul'&&a.energy<=23;}",timeout=21000)
-        await sample_phone_hud(page,output,label+'-low-energy',form='soul',hint='灵光快用完了')
-    await toggle(page,touch)
-    if full:await sample_phone_hud(page,output,label+'-recovering-energy',form='body')
-    else:await assert_hud_readable(page,label+'-recovering-energy',form='body')
-    await page.wait_for_timeout(900)
+    async with FaceSequence(page,output,label) as faces:
+        await faces.start('ticket')
+        await toggle(page,touch)
+        async def ticket():return bool(re.match(r'1\s*/',await page.locator('#stage-memories').inner_text()))
+        await drive_to(page,270,420,touch=touch,until=ticket)
+        await page.wait_for_timeout(120)
+        assert await ticket(), 'actual flight did not collect ticket'
+        await assert_hud_readable(page,label+'-ticket-held',form='soul',objective='去程票抱好了',cap='去程票抱好了',need_bubble=True)
+        await page.screenshot(path=str(output/(label+'-ticket.png')),full_page=True)
+        await faces.checkpoint('collected',required=['event','freeJoy'],finish=full)
+        if full:
+            await sample_phone_hud(page,output,label+'-ticket-held',form='soul',objective='去程票抱好了',cap='去程票抱好了',need_bubble=True)
+            # One natural depletion, reused at both phone widths. The original
+            # <=23 gate and new <20 observation share ONE 21-second total budget.
+            await faces.start('fatigue')
+            await wait_for_natural_fatigue(page,faces)
+            await sample_phone_hud(page,output,label+'-low-energy',form='soul',hint='灵光快用完了')
+            await faces.checkpoint('phone-low-energy',required=['soulTired','bodyTiredOpen','bodyTiredOpen-390','bodyTiredOpen-320'])
+        await toggle(page,touch)
+        if full:await sample_phone_hud(page,output,label+'-recovering-energy',form='body')
+        else:await assert_hud_readable(page,label+'-recovering-energy',form='body')
+        await page.wait_for_timeout(900)
+        await faces.checkpoint('returned',required=['soulTired','bodyTiredOpen','bodyTiredOpen-390','bodyTiredOpen-320','returning','recovered'] if full else ['event','freeJoy','returning','closedJoy'],finish=True)
     await toggle(page,touch);await page.wait_for_timeout(750)
     assert await ticket(), 'reopening counted ticket twice'
     await page.screenshot(path=str(output/(label+'-home.png')),full_page=True)
@@ -930,9 +944,12 @@ async def exercise(page,output,label,touch=False,full=False):
         async def reachable():return await page.locator('#stage-interact-label').inner_text()=='解谜'
         await drive_to(page,665,285,touch=touch,until=reachable)
         await page.screenshot(path=str(output/(label+'-lamp.png')),full_page=True)
-        await puzzle(page,'信封',wrong='行李箱',touch=touch)
-        assert re.match(r'1\s*/',await page.locator('#stage-seals').inner_text())
-        await toggle(page,touch);await page.wait_for_timeout(850)
+        async with FaceSequence(page,output,label+'-first-lamp') as lamp_faces:
+            async def before_lamp_continue():await lamp_faces.start('lamp')
+            await puzzle(page,'信封',wrong='行李箱',touch=touch,before_continue=before_lamp_continue)
+            assert re.match(r'1\s*/',await page.locator('#stage-seals').inner_text())
+            await toggle(page,touch);await page.wait_for_timeout(850)
+            await lamp_faces.checkpoint('returned',required=['event','returning','closedJoy'],finish=True)
         await drive_to(page,1110,touch=touch);await page.wait_for_timeout(180)
         await toggle(page,touch)
         await drive_to(page,1430,315,touch=touch,until=reachable)
@@ -946,7 +963,8 @@ async def exercise(page,output,label,touch=False,full=False):
         print(label,'walk to exit',await page.evaluate('window.__qaRead()'),flush=True)
         await drive_to(page,1890,touch=touch,until=complete,limit=10)
         await page.screenshot(path=str(output/(label+'-complete.png')),full_page=True)
-    return {'viewport':page.viewport_size,'version':version,'ticketCollectedAndReturned':True,'pauseFrozen':True,'noHorizontalOverflow':True,'chapterCompleted':full,'input':'emulated Chromium touch' if touch else 'keyboard','rafIntervalMs':timings,'frameSamplePhase':'initial active idle; not a physical-device benchmark','stationBodyJump':station_pose}
+    return {'viewport':page.viewport_size,'version':version,'ticketCollectedAndReturned':True,'pauseFrozen':True,'noHorizontalOverflow':True,'chapterCompleted':full,'input':'emulated Chromium touch' if touch else 'keyboard','rafIntervalMs':timings,'frameSamplePhase':'initial active idle; not a physical-device benchmark','stationBodyJump':station_pose,
+            'faceObservations':faces.records+(lamp_faces.records if full else [])}
 
 async def exercise_greenhouse(page,output,label):
     """Continue the desktop journey through the normal unlocked chapter map."""
@@ -1692,6 +1710,9 @@ async def exercise_festival_hud(page,output,label):
     await expect(page.locator('#stage-back-story')).to_have_accessible_name('返回主线')
     await expect(page.locator('#stage-back-story')).to_be_visible()
     festival=await assert_hud_readable(page,label+'-festival-hud',form='body')
+    festival_face=validate_face_snapshot(await page.evaluate('window.__qaRead()'))
+    assert festival_face['eligible'] is False, 'actual festival used the main-story face refinement'
+    (Path(output)/(label+'-face-festival-exclusion.json')).write_text(json.dumps({'festivalId':'halloween','face':festival_face,'scope':'actual existing visit; other nine festivals remain pure coverage'},ensure_ascii=False,indent=2)+'\n')
     bar=await page.evaluate(HUD_PROBE)
     back=next(b for b in bar['buttons'] if b['id']=='stage-back-story')
     assert back['visible'] and back['centerHits'] and back['rect']['height']>=36
@@ -1709,7 +1730,7 @@ async def exercise_festival_hud(page,output,label):
     assert await page.evaluate("(()=>{const r=JSON.parse(localStorage.getItem('tougaigu.capbook.v1')).scenes['story-0'];return {memories:r.memories,seals:r.seals};})()")==collections
     await page.screenshot(path=str(Path(output)/(label+'-festival-return.png')),full_page=True)
     return {'festivalId':'halloween','input':'emulated Chromium touch',
-            'festival':festival,'returnedMain':main_hud,'returnButton':back['rect'],
+            'festival':festival,'returnedMain':main_hud,'returnButton':back['rect'],'faceRefinementExcluded':festival_face,
             'giftCategoryAccessible':True,'mainMemoryCategoryRestored':True,
             'returnButtonCenterUncovered':True,'mainFestivalBarHidden':True,
             'chaptersChoicesAndCollectionsUnchanged':True,'rewardGrantsUnchanged':True,

@@ -1,6 +1,26 @@
 # 持续迭代记录
 
-## 当前在途：v31「眼窝里的笑」正式候选，未经发布
+## 当前在途：v31 Pages部署成功，待main完整公网验收
+
+**当前状态（2026-10-29 23:52 UTC）：v31 候选已验，Pages 部署成功，四项 HTTPS 资源逐字节核对通过；main 合并后的完整候选与公网浏览器仍待执行。** 正式第二候选为 `7ba7c5e00a6a32032e5becf5131a527322d03ac3`，[候选 run 40965474140](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40965474140) 通过 675/675 测试和完整候选浏览器，796 个源码 blob、143 个运行时文件已独立审计。
+
+[Pages PR #1](https://github.com/zhangshuaibo1/tougaigu/pull/1) 已合并，部署提交 `6e716a8c40e5ad0b917f3b3e85fe86f7b09a9241` 的 tree 精确为 `89c590e390f02c089b67cfa6f3539c35fa836201`；[Pages run 40975633681](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40975633681) 于 23:49:09 UTC success。23:52:08 UTC 只读检查确认 `https://tougaigu.com/` 的 index、dream、survivor 与新 `dream-traveler-face.js` 四资源均与准确候选字节相等；index/dream 的 application-version 为 31.0.0，survivor 沿用无该 meta 的原格式，但资源戳为31且内容相等。此项资源核对不能替代完整公网游戏浏览器。
+
+[main 同步 PR #2](https://github.com/zhangshuaibo1/tougaigu/pull/2) 使用从7ba建立的 `release-v31-browser-20261030` 分支。接续须保留 main `26a3fe6b9b73f597f8107f6f7e80e551f7aee9eb` 的 v30 审计与历史，完成合并后读取新 main SHA 对应的完整候选＋正式域名 HTTPS workflow 及新 artifact，再关闭 v31 公网验收。
+
+首次正式候选05adb / run40963548412在320未冻结安全靠近的原 `x<2120 && deaths===0` 断言失败；原safe值未记录，不推断原因。第二候选7ba仅将普通靠近目标2110提前为2050，并保留上限/零死亡、加入下限2000及身份约束；其正式候选已成功。准确门槛与原失败见 [QA-v31](QA-v31.md)。
+
+## v32 独立候选的本地完成状态
+
+v32 32.0.0 已在独立工作区完成桌面对话布局、六个视口／减动配置的真实 UI 验证及完整六章/手机/结局浏览器。实际执行代码 tree 为 `5445a39ba818484952598bfeab24d70702424a6b`：六个视口／减动配置验证20.642秒、完整浏览器752.294秒；随后最终代码76个测试文件、68个JS模块、171本地引用与232版本引用通过。归档 tree `ad30abdd5852d171c5853b706e86695748ff5aff` 仅追加证据文档，运行时/scripts/tests/package保持实跑字节。本轮main同步仍为v31，v32尚无正式GitHub候选CI或公开部署，待v31完整公网闭环后另行推进。不把本地结果写成线上交付，也不在此链接尚未上传的本地证据。
+
+## 历史：原生写请求无回执与发布准备
+
+23:01:58.287—23:02:43.290 UTC 曾有一次仅创建不可变 Pages commit 对象的原生请求未返回 SHA、错误或明确拒绝；该次服务端对象创建状态未知，不能追认成功或权限拒绝。后续已通过获授权的 Browser 流程取得上述 PR #1、准确 Pages 提交和部署成功回执，两件事分别记账。原生写通道仍未取得成功回执，不以重复未知写入替代正式结果。
+
+以下历史中的“当前”“最新”“下一项”均描述各自记录形成时的状态，不覆盖本文件开头的最新事实。
+
+## 历史协调：main 26a3 创建时的第一正式候选登记
 
 唯一候选 `iteration-v31-face-20261029`，提交 `05adb5da528dd449b85c7874313ac45262908921`，从已归档 v30 main `3c8c6ad2` 和 v31 pre-study `09905331` 无损整合。正式候选 CI [40963548412](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40963548412) 已启动，**最终结论以远端最新状态为准**。截至创建该记录尚未发布v31，正式站保持 v30.0.0。完整测试、原尺寸截图与候选网络门槛未通过前不得发布；已成功的预研候选不能替代正式分支。正式 Pages 树仅预创建未引用：`89c590e390f02c089b67cfa6f3539c35fa836201`（143个运行blob＋空 .nojekyll，原CNAME），**不是已发布证据**。下一次执行先复核候选CI及main新SHA，勿创建竞争版本。
 

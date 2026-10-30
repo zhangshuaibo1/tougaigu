@@ -1,4 +1,34 @@
-# v31 在途登记：眼窝里的笑（正式候选）
+# v31 在途登记：Pages与四资源核对通过，待main完整公网浏览器
+
+**当前状态（2026-10-29 23:52 UTC）：v31 候选已验，Pages 部署成功，四项 HTTPS 资源逐字节核对通过；main 合并后的完整候选与公网浏览器仍待执行。** 正式第二候选为 `7ba7c5e00a6a32032e5becf5131a527322d03ac3`，[候选 run 40965474140](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40965474140) 通过 675/675 测试和完整候选浏览器，796 个源码 blob、143 个运行时文件已独立审计。
+
+[Pages PR #1](https://github.com/zhangshuaibo1/tougaigu/pull/1) 已合并，部署提交 `6e716a8c40e5ad0b917f3b3e85fe86f7b09a9241` 的 tree 精确为 `89c590e390f02c089b67cfa6f3539c35fa836201`；[Pages run 40975633681](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40975633681) 于 23:49:09 UTC success。23:52:08 UTC 只读检查确认 `https://tougaigu.com/` 的 index、dream、survivor 与新 `dream-traveler-face.js` 四资源均与准确候选字节相等；index/dream 的 application-version 为 31.0.0，survivor 沿用无该 meta 的原格式，但资源戳为31且内容相等。此项资源核对不能替代完整公网游戏浏览器。
+
+[main 同步 PR #2](https://github.com/zhangshuaibo1/tougaigu/pull/2) 使用从7ba建立的 `release-v31-browser-20261030` 分支。接续须保留 main `26a3fe6b9b73f597f8107f6f7e80e551f7aee9eb` 的 v30 审计与历史，完成合并后读取新 main SHA 对应的完整候选＋正式域名 HTTPS workflow 及新 artifact，再关闭 v31 公网验收。
+
+## 当前接续与并发保护
+
+root负责唯一远端写入与结果核对。只解决两份文档冲突并更新必要状态文字，保持7ba候选运行时、scripts、tests、package与workflow原字节；尤其保留邮局靠近目标2050、`2000 <= x < 2120`、零死亡和同run/body身份门槛。正常合并保留main新增的 `verification-v30-public-audit.json` 与更新后的 `verification-v30-release-summary.md`，不以7ba整树覆盖main。当前候选证据通过上方已存在的Actions链接读取；正式本地归档文件尚未进入远端，不创建失效链接。
+
+## v32 独立候选的本地完成状态
+
+v32 32.0.0 已在独立工作区完成桌面对话布局、六个视口／减动配置的真实 UI 验证及完整六章/手机/结局浏览器。实际执行代码 tree 为 `5445a39ba818484952598bfeab24d70702424a6b`：六个视口／减动配置验证20.642秒、完整浏览器752.294秒；随后最终代码76个测试文件、68个JS模块、171本地引用与232版本引用通过。归档 tree `ad30abdd5852d171c5853b706e86695748ff5aff` 仅追加证据文档，运行时/scripts/tests/package保持实跑字节。本轮main同步仍为v31，v32尚无正式GitHub候选CI或公开部署，待v31完整公网闭环后另行推进。不把本地结果写成线上交付，也不在此链接尚未上传的本地证据。
+
+## 历史：原生写请求无回执与发布准备
+
+23:01:58.287—23:02:43.290 UTC 曾有一次仅创建不可变 Pages commit 对象的原生请求未返回 SHA、错误或明确拒绝；该次服务端对象创建状态未知，不能追认成功或权限拒绝。后续已通过获授权的 Browser 流程取得上述 PR #1、准确 Pages 提交和部署成功回执，两件事分别记账。原生写通道仍未取得成功回执，不以重复未知写入替代正式结果。
+
+## 历史：第一正式候选失败与第二候选修正提交时记录
+
+以下保留 7ba 中的原始失败与修正登记；其中“待二候选验证”属于提交时状态，现已由上面的正式 run 40965474140 验证通过。原失败的具体 safe 坐标仍未知。
+
+**正式第一候选失败登记（2026-10-29 22:19 UTC）：** 源码 `05adb5da` / [40963548412](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40963548412) **failure**。675/675 逻辑测试和本地资源检查 success，正式 Chromium 候选浏览器在正常解锁第六章、桌面与390px实操通过后，于 320px 真实蘑菇越根后的**未冻结身体安全靠近**触发 `scripts/browser_post_v28.py:597` 的原严格 `body.x<2120 && deaths===0` 断言。原始日志没有记录这一次 `safe` 的坐标与死亡值，**不能判定具体越界/受伤原因**。此前 320 蘑菇自然上弹 `vy=-850`、仅一次原生右触、原根台 y390、x1684.625、零死亡及完整清理均有真实 JSON，不能重判为失败。候选产物 ID `12938285523` 194231490 字节 SHA256 `3f1cabb7fa3597fac17cb6873453b499bdadfe29cfc78174b5336f62eb15ba65`，网页/HTTP正式公开步骤 **skipped**，未发布 v31。
+
+**后续针对性修正（待二候选验证）：** 保留原严格 `x<2120` / 0死亡/原run身份并新增 `x>=2000`，把实际 `drive_to` 目的地从近边界2110前移到2050，保留随后真实开盖、灵魂风廊、第二盏灯、连续原出口、完整结局/网络 gate；一次输入自然制动，不传送、不重试蘑菇、不降低任何速度/冻结/退出断言。若下一候选失败，将立即记录 `x/y/vx/deaths/run/body` 作为真实诊断，禁止将推测补造为旧失败事实。本地 Python AST、8项原post浏览器validator纯验证通过；**不是新候选浏览器证明**。
+
+## 历史协调：main 26a3 保存的原文
+
+以下整段保留 main 原文，包括当时“05adb 为第二父”、候选已启动及未发布的状态；当前合并须保留最新main及准确7ba两条历史，以本文件开头为准。
 
 **当前唯一正式候选**：`05adb5da528dd449b85c7874313ac45262908921` on `iteration-v31-face-20261029`，CI [40963548412](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40963548412) 已启动，结果以实时 GitHub 状态为准。v31 pre-study `09905331` 已通过675测试／候选浏览器，但仅作预备证据。正式 v30 公网已 success；目前官网仍为 v30。预计 Pages 树 `89c590e3` 已生成而**未挂到gh-pages**。main在候选创建后新增v30完整 artifact 独立审计 `01999717`；未来v31正式合并应以更新后的main为第一父、05adb为第二父并保留新增v30审计，不能以旧候选整树覆盖main。以下为当时预研记录，保留原文。
 

@@ -1,0 +1,18 @@
+{
+  "version": "31.0.0",
+  "status": "formal-candidate-unverified",
+  "base_main": "3c8c6ad20bd8458727d9634162df554d6efb061b",
+  "prestudy_commit": "0990533122f42a9bc22fc98282ab5f6ddc49f672",
+  "prestudy_success_workflow": 40934592656,
+  "source_mode": "reuse exact 099 blob SHAs for 30 non-document conflicting paths",
+  "excluded_overlapping_docs": [
+    "README.md",
+    "docs/ITERATION.md",
+    "docs/PLAN-v31.md",
+    "docs/QA-v31.md",
+    "docs/IN-PROGRESS-v31.md"
+  ],
+  "changed_blob_entries": 30,
+  "expected_public_domain": "https://tougaigu.com/",
+  "release_prohibited_until_candidate_success": true
+}

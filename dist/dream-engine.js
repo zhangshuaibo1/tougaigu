@@ -21,6 +21,7 @@ import {drawPostPlatform,drawPostMushroom,drawPostPendulum,drawPostExit} from '.
 import {createPostDelivery,beginPostReturn,advancePostDelivery,clearPostDelivery,settlePostDelivery,postDeliveryView,drawPostReturnSpark} from './dream-post-delivery.js';
 import { normalizeClockChoice, createClockEcho, advanceClockEcho, settleClockEcho, getClockEchoSnapshot, drawClockEcho } from './dream-clock-echo.js';
 import { drawRefinedSoul } from './dream-soul-art.js';
+import { drawTravelerSkullFront } from './dream-traveler-face.js';
 import { createTheatreEncore, advanceTheatreEncore, drawTheatreEncore, getTheatreEncoreView } from './dream-theatre-encore.js';
 import { createTravelerPerformance, advanceTravelerPerformance, settleTravelerPerformance, getTravelerPerformanceView, applyTravelerPerformance, isTravelerPerformanceScene } from './dream-traveler-performance.js';
 export { DREAM_LEVELS, DREAM_PHYSICS, createDreamRng, getDreamStars } from './dream-engine-base.js';
@@ -360,6 +361,10 @@ export class DreamGame extends BaseDreamGame {
     super.drawExit(c,t);
   }
   drawStationRim(c){drawCapFrontRim(c,this.capScene,this.capOpen);}
+  drawSkullFront(c,b,t,shown){
+    if(drawTravelerSkullFront(c,this,b,t,shown))return;
+    super.drawSkullFront(c,b,t,shown);
+  }
   drawSoul(c,s,t){
     if(this.mode==='story'&&this.chapterIndex<=5&&drawRefinedSoul(c,this,s,t))return;
     super.drawSoul(c,s,t);

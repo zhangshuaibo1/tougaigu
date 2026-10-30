@@ -5,7 +5,8 @@
 - 游戏：[掀起你的头盖骨](https://tougaigu.com/)
 - 旧入口：[GitHub Pages 地址](https://zhangshuaibo1.github.io/tougaigu/)；域名配置与实际验收状态见 [域名记录](docs/DOMAIN-tougaigu.com.md)。
 - **v30.0.0「脚下有回声」已发布并通过正式HTTPS验收**：六章真实起落/落地收势、纵书稳臂与前两章实地阴影，662项测试及公网浏览器成功，见 [QA-v30](docs/QA-v30.md) 和 [发布核验](docs/verification-v30-release-summary.md)。
-- 下一轮 **v31「眼窝里的笑」**：真实票据／点灯成功回应、骨面体积及疲倦表情，预研候选已通过但尚未正式31发布，见 [计划](docs/PLAN-v31.md)。
+- **v31「眼窝里的笑」已完成Pages部署与四项HTTPS资源精确核对**：[正式候选675测试及完整浏览器](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40965474140)通过；[Pages部署40975633681](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40975633681)于23:49:09 UTC成功，23:52:08 UTC核对index/dream/survivor/新face模块均与31候选原字节一致。[main同步PR #2](https://github.com/zhangshuaibo1/tougaigu/pull/2)之后的完整候选＋公网浏览器仍待执行，不能把资源核对当作完整公网验收；准确范围见 [QA-v31](docs/QA-v31.md)。
+- **v32桌面对话布局独立本地候选已完成**：六个视口／减动配置真实UI验证及完整六章/手机/结局浏览器通过，最终代码76测试文件通过；尚未进行正式GitHub候选CI或公开部署，待v31完整公网闭环后另行推进。
 - 原生 JavaScript / Canvas，无运行时第三方 JavaScript 依赖；原《再活一局》保留在 `survivor.html`。
 - 六章、十个节日、原有存档与奖励规则及企业页脚保留。
 
@@ -13,7 +14,7 @@
 
 六章里的阿拾都拥有由实际速度驱动的起跳收臂、下落寻找平衡和约0.2秒的落地收势。浮书上的自由手臂读取真实横向或纵向位移，随上下行轻轻稳住；脚底继续贴着原支撑面，握盖、抱物与归位沿用原有手部约束。第一、二章的腾空阴影投到真实可站立表面。
 
-原跳跃、平台、蘑菇、关卡、存档和奖励规则保持；暂停冻结，减少动态静态呈现。未升版预研已在真实浏览器执行六章pose、390正常纵书双向、320减动纵书双向、完整终章与结局流程。正式30.0.0的完整候选和HTTPS均已通过，当前公开版本为30.0.0。见 [QA-v30](docs/QA-v30.md) 与 [原始预研证据](docs/v30-prestudy/browser/README.md)。
+原跳跃、平台、蘑菇、关卡、存档和奖励规则保持；暂停冻结，减少动态静态呈现。未升版预研已在真实浏览器执行六章pose、390正常纵书双向、320减动纵书双向、完整终章与结局流程。正式30.0.0的完整候选和HTTPS均已通过；本段保留v30发布完成时的记录，当前Pages部署与待验范围见上方v31状态。见 [QA-v30](docs/QA-v30.md) 与 [原始预研证据](docs/v30-prestudy/browser/README.md)。
 
 ## 黎明邮局·晨光谢幕（v29，已发布）
 
