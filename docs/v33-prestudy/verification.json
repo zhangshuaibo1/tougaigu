@@ -1,0 +1,350 @@
+{
+  "status": "local pre-study complete; v33 not released",
+  "productVersion": "32.0.0",
+  "baselineCommit": "d113b48f7964dbc3f67ce0e0fee40a39519979d1",
+  "baselineTree": "ad30abdd5852d171c5853b706e86695748ff5aff",
+  "branch": "prestudy-v33-companion-20261030",
+  "sourceDelta": [
+    {
+      "path": "dist/dream-companion-art.js",
+      "status": "added",
+      "bytes": 8254,
+      "lines": 117,
+      "sha256": "f0d9916c23667807c7e5577b238dcb509e3cab6e54070b6e239d11af20f787f3",
+      "gitBlob": "f501ed4af0b7944ec9ceabb7008eaaeb66745625",
+      "baselineGitBlob": null
+    },
+    {
+      "path": "dist/dream-engine.js",
+      "status": "modified",
+      "bytes": 27043,
+      "lines": 411,
+      "sha256": "7b602b83f551c41fdbe97443e1fed08d6af773e9767f0ed830a434168951e889",
+      "gitBlob": "49baa14351da49a2deed0b842dfcdd113bfa3227",
+      "baselineGitBlob": "f9f99ca6f1024a672bfcae2fb58e9df74b57b678"
+    },
+    {
+      "path": "dist/index.html",
+      "status": "modified",
+      "bytes": 26090,
+      "lines": 111,
+      "sha256": "02a964629ffbec6ca6106b8851c2aaaf8291ff5c1af34183fa932c852b2a8308",
+      "gitBlob": "a43f0d7dd21556dff4865362256baecd0fc3343b",
+      "baselineGitBlob": "922a917e08f361f3031505d969133ddb52288128"
+    },
+    {
+      "path": "dist/dream.html",
+      "status": "modified",
+      "bytes": 26090,
+      "lines": 111,
+      "sha256": "02a964629ffbec6ca6106b8851c2aaaf8291ff5c1af34183fa932c852b2a8308",
+      "gitBlob": "a43f0d7dd21556dff4865362256baecd0fc3343b",
+      "baselineGitBlob": "922a917e08f361f3031505d969133ddb52288128"
+    },
+    {
+      "path": "dist/survivor.html",
+      "status": "modified",
+      "bytes": 17515,
+      "lines": 82,
+      "sha256": "901903dbc2f95fe8f221242cad1856d8f7bac2ba9b11945f82a438cac62bf316",
+      "gitBlob": "09ac36059227b016f789f54d7b4c2ac828cef16b",
+      "baselineGitBlob": "8ec451fae0e0f6da4bdacd9a3d68a5db31548ea2"
+    },
+    {
+      "path": "tests/companion-art-v33.test.mjs",
+      "status": "added",
+      "bytes": 11540,
+      "lines": 119,
+      "sha256": "d45d137cd85a1a62fc5e8d0a6c752889029f4b9fa29d2d79ea8bd5cc5627a3ba",
+      "gitBlob": "a1a29218f86610d51932acaf83ff9fb9b7acb613",
+      "baselineGitBlob": null
+    },
+    {
+      "path": "scripts/browser_companion_v33.py",
+      "status": "added",
+      "bytes": 16916,
+      "lines": 188,
+      "sha256": "49a8230bc798dbd83db78e48f4913cf946275122d29da941a3933bc8b93ce866",
+      "gitBlob": "bec16f77d17ed2339e82c1dca3797c4dcd9f0920",
+      "baselineGitBlob": null
+    }
+  ],
+  "unchangedBaseEngine": {
+    "path": "dist/dream-engine-base.js",
+    "sha256": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699",
+    "gitBlob": "1f6974f2038de030518ac23a83ddd0c0df4f7e55",
+    "identicalToBaselineBytes": true
+  },
+  "patch": {
+    "path": "docs/v33-prestudy/code-delta.patch",
+    "sha256": "ba6ea2373421d7ae0549be5bba945b0c7be1339d00e39325fd03900a49d58366",
+    "scope": "Only seven explicit source/test/driver files; no other worktree or version bump; evidence/docs are separate."
+  },
+  "browser": {
+    "report": "docs/v33-prestudy/browser/report.json",
+    "sha256": "623d522712b87735a93cbb700fd6179ebe10bbc451bddb899caf0299e4a6ea58",
+    "bytes": 1546877,
+    "status": "passed",
+    "elapsedSeconds": 41.897263018996455,
+    "chromiumVersion": "140.0.7339.16",
+    "cases": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "input": "keyboard",
+        "status": "passed",
+        "pauseCanvasBytesEqual": true,
+        "returnPhases": [
+          "returning",
+          "arrival-blink",
+          "closed"
+        ],
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "requestFailures": 0
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "input": "CDP simulated touch",
+        "status": "passed",
+        "pauseCanvasBytesEqual": true,
+        "returnPhases": [
+          "returning",
+          "arrival-blink",
+          "closed"
+        ],
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "requestFailures": 0
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 680
+        },
+        "input": "CDP simulated touch",
+        "status": "passed",
+        "pauseCanvasBytesEqual": true,
+        "returnPhases": [
+          "returning",
+          "arrival-blink",
+          "closed"
+        ],
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "requestFailures": 0
+      }
+    ]
+  },
+  "images": [
+    {
+      "path": "docs/v33-prestudy/browser/1280/after-neutral.png",
+      "bytes": 1072112,
+      "sha256": "a090daeda3df19c941df28feaf7546096e409d3573a966aa4eb0355617b7d729",
+      "width": 1280,
+      "height": 800,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/1280/before-neutral.png",
+      "bytes": 1071202,
+      "sha256": "5f21febdc7aa7d34bab79e7101d3e9abdffc45436a879b3b5a7e7dc7932c5644",
+      "width": 1280,
+      "height": 800,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/1280/reduced-open.png",
+      "bytes": 1079178,
+      "sha256": "574b4f169f3cbf3142fde64c7a114e1f50d10c40b73c1d085ae57fd7d50b7fa0",
+      "width": 1280,
+      "height": 800,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/1280/return-arrival-blink-canvas.png",
+      "bytes": 1483295,
+      "sha256": "c704636b407038710b8c04d07f1248c4513316f5a3276933a49af53475aa896a",
+      "width": 1280,
+      "height": 677,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/1280/return-closed-canvas.png",
+      "bytes": 1482317,
+      "sha256": "db99a6fa1cba7e0197f0fd0b764151560cccc666132acd8bfe99c8cf9aab7a10",
+      "width": 1280,
+      "height": 677,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/1280/return-returning-canvas.png",
+      "bytes": 1485762,
+      "sha256": "32ab22b2d26ded8afa0d72525018acd96603a54ba3c54454cb3b6a9b7ef0efe9",
+      "width": 1280,
+      "height": 677,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/1280/returned.png",
+      "bytes": 1071983,
+      "sha256": "ee583df5741f69a6c5d2dc6c57165a4bff5d32fea7bbe8aea4f9b0e2c12bea0c",
+      "width": 1280,
+      "height": 800,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/1280/watching-up.png",
+      "bytes": 1083583,
+      "sha256": "51cd960f6df5073d13e3b789827983c5380400f71761621de0b4ef08c23c0135",
+      "width": 1280,
+      "height": 800,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/320/after-neutral.png",
+      "bytes": 241077,
+      "sha256": "df4ac0b8b15b7c0d971760ae2fb5b3577e6210d1e7f7eb030a92d274794d31e7",
+      "width": 320,
+      "height": 680,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/320/before-neutral.png",
+      "bytes": 240955,
+      "sha256": "369236726bf4e17b79b689457050f7e7d8ecfac9a4c8539bf99cfd103bbd9dc4",
+      "width": 320,
+      "height": 680,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/320/reduced-open.png",
+      "bytes": 240116,
+      "sha256": "a0fdae4239900e3b2aee660ed3168f08f4fc1fa714fe03e1dd3f9c84ac5380b7",
+      "width": 320,
+      "height": 680,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/320/return-arrival-blink-canvas.png",
+      "bytes": 272440,
+      "sha256": "5421592424addc6f05ea00bbf80474d73cd2062e0b216f2267c697a1e9266aca",
+      "width": 320,
+      "height": 431,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/320/return-closed-canvas.png",
+      "bytes": 272130,
+      "sha256": "4242969283e6f2f74e05362fa3758ca169dd4923d2a122fbfef820fc4f7314d4",
+      "width": 320,
+      "height": 431,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/320/return-returning-canvas.png",
+      "bytes": 273039,
+      "sha256": "87ce145f13409bb5b72ed106a9c34aee1bf317e56516c96743332dc30e7a7537",
+      "width": 320,
+      "height": 431,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/320/returned.png",
+      "bytes": 243515,
+      "sha256": "a7603f1193985ff46347d7076f414c10b98e4dcc8548754d471d0198e997992a",
+      "width": 320,
+      "height": 680,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/320/watching-up.png",
+      "bytes": 233169,
+      "sha256": "ec280183c8975f17baacafd5b6e762fe7e3103500b7ac8944460af71d37d9c78",
+      "width": 320,
+      "height": 680,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/390/after-neutral.png",
+      "bytes": 353091,
+      "sha256": "50b35c98397df7ce250466b0b3559f641200fa17c133f73147aa5765fae57388",
+      "width": 390,
+      "height": 844,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/390/before-neutral.png",
+      "bytes": 352745,
+      "sha256": "eab8992ca663cd6a9dc1e2640d0c363a0e4eb3ba643470249bdd7fc2d63ac0e8",
+      "width": 390,
+      "height": 844,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/390/reduced-open.png",
+      "bytes": 356052,
+      "sha256": "528722dae267acdeedefadb7b50677ae9b48650d9468b69bacf6b4a0019a38ff",
+      "width": 390,
+      "height": 844,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/390/return-arrival-blink-canvas.png",
+      "bytes": 430362,
+      "sha256": "a054d799b7c6893119913dbb30f52a654cb5f2593febf2a14bf7d7e9c29109b5",
+      "width": 390,
+      "height": 595,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/390/return-closed-canvas.png",
+      "bytes": 429787,
+      "sha256": "b285d9b44e1223a8122e776428f75ba2da4eb7a8415bdd9e56d686833e04e5b5",
+      "width": 390,
+      "height": 595,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/390/return-returning-canvas.png",
+      "bytes": 432240,
+      "sha256": "d0377e45d69c368b55f9cdcf9d53e8ddc4f229c1541339177ce777a24a1c7fb4",
+      "width": 390,
+      "height": 595,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/390/returned.png",
+      "bytes": 352277,
+      "sha256": "abe3e14b1eb0d87d64cb8eec265d07abb4c4f4cd3ca3efb8615e57611f64b8f7",
+      "width": 390,
+      "height": 844,
+      "unedited": true
+    },
+    {
+      "path": "docs/v33-prestudy/browser/390/watching-up.png",
+      "bytes": 351242,
+      "sha256": "7797bab835430c5b8e31558ecd1d2193d7829bb121fbe529381228e60ae56acb",
+      "width": 390,
+      "height": 844,
+      "unedited": true
+    }
+  ],
+  "limitations": [
+    "complete chapter/story route",
+    "public HTTPS",
+    "physical phone",
+    "Safari",
+    "device performance",
+    "all optional activities",
+    "OS prefers-reduced-motion setting was not changed; in-game setting was used",
+    "Before/after images use separate fresh contexts with different animation times, not a same-frame pixel comparison",
+    "All-six-chapter and10festival coverage are logical/Canvas-command tests, not complete browser playthroughs",
+    "No hardware performance benchmark or new public deployment"
+  ]
+}

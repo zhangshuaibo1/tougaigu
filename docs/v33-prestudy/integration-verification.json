@@ -1,0 +1,390 @@
+{
+  "status": "local pre-study and callable adapter passed; v33 not released",
+  "productVersion": "32.0.0",
+  "baselineCommit": "d113b48f7964dbc3f67ce0e0fee40a39519979d1",
+  "baselineTree": "ad30abdd5852d171c5853b706e86695748ff5aff",
+  "branch": "prestudy-v33-companion-20261030",
+  "sourceDelta": [
+    {
+      "path": "dist/dream-companion-art.js",
+      "status": "added",
+      "bytes": 8254,
+      "lines": 117,
+      "sha256": "f0d9916c23667807c7e5577b238dcb509e3cab6e54070b6e239d11af20f787f3",
+      "gitBlob": "f501ed4af0b7944ec9ceabb7008eaaeb66745625",
+      "baselineGitBlob": null
+    },
+    {
+      "path": "dist/dream-engine.js",
+      "status": "modified",
+      "bytes": 27043,
+      "lines": 411,
+      "sha256": "7b602b83f551c41fdbe97443e1fed08d6af773e9767f0ed830a434168951e889",
+      "gitBlob": "49baa14351da49a2deed0b842dfcdd113bfa3227",
+      "baselineGitBlob": "f9f99ca6f1024a672bfcae2fb58e9df74b57b678"
+    },
+    {
+      "path": "dist/index.html",
+      "status": "modified",
+      "bytes": 26090,
+      "lines": 111,
+      "sha256": "02a964629ffbec6ca6106b8851c2aaaf8291ff5c1af34183fa932c852b2a8308",
+      "gitBlob": "a43f0d7dd21556dff4865362256baecd0fc3343b",
+      "baselineGitBlob": "922a917e08f361f3031505d969133ddb52288128"
+    },
+    {
+      "path": "dist/dream.html",
+      "status": "modified",
+      "bytes": 26090,
+      "lines": 111,
+      "sha256": "02a964629ffbec6ca6106b8851c2aaaf8291ff5c1af34183fa932c852b2a8308",
+      "gitBlob": "a43f0d7dd21556dff4865362256baecd0fc3343b",
+      "baselineGitBlob": "922a917e08f361f3031505d969133ddb52288128"
+    },
+    {
+      "path": "dist/survivor.html",
+      "status": "modified",
+      "bytes": 17515,
+      "lines": 82,
+      "sha256": "901903dbc2f95fe8f221242cad1856d8f7bac2ba9b11945f82a438cac62bf316",
+      "gitBlob": "09ac36059227b016f789f54d7b4c2ac828cef16b",
+      "baselineGitBlob": "8ec451fae0e0f6da4bdacd9a3d68a5db31548ea2"
+    },
+    {
+      "path": "tests/companion-art-v33.test.mjs",
+      "status": "added",
+      "bytes": 11540,
+      "lines": 119,
+      "sha256": "d45d137cd85a1a62fc5e8d0a6c752889029f4b9fa29d2d79ea8bd5cc5627a3ba",
+      "gitBlob": "a1a29218f86610d51932acaf83ff9fb9b7acb613",
+      "baselineGitBlob": null
+    },
+    {
+      "path": "scripts/browser_companion_v33.py",
+      "status": "added",
+      "bytes": 18959,
+      "lines": 218,
+      "sha256": "42b65bd9fdd0e4ad48002ddfd2b13f92ae4e461eb8a45414d519103db0ce4912",
+      "gitBlob": "ba659a1a8c9aa6e6200d2289147897857d22045b",
+      "baselineGitBlob": null
+    }
+  ],
+  "unchangedBaseEngine": {
+    "path": "dist/dream-engine-base.js",
+    "sha256": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699",
+    "gitBlob": "1f6974f2038de030518ac23a83ddd0c0df4f7e55",
+    "identicalToBaselineBytes": true
+  },
+  "currentPatch": {
+    "path": "docs/v33-prestudy/integration-delta.patch",
+    "sha256": "6ac1dd8a3886952711623958612306a8d5ef6e158e38ad7f318f9b8f6d73ffc8",
+    "bytes": 72422
+  },
+  "frozenPreAdapter": {
+    "report": {
+      "path": "docs/v33-prestudy/browser/report.json",
+      "sha256": "623d522712b87735a93cbb700fd6179ebe10bbc451bddb899caf0299e4a6ea58",
+      "bytes": 1546877
+    },
+    "manifest": {
+      "path": "docs/v33-prestudy/verification.json",
+      "sha256": "c59fce1d342400d6ff35ec23bc1cfe229004b192f28201dcfb07dc75511ce807",
+      "bytes": 11155
+    },
+    "driverSnapshot": {
+      "path": "docs/v33-prestudy/snapshots/browser_companion_v33.pre-adapter.py",
+      "sha256": "49a8230bc798dbd83db78e48f4913cf946275122d29da941a3933bc8b93ce866",
+      "bytes": 16916
+    },
+    "rootIndependentReview": {
+      "path": "docs/v33-prestudy/root-review-pre-adapter.json",
+      "sha256": "27a05e692646c3c9dddc84ea7821464a162587d886203464cdaee902cff65048",
+      "bytes": 6996
+    },
+    "original24PicturesUnchanged": true
+  },
+  "callableAdapter": {
+    "entryPoint": "exercise_companion(browser,args,output,api)",
+    "expectedVersion": "required args.version, strict actual page equality",
+    "baseline": "optional args.companion_baseline, local-only; omitted for release current URL checks",
+    "report": {
+      "path": "docs/v33-prestudy/adapter/companion/report.json",
+      "sha256": "e69b59fd62e5830f55460b7dc608859448ec5807c16566b49110aa3ea28970eb",
+      "bytes": 1510129
+    },
+    "callerContract": {
+      "path": "docs/v33-prestudy/adapter/caller-contract.json",
+      "sha256": "3188d84e7f9555fa92dc5f9420468359210a652d63768bbaa1d9b0be75da4915",
+      "bytes": 1856
+    },
+    "invocation": {
+      "path": "docs/v33-prestudy/validation/call-adapter.py",
+      "sha256": "deae3c7cd11a4333094f99e37c9cc8af42691b4b11d498bd7b9a7b375734ace2",
+      "bytes": 1979
+    },
+    "summary": {
+      "schema": "companion-v33-1",
+      "status": "passed",
+      "expectedVersion": "32.0.0",
+      "details": "companion/report.json",
+      "reportSha256": "e69b59fd62e5830f55460b7dc608859448ec5807c16566b49110aa3ea28970eb",
+      "baselineCompared": false,
+      "driverSha256": "42b65bd9fdd0e4ad48002ddfd2b13f92ae4e461eb8a45414d519103db0ce4912",
+      "elapsedSeconds": 32.370677425991744,
+      "cases": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "status": "passed",
+          "input": "keyboard",
+          "version": "32.0.0",
+          "pauseCanvasBytesEqual": true,
+          "returnPhases": [
+            "returning",
+            "arrival-blink",
+            "closed"
+          ],
+          "pageErrors": 0,
+          "httpErrors": 0,
+          "requestFailures": 0
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "status": "passed",
+          "input": "CDP simulated touch",
+          "version": "32.0.0",
+          "pauseCanvasBytesEqual": true,
+          "returnPhases": [
+            "returning",
+            "arrival-blink",
+            "closed"
+          ],
+          "pageErrors": 0,
+          "httpErrors": 0,
+          "requestFailures": 0
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "status": "passed",
+          "input": "CDP simulated touch",
+          "version": "32.0.0",
+          "pauseCanvasBytesEqual": true,
+          "returnPhases": [
+            "returning",
+            "arrival-blink",
+            "closed"
+          ],
+          "pageErrors": 0,
+          "httpErrors": 0,
+          "requestFailures": 0
+        }
+      ]
+    },
+    "images": [
+      {
+        "path": "docs/v33-prestudy/adapter/companion/1280/after-neutral.png",
+        "sha256": "cf251766d65b732a1ddf87f64377cc731aaf79706c907cb4e227033f74670c4f",
+        "bytes": 1072266,
+        "width": 1280,
+        "height": 800,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/1280/reduced-open.png",
+        "sha256": "9d3532a545c52d02f5071c0828b5e35e5c080010215dce112d2dd475969b4bc8",
+        "bytes": 1079142,
+        "width": 1280,
+        "height": 800,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/1280/return-arrival-blink-canvas.png",
+        "sha256": "950e2d88895632224884ff75e523294b2984eac28bbf98bfda43963294923b32",
+        "bytes": 1483393,
+        "width": 1280,
+        "height": 677,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/1280/return-closed-canvas.png",
+        "sha256": "730badc401555dcb70b03dbaa8fb974c2377ed3f46325c4f5f20dc49b963e8bd",
+        "bytes": 1482794,
+        "width": 1280,
+        "height": 677,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/1280/return-returning-canvas.png",
+        "sha256": "6112c656f74a31e50c73df2bbc1750c2205efedec736384ca6574764e77f1b5a",
+        "bytes": 1486346,
+        "width": 1280,
+        "height": 677,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/1280/returned.png",
+        "sha256": "1e5884ea505ad323f6aa92c20c65ad6eaa7464fe17781589e1caa7ae1420eeab",
+        "bytes": 1071771,
+        "width": 1280,
+        "height": 800,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/1280/watching-up.png",
+        "sha256": "c49e0f1e9d56e2d59344e9dcd8600cca47d7fab40c696aa1f83aec4e2ef3a6c8",
+        "bytes": 1084029,
+        "width": 1280,
+        "height": 800,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/320/after-neutral.png",
+        "sha256": "d4ce0006d21c18c7cbcebe87bab3994a5b06d354e0656c52953f0025b2e25bb8",
+        "bytes": 241150,
+        "width": 320,
+        "height": 680,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/320/reduced-open.png",
+        "sha256": "b7388560cc99e7879666add93ae511f71a032e2e19037cd012f6fbbff2e62f6e",
+        "bytes": 240117,
+        "width": 320,
+        "height": 680,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/320/return-arrival-blink-canvas.png",
+        "sha256": "b1feb48cf8c4a9357f3399e1afb594382e93f83161df32c3d918388d07e93dfe",
+        "bytes": 272452,
+        "width": 320,
+        "height": 431,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/320/return-closed-canvas.png",
+        "sha256": "d5adabbcd1fa916d6644810437dddffeeaa2bcd7989bf275fa77435d90835bb7",
+        "bytes": 272088,
+        "width": 320,
+        "height": 431,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/320/return-returning-canvas.png",
+        "sha256": "26be03cda0496b9e4b49ffe5954f05a711165ee1c1ebe3796a4be50ff4569964",
+        "bytes": 273653,
+        "width": 320,
+        "height": 431,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/320/returned.png",
+        "sha256": "cd92666cdc42fca6e47568df702df951c38caf4fab10e1bf037106cecaf9c8df",
+        "bytes": 243739,
+        "width": 320,
+        "height": 680,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/320/watching-up.png",
+        "sha256": "a5dfc9ec48c21aa972ffd70f504cdf249ac0ae5970b22426844fb3500b8ea211",
+        "bytes": 233533,
+        "width": 320,
+        "height": 680,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/390/after-neutral.png",
+        "sha256": "003cc1a25e72b3054083896e892a1c97770f2093508c63046392c7c5a5e5e27d",
+        "bytes": 353116,
+        "width": 390,
+        "height": 844,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/390/reduced-open.png",
+        "sha256": "65948b9ef494210e3f3276797e799e33026d1ea7952ccc97bb3ccd5017d921dc",
+        "bytes": 356013,
+        "width": 390,
+        "height": 844,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/390/return-arrival-blink-canvas.png",
+        "sha256": "c85a9a2581dcc66501b5fb6a0fa3e7a715a8ad92815fcb570f63abb244a34eb1",
+        "bytes": 430462,
+        "width": 390,
+        "height": 595,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/390/return-closed-canvas.png",
+        "sha256": "99092345b31e754f8cb08b7b15521200149b224ff1181ff3c1cfd702383627cd",
+        "bytes": 429706,
+        "width": 390,
+        "height": 595,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/390/return-returning-canvas.png",
+        "sha256": "d75fa0f335b3b1e3582d3dfea85656b0e05dc5e9423d726dce72440b0132fe4c",
+        "bytes": 432753,
+        "width": 390,
+        "height": 595,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/390/returned.png",
+        "sha256": "2a72b43ce9773517bcf4f7a4e3f75246b68b60003df7bd0e06fa095fc23c5f0c",
+        "bytes": 352194,
+        "width": 390,
+        "height": 844,
+        "unedited": true
+      },
+      {
+        "path": "docs/v33-prestudy/adapter/companion/390/watching-up.png",
+        "sha256": "c33eb9c11e06f5f64caeff4ad4c2fb68fee3ae29588ffedf472d0d03fa46f188",
+        "bytes": 351236,
+        "width": 390,
+        "height": 844,
+        "unedited": true
+      }
+    ]
+  },
+  "validation": {
+    "npmTest": {
+      "passedFiles": 77,
+      "failedFiles": 0,
+      "path": "docs/v33-prestudy/validation/npm-test-final.txt",
+      "sha256": "644d8b476cce242534e6c93ed52c0d40f03d0ed48c1f6caa63394358ce984ca5",
+      "bytes": 4253
+    },
+    "companionTests": {
+      "passedTests": 8,
+      "failedTests": 0,
+      "path": "docs/v33-prestudy/validation/companion-tests-final.txt",
+      "sha256": "8dfcf9983ec13cb9b0a3ed1cc332bac2b91101cc6ba51ea9039944b2c6bdd804",
+      "bytes": 1045
+    },
+    "npmCheck": {
+      "javascriptModules": 69,
+      "localReferences": 172,
+      "versionedReferences": 235,
+      "path": "docs/v33-prestudy/validation/npm-check-final.txt",
+      "sha256": "00263bca1340638a61235397f284d9b490fba1d56bb06688ed1634a267f188e1",
+      "bytes": 313
+    },
+    "pythonSyntax": "passed before adapter execution",
+    "noProductChangeDuringAdapter": true,
+    "noBrowserSmokeOrWorkflowChange": true
+  },
+  "integrationBoundary": "Apply only the seven listed source/test/driver deltas plus this evidence directory to the latest accepted v32. Do not overwrite with this older complete tree. Root owns >=33 smoke entry, official version, commit and deployment."
+}

@@ -1,0 +1,160 @@
+[
+  {
+    "attempt": "first",
+    "reportPath": "/tmp/v33-companion-browser-first/report.json",
+    "reportSha256": "2d682f306d9848971726482b76c8cb3479c6a5e0e49aa09dbf74368e6746084b",
+    "driverSha256": "70590c5ba46175693a7a3f3fbeedb417ad154d84e4f9cfe005aa46221b1cf188",
+    "status": "failed",
+    "elapsedSeconds": 15.12320567300776,
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "failure": "Could not steer to (185, 300); {'form': 'soul', 'state': 'playing', 'chapterIndex': 0, 'mode': 'story', 'festivalId': None, 'controlSource': 'keyboard', 'runId': 1, 'bodyIdentity': 1, 'input': {'x': 0, 'y': 0}, 'inputAvailable': True, 'energy': 79.50333333333165, 'maxEnergy': 100, 'emoteTime': 0, 'memoryFlags': [True, False, False], 'lampFlags': [False, False], 'facePresentation': {'time': 10.900000000000121, 'body': {'kind': 'attentive', 'sleepy': False, 'happy': False, 'opening': False, 'attentive': True, 'blink': 0.12, 'lookX': 0.679999999997319, 'lookY': -2.7}, 'soulJoy': False, 'presentedSoul': {'x': 172.9999999997319, 'y': 303.214285714734, 'vx': 2.124218716519068e-09, 'vy': -3.5515630011765385e-09, 'scale': 1, 'alpha': 1, 'pose': 'free', 'layer': 'world'}, 'rawSoul': {'x': 172.9999999997319, 'y': 303.214285714734, 'vx': 2.124218716519068e-09, 'vy': -3.5515630011765385e-09}, 'capEntry': 1, 'returnFrom': None}, 'hudSample': {'form': 'soul', 'state': 'playing', 'time': 10.866666666666786, 'energy': 79.646666666665, 'maxEnergy': 100}, 'observedAt': 11760.5, 'fullHudWrittenAt': 11714.19999999553, 'seals': 0, 'memories': 1, 'firstTicket': {'phase': 'stowed', 'collected': True, 'newlyCollected': True, 'settledAge': 6.016666666666651}, 'x': 172.9999999997319, 'y': 303.214285714734, 'vx': 2.124218716519068e-09, 'vy': -3.5515630011765385e-09, 'time': 10.900000000000121, 'visualTime': 10.900000000000121, 'deaths': 0, 'camera': 0, 'reducedMotion': False, 'storyNPC': {'id': 'story-npc-0', 'chapterIndex': 0, 'speaker': 'moth', 'name': '绒绒', 'motif': 'moth', 'prop': 'station-lantern', 'x': 190, 'y': 560, 'accent': '#cfb7ef', 'near': True, 'talking': False, 'talked': False, 'seals': 0, 'form': 'soul', 'look': {'x': 172.9999999997319, 'y': 303.214285714734}, 'capOpen': 1, 'stationTicket': {'phase': 'stowed', 'fresh': True, 'greeting': 'settled', 'progress': 1}, 'lighting': 'painted-station'}, 'body': {'x': 105, 'y': 560, 'w': 30, 'h': 58, 'vx': 0, 'vy': 0, 'grounded': True, 'platform': None, 'face': 1, 'land': 0, 'walk': 0}, 'capPhase': 'open', 'capAge': 4.766666666666655, 'capAmount': 1, 'travelerPerformance': {'phase': 'idle', 'reducedMotion': False, 'rise': 0, 'fall': 0, 'landing': 0, 'ride': 0, 'landingAge': None, 'landingDuration': 0.2, 'platformId': None, 'platformAxis': None, 'platformKind': None, 'platformVelocity': 0, 'platformVerticalVelocity': 0, 'balance': 0, 'verticalBalance': 0, 'freeArms': {'left': {'x': -16, 'y': -16}, 'right': {'x': 17, 'y': -16}}}, 'travelerStepSeconds': 0.016666666666666666, 'characterPose': {'walking': False, 'step': 0, 'hop': 0.7660993765057525, 'scaleY': 1, 'tilt': -0.025, 'bodyMatrix': [1, 0, 0, 1, 105, 559.2339006234943], 'openingWorld': {'x': 104.6000416653646, 'y': 494.238900363083}, 'grip': 1, 'clasp': 0.25, 'catching': 0, 'arms': {'left': {'shoulder': {'x': -13, 'y': -35}, 'elbow': {'x': -25.25052455873504, 'y': -50.809005282933825}, 'wrist': {'x': -18.931418036803198, 'y': -69.78448664084615}, 'requested': {'x': -18.931418036803198, 'y': -69.78448664084615}, 'length': 20, 'world': {'x': 86.0685819631968, 'y': 489.44941398264814}}, 'right': {'shoulder': {'x': 13, 'y': -35}, 'elbow': {'x': 13.53708859908944, 'y': -15.007212904731663}, 'wrist': {'x': 29.624457288248806, 'y': -26.889829142709516}, 'requested': {'x': 29.624457288248806, 'y': -26.889829142709516}, 'length': 20, 'world': {'x': 134.6244572882488, 'y': 532.3440714807848}}}, 'performance': {'phase': 'idle', 'reducedMotion': False, 'rise': 0, 'fall': 0, 'landing': 0, 'ride': 0, 'landingAge': None, 'landingDuration': 0.2, 'platformId': None, 'platformAxis': None, 'platformKind': None, 'platformVelocity': 0, 'platformVerticalVelocity': 0, 'balance': 0, 'verticalBalance': 0, 'freeArms': {'left': {'x': -16, 'y': -16}, 'right': {'x': 17, 'y': -16}}}, 'legs': [{'hip': {'x': -7, 'y': -21}, 'knee': {'x': -5, 'y': -12.007967330451951}, 'ankle': {'x': -7, 'y': -4.033900623494247}, 'foot': {'x': -7, 'y': 0.7660993765057525, 'angle': 0}, 'planted': True, 'lift': 0, 'worldFoot': {'x': 98, 'y': 560}}, {'hip': {'x': 7, 'y': -21}, 'knee': {'x': 9, 'y': -12.007967330451951}, 'ankle': {'x': 7, 'y': -4.033900623494247}, 'foot': {'x': 7, 'y': 0.7660993765057525, 'angle': 0}, 'planted': True, 'lift': 0, 'worldFoot': {'x': 112, 'y': 560}}]}, 'theatrePaint': None, 'libraryPaint': None, 'postPaint': None, 'postDelivery': None, 'coastPaint': None, 'hazards': [], 'nearHint': '车票已上车 · 往右走，让身体站上铜踏板', 'movers': [], 'platforms': [{'x': 0, 'y': 560, 'w': 2020, 'h': 100, 'kind': 'ground'}, {'x': 195, 'y': 465, 'w': 155, 'h': 18, 'kind': None}, {'x': 810, 'y': 445, 'w': 170, 'h': 18, 'kind': None}, {'x': 1090, 'y': 365, 'w': 150, 'h': 18, 'kind': None}, {'x': 1590, 'y': 465, 'w': 175, 'h': 18, 'kind': None}], 'letterChoice': None, 'clockChoice': None, 'clockEcho': None, 'letterEcho': None, 'greenhousePlant': None, 'seedCollected': False, 'mushrooms': [], 'roots': []}",
+    "failureSnapshot": null,
+    "pageErrors": [],
+    "httpErrors": [],
+    "requestFailures": [],
+    "diagnosisAndCorrection": "Legacy waypoint driver released at its predicted 12px boundary; actual x was 172.9999999997319 for target185, a 12.000000000268px difference."
+  },
+  {
+    "attempt": "second",
+    "reportPath": "/tmp/v33-companion-browser-second/report.json",
+    "reportSha256": "a85632603ae843f9e18e1536287f9523280fb55004a8839d66dbc0a3b5e25033",
+    "driverSha256": "1f12a29a0aa0b61d427574abac049e0cbcddb50916640657dd5c1351ba0d06a0",
+    "status": "failed",
+    "elapsedSeconds": 12.629088164001587,
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "failure": "soul must remain visibly above its unchanged body/cat",
+    "failureSnapshot": null,
+    "pageErrors": [],
+    "httpErrors": [],
+    "requestFailures": [],
+    "diagnosisAndCorrection": "The fresh read immediately after drive_to release failed the observation-region predicate. Exact failure-time velocity was not captured; continuing input/inertia is a timing inference. Added220ms of natural settling after release."
+  },
+  {
+    "attempt": "third",
+    "reportPath": "/tmp/v33-companion-browser-third/report.json",
+    "reportSha256": "8cd8b3e68b029359c6eeeb6d19221ba9496fb8f52609055e6821652ae819fd60",
+    "driverSha256": "8878518ccf233c05e50ba09f72721e6f3f8ffd3404ebc95a17ffba4cb128e666",
+    "status": "failed",
+    "elapsedSeconds": 21.698728803996346,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "failure": "cat must be visible in this planned picture",
+    "failureSnapshot": {
+      "version": "32.0.0",
+      "observedAt": 4473.70000000298,
+      "time": 4.233333333333324,
+      "visualTime": 4.233333333333324,
+      "state": "playing",
+      "form": "soul",
+      "mode": "story",
+      "chapterIndex": 0,
+      "runId": 1,
+      "deaths": 0,
+      "body": {
+        "x": 105,
+        "y": 560
+      },
+      "companion": {
+        "x": 40,
+        "y": 560
+      },
+      "rawSoul": {
+        "x": 184.60441811230368,
+        "y": 292.5105771015276,
+        "vx": -2.1482190031602304,
+        "vy": -4.989478917769613
+      },
+      "shown": {
+        "x": 184.60441811230368,
+        "y": 292.5105771015276,
+        "vx": -2.1482190031602304,
+        "vy": -4.989478917769613,
+        "scale": 1,
+        "alpha": 1,
+        "pose": "free",
+        "layer": "world"
+      },
+      "view": {
+        "x": 40,
+        "y": 560,
+        "time": 4.233333333333324,
+        "reduced": false,
+        "happy": true,
+        "focus": "free",
+        "target": {
+          "x": 184.60441811230368,
+          "y": 292.5105771015276
+        },
+        "lookX": 0.9972718490503701,
+        "lookY": -1.3,
+        "attention": 1,
+        "earLift": 1.6,
+        "headTilt": 0.0682854196641434,
+        "blink": 0.6,
+        "returnBlink": 0,
+        "bob": 2.936784516228362,
+        "tailBend": -3.6649010218868026,
+        "light": "#e9bf78"
+      },
+      "cap": {
+        "phase": "open",
+        "age": 2.199999999999997,
+        "progress": 1,
+        "opens": 1,
+        "returnFrom": null
+      },
+      "reducedMotion": false,
+      "memories": [
+        true,
+        false,
+        false
+      ],
+      "lamps": [
+        false,
+        false
+      ],
+      "firstTicket": {
+        "phase": "held",
+        "collected": true,
+        "newlyCollected": true,
+        "settledAge": 0
+      },
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "painted": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "canvas": {
+        "width": 390,
+        "height": 595,
+        "left": 0,
+        "top": 77,
+        "right": 390,
+        "bottom": 672
+      },
+      "companionBounds": {
+        "left": -4.473563300362343,
+        "right": 58.74518669963766,
+        "top": 539.984375,
+        "bottom": 605.9921875
+      },
+      "renderScopeReleased": true
+    },
+    "pageErrors": [],
+    "httpErrors": [],
+    "requestFailures": [],
+    "diagnosisAndCorrection": "Initial visibility check used center-38world units; the actual painter tail bound is center-32 including stroke. The390px native failure image shows the cat inside the Canvas; corrected the conservative bound and moved the real-input observation target to165,300 to retain margin."
+  }
+]

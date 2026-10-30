@@ -1,0 +1,93 @@
+{
+  "schema": "v33-local-formal-preparation-1",
+  "version": "33.0.0",
+  "status": "passed",
+  "sourceParent": "ce412d1298d0060dec08893f9b44cead9693edcf",
+  "sourceDescription": "Exact working preparation after seven verified study deltas, formal version stamping and nine-line smoke hook; source hashes in execution.json",
+  "tests": {
+    "testFiles": 77,
+    "cases": 691,
+    "pass": 691,
+    "fail": 0,
+    "skipped": 0
+  },
+  "references": {
+    "javascriptModules": 69,
+    "localReferences": 172,
+    "versionReferences": 235
+  },
+  "browser": {
+    "scope": "Three focused current-version contexts; not full story or public HTTPS",
+    "reportSha256": "f6dc20c435a006c01fdb8b74d6406c51f8215c2c82af76f8d5206ae469f701e2",
+    "elapsedSeconds": 34.315877393004484,
+    "viewports": [
+      1280,
+      390,
+      320
+    ],
+    "version": "33.0.0",
+    "allPassed": true,
+    "baselineCompared": false
+  },
+  "files": [
+    {
+      "path": "browser.txt",
+      "bytes": 1138,
+      "sha256": "fd851eda9cee65a83c51c7f01483bafc5af7589e7433006594a51bdd0fa44d72"
+    },
+    {
+      "path": "companion-report.json.gz",
+      "bytes": 71325,
+      "sha256": "af4a56935f0450d9bab290b0991c2fb9a9396f5d4e49cd6f42d773d7881bc54c"
+    },
+    {
+      "path": "execution.json",
+      "bytes": 27817,
+      "sha256": "b4b0e9617054e9ee19a1054c173fefd5716836f29c16d1368a92e1801d274b1f"
+    },
+    {
+      "path": "png/1280/watching-up.png",
+      "bytes": 1083951,
+      "sha256": "5acd8ab23eac4b6c553f1ef3ed555351274ca37b8dbdd25d2edad3385deca737"
+    },
+    {
+      "path": "png/320/after-neutral.png",
+      "bytes": 241077,
+      "sha256": "df4ac0b8b15b7c0d971760ae2fb5b3577e6210d1e7f7eb030a92d274794d31e7"
+    },
+    {
+      "path": "png/320/return-arrival-blink-canvas.png",
+      "bytes": 272455,
+      "sha256": "08548c35527680440c3e2afb135064d51136826ec9733d924f5e16120075d3f8"
+    },
+    {
+      "path": "png/390/return-returning-canvas.png",
+      "bytes": 433244,
+      "sha256": "4790f57e90d2b9d673dc0d154d042035eb373618ae40118e5043ecb6cbbdc7c5"
+    },
+    {
+      "path": "references.txt",
+      "bytes": 313,
+      "sha256": "57740815828b01655493951470690c70bafe915209be515d7194cd426d6d520c"
+    },
+    {
+      "path": "tests.txt",
+      "bytes": 74942,
+      "sha256": "62b76a2cbea51cfa1b98d1b3c088504a366187e8e18290924f8e9575871a97ec"
+    },
+    {
+      "path": "version-entry-check.json",
+      "bytes": 723,
+      "sha256": "7b958eb160f8343ac4c2f9e9f9ebeba23ea34894ce76c125a91a4b2ee12e25a1"
+    }
+  ],
+  "postExecutionVerifierAdjustment": {
+    "path": "scripts/browser-smoke.py",
+    "kind": "Two-line expected-version default before browser work",
+    "beforeSha256": "f83b15762d5abd7234d91c146b0a35ce8876b15523fe7359424d9a85735bd726",
+    "afterSha256": "524875447006fd9d868ae1a23ee38a09003e76a016afc28597147ff3190e9158",
+    "validation": "version-entry-check.json",
+    "originalExecutionAndReportUnmodified": true,
+    "productCodeExactToExecution": true
+  }
+}

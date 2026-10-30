@@ -1,0 +1,7 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> tougaigu@33.0.0 check
+> node scripts/check.mjs && node scripts/version-assets.mjs --check
+
+Checked 69 JavaScript modules and 172 local references.
+Verified 235 asset references for 33.0.0; 0 files need changes.

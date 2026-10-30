@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "sourceSha256": "524875447006fd9d868ae1a23ee38a09003e76a016afc28597147ff3190e9158",
+  "method": "Execute exact first main AST statement and original first-page version assertion; no browser or game mutation",
+  "cases": [
+    {
+      "supplied": null,
+      "resolved": "33.0.0",
+      "matchingAccepted": true,
+      "mismatchRejected": true
+    },
+    {
+      "supplied": "",
+      "resolved": "33.0.0",
+      "matchingAccepted": true,
+      "mismatchRejected": true
+    },
+    {
+      "supplied": "32.9.0",
+      "resolved": "32.9.0",
+      "matchingAccepted": true,
+      "mismatchRejected": true
+    }
+  ],
+  "assertionBeforeFirstExercise": true,
+  "explicitWorkflowVersionUnchanged": true
+}

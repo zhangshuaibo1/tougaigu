@@ -6,6 +6,7 @@
 - 旧入口：[GitHub Pages 地址](https://zhangshuaibo1.github.io/tougaigu/)；域名配置与实际验收状态见 [域名记录](docs/DOMAIN-tougaigu.com.md)。
 - **v30.0.0「脚下有回声」已发布并通过正式HTTPS验收**：六章真实起落/落地收势、纵书稳臂与前两章实地阴影，662项测试及公网浏览器成功，见 [QA-v30](docs/QA-v30.md) 和 [发布核验](docs/verification-v30-release-summary.md)。
 - **v31「眼窝里的笑」已上线并完成正式 HTTPS 验收**：[完整 main 候选＋公网 40978620156](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40978620156) 成功，797 个源码文件与 143 个运行文件独立审计精确一致。主角的笑意、疲态与灵魂表情已在实际路线中验证，完整发布历史见 [发布记录](docs/v31-browser-release/README.md) 与 [原始报告](docs/v31-main-release/README.md)。
+- **v33「小旅伴·抬头等你」独立候选**：原苔绿色小猫的口鼻、双爪与尾缘更细致，抬头看实际飞出的拾光，在归位时眨眼；691/691本地测试、当前33.0.0三尺寸专项通过，正式候选和公网仍待验收。官网尚未切至33，见 [计划](docs/PLAN-v33.md) 与 [QA](docs/QA-v33.md)。
 - **v32「给对白留一点空地」修正候选**：桌面对白与目标／公告分栏，温室角色面部与脚边更清楚；小于900px保留现有布局。首次正式候选因新增对白采样晚于自然收起而失败，原证据保留；本提交只修正测试采样，143 个运行文件与首次候选完全一致，等待新的完整正式验证。公开站点保持31.0.0，32.0.0尚未上线。见 [计划](docs/PLAN-v32.md)、[QA](docs/QA-v32.md) 和 [在途登记](docs/IN-PROGRESS-v32.md)。
 - 原生 JavaScript / Canvas，无运行时第三方 JavaScript 依赖；原《再活一局》保留在 `survivor.html`。
 - 六章、十个节日、原有存档与奖励规则及企业页脚保留。

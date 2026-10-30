@@ -1771,6 +1771,8 @@ def validate_request_failures(actual,expected):
     return {'actual':list(actual),'expected':list(expected),'exactMatch':True}
 
 async def main(args):
+    if not args.version:
+        args.version=json.loads((Path(__file__).resolve().parents[1]/'package.json').read_text())['version']
     output=Path(args.output);output.mkdir(parents=True,exist_ok=True)
     report={'url':args.url,'source':'served production HTML; app module has a read-only coordinate probe appended in-memory; all actions use DOM/input','cases':[]}
     async with async_playwright() as p:
@@ -1895,6 +1897,15 @@ async def main(args):
                 report['independentDialogueMatrix']=await exercise_dialogue_matrix(b,args,output,__main__)
             except Exception:
                 report['independentDialogueMatrix']={'status':'failed','details':'dialogue-matrix/report.json'}
+                (output/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
+                raise
+        if int((args.version or version).split('.')[0])>=33:
+            import __main__
+            from browser_companion_v33 import exercise_companion
+            try:
+                report['independentCompanion']=await exercise_companion(b,args,output,__main__)
+            except Exception:
+                report['independentCompanion']={'status':'failed','details':'companion/report.json'}
                 (output/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
                 raise
         await b.close()

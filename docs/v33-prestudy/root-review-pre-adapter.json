@@ -1,0 +1,274 @@
+{
+  "status": "passed",
+  "reportSha256": "623d522712b87735a93cbb700fd6179ebe10bbc451bddb899caf0299e4a6ea58",
+  "caseCount": 3,
+  "originalPicturesVerified": 24,
+  "productFilesExact": [
+    {
+      "path": "dist/dream-companion-art.js",
+      "sha256": "f0d9916c23667807c7e5577b238dcb509e3cab6e54070b6e239d11af20f787f3"
+    },
+    {
+      "path": "dist/dream-engine.js",
+      "sha256": "7b602b83f551c41fdbe97443e1fed08d6af773e9767f0ed830a434168951e889"
+    },
+    {
+      "path": "dist/dream-engine-base.js",
+      "sha256": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699"
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "02a964629ffbec6ca6106b8851c2aaaf8291ff5c1af34183fa932c852b2a8308"
+    },
+    {
+      "path": "dist/dream.html",
+      "sha256": "02a964629ffbec6ca6106b8851c2aaaf8291ff5c1af34183fa932c852b2a8308"
+    },
+    {
+      "path": "dist/survivor.html",
+      "sha256": "901903dbc2f95fe8f221242cad1856d8f7bac2ba9b11945f82a438cac62bf316"
+    }
+  ],
+  "cases": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "input": "keyboard",
+      "returnFrames": 72,
+      "reversalFrames": 37,
+      "pauseCanvasBytesEqual": true,
+      "nativeEventsTrusted": true,
+      "visibleCaptures": 4,
+      "errors": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "input": "CDP simulated touch",
+      "returnFrames": 101,
+      "reversalFrames": 45,
+      "pauseCanvasBytesEqual": true,
+      "nativeEventsTrusted": true,
+      "visibleCaptures": 4,
+      "errors": 0
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "input": "CDP simulated touch",
+      "returnFrames": 97,
+      "reversalFrames": 45,
+      "pauseCanvasBytesEqual": true,
+      "nativeEventsTrusted": true,
+      "visibleCaptures": 4,
+      "errors": 0
+    }
+  ],
+  "pictures": [
+    {
+      "path": "1280/before-neutral.png",
+      "sha256": "5f21febdc7aa7d34bab79e7101d3e9abdffc45436a879b3b5a7e7dc7932c5644",
+      "dimensions": [
+        1280,
+        800
+      ]
+    },
+    {
+      "path": "1280/after-neutral.png",
+      "sha256": "a090daeda3df19c941df28feaf7546096e409d3573a966aa4eb0355617b7d729",
+      "dimensions": [
+        1280,
+        800
+      ]
+    },
+    {
+      "path": "1280/watching-up.png",
+      "sha256": "51cd960f6df5073d13e3b789827983c5380400f71761621de0b4ef08c23c0135",
+      "dimensions": [
+        1280,
+        800
+      ]
+    },
+    {
+      "path": "1280/returned.png",
+      "sha256": "ee583df5741f69a6c5d2dc6c57165a4bff5d32fea7bbe8aea4f9b0e2c12bea0c",
+      "dimensions": [
+        1280,
+        800
+      ]
+    },
+    {
+      "path": "1280/reduced-open.png",
+      "sha256": "574b4f169f3cbf3142fde64c7a114e1f50d10c40b73c1d085ae57fd7d50b7fa0",
+      "dimensions": [
+        1280,
+        800
+      ]
+    },
+    {
+      "path": "1280/return-returning-canvas.png",
+      "sha256": "32ab22b2d26ded8afa0d72525018acd96603a54ba3c54454cb3b6a9b7ef0efe9",
+      "dimensions": [
+        1280,
+        677
+      ]
+    },
+    {
+      "path": "1280/return-arrival-blink-canvas.png",
+      "sha256": "c704636b407038710b8c04d07f1248c4513316f5a3276933a49af53475aa896a",
+      "dimensions": [
+        1280,
+        677
+      ]
+    },
+    {
+      "path": "1280/return-closed-canvas.png",
+      "sha256": "db99a6fa1cba7e0197f0fd0b764151560cccc666132acd8bfe99c8cf9aab7a10",
+      "dimensions": [
+        1280,
+        677
+      ]
+    },
+    {
+      "path": "390/before-neutral.png",
+      "sha256": "eab8992ca663cd6a9dc1e2640d0c363a0e4eb3ba643470249bdd7fc2d63ac0e8",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "390/after-neutral.png",
+      "sha256": "50b35c98397df7ce250466b0b3559f641200fa17c133f73147aa5765fae57388",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "390/watching-up.png",
+      "sha256": "7797bab835430c5b8e31558ecd1d2193d7829bb121fbe529381228e60ae56acb",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "390/returned.png",
+      "sha256": "abe3e14b1eb0d87d64cb8eec265d07abb4c4f4cd3ca3efb8615e57611f64b8f7",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "390/reduced-open.png",
+      "sha256": "528722dae267acdeedefadb7b50677ae9b48650d9468b69bacf6b4a0019a38ff",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "390/return-returning-canvas.png",
+      "sha256": "d0377e45d69c368b55f9cdcf9d53e8ddc4f229c1541339177ce777a24a1c7fb4",
+      "dimensions": [
+        390,
+        595
+      ]
+    },
+    {
+      "path": "390/return-arrival-blink-canvas.png",
+      "sha256": "a054d799b7c6893119913dbb30f52a654cb5f2593febf2a14bf7d7e9c29109b5",
+      "dimensions": [
+        390,
+        595
+      ]
+    },
+    {
+      "path": "390/return-closed-canvas.png",
+      "sha256": "b285d9b44e1223a8122e776428f75ba2da4eb7a8415bdd9e56d686833e04e5b5",
+      "dimensions": [
+        390,
+        595
+      ]
+    },
+    {
+      "path": "320/before-neutral.png",
+      "sha256": "369236726bf4e17b79b689457050f7e7d8ecfac9a4c8539bf99cfd103bbd9dc4",
+      "dimensions": [
+        320,
+        680
+      ]
+    },
+    {
+      "path": "320/after-neutral.png",
+      "sha256": "df4ac0b8b15b7c0d971760ae2fb5b3577e6210d1e7f7eb030a92d274794d31e7",
+      "dimensions": [
+        320,
+        680
+      ]
+    },
+    {
+      "path": "320/watching-up.png",
+      "sha256": "ec280183c8975f17baacafd5b6e762fe7e3103500b7ac8944460af71d37d9c78",
+      "dimensions": [
+        320,
+        680
+      ]
+    },
+    {
+      "path": "320/returned.png",
+      "sha256": "a7603f1193985ff46347d7076f414c10b98e4dcc8548754d471d0198e997992a",
+      "dimensions": [
+        320,
+        680
+      ]
+    },
+    {
+      "path": "320/reduced-open.png",
+      "sha256": "a0fdae4239900e3b2aee660ed3168f08f4fc1fa714fe03e1dd3f9c84ac5380b7",
+      "dimensions": [
+        320,
+        680
+      ]
+    },
+    {
+      "path": "320/return-returning-canvas.png",
+      "sha256": "87ce145f13409bb5b72ed106a9c34aee1bf317e56516c96743332dc30e7a7537",
+      "dimensions": [
+        320,
+        431
+      ]
+    },
+    {
+      "path": "320/return-arrival-blink-canvas.png",
+      "sha256": "5421592424addc6f05ea00bbf80474d73cd2062e0b216f2267c697a1e9266aca",
+      "dimensions": [
+        320,
+        431
+      ]
+    },
+    {
+      "path": "320/return-closed-canvas.png",
+      "sha256": "4242969283e6f2f74e05362fa3758ca169dd4923d2a122fbfef820fc4f7314d4",
+      "dimensions": [
+        320,
+        431
+      ]
+    }
+  ],
+  "visualReview": [
+    "320/before-neutral.png",
+    "320/after-neutral.png",
+    "390/return-arrival-blink-canvas.png",
+    "1280/watching-up.png"
+  ],
+  "scope": "Independent source, original screenshot hashes/dimensions and reported event evidence audit; original-size visual review of four listed images. Local simulated Chromium only. Driver subsequently adapting for formal reuse; not a v33 deployment."
+}

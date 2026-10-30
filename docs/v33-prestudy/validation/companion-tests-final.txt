@@ -1,0 +1,16 @@
+✔ real recall keeps watching the presented return while form is already body, then settles by the original cap progress (18.347853ms)
+✔ successful E reversal cancels the real return; rejected low-energy E keeps its current settling (21.92032ms)
+✔ immediate invisible double E cannot manufacture a return blink (1.832696ms)
+✔ paused return is frozen; reduced motion settles it and restoring motion does not replay (2.702236ms)
+✔ the six story chapters change only presentation under ordinary input, including original cat following coordinates (130.699602ms)
+✔ all festivals retain the exact old companion painter; absent or damaged contexts do not enter refinement (4.508943ms)
+✔ the painter preserves Canvas state, refuses before paint, and never turns a mid-paint error into a duplicate fallback (1.409389ms)
+✔ one shared render result survives null, failure and reentry without escaping its frame (22.447922ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 218.254727
