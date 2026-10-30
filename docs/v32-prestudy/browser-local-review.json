@@ -1,0 +1,787 @@
+{
+  "schema": "v32-readonly-browser-observation-local-review-1",
+  "status": "observation prepared; geometry fixtures passed; actual browser pending",
+  "base": "cd8dffdc0104bb23a62fea06c0cdf5ac587d8c57",
+  "worktree": "/workspace/scratch/2b18af2db412/tougaigu-v32",
+  "runtimeVersion": "29.0.0; unversioned v30/v31 art inherited from saved study",
+  "runtimeFileCount": 143,
+  "runtimeChangeCount": 0,
+  "browserExecuted": false,
+  "ciStarted": false,
+  "refsWritten": false,
+  "published": false,
+  "sourceAndNotesAtReview": [
+    {
+      "path": "scripts/browser-smoke.py",
+      "bytes": 138774,
+      "encoding": "utf-8",
+      "chars": 137998,
+      "gitBlobSha": "059b9e07e3baa235ea578a744318490fe829c647",
+      "sha256": "bf761b2aff918570db43d08ce0b905090f5a863ea32ddfea284b36e445516b14"
+    },
+    {
+      "path": "scripts/browser_dialogue_v32.py",
+      "bytes": 17600,
+      "encoding": "utf-8",
+      "chars": 17600,
+      "gitBlobSha": "06d31491ffaf3c302ff39bb1f4bf5d3069949323",
+      "sha256": "2baa0af1c6a9a140b8394327634a371c12bdedbd09eff8fbba78adef7ae63c73"
+    },
+    {
+      "path": "tests/browser-dialogue-v32.test.mjs",
+      "bytes": 7670,
+      "encoding": "utf-8",
+      "chars": 7666,
+      "gitBlobSha": "151c81042242725ee50609536674ad400de6d2c5",
+      "sha256": "91129e5d58bcb960aca3db462ba0738dcb34671a41c3c6a07dd6e199d570c2c1"
+    },
+    {
+      "path": "docs/v32-prestudy/BROWSER-NOTES.md",
+      "bytes": 7602,
+      "encoding": "utf-8",
+      "chars": 3622,
+      "gitBlobSha": "2288f4214d5d1e3081ffa46a97598911c735f7cf",
+      "sha256": "63d58ab06dc198743d57f66fd589cd5bd53228d231a5dcb0bf2ece2c5ddf0020"
+    },
+    {
+      "path": "docs/v32-prestudy/README.md",
+      "bytes": 2096,
+      "encoding": "utf-8",
+      "chars": 1044,
+      "gitBlobSha": "ee7aa7de948b0dba77614315135131cc241c33ab",
+      "sha256": "214bda876fdfba2d95bd361863b7616b0b7efb1d3a3a8c66aa77dfdae1f2b895"
+    }
+  ],
+  "newEvidenceCheckpoints": [
+    {
+      "label": "station-body",
+      "placement": "existing HUD evaluate after original initial wait",
+      "purpose": "actual same-run Canvas/control reference; no previous-release baseline"
+    },
+    {
+      "label": "ticket-held",
+      "placement": "existing HUD evaluate before original ticket screenshot",
+      "requiresNaturallyVisibleDialogue": true
+    },
+    {
+      "label": "greenhouse-root-crossed",
+      "placement": "one synchronous read after original grounded/root-crossed assertions, before original screenshot",
+      "requiresNaturallyVisibleDialogue": true
+    }
+  ],
+  "defaultHudOptIn": false,
+  "scope": {
+    "minimumViewportCssWidth": 900,
+    "mode": "ordinary story",
+    "excludedBodyClasses": [
+      "festival-session",
+      "lost-inspecting",
+      "moon-playing"
+    ],
+    "actorRegions": [
+      "face",
+      "cap",
+      "coat",
+      "left foot",
+      "right foot"
+    ],
+    "actorLimit": "Conservative transformed local boxes, not pixel segmentation, all poses, or the whole outfit silhouette.",
+    "sameFrameAsFollowingScreenshot": false,
+    "surfaceReference": "actual same-run original station checkpoint, not a previous release",
+    "unavailableBaselineStatus": "not-compared"
+  },
+  "focusedVerification": {
+    "command": "node --test tests/browser-dialogue-v32.test.mjs tests/browser-hud-geometry.test.mjs tests/browser-hud-energy.test.mjs tests/browser-face-v31.test.mjs",
+    "testFileCount": 4,
+    "passedTestFiles": 4,
+    "failedTestFiles": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0,
+    "newGeometryFixtureGroups": 4,
+    "durationMs": 1267.667992,
+    "originalLog": {
+      "path": "/tmp/tougaigu-v32-observation-tests.log",
+      "bytes": 330,
+      "sha256": "745f74741c9b48f18ca1c5a235bb5d6cfd86fbceaca3a9947b544536503dd993",
+      "text": "✔ tests/browser-dialogue-v32.test.mjs (190.852211ms)\n✔ tests/browser-face-v31.test.mjs (1255.40808ms)\n✔ tests/browser-hud-energy.test.mjs (139.861239ms)\n✔ tests/browser-hud-geometry.test.mjs (138.758342ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1267.667992\n"
+    },
+    "pythonCompile": "passed: scripts/browser_dialogue_v32.py, scripts/browser-smoke.py",
+    "appProbeSyntax": "passed: original PROBE plus DIALOGUE_APP_PROBE via node --check --input-type=module",
+    "gitDiffCheck": "passed",
+    "fullSuiteRun": false,
+    "fixtureLimit": "Fixtures call pure validation helpers only; no browser/game state is injected."
+  },
+  "integrationReview": {
+    "base": "cd8dffdc0104bb23a62fea06c0cdf5ac587d8c57",
+    "changedTopLevelFunctions": [
+      "assert_hud_readable",
+      "exercise",
+      "exercise_greenhouse",
+      "main"
+    ],
+    "unchangedTopLevelFunctions": 42,
+    "originalProbeUnchanged": true,
+    "originalAsyncActionSequencesUnchangedExceptReadonlyOptInArguments": true,
+    "explicitHudOptInCount": 2,
+    "hudAdditionalReadDefault": false,
+    "newBrowserReads": [
+      "one synchronous window.__qaDialogueRead at the existing grounded greenhouse screenshot point",
+      "two opt-in reads inside existing station/ticket HUD evaluates; same existing passive frame"
+    ],
+    "newWaits": 0,
+    "newInputs": 0,
+    "newFrameLoops": 0,
+    "appProbeJavascriptSyntax": "passed",
+    "runtimeFilesByteUnchanged": [
+      {
+        "path": "dist/CNAME",
+        "gitBlobSha": "c48e618893bc4c9f483098de75ba03765e7fbf64"
+      },
+      {
+        "path": "dist/app.js",
+        "gitBlobSha": "5c1932e7a232ead2d10712976bcd4e076ce58326"
+      },
+      {
+        "path": "dist/assets/coast-painted-v27.webp",
+        "gitBlobSha": "702c08721716d9b26307dff2967f526144521061"
+      },
+      {
+        "path": "dist/assets/company-wordmark.webp",
+        "gitBlobSha": "ffb20a555d0b05a2d7d947fcdfff844334dc39bc"
+      },
+      {
+        "path": "dist/assets/dream-cover-still.svg",
+        "gitBlobSha": "9bc419e083bd471bf9cdbb5e4fd1d2cf33aec0ee"
+      },
+      {
+        "path": "dist/assets/dream-cover.svg",
+        "gitBlobSha": "91e4380bd80df62b80e7fa92f950e59e551c781b"
+      },
+      {
+        "path": "dist/assets/festival-hero-christmas.svg",
+        "gitBlobSha": "ce037da2877326cae7f09c08fcfb9b45915b327a"
+      },
+      {
+        "path": "dist/assets/festival-hero-dragonboat.svg",
+        "gitBlobSha": "1cacb8d6785baa392be36274d2f3be85c37ce3b2"
+      },
+      {
+        "path": "dist/assets/festival-hero-halloween.svg",
+        "gitBlobSha": "d1ffca74f1b211b063fbba4578ed5f6b297710b7"
+      },
+      {
+        "path": "dist/assets/festival-hero-lantern.svg",
+        "gitBlobSha": "678782ec48fb9bb493fb2b1bd36af9869c87d955"
+      },
+      {
+        "path": "dist/assets/festival-hero-midautumn.svg",
+        "gitBlobSha": "e4ac9f6aaab0e4a193589000b5b7cc6bccc9c6db"
+      },
+      {
+        "path": "dist/assets/festival-hero-newyear.svg",
+        "gitBlobSha": "fddc1d6be8d92b561339a3479fcd770d7ee748fc"
+      },
+      {
+        "path": "dist/assets/festival-hero-qixi.svg",
+        "gitBlobSha": "6fe8613d2d8ca8341636f6f6e51d4d2e28ec3f04"
+      },
+      {
+        "path": "dist/assets/festival-hero-spring.svg",
+        "gitBlobSha": "01cf2f3fefee8a411b6f66d6ae574df2e5a37f25"
+      },
+      {
+        "path": "dist/assets/festival-hero-starlight.svg",
+        "gitBlobSha": "f081b1f90eddb2a49dff61e0d4bec666e0768c17"
+      },
+      {
+        "path": "dist/assets/festival-hero-thanksgiving.svg",
+        "gitBlobSha": "361f114ec67a5b5c60edffece532bf653b4c3f3e"
+      },
+      {
+        "path": "dist/assets/festival-hero-valentine.svg",
+        "gitBlobSha": "3804f190fd07d9c95ff343004efcf2f28facdefe"
+      },
+      {
+        "path": "dist/assets/festival-item-christmas.svg",
+        "gitBlobSha": "1774ed2ad9ce2893a70dba175030c0caae30b340"
+      },
+      {
+        "path": "dist/assets/festival-item-dragonboat.svg",
+        "gitBlobSha": "20f84fb4719999078abe33b550011c01ce15649a"
+      },
+      {
+        "path": "dist/assets/festival-item-halloween.svg",
+        "gitBlobSha": "9414665b324f920a471ba4f6905c36504c724581"
+      },
+      {
+        "path": "dist/assets/festival-item-lantern.svg",
+        "gitBlobSha": "bf12b0f9335dba667afe07cfbb5860cf0ae3860e"
+      },
+      {
+        "path": "dist/assets/festival-item-midautumn.svg",
+        "gitBlobSha": "762eb8f1c9c338a747d2953d5204d1502464e84c"
+      },
+      {
+        "path": "dist/assets/festival-item-newyear.svg",
+        "gitBlobSha": "bba948e7fac560ffcc6f50aa7b6e7531b3185e62"
+      },
+      {
+        "path": "dist/assets/festival-item-qixi.svg",
+        "gitBlobSha": "dbfa2570aa17f77ff7ff684eab77a302fad6e14c"
+      },
+      {
+        "path": "dist/assets/festival-item-spring.svg",
+        "gitBlobSha": "b78f8ad10dfd81685a7e97c655e11e5836cb4b15"
+      },
+      {
+        "path": "dist/assets/festival-item-thanksgiving.svg",
+        "gitBlobSha": "440a550431ec04f30349c2e7675ddf25a0076ddb"
+      },
+      {
+        "path": "dist/assets/festival-item-valentine.svg",
+        "gitBlobSha": "82bd1055aed36085719d9028cac6e0390768ba35"
+      },
+      {
+        "path": "dist/assets/festival-npc-christmas.svg",
+        "gitBlobSha": "f51dc5b059a62440def6dfdbf44b5b471456b998"
+      },
+      {
+        "path": "dist/assets/festival-npc-dragonboat.svg",
+        "gitBlobSha": "d10811d1f520c0b89d48b660511e7ab7c6bdf2ca"
+      },
+      {
+        "path": "dist/assets/festival-npc-halloween.svg",
+        "gitBlobSha": "1e02fe8dc031aba28304e4258aee6b9db2eb2cbc"
+      },
+      {
+        "path": "dist/assets/festival-npc-lantern.svg",
+        "gitBlobSha": "b1a19e3cebd1fdf3bb34a4454dd7d36e19ceb96c"
+      },
+      {
+        "path": "dist/assets/festival-npc-midautumn.svg",
+        "gitBlobSha": "2b31a265884b78a152df3a0da20d06f427c8cd8e"
+      },
+      {
+        "path": "dist/assets/festival-npc-newyear.svg",
+        "gitBlobSha": "2cf9c027a17dbae0a19240b879a3dad6041c9274"
+      },
+      {
+        "path": "dist/assets/festival-npc-qixi.svg",
+        "gitBlobSha": "45f5cb9470825978662d12bb6ecf5e05581e17b3"
+      },
+      {
+        "path": "dist/assets/festival-npc-spring.svg",
+        "gitBlobSha": "bf1230ade32d5c72aed3624bc5abe1283f6aada7"
+      },
+      {
+        "path": "dist/assets/festival-npc-thanksgiving.svg",
+        "gitBlobSha": "4bf34b2696c91bdfaa8d6aef4c71b67daa0af9cc"
+      },
+      {
+        "path": "dist/assets/festival-npc-valentine.svg",
+        "gitBlobSha": "cd2f336f7bfdc467b7204b497b1a8df2025a3b99"
+      },
+      {
+        "path": "dist/assets/greenhouse-painted-v17.webp",
+        "gitBlobSha": "1fd491e1b1b05a1557a210f2cf6223c92cfc76a6"
+      },
+      {
+        "path": "dist/assets/library-painted-v26.webp",
+        "gitBlobSha": "c7a7d9473f2a55ceef9fcab1df3876545452145b"
+      },
+      {
+        "path": "dist/assets/portrait-hero-curious.svg",
+        "gitBlobSha": "74b3a01aa444b8de658f80c5235bf43481f5574d"
+      },
+      {
+        "path": "dist/assets/portrait-hero-joy.svg",
+        "gitBlobSha": "4bcf4c378f353950063f903d8d519dad6ac1540a"
+      },
+      {
+        "path": "dist/assets/portrait-hero-open.svg",
+        "gitBlobSha": "1416fb0a83167387e4cbc6dd7f5c3cea0a3aabb8"
+      },
+      {
+        "path": "dist/assets/portrait-hero-tender.svg",
+        "gitBlobSha": "ffd93d05f2f84691a78d77f42de2d9a43c36227c"
+      },
+      {
+        "path": "dist/assets/portrait-hero.svg",
+        "gitBlobSha": "0b158c2bef9f82a6f91a845e0c15696f1a04a06a"
+      },
+      {
+        "path": "dist/assets/portrait-keeper.svg",
+        "gitBlobSha": "574f497998d808a0606c4d768c2ee94881fb8f0d"
+      },
+      {
+        "path": "dist/assets/portrait-moth.svg",
+        "gitBlobSha": "ad814207176e0337b547f9c4398210d3e1bd42dd"
+      },
+      {
+        "path": "dist/assets/portrait-soul-brave.svg",
+        "gitBlobSha": "ec980168667c17cb32c4f1396b7cf94e026ab637"
+      },
+      {
+        "path": "dist/assets/portrait-soul-joy.svg",
+        "gitBlobSha": "31c89762339cfe657eb2d78243c2739faafb53ea"
+      },
+      {
+        "path": "dist/assets/portrait-soul-peek.svg",
+        "gitBlobSha": "bb5b5d08940056aeac6c336c7fb673f7a11f7b51"
+      },
+      {
+        "path": "dist/assets/portrait-soul-sleep.svg",
+        "gitBlobSha": "1831852bfdae41dc925d81a22819cb9a3ecdc5d4"
+      },
+      {
+        "path": "dist/assets/portrait-soul.svg",
+        "gitBlobSha": "c3a1b6fccc3d7a816354e5cb064c48ee9323f82e"
+      },
+      {
+        "path": "dist/assets/portrait-whale.svg",
+        "gitBlobSha": "8f67f512150684db2cec31e8c66bf2917d2ffc91"
+      },
+      {
+        "path": "dist/assets/post-painted-v28.webp",
+        "gitBlobSha": "809dc7a584504d1eb49277fc9f292c3853aab96c"
+      },
+      {
+        "path": "dist/assets/reward-feather_charm.svg",
+        "gitBlobSha": "7f289262e1c1ad17ded7443db87d28bb242ed378"
+      },
+      {
+        "path": "dist/assets/reward-glow_candy.svg",
+        "gitBlobSha": "55940e726dadc933f1a00f5740235c7acf514fdc"
+      },
+      {
+        "path": "dist/assets/reward-star_compass.svg",
+        "gitBlobSha": "3a406d84d01705bdf139918b36481ddef4e4b32e"
+      },
+      {
+        "path": "dist/assets/station-painted-v16.webp",
+        "gitBlobSha": "7fb5a6ecf41233bf7afa9b7c7213fe7ef308dd21"
+      },
+      {
+        "path": "dist/assets/theatre-painted-v20.svg",
+        "gitBlobSha": "92b284a7d3d89a45462528abaa15faf3f34f0dd5"
+      },
+      {
+        "path": "dist/assets/theatre-painted-v22.webp",
+        "gitBlobSha": "9dfccc0cdd46daadc417f6899801d77f147a2573"
+      },
+      {
+        "path": "dist/cap-activities.css",
+        "gitBlobSha": "e77d0771ee038406aa9b06d689de7cb9ba82807f"
+      },
+      {
+        "path": "dist/cap-activity-progress.js",
+        "gitBlobSha": "abfab59830e0cd0602dda3cc41d5b0dd385fa572"
+      },
+      {
+        "path": "dist/cap-book.js",
+        "gitBlobSha": "1c11b0b0114f641b7516a6abcd3b877ab218e349"
+      },
+      {
+        "path": "dist/cap-play.css",
+        "gitBlobSha": "cbad1177460c567ba260acd88e041d3c71c2453e"
+      },
+      {
+        "path": "dist/cap-portraits.css",
+        "gitBlobSha": "e37839f8ebe175682a174c26e0c657c923637f2a"
+      },
+      {
+        "path": "dist/cap-progress.js",
+        "gitBlobSha": "cfabbb9db7b5a4adb1d39d92edd22b1419417b47"
+      },
+      {
+        "path": "dist/company-footer.css",
+        "gitBlobSha": "4ded84af1c16b08a760223d2106352c401ca29c2"
+      },
+      {
+        "path": "dist/content.js",
+        "gitBlobSha": "da147a37662601dd33428425b14d0d6c822910bd"
+      },
+      {
+        "path": "dist/dream-app.js",
+        "gitBlobSha": "7edc954415a94a8f8e17774dbfba48b1ebb966e3"
+      },
+      {
+        "path": "dist/dream-awakening-art.js",
+        "gitBlobSha": "eaa4131ed7e8d77e05b99d028961f832a6387d8a"
+      },
+      {
+        "path": "dist/dream-awakenings.js",
+        "gitBlobSha": "af08b8dd8479e273c3b55a4ce9109df576f6ae20"
+      },
+      {
+        "path": "dist/dream-cap-activities.js",
+        "gitBlobSha": "b3d2a940184a5a3322140fa02bc2e3b2297e437a"
+      },
+      {
+        "path": "dist/dream-cap-activity-art.js",
+        "gitBlobSha": "28a9fe83f8e2e9f3a37e2b641b12f6065ce61dc1"
+      },
+      {
+        "path": "dist/dream-cap-activity-engine.js",
+        "gitBlobSha": "b097b18e8824aaf099807e227375b60efff953ff"
+      },
+      {
+        "path": "dist/dream-cap-art.js",
+        "gitBlobSha": "4aa3369dc43b85cec968bbdd230547798903b7f5"
+      },
+      {
+        "path": "dist/dream-cap-story.js",
+        "gitBlobSha": "5817552b93f359f68cc2629fbcc572e4a8200835"
+      },
+      {
+        "path": "dist/dream-clock-echo.js",
+        "gitBlobSha": "eae39f75a307eef9fa46c5f7a65f4531cc442e5c"
+      },
+      {
+        "path": "dist/dream-coast-finish.js",
+        "gitBlobSha": "b44a6e1ed071415653d8c0540b3268de21a7a07d"
+      },
+      {
+        "path": "dist/dream-coast-scene.js",
+        "gitBlobSha": "bf92c423dbc8d8c29481f7f3a73fefcd2273373e"
+      },
+      {
+        "path": "dist/dream-direction-input.js",
+        "gitBlobSha": "a76bfa02d860fe03885bdc1d60557d86cf5b2d7c"
+      },
+      {
+        "path": "dist/dream-encounter-art.js",
+        "gitBlobSha": "ad04e77119a580063b540aa0e36c40a7d7171856"
+      },
+      {
+        "path": "dist/dream-encounters.js",
+        "gitBlobSha": "dacad19d36be8008a91291552516d0d9b3e62d92"
+      },
+      {
+        "path": "dist/dream-ending-art.js",
+        "gitBlobSha": "782b45da5f5f9e29a977571a7ad59c655b47d531"
+      },
+      {
+        "path": "dist/dream-ending-scene.js",
+        "gitBlobSha": "e4675255a02d949676779e990bda89e565749d52"
+      },
+      {
+        "path": "dist/dream-ending.css",
+        "gitBlobSha": "4a3ed6c88d38d60062f2a5f4f49516bfef89b2c8"
+      },
+      {
+        "path": "dist/dream-engine-base.js",
+        "gitBlobSha": "1f6974f2038de030518ac23a83ddd0c0df4f7e55"
+      },
+      {
+        "path": "dist/dream-engine.js",
+        "gitBlobSha": "f9f99ca6f1024a672bfcae2fb58e9df74b57b678"
+      },
+      {
+        "path": "dist/dream-festival-art.js",
+        "gitBlobSha": "eb3690aba440efdebf01a0f402f8741cfcc42da9"
+      },
+      {
+        "path": "dist/dream-festival-levels.js",
+        "gitBlobSha": "86c779a50b4866a0dd2f7ba690115ee45155b3c6"
+      },
+      {
+        "path": "dist/dream-festivals.js",
+        "gitBlobSha": "12386c43c139264162724641722adc038c4e95dc"
+      },
+      {
+        "path": "dist/dream-first-ticket-art.js",
+        "gitBlobSha": "4852b8e68d32b1b204fea1d780d9f9140091971b"
+      },
+      {
+        "path": "dist/dream-greenhouse-art.js",
+        "gitBlobSha": "3b18f5a30c7e489c8c6d93b7ded3bb789dd41053"
+      },
+      {
+        "path": "dist/dream-greenhouse-finish.js",
+        "gitBlobSha": "29124bb10db22e66bb79a4073b7838f7e59e2ced"
+      },
+      {
+        "path": "dist/dream-greenhouse-scene.js",
+        "gitBlobSha": "888b66d76fbcc7e6a1bf812187922b74b53ac0c0"
+      },
+      {
+        "path": "dist/dream-ground-shadow.js",
+        "gitBlobSha": "e15c26caeb3df1d8cdaabae3b0c8cf12c087a5b2"
+      },
+      {
+        "path": "dist/dream-journey.js",
+        "gitBlobSha": "e9fbf5734997bf907e9b3d01b884d7c5795339cb"
+      },
+      {
+        "path": "dist/dream-letter-echo.js",
+        "gitBlobSha": "84083288291baaeadfbf410237bca06fbebb7929"
+      },
+      {
+        "path": "dist/dream-levels.js",
+        "gitBlobSha": "1deb653a8745cecc78a8beef1a9cd9cb3afc3f73"
+      },
+      {
+        "path": "dist/dream-library-finish.js",
+        "gitBlobSha": "c035b01051e0a5ad644200e5ded0e66a4a0025e6"
+      },
+      {
+        "path": "dist/dream-library-scene.js",
+        "gitBlobSha": "bb41e3942519dcab27995d402bee1c66793ea78c"
+      },
+      {
+        "path": "dist/dream-lost-art.js",
+        "gitBlobSha": "ebfac7c71f6b75ed3b7c7f3a30bbae655f939df2"
+      },
+      {
+        "path": "dist/dream-lost-cases.js",
+        "gitBlobSha": "459164db3799ded99c220bb9914a97bca6d180e8"
+      },
+      {
+        "path": "dist/dream-lost-encore-art.js",
+        "gitBlobSha": "fa70a17a21e97a2e599ac77a14dc506536a68a1f"
+      },
+      {
+        "path": "dist/dream-lost-encores.js",
+        "gitBlobSha": "85d55a417353ae7e4b38dbc28616f43d4cee98c4"
+      },
+      {
+        "path": "dist/dream-lost-engine.js",
+        "gitBlobSha": "df73fd4ca5b2a81d580ab828ea193929e9c93f68"
+      },
+      {
+        "path": "dist/dream-modal-input.js",
+        "gitBlobSha": "4110bd3d6d324f24cba36dcd791c5a117c843182"
+      },
+      {
+        "path": "dist/dream-moon-art.js",
+        "gitBlobSha": "e27b272009c9740a763cee38a638c931810fe49c"
+      },
+      {
+        "path": "dist/dream-moon-play.js",
+        "gitBlobSha": "71df85d3f033adc790443cb831618108cf7a6687"
+      },
+      {
+        "path": "dist/dream-painted-scene.js",
+        "gitBlobSha": "487e15e8ef37b581074187abbbea91eec466dfa7"
+      },
+      {
+        "path": "dist/dream-play.css",
+        "gitBlobSha": "960d9527d98434ed3873a2e9960d7f8b202bb588"
+      },
+      {
+        "path": "dist/dream-post-delivery.js",
+        "gitBlobSha": "523bc4c1337b2de6cd0cef5e748ad719b0cac965"
+      },
+      {
+        "path": "dist/dream-post-finish.js",
+        "gitBlobSha": "9c9eea062b26c7613931bee13105d1e7aeb5a637"
+      },
+      {
+        "path": "dist/dream-post-scene.js",
+        "gitBlobSha": "a5b6d808b0741d2f82cf997169247fd1f6f92b2c"
+      },
+      {
+        "path": "dist/dream-scene-backdrop.js",
+        "gitBlobSha": "65aac9997dbffc2b30d86532dc22061fce758a1b"
+      },
+      {
+        "path": "dist/dream-soul-art.js",
+        "gitBlobSha": "0e71fc4e30ce41324a6cfbeb27a7532108af5db8"
+      },
+      {
+        "path": "dist/dream-station-art.js",
+        "gitBlobSha": "12ee5d7ea3ef84c1d69d229304ec56083f042d2a"
+      },
+      {
+        "path": "dist/dream-story-portrait.js",
+        "gitBlobSha": "de89500827c071568489e9b28262a32fe68180e1"
+      },
+      {
+        "path": "dist/dream-story.js",
+        "gitBlobSha": "38871a35ce1c9131d86c1bf11f74bc29381e1acd"
+      },
+      {
+        "path": "dist/dream-theatre-art.js",
+        "gitBlobSha": "5e99f2faff5aefb737225d639de4290844fd049a"
+      },
+      {
+        "path": "dist/dream-theatre-encore.js",
+        "gitBlobSha": "854a172c64ee269043b3b782c11dbf297b01910a"
+      },
+      {
+        "path": "dist/dream-theatre-guidance.js",
+        "gitBlobSha": "c5826a5e38dcd1f3045745b581721fe658fc716f"
+      },
+      {
+        "path": "dist/dream-theatre-lantern.js",
+        "gitBlobSha": "ee5906c632147c1d5ff134976b6793ec1da6886c"
+      },
+      {
+        "path": "dist/dream-theatre-painted.js",
+        "gitBlobSha": "26f23bd92935b7df2192eefb35d0167fa254252a"
+      },
+      {
+        "path": "dist/dream-traveler-art.js",
+        "gitBlobSha": "68053593be2394528f7c640a53e5c44a42f24eb9"
+      },
+      {
+        "path": "dist/dream-traveler-face.js",
+        "gitBlobSha": "913068ed2c8d27ff8dbc144c02bb466f2ac19e92"
+      },
+      {
+        "path": "dist/dream-traveler-performance.js",
+        "gitBlobSha": "e77f195c1999e6a56386d47137698c4da47904a1"
+      },
+      {
+        "path": "dist/dream-ui.js",
+        "gitBlobSha": "b1fac20217fcb146c8083c407629bb9bd1dff298"
+      },
+      {
+        "path": "dist/dream.css",
+        "gitBlobSha": "24eb69c93469edee17485ebf38eb9d646da4daae"
+      },
+      {
+        "path": "dist/dream.html",
+        "gitBlobSha": "9fc90ea4de22d0fc7dd820909ba09a8b81d067b5"
+      },
+      {
+        "path": "dist/engine.js",
+        "gitBlobSha": "5d249953c9259aa54296ee4b30218097924716e2"
+      },
+      {
+        "path": "dist/favicon.svg",
+        "gitBlobSha": "7ec686059b853335c185afe3e423c1ca2b6956b3"
+      },
+      {
+        "path": "dist/festival-hub.js",
+        "gitBlobSha": "a8bdc78e61bf3c07ca378f276d785d4aae2f9a29"
+      },
+      {
+        "path": "dist/festival.css",
+        "gitBlobSha": "38e5813e45f9ac4c4145ce2e26d33a5d5ce3bd42"
+      },
+      {
+        "path": "dist/game-shell.css",
+        "gitBlobSha": "17e0a743b991c02843ed1567b570c74755fd8e48"
+      },
+      {
+        "path": "dist/game-shell.js",
+        "gitBlobSha": "4d61f760a5cdd4d6f159785dae52764d6dbc930b"
+      },
+      {
+        "path": "dist/index.html",
+        "gitBlobSha": "9fc90ea4de22d0fc7dd820909ba09a8b81d067b5"
+      },
+      {
+        "path": "dist/lost-evidence.js",
+        "gitBlobSha": "f05fad3c00bdbc4bac2af7d6572ca8be0d603532"
+      },
+      {
+        "path": "dist/lost-play.css",
+        "gitBlobSha": "ff0d3f2335b4dccf2a994e7daf4341333c30fb57"
+      },
+      {
+        "path": "dist/lost-progress.js",
+        "gitBlobSha": "7358a9653ea5180294c990041ac0ba13aabf02e6"
+      },
+      {
+        "path": "dist/play-rewards.js",
+        "gitBlobSha": "78f7e7ed579a2366d11f3c442ff0e969aa6f3d95"
+      },
+      {
+        "path": "dist/portal.css",
+        "gitBlobSha": "f1a1ae692580596cd2fe8acd0a4f4bf8560f0eb5"
+      },
+      {
+        "path": "dist/style.css",
+        "gitBlobSha": "2344cf590c1eb94d633038a62c601e1cbde89cdf"
+      },
+      {
+        "path": "dist/survivor-play.css",
+        "gitBlobSha": "4d9089fa3379e1a6b1371999da3f3cd4722a0991"
+      },
+      {
+        "path": "dist/survivor.html",
+        "gitBlobSha": "e8dfc5511399a89da36fa5ce9465e88be91371af"
+      }
+    ],
+    "browserExecuted": false
+  },
+  "pendingActualAcceptance": [
+    "Execute integrated latest v31/v32 ordinary desktop browser route and inspect raw geometry plus original PNGs.",
+    "Obtain actual paired previous-release v31 and v32 Canvas/control observations at equal viewport; same-run comparisons do not establish this.",
+    "900/899 breakpoint, near-900 tablet width, 1024x640 and short-height views.",
+    "Natural longest theatre two-paragraph speech, announcement coexistence, large text and high-platform clearance.",
+    "Actual OS/game reduced-motion sampling at the relevant dialogue points.",
+    "Original mobile/lost/moon/festival regressions with final integration; source paths are preserved but were not browser-run here."
+  ],
+  "failureHandling": "Each capture writes the original snapshot to its own JSON before raising on validation failure. A naturally expired required bubble is missing visual evidence, not proof of a production timer defect; no replay or timer extension is added.",
+  "migration": "Merge only the observer import, opt-in HUD hook, three safe checkpoint attachments and appended read-only probe into the latest final v31 browser script; do not overwrite it wholesale with this older study copy.",
+  "frozenRuntimeRequirement": "All 143 dist files are byte-identical to cd8. No new style, input, physics, timers, text, version or cache-map changes.",
+  "sourceAndNotesAtReviewScope": "Original author review and focused-test checkpoint, preserved unchanged. BROWSER-NOTES.md was subsequently expanded with a pending actual-browser execution matrix during independent review; this does not turn the earlier checks into new test results.",
+  "independentRecoveryReview": {
+    "reviewedAtUtc": "2026-10-29T19:55:37.846925+00:00",
+    "base": "cd8dffdc0104bb23a62fea06c0cdf5ac587d8c57",
+    "result": "No blocking code issue found; safe to preserve as browser-unverified observation preparation.",
+    "runtimeFilesByteExact": 143,
+    "metadataFilesInitiallyExact": 6,
+    "changedTopLevelFunctions": [
+      "assert_hud_readable",
+      "exercise",
+      "exercise_greenhouse",
+      "main"
+    ],
+    "otherTopLevelFunctionsByteExact": 42,
+    "originalProbeByteExact": true,
+    "originalRendererProjectionChecked": [
+      "actual body/head/cap matrices",
+      "actual foot rotation and body transform",
+      "dpr and buffer rounding",
+      "scale, camera, shakeX and viewportOffsetY"
+    ],
+    "resourceLifecycle": "Pure synchronous read, no owned RAF/timer/listeners; installed test function follows existing page/context lifecycle. Validation after a returned snapshot writes evidence on failure; a pre-return evaluate error uses the original CI failure logs.",
+    "fixtureAssessment": "Independent numeric geometry and rejection fixtures cover real coordinate transforms and negative layouts; they do not validate CSS by string matching or prove actual layout.",
+    "extraTestsRun": false,
+    "actualBrowserRun": false,
+    "runtimeOrGateChangesMade": false,
+    "editsDuringReview": [
+      "Expanded pending actual acceptance matrix in BROWSER-NOTES.md",
+      "Added this independent review and clarified historical sourceAndNotesAtReview scope"
+    ],
+    "migration": "Apply only wrapper/CSS and observer diffs to final v31; preserve newer importmaps, version stamps, source fixes and all strict input/time/network gates.",
+    "currentNonSelfFileHashes": [
+      {
+        "path": "scripts/browser-smoke.py",
+        "bytes": 138774,
+        "sha256": "bf761b2aff918570db43d08ce0b905090f5a863ea32ddfea284b36e445516b14",
+        "gitBlobSha": "059b9e07e3baa235ea578a744318490fe829c647"
+      },
+      {
+        "path": "scripts/browser_dialogue_v32.py",
+        "bytes": 17600,
+        "sha256": "2baa0af1c6a9a140b8394327634a371c12bdedbd09eff8fbba78adef7ae63c73",
+        "gitBlobSha": "06d31491ffaf3c302ff39bb1f4bf5d3069949323"
+      },
+      {
+        "path": "tests/browser-dialogue-v32.test.mjs",
+        "bytes": 7670,
+        "sha256": "91129e5d58bcb960aca3db462ba0738dcb34671a41c3c6a07dd6e199d570c2c1",
+        "gitBlobSha": "151c81042242725ee50609536674ad400de6d2c5"
+      },
+      {
+        "path": "docs/v32-prestudy/BROWSER-NOTES.md",
+        "bytes": 11485,
+        "sha256": "e28cf26ffc166bf2473fa61f3d5f443f0f350aacd06b903351b9574ce94e5426",
+        "gitBlobSha": "2995375efdc78a05a54d7794d9fa17ff6b11ba37"
+      },
+      {
+        "path": "docs/v32-prestudy/README.md",
+        "bytes": 2096,
+        "sha256": "214bda876fdfba2d95bd361863b7616b0b7efb1d3a3a8c66aa77dfdae1f2b895",
+        "gitBlobSha": "ee7aa7de948b0dba77614315135131cc241c33ab"
+      }
+    ]
+  }
+}

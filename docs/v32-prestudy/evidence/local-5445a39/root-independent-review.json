@@ -1,0 +1,52 @@
+{
+  "checkedAtUtc": "2026-10-29T23:19:42.922823+00:00",
+  "candidateCodeTree": "5445a39ba818484952598bfeab24d70702424a6b",
+  "scope": "Root read of completed local report, exact network budgets and independent recalculation of new layout validators; not GitHub CI, HTTPS, hardware testing or rerunning all legacy validators",
+  "rawReport": {
+    "bytes": 15521306,
+    "sha256": "90219d4f982c6a92985aee50752452bed0e6c32d51cfdc2f0d68d242faf7605b"
+  },
+  "mainViewports": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "version": "32.0.0",
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "finalImagesLoaded": true,
+      "intentionalRequestFailures": 9,
+      "exactFailureBudget": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "32.0.0",
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "finalImagesLoaded": true,
+      "intentionalRequestFailures": 0,
+      "exactFailureBudget": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "version": "32.0.0",
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "finalImagesLoaded": true,
+      "intentionalRequestFailures": 0,
+      "exactFailureBudget": true
+    }
+  ],
+  "newMatrixCasesRevalidated": 6,
+  "newMatrixDialogueSnapshotsRevalidated": 12,
+  "greenhouseRootSnapshotRevalidated": true,
+  "runtimeOrTestMutationsDuringThisAudit": false,
+  "status": "passed"
+}

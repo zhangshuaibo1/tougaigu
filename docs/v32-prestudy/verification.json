@@ -1,0 +1,1131 @@
+{
+  "status": "local-prestudy-browser-layout-unverified",
+  "productVersion": "29.0.0",
+  "published": false,
+  "baseCommit": "4c0fbacfbc63e06353d9ab3a20f41cb17bbd7553",
+  "baseTree": "48fcf631baf826fa01a1713417490570d216a8dd",
+  "scope": "Ordinary story desktop UI at viewport width >=900px, excluding festival-session, lost-inspecting and moon-playing; <=899px preserves existing layout rules.",
+  "contracts": {
+    "base": "4c0fbacfbc63e06353d9ab3a20f41cb17bbd7553",
+    "dom": [
+      {
+        "file": "dist/index.html",
+        "originalSemanticEvents": 859,
+        "onlyNeutralWrapperAdded": true
+      },
+      {
+        "file": "dist/dream.html",
+        "originalSemanticEvents": 859,
+        "onlyNeutralWrapperAdded": true
+      }
+    ],
+    "runtimeCount": 143,
+    "unchangedRuntime": [
+      {
+        "path": "dist/CNAME",
+        "beforeSha256": "447a79106804d0bd1c330e2c219b75b7503796a3fcc4d2bbb0af3267d56fd6f8",
+        "afterSha256": "447a79106804d0bd1c330e2c219b75b7503796a3fcc4d2bbb0af3267d56fd6f8",
+        "beforeBytes": 13,
+        "afterBytes": 13
+      },
+      {
+        "path": "dist/app.js",
+        "beforeSha256": "b92bfcf99fc9f5121caeaa1697f5f640193eedc0f294b2e1a53db023bdcfa300",
+        "afterSha256": "b92bfcf99fc9f5121caeaa1697f5f640193eedc0f294b2e1a53db023bdcfa300",
+        "beforeBytes": 26222,
+        "afterBytes": 26222
+      },
+      {
+        "path": "dist/assets/coast-painted-v27.webp",
+        "beforeSha256": "55e8b21548307d311cf98eaff3823fe3684cf55053a4c9f9035fdee8ba201510",
+        "afterSha256": "55e8b21548307d311cf98eaff3823fe3684cf55053a4c9f9035fdee8ba201510",
+        "beforeBytes": 71750,
+        "afterBytes": 71750
+      },
+      {
+        "path": "dist/assets/company-wordmark.webp",
+        "beforeSha256": "932bb8787b245c8d3e20bef2fcf5e0e7b8e4af0dd18c6b3771e42c5526a57a10",
+        "afterSha256": "932bb8787b245c8d3e20bef2fcf5e0e7b8e4af0dd18c6b3771e42c5526a57a10",
+        "beforeBytes": 7152,
+        "afterBytes": 7152
+      },
+      {
+        "path": "dist/assets/dream-cover-still.svg",
+        "beforeSha256": "438e2d43ac707c6f71fbd20e664f869c8fe51ec5d86d94efbed774cd9cdf890f",
+        "afterSha256": "438e2d43ac707c6f71fbd20e664f869c8fe51ec5d86d94efbed774cd9cdf890f",
+        "beforeBytes": 22934,
+        "afterBytes": 22934
+      },
+      {
+        "path": "dist/assets/dream-cover.svg",
+        "beforeSha256": "c615db969ffa694e4151c3b3de0eb5b300dee672a3ae6d4d69cc45fb725bad0d",
+        "afterSha256": "c615db969ffa694e4151c3b3de0eb5b300dee672a3ae6d4d69cc45fb725bad0d",
+        "beforeBytes": 24298,
+        "afterBytes": 24298
+      },
+      {
+        "path": "dist/assets/festival-hero-christmas.svg",
+        "beforeSha256": "53e1dfae2214c9b295e65541864e6eb8fabcaaeeecfe416cf26860ef43263c39",
+        "afterSha256": "53e1dfae2214c9b295e65541864e6eb8fabcaaeeecfe416cf26860ef43263c39",
+        "beforeBytes": 3729,
+        "afterBytes": 3729
+      },
+      {
+        "path": "dist/assets/festival-hero-dragonboat.svg",
+        "beforeSha256": "0acfdd984f0d37558ba5e297a2bca3331fb74970281f25c014f976062b77c142",
+        "afterSha256": "0acfdd984f0d37558ba5e297a2bca3331fb74970281f25c014f976062b77c142",
+        "beforeBytes": 3752,
+        "afterBytes": 3752
+      },
+      {
+        "path": "dist/assets/festival-hero-halloween.svg",
+        "beforeSha256": "00864c16e8adac8bf45c5b6f36e615769e7e7682e21e88a4d3c239f4cd9d2e53",
+        "afterSha256": "00864c16e8adac8bf45c5b6f36e615769e7e7682e21e88a4d3c239f4cd9d2e53",
+        "beforeBytes": 4153,
+        "afterBytes": 4153
+      },
+      {
+        "path": "dist/assets/festival-hero-lantern.svg",
+        "beforeSha256": "514627a5429c84c94d78657ca9cc94333afbfaa6e4642886e842333e4554fc9d",
+        "afterSha256": "514627a5429c84c94d78657ca9cc94333afbfaa6e4642886e842333e4554fc9d",
+        "beforeBytes": 4011,
+        "afterBytes": 4011
+      },
+      {
+        "path": "dist/assets/festival-hero-midautumn.svg",
+        "beforeSha256": "75e56ac57c02e1c64a32286bf17f3721e175f4bb0064cc774d21169b036d903c",
+        "afterSha256": "75e56ac57c02e1c64a32286bf17f3721e175f4bb0064cc774d21169b036d903c",
+        "beforeBytes": 3861,
+        "afterBytes": 3861
+      },
+      {
+        "path": "dist/assets/festival-hero-newyear.svg",
+        "beforeSha256": "c0af96c59ee50fa6aca5f385b241ea4589df33129fe5025a098aaaf0084c625d",
+        "afterSha256": "c0af96c59ee50fa6aca5f385b241ea4589df33129fe5025a098aaaf0084c625d",
+        "beforeBytes": 4048,
+        "afterBytes": 4048
+      },
+      {
+        "path": "dist/assets/festival-hero-qixi.svg",
+        "beforeSha256": "6923d62120dfec7ec769f7a2d2571cffa1bc13001ed50128d730516c89ff20c4",
+        "afterSha256": "6923d62120dfec7ec769f7a2d2571cffa1bc13001ed50128d730516c89ff20c4",
+        "beforeBytes": 3834,
+        "afterBytes": 3834
+      },
+      {
+        "path": "dist/assets/festival-hero-spring.svg",
+        "beforeSha256": "eeda58a5f492535a69895325b9a5b5cd99bb0096213172c902e49df9d204aac7",
+        "afterSha256": "eeda58a5f492535a69895325b9a5b5cd99bb0096213172c902e49df9d204aac7",
+        "beforeBytes": 4165,
+        "afterBytes": 4165
+      },
+      {
+        "path": "dist/assets/festival-hero-starlight.svg",
+        "beforeSha256": "90f2f9d5a15055f0a0d46ce81c23a1abbc61db7ba456fee81baf116ab23c7c59",
+        "afterSha256": "90f2f9d5a15055f0a0d46ce81c23a1abbc61db7ba456fee81baf116ab23c7c59",
+        "beforeBytes": 3973,
+        "afterBytes": 3973
+      },
+      {
+        "path": "dist/assets/festival-hero-thanksgiving.svg",
+        "beforeSha256": "4365b5d99320a304f952745db27cd4349bc532088a08bfcdc7173221847eb2fe",
+        "afterSha256": "4365b5d99320a304f952745db27cd4349bc532088a08bfcdc7173221847eb2fe",
+        "beforeBytes": 3752,
+        "afterBytes": 3752
+      },
+      {
+        "path": "dist/assets/festival-hero-valentine.svg",
+        "beforeSha256": "14fe9d731f1c385e05308b86c612adb813e9eff6c9c1ac698813b3e44a2992f6",
+        "afterSha256": "14fe9d731f1c385e05308b86c612adb813e9eff6c9c1ac698813b3e44a2992f6",
+        "beforeBytes": 3893,
+        "afterBytes": 3893
+      },
+      {
+        "path": "dist/assets/festival-item-christmas.svg",
+        "beforeSha256": "5eedb876b2288cb1468fb0efdfd4910869e23b8001426106a15706968786fa13",
+        "afterSha256": "5eedb876b2288cb1468fb0efdfd4910869e23b8001426106a15706968786fa13",
+        "beforeBytes": 2851,
+        "afterBytes": 2851
+      },
+      {
+        "path": "dist/assets/festival-item-dragonboat.svg",
+        "beforeSha256": "5f32443e562015bb9e66084cd39e78d8520c0da91bfaa61382b9bdd5e76e4e05",
+        "afterSha256": "5f32443e562015bb9e66084cd39e78d8520c0da91bfaa61382b9bdd5e76e4e05",
+        "beforeBytes": 2914,
+        "afterBytes": 2914
+      },
+      {
+        "path": "dist/assets/festival-item-halloween.svg",
+        "beforeSha256": "664c40d99102a833537261cc4b1eee13b51e2881e8042e46505612127700f849",
+        "afterSha256": "664c40d99102a833537261cc4b1eee13b51e2881e8042e46505612127700f849",
+        "beforeBytes": 3042,
+        "afterBytes": 3042
+      },
+      {
+        "path": "dist/assets/festival-item-lantern.svg",
+        "beforeSha256": "955afe8182003dea214fe1b4f05d35447de8cc4668ce197bb6973d58f363a074",
+        "afterSha256": "955afe8182003dea214fe1b4f05d35447de8cc4668ce197bb6973d58f363a074",
+        "beforeBytes": 3023,
+        "afterBytes": 3023
+      },
+      {
+        "path": "dist/assets/festival-item-midautumn.svg",
+        "beforeSha256": "a44acae234fe519ecfef23d458d4bb17622a2ce7e1b41cc0cb08ac7560875157",
+        "afterSha256": "a44acae234fe519ecfef23d458d4bb17622a2ce7e1b41cc0cb08ac7560875157",
+        "beforeBytes": 2823,
+        "afterBytes": 2823
+      },
+      {
+        "path": "dist/assets/festival-item-newyear.svg",
+        "beforeSha256": "afd0ac7092b888ea4465387199d7b9e5235b1181261eb382297d21f63ad8aaae",
+        "afterSha256": "afd0ac7092b888ea4465387199d7b9e5235b1181261eb382297d21f63ad8aaae",
+        "beforeBytes": 3768,
+        "afterBytes": 3768
+      },
+      {
+        "path": "dist/assets/festival-item-qixi.svg",
+        "beforeSha256": "5ebbb5f006233d358b50229db62502bfad15740780581b4417ce957a0022409f",
+        "afterSha256": "5ebbb5f006233d358b50229db62502bfad15740780581b4417ce957a0022409f",
+        "beforeBytes": 3258,
+        "afterBytes": 3258
+      },
+      {
+        "path": "dist/assets/festival-item-spring.svg",
+        "beforeSha256": "d4fab369b15c45193888dd50e9acd586a6946a3c0b8e853680ff11a2d49439a3",
+        "afterSha256": "d4fab369b15c45193888dd50e9acd586a6946a3c0b8e853680ff11a2d49439a3",
+        "beforeBytes": 3134,
+        "afterBytes": 3134
+      },
+      {
+        "path": "dist/assets/festival-item-thanksgiving.svg",
+        "beforeSha256": "a1db3c8bd1f2a38c55b33a87694e4893ff8e03644ffcc307e0492e3372216032",
+        "afterSha256": "a1db3c8bd1f2a38c55b33a87694e4893ff8e03644ffcc307e0492e3372216032",
+        "beforeBytes": 2849,
+        "afterBytes": 2849
+      },
+      {
+        "path": "dist/assets/festival-item-valentine.svg",
+        "beforeSha256": "2c696df902dc0425f832e0d99aaf412227eb4b30307c397bad8c055539463cb8",
+        "afterSha256": "2c696df902dc0425f832e0d99aaf412227eb4b30307c397bad8c055539463cb8",
+        "beforeBytes": 3023,
+        "afterBytes": 3023
+      },
+      {
+        "path": "dist/assets/festival-npc-christmas.svg",
+        "beforeSha256": "438ff90b8cfd12da819dce37e6e8c978f006ac49d6f13c48c27c9350d7d95852",
+        "afterSha256": "438ff90b8cfd12da819dce37e6e8c978f006ac49d6f13c48c27c9350d7d95852",
+        "beforeBytes": 3221,
+        "afterBytes": 3221
+      },
+      {
+        "path": "dist/assets/festival-npc-dragonboat.svg",
+        "beforeSha256": "eaea71b7f1c55dfc9c83a55a6266f07e5fb6acbba3f59bd652cb211242944522",
+        "afterSha256": "eaea71b7f1c55dfc9c83a55a6266f07e5fb6acbba3f59bd652cb211242944522",
+        "beforeBytes": 3169,
+        "afterBytes": 3169
+      },
+      {
+        "path": "dist/assets/festival-npc-halloween.svg",
+        "beforeSha256": "340d50b07d39898b98d272ab0014b7dc103a6c281e33f4600554222880ee35ff",
+        "afterSha256": "340d50b07d39898b98d272ab0014b7dc103a6c281e33f4600554222880ee35ff",
+        "beforeBytes": 2816,
+        "afterBytes": 2816
+      },
+      {
+        "path": "dist/assets/festival-npc-lantern.svg",
+        "beforeSha256": "8387b3dcc77b6ae99fca78f457b5c8683fc54b42bfce88eee107a15167a1e6df",
+        "afterSha256": "8387b3dcc77b6ae99fca78f457b5c8683fc54b42bfce88eee107a15167a1e6df",
+        "beforeBytes": 3068,
+        "afterBytes": 3068
+      },
+      {
+        "path": "dist/assets/festival-npc-midautumn.svg",
+        "beforeSha256": "d721b60c3d5984be991fd4fc07f501f2bf1dcc7e841dcd897efbc0372414141d",
+        "afterSha256": "d721b60c3d5984be991fd4fc07f501f2bf1dcc7e841dcd897efbc0372414141d",
+        "beforeBytes": 2766,
+        "afterBytes": 2766
+      },
+      {
+        "path": "dist/assets/festival-npc-newyear.svg",
+        "beforeSha256": "858b80944e155050a49494681df5337ef1f6fbc3710bc00c743107670bde6d37",
+        "afterSha256": "858b80944e155050a49494681df5337ef1f6fbc3710bc00c743107670bde6d37",
+        "beforeBytes": 2968,
+        "afterBytes": 2968
+      },
+      {
+        "path": "dist/assets/festival-npc-qixi.svg",
+        "beforeSha256": "de7b0411980c5a90bd27f66770c43f40051f2bfe263e056c7af6d60fe98a501c",
+        "afterSha256": "de7b0411980c5a90bd27f66770c43f40051f2bfe263e056c7af6d60fe98a501c",
+        "beforeBytes": 2553,
+        "afterBytes": 2553
+      },
+      {
+        "path": "dist/assets/festival-npc-spring.svg",
+        "beforeSha256": "1f5309ca12148e6a9f5355b48169f06f9123efeda7c714d3f225afcf33c375dc",
+        "afterSha256": "1f5309ca12148e6a9f5355b48169f06f9123efeda7c714d3f225afcf33c375dc",
+        "beforeBytes": 2986,
+        "afterBytes": 2986
+      },
+      {
+        "path": "dist/assets/festival-npc-thanksgiving.svg",
+        "beforeSha256": "a9c1a5b1217bef334b3729da20a15a9823eb20df4644f1b3476024d49d7b5bb5",
+        "afterSha256": "a9c1a5b1217bef334b3729da20a15a9823eb20df4644f1b3476024d49d7b5bb5",
+        "beforeBytes": 2760,
+        "afterBytes": 2760
+      },
+      {
+        "path": "dist/assets/festival-npc-valentine.svg",
+        "beforeSha256": "b3e4ea9323868a05933fd4d033a09e31886715c42147fa4fde4bec69c20e192a",
+        "afterSha256": "b3e4ea9323868a05933fd4d033a09e31886715c42147fa4fde4bec69c20e192a",
+        "beforeBytes": 2800,
+        "afterBytes": 2800
+      },
+      {
+        "path": "dist/assets/greenhouse-painted-v17.webp",
+        "beforeSha256": "f017cedf22b93e3fc53de1feb95e00cac21661dab00d90a31c2b9aa9efb4c4fd",
+        "afterSha256": "f017cedf22b93e3fc53de1feb95e00cac21661dab00d90a31c2b9aa9efb4c4fd",
+        "beforeBytes": 508666,
+        "afterBytes": 508666
+      },
+      {
+        "path": "dist/assets/library-painted-v26.webp",
+        "beforeSha256": "6e32b91fc56890f6362590eb2bfe0ccd0858389aeeb5de5aac72b5cb02dcab03",
+        "afterSha256": "6e32b91fc56890f6362590eb2bfe0ccd0858389aeeb5de5aac72b5cb02dcab03",
+        "beforeBytes": 178156,
+        "afterBytes": 178156
+      },
+      {
+        "path": "dist/assets/portrait-hero-curious.svg",
+        "beforeSha256": "b4b3454a990a1a237cad6e269096861c08ce2644f1debab1e8e71820e5ad3828",
+        "afterSha256": "b4b3454a990a1a237cad6e269096861c08ce2644f1debab1e8e71820e5ad3828",
+        "beforeBytes": 11821,
+        "afterBytes": 11821
+      },
+      {
+        "path": "dist/assets/portrait-hero-joy.svg",
+        "beforeSha256": "195f32e5b566f78e6761cca67cc85523e9a280ebe2855bb7c2d77957d7dbc8f7",
+        "afterSha256": "195f32e5b566f78e6761cca67cc85523e9a280ebe2855bb7c2d77957d7dbc8f7",
+        "beforeBytes": 11604,
+        "afterBytes": 11604
+      },
+      {
+        "path": "dist/assets/portrait-hero-open.svg",
+        "beforeSha256": "57fd3074a83dfe7ff65d90b519fa6be136284ce9636ee989a2cdaa04c6f0d9a8",
+        "afterSha256": "57fd3074a83dfe7ff65d90b519fa6be136284ce9636ee989a2cdaa04c6f0d9a8",
+        "beforeBytes": 12708,
+        "afterBytes": 12708
+      },
+      {
+        "path": "dist/assets/portrait-hero-tender.svg",
+        "beforeSha256": "b0b5af577982007fc221dae38f87c14973d6b722690b0a8e636573e6b9b88a50",
+        "afterSha256": "b0b5af577982007fc221dae38f87c14973d6b722690b0a8e636573e6b9b88a50",
+        "beforeBytes": 11673,
+        "afterBytes": 11673
+      },
+      {
+        "path": "dist/assets/portrait-hero.svg",
+        "beforeSha256": "2d407ef312fa8012eafbff1ad246ace7b262b527f9a2ce94e33da85a190846c5",
+        "afterSha256": "2d407ef312fa8012eafbff1ad246ace7b262b527f9a2ce94e33da85a190846c5",
+        "beforeBytes": 11598,
+        "afterBytes": 11598
+      },
+      {
+        "path": "dist/assets/portrait-keeper.svg",
+        "beforeSha256": "2852a93a02a8811bec16df4ec95edd65ae415ad6c2a7a013e6ca6d52f7a20dc0",
+        "afterSha256": "2852a93a02a8811bec16df4ec95edd65ae415ad6c2a7a013e6ca6d52f7a20dc0",
+        "beforeBytes": 3053,
+        "afterBytes": 3053
+      },
+      {
+        "path": "dist/assets/portrait-moth.svg",
+        "beforeSha256": "50c8ebd220c55e8a857894753faa2c12b9ffc0a8c890e1a01a781516a94263ab",
+        "afterSha256": "50c8ebd220c55e8a857894753faa2c12b9ffc0a8c890e1a01a781516a94263ab",
+        "beforeBytes": 3575,
+        "afterBytes": 3575
+      },
+      {
+        "path": "dist/assets/portrait-soul-brave.svg",
+        "beforeSha256": "127e3a064b7dcff96e6b7c52a843d9a993521e3ab754eedaf8506c735b1f4f22",
+        "afterSha256": "127e3a064b7dcff96e6b7c52a843d9a993521e3ab754eedaf8506c735b1f4f22",
+        "beforeBytes": 7204,
+        "afterBytes": 7204
+      },
+      {
+        "path": "dist/assets/portrait-soul-joy.svg",
+        "beforeSha256": "f3616b565ce5766bab09a026669c09a70fe78cc2d6eee1c4f8524f2f5ee56f6f",
+        "afterSha256": "f3616b565ce5766bab09a026669c09a70fe78cc2d6eee1c4f8524f2f5ee56f6f",
+        "beforeBytes": 6893,
+        "afterBytes": 6893
+      },
+      {
+        "path": "dist/assets/portrait-soul-peek.svg",
+        "beforeSha256": "2943744828f1312a7e84736f448c88c6468b7b9d9d9643f93579d80e5bc6ebdd",
+        "afterSha256": "2943744828f1312a7e84736f448c88c6468b7b9d9d9643f93579d80e5bc6ebdd",
+        "beforeBytes": 6802,
+        "afterBytes": 6802
+      },
+      {
+        "path": "dist/assets/portrait-soul-sleep.svg",
+        "beforeSha256": "087ca85d1acf004b493d84d9627cee82757e4481bf2bd36d514298f31400f1ee",
+        "afterSha256": "087ca85d1acf004b493d84d9627cee82757e4481bf2bd36d514298f31400f1ee",
+        "beforeBytes": 6742,
+        "afterBytes": 6742
+      },
+      {
+        "path": "dist/assets/portrait-soul.svg",
+        "beforeSha256": "88047b69cd52536ca164b507c811871cdcf5ca311b0478221b679274b6b53c9a",
+        "afterSha256": "88047b69cd52536ca164b507c811871cdcf5ca311b0478221b679274b6b53c9a",
+        "beforeBytes": 6766,
+        "afterBytes": 6766
+      },
+      {
+        "path": "dist/assets/portrait-whale.svg",
+        "beforeSha256": "f5b99f6522cd7af5315ea0a258833181f457b0ccf8998787971148b68a50efbc",
+        "afterSha256": "f5b99f6522cd7af5315ea0a258833181f457b0ccf8998787971148b68a50efbc",
+        "beforeBytes": 3200,
+        "afterBytes": 3200
+      },
+      {
+        "path": "dist/assets/post-painted-v28.webp",
+        "beforeSha256": "90cb512f70f4404b34b56f2951a0559c078eaa766e7d7460f98cbf646b05a201",
+        "afterSha256": "90cb512f70f4404b34b56f2951a0559c078eaa766e7d7460f98cbf646b05a201",
+        "beforeBytes": 101798,
+        "afterBytes": 101798
+      },
+      {
+        "path": "dist/assets/reward-feather_charm.svg",
+        "beforeSha256": "bde651f012ab108e437274ccb295d1cd6ba111df151d8dd1ac5df151fc04a2f7",
+        "afterSha256": "bde651f012ab108e437274ccb295d1cd6ba111df151d8dd1ac5df151fc04a2f7",
+        "beforeBytes": 2370,
+        "afterBytes": 2370
+      },
+      {
+        "path": "dist/assets/reward-glow_candy.svg",
+        "beforeSha256": "4f90857f6288d137c442ec49c5dba0929214e3f5672b71579f40c2c1b2c943f8",
+        "afterSha256": "4f90857f6288d137c442ec49c5dba0929214e3f5672b71579f40c2c1b2c943f8",
+        "beforeBytes": 2470,
+        "afterBytes": 2470
+      },
+      {
+        "path": "dist/assets/reward-star_compass.svg",
+        "beforeSha256": "16586e58b57f7fd578e01a17325ac268014f1b6e0b2458f06d671e83cb2a7caa",
+        "afterSha256": "16586e58b57f7fd578e01a17325ac268014f1b6e0b2458f06d671e83cb2a7caa",
+        "beforeBytes": 2260,
+        "afterBytes": 2260
+      },
+      {
+        "path": "dist/assets/station-painted-v16.webp",
+        "beforeSha256": "51406de059d3d092b0bf7c8f80f285f82dcc7fb17bcfbd77b5fcd000bb888fba",
+        "afterSha256": "51406de059d3d092b0bf7c8f80f285f82dcc7fb17bcfbd77b5fcd000bb888fba",
+        "beforeBytes": 266328,
+        "afterBytes": 266328
+      },
+      {
+        "path": "dist/assets/theatre-painted-v20.svg",
+        "beforeSha256": "059b3c68d84666f292e4c8fab3b379e894eaff484a6907eb9dbba1faabe32cea",
+        "afterSha256": "059b3c68d84666f292e4c8fab3b379e894eaff484a6907eb9dbba1faabe32cea",
+        "beforeBytes": 58148,
+        "afterBytes": 58148
+      },
+      {
+        "path": "dist/assets/theatre-painted-v22.webp",
+        "beforeSha256": "8c59e1cf3a361501e57eaf8d9bc5e5df6a71823ac4773895f19e48e392632b7d",
+        "afterSha256": "8c59e1cf3a361501e57eaf8d9bc5e5df6a71823ac4773895f19e48e392632b7d",
+        "beforeBytes": 178844,
+        "afterBytes": 178844
+      },
+      {
+        "path": "dist/cap-activities.css",
+        "beforeSha256": "a1ab4e7e50c922c159c61678f429e633973c5df40f06c39ef3b8bff36afb53a1",
+        "afterSha256": "a1ab4e7e50c922c159c61678f429e633973c5df40f06c39ef3b8bff36afb53a1",
+        "beforeBytes": 3911,
+        "afterBytes": 3911
+      },
+      {
+        "path": "dist/cap-activity-progress.js",
+        "beforeSha256": "30190693766ddaedd1f5c1c46f73374e28041851d6c71f65ea6cb9111178d967",
+        "afterSha256": "30190693766ddaedd1f5c1c46f73374e28041851d6c71f65ea6cb9111178d967",
+        "beforeBytes": 11165,
+        "afterBytes": 11165
+      },
+      {
+        "path": "dist/cap-book.js",
+        "beforeSha256": "210950f7a4cdf2a99bb6ea3943bf739ce79f5d517081621fe90994a1faa38f87",
+        "afterSha256": "210950f7a4cdf2a99bb6ea3943bf739ce79f5d517081621fe90994a1faa38f87",
+        "beforeBytes": 17410,
+        "afterBytes": 17410
+      },
+      {
+        "path": "dist/cap-portraits.css",
+        "beforeSha256": "4686bb6bfb5fecb24b7413973b93c40974e9744c76afa9cfa6b84212e9e10ddb",
+        "afterSha256": "4686bb6bfb5fecb24b7413973b93c40974e9744c76afa9cfa6b84212e9e10ddb",
+        "beforeBytes": 2741,
+        "afterBytes": 2741
+      },
+      {
+        "path": "dist/cap-progress.js",
+        "beforeSha256": "5ab3326cea09d614e65e1c11c941fbbe97e90cfd7889d23a65495151cbd0f681",
+        "afterSha256": "5ab3326cea09d614e65e1c11c941fbbe97e90cfd7889d23a65495151cbd0f681",
+        "beforeBytes": 4574,
+        "afterBytes": 4574
+      },
+      {
+        "path": "dist/company-footer.css",
+        "beforeSha256": "a5f94a2c7e3f2a53def5b5c7c06882cfe2fff8320e0e4c7200d03dcc4c5f72ad",
+        "afterSha256": "a5f94a2c7e3f2a53def5b5c7c06882cfe2fff8320e0e4c7200d03dcc4c5f72ad",
+        "beforeBytes": 1785,
+        "afterBytes": 1785
+      },
+      {
+        "path": "dist/content.js",
+        "beforeSha256": "cc7726e290e6bb2ea9100a28d977f1b1f3f3f2146282d222dfa5d1fe094512ff",
+        "afterSha256": "cc7726e290e6bb2ea9100a28d977f1b1f3f3f2146282d222dfa5d1fe094512ff",
+        "beforeBytes": 19739,
+        "afterBytes": 19739
+      },
+      {
+        "path": "dist/dream-app.js",
+        "beforeSha256": "51db406e50ca21c487a3259bb76f9aaf7e85eaaf773f0fe2b7160701579d7505",
+        "afterSha256": "51db406e50ca21c487a3259bb76f9aaf7e85eaaf773f0fe2b7160701579d7505",
+        "beforeBytes": 65492,
+        "afterBytes": 65492
+      },
+      {
+        "path": "dist/dream-awakening-art.js",
+        "beforeSha256": "a9255f851e92b8649798c23de42167c6137a8745829dbf5e71ca1ba22df6cdd6",
+        "afterSha256": "a9255f851e92b8649798c23de42167c6137a8745829dbf5e71ca1ba22df6cdd6",
+        "beforeBytes": 26022,
+        "afterBytes": 26022
+      },
+      {
+        "path": "dist/dream-awakenings.js",
+        "beforeSha256": "a96bf35c9379612d0cda50073b8c12e56b263b5ae8dbf90362b0dcfc9ed30e1b",
+        "afterSha256": "a96bf35c9379612d0cda50073b8c12e56b263b5ae8dbf90362b0dcfc9ed30e1b",
+        "beforeBytes": 3832,
+        "afterBytes": 3832
+      },
+      {
+        "path": "dist/dream-cap-activities.js",
+        "beforeSha256": "041c66d52a0a17f80e75bc4da31054f2d01d5c440567d380533be10076a69749",
+        "afterSha256": "041c66d52a0a17f80e75bc4da31054f2d01d5c440567d380533be10076a69749",
+        "beforeBytes": 13737,
+        "afterBytes": 13737
+      },
+      {
+        "path": "dist/dream-cap-activity-art.js",
+        "beforeSha256": "fe5127ec3b28ee9ce891fa864ae3e277c2be23b88053c3f345fc99a6bc5a163d",
+        "afterSha256": "fe5127ec3b28ee9ce891fa864ae3e277c2be23b88053c3f345fc99a6bc5a163d",
+        "beforeBytes": 32906,
+        "afterBytes": 32906
+      },
+      {
+        "path": "dist/dream-cap-activity-engine.js",
+        "beforeSha256": "e29d1cd2a3e1853aee323fdfb36890e2965924c5d3c070bb01155a1a7bdaf31a",
+        "afterSha256": "e29d1cd2a3e1853aee323fdfb36890e2965924c5d3c070bb01155a1a7bdaf31a",
+        "beforeBytes": 15627,
+        "afterBytes": 15627
+      },
+      {
+        "path": "dist/dream-cap-art.js",
+        "beforeSha256": "dad5b4a0e2c0ffb13c008c473068465d25f701509114b31ab100629e459063ed",
+        "afterSha256": "dad5b4a0e2c0ffb13c008c473068465d25f701509114b31ab100629e459063ed",
+        "beforeBytes": 23249,
+        "afterBytes": 23249
+      },
+      {
+        "path": "dist/dream-cap-story.js",
+        "beforeSha256": "cb17da0fc2a46ec8476910953a4bf3094aaef351f58183eb83745334f4345c19",
+        "afterSha256": "cb17da0fc2a46ec8476910953a4bf3094aaef351f58183eb83745334f4345c19",
+        "beforeBytes": 14480,
+        "afterBytes": 14480
+      },
+      {
+        "path": "dist/dream-clock-echo.js",
+        "beforeSha256": "51a27018ea27ff0817b38cec88d52b28f4836e9691a8fdbe624dc3c7ed008171",
+        "afterSha256": "51a27018ea27ff0817b38cec88d52b28f4836e9691a8fdbe624dc3c7ed008171",
+        "beforeBytes": 8888,
+        "afterBytes": 8888
+      },
+      {
+        "path": "dist/dream-coast-finish.js",
+        "beforeSha256": "39b1818d3158c415546c2ae1b6b44ec379d765a7e089caa0cd578b3ba0bd8902",
+        "afterSha256": "39b1818d3158c415546c2ae1b6b44ec379d765a7e089caa0cd578b3ba0bd8902",
+        "beforeBytes": 6742,
+        "afterBytes": 6742
+      },
+      {
+        "path": "dist/dream-coast-scene.js",
+        "beforeSha256": "5927d816f86835dbbf9e5d0237a251ed14953f11a80869609b43d30727257fc7",
+        "afterSha256": "5927d816f86835dbbf9e5d0237a251ed14953f11a80869609b43d30727257fc7",
+        "beforeBytes": 4219,
+        "afterBytes": 4219
+      },
+      {
+        "path": "dist/dream-direction-input.js",
+        "beforeSha256": "ebbe509a6ce3114fe1f0689ef4252b19bf9ddfd2e8b3e367626ef21c891401de",
+        "afterSha256": "ebbe509a6ce3114fe1f0689ef4252b19bf9ddfd2e8b3e367626ef21c891401de",
+        "beforeBytes": 1920,
+        "afterBytes": 1920
+      },
+      {
+        "path": "dist/dream-encounter-art.js",
+        "beforeSha256": "f98a01bbf775e1c7f52d5f01184bd2429096daa625bcf4a44f249d234ba56efc",
+        "afterSha256": "f98a01bbf775e1c7f52d5f01184bd2429096daa625bcf4a44f249d234ba56efc",
+        "beforeBytes": 34104,
+        "afterBytes": 34104
+      },
+      {
+        "path": "dist/dream-encounters.js",
+        "beforeSha256": "6d3d3b962c9d9d27deb2ccfbcb52255b18bb3caeb8d77dce4a4a0e9e745c1f20",
+        "afterSha256": "6d3d3b962c9d9d27deb2ccfbcb52255b18bb3caeb8d77dce4a4a0e9e745c1f20",
+        "beforeBytes": 16794,
+        "afterBytes": 16794
+      },
+      {
+        "path": "dist/dream-ending-art.js",
+        "beforeSha256": "80f61137dfb5ad0f6b906855d1e5678dac2c30aeff218cf41541c17052a8d95c",
+        "afterSha256": "80f61137dfb5ad0f6b906855d1e5678dac2c30aeff218cf41541c17052a8d95c",
+        "beforeBytes": 21986,
+        "afterBytes": 21986
+      },
+      {
+        "path": "dist/dream-ending-scene.js",
+        "beforeSha256": "92213dae9ec72e37d9e6a61d92e240d2cb5792899217638d5d8a414b89160818",
+        "afterSha256": "92213dae9ec72e37d9e6a61d92e240d2cb5792899217638d5d8a414b89160818",
+        "beforeBytes": 1771,
+        "afterBytes": 1771
+      },
+      {
+        "path": "dist/dream-ending.css",
+        "beforeSha256": "b3c8c90f8ae35f900d895f47199369e9d7cf6fd55f3fdcca469289d00e4cd109",
+        "afterSha256": "b3c8c90f8ae35f900d895f47199369e9d7cf6fd55f3fdcca469289d00e4cd109",
+        "beforeBytes": 4186,
+        "afterBytes": 4186
+      },
+      {
+        "path": "dist/dream-engine-base.js",
+        "beforeSha256": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699",
+        "afterSha256": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699",
+        "beforeBytes": 94772,
+        "afterBytes": 94772
+      },
+      {
+        "path": "dist/dream-engine.js",
+        "beforeSha256": "85d26f539d466649c011208a0cdd2832e667d86a060f18a596d10005d04d2a5d",
+        "afterSha256": "85d26f539d466649c011208a0cdd2832e667d86a060f18a596d10005d04d2a5d",
+        "beforeBytes": 25985,
+        "afterBytes": 25985
+      },
+      {
+        "path": "dist/dream-festival-art.js",
+        "beforeSha256": "9ede1ae7d2c0499bc2a22aa61fb1f44a3c97b4efe327023406f15d2c695881e5",
+        "afterSha256": "9ede1ae7d2c0499bc2a22aa61fb1f44a3c97b4efe327023406f15d2c695881e5",
+        "beforeBytes": 31364,
+        "afterBytes": 31364
+      },
+      {
+        "path": "dist/dream-festival-levels.js",
+        "beforeSha256": "ab633cf46ea8b2c1f925692c9ae21bf104522d647a1b05be782ebf2418c346c5",
+        "afterSha256": "ab633cf46ea8b2c1f925692c9ae21bf104522d647a1b05be782ebf2418c346c5",
+        "beforeBytes": 6674,
+        "afterBytes": 6674
+      },
+      {
+        "path": "dist/dream-festivals.js",
+        "beforeSha256": "3ea4f05fc6a260ec6a0e0cdc1bda849bdca199ef664ad1dd353002508c15f86c",
+        "afterSha256": "3ea4f05fc6a260ec6a0e0cdc1bda849bdca199ef664ad1dd353002508c15f86c",
+        "beforeBytes": 53530,
+        "afterBytes": 53530
+      },
+      {
+        "path": "dist/dream-first-ticket-art.js",
+        "beforeSha256": "44c9b420d544f7db1ed9c79cb2a0291563db8e83442f6ce4df5e1aaf4f56dd04",
+        "afterSha256": "44c9b420d544f7db1ed9c79cb2a0291563db8e83442f6ce4df5e1aaf4f56dd04",
+        "beforeBytes": 4329,
+        "afterBytes": 4329
+      },
+      {
+        "path": "dist/dream-greenhouse-art.js",
+        "beforeSha256": "38a4f9044a7f403a5d121ef6189aa83108d72f0b4a2c8b0e0aeabc03dbe3db83",
+        "afterSha256": "38a4f9044a7f403a5d121ef6189aa83108d72f0b4a2c8b0e0aeabc03dbe3db83",
+        "beforeBytes": 3880,
+        "afterBytes": 3880
+      },
+      {
+        "path": "dist/dream-greenhouse-finish.js",
+        "beforeSha256": "af7d94a6222491b2712b7af10db2f79ef45db9f899a92e939d5fb6eba664ab56",
+        "afterSha256": "af7d94a6222491b2712b7af10db2f79ef45db9f899a92e939d5fb6eba664ab56",
+        "beforeBytes": 10999,
+        "afterBytes": 10999
+      },
+      {
+        "path": "dist/dream-greenhouse-scene.js",
+        "beforeSha256": "b4a4c84440ed43bd52ba8405c719cb3d426d134e6c8285bcb584533879a6c8e6",
+        "afterSha256": "b4a4c84440ed43bd52ba8405c719cb3d426d134e6c8285bcb584533879a6c8e6",
+        "beforeBytes": 4446,
+        "afterBytes": 4446
+      },
+      {
+        "path": "dist/dream-ground-shadow.js",
+        "beforeSha256": "ede6c52978710e0e8286a1b5fdf51eeb09e1e17a1d9df3171cca8176c90d94bc",
+        "afterSha256": "ede6c52978710e0e8286a1b5fdf51eeb09e1e17a1d9df3171cca8176c90d94bc",
+        "beforeBytes": 3409,
+        "afterBytes": 3409
+      },
+      {
+        "path": "dist/dream-journey.js",
+        "beforeSha256": "62947008e6c4edd0f1817b92a5338d7d0ebdf0a2a065d3049b280ea36d22434c",
+        "afterSha256": "62947008e6c4edd0f1817b92a5338d7d0ebdf0a2a065d3049b280ea36d22434c",
+        "beforeBytes": 10112,
+        "afterBytes": 10112
+      },
+      {
+        "path": "dist/dream-letter-echo.js",
+        "beforeSha256": "10c446ba05235b9123f09667cf2fd2e9e96be57b9fc87da6e8b1c8c5696e1f2f",
+        "afterSha256": "10c446ba05235b9123f09667cf2fd2e9e96be57b9fc87da6e8b1c8c5696e1f2f",
+        "beforeBytes": 8899,
+        "afterBytes": 8899
+      },
+      {
+        "path": "dist/dream-levels.js",
+        "beforeSha256": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0",
+        "afterSha256": "38ca1aa53af038a9db50bdca15b6b92844f6f9428b82e7e320b34bdb7aac41c0",
+        "beforeBytes": 8742,
+        "afterBytes": 8742
+      },
+      {
+        "path": "dist/dream-library-finish.js",
+        "beforeSha256": "0295efbb70a84b616301e0b3d9e68bdfd87706c33c5e1736403b624d5d8316f8",
+        "afterSha256": "0295efbb70a84b616301e0b3d9e68bdfd87706c33c5e1736403b624d5d8316f8",
+        "beforeBytes": 2485,
+        "afterBytes": 2485
+      },
+      {
+        "path": "dist/dream-library-scene.js",
+        "beforeSha256": "9564ec3fa13e9f4de038d8db6ec44cd3421cbc1bf26d89256a22921307ca23ea",
+        "afterSha256": "9564ec3fa13e9f4de038d8db6ec44cd3421cbc1bf26d89256a22921307ca23ea",
+        "beforeBytes": 3661,
+        "afterBytes": 3661
+      },
+      {
+        "path": "dist/dream-lost-art.js",
+        "beforeSha256": "f572fc0d082178d8bb28ac3fc45561aacfc0b090da6f1f6c5f0cdb0815f0c235",
+        "afterSha256": "f572fc0d082178d8bb28ac3fc45561aacfc0b090da6f1f6c5f0cdb0815f0c235",
+        "beforeBytes": 41560,
+        "afterBytes": 41560
+      },
+      {
+        "path": "dist/dream-lost-cases.js",
+        "beforeSha256": "8c82de1b2021734f9355fae64475386f235b6b8451dd495fd3afc839adfea79f",
+        "afterSha256": "8c82de1b2021734f9355fae64475386f235b6b8451dd495fd3afc839adfea79f",
+        "beforeBytes": 26967,
+        "afterBytes": 26967
+      },
+      {
+        "path": "dist/dream-lost-encore-art.js",
+        "beforeSha256": "2eeecf0c00e9f965a66034089b18d8fa7795641855c5269d8c6e5aaac235dda2",
+        "afterSha256": "2eeecf0c00e9f965a66034089b18d8fa7795641855c5269d8c6e5aaac235dda2",
+        "beforeBytes": 15525,
+        "afterBytes": 15525
+      },
+      {
+        "path": "dist/dream-lost-encores.js",
+        "beforeSha256": "0bbba9148430c6efae7bbee811bcd9170296bfff07cdb98a8aa4509d73be5576",
+        "afterSha256": "0bbba9148430c6efae7bbee811bcd9170296bfff07cdb98a8aa4509d73be5576",
+        "beforeBytes": 2730,
+        "afterBytes": 2730
+      },
+      {
+        "path": "dist/dream-lost-engine.js",
+        "beforeSha256": "42239bd2c4df5e4aa465d70a1d8d598faa4ef882b1477484fbe18a1d2eb636d5",
+        "afterSha256": "42239bd2c4df5e4aa465d70a1d8d598faa4ef882b1477484fbe18a1d2eb636d5",
+        "beforeBytes": 12739,
+        "afterBytes": 12739
+      },
+      {
+        "path": "dist/dream-modal-input.js",
+        "beforeSha256": "9453aa3d43e06b2b27274c7390a735a37ed04c85c600a12f41d6c553dd9f7e74",
+        "afterSha256": "9453aa3d43e06b2b27274c7390a735a37ed04c85c600a12f41d6c553dd9f7e74",
+        "beforeBytes": 5458,
+        "afterBytes": 5458
+      },
+      {
+        "path": "dist/dream-moon-art.js",
+        "beforeSha256": "1f6941a32a0ec6d448b29920816d026778b09c71a951f54cd9107cd05ce05b32",
+        "afterSha256": "1f6941a32a0ec6d448b29920816d026778b09c71a951f54cd9107cd05ce05b32",
+        "beforeBytes": 14741,
+        "afterBytes": 14741
+      },
+      {
+        "path": "dist/dream-moon-play.js",
+        "beforeSha256": "4f43c1b14750211498edda61d70a1c3fef54c9aa56c66c7b48006604650e5095",
+        "afterSha256": "4f43c1b14750211498edda61d70a1c3fef54c9aa56c66c7b48006604650e5095",
+        "beforeBytes": 12656,
+        "afterBytes": 12656
+      },
+      {
+        "path": "dist/dream-painted-scene.js",
+        "beforeSha256": "ba9551548f431ecf4b7d13f63e62e9f329d9643a0afac292729fa3b598722ce7",
+        "afterSha256": "ba9551548f431ecf4b7d13f63e62e9f329d9643a0afac292729fa3b598722ce7",
+        "beforeBytes": 7197,
+        "afterBytes": 7197
+      },
+      {
+        "path": "dist/dream-post-delivery.js",
+        "beforeSha256": "d8a1cfe4067d332f0dbee0602ff48d0463ed1c434c2185c50b3722b11f17de1a",
+        "afterSha256": "d8a1cfe4067d332f0dbee0602ff48d0463ed1c434c2185c50b3722b11f17de1a",
+        "beforeBytes": 1988,
+        "afterBytes": 1988
+      },
+      {
+        "path": "dist/dream-post-finish.js",
+        "beforeSha256": "b75eb3a683d841d1e6e68ac6fad40ae257a9c1c4df979feb76c0b847eae62f7e",
+        "afterSha256": "b75eb3a683d841d1e6e68ac6fad40ae257a9c1c4df979feb76c0b847eae62f7e",
+        "beforeBytes": 4432,
+        "afterBytes": 4432
+      },
+      {
+        "path": "dist/dream-post-scene.js",
+        "beforeSha256": "d6af0e2711f354765e31b186e9d1f20d1240d974d51d71347e2b2559f5674275",
+        "afterSha256": "d6af0e2711f354765e31b186e9d1f20d1240d974d51d71347e2b2559f5674275",
+        "beforeBytes": 3462,
+        "afterBytes": 3462
+      },
+      {
+        "path": "dist/dream-scene-backdrop.js",
+        "beforeSha256": "39f31d372405896f580ee297c9168a1d8a12dcd5af134c2c09ea908f28cbedd8",
+        "afterSha256": "39f31d372405896f580ee297c9168a1d8a12dcd5af134c2c09ea908f28cbedd8",
+        "beforeBytes": 19110,
+        "afterBytes": 19110
+      },
+      {
+        "path": "dist/dream-soul-art.js",
+        "beforeSha256": "4af4abd87fd3157f3e9a06bd8f2ed750819c645a01a4de24d159a028e96a46b8",
+        "afterSha256": "4af4abd87fd3157f3e9a06bd8f2ed750819c645a01a4de24d159a028e96a46b8",
+        "beforeBytes": 10699,
+        "afterBytes": 10699
+      },
+      {
+        "path": "dist/dream-station-art.js",
+        "beforeSha256": "73a257203b10d12dd52f7b66f60fe3d65e08200aa64b1b4e5c3f223f654d31ee",
+        "afterSha256": "73a257203b10d12dd52f7b66f60fe3d65e08200aa64b1b4e5c3f223f654d31ee",
+        "beforeBytes": 16476,
+        "afterBytes": 16476
+      },
+      {
+        "path": "dist/dream-story-portrait.js",
+        "beforeSha256": "fe82cc56695db356b71b572cbc9563cddc7c455e7bae1e56db46dba9905a62ef",
+        "afterSha256": "fe82cc56695db356b71b572cbc9563cddc7c455e7bae1e56db46dba9905a62ef",
+        "beforeBytes": 1526,
+        "afterBytes": 1526
+      },
+      {
+        "path": "dist/dream-story.js",
+        "beforeSha256": "a91aaf6b497cf956a85c9119e97871ed8b4cc119dd06c6ebe765aa3ed02fb9de",
+        "afterSha256": "a91aaf6b497cf956a85c9119e97871ed8b4cc119dd06c6ebe765aa3ed02fb9de",
+        "beforeBytes": 31000,
+        "afterBytes": 31000
+      },
+      {
+        "path": "dist/dream-theatre-art.js",
+        "beforeSha256": "a92c905952383c801559103f3b80d34537acdde4eb4d2292d3fc88e7c51bf213",
+        "afterSha256": "a92c905952383c801559103f3b80d34537acdde4eb4d2292d3fc88e7c51bf213",
+        "beforeBytes": 11372,
+        "afterBytes": 11372
+      },
+      {
+        "path": "dist/dream-theatre-encore.js",
+        "beforeSha256": "62ca4f474e0261e31980bedfae4d02f97b879ceaa83e8670596253d6d190456d",
+        "afterSha256": "62ca4f474e0261e31980bedfae4d02f97b879ceaa83e8670596253d6d190456d",
+        "beforeBytes": 4646,
+        "afterBytes": 4646
+      },
+      {
+        "path": "dist/dream-theatre-guidance.js",
+        "beforeSha256": "ee0db2c0c396d45dc6386e81921f90369092a3361927295a4bf160a2ba5c9a28",
+        "afterSha256": "ee0db2c0c396d45dc6386e81921f90369092a3361927295a4bf160a2ba5c9a28",
+        "beforeBytes": 3586,
+        "afterBytes": 3586
+      },
+      {
+        "path": "dist/dream-theatre-lantern.js",
+        "beforeSha256": "84be352475290b6fb2f0f9b85d0f77d9bf262be89fc3d5443ea1cd9af0da1904",
+        "afterSha256": "84be352475290b6fb2f0f9b85d0f77d9bf262be89fc3d5443ea1cd9af0da1904",
+        "beforeBytes": 5506,
+        "afterBytes": 5506
+      },
+      {
+        "path": "dist/dream-theatre-painted.js",
+        "beforeSha256": "240e8e0990fbd65fa24f920daaa24a6c0225b4714f04496d5e5d33c7b001fd6e",
+        "afterSha256": "240e8e0990fbd65fa24f920daaa24a6c0225b4714f04496d5e5d33c7b001fd6e",
+        "beforeBytes": 6850,
+        "afterBytes": 6850
+      },
+      {
+        "path": "dist/dream-traveler-art.js",
+        "beforeSha256": "e7c1315bdf28b22705887d8fc478472e1d4952df0c1f9e598abf5f2f6ca0e8ac",
+        "afterSha256": "e7c1315bdf28b22705887d8fc478472e1d4952df0c1f9e598abf5f2f6ca0e8ac",
+        "beforeBytes": 8767,
+        "afterBytes": 8767
+      },
+      {
+        "path": "dist/dream-traveler-face.js",
+        "beforeSha256": "ea914374c1d7793ebf710617d2749a71e01805ce7d1c33f20294ecd65acfd71b",
+        "afterSha256": "ea914374c1d7793ebf710617d2749a71e01805ce7d1c33f20294ecd65acfd71b",
+        "beforeBytes": 6783,
+        "afterBytes": 6783
+      },
+      {
+        "path": "dist/dream-traveler-performance.js",
+        "beforeSha256": "ff4f258632c6136fed2a4b95fa8aa828c25817d3db6318663b924ee93ecf2c5c",
+        "afterSha256": "ff4f258632c6136fed2a4b95fa8aa828c25817d3db6318663b924ee93ecf2c5c",
+        "beforeBytes": 7342,
+        "afterBytes": 7342
+      },
+      {
+        "path": "dist/dream-ui.js",
+        "beforeSha256": "3da92277b69c46b80b06125e08cef13166122b17867ec59a2bb532b6b0c73c48",
+        "afterSha256": "3da92277b69c46b80b06125e08cef13166122b17867ec59a2bb532b6b0c73c48",
+        "beforeBytes": 4422,
+        "afterBytes": 4422
+      },
+      {
+        "path": "dist/dream.css",
+        "beforeSha256": "a6a19381a2b375ffcd1ee71b996bde69f1dfbd2a12c4625dbb565fd500065ca1",
+        "afterSha256": "a6a19381a2b375ffcd1ee71b996bde69f1dfbd2a12c4625dbb565fd500065ca1",
+        "beforeBytes": 64955,
+        "afterBytes": 64955
+      },
+      {
+        "path": "dist/engine.js",
+        "beforeSha256": "3af6579235e5cce9ef65e476d65e30aeab837f1ac6d842b8721ab44f795b514a",
+        "afterSha256": "3af6579235e5cce9ef65e476d65e30aeab837f1ac6d842b8721ab44f795b514a",
+        "beforeBytes": 40797,
+        "afterBytes": 40797
+      },
+      {
+        "path": "dist/favicon.svg",
+        "beforeSha256": "87d7f408dd19dd027b53625a0b97daa5e22459fcaad1af334da5faab4b54ff46",
+        "afterSha256": "87d7f408dd19dd027b53625a0b97daa5e22459fcaad1af334da5faab4b54ff46",
+        "beforeBytes": 382,
+        "afterBytes": 382
+      },
+      {
+        "path": "dist/festival-hub.js",
+        "beforeSha256": "5f5d5c69ea925f137a1b3b8da88d3be92535cf4b594f515f23e4d61ea65f8e25",
+        "afterSha256": "5f5d5c69ea925f137a1b3b8da88d3be92535cf4b594f515f23e4d61ea65f8e25",
+        "beforeBytes": 21507,
+        "afterBytes": 21507
+      },
+      {
+        "path": "dist/festival.css",
+        "beforeSha256": "707931f9ffa5167b0192fc125c77665f5ef60d8ea907722fa5334a9dc36bada7",
+        "afterSha256": "707931f9ffa5167b0192fc125c77665f5ef60d8ea907722fa5334a9dc36bada7",
+        "beforeBytes": 21046,
+        "afterBytes": 21046
+      },
+      {
+        "path": "dist/game-shell.css",
+        "beforeSha256": "d3a32538ad73198046c4dee50e18fdcef746b5c17528f5e47b7225a5d4eee80c",
+        "afterSha256": "d3a32538ad73198046c4dee50e18fdcef746b5c17528f5e47b7225a5d4eee80c",
+        "beforeBytes": 8510,
+        "afterBytes": 8510
+      },
+      {
+        "path": "dist/game-shell.js",
+        "beforeSha256": "109f0b136dca39253395e47a0eca84c6a392d17a17e998bb37ea420d846d91c9",
+        "afterSha256": "109f0b136dca39253395e47a0eca84c6a392d17a17e998bb37ea420d846d91c9",
+        "beforeBytes": 7726,
+        "afterBytes": 7726
+      },
+      {
+        "path": "dist/lost-evidence.js",
+        "beforeSha256": "a681f0d4b2234d00cef0837eab1f223988dfab5198b518d06b1d6fdaaa7548c5",
+        "afterSha256": "a681f0d4b2234d00cef0837eab1f223988dfab5198b518d06b1d6fdaaa7548c5",
+        "beforeBytes": 7147,
+        "afterBytes": 7147
+      },
+      {
+        "path": "dist/lost-play.css",
+        "beforeSha256": "13acb839c240ce9f75ac5802842dcf2ff334e484aeae6163c25d3b1aa87bbfa9",
+        "afterSha256": "13acb839c240ce9f75ac5802842dcf2ff334e484aeae6163c25d3b1aa87bbfa9",
+        "beforeBytes": 7354,
+        "afterBytes": 7354
+      },
+      {
+        "path": "dist/lost-progress.js",
+        "beforeSha256": "f81f1a0dfad558be5efa220eebd13688a0f9e183ac9fc1d569c62b4f9c5c5efb",
+        "afterSha256": "f81f1a0dfad558be5efa220eebd13688a0f9e183ac9fc1d569c62b4f9c5c5efb",
+        "beforeBytes": 9956,
+        "afterBytes": 9956
+      },
+      {
+        "path": "dist/play-rewards.js",
+        "beforeSha256": "d2133a6ea631fcd32dabb3e65242dd3da1ce8809d09cdb056c881bcc6d89c0fb",
+        "afterSha256": "d2133a6ea631fcd32dabb3e65242dd3da1ce8809d09cdb056c881bcc6d89c0fb",
+        "beforeBytes": 20803,
+        "afterBytes": 20803
+      },
+      {
+        "path": "dist/portal.css",
+        "beforeSha256": "5c06d5415242abb37b02cc8e43c516b4631e5cbb42af4a8593bcead103ae965f",
+        "afterSha256": "5c06d5415242abb37b02cc8e43c516b4631e5cbb42af4a8593bcead103ae965f",
+        "beforeBytes": 2729,
+        "afterBytes": 2729
+      },
+      {
+        "path": "dist/style.css",
+        "beforeSha256": "6e6d7748ac71de73ceffa3d4ea1e8e8b260207e426a0354158d3b21fc5fb28b3",
+        "afterSha256": "6e6d7748ac71de73ceffa3d4ea1e8e8b260207e426a0354158d3b21fc5fb28b3",
+        "beforeBytes": 36943,
+        "afterBytes": 36943
+      },
+      {
+        "path": "dist/survivor-play.css",
+        "beforeSha256": "c2ef15377a4075d4d6816802ba57dc2abf2944fb26df2de3d9845249b4bb4507",
+        "afterSha256": "c2ef15377a4075d4d6816802ba57dc2abf2944fb26df2de3d9845249b4bb4507",
+        "beforeBytes": 8562,
+        "afterBytes": 8562
+      },
+      {
+        "path": "dist/survivor.html",
+        "beforeSha256": "95162e83da5b760d278281a7503cfab1c5e30fd8087a56fa250a4dea8a0e8958",
+        "afterSha256": "95162e83da5b760d278281a7503cfab1c5e30fd8087a56fa250a4dea8a0e8958",
+        "beforeBytes": 17389,
+        "afterBytes": 17389
+      }
+    ],
+    "changedRuntime": [
+      {
+        "path": "dist/cap-play.css",
+        "beforeSha256": "e80091822b14c618a820cdda14f2a56ddfc2f859bf05176b251d03156b288fd1",
+        "afterSha256": "a633fd679d3e79fd98160fe36dbff8fe6c6f8d615b2bf8eee1089fbb0045cf08",
+        "beforeBytes": 9603,
+        "afterBytes": 10558
+      },
+      {
+        "path": "dist/dream-play.css",
+        "beforeSha256": "d493a4f215231dae11d71617e1b972fa21c41b7e9cf1303b4ea7cf09412b9fc3",
+        "afterSha256": "4a952c2631e2ede816f43b1932e42a7b0b7c06d64aa34107e7745810a5522022",
+        "beforeBytes": 13110,
+        "afterBytes": 15070
+      },
+      {
+        "path": "dist/dream.html",
+        "beforeSha256": "996d1f18ab19686e439d039b040b0d52a6ec5534efe2cb46e7e53db5fe7c574a",
+        "afterSha256": "636d3c72c1be5125e2b99ec92a980f1449a747a8c38ba5bfb068fcc09fd4069e",
+        "beforeBytes": 25918,
+        "afterBytes": 25964
+      },
+      {
+        "path": "dist/index.html",
+        "beforeSha256": "996d1f18ab19686e439d039b040b0d52a6ec5534efe2cb46e7e53db5fe7c574a",
+        "afterSha256": "636d3c72c1be5125e2b99ec92a980f1449a747a8c38ba5bfb068fcc09fd4069e",
+        "beforeBytes": 25918,
+        "afterBytes": 25964
+      }
+    ]
+  },
+  "tests": {
+    "existingTestFiles": 74,
+    "passedFiles": 74,
+    "failedFiles": 0,
+    "skippedFiles": 0,
+    "durationMs": 5833.500658,
+    "rawLog": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> tougaigu@29.0.0 test\n> node --test tests/*.test.mjs\n\n✔ tests/browser-coast-route-v27.test.mjs (620.447761ms)\n✔ tests/browser-driver-boundary.test.mjs (267.399288ms)\n✔ tests/browser-ending-v29.test.mjs (1227.478578ms)\n✔ tests/browser-face-v31.test.mjs (2432.945613ms)\n✔ tests/browser-hud-energy.test.mjs (205.704132ms)\n✔ tests/browser-hud-geometry.test.mjs (205.703116ms)\n✔ tests/browser-library-route-v27.test.mjs (1145.94161ms)\n✔ tests/browser-portrait-sequence.test.mjs (821.984215ms)\n✔ tests/browser-post-route-v29.test.mjs (1136.673112ms)\n✔ tests/browser-theatre-alight.test.mjs (990.715874ms)\n✔ tests/browser-traveler-performance.test.mjs (2153.194504ms)\n✔ tests/cap-activities.test.mjs (133.736402ms)\n✔ tests/cap-activity-engine.test.mjs (1400.906079ms)\n✔ tests/cap-activity-growth.test.mjs (118.010145ms)\n✔ tests/cap-activity-progress.test.mjs (146.021689ms)\n✔ tests/cap-character-motion.test.mjs (452.742141ms)\n✔ tests/cap-engine.test.mjs (1412.982937ms)\n✔ tests/cap-progress.test.mjs (167.638128ms)\n✔ tests/cap-story.test.mjs (101.474922ms)\n✔ tests/clock-echo-v27.test.mjs (529.703371ms)\n✔ tests/coast-presentation-v27.test.mjs (570.17823ms)\n✔ tests/dream-app-energy.test.mjs (255.436973ms)\n✔ tests/dream-awakening-engine.test.mjs (1788.363735ms)\n✔ tests/dream-awakenings.test.mjs (81.665303ms)\n✔ tests/dream-direction-input.test.mjs (165.012941ms)\n✔ tests/dream-encounter-engine.test.mjs (627.626825ms)\n✔ tests/dream-encounters.test.mjs (160.060287ms)\n✔ tests/dream-ending-art.test.mjs (172.089884ms)\n✔ tests/dream-engine.test.mjs (821.621295ms)\n✔ tests/dream-journey.test.mjs (124.948306ms)\n✔ tests/dream-modal-input.test.mjs (126.508925ms)\n✔ tests/dream-moon-play.test.mjs (148.14596ms)\n✔ tests/dream-story-portrait-v24.test.mjs (99.399784ms)\n✔ tests/dream-story.test.mjs (99.789558ms)\n✔ tests/dream-ui.test.mjs (121.247175ms)\n✔ tests/ending-scene-v29.test.mjs (71.75168ms)\n✔ tests/engine.test.mjs (173.189343ms)\n✔ tests/festival-engine.test.mjs (781.392971ms)\n✔ tests/festivals.test.mjs (140.540934ms)\n✔ tests/first-ticket-engine.test.mjs (370.011612ms)\n✔ tests/greenhouse-engine.test.mjs (748.470701ms)\n✔ tests/greenhouse-materials.test.mjs (150.754702ms)\n✔ tests/greenhouse-scene.test.mjs (66.748909ms)\n✔ tests/ground-shadow.test.mjs (84.303542ms)\n✔ tests/journey-engine.test.mjs (479.813124ms)\n✔ tests/letter-echo.test.mjs (618.78273ms)\n✔ tests/library-finish-v26.test.mjs (226.213716ms)\n✔ tests/lost-cases.test.mjs (150.374491ms)\n✔ tests/lost-encores.test.mjs (113.684854ms)\n✔ tests/lost-engine.test.mjs (1438.43084ms)\n✔ tests/lost-evidence.test.mjs (128.279848ms)\n✔ tests/lost-progress.test.mjs (130.408995ms)\n✔ tests/moon-play-engine.test.mjs (586.943548ms)\n✔ tests/painted-scene.test.mjs (99.122413ms)\n✔ tests/painted-station-integration.test.mjs (616.864442ms)\n✔ tests/play-rewards.test.mjs (145.748496ms)\n✔ tests/post-delivery-v28.test.mjs (197.358891ms)\n✔ tests/post-mushroom-input-v29.test.mjs (279.262823ms)\n✔ tests/progression.test.mjs (119.041635ms)\n✔ tests/scene-backdrop-integration.test.mjs (746.623657ms)\n✔ tests/soul-art-v22.test.mjs (299.934444ms)\n✔ tests/station-finish.test.mjs (486.812075ms)\n✔ tests/theatre-art.test.mjs (136.241799ms)\n✔ tests/theatre-assets-v22.test.mjs (182.440711ms)\n✔ tests/theatre-encore-v21.test.mjs (157.888754ms)\n✔ tests/theatre-encore-v22.test.mjs (186.345873ms)\n✔ tests/theatre-engine.test.mjs (487.619856ms)\n✔ tests/theatre-guidance.test.mjs (85.289431ms)\n✔ tests/theatre-npc-art-v24.test.mjs (177.898084ms)\n✔ tests/theatre-painted-v20.test.mjs (210.986197ms)\n✔ tests/traveler-face-v31.test.mjs (217.493563ms)\n✔ tests/traveler-motion.test.mjs (153.683798ms)\n✔ tests/traveler-performance-v30.test.mjs (1284.478889ms)\n✔ tests/traveler-performance.test.mjs (267.519384ms)\nℹ tests 74\nℹ suites 0\nℹ pass 74\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 5833.500658\n",
+    "rawLogBytes": 4101,
+    "rawLogSha256": "8d30560db8eab33162cbc54894259537ece04e4397c3c91f0acc0a26997c7586",
+    "testedChangedRuntime": [
+      {
+        "path": "dist/cap-play.css",
+        "beforeSha256": "e80091822b14c618a820cdda14f2a56ddfc2f859bf05176b251d03156b288fd1",
+        "afterSha256": "692426a119f3b4f8a2e0179615d679828d06940e82acd11f88f50d7b6b941aaf",
+        "beforeBytes": 9603,
+        "afterBytes": 10435
+      },
+      {
+        "path": "dist/dream-play.css",
+        "beforeSha256": "d493a4f215231dae11d71617e1b972fa21c41b7e9cf1303b4ea7cf09412b9fc3",
+        "afterSha256": "92bb23c87611c708e17f36ce875d919012d08de9741d315b8ea6bf6d15734ebd",
+        "beforeBytes": 13110,
+        "afterBytes": 14786
+      },
+      {
+        "path": "dist/dream.html",
+        "beforeSha256": "996d1f18ab19686e439d039b040b0d52a6ec5534efe2cb46e7e53db5fe7c574a",
+        "afterSha256": "636d3c72c1be5125e2b99ec92a980f1449a747a8c38ba5bfb068fcc09fd4069e",
+        "beforeBytes": 25918,
+        "afterBytes": 25964
+      },
+      {
+        "path": "dist/index.html",
+        "beforeSha256": "996d1f18ab19686e439d039b040b0d52a6ec5534efe2cb46e7e53db5fe7c574a",
+        "afterSha256": "636d3c72c1be5125e2b99ec92a980f1449a747a8c38ba5bfb068fcc09fd4069e",
+        "beforeBytes": 25918,
+        "afterBytes": 25964
+      }
+    ],
+    "phase": "Initial four-file layout; final changes only narrowed CSS scope for lost/moon special layouts and corrected explanatory comments. Full suite not rerun after that scope-only change."
+  },
+  "localReferences": {
+    "javascriptModules": 68,
+    "localReferences": 171,
+    "passed": true
+  },
+  "diffCheckPassed": true,
+  "patch": {
+    "file": "runtime.patch",
+    "bytes": 11034,
+    "sha256": "1591c0f0a592c8ebcb1108ba21c25e74b05725458b8ed8352f8fcc04d45d796f",
+    "appliesToExactBase": true,
+    "appliesToFutureReleasedV31": "not yet checked"
+  },
+  "beforeImage": {
+    "file": "before-greenhouse-root-crossed.png",
+    "sourceRunId": 40926668988,
+    "sourceArtifactPath": "candidate/1280-greenhouse-root-crossed.png",
+    "bytes": 1279658,
+    "sha256": "bb781624a53d5d27c305c5b75f9a54c929735a3192c6407fb6bf76edd60c8a83",
+    "unaltered": true,
+    "viewed": true
+  },
+  "browser": {
+    "availableLibrary": "Playwright",
+    "expectedChromiumExecutable": "/root/.cache/ms-playwright/chromium-1234/chrome-linux64/chrome",
+    "executableExists": false,
+    "installedBrowser": false,
+    "realBrowserExecuted": false,
+    "afterScreenshots": [],
+    "geometryComparisonExecuted": false
+  },
+  "unchangedBoundaries": [
+    "all production JavaScript bytes",
+    "all scripts/tests/package bytes",
+    "single original speech/portrait/live-region nodes",
+    "3800ms single-line and 5800ms multi-line timer source",
+    "Canvas and control CSS declarations",
+    "original phone CSS blocks",
+    "version/cache markers"
+  ],
+  "pending": [
+    "1280/1024/900 desktop naturally triggered greenhouse speech, face and platform visibility",
+    "899 breakpoint fallback and 390/320 unchanged reading/control geometry",
+    "actual long two-line theatre speech and simultaneous existing announcement without overlap",
+    "same-viewport Canvas and control rectangle comparison",
+    "actual reduced-motion and accessible state observations",
+    "formal v30/v31 ordered release baseline integration",
+    "candidate and Pages/public verification",
+    "Original lost-inspecting and moon-playing dedicated layout remains unchanged at >=900px"
+  ],
+  "independentStaticReview": {
+    "completed": true,
+    "runtimeFilesEditedByReviewer": false,
+    "noBrowserRun": true,
+    "ordinaryStoryDomCascadeBlockers": [],
+    "addressed": [
+      "Exclude lost-inspecting and moon-playing to preserve their dedicated existing reading cards",
+      "Qualify spanning auto-grid row behavior; long content may still affect track heights"
+    ],
+    "remaining": "Actual desktop/900 breakpoint/large-font/short-height geometry and high-platform visibility need real browser review."
+  }
+}

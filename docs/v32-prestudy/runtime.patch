@@ -1,0 +1,92 @@
+diff --git a/dist/cap-play.css b/dist/cap-play.css
+index d2352fb..cbad117 100644
+--- a/dist/cap-play.css
++++ b/dist/cap-play.css
+@@ -8,6 +8,14 @@
+ @media(max-width:640px){.cap-bubble{bottom:184px;max-width:calc(100% - 30px);padding:10px 12px 10px 8px;gap:8px;border-radius:13px}.cap-bubble>img{width:38px;height:38px}.cap-bubble p{font-size:10px;line-height:1.7}.cap-bubble b{font-size:8px;margin-right:5px}.cap-bubble-lines{gap:4px}.cap-status{font-size:7px;margin-top:3px;gap:4px}.cap-status i{width:2px;height:2px}.cap-book-dialog{padding:22px 16px;width:calc(100vw - 20px);max-height:calc(100dvh - 24px)}.cap-book-dialog h2{font-size:22px;max-width:290px;margin:9px 0 14px}.cap-book-stats{gap:15px;padding-bottom:13px;margin-bottom:15px}.cap-book-stats b{font-size:17px}.cap-book-stats>span{font-size:8px;gap:5px}.cap-book-feature{grid-template-columns:1fr;gap:0;border-radius:15px}.cap-book-window{min-height:218px}.cap-book-window canvas{width:250px;height:207px}.cap-book-window:before{width:185px;height:185px}.cap-book-window.unopened img{width:153px;height:153px}.cap-book-window.unopened{min-height:218px;gap:5px}.cap-book-window.unopened>span{font-size:9px}.cap-book-copy{padding:0 17px 19px}.cap-book-copy>small{font-size:9px}.cap-book-copy h3{font-size:21px}.cap-book-copy>p{font-size:10px}.cap-book-lines p{font-size:10px}.cap-book-lines b{font-size:8px}.cap-thoughts{padding:15px 17px}.cap-thought p{font-size:10px}.cap-book-card{padding:8px 5px;gap:5px;align-items:flex-start}.cap-book-card img{width:38px;height:38px}.cap-book-card small{font-size:7px}.cap-book-card b{font-size:9px}.cap-book-card em{font-size:7px}.cap-book-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.cap-book-section-title{gap:5px}.cap-book-section-title h3{font-size:12px}.cap-book-section-title>span{font-size:7px}.journal-cap-link{gap:9px;padding:10px 12px}.journal-cap-link img{width:41px;height:41px}.journal-cap-link strong{font-size:12px}.journal-cap-link small{font-size:9px}}
+ @media(prefers-reduced-motion:reduce){.cap-bubble,.cap-book-card{transition:none}.cap-bubble{backdrop-filter:none;transform:translate(-50%,0)}}.reduced-motion .cap-bubble,.reduced-motion .cap-book-card{transition:none}.reduced-motion .cap-bubble{transform:translate(-50%,0)}
+ 
++/* Keep the existing portrait, full speech and live region in a quiet desktop
++   column. No tail or translation points back across the playable scene. */
++@media(min-width:900px){
++  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications .cap-bubble{position:static;inset:auto;transform:none;grid-column:1;grid-row:2/span 2;align-self:start;min-width:0;width:100%;max-width:100%;margin:0;padding:11px 14px;gap:13px;border-radius:14px;border-color:#dbc49d60;background:linear-gradient(125deg,#302d43f2,#242737f2);box-shadow:0 8px 24px #08091438,inset 0 1px #fff0d70c}
++  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications .cap-bubble-lines{min-width:0;white-space:normal;overflow-wrap:anywhere}
++  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications .cap-bubble:after{display:none}
++}
++
+ /* Mobile dialogue follows the full instruction block in the same flow. The
+    duplicate cap-state sentence describes the existing toggle for screen readers. */
+ @media(max-width:640px){
+diff --git a/dist/dream-play.css b/dist/dream-play.css
+index 43f2aa3..960d952 100644
+--- a/dist/dream-play.css
++++ b/dist/dream-play.css
+@@ -7,7 +7,7 @@ body.dream-play{--play-top:var(--shell-top);--play-bottom:var(--shell-bottom);ba
+ #dream-stage [data-direction]:focus-visible{outline:2px solid #f3d39c;outline-offset:3px}
+ #letter-fragments p>small{display:block;margin-bottom:6px;font-size:10px;color:#a7c9b9;letter-spacing:1px}
+ #dream-stage .stage-vignette{background:linear-gradient(180deg,#15151d70 0,transparent 26%,transparent 80%,#15131f66)}
+-.stage-reading{display:contents}
++.stage-communications,.stage-reading{display:contents}
+ #dream-stage .stage-hud{top:15px;left:24px;right:24px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
+ #dream-stage .stage-hud-left{gap:13px;align-items:center}
+ #dream-stage .stage-hud-left>div>span{font-size:9px;letter-spacing:2px;color:#a7a6b2}
+@@ -134,3 +134,19 @@ body.dream-play{--play-top:var(--shell-top);--play-bottom:var(--shell-bottom);ba
+ }
+ 
+ @media(max-width:640px){body.dream-play>.corporate-footer{padding-bottom:calc(6px + env(safe-area-inset-bottom,0px))}}
++
++/* Story desktop reading stays above the action. The neutral wrapper generates
++   no box at smaller widths, so the existing phone reading/announcement anchors
++   remain attached to the stage. Speech spans the two right-hand reading rows;
++   all tracks still size from content. Very long speech needs browser review. */
++@media(min-width:900px){
++  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications{position:absolute;top:15px;left:24px;right:24px;display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);grid-template-rows:auto auto auto;gap:10px 24px;align-items:start;pointer-events:none}
++  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications .stage-hud{position:static;inset:auto;grid-column:1/-1;grid-row:1;min-width:0}
++  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications .stage-objective{position:static;inset:auto;transform:none;grid-column:2;grid-row:2;justify-self:center;min-width:0;width:100%;max-width:580px;margin:0}
++  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications #stage-objective,
++  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications #stage-near-hint{max-width:none;white-space:normal;overflow-wrap:anywhere}
++  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications .stage-announcement{position:static;inset:auto;transform:none;grid-column:2;grid-row:3;justify-self:center;min-width:0;width:fit-content;max-width:100%;margin:0;white-space:normal;overflow-wrap:anywhere}
++}
++@media(min-width:900px) and (max-height:520px){
++  .dream-play:not(.festival-session):not(.lost-inspecting):not(.moon-playing) #dream-stage .stage-communications{top:8px;row-gap:6px}
++}
+diff --git a/dist/dream.html b/dist/dream.html
+index 4340457..9fc90ea 100644
+--- a/dist/dream.html
++++ b/dist/dream.html
+@@ -43,6 +43,7 @@
+ <main id="dream-stage" aria-label="掀起你的头盖骨 · 故事解谜关卡">
+   <canvas id="dream-canvas" tabindex="0" aria-describedby="stage-objective stage-near-hint" aria-label="回声旅途。方向键移动，身体形态空格跳跃，E 掀开头盖骨或返回身体，灵魂形态空格发出脉冲，Q 互动，Escape 暂停。"></canvas>
+   <div class="stage-vignette"></div>
++  <div class="stage-communications">
+   <div class="stage-reading">
+     <header class="stage-hud" aria-label="关卡状态">
+       <div class="stage-hud-left">
+@@ -72,6 +73,7 @@
+     <div id="cap-bubble" class="cap-bubble" role="status" aria-live="polite" aria-atomic="true"><img id="cap-bubble-portrait" src="./assets/portrait-hero-open.svg" width="49" height="49" alt=""><div id="cap-bubble-lines" class="cap-bubble-lines"></div></div>
+   </div>
+   <div id="stage-announcement" class="stage-announcement" role="status" aria-live="polite"></div>
++  </div>
+   <aside id="stage-lost-evidence" class="stage-lost-evidence" role="status" aria-live="polite" aria-atomic="true" hidden></aside>
+   <div id="stage-touch-move" class="stage-touch-move" role="group" aria-label="方向控制，按住移动；键盘或读屏激活移动一小步"><button data-direction="up" aria-label="向上飞行或跳跃">↑</button><button data-direction="left" aria-label="向左移动">←</button><span></span><button data-direction="right" aria-label="向右移动">→</button><button data-direction="down" aria-label="向下飞行">↓</button></div>
+   <div class="stage-actions"><button id="stage-interact" class="stage-action secondary-action"><svg><use href="#d-letter"/></svg><span id="stage-interact-label">互动</span><kbd>Q</kbd></button><button id="stage-toggle" class="stage-action soul-action" aria-describedby="stage-cap-label"><svg><use href="#d-cap"/></svg><span id="stage-toggle-label">掀开头盖骨</span><kbd>E</kbd></button><button id="stage-jump" class="stage-action jump-action"><span class="action-glyph" id="stage-action-glyph">↑</span><span id="stage-action-label">跳跃</span><kbd>SPACE</kbd></button></div>
+diff --git a/dist/index.html b/dist/index.html
+index 4340457..9fc90ea 100644
+--- a/dist/index.html
++++ b/dist/index.html
+@@ -43,6 +43,7 @@
+ <main id="dream-stage" aria-label="掀起你的头盖骨 · 故事解谜关卡">
+   <canvas id="dream-canvas" tabindex="0" aria-describedby="stage-objective stage-near-hint" aria-label="回声旅途。方向键移动，身体形态空格跳跃，E 掀开头盖骨或返回身体，灵魂形态空格发出脉冲，Q 互动，Escape 暂停。"></canvas>
+   <div class="stage-vignette"></div>
++  <div class="stage-communications">
+   <div class="stage-reading">
+     <header class="stage-hud" aria-label="关卡状态">
+       <div class="stage-hud-left">
+@@ -72,6 +73,7 @@
+     <div id="cap-bubble" class="cap-bubble" role="status" aria-live="polite" aria-atomic="true"><img id="cap-bubble-portrait" src="./assets/portrait-hero-open.svg" width="49" height="49" alt=""><div id="cap-bubble-lines" class="cap-bubble-lines"></div></div>
+   </div>
+   <div id="stage-announcement" class="stage-announcement" role="status" aria-live="polite"></div>
++  </div>
+   <aside id="stage-lost-evidence" class="stage-lost-evidence" role="status" aria-live="polite" aria-atomic="true" hidden></aside>
+   <div id="stage-touch-move" class="stage-touch-move" role="group" aria-label="方向控制，按住移动；键盘或读屏激活移动一小步"><button data-direction="up" aria-label="向上飞行或跳跃">↑</button><button data-direction="left" aria-label="向左移动">←</button><span></span><button data-direction="right" aria-label="向右移动">→</button><button data-direction="down" aria-label="向下飞行">↓</button></div>
+   <div class="stage-actions"><button id="stage-interact" class="stage-action secondary-action"><svg><use href="#d-letter"/></svg><span id="stage-interact-label">互动</span><kbd>Q</kbd></button><button id="stage-toggle" class="stage-action soul-action" aria-describedby="stage-cap-label"><svg><use href="#d-cap"/></svg><span id="stage-toggle-label">掀开头盖骨</span><kbd>E</kbd></button><button id="stage-jump" class="stage-action jump-action"><span class="action-glyph" id="stage-action-glyph">↑</span><span id="stage-action-label">跳跃</span><kbd>SPACE</kbd></button></div>

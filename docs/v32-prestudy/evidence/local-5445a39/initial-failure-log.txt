@@ -1,0 +1,25 @@
+{"candidateTree": "6be11a3af80320a62ca78d400d04cf4c00323e7a", "base": "7ba7c5e00a6a32032e5becf5131a527322d03ac3", "version": "32.0.0", "sourceFileCount": 810, "manifestSha256": "3358b318705ba32200d57da6c35e9007bb14cab50ade160d4d49f93392a8e06d", "playwrightVersion": "1.55.0", "status": "failed", "scope": "Only the independent six-context real-UI matrix; original full story suite not rerun locally", "chromiumVersion": "140.0.7339.16", "failure": "Canvas changed top", "elapsedSeconds": 2.423}
+Traceback (most recent call last):
+  File "/tmp/tougaigu-v32-run-matrix.py", line 71, in <module>
+    asyncio.run(run())
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/tmp/tougaigu-v32-run-matrix.py", line 55, in run
+    result = await exercise_dialogue_matrix(browser, args, OUTPUT, api)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2b18af2db412/tougaigu-v32-release/scripts/browser_dialogue_matrix_v32.py", line 170, in exercise_dialogue_matrix
+    record['restorationComparison']=compare_surfaces(pair['before'], pair['restored'])
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2b18af2db412/tougaigu-v32-release/scripts/browser_dialogue_matrix_v32.py", line 112, in compare_surfaces
+    same_rect('Canvas', before['canvas']['rect'], after['canvas']['rect'])
+  File "/workspace/scratch/2b18af2db412/tougaigu-v32-release/scripts/browser_dialogue_matrix_v32.py", line 111, in same_rect
+    assert abs(a[key]-b[key]) <= tolerance, name+' changed '+key
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Canvas changed top
