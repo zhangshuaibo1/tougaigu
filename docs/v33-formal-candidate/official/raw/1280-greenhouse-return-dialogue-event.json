@@ -1,0 +1,80 @@
+{
+  "initial": {
+    "observedAt": 61673.899999999994,
+    "lastShownAt": 59961.100000000006,
+    "ageMs": 1712.7999999999884,
+    "showClass": true,
+    "opacity": 1,
+    "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+    "chapterIndex": 1,
+    "runId": 1,
+    "state": "playing",
+    "form": "soul",
+    "capPhase": "open",
+    "plantStage": 2,
+    "deaths": 0,
+    "body": {
+      "x": 593,
+      "y": 560,
+      "grounded": true
+    }
+  },
+  "inputs": [
+    {
+      "code": "KeyE",
+      "isTrusted": true,
+      "repeat": false,
+      "snapshot": {
+        "observedAt": 61691.5,
+        "lastShownAt": 59961.100000000006,
+        "ageMs": 1730.3999999999942,
+        "showClass": true,
+        "opacity": 1,
+        "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+        "chapterIndex": 1,
+        "runId": 1,
+        "state": "playing",
+        "form": "soul",
+        "capPhase": "open",
+        "plantStage": 2,
+        "deaths": 0,
+        "body": {
+          "x": 593,
+          "y": 560,
+          "grounded": true
+        }
+      }
+    }
+  ],
+  "count": 1,
+  "active": false,
+  "after": {
+    "observedAt": 62415.100000000006,
+    "lastShownAt": 61693,
+    "ageMs": 722.1000000000058,
+    "showClass": true,
+    "opacity": 1,
+    "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+    "chapterIndex": 1,
+    "runId": 1,
+    "state": "playing",
+    "form": "body",
+    "capPhase": "closed",
+    "plantStage": 2,
+    "deaths": 0,
+    "body": {
+      "x": 593,
+      "y": 560,
+      "grounded": true
+    }
+  },
+  "observerRemoved": true,
+  "validation": {
+    "status": "passed",
+    "trustedInput": true,
+    "existingCooldownMs": 1600,
+    "actualInputAgeMs": 1730.3999999999942,
+    "actualReturnDialogueAgeMs": 722.1000000000058,
+    "scope": "Existing real return E, natural authored dialogue refresh and completed cap closure; no replay or clock mutation"
+  }
+}

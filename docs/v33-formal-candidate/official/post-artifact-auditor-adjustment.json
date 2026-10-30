@@ -1,0 +1,463 @@
+{
+  "status": "auditor-metadata-corrected",
+  "recordedAt": "2026-10-30T01:26:44.020347+00:00",
+  "productOrOriginalBrowserCodeChanged": false,
+  "pureFaceValidatorAndThresholdsChanged": false,
+  "originalReviewerSHA256": "39afa333c806089265062c4c574e774ef4d48b2086e8653b78c750e4d91c3744",
+  "updatedReviewerSHA256": "5d63045f4bd36cb82e19322bac3cd370bdcb1cdba07279884924212e5b5503a3",
+  "failure": "Inherited summary expected exactly11 original PNGs, reflecting previous run inventory. Current exact primary validator accepted12 legitimate captures.",
+  "previous11AllPresent": true,
+  "previous11": [
+    "1280-face-fatigue-bodyTiredOpen-320.png",
+    "1280-face-fatigue-bodyTiredOpen-390.png",
+    "1280-face-fatigue-bodyTiredOpen.png",
+    "1280-face-fatigue-recovered.png",
+    "1280-face-fatigue-soulTired.png",
+    "1280-face-ticket-freeJoy.png",
+    "1280-first-lamp-face-lamp-closedJoy.png",
+    "320-face-ticket-closedJoy.png",
+    "320-face-ticket-freeJoy.png",
+    "390-face-ticket-closedJoy.png",
+    "390-face-ticket-freeJoy.png"
+  ],
+  "current12": [
+    {
+      "file": "1280-face-ticket-freeJoy.png",
+      "bytes": 1489698,
+      "sha256": "1a3573b562bf8361e69116e4861f1e4d3f49a199ea5a35e6d2e3ba00e86df8b9",
+      "width": 1280,
+      "height": 677,
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "sequence": 47,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "1280-face-fatigue-soulTired.png",
+      "bytes": 1487012,
+      "sha256": "515ddfffd0d03f410481a9137a34002780ee8d7c56da23bd9c94b9708b78f824",
+      "width": 1280,
+      "height": 677,
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "sequence": 938,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "1280-face-fatigue-bodyTiredOpen.png",
+      "bytes": 1487349,
+      "sha256": "52bd399ab85f4e71b34e9a88eae1d2adc345617302cfc4562b867a2e920dc721",
+      "width": 1280,
+      "height": 677,
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "sequence": 972,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "1280-face-fatigue-bodyTiredOpen-390.png",
+      "bytes": 432844,
+      "sha256": "ae35922e26743a546887c17f78c2a2347e1160267f3a05a9714e15454a394cd5",
+      "width": 390,
+      "height": 595,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sequence": 998,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "1280-face-fatigue-bodyTiredOpen-320.png",
+      "bytes": 274713,
+      "sha256": "55be2c433e605b0ce61a3fc24b2282dc10c3592afc7c7d8022f0a00dd55ba7d8",
+      "width": 320,
+      "height": 431,
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "sequence": 1020,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "1280-face-fatigue-recovered.png",
+      "bytes": 1483515,
+      "sha256": "634f947aca5ccbc0875d290c6948bf9211191654666e1f90f80c334ff847a5e4",
+      "width": 1280,
+      "height": 677,
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "sequence": 1102,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "1280-first-lamp-face-lamp-freeJoy.png",
+      "bytes": 1489598,
+      "sha256": "da2cee67c360746b46c1054b9a0e0a0bafad12c9954933afa98b334f48408546",
+      "width": 1280,
+      "height": 677,
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "sequence": 6,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "1280-first-lamp-face-lamp-closedJoy.png",
+      "bytes": 1492090,
+      "sha256": "06dcbbb3531d3f9a904b2d02aa75bba646dc8afb7e739ecc6732e787f2751abc",
+      "width": 1280,
+      "height": 677,
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "sequence": 48,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "390-face-ticket-freeJoy.png",
+      "bytes": 434524,
+      "sha256": "8718c041642f5598ff87311f5dce25103327b500c5df9f7148cd933f0d9f11db",
+      "width": 390,
+      "height": 595,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sequence": 56,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "390-face-ticket-closedJoy.png",
+      "bytes": 430502,
+      "sha256": "d55c1a251400b5ee80538b688ab9aecc9067c951e4aa02fa49d9381365a9d9cd",
+      "width": 390,
+      "height": 595,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sequence": 156,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "320-face-ticket-freeJoy.png",
+      "bytes": 274021,
+      "sha256": "372bc6caf7b008200ea92d11163572f657369d489cb12c4307e7016fa5cbc801",
+      "width": 320,
+      "height": 431,
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "sequence": 55,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "320-face-ticket-closedJoy.png",
+      "bytes": 271877,
+      "sha256": "c1098971af3a2b667d5fc4ba2c3f47c53b310bc3b02a7dbb72c0f433e696ce70",
+      "width": 320,
+      "height": 431,
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "sequence": 142,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    }
+  ],
+  "onlyAdditionalFile": "1280-first-lamp-face-lamp-freeJoy.png",
+  "sameRunSource": "candidate/1280-first-lamp-face-lamp-returned.json",
+  "sameRunSourceSHA256": "96db56ee6dfdf1d3f1fc6f76d93f5ff24aeb421ddfbb350994495bbe6baee815",
+  "extraRecordImage": {
+    "sequence": 6,
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "width": 1280,
+    "height": 677,
+    "css": {
+      "left": 0,
+      "top": 81,
+      "width": 1280,
+      "height": 677
+    },
+    "source": "unmodified current Canvas pixels; one RAF observation, no render call",
+    "file": "1280-first-lamp-face-lamp-freeJoy.png"
+  },
+  "extraRecordLatch": {
+    "sequence": 6,
+    "source": "raf",
+    "observedAt": 36528.2,
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "form": "soul",
+    "state": "playing",
+    "chapterIndex": 0,
+    "mode": "story",
+    "festivalId": null,
+    "runId": 1,
+    "bodyIdentity": 1,
+    "input": {
+      "x": 0,
+      "y": 0
+    },
+    "energy": 100,
+    "maxEnergy": 100,
+    "emoteTime": 2,
+    "seals": 1,
+    "memories": 1,
+    "lampFlags": [
+      true,
+      false
+    ],
+    "memoryFlags": [
+      true,
+      false,
+      false
+    ],
+    "firstTicket": {
+      "phase": "stowed",
+      "collected": true,
+      "newlyCollected": true,
+      "settledAge": 8.466666666666667
+    },
+    "time": 34.04999999999935,
+    "visualTime": 34.04999999999935,
+    "deaths": 0,
+    "reducedMotion": false,
+    "body": {
+      "x": 417,
+      "y": 560,
+      "w": 30,
+      "h": 58,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "platform": null,
+      "face": 1,
+      "land": 0,
+      "walk": 15.59999999999998
+    },
+    "capPhase": "open",
+    "capAge": 1.7833333333333319,
+    "capAmount": 1,
+    "facePresentation": {
+      "time": 34.04999999999935,
+      "body": {
+        "kind": "attentive",
+        "sleepy": false,
+        "happy": true,
+        "opening": false,
+        "attentive": true,
+        "blink": 0.7,
+        "lookX": 2.204143853919784,
+        "lookY": -2.7
+      },
+      "soulJoy": true,
+      "presentedSoul": {
+        "x": 637.4143853919784,
+        "y": 315.3008420198109,
+        "vx": 0,
+        "vy": 0,
+        "scale": 1,
+        "alpha": 1,
+        "pose": "free",
+        "layer": "world"
+      },
+      "rawSoul": {
+        "x": 637.4143853919784,
+        "y": 315.3008420198109,
+        "vx": 0,
+        "vy": 0
+      },
+      "capEntry": 1,
+      "returnFrom": null
+    },
+    "characterPose": {
+      "walking": false,
+      "step": 0,
+      "hop": -1.0995392905577375,
+      "scaleY": 1,
+      "tilt": -0.025,
+      "bodyMatrix": [
+        1,
+        0,
+        0,
+        1,
+        417,
+        561.0995392905577
+      ],
+      "openingWorld": {
+        "x": 416.6000416653646,
+        "y": 496.10453903014644
+      },
+      "grip": 1,
+      "clasp": 0.25,
+      "catching": 0,
+      "arms": {
+        "left": {
+          "shoulder": {
+            "x": -13,
+            "y": -35
+          },
+          "elbow": {
+            "x": -25.25052455873504,
+            "y": -50.809005282933825
+          },
+          "wrist": {
+            "x": -18.931418036803198,
+            "y": -69.78448664084615
+          },
+          "requested": {
+            "x": -18.931418036803198,
+            "y": -69.78448664084615
+          },
+          "length": 20,
+          "world": {
+            "x": 398.0685819631968,
+            "y": 491.31505264971156
+          }
+        },
+        "right": {
+          "shoulder": {
+            "x": 13,
+            "y": -35
+          },
+          "elbow": {
+            "x": 13.53708859908944,
+            "y": -15.007212904731663
+          },
+          "wrist": {
+            "x": 29.624457288248806,
+            "y": -26.889829142709516
+          },
+          "requested": {
+            "x": 29.624457288248806,
+            "y": -26.889829142709516
+          },
+          "length": 20,
+          "world": {
+            "x": 446.6244572882488,
+            "y": 534.2097101478482
+          }
+        }
+      },
+      "performance": {
+        "phase": "idle",
+        "reducedMotion": false,
+        "rise": 0,
+        "fall": 0,
+        "landing": 0,
+        "ride": 0,
+        "landingAge": null,
+        "landingDuration": 0.2,
+        "platformId": null,
+        "platformAxis": null,
+        "platformKind": null,
+        "platformVelocity": 0,
+        "platformVerticalVelocity": 0,
+        "balance": 0,
+        "verticalBalance": 0,
+        "freeArms": {
+          "left": {
+            "x": -16,
+            "y": -16
+          },
+          "right": {
+            "x": 17,
+            "y": -16
+          }
+        }
+      },
+      "legs": [
+        {
+          "hip": {
+            "x": -7,
+            "y": -21
+          },
+          "knee": {
+            "x": -5,
+            "y": -12.996755823995601
+          },
+          "ankle": {
+            "x": -7,
+            "y": -5.899539290557737
+          },
+          "foot": {
+            "x": -7,
+            "y": -1.0995392905577375,
+            "angle": 0
+          },
+          "planted": true,
+          "lift": 0,
+          "worldFoot": {
+            "x": 410,
+            "y": 560
+          }
+        },
+        {
+          "hip": {
+            "x": 7,
+            "y": -21
+          },
+          "knee": {
+            "x": 9,
+            "y": -12.996755823995601
+          },
+          "ankle": {
+            "x": 7,
+            "y": -5.899539290557737
+          },
+          "foot": {
+            "x": 7,
+            "y": -1.0995392905577375,
+            "angle": -0.0
+          },
+          "planted": true,
+          "lift": 0,
+          "worldFoot": {
+            "x": 424,
+            "y": 560
+          }
+        }
+      ]
+    }
+  },
+  "exactCurrentNameSetChecked": true,
+  "perImageRawZIPHashesAlreadyVerified": true,
+  "countAssertionNeverChangedToLowerBound": true,
+  "preservedFailureReplay": {
+    "executedAt": "2026-10-30T01:27:51.398654+00:00",
+    "returnCode": 1,
+    "stderrSHA256": "402a297349902f892fa616e129b7cc9426ce9ea53ad70845be2f8f684b63d20f",
+    "scope": "Re-execution of exact before-correction read-only review script; stderr is original bytes from this local reproduction, not original workflow output."
+  }
+}

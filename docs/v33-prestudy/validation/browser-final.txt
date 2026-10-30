@@ -1,0 +1,1 @@
+{"status": "passed", "cases": [{"viewport": {"width": 1280, "height": 800}, "status": "passed", "input": "keyboard"}, {"viewport": {"width": 390, "height": 844}, "status": "passed", "input": "CDP simulated touch"}, {"viewport": {"width": 320, "height": 680}, "status": "passed", "input": "CDP simulated touch"}], "elapsedSeconds": 41.897263018996455}

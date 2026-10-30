@@ -1,0 +1,2 @@
+Observed initial reviewer failure (concise transcript, not the raw GitHub job log):
+The copied v32 inventory assertion expected 11 face PNGs at review-v33-candidate-artifact.py line 113 and raised AssertionError. The original script bytes are retained beside this file; count-failure-replay.stderr.txt is a fresh exact local reproduction using those bytes. This was an evidence-summary assumption, not a product or CI failure.

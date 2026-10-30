@@ -1,0 +1,436 @@
+{
+  "status": "passed",
+  "reviewedAt": "2026-10-30T01:26:45.942866+00:00",
+  "runId": 40984114609,
+  "runUrl": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984114609",
+  "commit": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+  "tree": "4de8f4e351ec2d3aa66f20785df440e702b06007",
+  "artifactId": 12946517224,
+  "artifactZipBytes": 284085966,
+  "artifactZipSha256": "24cf2bbf51c7708e29fad281ac3358dbb1be6444e9e69470b48504bf925389b6",
+  "sourceBlobs": 996,
+  "runtimeBlobs": 144,
+  "tests": {
+    "tests": 691,
+    "pass": 691,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0
+  },
+  "old675SubtestsAllPresent": true,
+  "old74TestFilesExact": true,
+  "old683V32SubtestsAllPresent": true,
+  "all76V32TestFilesExact": true,
+  "runtimeDeltaMatchesApprovedPlan": true,
+  "artifactPaths": 296,
+  "originalPNGCount": 227,
+  "reportBytes": 15716945,
+  "reportSha256": "a8caee04c996e99e91609a4020fde277a4b58efc96733aa1c0743bd1a0f1b441",
+  "fullRouteViewports": [
+    {
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 680
+    }
+  ],
+  "expectedFailureCounts": [
+    9,
+    0,
+    0
+  ],
+  "unexpectedNetworkFailures": 0,
+  "pageErrors": 0,
+  "httpErrors": 0,
+  "faceCheckpointCount": 10,
+  "facePNGCount": 12,
+  "faceSnapshotOccurrences": 971,
+  "poseSnapshotOccurrences": 1094,
+  "completePostRoutes": 4,
+  "phoneEndingReadings": 6,
+  "desktopEndingCombinations": 4,
+  "jumpRecords": 6,
+  "originalStrictGatesPreserved": true,
+  "naturalReturnEvent": {
+    "status": "passed",
+    "trustedInput": true,
+    "existingCooldownMs": 1600,
+    "actualInputAgeMs": 1730.3999999999942,
+    "actualReturnDialogueAgeMs": 722.1000000000058,
+    "scope": "Existing real return E, natural authored dialogue refresh and completed cap closure; no replay or clock mutation"
+  },
+  "greenhouseLayoutRecords": 2,
+  "matrixConfigurations": 6,
+  "matrixDialogueSnapshots": 12,
+  "matrixExcluded899Snapshots": 2,
+  "companion": {
+    "status": "passed",
+    "reviewedAt": "2026-10-30T01:25:41.901071+00:00",
+    "runId": 40984114609,
+    "commit": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+    "version": "33.0.0",
+    "reportBytes": 1502133,
+    "reportSha256": "fa020995cf8bb1dfc786fe7b6a89e19edb6c5dec78a5673588bed6f543ee172f",
+    "summaryExactToOriginalReport": true,
+    "elapsedSeconds": 32.595662565,
+    "sourceFilesExactToPrimaryGit": {
+      "dist/dream-companion-art.js": "f0d9916c23667807c7e5577b238dcb509e3cab6e54070b6e239d11af20f787f3",
+      "dist/dream-engine.js": "7b602b83f551c41fdbe97443e1fed08d6af773e9767f0ed830a434168951e889",
+      "dist/dream-engine-base.js": "688e3006296e9d18fbaf49135b7b82b72d949539dcdc9387acefb224aab58699",
+      "dist/index.html": "c5b666ab2703fb1164b0a097f605ca19cbd3283f4184c320130e6f4dcd2035ca",
+      "dist/dream.html": "c5b666ab2703fb1164b0a097f605ca19cbd3283f4184c320130e6f4dcd2035ca",
+      "dist/survivor.html": "e98f1d79ca1a1f57922f11ad4453da16933e6cd3e7670ec85eb1207af60e7d42",
+      "scripts/browser_companion_v33.py": "42b65bd9fdd0e4ad48002ddfd2b13f92ae4e461eb8a45414d519103db0ce4912"
+    },
+    "originalPNGCount": 21,
+    "originalPNGs": [
+      {
+        "path": "candidate/companion/1280/after-neutral.png",
+        "bytes": 1071757,
+        "sha256": "e3b1a38c351c867ddfdebd33c6d1c78ba0ad44cefab05e737a8775213fe2ac12",
+        "width": 1280,
+        "height": 800,
+        "kind": "full page",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/1280/watching-up.png",
+        "bytes": 1083427,
+        "sha256": "457fa46528195ac179f15c4d4252f5cd1f4ed057df72db535f5556171d5d2766",
+        "width": 1280,
+        "height": 800,
+        "kind": "full page",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/1280/returned.png",
+        "bytes": 1072172,
+        "sha256": "a79d0e2573937b5f4f7fb5f2cde6f51a6b2bf1ea25451c701493e87ed4f8e588",
+        "width": 1280,
+        "height": 800,
+        "kind": "full page",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/1280/reduced-open.png",
+        "bytes": 1078611,
+        "sha256": "ccd7efff26976f24c0c907e877dfb56818d63e79cdb8d442548cb715d6285194",
+        "width": 1280,
+        "height": 800,
+        "kind": "full page",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/1280/return-returning-canvas.png",
+        "bytes": 1485972,
+        "sha256": "e5464c3826f361ee269d59d20d8371476de1b2c97b8da4d3746a6dde1756cc4b",
+        "width": 1280,
+        "height": 677,
+        "kind": "Canvas",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/1280/return-arrival-blink-canvas.png",
+        "bytes": 1483647,
+        "sha256": "59e9d59274d976a56d4737b4b515e9689c961fc47490ce9a6123534df4f1bea4",
+        "width": 1280,
+        "height": 677,
+        "kind": "Canvas",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/1280/return-closed-canvas.png",
+        "bytes": 1483011,
+        "sha256": "376d3833f3a6beb13822dd50a8bc114bed711328ed50b227bce163c60f6e6703",
+        "width": 1280,
+        "height": 677,
+        "kind": "Canvas",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/390/after-neutral.png",
+        "bytes": 352424,
+        "sha256": "fd334fe9eada48f30340ce2d9bb3606f7d0b605c3b78905f7f7a49a4da3f8acd",
+        "width": 390,
+        "height": 844,
+        "kind": "full page",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/390/watching-up.png",
+        "bytes": 350739,
+        "sha256": "c3031289c036b7e5de911283d33879c669fff6cbc869624a9eaec112eda84309",
+        "width": 390,
+        "height": 844,
+        "kind": "full page",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/390/returned.png",
+        "bytes": 351473,
+        "sha256": "3a0bded802713364709a8b6725a508f50d6e5f6b2e5958ca45943f9a88f77aa3",
+        "width": 390,
+        "height": 844,
+        "kind": "full page",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/390/reduced-open.png",
+        "bytes": 355424,
+        "sha256": "52603afa3327a83353e3272c42fa26fd62c8eaf894b1a67c7b0f5b56346e6588",
+        "width": 390,
+        "height": 844,
+        "kind": "full page",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/390/return-returning-canvas.png",
+        "bytes": 432804,
+        "sha256": "7630f7d449f69c8a059fd0400bd13d808dc7f66a4de7a98c6fff76cdf0897171",
+        "width": 390,
+        "height": 595,
+        "kind": "Canvas",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/390/return-arrival-blink-canvas.png",
+        "bytes": 430236,
+        "sha256": "c65b12687555de5a820ca6c939518b62382c7812c335bd6407f167c28000e129",
+        "width": 390,
+        "height": 595,
+        "kind": "Canvas",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/390/return-closed-canvas.png",
+        "bytes": 429658,
+        "sha256": "222419c9967636a35ed480e59bbdf3a07d5bf261681196720b872cfa2c290aeb",
+        "width": 390,
+        "height": 595,
+        "kind": "Canvas",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/320/after-neutral.png",
+        "bytes": 240481,
+        "sha256": "b46b1ad09f541d1d2bdbf5059701911d9236ec0845c1f49dd23a7d940aa396b5",
+        "width": 320,
+        "height": 680,
+        "kind": "full page",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/320/watching-up.png",
+        "bytes": 232688,
+        "sha256": "13c90ceae983198152369572d3377be4c595d00656385ddf73b0759fd7393ecb",
+        "width": 320,
+        "height": 680,
+        "kind": "full page",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/320/returned.png",
+        "bytes": 242696,
+        "sha256": "2654bc6c46650515548829b2600643de5b68e1cd9939ceb921b00c97415404a5",
+        "width": 320,
+        "height": 680,
+        "kind": "full page",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/320/reduced-open.png",
+        "bytes": 239492,
+        "sha256": "d393ecb394f16f2a4fe89d62d283d41207086ce99f6474314c0aa0d1ece914ea",
+        "width": 320,
+        "height": 680,
+        "kind": "full page",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/320/return-returning-canvas.png",
+        "bytes": 273491,
+        "sha256": "442fc2732ea54e84842e5f95729646d22ca9908e643acb41aca68c6514e22f64",
+        "width": 320,
+        "height": 431,
+        "kind": "Canvas",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/320/return-arrival-blink-canvas.png",
+        "bytes": 272337,
+        "sha256": "e18ea4b98392cbf11e322d42788c5edc01cce907255e1702aa2aee7eaa65ed9c",
+        "width": 320,
+        "height": 431,
+        "kind": "Canvas",
+        "originalArtifactPixels": true
+      },
+      {
+        "path": "candidate/companion/320/return-closed-canvas.png",
+        "bytes": 272067,
+        "sha256": "1ec5b587188cbecdeeeeb356478cd2bdc0a4488a22710954a0161b3d54e17ccb",
+        "width": 320,
+        "height": 431,
+        "kind": "Canvas",
+        "originalArtifactPixels": true
+      }
+    ],
+    "snapshotOccurrencesRevalidated": 472,
+    "cases": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "version": "33.0.0",
+        "input": "keyboard",
+        "status": "passed",
+        "zeroDeathsAndPageHTTPNetworkErrors": true,
+        "bodyCoordinatesStayedAt": {
+          "x": 105,
+          "y": 560
+        },
+        "sameRunWithinThisFreshContext": 1,
+        "strictVisibleCaptureCount": 4,
+        "passiveObservations": [
+          {
+            "kind": "return",
+            "samples": 72,
+            "trustedEventCount": 5,
+            "elapsedMs": 1728.3000000000466,
+            "inactiveAtCollection": true
+          },
+          {
+            "kind": "reversal",
+            "samples": 38,
+            "trustedEventCount": 2,
+            "elapsedMs": 633.0999999999767,
+            "inactiveAtCollection": true
+          }
+        ],
+        "actualReturnFocusDistinctFromRawSoulSamples": 41,
+        "returnBlinkProgress": 0.7870370370370372,
+        "returnBlinkAmount": 0.9063077870366507,
+        "pauseStatesRechecked": true,
+        "pauseReportedCanvasBytesEqual": true,
+        "trustedReversalActions": 2,
+        "gameReducedMotionActualUI": true,
+        "noChapterSettled": true,
+        "onlyFirstTicketCollected": true
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "version": "33.0.0",
+        "input": "CDP simulated touch",
+        "status": "passed",
+        "zeroDeathsAndPageHTTPNetworkErrors": true,
+        "bodyCoordinatesStayedAt": {
+          "x": 105,
+          "y": 560
+        },
+        "sameRunWithinThisFreshContext": 1,
+        "strictVisibleCaptureCount": 4,
+        "passiveObservations": [
+          {
+            "kind": "return",
+            "samples": 97,
+            "trustedEventCount": 9,
+            "elapsedMs": 1624.3999999999069,
+            "inactiveAtCollection": true
+          },
+          {
+            "kind": "reversal",
+            "samples": 44,
+            "trustedEventCount": 6,
+            "elapsedMs": 733.9000000000233,
+            "inactiveAtCollection": true
+          }
+        ],
+        "actualReturnFocusDistinctFromRawSoulSamples": 57,
+        "returnBlinkProgress": 0.8101851851851855,
+        "returnBlinkAmount": 0.976296007119934,
+        "pauseStatesRechecked": true,
+        "pauseReportedCanvasBytesEqual": true,
+        "trustedReversalActions": 2,
+        "gameReducedMotionActualUI": true,
+        "noChapterSettled": true,
+        "onlyFirstTicketCollected": true
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 680
+        },
+        "version": "33.0.0",
+        "input": "CDP simulated touch",
+        "status": "passed",
+        "zeroDeathsAndPageHTTPNetworkErrors": true,
+        "bodyCoordinatesStayedAt": {
+          "x": 105,
+          "y": 560
+        },
+        "sameRunWithinThisFreshContext": 1,
+        "strictVisibleCaptureCount": 4,
+        "passiveObservations": [
+          {
+            "kind": "return",
+            "samples": 96,
+            "trustedEventCount": 9,
+            "elapsedMs": 1593.5999999999767,
+            "inactiveAtCollection": true
+          },
+          {
+            "kind": "reversal",
+            "samples": 44,
+            "trustedEventCount": 6,
+            "elapsedMs": 731,
+            "inactiveAtCollection": true
+          }
+        ],
+        "actualReturnFocusDistinctFromRawSoulSamples": 55,
+        "returnBlinkProgress": 0.8101851851851855,
+        "returnBlinkAmount": 0.976296007119934,
+        "pauseStatesRechecked": true,
+        "pauseReportedCanvasBytesEqual": true,
+        "trustedReversalActions": 2,
+        "gameReducedMotionActualUI": true,
+        "noChapterSettled": true,
+        "onlyFirstTicketCollected": true
+      }
+    ],
+    "artifactProgramCodeExecuted": false,
+    "trustedPureValidator": "validate from exact primary Git scripts/browser_companion_v33.py",
+    "limits": [
+      "This companion subset is three fresh first-station contexts; full six-chapter proof belongs to the preceding original route audit.",
+      "Body positions and run IDs are recorded; these companion browser snapshots do not contain body object identities. Exact per-frame presentedSoul reference identity is established by the eight original unit tests, not inferred from JSON identity.",
+      "Canvas PNGs are unmodified passive-RAF latches. Full-page pictures follow their reads and are not claimed as the identical frame.",
+      "Pause snapshots are independently compared. Raw paired paused Canvas strings were not retained in the report; their equality was asserted by the exact source in the successful official run.",
+      "Game-internal reduced-motion setting was exercised; the companion subset did not separately set OS media preference.",
+      "No physical handset, Safari, device performance or exhaustive outfit/activity coverage; no public HTTPS in this candidate."
+    ]
+  },
+  "matrixZeroPageHTTPNetworkErrors": true,
+  "maxPairedCanvasControlRectDeltaCssPx": 0,
+  "artifactProgramCodeExecuted": false,
+  "publicStep": "skipped",
+  "scope": "Official v33 companion candidate, exact 1d63072 Git source, full original browser routes then six independent layout configurations and three fresh companion configurations. Not v33 public HTTPS.",
+  "limits": [
+    "The required visible greenhouse speech check moved to natural cap-closure before root traversal; root-crossed still checks actual geometry and any speech that remains visible. Original v31 route/physics assertions remain unchanged.",
+    "The new event record proves same run/chapter/deaths and stable body coordinates; it contains no bodyIdentity and is not independent object-identity evidence.",
+    "Geometry and screenshots are consecutive, not synchronous frames. Every pair uses the same current DOM with old CSS and a neutral display:contents wrapper; it is not a complete old-release execution.",
+    "899px checks exclusion-side Canvas/control geometry and input centers, not desktop actor avoidance. Actor regions are conservative face/cap/coat/feet, not complete outfit pixel silhouettes.",
+    "The raw notCovered coexistence phrase is overbroad if the recorded list above is nonempty; use exact observed first-station and greenhouse scopes, not a claim about all announcements.",
+    "No public HTTPS v33 verification, physical handset, Safari, maximum-font/longest-dialogue/high-platform exhaustiveness or performance benchmark in this candidate.",
+    "Manual original-PNG review is recorded separately.",
+    "Face evidence remains event-specific and open-cap fatigue; not complete six-chapter face coverage."
+  ]
+}

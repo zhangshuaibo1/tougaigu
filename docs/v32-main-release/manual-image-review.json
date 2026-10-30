@@ -1,0 +1,114 @@
+{
+  "status": "reviewed",
+  "reviewedAt": "2026-10-30T01:43:37.101230+00:00",
+  "runId": 40984854669,
+  "commit": "93655a7013adb3ecd41f7e1fac6935f7b5464539",
+  "images": [
+    {
+      "path": "live/1280-greenhouse-leaves-returned.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1309263,
+      "sha256": "cb11707f3c9e127e50546704d748318f9e64598476b7a575f3a60cc4e16474fe",
+      "viewedAtOriginalSize": true,
+      "unmodifiedOriginalArtifact": true,
+      "source": "official main workflow public HTTPS",
+      "notes": "实际公网归位后整页：左上对白与头像完整清晰，角色/帽盖/小猫及右下操作区未被对白覆盖；背景温室和脚下真实平台连续。"
+    },
+    {
+      "path": "live/1280-greenhouse-root-crossed.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1306767,
+      "sha256": "a30542af370d0180113ab6c35b0eb3337a4236c5e5b9065daed33b94136bdf6e",
+      "viewedAtOriginalSize": true,
+      "unmodifiedOriginalArtifact": true,
+      "source": "official main workflow public HTTPS",
+      "notes": "实际公网越根后整页：可见暖灯公告、完整角色与操作区；此后续 PNG 中左上对白已消失。此前几何 JSON 在对白年龄 3765.4ms 同时记录对白和公告可见，不能把这张较晚截图说成同步共存图。"
+    },
+    {
+      "path": "live/dialogue-matrix/900x800-opening.png",
+      "width": 900,
+      "height": 800,
+      "bytes": 800614,
+      "sha256": "be5b12da0cd6fe50306ec93d73b63f308ed932bf167cf2e1524e92be13e4b4fb",
+      "viewedAtOriginalSize": true,
+      "unmodifiedOriginalArtifact": true,
+      "source": "official main workflow public HTTPS",
+      "notes": "实际公网 900×800 开场：双人对白与头像位于左上，抬盖角色完整，右侧指引与底部按钮分区清楚。图片是后续取图，公告共存事实来自前面的同步 DOM 快照。"
+    },
+    {
+      "path": "live/dialogue-matrix/900x520-opening.png",
+      "width": 900,
+      "height": 520,
+      "bytes": 526884,
+      "sha256": "b6f0a0411eb016ee5ae9230c6c8831cde54a03577c882e03824f11a23cc8be4f",
+      "viewedAtOriginalSize": true,
+      "unmodifiedOriginalArtifact": true,
+      "source": "official main workflow public HTTPS",
+      "notes": "实际公网 900×520 矮屏：对白框保持独立可读，人物、帽盖和底部按钮均在画面内；世界缩放保留原语义。几何先读、PNG 后拍，不当作同一帧公告共存证据。"
+    },
+    {
+      "path": "live/320-face-ticket-closedJoy.png",
+      "width": 320,
+      "height": 431,
+      "bytes": 271537,
+      "sha256": "a704edf7a63d7a494a3a47eb0272e1ce0196a625681918d59713cd842633ed99",
+      "viewedAtOriginalSize": true,
+      "unmodifiedOriginalArtifact": true,
+      "source": "official main workflow public HTTPS",
+      "notes": "实际公网 320×431 Canvas：收票归位后的阿拾闭眼微笑，帽子/头部轮廓、手部与小猫清楚；只是原 Canvas，不是 320×680 整页。"
+    },
+    {
+      "path": "live/1280-full-touch-320-post-book-riding.png",
+      "width": 320,
+      "height": 680,
+      "bytes": 218619,
+      "sha256": "e1b56e68c87eb3cbec00f9f61febbae6e73235f8952c165ee3107c94ccec0251",
+      "viewedAtOriginalSize": true,
+      "unmodifiedOriginalArtifact": true,
+      "source": "official main workflow public HTTPS",
+      "notes": "实际公网 320×680 整页：黎明邮局原移动书本路线，角色与小猫位于书面，手机摇杆、掀盖和跳跃按钮均可见；完整运动与足底误差依赖对应时间序列，不由此静帧单独证明。"
+    },
+    {
+      "path": "live/1280-ending-dawn-320-read.png",
+      "width": 320,
+      "height": 680,
+      "bytes": 138742,
+      "sha256": "e40b7bfd1c1c0f1d21a5fddb01603c8447381e2b607eac816b91dc3fddfb7b55",
+      "viewedAtOriginalSize": true,
+      "unmodifiedOriginalArtifact": true,
+      "source": "official main workflow public HTTPS",
+      "notes": "实际公网 320×680 结局已阅读位置：标题、三段文字、结尾句与返回按钮完整可读；屏幕顶部已是此前滚动后的插图部分，不能称未经滚动的首屏。"
+    },
+    {
+      "path": "live/1280-first-lamp-face-lamp-freeJoy.png",
+      "width": 1280,
+      "height": 677,
+      "bytes": 1489851,
+      "sha256": "f0e81556fd5c73c6f7aaecc3d99329c489b3bbc8a49b147e4f0646d2b1a1e587",
+      "viewedAtOriginalSize": true,
+      "unmodifiedOriginalArtifact": true,
+      "source": "official main workflow public HTTPS",
+      "notes": "实际公网额外第一灯 freeJoy 原 Canvas：亮灯后的拾光笑脸清楚，阿拾保持开盖，握点和帽饰相连。该可选 RAF 图来自已有观察器，原 returned.json 的 image/latch 都是 sequence 6。"
+    },
+    {
+      "path": "candidate/1280-greenhouse-leaves-returned.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 1308886,
+      "sha256": "6a9b139c43eb4830dd2717ec4e1c1234f33607cdf1074f34efd5099edbcf55e3",
+      "viewedAtOriginalSize": true,
+      "unmodifiedOriginalArtifact": true,
+      "source": "official main workflow localhost candidate",
+      "notes": "候选 localhost 的独立归位后整页：左上对白清楚、人物和控件无遮挡。与公网是两次独立输入路线，不是同步帧或新旧版本像素对比。"
+    }
+  ],
+  "method": "view_image(detail=original) of each raw official PNG, after validating source archive and original image hashes; no image edits, composites, rescales or screenshot substitutions.",
+  "limits": [
+    "Only these nine selected raw images were manually inspected; all 411 PNGs had size/hash checks, not manual review.",
+    "Geometry and subsequent full-page screenshots are not same-frame. Public root-crossed JSON had bubble+announcement visible, but its following PNG already shows bubble hidden.",
+    "Face Canvas exports are same-RAF with their recorded latches, but full-page layout screenshots are a later browser capture.",
+    "No physical-phone, Safari, low-end-GPU or frame-rate proof."
+  ]
+}

@@ -1,20 +1,47 @@
 # v32 验收：给对白留一点空地
 
-**发布状态（2026-10-30 UTC）：第二正式候选 ce412 已通过完整官方浏览器与独立产物审计；v32 Pages 已部署，五项实际 HTTPS 资源精确匹配。main 本提交后的完整候选＋正式 HTTPS 回归仍待实际结果。** 当前游戏入口为 [tougaigu.com](https://tougaigu.com/)。[候选40982421518](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40982421518) 与 [Pages40984296820](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984296820) 已成功；不能以此替代完整线上游戏验证。
+**验收状态（2026-10-30 UTC）：v32 已闭环。** 第二正式候选 ce412、准确 Pages 部署，以及 main `93655a7013adb3ecd41f7e1fac6935f7b5464539` 的完整候选＋真实 HTTPS 游戏回归，均已成功并完成独立原始产物审计。[最终完整验证40984854669](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984854669) 的公网步骤于 01:39:31 UTC 成功结束。游戏入口为 [tougaigu.com](https://tougaigu.com/)；本页记录 v32 当次已验部署，不据此声明该入口此后的当前版本。
 
 ## 具体改动
 
 至少 900px 的普通故事中，左侧对白与右侧目标／公告分栏。小于 900px 的布局及特殊模式保持原组织方式；新容器不改变原元素 ID、ARIA、剧情头像与事件。角色对白的 3800／5800ms 原时长没有改变。运行时只修改 `cap-play.css`、`dream-play.css`、相同的 `index.html`／`dream.html`；`survivor.html` 仅更新统一资源版本。143 个运行文件中，138 个保持原字节。
 
-## 第二正式候选与准确部署
+## 最终 main 与真实公网验收
+
+主分支提交为 `93655a7013adb3ecd41f7e1fac6935f7b5464539`，tree `3d5e268bbb8bef91b289097cf34f5012bbc08cd3`；其两个父提交为 v31 main 75010 和已验 v32 候选 ce412。254 个受保护源码路径（运行时、scripts、tests、package、workflow）与 ce412 精确一致，main 仅追加证据与状态文档。
+
+| 项目 | 本次 main 的实际结果 |
+|---|---|
+| 官方工作流 | [40984854669](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984854669)，completed / success |
+| 完整候选浏览器 | 2026-10-30 01:17:09—01:28:17 UTC，成功 |
+| 真实公网浏览器 | 2026-10-30 01:28:17—01:39:31 UTC，成功；URL 带准确 main SHA |
+| 测试与源码 | 683/683；950 个源文件的内容与执行权限逐项匹配官方 source.tar.gz；原 74 个 v31 测试文件和 675 个子测试名保留 |
+| 已验部署 | Pages `91ccef79541f2dd061059462c10d60cbecbed144`；143 个运行文件及权限精确匹配 main，加空 `.nojekyll` |
+| 公网 HTML | 官方实际下载的 public-index.html 与 main/dist/index.html 逐字节相同 |
+| 两套完整路线 | 各含 1280／390／320 视口、6 次跳跃、4 个完整书本周期、4 条邮局路线、6 次手机结局阅读、4 种桌面结局及重载；记录中的落地足底误差 0 |
+| 严格网络核账 | 每套预期故障清单 9／0／0，逐条与实际一致；额外网络、页面及 HTTP 错误均为 0 |
+| 独立对白矩阵 | 每套各 6 配置、12 份原始布局 JSON 和 12 张 PNG；成对 Canvas／控件外框最大差 0px |
+| 原始产物 | artifact `12948000217`，373,521,741 字节；542 个唯一载荷，411 张原 PNG 尺寸／哈希已核验；人工逐张检查其中 9 张，8 张来自真实公网 |
+
+完整原始数值和必要原图见 [最终 main／公网证据](v32-main-release/README.md)、[独立审计](v32-main-release/independent-main-review.json) 与 [清单](v32-main-release/manifest.json)。精简包共 53 文件、13,221,720 字节；root 在后续发布准备树复制后，再次核对全部文件、13 个 gzip 和两套共 118 个 tar 成员，见 [交接复验](v32-release/main-root-transfer-check.json)。
+
+### 本次候选与公网的对白状态分别记录
+
+两套路线的归位布局快照均为“对白可见、公告不可见”。候选越根快照在对白年龄约 3802.1ms 时已自然隐藏对白，公告可见；**公网越根几何快照在约 3765.4ms 时对白与暖灯公告同时可见**。公网随后拍摄的原 PNG 中对白已经消失，因此不能把该图称为同帧共存图。这里的结果属于 main 93655，不能借用此前 ce412 候选或 5445 本地预研的计时与可见性结论。
+
+每套六配置中，三个普通首站 opening 的同步 DOM 快照也实际记录了公告与对白共存。几何读取与后续图片并非同一帧；同 DOM 的旧 CSS 消融及恢复，不是完整旧版本执行。自然归位事件证明同 run／章节／死亡数、稳定身体坐标和一个可信 E；该事件没有 bodyIdentity，不能称其独立证明身体对象身份。
+
+本次候选面部观察器保存 11 张原图，公网保存原必需 11 张加一张合法的第一灯 freeJoy；额外图的 image／latch 同为 sequence 6，全部原面部验证器通过。仅审计汇总的数量按事实读取，未改产品或验证阈值；详见 [面部图数量说明](v32-main-release/face-png-count-note.json)。
+
+## 历史：第二正式候选与准确部署
 
 正式提交 `ce412d1298d0060dec08893f9b44cead9693edcf`，tree `1d0dd1a3a860b5571050db0e5f138f0a58f30261`。[完整候选40982421518](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40982421518) 的浏览器于00:53:31—01:06:04 UTC成功。官方683/683测试通过，913源码文件内容与模式逐一匹配，143运行文件与第一候选a892精确相同，旧675个TAP子测试名完整出现。
 
 完整六章、三视口、旧严格动作／物理／邮局／结局／重载与最终网络核账均经独立重新验证。三个主视口严格故意失败清单为9/0/0，页面、HTTP和额外网络错误均为0。原完整报告、205张PNG的尺寸与哈希、59份即时原JSON见 [第二候选归档](v32-formal-candidate/second/README.md)。本次public步骤按候选规则skipped，不能称为线上通过。
 
-本次官方温室归位记录是“对白可见、公告不可见”，越根记录是“对白已自然消失、公告可见”；不要将两次不同观测拼成同帧共存。六配置矩阵全部通过，12份JSON／12张原图精确匹配；同帧公告和对白共存来自三个普通首站opening。Canvas和控件成对外框最大差0px；这是旧CSS消融对照，不是完整旧版运行。
+该 ce412 候选的官方温室归位记录是“对白可见、公告不可见”，越根记录是“对白已自然消失、公告可见”；不要将两次不同观测拼成同帧共存。六配置矩阵全部通过，12份JSON／12张原图精确匹配；同帧公告和对白共存来自三个普通首站opening。Canvas和控件成对外框最大差0px；这是旧CSS消融对照，不是完整旧版运行。
 
-Pages提交 `91ccef79541f2dd061059462c10d60cbecbed144` 的tree为 `321e762d63088910a73b60a9b3cc7fb5344e8f9d`，恰好143个已验运行文件加空`.nojekyll`，CNAME保持tougaigu.com。01:12:16 UTC，index、dream、survivor、cap-play.css、dream-play.css五项实际HTTPS均200且逐字节匹配ce412；见 [发布记录](v32-release/README.md)。主分支完整HTTPS回归将在本提交触发，当前不提前宣称通过。
+Pages提交 `91ccef79541f2dd061059462c10d60cbecbed144` 的tree为 `321e762d63088910a73b60a9b3cc7fb5344e8f9d`，恰好143个已验运行文件加空`.nojekyll`，CNAME保持tougaigu.com。01:12:16 UTC，index、dream、survivor、cap-play.css、dream-play.css五项实际HTTPS均200且逐字节匹配ce412；见 [发布记录](v32-release/README.md)。在该五资源记录产生时，主分支完整HTTPS尚待执行；随后由上述 main 93655 的完整工作流取得了实际通过结果。
 
 ## 已实际执行的本地验证
 
@@ -34,7 +61,7 @@ Pages提交 `91ccef79541f2dd061059462c10d60cbecbed144` 的tree为 `321e762d63088
 
 完整说明见 [本地结果](v32-prestudy/LOCAL-RESULTS.md)，原始报告压缩包与图片索引见 [证据清单](v32-prestudy/evidence/local-5445a39/evidence-manifest.json)。此处没有把这些本地结果改写为正式 GitHub 或公网结果。
 
-## 原尺寸画面与只读布局核验
+## 历史：本地原尺寸画面与只读布局核验
 
 根会话检查了真实温室越根后的旧／新画面；新布局中对白与公告同时出现时，主角面部和脚边可见。两张温室图来自各自实际流程中的不同时间，不作为逐像素同帧 A/B 证明。
 
@@ -44,7 +71,7 @@ Pages提交 `91ccef79541f2dd061059462c10d60cbecbed144` 的tree为 `321e762d63088
 
 [短屏开场](v32-prestudy/evidence/local-5445a39/900x520-opening.png) · [899px 旧布局](v32-prestudy/evidence/local-5445a39/899x800-ticket.png) · [系统减动收票](v32-prestudy/evidence/local-5445a39/1280x800-os-reduce-ticket.png)
 
-普通开场的即时快照包含新手公告与双句对白；稍后截图可能已自然消退，不能写成同一帧。南瓜夜邮的标签不是公告。温室是实际叶子对白与检查点公告并存的观测。
+普通开场的即时快照包含新手公告与双句对白；稍后截图可能已自然消退，不能写成同一帧。南瓜夜邮的标签不是公告。这一本地预研中的温室是实际叶子对白与检查点公告并存的观测，不替代后来各正式候选或公网的实际读数。
 
 ## 失败与修正历史
 
@@ -66,11 +93,11 @@ Pages提交 `91ccef79541f2dd061059462c10d60cbecbed144` 的tree为 `321e762d63088
 
 原失败的 [日志](v32-prestudy/evidence/local-5445a39/initial-failure-log.txt) 与 [原始报告](v32-prestudy/evidence/local-5445a39/initial-failure-report.json.gz) 保留。随后六配置和完整原游戏脚本均重新执行并通过。
 
-## 正式候选保护与后续验收
+## 正式候选保护与最终验收
 
 正式候选基于 v31 main 75010，保留两份 main 的 v30 审计及双方历史。首次 12 项代码增量来自本地实跑版本，包括必需的 `tests/fixtures/v32-layout-v31-css.json`；第二候选仅在两个验证脚本和一个验证测试中修正上述采样。邮局 `scripts/browser_post_v28.py` 继续保持 2050 目标、`2000 <= body.x < 2120`、零死亡、同 run／body 身份和所有原连续输入门槛。
 
-正式候选原artifact／准确源码、Pages全部运行文件逐path／SHA／mode、自定义域名和五项HTTPS资源核对均已完成；剩余本main提交的32.0.0完整候选＋正式HTTPS浏览器和末尾网络核账，必须取得实际结果后才能关闭本轮。
+正式候选原 artifact／准确源码、Pages 全部运行文件逐 path／SHA／mode、自定义域名和五项 HTTPS 资源核对，以及 main 93655 的 32.0.0 完整候选＋真实 HTTPS 浏览器、末尾网络核账与新原始产物独立审计，均已完成。v32 验收已关闭；后续版本应继承本页与最终证据包，保留下面的已知边界及全部失败历史。
 
 ## 已知边界
 

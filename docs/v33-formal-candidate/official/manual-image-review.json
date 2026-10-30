@@ -1,0 +1,74 @@
+{
+  "status": "reviewed",
+  "reviewedAt": "2026-10-30T01:29:08.903361+00:00",
+  "runId": 40984114609,
+  "commit": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+  "scope": "Six original official candidate PNG files were opened for visual inspection, without resizing, image editing or new rendering in the archive.",
+  "images": [
+    {
+      "path": "candidate/companion/1280/watching-up.png",
+      "bytes": 1083427,
+      "sha256": "457fa46528195ac179f15c4d4252f5cd1f4ed057df72db535f5556171d5d2766",
+      "width": 1280,
+      "height": 800,
+      "unalteredOriginalArtifact": true,
+      "observation": "1280×800 候选整页：小猫完整可见，面向空中的拾光；帽盖、角色及场景保持统一比例。",
+      "viewedUnmodifiedFile": true
+    },
+    {
+      "path": "candidate/companion/320/after-neutral.png",
+      "bytes": 240481,
+      "sha256": "b46b1ad09f541d1d2bdbf5059701911d9236ec0845c1f49dd23a7d940aa396b5",
+      "width": 320,
+      "height": 680,
+      "unalteredOriginalArtifact": true,
+      "observation": "320×680 候选整页：新开局小猫和主角、引导与触控均可见；猫的鼻口、双足与尾部轮廓可辨。",
+      "viewedUnmodifiedFile": true
+    },
+    {
+      "path": "candidate/companion/390/returned.png",
+      "bytes": 351473,
+      "sha256": "3a0bded802713364709a8b6725a508f50d6e5f6b2e5958ca45943f9a88f77aa3",
+      "width": 390,
+      "height": 844,
+      "unalteredOriginalArtifact": true,
+      "observation": "390×844 候选整页：归位完成，主角已闭盖，小猫保持原跟随位置；这张是归位后的整页。",
+      "viewedUnmodifiedFile": true
+    },
+    {
+      "path": "candidate/companion/390/return-returning-canvas.png",
+      "bytes": 432804,
+      "sha256": "7630f7d449f69c8a059fd0400bd13d808dc7f66a4de7a98c6fff76cdf0897171",
+      "width": 390,
+      "height": 595,
+      "unalteredOriginalArtifact": true,
+      "observation": "390×595 原 Canvas：实际归位起始的拾光仍在半空，小猫抬头关注；不把它描述为已经钻入盖内。",
+      "viewedUnmodifiedFile": true
+    },
+    {
+      "path": "candidate/companion/320/return-arrival-blink-canvas.png",
+      "bytes": 272337,
+      "sha256": "e18ea4b98392cbf11e322d42788c5edc01cce907255e1702aa2aee7eaa65ed9c",
+      "width": 320,
+      "height": 431,
+      "unalteredOriginalArtifact": true,
+      "observation": "320×431 原 Canvas：归位末段的小猫眨眼清楚可见，盖仍在原开合过程，身体脚点与平台保持连贯。",
+      "viewedUnmodifiedFile": true
+    },
+    {
+      "path": "candidate/1280-first-lamp-face-lamp-freeJoy.png",
+      "bytes": 1489598,
+      "sha256": "da2cee67c360746b46c1054b9a0e0a0bafad12c9954933afa98b334f48408546",
+      "width": 1280,
+      "height": 677,
+      "unalteredOriginalArtifact": true,
+      "observation": "1280×677 原 Canvas：第一盏灯点亮后额外捕获的拾光喜悦帧；来自本次原观察器，说明表情图本次为12张。",
+      "viewedUnmodifiedFile": true
+    }
+  ],
+  "limits": [
+    "These are official candidate Chromium screenshots, not public tougaigu.com or physical-device images.",
+    "Full-page screenshots follow their snapshot reads; they are not claimed to be the same frame. Three Canvas files here are passive original RAF exports.",
+    "Visual inspection of selected frames does not establish animation performance or exhaustive costume/scene framing."
+  ]
+}

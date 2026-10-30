@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "commit": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+  "tree": "4de8f4e351ec2d3aa66f20785df440e702b06007",
+  "parent": "ce412d1298d0060dec08893f9b44cead9693edcf",
+  "remoteTreeExactToLocalGit": true,
+  "sourceFiles": 996,
+  "runtimeFiles": 144,
+  "protectedFiles": 257,
+  "approvedProtectedDelta": [
+    "dist/dream-companion-art.js",
+    "dist/dream-engine.js",
+    "dist/dream.html",
+    "dist/index.html",
+    "dist/survivor.html",
+    "package.json",
+    "scripts/browser-smoke.py",
+    "scripts/browser_companion_v33.py",
+    "tests/companion-art-v33.test.mjs"
+  ],
+  "runtimeDelta": [
+    "dist/dream-companion-art.js",
+    "dist/dream-engine.js",
+    "dist/dream.html",
+    "dist/index.html",
+    "dist/survivor.html"
+  ],
+  "all76V32TestsPlusFixtureExact": true,
+  "allOldSmokeTopLevelNodesExact": true,
+  "oldMainASTExactAfterRemovingOnlyTwoApprovedAdditions": true,
+  "removedForComparison": [
+    "package version default",
+    "companion tail hook"
+  ],
+  "scope": "Read-only precise primary Git identity review before receiving the official artifact. Not a browser run."
+}

@@ -6,7 +6,8 @@
 - 旧入口：[GitHub Pages 地址](https://zhangshuaibo1.github.io/tougaigu/)；域名配置与实际验收状态见 [域名记录](docs/DOMAIN-tougaigu.com.md)。
 - **v30.0.0「脚下有回声」已发布并通过正式HTTPS验收**：六章真实起落/落地收势、纵书稳臂与前两章实地阴影，662项测试及公网浏览器成功，见 [QA-v30](docs/QA-v30.md) 和 [发布核验](docs/verification-v30-release-summary.md)。
 - **v31「眼窝里的笑」已上线并完成正式 HTTPS 验收**：[完整 main 候选＋公网 40978620156](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40978620156) 成功，797 个源码文件与 143 个运行文件独立审计精确一致。主角的笑意、疲态与灵魂表情已在实际路线中验证，完整发布历史见 [发布记录](docs/v31-browser-release/README.md) 与 [原始报告](docs/v31-main-release/README.md)。
-- **v32「给对白留一点空地」已部署，完整公网回归待本提交结果**：桌面对白与目标／公告分栏；小于900px保留现有布局。[正式候选683项测试与完整浏览器](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40982421518)、独立源包／原图审计及[Pages部署](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984296820)均通过，五项实际HTTPS资源精确匹配。玩法、存档、原对白时长保持，见 [QA](docs/QA-v32.md) 与 [发布记录](docs/v32-release/README.md)。
+- **v32「给对白留一点空地」已完成正式HTTPS验收**：桌面对白与目标／公告分栏；小于900px保留现有布局。[main完整候选＋公网40984854669](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984854669)成功，950源码／143运行文件精确核验，683/683及两套原剧情／物理／布局与网络检查通过。见 [QA](docs/QA-v32.md) 与 [完整最终证据](docs/v32-main-release/README.md)。
+- **v33「小旅伴·抬头等你」已部署，等待main完整公网回归**：苔绿色小猫的口鼻、耳内、双爪与尾缘更清楚，会看向实际显示的拾光，在归位末段轻轻眨眼。[正式候选](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984114609)通过691/691测试、完整旧路线及三尺寸专项；[Pages部署40987732103](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40987732103)成功，七项实际HTTPS资源精确匹配。本main提交保留已验准确代码并触发完整候选＋官网回归，见 [QA](docs/QA-v33.md) 与 [发布记录](docs/v33-release/README.md)。
 - 原生 JavaScript / Canvas，无运行时第三方 JavaScript 依赖；原《再活一局》保留在 `survivor.html`。
 - 六章、十个节日、原有存档与奖励规则及企业页脚保留。
 
@@ -14,7 +15,7 @@
 
 六章里的阿拾都拥有由实际速度驱动的起跳收臂、下落寻找平衡和约0.2秒的落地收势。浮书上的自由手臂读取真实横向或纵向位移，随上下行轻轻稳住；脚底继续贴着原支撑面，握盖、抱物与归位沿用原有手部约束。第一、二章的腾空阴影投到真实可站立表面。
 
-原跳跃、平台、蘑菇、关卡、存档和奖励规则保持；暂停冻结，减少动态静态呈现。未升版预研已在真实浏览器执行六章pose、390正常纵书双向、320减动纵书双向、完整终章与结局流程。正式30.0.0的完整候选和HTTPS均已通过；本段保留v30发布完成时的记录，当前Pages部署与待验范围见上方v31状态。见 [QA-v30](docs/QA-v30.md) 与 [原始预研证据](docs/v30-prestudy/browser/README.md)。
+原跳跃、平台、蘑菇、关卡、存档和奖励规则保持；暂停冻结，减少动态静态呈现。未升版预研已在真实浏览器执行六章pose、390正常纵书双向、320减动纵书双向、完整终章与结局流程。正式30.0.0的完整候选和HTTPS均已通过；本段保留v30发布完成时的记录，当前Pages部署与待验范围见本文顶部最新状态。见 [QA-v30](docs/QA-v30.md) 与 [原始预研证据](docs/v30-prestudy/browser/README.md)。
 
 ## 黎明邮局·晨光谢幕（v29，已发布）
 

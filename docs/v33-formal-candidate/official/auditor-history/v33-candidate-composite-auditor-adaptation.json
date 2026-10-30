@@ -1,0 +1,126 @@
+{
+  "source": "/tmp/review-v32-second-artifact.py",
+  "sourceSha256": "7ec7e159f433524b0369c117afe5a9ba1e02bc0a73a129340abdbacf93fb16c9",
+  "derived": "/tmp/review-v33-candidate-artifact.py",
+  "derivedSha256": "5d63045f4bd36cb82e19322bac3cd370bdcb1cdba07279884924212e5b5503a3",
+  "changes": [
+    {
+      "from": "/tmp/tougaigu-v32-second-40982421518",
+      "to": "/tmp/tougaigu-v33-candidate-40984114609",
+      "occurrences": 2
+    },
+    {
+      "from": "/workspace/scratch/2b18af2db412/tougaigu-v32-formal",
+      "to": "/workspace/scratch/2b18af2db412/tougaigu-v33-formal",
+      "occurrences": 1
+    },
+    {
+      "from": "COMMIT='ce412d1298d0060dec08893f9b44cead9693edcf'",
+      "to": "COMMIT='1d63072bb9a27690ed14b15d3103c6e8a87fa297'",
+      "occurrences": 1
+    },
+    {
+      "from": "FIRST='a892471e6a4f87f534bb16434b4b9097bba10223'",
+      "to": "FIRST='ce412d1298d0060dec08893f9b44cead9693edcf'",
+      "occurrences": 1
+    },
+    {
+      "from": "TREE='1d0dd1a3a860b5571050db0e5f138f0a58f30261'",
+      "to": "TREE='4de8f4e351ec2d3aa66f20785df440e702b06007'",
+      "occurrences": 1
+    },
+    {
+      "from": "40982421518",
+      "to": "40984114609",
+      "occurrences": 1
+    },
+    {
+      "from": "iteration-v32-dialogue-20261030",
+      "to": "iteration-v33-companion-20261030",
+      "occurrences": 1
+    },
+    {
+      "from": "len(tree)==913",
+      "to": "len(tree)==996",
+      "occurrences": 1
+    },
+    {
+      "from": "assert len(runtime)==143 and runtime=={p:v for p,v in before.items() if p.startswith('dist/')}",
+      "to": "assert len(runtime)==144\nruntime_delta={p for p in set(tree)|set(before) if p.startswith('dist/') and tree.get(p)!=before.get(p)}\nassert runtime_delta=={'dist/dream-companion-art.js','dist/dream-engine.js','dist/index.html','dist/dream.html','dist/survivor.html'}\nassert tree['dist/dream-engine-base.js']==before['dist/dream-engine-base.js']\nassert len([p for p in runtime if p not in runtime_delta and tree[p]==before[p]])==139",
+      "occurrences": 1
+    },
+    {
+      "from": "assert changed_protected=={'scripts/browser-smoke.py','scripts/browser_dialogue_v32.py','tests/browser-dialogue-v32.test.mjs'}",
+      "to": "plan=json.loads(Path('/tmp/v33-formal-candidate-upload.json').read_text())\nassert plan['expectedCandidateTree']==TREE and plan['expectedParent']==FIRST\nassert changed_protected==set(plan['protectedCodeChanges'])=={'dist/dream-companion-art.js','dist/dream-engine.js','dist/dream.html','dist/index.html','dist/survivor.html','package.json','scripts/browser-smoke.py','scripts/browser_companion_v33.py','tests/companion-art-v33.test.mjs'}\nassert sum(p.startswith(('dist/','scripts/','tests/','.github/')) or p=='package.json' for p in tree)==257\nv32_tests={p:v for p,v in before.items() if p.startswith('tests/')}\nassert len(v32_tests)==77 and sum(p.endswith('.test.mjs') for p in v32_tests)==76 and all(tree[p]==v for p,v in v32_tests.items())\nassert tree['scripts/browser_dialogue_v32.py']==before['scripts/browser_dialogue_v32.py']\nassert tree['scripts/browser_post_v28.py']==before['scripts/browser_post_v28.py']\nassert tree['.github/workflows/iteration-check.yml']==before['.github/workflows/iteration-check.yml']",
+      "occurrences": 1
+    },
+    {
+      "from": "expected_blobs={'scripts/browser-smoke.py':'85862580232272708c31ab4af7ae57b28f73b02b','scripts/browser_dialogue_v32.py':'d87aad742f241155d866dadcec722a915443abc3','tests/browser-dialogue-v32.test.mjs':'3ce8eeb2e04348a5495f7f7d523294d8a8c18464'}",
+      "to": "expected_blobs={f['path']:f['gitBlobSha'] for f in plan['files'] if f['path'] in changed_protected}",
+      "occurrences": 1
+    },
+    {
+      "from": "len(audit['sourceFiles'])==913",
+      "to": "len(audit['sourceFiles'])==996",
+      "occurrences": 1
+    },
+    {
+      "from": "assert sum(new_names.values())==audit['tests']['tests']",
+      "to": "assert sum(new_names.values())==audit['tests']['tests']==691\nv32_tap=Path('/tmp/tougaigu-v32-second-40982421518/tests.txt').read_text()\nv32_names=Counter(re.findall(pattern,v32_tap,re.M))\nassert sum(v32_names.values())==683 and not(v32_names-new_names)",
+      "occurrences": 1
+    },
+    {
+      "from": "'sourceBlobs':913,'runtimeBlobs':143",
+      "to": "'sourceBlobs':996,'runtimeBlobs':144",
+      "occurrences": 2
+    },
+    {
+      "from": "'runtimeExactToFirstCandidate':True",
+      "to": "'runtimeDeltaMatchesApprovedPlan':True",
+      "occurrences": 2
+    },
+    {
+      "from": "'onlyThreeProtectedCodeChanges':expected_blobs",
+      "to": "'onlyNineProtectedCodeChanges':expected_blobs,'all76V32TestFilesExact':True,'old683V32SubtestsAllPresent':True",
+      "occurrences": 1
+    },
+    {
+      "from": "assert layout['status']=='passed' and layout['matrix']['caseCount']==6",
+      "to": "assert layout['status']=='passed' and layout['matrix']['caseCount']==6\ncompanion=json.loads((OUT/'companion-evidence-summary.json').read_text())\nassert companion['status']=='passed' and len(companion['cases'])==3 and companion['originalPNGCount']==21",
+      "occurrences": 1
+    },
+    {
+      "from": "c['version']=='32.0.0'",
+      "to": "c['version']=='33.0.0'",
+      "occurrences": 1
+    },
+    {
+      "from": "'old675SubtestsAllPresent':True,'old74TestFilesExact':True",
+      "to": "'old675SubtestsAllPresent':True,'old74TestFilesExact':True,'old683V32SubtestsAllPresent':True,'all76V32TestFilesExact':True",
+      "occurrences": 1
+    },
+    {
+      "from": "'matrixExcluded899Snapshots':2,",
+      "to": "'matrixExcluded899Snapshots':2,'companion':companion,",
+      "occurrences": 1
+    },
+    {
+      "from": "Official corrected second v32 candidate, exact ce412 Git source, full original browser routes followed by six independent layout configurations. Not v32 public HTTPS.",
+      "to": "Official v33 companion candidate, exact 1d63072 Git source, full original browser routes then six independent layout configurations and three fresh companion configurations. Not v33 public HTTPS.",
+      "occurrences": 1
+    },
+    {
+      "from": "assert faces['faceCheckpointCount']==10 and faces['uniqueObserverCount']==5 and len(faces['uniqueCapturedCanvasFiles'])==11",
+      "to": "assert faces['faceCheckpointCount']==10 and faces['uniqueObserverCount']==5\nexpected_face_pngs={'390-face-ticket-closedJoy.png', '1280-face-ticket-freeJoy.png', '390-face-ticket-freeJoy.png', '1280-face-fatigue-bodyTiredOpen.png', '1280-face-fatigue-bodyTiredOpen-390.png', '1280-first-lamp-face-lamp-closedJoy.png', '1280-face-fatigue-recovered.png', '1280-face-fatigue-bodyTiredOpen-320.png', '320-face-ticket-freeJoy.png', '1280-first-lamp-face-lamp-freeJoy.png', '320-face-ticket-closedJoy.png', '1280-face-fatigue-soulTired.png'}\nassert len(faces['uniqueCapturedCanvasFiles'])==12 and {p['file'] for p in faces['uniqueCapturedCanvasFiles']}==expected_face_pngs",
+      "occurrences": 1,
+      "reason": "Previous11 was prior-run inventory, not a runtime gate. This official run contains exact prior11 plus same-run optional first-lamp freeJoy; verify all12 precise names after unchanged face validators."
+    },
+    {
+      "from": "'faceCheckpointCount':10,'faceSnapshotOccurrences':",
+      "to": "'faceCheckpointCount':10,'facePNGCount':12,'faceSnapshotOccurrences':",
+      "occurrences": 1,
+      "reason": "Expose current original face PNG count in final evidence summary."
+    }
+  ],
+  "identityChanges": "v32-specific same-runtime and three-verifier-delta assertions replaced with exact approved v33 five-runtime/nine-protected delta. Added all76 v32 test files and all683 subtests retained; all original physics/input/time/network/layout checks remain."
+}

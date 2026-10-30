@@ -1,0 +1,99 @@
+{
+  "checkedAt": "2026-10-30T01:46:30.860491+00:00",
+  "candidate": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+  "pages": "d997c58b2a846b2673b8baec500db9697a846d7a",
+  "version": "33.0.0",
+  "defaultTLSAndHostnameVerification": true,
+  "scope": "Seven live HTTPS resources, not a replacement for the full public browser run",
+  "results": [
+    {
+      "path": "index.html",
+      "url": "https://tougaigu.com/index.html?v=33.0.0&qa=d997c58b2a846b2673b8baec500db9697a846d7a",
+      "candidateBytes": 26090,
+      "candidateSHA256": "c5b666ab2703fb1164b0a097f605ca19cbd3283f4184c320130e6f4dcd2035ca",
+      "status": 200,
+      "finalURL": "https://tougaigu.com/index.html?v=33.0.0&qa=d997c58b2a846b2673b8baec500db9697a846d7a",
+      "bytes": 26090,
+      "sha256": "c5b666ab2703fb1164b0a097f605ca19cbd3283f4184c320130e6f4dcd2035ca",
+      "exactToCandidate": true,
+      "applicationVersion": "33.0.0",
+      "versionMatches": true,
+      "passed": true
+    },
+    {
+      "path": "dream.html",
+      "url": "https://tougaigu.com/dream.html?v=33.0.0&qa=d997c58b2a846b2673b8baec500db9697a846d7a",
+      "candidateBytes": 26090,
+      "candidateSHA256": "c5b666ab2703fb1164b0a097f605ca19cbd3283f4184c320130e6f4dcd2035ca",
+      "status": 200,
+      "finalURL": "https://tougaigu.com/dream.html?v=33.0.0&qa=d997c58b2a846b2673b8baec500db9697a846d7a",
+      "bytes": 26090,
+      "sha256": "c5b666ab2703fb1164b0a097f605ca19cbd3283f4184c320130e6f4dcd2035ca",
+      "exactToCandidate": true,
+      "applicationVersion": "33.0.0",
+      "versionMatches": true,
+      "passed": true
+    },
+    {
+      "path": "survivor.html",
+      "url": "https://tougaigu.com/survivor.html?v=33.0.0&qa=d997c58b2a846b2673b8baec500db9697a846d7a",
+      "candidateBytes": 17515,
+      "candidateSHA256": "e98f1d79ca1a1f57922f11ad4453da16933e6cd3e7670ec85eb1207af60e7d42",
+      "status": 200,
+      "finalURL": "https://tougaigu.com/survivor.html?v=33.0.0&qa=d997c58b2a846b2673b8baec500db9697a846d7a",
+      "bytes": 17515,
+      "sha256": "e98f1d79ca1a1f57922f11ad4453da16933e6cd3e7670ec85eb1207af60e7d42",
+      "exactToCandidate": true,
+      "passed": true
+    },
+    {
+      "path": "dream-companion-art.js",
+      "url": "https://tougaigu.com/dream-companion-art.js?v=33.0.0&qa=d997c58b2a846b2673b8baec500db9697a846d7a",
+      "candidateBytes": 8254,
+      "candidateSHA256": "f0d9916c23667807c7e5577b238dcb509e3cab6e54070b6e239d11af20f787f3",
+      "status": 200,
+      "finalURL": "https://tougaigu.com/dream-companion-art.js?v=33.0.0&qa=d997c58b2a846b2673b8baec500db9697a846d7a",
+      "bytes": 8254,
+      "sha256": "f0d9916c23667807c7e5577b238dcb509e3cab6e54070b6e239d11af20f787f3",
+      "exactToCandidate": true,
+      "passed": true
+    },
+    {
+      "path": "dream-engine.js",
+      "url": "https://tougaigu.com/dream-engine.js?v=33.0.0&qa=d997c58b2a846b2673b8baec500db9697a846d7a",
+      "candidateBytes": 27043,
+      "candidateSHA256": "7b602b83f551c41fdbe97443e1fed08d6af773e9767f0ed830a434168951e889",
+      "status": 200,
+      "finalURL": "https://tougaigu.com/dream-engine.js?v=33.0.0&qa=d997c58b2a846b2673b8baec500db9697a846d7a",
+      "bytes": 27043,
+      "sha256": "7b602b83f551c41fdbe97443e1fed08d6af773e9767f0ed830a434168951e889",
+      "exactToCandidate": true,
+      "passed": true
+    },
+    {
+      "path": "cap-play.css",
+      "url": "https://tougaigu.com/cap-play.css?v=33.0.0&qa=d997c58b2a846b2673b8baec500db9697a846d7a",
+      "candidateBytes": 10558,
+      "candidateSHA256": "a633fd679d3e79fd98160fe36dbff8fe6c6f8d615b2bf8eee1089fbb0045cf08",
+      "status": 200,
+      "finalURL": "https://tougaigu.com/cap-play.css?v=33.0.0&qa=d997c58b2a846b2673b8baec500db9697a846d7a",
+      "bytes": 10558,
+      "sha256": "a633fd679d3e79fd98160fe36dbff8fe6c6f8d615b2bf8eee1089fbb0045cf08",
+      "exactToCandidate": true,
+      "passed": true
+    },
+    {
+      "path": "dream-play.css",
+      "url": "https://tougaigu.com/dream-play.css?v=33.0.0&qa=d997c58b2a846b2673b8baec500db9697a846d7a",
+      "candidateBytes": 15070,
+      "candidateSHA256": "4a952c2631e2ede816f43b1932e42a7b0b7c06d64aa34107e7745810a5522022",
+      "status": 200,
+      "finalURL": "https://tougaigu.com/dream-play.css?v=33.0.0&qa=d997c58b2a846b2673b8baec500db9697a846d7a",
+      "bytes": 15070,
+      "sha256": "4a952c2631e2ede816f43b1932e42a7b0b7c06d64aa34107e7745810a5522022",
+      "exactToCandidate": true,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-30T01:30:21.220734+00:00",
+  "manifestSHA256": "b386156903e35ecc01296b126fe79bddaf56dd0ca7bc07f04b2b592706a3f6c0",
+  "frozenPackageFiles": 46,
+  "exactCopiedBytes": 6886665,
+  "gzipPayloads": 10,
+  "exactOriginalSidecars": 59,
+  "protectedFilesComparedToCandidate": 257,
+  "protectedExact": true,
+  "scope": "Root validated transfer, every compressed original, all sidecar bytes, and full code identity to accepted candidate. Candidate, not public."
+}

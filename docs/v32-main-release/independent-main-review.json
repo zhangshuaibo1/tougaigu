@@ -1,0 +1,197 @@
+{
+  "reviewedAt": "2026-10-30T01:42:17.348500+00:00",
+  "status": "passed",
+  "runId": 40984854669,
+  "runUrl": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984854669",
+  "commit": "93655a7013adb3ecd41f7e1fac6935f7b5464539",
+  "tree": "3d5e268bbb8bef91b289097cf34f5012bbc08cd3",
+  "pagesHead": "91ccef79541f2dd061059462c10d60cbecbed144",
+  "pagesTree": "321e762d63088910a73b60a9b3cc7fb5344e8f9d",
+  "artifactId": 12948000217,
+  "artifactZipBytes": 373521741,
+  "artifactZipSha256": "0dae5b5511f491f142b6a1effb6684ca10489ea4196e28aa05a73d267b9fa427",
+  "sourceBlobsExact": 950,
+  "runtimeBlobsExact": 143,
+  "tests": {
+    "tests": 683,
+    "pass": 683,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0
+  },
+  "artifactPaths": 542,
+  "originalPNGCount": 411,
+  "sourceArchiveModesAlsoChecked": true,
+  "publicIndex": {
+    "bytes": 26027,
+    "sha256": "a96a5dc902053f5519d1946a8172fc8c21046237da2bd892573ecd283d96a833",
+    "exactMainDistIndex": true
+  },
+  "reports": [
+    {
+      "scope": "candidate",
+      "url": "http://127.0.0.1:8080/",
+      "bytes": 16735456,
+      "sha256": "93e0b647b799095ba975e0857b6d8acb5883a8182382c83e49e64c7cdfa15038",
+      "viewports": [
+        {
+          "width": 1280,
+          "height": 800
+        },
+        {
+          "width": 390,
+          "height": 844
+        },
+        {
+          "width": 320,
+          "height": 680
+        }
+      ],
+      "expectedFailureCounts": [
+        9,
+        0,
+        0
+      ],
+      "unexpectedNetworkFailures": 0,
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "faceCheckpointCount": 10,
+      "actualCapturedFacePNGs": 11,
+      "requiredPrior11FacePNGsAllPresent": true,
+      "additionalSourceValidatedFacePNGs": [],
+      "faceSnapshotOccurrences": 934,
+      "poseSnapshotOccurrences": 1173,
+      "completePostRoutes": 4,
+      "phoneEndingReadings": 6,
+      "desktopEndingCombinations": 4,
+      "jumpRecords": 6,
+      "fatigue": {
+        "sharedDeadlineMs": 21000,
+        "actualBodyTiredFirstCaptureMs": 17337.200000000004,
+        "actualEnergyAtFirstBodyTired": 19.948333333331142,
+        "observerLifecycleMs": 27000,
+        "scope": "form=soul, capPhase=open; not closed-lid fatigue proof",
+        "recoveryNeutralEnergy": 28.131666666664565
+      },
+      "faceAudit": "candidate-face-evidence-summary.json",
+      "inheritedGateAudit": "candidate-inherited-gates-summary.json",
+      "dialogueAudit": "candidate-dialogue-evidence-summary.json",
+      "matrixConfigurations": 6,
+      "matrixImmediateJSONs": 12,
+      "matrixRawPNGs": 12,
+      "matrixMaxCanvasControlDelta": 0,
+      "naturalReturnValidation": {
+        "status": "passed",
+        "trustedInput": true,
+        "existingCooldownMs": 1600,
+        "actualInputAgeMs": 1613.5999999999913,
+        "actualReturnDialogueAgeMs": 746.8999999999942,
+        "scope": "Existing real return E, natural authored dialogue refresh and completed cap closure; no replay or clock mutation"
+      },
+      "greenhouseVisibility": [
+        {
+          "label": "1280-greenhouse-leaves-returned",
+          "bubble": true,
+          "announcement": false
+        },
+        {
+          "label": "1280-greenhouse-root-crossed",
+          "bubble": false,
+          "announcement": true
+        }
+      ]
+    },
+    {
+      "scope": "live",
+      "url": "https://tougaigu.com/?qa=93655a7013adb3ecd41f7e1fac6935f7b5464539",
+      "bytes": 16694154,
+      "sha256": "e3f63a1ea84216d6acd8b3947086efd1d9b3f655b71f1ac11a598492e0fbfe18",
+      "viewports": [
+        {
+          "width": 1280,
+          "height": 800
+        },
+        {
+          "width": 390,
+          "height": 844
+        },
+        {
+          "width": 320,
+          "height": 680
+        }
+      ],
+      "expectedFailureCounts": [
+        9,
+        0,
+        0
+      ],
+      "unexpectedNetworkFailures": 0,
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "faceCheckpointCount": 10,
+      "actualCapturedFacePNGs": 12,
+      "requiredPrior11FacePNGsAllPresent": true,
+      "additionalSourceValidatedFacePNGs": [
+        "1280-first-lamp-face-lamp-freeJoy.png"
+      ],
+      "faceSnapshotOccurrences": 935,
+      "poseSnapshotOccurrences": 1171,
+      "completePostRoutes": 4,
+      "phoneEndingReadings": 6,
+      "desktopEndingCombinations": 4,
+      "jumpRecords": 6,
+      "fatigue": {
+        "sharedDeadlineMs": 21000,
+        "actualBodyTiredFirstCaptureMs": 17356,
+        "actualEnergyAtFirstBodyTired": 19.948333333331142,
+        "observerLifecycleMs": 27000,
+        "scope": "form=soul, capPhase=open; not closed-lid fatigue proof",
+        "recoveryNeutralEnergy": 27.844999999997896
+      },
+      "faceAudit": "live-face-evidence-summary.json",
+      "inheritedGateAudit": "live-inherited-gates-summary.json",
+      "dialogueAudit": "live-dialogue-evidence-summary.json",
+      "matrixConfigurations": 6,
+      "matrixImmediateJSONs": 12,
+      "matrixRawPNGs": 12,
+      "matrixMaxCanvasControlDelta": 0,
+      "naturalReturnValidation": {
+        "status": "passed",
+        "trustedInput": true,
+        "existingCooldownMs": 1600,
+        "actualInputAgeMs": 1616.8000000000466,
+        "actualReturnDialogueAgeMs": 747.9000000000233,
+        "scope": "Existing real return E, natural authored dialogue refresh and completed cap closure; no replay or clock mutation"
+      },
+      "greenhouseVisibility": [
+        {
+          "label": "1280-greenhouse-leaves-returned",
+          "bubble": true,
+          "announcement": false
+        },
+        {
+          "label": "1280-greenhouse-root-crossed",
+          "bubble": true,
+          "announcement": true
+        }
+      ]
+    }
+  ],
+  "old675SubtestNamesPreserved": true,
+  "all683SubtestNamesExactToAcceptedCandidate": true,
+  "old74TestFilesExact": true,
+  "originalStrictGatesPreserved": true,
+  "artifactProgramCodeExecuted": false,
+  "scope": "Official main GitHub workflow, full local candidate AND public HTTPS browser routes. Independent data validation from exact trusted Git source.",
+  "localChromiumFailure": "Earlier local environment Chromium trust failure remains preserved separately at /tmp/v31-live-browser-20261030; it is not counted as a passing test or a product regression.",
+  "limits": [
+    "No physical handset, Safari or low-end GPU/performance benchmark.",
+    "Face checkpoint coverage remains the exact events recorded, not all six chapter faces.",
+    "Snapshot counts include repeated report occurrences and are not unique animation frames.",
+    "Raw PNGs retain original dimensions; manual review is recorded separately after inspecting selected files.",
+    "Geometry measurements and later PNGs are not synchronous frames. Old CSS ablation uses current DOM, not an old complete release.",
+    "Natural-return sidecar has no bodyIdentity: it proves same run/chapter/deaths and stable coordinates.",
+    "Public/candidate are separate routes; use their actual dialogue/announcement visibility, never borrow the accepted candidate timing or coexistence values."
+  ]
+}

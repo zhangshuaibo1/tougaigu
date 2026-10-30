@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-30",
+  "auditors": [
+    {
+      "path": "/tmp/audit-v33-candidate-faces.py",
+      "sha256": "e2dfe9b955b1dd7130d8b515910699e35787c6d9fed3faacf8132d34e05dbe12",
+      "adaptationReplayExact": true
+    },
+    {
+      "path": "/tmp/audit-v33-candidate-gates.py",
+      "sha256": "f7055368d797fa9f4677c4e009ec075a94857c90fbefff3369969c200862fb03",
+      "adaptationReplayExact": true
+    },
+    {
+      "path": "/tmp/audit-v33-candidate-dialogue.py",
+      "sha256": "4e3ef661bcd3420124d47e42ff5d937814ad1fd350e5e32703b87574c0fce4e9",
+      "adaptationReplayExact": true
+    },
+    {
+      "path": "/tmp/review-v33-candidate-artifact.py",
+      "sha256": "39afa333c806089265062c4c574e774ef4d48b2086e8653b78c750e4d91c3744",
+      "adaptationReplayExact": true
+    }
+  ],
+  "originalSmokeASTExactAfterTwoRecordedAdditions": true,
+  "scope": "Independent check of auditor derivation and accepted source before official run completes; no browser claim"
+}

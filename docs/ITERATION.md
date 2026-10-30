@@ -1,6 +1,14 @@
 # 持续迭代记录
 
-## 当前发布：v32已部署，等待main完整HTTPS结果
+## 当前发布：v33已部署，等待main完整HTTPS结果
+
+v33「小旅伴·抬头等你」候选`1d63072`／[40984114609](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984114609)及原产物独立审计已成功，public步骤正确跳过。996源码精确、691/691测试、完整旧路线与六配置对白通过；三尺寸小猫专项32.596秒、472次快照记录与21张原PNG核验通过，见 [正式归档](v33-formal-candidate/official/README.md)。发布基于v32 main `93655a7`，完整继承其最新历史和 [40984854669候选＋真实HTTPS最终证据](v32-main-release/README.md)，仅合入九项准确源码变化及33专属证据。
+
+Pages d997c58／[40987732103](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40987732103)已成功，144运行文件加空.nojekyll精确，CNAME保留；01:46:30.860 UTC七项实际HTTPS资源逐字节匹配。官网现在33.0.0，本main提交继续运行完整候选＋真实HTTPS，待新产物独立审计后关闭本轮，见 [发布记录](v33-release/README.md)。该轮完成前保持官网33，不抢先部署34。
+
+v34窄屏近身抬盖留边已在独立工作树实施与局部验证，不包含在本33发布树。它使用同一相机投影和同帧角色／拾光对象，保留原世界物理；预研中发现并修复了角色大半在屏内却无法重入取景的边界，原失败与修正分别保留。以下各旧版本段落继续保留其记录当时的状态。
+
+## v32发布检查点：已部署，等待main完整HTTPS结果
 
 第二候选ce412／[40982421518](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40982421518)通过683/683测试、完整六章／手机／结局和六配置对白矩阵；913源码、143运行、原报告与原图已独立审计。Pages91ccef7／[40984296820](https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984296820)成功，01:12:16 UTC五项实际HTTPS文件逐字节匹配。当前官网32.0.0，原CNAME与.nojekyll保留。
 

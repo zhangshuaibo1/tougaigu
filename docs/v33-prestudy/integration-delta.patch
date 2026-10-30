@@ -1,0 +1,567 @@
+diff --git a/dist/dream-engine.js b/dist/dream-engine.js
+index f9f99ca..49baa14 100644
+--- a/dist/dream-engine.js
++++ b/dist/dream-engine.js
+@@ -22,6 +22,7 @@ import {createPostDelivery,beginPostReturn,advancePostDelivery,clearPostDelivery
+ import { normalizeClockChoice, createClockEcho, advanceClockEcho, settleClockEcho, getClockEchoSnapshot, drawClockEcho } from './dream-clock-echo.js';
+ import { drawRefinedSoul } from './dream-soul-art.js';
+ import { drawTravelerSkullFront } from './dream-traveler-face.js';
++import { isCompanionScene, getCompanionView, drawRefinedCompanion } from './dream-companion-art.js';
+ import { createTheatreEncore, advanceTheatreEncore, drawTheatreEncore, getTheatreEncoreView } from './dream-theatre-encore.js';
+ import { createTravelerPerformance, advanceTravelerPerformance, settleTravelerPerformance, getTravelerPerformanceView, applyTravelerPerformance, isTravelerPerformanceScene } from './dream-traveler-performance.js';
+ export { DREAM_LEVELS, DREAM_PHYSICS, createDreamRng, getDreamStars } from './dream-engine-base.js';
+@@ -37,6 +38,7 @@ export class DreamGame extends BaseDreamGame {
+     this.postScenes=createPostSceneAssets({loadImage:resources.loadPostImage});
+     this.coastPaintedFrame=false;this.coastLight=null;this.clockEcho=null;
+     this.postPaintedFrame=false;this.postLight=null;this.postDelivery=null;
++    this.companionRenderScope=null;
+     this.paintedFrame=false;this.greenhousePaintedFrame=false;this.theatrePaintedFrame=false;this.theatreLight=null;this.libraryLight=null;this.libraryPaintedFrame=false;this.theatreEncore=null;this.letterEcho=null;this.travelerPerformance=null;
+   }
+   isStationFinish(){return this.mode==='story'&&this.chapterIndex===0;}
+@@ -227,6 +229,20 @@ export class DreamGame extends BaseDreamGame {
+   getCharacterPresentation(t=this.options.reducedMotion?0:this.visualTime){
+     return applyTravelerPerformance(super.getCharacterPresentation(t),this.getTravelerPerformanceView());
+   }
++  render(){
++    if(!isCompanionScene(this))return super.render();
++    const previous=this.companionRenderScope;
++    this.companionRenderScope={ready:false,shown:null};
++    try{return super.render();}
++    finally{this.companionRenderScope=previous;}
++  }
++  getSoulPresentation(character=null){
++    const shown=super.getSoulPresentation(character),scope=this.companionRenderScope;
++    // Base render has already solved the one character and soul presentation.
++    // Share that exact object with the cat; do not calculate another return.
++    if(scope&&!scope.ready){scope.ready=true;scope.shown=shown;}
++    return shown;
++  }
+   getStoryNPCView(npc){
+     const view=super.getStoryNPCView(npc);
+     if(view&&this.isCoastFinish())return{...view,clockChoice:this.clockEcho?.choice||null,lighting:'painted-coast'};
+@@ -365,6 +381,14 @@ export class DreamGame extends BaseDreamGame {
+     if(drawTravelerSkullFront(c,this,b,t,shown))return;
+     super.drawSkullFront(c,b,t,shown);
+   }
++  drawCompanion(c,x,y,t){
++    if(!c||!this.body||!this.options||!this.level)return;
++    const scope=this.companionRenderScope;
++    if(isCompanionScene(this)&&scope?.ready){
++      if(drawRefinedCompanion(c,getCompanionView(this,x,y,t,scope.shown)))return;
++    }
++    super.drawCompanion(c,x,y,t);
++  }
+   drawSoul(c,s,t){
+     if(this.mode==='story'&&this.chapterIndex<=5&&drawRefinedSoul(c,this,s,t))return;
+     super.drawSoul(c,s,t);
+diff --git a/dist/dream.html b/dist/dream.html
+index 922a917..a43f0d7 100644
+--- a/dist/dream.html
++++ b/dist/dream.html
+@@ -105,7 +105,7 @@
+ <dialog id="preferences-dialog" class="dream-dialog preferences-dialog" aria-labelledby="preferences-title"><button class="dream-dialog-close" data-close="preferences-dialog" aria-label="关闭偏好设置">×</button><div class="dialog-eyebrow"></div><h2 id="preferences-title">设置与存档</h2><label class="preference-row"><span><b>旅途音效</b><small>合成的脚步、跳跃与回声灯声</small></span><input id="dream-pref-sound" type="checkbox" role="switch"></label><label class="preference-row"><span><b>减少动态效果</b><small>简化掀盖、归位、粒子与镜头动态</small></span><input id="dream-pref-motion" type="checkbox" role="switch"></label><div class="dream-save-box"><h3>存档备份</h3><p>故事、脑洞画册、借景路线、失物回执、节日收藏和时光奖励一起备份。</p><div><button id="dream-export" class="dream-secondary">导出旅途存档 ↓</button><label class="dream-secondary dream-file-label">导入旅途存档 ↑<input id="dream-import" type="file" accept="application/json,.json"></label></div><p id="dream-save-message" role="status"></p></div><p class="dialog-note">两款游戏共用时光奖励，主线与生存成长分别保存。刷新从关卡起点开始。</p></dialog>
+ <div id="dream-toast" class="dream-toast" role="status"></div>
+ <noscript><div class="dream-noscript">这段旅程需要启用 JavaScript 才能开始。<a href="./index.html">返回头盖骨首页</a></div></noscript>
+-<script type="importmap" id="release-modules">{"imports":{"./app.js":"./app.js?v=32.0.0","./cap-activity-progress.js":"./cap-activity-progress.js?v=32.0.0","./cap-book.js":"./cap-book.js?v=32.0.0","./cap-progress.js":"./cap-progress.js?v=32.0.0","./content.js":"./content.js?v=32.0.0","./dream-app.js":"./dream-app.js?v=32.0.0","./dream-awakening-art.js":"./dream-awakening-art.js?v=32.0.0","./dream-awakenings.js":"./dream-awakenings.js?v=32.0.0","./dream-cap-activities.js":"./dream-cap-activities.js?v=32.0.0","./dream-cap-activity-art.js":"./dream-cap-activity-art.js?v=32.0.0","./dream-cap-activity-engine.js":"./dream-cap-activity-engine.js?v=32.0.0","./dream-cap-art.js":"./dream-cap-art.js?v=32.0.0","./dream-cap-story.js":"./dream-cap-story.js?v=32.0.0","./dream-clock-echo.js":"./dream-clock-echo.js?v=32.0.0","./dream-coast-finish.js":"./dream-coast-finish.js?v=32.0.0","./dream-coast-scene.js":"./dream-coast-scene.js?v=32.0.0","./dream-direction-input.js":"./dream-direction-input.js?v=32.0.0","./dream-encounter-art.js":"./dream-encounter-art.js?v=32.0.0","./dream-encounters.js":"./dream-encounters.js?v=32.0.0","./dream-ending-art.js":"./dream-ending-art.js?v=32.0.0","./dream-ending-scene.js":"./dream-ending-scene.js?v=32.0.0","./dream-engine-base.js":"./dream-engine-base.js?v=32.0.0","./dream-engine.js":"./dream-engine.js?v=32.0.0","./dream-festival-art.js":"./dream-festival-art.js?v=32.0.0","./dream-festival-levels.js":"./dream-festival-levels.js?v=32.0.0","./dream-festivals.js":"./dream-festivals.js?v=32.0.0","./dream-first-ticket-art.js":"./dream-first-ticket-art.js?v=32.0.0","./dream-greenhouse-art.js":"./dream-greenhouse-art.js?v=32.0.0","./dream-greenhouse-finish.js":"./dream-greenhouse-finish.js?v=32.0.0","./dream-greenhouse-scene.js":"./dream-greenhouse-scene.js?v=32.0.0","./dream-ground-shadow.js":"./dream-ground-shadow.js?v=32.0.0","./dream-journey.js":"./dream-journey.js?v=32.0.0","./dream-letter-echo.js":"./dream-letter-echo.js?v=32.0.0","./dream-levels.js":"./dream-levels.js?v=32.0.0","./dream-library-finish.js":"./dream-library-finish.js?v=32.0.0","./dream-library-scene.js":"./dream-library-scene.js?v=32.0.0","./dream-lost-art.js":"./dream-lost-art.js?v=32.0.0","./dream-lost-cases.js":"./dream-lost-cases.js?v=32.0.0","./dream-lost-encore-art.js":"./dream-lost-encore-art.js?v=32.0.0","./dream-lost-encores.js":"./dream-lost-encores.js?v=32.0.0","./dream-lost-engine.js":"./dream-lost-engine.js?v=32.0.0","./dream-modal-input.js":"./dream-modal-input.js?v=32.0.0","./dream-moon-art.js":"./dream-moon-art.js?v=32.0.0","./dream-moon-play.js":"./dream-moon-play.js?v=32.0.0","./dream-painted-scene.js":"./dream-painted-scene.js?v=32.0.0","./dream-post-delivery.js":"./dream-post-delivery.js?v=32.0.0","./dream-post-finish.js":"./dream-post-finish.js?v=32.0.0","./dream-post-scene.js":"./dream-post-scene.js?v=32.0.0","./dream-scene-backdrop.js":"./dream-scene-backdrop.js?v=32.0.0","./dream-soul-art.js":"./dream-soul-art.js?v=32.0.0","./dream-station-art.js":"./dream-station-art.js?v=32.0.0","./dream-story-portrait.js":"./dream-story-portrait.js?v=32.0.0","./dream-story.js":"./dream-story.js?v=32.0.0","./dream-theatre-art.js":"./dream-theatre-art.js?v=32.0.0","./dream-theatre-encore.js":"./dream-theatre-encore.js?v=32.0.0","./dream-theatre-guidance.js":"./dream-theatre-guidance.js?v=32.0.0","./dream-theatre-lantern.js":"./dream-theatre-lantern.js?v=32.0.0","./dream-theatre-painted.js":"./dream-theatre-painted.js?v=32.0.0","./dream-traveler-art.js":"./dream-traveler-art.js?v=32.0.0","./dream-traveler-face.js":"./dream-traveler-face.js?v=32.0.0","./dream-traveler-performance.js":"./dream-traveler-performance.js?v=32.0.0","./dream-ui.js":"./dream-ui.js?v=32.0.0","./engine.js":"./engine.js?v=32.0.0","./festival-hub.js":"./festival-hub.js?v=32.0.0","./game-shell.js":"./game-shell.js?v=32.0.0","./lost-evidence.js":"./lost-evidence.js?v=32.0.0","./lost-progress.js":"./lost-progress.js?v=32.0.0","./play-rewards.js":"./play-rewards.js?v=32.0.0"}}</script>
++<script type="importmap" id="release-modules">{"imports":{"./app.js":"./app.js?v=32.0.0","./cap-activity-progress.js":"./cap-activity-progress.js?v=32.0.0","./cap-book.js":"./cap-book.js?v=32.0.0","./cap-progress.js":"./cap-progress.js?v=32.0.0","./content.js":"./content.js?v=32.0.0","./dream-app.js":"./dream-app.js?v=32.0.0","./dream-awakening-art.js":"./dream-awakening-art.js?v=32.0.0","./dream-awakenings.js":"./dream-awakenings.js?v=32.0.0","./dream-cap-activities.js":"./dream-cap-activities.js?v=32.0.0","./dream-cap-activity-art.js":"./dream-cap-activity-art.js?v=32.0.0","./dream-cap-activity-engine.js":"./dream-cap-activity-engine.js?v=32.0.0","./dream-cap-art.js":"./dream-cap-art.js?v=32.0.0","./dream-cap-story.js":"./dream-cap-story.js?v=32.0.0","./dream-clock-echo.js":"./dream-clock-echo.js?v=32.0.0","./dream-coast-finish.js":"./dream-coast-finish.js?v=32.0.0","./dream-coast-scene.js":"./dream-coast-scene.js?v=32.0.0","./dream-companion-art.js":"./dream-companion-art.js?v=32.0.0","./dream-direction-input.js":"./dream-direction-input.js?v=32.0.0","./dream-encounter-art.js":"./dream-encounter-art.js?v=32.0.0","./dream-encounters.js":"./dream-encounters.js?v=32.0.0","./dream-ending-art.js":"./dream-ending-art.js?v=32.0.0","./dream-ending-scene.js":"./dream-ending-scene.js?v=32.0.0","./dream-engine-base.js":"./dream-engine-base.js?v=32.0.0","./dream-engine.js":"./dream-engine.js?v=32.0.0","./dream-festival-art.js":"./dream-festival-art.js?v=32.0.0","./dream-festival-levels.js":"./dream-festival-levels.js?v=32.0.0","./dream-festivals.js":"./dream-festivals.js?v=32.0.0","./dream-first-ticket-art.js":"./dream-first-ticket-art.js?v=32.0.0","./dream-greenhouse-art.js":"./dream-greenhouse-art.js?v=32.0.0","./dream-greenhouse-finish.js":"./dream-greenhouse-finish.js?v=32.0.0","./dream-greenhouse-scene.js":"./dream-greenhouse-scene.js?v=32.0.0","./dream-ground-shadow.js":"./dream-ground-shadow.js?v=32.0.0","./dream-journey.js":"./dream-journey.js?v=32.0.0","./dream-letter-echo.js":"./dream-letter-echo.js?v=32.0.0","./dream-levels.js":"./dream-levels.js?v=32.0.0","./dream-library-finish.js":"./dream-library-finish.js?v=32.0.0","./dream-library-scene.js":"./dream-library-scene.js?v=32.0.0","./dream-lost-art.js":"./dream-lost-art.js?v=32.0.0","./dream-lost-cases.js":"./dream-lost-cases.js?v=32.0.0","./dream-lost-encore-art.js":"./dream-lost-encore-art.js?v=32.0.0","./dream-lost-encores.js":"./dream-lost-encores.js?v=32.0.0","./dream-lost-engine.js":"./dream-lost-engine.js?v=32.0.0","./dream-modal-input.js":"./dream-modal-input.js?v=32.0.0","./dream-moon-art.js":"./dream-moon-art.js?v=32.0.0","./dream-moon-play.js":"./dream-moon-play.js?v=32.0.0","./dream-painted-scene.js":"./dream-painted-scene.js?v=32.0.0","./dream-post-delivery.js":"./dream-post-delivery.js?v=32.0.0","./dream-post-finish.js":"./dream-post-finish.js?v=32.0.0","./dream-post-scene.js":"./dream-post-scene.js?v=32.0.0","./dream-scene-backdrop.js":"./dream-scene-backdrop.js?v=32.0.0","./dream-soul-art.js":"./dream-soul-art.js?v=32.0.0","./dream-station-art.js":"./dream-station-art.js?v=32.0.0","./dream-story-portrait.js":"./dream-story-portrait.js?v=32.0.0","./dream-story.js":"./dream-story.js?v=32.0.0","./dream-theatre-art.js":"./dream-theatre-art.js?v=32.0.0","./dream-theatre-encore.js":"./dream-theatre-encore.js?v=32.0.0","./dream-theatre-guidance.js":"./dream-theatre-guidance.js?v=32.0.0","./dream-theatre-lantern.js":"./dream-theatre-lantern.js?v=32.0.0","./dream-theatre-painted.js":"./dream-theatre-painted.js?v=32.0.0","./dream-traveler-art.js":"./dream-traveler-art.js?v=32.0.0","./dream-traveler-face.js":"./dream-traveler-face.js?v=32.0.0","./dream-traveler-performance.js":"./dream-traveler-performance.js?v=32.0.0","./dream-ui.js":"./dream-ui.js?v=32.0.0","./engine.js":"./engine.js?v=32.0.0","./festival-hub.js":"./festival-hub.js?v=32.0.0","./game-shell.js":"./game-shell.js?v=32.0.0","./lost-evidence.js":"./lost-evidence.js?v=32.0.0","./lost-progress.js":"./lost-progress.js?v=32.0.0","./play-rewards.js":"./play-rewards.js?v=32.0.0"}}</script>
+ <script type="module" src="./dream-app.js?v=32.0.0"></script>
+ </body>
+ </html>
+diff --git a/dist/index.html b/dist/index.html
+index 922a917..a43f0d7 100644
+--- a/dist/index.html
++++ b/dist/index.html
+@@ -105,7 +105,7 @@
+ <dialog id="preferences-dialog" class="dream-dialog preferences-dialog" aria-labelledby="preferences-title"><button class="dream-dialog-close" data-close="preferences-dialog" aria-label="关闭偏好设置">×</button><div class="dialog-eyebrow"></div><h2 id="preferences-title">设置与存档</h2><label class="preference-row"><span><b>旅途音效</b><small>合成的脚步、跳跃与回声灯声</small></span><input id="dream-pref-sound" type="checkbox" role="switch"></label><label class="preference-row"><span><b>减少动态效果</b><small>简化掀盖、归位、粒子与镜头动态</small></span><input id="dream-pref-motion" type="checkbox" role="switch"></label><div class="dream-save-box"><h3>存档备份</h3><p>故事、脑洞画册、借景路线、失物回执、节日收藏和时光奖励一起备份。</p><div><button id="dream-export" class="dream-secondary">导出旅途存档 ↓</button><label class="dream-secondary dream-file-label">导入旅途存档 ↑<input id="dream-import" type="file" accept="application/json,.json"></label></div><p id="dream-save-message" role="status"></p></div><p class="dialog-note">两款游戏共用时光奖励，主线与生存成长分别保存。刷新从关卡起点开始。</p></dialog>
+ <div id="dream-toast" class="dream-toast" role="status"></div>
+ <noscript><div class="dream-noscript">这段旅程需要启用 JavaScript 才能开始。<a href="./index.html">返回头盖骨首页</a></div></noscript>
+-<script type="importmap" id="release-modules">{"imports":{"./app.js":"./app.js?v=32.0.0","./cap-activity-progress.js":"./cap-activity-progress.js?v=32.0.0","./cap-book.js":"./cap-book.js?v=32.0.0","./cap-progress.js":"./cap-progress.js?v=32.0.0","./content.js":"./content.js?v=32.0.0","./dream-app.js":"./dream-app.js?v=32.0.0","./dream-awakening-art.js":"./dream-awakening-art.js?v=32.0.0","./dream-awakenings.js":"./dream-awakenings.js?v=32.0.0","./dream-cap-activities.js":"./dream-cap-activities.js?v=32.0.0","./dream-cap-activity-art.js":"./dream-cap-activity-art.js?v=32.0.0","./dream-cap-activity-engine.js":"./dream-cap-activity-engine.js?v=32.0.0","./dream-cap-art.js":"./dream-cap-art.js?v=32.0.0","./dream-cap-story.js":"./dream-cap-story.js?v=32.0.0","./dream-clock-echo.js":"./dream-clock-echo.js?v=32.0.0","./dream-coast-finish.js":"./dream-coast-finish.js?v=32.0.0","./dream-coast-scene.js":"./dream-coast-scene.js?v=32.0.0","./dream-direction-input.js":"./dream-direction-input.js?v=32.0.0","./dream-encounter-art.js":"./dream-encounter-art.js?v=32.0.0","./dream-encounters.js":"./dream-encounters.js?v=32.0.0","./dream-ending-art.js":"./dream-ending-art.js?v=32.0.0","./dream-ending-scene.js":"./dream-ending-scene.js?v=32.0.0","./dream-engine-base.js":"./dream-engine-base.js?v=32.0.0","./dream-engine.js":"./dream-engine.js?v=32.0.0","./dream-festival-art.js":"./dream-festival-art.js?v=32.0.0","./dream-festival-levels.js":"./dream-festival-levels.js?v=32.0.0","./dream-festivals.js":"./dream-festivals.js?v=32.0.0","./dream-first-ticket-art.js":"./dream-first-ticket-art.js?v=32.0.0","./dream-greenhouse-art.js":"./dream-greenhouse-art.js?v=32.0.0","./dream-greenhouse-finish.js":"./dream-greenhouse-finish.js?v=32.0.0","./dream-greenhouse-scene.js":"./dream-greenhouse-scene.js?v=32.0.0","./dream-ground-shadow.js":"./dream-ground-shadow.js?v=32.0.0","./dream-journey.js":"./dream-journey.js?v=32.0.0","./dream-letter-echo.js":"./dream-letter-echo.js?v=32.0.0","./dream-levels.js":"./dream-levels.js?v=32.0.0","./dream-library-finish.js":"./dream-library-finish.js?v=32.0.0","./dream-library-scene.js":"./dream-library-scene.js?v=32.0.0","./dream-lost-art.js":"./dream-lost-art.js?v=32.0.0","./dream-lost-cases.js":"./dream-lost-cases.js?v=32.0.0","./dream-lost-encore-art.js":"./dream-lost-encore-art.js?v=32.0.0","./dream-lost-encores.js":"./dream-lost-encores.js?v=32.0.0","./dream-lost-engine.js":"./dream-lost-engine.js?v=32.0.0","./dream-modal-input.js":"./dream-modal-input.js?v=32.0.0","./dream-moon-art.js":"./dream-moon-art.js?v=32.0.0","./dream-moon-play.js":"./dream-moon-play.js?v=32.0.0","./dream-painted-scene.js":"./dream-painted-scene.js?v=32.0.0","./dream-post-delivery.js":"./dream-post-delivery.js?v=32.0.0","./dream-post-finish.js":"./dream-post-finish.js?v=32.0.0","./dream-post-scene.js":"./dream-post-scene.js?v=32.0.0","./dream-scene-backdrop.js":"./dream-scene-backdrop.js?v=32.0.0","./dream-soul-art.js":"./dream-soul-art.js?v=32.0.0","./dream-station-art.js":"./dream-station-art.js?v=32.0.0","./dream-story-portrait.js":"./dream-story-portrait.js?v=32.0.0","./dream-story.js":"./dream-story.js?v=32.0.0","./dream-theatre-art.js":"./dream-theatre-art.js?v=32.0.0","./dream-theatre-encore.js":"./dream-theatre-encore.js?v=32.0.0","./dream-theatre-guidance.js":"./dream-theatre-guidance.js?v=32.0.0","./dream-theatre-lantern.js":"./dream-theatre-lantern.js?v=32.0.0","./dream-theatre-painted.js":"./dream-theatre-painted.js?v=32.0.0","./dream-traveler-art.js":"./dream-traveler-art.js?v=32.0.0","./dream-traveler-face.js":"./dream-traveler-face.js?v=32.0.0","./dream-traveler-performance.js":"./dream-traveler-performance.js?v=32.0.0","./dream-ui.js":"./dream-ui.js?v=32.0.0","./engine.js":"./engine.js?v=32.0.0","./festival-hub.js":"./festival-hub.js?v=32.0.0","./game-shell.js":"./game-shell.js?v=32.0.0","./lost-evidence.js":"./lost-evidence.js?v=32.0.0","./lost-progress.js":"./lost-progress.js?v=32.0.0","./play-rewards.js":"./play-rewards.js?v=32.0.0"}}</script>
++<script type="importmap" id="release-modules">{"imports":{"./app.js":"./app.js?v=32.0.0","./cap-activity-progress.js":"./cap-activity-progress.js?v=32.0.0","./cap-book.js":"./cap-book.js?v=32.0.0","./cap-progress.js":"./cap-progress.js?v=32.0.0","./content.js":"./content.js?v=32.0.0","./dream-app.js":"./dream-app.js?v=32.0.0","./dream-awakening-art.js":"./dream-awakening-art.js?v=32.0.0","./dream-awakenings.js":"./dream-awakenings.js?v=32.0.0","./dream-cap-activities.js":"./dream-cap-activities.js?v=32.0.0","./dream-cap-activity-art.js":"./dream-cap-activity-art.js?v=32.0.0","./dream-cap-activity-engine.js":"./dream-cap-activity-engine.js?v=32.0.0","./dream-cap-art.js":"./dream-cap-art.js?v=32.0.0","./dream-cap-story.js":"./dream-cap-story.js?v=32.0.0","./dream-clock-echo.js":"./dream-clock-echo.js?v=32.0.0","./dream-coast-finish.js":"./dream-coast-finish.js?v=32.0.0","./dream-coast-scene.js":"./dream-coast-scene.js?v=32.0.0","./dream-companion-art.js":"./dream-companion-art.js?v=32.0.0","./dream-direction-input.js":"./dream-direction-input.js?v=32.0.0","./dream-encounter-art.js":"./dream-encounter-art.js?v=32.0.0","./dream-encounters.js":"./dream-encounters.js?v=32.0.0","./dream-ending-art.js":"./dream-ending-art.js?v=32.0.0","./dream-ending-scene.js":"./dream-ending-scene.js?v=32.0.0","./dream-engine-base.js":"./dream-engine-base.js?v=32.0.0","./dream-engine.js":"./dream-engine.js?v=32.0.0","./dream-festival-art.js":"./dream-festival-art.js?v=32.0.0","./dream-festival-levels.js":"./dream-festival-levels.js?v=32.0.0","./dream-festivals.js":"./dream-festivals.js?v=32.0.0","./dream-first-ticket-art.js":"./dream-first-ticket-art.js?v=32.0.0","./dream-greenhouse-art.js":"./dream-greenhouse-art.js?v=32.0.0","./dream-greenhouse-finish.js":"./dream-greenhouse-finish.js?v=32.0.0","./dream-greenhouse-scene.js":"./dream-greenhouse-scene.js?v=32.0.0","./dream-ground-shadow.js":"./dream-ground-shadow.js?v=32.0.0","./dream-journey.js":"./dream-journey.js?v=32.0.0","./dream-letter-echo.js":"./dream-letter-echo.js?v=32.0.0","./dream-levels.js":"./dream-levels.js?v=32.0.0","./dream-library-finish.js":"./dream-library-finish.js?v=32.0.0","./dream-library-scene.js":"./dream-library-scene.js?v=32.0.0","./dream-lost-art.js":"./dream-lost-art.js?v=32.0.0","./dream-lost-cases.js":"./dream-lost-cases.js?v=32.0.0","./dream-lost-encore-art.js":"./dream-lost-encore-art.js?v=32.0.0","./dream-lost-encores.js":"./dream-lost-encores.js?v=32.0.0","./dream-lost-engine.js":"./dream-lost-engine.js?v=32.0.0","./dream-modal-input.js":"./dream-modal-input.js?v=32.0.0","./dream-moon-art.js":"./dream-moon-art.js?v=32.0.0","./dream-moon-play.js":"./dream-moon-play.js?v=32.0.0","./dream-painted-scene.js":"./dream-painted-scene.js?v=32.0.0","./dream-post-delivery.js":"./dream-post-delivery.js?v=32.0.0","./dream-post-finish.js":"./dream-post-finish.js?v=32.0.0","./dream-post-scene.js":"./dream-post-scene.js?v=32.0.0","./dream-scene-backdrop.js":"./dream-scene-backdrop.js?v=32.0.0","./dream-soul-art.js":"./dream-soul-art.js?v=32.0.0","./dream-station-art.js":"./dream-station-art.js?v=32.0.0","./dream-story-portrait.js":"./dream-story-portrait.js?v=32.0.0","./dream-story.js":"./dream-story.js?v=32.0.0","./dream-theatre-art.js":"./dream-theatre-art.js?v=32.0.0","./dream-theatre-encore.js":"./dream-theatre-encore.js?v=32.0.0","./dream-theatre-guidance.js":"./dream-theatre-guidance.js?v=32.0.0","./dream-theatre-lantern.js":"./dream-theatre-lantern.js?v=32.0.0","./dream-theatre-painted.js":"./dream-theatre-painted.js?v=32.0.0","./dream-traveler-art.js":"./dream-traveler-art.js?v=32.0.0","./dream-traveler-face.js":"./dream-traveler-face.js?v=32.0.0","./dream-traveler-performance.js":"./dream-traveler-performance.js?v=32.0.0","./dream-ui.js":"./dream-ui.js?v=32.0.0","./engine.js":"./engine.js?v=32.0.0","./festival-hub.js":"./festival-hub.js?v=32.0.0","./game-shell.js":"./game-shell.js?v=32.0.0","./lost-evidence.js":"./lost-evidence.js?v=32.0.0","./lost-progress.js":"./lost-progress.js?v=32.0.0","./play-rewards.js":"./play-rewards.js?v=32.0.0"}}</script>
+ <script type="module" src="./dream-app.js?v=32.0.0"></script>
+ </body>
+ </html>
+diff --git a/dist/survivor.html b/dist/survivor.html
+index 8ec451f..09ac360 100644
+--- a/dist/survivor.html
++++ b/dist/survivor.html
+@@ -76,7 +76,7 @@
+ <dialog id="help-dialog" class="game-dialog help-dialog" aria-labelledby="help-title"><button class="dialog-close" data-close="help-dialog" aria-label="关闭玩法说明">×</button><h2 id="help-title">操作帮助</h2><div class="help-steps"><article><b>01</b><div><h3>走位就好，攻击交给本能。</h3><p>WASD / 方向键移动；手机用左下角摇杆。空格或右下按钮冲刺，短暂无敌并穿过怪群。</p></div></article><article><b>02</b><div><h3>捡起光点，选出自己的流派。</h3><p>击败怪物会掉落经验。升级时战场暂停，三选一。先把几个核心技能升高，更容易触发进化。</p></div></article><article><b>03</b><div><h3>长夜有尽头，成长没有。</h3><p>90 秒、180 秒与 300 秒迎战首领。击败终夜领主即通关；想挑战极限，可以选择无尽长夜。</p></div></article></div><div class="help-tip">小提示：沿怪群的外圈移动，给自己留一条退路。暂停或切走标签页，战斗都会停下。</div><button class="primary-button" data-close="help-dialog">明白了，出发！ <span>→</span></button></dialog>
+ <div id="toast" class="toast" role="status" aria-live="polite"></div>
+ <noscript><div class="noscript">这款游戏需要启用 JavaScript 才能运行。</div></noscript>
+-<script type="importmap" id="release-modules">{"imports":{"./app.js":"./app.js?v=32.0.0","./cap-activity-progress.js":"./cap-activity-progress.js?v=32.0.0","./cap-book.js":"./cap-book.js?v=32.0.0","./cap-progress.js":"./cap-progress.js?v=32.0.0","./content.js":"./content.js?v=32.0.0","./dream-app.js":"./dream-app.js?v=32.0.0","./dream-awakening-art.js":"./dream-awakening-art.js?v=32.0.0","./dream-awakenings.js":"./dream-awakenings.js?v=32.0.0","./dream-cap-activities.js":"./dream-cap-activities.js?v=32.0.0","./dream-cap-activity-art.js":"./dream-cap-activity-art.js?v=32.0.0","./dream-cap-activity-engine.js":"./dream-cap-activity-engine.js?v=32.0.0","./dream-cap-art.js":"./dream-cap-art.js?v=32.0.0","./dream-cap-story.js":"./dream-cap-story.js?v=32.0.0","./dream-clock-echo.js":"./dream-clock-echo.js?v=32.0.0","./dream-coast-finish.js":"./dream-coast-finish.js?v=32.0.0","./dream-coast-scene.js":"./dream-coast-scene.js?v=32.0.0","./dream-direction-input.js":"./dream-direction-input.js?v=32.0.0","./dream-encounter-art.js":"./dream-encounter-art.js?v=32.0.0","./dream-encounters.js":"./dream-encounters.js?v=32.0.0","./dream-ending-art.js":"./dream-ending-art.js?v=32.0.0","./dream-ending-scene.js":"./dream-ending-scene.js?v=32.0.0","./dream-engine-base.js":"./dream-engine-base.js?v=32.0.0","./dream-engine.js":"./dream-engine.js?v=32.0.0","./dream-festival-art.js":"./dream-festival-art.js?v=32.0.0","./dream-festival-levels.js":"./dream-festival-levels.js?v=32.0.0","./dream-festivals.js":"./dream-festivals.js?v=32.0.0","./dream-first-ticket-art.js":"./dream-first-ticket-art.js?v=32.0.0","./dream-greenhouse-art.js":"./dream-greenhouse-art.js?v=32.0.0","./dream-greenhouse-finish.js":"./dream-greenhouse-finish.js?v=32.0.0","./dream-greenhouse-scene.js":"./dream-greenhouse-scene.js?v=32.0.0","./dream-ground-shadow.js":"./dream-ground-shadow.js?v=32.0.0","./dream-journey.js":"./dream-journey.js?v=32.0.0","./dream-letter-echo.js":"./dream-letter-echo.js?v=32.0.0","./dream-levels.js":"./dream-levels.js?v=32.0.0","./dream-library-finish.js":"./dream-library-finish.js?v=32.0.0","./dream-library-scene.js":"./dream-library-scene.js?v=32.0.0","./dream-lost-art.js":"./dream-lost-art.js?v=32.0.0","./dream-lost-cases.js":"./dream-lost-cases.js?v=32.0.0","./dream-lost-encore-art.js":"./dream-lost-encore-art.js?v=32.0.0","./dream-lost-encores.js":"./dream-lost-encores.js?v=32.0.0","./dream-lost-engine.js":"./dream-lost-engine.js?v=32.0.0","./dream-modal-input.js":"./dream-modal-input.js?v=32.0.0","./dream-moon-art.js":"./dream-moon-art.js?v=32.0.0","./dream-moon-play.js":"./dream-moon-play.js?v=32.0.0","./dream-painted-scene.js":"./dream-painted-scene.js?v=32.0.0","./dream-post-delivery.js":"./dream-post-delivery.js?v=32.0.0","./dream-post-finish.js":"./dream-post-finish.js?v=32.0.0","./dream-post-scene.js":"./dream-post-scene.js?v=32.0.0","./dream-scene-backdrop.js":"./dream-scene-backdrop.js?v=32.0.0","./dream-soul-art.js":"./dream-soul-art.js?v=32.0.0","./dream-station-art.js":"./dream-station-art.js?v=32.0.0","./dream-story-portrait.js":"./dream-story-portrait.js?v=32.0.0","./dream-story.js":"./dream-story.js?v=32.0.0","./dream-theatre-art.js":"./dream-theatre-art.js?v=32.0.0","./dream-theatre-encore.js":"./dream-theatre-encore.js?v=32.0.0","./dream-theatre-guidance.js":"./dream-theatre-guidance.js?v=32.0.0","./dream-theatre-lantern.js":"./dream-theatre-lantern.js?v=32.0.0","./dream-theatre-painted.js":"./dream-theatre-painted.js?v=32.0.0","./dream-traveler-art.js":"./dream-traveler-art.js?v=32.0.0","./dream-traveler-face.js":"./dream-traveler-face.js?v=32.0.0","./dream-traveler-performance.js":"./dream-traveler-performance.js?v=32.0.0","./dream-ui.js":"./dream-ui.js?v=32.0.0","./engine.js":"./engine.js?v=32.0.0","./festival-hub.js":"./festival-hub.js?v=32.0.0","./game-shell.js":"./game-shell.js?v=32.0.0","./lost-evidence.js":"./lost-evidence.js?v=32.0.0","./lost-progress.js":"./lost-progress.js?v=32.0.0","./play-rewards.js":"./play-rewards.js?v=32.0.0"}}</script>
++<script type="importmap" id="release-modules">{"imports":{"./app.js":"./app.js?v=32.0.0","./cap-activity-progress.js":"./cap-activity-progress.js?v=32.0.0","./cap-book.js":"./cap-book.js?v=32.0.0","./cap-progress.js":"./cap-progress.js?v=32.0.0","./content.js":"./content.js?v=32.0.0","./dream-app.js":"./dream-app.js?v=32.0.0","./dream-awakening-art.js":"./dream-awakening-art.js?v=32.0.0","./dream-awakenings.js":"./dream-awakenings.js?v=32.0.0","./dream-cap-activities.js":"./dream-cap-activities.js?v=32.0.0","./dream-cap-activity-art.js":"./dream-cap-activity-art.js?v=32.0.0","./dream-cap-activity-engine.js":"./dream-cap-activity-engine.js?v=32.0.0","./dream-cap-art.js":"./dream-cap-art.js?v=32.0.0","./dream-cap-story.js":"./dream-cap-story.js?v=32.0.0","./dream-clock-echo.js":"./dream-clock-echo.js?v=32.0.0","./dream-coast-finish.js":"./dream-coast-finish.js?v=32.0.0","./dream-coast-scene.js":"./dream-coast-scene.js?v=32.0.0","./dream-companion-art.js":"./dream-companion-art.js?v=32.0.0","./dream-direction-input.js":"./dream-direction-input.js?v=32.0.0","./dream-encounter-art.js":"./dream-encounter-art.js?v=32.0.0","./dream-encounters.js":"./dream-encounters.js?v=32.0.0","./dream-ending-art.js":"./dream-ending-art.js?v=32.0.0","./dream-ending-scene.js":"./dream-ending-scene.js?v=32.0.0","./dream-engine-base.js":"./dream-engine-base.js?v=32.0.0","./dream-engine.js":"./dream-engine.js?v=32.0.0","./dream-festival-art.js":"./dream-festival-art.js?v=32.0.0","./dream-festival-levels.js":"./dream-festival-levels.js?v=32.0.0","./dream-festivals.js":"./dream-festivals.js?v=32.0.0","./dream-first-ticket-art.js":"./dream-first-ticket-art.js?v=32.0.0","./dream-greenhouse-art.js":"./dream-greenhouse-art.js?v=32.0.0","./dream-greenhouse-finish.js":"./dream-greenhouse-finish.js?v=32.0.0","./dream-greenhouse-scene.js":"./dream-greenhouse-scene.js?v=32.0.0","./dream-ground-shadow.js":"./dream-ground-shadow.js?v=32.0.0","./dream-journey.js":"./dream-journey.js?v=32.0.0","./dream-letter-echo.js":"./dream-letter-echo.js?v=32.0.0","./dream-levels.js":"./dream-levels.js?v=32.0.0","./dream-library-finish.js":"./dream-library-finish.js?v=32.0.0","./dream-library-scene.js":"./dream-library-scene.js?v=32.0.0","./dream-lost-art.js":"./dream-lost-art.js?v=32.0.0","./dream-lost-cases.js":"./dream-lost-cases.js?v=32.0.0","./dream-lost-encore-art.js":"./dream-lost-encore-art.js?v=32.0.0","./dream-lost-encores.js":"./dream-lost-encores.js?v=32.0.0","./dream-lost-engine.js":"./dream-lost-engine.js?v=32.0.0","./dream-modal-input.js":"./dream-modal-input.js?v=32.0.0","./dream-moon-art.js":"./dream-moon-art.js?v=32.0.0","./dream-moon-play.js":"./dream-moon-play.js?v=32.0.0","./dream-painted-scene.js":"./dream-painted-scene.js?v=32.0.0","./dream-post-delivery.js":"./dream-post-delivery.js?v=32.0.0","./dream-post-finish.js":"./dream-post-finish.js?v=32.0.0","./dream-post-scene.js":"./dream-post-scene.js?v=32.0.0","./dream-scene-backdrop.js":"./dream-scene-backdrop.js?v=32.0.0","./dream-soul-art.js":"./dream-soul-art.js?v=32.0.0","./dream-station-art.js":"./dream-station-art.js?v=32.0.0","./dream-story-portrait.js":"./dream-story-portrait.js?v=32.0.0","./dream-story.js":"./dream-story.js?v=32.0.0","./dream-theatre-art.js":"./dream-theatre-art.js?v=32.0.0","./dream-theatre-encore.js":"./dream-theatre-encore.js?v=32.0.0","./dream-theatre-guidance.js":"./dream-theatre-guidance.js?v=32.0.0","./dream-theatre-lantern.js":"./dream-theatre-lantern.js?v=32.0.0","./dream-theatre-painted.js":"./dream-theatre-painted.js?v=32.0.0","./dream-traveler-art.js":"./dream-traveler-art.js?v=32.0.0","./dream-traveler-face.js":"./dream-traveler-face.js?v=32.0.0","./dream-traveler-performance.js":"./dream-traveler-performance.js?v=32.0.0","./dream-ui.js":"./dream-ui.js?v=32.0.0","./engine.js":"./engine.js?v=32.0.0","./festival-hub.js":"./festival-hub.js?v=32.0.0","./game-shell.js":"./game-shell.js?v=32.0.0","./lost-evidence.js":"./lost-evidence.js?v=32.0.0","./lost-progress.js":"./lost-progress.js?v=32.0.0","./play-rewards.js":"./play-rewards.js?v=32.0.0"}}</script>
+ <script type="module" src="./app.js?v=32.0.0"></script>
+ </body>
+ </html>
+diff --git a/dist/dream-companion-art.js b/dist/dream-companion-art.js
+new file mode 100644
+index 0000000..f501ed4
+--- /dev/null
++++ b/dist/dream-companion-art.js
+@@ -0,0 +1,117 @@
++// The existing moss-colored cat, painted at its original following position.
++// Read-only presentation: no following simulation, event queue or extra clock.
++const TAU=Math.PI*2;
++const finite=(n,fallback=0)=>Number.isFinite(n)?n:fallback;
++const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
++const hex=(s,fallback)=>/^#[\da-f]{6}$/i.test(s||'')?s:fallback;
++const required=['save','restore','translate','rotate','beginPath','moveTo','lineTo','bezierCurveTo','quadraticCurveTo','closePath','ellipse','fill','stroke','createLinearGradient'];
++
++export function isCompanionScene(game){
++  if(!game||game.destroyed||game.mode!=='story'||!Number.isInteger(game.chapterIndex)||game.chapterIndex<0||game.chapterIndex>5)return false;
++  if(!game.level||!game.options||!game.cap||!game.body||!['playing','paused','complete'].includes(game.state)||!['body','soul'].includes(game.form))return false;
++  return Number.isFinite(game.capOpen)&&['x','y','vx','vy','face','walk','land'].every(key=>Number.isFinite(game.body[key]))
++    &&['age','progress','entry','openness','fromOpen','handGrip','handClasp','handCatch'].every(key=>Number.isFinite(game.cap[key]))
++    &&['closed','opening','open','returning'].includes(game.cap.phase);
++}
++const validReturnFrom=from=>from&&['x','y','vx','vy','scale','alpha'].every(key=>Number.isFinite(from[key]))&&from.scale>0&&from.alpha>.02;
++
++/** The caller supplies the same original character/presented-soul calculation. */
++export function getCompanionView(game,x,y,t,shown=null){
++  if(!isCompanionScene(game)||!Number.isFinite(x)||!Number.isFinite(y))return null;
++  const reduced=game.options?.reducedMotion===true,time=reduced?0:finite(t);
++  const returning=!reduced&&game.form==='body'&&game.cap.phase==='returning'&&validReturnFrom(game.cap.returnFrom);
++  const presented=shown&&['x','y','alpha','scale'].every(key=>Number.isFinite(shown[key]))&&shown.alpha>.05&&shown.scale>0;
++  const visible=presented&&(returning&&shown.pose==='return'&&shown.layer==='inside'
++    ||game.form==='soul'&&(shown.pose==='peek'&&shown.layer==='inside'||shown.pose==='free'&&shown.layer==='world'));
++  const target=Object.freeze(visible?{x:shown.x,y:shown.y}:{x:game.body.x,y:game.body.y-58});
++  const dx=target.x-x,dy=target.y-(y-32),attention=visible?clamp(-dy/190,0,1):0;
++  const happy=finite(game.emoteTime)>0;
++  const naturalBlink=!reduced&&Math.sin(time*1.6+.8)>.985?.18:happy?.6:1;
++  // Base recall reaches the cap at .48s, then finishes closing at .72s.
++  // Those are the last third of the ORIGINAL cap.progress, not a new timer.
++  // An invisible immediate double-E has no returnFrom and cannot create this
++  // settling blink. Reopening/respawn/reduced motion clear the original phase.
++  const closing=returning&&!visible&&game.cap.progress>=2/3&&game.cap.progress<1;
++  const returnBlink=closing?Math.sin(Math.PI*clamp((game.cap.progress-2/3)*3,0,1)):0;
++  return Object.freeze({
++    x,y,time,reduced,happy,focus:visible?shown.pose:'body',target,
++    lookX:clamp(dx/145,-1.3,1.3),lookY:clamp(dy/120,-1.3,1.3),
++    attention,earLift:attention*1.6,
++    headTilt:reduced?0:clamp(dx/180,-1,1)*attention*.085,
++    blink:Math.max(.12,Math.min(naturalBlink,1-returnBlink*.88)),returnBlink,
++    bob:reduced?0:Math.sin(time*(happy?5:2))*(happy?4:2),
++    tailBend:reduced?0:Math.sin(time*2.5)*4,
++    light:hex(game.level?.theme?.light,'#edcf99'),
++  });
++}
++function oval(c,x,y,rx,ry,fill){c.beginPath();c.ellipse(x,y,rx,ry,0,0,TAU);c.fillStyle=fill;c.fill();}
++function gradient(c,x,y,x2,y2,stops){const g=c.createLinearGradient(x,y,x2,y2);for(const [n,col] of stops)g.addColorStop(n,col);return g;}
++function line(c,points,color,width=1){c.beginPath();c.moveTo(...points[0]);for(const p of points.slice(1))c.lineTo(...p);c.strokeStyle=color;c.lineWidth=width;c.stroke();}
++function curve(c,points,color,width=1){c.beginPath();c.moveTo(...points.slice(0,2));c.bezierCurveTo(...points.slice(2));c.strokeStyle=color;c.lineWidth=width;c.stroke();}
++function star(c,x,y,r,paint){c.beginPath();c.moveTo(x,y-r);c.quadraticCurveTo(x+r*.2,y-r*.2,x+r,y);c.quadraticCurveTo(x+r*.2,y+r*.2,x,y+r);c.quadraticCurveTo(x-r*.2,y+r*.2,x-r,y);c.quadraticCurveTo(x-r*.2,y-r*.2,x,y-r);c.closePath();c.fillStyle=paint;c.fill();}
++function headPath(c,lift){
++  c.beginPath();c.moveTo(-12,-38);
++  c.lineTo(-15.3,-51.7-lift*.45);c.quadraticCurveTo(-10,-48,-4,-43.5);
++  c.quadraticCurveTo(0,-45,4,-43.5);c.quadraticCurveTo(10,-48,15.1,-51.7-lift*.45);
++  c.lineTo(12.8,-37.5);c.quadraticCurveTo(16,-32,13,-27);
++  c.quadraticCurveTo(7,-20.5,0,-21.7);c.quadraticCurveTo(-9,-21,-13,-27);
++  c.quadraticCurveTo(-16,-33,-12,-38);c.closePath();
++}
++
++export function drawRefinedCompanion(c,view){
++  // Reject before drawing, so the caller can safely use the old painter. An
++  // unexpected mid-paint exception is never relabeled as an undrawn fallback.
++  if(!view||!c||!required.every(name=>typeof c[name]==='function')
++    ||!['x','y','time','lookX','lookY','attention','earLift','headTilt','blink','bob','tailBend'].every(key=>Number.isFinite(view[key]))
++    ||view.blink<0||view.blink>1)return false;
++  const v=view;c.save();
++  try{
++    c.translate(v.x,v.y);c.lineCap='round';c.lineJoin='round';
++    // Keep the old shadow and floating origin. This painter adds no collision,
++    // landing claim, projected surface or new following simulation.
++    oval(c,0,-3,18,4,'#0d1c264d');c.translate(0,v.bob);
++    curve(c,[-8,-12,-27,-10,-28,-28,-20,-32+v.tailBend],'#618b7e',6.7);
++    curve(c,[-8,-12,-26,-11,-27,-28,-20,-32+v.tailBend],'#a4c5ac',4.7);
++    curve(c,[-11,-13,-25,-12,-26,-27,-20,-31+v.tailBend],'#d4dfbbbd',1.25);
++    const body=gradient(c,-13,-37,13,-7,[[0,'#d2dfbf'],[.43,'#a9c3a7'],[1,'#688f7b']]);
++    oval(c,0,-22,12.8,18,body);
++    c.beginPath();c.moveTo(-5,-33);c.quadraticCurveTo(-10,-24,-7,-13);c.quadraticCurveTo(-5,-5,1,-6);c.quadraticCurveTo(9,-9,7,-21);c.quadraticCurveTo(6,-29,3,-33);c.closePath();
++    c.fillStyle=gradient(c,-7,-30,7,-7,[[0,'#edf0cf'],[.55,'#d5dfb8'],[1,'#acbc99']]);c.fill();
++    curve(c,[-9,-24,-12,-19,-10,-12,-7,-10],'#e5ebc28c',1.2);
++    // Separate soft paws replace the old zigzag without moving the foot area.
++    for(const side of [-1,1]){
++      const x=side*5.3;
++      oval(c,x,-4.1,4.5,2.9,'#6e927b');oval(c,x-.5,-4.9,3.7,2.4,'#dce5be');
++      line(c,[[x+.3,-5.8],[x+.3,-3.7]],'#a5b797',.65);
++    }
++    c.save();
++    try{
++      c.translate(0,-27);c.rotate(v.headTilt);c.translate(0,27);
++      headPath(c,v.earLift);c.fillStyle=gradient(c,-14,-48,14,-23,[[0,'#e4e9c7'],[.38,'#c0d2b4'],[1,'#7ea38d']]);c.fill();
++      c.strokeStyle='#648a786e';c.lineWidth=.85;c.stroke();
++      // Ear folds stay inside the original silhouette. There are no new props.
++      for(const side of [-1,1]){
++        c.beginPath();c.moveTo(side*12.2,-47.7-v.earLift*.25);c.lineTo(side*10.1,-38.5);c.lineTo(side*5.2,-42.9);c.closePath();c.fillStyle='#c3988d';c.fill();
++        line(c,[[side*11.8,-45.7],[side*10.2,-39.7]],'#e8c5aa',.9);
++      }
++      c.beginPath();c.moveTo(-11,-37);c.quadraticCurveTo(0,-43,11,-37);c.quadraticCurveTo(12,-27,0,-24);c.quadraticCurveTo(-12,-27,-11,-37);c.closePath();
++      c.fillStyle=gradient(c,0,-40,0,-24,[[0,'#e4e9c48c'],[1,'#d0dcb36b']]);c.fill();
++      for(const x of [-5.1,5.1]){
++        oval(c,x,-32.1,3.0,3.9*v.blink,gradient(c,x-2,-36,x+2,-28,[[0,'#263f40'],[1,'#49716a']]));
++        if(v.blink>.3){oval(c,x+v.lookX*.7,-33+v.lookY*.65,.9,1.25,'#fff5d9');oval(c,x-.6,-30.1,.45,.55,'#a3cfb389');}
++      }
++      // A short nose and paired muzzle read as the existing cat, not a beak.
++      oval(c,-3.4,-25.8,4.0,2.8,'#e7e9c9b8');oval(c,3.4,-25.8,4.0,2.8,'#e7e9c9b8');
++      c.beginPath();c.moveTo(-2.1,-27.7);c.quadraticCurveTo(0,-29,2.1,-27.7);c.quadraticCurveTo(.9,-25.5,0,-25.9);c.quadraticCurveTo(-.9,-25.5,-2.1,-27.7);c.closePath();c.fillStyle='#997e75';c.fill();
++      curve(c,[0,-25.6,-.5,-23.4,-2,-23.7,-3,-24.4],'#6d8875',.8);
++      curve(c,[0,-25.6,.5,-23.4,2,-23.7,3,-24.4],'#6d8875',.8);
++      for(const side of [-1,1]){
++        oval(c,side*10,-27,2.8,1.2,'#cd9e8b55');
++        line(c,[[side*10,-28.2],[side*16.5,-29.1]],'#dfe5bd8a',.75);
++      }
++      curve(c,[-10,-38,-8,-40,-5,-40.5,-3,-40],'#f6f4d698',1.1);
++    }finally{c.restore();}
++    if(v.happy)star(c,20,-46,4,v.light);
++    return true;
++  }finally{c.restore();}
++}
+diff --git a/tests/companion-art-v33.test.mjs b/tests/companion-art-v33.test.mjs
+new file mode 100644
+index 0000000..a1a2921
+--- /dev/null
++++ b/tests/companion-art-v33.test.mjs
+@@ -0,0 +1,119 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {DreamGame} from '../dist/dream-engine.js';
++import {DreamGame as BaseGame} from '../dist/dream-engine-base.js';
++import {FESTIVAL_LEVELS} from '../dist/dream-festival-levels.js';
++import {isCompanionScene,getCompanionView,drawRefinedCompanion} from '../dist/dream-companion-art.js';
++
++const noop=()=>{},clone=x=>JSON.parse(JSON.stringify(x));
++globalThis.window={devicePixelRatio:1,addEventListener:noop,removeEventListener:noop};
++globalThis.document={hidden:false,addEventListener:noop,removeEventListener:noop};
++globalThis.requestAnimationFrame=()=>1;globalThis.cancelAnimationFrame=noop;
++function context(){
++  const calls=[],stack=[],values={globalAlpha:.7,fillStyle:'#123456',strokeStyle:'#234567',lineWidth:4,lineCap:'butt',lineJoin:'miter'};
++  const record=(name,args=[])=>{for(const n of args)if(typeof n==='number')assert.ok(Number.isFinite(n),name+' uses finite geometry');calls.push([name,...args]);};
++  const api={calls,depth:()=>stack.length,snapshot:()=>clone(values),
++    save(){stack.push({...values});record('save');},restore(){assert.ok(stack.length);Object.assign(values,stack.pop());record('restore');},
++    createLinearGradient(...args){record('gradient',args);return {addColorStop(at,color){record('stop',[at,color]);}};},
++    createRadialGradient(...args){record('radial',args);return {addColorStop(at,color){record('stop',[at,color]);}};},
++    measureText:text=>({width:text.length*8})};
++  return new Proxy(api,{get(o,k){if(k in o)return o[k];if(k in values)return values[k];return (...args)=>record(k,args);},set(o,k,v){if(k in o)o[k]=v;else values[k]=v;return true;}});
++}
++function make(options={},Class=DreamGame){const c=context(),game=new Class({getContext:()=>c,getBoundingClientRect:()=>({width:320,height:431})});game.start({sound:false,...options});return {game,c};}
++function tick(g,n){for(let i=0;i<n;i++)g.update(1/60);}
++function view(g,t=g.options.reducedMotion?0:g.visualTime){const character=g.getCharacterPresentation(t),shown=g.getSoulPresentation(character);return {shown,view:getCompanionView(g,g.companion.x,g.companion.y,t,shown)};}
++function openAndFly(g){assert.equal(g.toggleSoul(),true);tick(g,44);g.setInput({x:.65,y:-.7});tick(g,24);g.setInput({x:0,y:0});tick(g,9);assert.equal(g.form,'soul');}
++const physical=g=>clone({body:g.body,soul:g.soul,companion:g.companion,form:g.form,cap:g.cap,input:g.input,state:g.state,time:g.time,visualTime:g.visualTime,runId:g.runId,energy:g.energy,emoteTime:g.emoteTime,deaths:g.deaths,lanterns:g.lanterns,memories:g.memories,movers:g.movers,hazards:g.hazards,pads:g.pads,checkpoint:g.checkpoint,firstTicket:g.firstTicket,greenhousePlant:g.greenhousePlant});
++
++test('real recall keeps watching the presented return while form is already body, then settles by the original cap progress',()=>{
++  const {game:g}=make();openAndFly(g);const raw={x:g.soul.x,y:g.soul.y};assert.equal(g.recall(),true);tick(g,8);
++  const returning=view(g);assert.equal(g.form,'body');assert.equal(returning.shown.pose,'return');assert.equal(returning.view.focus,'return');
++  assert.deepEqual(returning.view.target,{x:returning.shown.x,y:returning.shown.y});assert.notDeepEqual(returning.view.target,raw,'the original raw soul no longer describes its visible cubic return');
++  assert.equal(returning.view.returnBlink,0);assert.ok(returning.view.lookY<0);
++  tick(g,20);assert.equal(view(g).shown.pose,'return');assert.equal(view(g).view.returnBlink,0,'28 actual frames are still before arrival');
++  tick(g,1);assert.equal(view(g).shown,null);assert.ok(view(g).view.returnBlink>0,'29 actual frames begin the last closing third');
++  tick(g,7);assert.ok(view(g).view.returnBlink>.99,'36 actual frames reach the brief closing blink');
++  tick(g,8);const closed=view(g);assert.equal(g.cap.phase,'closed');assert.equal(closed.view.returnBlink,0);assert.equal(closed.view.focus,'body');
++  assert.deepEqual(closed.view.target,{x:g.body.x,y:g.body.y-58});g.destroy();
++});
++
++test('successful E reversal cancels the real return; rejected low-energy E keeps its current settling',()=>{
++  const {game:g}=make();openAndFly(g);g.recall();tick(g,36);assert.ok(view(g).view.returnBlink>.99);
++  assert.equal(g.toggleSoul(),true);assert.equal(g.cap.phase,'opening');assert.equal(g.cap.returnFrom,null);assert.equal(view(g).view.returnBlink,0);g.destroy();
++  const {game:tired}=make();assert.equal(tired.toggleSoul(),true);
++  for(let frame=0;frame<1500&&tired.energy>=6;frame++)tired.update(1/60);
++  assert.equal(tired.form,'soul');assert.ok(tired.energy>0&&tired.energy<6);assert.equal(tired.recall(),true);tick(tired,36);
++  const before=physical(tired),blink=view(tired).view.returnBlink;assert.ok(tired.energy<18);assert.ok(blink>.99);
++  assert.equal(tired.toggleSoul(),false);assert.deepEqual(physical(tired),before);assert.equal(view(tired).view.returnBlink,blink);tired.destroy();
++});
++
++test('immediate invisible double E cannot manufacture a return blink',()=>{
++  const {game:g}=make();assert.equal(g.toggleSoul(),true);assert.equal(g.getSoulPresentation().alpha,0);assert.equal(g.toggleSoul(),true);assert.equal(g.cap.returnFrom,null);
++  for(let frame=0;frame<46;frame++){tick(g,1);assert.equal(view(g).view.returnBlink,0);assert.equal(view(g).view.focus,'body');}g.destroy();
++});
++
++test('paused return is frozen; reduced motion settles it and restoring motion does not replay',()=>{
++  const {game:g}=make();openAndFly(g);g.recall();tick(g,8);assert.equal(g.pause(),true);
++  const before=physical(g),frozen=view(g).view,a=context(),b=context();drawRefinedCompanion(a,frozen);tick(g,120);drawRefinedCompanion(b,view(g).view);
++  assert.deepEqual(physical(g),before);assert.deepEqual(view(g).view,frozen);assert.deepEqual(a.calls,b.calls);
++  assert.equal(g.resume(),true);g.setReducedMotion(true);assert.equal(g.cap.phase,'closed');assert.equal(g.cap.returnFrom,null);
++  const reduced=view(g,1e8).view;assert.equal(reduced.time,0);assert.equal(reduced.returnBlink,0);assert.equal(reduced.bob,0);assert.equal(reduced.tailBend,0);assert.equal(reduced.headTilt,0);
++  assert.deepEqual(view(g,0).view,reduced);g.setReducedMotion(false);assert.equal(view(g).view.returnBlink,0);assert.equal(g.cap.phase,'closed');g.destroy();
++});
++
++test('the six story chapters change only presentation under ordinary input, including original cat following coordinates',()=>{
++  for(let chapterIndex=0;chapterIndex<6;chapterIndex++){
++    const {game:g}=make({chapterIndex}),{game:base}=make({chapterIndex},BaseGame);
++    assert.equal(isCompanionScene(g),true);
++    const equal=()=>assert.deepEqual(physical(g),physical(base),'identical original gameplay in chapter '+chapterIndex);
++    const both=(method,...args)=>{assert.deepEqual(g[method](...args),base[method](...args));equal();};
++    const advance=n=>{for(let frame=0;frame<n;frame++){g.update(1/60);base.update(1/60);equal();}};
++    both('setInput',{x:1,y:0});advance(20);both('setInput',{x:0,y:0});advance(14);both('toggleSoul');advance(44);
++    both('setInput',{x:.5,y:-.6});advance(20);both('recall');advance(44);
++    const before=physical(g);g.render();assert.deepEqual(physical(g),before);assert.equal(g.ctx.depth(),0);g.destroy();base.destroy();
++  }
++});
++
++test('all festivals retain the exact old companion painter; absent or damaged contexts do not enter refinement',()=>{
++  for(const level of FESTIVAL_LEVELS){
++    const {game:g}=make({festival:{id:level.festivalId}}),a=context(),b=context();
++    assert.equal(isCompanionScene(g),false);assert.equal(getCompanionView(g,g.companion.x,g.companion.y,0),null);
++    g.drawCompanion(a,g.companion.x,g.companion.y,0);BaseGame.prototype.drawCompanion.call(g,b,g.companion.x,g.companion.y,0);assert.deepEqual(a.calls,b.calls);g.destroy();
++  }
++  const {game:g}=make(),bad=[null,undefined,{},...[-1,6,.5,'0'].map(chapterIndex=>({...g,chapterIndex})),{...g,mode:'survivor'},
++    {...g,destroyed:true},{...g,body:null},{...g,body:{...g.body,x:NaN}},{...g,cap:null},{...g,capOpen:NaN},
++    {...g,cap:{...g.cap,entry:NaN}},{...g,options:null},{...g,level:null}];
++  for(const invalid of bad){assert.equal(isCompanionScene(invalid),false);assert.equal(getCompanionView(invalid,40,560,0),null);}
++  assert.equal(getCompanionView(g,NaN,560,0),null);assert.equal(getCompanionView(g,40,Infinity,0),null);
++  const before=physical(g);g.drawCompanion(null,40,560,0);assert.deepEqual(physical(g),before);
++  g.destroy();assert.equal(getCompanionView(g,40,560,0),null);
++});
++
++test('the painter preserves Canvas state, refuses before paint, and never turns a mid-paint error into a duplicate fallback',()=>{
++  const {game:g}=make(),v=view(g).view,c=context(),before=c.snapshot(),facts=physical(g);assert.ok(Object.isFrozen(v)&&Object.isFrozen(v.target));
++  assert.equal(drawRefinedCompanion(c,v),true);assert.equal(c.depth(),0);assert.deepEqual(c.snapshot(),before);assert.deepEqual(physical(g),facts);
++  for(const invalid of [null,{...v,x:NaN},{...v,blink:Infinity}]){const unused=context();assert.equal(drawRefinedCompanion(unused,invalid),false);assert.deepEqual(unused.calls,[]);}
++  const missing=context();missing.createLinearGradient=null;assert.equal(drawRefinedCompanion(missing,v),false);assert.deepEqual(missing.calls,[]);
++  const throwing=context();throwing.fill=()=>{throw Error('paint failure');};assert.throws(()=>drawRefinedCompanion(throwing,v),/paint failure/);assert.equal(throwing.depth(),0);g.destroy();
++});
++
++test('one shared render result survives null, failure and reentry without escaping its frame',()=>{
++  const {game:g}=make();let reads=0,lastSoul;const get=g.getSoulPresentation.bind(g);
++  g.getSoulPresentation=(...args)=>{reads++;return lastSoul=get(...args);};g.render();assert.equal(reads,1);assert.equal(g.companionRenderScope,null);
++  reads=0;const standalone=context(),old=context();g.drawCompanion(standalone,40,560,0);BaseGame.prototype.drawCompanion.call(g,old,40,560,0);
++  assert.equal(reads,0,'standalone drawing safely falls back without another pose');assert.deepEqual(standalone.calls,old.calls);
++  const draw=g.drawCompanion;g.drawCompanion=()=>{assert.equal(g.companionRenderScope.ready,true);assert.equal(g.companionRenderScope.shown,null);throw Error('interrupted render');};
++  assert.throws(()=>g.render(),/interrupted render/);assert.equal(g.companionRenderScope,null);
++  g.drawCompanion=function(...args){assert.strictEqual(this.companionRenderScope.shown,lastSoul,'the cat consumes the one base-render object');return draw.apply(this,args);};
++  openAndFly(g);g.recall();tick(g,8);reads=0;g.render();assert.equal(reads,1);assert.equal(g.companionRenderScope,null);
++  const background=g.drawBackground,painted=[];let entered=false,outer;
++  g.drawBackground=function(...args){
++    if(!entered){entered=true;outer=this.companionRenderScope;const originalSoul=outer.shown;this.render();assert.strictEqual(this.companionRenderScope,outer);assert.strictEqual(outer.shown,originalSoul);}
++    return background.apply(this,args);
++  };
++  g.drawCompanion=function(...args){painted.push(this.companionRenderScope);return draw.apply(this,args);};
++  reads=0;g.render();assert.equal(reads,2,'one original result for each of the two nested frames');assert.equal(painted.length,2);
++  assert.notStrictEqual(painted[0],outer);assert.strictEqual(painted[1],outer);assert.equal(g.companionRenderScope,null);
++  const savedContext=g.ctx;g.ctx=null;reads=0;g.render();assert.equal(reads,0);assert.equal(g.companionRenderScope,null);g.ctx=savedContext;
++  g.destroy();g.render();assert.equal(reads,0);assert.equal(g.companionRenderScope,null);
++});
+diff --git a/scripts/browser_companion_v33.py b/scripts/browser_companion_v33.py
+new file mode 100644
+index 0000000..ba659a1
+--- /dev/null
++++ b/scripts/browser_companion_v33.py
+@@ -0,0 +1,218 @@
++"""Bounded three-size companion checks, callable after the existing smoke route.
++
++The caller owns its browser and supplies the original input API. Read-only app
++probes never assign saves, coordinates, cap phases, clocks or drawing routines.
++An optional local old-site comparison belongs to the standalone study only;
++normal release checks use the current args.url and strict args.version.
++"""
++import base64, hashlib, json, re, time
++from pathlib import Path
++from urllib.parse import urlparse
++
++HERE=Path(__file__).resolve().parent
++
++COMPANION_PROBE="""
++import {getCompanionView as __qaCompanionView} from './dream-companion-art.js';
++window.__qaCompanionRead=()=>{
++  if(!game?.body)return null;
++  const t=game.options.reducedMotion?0:game.visualTime;
++  const character=game.getCharacterPresentation(t),shown=game.getSoulPresentation(character);
++  const companion=game.companion,view=__qaCompanionView(game,companion.x,companion.y,t,shown);
++  const canvas=document.querySelector('#dream-canvas'),r=canvas.getBoundingClientRect();
++  const x=r.left+(companion.x-game.camera)*game.scale,y=r.top+companion.y*game.scale+game.viewportOffsetY;
++  return {version:document.querySelector('meta[name="application-version"]').content,
++    observedAt:performance.now(),time:game.time,visualTime:game.visualTime,state:game.state,form:game.form,
++    mode:game.mode,chapterIndex:game.chapterIndex,runId:game.runId,deaths:game.deaths,
++    body:{x:game.body.x,y:game.body.y},companion:{...companion},rawSoul:{...game.soul},shown,view,
++    cap:{phase:game.cap.phase,age:game.cap.age,progress:game.cap.progress,opens:game.cap.opens,returnFrom:game.cap.returnFrom},
++    reducedMotion:game.options.reducedMotion,memories:game.memories.map(m=>m.collected),lamps:game.lanterns.map(l=>l.lit),
++    firstTicket:{...game.firstTicket},input:{...game.input},painted:game.paintedFrame,
++    viewport:{width:innerWidth,height:innerHeight},scale:game.scale,camera:game.camera,canvas:{width:canvas.width,height:canvas.height,left:r.left,top:r.top,right:r.right,bottom:r.bottom},
++    companionBounds:{left:x-32*game.scale,right:x+30*game.scale,top:y-62*game.scale,bottom:y+9*game.scale},
++    renderScopeReleased:game.companionRenderScope===null};
++};
++"""
++
++OBSERVER="""({tag,images=true})=>{
++  if(window.__qaCompanionObserver)throw Error('observer already exists');
++  const samples=[],events=[],latches={},pictures={};let raf=0,timer=0,active=true;
++  const initial=window.__qaCompanionRead(),started=performance.now();
++  function latch(name,s){
++    if(latches[name])return;latches[name]=s;
++    if(images)pictures[name]=document.querySelector('#dream-canvas').toDataURL('image/png');
++  }
++  function read(){return {tag,initial,samples:[...samples],events:[...events],latches:{...latches},pictures:{...pictures},active,elapsedMs:performance.now()-started};}
++  function native(e){
++    const target=e.target?.closest?.('#stage-toggle,#stage-resume,[data-shell-action="pause"]');
++    if(!(e.type==='keydown'&&['KeyE','Escape'].includes(e.code))&&!target)return;
++    if(events.length<32)events.push({type:e.type,code:e.code||null,target:target?.id||target?.dataset.shellAction||null,isTrusted:e.isTrusted,repeat:e.repeat||false,pointerType:e.pointerType||null,detail:e.detail??null,snapshot:window.__qaCompanionRead()});
++  }
++  const types=['keydown','pointerdown','pointerup','click'];
++  function stop(){if(active){active=false;cancelAnimationFrame(raf);clearTimeout(timer);for(const type of types)window.removeEventListener(type,native,true);}const result=read();delete window.__qaCompanionObserver;return result;}
++  function tick(){
++    if(!active)return;const s=window.__qaCompanionRead();samples.push(s);if(samples.length>180)samples.shift();
++    if(s.form==='body'&&s.cap.phase==='returning'&&s.shown?.pose==='return'&&s.view?.focus==='return'&&s.shown.alpha>.2)latch('returning',s);
++    if(latches.returning&&s.view?.returnBlink>.8)latch('arrival-blink',s);
++    if(latches.returning&&s.cap.phase==='closed'&&s.view?.focus==='body')latch('closed',s);
++    if(performance.now()-started<5000)raf=requestAnimationFrame(tick);
++  }
++  for(const type of types)window.addEventListener(type,native,true);
++  timer=setTimeout(()=>{active=false;cancelAnimationFrame(raf);for(const type of types)window.removeEventListener(type,native,true);},5200);
++  window.__qaCompanionObserver={read,stop};raf=requestAnimationFrame(tick);return initial;
++}"""
++
++def sha(data):return hashlib.sha256(data).hexdigest()
++def save_json(path,value):path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
++def validate(s,expected_version):
++    assert s['version']==expected_version,{'expectedVersion':expected_version,'actualVersion':s['version']}
++    assert s['mode']=='story' and s['chapterIndex']==0 and s['deaths']==0
++    assert s['renderScopeReleased'],'render scope escaped the synchronous frame'
++    v=s['view'];assert v and v['x']==s['companion']['x'] and v['y']==s['companion']['y']
++    if v['focus']=='return':
++        assert s['form']=='body' and s['cap']['phase']=='returning' and s['shown']['pose']=='return'
++        assert v['target']=={'x':s['shown']['x'],'y':s['shown']['y']},'cat is not following the actual displayed return'
++    if v['returnBlink']>0:assert s['form']=='body' and s['cap']['phase']=='returning' and s['cap']['returnFrom'] and s['cap']['progress']>=2/3
++    if s['reducedMotion']:assert all(v[k]==0 for k in ['time','returnBlink','bob','tailBend','headTilt'])
++    return s
++
++async def capture(page,folder,name,records,expected_version):
++    s=validate(await page.evaluate('window.__qaCompanionRead()'),expected_version)
++    r=s['companionBounds'];c=s['canvas'];assert r['left']>=c['left']-1 and r['right']<=c['right']+1 and r['top']>=c['top']-1 and r['bottom']<=c['bottom']+1,'cat must be visible in this planned picture'
++    file=folder/(name+'.png');await page.screenshot(path=str(file),full_page=True)
++    records.append({'file':file.name,'sha256':sha(file.read_bytes()),'snapshot':s,'scope':'full browser page; read and subsequent screenshot are not guaranteed the same frame'})
++    return s
++
++async def take_observer(page,folder,name,expected_version):
++    result=await page.evaluate('window.__qaCompanionObserver.stop()')
++    pictures=result.pop('pictures');result['pictures']=[]
++    for label,url in pictures.items():
++        data=base64.b64decode(url.split(',',1)[1]);file=folder/(name+'-'+label+'-canvas.png');file.write_bytes(data)
++        result['pictures'].append({'file':file.name,'sha256':sha(data),'bytes':len(data),'width':int.from_bytes(data[16:20],'big'),'height':int.from_bytes(data[20:24],'big'),'scope':'unaltered current Canvas pixels latched by passive RAF, no render call'})
++    for s in [result['initial'],*result['samples']]:validate(s,expected_version)
++    assert result['events'] and all(e['isTrusted'] for e in result['events'])
++    return result
++
++async def instrument(page,after,api):
++    async def route(r):
++        response=await r.fetch();await r.fulfill(response=response,body=(await response.text())+api.PROBE+(COMPANION_PROBE if after else ''))
++    await page.route(re.compile(r'/dream-app\.js(?:\?[^#]*)?$'),route)
++
++async def watch_from_above(page,touch,api):
++    # This picture needs a real, slowly moving soul above the cat, not a pixel-
++    # exact waypoint. The old driver's predicted 12px release can asymptotically
++    # stop at 12.0000000003px; accept this explicit visible observation region.
++    async def arrived():
++        a=await page.evaluate('window.__qaRead()')
++        return a['form']=='soul' and 140<=a['x']<=185 and 280<=a['y']<=320 and abs(a['vx'])<40 and abs(a['vy'])<40
++    await api.drive_to(page,165,300,touch=touch,until=arrived,limit=4)
++    # drive_to releases the held native control in finally. Let the original
++    # inertial motion settle before a second observation after that release.
++    await page.wait_for_timeout(220)
++    assert await arrived(),'soul must remain visibly above its unchanged body/cat'
++
++async def exercise_companion(browser,args,output,api):
++    """Use three fresh contexts; never close the caller's browser or import it."""
++    expected_version=getattr(args,'version',None)
++    assert isinstance(expected_version,str) and expected_version.strip(),'companion checks require an explicit args.version'
++    assert urlparse(args.url).scheme in ['http','https'],'current URL must use HTTP or HTTPS'
++    baseline=getattr(args,'companion_baseline',None)
++    if baseline:assert urlparse(baseline).hostname in ['127.0.0.1','localhost'],'optional old-site comparison is local-only'
++    out=Path(output)/'companion';out.mkdir(parents=True,exist_ok=True)
++    report={'schema':'companion-v33-1','status':'running','expectedVersion':expected_version,
++            'scope':'Fresh current-URL contexts with read-only app probes and original keyboard/touch/UI controls',
++            'baselineURL':baseline,'currentURL':args.url,'cases':[],
++            'notCovered':['complete chapter/story route','physical phone','Safari','device performance','all optional activities','OS reduced-motion media preference']}
++    if urlparse(args.url).hostname in ['127.0.0.1','localhost']:report['notCovered'].append('public HTTPS')
++    report['sourceFiles']={name:sha((HERE.parent/name).read_bytes()) for name in ['dist/dream-companion-art.js','dist/dream-engine.js','dist/dream-engine-base.js','dist/index.html','dist/dream.html','dist/survivor.html','scripts/browser_companion_v33.py']}
++    report['sourceFilesScope']='Local files at execution; page version equality alone does not prove every remotely served byte.'
++    report['visibilityBounds']='Conservative world offsets: left -32 (tail control points -28 minus3.35 stroke), right+30, top-62, bottom+9; original camera, scale and viewport offset apply.'
++    report['chromiumVersion']=browser.version;started=time.monotonic();report_path=out/'report.json'
++    try:
++        for width,height,touch in [(1280,800,False),(390,844,True),(320,680,True)]:
++            record={'viewport':{'width':width,'height':height},'input':'CDP simulated touch' if touch else 'keyboard','status':'running','captures':[]};report['cases'].append(record)
++            folder=out/str(width);folder.mkdir(exist_ok=True)
++            context=None;page=None;errors=[];http=[];failed=[]
++            try:
++                if baseline:
++                    before=await browser.new_context(viewport={'width':width,'height':height},device_scale_factor=1,has_touch=touch,is_mobile=touch)
++                    try:
++                        bpage=await before.new_page();await instrument(bpage,False,api);await bpage.goto(baseline,wait_until='networkidle',timeout=45000);await bpage.wait_for_timeout(1200)
++                        record['baselineSnapshot']=await bpage.evaluate('window.__qaRead()');baseline_file=folder/'before-neutral.png';await bpage.screenshot(path=str(baseline_file),full_page=True)
++                        record['baselinePicture']={'file':baseline_file.name,'sha256':sha(baseline_file.read_bytes()),'scope':'separate fresh optional local baseline context, not a same-frame pixel A/B'}
++                    finally:await before.close()
++                context=await browser.new_context(viewport={'width':width,'height':height},device_scale_factor=1,has_touch=touch,is_mobile=touch)
++                page=await context.new_page();page.set_default_timeout(5000)
++                page.on('pageerror',lambda e:errors.append(str(e)));page.on('response',lambda r:http.append({'url':r.url,'status':r.status}) if r.status>=400 else None);page.on('requestfailed',lambda r:failed.append({'url':r.url,'failure':r.failure}))
++                await instrument(page,True,api);await page.goto(args.url,wait_until='networkidle',timeout=45000);await page.wait_for_timeout(1200)
++                await page.wait_for_function('()=>window.__qaCompanionRead()?.painted===true',timeout=5000)
++                initial=await capture(page,folder,'after-neutral',record['captures'],expected_version);record['version']=initial['version'];record['pageURL']=page.url
++                assert initial['memories']==[False,False,False] and initial['deaths']==0
++                if baseline:
++                    assert initial['body']=={k:record['baselineSnapshot']['body'][k] for k in ['x','y']},'fresh baseline and new body positions differ'
++                await page.locator('#dream-canvas').focus();await api.toggle(page,touch)
++                async def ticket():return (await page.evaluate('window.__qaRead()'))['memoryFlags'][0]
++                await api.drive_to(page,270,420,touch=touch,until=ticket,limit=4);assert await ticket()
++                await watch_from_above(page,touch,api);await capture(page,folder,'watching-up',record['captures'],expected_version)
++                await page.evaluate(OBSERVER,{'tag':'return-pause','images':True});await api.toggle(page,touch);await page.wait_for_timeout(100)
++                if touch:await page.locator('[data-shell-action="pause"]').tap()
++                else:await page.keyboard.press('Escape')
++                await page.locator('#pause-dialog[open]').wait_for(timeout=1500)
++                paused=validate(await page.evaluate('window.__qaCompanionRead()'),expected_version);assert paused['state']=='paused' and paused['cap']['phase']=='returning'
++                image_a=await page.locator('#dream-canvas').evaluate('c=>c.toDataURL("image/png")');await page.wait_for_timeout(280)
++                still=validate(await page.evaluate('window.__qaCompanionRead()'),expected_version);image_b=await page.locator('#dream-canvas').evaluate('c=>c.toDataURL("image/png")')
++                assert all(paused[k]==still[k] for k in ['time','visualTime','cap','view','body','companion']) and image_a==image_b,'pause did not freeze the existing view and Canvas'
++                record['pause']={'snapshot':paused,'after':still,'canvasBytesEqual':True}
++                if touch:await page.locator('#stage-resume').tap()
++                else:await page.locator('#stage-resume').click()
++                await page.wait_for_timeout(900);record['return']=await take_observer(page,folder,'return',expected_version)
++                assert all(key in record['return']['latches'] for key in ['returning','arrival-blink','closed'])
++                await capture(page,folder,'returned',record['captures'],expected_version)
++                await api.toggle(page,touch);await page.wait_for_timeout(700);await watch_from_above(page,touch,api)
++                await page.evaluate(OBSERVER,{'tag':'E-reversal','images':False});await api.toggle(page,touch)
++                await page.wait_for_function('()=>window.__qaCompanionRead()?.view.returnBlink>.3',timeout=2500);await api.toggle(page,touch)
++                await page.wait_for_timeout(70);reopened=validate(await page.evaluate('window.__qaCompanionRead()'),expected_version);assert reopened['form']=='soul' and reopened['cap']['phase']=='opening' and reopened['cap']['returnFrom'] is None and reopened['view']['returnBlink']==0
++                record['reversal']=await take_observer(page,folder,'reversal',expected_version);record['reversal']['after']=reopened
++                await api.toggle(page,touch);await api.set_reduced_motion_from_ui(page,True);await api.toggle(page,touch);await page.wait_for_timeout(150)
++                reduced=await capture(page,folder,'reduced-open',record['captures'],expected_version);assert reduced['reducedMotion'] and reduced['cap']['phase']=='open'
++                await api.toggle(page,touch);settled=validate(await page.evaluate('window.__qaCompanionRead()'),expected_version);assert settled['cap']['phase']=='closed' and settled['view']['returnBlink']==0
++                record['reducedRecall']=settled
++                final=validate(await page.evaluate('window.__qaCompanionRead()'),expected_version);assert final['runId']==initial['runId'] and final['body']==initial['body'] and final['memories']==[True,False,False] and final['lamps']==[False,False]
++                record['storedSave']=await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.dream.v1'))");record['storedCapBook']=await page.evaluate("JSON.parse(localStorage.getItem('tougaigu.capbook.v1'))")
++                assert not any(c['completed'] or c['runs'] for c in record['storedSave']['chapters'])
++                assert await page.evaluate('document.documentElement.scrollWidth<=innerWidth')
++                await page.wait_for_load_state('networkidle');assert not errors and not http and not failed,{'page':errors,'http':http,'request':failed}
++                record['status']='passed'
++            except Exception as error:
++                record['status']='failed';record['failure']=str(error);report['status']='failed'
++                if page:
++                    try:record['failureSnapshot']=await page.evaluate('window.__qaCompanionRead?.()');await page.screenshot(path=str(folder/'failure.png'),full_page=True,timeout=5000)
++                    except Exception as evidence_error:record['failureEvidenceError']=str(evidence_error)
++                raise
++            finally:
++                record.update(pageErrors=errors,httpErrors=http,requestFailures=failed);save_json(report_path,report)
++                if context:await context.close()
++        report['status']='passed'
++    finally:
++        report['elapsedSeconds']=time.monotonic()-started;save_json(report_path,report)
++    return {'schema':report['schema'],'status':report['status'],'expectedVersion':expected_version,
++            'details':'companion/report.json','reportSha256':sha(report_path.read_bytes()),'baselineCompared':bool(baseline),
++            'driverSha256':report['sourceFiles']['scripts/browser_companion_v33.py'],'elapsedSeconds':report['elapsedSeconds'],
++            'cases':[{'viewport':c['viewport'],'status':c['status'],'input':c['input'],'version':c['version'],
++                      'pauseCanvasBytesEqual':c['pause']['canvasBytesEqual'],'returnPhases':list(c['return']['latches']),
++                      'pageErrors':len(c['pageErrors']),'httpErrors':len(c['httpErrors']),'requestFailures':len(c['requestFailures'])} for c in report['cases']]}
++
++async def main(args,api):
++    from playwright.async_api import async_playwright
++    async with async_playwright() as p:
++        browser=await p.chromium.launch(headless=True,args=['--no-sandbox'])
++        try:summary=await exercise_companion(browser,args,args.output,api)
++        finally:await browser.close()
++    print(json.dumps(summary,ensure_ascii=False))
++
++if __name__=='__main__':
++    import argparse,asyncio,importlib.util
++    spec=importlib.util.spec_from_file_location('companion_original_driver',HERE/'browser-smoke.py')
++    api=importlib.util.module_from_spec(spec);spec.loader.exec_module(api)
++    parser=argparse.ArgumentParser();parser.add_argument('--url',required=True);parser.add_argument('--version',required=True)
++    parser.add_argument('--baseline',dest='companion_baseline');parser.add_argument('--output',default='/tmp/v33-companion-browser')
++    asyncio.run(main(parser.parse_args(),api))

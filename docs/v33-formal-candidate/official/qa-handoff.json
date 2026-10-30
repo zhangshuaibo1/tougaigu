@@ -1,0 +1,75 @@
+{
+  "status": "candidate-passed-independently-audited",
+  "runId": 40984114609,
+  "runURL": "https://github.com/zhangshuaibo1/tougaigu/actions/runs/40984114609",
+  "commit": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+  "tree": "4de8f4e351ec2d3aa66f20785df440e702b06007",
+  "version": "33.0.0",
+  "sourceFiles": 996,
+  "runtimeFiles": 144,
+  "protectedFiles": 257,
+  "tests": {
+    "tests": 691,
+    "pass": 691,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0
+  },
+  "testDurationMs": 14514.703577,
+  "allOld683NamesPresent": true,
+  "allOld76TestFilesAndFixtureExact": true,
+  "browserStep": {
+    "startedAt": "2026-10-30T01:10:11Z",
+    "completedAt": "2026-10-30T01:23:21Z",
+    "seconds": 790.0
+  },
+  "companionSeconds": 32.595662565,
+  "companionViewports": [
+    {
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 680
+    }
+  ],
+  "companionSnapshotOccurrences": 472,
+  "companionOriginalPNGs": 21,
+  "mainRouteExpectedNetworkFaultCounts": [
+    9,
+    0,
+    0
+  ],
+  "extraNetworkFailures": 0,
+  "pageErrors": 0,
+  "httpErrors": 0,
+  "faceCheckpoints": 10,
+  "faceObservers": 5,
+  "faceOriginalPNGCount": 12,
+  "sourceIdentityAndOldStrictGates": "passed",
+  "dialogueConfigurations": 6,
+  "dialogueSnapshots": 12,
+  "maxPairedCanvasControlDifferenceCSSPx": 0,
+  "publicStep": "skipped",
+  "deployedByThisAgent": false,
+  "scope": "Official candidate only. Publish only after previous v32 public HTTPS audit closes, then run v33 main candidate and public HTTPS suite.",
+  "artifactId": 12946517224,
+  "artifactZipBytes": 284085966,
+  "artifactZipSHA256": "24cf2bbf51c7708e29fad281ac3358dbb1be6444e9e69470b48504bf925389b6",
+  "fullReportBytes": 15716945,
+  "fullReportSHA256": "a8caee04c996e99e91609a4020fde277a4b58efc96733aa1c0743bd1a0f1b441",
+  "selectedOriginalImages": [
+    "candidate/companion/1280/watching-up.png",
+    "candidate/companion/320/after-neutral.png",
+    "candidate/companion/390/returned.png",
+    "candidate/companion/390/return-returning-canvas.png",
+    "candidate/companion/320/return-arrival-blink-canvas.png",
+    "candidate/1280-first-lamp-face-lamp-freeJoy.png"
+  ]
+}

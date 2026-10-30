@@ -1,0 +1,61 @@
+{
+  "kind": "auditor metadata count correction prepared before running the main audit, not a game/test correction",
+  "actualReports": [
+    {
+      "scope": "candidate",
+      "count": 11,
+      "files": [
+        "1280-face-ticket-freeJoy.png",
+        "1280-face-fatigue-soulTired.png",
+        "1280-face-fatigue-bodyTiredOpen.png",
+        "1280-face-fatigue-bodyTiredOpen-390.png",
+        "1280-face-fatigue-bodyTiredOpen-320.png",
+        "1280-face-fatigue-recovered.png",
+        "1280-first-lamp-face-lamp-closedJoy.png",
+        "390-face-ticket-freeJoy.png",
+        "390-face-ticket-closedJoy.png",
+        "320-face-ticket-freeJoy.png",
+        "320-face-ticket-closedJoy.png"
+      ],
+      "originalValidatorsPass": true,
+      "requiredPrior11Present": true
+    },
+    {
+      "scope": "live",
+      "count": 12,
+      "files": [
+        "1280-face-ticket-freeJoy.png",
+        "1280-face-fatigue-soulTired.png",
+        "1280-face-fatigue-bodyTiredOpen.png",
+        "1280-face-fatigue-bodyTiredOpen-390.png",
+        "1280-face-fatigue-bodyTiredOpen-320.png",
+        "1280-face-fatigue-recovered.png",
+        "1280-first-lamp-face-lamp-freeJoy.png",
+        "1280-first-lamp-face-lamp-closedJoy.png",
+        "390-face-ticket-freeJoy.png",
+        "390-face-ticket-closedJoy.png",
+        "320-face-ticket-freeJoy.png",
+        "320-face-ticket-closedJoy.png"
+      ],
+      "originalValidatorsPass": true,
+      "requiredPrior11Present": true
+    }
+  ],
+  "optionalPublicImage": {
+    "file": "1280-first-lamp-face-lamp-freeJoy.png",
+    "imageSequence": 6,
+    "latchSequence": 6,
+    "snapshotSource": "raf",
+    "form": "soul",
+    "capPhase": "open",
+    "soulJoy": true,
+    "pose": "free"
+  },
+  "previousPreflightReviewer": {
+    "path": "preflight-review-with-historical-fixed-count.py",
+    "sha256": "b01d54647358fd4d5af7e182a182351c0f4e6cd0bbe213ed3aa578469170a555",
+    "executedAgainstThisMainArtifact": false
+  },
+  "runtimeAndProductionValidatorsUnchanged": true,
+  "reason": "The existing observer may latch first-lamp freeJoy before E depending on real RAF/input timing. Fixed previous-run count 11 is not a production invariant; original required 11 and all original source validators remain required."
+}

@@ -1,0 +1,1164 @@
+{
+  "runId": 40984114609,
+  "commit": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+  "version": "33.0.0",
+  "scope": "Formal33 companion candidate; public release is not part of this run",
+  "artifactId": 12946517224,
+  "zipBytes": 284085966,
+  "zipSha256": "24cf2bbf51c7708e29fad281ac3358dbb1be6444e9e69470b48504bf925389b6",
+  "sourceFilesExact": 996,
+  "artifactPaths": 296,
+  "tests": {
+    "tests": 691,
+    "pass": 691,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0
+  },
+  "rawReportBytes": 15716945,
+  "rawReportSha256": "a8caee04c996e99e91609a4020fde277a4b58efc96733aa1c0743bd1a0f1b441",
+  "faceCheckpointCount": 10,
+  "uniqueObserverCount": 5,
+  "snapshotsRevalidatedOccurrences": 971,
+  "journeyFaceSnapshotOccurrences": 45,
+  "journeyFaceByChapter": {
+    "2": 45
+  },
+  "journeyFaceKinds": [
+    {
+      "chapterIndex": 2,
+      "bodyFace": "neutral",
+      "reducedMotion": false,
+      "occurrences": 45
+    }
+  ],
+  "checkpointRecords": [
+    {
+      "file": "1280-face-ticket-collected.json",
+      "kind": "ticket",
+      "phase": "collected",
+      "label": "1280",
+      "status": "passed",
+      "sameRunId": 1,
+      "sameBodyIdentity": 1,
+      "framesObserved": 101,
+      "retainedSnapshots": 96,
+      "snapshotOccurrencesRevalidated": 102,
+      "nativeEventCount": 1,
+      "actualActions": [
+        {
+          "action": "toggle",
+          "type": "keydown",
+          "targetId": "dream-canvas",
+          "code": "KeyE",
+          "sequence": 2,
+          "isTrusted": true,
+          "observedMsAfterInstall": 18.5,
+          "pointerId": null,
+          "pointerType": null
+        }
+      ],
+      "latches": {
+        "event": {
+          "beforeSequence": 46,
+          "afterSequence": 47,
+          "beforeMemory": 0,
+          "afterMemory": 1,
+          "beforeSeals": 0,
+          "afterSeals": 0,
+          "actualEventRemainingSeconds": 2.3
+        },
+        "freeJoy": {
+          "sequence": 47,
+          "observedMsAfterInstall": 776.0,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "attentive",
+          "soulJoy": true,
+          "energy": 100,
+          "emoteRemainingSeconds": 2.3,
+          "bodyBlink": 0.7,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        }
+      },
+      "cleanup": {
+        "requested": true,
+        "stopped": true,
+        "removed": true
+      },
+      "validationRecomputedExact": true,
+      "rawBytes": 577810,
+      "rawSha256": "fb47823d4cf1b1a28d5e753e3c007041f260541c02490c75843ea292d871b7ca"
+    },
+    {
+      "file": "1280-face-fatigue-soul-low-energy.json",
+      "kind": "fatigue",
+      "phase": "soul-low-energy",
+      "label": "1280",
+      "status": "passed",
+      "sameRunId": 1,
+      "sameBodyIdentity": 1,
+      "framesObserved": 939,
+      "retainedSnapshots": 96,
+      "snapshotOccurrencesRevalidated": 99,
+      "nativeEventCount": 0,
+      "actualActions": [],
+      "latches": {
+        "soulTired": {
+          "sequence": 938,
+          "observedMsAfterInstall": 15821.199999999997,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "attentive",
+          "soulJoy": false,
+          "energy": 22.95833333333109,
+          "emoteRemainingSeconds": 0,
+          "bodyBlink": 1,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        }
+      },
+      "cleanup": {
+        "requested": false,
+        "stopped": false,
+        "removed": false
+      },
+      "validationRecomputedExact": true,
+      "rawBytes": 558537,
+      "rawSha256": "fab69f8821fec90bd407215c3d133b74bfd490346b50b491380329ddb2c162c4"
+    },
+    {
+      "file": "1280-face-fatigue-body-tired-open.json",
+      "kind": "fatigue",
+      "phase": "body-tired-open",
+      "label": "1280",
+      "status": "passed",
+      "sameRunId": 1,
+      "sameBodyIdentity": 1,
+      "framesObserved": 973,
+      "retainedSnapshots": 96,
+      "snapshotOccurrencesRevalidated": 100,
+      "nativeEventCount": 0,
+      "actualActions": [],
+      "latches": {
+        "soulTired": {
+          "sequence": 938,
+          "observedMsAfterInstall": 15821.199999999997,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "attentive",
+          "soulJoy": false,
+          "energy": 22.95833333333109,
+          "emoteRemainingSeconds": 0,
+          "bodyBlink": 1,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        },
+        "bodyTiredOpen": {
+          "sequence": 972,
+          "observedMsAfterInstall": 16521.600000000006,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "tired",
+          "soulJoy": false,
+          "energy": 19.948333333331142,
+          "emoteRemainingSeconds": 0,
+          "bodyBlink": 0.43,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        }
+      },
+      "cleanup": {
+        "requested": false,
+        "stopped": false,
+        "removed": false
+      },
+      "validationRecomputedExact": true,
+      "rawBytes": 564697,
+      "rawSha256": "ff5e1b19a42f88498cf18865c8d711d7042370fed8436eb91bd9d4788c612c36"
+    },
+    {
+      "file": "1280-face-fatigue-phone-low-energy.json",
+      "kind": "fatigue",
+      "phase": "phone-low-energy",
+      "label": "1280",
+      "status": "passed",
+      "sameRunId": 1,
+      "sameBodyIdentity": 1,
+      "framesObserved": 1038,
+      "retainedSnapshots": 96,
+      "snapshotOccurrencesRevalidated": 102,
+      "nativeEventCount": 0,
+      "actualActions": [],
+      "latches": {
+        "soulTired": {
+          "sequence": 938,
+          "observedMsAfterInstall": 15821.199999999997,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "attentive",
+          "soulJoy": false,
+          "energy": 22.95833333333109,
+          "emoteRemainingSeconds": 0,
+          "bodyBlink": 1,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        },
+        "bodyTiredOpen": {
+          "sequence": 972,
+          "observedMsAfterInstall": 16521.600000000006,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "tired",
+          "soulJoy": false,
+          "energy": 19.948333333331142,
+          "emoteRemainingSeconds": 0,
+          "bodyBlink": 0.43,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        },
+        "bodyTiredOpen-390": {
+          "sequence": 998,
+          "observedMsAfterInstall": 17111.5,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "tired",
+          "soulJoy": false,
+          "energy": 17.439999999997852,
+          "emoteRemainingSeconds": 0,
+          "bodyBlink": 0.43,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        },
+        "bodyTiredOpen-320": {
+          "sequence": 1020,
+          "observedMsAfterInstall": 17472.100000000006,
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "tired",
+          "soulJoy": false,
+          "energy": 15.863333333331209,
+          "emoteRemainingSeconds": 0,
+          "bodyBlink": 0.43,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        }
+      },
+      "cleanup": {
+        "requested": false,
+        "stopped": false,
+        "removed": false
+      },
+      "validationRecomputedExact": true,
+      "rawBytes": 577020,
+      "rawSha256": "0da04cb114ec7f2fd12fd60e496d72df545ec90ee186e6992b8e7e6ac9e68aaf"
+    },
+    {
+      "file": "1280-face-fatigue-returned.json",
+      "kind": "fatigue",
+      "phase": "returned",
+      "label": "1280",
+      "status": "passed",
+      "sameRunId": 1,
+      "sameBodyIdentity": 1,
+      "framesObserved": 1148,
+      "retainedSnapshots": 96,
+      "snapshotOccurrencesRevalidated": 105,
+      "nativeEventCount": 1,
+      "actualActions": [
+        {
+          "action": "toggle",
+          "type": "keydown",
+          "targetId": "dream-canvas",
+          "code": "KeyE",
+          "sequence": 1059,
+          "isTrusted": true,
+          "observedMsAfterInstall": 18268.300000000003,
+          "pointerId": null,
+          "pointerType": null
+        }
+      ],
+      "latches": {
+        "soulTired": {
+          "sequence": 938,
+          "observedMsAfterInstall": 15821.199999999997,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "attentive",
+          "soulJoy": false,
+          "energy": 22.95833333333109,
+          "emoteRemainingSeconds": 0,
+          "bodyBlink": 1,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        },
+        "bodyTiredOpen": {
+          "sequence": 972,
+          "observedMsAfterInstall": 16521.600000000006,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "tired",
+          "soulJoy": false,
+          "energy": 19.948333333331142,
+          "emoteRemainingSeconds": 0,
+          "bodyBlink": 0.43,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        },
+        "bodyTiredOpen-390": {
+          "sequence": 998,
+          "observedMsAfterInstall": 17111.5,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "tired",
+          "soulJoy": false,
+          "energy": 17.439999999997852,
+          "emoteRemainingSeconds": 0,
+          "bodyBlink": 0.43,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        },
+        "bodyTiredOpen-320": {
+          "sequence": 1020,
+          "observedMsAfterInstall": 17472.100000000006,
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "tired",
+          "soulJoy": false,
+          "energy": 15.863333333331209,
+          "emoteRemainingSeconds": 0,
+          "bodyBlink": 0.43,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        },
+        "returning": {
+          "sequence": 1060,
+          "observedMsAfterInstall": 18279.199999999997,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "source": "raf",
+          "form": "body",
+          "capPhase": "returning",
+          "bodyFace": "tired",
+          "soulJoy": false,
+          "energy": 12.79499999999785,
+          "emoteRemainingSeconds": 0,
+          "bodyBlink": 0.43,
+          "actualSoulPose": "return",
+          "actualSoulLayer": "inside"
+        },
+        "recovered": {
+          "sequence": 1102,
+          "observedMsAfterInstall": 19004.399999999994,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "source": "raf",
+          "form": "body",
+          "capPhase": "closed",
+          "bodyFace": "neutral",
+          "soulJoy": false,
+          "energy": 25.99499999999788,
+          "emoteRemainingSeconds": 0,
+          "bodyBlink": 1,
+          "actualSoulPose": null,
+          "actualSoulLayer": null
+        }
+      },
+      "cleanup": {
+        "requested": true,
+        "stopped": true,
+        "removed": true
+      },
+      "validationRecomputedExact": true,
+      "rawBytes": 576686,
+      "rawSha256": "83369194d1717ef0a5a6eea5ebcc86a86a8a92bc0b981b22c9c43e49c7c72c8c"
+    },
+    {
+      "file": "1280-first-lamp-face-lamp-returned.json",
+      "kind": "lamp",
+      "phase": "returned",
+      "label": "1280-first-lamp",
+      "status": "passed",
+      "sameRunId": 1,
+      "sameBodyIdentity": 1,
+      "framesObserved": 53,
+      "retainedSnapshots": 57,
+      "snapshotOccurrencesRevalidated": 68,
+      "nativeEventCount": 4,
+      "actualActions": [
+        {
+          "action": "continue",
+          "type": "click",
+          "targetId": "puzzle-continue",
+          "code": null,
+          "sequence": 5,
+          "isTrusted": true,
+          "observedMsAfterInstall": 80.19999999999709,
+          "pointerId": 1,
+          "pointerType": "mouse"
+        },
+        {
+          "action": "toggle",
+          "type": "keydown",
+          "targetId": "dream-canvas",
+          "code": "KeyE",
+          "sequence": 7,
+          "isTrusted": true,
+          "observedMsAfterInstall": 153.3000000000029,
+          "pointerId": null,
+          "pointerType": null
+        }
+      ],
+      "latches": {
+        "event": {
+          "beforeSequence": 5,
+          "afterSequence": 6,
+          "beforeMemory": 1,
+          "afterMemory": 1,
+          "beforeSeals": 0,
+          "afterSeals": 1,
+          "actualEventRemainingSeconds": 2
+        },
+        "freeJoy": {
+          "sequence": 6,
+          "observedMsAfterInstall": 99.60000000000582,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "attentive",
+          "soulJoy": true,
+          "energy": 100,
+          "emoteRemainingSeconds": 2,
+          "bodyBlink": 0.7,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        },
+        "returning": {
+          "sequence": 8,
+          "observedMsAfterInstall": 160.6999999999971,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "source": "raf",
+          "form": "body",
+          "capPhase": "returning",
+          "bodyFace": "attentive",
+          "soulJoy": false,
+          "energy": 100,
+          "emoteRemainingSeconds": 1.9500000000000002,
+          "bodyBlink": 0.7,
+          "actualSoulPose": "return",
+          "actualSoulLayer": "inside"
+        },
+        "closedJoy": {
+          "sequence": 48,
+          "observedMsAfterInstall": 823.6999999999971,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "source": "raf",
+          "form": "body",
+          "capPhase": "closed",
+          "bodyFace": "joy",
+          "soulJoy": false,
+          "energy": 100,
+          "emoteRemainingSeconds": 1.2666666666666693,
+          "bodyBlink": 0.7,
+          "actualSoulPose": null,
+          "actualSoulLayer": null
+        }
+      },
+      "cleanup": {
+        "requested": true,
+        "stopped": true,
+        "removed": true
+      },
+      "validationRecomputedExact": true,
+      "rawBytes": 386093,
+      "rawSha256": "96db56ee6dfdf1d3f1fc6f76d93f5ff24aeb421ddfbb350994495bbe6baee815"
+    },
+    {
+      "file": "390-face-ticket-collected.json",
+      "kind": "ticket",
+      "phase": "collected",
+      "label": "390",
+      "status": "passed",
+      "sameRunId": 1,
+      "sameBodyIdentity": 1,
+      "framesObserved": 81,
+      "retainedSnapshots": 84,
+      "snapshotOccurrencesRevalidated": 92,
+      "nativeEventCount": 3,
+      "actualActions": [
+        {
+          "action": "toggle",
+          "type": "click",
+          "targetId": "stage-toggle",
+          "code": null,
+          "sequence": 7,
+          "isTrusted": true,
+          "observedMsAfterInstall": 68.69999999995343,
+          "pointerId": 2,
+          "pointerType": "touch"
+        }
+      ],
+      "latches": {
+        "event": {
+          "beforeSequence": 55,
+          "afterSequence": 56,
+          "beforeMemory": 0,
+          "afterMemory": 1,
+          "beforeSeals": 0,
+          "afterSeals": 0,
+          "actualEventRemainingSeconds": 2.3
+        },
+        "freeJoy": {
+          "sequence": 56,
+          "observedMsAfterInstall": 880.6999999999534,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "attentive",
+          "soulJoy": true,
+          "energy": 100,
+          "emoteRemainingSeconds": 2.3,
+          "bodyBlink": 0.7,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        }
+      },
+      "cleanup": {
+        "requested": false,
+        "stopped": false,
+        "removed": false
+      },
+      "validationRecomputedExact": true,
+      "rawBytes": 517058,
+      "rawSha256": "f63f765da01659eb753ad153866f09a34806225a825c21cda939e2d25d79a995"
+    },
+    {
+      "file": "390-face-ticket-returned.json",
+      "kind": "ticket",
+      "phase": "returned",
+      "label": "390",
+      "status": "passed",
+      "sameRunId": 1,
+      "sameBodyIdentity": 1,
+      "framesObserved": 164,
+      "retainedSnapshots": 96,
+      "snapshotOccurrencesRevalidated": 109,
+      "nativeEventCount": 6,
+      "actualActions": [
+        {
+          "action": "toggle",
+          "type": "click",
+          "targetId": "stage-toggle",
+          "code": null,
+          "sequence": 7,
+          "isTrusted": true,
+          "observedMsAfterInstall": 68.69999999995343,
+          "pointerId": 2,
+          "pointerType": "touch"
+        },
+        {
+          "action": "toggle",
+          "type": "click",
+          "targetId": "stage-toggle",
+          "code": null,
+          "sequence": 112,
+          "isTrusted": true,
+          "observedMsAfterInstall": 1802.0999999999767,
+          "pointerId": 7,
+          "pointerType": "touch"
+        }
+      ],
+      "latches": {
+        "event": {
+          "beforeSequence": 55,
+          "afterSequence": 56,
+          "beforeMemory": 0,
+          "afterMemory": 1,
+          "beforeSeals": 0,
+          "afterSeals": 0,
+          "actualEventRemainingSeconds": 2.3
+        },
+        "freeJoy": {
+          "sequence": 56,
+          "observedMsAfterInstall": 880.6999999999534,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "attentive",
+          "soulJoy": true,
+          "energy": 100,
+          "emoteRemainingSeconds": 2.3,
+          "bodyBlink": 0.7,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        },
+        "returning": {
+          "sequence": 113,
+          "observedMsAfterInstall": 1812.8000000000466,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "source": "raf",
+          "form": "body",
+          "capPhase": "returning",
+          "bodyFace": "attentive",
+          "soulJoy": false,
+          "energy": 96.35833333333301,
+          "emoteRemainingSeconds": 1.3666666666666698,
+          "bodyBlink": 0.7,
+          "actualSoulPose": "return",
+          "actualSoulLayer": "inside"
+        },
+        "closedJoy": {
+          "sequence": 156,
+          "observedMsAfterInstall": 2528.5,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "source": "raf",
+          "form": "body",
+          "capPhase": "closed",
+          "bodyFace": "joy",
+          "soulJoy": false,
+          "energy": 100,
+          "emoteRemainingSeconds": 0.6500000000000034,
+          "bodyBlink": 0.7,
+          "actualSoulPose": null,
+          "actualSoulLayer": null
+        }
+      },
+      "cleanup": {
+        "requested": true,
+        "stopped": true,
+        "removed": true
+      },
+      "validationRecomputedExact": true,
+      "rawBytes": 616200,
+      "rawSha256": "2f65991277f149fb6b82afc944503a564885074693a1454bcf61376169127691"
+    },
+    {
+      "file": "320-face-ticket-collected.json",
+      "kind": "ticket",
+      "phase": "collected",
+      "label": "320",
+      "status": "passed",
+      "sameRunId": 1,
+      "sameBodyIdentity": 1,
+      "framesObserved": 74,
+      "retainedSnapshots": 77,
+      "snapshotOccurrencesRevalidated": 85,
+      "nativeEventCount": 3,
+      "actualActions": [
+        {
+          "action": "toggle",
+          "type": "click",
+          "targetId": "stage-toggle",
+          "code": null,
+          "sequence": 7,
+          "isTrusted": true,
+          "observedMsAfterInstall": 68.59999999997672,
+          "pointerId": 2,
+          "pointerType": "touch"
+        }
+      ],
+      "latches": {
+        "event": {
+          "beforeSequence": 54,
+          "afterSequence": 55,
+          "beforeMemory": 0,
+          "afterMemory": 1,
+          "beforeSeals": 0,
+          "afterSeals": 0,
+          "actualEventRemainingSeconds": 2.3
+        },
+        "freeJoy": {
+          "sequence": 55,
+          "observedMsAfterInstall": 866.3000000000466,
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "attentive",
+          "soulJoy": true,
+          "energy": 100,
+          "emoteRemainingSeconds": 2.3,
+          "bodyBlink": 0.7,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        }
+      },
+      "cleanup": {
+        "requested": false,
+        "stopped": false,
+        "removed": false
+      },
+      "validationRecomputedExact": true,
+      "rawBytes": 477788,
+      "rawSha256": "6afe28fdbcd9da05d198135a8cdba06b9731ff7fb2334ae1b86640e73d78c456"
+    },
+    {
+      "file": "320-face-ticket-returned.json",
+      "kind": "ticket",
+      "phase": "returned",
+      "label": "320",
+      "status": "passed",
+      "sameRunId": 1,
+      "sameBodyIdentity": 1,
+      "framesObserved": 151,
+      "retainedSnapshots": 96,
+      "snapshotOccurrencesRevalidated": 109,
+      "nativeEventCount": 6,
+      "actualActions": [
+        {
+          "action": "toggle",
+          "type": "click",
+          "targetId": "stage-toggle",
+          "code": null,
+          "sequence": 7,
+          "isTrusted": true,
+          "observedMsAfterInstall": 68.59999999997672,
+          "pointerId": 2,
+          "pointerType": "touch"
+        },
+        {
+          "action": "toggle",
+          "type": "click",
+          "targetId": "stage-toggle",
+          "code": null,
+          "sequence": 98,
+          "isTrusted": true,
+          "observedMsAfterInstall": 1568.5999999999767,
+          "pointerId": 7,
+          "pointerType": "touch"
+        }
+      ],
+      "latches": {
+        "event": {
+          "beforeSequence": 54,
+          "afterSequence": 55,
+          "beforeMemory": 0,
+          "afterMemory": 1,
+          "beforeSeals": 0,
+          "afterSeals": 0,
+          "actualEventRemainingSeconds": 2.3
+        },
+        "freeJoy": {
+          "sequence": 55,
+          "observedMsAfterInstall": 866.3000000000466,
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "source": "raf",
+          "form": "soul",
+          "capPhase": "open",
+          "bodyFace": "attentive",
+          "soulJoy": true,
+          "energy": 100,
+          "emoteRemainingSeconds": 2.3,
+          "bodyBlink": 0.7,
+          "actualSoulPose": "free",
+          "actualSoulLayer": "world"
+        },
+        "returning": {
+          "sequence": 99,
+          "observedMsAfterInstall": 1580.8000000000466,
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "source": "raf",
+          "form": "body",
+          "capPhase": "returning",
+          "bodyFace": "attentive",
+          "soulJoy": false,
+          "energy": 97.28999999999975,
+          "emoteRemainingSeconds": 1.5833333333333357,
+          "bodyBlink": 0.7,
+          "actualSoulPose": "return",
+          "actualSoulLayer": "inside"
+        },
+        "closedJoy": {
+          "sequence": 142,
+          "observedMsAfterInstall": 2296.70000000007,
+          "viewport": {
+            "width": 320,
+            "height": 680
+          },
+          "source": "raf",
+          "form": "body",
+          "capPhase": "closed",
+          "bodyFace": "joy",
+          "soulJoy": false,
+          "energy": 100,
+          "emoteRemainingSeconds": 0.8666666666666707,
+          "bodyBlink": 0.7,
+          "actualSoulPose": null,
+          "actualSoulLayer": null
+        }
+      },
+      "cleanup": {
+        "requested": true,
+        "stopped": true,
+        "removed": true
+      },
+      "validationRecomputedExact": true,
+      "rawBytes": 615560,
+      "rawSha256": "97cfa4c3c73439c9fee33cc6ed2daf42f4c010bd058c32574ff44c37700ae58c"
+    }
+  ],
+  "observerCleanup": [
+    {
+      "label": "1280",
+      "kind": "ticket",
+      "checkpoints": 1,
+      "finalPhase": "collected",
+      "framesObserved": 101,
+      "observerElapsedMs": 1765.699999999997,
+      "limitMs": 16000,
+      "stoppedAndRemoved": true,
+      "intermediateCheckpointsCorrectlyLeftObserverRunning": true
+    },
+    {
+      "label": "1280",
+      "kind": "fatigue",
+      "checkpoints": 4,
+      "finalPhase": "returned",
+      "framesObserved": 1148,
+      "observerElapsedMs": 19837.800000000003,
+      "limitMs": 27000,
+      "stoppedAndRemoved": true,
+      "intermediateCheckpointsCorrectlyLeftObserverRunning": true
+    },
+    {
+      "label": "1280-first-lamp",
+      "kind": "lamp",
+      "checkpoints": 1,
+      "finalPhase": "returned",
+      "framesObserved": 53,
+      "observerElapsedMs": 1018.6000000000058,
+      "limitMs": 5000,
+      "stoppedAndRemoved": true,
+      "intermediateCheckpointsCorrectlyLeftObserverRunning": true
+    },
+    {
+      "label": "390",
+      "kind": "ticket",
+      "checkpoints": 2,
+      "finalPhase": "returned",
+      "framesObserved": 164,
+      "observerElapsedMs": 2776.6999999999534,
+      "limitMs": 16000,
+      "stoppedAndRemoved": true,
+      "intermediateCheckpointsCorrectlyLeftObserverRunning": true
+    },
+    {
+      "label": "320",
+      "kind": "ticket",
+      "checkpoints": 2,
+      "finalPhase": "returned",
+      "framesObserved": 151,
+      "observerElapsedMs": 2549.0999999999767,
+      "limitMs": 16000,
+      "stoppedAndRemoved": true,
+      "intermediateCheckpointsCorrectlyLeftObserverRunning": true
+    }
+  ],
+  "uniqueCapturedCanvasFiles": [
+    {
+      "file": "1280-face-ticket-freeJoy.png",
+      "bytes": 1489698,
+      "sha256": "1a3573b562bf8361e69116e4861f1e4d3f49a199ea5a35e6d2e3ba00e86df8b9",
+      "width": 1280,
+      "height": 677,
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "sequence": 47,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "1280-face-fatigue-soulTired.png",
+      "bytes": 1487012,
+      "sha256": "515ddfffd0d03f410481a9137a34002780ee8d7c56da23bd9c94b9708b78f824",
+      "width": 1280,
+      "height": 677,
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "sequence": 938,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "1280-face-fatigue-bodyTiredOpen.png",
+      "bytes": 1487349,
+      "sha256": "52bd399ab85f4e71b34e9a88eae1d2adc345617302cfc4562b867a2e920dc721",
+      "width": 1280,
+      "height": 677,
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "sequence": 972,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "1280-face-fatigue-bodyTiredOpen-390.png",
+      "bytes": 432844,
+      "sha256": "ae35922e26743a546887c17f78c2a2347e1160267f3a05a9714e15454a394cd5",
+      "width": 390,
+      "height": 595,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sequence": 998,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "1280-face-fatigue-bodyTiredOpen-320.png",
+      "bytes": 274713,
+      "sha256": "55be2c433e605b0ce61a3fc24b2282dc10c3592afc7c7d8022f0a00dd55ba7d8",
+      "width": 320,
+      "height": 431,
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "sequence": 1020,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "1280-face-fatigue-recovered.png",
+      "bytes": 1483515,
+      "sha256": "634f947aca5ccbc0875d290c6948bf9211191654666e1f90f80c334ff847a5e4",
+      "width": 1280,
+      "height": 677,
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "sequence": 1102,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "1280-first-lamp-face-lamp-freeJoy.png",
+      "bytes": 1489598,
+      "sha256": "da2cee67c360746b46c1054b9a0e0a0bafad12c9954933afa98b334f48408546",
+      "width": 1280,
+      "height": 677,
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "sequence": 6,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "1280-first-lamp-face-lamp-closedJoy.png",
+      "bytes": 1492090,
+      "sha256": "06dcbbb3531d3f9a904b2d02aa75bba646dc8afb7e739ecc6732e787f2751abc",
+      "width": 1280,
+      "height": 677,
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "sequence": 48,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "390-face-ticket-freeJoy.png",
+      "bytes": 434524,
+      "sha256": "8718c041642f5598ff87311f5dce25103327b500c5df9f7148cd933f0d9f11db",
+      "width": 390,
+      "height": 595,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sequence": 56,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "390-face-ticket-closedJoy.png",
+      "bytes": 430502,
+      "sha256": "d55c1a251400b5ee80538b688ab9aecc9067c951e4aa02fa49d9381365a9d9cd",
+      "width": 390,
+      "height": 595,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sequence": 156,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "320-face-ticket-freeJoy.png",
+      "bytes": 274021,
+      "sha256": "372bc6caf7b008200ea92d11163572f657369d489cb12c4307e7016fa5cbc801",
+      "width": 320,
+      "height": 431,
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "sequence": 55,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    },
+    {
+      "file": "320-face-ticket-closedJoy.png",
+      "bytes": 271877,
+      "sha256": "c1098971af3a2b667d5fc4ba2c3f47c53b310bc3b02a7dbb72c0f433e696ce70",
+      "width": 320,
+      "height": 431,
+      "viewport": {
+        "width": 320,
+        "height": 680
+      },
+      "sequence": 142,
+      "unmodifiedArtifactCanvas": true,
+      "manuallyViewed": false
+    }
+  ],
+  "festivalExclusions": [
+    {
+      "width": 390,
+      "file": "390-face-festival-exclusion.json",
+      "festivalId": "halloween",
+      "actualExclusionSummaryMatchesReport": true,
+      "rawSnapshotRetained": false,
+      "scope": "actual original browser visit; other nine festivals remain pure checks"
+    },
+    {
+      "width": 320,
+      "file": "320-face-festival-exclusion.json",
+      "festivalId": "halloween",
+      "actualExclusionSummaryMatchesReport": true,
+      "rawSnapshotRetained": false,
+      "scope": "actual original browser visit; other nine festivals remain pure checks"
+    }
+  ],
+  "fatigue": {
+    "sharedDeadlineMs": 21000,
+    "actualBodyTiredFirstCaptureMs": 16521.600000000006,
+    "actualEnergyAtFirstBodyTired": 19.948333333331142,
+    "observerLifecycleMs": 27000,
+    "scope": "form=soul, capPhase=open; not closed-lid fatigue proof",
+    "recoveryNeutralEnergy": 25.99499999999788
+  },
+  "artifactCodeExecuted": false,
+  "validatorSource": "exact primary Git scripts/browser_face_v31.py at v33 1d63072 commit; original face validators identical to 7ba; pure functions only",
+  "limits": [
+    "Checkpoint snapshots can repeat across report files; occurrence counts are not distinct animation frames.",
+    "Native input captures precede later handlers; actual returning/closed states are validated from later RAF snapshots.",
+    "PNG files are original current Canvas exports, not additional rendered fixtures.",
+    "Five final observer cleanups are verified; intermediate checkpoints intentionally keep their observer active.",
+    "Festival raw snapshot is not saved in the immediate exclusion JSON; production validator output matches the complete report for original Halloween visits.",
+    "The six-chapter motion pose records intentionally omit face fields. Additional complete-report face snapshots cover only the chapters listed in journeyFaceByChapter; first-chapter event faces are in standalone records. Do not claim six-chapter browser face coverage from motion counts.",
+    "Desktop low-energy/body fatigue remains open-cap evidence; closed fatigue is only older offline evidence.",
+    "No physical phone, Safari, low-end GPU, frame-rate benchmark or public/live verification in this run."
+  ]
+}

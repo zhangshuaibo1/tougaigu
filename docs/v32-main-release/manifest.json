@@ -1,0 +1,1024 @@
+{
+  "schemaVersion": 1,
+  "frozenAt": "2026-10-30T01:43:41.963896+00:00",
+  "runId": 40984854669,
+  "commit": "93655a7013adb3ecd41f7e1fac6935f7b5464539",
+  "tree": "3d5e268bbb8bef91b289097cf34f5012bbc08cd3",
+  "pagesHead": "91ccef79541f2dd061059462c10d60cbecbed144",
+  "artifactId": 12948000217,
+  "officialZipSha256": "0dae5b5511f491f142b6a1effb6684ca10489ea4196e28aa05a73d267b9fa427",
+  "status": "passed",
+  "payloadFiles": 52,
+  "totalPayloadBytes": 13178121,
+  "files": [
+    {
+      "path": "official-metadata.json",
+      "bytes": 112551,
+      "sha256": "1cbd910bf4a838b5825349efc6aae4000196f1479657485dc55c183cd290973e",
+      "role": "Official GitHub run, commit, job, artifact, Pages state and monitoring timeline",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/official-metadata.json"
+    },
+    {
+      "path": "independent-main-review.json",
+      "bytes": 7050,
+      "sha256": "0f5a4ea937cac24f0699b9267b8ece8c6145c819ac3aca207b4c19c11eda667b",
+      "role": "Independent complete candidate AND public HTTPS audit",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/independent-main-review.json"
+    },
+    {
+      "path": "manual-image-review.json",
+      "bytes": 6042,
+      "sha256": "90830309eb8913702995a4dc849655d4d317a1736442f5c815c8715b7eedcf01",
+      "role": "Original-size public and candidate PNG visual review with precise scope",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/manual-image-review.json"
+    },
+    {
+      "path": "auditor-adaptation.json",
+      "bytes": 18718,
+      "sha256": "32b1a52143b39d9cb4de57846ffd1f090de77244d5bb06c30cd366ec1babeaff",
+      "role": "Auditor adaptation: identity, metadata, scope and exact origin; previous test gates retained",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/auditor-adaptation.json"
+    },
+    {
+      "path": "face-png-count-note.json",
+      "bytes": 2246,
+      "sha256": "a22eedeb1fdfbcd52c5f87eb27f00140f5fee8ed1f3d3c5b05657f043cbdd5c6",
+      "role": "Actual 11 candidate versus 12 public face PNGs; optional first-lamp RAF record and unchanged validators",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/face-png-count-note.json"
+    },
+    {
+      "path": "candidate-face-evidence-summary.json",
+      "bytes": 33049,
+      "sha256": "2f1d6b0aa35538ba75686cafcdb786a0651d19c951a4c4e35bb85ce70e4cfadf",
+      "role": "Independent candidate face data revalidation",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/candidate-face-evidence-summary.json"
+    },
+    {
+      "path": "candidate-inherited-gates-summary.json",
+      "bytes": 45488,
+      "sha256": "e822d90f7e9d87c570d1b8edb9cebb3990397aa7735dc86d894bd3defbe54bb9",
+      "role": "Independent candidate inherited-gates data revalidation",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/candidate-inherited-gates-summary.json"
+    },
+    {
+      "path": "candidate-dialogue-evidence-summary.json",
+      "bytes": 30520,
+      "sha256": "b9c6c8ee53356777fad917b6537abb42b766407084a88b60f5f97f1b90157f8e",
+      "role": "Independent candidate dialogue data revalidation",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/candidate-dialogue-evidence-summary.json"
+    },
+    {
+      "path": "live-face-evidence-summary.json",
+      "bytes": 33833,
+      "sha256": "481ffbb534ec662c9417d902274753681c92fd345990e07b88b46a4b3ff845fe",
+      "role": "Independent live face data revalidation",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/live-face-evidence-summary.json"
+    },
+    {
+      "path": "live-inherited-gates-summary.json",
+      "bytes": 45384,
+      "sha256": "61fcf65c537438e7d6524d650bc38398c124c9bb960ce8d188cb934fdbc258fb",
+      "role": "Independent live inherited-gates data revalidation",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/live-inherited-gates-summary.json"
+    },
+    {
+      "path": "live-dialogue-evidence-summary.json",
+      "bytes": 30582,
+      "sha256": "4acc22d7c4cd11550fd3d698bb066b6233ee3fd1734e92e1c5ce07283293ead5",
+      "role": "Independent live dialogue data revalidation",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/live-dialogue-evidence-summary.json"
+    },
+    {
+      "path": "candidate-report.json.gz",
+      "bytes": 683603,
+      "sha256": "1ac30157e5828a2c80812abbbed872a970732d8d14e8ce23ae51a9aab30c6958",
+      "role": "Unabridged original complete candidate browser report",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/candidate/report.json",
+      "uncompressedBytes": 16735456,
+      "uncompressedSha256": "93e0b647b799095ba975e0857b6d8acb5883a8182382c83e49e64c7cdfa15038"
+    },
+    {
+      "path": "public-report.json.gz",
+      "bytes": 682007,
+      "sha256": "3e5257941bad4cc684ae7563b37da6f9c77380590c64093a54b705703f0be201",
+      "role": "Unabridged original complete public HTTPS browser report",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/live/report.json",
+      "uncompressedBytes": 16694154,
+      "uncompressedSha256": "e3f63a1ea84216d6acd8b3947086efd1d9b3f655b71f1ac11a598492e0fbfe18"
+    },
+    {
+      "path": "candidate-dialogue-matrix-report.json.gz",
+      "bytes": 48806,
+      "sha256": "d88c04534f216d611b93e3a79af0d5f94fbc1162239aa72479e382c1fb175744",
+      "role": "Original complete independent candidate six-config matrix",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/candidate/dialogue-matrix/report.json",
+      "uncompressedBytes": 792524,
+      "uncompressedSha256": "04f09bd0be35dc01f0dba7e68de122222a4c7e4c675ea4d879dae25e477d26f5"
+    },
+    {
+      "path": "public-dialogue-matrix-report.json.gz",
+      "bytes": 48829,
+      "sha256": "35f2d90d281d5aec1df6c7335a9ec9a32ba5d285df6c80f5ef9fccbd7ca53544",
+      "role": "Original complete independent public HTTPS six-config matrix",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/live/dialogue-matrix/report.json",
+      "uncompressedBytes": 792468,
+      "uncompressedSha256": "53ad6a62a670acf3a90cc8e9c49ca7a40652580f15c0e26a9ec37b7fc40b4036"
+    },
+    {
+      "path": "browser-candidate.txt.gz",
+      "bytes": 686197,
+      "sha256": "7393aaed55832ee6e84807cc723d042a49b262f46dcc0d7d5223795d244e5781",
+      "role": "Unmodified complete candidate browser stdout",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/browser-candidate.txt",
+      "uncompressedBytes": 16744687,
+      "uncompressedSha256": "2164f8f318d53c4d2673bf60e68443ab65768eb1f8b38f4e05f4bb8ed04101e5"
+    },
+    {
+      "path": "browser-public.txt.gz",
+      "bytes": 684786,
+      "sha256": "f35942c4dd73ee0650b5970c4e1266a8b765ab07c57c1dc57ca76f69658e58ca",
+      "role": "Unmodified complete public HTTPS browser stdout",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/browser-live.txt",
+      "uncompressedBytes": 16703521,
+      "uncompressedSha256": "39b6335f4d2e9d367f5e016d07f5a280cdad61d7477174044da9a7f4309344cd"
+    },
+    {
+      "path": "tests.txt.gz",
+      "bytes": 34359,
+      "sha256": "946c0a205d5549b06da548fb159a92be5ba62bd423a814c586fb8fc2db470be6",
+      "role": "Original 683/683 tests log, all old 675 names present",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/tests.txt",
+      "uncompressedBytes": 170546,
+      "uncompressedSha256": "7e4db537299229722bad091951ccf2074474c828ab0941273fb024d6a005b31c"
+    },
+    {
+      "path": "references.txt.gz",
+      "bytes": 169,
+      "sha256": "86a3addac4fa8f6e536f09137e40092c61d1f5489384e7a7d99636abc7ce6c20",
+      "role": "Original local references and release-version checks",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/references.txt",
+      "uncompressedBytes": 214,
+      "uncompressedSha256": "265cad67cad87e34305b98bd49fa78e7a29786b603c6891443452bba94bb2e8e"
+    },
+    {
+      "path": "source-integrity.json.gz",
+      "bytes": 75958,
+      "sha256": "52e361240512da71c90d2983b252055176257554689cd2464ea3812e9c71ddaa",
+      "role": "All 950 source blobs/modes, 143 runtime identities, Pages and public HTML exact",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/source-integrity.json",
+      "uncompressedBytes": 275495,
+      "uncompressedSha256": "3f9ffd2cd095e026e3f30e69e024d043ecb9084a16477c68a27244b41036049d"
+    },
+    {
+      "path": "artifact-audit.json.gz",
+      "bytes": 602362,
+      "sha256": "1d3a625a06896372e601d755637d0097ace9e5defde1302c5722ed04fdbbcfcc",
+      "role": "Complete official ZIP entries and raw hashes",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/artifact-audit.json",
+      "uncompressedBytes": 15245518,
+      "uncompressedSha256": "ab1722a9a3966252d42894bafabaeea8c0e78c5700617808613418dfdb6a6f59"
+    },
+    {
+      "path": "original-png-inventory.json.gz",
+      "bytes": 21949,
+      "sha256": "49706f457aa820e27a11177a4a92e251d32e84f611bec5c47aebb979f671c485",
+      "role": "All original official PNG sizes and hashes",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/original-png-inventory.json",
+      "uncompressedBytes": 100108,
+      "uncompressedSha256": "66f3c86d630a89f5f4cc1bff75ae42e7f3919cfa3b7c0b35216a38e1235ce18b"
+    },
+    {
+      "path": "commit.txt",
+      "bytes": 41,
+      "sha256": "c92d71788826f375a6b69f2e670e912b89e45723f0e9226bee219c5c63fc8f21",
+      "role": "Original official source/environment/public HTML marker",
+      "origin": "official ZIP commit.txt"
+    },
+    {
+      "path": "node.txt",
+      "bytes": 9,
+      "sha256": "2266957ed9a639bd7264d714bfa798a961510bf2e50695c668ab8fc0c3f4e906",
+      "role": "Original official source/environment/public HTML marker",
+      "origin": "official ZIP node.txt"
+    },
+    {
+      "path": "public-index.html",
+      "bytes": 26027,
+      "sha256": "a96a5dc902053f5519d1946a8172fc8c21046237da2bd892573ecd283d96a833",
+      "role": "Original official source/environment/public HTML marker",
+      "origin": "official ZIP public-index.html"
+    },
+    {
+      "path": "raw/candidate/1280-greenhouse-return-dialogue-event.json",
+      "bytes": 1918,
+      "sha256": "092624918945f922408a978374f3d645c1397f641113cfa59243f9fa3ef67932",
+      "role": "Unmodified natural-return event or actual greenhouse layout sidecar",
+      "origin": "official ZIP candidate/1280-greenhouse-return-dialogue-event.json"
+    },
+    {
+      "path": "raw/candidate/1280-greenhouse-leaves-returned-dialogue-layout.json",
+      "bytes": 49138,
+      "sha256": "4ca30c01a578586d23c3cdbd9913e957098b36014823357179fda6439f64bf84",
+      "role": "Unmodified natural-return event or actual greenhouse layout sidecar",
+      "origin": "official ZIP candidate/1280-greenhouse-leaves-returned-dialogue-layout.json"
+    },
+    {
+      "path": "raw/candidate/1280-greenhouse-root-crossed-dialogue-layout.json",
+      "bytes": 49100,
+      "sha256": "40c1846e26e844cbdbc7ec2ef12892bbae6b3ebbd0d5dc322c92e32b340b3d2c",
+      "role": "Unmodified natural-return event or actual greenhouse layout sidecar",
+      "origin": "official ZIP candidate/1280-greenhouse-root-crossed-dialogue-layout.json"
+    },
+    {
+      "path": "candidate-immediate-json.tar.gz",
+      "bytes": 774234,
+      "sha256": "74776325693cfb30e501a5e7558eefa73e774109a9af09c564fbdfcee88010bc",
+      "role": "All original immediate JSON sidecars including nested matrix records",
+      "origin": "official ZIP candidate/**/*.json except separately preserved reports",
+      "uncompressedBytes": 16271360,
+      "uncompressedSha256": "6f895b235273b955ed92140c5039ee91ca052534d28554eba64d50d81515e085",
+      "members": [
+        {
+          "path": "candidate/1280-ending-dawn-320-case.json",
+          "bytes": 23638,
+          "sha256": "12027d2994661d8bab761f5af55c8b9c8c95bd4e4ab2b3c3d90ca6e3dc86ab61"
+        },
+        {
+          "path": "candidate/1280-ending-dawn-320-reading.json",
+          "bytes": 21964,
+          "sha256": "cbb0f5b4b83f20f3757bd20505750f0531b23af49e7f977c78e7e09df6460dc1"
+        },
+        {
+          "path": "candidate/1280-ending-dawn-390-case.json",
+          "bytes": 6564,
+          "sha256": "ecb806a0644c8f5bb6f5cebf26a97d1cfa9b21bcd1f201afecd1c4adc325a16b"
+        },
+        {
+          "path": "candidate/1280-ending-dawn-390-reading.json",
+          "bytes": 4905,
+          "sha256": "2896682e1922923d958ec891d89f6030c45a02ef5610ba9f77d54f16de28608c"
+        },
+        {
+          "path": "candidate/1280-ending-keep-hold.json",
+          "bytes": 9806,
+          "sha256": "0a652dd933a207ab5e646015cf1adbf89d95bd7bda8c901a4f2a07679c09b0b1"
+        },
+        {
+          "path": "candidate/1280-ending-keep-release.json",
+          "bytes": 9761,
+          "sha256": "5de2b8690e2aead9676c2d46bc1dfc8b86256f595d031a4005f85dfb5ab23420"
+        },
+        {
+          "path": "candidate/1280-ending-lanterns-320-case.json",
+          "bytes": 23760,
+          "sha256": "eb4d9f355a4eb1502689313e5d7cc1a545e7cd41fb21b6a2591e4656c683d58b"
+        },
+        {
+          "path": "candidate/1280-ending-lanterns-320-reading.json",
+          "bytes": 22080,
+          "sha256": "ece1d1e1f74c97b2b083a86cf239f728ffac962a892c74af4d84f88eed017c90"
+        },
+        {
+          "path": "candidate/1280-ending-lanterns-390-case.json",
+          "bytes": 6609,
+          "sha256": "d82bed31a76b34bfd7c384e1aa2e9ee0c51fc595286c0d21a2da31fa4bc85df4"
+        },
+        {
+          "path": "candidate/1280-ending-lanterns-390-reading.json",
+          "bytes": 4943,
+          "sha256": "586f10e01f510bd09cbd25d3798bcc2638072553ce627dd89b7df3d2cd8b5590"
+        },
+        {
+          "path": "candidate/1280-ending-send-hold.json",
+          "bytes": 9749,
+          "sha256": "f5e7bb6edc724fe5ad90211b4e2d400d7074110bfb202aba65433d5b9b9d85d8"
+        },
+        {
+          "path": "candidate/1280-ending-send-release.json",
+          "bytes": 9718,
+          "sha256": "e524c40b3cb6873fa3b1497cc10eac74109af731e7b52df6849bbd7ac5377889"
+        },
+        {
+          "path": "candidate/1280-ending-tender-320-case.json",
+          "bytes": 23647,
+          "sha256": "df7b0ca821c56c5fa95756157950a2d284ee3e53a5f5f4f34177c0d8bf8d0ef6"
+        },
+        {
+          "path": "candidate/1280-ending-tender-320-reading.json",
+          "bytes": 21984,
+          "sha256": "9f22b8db6d070b4ef881f31311441488a1f7513dafd11715b2714f6df9ed6bea"
+        },
+        {
+          "path": "candidate/1280-ending-tender-390-case.json",
+          "bytes": 6574,
+          "sha256": "a17cda1b4904847bb474225750583a9b8f2eb23455360c8eb290ca997c3d8e62"
+        },
+        {
+          "path": "candidate/1280-ending-tender-390-reading.json",
+          "bytes": 4910,
+          "sha256": "898bc45886e04fc3a8acf485ef7e50f6fdd103ca9e974df6e3185c9bd4849a44"
+        },
+        {
+          "path": "candidate/1280-face-fatigue-body-tired-open.json",
+          "bytes": 564891,
+          "sha256": "b84effbd659381b76f3b6583ac585f8ec0ff724ada1068b859b67a95c87637fd"
+        },
+        {
+          "path": "candidate/1280-face-fatigue-phone-low-energy.json",
+          "bytes": 577202,
+          "sha256": "b043bea300d8f3950e6f373f169e918cc983bc717f31ae3053fa28eeff9f4887"
+        },
+        {
+          "path": "candidate/1280-face-fatigue-returned.json",
+          "bytes": 581011,
+          "sha256": "12411213e98462eb4ce1984b0de3e46656e712253537811d5ede9a51fc432850"
+        },
+        {
+          "path": "candidate/1280-face-fatigue-soul-low-energy.json",
+          "bytes": 558946,
+          "sha256": "db2e21feebf647782ad331be20d46600b3e7e9504963ef19d7bfaf661cd6eb5f"
+        },
+        {
+          "path": "candidate/1280-face-ticket-collected.json",
+          "bytes": 460066,
+          "sha256": "bc05f46c518df1278bbdc385f3de0f23f5e0c3b704fd9ce416f8dc8061e15fa0"
+        },
+        {
+          "path": "candidate/1280-first-lamp-face-lamp-returned.json",
+          "bytes": 387785,
+          "sha256": "90744f29f1ef02c4c07d832020b264b70b78ef4bbb7ab6fc33ad0a355995e42b"
+        },
+        {
+          "path": "candidate/1280-full-fallback-post-mushroom-crossing.json",
+          "bytes": 134660,
+          "sha256": "78d3e55d1a794fed9388dc3319531853c51217fc21d7dc22758f52b613630c0c"
+        },
+        {
+          "path": "candidate/1280-full-fallback-post-route.json",
+          "bytes": 1448890,
+          "sha256": "c8b8c19442cc7cd306699828c187959e05ef53cce76265efda77b8da2bc6d604"
+        },
+        {
+          "path": "candidate/1280-full-touch-320-post-mushroom-crossing.json",
+          "bytes": 135470,
+          "sha256": "5ef0756f00f999215b5e7f8d0d536e2d412a7947d5b1a975c1f9e29d264f812f"
+        },
+        {
+          "path": "candidate/1280-full-touch-320-post-route.json",
+          "bytes": 1559524,
+          "sha256": "0b0774a9f4dfd8bf5118eee5281f41c28d6503108f50677fd4e1c4dd65088061"
+        },
+        {
+          "path": "candidate/1280-full-touch-390-post-mushroom-crossing.json",
+          "bytes": 137241,
+          "sha256": "adf8b54ac39a166ba5fe1104e3dca9dfb8d54e19e28276fb93fdf0ee445b0940"
+        },
+        {
+          "path": "candidate/1280-full-touch-390-post-route.json",
+          "bytes": 1558050,
+          "sha256": "b3156dbf3e1dfc744f20fe05b8c294a59656c85622afc357012a277db4459eef"
+        },
+        {
+          "path": "candidate/1280-greenhouse-leaves-returned-dialogue-layout.json",
+          "bytes": 49138,
+          "sha256": "4ca30c01a578586d23c3cdbd9913e957098b36014823357179fda6439f64bf84"
+        },
+        {
+          "path": "candidate/1280-greenhouse-return-dialogue-event.json",
+          "bytes": 1918,
+          "sha256": "092624918945f922408a978374f3d645c1397f641113cfa59243f9fa3ef67932"
+        },
+        {
+          "path": "candidate/1280-greenhouse-root-crossed-dialogue-layout.json",
+          "bytes": 49100,
+          "sha256": "40c1846e26e844cbdbc7ec2ef12892bbae6b3ebbd0d5dc322c92e32b340b3d2c"
+        },
+        {
+          "path": "candidate/1280-post-full-touch-320.json",
+          "bytes": 1686356,
+          "sha256": "6e54cf8ad0481ab1c512d5e83653eef0c7bbbfeeaac7ab1c3919500e3eb6b88a"
+        },
+        {
+          "path": "candidate/1280-post-full-touch-390.json",
+          "bytes": 1684778,
+          "sha256": "9c6ca3b798cc3cf273c9ddd94c5fee9a621948c5426074baea3da7410a085ffd"
+        },
+        {
+          "path": "candidate/1280-post-mushroom-crossing.json",
+          "bytes": 133685,
+          "sha256": "f9405ba69f0de0e97c48a22e97acf3f5228c5b8abab73920707417633c2b1667"
+        },
+        {
+          "path": "candidate/1280-post-route.json",
+          "bytes": 1556421,
+          "sha256": "763e39e7c52aa9a8ae9af55e94451c6149d39e5d91f5b25a97a3bbe5d9e90df2"
+        },
+        {
+          "path": "candidate/1280-station-body-dialogue-layout.json",
+          "bytes": 44848,
+          "sha256": "2e4e006dee59def3d0bff7b939ab44830297bf62532f70fa518e3bf5ce0ef7b3"
+        },
+        {
+          "path": "candidate/1280-ticket-held-dialogue-layout.json",
+          "bytes": 49953,
+          "sha256": "7932330074400c38094d6c9d147ef2cc4f50d5b4b85963deef0dfc32d1496d9f"
+        },
+        {
+          "path": "candidate/320-face-festival-exclusion.json",
+          "bytes": 190,
+          "sha256": "fb713f619b5b90a4dc752c167bb5d777e37553705efc7625f8c19ac1b662d617"
+        },
+        {
+          "path": "candidate/320-face-ticket-collected.json",
+          "bytes": 454883,
+          "sha256": "39f249ed26561ff349e69998a011c21dc7e8ff9399a9af7901fd7ffce550118c"
+        },
+        {
+          "path": "candidate/320-face-ticket-returned.json",
+          "bytes": 616240,
+          "sha256": "5bcd03d67140cc06f0ac2d862b02ad93809d20ea354d83813742f2d9af25945c"
+        },
+        {
+          "path": "candidate/320-station-body-dialogue-layout.json",
+          "bytes": 689,
+          "sha256": "474b887d34b06b744ed013d7d4a6cf8e71aec9947112a06516be655770181872"
+        },
+        {
+          "path": "candidate/320-ticket-held-dialogue-layout.json",
+          "bytes": 689,
+          "sha256": "8d6dbaceab04aea89ebb7477bab98e4e999a2d77bef25d27f8fe8f6d72373303"
+        },
+        {
+          "path": "candidate/390-face-festival-exclusion.json",
+          "bytes": 190,
+          "sha256": "fb713f619b5b90a4dc752c167bb5d777e37553705efc7625f8c19ac1b662d617"
+        },
+        {
+          "path": "candidate/390-face-ticket-collected.json",
+          "bytes": 449795,
+          "sha256": "e16c0e5dbb9aab04bef7875c048e9b8f6a458279ca7f3b2de80295cab4632489"
+        },
+        {
+          "path": "candidate/390-face-ticket-returned.json",
+          "bytes": 616955,
+          "sha256": "bfdd75eebb1e20744cc9e59c0d86612599902c24a9ac6dd92f814331d79a91e5"
+        },
+        {
+          "path": "candidate/390-station-body-dialogue-layout.json",
+          "bytes": 689,
+          "sha256": "652637c585d6559813058a5122461100261e7beb8d5c88f9a00ccd9161c19dac"
+        },
+        {
+          "path": "candidate/390-ticket-held-dialogue-layout.json",
+          "bytes": 689,
+          "sha256": "196899517f5a506e4247c89081871609496f35fef210955ee00be2a30994fb0c"
+        },
+        {
+          "path": "candidate/dialogue-matrix/1024x640-opening-dialogue-layout.json",
+          "bytes": 51793,
+          "sha256": "818872de52a815396adc571a418740869918062452340718b4f35c5b2ff3bf95"
+        },
+        {
+          "path": "candidate/dialogue-matrix/1024x640-ticket-dialogue-layout.json",
+          "bytes": 49386,
+          "sha256": "9b6f24d58d52f9ef42a799da22657bb2e7ec19afc05d2a5dd4c2b5b160295d9c"
+        },
+        {
+          "path": "candidate/dialogue-matrix/1280x800-game-reduce-opening-dialogue-layout.json",
+          "bytes": 51427,
+          "sha256": "ef8a752918d1b89440396c7bce849826355ed23ab61270a9bd1eeacfc32c9e93"
+        },
+        {
+          "path": "candidate/dialogue-matrix/1280x800-game-reduce-ticket-dialogue-layout.json",
+          "bytes": 49062,
+          "sha256": "1eae689cd75f18f270fba640abf427322d6c5772be64b01c349da21810ead403"
+        },
+        {
+          "path": "candidate/dialogue-matrix/1280x800-os-reduce-opening-dialogue-layout.json",
+          "bytes": 51450,
+          "sha256": "6868d90a4373975d6ae477c6d1061b7b4046f7649db81bd5d3d73953b1aa6841"
+        },
+        {
+          "path": "candidate/dialogue-matrix/1280x800-os-reduce-ticket-dialogue-layout.json",
+          "bytes": 49072,
+          "sha256": "01ad47629d8c75ca6b8c356812f6fe0d9f7e2042f66253e812728c0fdadeed23"
+        },
+        {
+          "path": "candidate/dialogue-matrix/899x800-opening-dialogue-layout.json",
+          "bytes": 694,
+          "sha256": "1d4d45adc40d445ea649a6de51fd915d243bf56cb8631bae175db0508c8e3af5"
+        },
+        {
+          "path": "candidate/dialogue-matrix/899x800-ticket-dialogue-layout.json",
+          "bytes": 692,
+          "sha256": "65d1d8efac8ffc77c9d4a65eb464653faf009aa0925a0988647e889076fb1425"
+        },
+        {
+          "path": "candidate/dialogue-matrix/900x520-opening-dialogue-layout.json",
+          "bytes": 50918,
+          "sha256": "6f0a70a632cd73a66b220f3899518930170082b526565c44e3583a5f2cd41b78"
+        },
+        {
+          "path": "candidate/dialogue-matrix/900x520-ticket-dialogue-layout.json",
+          "bytes": 48571,
+          "sha256": "3bf278d38dfc371ee6ab6bfe02ffb334ce8db1c5d1a5ac4c39e42047db0da39c"
+        },
+        {
+          "path": "candidate/dialogue-matrix/900x800-opening-dialogue-layout.json",
+          "bytes": 51733,
+          "sha256": "0fba8fd39e5966d81c628a8b58bee4b89b08bf216bcb030fc01fb950060267c5"
+        },
+        {
+          "path": "candidate/dialogue-matrix/900x800-ticket-dialogue-layout.json",
+          "bytes": 49336,
+          "sha256": "291097b3323c5ab03d956c9440be7168eb5ab3aa444024146930a943b62595dd"
+        }
+      ]
+    },
+    {
+      "path": "raw/live/1280-greenhouse-return-dialogue-event.json",
+      "bytes": 1934,
+      "sha256": "a462dd0ff6075b1cdef69ce9a0108c3cbfbe0f5a47d256c50eb05ec1e1d9fc3d",
+      "role": "Unmodified natural-return event or actual greenhouse layout sidecar",
+      "origin": "official ZIP live/1280-greenhouse-return-dialogue-event.json"
+    },
+    {
+      "path": "raw/live/1280-greenhouse-leaves-returned-dialogue-layout.json",
+      "bytes": 49159,
+      "sha256": "addd2fb106996f8afb0e7cae7de9b539a57069b7afe5f6e8b4eafcdd89c07da8",
+      "role": "Unmodified natural-return event or actual greenhouse layout sidecar",
+      "origin": "official ZIP live/1280-greenhouse-leaves-returned-dialogue-layout.json"
+    },
+    {
+      "path": "raw/live/1280-greenhouse-root-crossed-dialogue-layout.json",
+      "bytes": 49138,
+      "sha256": "907cf67b16f2fc724adb3580cf595b3bdcf6349bbebfba2a98c0e7ee9e9943fb",
+      "role": "Unmodified natural-return event or actual greenhouse layout sidecar",
+      "origin": "official ZIP live/1280-greenhouse-root-crossed-dialogue-layout.json"
+    },
+    {
+      "path": "live-immediate-json.tar.gz",
+      "bytes": 771852,
+      "sha256": "cde68a6cdc3a4f86bdfd957138d12b55eb433aa2b111f277506bea77b70e8873",
+      "role": "All original immediate JSON sidecars including nested matrix records",
+      "origin": "official ZIP live/**/*.json except separately preserved reports",
+      "uncompressedBytes": 16250880,
+      "uncompressedSha256": "c04ec65bd908c53c9297cddd883c0e7635de7f5d69c447f0a8bc2d7f2625acb2",
+      "members": [
+        {
+          "path": "live/1280-ending-dawn-320-case.json",
+          "bytes": 23649,
+          "sha256": "f45b9ac6d70fd4fa7d8540a19e3e272cbc9933d5dad88f58f981f915cd14cc0e"
+        },
+        {
+          "path": "live/1280-ending-dawn-320-reading.json",
+          "bytes": 21962,
+          "sha256": "16f0e3398f74d9f33a186850c3b7d2d408cec284f73a522bf3f2e9b7edfae81a"
+        },
+        {
+          "path": "live/1280-ending-dawn-390-case.json",
+          "bytes": 6562,
+          "sha256": "c000163f8818e6639f652741ced356e0696a745d78b1e5d6da0e25bbbab6123b"
+        },
+        {
+          "path": "live/1280-ending-dawn-390-reading.json",
+          "bytes": 4905,
+          "sha256": "2896682e1922923d958ec891d89f6030c45a02ef5610ba9f77d54f16de28608c"
+        },
+        {
+          "path": "live/1280-ending-keep-hold.json",
+          "bytes": 9804,
+          "sha256": "a3a6987edf01744ec2ad660343e6af6ef4a3eb8fbbc5ac8d6697c6a3f046efb1"
+        },
+        {
+          "path": "live/1280-ending-keep-release.json",
+          "bytes": 9759,
+          "sha256": "09e6c2b186aa17a50f13cce8139a0a336ccb14b1cf9c1a2eef18fa8312ea319c"
+        },
+        {
+          "path": "live/1280-ending-lanterns-320-case.json",
+          "bytes": 23774,
+          "sha256": "51fba2c853ae8c961cd8f68bb21665ce22a16ac1a66d277795c0db1c1130fc7a"
+        },
+        {
+          "path": "live/1280-ending-lanterns-320-reading.json",
+          "bytes": 22081,
+          "sha256": "0159edd2ac04f63590618571519cd4865d93efc13fc566f1cfe48d53e8aab08a"
+        },
+        {
+          "path": "live/1280-ending-lanterns-390-case.json",
+          "bytes": 6607,
+          "sha256": "13f6b89c040d746329a24589e5cdd35d358623bdbfda84d1a9e13186e60467c4"
+        },
+        {
+          "path": "live/1280-ending-lanterns-390-reading.json",
+          "bytes": 4943,
+          "sha256": "586f10e01f510bd09cbd25d3798bcc2638072553ce627dd89b7df3d2cd8b5590"
+        },
+        {
+          "path": "live/1280-ending-send-hold.json",
+          "bytes": 9747,
+          "sha256": "11f18d17e67539bbdb020c056fd1069bd0570527574cad2a115b011d8a106829"
+        },
+        {
+          "path": "live/1280-ending-send-release.json",
+          "bytes": 9716,
+          "sha256": "0fe2c7199c587b52b4cbe3b56de8f4aa75248c801411cc9b672698bae620afdb"
+        },
+        {
+          "path": "live/1280-ending-tender-320-case.json",
+          "bytes": 23660,
+          "sha256": "1a89e87fde185ec0d74444cc8c1a7519390501cee6cc2a776ccdc8aa5406b2e1"
+        },
+        {
+          "path": "live/1280-ending-tender-320-reading.json",
+          "bytes": 21984,
+          "sha256": "f0b5247ef6ab58338c83b15da774d5e0c517234ae4edda763aededf529625fa6"
+        },
+        {
+          "path": "live/1280-ending-tender-390-case.json",
+          "bytes": 6572,
+          "sha256": "50771feab5226251947cffeba603c3459758a8890c90926eece02b359aec974e"
+        },
+        {
+          "path": "live/1280-ending-tender-390-reading.json",
+          "bytes": 4910,
+          "sha256": "898bc45886e04fc3a8acf485ef7e50f6fdd103ca9e974df6e3185c9bd4849a44"
+        },
+        {
+          "path": "live/1280-face-fatigue-body-tired-open.json",
+          "bytes": 564712,
+          "sha256": "355ba51ae3b1709ff145a0acdeccb5d9dfeafffaf77aeafcb414b34ad7de57fe"
+        },
+        {
+          "path": "live/1280-face-fatigue-phone-low-energy.json",
+          "bytes": 576982,
+          "sha256": "84d2cc8b7237481ff900049040dbe3a1df16d34875c3fe8728ae81884d0d70bd"
+        },
+        {
+          "path": "live/1280-face-fatigue-returned.json",
+          "bytes": 580843,
+          "sha256": "af2292873858be9568bac8294681f2feb5eefeeeb997d834e6798fb42a06c1c2"
+        },
+        {
+          "path": "live/1280-face-fatigue-soul-low-energy.json",
+          "bytes": 558722,
+          "sha256": "7b29b690e184568824763d18a1677c5b96842a6c38630d914c6e553868a276e5"
+        },
+        {
+          "path": "live/1280-face-ticket-collected.json",
+          "bytes": 448920,
+          "sha256": "9765a3fd88ef08b61cb7f910db3c6fef78a6318a9eab9e1ddd3b53e7059890d1"
+        },
+        {
+          "path": "live/1280-first-lamp-face-lamp-returned.json",
+          "bytes": 398212,
+          "sha256": "3e3086060b93482e3322ab04bfe3887405668a08af9742214dc058d119a002a6"
+        },
+        {
+          "path": "live/1280-full-fallback-post-mushroom-crossing.json",
+          "bytes": 134686,
+          "sha256": "8191c1be24faadd0994bc8a1afe0f4e73ecc9000501f418c0c7d2680b01eaf0e"
+        },
+        {
+          "path": "live/1280-full-fallback-post-route.json",
+          "bytes": 1429593,
+          "sha256": "5546b02dc49e663236e66268dab86f8938775a8f4db68450f5cf2722254b0323"
+        },
+        {
+          "path": "live/1280-full-touch-320-post-mushroom-crossing.json",
+          "bytes": 134503,
+          "sha256": "e6ee748978b71f3d1daf6bda7a5a5805f03587d56a8392d679d38ffb044921f2"
+        },
+        {
+          "path": "live/1280-full-touch-320-post-route.json",
+          "bytes": 1563312,
+          "sha256": "df1e97191c86f9afe79cb7baada78f39db8e6a027cbe6758457985060a2909a7"
+        },
+        {
+          "path": "live/1280-full-touch-390-post-mushroom-crossing.json",
+          "bytes": 136162,
+          "sha256": "8a979c9b9b42ae7058f947a124fc3b0e38cd36f038e21eea9e9b1518186d2cbf"
+        },
+        {
+          "path": "live/1280-full-touch-390-post-route.json",
+          "bytes": 1556345,
+          "sha256": "4fac1ada6d09923bfa7cdc975dc9b7a8ce4501f3675a848e21885fe6c6069438"
+        },
+        {
+          "path": "live/1280-greenhouse-leaves-returned-dialogue-layout.json",
+          "bytes": 49159,
+          "sha256": "addd2fb106996f8afb0e7cae7de9b539a57069b7afe5f6e8b4eafcdd89c07da8"
+        },
+        {
+          "path": "live/1280-greenhouse-return-dialogue-event.json",
+          "bytes": 1934,
+          "sha256": "a462dd0ff6075b1cdef69ce9a0108c3cbfbe0f5a47d256c50eb05ec1e1d9fc3d"
+        },
+        {
+          "path": "live/1280-greenhouse-root-crossed-dialogue-layout.json",
+          "bytes": 49138,
+          "sha256": "907cf67b16f2fc724adb3580cf595b3bdcf6349bbebfba2a98c0e7ee9e9943fb"
+        },
+        {
+          "path": "live/1280-post-full-touch-320.json",
+          "bytes": 1690383,
+          "sha256": "e81409793cd224a12348e50eade6474ed26208855c1041791101261d168d9085"
+        },
+        {
+          "path": "live/1280-post-full-touch-390.json",
+          "bytes": 1682896,
+          "sha256": "95902480165e81f29c53485152e53c7b74fa0755ff56c590a9c931e33342ba75"
+        },
+        {
+          "path": "live/1280-post-mushroom-crossing.json",
+          "bytes": 131835,
+          "sha256": "83db1d24d314cb8cfd9b90fa3b7520f92a88f64527d933961a49a77e410340bc"
+        },
+        {
+          "path": "live/1280-post-route.json",
+          "bytes": 1554743,
+          "sha256": "cd4365694d25625694a5468ae08a3b4db5de092911d99fea5435af9da73f326e"
+        },
+        {
+          "path": "live/1280-station-body-dialogue-layout.json",
+          "bytes": 44846,
+          "sha256": "b5740d0c9f290b0415ac3122c3e0f902b4d70d6ad92a863fe1aa219f37367496"
+        },
+        {
+          "path": "live/1280-ticket-held-dialogue-layout.json",
+          "bytes": 49956,
+          "sha256": "60b7866d08c6b2b9acf124a060b750dc6bcb6cf55f4d523d7c1c4430e9591e9f"
+        },
+        {
+          "path": "live/320-face-festival-exclusion.json",
+          "bytes": 190,
+          "sha256": "fb713f619b5b90a4dc752c167bb5d777e37553705efc7625f8c19ac1b662d617"
+        },
+        {
+          "path": "live/320-face-ticket-collected.json",
+          "bytes": 444019,
+          "sha256": "439b25a45d5468364a8782a7436e225ca897e95a0e0eb717d95873e34c741927"
+        },
+        {
+          "path": "live/320-face-ticket-returned.json",
+          "bytes": 616410,
+          "sha256": "db5cdcb5b2d52b2a51ac38eaf40374b164c18a09218a7cba18e9569b74f739b1"
+        },
+        {
+          "path": "live/320-station-body-dialogue-layout.json",
+          "bytes": 689,
+          "sha256": "474b887d34b06b744ed013d7d4a6cf8e71aec9947112a06516be655770181872"
+        },
+        {
+          "path": "live/320-ticket-held-dialogue-layout.json",
+          "bytes": 689,
+          "sha256": "8d6dbaceab04aea89ebb7477bab98e4e999a2d77bef25d27f8fe8f6d72373303"
+        },
+        {
+          "path": "live/390-face-festival-exclusion.json",
+          "bytes": 190,
+          "sha256": "fb713f619b5b90a4dc752c167bb5d777e37553705efc7625f8c19ac1b662d617"
+        },
+        {
+          "path": "live/390-face-ticket-collected.json",
+          "bytes": 466536,
+          "sha256": "67787d4e61aea23570f6f232bac7e4c8ef74293ad018b2fc3800b4e383cd73fd"
+        },
+        {
+          "path": "live/390-face-ticket-returned.json",
+          "bytes": 616634,
+          "sha256": "675a7b2652a15e950e6c696cc0e9dc55fcfbdc30fef2dc6ac7ee9ff272f92476"
+        },
+        {
+          "path": "live/390-station-body-dialogue-layout.json",
+          "bytes": 689,
+          "sha256": "652637c585d6559813058a5122461100261e7beb8d5c88f9a00ccd9161c19dac"
+        },
+        {
+          "path": "live/390-ticket-held-dialogue-layout.json",
+          "bytes": 689,
+          "sha256": "196899517f5a506e4247c89081871609496f35fef210955ee00be2a30994fb0c"
+        },
+        {
+          "path": "live/dialogue-matrix/1024x640-opening-dialogue-layout.json",
+          "bytes": 51778,
+          "sha256": "4a7cecd5a970721f720bc33e7fe56e450e9cbbebfdb3e7c6fa39f67fc78c1605"
+        },
+        {
+          "path": "live/dialogue-matrix/1024x640-ticket-dialogue-layout.json",
+          "bytes": 49382,
+          "sha256": "4f40549d24d40376793df8c47dc5b200965a7ae0658c4d987865375049491404"
+        },
+        {
+          "path": "live/dialogue-matrix/1280x800-game-reduce-opening-dialogue-layout.json",
+          "bytes": 51452,
+          "sha256": "4afa777cd8a4bfa3753f7517c69b29ae652f1eb95e259057925dce9543db3801"
+        },
+        {
+          "path": "live/dialogue-matrix/1280x800-game-reduce-ticket-dialogue-layout.json",
+          "bytes": 49061,
+          "sha256": "69a15f85559c79741e54dc4377052d839032960cd73fdf768e58fed006a50d5f"
+        },
+        {
+          "path": "live/dialogue-matrix/1280x800-os-reduce-opening-dialogue-layout.json",
+          "bytes": 51410,
+          "sha256": "8d7a7ca0747be15fc3badd37898aac7635c9d5c7406af15abf27eaef3a8da6b8"
+        },
+        {
+          "path": "live/dialogue-matrix/1280x800-os-reduce-ticket-dialogue-layout.json",
+          "bytes": 49060,
+          "sha256": "30b46d0a2c2e2836637475385c9cef9209281de5f5a5f41fffa369bc43e5296d"
+        },
+        {
+          "path": "live/dialogue-matrix/899x800-opening-dialogue-layout.json",
+          "bytes": 694,
+          "sha256": "1d4d45adc40d445ea649a6de51fd915d243bf56cb8631bae175db0508c8e3af5"
+        },
+        {
+          "path": "live/dialogue-matrix/899x800-ticket-dialogue-layout.json",
+          "bytes": 692,
+          "sha256": "65d1d8efac8ffc77c9d4a65eb464653faf009aa0925a0988647e889076fb1425"
+        },
+        {
+          "path": "live/dialogue-matrix/900x520-opening-dialogue-layout.json",
+          "bytes": 50915,
+          "sha256": "a98581f84f939d95273fa0890cdcbfd220dfe7e9a8fb4536fdfe5d539d104c71"
+        },
+        {
+          "path": "live/dialogue-matrix/900x520-ticket-dialogue-layout.json",
+          "bytes": 48592,
+          "sha256": "a8d6d789a89cd996d8f1935594980b70c92a9695822df90b6a0d3c3373122e9e"
+        },
+        {
+          "path": "live/dialogue-matrix/900x800-opening-dialogue-layout.json",
+          "bytes": 51727,
+          "sha256": "ae674e35b73f3daab2beab8f23a226c86158d921ec4620b8bf86eb8bb5001cc1"
+        },
+        {
+          "path": "live/dialogue-matrix/900x800-ticket-dialogue-layout.json",
+          "bytes": 49321,
+          "sha256": "f2c1ba09010dd73554e9c7429bdaa73e400e33d01351b5f9afb6dc01db534cdb"
+        }
+      ]
+    },
+    {
+      "path": "png/live/1280-greenhouse-leaves-returned.png",
+      "bytes": 1309263,
+      "sha256": "cb11707f3c9e127e50546704d748318f9e64598476b7a575f3a60cc4e16474fe",
+      "role": "Unmodified original-size image selected for visual review",
+      "origin": "official ZIP live/1280-greenhouse-leaves-returned.png",
+      "width": 1280,
+      "height": 800,
+      "unalteredOriginalPNG": true
+    },
+    {
+      "path": "png/live/1280-greenhouse-root-crossed.png",
+      "bytes": 1306767,
+      "sha256": "a30542af370d0180113ab6c35b0eb3337a4236c5e5b9065daed33b94136bdf6e",
+      "role": "Unmodified original-size image selected for visual review",
+      "origin": "official ZIP live/1280-greenhouse-root-crossed.png",
+      "width": 1280,
+      "height": 800,
+      "unalteredOriginalPNG": true
+    },
+    {
+      "path": "png/live/dialogue-matrix/900x800-opening.png",
+      "bytes": 800614,
+      "sha256": "be5b12da0cd6fe50306ec93d73b63f308ed932bf167cf2e1524e92be13e4b4fb",
+      "role": "Unmodified original-size image selected for visual review",
+      "origin": "official ZIP live/dialogue-matrix/900x800-opening.png",
+      "width": 900,
+      "height": 800,
+      "unalteredOriginalPNG": true
+    },
+    {
+      "path": "png/live/dialogue-matrix/900x520-opening.png",
+      "bytes": 526884,
+      "sha256": "b6f0a0411eb016ee5ae9230c6c8831cde54a03577c882e03824f11a23cc8be4f",
+      "role": "Unmodified original-size image selected for visual review",
+      "origin": "official ZIP live/dialogue-matrix/900x520-opening.png",
+      "width": 900,
+      "height": 520,
+      "unalteredOriginalPNG": true
+    },
+    {
+      "path": "png/live/320-face-ticket-closedJoy.png",
+      "bytes": 271537,
+      "sha256": "a704edf7a63d7a494a3a47eb0272e1ce0196a625681918d59713cd842633ed99",
+      "role": "Unmodified original-size image selected for visual review",
+      "origin": "official ZIP live/320-face-ticket-closedJoy.png",
+      "width": 320,
+      "height": 431,
+      "unalteredOriginalPNG": true
+    },
+    {
+      "path": "png/live/1280-full-touch-320-post-book-riding.png",
+      "bytes": 218619,
+      "sha256": "e1b56e68c87eb3cbec00f9f61febbae6e73235f8952c165ee3107c94ccec0251",
+      "role": "Unmodified original-size image selected for visual review",
+      "origin": "official ZIP live/1280-full-touch-320-post-book-riding.png",
+      "width": 320,
+      "height": 680,
+      "unalteredOriginalPNG": true
+    },
+    {
+      "path": "png/live/1280-ending-dawn-320-read.png",
+      "bytes": 138742,
+      "sha256": "e40b7bfd1c1c0f1d21a5fddb01603c8447381e2b607eac816b91dc3fddfb7b55",
+      "role": "Unmodified original-size image selected for visual review",
+      "origin": "official ZIP live/1280-ending-dawn-320-read.png",
+      "width": 320,
+      "height": 680,
+      "unalteredOriginalPNG": true
+    },
+    {
+      "path": "png/live/1280-first-lamp-face-lamp-freeJoy.png",
+      "bytes": 1489851,
+      "sha256": "f0e81556fd5c73c6f7aaecc3d99329c489b3bbc8a49b147e4f0646d2b1a1e587",
+      "role": "Unmodified original-size image selected for visual review",
+      "origin": "official ZIP live/1280-first-lamp-face-lamp-freeJoy.png",
+      "width": 1280,
+      "height": 677,
+      "unalteredOriginalPNG": true
+    },
+    {
+      "path": "png/candidate/1280-greenhouse-leaves-returned.png",
+      "bytes": 1308886,
+      "sha256": "6a9b139c43eb4830dd2717ec4e1c1234f33607cdf1074f34efd5099edbcf55e3",
+      "role": "Unmodified original-size image selected for visual review",
+      "origin": "official ZIP candidate/1280-greenhouse-leaves-returned.png",
+      "width": 1280,
+      "height": 800,
+      "unalteredOriginalPNG": true
+    },
+    {
+      "path": "auditors/audit-tougaigu-v29.py",
+      "bytes": 4516,
+      "sha256": "ab612734835df954c3ae1f95bdc9d2e151e2422eca2989bfe2d98d4bf5591b72",
+      "role": "Independent read-only data auditor; pure validators load from exact primary Git",
+      "origin": "/tmp/audit-tougaigu-v29.py"
+    },
+    {
+      "path": "auditors/audit-v32-main-faces.py",
+      "bytes": 11830,
+      "sha256": "a7027003d5091f86ef216c101a119aaec4ce638276205b7cba232c34f7df4d5f",
+      "role": "Independent read-only data auditor; pure validators load from exact primary Git",
+      "origin": "/tmp/audit-v32-main-faces.py"
+    },
+    {
+      "path": "auditors/audit-v32-main-gates.py",
+      "bytes": 22914,
+      "sha256": "a1c353e592dd75000612220c32bdc313574ed62c8c9d340561126dd56b9cd6d8",
+      "role": "Independent read-only data auditor; pure validators load from exact primary Git",
+      "origin": "/tmp/audit-v32-main-gates.py"
+    },
+    {
+      "path": "auditors/audit-v32-main-dialogue.py",
+      "bytes": 12039,
+      "sha256": "e54df433fb72070ae5974f60b64764a1ac1adf22d8e0ee9087b2e49af32653d5",
+      "role": "Independent read-only data auditor; pure validators load from exact primary Git",
+      "origin": "/tmp/audit-v32-main-dialogue.py"
+    },
+    {
+      "path": "auditors/review-v32-main-artifact.py",
+      "bytes": 13206,
+      "sha256": "e585f03981fa1869bfa90202a313b68f4532f010955c02e0755577a57fb171a9",
+      "role": "Independent read-only data auditor; pure validators load from exact primary Git",
+      "origin": "/tmp/review-v32-main-artifact.py"
+    },
+    {
+      "path": "auditors/prepare-v32-main-auditors.py",
+      "bytes": 5685,
+      "sha256": "7c9deac8f0fdf8cb9a782def5ef4e0b41a4c113929ee78fc1bf484a0dcb1ef1e",
+      "role": "Independent read-only data auditor; pure validators load from exact primary Git",
+      "origin": "/tmp/prepare-v32-main-auditors.py"
+    },
+    {
+      "path": "auditors/prepare-v32-main-review.py",
+      "bytes": 7474,
+      "sha256": "c1da1861359d2e0b822de05f1fcf08a74eda0ed2ec8960779007fa3f8cdb2f46",
+      "role": "Independent read-only data auditor; pure validators load from exact primary Git",
+      "origin": "/tmp/prepare-v32-main-review.py"
+    },
+    {
+      "path": "auditors/preflight-review-with-historical-fixed-count.py",
+      "bytes": 11931,
+      "sha256": "b01d54647358fd4d5af7e182a182351c0f4e6cd0bbe213ed3aa578469170a555",
+      "role": "Earlier preflight reviewer with historical fixed 11 count; not executed against this main artifact",
+      "origin": "/tmp/tougaigu-v32-main-40984854669/preflight-review-with-historical-fixed-count.py"
+    },
+    {
+      "path": "dialogue-observed-scope.json",
+      "bytes": 6026,
+      "sha256": "c9f19fba7e7d5506fe0bfe56538b3c4d590c45fbc0baa79e937797b898e8e385",
+      "role": "Concise source-linked actual timing and visibility by independent route"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4299,
+      "sha256": "53da53f5b424298135ee0ed6e0431252720a158b494ac332cdfea1670b80d429",
+      "role": "Exact release verification, public-dialogue scope and limitations"
+    }
+  ]
+}

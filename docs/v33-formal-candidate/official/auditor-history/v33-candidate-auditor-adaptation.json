@@ -1,0 +1,182 @@
+[
+  {
+    "source": "/tmp/audit-v32-second-faces.py",
+    "sourceSha256": "df9c326f65a6d1b61659074a6b781cf6b5fb221336db1506ac88a123249f4970",
+    "derived": "/tmp/audit-v33-candidate-faces.py",
+    "derivedSha256": "e2dfe9b955b1dd7130d8b515910699e35787c6d9fed3faacf8132d34e05dbe12",
+    "changes": [
+      {
+        "from": "/workspace/scratch/2b18af2db412/tougaigu-v32-formal",
+        "to": "/workspace/scratch/2b18af2db412/tougaigu-v33-formal",
+        "occurrences": 1
+      },
+      {
+        "from": "/tmp/tougaigu-v32-second-40982421518",
+        "to": "/tmp/tougaigu-v33-candidate-40984114609",
+        "occurrences": 1
+      },
+      {
+        "from": "ce412d1298d0060dec08893f9b44cead9693edcf",
+        "to": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+        "occurrences": 1
+      },
+      {
+        "from": "40982421518",
+        "to": "40984114609",
+        "occurrences": 1
+      },
+      {
+        "from": "32.0.0",
+        "to": "33.0.0",
+        "occurrences": 2
+      },
+      {
+        "from": "==913",
+        "to": "==996",
+        "occurrences": 1
+      },
+      {
+        "from": "'sourceFilesExact':913",
+        "to": "'sourceFilesExact':996",
+        "occurrences": 1
+      },
+      {
+        "from": "Formal32 corrected second candidate",
+        "to": "Formal33 companion candidate",
+        "occurrences": 1
+      },
+      {
+        "from": "corrected ce412 commit",
+        "to": "v33 1d63072 commit",
+        "occurrences": 1
+      },
+      {
+        "from": "assert source==subprocess.check_output(['git','show',EXPECTED+':scripts/browser_face_v31.py'],cwd=ROOT).decode()",
+        "to": "assert source==subprocess.check_output(['git','show','7ba7c5e00a6a32032e5becf5131a527322d03ac3:scripts/browser_face_v31.py'],cwd=ROOT).decode()",
+        "occurrences": 1,
+        "reason": "Strengthen the inherited tautological source comparison to actual accepted7ba face-source equality; all face geometry/clock thresholds unchanged."
+      }
+    ],
+    "contract": "Identity/version/path/count adaptation only. Old route, physics, time, face, input, cooldown and network assertions remain. Also strengthen the inherited face source comparison to accepted7ba instead of comparing the same ref to itself."
+  },
+  {
+    "source": "/tmp/audit-v32-second-gates.py",
+    "sourceSha256": "ce00f8d6de5209303c50d545aa4be41b18cbe13f02695038214787dcace36bdf",
+    "derived": "/tmp/audit-v33-candidate-gates.py",
+    "derivedSha256": "f7055368d797fa9f4677c4e009ec075a94857c90fbefff3369969c200862fb03",
+    "changes": [
+      {
+        "from": "/workspace/scratch/2b18af2db412/tougaigu-v32-formal",
+        "to": "/workspace/scratch/2b18af2db412/tougaigu-v33-formal",
+        "occurrences": 1
+      },
+      {
+        "from": "/tmp/tougaigu-v32-second-40982421518",
+        "to": "/tmp/tougaigu-v33-candidate-40984114609",
+        "occurrences": 1
+      },
+      {
+        "from": "ce412d1298d0060dec08893f9b44cead9693edcf",
+        "to": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+        "occurrences": 1
+      },
+      {
+        "from": "40982421518",
+        "to": "40984114609",
+        "occurrences": 1
+      },
+      {
+        "from": "32.0.0",
+        "to": "33.0.0",
+        "occurrences": 7
+      },
+      {
+        "from": "==913",
+        "to": "==996",
+        "occurrences": 1
+      },
+      {
+        "from": "==143",
+        "to": "==144",
+        "occurrences": 1
+      },
+      {
+        "from": "len(imports) == 68",
+        "to": "len(imports) == 69",
+        "occurrences": 1
+      },
+      {
+        "from": "Formal32 corrected second candidate",
+        "to": "Formal33 companion candidate",
+        "occurrences": 1
+      },
+      {
+        "from": "second formal32 candidate CI",
+        "to": "formal33 companion candidate CI",
+        "occurrences": 1
+      },
+      {
+        "from": "allVersioned32",
+        "to": "allVersioned33",
+        "occurrences": 1,
+        "reason": "Metadata key names updated to actual33; assertions already require33."
+      },
+      {
+        "from": "allObservedJsCssVersioned32",
+        "to": "allObservedJsCssVersioned33",
+        "occurrences": 1,
+        "reason": "Metadata key names updated to actual33; assertions already require33."
+      }
+    ],
+    "contract": "Identity/version/path/count adaptation only. Old route, physics, time, face, input, cooldown and network assertions remain."
+  },
+  {
+    "source": "/tmp/audit-v32-second-dialogue.py",
+    "sourceSha256": "951a85faa69dee115c18dfdfdfa09c5f78aa2995f6bb36d1f1a1bc926e71d654",
+    "derived": "/tmp/audit-v33-candidate-dialogue.py",
+    "derivedSha256": "4e3ef661bcd3420124d47e42ff5d937814ad1fd350e5e32703b87574c0fce4e9",
+    "changes": [
+      {
+        "from": "/workspace/scratch/2b18af2db412/tougaigu-v32-formal",
+        "to": "/workspace/scratch/2b18af2db412/tougaigu-v33-formal",
+        "occurrences": 1
+      },
+      {
+        "from": "/tmp/tougaigu-v32-second-40982421518",
+        "to": "/tmp/tougaigu-v33-candidate-40984114609",
+        "occurrences": 1
+      },
+      {
+        "from": "ce412d1298d0060dec08893f9b44cead9693edcf",
+        "to": "1d63072bb9a27690ed14b15d3103c6e8a87fa297",
+        "occurrences": 1
+      },
+      {
+        "from": "40982421518",
+        "to": "40984114609",
+        "occurrences": 1
+      },
+      {
+        "from": "32.0.0",
+        "to": "33.0.0",
+        "occurrences": 5
+      },
+      {
+        "from": "==913",
+        "to": "==996",
+        "occurrences": 1
+      },
+      {
+        "from": "New official corrected candidate",
+        "to": "New official v33 companion candidate",
+        "occurrences": 1
+      },
+      {
+        "from": "public HTTPS v32 verification",
+        "to": "public HTTPS v33 verification",
+        "occurrences": 1
+      }
+    ],
+    "contract": "Identity/version/path/count adaptation only. Old route, physics, time, face, input, cooldown and network assertions remain."
+  }
+]

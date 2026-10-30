@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/tmp/tougaigu-v33-candidate-40984114609/auditor-history/review-v33-candidate-artifact.before-png-correction.py", line 113, in <module>
+    assert faces['faceCheckpointCount']==10 and faces['uniqueObserverCount']==5 and len(faces['uniqueCapturedCanvasFiles'])==11
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,22 @@
+{
+  "commit": "d997c58b2a846b2673b8baec500db9697a846d7a",
+  "tree": "ef9072b947447304f4561855a8db58fb7fc42211",
+  "parents": [
+    "91ccef79541f2dd061059462c10d60cbecbed144",
+    "1d63072bb9a27690ed14b15d3103c6e8a87fa297"
+  ],
+  "runtimeFiles": 144,
+  "totalPagesFiles": 145,
+  "candidateRun": 40984114609,
+  "previousMainRun": 40984854669,
+  "candidateAuditPassed": true,
+  "previousPublicAuditPassed": true,
+  "refUpdated": true,
+  "refReadback": "d997c58b2a846b2673b8baec500db9697a846d7a",
+  "pagesRun": 40987732103,
+  "pagesRunStatus": "success",
+  "version": "33.0.0",
+  "liveResourcesCheckedAt": "2026-10-30T01:46:30.860491+00:00",
+  "liveResourceCount": 7,
+  "liveResourceBytesExact": true
+}

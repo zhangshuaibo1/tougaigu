@@ -1,0 +1,182 @@
+[
+  {
+    "scope": "candidate",
+    "before": {
+      "observedAt": 56151.399999999994,
+      "lastShownAt": 54537.8,
+      "ageMs": 1613.5999999999913,
+      "showClass": true,
+      "opacity": 1,
+      "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+      "chapterIndex": 1,
+      "runId": 1,
+      "state": "playing",
+      "form": "soul",
+      "capPhase": "open",
+      "plantStage": 2,
+      "deaths": 0,
+      "body": {
+        "x": 593,
+        "y": 560,
+        "grounded": true
+      }
+    },
+    "after": {
+      "observedAt": 56898.899999999994,
+      "lastShownAt": 56152,
+      "ageMs": 746.8999999999942,
+      "showClass": true,
+      "opacity": 1,
+      "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+      "chapterIndex": 1,
+      "runId": 1,
+      "state": "playing",
+      "form": "body",
+      "capPhase": "closed",
+      "plantStage": 2,
+      "deaths": 0,
+      "body": {
+        "x": 593,
+        "y": 560,
+        "grounded": true
+      }
+    },
+    "validation": {
+      "status": "passed",
+      "trustedInput": true,
+      "existingCooldownMs": 1600,
+      "actualInputAgeMs": 1613.5999999999913,
+      "actualReturnDialogueAgeMs": 746.8999999999942,
+      "scope": "Existing real return E, natural authored dialogue refresh and completed cap closure; no replay or clock mutation"
+    },
+    "greenhouse": [
+      {
+        "label": "1280-greenhouse-leaves-returned",
+        "bubbleVisible": true,
+        "announcementVisible": false,
+        "dialogueAgeMs": 751.8999999999942,
+        "announcementText": "一盏诗灯亮了。它记住了你的答案，也为身体打开了路。"
+      },
+      {
+        "label": "1280-greenhouse-root-crossed",
+        "bubbleVisible": false,
+        "announcementVisible": true,
+        "dialogueAgeMs": 3802.0999999999913,
+        "announcementText": "借一朵蘑菇的力气，跳得比烦恼更高。"
+      }
+    ],
+    "actualFirstStationCoexistence": [
+      {
+        "label": "900x800-opening",
+        "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+        "dialogue": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+        "synchronousSnapshot": true,
+        "subsequentPNGNotSameFrame": true
+      },
+      {
+        "label": "1024x640-opening",
+        "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+        "dialogue": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+        "synchronousSnapshot": true,
+        "subsequentPNGNotSameFrame": true
+      },
+      {
+        "label": "900x520-opening",
+        "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+        "dialogue": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+        "synchronousSnapshot": true,
+        "subsequentPNGNotSameFrame": true
+      }
+    ]
+  },
+  {
+    "scope": "live",
+    "before": {
+      "observedAt": 56670,
+      "lastShownAt": 55053.19999999995,
+      "ageMs": 1616.8000000000466,
+      "showClass": true,
+      "opacity": 1,
+      "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+      "chapterIndex": 1,
+      "runId": 1,
+      "state": "playing",
+      "form": "soul",
+      "capPhase": "open",
+      "plantStage": 2,
+      "deaths": 0,
+      "body": {
+        "x": 597,
+        "y": 560,
+        "grounded": true
+      }
+    },
+    "after": {
+      "observedAt": 57418.69999999995,
+      "lastShownAt": 56670.79999999993,
+      "ageMs": 747.9000000000233,
+      "showClass": true,
+      "opacity": 1,
+      "text": "阿拾叶子探出头了，盖子得给它留点地方。",
+      "chapterIndex": 1,
+      "runId": 1,
+      "state": "playing",
+      "form": "body",
+      "capPhase": "closed",
+      "plantStage": 2,
+      "deaths": 0,
+      "body": {
+        "x": 597,
+        "y": 560,
+        "grounded": true
+      }
+    },
+    "validation": {
+      "status": "passed",
+      "trustedInput": true,
+      "existingCooldownMs": 1600,
+      "actualInputAgeMs": 1616.8000000000466,
+      "actualReturnDialogueAgeMs": 747.9000000000233,
+      "scope": "Existing real return E, natural authored dialogue refresh and completed cap closure; no replay or clock mutation"
+    },
+    "greenhouse": [
+      {
+        "label": "1280-greenhouse-leaves-returned",
+        "bubbleVisible": true,
+        "announcementVisible": false,
+        "dialogueAgeMs": 751.4000000000233,
+        "announcementText": "一盏诗灯亮了。它记住了你的答案，也为身体打开了路。"
+      },
+      {
+        "label": "1280-greenhouse-root-crossed",
+        "bubbleVisible": true,
+        "announcementVisible": true,
+        "dialogueAgeMs": 3765.4000000000233,
+        "announcementText": "暖灯记住了这里。散架后，会从这里再出发。"
+      }
+    ],
+    "actualFirstStationCoexistence": [
+      {
+        "label": "900x800-opening",
+        "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+        "dialogue": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+        "synchronousSnapshot": true,
+        "subsequentPNGNotSameFrame": true
+      },
+      {
+        "label": "1024x640-opening",
+        "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+        "dialogue": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+        "synchronousSnapshot": true,
+        "subsequentPNGNotSameFrame": true
+      },
+      {
+        "label": "900x520-opening",
+        "announcement": "「掀开头盖骨」 · 让拾光去找上方的去程票",
+        "dialogue": "阿拾我头里有个站台？车票找谁报销？拾光脑洞专线，凭一个好奇心上车。",
+        "synchronousSnapshot": true,
+        "subsequentPNGNotSameFrame": true
+      }
+    ]
+  }
+]
