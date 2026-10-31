@@ -18,6 +18,7 @@ import { drawMoonPlay } from './dream-moon-art.js';
 import { drawFirstTicket } from './dream-first-ticket-art.js';
 import { drawGreenhouseSeed } from './dream-greenhouse-art.js';
 import { getJourneyFacts, getGreenhouseStage } from './dream-journey.js';
+import { isCapFramingScene, getCapFramingView, accumulateCameraFollow, resolveCapFramingCamera } from './dream-cap-framing.js';
 
 const TAU=Math.PI*2;
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
@@ -73,6 +74,7 @@ export class DreamGame {
     const nearStoryLamp=this.lanterns?.some(lamp=>!lamp.lit&&this.soul&&dist(lamp,this.soul)<125);
     this.moonFramed=this.form==='soul'&&!!this.moonPlay?.getSnapshot().near&&Math.abs(this.soul.x-1460)<205&&this.soul.y>=170&&!nearStoryLamp;
     this.activityFramed=this.moonFramed||this.lostFramed||(this.form==='soul'&&!!this.capActivity?.bodyInRange(this.body)&&(this.capActivity.started||this.capActivity.phase==='complete'));
+    if(this.activityFramed||wasFramed){this.capCameraFollow=null;this.capFramingView=null;}
     this.scale=this.activityFramed?Math.min(this.baseScale,this.cssWidth/(this.moonFramed?470:400)):this.baseScale;
     const moonSafeBottom=this.cssHeight-36;
     if(this.moonFramed&&this.cssWidth<=640)this.scale=Math.min(this.scale,Math.max(.25,(moonSafeBottom-150)/385));
@@ -124,6 +126,7 @@ export class DreamGame {
     this.movers=this.level.movers.map(m=>({...m,baseX:m.x,baseY:m.y,prevX:m.x,prevY:m.y}));
     this.hazards=this.level.hazards.map(h=>({...h,clock:0,frozen:0,hitCooldown:0,px:h.x,py:h.y}));
     this.pads=this.level.pads.map(p=>({...p,boing:0,cooldown:0}));this.plateState=new Map();this.particles=[];this.pulses=[];this.camera=0;this.capOpen=0;this.jumpBuffer=0;this.hudTick=0;this.trailTick=0;this.eventCooldown=0;this.pulseCooldown=0;this.lastCheckpointEvent=-1;this.shake=0;
+    this.capCameraFollow=null;this.capFramingView=null;this.capFramingViewport=null;
     this.resetCapPresentation();
     this.capActivity=this.createCapActivity(this.options.capActivityRecord,this.options.capActivityRevision);
     this.lostCase=this.createLostCase(this.options.lostCaseRecord,this.options.lostCaseRevision);
@@ -624,6 +627,8 @@ export class DreamGame {
     this.pulses=this.pulses.filter(p=>p.age<.8).slice(-8);
     this.updateViewport();
     const target=this.form==='soul'?this.soul.x:this.body.x,targetCamera=clamp(target-this.viewWidth*.43,0,Math.max(0,this.level.width-this.viewWidth));
+    if(isCapFramingScene(this))this.capCameraFollow=accumulateCameraFollow(this.capCameraFollow,this.camera,this.options.reducedMotion?1:dt*5.5);
+    else this.capCameraFollow=null;
     if(!this.activityFramed)this.camera=this.options.reducedMotion?targetCamera:mix(this.camera,targetCamera,dt*5.5);
     this.companion.x=mix(this.companion.x,clamp(b.x-b.face*65,30,this.level.width-30),dt*3);this.companion.y=mix(this.companion.y,Math.min(560,b.y+10),dt*4);
     this.hudTick-=dt;if(this.hudTick<=0){this.hudTick=.1;this.emitHud();}
@@ -698,10 +703,19 @@ export class DreamGame {
   }
 
   render(){
-    if(this.destroyed||!this.level||!this.ctx)return;
+    if(this.destroyed||!this.level||!this.ctx){this.capCameraFollow=null;return;}
     this.updateViewport();
+    const follow=this.capCameraFollow;this.capCameraFollow=null;
     const c=this.ctx,w=this.viewWidth,h=640,t=this.options.reducedMotion?0:this.visualTime,theme=this.level.theme;
     const character=this.getCharacterPresentation(t),presentedSoul=this.getSoulPresentation(character);
+    // Resolve one final camera from the existing frame pose, before any world,
+    // background, culling or compass projection. Repeated renders use no budget.
+    const previousViewport=this.capFramingViewport;
+    const resized=!!previousViewport&&(previousViewport.width!==this.cssWidth||previousViewport.height!==this.cssHeight||previousViewport.scale!==this.scale);
+    const framing=getCapFramingView(this,character,presentedSoul,{wasActive:!!this.capFramingView?.active,resized,previousViewport});
+    this.camera=resolveCapFramingCamera(this.camera,follow,framing,{playing:this.state==='playing',reducedMotion:this.options.reducedMotion,resized});
+    this.capFramingView=framing;
+    this.capFramingViewport={width:this.cssWidth,height:this.cssHeight,scale:this.scale,viewWidth:this.viewWidth,camera:this.camera};
     const canvasTop=-this.viewportOffsetY/this.scale,canvasHeight=this.cssHeight/this.scale;
     c.setTransform(this.dpr*this.scale,0,0,this.dpr*this.scale,0,this.dpr*this.viewportOffsetY);c.clearRect(0,canvasTop,w,canvasHeight);c.lineCap='round';c.lineJoin='round';
     this.drawBackground(c,w,h,t);
