@@ -68,6 +68,16 @@ jobs:
         if: always()
         with:
           name: game-verification-${{ github.sha }}
-          path: verification/
+          path: |
+            verification/
+            !verification/live/**
+          retention-days: 3
+          if-no-files-found: error
+      - name: Preserve public browser evidence separately
+        uses: actions/upload-artifact@v4
+        if: ${{ always() && github.ref == 'refs/heads/main' }}
+        with:
+          name: game-public-verification-${{ github.sha }}
+          path: verification/live/
           retention-days: 3
           if-no-files-found: error
