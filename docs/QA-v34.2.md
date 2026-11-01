@@ -11,3 +11,6 @@
 
 ## 候选与正式发布门槛
 先 `npm test`、`npm run check`；跑官方原有 Actions 候选真实 Chromium 1280/390/320 与故事/资源故障/暂停/减动/六章/手机/结局门槛，再使用 fresh-read 的 expected_sha、force=false 追加 main，严格同步目标 dist 的 147 项运行文件，唯一空 `.nojekyll` 与正确 CNAME，完成新的 Pages 和 main 正式 HTTPS 全套，不降低原失败预算。发布前任何 local / candidate 成功不得冒充公网完成。
+
+## 首次官方候选失败与精准修正
+初始提交 dc9981a1 / Actions 41308714422 的 714 项测试中有 713 项通过、1 项失败。失败为本轮新增肖像测试误以为动态拼接 URL 在源代码中包含字面 `portrait-hero-`；真实生产 `dream-app.js` 是 `portrait-` + `hero-` 分段构建，且旧剧情实际使用正确路径。并非产品图片加载失败。第二次候选仅改此一条新增契约断言为校验原始动态拼接表达式，不更改游戏代码、原 711 项测试、网络失败预算或浏览器门槛。保留首次官方失败和 artifact 13084491479；再次全套验收结果以新 Actions 为准。
