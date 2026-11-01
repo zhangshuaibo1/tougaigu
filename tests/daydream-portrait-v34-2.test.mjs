@@ -38,7 +38,7 @@ test('live player portrait routes retain their pre-existing names, including bub
   const app = readFileSync(new URL('../dist/dream-app.js', import.meta.url), 'utf8');
   const shell = readFileSync(new URL('../dist/game-shell.js', import.meta.url), 'utf8');
   const cap = readFileSync(new URL('../dist/cap-book.js', import.meta.url), 'utf8');
-  assert.match(app, /'portrait-' \+ \(line\.speaker === 'ashi' \? 'hero-' : 'soul-'\)/);
+  assert.ok(app.includes("return './assets/portrait-' + (line.speaker === 'ashi' ? 'hero-' : 'soul-') + line.mood + '.svg'"), 'retain real assembled hero/soul image route');
   assert.match(app, /portrait-hero\.svg/);
   assert.match(shell, /portrait-hero\.svg/);
   assert.match(cap, /portrait-hero-open\.svg/);
