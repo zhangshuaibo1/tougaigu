@@ -179,9 +179,7 @@ function soulFace(c, { time, vx, vy, sleepy, returning, peeking, joyful, light }
   } else {
     curve(c, [-3, 3, -.8, 7.5, 2.8, 7.5, 5, 3], '#5e9081', 1.15);
   }
-  star(c, 0, -15.5, 3.3, '#9fbf946b');
-  star(c, 0, -16, 3.2, light);
-  star(c, -.3, -16.5, 1.35, '#fff7d5db');
+  // The face remains human; no floating-sprite crown or halo.
 }
 
 /**
@@ -222,7 +220,7 @@ export function drawRefinedSoul(c, game, presentedSoul, t = 0) {
       // These are the same transforms as base drawSoul. Neither cap-relative
       // coordinates nor held-object anchors are reconstructed from game.soul.
       c.translate(s.x, s.y + bob * size); c.rotate(tilt); c.scale(size, size);
-      pearlBody(c, tailX, tailY, spirit, vx, vy, returning, peeking, reduced);
+      humanShiguang(c, tailX, tailY, spirit, vx, vy, returning, peeking, reduced);
       soulFace(c, { time, vx, vy, sleepy, returning, peeking, joyful: hasSoulJoy(game, s), light });
       if (finite(game.emoteTime) > 0) {
         star(c, -23, -12, 3, light + 'bb'); star(c, 23, -18, 2.5, light + 'bb');
