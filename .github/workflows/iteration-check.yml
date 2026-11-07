@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     # The v29 candidate already spends over ten minutes before the final
     # fallback/reload/ending checks. main runs the full candidate AND HTTPS
     # route; allow both to finish while retaining every local action timeout.
