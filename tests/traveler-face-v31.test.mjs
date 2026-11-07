@@ -143,7 +143,7 @@ test('main-story soul joy leaves the original pearl, held-object anchors and pro
   const valid = gameView({ emoteTime: 2 }), outside = gameView({ emoteTime: 2, mode: 'festival' });
   const free = soulView(), joyful = soulPaint(valid, free), original = soulPaint(outside, free);
   const silhouette = c => c.paints.filter(p => p.path[0]?.[0] === 'moveTo' && p.path[0][1] === -15 && p.path[0][2] === 4);
-  assert.deepEqual(silhouette(joyful), silhouette(original), 'no replacement pearl silhouette or material');
+  assert.deepEqual(silhouette(joyful), silhouette(original), 'no replacement human hair silhouette or clothing material');
   assert.notDeepEqual(joyful.calls, original.calls, 'healthy true event changes the free face');
   for (const extra of [{ emoteTime: 0 }, { energy: 24.999 }, { energy: 0 }]) {
     assert.deepEqual(soulPaint(gameView({ ...valid, ...extra }), free).calls,

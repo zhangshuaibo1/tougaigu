@@ -36,51 +36,100 @@ function star(c, x, y, radius, paint) {
 }
 
 function silhouette(c, tailX, tailY) {
-  // The crest, cheeks and face keep the original play-size envelope. A round
-  // tail tip replaces the sharp endpoint; it is still part of one soft body.
+  // Long hair is the moving outer silhouette, not a floating spirit tail.
+  // The same bounded velocity response keeps the girl readable in phone play.
   c.beginPath(); c.moveTo(-15, 4);
-  c.bezierCurveTo(-24, -8, -17, -22, -6, -23);
-  c.quadraticCurveTo(1, -28, 2, -35);
-  c.bezierCurveTo(10, -31, 7, -25, 12, -22);
-  c.bezierCurveTo(20, -21, 23, -14, 19, -9);
-  c.bezierCurveTo(25, 7, 14, 17, tailX + 2.4, tailY - 1.4);
-  c.bezierCurveTo(tailX + .7, tailY + .6, tailX - 1.3, tailY + .4, tailX - 1.4, tailY - 1.1);
-  c.bezierCurveTo(tailX - .2, tailY - 6.8, -3, 15, -15, 4);
+  c.bezierCurveTo(-20, -7, -17, -24, -8, -31);
+  c.quadraticCurveTo(0, -37, 9, -30);
+  c.bezierCurveTo(18, -24, 18, -8, 15, 4);
+  c.bezierCurveTo(18, 11, tailX + 7, tailY - 4, tailX + 1, tailY);
+  c.bezierCurveTo(tailX - 3, tailY + 2, 8, 17, 4, 12);
+  c.bezierCurveTo(0, 9, -5, 15, -10, 12);
+  c.bezierCurveTo(-14, 10, -17, 7, -15, 4);
   c.closePath();
 }
 
-function pearlBody(c, tailX, tailY, spirit) {
-  // Broad light and shade survive the small phone projection. The main body
-  // stays mint even when a chapter's ambient spirit color is violet or blue.
-  const pearl = gradient(c, -15, -29, 19, 27, [
-    [0, '#fbfff1f7'], [.32, '#e4f9e9f5'], [.66, '#b9e9d5ed'], [1, '#79c7b9c7'],
+function humanShiguang(c, tailX, tailY, spirit, vx, vy, returning, peeking, reduced) {
+  // Back hair: chestnut brown, long and softly separated into two flowing locks.
+  const hair = gradient(c, -18, -34, 22, 30, [
+    [0, '#684638'], [.28, '#49332f'], [.66, '#34272a'], [1, '#241f29'],
   ]);
-  silhouette(c, tailX, tailY); c.fillStyle = pearl; c.fill();
+  silhouette(c, tailX, tailY); c.fillStyle = hair; c.fill();
+  c.strokeStyle = '#241f29'; c.lineWidth = 1.15; c.stroke();
+  curve(c, [-12, -18, -18, -5, -13, 9, tailX - 2, tailY - 3], '#9b7052b8', 1.15);
+  curve(c, [10, -17, 17, -3, 13, 10, 8 + tailX * .18, 25], '#9b705277', 1.05);
+  curve(c, [-8, -28, -3, -32, 3, -31, 7, -26], '#c18b647e', 1.2);
 
-  const softLight = c.createRadialGradient(-7, -17, 1, -2, -9, 34);
-  softLight.addColorStop(0, '#ffffe6a0');
-  softLight.addColorStop(.5, '#f0ffe52b'); softLight.addColorStop(1, '#efffdf00');
-  silhouette(c, tailX, tailY); c.fillStyle = softLight; c.fill();
-  silhouette(c, tailX, tailY);
-  c.fillStyle = gradient(c, -14, -14, 23, 22, [[0, '#397e8100'], [.57, '#397e8100'], [1, '#297c8252']]); c.fill();
+  // Full human body. The arms and legs respond to the actual flight vector;
+  // they do not affect collision, velocity, anchors or any game state.
+  const lean = reduced ? 0 : clamp(vx / 340, -1, 1) * .08;
+  const reach = returning ? .55 : peeking ? -.12 : clamp(Math.abs(vx) / 340, 0, 1) * .3;
+  c.save(); c.rotate(lean);
+  // Legs and shoes sit behind the coat hem.
+  curve(c, [-4, 17, -6, 23, -7 + reach * 2, 30, -8 + reach * 2, 34], '#594b49', 4.1);
+  curve(c, [4, 17, 6, 23, 7 - reach * 2, 30, 8 - reach * 2, 34], '#594b49', 4.1);
+  curve(c, [-4, 18, -6, 24, -7 + reach * 2, 30, -8 + reach * 2, 33], '#e2d5c2', 2.25);
+  curve(c, [4, 18, 6, 24, 7 - reach * 2, 30, 8 - reach * 2, 33], '#e2d5c2', 2.25);
+  oval(c, -9 + reach * 2, 34, 4.5, 2.2, '#5a4542');
+  oval(c, 9 - reach * 2, 34, 4.5, 2.2, '#5a4542');
 
-  // A fine, darker lower contour keeps the translucent pearl readable against
-  // warm lamps. The upper rim catches light without a bloom over the eyes.
-  c.strokeStyle = gradient(c, -16, -24, 19, 25, [
-    [0, '#f3ffe8e8'], [.35, '#d9f8e1ce'], [.72, '#84bfadce'], [1, '#578f88d9'],
+  // Arms are visible beside the coat and settle inward during a return.
+  const armSweep = reduced ? 0 : clamp(vy / 340, -1, 1) * 2.2;
+  curve(c, [-8, -5, -15, -4 - reach * 5, -18 - reach * 2, 3 + armSweep, -15, 10 + armSweep], '#c7b49f', 5.2);
+  curve(c, [8, -5, 15, -4 - reach * 5, 18 + reach * 2, 3 + armSweep, 15, 10 + armSweep], '#c7b49f', 5.2);
+  curve(c, [-8, -5, -15, -4 - reach * 5, -18 - reach * 2, 3 + armSweep, -15, 9 + armSweep], '#eee0ca', 3.1);
+  curve(c, [8, -5, 15, -4 - reach * 5, 18 + reach * 2, 3 + armSweep, 15, 9 + armSweep], '#eee0ca', 3.1);
+  oval(c, -15, 10 + armSweep, 2.4, 2.7, '#e9c9b0');
+  oval(c, 15, 10 + armSweep, 2.4, 2.7, '#e9c9b0');
+
+  // Beige outer coat with lapels, seams and a softly shaded hem.
+  c.beginPath(); c.moveTo(-9, -8); c.quadraticCurveTo(-13, -4, -11, 7);
+  c.lineTo(-9, 22); c.quadraticCurveTo(0, 25, 9, 22);
+  c.lineTo(11, 7); c.quadraticCurveTo(13, -4, 9, -8);
+  c.quadraticCurveTo(0, -12, -9, -8); c.closePath();
+  c.fillStyle = gradient(c, -12, -9, 12, 23, [
+    [0, '#fff0d9'], [.35, '#e9d9c2'], [.72, '#d4c0a8'], [1, '#9c8d82'],
+  ]); c.fill(); c.strokeStyle = '#8f7e72'; c.lineWidth = .85; c.stroke();
+  curve(c, [-8, -5, -5, -1, -2, 1, 0, 5], '#fff7e4', 1.1);
+  curve(c, [8, -5, 5, -1, 2, 1, 0, 5], '#b49e8d', 1.05);
+  curve(c, [-8, 17, -3, 19, 3, 19, 8, 17], '#fff0d2a6', .8);
+  curve(c, [0, 5, -.5, 10, .5, 16, 0, 21], '#aa9585a8', .8);
+  for (const y of [9, 14]) oval(c, 1.7, y, .7, .7, '#8c776b');
+
+  // Neck, skin and a real human face. The face landmarks remain at the
+  // established play-scale positions so existing expression timing is kept.
+  c.beginPath(); c.roundRect(-3.2, -13, 6.4, 9, 2); c.fillStyle = '#e7bfa6'; c.fill();
+  oval(c, -11, -7, 2.2, 3, '#dcae96'); oval(c, 11, -7, 2.2, 3, '#dcae96');
+  const skin = gradient(c, -11, -21, 11, 8, [
+    [0, '#ffe0c7'], [.42, '#f0c8ae'], [1, '#d99f88'],
   ]);
-  c.lineWidth = 1.15; c.stroke();
-  curve(c, [-15.6, -8, -17.5, -14, -12.4, -20, -6.5, -21.5], '#ffffeeb8', 1.75);
-  curve(c, [-4.3, -23.5, -.1, -26.2, 1.3, -29.4, 2.2, -32.2], '#ffffeaa3', 1.2);
-  curve(c, [18.5, -12, 21.6, -5.2, 17.2, 6.2, 11.6, 10.8], '#e2f8e3b5', 1.1);
-  curve(c, [18.1, -3.2, 18.1, 2.5, 15.3, 6.2, 12.6, 8.1], spirit + '69', 1.4);
-  curve(c, [-8.5, 11.8, -.5, 16.9, tailX + 1.6, tailY - 7.2, tailX - .1, tailY - 2.2], '#e5ffdf92', .95);
-  // A quiet underside reflection gives the tail a thickness rather than a
-  // painted stripe. It follows the exact same velocity-derived bend.
-  curve(c, [4.4, 13.6, 9, 16, tailX + 2.6, tailY - 4.6, tailX + .6, tailY - 1.9], '#84c9b86b', .8);
-  oval(c, -10.6, -16.2, 1.4, .8, '#fffdeac4');
+  oval(c, 0, -8, 10.7, 13.4, skin);
+  curve(c, [-9, -13, -10, -5, -7, 2, -3, 4], '#fff0d4a0', .9);
+  // Long side locks frame rather than obscure the face.
+  c.beginPath(); c.moveTo(-11, -23); c.quadraticCurveTo(-17, -9, -13, 8);
+  c.quadraticCurveTo(-11, 14, -8, 17); c.quadraticCurveTo(-10, 3, -9, -5);
+  c.closePath(); c.fillStyle = hair; c.fill();
+  c.beginPath(); c.moveTo(11, -23); c.quadraticCurveTo(17, -8, 13, 8);
+  c.quadraticCurveTo(11, 14, 8, 17); c.quadraticCurveTo(10, 3, 9, -5);
+  c.closePath(); c.fillStyle = hair; c.fill();
+
+  // Red scarf is a clear identity marker, with a restrained wind-driven tail.
+  c.beginPath(); c.moveTo(-8, -5); c.quadraticCurveTo(0, -1, 8, -5);
+  c.lineTo(7, 1); c.quadraticCurveTo(0, 5, -7, 1); c.closePath();
+  c.fillStyle = gradient(c, -8, -5, 8, 2, [[0, '#9d3f49'], [.45, '#d75d60'], [1, '#a63e4d']]); c.fill();
+  curve(c, [-6, -2, -3, 0, 2, 1, 6, -2], '#f3a09a', .75);
+  c.beginPath(); c.moveTo(-7, -2); c.bezierCurveTo(-15, -1, -22, -5 + tailY * .08, -29 - tailX * .25, -3 + tailX * .08);
+  c.lineTo(-27 - tailX * .25, 2 + tailX * .08); c.bezierCurveTo(-18, 3, -12, 4, -6, 2);
+  c.closePath(); c.fillStyle = gradient(c, -28, -5, -7, 3, [[0, '#ef8580'], [.5, '#c94d59'], [1, '#873846']]); c.fill();
+  curve(c, [-25 - tailX * .2, -2 + tailX * .06, -19, -1, -13, 1, -8, 0], '#f4aaa0b8', .7);
+
+  // A warm hair clip replaces the old floating forehead star.
+  oval(c, -8.5, -20.2, 2.1, 1.3, '#e8b56d');
+  oval(c, -8.5, -20.2, .8, .65, '#fff0c7');
+  c.restore();
+  // The tiny chapter light is reflected on the hair, not emitted as a fairy halo.
+  oval(c, 8.4, -27.4, 1.1, .65, spirit + '9a');
 }
-
 function soulFace(c, { time, vx, vy, sleepy, returning, peeking, joyful, light }) {
   const lookX = clamp(vx / 250, -1.2, 1.2), lookY = clamp(vy / 340, -1, 1) * .45;
   // A narrow, smooth blink uses only the supplied render clock. Low energy
@@ -165,7 +214,7 @@ export function drawRefinedSoul(c, game, presentedSoul, t = 0) {
     c.globalAlpha *= clamp(alpha, 0, 1); c.lineCap = 'round'; c.lineJoin = 'round';
     if (typeof c.setLineDash === 'function') c.setLineDash([]);
     const glow = c.createRadialGradient(s.x, s.y, Math.min(1, 58 * size), s.x, s.y, 58 * size);
-    glow.addColorStop(0, spirit + '36'); glow.addColorStop(.48, spirit + '15'); glow.addColorStop(1, spirit + '00');
+    glow.addColorStop(0, spirit + '1d'); glow.addColorStop(.48, spirit + '0a'); glow.addColorStop(1, spirit + '00');
     c.fillStyle = glow; c.fillRect(s.x - 60 * size, s.y - 60 * size, 120 * size, 120 * size);
 
     c.save();
@@ -173,7 +222,7 @@ export function drawRefinedSoul(c, game, presentedSoul, t = 0) {
       // These are the same transforms as base drawSoul. Neither cap-relative
       // coordinates nor held-object anchors are reconstructed from game.soul.
       c.translate(s.x, s.y + bob * size); c.rotate(tilt); c.scale(size, size);
-      pearlBody(c, tailX, tailY, spirit);
+      pearlBody(c, tailX, tailY, spirit, vx, vy, returning, peeking, reduced);
       soulFace(c, { time, vx, vy, sleepy, returning, peeking, joyful: hasSoulJoy(game, s), light });
       if (finite(game.emoteTime) > 0) {
         star(c, -23, -12, 3, light + 'bb'); star(c, 23, -18, 2.5, light + 'bb');

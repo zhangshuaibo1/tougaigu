@@ -101,22 +101,22 @@ test('the cap presentation owns the exact position, scale and inside-layer ancho
   assert.deepEqual(a.calls, b.calls, 'world physics coordinates do not override a peeking/returning presentation');
 });
 
-test('tail curvature reads actual presented velocity while reduced motion freezes every decorative clock', () => {
+test('long hair and scarf respond to actual presented velocity while reduced motion freezes every decorative clock', () => {
   const poses = [soulView(), soulView({ pose: 'peek', layer: 'inside', scale: .54 }), soulView({ pose: 'return', layer: 'inside' })];
   for (const energy of [12, 84]) for (const s of poses) for (const carry of [{}, { firstTicket: { phase: 'held' } }, { greenhousePlant: { phase: 'returning' } }]) {
     const game = gameView({ options: { reducedMotion: true }, energy, emoteTime: 1, ...carry });
-    assert.deepEqual(painted(game, s, 0).calls, painted(game, s, 193.75).calls, 'reduced motion includes tail, blink, highlights and carried items');
+    assert.deepEqual(painted(game, s, 0).calls, painted(game, s, 193.75).calls, 'reduced motion freezes hair, scarf, blink and carried items');
   }
   const game = gameView({ options: { reducedMotion: true } });
   const still = bodyPath(painted(game, soulView({ vx: 0, vy: 0 })));
   assert.notDeepEqual(still, bodyPath(painted(game, soulView({ vx: 300, vy: 0 }))));
   assert.notDeepEqual(still, bodyPath(painted(game, soulView({ vx: 0, vy: -340 }))));
   assert.notDeepEqual(bodyPath(painted(game, soulView({ vx: -300 }))), bodyPath(painted(game, soulView({ vx: 300 }))));
-  assert.deepEqual(bodyPath(painted(game, soulView({ vx: 400, vy: -340 }))), bodyPath(painted(game, soulView({ vx: 10000, vy: -10000 }))), 'extreme finite velocity cannot stretch the tail outside its small envelope');
+  assert.deepEqual(bodyPath(painted(game, soulView({ vx: 400, vy: -340 }))), bodyPath(painted(game, soulView({ vx: 10000, vy: -10000 }))), 'extreme finite velocity cannot stretch the hair outside its play-size envelope');
   assert.notDeepEqual(painted(gameView(), soulView(), .1).calls, painted(gameView(), soulView(), .9).calls, 'normal idle movement still uses the supplied clock');
 });
 
-test('low energy, peek and relieved return are readable poses and the original energy arc stays anchored', () => {
+test('human facial expressions, peek and relieved return remain readable and the original energy arc stays anchored', () => {
   const normal = painted(gameView(), soulView(), 0), tired = painted(gameView({ energy: 16 }), soulView(), 0);
   assert.equal(eyeEllipses(normal).length, 2); assert.equal(eyeEllipses(tired).length, 2);
   assert.ok(eyeEllipses(tired).every(p => p.path[0][4] < eyeEllipses(normal)[0].path[0][4]));
@@ -274,7 +274,7 @@ if (process.env.SOUL_ART_V22_OUTPUT) test('offline Canvas poses and real pickup/
     routes.push({ width, height, realInput: true, collectedTicket: ticket.collected, returnedTicket: game.firstTicket.phase, deaths: game.deaths, pausedPixelsEqual: true, reducedMotionPixelsEqual: true });
     game.destroy();
   }
-  // Check the mint silhouette against the theatre's warm brass and curtains,
+  // Check the human companion against the theatre's warm brass and curtains,
   // using a normal walk and flight to its first authored lamp. This does not
   // solve a lamp, invent a reward or claim that the chapter was completed.
   {
