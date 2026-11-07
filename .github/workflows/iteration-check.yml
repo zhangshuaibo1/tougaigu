@@ -1,12 +1,12 @@
 name: Game iteration verification
 on:
   push:
-    branches: [main, 'agent/**', 'iteration-*']
+    branches: [main, 'iteration-latest']
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: game-check-${{ github.ref }}
+  group: game-check-${{ github.repository }}
   cancel-in-progress: false
 jobs:
   verify:
@@ -19,6 +19,12 @@ jobs:
       run:
         shell: bash
     steps:
+      - name: Enforce the single active development branch
+        run: |
+          case "$GITHUB_REF" in
+            refs/heads/main|refs/heads/iteration-latest) ;;
+            *) echo "::error::Only main and iteration-latest are accepted; legacy branches are frozen."; exit 1 ;;
+          esac
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
