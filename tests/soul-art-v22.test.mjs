@@ -113,7 +113,17 @@ test('long hair and scarf respond to actual presented velocity while reduced mot
   assert.notDeepEqual(still, bodyPath(painted(game, soulView({ vx: 0, vy: -340 }))));
   assert.notDeepEqual(bodyPath(painted(game, soulView({ vx: -300 }))), bodyPath(painted(game, soulView({ vx: 300 }))));
   assert.deepEqual(bodyPath(painted(game, soulView({ vx: 400, vy: -340 }))), bodyPath(painted(game, soulView({ vx: 10000, vy: -10000 }))), 'extreme finite velocity cannot stretch the hair outside its play-size envelope');
-  assert.notDeepEqual(painted(gameView(), soulView(), .1).calls, painted(gameView(), soulView(), .9).calls, 'normal idle movement still uses the supplied clock');
+  const detail = painted(gameView(), soulView({ vx: 240, vy: -100 }), .5);
+  const strandColors = ['#bd8b6b82', '#926b5b9c'];
+  const seamColors = ['#7c354899', '#ed9893b0'];
+  for (const shade of [...strandColors, ...seamColors])
+    assert.equal(detail.paints.filter(p => p.kind === 'stroke' && p.paint === shade).length, 1,
+      `each human hair lock / scarf seam belongs to the world-space Canvas rig: ${shade}`);
+  const movingSeam = velocity => painted(gameView(), soulView({ vx: velocity }), .5).paints
+    .find(p => p.kind === 'stroke' && p.paint === '#7c354899').path;
+  assert.notDeepEqual(movingSeam(-240), movingSeam(240), 'scarf hem reacts to real movement direction');
+  assert.deepEqual(movingSeam(400), movingSeam(10000), 'scarf hem respects the existing velocity bound');
+    assert.notDeepEqual(painted(gameView(), soulView(), .1).calls, painted(gameView(), soulView(), .9).calls, 'normal idle movement still uses the supplied clock');
 });
 
 test('human facial expressions, peek and relieved return remain readable and the original energy arc stays anchored', () => {

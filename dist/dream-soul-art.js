@@ -112,6 +112,10 @@ function humanShiguang(c, tailX, tailY, spirit, vx, vy, returning, peeking, redu
   c.beginPath(); c.moveTo(11, -23); c.quadraticCurveTo(17, -8, 13, 8);
   c.quadraticCurveTo(11, 14, 8, 17); c.quadraticCurveTo(10, 3, 9, -5);
   c.closePath(); c.fillStyle = hair; c.fill();
+  // Two separate locks catch the same side light as the full-length hair.
+  // They remain under the scarf, so no strand can cover the eyes or nose.
+  curve(c, [-14, -15, -16, -7, -13, 7, -10, 13], '#bd8b6b82', .72);
+  curve(c, [12, -17, 15, -8, 13, 6, 10, 13], '#926b5b9c', .86);
 
   // Red scarf is a clear identity marker, with a restrained wind-driven tail.
   c.beginPath(); c.moveTo(-8, -5); c.quadraticCurveTo(0, -1, 8, -5);
@@ -122,6 +126,9 @@ function humanShiguang(c, tailX, tailY, spirit, vx, vy, returning, peeking, redu
   c.lineTo(-27 - tailX * .25, 2 + tailX * .08); c.bezierCurveTo(-18, 3, -12, 4, -6, 2);
   c.closePath(); c.fillStyle = gradient(c, -28, -5, -7, 3, [[0, '#ef8580'], [.5, '#c94d59'], [1, '#873846']]); c.fill();
   curve(c, [-25 - tailX * .2, -2 + tailX * .06, -19, -1, -13, 1, -8, 0], '#f4aaa0b8', .7);
+  // Hem stitching follows the same real velocity-derived tailX, not a new clock.
+  curve(c, [-27 - tailX * .25, 1 + tailX * .08, -20, 2, -15, 2, -9, 1], '#7c354899', .65);
+  curve(c, [-4, -1, 0, 1, 4, 1, 6, -1], '#ed9893b0', .6);
 
   // A warm hair clip replaces the old floating forehead star.
   oval(c, -8.5, -20.2, 2.1, 1.3, '#e8b56d');
