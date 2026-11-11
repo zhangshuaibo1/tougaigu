@@ -206,3 +206,20 @@ test('real ticket pickup and actual cap closure use only the original remaining 
     assert.equal(g.deaths, 0); assert.equal(g.firstTicket.phase, 'stowed');
   } finally { games.forEach(game => game.destroy()); }
 });
+
+
+test('human Ashi face uses skin and brown bangs instead of bone planes across six story chapters', () => {
+  for (let chapterIndex=0;chapterIndex<6;chapterIndex++) {
+    const g=freeze(gameView({chapterIndex}));
+    const frame=skullPaint(g);
+    const pigments=frame.paints.map(item=>item.paint);
+    const flat=pigments.filter(p=>typeof p==='string');
+    assert.ok(flat.includes('#63402e') && flat.includes('#513426'), 'side-swept brown hair and temples present');
+    assert.ok(flat.includes('#c78f77') && flat.includes('#db9f86'), 'warm ears and skin, not exposed ivory bone');
+    assert.ok(!flat.includes('#fff2d4'), 'no stylized skull teeth');
+    const gradients=pigments.filter(p=>p&&p.kind==='linear');
+    assert.ok(gradients.some(p=>p.stops.some(([,shade])=>shade==='#f8dec4')), 'living skin gradient required');
+  }
+  const joy=skullPaint(gameView({emoteTime:2}));
+  assert.ok(joy.paints.some(p=>p.paint==='#fff0de'),'a single natural smile highlight replaces teeth');
+});

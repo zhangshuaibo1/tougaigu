@@ -46,49 +46,71 @@ function line(c, points, paint, width) {
   for (const point of points.slice(1)) c.lineTo(...point);
   c.strokeStyle = paint; c.lineWidth = width; c.stroke();
 }
-function skull(c) {
-  c.beginPath(); c.moveTo(-22, -13); c.bezierCurveTo(-26, 0, -23, 10, -14, 14);
-  c.lineTo(-13, 22); c.quadraticCurveTo(0, 26, 13, 22); c.lineTo(14, 14);
-  c.bezierCurveTo(23, 10, 26, 0, 22, -13); c.closePath();
+// Human skin and brown side-swept bangs, painted in the original head rig.
+// The lifted "idea" is a metaphor: never render a literal bone face or helmet.
+function faceOutline(c) {
+  c.beginPath(); c.moveTo(-22, -13); c.bezierCurveTo(-25, -1, -22, 13, -14, 17);
+  c.lineTo(-11, 23); c.quadraticCurveTo(0, 27, 11, 23); c.lineTo(14, 17);
+  c.bezierCurveTo(22, 13, 25, -1, 22, -13); c.closePath();
 }
-function bonePlanes(c) {
-  // The silhouette is unchanged. Two broad planes give the cheek and jaw a
-  // readable thickness at phone scale, without adding a network of tiny lines.
-  const ivory = c.createLinearGradient(-22, -13, 23, 23);
-  ivory.addColorStop(0, '#fff1d2'); ivory.addColorStop(.48, '#ead9b8'); ivory.addColorStop(1, '#c1b08f');
-  skull(c); c.fillStyle = ivory; c.fill(); c.strokeStyle = '#bbaa8a'; c.lineWidth = 1.2; c.stroke();
-  c.beginPath(); c.moveTo(16, -12); c.quadraticCurveTo(23, -4, 19, 8);
-  c.quadraticCurveTo(17, 12, 12, 14); c.lineTo(10, 21);
-  c.quadraticCurveTo(4, 24, -5, 23); c.quadraticCurveTo(2, 26, 13, 22);
-  c.lineTo(14, 14); c.bezierCurveTo(23, 10, 26, 0, 22, -13); c.closePath();
-  const shade = c.createLinearGradient(10, -8, 23, 18);
-  shade.addColorStop(0, '#b89d7540'); shade.addColorStop(1, '#9d805759');
-  c.fillStyle = shade; c.fill();
-  c.beginPath(); c.moveTo(-21, -11); c.quadraticCurveTo(-23, 1, -18, 7);
-  c.quadraticCurveTo(-16, 10, -12, 10); c.quadraticCurveTo(-16, 6, -16, 1);
-  c.quadraticCurveTo(-17, -7, -21, -11); c.closePath(); c.fillStyle = '#fff9e175'; c.fill();
+function skinPlanes(c) {
+  // Ears stay below the cheek silhouette and never become skull plates.
+  oval(c, -22, 4, 3.5, 6, '#c78f77');
+  oval(c, 22, 4, 3.5, 6, '#b67d69');
+  oval(c, -22, 4, 1.4, 3.1, '#e9b59b');
+  oval(c, 22, 4, 1.4, 3.1, '#db9f86');
+  const skin = c.createLinearGradient(-22, -15, 22, 24);
+  skin.addColorStop(0, '#f8dec4'); skin.addColorStop(.42, '#efbfa3');
+  skin.addColorStop(1, '#bb8474');
+  faceOutline(c); c.fillStyle = skin; c.fill(); c.strokeStyle = '#986f65';
+  c.lineWidth = 1.05; c.stroke();
+  const cheek = c.createLinearGradient(4, -5, 23, 23);
+  cheek.addColorStop(0, '#f8d5b300'); cheek.addColorStop(1, '#97696757');
+  c.beginPath(); c.moveTo(12, -9); c.quadraticCurveTo(25, 4, 13, 21);
+  c.quadraticCurveTo(4, 25, 1, 24); c.quadraticCurveTo(15, 7, 12, -9);
+  c.closePath(); c.fillStyle = cheek; c.fill();
+  // Hair has three overlapping swept clumps and a visible lit strand.
+  const hair = c.createLinearGradient(-20, -21, 20, -3);
+  hair.addColorStop(0, '#af734f'); hair.addColorStop(.44, '#75482f');
+  hair.addColorStop(1, '#3b2926');
+  c.beginPath(); c.moveTo(-22,-12); c.bezierCurveTo(-22,-21,-8,-24,3,-21);
+  c.bezierCurveTo(15,-24,23,-17,22,-9);
+  c.quadraticCurveTo(11,-13,5,-9); c.quadraticCurveTo(-4,-3,-12,-9);
+  c.quadraticCurveTo(-18,-7,-22,-12); c.closePath();
+  c.fillStyle = hair; c.fill();
+  line(c, [[-19,-14],[-9,-17],[0,-14]], '#c08b62', 1.4);
+  line(c, [[1,-17],[10,-16],[17,-11]], '#987056', 1.05);
+  c.beginPath(); c.moveTo(-20,-10); c.quadraticCurveTo(-23,1,-18,6);
+  c.lineTo(-15,0); c.quadraticCurveTo(-16,-7,-20,-10); c.closePath();
+  c.fillStyle='#63402e'; c.fill();
+  c.beginPath(); c.moveTo(21,-11); c.quadraticCurveTo(23,-2,19,5);
+  c.lineTo(16,-1); c.quadraticCurveTo(16,-7,21,-11); c.closePath();
+  c.fillStyle='#513426'; c.fill();
 }
 function eyeSocket(c, x, view) {
   c.beginPath();
   if (view.kind === 'joy' && view.blink > .2) {
-    // A filled crescent stays legible when the whole eye is only nine pixels.
-    c.moveTo(x - 6.6, 3.2); c.bezierCurveTo(x - 6.9, -6.7, x + 6.9, -6.7, x + 6.6, 3.2);
-    c.bezierCurveTo(x + 3.4, -1.7, x - 3.4, -1.7, x - 6.6, 3.2); c.closePath();
+    c.moveTo(x - 4.5, 2); c.quadraticCurveTo(x, -2.8, x + 4.5, 2);
+    c.quadraticCurveTo(x, -.5, x - 4.5, 2); c.closePath();
   } else if (view.kind === 'tired' && view.blink > .2) {
-    // The heavy upper edge slopes down toward the middle; the mouth below is
-    // an O, so fatigue cannot read as the upward closed-eye success expression.
-    c.moveTo(x - 6.4, -2.5); c.quadraticCurveTo(x, .7, x + 6.4, -2.5);
-    c.bezierCurveTo(x + 7.1, 6.4, x - 7.1, 6.4, x - 6.4, -2.5); c.closePath();
-  } else c.ellipse(x, 1, 6.6, 8.2 * view.blink, 0, 0, TAU);
+    c.moveTo(x - 4.3, -.6); c.quadraticCurveTo(x, 1.7, x + 4.3, -.6);
+    c.quadraticCurveTo(x + 4.1, 4.5, x, 4.9);
+    c.quadraticCurveTo(x - 4.1, 4.5, x - 4.3, -.6); c.closePath();
+  } else c.ellipse(x, 1, 4.2, 5.3 * view.blink, 0, 0, TAU);
 }
-function teeth(c, joyful) {
+function lips(c, joyful) {
   if (joyful) {
-    c.beginPath(); c.moveTo(-8.8, 17.5); c.quadraticCurveTo(0, 20.8, 8.8, 17.5);
-    c.bezierCurveTo(6.7, 25, -6.7, 25, -8.8, 17.5); c.closePath(); c.fillStyle = '#75604e'; c.fill();
-    c.beginPath(); c.moveTo(-6.8, 19.1); c.quadraticCurveTo(0, 21.1, 6.8, 19.1);
-    c.lineTo(5.8, 21); c.quadraticCurveTo(0, 23.1, -5.8, 21); c.closePath(); c.fillStyle = '#fff2d4'; c.fill();
-    for (const x of [-3, 3]) line(c, [[x, 20.4], [x, 22]], '#b99d7b', .8);
-  } else for (const x of [-7, 0, 7]) line(c, [[x, 20], [x, 24]], '#9b8d7a', 1.4);
+    c.beginPath(); c.moveTo(-7.2, 16.8); c.quadraticCurveTo(0, 20.3, 7.2, 16.8);
+    c.bezierCurveTo(5.1, 22.1, -5.1, 22.1, -7.2, 16.8); c.closePath();
+    c.fillStyle='#75604e'; c.fill();
+    c.beginPath(); c.moveTo(-4.8, 17.8); c.quadraticCurveTo(0, 19.3, 4.8, 17.8);
+    c.quadraticCurveTo(0, 20.8, -4.8, 17.8); c.closePath();
+    c.fillStyle='#fff0de'; c.fill();
+  } else {
+    c.beginPath(); c.moveTo(-5.7, 18.5); c.quadraticCurveTo(0, joyful ? 22 : 19, 5.7, 18.5);
+    c.strokeStyle='#875c57'; c.lineWidth=1.65; c.stroke();
+    line(c,[[-4,20],[0,21],[4,20]],'#d68d80',.8);
+  }
 }
 
 /** Paint in the caller's existing head space; never transform the shared rig. */
@@ -99,7 +121,7 @@ export function drawTravelerSkullFront(c, game, body, t, shown) {
   c.save();
   try {
     c.lineCap = 'round'; c.lineJoin = 'round';
-    bonePlanes(c);
+    skinPlanes(c);
     for (const x of [-9, 9]) {
       c.save();
       try {
@@ -113,14 +135,13 @@ export function drawTravelerSkullFront(c, game, body, t, shown) {
         }
       } finally { c.restore(); }
     }
-    if (view.attentive || view.happy) {
-      line(c, [[-15, -11], [-10, -13], [-5, -11]], '#bba684', 1.2);
-      line(c, [[5, -11], [10, -13], [15, -11]], '#bba684', 1.2);
-    }
+    // Brows share the same skin plane; they remain attached in all six chapters.
+    for (const x of [-9,9]) line(c, [[x-4.1,-9.1],[x,-10.2-(view.attentive?1.2:0)],[x+4.1,-9.1]], '#674439', 1.4);
     oval(c, -18, 8, 3.8, 1.7, '#d39b8b44'); oval(c, 18, 8, 3.8, 1.7, '#d39b8b44');
-    c.beginPath(); c.moveTo(0, 9); c.lineTo(-3, 14); c.lineTo(3, 14);
-    c.closePath(); c.fillStyle = '#736566'; c.fill();
-    teeth(c, view.kind === 'joy');
+    // A small shaded bridge and tip instead of a triangular nose cavity.
+    line(c, [[1,6],[-.8,12],[1.5,13.4]], '#bd8172', 1.18);
+    oval(c, 1.2, 13.7, 2.1, 1.1, '#e6a38b');
+    lips(c, view.kind === 'joy');
     if (view.sleepy) oval(c, 0, 19, 3.2, 2.9, '#796554');
     return true;
   } finally { c.restore(); }
