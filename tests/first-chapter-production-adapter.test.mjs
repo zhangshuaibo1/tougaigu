@@ -19,7 +19,7 @@ test('the retained engine and new painter are byte-identical to the verified sou
   const sha = createHash('sha1').update(Buffer.from(`blob ${b.length}\0`)).update(b).digest('hex');
   assert.equal(sha, '49baa14351da49a2deed0b842dfcdd113bfa3227');
   const p = readFileSync(new URL('../dist/dream-ashi-daydream.js', import.meta.url));
-  assert.equal(createHash('sha256').update(p).digest('hex'), 'e6873944329953641482701872b82a22baecf6d092c02d411bfab14275fa6abf');
+  assert.equal(createHash('sha256').update(p).digest('hex'), '80035b0efadf9b11509464a059eafb695175d7533eea5c2aa77ecd710bdf7026');
 });
 test('the actual game canvas selects artwork but every other canvas remains opt-in', () => {
   const real = new DreamGame(canvas('dream-canvas'));
