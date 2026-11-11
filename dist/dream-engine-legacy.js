@@ -325,7 +325,7 @@ export class DreamGame extends BaseDreamGame {
     if(image){
       c.save();
       const sky=c.createLinearGradient(0,view.viewport.top,0,view.viewport.bottom);
-      sky.addColorStop(0,'#102d4e');sky.addColorStop(.65,'#16364e');sky.addColorStop(1,'#152d3f');
+      sky.addColorStop(0,'#94c5e9');sky.addColorStop(.65,'#d6e9e8');sky.addColorStop(1,'#ffe1c0');
       c.fillStyle=sky;c.fillRect(0,view.viewport.top,w,view.viewport.bottom-view.viewport.top);c.restore();
       if(drawPaintedStation(c,view,image)){
         this.paintedFrame=true;

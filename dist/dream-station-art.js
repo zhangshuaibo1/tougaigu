@@ -73,10 +73,10 @@ function cachedCanopy(c,x){
 export function drawStationBackdrop(c,view,t=0,reduced=false){
   const {width,top,bottom}=view.viewport,time=reduced?0:t;
   c.save();c.beginPath();c.rect(0,top,width,bottom-top);c.clip();
-  c.fillStyle=gradient(c,0,top,0,600,[[0,'#102333'],[.45,'#244b59'],[1,'#426268']]);c.fillRect(0,top,width,bottom-top);
+  c.fillStyle=gradient(c,0,top,0,600,[[0,'#94c5ea'],[.45,'#d4e6ed'],[1,'#f6ddc5']]);c.fillRect(0,top,width,bottom-top);
   const moonX=width*.76-view.cameraX*.07;
   glow(c,moonX,125,210,'#c8e6d51b');
-  oval(c,moonX,125,39,39,'#dbdfbf');oval(c,moonX+16,111,33,33,'#1d3948');
+  oval(c,moonX,125,39,39,'#fff1c9');
   // Small broken clouds, well away from the playable platform silhouettes.
   for(let i=0;i<6;i++){
     const x=i*281-view.cameraX*.09+Math.sin(time*.035+i)*7;

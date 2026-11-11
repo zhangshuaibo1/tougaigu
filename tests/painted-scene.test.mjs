@@ -29,7 +29,7 @@ function context({fail=false}={}){
 }
 
 test('painting URL is module-relative and its geometry contract is immutable',()=>{
-  assert.equal(PAINTED_STATION_URL,new URL('../dist/assets/station-painted-v16.webp',import.meta.url).href);
+  assert.equal(PAINTED_STATION_URL,new URL('../dist/assets/station-daylight-r70.svg',import.meta.url).href);
   assert.equal(PAINTED_STATION_CONFIG.parallax,.28);
   assert.ok(Object.isFrozen(PAINTED_STATION_CONFIG));
   const source=view(),before=structuredClone(source),layout=getPaintedStationLayout(source);
