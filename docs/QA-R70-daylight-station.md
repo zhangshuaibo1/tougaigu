@@ -6,3 +6,8 @@
 - 本轮角色/光影协调：主角阿拾棕发蓝夹克/旅行背包与拾光米色外衣红围巾的实景绘制模块未替换、不伪称重绘；新场景的暖日光背景使角色轮廓与旧夜间图相比更符合批准站台。后续仍须精修角色五官、服装、动作、脚部落地、NPC 与整个场景的光影统一。
 - 保持原游戏六章、十节日、物理、输入、存档、剧情、网络账本及所有错误阈值；原 dark night 位图保留在仓库作为历史资源，不覆盖文件。
 - **发布门禁**：必须本 SHA 官方完整 Node／资源与 Chromium 1280、390、320 逐姿态/失败资源测试；与稳定版同场景实景视觉对照，截图验收；发布负责人明确交接；随后安全合并 main、同轮 Pages 部署、main HTTPS、公网版本/逐文件 artifact 独立审计。缺任一证据均不得声称上线。
+
+## 官方首次失败与因果修复
+
+- 候选 `a9d4660dad7da5d1c1f6d069e1fd473af971c06f` 的 [Actions 43006217550](https://github.com/zhangshuaibo1/tougaigu/actions/runs/43006217550) 在 Node 阶段 **718/719**；唯一失败为 `tests/first-chapter-production-adapter.test.mjs` 仍然把主动改过日光天空颜色的 `dream-engine-legacy.js` 强制比对到历史 Blob `49baa14351da49a2deed0b842dfcdd113bfa3227`。实际新生产 Blob 是 `f79f33ae1b40dc5aca52cac74792f8607e4f8330`。
+- 原失败保留、不跳过；原 SHA-1 Git Blob 全文件强度校验不变，只将预期值准确更新到审查过的候选源码。另一个日梦画师 SHA-256 精确约束、原动作/物理/资源/网络测试均保持不变。新完整候选结果另行记录，不将此次 Node 修复冒充 Chromium 通过。

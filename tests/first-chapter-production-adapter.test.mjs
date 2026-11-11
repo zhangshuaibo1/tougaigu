@@ -14,10 +14,10 @@ function canvas(id) {
   const ctx = new Proxy({ globalAlpha: 1 }, { get: (o, k) => k in o ? o[k] : noop });
   return { id, getContext: () => ctx, getBoundingClientRect: () => ({width: 390, height: 600}) };
 }
-test('the retained engine and new painter are byte-identical to the verified source assets', () => {
+test('the production engine and retained daydream painter match their exact reviewed source blobs', () => {
   const b = readFileSync(new URL('../dist/dream-engine-legacy.js', import.meta.url));
   const sha = createHash('sha1').update(Buffer.from(`blob ${b.length}\0`)).update(b).digest('hex');
-  assert.equal(sha, '49baa14351da49a2deed0b842dfcdd113bfa3227');
+  assert.equal(sha, 'f79f33ae1b40dc5aca52cac74792f8607e4f8330');
   const p = readFileSync(new URL('../dist/dream-ashi-daydream.js', import.meta.url));
   assert.equal(createHash('sha256').update(p).digest('hex'), '80035b0efadf9b11509464a059eafb695175d7533eea5c2aa77ecd710bdf7026');
 });
