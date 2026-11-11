@@ -141,6 +141,26 @@ test('human facial expressions, peek and relieved return remain readable and the
   assert.notDeepEqual(normal.paints, painted(gameView(), soulView({ pose: 'peek' }), 0).paints, 'the little surprised peek is distinct from free flight');
 });
 
+test('R69 human facial planes keep paired brows and warm cheeks inside the play-scale skin oval', () => {
+  for (const pose of ['free', 'peek', 'return']) for (const energy of [16, 84]) {
+    const rendered = painted(gameView({ energy }), soulView({ pose, layer: pose === 'free' ? 'world' : 'inside' }), .47);
+    const brows = rendered.paints.filter(p => p.kind === 'stroke' && p.paint === '#6b4b41');
+    assert.equal(brows.length, 2, 'both human brows use the existing face and expression pose');
+    assert.ok(brows.every(p => p.width === .95), 'brows stay fine at native phone size');
+    const cheeks = rendered.paints.filter(p => p.kind === 'fill'
+      && p.paint?.kind === 'radialGradient' && p.paint.stops?.[0]?.[1] === '#f1c1a885');
+    assert.equal(cheeks.length, 2, 'both cheek planes use warm skin light');
+    assert.deepEqual(cheeks.map(p => p.path[0]?.[1]), [-7.2, 7.7],
+      'blush centres are inside the real human face instead of floating outside');
+    assert.ok(rendered.paints.some(p => p.kind === 'stroke' && p.paint === '#b98578'),
+      'small nose bridge is painted without changing game or gaze state');
+    assert.ok(rendered.calls.length < 500, 'face detail does not introduce a new render loop');
+  }
+  const reduced = gameView({ options: { reducedMotion: true } });
+  assert.deepEqual(painted(reduced, soulView(), 0).calls, painted(reduced, soulView(), 300).calls,
+    'new human landmarks follow the existing reduced-motion freeze');
+});
+
 test('the original ticket and seed art keep their exact carried transforms and only draw when actually held', () => {
   const t = .47, soul = soulView({ scale: .72, alpha: .8, pose: 'return', layer: 'inside' });
   for (const [key, painter, scale] of [['firstTicket', drawFirstTicket, .55], ['greenhousePlant', drawGreenhouseSeed, .65]]) {

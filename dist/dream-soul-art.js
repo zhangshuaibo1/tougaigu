@@ -143,7 +143,16 @@ function soulFace(c, { time, vx, vy, sleepy, returning, peeking, joyful, light }
   // remains a held expression; returning gets a relieved, small smile.
   const blink = 1 - .84 * clamp((Math.sin(time * 1.42 + 1) - .975) / .025, 0, 1);
   const eyelid = sleepy ? .42 : blink;
-  const eye = gradient(c, -4, -11, 7, -.5, [[0, '#254d55'], [.65, '#355d62'], [1, '#4b807a']]);
+  // A pair of softly arched human brows is anchored to the same face as the
+  // eyes; expressions only change the brow rise, never a separate animation.
+  for (const x of [-6, 7]) {
+    const rise = returning ? -1.2 : joyful ? -.7 : sleepy ? .7 : 0;
+    curve(c, [x - 3.4, -13.9 + rise, x - 1.5, -15.2 + rise,
+      x + 1.1, -15.4 + rise, x + 3.4, -13.8 + rise], '#6b4b41', .95);
+  }
+  // Warm brown pupils belong to a human girl's face, not the old mint spirit.
+  // Preserve the eye geometry, blink, expression switch and gaze landmarks.
+  const eye = gradient(c, -4, -11, 7, -.5, [[0, '#3f3737'], [.65, '#5c4942'], [1, '#785b4a']]);
   for (const x of [-6, 7]) {
     if (returning) {
       const rise = sleepy ? 2.3 : 3.8, y = sleepy ? -4.9 : -4.4;
@@ -165,12 +174,16 @@ function soulFace(c, { time, vx, vy, sleepy, returning, peeking, joyful, light }
       if (sleepy) curve(c, [x - 2.8, -9.1, x - 1, -8.1, x + .6, -8.3, x + 2.8, -9.3], '#84b9a886', .8);
     }
   }
-  // Soft blush is deliberately below the eyes, leaving the original face
-  // landmarks and the shared held-ticket/seed hands clear at normal scale.
-  for (const x of [-12, 13]) {
-    const blush = c.createRadialGradient(x, 1, 0, x, 1, 3.4);
+  // Tiny nose bridge and tip remain within the actual skin oval, between the
+  // original gaze and mouth landmarks, even at narrow phone scale.
+  curve(c, [.1, -1.1, -.4, .1, .2, 1.2, 1.4, 1.5], '#b98578', .72);
+  oval(c, 1.3, 1.6, 1.05, .55, '#e9b5a0');
+  // Previously the blush was centred outside the 10.7px facial silhouette at
+  // x=-12/13, making the cheeks float. Both now sit inside the skin plane.
+  for (const x of [-7.2, 7.7]) {
+    const blush = c.createRadialGradient(x, 1.5, 0, x, 1.5, 2.6);
     blush.addColorStop(0, '#f1c1a885'); blush.addColorStop(1, '#f1c1a800');
-    oval(c, x, 1, 3.4, 1.9, blush);
+    oval(c, x, 1.5, 2.5, 1.6, blush);
   }
   if (returning) {
     curve(c, [-3.6, 2.5, -1.3, sleepy ? 6 : 7.2, 3.5, sleepy ? 6 : 7.2, 5.4, 2.5], '#558b7e', 1.25);
