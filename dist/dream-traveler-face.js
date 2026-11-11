@@ -130,8 +130,18 @@ export function drawTravelerSkullFront(c, game, body, t, shown) {
         // tired eye's glint within its cavity instead of lighting the eyelid.
         c.clip();
         if (view.blink > .2 && view.kind !== 'joy') {
-          oval(c, x + view.lookX, view.lookY, 2.2, 2.6, light);
-          oval(c, x + view.lookX + 1, view.lookY - 1.5, .9, 1, '#fff1ce');
+          // An ivory-white eye plane, separate warm-brown iris and small dark
+          // pupil stay inside the existing clipped socket as the gaze moves.
+          // Their coordinates are presentation-only, never world physics.
+          oval(c, x, 1, 3.6, Math.max(.5, 4.15 * view.blink), '#f6e9dc');
+          const gazeX = x + view.lookX * .66;
+          const gazeY = 1 + view.lookY * .3;
+          oval(c, gazeX, gazeY, 2.35, 2.7, '#784e38');
+          oval(c, gazeX + .3, gazeY + .1, 1.3, 1.9, '#302c2d');
+          oval(c, gazeX - .7, gazeY - 1.2, .75, .9, '#fff1ce');
+          // A very narrow environment reflection uses the original chapter
+          // light while the iris keeps the same human brown in every scene.
+          oval(c, gazeX + 1, gazeY - 1.55, .4, .55, light);
         }
       } finally { c.restore(); }
     }

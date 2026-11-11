@@ -223,3 +223,19 @@ test('human Ashi face uses skin and brown bangs instead of bone planes across si
   const joy=skullPaint(gameView({emoteTime:2}));
   assert.ok(joy.paints.some(p=>p.paint==='#fff0de'),'a single natural smile highlight replaces teeth');
 });
+
+
+test('six live Ashi face painters add bounded human sclera, brown irises and pupils without breaking joy or reduced motion', () => {
+  for (let chapterIndex=0; chapterIndex<6; chapterIndex++) {
+    const base=gameView({chapterIndex});
+    const normal=skullPaint(base), paints=normal.paints.map(p=>p.paint);
+    for (const tone of ['#f6e9dc','#784e38','#302c2d','#fff1ce']) {
+      assert.equal(paints.filter(v=>v===tone).length,2,tone+' should occur in both clipped human eyes');
+    }
+    assert.equal(normal.calls.filter(([method])=>method==='clip').length,2);
+    const joyful=skullPaint(gameView({chapterIndex,emoteTime:2}));
+    assert.equal(joyful.paints.filter(p=>p.paint==='#784e38').length,0,'joy smile preserves the original smiling lids');
+    const reduced=gameView({chapterIndex,options:{reducedMotion:true}});
+    assert.deepEqual(skullPaint(reduced,soulView(),0).calls,skullPaint(reduced,soulView(),130).calls);
+  }
+});
