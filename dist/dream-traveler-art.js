@@ -126,11 +126,35 @@ export function drawTravelerCoat(c,motion,dress){
   line(c,[[0,-35],[0,-18]],tint(dress.coat,'#263447',.25),1.7);line(c,[[1,-34],[1,-19]],tint(dress.trim,'#f5e8c8',.15),.6);
   for(const y of [-31,-25,-19]){oval(c,3,y,1.7,1.7,'#847153');oval(c,2.5,y-.5,1.15,1.15,'#e8ce95');}
   c.beginPath();c.moveTo(-11,-28);c.lineTo(-4,-28);c.lineTo(-4,-23);c.quadraticCurveTo(-7,-20,-11,-23);c.closePath();c.fillStyle=tint(dress.coat,'#e1ead5',.12);c.fill();line(c,[[-11,-28],[-4,-28]],tint(dress.trim,'#f5e8c8',.1),.8);
-  // The diagonal strap visually connects the bag to its traveler.
-  c.beginPath();c.moveTo(9,-39);c.quadraticCurveTo(0,-30,-16,-19);c.strokeStyle='#2a344b55';c.lineWidth=4.8;c.stroke();c.strokeStyle='#987a60';c.lineWidth=3.2;c.stroke();
-  c.beginPath();c.moveTo(8,-39);c.quadraticCurveTo(-1,-30,-16,-20);c.strokeStyle='#dbbb8d99';c.lineWidth=.8;c.stroke();
-  // A soft scarf collar overlaps the strap and is shaded under the skull.
-  c.beginPath();c.roundRect(-16,-41,32,8,4);c.fillStyle=gradient(c,-8,-41,4,-33,[[0,tint(dress.scarf,'#fff3d4',.22)],[.45,dress.scarf],[1,tint(dress.scarf,'#463544',.22)]]);c.fill();
-  line(c,[[-11,-37],[9,-37]],'#fff0cf44',.9);oval(c,11,-37,3.4,3.1,tint(dress.scarf,'#fff0d1',.1));
+  if(dress.coat==='#3d6f9d'){
+    // The everyday bag is a two-strap travel rucksack, not a mail satchel.
+    // Both straps share the existing torso transform and stay fixed on jumps.
+    for(const side of [-1,1]){
+      c.beginPath();c.moveTo(side*10,-39);c.quadraticCurveTo(side*13,-32,side*11,-22);
+      c.strokeStyle='#304d69';c.lineWidth=4.1;c.stroke();
+      c.strokeStyle='#6d94ae';c.lineWidth=1.35;c.stroke();
+      c.beginPath();c.roundRect(side*11-2.2,-27,4.4,4.2,1);
+      c.fillStyle='#c6b797';c.fill();
+    }
+    line(c,[[-10,-35],[-7,-31]],'#e3d5b17a',.75);
+  }else{
+    // Festival/alternate outfits keep the original diagonal delivery strap.
+    c.beginPath();c.moveTo(9,-39);c.quadraticCurveTo(0,-30,-16,-19);c.strokeStyle='#2a344b55';c.lineWidth=4.8;c.stroke();c.strokeStyle='#987a60';c.lineWidth=3.2;c.stroke();
+    c.beginPath();c.moveTo(8,-39);c.quadraticCurveTo(-1,-30,-16,-20);c.strokeStyle='#dbbb8d99';c.lineWidth=.8;c.stroke();
+  }
+  if(dress.coat==='#3d6f9d'){
+    // Blue jacket collar frames the cream shirt; the old scarf does not
+    // obscure Ashi's approved everyday identity.
+    c.beginPath();c.moveTo(-15,-41);c.lineTo(-2,-37);c.lineTo(-8,-32);c.lineTo(-15,-35);c.closePath();
+    c.fillStyle=gradient(c,-15,-41,-5,-32,[[0,'#709dbd'],[1,'#28547c']]);c.fill();
+    c.beginPath();c.moveTo(15,-41);c.lineTo(2,-37);c.lineTo(8,-32);c.lineTo(15,-35);c.closePath();
+    c.fillStyle=gradient(c,5,-41,15,-32,[[0,'#83a7c1'],[1,'#315a80']]);c.fill();
+    line(c,[[-14,-39],[-5,-36]],'#b5d2e2',.95);
+    line(c,[[5,-36],[14,-39]],'#c5d9e4',.95);
+  }else{
+    // Festival and alternate garments retain their original soft scarf collar.
+    c.beginPath();c.roundRect(-16,-41,32,8,4);c.fillStyle=gradient(c,-8,-41,4,-33,[[0,tint(dress.scarf,'#fff3d4',.22)],[.45,dress.scarf],[1,tint(dress.scarf,'#463544',.22)]]);c.fill();
+    line(c,[[-11,-37],[9,-37]],'#fff0cf44',.9);oval(c,11,-37,3.4,3.1,tint(dress.scarf,'#fff0d1',.1));
+  }
   c.restore();
 }
