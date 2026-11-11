@@ -23,7 +23,7 @@ const outfits={
   qixi:{coat:'#665995',scarf:'#bca4e3',trim:'#e7d3ef'},midautumn:{coat:'#6c8d88',scarf:'#e7c487',trim:'#dfd5b7'},
   starlight:{coat:'#304764',scarf:'#e2be73',trim:'#e9d4a7'},
 };
-export function getOutfitPalette(id){return outfits[id]||{coat:'#79689b',scarf:'#e4b27c',trim:'#d2bddc'};}
+export function getOutfitPalette(id){return outfits[id]||{coat:'#3d6f9d',scarf:'#dcc8a8',trim:'#a6c4da'};}
 const ellipse=(c,x,y,rx,ry,color,rotation=0)=>{c.beginPath();c.ellipse(x,y,rx,ry,rotation,0,TAU);c.fillStyle=color;c.fill();};
 const line=(c,points,color,width=2)=>{c.beginPath();points.forEach((p,i)=>i?c.lineTo(...p):c.moveTo(...p));c.strokeStyle=color;c.lineWidth=width;c.stroke();};
 const box=(c,x,y,w,h,r,fill,stroke)=>{c.beginPath();c.roundRect(x,y,w,h,r);if(fill){c.fillStyle=fill;c.fill();}if(stroke){c.strokeStyle=stroke;c.lineWidth=1.5;c.stroke();}};

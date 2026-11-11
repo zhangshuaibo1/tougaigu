@@ -194,8 +194,11 @@ export function drawStationCharacter(game,c,b,t,shown,p,paint={}){
   if(game.featherCharges){for(let i=0;i<3;i++){const a=t*.55+i*TAU/3;oval(c,Math.cos(a)*30,-39+Math.sin(a)*22,2,2,'#d6e8ecaa');}}
   drawTravelerBack(c,motion,dress);drawTravelerLegs(c,motion);
   for(const arm of [p.arms.left,p.arms.right]){
-    path(c,[[arm.shoulder.x,arm.shoulder.y],[arm.elbow.x,arm.elbow.y],[arm.wrist.x,arm.wrist.y]],'#a59c7d',5);
-    path(c,[[arm.shoulder.x-1,arm.shoulder.y],[arm.elbow.x-1,arm.elbow.y],[arm.wrist.x-1,arm.wrist.y]],'#eadbb9',2.5);oval(c,arm.elbow.x,arm.elbow.y,2.8,2.8,'#f3e6c5');
+    const everyday=outfit==null&&game.mode==='story';
+    path(c,[[arm.shoulder.x,arm.shoulder.y],[arm.elbow.x,arm.elbow.y],[arm.wrist.x,arm.wrist.y]],everyday?'#264f77':'#a59c7d',5);
+    path(c,[[arm.shoulder.x-1,arm.shoulder.y],[arm.elbow.x-1,arm.elbow.y],[arm.wrist.x-1,arm.wrist.y]],everyday?'#6c9fc0':'#eadbb9',2.5);
+    oval(c,arm.elbow.x,arm.elbow.y,2.8,2.8,everyday?'#477baa':'#f3e6c5');
+    if(everyday)oval(c,arm.wrist.x,arm.wrist.y,3.1,3,'#e7c3a3');
   }
   drawTravelerCoat(c,motion,dress);
   c.save();c.transform(...rig.headLocalMatrix);drawCapInterior(c,game.capScene,t,game.capOpen);c.restore();c.restore();
