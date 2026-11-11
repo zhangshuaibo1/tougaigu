@@ -84,7 +84,9 @@ test('peek and return are masked by the front skull and rim, while free flight u
   const originalSoul=game.drawSoul.bind(game);game.drawSoul=(c,s,t)=>{assert.equal(s,lastSoul);layers.push('soul-'+s.layer);return originalSoul(c,s,t);};
   function renderAndCheck(inside){ctx.resetLog();count=0;game.render();assert.equal(count,1,'one render must calculate its soul presentation once');const soul=layers.indexOf('soul-'+(inside?'inside':'world')),front=layers.indexOf('drawSkullFront'),rim=layers.indexOf('rim'),lid=layers.indexOf('drawCapLid'),hands=layers.indexOf('drawCharacterHands');assert.ok(soul>=0);if(inside){assert.ok(soul<front&&front<rim&&rim<lid&&lid<hands);}else assert.ok(front<rim&&rim<lid&&lid<hands&&hands<soul);assert.equal(layers.filter(item=>item.startsWith('soul-')).length,1);}
   game.toggleSoul();tick(game,.3);game.body.invulnerable=1;game.visualTime=.34;renderAndCheck(true);
-  const skull=ctx.fills.find(item=>item.style?.kind==='linear'&&item.style.args.join(',')==='-22,-13,23,23');assert.equal(skull.alpha,1,'invulnerability blinking must not reveal a soul through the face');
+  const humanFace=ctx.fills.find(item=>item.style?.kind==='linear'&&item.style.args.join(',')==='-22,-15,22,24');
+  assert.ok(humanFace,'the actual six-chapter human skin plane must mask the returning soul');
+  assert.equal(humanFace.alpha,1,'invulnerability blinking must not reveal a soul through the human face');
   tick(game,.5);renderAndCheck(false);game.recall();tick(game,.2);renderAndCheck(true);game.destroy();
 });
 
