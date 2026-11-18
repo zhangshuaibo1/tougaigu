@@ -1,7 +1,7 @@
 name: Game iteration verification
 on:
   push:
-    branches: [main, 'iteration-latest']
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
@@ -11,20 +11,20 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-24.04
-    # The v29 candidate already spends over ten minutes before the final
-    # fallback/reload/ending checks. main runs the full candidate AND HTTPS
+    # The full main verification already spends over ten minutes before the final
+    # fallback/reload/ending checks. main runs the full browser verification AND HTTPS
     # route; allow both to finish while retaining every local action timeout.
     timeout-minutes: 35
     defaults:
       run:
         shell: bash
     steps:
-      - name: Enforce the single active development branch
+      - name: Enforce main-only development
         run: |
-          case "$GITHUB_REF" in
-            refs/heads/main|refs/heads/iteration-latest) ;;
-            *) echo "::error::Only main and iteration-latest are accepted; legacy branches are frozen."; exit 1 ;;
-          esac
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::All changes and verification must run directly from main. Creating or using another branch is forbidden."
+            exit 1
+          fi
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
@@ -41,7 +41,7 @@ jobs:
         run: |
           python -m pip install playwright==1.55.0
           python -m playwright install --with-deps chromium
-      - name: Test candidate with real browser input
+      - name: Test main with real browser input
         run: |
           set -euo pipefail
           python3 -m http.server 8080 --bind 127.0.0.1 --directory dist > verification/server.txt 2>&1 &

@@ -1,11 +1,20 @@
 # 项目协作与发布约束（强制）
 
-本文件是本项目持续开发、分支协作、验收和发布的最高执行约束；与旧版本计划中的“多分支并行”“另开 iteration 分支”等历史文字冲突时，以本文件为准。历史分支与旧报告只作审计资料，不代表可继续开发或发布。
+本文件记录当前执行规则和历史迭代证据。**从 2026-11-18 起，所有修改只允许直接基于远端 `main`；严禁创建任何新分支。** 本文件中更早的 iteration 分支、候选分支和 PR 描述均为当时的历史记录，不再构成当前操作指令。
 
+## 当前最高优先级：main-only 开发（强制）
+
+- 唯一可写源码分支是 `main`。所有代码、美术、测试、文档、QA、脚本、依赖和工作流修改都直接提交到最新远端 main。
+- 禁止创建 `iteration-latest`、任何 `iteration-*`、`release-*`、`prestudy/*`、`agent/*`、临时集成、候选、备份或其他任何新分支；不使用 PR/候选分支合并流程。
+- `gh-pages` 仅为正式部署产物分支，只能由部署工作流更新，不得用于源码开发。
+- 每次写入前 fresh-read main HEAD 和目标文件 SHA；写入使用 expected SHA、force=false。若冲突或保护规则拒绝直接写 main，停止并报告，不创建分支绕过。
+- 历史分支仅作审计来源；需要恢复的独有内容先对照最新 main 做差量，再直接提交 main。不得整树覆盖、盲目合并或丢弃独有内容。
+- main 上每批变更完成后执行完整 Node、资源、真实 Chromium 1280/390/320、物理/剧情/存档/网络回归。全部通过后同一轮立即部署到 `https://tougaigu.com/`，再执行新的 main HTTPS 与 Pages/live artifact 逐文件审计。
+- 任一验收失败、并发写入、artifact 不完整或公网证据不足时，不部署、不覆盖稳定站点，并如实记录 main SHA、Pages run、HTTPS run、线上版本和阻塞。
 
 ## 当前持续主线：主角实景精修（强制）
 
-角色身份、Canvas 实景绘制、动作帧、细腻度/美观度、质量门槛和逐轮验收详见 [`docs/CHARACTER-ART-CONSTRAINTS.md`](CHARACTER-ART-CONSTRAINTS.md)。该规则对所有自动迭代生效：阿拾固定为棕色短发、自然人脸、蓝色夹克、米色内搭、旅行背包；拾光固定为长发、红围巾、米色外衣的完整人形女孩。每轮必须优先改善真实游戏 Canvas 中的五官、发型、人体比例、服装材质、动作、遮挡和光影；只改头像/肖像/版本号不算角色实景优化。角色质量须在 1280/390/320 真实候选浏览器中与上一稳定版本同场景同动作对照，身份或质量门槛未通过则不合并、不部署。不得放宽既有物理、输入、剧情、存档/奖励、暂停/减动、可访问性和网络验收。
+角色身份、Canvas 实景绘制、动作帧、细腻度/美观度、质量门槛和逐轮验收详见 [`docs/CHARACTER-ART-CONSTRAINTS.md`](CHARACTER-ART-CONSTRAINTS.md)。该规则对所有自动迭代生效：阿拾固定为棕色短发、自然人脸、蓝色夹克、米色内搭、旅行背包；拾光固定为长发、红围巾、米色外衣的完整人形女孩。每轮必须优先改善真实游戏 Canvas 中的五官、发型、人体比例、服装材质、动作、遮挡和光影；只改头像/肖像/版本号不算角色实景优化。角色质量须在 1280/390/320 真实 Chromium 中与上一稳定版本同场景同动作对照。不得放宽既有物理、输入、剧情、存档/奖励、暂停/减动、可访问性和网络验收。
 
 ### 2026-11-11 R68 候选失败与精确修复（尚未发布）
 
@@ -15,40 +24,40 @@
 
 R68 修复提交 `52cd4888` 的官方候选 [42988216651](https://github.com/zhangshuaibo1/tougaigu/actions/runs/42988216651) 已于 2026-11-11 08:50:42 UTC 完成，结论 success（Node、资源、候选 Chromium；开发分支公网测试按原工作流 skipped）。本轮直接精修生产 `dist/dream-soul-art.js`：将旧湖绿眼部受色收敛为暖棕色，补齐同一肤色平面的眉弓与鼻梁鼻尖，并把原先落在面部边界外的双侧腮红移回脸颊；旧眼位、眨眼、表情、动作、速度、物品锚点、碰撞、暂停/减少动态均不改。新增 `tests/soul-art-v22.test.mjs` 精确绘制断言；正式 Chromium 1280/390/320 同场景前后比较与本轮完整 CI 仍须对新提交单独获取。批准的原图在本地 R64/R65 工程档案中 SHA-256 精确匹配，但远端 `docs/art-reference/approved-board.png` 依然 404；不能宣称已纳入仓库。本轮只允许持续开发，**不得合并 main／部署**：当前没有明确的串行发布交接，第一章仍是旧夜间站台，原图也未落在仓库规定路径。候选 CI/视觉验证取得前状态为未发布；继续保留旧失败与稳定版。
 
-## 1. 分支唯一性与协作
+## 1. 唯一源码分支：main
 
-- 唯一可写的持续开发分支：`iteration-latest`。所有会话、自动化任务、人工修改和协作者都必须在这一个分支上协同；先读取远端最新 HEAD，再在该分支追加提交。
-- `main` 是正式源码基线，只能通过当前 `iteration-latest` 的审查 PR 合并更新；不得直接在 main 开发，不得从旧分支另起候选，不得建立第二条活动开发分支。
-- `gh-pages` 是部署产物分支，只能由正式部署流程更新；不得把它当源码分支或手工开发分支。
-- 既有 `iteration-v*`、`agent/*`、`prestudy/*`、`release-*` 等旧分支全部冻结为历史审计引用，不再接收提交、不再触发新候选。不得从中 cherry-pick 整树覆盖 main；需要的内容必须先对照最新 main 做有证据的差量整合到 `iteration-latest`。
-- 历史分支引用暂时保留以保护已发生的提交、失败和发布证据；不得为了“只保留一个活动分支”而删除尚未确认已归档/可恢复的提交。完成独立归档与可恢复性核验后，才可清理旧分支引用。无论旧引用是否物理删除，活动开发分支始终只能有一个。
-- 写入前必须 fresh-read 分支 SHA；更新 `iteration-latest` 使用 expected SHA、fast-forward（force=false）。若远端 HEAD 已变化或写入 lease 冲突，停止并重新读取，不覆盖、不强推、不抢占其他会话的提交。
-- 同一时间只允许一个发布负责人推进候选→合并→部署闭环。所有其他会话只在 `iteration-latest` 协同，不另建分支、不并行发布。
+- 所有源码、美术、测试、文档、QA、脚本、配置和工作流修改必须直接基于最新远端 `main` 并提交到 `main`。
+- 禁止创建任何新分支，包括 `iteration-latest`、`iteration-*`、`iteration-v*`、`release-*`、`prestudy/*`、`agent/*`、临时集成、候选、备份或个人分支。
+- 不使用 PR/分支合并流程。候选验收是对 main 当前提交执行的验证阶段，不建立候选分支。
+- `gh-pages` 只由正式部署流程更新，是部署产物分支，不得写入源码。
+- 历史分支只读；需要恢复其独有工作时，先对照最新 main 做精确差量，再直接提交 main。不得整树覆盖或盲目合并历史分支。
+- 每次写入前 fresh-read main SHA 和目标文件 blob SHA，更新时 expected SHA、force=false。发生冲突、并发写入或 main 保护拒绝时立即停止并报告，不得创建分支绕过。
+- 不因本规则盲删历史分支；清理旧引用前先确认独有提交已整合或有经验证可恢复的不可变归档。不得删除 gh-pages。
 
-## 2. 最新完整 dist 的候选整合方式
+## 2. 基于 main 的安全整合
 
-- 每轮以最新 `main` 为父历史和源码基线，在 `iteration-latest` 上建立候选；不得以本地包或旧候选的整棵仓库覆盖 main。
-- 当最新完整游戏 `dist/` 已通过清单核对时，可将 `dist/` 作为一个整体候选替换：先比较路径清单、SHA、文件大小和模式；必须确认没有删除 main 仍需的运行路径，所有新增路径均被纳入，并保留 CNAME、空 `.nojekyll`、首页/模块版本戳。
-- 整体替换仅限 `dist/` 及经审查的配套资源/版本文件。不得整体覆盖 `.github/`、`scripts/`、`tests/`、`docs/`、package/锁文件、QA证据、工作流或其他源码根目录。它们必须以最新 main 为准，按文件/函数差量整合。
-- 保留六章、十节日、旧游戏、碰撞物理、输入、存档/奖励/选择、ARIA/语义、企业页脚和既有精确网络失败预算。测试失败原样保留并因果修复，不 skip、不放宽阈值。
+- 每轮以最新 main 为唯一父历史和源码基线；本地包/历史提交只能作为差量来源，逐路径核对 SHA、大小、模式、调用关系和依赖。
+- 完整 `dist/` 仅在路径清单、blob SHA、size、mode 核对通过且没有删除 main 必需运行路径时，才可作为整体候选内容直接更新 main；保留 CNAME、空 `.nojekyll`、首页和模块版本戳。
+- 不得整树覆盖 `.github/`、`scripts/`、`tests/`、`docs/`、package/锁文件、QA证据和工作流；这些内容必须基于最新 main 按文件/函数差量整合。
+- 保留六章、十节日、旧游戏、碰撞物理、输入、存档/奖励/选择、ARIA/语义、企业页脚和精确网络失败预算。测试失败原样保留并因果修复，不 skip、不放宽阈值。
 
-## 3. 每批更新的强制闭环
+## 3. 每批 main 更新的强制闭环
 
-1. 在 `iteration-latest` 完成一批真实代码/美术变更，更新本轮 QA/交接记录。
-2. 运行原官方候选工作流：全量 Node 测试、资源/版本引用检查、真实 Chromium 候选浏览器及 1280/390/320 视口和既有故障资源、迟到、暂停/减动、剧情逐页 decode、输入/物理/解锁/存档/奖励/网络账本门槛。
-3. 候选未通过、浏览器证据不足、并发负责人未交接或 artifact 无法独立审计时：停止，不合并、不更新 Pages、不覆盖稳定版；记录具体失败与阻塞。
-4. 候选通过后，从最新 `main` SHA 建立/更新 PR，检查 PR base/head 和完整差异；只合并当前 `iteration-latest` 的已验收候选。合并后 fresh-read 新 main SHA。
-5. **同一轮立即部署**：从该 main SHA 生成 Pages 运行树并更新 `gh-pages`，启动 GitHub Pages workflow；不得把部署推迟到下一轮或累积多轮更新。部署失败时保留 main 与旧 gh-pages，不伪报上线。
-6. 部署后立即运行 main 完整官方工作流（含正式 `https://tougaigu.com/` Chromium 验收），下载本轮源代码与 Pages/live artifacts，逐路径核对 path/blob SHA/size/mode；核验唯一空 `.nojekyll`、单行 `CNAME=tougaigu.com`、首页版本、关键 JS/CSS/图片 HTTP 响应及正式域名返回目标版本。
-7. 只有本轮 Pages run、main HTTPS run、artifact 独立审计、线上版本与关键资源响应全部成功，才报告“已上线”。否则明确区分“候选未通过”“已合并但未部署”“Pages部署完成但main HTTPS未通过”，列出候选/合并 SHA、Pages run、HTTPS run、线上版本和缺口。
+1. Fresh-read main HEAD、工作区/远端差异、当前 Actions 和 Pages 状态，确认无其他写入者。
+2. 直接在 main 完成一批真实代码/美术变更并更新本轮 QA/交接记录；不得创建分支或 PR。
+3. 对该 main 提交运行完整 Node 测试、资源/版本引用检查、真实 Chromium 1280/390/320 视口，以及故障资源/迟到、暂停/减动、剧情逐页 decode、输入/物理/解锁/存档/奖励/网络账本门槛。
+4. 验收失败、浏览器证据不足、artifact 不完整或发生并发冲突时停止，不部署、不覆盖稳定版；保留原始失败并因果修复，修复仍直接提交 main。
+5. 完整验收成功后，同一轮立即从该 main SHA 生成 Pages 运行树并部署到 `https://tougaigu.com/`，更新 gh-pages；不得推迟到下一轮。
+6. 部署后立即运行新的 main 完整 HTTPS 工作流，下载源代码和 Pages/live artifacts，逐路径核对 path/blob SHA/size/mode；核验唯一空 `.nojekyll`、单行 `CNAME=tougaigu.com`、首页版本、关键 JS/CSS/图片响应和正式域名实际返回版本。
+7. 只有本轮 main 验收、Pages run、main HTTPS run、artifact 独立审计及正式域名目标版本全部成功，才报告“已上线”。否则列出 main SHA、Pages run、HTTPS run、线上版本和具体缺口。
 
-## 4. 自动化入口
+## 4. 自动化入口（仅 main）
 
-- `iteration-check.yml` 只接受 `main` 与 `iteration-latest` 的 push；手动 dispatch 若来自其他 ref 必须失败退出。
-- 候选分支只跑本地真实浏览器候选，不执行正式公网步骤；只有 main 执行正式域名浏览器验收。
-- 所有 game verification runs 使用同一个仓库级 concurrency group，`cancel-in-progress: false`，避免不同分支同时争用验收/发布资源。
-- Pages 发布只允许在候选成功并合并 main 后执行；不得从冻结历史分支直接发布。
-
+- `iteration-check.yml` 仅允许 main push 触发；workflow_dispatch 也必须拒绝非 `refs/heads/main`。
+- 不再运行候选分支 CI 或候选分支公网跳过逻辑；完整候选和正式 HTTPS 都针对 main 对应提交执行。
+- 所有验证使用同一仓库级 concurrency group，`cancel-in-progress: false`。
+- Pages 发布只允许基于已通过完整 main 验收的精确 SHA 执行。
+ 
 ## 5. 视觉基准
 
 唯一角色/场景视觉依据为用户批准的原始设定板 `docs/art-reference/approved-board.png`，必须核验其 SHA-256 为 `f728aa967f5ccd0fcb8a3ea2a13015f88e1904a293a77626a7770798a4891793`。阿拾为棕色短发、蓝夹克、米色内搭、旅行背包；拾光为长发、红围巾、米色外衣的人形女孩。头盖骨仅为“打开脑洞”的比喻，不得制作字面头骨头盔。不得以旧银发/湖绿围巾/小光灵方案替代批准基准。

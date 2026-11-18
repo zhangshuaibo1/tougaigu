@@ -1,6 +1,10 @@
-【2026-11-01 · v34.2.0 原生肖像候选，未发布】本仓库当前正式完成版本仍为 v34.1.0，main `cf938a728e8b860fe06d1735e54973a95cca166e`、Pages `91a08f26d779e7a72ea7229a2efed6570c067beb`，正式 HTTPS Actions `41301982337` 成功（issue #3 已解决）。从此正式基线新增五张阿拾原创自然人脸肖像，保留同名路径和眼眉五种情绪；见 `docs/QA-v34.2.md`。本段是新的未发布候选状态，须经过候选CI、正式Pages、main公网全套与原始证据审计才能称34.2.0上线。下面旧版本段落均按记录当时的历史看待。
+【2026-11-18 · main-only 开发规则生效】唯一可写源码分支为 `main`；所有代码、美术、测试、文档和配置修改均直接基于最新 main 提交。**禁止创建任何新分支**，包括 iteration、release、prestudy、agent、候选或临时分支；不使用 PR/分支合并流程。
 
-强制协作与发布规则：[项目约束](docs/PROJECT-CONSTRAINTS.md) · 唯一活动开发分支为 `iteration-latest`；所有修改在该分支协同，候选通过后同轮合并并部署至 `https://tougaigu.com/`。
+本仓库的正式 Pages 部署产物使用 `gh-pages`，它不是源码开发分支。每批 main 修改必须完成全量逻辑/资源/真实 Chromium 1280/390/320 验收，通过后同一轮立即部署到 `https://tougaigu.com/`，并完成新的 main HTTPS 与 Pages/live artifact 逐文件审计。具体规则见 [项目约束](docs/PROJECT-CONSTRAINTS.md) 和 [当前迭代任务](docs/ITERATION.md)。
+
+【历史记录】下文较早的版本状态、分支名、候选分支和 PR 说明均为形成当时的历史记录，不构成当前开发流程；当前唯一可写源码分支始终为 main。
+
+强制协作与发布规则：[项目约束](docs/PROJECT-CONSTRAINTS.md) · 所有修改直接提交到唯一源码分支 `main`；禁止创建新分支，验收通过后同轮部署至 `https://tougaigu.com/`。
 
 # 掀起你的头盖骨 · 给明天的一封信
 
