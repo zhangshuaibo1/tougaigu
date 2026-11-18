@@ -1,6 +1,6 @@
 // A decorative, screen-space painting. This module owns no gameplay state and
 // does not read the DOM until an eligible scene explicitly requests its image.
-export const PAINTED_STATION_URL=new URL('./assets/station-painted-v16.webp',import.meta.url).href;
+export const PAINTED_STATION_URL=new URL('./assets/station-daylight-r70.svg',import.meta.url).href;
 export const PAINTED_STATION_CONFIG=Object.freeze({
   aspect:3,
   baseWidth:1920,

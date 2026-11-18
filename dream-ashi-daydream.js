@@ -82,13 +82,13 @@ export function drawFirstChapterDaydreamFace(c, game, body, t, shown) {
     c.bezierCurveTo(25, -32, 27, -17, 18, -9); c.quadraticCurveTo(15, -20, 8, -18);
     c.quadraticCurveTo(2, -10, -3, -13); c.quadraticCurveTo(-12, -21, -20, -11); c.closePath();
     c.fillStyle = fillGradient(c, -20, -33, 20, -9, [
-      [0, '#334c56'], [.31, '#526275'], [.58, '#767084'], [1, '#354b61']]); c.fill();
+      [0, '#402c28'], [.31, '#714a36'], [.58, '#9e714f'], [1, '#4a302b']]); c.fill();
     c.beginPath(); c.moveTo(-21, -12); c.bezierCurveTo(-25, -20, -18, -31, -6, -33);
-    c.quadraticCurveTo(-19 + sway, -23, -13 + sway, -15); c.quadraticCurveTo(-17, -11, -21, -12); c.fillStyle = '#3f5869'; c.fill();
-    curve(c, [-18, -27, -6, -35, 6, -35, 13, -27], '#d7c3bd70', 1.25);
-    curve(c, [-7, -28, 1 + sway, -25, 5 + sway, -22, 8, -15], '#a8a0a8a0', 1);
+    c.quadraticCurveTo(-19 + sway, -23, -13 + sway, -15); c.quadraticCurveTo(-17, -11, -21, -12); c.fillStyle = '#5b3d30'; c.fill();
+    curve(c, [-18, -27, -6, -35, 6, -35, 13, -27], '#e0b0807d', 1.25);
+    curve(c, [-7, -28, 1 + sway, -25, 5 + sway, -22, 8, -15], '#b67d5799', 1);
     // Hair ribbon at the back, not a hat or metallic crown.
-    curve(c, [14, -26, 22, -24, 23, -19, 22, -12], '#8abfbaa0', 2.2);
+    curve(c, [14, -26, 22, -24, 23, -19, 22, -12], '#70483d88', 2.2);
     // Soft brows, curved eyelids and finite gaze keep old attention semantics.
     for (const x of [-9, 9]) {
       curve(c, [x - 4.8, -5.9, x - 3, -8.8, x + 2.5, -9, x + 5.4, -6.3], '#5e5360', 1.1);
